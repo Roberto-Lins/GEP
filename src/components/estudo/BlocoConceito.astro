@@ -1,0 +1,13 @@
+---
+interface Props { titulo?: string }
+const { titulo = 'Conceito-chave' } = Astro.props;
+---
+<aside class="my-6 rounded-xl border border-aco-light/60 bg-aco/30 p-5">
+  <div class="mb-2 flex items-center gap-2 text-nevoa">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#93c5fd" stroke-width="2" aria-hidden="true">
+      <path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.5.4.9 1 1 1.6h5c.1-.6.5-1.2 1-1.6A6 6 0 0 0 12 3z"/>
+    </svg>
+    <h3 class="font-serif text-lg font-semibold text-marfim">{titulo}</h3>
+  </div>
+  <div class="prosa text-nevoa"><slot /></div>
+</aside>

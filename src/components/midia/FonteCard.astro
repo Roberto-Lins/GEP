@@ -1,0 +1,33 @@
+---
+import type { Fonte } from '@data/fontes';
+interface Props { fonte: Fonte }
+const { fonte } = Astro.props;
+const icones: Record<Fonte['tipo'], string> = {
+  livro: 'M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2V5zM6 3v18',
+  slide: 'M3 4h18v12H3zM8 20h8M12 16v4',
+  resumo: 'M5 3h9l5 5v13H5zM14 3v5h5M8 13h8M8 17h6',
+  prova: 'M9 11l3 3 8-8M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11',
+  observacao: 'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zM12 8h.01M11 12h1v4h1',
+};
+const rotulo: Record<Fonte['tipo'], string> = {
+  livro: 'Livro', slide: 'Slides', resumo: 'Resumo', prova: 'Conteúdo da prova', observacao: 'Observação',
+};
+---
+<div class="card flex items-start gap-4 p-4">
+  <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-aco/40 text-dourado">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d={icones[fonte.tipo]}/></svg>
+  </span>
+  <div class="flex-1">
+    <div class="flex items-center gap-2">
+      <p class="font-serif text-marfim">{fonte.titulo}</p>
+      <span class="chip border border-white/10 bg-white/5 text-[10px] uppercase tracking-wider text-nevoa/60">{rotulo[fonte.tipo]}</span>
+    </div>
+    <p class="mt-1 text-sm text-nevoa/70">{fonte.descricao}</p>
+    {fonte.arquivo && (
+      <a href={fonte.arquivo} download class="mt-2 inline-flex items-center gap-1.5 text-sm text-dourado hover:text-dourado-soft">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+        Baixar
+      </a>
+    )}
+  </div>
+</div>

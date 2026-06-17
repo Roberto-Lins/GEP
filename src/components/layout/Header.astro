@@ -1,0 +1,60 @@
+---
+const links = [
+  { href: '/', label: 'Início' },
+  { href: '/timeline', label: 'Timeline' },
+  { href: '/questoes', label: 'Questões' },
+  { href: '/simulados', label: 'Simulados' },
+  { href: '/revisao-final', label: 'Revisão final' },
+  { href: '/fontes', label: 'Fontes' },
+];
+const path = Astro.url.pathname;
+const ativo = (href: string) =>
+  href === '/' ? path === '/' : path.startsWith(href);
+---
+
+<header class="sticky top-0 z-40 border-b border-white/10 bg-naval/85 backdrop-blur-md">
+  <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+    <a href="/" class="group flex items-center gap-3">
+      <svg viewBox="0 0 32 32" class="h-9 w-9 shrink-0" aria-hidden="true">
+        <circle cx="16" cy="16" r="13" fill="none" stroke="#D6A84F" stroke-width="1.4" />
+        <path d="M16 3v26M3 16h26" stroke="#D6A84F" stroke-width="0.9" opacity="0.5" />
+        <path d="M16 7l2.8 6.2 6.2 2.8-6.2 2.8L16 25l-2.8-6.2L7 16l6.2-2.8z" fill="#1E3A5F" stroke="#D6A84F" stroke-width="1" />
+        <circle cx="16" cy="16" r="2" fill="#D6A84F" />
+      </svg>
+      <span class="flex flex-col leading-tight">
+        <span class="font-serif text-lg font-semibold text-marfim">GEP Command Deck</span>
+        <span class="text-[11px] uppercase tracking-[0.2em] text-dourado/80">Trilha de estudo · GEP P1</span>
+      </span>
+    </a>
+
+    <nav class="hidden items-center gap-1 md:flex" aria-label="Principal">
+      {links.map((l) => (
+        <a
+          href={l.href}
+          class:list={[
+            'rounded-lg px-3 py-2 text-sm font-medium transition',
+            ativo(l.href)
+              ? 'bg-dourado/15 text-dourado'
+              : 'text-nevoa hover:bg-white/5 hover:text-marfim',
+          ]}
+          aria-current={ativo(l.href) ? 'page' : undefined}
+        >
+          {l.label}
+        </a>
+      ))}
+    </nav>
+
+    <details class="relative md:hidden">
+      <summary class="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-lg border border-white/10 text-marfim">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </summary>
+      <div class="absolute right-0 mt-2 w-52 rounded-xl border border-white/10 bg-naval-800 p-2 shadow-card">
+        {links.map((l) => (
+          <a href={l.href} class:list={['block rounded-lg px-3 py-2 text-sm', ativo(l.href) ? 'bg-dourado/15 text-dourado' : 'text-nevoa hover:bg-white/5']}>
+            {l.label}
+          </a>
+        ))}
+      </div>
+    </details>
+  </div>
+</header>

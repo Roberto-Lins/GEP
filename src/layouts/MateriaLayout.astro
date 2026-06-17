@@ -1,0 +1,46 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import SidebarTimeline from '@components/estudo/SidebarTimeline.astro';
+import NavegacaoMateria from '@components/estudo/NavegacaoMateria.astro';
+import ProgressoScript from '@components/estudo/ProgressoScript.astro';
+import ProgressoMateria from '@components/estudo/ProgressoMateria.tsx';
+import { PRIORIDADE_META, type TopicoTimeline } from '@data/timeline';
+import { numeroTopico } from '@utils/slug';
+
+interface Props { topico: TopicoTimeline }
+const { topico } = Astro.props;
+const meta = PRIORIDADE_META[topico.prioridade];
+const num = numeroTopico(topico.slug);
+---
+<BaseLayout titulo={topico.titulo} descricao={topico.objetivo} largura="larga">
+  <div class="grid gap-8 lg:grid-cols-[15rem_minmax(0,1fr)]">
+    <SidebarTimeline atual={topico.slug} />
+
+    <article class="min-w-0">
+      <!-- Cabeçalho da mini matéria -->
+      <header class="mb-8 border-b border-white/10 pb-6">
+        <div class="mb-3 flex flex-wrap items-center gap-3 text-sm">
+          <span class="font-mono text-dourado/70">{topico.ordem === 99 ? 'REVISÃO' : `Tópico ${num}`}</span>
+          <span class:list={['chip border', meta.classe]}>Prioridade {meta.label.toLowerCase()}</span>
+          <span class="inline-flex items-center gap-1.5 text-nevoa/60">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            {topico.tempoEstimado}
+          </span>
+        </div>
+        <div class="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <h1 class="text-3xl font-bold sm:text-4xl">{topico.titulo}</h1>
+            <p class="mt-2 text-lg text-nevoa/80">{topico.subtitulo}</p>
+          </div>
+          <ProgressoMateria slug={topico.slug} client:load />
+        </div>
+      </header>
+
+      <slot />
+
+      <NavegacaoMateria slug={topico.slug} />
+    </article>
+  </div>
+
+  <ProgressoScript />
+</BaseLayout>

@@ -1,0 +1,16 @@
+---
+interface Props {
+  titulo: string;
+  subtitulo?: string;
+  kicker?: string;
+}
+const { titulo, subtitulo, kicker } = Astro.props;
+---
+<section class="mb-8">
+  {kicker && (
+    <p class="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-dourado/80">{kicker}</p>
+  )}
+  <h1 class="text-3xl font-bold sm:text-4xl">{titulo}</h1>
+  {subtitulo && <p class="mt-3 max-w-2xl text-lg text-nevoa/80">{subtitulo}</p>}
+  <slot />
+</section>

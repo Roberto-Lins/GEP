@@ -1,0 +1,51 @@
+---
+// Atualiza, no cliente, todos os indicadores de progresso da página a partir
+// do localStorage. Sem React: um único script cobre cards, badges e a barra geral.
+---
+<script>
+  import { carregar, EVENTO } from '@utils/progresso';
+  import { checklists } from '@data/checklists';
+
+  function pctMateria(slug: string): number {
+    const p = carregar();
+    const m = p.materias[slug];
+    if (!m) return 0;
+    if (m.concluida) return 100;
+    const total = (checklists[slug] ?? []).length;
+    if (!total) return m.concluida ? 100 : 0;
+    const marcados = Object.values(m.checklist).filter(Boolean).length;
+    return Math.min(100, Math.round((marcados / total) * 100));
+  }
+
+  function atualizar() {
+    // Cards / barras / rótulos por matéria
+    document.querySelectorAll<HTMLElement>('[data-progresso-barra]').forEach((el) => {
+      const slug = el.dataset.progressoBarra!;
+      el.style.width = pctMateria(slug) + '%';
+    });
+    document.querySelectorAll<HTMLElement>('[data-progresso-rotulo]').forEach((el) => {
+      const pct = pctMateria(el.dataset.progressoRotulo!);
+      el.textContent = pct === 100 ? '✓ Concluída' : pct + '%';
+      el.classList.toggle('text-progresso', pct === 100);
+    });
+
+    // Progresso geral (média das matérias de estudo listadas na página)
+    const slugs = Array.from(document.querySelectorAll<HTMLElement>('[data-progresso-card]'))
+      .map((el) => el.dataset.progressoCard!)
+      .filter((s) => s !== '99-revisao-final');
+    const unicos = Array.from(new Set(slugs));
+    if (unicos.length) {
+      const media = Math.round(unicos.reduce((a, s) => a + pctMateria(s), 0) / unicos.length);
+      const concluidas = unicos.filter((s) => pctMateria(s) === 100).length;
+      document.querySelectorAll<HTMLElement>('[data-progresso-geral-barra]').forEach((el) => (el.style.width = media + '%'));
+      document.querySelectorAll<HTMLElement>('[data-progresso-geral-pct]').forEach((el) => (el.textContent = media + '%'));
+      document.querySelectorAll<HTMLElement>('[data-progresso-geral-concluidas]').forEach((el) => (el.textContent = String(concluidas)));
+      document.querySelectorAll<HTMLElement>('[data-progresso-geral-total]').forEach((el) => (el.textContent = String(unicos.length)));
+    }
+  }
+
+  atualizar();
+  window.addEventListener(EVENTO, atualizar);
+  window.addEventListener('storage', atualizar);
+  document.addEventListener('astro:after-swap', atualizar);
+</script>

@@ -1,0 +1,8 @@
+---
+interface Props { titulo?: string }
+const { titulo = 'Por quê?' } = Astro.props;
+---
+<div class="my-3 rounded-xl border border-white/10 bg-naval-800/60 p-4">
+  <p class="mb-1 text-xs font-semibold uppercase tracking-wider text-dourado/70">{titulo}</p>
+  <div class="prosa text-sm text-nevoa/85"><slot /></div>
+</div>

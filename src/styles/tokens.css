@@ -1,0 +1,27 @@
+/* Tokens visuais do GEP Command Deck.
+   Espelham a paleta do CLAUDE.md e ficam disponíveis como CSS vars
+   (útil para shiki, SVGs e ajustes pontuais fora do Tailwind). */
+:root {
+  --azul-naval: #0b1220;
+  --azul-naval-800: #101a2e;
+  --azul-naval-700: #16233d;
+  --azul-aco: #1e3a5f;
+  --azul-aco-light: #27496e;
+  --azul-acinzentado: #334155;
+  --dourado: #d6a84f;
+  --dourado-soft: #e0bd74;
+  --marfim: #f7f3ea;
+  --nevoa: #cbd5e1;
+  --verde: #22c55e;
+  --vermelho: #ef4444;
+
+  /* shiki / blocos de código */
+  --astro-code-color-text: #e2e8f0;
+  --astro-code-color-background: #0d1730;
+  --astro-code-token-comment: #64748b;
+  --astro-code-token-keyword: #d6a84f;
+  --astro-code-token-string: #7dd3a0;
+  --astro-code-token-function: #93c5fd;
+  --astro-code-token-constant: #e0bd74;
+  --astro-code-token-punctuation: #94a3b8;
+}

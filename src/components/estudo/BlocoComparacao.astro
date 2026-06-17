@@ -1,0 +1,40 @@
+---
+// Tabela comparativa estilizada. Use passando `colunas` e `linhas`,
+// ou simplesmente envolva uma tabela Markdown no slot.
+interface Props {
+  titulo?: string;
+  colunas?: string[];
+  linhas?: string[][];
+}
+const { titulo, colunas, linhas } = Astro.props;
+const temTabela = colunas && linhas;
+---
+<figure class="my-6 overflow-hidden rounded-xl border border-white/10 bg-aco/20">
+  {titulo && (
+    <figcaption class="border-b border-white/10 bg-aco/40 px-4 py-2.5 font-serif text-marfim">
+      {titulo}
+    </figcaption>
+  )}
+  {temTabela ? (
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead class="bg-aco/30">
+          <tr>{colunas!.map((c) => <th class="px-4 py-2.5 text-left font-serif text-dourado-soft">{c}</th>)}</tr>
+        </thead>
+        <tbody>
+          {linhas!.map((linha, i) => (
+            <tr class={i % 2 ? 'bg-white/[0.02]' : ''}>
+              {linha.map((celula, j) => (
+                <td class:list={['px-4 py-2.5 align-top border-t border-white/5', j === 0 ? 'font-medium text-marfim' : 'text-nevoa']}>
+                  {celula}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  ) : (
+    <div class="prosa p-4"><slot /></div>
+  )}
+</figure>

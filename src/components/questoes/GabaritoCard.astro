@@ -1,0 +1,9 @@
+---
+interface Props { resposta: string; conceito?: string }
+const { resposta, conceito } = Astro.props;
+---
+<div class="my-4 flex flex-wrap items-center gap-3 rounded-xl border border-progresso/40 bg-progresso/10 px-4 py-3">
+  <span class="chip border border-progresso/50 text-progresso">Gabarito</span>
+  <span class="font-medium text-marfim">{resposta}</span>
+  {conceito && <span class="ml-auto text-xs uppercase tracking-wider text-dourado/70">{conceito}</span>}
+</div>

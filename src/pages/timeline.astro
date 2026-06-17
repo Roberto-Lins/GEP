@@ -1,0 +1,26 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import PageContainer from '@components/layout/PageContainer.astro';
+import TimelineEstudo from '@components/estudo/TimelineEstudo.astro';
+import ProgressoScript from '@components/estudo/ProgressoScript.astro';
+import { topicosEstudo } from '@data/timeline';
+import { somarTempos } from '@utils/formatarTempo';
+
+const tempoTotal = somarTempos(topicosEstudo.map((t) => t.tempoEstimado));
+---
+<BaseLayout titulo="Linha do tempo">
+  <PageContainer
+    kicker="Trilha sequencial"
+    titulo="Linha do tempo do estudo"
+    subtitulo={`Estude na ordem. São ${topicosEstudo.length} mini matérias (mais a revisão), cerca de ${tempoTotal} de conteúdo, do conceito de Estado à governança da Marinha.`}
+  >
+    <div class="mt-4 flex flex-wrap gap-2 text-xs">
+      <span class="chip border border-white/15 bg-white/5 text-nevoa">Alta</span>
+      <span class="chip border border-dourado/30 bg-dourado/10 text-dourado-soft">Muito alta</span>
+      <span class="chip border border-dourado bg-dourado font-semibold text-naval">Máxima</span>
+    </div>
+  </PageContainer>
+
+  <TimelineEstudo />
+  <ProgressoScript />
+</BaseLayout>

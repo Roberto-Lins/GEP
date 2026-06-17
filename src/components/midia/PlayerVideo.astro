@@ -1,0 +1,29 @@
+---
+import type { Midia } from '@data/midias';
+interface Props { midia: Midia }
+const { midia } = Astro.props;
+const ext = midia.src.split('.').pop()?.toLowerCase();
+const mime = ext === 'webm' ? 'video/webm' : ext === 'mkv' ? 'video/x-matroska' : 'video/mp4';
+const suportado = ext !== 'mkv';
+---
+<figure class="card overflow-hidden">
+  {suportado ? (
+    <video controls preload="metadata" class="aspect-video w-full bg-black" poster={midia.thumb}>
+      <source src={midia.src} type={mime} />
+      Seu navegador não suporta vídeo.
+    </video>
+  ) : (
+    <div class="flex aspect-video w-full flex-col items-center justify-center gap-2 bg-naval-700 text-center text-sm text-nevoa/70">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D6A84F" stroke-width="1.6"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+      <span>Formato .mkv — baixe para assistir</span>
+      <a href={midia.src} download class="text-dourado underline">Baixar vídeo</a>
+    </div>
+  )}
+  <figcaption class="flex items-start justify-between gap-3 p-4">
+    <div>
+      <p class="font-serif text-marfim">{midia.titulo}</p>
+      {midia.descricao && <p class="mt-1 text-sm text-nevoa/70">{midia.descricao}</p>}
+    </div>
+    <span class="chip shrink-0 border border-white/10 bg-white/5 text-xs text-nevoa/70">{midia.fonte}</span>
+  </figcaption>
+</figure>

@@ -1,0 +1,40 @@
+---
+import type { TopicoTimeline } from '@data/timeline';
+import { PRIORIDADE_META } from '@data/timeline';
+import { checklistDe } from '@data/checklists';
+import { numeroTopico, urlMateria } from '@utils/slug';
+
+interface Props { topico: TopicoTimeline }
+const { topico } = Astro.props;
+const meta = PRIORIDADE_META[topico.prioridade];
+const total = checklistDe(topico.slug).length;
+const num = numeroTopico(topico.slug);
+---
+<a
+  href={urlMateria(topico.slug)}
+  class="card card-hover group relative flex flex-col gap-3 p-5"
+  data-progresso-card={topico.slug}
+  data-total-checklist={total}
+>
+  <div class="flex items-start justify-between gap-3">
+    <span class="font-mono text-sm text-dourado/70">{num === '99' ? 'REV' : num}</span>
+    <span class:list={['chip border', meta.classe]}>{meta.label}</span>
+  </div>
+
+  <div>
+    <h3 class="font-serif text-lg font-semibold leading-snug text-marfim group-hover:text-dourado">
+      {topico.titulo}
+    </h3>
+    <p class="mt-1 text-sm text-nevoa/70">{topico.subtitulo}</p>
+  </div>
+
+  <p class="line-clamp-2 text-sm text-nevoa/80">{topico.objetivo}</p>
+
+  <div class="mt-auto flex items-center justify-end pt-2 text-xs text-nevoa/60">
+    <span class="progresso-rotulo font-medium text-nevoa/70" data-progresso-rotulo={topico.slug}>0%</span>
+  </div>
+
+  <div class="h-1.5 overflow-hidden rounded-full bg-white/5">
+    <div class="h-full rounded-full bg-progresso transition-all duration-500" style="width:0%" data-progresso-barra={topico.slug}></div>
+  </div>
+</a>

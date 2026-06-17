@@ -1,0 +1,23 @@
+---
+import type { Midia } from '@data/midias';
+interface Props { midia: Midia }
+const { midia } = Astro.props;
+---
+<figure class="card flex flex-col gap-3 p-4">
+  <div class="flex items-start gap-3">
+    <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-dourado/15 text-dourado">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+        <path d="M12 2a4 4 0 0 0-4 4v6a4 4 0 0 0 8 0V6a4 4 0 0 0-4-4z"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/>
+      </svg>
+    </span>
+    <div class="min-w-0">
+      <p class="font-serif text-marfim">{midia.titulo}</p>
+      {midia.descricao && <p class="mt-0.5 text-sm text-nevoa/70">{midia.descricao}</p>}
+      <span class="mt-1 inline-block text-xs uppercase tracking-wider text-dourado/60">Podcast · {midia.fonte}</span>
+    </div>
+  </div>
+  <audio controls preload="none" class="w-full">
+    <source src={midia.src} type="audio/mp4" />
+    Seu navegador não suporta áudio.
+  </audio>
+</figure>

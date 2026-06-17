@@ -1,0 +1,117 @@
+@import './tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* As fontes (Newsreader / Inter / JetBrains Mono) são carregadas via <link>
+   no BaseLayout.astro. */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-naval text-nevoa font-sans antialiased;
+    background-image:
+      radial-gradient(900px 500px at 85% -5%, rgba(30, 58, 95, 0.55), transparent 60%),
+      radial-gradient(700px 400px at -10% 10%, rgba(214, 168, 79, 0.06), transparent 55%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif text-marfim;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background: rgba(214, 168, 79, 0.35);
+    color: #fff;
+  }
+
+  /* Scrollbar discreta no tema naval */
+  * {
+    scrollbar-color: var(--azul-aco) transparent;
+  }
+  *::-webkit-scrollbar { width: 10px; height: 10px; }
+  *::-webkit-scrollbar-thumb {
+    background: var(--azul-aco);
+    border-radius: 999px;
+    border: 2px solid var(--azul-naval);
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-white/5 bg-aco/40 backdrop-blur-sm shadow-card;
+  }
+
+  .card-hover {
+    @apply transition duration-200 hover:border-dourado/40 hover:shadow-glow hover:-translate-y-0.5;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium tracking-wide;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 font-medium transition focus:outline-none focus-visible:ring-2 focus-visible:ring-dourado/60;
+  }
+  .btn-primary {
+    @apply btn bg-dourado text-naval hover:bg-dourado-soft;
+  }
+  .btn-ghost {
+    @apply btn border border-white/10 text-marfim hover:border-dourado/40 hover:bg-white/5;
+  }
+
+  .link-quiet {
+    @apply text-nevoa underline-offset-4 transition hover:text-dourado hover:underline;
+  }
+
+  /* Conteúdo editorial das mini matérias (MDX) */
+  .prosa {
+    @apply text-[15.5px] leading-relaxed text-nevoa/95;
+  }
+  .prosa > * + * { @apply mt-4; }
+  .prosa h2 {
+    @apply mt-10 mb-3 border-l-4 border-dourado pl-3 text-2xl;
+  }
+  .prosa h3 { @apply mt-7 mb-2 text-xl text-marfim/90; }
+  .prosa p { @apply max-w-prose; }
+  .prosa strong { @apply text-marfim font-semibold; }
+  .prosa em { @apply text-dourado-soft not-italic font-medium; }
+  .prosa a { @apply text-dourado underline underline-offset-4 hover:text-dourado-soft; }
+  .prosa ul { @apply list-disc space-y-1.5 pl-6 marker:text-dourado/70; }
+  .prosa ol { @apply list-decimal space-y-1.5 pl-6 marker:text-dourado/70; }
+  .prosa blockquote {
+    @apply rounded-r-lg border-l-4 border-aco-light bg-white/5 py-2 pl-4 pr-3 italic text-marfim/80;
+  }
+  .prosa code {
+    @apply rounded bg-naval-700 px-1.5 py-0.5 font-mono text-[0.85em] text-dourado-soft;
+  }
+  .prosa pre {
+    @apply overflow-x-auto rounded-xl border border-white/10 p-4 text-sm;
+  }
+  .prosa pre code { @apply bg-transparent p-0 text-inherit; }
+  .prosa table {
+    @apply my-4 w-full overflow-hidden rounded-xl border border-white/10 text-sm;
+  }
+  .prosa thead { @apply bg-aco/60; }
+  .prosa th {
+    @apply border-b border-white/10 px-3 py-2 text-left font-serif text-marfim;
+  }
+  .prosa td {
+    @apply border-b border-white/5 px-3 py-2 align-top;
+  }
+  .prosa tbody tr:nth-child(even) { @apply bg-white/[0.02]; }
+  .prosa hr { @apply my-8 border-white/10; }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .grid-fluid {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+  }
+}

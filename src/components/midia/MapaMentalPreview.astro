@@ -1,0 +1,18 @@
+---
+import type { Midia } from '@data/midias';
+interface Props { midia: Midia }
+const { midia } = Astro.props;
+---
+<a href={midia.src} target="_blank" rel="noopener" class="card card-hover flex items-center gap-4 p-4">
+  <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-aco/40 text-dourado">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+      <circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="18" r="2.5"/><circle cx="19" cy="18" r="2.5"/>
+      <path d="M12 7.5v4M12 11.5 6.5 16M12 11.5 17.5 16"/>
+    </svg>
+  </span>
+  <div class="flex-1">
+    <p class="font-serif text-marfim">{midia.titulo}</p>
+    {midia.descricao && <p class="text-sm text-nevoa/70">{midia.descricao}</p>}
+  </div>
+  <span class="text-xs text-dourado">Abrir →</span>
+</a>
