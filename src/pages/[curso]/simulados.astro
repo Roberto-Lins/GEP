@@ -1,0 +1,51 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import PageContainer from '@components/layout/PageContainer.astro';
+import BancoQuestoes from '@components/questoes/BancoQuestoes.tsx';
+import ProgressoScript from '@components/estudo/ProgressoScript.astro';
+import { listarCursos } from '@utils/courses';
+import { dadosDoCurso } from '@utils/content';
+
+export async function getStaticPaths() {
+  return listarCursos()
+    .filter((c) => c.features.simulados)
+    .map((c) => ({ params: { curso: c.slug } }));
+}
+
+const { curso } = Astro.params;
+const dados = dadosDoCurso(curso!)!;
+const simulados = [
+  { id: 'me', titulo: 'Simulado — Múltipla escolha', desc: `${dados.multiplaEscolha.length} questões objetivas, no estilo da prova.`, questoes: dados.multiplaEscolha },
+  { id: 'vf', titulo: 'Simulado — Verdadeiro ou Falso', desc: `${dados.verdadeiroFalso.length} afirmações para julgar.`, questoes: dados.verdadeiroFalso },
+  dados.correlacionar.length > 0 && { id: 'cor', titulo: 'Simulado — Correlacione', desc: `${dados.correlacionar.length} grupos de correlação.`, questoes: dados.correlacionar },
+  dados.discursivas && dados.discursivas.length > 0 && { id: 'disc', titulo: 'Simulado — Discursivas', desc: `${dados.discursivas.length} questões discursivas com gabarito comentado e autoavaliação.`, questoes: dados.discursivas },
+].filter(Boolean) as { id: string; titulo: string; desc: string; questoes: import('@tipos/question').Questao[] }[];
+const totais = Object.fromEntries(dados.timeline.map((t) => [t.slug, dados.checklistDe(t.slug).length]));
+---
+<BaseLayout titulo="Simulados" curso={curso}>
+  <PageContainer
+    kicker="Modo prova"
+    titulo="Simulados"
+    subtitulo="Treine por tipo de questão. Cada bloco mostra um placar ao vivo; seus acertos entram no progresso geral."
+  />
+
+  <nav class="mb-8 flex flex-wrap gap-2">
+    {simulados.map((s) => (
+      <a href={`#${s.id}`} class="chip border border-white/10 bg-white/5 text-nevoa/80 hover:border-dourado/40 hover:text-dourado">{s.titulo.replace('Simulado — ', '')}</a>
+    ))}
+  </nav>
+
+  <div class="space-y-14">
+    {simulados.map((s) => (
+      <section id={s.id} class="scroll-mt-24">
+        <div class="mb-5 border-l-4 border-dourado pl-4">
+          <h2 class="text-2xl font-bold">{s.titulo}</h2>
+          <p class="text-nevoa/70">{s.desc}</p>
+        </div>
+        <BancoQuestoes questoes={s.questoes} curso={curso} registrar={true} client:visible />
+      </section>
+    ))}
+  </div>
+
+  <ProgressoScript curso={curso} totais={totais} />
+</BaseLayout>

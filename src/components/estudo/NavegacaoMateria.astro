@@ -1,14 +1,14 @@
 ---
-import { vizinhos } from '@data/timeline';
+import { dadosDoCurso } from '@utils/content';
 import { numeroTopico, urlMateria } from '@utils/slug';
 
-interface Props { slug: string }
-const { slug } = Astro.props;
-const { anterior, proximo } = vizinhos(slug);
+interface Props { curso: string; slug: string }
+const { curso, slug } = Astro.props;
+const { anterior, proximo } = dadosDoCurso(curso)!.vizinhos(slug);
 ---
 <nav class="mt-12 grid gap-4 border-t border-white/10 pt-8 sm:grid-cols-2" aria-label="Navegação entre matérias">
   {anterior ? (
-    <a href={urlMateria(anterior.slug)} class="card card-hover group flex flex-col gap-1 p-4">
+    <a href={urlMateria(curso, anterior.slug)} class="card card-hover group flex flex-col gap-1 p-4">
       <span class="text-xs uppercase tracking-wider text-nevoa/50">← Anterior</span>
       <span class="font-serif text-marfim group-hover:text-dourado">
         <span class="font-mono text-sm text-dourado/60">{anterior.ordem === 99 ? 'REV' : numeroTopico(anterior.slug)}</span>
@@ -18,7 +18,7 @@ const { anterior, proximo } = vizinhos(slug);
   ) : <div />}
 
   {proximo ? (
-    <a href={urlMateria(proximo.slug)} class="card card-hover group flex flex-col gap-1 p-4 text-right sm:items-end">
+    <a href={urlMateria(curso, proximo.slug)} class="card card-hover group flex flex-col gap-1 p-4 text-right sm:items-end">
       <span class="text-xs uppercase tracking-wider text-dourado/70">Próxima →</span>
       <span class="font-serif text-marfim group-hover:text-dourado">
         <span class="font-mono text-sm text-dourado/60">{proximo.ordem === 99 ? 'REV' : numeroTopico(proximo.slug)}</span>

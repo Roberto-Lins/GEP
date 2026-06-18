@@ -1,23 +1,24 @@
 import { useEffect, useState } from 'react';
-import type { ItemChecklist } from '@data/checklists';
-import { materia, marcarChecklist, marcarConcluida } from '@utils/progresso';
+import type { ItemChecklist } from '@tipos/lesson';
+import { materia, marcarChecklist, marcarConcluida } from '@utils/progress';
 
 interface Props {
+  curso?: string;
   slug: string;
   itens: ItemChecklist[];
 }
 
-export default function ChecklistMateria({ slug, itens }: Props) {
+export default function ChecklistMateria({ curso = 'gep', slug, itens }: Props) {
   const [marcados, setMarcados] = useState<Record<string, boolean>>({});
   const [concluida, setConcluida] = useState(false);
   const [montado, setMontado] = useState(false);
 
   useEffect(() => {
-    const m = materia(slug);
+    const m = materia(curso, slug);
     setMarcados(m.checklist);
     setConcluida(m.concluida);
     setMontado(true);
-  }, [slug]);
+  }, [curso, slug]);
 
   const total = itens.length;
   const feitos = itens.filter((i) => marcados[i.id]).length;
@@ -26,13 +27,13 @@ export default function ChecklistMateria({ slug, itens }: Props) {
   function toggle(id: string) {
     const novo = !marcados[id];
     setMarcados((prev) => ({ ...prev, [id]: novo }));
-    marcarChecklist(slug, id, novo);
+    marcarChecklist(curso, slug, id, novo);
   }
 
   function toggleConcluida() {
     const novo = !concluida;
     setConcluida(novo);
-    marcarConcluida(slug, novo);
+    marcarConcluida(curso, slug, novo);
   }
 
   return (

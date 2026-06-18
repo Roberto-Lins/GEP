@@ -1,0 +1,29 @@
+{
+  "ordem": 2,
+  "slug": "02-weber-e-burocracia",
+  "titulo": "Max Weber e a burocracia",
+  "prioridade": "muito alta",
+  "subtitulo": "Dominação racional-legal e burocracia ideal",
+  "tempoEstimado": "60 min",
+  "objetivo": "Entender a burocracia como forma racional, formal, impessoal e profissional de organização.",
+  "palavrasChave": [
+    "Weber",
+    "dominação",
+    "tradicional",
+    "carismática",
+    "racional-legal",
+    "formalidade",
+    "impessoalidade",
+    "profissionalismo"
+  ],
+  "midias": [
+    {
+      "tipo": "podcast",
+      "titulo": "Weber, burocracia e o combate ao patrimonialismo",
+      "fonte": "NotebookLM",
+      "src": "/podcasts/notebooklm/02-weber-podcast.m4a",
+      "origem": "local",
+      "descricao": "Dominação racional-legal e o tipo ideal de burocracia explicados em diálogo."
+    }
+  ]
+}

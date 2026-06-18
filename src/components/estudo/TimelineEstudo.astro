@@ -1,9 +1,13 @@
 ---
-import { timeline, PRIORIDADE_META } from '@data/timeline';
-import { checklistDe } from '@data/checklists';
+import { dadosDoCurso } from '@utils/content';
 import { numeroTopico, urlMateria } from '@utils/slug';
 
-const ordenada = [...timeline].sort((a, b) => a.ordem - b.ordem);
+interface Props { curso: string }
+const { curso } = Astro.props;
+const dados = dadosDoCurso(curso)!;
+const PRIORIDADE_META = dados.PRIORIDADE_META;
+const checklistDe = dados.checklistDe;
+const ordenada = [...dados.timeline].sort((a, b) => a.ordem - b.ordem);
 ---
 <ol class="relative ml-3 border-l-2 border-white/10">
   {ordenada.map((t) => {
@@ -23,7 +27,7 @@ const ordenada = [...timeline].sort((a, b) => a.ordem - b.ordem);
           <span class="h-2 w-2 rounded-full bg-white/30 transition-colors" data-progresso-ponto-fill={t.slug}></span>
         </span>
 
-        <a href={urlMateria(t.slug)} class="card card-hover block p-5">
+        <a href={urlMateria(curso, t.slug)} class="card card-hover block p-5">
           <div class="flex flex-wrap items-center justify-between gap-2">
             <div class="flex items-center gap-3">
               <span class="font-mono text-sm text-dourado/70">{revisao ? 'REV' : num}</span>

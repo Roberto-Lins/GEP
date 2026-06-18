@@ -1,0 +1,59 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import SidebarTimeline from '@components/estudo/SidebarTimeline.astro';
+import NavegacaoMateria from '@components/estudo/NavegacaoMateria.astro';
+import ProgressoScript from '@components/estudo/ProgressoScript.astro';
+import ProgressoMateria from '@components/estudo/ProgressoMateria.tsx';
+import { dadosDoCurso } from '@utils/content';
+import { cursoPorSlug } from '@utils/courses';
+import { numeroTopico } from '@utils/slug';
+import type { TopicoTimeline } from '@tipos/lesson';
+
+interface Props { curso: string; topico: TopicoTimeline }
+const { curso, topico } = Astro.props;
+
+const config = cursoPorSlug(curso);
+const dados = dadosDoCurso(curso)!;
+const meta = dados.PRIORIDADE_META[topico.prioridade];
+const num = numeroTopico(topico.slug);
+const totalChecklist = dados.checklistDe(topico.slug).length;
+
+// Totais de checklist por matéria, para os indicadores da sidebar.
+const totais = Object.fromEntries(
+  dados.timeline.map((t) => [t.slug, dados.checklistDe(t.slug).length]),
+);
+---
+<BaseLayout titulo={topico.titulo} descricao={topico.objetivo} largura="larga" curso={curso}>
+  <div class="grid gap-8 md:grid-cols-[15rem_minmax(0,1fr)]">
+    <SidebarTimeline curso={curso} atual={topico.slug} />
+
+    <article class="min-w-0">
+      <!-- Cabeçalho da mini matéria -->
+      <header class="mb-8 border-b border-white/10 pb-6">
+        <div class="mb-3 flex flex-wrap items-center gap-3 text-sm">
+          <a href={`/${curso}`} class="font-mono text-dourado/70 hover:text-dourado">{config?.titulo ?? curso}</a>
+          <span class="text-nevoa/30">/</span>
+          <span class="font-mono text-dourado/70">{topico.ordem === 99 ? 'REVISÃO' : `Tópico ${num}`}</span>
+          <span class:list={['chip border', meta.classe]}>Prioridade {meta.label.toLowerCase()}</span>
+          <span class="inline-flex items-center gap-1.5 text-nevoa/60">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            {topico.tempoEstimado}
+          </span>
+        </div>
+        <div class="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <h1 class="text-3xl font-bold sm:text-4xl">{topico.titulo}</h1>
+            <p class="mt-2 text-lg text-nevoa/80">{topico.subtitulo}</p>
+          </div>
+          <ProgressoMateria curso={curso} slug={topico.slug} totalChecklist={totalChecklist} client:load />
+        </div>
+      </header>
+
+      <slot />
+
+      <NavegacaoMateria curso={curso} slug={topico.slug} />
+    </article>
+  </div>
+
+  <ProgressoScript curso={curso} totais={totais} />
+</BaseLayout>

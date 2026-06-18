@@ -1,0 +1,157 @@
+---
+import { getCollection } from 'astro:content';
+import LessonLayout from '@layouts/LessonLayout.astro';
+import BlocoObjetivo from '@components/estudo/BlocoObjetivo.astro';
+import BlocoConceito from '@components/estudo/BlocoConceito.astro';
+import BlocoPegadinha from '@components/estudo/BlocoPegadinha.astro';
+import BlocoComparacao from '@components/estudo/BlocoComparacao.astro';
+import PlayerVideo from '@components/midia/PlayerVideo.astro';
+import PlayerPodcast from '@components/midia/PlayerPodcast.astro';
+import MapaMentalPreview from '@components/midia/MapaMentalPreview.astro';
+import ChecklistMateria from '@components/estudo/ChecklistMateria.tsx';
+import BancoQuestoes from '@components/questoes/BancoQuestoes.tsx';
+import { listarCursos, cursoPorSlug } from '@utils/courses';
+import { dadosDoCurso } from '@utils/content';
+
+export async function getStaticPaths() {
+  const paths = [];
+  for (const c of listarCursos()) {
+    const dados = dadosDoCurso(c.slug);
+    if (!dados) continue;
+    for (const t of dados.topicosEstudo) {
+      paths.push({ params: { curso: c.slug, materia: t.slug } });
+    }
+  }
+  return paths;
+}
+
+const { curso, materia } = Astro.params;
+const config = cursoPorSlug(curso!)!;
+const dados = dadosDoCurso(curso!)!;
+const topico = dados.topicoPorSlug(materia!)!;
+
+// Componentes disponíveis dentro do MDX (sem precisar importar em cada arquivo).
+const mdxComponents = { BlocoConceito, BlocoPegadinha, BlocoComparacao, BlocoObjetivo };
+
+// Seções de conteúdo desta matéria, agrupadas pela pasta e ordenadas.
+const todas = await getCollection('cursos');
+const secoes = todas
+  .filter((e) => e.id.split('/')[0] === curso && e.id.split('/')[1] === materia)
+  .sort((a, b) => a.data.secaoOrdem - b.data.secaoOrdem);
+
+const pegar = (nome: string) => secoes.find((s) => s.data.secao === nome);
+const renderizar = async (entry?: typeof secoes[number]) => (entry ? (await entry.render()).Content : null);
+
+const Capa = await renderizar(pegar('capa'));
+const Aula = await renderizar(pegar('aula'));
+const Resumo = await renderizar(pegar('resumo'));
+const Comparacoes = await renderizar(pegar('comparacoes'));
+const Pegadinhas = await renderizar(pegar('pegadinhas'));
+const Referencias = await renderizar(pegar('referencias'));
+
+const { videos, podcasts, mapas } = dados.midiasPorTopico(materia!);
+const exibirPodcasts = config.features.podcasts ? podcasts : [];
+const exibirMapas = config.features.mapasMentais ? mapas : [];
+const questoes = dados.questoesPorTopico(materia!);
+const itensChecklist = dados.checklistDe(materia!);
+const temMidia = videos.length || exibirPodcasts.length || exibirMapas.length;
+
+// Sumário de navegação interna
+const sumario = [
+  { id: 'objetivo', label: 'Objetivo' },
+  Aula && { id: 'aula', label: 'Aula' },
+  Resumo && { id: 'resumo', label: 'Resumo' },
+  Comparacoes && { id: 'comparacoes', label: 'Comparações' },
+  Pegadinhas && { id: 'pegadinhas', label: 'Pegadinhas' },
+  temMidia && { id: 'midias', label: 'Mídias' },
+  questoes.length && { id: 'exercicios', label: 'Exercícios' },
+  itensChecklist.length && { id: 'checklist', label: 'Checklist' },
+  Referencias && { id: 'referencias', label: 'Referências' },
+].filter(Boolean) as { id: string; label: string }[];
+---
+<LessonLayout curso={curso} topico={topico}>
+  <!-- Sumário interno -->
+  <nav class="mb-8 flex flex-wrap gap-2" aria-label="Seções desta matéria">
+    {sumario.map((s) => (
+      <a href={`#${s.id}`} class="chip border border-white/10 bg-white/5 text-nevoa/80 transition hover:border-dourado/40 hover:text-dourado">
+        {s.label}
+      </a>
+    ))}
+  </nav>
+
+  <section id="objetivo" class="scroll-mt-24">
+    <BlocoObjetivo>
+      <p>{topico.objetivo}</p>
+    </BlocoObjetivo>
+    {Capa && <div class="prosa mt-4"><Capa components={mdxComponents} /></div>}
+  </section>
+
+  {Aula && (
+    <section id="aula" class="scroll-mt-24 mt-12">
+      <h2 class="mb-1 flex items-center gap-2 text-2xl font-bold"><span class="text-dourado">▸</span> Aula</h2>
+      <p class="mb-4 text-sm text-nevoa/60">Conteúdo completo, para estudar do zero.</p>
+      <div class="prosa"><Aula components={mdxComponents} /></div>
+    </section>
+  )}
+
+  {Resumo && (
+    <section id="resumo" class="scroll-mt-24 mt-12">
+      <h2 class="mb-1 flex items-center gap-2 text-2xl font-bold"><span class="text-dourado">▸</span> Resumo rápido</h2>
+      <p class="mb-4 text-sm text-nevoa/60">Para revisar na véspera.</p>
+      <div class="prosa card border-dourado/15 p-5"><Resumo components={mdxComponents} /></div>
+    </section>
+  )}
+
+  {Comparacoes && (
+    <section id="comparacoes" class="scroll-mt-24 mt-12">
+      <h2 class="mb-1 flex items-center gap-2 text-2xl font-bold"><span class="text-dourado">▸</span> Comparações</h2>
+      <p class="mb-4 text-sm text-nevoa/60">Quadros lado a lado — o que mais cai nesta prova.</p>
+      <div class="prosa"><Comparacoes components={mdxComponents} /></div>
+    </section>
+  )}
+
+  {Pegadinhas && (
+    <section id="pegadinhas" class="scroll-mt-24 mt-12">
+      <h2 class="mb-1 flex items-center gap-2 text-2xl font-bold"><span class="text-dourado">▸</span> Pegadinhas</h2>
+      <p class="mb-4 text-sm text-nevoa/60">Frases perigosas e erros comuns de prova.</p>
+      <div class="prosa"><Pegadinhas components={mdxComponents} /></div>
+    </section>
+  )}
+
+  {temMidia ? (
+    <section id="midias" class="scroll-mt-24 mt-12">
+      <h2 class="mb-4 flex items-center gap-2 text-2xl font-bold"><span class="text-dourado">▸</span> Vídeos, podcasts e mapas</h2>
+      {videos.length > 0 && (
+        <div class="mb-6 grid gap-4 lg:grid-cols-2">{videos.map((m) => <PlayerVideo midia={m} />)}</div>
+      )}
+      {exibirPodcasts.length > 0 && (
+        <div class="mb-6 grid gap-4 sm:grid-cols-2">{exibirPodcasts.map((m) => <PlayerPodcast midia={m} />)}</div>
+      )}
+      {exibirMapas.length > 0 && (
+        <div class="grid gap-3">{exibirMapas.map((m) => <MapaMentalPreview midia={m} />)}</div>
+      )}
+    </section>
+  ) : null}
+
+  {questoes.length > 0 && (
+    <section id="exercicios" class="scroll-mt-24 mt-12">
+      <h2 class="mb-1 flex items-center gap-2 text-2xl font-bold"><span class="text-dourado">▸</span> Exercícios</h2>
+      <p class="mb-5 text-sm text-nevoa/60">Responda e veja o gabarito comentado na hora. Seus acertos contam no seu progresso.</p>
+      <BancoQuestoes questoes={questoes} curso={curso} filtros={true} client:visible />
+    </section>
+  )}
+
+  {itensChecklist.length > 0 && (
+    <section id="checklist" class="scroll-mt-24 mt-12">
+      <h2 class="mb-4 flex items-center gap-2 text-2xl font-bold"><span class="text-dourado">▸</span> Checklist final</h2>
+      <ChecklistMateria curso={curso} slug={materia!} itens={itensChecklist} client:visible />
+    </section>
+  )}
+
+  {Referencias && (
+    <section id="referencias" class="scroll-mt-24 mt-12">
+      <h2 class="mb-4 flex items-center gap-2 text-2xl font-bold"><span class="text-dourado">▸</span> Referências</h2>
+      <div class="prosa"><Referencias components={mdxComponents} /></div>
+    </section>
+  )}
+</LessonLayout>

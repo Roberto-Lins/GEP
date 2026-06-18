@@ -1,12 +1,15 @@
 import { useMemo, useState } from 'react';
-import type { Questao } from '@data/exercicios';
+import type { Questao, Dificuldade } from '@tipos/question';
 import QuestaoMultiplaEscolha from './QuestaoMultiplaEscolha';
 import QuestaoVF from './QuestaoVF';
 import QuestaoCorrelacione from './QuestaoCorrelacione';
-import { registrarResposta } from '@utils/progresso';
+import QuestaoDiscursiva from './QuestaoDiscursiva';
+import { registrarResposta } from '@utils/progress';
 
 interface Props {
   questoes: Questao[];
+  /** curso ao qual as questões pertencem (para o progresso) */
+  curso?: string;
   /** quando definido, registra acertos no progresso da matéria */
   registrar?: boolean;
   /** mostra abas de filtro por tipo */
@@ -14,22 +17,35 @@ interface Props {
   titulo?: string;
 }
 
-type Filtro = 'todos' | 'multipla' | 'vf' | 'correlacione';
+type Filtro = 'todos' | 'multipla' | 'vf' | 'correlacione' | 'discursiva';
+type FiltroDif = 'todas' | Dificuldade;
 
 const ROTULO_FILTRO: Record<Filtro, string> = {
   todos: 'Todas',
   multipla: 'Múltipla escolha',
   vf: 'Verdadeiro/Falso',
   correlacione: 'Correlacione',
+  discursiva: 'Discursivas',
 };
 
-export default function BancoQuestoes({ questoes, registrar = true, filtros = false, titulo }: Props) {
+const ROTULO_DIF: Record<FiltroDif, string> = {
+  todas: 'Todas',
+  facil: 'Fácil',
+  medio: 'Médio',
+  dificil: 'Difícil',
+};
+
+export default function BancoQuestoes({ questoes, curso = 'gep', registrar = true, filtros = false, titulo }: Props) {
   const [filtro, setFiltro] = useState<Filtro>('todos');
+  const [dif, setDif] = useState<FiltroDif>('todas');
   const [resultados, setResultados] = useState<Record<string, boolean>>({});
 
   const visiveis = useMemo(
-    () => (filtro === 'todos' ? questoes : questoes.filter((q) => q.tipo === filtro)),
-    [questoes, filtro],
+    () =>
+      questoes
+        .filter((q) => filtro === 'todos' || q.tipo === filtro)
+        .filter((q) => dif === 'todas' || q.dificuldade === dif),
+    [questoes, filtro, dif],
   );
 
   const respondidas = Object.keys(resultados).length;
@@ -38,12 +54,17 @@ export default function BancoQuestoes({ questoes, registrar = true, filtros = fa
 
   function aoResponder(q: Questao, acertou: boolean) {
     setResultados((p) => ({ ...p, [q.id]: acertou }));
-    if (registrar) registrarResposta(q.topico, q.id, acertou);
+    if (registrar) registrarResposta(curso, q.topico, q.id, acertou);
   }
 
   const tiposPresentes = useMemo(() => {
     const s = new Set(questoes.map((q) => q.tipo));
-    return (['multipla', 'vf', 'correlacione'] as const).filter((t) => s.has(t));
+    return (['multipla', 'vf', 'correlacione', 'discursiva'] as const).filter((t) => s.has(t));
+  }, [questoes]);
+
+  const dificuldadesPresentes = useMemo(() => {
+    const s = new Set(questoes.map((q) => q.dificuldade).filter(Boolean) as Dificuldade[]);
+    return (['facil', 'medio', 'dificil'] as const).filter((d) => s.has(d));
   }, [questoes]);
 
   return (
@@ -70,6 +91,25 @@ export default function BancoQuestoes({ questoes, registrar = true, filtros = fa
         </div>
       )}
 
+      {/* Filtro por dificuldade — só aparece quando há questões com dificuldade definida. */}
+      {dificuldadesPresentes.length > 0 && (
+        <div className="mb-5 flex flex-wrap items-center gap-2">
+          <span className="text-xs uppercase tracking-wider text-nevoa/50">Dificuldade:</span>
+          {(['todas', ...dificuldadesPresentes] as FiltroDif[]).map((d) => (
+            <button
+              key={d}
+              type="button"
+              onClick={() => setDif(d)}
+              className={`rounded-lg border px-3 py-1 text-xs transition ${
+                dif === d ? 'border-dourado bg-dourado/15 text-dourado' : 'border-white/10 text-nevoa/70 hover:border-dourado/40'
+              }`}
+            >
+              {ROTULO_DIF[d]}
+            </button>
+          ))}
+        </div>
+      )}
+
       {respondidas > 0 && (
         <div className="sticky top-[4.5rem] z-20 mb-5 flex items-center justify-between gap-4 rounded-xl border border-white/10 bg-naval-800/90 px-4 py-3 backdrop-blur">
           <div className="flex items-center gap-4 text-sm">
@@ -92,6 +132,8 @@ export default function BancoQuestoes({ questoes, registrar = true, filtros = fa
             return <QuestaoMultiplaEscolha key={q.id} questao={q} indice={i + 1} onResponder={(a) => aoResponder(q, a)} />;
           if (q.tipo === 'vf')
             return <QuestaoVF key={q.id} questao={q} indice={i + 1} onResponder={(a) => aoResponder(q, a)} />;
+          if (q.tipo === 'discursiva')
+            return <QuestaoDiscursiva key={q.id} questao={q} indice={i + 1} onResponder={(a) => aoResponder(q, a)} />;
           return <QuestaoCorrelacione key={q.id} questao={q} indice={i + 1} onResponder={(a) => aoResponder(q, a)} />;
         })}
       </div>

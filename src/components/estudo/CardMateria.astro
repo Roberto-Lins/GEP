@@ -1,17 +1,17 @@
 ---
-import type { TopicoTimeline } from '@data/timeline';
-import { PRIORIDADE_META } from '@data/timeline';
-import { checklistDe } from '@data/checklists';
+import type { TopicoTimeline } from '@tipos/lesson';
+import { dadosDoCurso } from '@utils/content';
 import { numeroTopico, urlMateria } from '@utils/slug';
 
-interface Props { topico: TopicoTimeline }
-const { topico } = Astro.props;
-const meta = PRIORIDADE_META[topico.prioridade];
-const total = checklistDe(topico.slug).length;
+interface Props { curso: string; topico: TopicoTimeline }
+const { curso, topico } = Astro.props;
+const dados = dadosDoCurso(curso)!;
+const meta = dados.PRIORIDADE_META[topico.prioridade];
+const total = dados.checklistDe(topico.slug).length;
 const num = numeroTopico(topico.slug);
 ---
 <a
-  href={urlMateria(topico.slug)}
+  href={urlMateria(curso, topico.slug)}
   class="card card-hover group relative flex flex-col gap-3 p-5"
   data-progresso-card={topico.slug}
   data-total-checklist={total}

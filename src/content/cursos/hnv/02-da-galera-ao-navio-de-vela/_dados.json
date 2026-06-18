@@ -1,0 +1,21 @@
+{
+  "ordem": 2,
+  "slug": "02-da-galera-ao-navio-de-vela",
+  "titulo": "Da galera ao navio de vela: tecnologia e poder naval",
+  "prioridade": "alta",
+  "subtitulo": "Como a tecnologia muda a escala da guerra naval",
+  "tempoEstimado": "45 min",
+  "objetivo": "Relacionar a evolução das embarcações — da galera às cogas, das cogas aos navios à vela com artilharia — com a expansão ultramarina e as disputas coloniais.",
+  "palavrasChave": ["galera", "coga", "Liga Hanseática", "vela", "canhão", "galeão", "binômio vela-canhão", "Sluys", "Dover", "descobrimentos ibéricos"],
+  "fontes": ["CEZAR, Willian Carmo — Uma História das Guerras Navais (caps. 5 e 6)"],
+  "midias": [
+    {
+      "tipo": "podcast",
+      "titulo": "A revolução da vela e do canhão",
+      "fonte": "NotebookLM",
+      "src": "/podcasts/hnv/02-galera-ao-navio-de-vela.m4a",
+      "origem": "local",
+      "descricao": "Da galera mediterrânea às cogas do Norte e ao galeão com canhão: o salto tecnológico que viabilizou os impérios ultramarinos."
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "ordem": 5,
+  "slug": "05-brasil-holandes-restauracao-e-imperio",
+  "titulo": "Brasil Holandês, Restauração e governo do Império",
+  "prioridade": "máxima",
+  "subtitulo": "Guerra, diplomacia e administração imperial se misturam",
+  "tempoEstimado": "70 min",
+  "objetivo": "Entender o nexo atlântico Brasil-Angola, o Estado polissinodal e a monarquia pluricontinental na crise da Restauração (1640-1654), e a reconquista de Angola por Salvador Correia de Sá.",
+  "palavrasChave": ["Restauração", "D. João IV", "Estado polissinodal", "monarquia pluricontinental", "Angola", "nexo atlântico", "Salvador Correia de Sá", "diplomacia", "Pe. Vieira", "Capitulação da Campina do Taborda"],
+  "fontes": ["LOUREIRO, Marcello — Em miserável estado (1640-1654)"],
+  "midias": [
+    {
+      "tipo": "podcast",
+      "titulo": "A retomada de Angola e do Brasil",
+      "fonte": "NotebookLM",
+      "src": "/podcasts/hnv/05-brasil-holandes-restauracao.m4a",
+      "origem": "local",
+      "descricao": "Restauração, nexo atlântico Brasil-Angola e o Estado polissinodal em crise."
+    }
+  ]
+}

@@ -1,28 +1,30 @@
 import { useEffect, useState } from 'react';
-import { carregar, resumoQuestoes, EVENTO, type Progresso } from '@utils/progresso';
-import { checklists } from '@data/checklists';
+import { carregar, resumoQuestoes, EVENTO } from '@utils/progress';
+import type { Progresso } from '@tipos/progress';
 
 interface TopicoMin {
   slug: string;
   titulo: string;
   ordem: number;
+  /** nº de itens do checklist da matéria (para calcular o progresso) */
+  totalChecklist: number;
 }
 
 interface Props {
+  curso?: string;
   topicos: TopicoMin[]; // apenas os de estudo (ordem < 99), já ordenados
 }
 
-function pct(p: Progresso, slug: string): number {
-  const m = p.materias[slug];
+function pct(p: Progresso, curso: string, t: TopicoMin): number {
+  const m = p.cursos[curso]?.materias[t.slug];
   if (!m) return 0;
   if (m.concluida) return 100;
-  const total = (checklists[slug] ?? []).length;
-  if (!total) return 0;
-  return Math.min(100, Math.round((Object.values(m.checklist).filter(Boolean).length / total) * 100));
+  if (!t.totalChecklist) return 0;
+  return Math.min(100, Math.round((Object.values(m.checklist).filter(Boolean).length / t.totalChecklist) * 100));
 }
 
-export default function PainelInicio({ topicos }: Props) {
-  const [p, setP] = useState<Progresso>({ materias: {} });
+export default function PainelInicio({ curso = 'gep', topicos }: Props) {
+  const [p, setP] = useState<Progresso>({ cursos: {} });
   const [montado, setMontado] = useState(false);
 
   useEffect(() => {
@@ -37,12 +39,12 @@ export default function PainelInicio({ topicos }: Props) {
   }, []);
 
   const total = topicos.length;
-  const concluidas = topicos.filter((t) => pct(p, t.slug) === 100).length;
-  const geral = total ? Math.round(topicos.reduce((a, t) => a + pct(p, t.slug), 0) / total) : 0;
-  const q = resumoQuestoes(p);
+  const concluidas = topicos.filter((t) => pct(p, curso, t) === 100).length;
+  const geral = total ? Math.round(topicos.reduce((a, t) => a + pct(p, curso, t), 0) / total) : 0;
+  const q = resumoQuestoes(curso, p);
 
   // Próxima matéria: a primeira não concluída na ordem; senão, a última acessada.
-  const proxima = topicos.find((t) => pct(p, t.slug) < 100) ?? topicos[0];
+  const proxima = topicos.find((t) => pct(p, curso, t) < 100) ?? topicos[0];
   const jaComecou = montado && (geral > 0 || q.respondidas > 0);
 
   return (
@@ -80,7 +82,7 @@ export default function PainelInicio({ topicos }: Props) {
             {jaComecou ? 'Continue de onde parou' : 'Comece sua trilha'}
           </p>
           <h3 className="mt-2 font-serif text-xl text-marfim">{proxima?.titulo ?? '—'}</h3>
-          <a href={`/materias/${proxima?.slug}`} className="btn-primary mt-4 inline-flex">
+          <a href={`/${curso}/${proxima?.slug}`} className="btn-primary mt-4 inline-flex">
             {jaComecou ? 'Retomar matéria' : 'Começar pela primeira matéria'}
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
           </a>

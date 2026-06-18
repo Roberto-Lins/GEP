@@ -2,14 +2,28 @@
 import '@styles/global.css';
 import Header from '@components/layout/Header.astro';
 import Footer from '@components/layout/Footer.astro';
+import { cursoPorSlug } from '@utils/courses';
 
 interface Props {
   titulo: string;
   descricao?: string;
   largura?: 'normal' | 'larga';
+  /** slug do curso atual; quando ausente, é o dashboard (tema padrão) */
+  curso?: string;
+  /** override do tema visual (classe em themes.css); senão vem do curso */
+  tema?: string;
 }
-const { titulo, descricao = 'Trilha de estudo para a prova de Gestão Pública — GEP P1.', largura = 'normal' } = Astro.props;
-const tituloCompleto = titulo === 'GEP Command Deck' ? titulo : `${titulo} · GEP Command Deck`;
+const {
+  titulo,
+  descricao = 'Plataforma de estudos multi-curso — trilhas sequenciais com exercícios comentados.',
+  largura = 'normal',
+  curso,
+  tema,
+} = Astro.props;
+const config = curso ? cursoPorSlug(curso) : undefined;
+const temaAtivo = tema ?? config?.temaVisual ?? 'naval-command';
+const PLATAFORMA = 'Bússola dos Aspirantes';
+const tituloCompleto = titulo === PLATAFORMA ? titulo : `${titulo} · ${PLATAFORMA}`;
 ---
 
 <!doctype html>
@@ -29,11 +43,11 @@ const tituloCompleto = titulo === 'GEP Command Deck' ? titulo : `${titulo} · GE
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta name="theme-color" content="#0B1220" />
   </head>
-  <body>
+  <body class={`tema-${temaAtivo}`}>
     <a href="#conteudo" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-dourado focus:px-4 focus:py-2 focus:text-naval">
       Pular para o conteúdo
     </a>
-    <Header />
+    <Header curso={config} />
     <main id="conteudo" class={`mx-auto w-full px-4 py-8 sm:px-6 ${largura === 'larga' ? 'max-w-7xl' : 'max-w-6xl'}`}>
       <slot />
     </main>

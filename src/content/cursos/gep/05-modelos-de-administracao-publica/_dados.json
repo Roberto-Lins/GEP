@@ -1,0 +1,28 @@
+{
+  "ordem": 5,
+  "slug": "05-modelos-de-administracao-publica",
+  "titulo": "Modelos de Administração Pública",
+  "prioridade": "muito alta",
+  "subtitulo": "Patrimonialista, burocrática e gerencial",
+  "tempoEstimado": "60 min",
+  "objetivo": "Comparar os três modelos principais da Administração Pública.",
+  "palavrasChave": [
+    "patrimonialista",
+    "burocrática",
+    "gerencial",
+    "apropriação",
+    "legalidade",
+    "resultado",
+    "cidadão-usuário"
+  ],
+  "midias": [
+    {
+      "tipo": "podcast",
+      "titulo": "Do patrimonialismo à gestão por resultados",
+      "fonte": "NotebookLM",
+      "src": "/podcasts/notebooklm/05-modelos-podcast.m4a",
+      "origem": "local",
+      "descricao": "A trajetória dos três modelos de Administração Pública em formato de podcast."
+    }
+  ]
+}

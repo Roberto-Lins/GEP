@@ -11,8 +11,13 @@ export function numeroTopico(slug: string): string {
   return m ? m[1] : '';
 }
 
-/** Caminho da página de uma mini matéria. */
-export function urlMateria(slug: string): string {
-  if (slug === '99-revisao-final') return '/revisao-final';
-  return `/materias/${slug}`;
+/** Caminho da home de um curso. */
+export function urlCurso(curso: string): string {
+  return `/${curso}`;
+}
+
+/** Caminho da página de uma mini matéria dentro de um curso. */
+export function urlMateria(curso: string, slug: string): string {
+  if (slug === '99-revisao-final') return `/${curso}/revisao-final`;
+  return `/${curso}/${slug}`;
 }

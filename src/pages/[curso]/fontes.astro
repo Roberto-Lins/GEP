@@ -1,0 +1,75 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import PageContainer from '@components/layout/PageContainer.astro';
+import FonteCard from '@components/midia/FonteCard.astro';
+import { listarCursos } from '@utils/courses';
+import { dadosDoCurso } from '@utils/content';
+
+export async function getStaticPaths() {
+  return listarCursos().map((c) => ({ params: { curso: c.slug } }));
+}
+
+const { curso } = Astro.params;
+const dados = dadosDoCurso(curso!)!;
+const fontes = dados.fontes;
+const midias = dados.midias;
+const grupos = {
+  prova: fontes.filter((f) => f.tipo === 'prova'),
+  resumo: fontes.filter((f) => f.tipo === 'resumo'),
+  livro: fontes.filter((f) => f.tipo === 'livro'),
+  slide: fontes.filter((f) => f.tipo === 'slide'),
+};
+const totalMidias = midias.length;
+---
+<BaseLayout titulo="Fontes" curso={curso}>
+  <PageContainer
+    kicker="Bibliografia"
+    titulo="Fontes e materiais"
+    subtitulo="Tudo que alimentou esta trilha: conteúdo oficial, resumos, capítulos, slides e as mídias geradas."
+  />
+
+  <div class="space-y-10">
+    {(grupos.prova.length > 0 || grupos.resumo.length > 0) && (
+      <section>
+        <h2 class="mb-4 text-xl font-bold">Conteúdo da prova e resumo</h2>
+        <div class="grid gap-4 sm:grid-cols-2">
+          {[...grupos.prova, ...grupos.resumo].map((f) => <FonteCard fonte={f} />)}
+        </div>
+      </section>
+    )}
+
+    {grupos.livro.length > 0 && (
+      <section>
+        <h2 class="mb-4 text-xl font-bold">Livros e capítulos</h2>
+        <div class="grid gap-4 sm:grid-cols-2">
+          {grupos.livro.map((f) => <FonteCard fonte={f} />)}
+        </div>
+      </section>
+    )}
+
+    {grupos.slide.length > 0 && (
+      <section>
+        <h2 class="mb-4 text-xl font-bold">Slides</h2>
+        <div class="grid gap-4 sm:grid-cols-2">
+          {grupos.slide.map((f) => <FonteCard fonte={f} />)}
+        </div>
+      </section>
+    )}
+
+    {totalMidias > 0 && (
+      <section>
+        <h2 class="mb-2 text-xl font-bold">Mídias</h2>
+        <p class="mb-4 text-sm text-nevoa/70">{totalMidias} mídias distribuídas pelas mini matérias.</p>
+        <ul class="grid gap-2 sm:grid-cols-2">
+          {midias.map((m) => (
+            <li class="flex items-center gap-3 rounded-lg border border-white/10 bg-white/[0.02] px-3 py-2 text-sm">
+              <span class="chip border border-white/10 bg-white/5 text-[10px] uppercase text-nevoa/60">{m.tipo}</span>
+              <span class="flex-1 text-nevoa/85">{m.titulo}</span>
+              <span class="text-xs text-nevoa/45">{m.fonte}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+  </div>
+</BaseLayout>

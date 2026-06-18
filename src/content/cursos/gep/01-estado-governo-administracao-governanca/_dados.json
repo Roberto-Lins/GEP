@@ -1,0 +1,29 @@
+{
+  "ordem": 1,
+  "slug": "01-estado-governo-administracao-governanca",
+  "titulo": "Estado, Governo, Administração Pública e Governança",
+  "prioridade": "alta",
+  "subtitulo": "O cenário onde a gestão pública acontece",
+  "tempoEstimado": "45 min",
+  "objetivo": "Diferenciar Estado, Governo, Administração Pública e Governança.",
+  "palavrasChave": [
+    "Estado",
+    "Governo",
+    "Administração Pública",
+    "Governança",
+    "Administração Direta",
+    "Administração Indireta",
+    "desconcentração",
+    "descentralização"
+  ],
+  "midias": [
+    {
+      "tipo": "podcast",
+      "titulo": "Diferenças entre Estado, Governo e Administração Pública",
+      "fonte": "NotebookLM",
+      "src": "/podcasts/notebooklm/01-estado-governo-podcast.m4a",
+      "origem": "local",
+      "descricao": "Conversa que destrincha os quatro conceitos-base e a estrutura da Administração."
+    }
+  ]
+}

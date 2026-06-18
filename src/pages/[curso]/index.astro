@@ -1,0 +1,95 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import CardMateria from '@components/estudo/CardMateria.astro';
+import PainelInicio from '@components/estudo/PainelInicio.tsx';
+import ProgressoScript from '@components/estudo/ProgressoScript.astro';
+import { listarCursos, cursoPorSlug } from '@utils/courses';
+import { dadosDoCurso } from '@utils/content';
+import { urlMateria } from '@utils/slug';
+
+export async function getStaticPaths() {
+  return listarCursos().map((c) => ({ params: { curso: c.slug } }));
+}
+
+const { curso } = Astro.params;
+const config = cursoPorSlug(curso!)!;
+const dados = dadosDoCurso(curso!)!;
+
+const ordenados = [...dados.topicosEstudo].sort((a, b) => a.ordem - b.ordem);
+const prioridadeMaxima = dados.timeline.filter((t) => t.prioridade === 'máxima' && t.ordem < 99);
+const revisao = dados.timeline.find((t) => t.ordem === 99);
+const totalQ = dados.totalQuestoes.multipla + dados.totalQuestoes.vf + dados.totalQuestoes.correlacione + (dados.totalQuestoes.discursiva ?? 0);
+const painelTopicos = ordenados.map((t) => ({
+  slug: t.slug, titulo: t.titulo, ordem: t.ordem, totalChecklist: dados.checklistDe(t.slug).length,
+}));
+const totais = Object.fromEntries(dados.timeline.map((t) => [t.slug, dados.checklistDe(t.slug).length]));
+---
+<BaseLayout titulo={config.titulo} descricao={config.descricao} curso={curso} largura="larga">
+  <!-- HERO -->
+  <section class="relative mb-10 overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-aco/40 via-naval-800 to-naval px-6 py-12 sm:px-10 sm:py-16">
+    <div class="pointer-events-none absolute inset-0 opacity-[0.07]"
+      style="background-image:radial-gradient(circle at 1px 1px, #D6A84F 1px, transparent 0);background-size:26px 26px"></div>
+    <div class="relative max-w-2xl">
+      {config.categoria && (
+        <p class="mb-3 inline-flex items-center gap-2 rounded-full border border-dourado/30 bg-dourado/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] text-dourado">
+          {config.categoria}
+        </p>
+      )}
+      <h1 class="text-balance text-4xl font-bold leading-tight sm:text-5xl">{config.titulo}</h1>
+      {config.descricao && <p class="mt-4 max-w-xl text-lg text-nevoa/85">{config.descricao}</p>}
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href={urlMateria(curso!, ordenados[0].slug)} class="btn-primary">Começar pela primeira matéria</a>
+        {config.features.timeline && <a href={`/${curso}/timeline`} class="btn-ghost">Ver a linha do tempo</a>}
+      </div>
+      <dl class="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-sm">
+        <div><dt class="text-nevoa/50">Mini matérias</dt><dd class="font-serif text-xl text-marfim">{ordenados.length}</dd></div>
+        <div><dt class="text-nevoa/50">Questões comentadas</dt><dd class="font-serif text-xl text-marfim">{totalQ}</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- PAINEL DE PROGRESSO -->
+  <section class="mb-12">
+    <PainelInicio curso={curso} topicos={painelTopicos} client:load />
+  </section>
+
+  <!-- TODAS AS MINI MATÉRIAS -->
+  <section class="mb-12">
+    <div class="mb-5 flex items-end justify-between">
+      <h2 class="text-2xl font-bold">Mini matérias</h2>
+      {config.features.timeline && <a href={`/${curso}/timeline`} class="text-sm text-dourado hover:text-dourado-soft">Linha do tempo completa →</a>}
+    </div>
+    <div class="grid grid-fluid gap-4">
+      {ordenados.map((t) => <CardMateria curso={curso} topico={t} />)}
+    </div>
+  </section>
+
+  <!-- PRIORIDADE MÁXIMA -->
+  {prioridadeMaxima.length > 0 && (
+    <section class="mb-12">
+      <div class="mb-5 flex items-center gap-3">
+        <h2 class="text-2xl font-bold">Prioridade máxima</h2>
+        <span class="chip border border-dourado bg-dourado font-semibold text-naval">cai com força</span>
+      </div>
+      <p class="mb-5 max-w-2xl text-nevoa/75">Temas que o professor destacou. Se o tempo apertar, garanta estes.</p>
+      <div class="grid gap-4 sm:grid-cols-2">
+        {prioridadeMaxima.map((t) => <CardMateria curso={curso} topico={t} />)}
+      </div>
+    </section>
+  )}
+
+  <!-- REVISÃO FINAL -->
+  {revisao && (
+    <section class="mb-4">
+      <a href={`/${curso}/revisao-final`} class="card card-hover flex flex-col items-start gap-3 p-6 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <h2 class="font-serif text-2xl text-marfim">{revisao.titulo}</h2>
+          <p class="mt-1 text-nevoa/75">{revisao.subtitulo}</p>
+        </div>
+        <span class="btn-primary shrink-0">Ir para a revisão final →</span>
+      </a>
+    </section>
+  )}
+
+  <ProgressoScript curso={curso} totais={totais} />
+</BaseLayout>

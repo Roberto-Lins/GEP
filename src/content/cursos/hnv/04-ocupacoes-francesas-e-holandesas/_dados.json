@@ -1,0 +1,21 @@
+{
+  "ordem": 4,
+  "slug": "04-ocupacoes-francesas-e-holandesas",
+  "titulo": "Ocupações francesas e holandesas: o litoral como teatro naval",
+  "prioridade": "alta",
+  "subtitulo": "Por que o litoral brasileiro vira teatro de guerra naval",
+  "tempoEstimado": "50 min",
+  "objetivo": "Acompanhar as operações navais das invasões holandesas (Bahia 1624, Jornada dos Vassalos, Abrolhos 1631, Pernambuco 1630) e o papel do poder naval no controle do litoral.",
+  "palavrasChave": ["WIC", "invasão da Bahia", "Jornada dos Vassalos", "D. Fadrique de Toledo", "Batalha de Abrolhos", "Oquendo", "Pater", "invasão de Pernambuco", "Nassau", "bloqueio naval"],
+  "fontes": ["CEZAR, Willian Carmo — Uma História das Guerras Navais (Ocupações Francesas e Holandesas)"],
+  "midias": [
+    {
+      "tipo": "podcast",
+      "titulo": "A guerra naval no Brasil colonial",
+      "fonte": "NotebookLM",
+      "src": "/podcasts/hnv/04-ocupacoes-holandesas.m4a",
+      "origem": "local",
+      "descricao": "As invasões holandesas: da Bahia (1624) a Pernambuco (1630) e a Batalha de Abrolhos."
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "ordem": 0,
+  "slug": "00-visao-geral",
+  "titulo": "Introdução e visão geral",
+  "prioridade": "alta",
+  "subtitulo": "O mar como fronteira dos impérios",
+  "tempoEstimado": "20 min",
+  "objetivo": "Entender o fio condutor da matéria: o poder naval como instrumento estruturante de economias, impérios e disputas — e como a prova cobra leitura, causalidade e contexto, não decoreba de batalhas.",
+  "palavrasChave": ["poder naval", "economia", "tecnologia", "religião", "diplomacia", "governo de impérios"],
+  "midias": [
+    {
+      "tipo": "podcast",
+      "titulo": "O mar como fronteira dos impérios",
+      "fonte": "NotebookLM",
+      "src": "/podcasts/hnv/00-visao-geral.m4a",
+      "origem": "local",
+      "descricao": "Visão geral da matéria: o fio condutor que liga Mylae ao Brasil Holandês."
+    }
+  ]
+}

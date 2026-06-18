@@ -1,5 +1,5 @@
 // Utilidades de filtragem/embaralhamento de questões.
-import type { Questao } from '@data/exercicios';
+import type { Questao } from '@data/cursos/gep/exercicios';
 
 export function embaralhar<T>(arr: T[], seed?: number): T[] {
   const a = [...arr];

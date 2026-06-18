@@ -1,18 +1,27 @@
 ---
 // Atualiza, no cliente, todos os indicadores de progresso da página a partir
 // do localStorage. Sem React: um único script cobre cards, badges e a barra geral.
+// Recebe o curso e os totais de checklist por matéria (calculados no servidor),
+// para não depender dos dados de um curso específico no bundle do cliente.
+interface Props { curso: string; totais: Record<string, number> }
+const { curso, totais } = Astro.props;
 ---
+<script type="application/json" id="progresso-config" is:inline set:html={JSON.stringify({ curso, totais })} />
 <script>
-  import { carregar, EVENTO } from '@utils/progresso';
-  import { checklists } from '@data/checklists';
+  import { carregar, EVENTO } from '@utils/progress';
+
+  const cfgEl = document.getElementById('progresso-config');
+  const cfg = cfgEl ? JSON.parse(cfgEl.textContent || '{}') : { curso: '', totais: {} };
+  const curso: string = cfg.curso;
+  const totais: Record<string, number> = cfg.totais || {};
 
   function pctMateria(slug: string): number {
     const p = carregar();
-    const m = p.materias[slug];
+    const m = p.cursos?.[curso]?.materias?.[slug];
     if (!m) return 0;
     if (m.concluida) return 100;
-    const total = (checklists[slug] ?? []).length;
-    if (!total) return m.concluida ? 100 : 0;
+    const total = totais[slug] ?? 0;
+    if (!total) return 0;
     const marcados = Object.values(m.checklist).filter(Boolean).length;
     return Math.min(100, Math.round((marcados / total) * 100));
   }

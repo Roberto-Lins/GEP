@@ -1,0 +1,23 @@
+{
+  "slug": "gep",
+  "titulo": "Gestão Pública — GEP P1",
+  "subtitulo": "Trilha de estudo para a prova de Gestão Pública",
+  "descricao": "Do Estado aos modelos de Administração Pública, reformas, orçamento e governança naval — tudo o que cai na GEP P1, em trilha sequencial com exercícios comentados.",
+  "categoria": "Carreira Naval",
+  "ordem": 1,
+  "temaVisual": "naval-command",
+  "corTema": "dourado",
+  "icone": "/imagens/cursos/gep/icone.svg",
+  "capa": "/imagens/cursos/gep/capa.svg",
+  "features": {
+    "timeline": true,
+    "simulados": true,
+    "mapasMentais": true,
+    "podcasts": true,
+    "animacoesHero": true,
+    "animacoesTransicao": false,
+    "modoRevisaoVespera": true,
+    "graficoProgressoAvancado": false
+  },
+  "componentesExtras": []
+}

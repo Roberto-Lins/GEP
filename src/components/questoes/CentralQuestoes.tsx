@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import type { Questao } from '@data/exercicios';
+import type { Questao } from '@tipos/question';
 import BancoQuestoes from './BancoQuestoes';
 
 interface TopicoOpt { slug: string; titulo: string; numero: string }
@@ -7,9 +7,10 @@ interface TopicoOpt { slug: string; titulo: string; numero: string }
 interface Props {
   questoes: Questao[];
   topicos: TopicoOpt[];
+  curso?: string;
 }
 
-export default function CentralQuestoes({ questoes, topicos }: Props) {
+export default function CentralQuestoes({ questoes, topicos, curso = 'gep' }: Props) {
   const [selecionados, setSelecionados] = useState<string[]>([]);
 
   function toggle(slug: string) {
@@ -52,7 +53,7 @@ export default function CentralQuestoes({ questoes, topicos }: Props) {
       </div>
 
       <p className="mb-4 text-sm text-nevoa/60">{filtradas.length} questões selecionadas.</p>
-      <BancoQuestoes questoes={filtradas} filtros={true} registrar={true} key={selecionados.join(',')} />
+      <BancoQuestoes questoes={filtradas} curso={curso} filtros={true} registrar={true} key={selecionados.join(',')} />
     </div>
   );
 }

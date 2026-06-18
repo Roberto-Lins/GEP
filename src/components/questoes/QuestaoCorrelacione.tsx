@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type { GrupoCorrelacione } from '@data/exercicios';
+import type { GrupoCorrelacione } from '@tipos/question';
 
 interface Props {
   questao: GrupoCorrelacione;

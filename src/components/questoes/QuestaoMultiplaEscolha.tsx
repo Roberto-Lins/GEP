@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type { QuestaoMultipla } from '@data/exercicios';
+import type { QuestaoMultipla } from '@tipos/question';
 
 const LETRAS = ['A', 'B', 'C', 'D', 'E'];
 
@@ -65,7 +65,12 @@ export default function QuestaoMultiplaEscolha({ questao, indice, onResponder }:
             {escolha === questao.correta ? '✓ Você acertou' : `✗ Resposta correta: ${LETRAS[questao.correta]}`}
           </p>
           <p className="text-sm text-nevoa/85">{questao.comentario}</p>
-          <p className="mt-2 text-xs uppercase tracking-wider text-dourado/70">Conceito: {questao.conceito}</p>
+          {questao.conceito && (
+            <p className="mt-2 text-xs uppercase tracking-wider text-dourado/70">Conceito: {questao.conceito}</p>
+          )}
+          {questao.armadilha && (
+            <p className="mt-2 text-xs text-alerta/80"><strong>Armadilha:</strong> {questao.armadilha}</p>
+          )}
         </div>
       )}
     </div>

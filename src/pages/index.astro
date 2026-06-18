@@ -1,92 +1,55 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
-import CardMateria from '@components/estudo/CardMateria.astro';
-import PainelInicio from '@components/estudo/PainelInicio.tsx';
-import ProgressoScript from '@components/estudo/ProgressoScript.astro';
-import { timeline, topicosEstudo } from '@data/timeline';
-import { somarTempos } from '@utils/formatarTempo';
-import { totalQuestoes } from '@data/exercicios';
+import CourseDashboard from '@components/cursos/CourseDashboard.tsx';
+import BackupProgresso from '@components/progresso/BackupProgresso.tsx';
+import { listarCursos } from '@utils/courses';
+import { dadosDoCurso } from '@utils/content';
 
-const ordenados = [...topicosEstudo].sort((a, b) => a.ordem - b.ordem);
-const prioridadeMaxima = timeline.filter((t) => t.prioridade === 'máxima');
-const revisao = timeline.find((t) => t.ordem === 99)!;
-const tempoTotal = somarTempos(topicosEstudo.map((t) => t.tempoEstimado));
-const totalQ = totalQuestoes.multipla + totalQuestoes.vf + totalQuestoes.correlacione;
-const painelTopicos = ordenados.map((t) => ({ slug: t.slug, titulo: t.titulo, ordem: t.ordem }));
+const cursos = listarCursos().map((c) => {
+  const dados = dadosDoCurso(c.slug);
+  return {
+    slug: c.slug,
+    titulo: c.titulo,
+    subtitulo: c.subtitulo,
+    descricao: c.descricao,
+    categoria: c.categoria,
+    totalMaterias: dados ? dados.topicosEstudo.length : 0,
+  };
+});
 ---
-<BaseLayout titulo="GEP Command Deck" largura="larga">
+<BaseLayout titulo="Bússola dos Aspirantes" largura="larga">
   <!-- HERO -->
-  <section class="relative mb-10 overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-aco/40 via-naval-800 to-naval px-6 py-12 sm:px-10 sm:py-16">
+  <section class="relative mb-12 overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-aco/40 via-naval-800 to-naval px-6 py-12 sm:px-10 sm:py-16">
     <div class="pointer-events-none absolute inset-0 opacity-[0.07]"
       style="background-image:radial-gradient(circle at 1px 1px, #D6A84F 1px, transparent 0);background-size:26px 26px"></div>
-    <div class="pointer-events-none absolute -right-16 top-1/2 hidden -translate-y-1/2 lg:block opacity-40">
-      <svg width="320" height="320" viewBox="0 0 200 200" fill="none">
-        <circle cx="100" cy="100" r="78" stroke="#D6A84F" stroke-width="0.6" opacity="0.5"/>
-        <circle cx="100" cy="100" r="58" stroke="#D6A84F" stroke-width="0.6" opacity="0.4"/>
-        <circle cx="100" cy="100" r="38" stroke="#D6A84F" stroke-width="0.6" opacity="0.3"/>
-        <path d="M100 12v176M12 100h176" stroke="#D6A84F" stroke-width="0.5" opacity="0.35"/>
-        <path d="M100 60l7 26 26 7-26 7-7 26-7-26-26-7 26-7z" fill="#1E3A5F" stroke="#D6A84F" stroke-width="0.8"/>
-      </svg>
-    </div>
     <div class="relative max-w-2xl">
       <p class="mb-3 inline-flex items-center gap-2 rounded-full border border-dourado/30 bg-dourado/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] text-dourado">
-        Gestão Pública · Prova P1
+        Campus de estudos
       </p>
-      <h1 class="text-balance text-4xl font-bold leading-tight sm:text-5xl">GEP P1 — Trilha de Estudo</h1>
+      <h1 class="text-balance text-4xl font-bold leading-tight sm:text-5xl">Bússola dos Aspirantes</h1>
       <p class="mt-4 max-w-xl text-lg text-nevoa/85">
-        A prova cobra <strong class="text-marfim">comparar modelos de Administração Pública</strong> e aplicar
-        conceitos de gestão e governança. Aqui você estuda na ordem certa: do conceito de Estado ao
-        Sistema de Governança da Marinha — com aulas, resumos, mídias e exercícios comentados.
+        Escolha um curso e siga a <strong class="text-marfim">trilha de estudo</strong> na ordem certa:
+        aulas, resumos, mídias, exercícios comentados e revisão final — com o seu progresso salvo no
+        navegador, sem login.
       </p>
-      <div class="mt-6 flex flex-wrap gap-3">
-        <a href={`/materias/${ordenados[0].slug}`} class="btn-primary">Começar pela primeira matéria</a>
-        <a href="/timeline" class="btn-ghost">Ver a linha do tempo</a>
-      </div>
-      <dl class="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-sm">
-        <div><dt class="text-nevoa/50">Mini matérias</dt><dd class="font-serif text-xl text-marfim">{topicosEstudo.length}</dd></div>
-        <div><dt class="text-nevoa/50">Questões comentadas</dt><dd class="font-serif text-xl text-marfim">{totalQ}</dd></div>
-      </dl>
     </div>
   </section>
 
-  <!-- PAINEL DE PROGRESSO -->
+  <!-- CURSOS -->
   <section class="mb-12">
-    <PainelInicio topicos={painelTopicos} client:load />
+    <h2 class="mb-5 text-2xl font-bold">Cursos disponíveis</h2>
+    <CourseDashboard cursos={cursos} client:load />
   </section>
 
-  <!-- TODAS AS MINI MATÉRIAS -->
-  <section class="mb-12">
-    <div class="mb-5 flex items-end justify-between">
-      <h2 class="text-2xl font-bold">Mini matérias</h2>
-      <a href="/timeline" class="text-sm text-dourado hover:text-dourado-soft">Linha do tempo completa →</a>
-    </div>
-    <div class="grid grid-fluid gap-4">
-      {ordenados.map((t) => <CardMateria topico={t} />)}
-    </div>
-  </section>
-
-  <!-- PRIORIDADE MÁXIMA -->
-  <section class="mb-12">
-    <div class="mb-5 flex items-center gap-3">
-      <h2 class="text-2xl font-bold">Prioridade máxima</h2>
-      <span class="chip border border-dourado bg-dourado font-semibold text-naval">cai com força</span>
-    </div>
-    <p class="mb-5 max-w-2xl text-nevoa/75">Temas que o professor destacou. Se o tempo apertar, garanta estes.</p>
-    <div class="grid gap-4 sm:grid-cols-2">
-      {prioridadeMaxima.map((t) => <CardMateria topico={t} />)}
-    </div>
-  </section>
-
-  <!-- REVISÃO FINAL -->
+  <!-- BACKUP -->
   <section class="mb-4">
-    <a href="/revisao-final" class="card card-hover flex flex-col items-start gap-3 p-6 sm:flex-row sm:items-center sm:justify-between">
-      <div>
-        <h2 class="font-serif text-2xl text-marfim">{revisao.titulo}</h2>
-        <p class="mt-1 text-nevoa/75">{revisao.subtitulo}</p>
-      </div>
-      <span class="btn-primary shrink-0">Ir para a revisão final →</span>
-    </a>
+    <div class="card p-6">
+      <h2 class="mb-1 font-serif text-xl text-marfim">Seu progresso</h2>
+      <p class="mb-4 text-sm text-nevoa/70">
+        Tudo fica salvo apenas neste navegador. Exporte um backup para guardar ou levar para outro
+        dispositivo.
+      </p>
+      <BackupProgresso client:load />
+    </div>
   </section>
-
-  <ProgressoScript />
 </BaseLayout>

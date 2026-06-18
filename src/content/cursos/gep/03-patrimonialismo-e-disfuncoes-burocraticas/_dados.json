@@ -1,0 +1,29 @@
+{
+  "ordem": 3,
+  "slug": "03-patrimonialismo-e-disfuncoes-burocraticas",
+  "titulo": "Patrimonialismo e disfunções burocráticas",
+  "prioridade": "muito alta",
+  "subtitulo": "O que a burocracia combate e o que pode dar errado nela",
+  "tempoEstimado": "50 min",
+  "objetivo": "Diferenciar patrimonialismo, burocracia ideal e burocratismo.",
+  "palavrasChave": [
+    "patrimonialismo",
+    "burocracia ideal",
+    "burocratismo",
+    "Merton",
+    "Perrow",
+    "Roth",
+    "formalismo",
+    "excesso de regras"
+  ],
+  "midias": [
+    {
+      "tipo": "podcast",
+      "titulo": "Patrimonialismo e as disfunções da burocracia",
+      "fonte": "NotebookLM",
+      "src": "/podcasts/notebooklm/03-patrimonialismo-podcast.m4a",
+      "origem": "local",
+      "descricao": "Merton, Perrow e Roth: o que acontece quando a burocracia adoece."
+    }
+  ]
+}

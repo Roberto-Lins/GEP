@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-label="História Naval — HNV">
+  <!-- TODO: capa definitiva do curso HNV -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1220"/>
+      <stop offset="0.6" stop-color="#1E3A5F"/>
+      <stop offset="1" stop-color="#0B1220"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <g opacity="0.5" stroke="#D6A84F" stroke-width="1" fill="none">
+    <path d="M0 330 Q200 300 400 330 T800 330"/>
+    <path d="M0 360 Q200 330 400 360 T800 360"/>
+    <path d="M0 390 Q200 360 400 390 T800 390"/>
+  </g>
+  <g transform="translate(400 170)">
+    <path d="M0 -70l14 42h-28l14-42z" fill="#D6A84F"/>
+    <path d="M0 -28v90" stroke="#D6A84F" stroke-width="5" stroke-linecap="round"/>
+    <path d="M-70 30c0 26 31 46 70 46s70-20 70-46c-20 8-44 12-70 12s-50-4-70-12z" fill="#0B1220" stroke="#D6A84F" stroke-width="4"/>
+  </g>
+  <text x="400" y="410" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#F7F3EA">História Naval — HNV</text>
+</svg>

@@ -1,0 +1,21 @@
+{
+  "ordem": 1,
+  "slug": "01-mediterraneo-antigo-e-batalha-de-mylae",
+  "titulo": "O Mediterrâneo antigo e a Batalha de Mylae",
+  "prioridade": "muito alta",
+  "subtitulo": "Como uma potência terrestre aprende a disputar o mar",
+  "tempoEstimado": "50 min",
+  "objetivo": "Explicar como Roma, potência terrestre, venceu Cartago no mar adaptando sua vantagem comparativa (o exército cidadão) via corvus, na Primeira Guerra Púnica.",
+  "palavrasChave": ["Mylae", "corvus", "Cartago", "Roma", "Primeira Guerra Púnica", "Sicília", "Estreito de Messina", "exército cidadão", "mercenários", "galeras"],
+  "fontes": ["FERREIRA, Leonardo da Costa — A Batalha de Mylae (Outros Tempos, 2019)"],
+  "midias": [
+    {
+      "tipo": "podcast",
+      "titulo": "Roma aniquilou Cartago com o corvus",
+      "fonte": "NotebookLM",
+      "src": "/podcasts/hnv/01-mediterraneo-mylae.m4a",
+      "origem": "local",
+      "descricao": "A Batalha de Mylae e a transformação de Roma em potência naval."
+    }
+  ]
+}

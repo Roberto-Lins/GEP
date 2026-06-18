@@ -1,0 +1,27 @@
+{
+  "ordem": 0,
+  "slug": "00-ideia-central-da-prova",
+  "titulo": "Ideia central da prova",
+  "prioridade": "alta",
+  "subtitulo": "A lógica-mãe da GEP P1",
+  "tempoEstimado": "15 min",
+  "objetivo": "Entender que a prova cobra comparação entre modelos de Administração Pública e aplicação de conceitos de gestão pública.",
+  "palavrasChave": [
+    "Estado",
+    "valor público",
+    "modelos administrativos",
+    "governança",
+    "orçamento",
+    "defesa"
+  ],
+  "midias": [
+    {
+      "tipo": "video",
+      "titulo": "Visão geral da Administração Pública",
+      "fonte": "NotebookLM",
+      "src": "/videos/notebooklm/00-visao-geral-video.mp4",
+      "origem": "local",
+      "descricao": "Panorama em vídeo que costura os grandes temas da prova: do Estado aos modelos de gestão."
+    }
+  ]
+}

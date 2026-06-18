@@ -1,0 +1,21 @@
+{
+  "ordem": 3,
+  "slug": "03-franca-antartica-corso-e-religiao",
+  "titulo": "França Antártica: corso, conquista e religião",
+  "prioridade": "muito alta",
+  "subtitulo": "O mar como espaço de disputa imperial, comercial e religiosa",
+  "tempoEstimado": "55 min",
+  "objetivo": "Compreender a França Antártica como ameaça bifronte (econômico-territorial e religiosa) ao projeto colonizador português, e a lógica de guerra viva e mercês régias.",
+  "palavrasChave": ["França Antártica", "Villegagnon", "Forte Coligny", "corso", "pirataria", "mare clausum", "mare liberum", "peçonha luterana", "guerra viva", "mercês régias", "Fé e Império", "Jean de Bolés", "Tamoios"],
+  "fontes": ["BICALHO, Maria Fernanda B. — A França Antártica, o corso, a conquista e a 'peçonha luterana' (História, 2008)"],
+  "midias": [
+    {
+      "tipo": "podcast",
+      "titulo": "Guerra viva e religião na França Antártica",
+      "fonte": "NotebookLM",
+      "src": "/podcasts/hnv/03-franca-antartica.m4a",
+      "origem": "local",
+      "descricao": "A ameaça bifronte da França Antártica: corso, mare liberum e a peçonha luterana."
+    }
+  ]
+}

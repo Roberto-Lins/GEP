@@ -1,0 +1,23 @@
+{
+  "slug": "__SLUG__",
+  "titulo": "__TITULO__",
+  "subtitulo": "Subtítulo do curso",
+  "descricao": "Descrição do curso — o que ele cobre e para que serve.",
+  "categoria": "Geral",
+  "ordem": 99,
+  "temaVisual": "naval-command",
+  "corTema": "dourado",
+  "icone": "/imagens/cursos/__SLUG__/icone.svg",
+  "capa": "/imagens/cursos/__SLUG__/capa.svg",
+  "features": {
+    "timeline": true,
+    "simulados": true,
+    "mapasMentais": false,
+    "podcasts": false,
+    "animacoesHero": false,
+    "animacoesTransicao": false,
+    "modoRevisaoVespera": true,
+    "graficoProgressoAvancado": false
+  },
+  "componentesExtras": []
+}

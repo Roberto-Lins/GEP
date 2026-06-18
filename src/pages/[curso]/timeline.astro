@@ -1,0 +1,36 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import PageContainer from '@components/layout/PageContainer.astro';
+import TimelineEstudo from '@components/estudo/TimelineEstudo.astro';
+import ProgressoScript from '@components/estudo/ProgressoScript.astro';
+import { listarCursos } from '@utils/courses';
+import { dadosDoCurso } from '@utils/content';
+import { somarTempos } from '@utils/formatarTempo';
+
+export async function getStaticPaths() {
+  return listarCursos()
+    .filter((c) => c.features.timeline)
+    .map((c) => ({ params: { curso: c.slug } }));
+}
+
+const { curso } = Astro.params;
+const dados = dadosDoCurso(curso!)!;
+const tempoTotal = somarTempos(dados.topicosEstudo.map((t) => t.tempoEstimado));
+const totais = Object.fromEntries(dados.timeline.map((t) => [t.slug, dados.checklistDe(t.slug).length]));
+---
+<BaseLayout titulo="Linha do tempo" curso={curso}>
+  <PageContainer
+    kicker="Trilha sequencial"
+    titulo="Linha do tempo do estudo"
+    subtitulo={`Estude na ordem. São ${dados.topicosEstudo.length} mini matérias (mais a revisão), cerca de ${tempoTotal} de conteúdo.`}
+  >
+    <div class="mt-4 flex flex-wrap gap-2 text-xs">
+      <span class="chip border border-white/15 bg-white/5 text-nevoa">Alta</span>
+      <span class="chip border border-dourado/30 bg-dourado/10 text-dourado-soft">Muito alta</span>
+      <span class="chip border border-dourado bg-dourado font-semibold text-naval">Máxima</span>
+    </div>
+  </PageContainer>
+
+  <TimelineEstudo curso={curso} />
+  <ProgressoScript curso={curso} totais={totais} />
+</BaseLayout>

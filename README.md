@@ -1,79 +1,57 @@
-# GEP Command Deck
+# Bússola dos Aspirantes
 
-Site pessoal de estudos para a prova de **Gestão Pública — GEP P1**. Uma trilha sequencial de mini
-matérias com aulas, resumos, comparações, pegadinhas, mídias (vídeos/podcasts) e **exercícios
-comentados** — tudo estático, com **progresso salvo no navegador** (localStorage), sem backend.
+Plataforma pessoal de estudos **multi-curso**, 100% estática. O aluno entra no dashboard, escolhe um
+curso e segue uma **trilha sequencial** de mini-matérias com aulas, resumos, comparações, pegadinhas,
+mídias e **exercícios comentados** — com **progresso salvo no navegador** (localStorage), sem backend.
 
-> Estética: painel naval + documentação técnica elegante. Veja `CLAUDE.md` para a especificação completa.
+Hoje há **um curso real: GEP** (Gestão Pública — P1, tema `naval-command`). A especificação completa,
+a arquitetura e o manual "como criar um curso" estão em `CLAUDE.md` e `docs/`.
 
 ## Stack
 
-Astro · TypeScript · MDX · Tailwind CSS · React (apenas onde há interatividade). Sem banco de dados,
-sem login, sem backend.
+Astro · TypeScript · MDX · Tailwind CSS · React (apenas em ilhas). Sem banco, sem login, sem backend.
 
 ## Como rodar
 
 ```bash
-npm install          # instala dependências
-npm run dev          # ambiente de desenvolvimento em http://localhost:4321
-npm run build        # gera o site estático em dist/
-npm run preview      # serve o build localmente
-npx astro check      # checagem de tipos
+npm install
+npm run dev              # http://localhost:4321
+npm run build            # gera dist/
+npm run preview          # serve o build
+npm run validate-content # valida _config.json e _dados.json de todos os cursos
+npm run audit-media      # lista mídia pesada ainda versionada
 ```
 
-Deploy: publique a pasta `dist/` em **Vercel**, **Netlify** ou **GitHub Pages** (ajuste `site` em
-`astro.config.mjs`).
+Deploy: publique `dist/` em Vercel, Netlify ou GitHub Pages (ajuste `site` em `astro.config.mjs`).
 
-## Estrutura
+## Estrutura (resumo)
 
 ```
 src/
-├── components/   layout · estudo · midia · questoes
-├── content/materias/<XX-slug>/   conteúdo MDX de cada mini matéria
-├── data/         timeline · exercicios · checklists · midias · fontes
-├── layouts/      BaseLayout · MateriaLayout · RevisaoLayout
-├── pages/        index · timeline · materias/[slug] · questoes · simulados · revisao-final · fontes
-├── styles/       global.css · tokens.css
-└── utils/        progresso (localStorage) · slug · formatarTempo · filtrarQuestoes
-public/           imagens · videos · podcasts · mapas-mentais · arquivos (fontes p/ download)
+├── content/cursos/<slug>/   _config.json + mini-matérias (.mdx + _dados.json)
+├── data/cursos/<slug>/      timeline · exercicios · checklists · midias · fontes
+├── components/              ui · layout · estudo · midia · questoes · cursos · progresso
+├── layouts/                 Base · Dashboard · Course · Lesson · Review
+├── pages/                   index (dashboard) · [curso]/...
+├── utils/                   courses · content · progress · backup · migration · media · ...
+├── styles/                  global · tokens · themes · prose
+└── types/                   course · lesson · question · media · progress
+public/<tipo>/cursos/<slug>/   imagens · videos · podcasts · mapas-mentais · arquivos
+templates/curso/   scripts/   docs/   backups/
 ```
 
-## Como adicionar uma nova mini matéria
+## Como adicionar um novo curso
 
-1. Crie a pasta `src/content/materias/XX-nome/` com os arquivos MDX. Cada arquivo tem frontmatter:
-   ```yaml
-   ---
-   titulo: "Título da seção"
-   secao: "aula"        # capa | aula | resumo | comparacoes | pegadinhas | referencias
-   secaoOrdem: 2
-   ---
-   ```
-   Dentro do MDX você pode usar `<BlocoConceito>`, `<BlocoPegadinha>` e `<BlocoComparacao>` sem importar.
-2. Registre o tópico em `src/data/timeline.ts` (ordem, slug, prioridade, tempo, objetivo, palavras-chave).
-3. (Opcional) Adicione itens em `src/data/checklists.ts` e questões em `src/data/exercicios.ts` com
-   `topico: "XX-nome"`.
+Resumo (manual completo em `CLAUDE.md` → "Como criar um novo curso"):
 
-A página `/materias/[slug]` monta tudo automaticamente (objetivo, seções, mídias, exercícios,
-checklist, navegação anterior/próxima).
-
-## Como adicionar vídeos, podcasts e mapas mentais
-
-1. Copie o arquivo para a pasta certa em `public/`:
-   - vídeos NotebookLM → `public/videos/notebooklm/`
-   - vídeos do YouTube → `public/videos/youtube/`
-   - podcasts → `public/podcasts/notebooklm/`
-   - mapas mentais (PDF) → `public/mapas-mentais/notebooklm/`
-2. Registre em `src/data/midias.ts` um item com `tipo`, `topico` (slug), `titulo`, `fonte`, `src`.
-
-> Vídeos `.mkv` não tocam em todos os navegadores: o player oferece download automaticamente.
-
-## Como adicionar/baixar fontes
-
-Coloque o arquivo em `public/arquivos/{livros,slides,resumos,provas}/` e registre em
-`src/data/fontes.ts`. Eles aparecem na página `/fontes` com botão de download.
+```bash
+npm run create-course <slug>   # copia templates/curso/ → src/content/cursos/<slug>/
+```
+Depois: edite `_config.json`, crie as mini-matérias (`.mdx` + `_dados.json`), adicione imagens leves,
+externalize mídia pesada, rode `npm run validate-content`. O curso aparece sozinho no dashboard.
 
 ## Conteúdo e progresso
 
-- O progresso (checklists, questões respondidas, matérias concluídas) fica em `localStorage`
-  (`gep:progresso:v1`) e nunca sai do navegador.
-- Exercícios: 60 múltipla escolha + 40 V/F + 20 correlações, todos com gabarito comentado.
+- Progresso (checklists, questões, matérias concluídas) em `localStorage` (`bussola:v1`), por curso,
+  nunca sai do navegador. Exportar/Importar/Reset no dashboard.
+- GEP: 60 múltipla escolha + 40 V/F + 5 grupos de correlação, todos com gabarito comentado.

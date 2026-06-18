@@ -1,24 +1,19 @@
 import { useEffect, useState } from 'react';
-import { carregar, EVENTO } from '@utils/progresso';
-import { checklists } from '@data/checklists';
+import { materia, EVENTO } from '@utils/progress';
 
-interface Props { slug: string }
+interface Props { curso?: string; slug: string; totalChecklist: number }
 
 // Selo compacto de progresso da matéria (topo da página), reativo ao localStorage.
-export default function ProgressoMateria({ slug }: Props) {
+export default function ProgressoMateria({ curso = 'gep', slug, totalChecklist }: Props) {
   const [pct, setPct] = useState(0);
   const [montado, setMontado] = useState(false);
 
   useEffect(() => {
     function calc() {
-      const p = carregar();
-      const m = p.materias[slug];
-      const total = (checklists[slug] ?? []).length;
+      const m = materia(curso, slug);
       let valor = 0;
-      if (m) {
-        if (m.concluida) valor = 100;
-        else if (total) valor = Math.min(100, Math.round((Object.values(m.checklist).filter(Boolean).length / total) * 100));
-      }
+      if (m.concluida) valor = 100;
+      else if (totalChecklist) valor = Math.min(100, Math.round((Object.values(m.checklist).filter(Boolean).length / totalChecklist) * 100));
       setPct(valor);
       setMontado(true);
     }
@@ -29,7 +24,7 @@ export default function ProgressoMateria({ slug }: Props) {
       window.removeEventListener(EVENTO, calc);
       window.removeEventListener('storage', calc);
     };
-  }, [slug]);
+  }, [curso, slug, totalChecklist]);
 
   const rotulo = !montado ? '—' : pct === 100 ? 'Concluída' : pct > 0 ? `${pct}%` : 'Não iniciada';
 

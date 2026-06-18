@@ -1,0 +1,46 @@
+/* Temas visuais por curso.
+   As cores do Tailwind apontam para estas variáveis (canais "R G B", para
+   suportar os modificadores de opacidade do Tailwind, ex.: bg-dourado/40).
+   Cada curso aplica seu tema via classe `tema-<temaVisual>` no <body>
+   (definido no _config.json). O :root carrega o tema padrão (naval-command),
+   usado também no dashboard. Para um curso novo com paleta própria, adicione
+   um bloco `.tema-<nome>` aqui e aponte `temaVisual` no _config.json. */
+
+:root,
+.tema-naval-command {
+  --c-naval: 11 18 32;
+  --c-naval-900: 11 18 32;
+  --c-naval-800: 16 26 46;
+  --c-naval-700: 22 35 61;
+  --c-aco: 30 58 95;
+  --c-aco-light: 39 73 110;
+  --c-aco-dark: 23 48 79;
+  --c-acinzentado: 51 65 85;
+  --c-dourado: 214 168 79;
+  --c-dourado-soft: 224 189 116;
+  --c-dourado-dark: 184 138 55;
+  --c-marfim: 247 243 234;
+  --c-nevoa: 203 213 225;
+  --c-progresso: 34 197 94;
+  --c-alerta: 239 68 68;
+}
+
+/* Exemplo de tema alternativo para um curso futuro (não usado por nenhum curso
+   real). Demonstra como trocar a paleta sem tocar no GEP. */
+.tema-sepia {
+  --c-naval: 28 24 18;
+  --c-naval-900: 28 24 18;
+  --c-naval-800: 38 32 24;
+  --c-naval-700: 51 43 32;
+  --c-aco: 92 74 51;
+  --c-aco-light: 120 97 67;
+  --c-aco-dark: 71 57 39;
+  --c-acinzentado: 84 75 63;
+  --c-dourado: 196 154 88;
+  --c-dourado-soft: 214 181 130;
+  --c-dourado-dark: 158 120 64;
+  --c-marfim: 245 238 224;
+  --c-nevoa: 214 204 188;
+  --c-progresso: 122 158 84;
+  --c-alerta: 198 92 74;
+}

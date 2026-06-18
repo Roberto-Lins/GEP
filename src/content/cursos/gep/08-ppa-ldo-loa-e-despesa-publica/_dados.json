@@ -1,0 +1,70 @@
+{
+  "ordem": 8,
+  "slug": "08-ppa-ldo-loa-e-despesa-publica",
+  "titulo": "PPA, LDO, LOA e despesa pública",
+  "prioridade": "muito alta",
+  "subtitulo": "Como o planejamento vira orçamento",
+  "tempoEstimado": "60 min",
+  "objetivo": "Entender os instrumentos orçamentários e a execução da despesa pública.",
+  "palavrasChave": [
+    "PPA",
+    "LDO",
+    "LOA",
+    "diretrizes",
+    "objetivos",
+    "metas",
+    "empenho",
+    "liquidação",
+    "pagamento"
+  ],
+  "midias": [
+    {
+      "tipo": "video",
+      "titulo": "Orçamento Fácil — A série de animação do Senado",
+      "fonte": "Senado Federal (YouTube)",
+      "src": "/videos/youtube/orcamento-01.webm",
+      "origem": "local",
+      "descricao": "Abertura da série que explica o orçamento público de forma simples."
+    },
+    {
+      "tipo": "video",
+      "titulo": "Orçamento Fácil — Importância do orçamento e tributos",
+      "fonte": "Senado Federal (YouTube)",
+      "src": "/videos/youtube/orcamento-02.webm",
+      "origem": "local",
+      "descricao": "Por que o orçamento importa; impostos, taxas e contribuições."
+    },
+    {
+      "tipo": "video",
+      "titulo": "Orçamento Fácil — Sistema orçamentário: PPA, LDO e LOA",
+      "fonte": "Senado Federal (YouTube)",
+      "src": "/videos/youtube/orcamento-03.webm",
+      "origem": "local",
+      "descricao": "As três leis orçamentárias e como se encaixam."
+    },
+    {
+      "tipo": "video",
+      "titulo": "Orçamento Fácil — O que é o PPA (Plano Plurianual)",
+      "fonte": "Senado Federal (YouTube)",
+      "src": "/videos/youtube/orcamento-04.webm",
+      "origem": "local",
+      "descricao": "O instrumento de planejamento de médio prazo em detalhe."
+    },
+    {
+      "tipo": "video",
+      "titulo": "Orçamento Fácil — O que é a LOA (Lei Orçamentária Anual)",
+      "fonte": "Senado Federal (YouTube)",
+      "src": "/videos/youtube/orcamento-05.webm",
+      "origem": "local",
+      "descricao": "Receitas e despesas orçamentárias do exercício."
+    },
+    {
+      "tipo": "video",
+      "titulo": "Orçamento Fácil — O que é a LDO (Lei de Diretrizes Orçamentárias)",
+      "fonte": "Senado Federal (YouTube)",
+      "src": "/videos/youtube/orcamento-06.webm",
+      "origem": "local",
+      "descricao": "O elo entre planejamento e orçamento anual."
+    }
+  ]
+}

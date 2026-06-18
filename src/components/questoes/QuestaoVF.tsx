@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type { QuestaoVF as TQuestaoVF } from '@data/exercicios';
+import type { QuestaoVF as TQuestaoVF } from '@tipos/question';
 
 interface Props {
   questao: TQuestaoVF;
@@ -57,6 +57,9 @@ export default function QuestaoVF({ questao, indice, onResponder }: Props) {
             {acertou ? '✓ Você acertou' : `✗ O correto é: ${questao.correta ? 'Verdadeiro' : 'Falso'}`}
           </p>
           <p className="text-sm text-nevoa/85">{questao.comentario}</p>
+          {questao.armadilha && (
+            <p className="mt-2 text-xs text-alerta/80"><strong>Armadilha:</strong> {questao.armadilha}</p>
+          )}
         </div>
       )}
     </div>

@@ -1,0 +1,29 @@
+{
+  "ordem": 10,
+  "slug": "10-sistema-de-governanca-da-mb",
+  "titulo": "Sistema de Governança da MB",
+  "prioridade": "alta",
+  "subtitulo": "Aplicação prática da governança pública na Marinha",
+  "tempoEstimado": "50 min",
+  "objetivo": "Entender como a governança da MB conecta estratégia, gestão, controle e entrega de valor público.",
+  "palavrasChave": [
+    "Governança da MB",
+    "Alta Administração Naval",
+    "CEMA",
+    "ODS",
+    "Programa Netuno",
+    "Defesa Naval",
+    "Segurança Marítima",
+    "Diplomacia Naval"
+  ],
+  "midias": [
+    {
+      "tipo": "podcast",
+      "titulo": "Governança e Gestão Estratégica na Marinha",
+      "fonte": "NotebookLM",
+      "src": "/podcasts/notebooklm/10-governanca-mb-podcast.m4a",
+      "origem": "local",
+      "descricao": "Como o Sistema de Governança da MB aplica os conceitos da prova na prática."
+    }
+  ]
+}

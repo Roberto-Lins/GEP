@@ -1,0 +1,23 @@
+{
+  "slug": "hnv",
+  "titulo": "História Naval — HNV",
+  "subtitulo": "Trilha de revisão e aprofundamento em História Naval",
+  "descricao": "Do Mediterrâneo antigo ao Brasil Holandês: como o poder naval estruturou economias, impérios e disputas — em trilha histórica sequencial, com questões por dificuldade e discursivas comentadas.",
+  "categoria": "Carreira Naval",
+  "ordem": 2,
+  "temaVisual": "naval-command",
+  "corTema": "dourado",
+  "icone": "/imagens/cursos/hnv/icone.svg",
+  "capa": "/imagens/cursos/hnv/capa.svg",
+  "features": {
+    "timeline": true,
+    "simulados": true,
+    "mapasMentais": true,
+    "podcasts": true,
+    "animacoesHero": false,
+    "animacoesTransicao": false,
+    "modoRevisaoVespera": true,
+    "graficoProgressoAvancado": false
+  },
+  "componentesExtras": []
+}

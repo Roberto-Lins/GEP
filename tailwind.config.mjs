@@ -4,27 +4,29 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Cores temáveis por curso — apontam para variáveis CSS (canais R G B)
+        // definidas em src/styles/themes.css. Ver tema padrão `naval-command`.
         naval: {
-          DEFAULT: '#0B1220', // azul naval profundo — fundo
-          900: '#0B1220',
-          800: '#101a2e',
-          700: '#16233d',
+          DEFAULT: 'rgb(var(--c-naval) / <alpha-value>)', // fundo
+          900: 'rgb(var(--c-naval-900) / <alpha-value>)',
+          800: 'rgb(var(--c-naval-800) / <alpha-value>)',
+          700: 'rgb(var(--c-naval-700) / <alpha-value>)',
         },
         aco: {
-          DEFAULT: '#1E3A5F', // azul aço — cards
-          light: '#27496e',
-          dark: '#17304f',
+          DEFAULT: 'rgb(var(--c-aco) / <alpha-value>)', // cards
+          light: 'rgb(var(--c-aco-light) / <alpha-value>)',
+          dark: 'rgb(var(--c-aco-dark) / <alpha-value>)',
         },
-        acinzentado: '#334155',
+        acinzentado: 'rgb(var(--c-acinzentado) / <alpha-value>)',
         dourado: {
-          DEFAULT: '#D6A84F', // destaque / prioridade
-          soft: '#e0bd74',
-          dark: '#b88a37',
+          DEFAULT: 'rgb(var(--c-dourado) / <alpha-value>)', // destaque / prioridade
+          soft: 'rgb(var(--c-dourado-soft) / <alpha-value>)',
+          dark: 'rgb(var(--c-dourado-dark) / <alpha-value>)',
         },
-        marfim: '#F7F3EA',
-        nevoa: '#CBD5E1', // texto comum
-        progresso: '#22C55E',
-        alerta: '#EF4444',
+        marfim: 'rgb(var(--c-marfim) / <alpha-value>)',
+        nevoa: 'rgb(var(--c-nevoa) / <alpha-value>)', // texto comum
+        progresso: 'rgb(var(--c-progresso) / <alpha-value>)',
+        alerta: 'rgb(var(--c-alerta) / <alpha-value>)',
       },
       fontFamily: {
         serif: ['Newsreader', 'Merriweather', 'Georgia', 'serif'],

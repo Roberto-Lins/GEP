@@ -1,0 +1,37 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import PageContainer from '@components/layout/PageContainer.astro';
+import CentralQuestoes from '@components/questoes/CentralQuestoes.tsx';
+import ProgressoScript from '@components/estudo/ProgressoScript.astro';
+import { listarCursos } from '@utils/courses';
+import { dadosDoCurso } from '@utils/content';
+import { numeroTopico } from '@utils/slug';
+
+export async function getStaticPaths() {
+  return listarCursos().map((c) => ({ params: { curso: c.slug } }));
+}
+
+const { curso } = Astro.params;
+const dados = dadosDoCurso(curso!)!;
+const opcoes = [...dados.topicosEstudo]
+  .sort((a, b) => a.ordem - b.ordem)
+  .map((t) => ({ slug: t.slug, titulo: t.titulo, numero: numeroTopico(t.slug) }));
+const tq = dados.totalQuestoes;
+const totalQ = tq.multipla + tq.vf + tq.correlacione + (tq.discursiva ?? 0);
+const partes = [
+  `${tq.multipla} de múltipla escolha`,
+  `${tq.vf} de verdadeiro/falso`,
+  tq.correlacione ? `${tq.correlacione} correlações` : '',
+  tq.discursiva ? `${tq.discursiva} discursivas` : '',
+].filter(Boolean);
+const totais = Object.fromEntries(dados.timeline.map((t) => [t.slug, dados.checklistDe(t.slug).length]));
+---
+<BaseLayout titulo="Central de questões" curso={curso}>
+  <PageContainer
+    kicker="Treino"
+    titulo="Central de questões"
+    subtitulo={`${totalQ} questões comentadas — ${partes.join(', ')}. Filtre por matéria e responda com gabarito imediato.`}
+  />
+  <CentralQuestoes questoes={dados.todasQuestoes} topicos={opcoes} curso={curso} client:load />
+  <ProgressoScript curso={curso} totais={totais} />
+</BaseLayout>
