@@ -1,31 +1,82 @@
 // Mídias (vídeos, podcasts, mapas) do curso HNV, por `topico` (slug).
-// Ver docs/MEDIA-PROTOCOL.md: mídia pesada (vídeos/áudios) NÃO fica no repo.
+// É esta lista que a página da mini-matéria renderiza (via midiasPorTopico).
 //
-// TODO (externalizar — protocolo de mídia): os áudios (NotebookLM, ~34–53 MB cada)
-// e o vídeo geral (~55 MB) estão na pasta externa ../HNV e ainda não têm link
-// público. Quando subirem para YouTube não-listado / R2 / Bunny, registre-os aqui
-// com `origem` e `src` corretos. Esqueleto pronto abaixo (comentado para não
-// renderizar players sem fonte):
-//
-//   { tipo: 'podcast', topico: '00-visao-geral', titulo: 'O mar como fronteira dos impérios',
-//     fonte: 'NotebookLM', origem: 'externo', src: 'TODO://o-mar-como-fronteira-dos-imperios' },
-//   { tipo: 'podcast', topico: '01-mediterraneo-antigo-e-batalha-de-mylae',
-//     titulo: 'Roma aniquilou Cartago com o corvus', fonte: 'NotebookLM', origem: 'externo', src: 'TODO://...' },
-//   { tipo: 'podcast', topico: '02-da-galera-ao-navio-de-vela',
-//     titulo: 'A revolução da vela e do canhão', fonte: 'NotebookLM', origem: 'externo', src: 'TODO://...' },
-//   { tipo: 'podcast', topico: '03-franca-antartica-corso-e-religiao',
-//     titulo: 'Guerra viva e religião na França Antártica', fonte: 'NotebookLM', origem: 'externo', src: 'TODO://...' },
-//   { tipo: 'podcast', topico: '04-ocupacoes-francesas-e-holandesas',
-//     titulo: 'A guerra naval no Brasil colonial', fonte: 'NotebookLM', origem: 'externo', src: 'TODO://...' },
-//   { tipo: 'podcast', topico: '05-brasil-holandes-restauracao-e-imperio',
-//     titulo: 'A retomada de Angola e do Brasil', fonte: 'NotebookLM', origem: 'externo', src: 'TODO://...' },
-//   { tipo: 'video', topico: '00-visao-geral', titulo: 'Evolução do Poder Marítimo',
-//     fonte: 'NotebookLM', origem: 'youtube', src: 'TODO://link-do-youtube' },
+// Áudios e vídeo estão versionados localmente em public/ (origem 'local').
+// NOTA (docs/MEDIA-PROTOCOL.md): são arquivos pesados (~290 MB no total). O ideal,
+// antes de commitar/escalar, é externalizá-los (YouTube não-listado / R2 / Bunny)
+// e trocar `origem`/`src`. Por ora ficam locais para funcionarem de imediato.
 import type { Midia } from '@tipos/media';
 export type { Midia } from '@tipos/media';
 
 export const midias: Midia[] = [
-  // Mapa mental leve (versionado no repo).
+  // ── Tópico 00 — vídeo e áudio gerais (sobre toda a matéria) ──
+  {
+    tipo: 'video',
+    topico: '00-visao-geral',
+    titulo: 'Evolução do Poder Marítimo',
+    fonte: 'NotebookLM',
+    src: '/videos/hnv/00-evolucao-do-poder-maritimo.mp4',
+    origem: 'local',
+    descricao: 'Vídeo-panorama de toda a matéria: do Mediterrâneo antigo ao Brasil Holandês.',
+  },
+  {
+    tipo: 'podcast',
+    topico: '00-visao-geral',
+    titulo: 'O mar como fronteira dos impérios',
+    fonte: 'NotebookLM',
+    src: '/podcasts/hnv/00-visao-geral.m4a',
+    origem: 'local',
+    descricao: 'Áudio-resumo geral: o poder naval como fio condutor de economias, impérios e disputas.',
+  },
+
+  // ── Podcasts por tópico ──
+  {
+    tipo: 'podcast',
+    topico: '01-mediterraneo-antigo-e-batalha-de-mylae',
+    titulo: 'Roma aniquilou Cartago com o corvus',
+    fonte: 'NotebookLM',
+    src: '/podcasts/hnv/01-mediterraneo-mylae.m4a',
+    origem: 'local',
+    descricao: 'A Primeira Guerra Púnica, o exército cidadão e a inovação do corvus em Mylae.',
+  },
+  {
+    tipo: 'podcast',
+    topico: '02-da-galera-ao-navio-de-vela',
+    titulo: 'A revolução da vela e do canhão',
+    fonte: 'NotebookLM',
+    src: '/podcasts/hnv/02-galera-ao-navio-de-vela.m4a',
+    origem: 'local',
+    descricao: 'Da galera de remo à coga e ao galeão: o binômio vela-canhão e a projeção oceânica.',
+  },
+  {
+    tipo: 'podcast',
+    topico: '03-franca-antartica-corso-e-religiao',
+    titulo: 'Guerra viva e religião na França Antártica',
+    fonte: 'NotebookLM',
+    src: '/podcasts/hnv/03-franca-antartica.m4a',
+    origem: 'local',
+    descricao: 'A ameaça bifronte: corso, mare clausum x mare liberum, guerra viva e peçonha luterana.',
+  },
+  {
+    tipo: 'podcast',
+    topico: '04-ocupacoes-francesas-e-holandesas',
+    titulo: 'A guerra naval no Brasil colonial',
+    fonte: 'NotebookLM',
+    src: '/podcasts/hnv/04-ocupacoes-holandesas.m4a',
+    origem: 'local',
+    descricao: 'O litoral como teatro naval: França Equinocial, Bahia, Jornada dos Vassalos e Abrolhos.',
+  },
+  {
+    tipo: 'podcast',
+    topico: '05-brasil-holandes-restauracao-e-imperio',
+    titulo: 'A retomada de Angola e do Brasil',
+    fonte: 'NotebookLM',
+    src: '/podcasts/hnv/05-brasil-holandes-restauracao.m4a',
+    origem: 'local',
+    descricao: 'Restauração, nexo atlântico, Estado polissinodal e a reconquista de Angola (1648).',
+  },
+
+  // ── Mapa mental leve (versionado no repo) ──
   {
     tipo: 'mapa',
     topico: '05-brasil-holandes-restauracao-e-imperio',

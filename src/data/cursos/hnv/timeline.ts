@@ -74,10 +74,11 @@ export const timeline: TopicoTimeline[] = [
     tempoEstimado: '50 min',
     statusInicial: 'pendente',
     objetivo:
-      'Acompanhar as operações navais das invasões holandesas (Bahia 1624, Jornada dos Vassalos, Abrolhos 1631, Pernambuco 1630) e o papel do poder naval no controle do litoral.',
+      'Acompanhar as ocupações no litoral brasileiro — a presença francesa (França Antártica e França Equinocial) e as operações navais das invasões holandesas (Bahia 1624, Jornada dos Vassalos, Abrolhos 1631, Pernambuco 1630) — e o papel do poder naval no controle do litoral.',
     palavrasChave: [
-      'WIC', 'invasão da Bahia', 'Jornada dos Vassalos', 'D. Fadrique de Toledo',
-      'Batalha de Abrolhos', 'Oquendo', 'Pater', 'invasão de Pernambuco', 'Nassau', 'bloqueio naval',
+      'França Equinocial', 'Guaxenduba', 'WIC', 'invasão da Bahia', 'Jornada dos Vassalos',
+      'D. Fadrique de Toledo', 'Batalha de Abrolhos', 'Oquendo', 'Pater', 'invasão de Pernambuco',
+      'Nassau', 'bloqueio naval',
     ],
   },
   {
