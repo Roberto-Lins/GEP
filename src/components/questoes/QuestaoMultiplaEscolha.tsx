@@ -24,7 +24,7 @@ export default function QuestaoMultiplaEscolha({ questao, indice, onResponder }:
     <div className="card p-5">
       <div className="mb-3 flex items-start gap-2">
         {indice != null && <span className="font-mono text-sm text-dourado/70">{indice}.</span>}
-        <p className="font-medium text-marfim">{questao.enunciado}</p>
+        <p className="whitespace-pre-line font-medium text-marfim">{questao.enunciado}</p>
       </div>
 
       <ul className="space-y-2">

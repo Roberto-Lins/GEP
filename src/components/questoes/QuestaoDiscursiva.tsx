@@ -66,8 +66,8 @@ export default function QuestaoDiscursiva({ questao, indice, onResponder }: Prop
         {indice != null && <span className="font-mono text-sm text-dourado/70">{indice}.</span>}
         <div>
           <span className="mb-1 inline-block rounded bg-aco/40 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-dourado/80">Discursiva</span>
-          {questao.contexto && <p className="mb-2 text-sm text-nevoa/70">{questao.contexto}</p>}
-          <p className="font-medium text-marfim">{questao.enunciado}</p>
+          {questao.contexto && <p className="mb-2 whitespace-pre-line text-sm text-nevoa/70">{questao.contexto}</p>}
+          <p className="whitespace-pre-line font-medium text-marfim">{questao.enunciado}</p>
         </div>
       </div>
 

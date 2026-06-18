@@ -24,7 +24,7 @@ export default function QuestaoVF({ questao, indice, onResponder }: Props) {
     <div className="card p-5">
       <div className="mb-3 flex items-start gap-2">
         {indice != null && <span className="font-mono text-sm text-dourado/70">{indice}.</span>}
-        <p className="font-medium text-marfim">{questao.afirmacao}</p>
+        <p className="whitespace-pre-line font-medium text-marfim">{questao.afirmacao}</p>
       </div>
 
       <div className="flex gap-3">

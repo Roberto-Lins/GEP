@@ -188,7 +188,13 @@ export const multiplaEscolha: QuestaoMultipla[] = [
     "tipo": "multipla",
     "topico": "01-mediterraneo-antigo-e-batalha-de-mylae",
     "dificuldade": "medio",
-    "enunciado": "Sobre a geopolítica da Primeira Guerra Púnica e as motivações para o conflito entre Roma e Cartago, analise as seguintes afirmativas: I. A Sicília era estratégica para Roma devido ao seu valor agrícola e à proximidade com a Península Itálica, funcionando como uma barreira defensiva contra invasões cartaginesas. II. O controle do Estreito de Messina foi o estopim formal da guerra, iniciado pelo pedido de socorro do povo marmentino aos romanos contra Siracusa e Cartago. III. Cartago desejava o controle da Sicília para garantir o suprimento de prata necessária para pagar seus exércitos mercenários, uma vez que as minas ibéricas estavam exauridas. Está(ão) correta(s):",
+    "enunciado": `Sobre a geopolítica da Primeira Guerra Púnica e as motivações para o conflito entre Roma e Cartago, analise as seguintes afirmativas:
+
+I. A Sicília era estratégica para Roma devido ao seu valor agrícola e à proximidade com a Península Itálica, funcionando como uma barreira defensiva contra invasões cartaginesas.
+II. O controle do Estreito de Messina foi o estopim formal da guerra, iniciado pelo pedido de socorro do povo marmentino aos romanos contra Siracusa e Cartago.
+III. Cartago desejava o controle da Sicília para garantir o suprimento de prata necessária para pagar seus exércitos mercenários, uma vez que as minas ibéricas estavam exauridas.
+
+Está(ão) correta(s):`,
     "alternativas": [
       "Apenas I e II.",
       "Apenas II e III.",
@@ -278,7 +284,13 @@ export const multiplaEscolha: QuestaoMultipla[] = [
     "tipo": "multipla",
     "topico": "05-brasil-holandes-restauracao-e-imperio",
     "dificuldade": "medio",
-    "enunciado": "Analise as proposições abaixo sobre o contexto internacional de Portugal em 1640: I. Portugal mantinha uma relação ambígua com a Holanda: precisava de seu apoio contra a Espanha na Europa, mas dependia da reconquista dos territórios ultramarinos (Brasil/Angola) tomados pela WIC. II. A defasagem naval era crítica: enquanto as Províncias Unidas possuíam cerca de 14.000 navios, Portugal contava com apenas 13 embarcações. III. O comércio do sal de Setúbal era um fator moderador, pois os holandeses precisavam desse insumo para a sua indústria pesqueira de arenque. Está(ão) correta(s):",
+    "enunciado": `Analise as proposições abaixo sobre o contexto internacional de Portugal em 1640:
+
+I. Portugal mantinha uma relação ambígua com a Holanda: precisava de seu apoio contra a Espanha na Europa, mas dependia da reconquista dos territórios ultramarinos (Brasil/Angola) tomados pela WIC.
+II. A defasagem naval era crítica: enquanto as Províncias Unidas possuíam cerca de 14.000 navios, Portugal contava com apenas 13 embarcações.
+III. O comércio do sal de Setúbal era um fator moderador, pois os holandeses precisavam desse insumo para a sua indústria pesqueira de arenque.
+
+Está(ão) correta(s):`,
     "alternativas": [
       "Apenas I.",
       "Apenas II e III.",
@@ -368,7 +380,13 @@ export const multiplaEscolha: QuestaoMultipla[] = [
     "tipo": "multipla",
     "topico": "05-brasil-holandes-restauracao-e-imperio",
     "dificuldade": "dificil",
-    "enunciado": "O Estado português no pós-1640 é definido por Marcello Loureiro como uma \"monarquia pluricontinental\" operada por um sistema \"polissinodal\", onde governar era, essencialmente, \"informar e ser informado\". Contudo, essa gestão dependia da circulação física de papéis sob o \"ritmo das velas\". Simultaneamente, Willian Cezar destaca a imensa disparidade naval luso-holandesa, citando o \"Papel-Forte\" de Vieira: Portugal possuía apenas 13 navios frente aos 14.000 da Holanda. Essa precariedade material impunha o que a historiografia chama de \"descerebração\" do governo central, pois a \"tirania da distância\" e a hegemonia inimiga nos mares filtravam a autoridade régia. A partir dessa conjuntura, avalie as afirmativas: I. A autonomia dos oficiais régios na periferia (como no Rio e em Angola) era uma forma de rebeldia política contra a nova dinastia de Bragança. II. A morosidade polissinodal, somada à defasagem naval, forçava a adaptação das ordens de Lisboa às realidades e negociações locais. III. O domínio holandês sobre o \"ritmo das velas\" impedia que o centro recebesse informações acuradas, tornando o processo decisório \"descerebrado\". Está correto o que se afirma em:",
+    "enunciado": `O Estado português no pós-1640 é definido por Marcello Loureiro como uma "monarquia pluricontinental" operada por um sistema "polissinodal", onde governar era, essencialmente, "informar e ser informado". Contudo, essa gestão dependia da circulação física de papéis sob o "ritmo das velas". Simultaneamente, Willian Cezar destaca a imensa disparidade naval luso-holandesa, citando o "Papel-Forte" de Vieira: Portugal possuía apenas 13 navios frente aos 14.000 da Holanda. Essa precariedade material impunha o que a historiografia chama de "descerebração" do governo central, pois a "tirania da distância" e a hegemonia inimiga nos mares filtravam a autoridade régia. A partir dessa conjuntura, avalie as afirmativas:
+
+I. A autonomia dos oficiais régios na periferia (como no Rio e em Angola) era uma forma de rebeldia política contra a nova dinastia de Bragança.
+II. A morosidade polissinodal, somada à defasagem naval, forçava a adaptação das ordens de Lisboa às realidades e negociações locais.
+III. O domínio holandês sobre o "ritmo das velas" impedia que o centro recebesse informações acuradas, tornando o processo decisório "descerebrado".
+
+Está correto o que se afirma em:`,
     "alternativas": [
       "I e II apenas.",
       "II e III apenas.",
@@ -377,7 +395,7 @@ export const multiplaEscolha: QuestaoMultipla[] = [
     ],
     "correta": 1,
     "conceito": "Restauração e império atlântico",
-    "comentario": "Alternativa Correta: B.. Explicação: A afirmativa I está incorreta porque a autonomia não era rebeldia, mas uma necessidade prática imposta pela distância e falta de meios (Loureiro). As afirmativas II e III sintetizam o argumento de que a estrutura administrativa (polissinodal) colidia com a limitação tecnológica e numérica da marinha lusa, gerando a mediação local da autoridade (Loureiro). Relação: Conecta a estrutura de governo (Loureiro) à incapacidade material de mantê-la (Cezar/Vieira). Caminho de raciocínio: Crise de 1640 -> 13 navios vs 14.000 -> lentidão da informação -> oficiais locais decidem sozinhos -> governo \"descerebrado\".",
+    "comentario": "Alternativa Correta: B. Explicação: A afirmativa I está incorreta porque a autonomia não era rebeldia, mas uma necessidade prática imposta pela distância e falta de meios (Loureiro). As afirmativas II e III sintetizam o argumento de que a estrutura administrativa (polissinodal) colidia com a limitação tecnológica e numérica da marinha lusa, gerando a mediação local da autoridade (Loureiro). Relação: Conecta a estrutura de governo (Loureiro) à incapacidade material de mantê-la (Cezar/Vieira). Caminho de raciocínio: Crise de 1640 -> 13 navios vs 14.000 -> lentidão da informação -> oficiais locais decidem sozinhos -> governo \"descerebrado\".",
     "fonte": "Loureiro e Cezar (via citação de Vieira no texto de Loureiro).",
     "armadilha": "Insinuar que a autonomia periférica era intencionalmente subversiva (I)."
   },
@@ -395,7 +413,7 @@ export const multiplaEscolha: QuestaoMultipla[] = [
     ],
     "correta": 0,
     "conceito": "Mediterrâneo antigo e Mylae",
-    "comentario": "Alternativa Correta: A.. Explicação: O erro sutil é o anacronismo e a imprecisão técnica: o exército/marinha romano não era profissional nem permanente; era cívico e sazonal (Ferreira). Relação: Comparam-se os modelos de recrutamento e a sustentabilidade econômica do esforço de guerra. Caminho de raciocínio: Roma = dever cívico/fazenda própria; Brasil = serviço/vassalo/mercê; Cartago = dinheiro/mercenário -> O erro é chamar o modelo romano de profissional.",
+    "comentario": "Alternativa Correta: A. Explicação: O erro sutil é o anacronismo e a imprecisão técnica: o exército/marinha romano não era profissional nem permanente; era cívico e sazonal (Ferreira). Relação: Comparam-se os modelos de recrutamento e a sustentabilidade econômica do esforço de guerra. Caminho de raciocínio: Roma = dever cívico/fazenda própria; Brasil = serviço/vassalo/mercê; Cartago = dinheiro/mercenário -> O erro é chamar o modelo romano de profissional.",
     "fonte": "Ferreira e Bicalho.",
     "armadilha": "Achar que \"eficiência\" em Roma significava \"profissionalismo moderno\"."
   },
@@ -413,7 +431,7 @@ export const multiplaEscolha: QuestaoMultipla[] = [
     ],
     "correta": 1,
     "conceito": "França Antártica, corso e religião",
-    "comentario": "Alternativa Correta: B.. Explicação: Bolés representava tanto o perigo militar francês quanto a \"peçonha luterana\" (Bicalho). A alternativa A está errada pois ele foi preso apesar da ajuda (Bicalho). A C e D são invenções sem base nas fontes. Relação: Relaciona o papel do indivíduo \"douto\" e do oficial régio na manutenção do império.",
+    "comentario": "Alternativa Correta: B. Explicação: Bolés representava tanto o perigo militar francês quanto a \"peçonha luterana\" (Bicalho). A alternativa A está errada pois ele foi preso apesar da ajuda (Bicalho). A C e D são invenções sem base nas fontes. Relação: Relaciona o papel do indivíduo \"douto\" e do oficial régio na manutenção do império.",
     "fonte": "Bicalho e Loureiro.",
     "armadilha": "Achar que a utilidade militar de Bolés o protegeu da intolerância religiosa."
   },
@@ -431,7 +449,7 @@ export const multiplaEscolha: QuestaoMultipla[] = [
     ],
     "correta": 0,
     "conceito": "Galera, vela e canhão",
-    "comentario": "Alternativa Correta: A.. Explicação: (F) Em Sluys (1340), a abordagem ainda foi a tática decisiva apesar dos primeiros canhões (Cezar). (V) O leme de cadaste foi uma inovação da coga (Cezar). (F) O corvus permitia rotação em torno de seu eixo (Ferreira). (V) A borda alta e autonomia definiram o navio de vela oceânico (Cezar). Relação: Evolução técnica do combate próximo (Antiguidade/Medieval) para a projeção oceânica.",
+    "comentario": "Alternativa Correta: A. Explicação: (F) Em Sluys (1340), a abordagem ainda foi a tática decisiva apesar dos primeiros canhões (Cezar). (V) O leme de cadaste foi uma inovação da coga (Cezar). (F) O corvus permitia rotação em torno de seu eixo (Ferreira). (V) A borda alta e autonomia definiram o navio de vela oceânico (Cezar). Relação: Evolução técnica do combate próximo (Antiguidade/Medieval) para a projeção oceânica.",
     "fonte": "Cezar e Ferreira.",
     "armadilha": "Afirmar que o canhão decidiu Sluys (inversão de cronologia tática)."
   },
@@ -449,7 +467,7 @@ export const multiplaEscolha: QuestaoMultipla[] = [
     ],
     "correta": 1,
     "conceito": "Restauração e império atlântico",
-    "comentario": "Alternativa Correta: B.. Explicação: Loureiro explica que a falta de negros em Buenos Aires (devido à queda de Angola) paralisou a entrada do \"metal branco\" (prata), causando o impasse monetário (Loureiro). A opção A é anacrônica (Abrolhos foi em 1631, Luanda caiu em 1641). A D está errada pois foi financiada por negociantes do Rio (Loureiro). Relação: O impacto estratégico da interrupção de rotas navais na solvência financeira do império.",
+    "comentario": "Alternativa Correta: B. Explicação: Loureiro explica que a falta de negros em Buenos Aires (devido à queda de Angola) paralisou a entrada do \"metal branco\" (prata), causando o impasse monetário (Loureiro). A opção A é anacrônica (Abrolhos foi em 1631, Luanda caiu em 1641). A D está errada pois foi financiada por negociantes do Rio (Loureiro). Relação: O impacto estratégico da interrupção de rotas navais na solvência financeira do império.",
     "fonte": "Loureiro e Cezar.",
     "armadilha": "Atribuir a crise à produção de açúcar (C), quando o texto foca na falta de escravos e prata."
   },
@@ -467,7 +485,7 @@ export const multiplaEscolha: QuestaoMultipla[] = [
     ],
     "correta": 1,
     "conceito": "Restauração e império atlântico",
-    "comentario": "Alternativa Correta: B.. Explicação: Loureiro afirma que os holandeses não agiam francamente contra Portugal metropolitano pelo interesse no sal para a indústria do arenque (Loureiro). A alternativa D é um erro conceitual: a França contestava Tordesilhas (Bicalho). Relação: O mar como espaço de negociação diplomática e econômica regulada por interesses materiais.",
+    "comentario": "Alternativa Correta: B. Explicação: Loureiro afirma que os holandeses não agiam francamente contra Portugal metropolitano pelo interesse no sal para a indústria do arenque (Loureiro). A alternativa D é um erro conceitual: a França contestava Tordesilhas (Bicalho). Relação: O mar como espaço de negociação diplomática e econômica regulada por interesses materiais.",
     "fonte": "Bicalho e Loureiro.",
     "armadilha": "Confundir a defesa do mare liberum com a aceitação de Tordesilhas (D)."
   },
@@ -485,7 +503,7 @@ export const multiplaEscolha: QuestaoMultipla[] = [
     ],
     "correta": 1,
     "conceito": "Restauração e império atlântico",
-    "comentario": "Alternativa Correta: B.. Explicação: O Estado era polissinodal (Loureiro). Os agentes adaptavam as ordens (Loureiro). O sistema de mercês permitia ascensão social e pacto (Bicalho). Relação: Estrutura administrativa (polissinodal) vs. Prática social (Guerra Viva/Mercês).",
+    "comentario": "Alternativa Correta: B. Explicação: O Estado era polissinodal (Loureiro). Os agentes adaptavam as ordens (Loureiro). O sistema de mercês permitia ascensão social e pacto (Bicalho). Relação: Estrutura administrativa (polissinodal) vs. Prática social (Guerra Viva/Mercês).",
     "fonte": "Loureiro e Bicalho.",
     "armadilha": "Confundir \"polissinodal\" com \"absolutista\" (C)."
   },
@@ -503,7 +521,7 @@ export const multiplaEscolha: QuestaoMultipla[] = [
     ],
     "correta": 3,
     "conceito": "Galera, vela e canhão",
-    "comentario": "Alternativa Correta: D.. Explicação: Incorreta. Foi o binômio vela-canhão que permitiu o domínio estratégico português no Índico e Atlântico, e não o esporão (Cezar). Relação: Morfologia naval e adequação ao ambiente geográfico e estratégico.",
+    "comentario": "Alternativa Correta: D. Explicação: Incorreta. Foi o binômio vela-canhão que permitiu o domínio estratégico português no Índico e Atlântico, e não o esporão (Cezar). Relação: Morfologia naval e adequação ao ambiente geográfico e estratégico.",
     "fonte": "Cezar e Ferreira.",
     "armadilha": "Achar que a galera, por ser clássica, dominou as grandes navegações oceânicas (C)."
   },
@@ -521,7 +539,7 @@ export const multiplaEscolha: QuestaoMultipla[] = [
     ],
     "correta": 1,
     "conceito": "Restauração e império atlântico",
-    "comentario": "Alternativa Correta: B.. Explicação: Loureiro detalha que Salvador de Sá levantou os recursos com negociantes e latifundiários do Rio, pois a Coroa estava exausta (Loureiro). A alternativa C é falsa (Roma não tinha 14.000 navios, esse número era da Holanda em 1640). A D inverte a lógica do texto. Relação: Logística financeira da guerra: capital público vs. capital privado/cívico.",
+    "comentario": "Alternativa Correta: B. Explicação: Loureiro detalha que Salvador de Sá levantou os recursos com negociantes e latifundiários do Rio, pois a Coroa estava exausta (Loureiro). A alternativa C é falsa (Roma não tinha 14.000 navios, esse número era da Holanda em 1640). A D inverte a lógica do texto. Relação: Logística financeira da guerra: capital público vs. capital privado/cívico.",
     "fonte": "Loureiro e Ferreira.",
     "armadilha": "Inverter os dados numéricos (14.000 navios era da Holanda, não de Roma) em C."
   },
@@ -539,7 +557,7 @@ export const multiplaEscolha: QuestaoMultipla[] = [
     ],
     "correta": 2,
     "conceito": "França Antártica, corso e religião",
-    "comentario": "Alternativa Correta: C.. Explicação: Bicalho define o processo colonizador como bifronte: Fé e Império (Bicalho). A alternativa A é falsa (índios não eram calvinistas). A B ignora a \"peçonha luterana\". A D inverte o papel de Calabar (ele ajudou os holandeses - Cezar). Relação: O papel da religião como instrumento de legitimação da guerra e da conquista naval.",
+    "comentario": "Alternativa Correta: C. Explicação: Bicalho define o processo colonizador como bifronte: Fé e Império (Bicalho). A alternativa A é falsa (índios não eram calvinistas). A B ignora a \"peçonha luterana\". A D inverte o papel de Calabar (ele ajudou os holandeses - Cezar). Relação: O papel da religião como instrumento de legitimação da guerra e da conquista naval.",
     "fonte": "Bicalho e Cezar.",
     "armadilha": "Confundir a atuação de Calabar (ajudou holandeses) com a resistência (D)"
   }
@@ -885,7 +903,7 @@ export const discursivas: QuestaoDiscursiva[] = [
       "Explica o travamento do navio inimigo.",
       "Relaciona o uso do corvus ao combate corpo a corpo romano."
     ],
-    "comentario": "Roma transformou a batalha naval em uma batalha terrestre \"sobre o mar\", onde sua infantaria era superior. Por que é fácil: É o conceito tecnológico central da Batalha de Mylae, descrito detalhadamente em todos os textos sobre o período.",
+    "comentario": "Roma transformou a batalha naval em uma batalha terrestre \"sobre o mar\", onde sua infantaria era superior.",
     "fonte": "Leonardo Ferreira (\"A Batalha de Mylae\").",
     "armadilha": "Achar que o corvus servia para afundar navios por impacto (abalroamento); sua função era exclusivamente a abordagem e travamento."
   },
@@ -902,7 +920,7 @@ export const discursivas: QuestaoDiscursiva[] = [
       "Cita ao menos duas características estruturais da coga.",
       "Relaciona a estrutura da coga aos mares do Norte."
     ],
-    "comentario": "A coga foi projetada para as águas turbulentas do Báltico e do Mar do Norte, priorizando a estabilidade e a capacidade de carga em detrimento da velocidade. Por que é fácil: É a embarcação de transição mais importante descrita no capítulo sobre velas e canhões.",
+    "comentario": "A coga foi projetada para as águas turbulentas do Báltico e do Mar do Norte, priorizando a estabilidade e a capacidade de carga em detrimento da velocidade.",
     "fonte": "Willian Cezar (\"História das Guerras Navais\" / HNV P1).",
     "armadilha": "Confundir a coga com a galera; a galera era movida a remo e possuía borda baixa, inadequada para o Mar do Norte."
   },
@@ -919,7 +937,7 @@ export const discursivas: QuestaoDiscursiva[] = [
       "Explica o papel político do corsário nas disputas monárquicas.",
       "Evita reduzir a diferença ao grau de violência."
     ],
-    "comentario": "O corsário agia como um instrumento da política externa de seu rei (como na contestação do monopólio ibérico), enquanto o pirata agia por conta própria. Por que é fácil: É uma distinção conceitual clássica e essencial para entender as invasões francesas.",
+    "comentario": "O corsário agia como um instrumento da política externa de seu rei (como na contestação do monopólio ibérico), enquanto o pirata agia por conta própria.",
     "fonte": "Maria Fernanda Bicalho (\"A França Antártica...\").",
     "armadilha": "Achar que a diferença estava na violência empregada; ambos praticavam pilhagem, a diferença era apenas a legitimidade política."
   },
@@ -936,7 +954,7 @@ export const discursivas: QuestaoDiscursiva[] = [
       "Cita D. João IV como monarca aclamado.",
       "Relaciona a Restauração ao fim da União Ibérica."
     ],
-    "comentario": "A Restauração marcou a separação de Portugal da Coroa de Castela e o início da luta pelo reconhecimento da independência lusa. Por que é fácil: São os dados factuais básicos que iniciam o estudo do período de 1640-1654.",
+    "comentario": "A Restauração marcou a separação de Portugal da Coroa de Castela e o início da luta pelo reconhecimento da independência lusa.",
     "fonte": "Marcello Loureiro (\"Em miserável estado\").",
     "armadilha": "Confundir o rei aclamado com Filipe IV, que era o rei espanhol que D. João IV substituiu."
   },
@@ -953,7 +971,7 @@ export const discursivas: QuestaoDiscursiva[] = [
       "Cita o açúcar como interesse comercial central.",
       "Relaciona a WIC ao tráfico de escravizados no Atlântico."
     ],
-    "comentario": "A WIC era uma companhia de comércio privilegiada que buscava lucros através da exploração colonial e do ataque ao império luso-espanhol. Por que é fácil: É a principal organização adversária de Portugal mencionada nos textos sobre o século XVII.",
+    "comentario": "A WIC era uma companhia de comércio privilegiada que buscava lucros através da exploração colonial e do ataque ao império luso-espanhol.",
     "fonte": "Willian Cezar / Marcello Loureiro.",
     "armadilha": "Confundir com a VOC (Companhia das Índias Orientais), que atuava no Oriente."
   },
@@ -970,7 +988,7 @@ export const discursivas: QuestaoDiscursiva[] = [
       "Relaciona Angola ao funcionamento dos engenhos brasileiros.",
       "Conecta o tráfico à arrecadação da Fazenda Real."
     ],
-    "comentario": "O sistema colonial dependia do fluxo constante de escravizados africanos para produzir o açúcar, que era a base da riqueza do império. Por que é fácil: É o argumento central da famosa máxima: \"Sem Angola não há negros, e sem negros não há Pernambuco\".",
+    "comentario": "O sistema colonial dependia do fluxo constante de escravizados africanos para produzir o açúcar, que era a base da riqueza do império.",
     "fonte": "Marcello Loureiro (Citação do Conselho de Guerra e Pe. Vieira).",
     "armadilha": "Focar apenas na defesa militar e esquecer que a motivação principal era a mão de obra para a economia do açúcar."
   },
@@ -987,7 +1005,7 @@ export const discursivas: QuestaoDiscursiva[] = [
       "Explica o combate à distância por bombardeio.",
       "Relaciona a artilharia à mudança estratégica do navio."
     ],
-    "comentario": "A união da vela com o canhão permitiu que o poder naval fosse projetado a longas distâncias com alto poder de destruição. Por que é fácil: É a mudança tecnológica fundamental que define a \"Era das Velas e dos Canhões\".",
+    "comentario": "A união da vela com o canhão permitiu que o poder naval fosse projetado a longas distâncias com alto poder de destruição.",
     "fonte": "Willian Cezar (\"História das Guerras Navais\" / HNV P1).",
     "armadilha": "Achar que o canhão de ferro era preferido; na verdade, os de bronze eram os favoritos por serem mais leves e resistentes à corrosão."
   },
@@ -1004,7 +1022,7 @@ export const discursivas: QuestaoDiscursiva[] = [
       "Explica a oferta de vidas e fazendas pelos vassalos.",
       "Relaciona o serviço às mercês régias."
     ],
-    "comentario": "A guerra era vivida como um serviço ao Rei que gerava um direito de recompensa, consolidando as elites locais na colônia. Por que é fácil: É o termo central usado pela autora para explicar a motivação dos conquistadores do Rio.",
+    "comentario": "A guerra era vivida como um serviço ao Rei que gerava um direito de recompensa, consolidando as elites locais na colônia.",
     "fonte": "Maria Fernanda Bicalho (\"A França Antártica...\").",
     "armadilha": "Interpretar o termo como \"guerra com muitas mortes\"; o foco é no sentido político de \"serviço ativo\"."
   },
@@ -1021,7 +1039,7 @@ export const discursivas: QuestaoDiscursiva[] = [
       "Explica a posição do Estreito de Messina.",
       "Relaciona Messina à segurança da Península Itálica."
     ],
-    "comentario": "Messina era a porta de entrada para a Itália e o nó comercial que controlava as rotas do Mediterrâneo central. Por que é fácil: É a causa geográfica direta do início da guerra descrita no texto.",
+    "comentario": "Messina era a porta de entrada para a Itália e o nó comercial que controlava as rotas do Mediterrâneo central.",
     "fonte": "Leonardo Ferreira (\"Batalha de Mylae\").",
     "armadilha": "Achar que a disputa era apenas por comércio; a segurança territorial de Roma era o fator primordial no Estreito."
   },
@@ -1038,7 +1056,7 @@ export const discursivas: QuestaoDiscursiva[] = [
       "Cita D. Fadrique de Toledo Osório como comandante.",
       "Relaciona a expedição à retomada de Salvador."
     ],
-    "comentario": "O nome \"Vassalos\" deve-se à participação de muitos nobres que financiaram e serviram na expedição sob a Coroa Unificada. Por que é fácil: É a maior operação naval do início do século XVII descrita minuciosamente no texto.",
+    "comentario": "O nome \"Vassalos\" deve-se à participação de muitos nobres que financiaram e serviram na expedição sob a Coroa Unificada.",
     "fonte": "Willian Cezar (\"História das Guerras Navais\" / HNV P1).",
     "armadilha": "Achar que a expedição foi organizada apenas por Portugal; foi uma operação conjunta da União Ibérica sob comando espanhol."
   },

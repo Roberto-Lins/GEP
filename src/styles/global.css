@@ -73,7 +73,7 @@
 
   /* Conteúdo editorial das mini matérias (MDX) */
   .prosa {
-    @apply text-[15.5px] leading-relaxed text-nevoa/95;
+    @apply text-[17.5px] leading-relaxed text-nevoa/95;
   }
   .prosa > * + * { @apply mt-4; }
   .prosa h2 {
