@@ -13,5 +13,6 @@ export function numeroTopico(slug: string): string {
 
 /** Caminho da página de uma mini matéria. */
 export function urlMateria(slug: string): string {
+  if (slug === '99-revisao-final') return '/revisao-final';
   return `/materias/${slug}`;
 }
