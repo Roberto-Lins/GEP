@@ -560,6 +560,150 @@ Está correto o que se afirma em:`,
     "comentario": "Alternativa Correta: C. Explicação: Bicalho define o processo colonizador como bifronte: Fé e Império (Bicalho). A alternativa A é falsa (índios não eram calvinistas). A B ignora a \"peçonha luterana\". A D inverte o papel de Calabar (ele ajudou os holandeses - Cezar). Relação: O papel da religião como instrumento de legitimação da guerra e da conquista naval.",
     "fonte": "Bicalho e Cezar.",
     "armadilha": "Confundir a atuação de Calabar (ajudou holandeses) com a resistência (D)"
+  },
+  {
+    "id": "hnv-o-ex-01",
+    "tipo": "multipla",
+    "topico": "06-extras",
+    "dificuldade": "facil",
+    "enunciado": "Na aula, Marcello Loureiro reconstrói a sequência das invasões holandesas no Brasil. Assinale a alternativa que apresenta a ordem correta:",
+    "alternativas": [
+      "Primeiro Pernambuco (1630), depois a Bahia (1624), de onde nunca foram expulsos.",
+      "Primeiro a Bahia/Salvador (1624), de onde foram expulsos em 1625, e depois Pernambuco (1630).",
+      "Atacaram simultaneamente Bahia e Pernambuco em 1630, após o Tratado de Vestfália.",
+      "Ocuparam apenas Angola e São Jorge da Mina, sem desembarcar no litoral brasileiro."
+    ],
+    "correta": 1,
+    "conceito": "Invasões holandesas",
+    "comentario": "Alternativa B. Os holandeses atacaram primeiro Salvador, na Bahia, em 1624 (expulsos em 1625) e só voltaram em 1630, agora para Pernambuco. As demais invertem a ordem (A), criam simultaneidade inexistente (C) ou negam o desembarque no Brasil (D).",
+    "fonte": "Marcello Loureiro (transcrição).",
+    "armadilha": "Inverter a ordem Bahia → Pernambuco ou ancorar o início das invasões em Vestfália (1648), que é o desfecho, não o começo."
+  },
+  {
+    "id": "hnv-o-ex-02",
+    "tipo": "multipla",
+    "topico": "06-extras",
+    "dificuldade": "facil",
+    "enunciado": "Loureiro insiste que a conquista holandesa de Angola foi mais grave que a mera perda territorial. Por quê?",
+    "alternativas": [
+      "Porque Angola fornecia o ouro que financiava diretamente a Guerra da Restauração.",
+      "Porque, sem Angola, bloqueava-se a oferta de escravizados ao Brasil, faltando mão de obra para a cana — a colônia deixava de ser rentável.",
+      "Porque Angola era a sede do Conselho Ultramarino, paralisando a administração colonial.",
+      "Porque a perda de Angola entregava aos holandeses o controle do Tratado de Vestfália."
+    ],
+    "correta": 1,
+    "conceito": "Nexo atlântico Brasil-Angola",
+    "comentario": "Alternativa B. Sem Angola, corta-se o fornecimento de escravizados; sem mão de obra, não há açúcar; a colônia deixa de ser rentável e útil. A é falsa (a lógica é açúcar/escravos, não ouro); C inventa uma sede colonial em Angola; D confunde causa e tratado.",
+    "fonte": "Marcello Loureiro (transcrição).",
+    "armadilha": "Tratar a perda de Angola como problema só territorial/militar, ignorando o nexo econômico escravos → açúcar → receita."
+  },
+  {
+    "id": "hnv-o-ex-03",
+    "tipo": "multipla",
+    "topico": "06-extras",
+    "dificuldade": "medio",
+    "enunciado": "Ao restaurar a soberania em 1640, D. João IV recompõe os Conselhos Superiores da Monarquia. Sobre o conselho que Loureiro destaca como \"o mais importante para nós\", assinale a alternativa correta:",
+    "alternativas": [
+      "O Conselho da Fazenda, que nomeava os comandantes militares das colônias.",
+      "O Conselho de Justiça, que cuidava exclusivamente da diplomacia e dos casamentos dos príncipes.",
+      "O Conselho Ultramarino, que geria os assuntos coloniais e, no caso de Pernambuco, recusou-se a entregá-lo.",
+      "A Junta dos Três Estados, que substituía o rei nas decisões de guerra."
+    ],
+    "correta": 2,
+    "conceito": "Conselhos / Conselho Ultramarino",
+    "comentario": "Alternativa C. O Conselho Ultramarino cuidava da gestão dos assuntos coloniais; após a vitória pernambucana, ele se recusou a entregar Pernambuco (o de Guerra entregaria; o de Estado ficou dividido). A troca atribuições (Fazenda = finanças, não nomeação militar); B descreve mal o Conselho de Justiça (esses temas são do Conselho de Estado); D inventa uma função.",
+    "fonte": "Marcello Loureiro (transcrição).",
+    "armadilha": "Trocar as competências dos conselhos — Fazenda (finanças), Guerra (cargos/logística militar), Justiça (juízes/Desembargo do Paço), Ultramarino (colônias)."
+  },
+  {
+    "id": "hnv-o-ex-04",
+    "tipo": "multipla",
+    "topico": "06-extras",
+    "dificuldade": "medio",
+    "enunciado": "Um dos pontos mais provocadores da aula é a desconstrução do \"rei absolutista\". Qual alternativa expressa corretamente o argumento de Loureiro?",
+    "alternativas": [
+      "Luís XIV resumiu o período ao dizer \"L'État, c'est moi\", consolidando o Estado absolutista.",
+      "O rei concentrava todo o poder graças à teoria do direito divino amplamente aceita pela Igreja.",
+      "Nenhum rei se declarou \"absolutista\"; o poder era negociado entre o rei e uma teia de conselhos, e o \"Estado Absolutista\" é uma construção posterior.",
+      "O absolutismo português era real, mas limitava-se às colônias, não ao reino europeu."
+    ],
+    "correta": 2,
+    "conceito": "Mito do rei absolutista",
+    "comentario": "Alternativa C. Loureiro argumenta que a frase atribuída a Luís XIV é apócrifa e que a monarquia \"não é o próprio rei\", mas uma arquitetura de poder entre rei e conselhos. A repete o mito; B afirma uma aceitação do direito divino que o autor nega (livro de Bossuet condenado pelo Papa); D inventa um absolutismo \"colonial\".",
+    "fonte": "Marcello Loureiro (transcrição).",
+    "armadilha": "Tomar \"L'État, c'est moi\" e o direito divino como descrição fiel do poder real no século XVII."
+  },
+  {
+    "id": "hnv-o-ex-05",
+    "tipo": "multipla",
+    "topico": "06-extras",
+    "dificuldade": "medio",
+    "enunciado": "Loureiro define a monarquia portuguesa como polissinodal. Assinale a alternativa que melhor traduz o conceito:",
+    "alternativas": [
+      "Governo de uma só \"cabeça\" — o rei — que decide sem consultar ninguém.",
+      "Estado de múltiplas \"cabeças\" (sínodo = cabeça; poli = múltiplo): decisões tomadas em assembleia, com pareceres não vinculantes.",
+      "Sistema em que um único conselho militar comanda todas as colônias.",
+      "Administração em que cada governador colonial legisla livremente, sem vínculo com Lisboa."
+    ],
+    "correta": 1,
+    "conceito": "Estado polissinodal",
+    "comentario": "Alternativa B. \"Polissinodal\" = muitas cabeças; as decisões emergem de assembleias e consultas que não obrigam o rei nem vinculam outros tribunais. A descreve o absolutismo; C reduz a um só conselho; D confunde com autonomia colonial irrestrita.",
+    "fonte": "Marcello Loureiro (transcrição).",
+    "armadilha": "Reduzir o polissinodalismo a \"vários conselhos\" sem captar a decisão por negociação e os pareceres não vinculantes."
+  },
+  {
+    "id": "hnv-o-ex-06",
+    "tipo": "multipla",
+    "topico": "06-extras",
+    "dificuldade": "dificil",
+    "enunciado": "A máxima \"obedeço, mas não cumpro\" e a imagem da informação correndo \"ao ritmo das velas\" expressam, na leitura de Loureiro:",
+    "alternativas": [
+      "Uma insubordinação aberta dos colonos, que negavam a autoridade do rei.",
+      "A eficiência burocrática impessoal da administração portuguesa, no sentido de Max Weber.",
+      "O reconhecimento da autoridade régia combinado à relativização da execução de ordens defasadas — a prudência vista como virtude.",
+      "A proibição legal de que o rei enviasse ordens às colônias durante a guerra."
+    ],
+    "correta": 2,
+    "conceito": "Gestão do Labirinto",
+    "comentario": "Alternativa C. Reconhece-se a autoridade do rei, mas relativiza-se a execução, pois a ordem chegava meses depois, já sem sentido; a prudência/morosidade era vista como virtude. A exagera para insubordinação; B inverte (a administração era pessoalizada, não impessoal); D inventa uma proibição.",
+    "fonte": "Marcello Loureiro (transcrição).",
+    "armadilha": "Ler \"obedeço, mas não cumpro\" como rebeldia, ou aplicar a burocracia impessoal de Weber ao Antigo Regime."
+  },
+  {
+    "id": "hnv-o-ex-07",
+    "tipo": "multipla",
+    "topico": "06-extras",
+    "dificuldade": "dificil",
+    "enunciado": "Sobre a \"economia das mercês\" descrita na aula, é correto afirmar que:",
+    "alternativas": [
+      "A monarquia se movia por mérito técnico, pagando soldo fixo a quem servia na guerra.",
+      "A monarquia se movia por mercê (recompensa por lealdade — título, cargo, isenção); muitos faziam a guerra viva sem salário, como Salvador Correia de Sá, que custeou a reconquista de Angola.",
+      "As mercês eram proibidas após a Restauração, para evitar a corrupção dos vassalos.",
+      "Apenas nobres de sangue recebiam mercês, jamais negociantes ou colonos locais."
+    ],
+    "correta": 1,
+    "conceito": "Economia das mercês",
+    "comentario": "Alternativa B. A instituição é corporativa: troca-se lealdade por recompensa. Salvador Correia de Sá pagou do próprio bolso a reconquista de Angola (1648) e foi recompensado (filhos viraram Visconde e General; ele governou o Rio). A confunde mercê com soldo/mérito; C e D inventam proibições e restrições inexistentes.",
+    "fonte": "Marcello Loureiro (transcrição).",
+    "armadilha": "Modernizar a lógica e confundir mercê (recompensa honorífica/patrimonial por lealdade) com salário (soldo) ou meritocracia."
+  },
+  {
+    "id": "hnv-o-ex-08",
+    "tipo": "multipla",
+    "topico": "06-extras",
+    "dificuldade": "dificil",
+    "enunciado": "Loureiro usa o caso de Pernambuco (Guararapes) para definir a monarquia pluricontinental. Qual alternativa capta corretamente o conceito?",
+    "alternativas": [
+      "Pluricontinental significa apenas que o império estava em vários continentes, sem implicação política.",
+      "As periferias tinham poder de mando a ponto de interferir nas decisões do rei: o rei chegou a aceitar entregar Pernambuco, mas os locais venceram e impediram a entrega.",
+      "O rei mantinha tropas profissionais próprias em cada continente, dispensando os colonos.",
+      "A vitória em Guararapes foi obra exclusiva de tropas enviadas de Lisboa, sem participação indígena ou africana."
+    ],
+    "correta": 1,
+    "conceito": "Monarquia pluricontinental",
+    "comentario": "Alternativa B. Sem tropas próprias, o rei dependia da gente local (\"ovo na cloaca da galinha\"); vencida a guerra, os locais impuseram a não-entrega de Pernambuco. A esvazia o conceito; C nega a dependência das periferias; D apaga o papel de indígenas e africanos, central no argumento.",
+    "fonte": "Marcello Loureiro (transcrição).",
+    "armadilha": "Reduzir \"pluricontinental\" à geografia e ignorar o poder de mando das periferias (indígenas, africanos e colonos)."
   }
 ];
 
@@ -886,6 +1030,72 @@ export const verdadeiroFalso: QuestaoVF[] = [
     "comentario": "Justificativa: O cidadão romano não recebia soldo; servia por dever cívico e custeava a própria estadia. O vassalo colonial buscava mercês (terras, cargos, privilégios) como recompensa posterior por colocar \"vidas e fazendas\" em risco, e não um salário fixo estatal. Correção: Romanos serviam por dever cívico (gratuito); vassalos serviam por um contrato de reciprocidade (mercês). Nenhum dos dois operava sob a lógica do soldo estatal profissional. Relação entre fontes: O civismo de Ferreira e a \"Guerra Viva\" de Bicalho são as duas faces do Estado terceirizando o custo da guerra para a sociedade em troca de prestígio ou dever. O que o aluno excelente percebe: A ausência de um exército profissional burocrático (Weberiano) em ambas as eras.",
     "fonte": "Ferreira (\"Batalha de Mylae\") e Bicalho (\"A França Antártica\") / Loureiro.",
     "armadilha": "Modernizar o conceito de \"pagamento\", confundindo salário (soldo) com recompensa honorífica ou patrimonial (mercê)."
+  },
+  {
+    "id": "hnv-vf-ex-01",
+    "tipo": "vf",
+    "topico": "06-extras",
+    "dificuldade": "facil",
+    "afirmacao": "Segundo a aula de Loureiro, os holandeses ocuparam primeiro Pernambuco (1630) e só depois a Bahia (1624).",
+    "correta": false,
+    "comentario": "Gabarito: Falso. A ordem é a inversa: primeiro a Bahia/Salvador (1624, com expulsão em 1625) e só depois Pernambuco (1630).",
+    "fonte": "Marcello Loureiro (transcrição).",
+    "armadilha": "Decorar as datas soltas e inverter a sequência Bahia → Pernambuco."
+  },
+  {
+    "id": "hnv-vf-ex-02",
+    "tipo": "vf",
+    "topico": "06-extras",
+    "dificuldade": "facil",
+    "afirmacao": "A Guerra da Restauração (a partir de 1640) buscava devolver Portugal à situação anterior à União Ibérica, e culminou na aclamação do Duque de Bragança como D. João IV em 1º de dezembro de 1640.",
+    "correta": true,
+    "comentario": "Gabarito: Verdadeiro. \"Restauração\" remete a restaurar a soberania anterior à União Ibérica; a aclamação de D. João IV em 1º/12/1640 é, até hoje, o Dia da Independência Nacional em Portugal.",
+    "fonte": "Marcello Loureiro (transcrição).",
+    "armadilha": "Confundir \"Restauração\" com uma restauração religiosa ou com a Restauração inglesa de 1660."
+  },
+  {
+    "id": "hnv-vf-ex-03",
+    "tipo": "vf",
+    "topico": "06-extras",
+    "dificuldade": "medio",
+    "afirmacao": "No Estado polissinodal, as consultas produzidas pelos conselhos eram vinculantes: obrigavam o rei a cumpri-las e vinculavam os demais tribunais.",
+    "correta": false,
+    "comentario": "Gabarito: Falso. As consultas e pareceres NÃO eram vinculantes — o rei podia devolvê-las com perguntas e os tribunais não se vinculavam entre si. Ainda assim, o rei acatava a grande maioria (~96%).",
+    "fonte": "Marcello Loureiro (transcrição).",
+    "armadilha": "Supor que \"governo por conselhos\" significa decisões obrigatórias; o modelo é de negociação, com pareceres não vinculantes."
+  },
+  {
+    "id": "hnv-vf-ex-04",
+    "tipo": "vf",
+    "topico": "06-extras",
+    "dificuldade": "medio",
+    "afirmacao": "Para Loureiro, a frase \"L'État, c'est moi\", atribuída a Luís XIV, é a melhor descrição do poder real no século XVII.",
+    "correta": false,
+    "comentario": "Gabarito: Falso. Loureiro trata o \"rei absolutista\" como mito: Luís XIV nunca disse essa frase e o poder era negociado entre o rei e a teia de conselhos. O \"Estado Absolutista\" é construção posterior.",
+    "fonte": "Marcello Loureiro (transcrição).",
+    "armadilha": "Aceitar o mito do absolutismo como retrato fiel da monarquia do Antigo Regime."
+  },
+  {
+    "id": "hnv-vf-ex-05",
+    "tipo": "vf",
+    "topico": "06-extras",
+    "dificuldade": "medio",
+    "afirmacao": "A reconquista de Angola (1648) foi custeada pela Coroa portuguesa, que pagou soldo regular a Salvador Correia de Sá pelo serviço.",
+    "correta": false,
+    "comentario": "Gabarito: Falso. Salvador Correia de Sá custeou a expedição do próprio bolso e com recursos de negociantes do Rio de Janeiro; a recompensa veio na forma de mercês (filhos viraram Visconde e General), não de soldo estatal.",
+    "fonte": "Marcello Loureiro (transcrição).",
+    "armadilha": "Confundir a lógica da mercê (recompensa por lealdade) com pagamento de salário pela Coroa."
+  },
+  {
+    "id": "hnv-vf-ex-06",
+    "tipo": "vf",
+    "topico": "06-extras",
+    "dificuldade": "dificil",
+    "afirmacao": "A máxima \"obedeço, mas não cumpro\" expressava insubordinação aberta e negação da autoridade do rei nas colônias.",
+    "correta": false,
+    "comentario": "Gabarito: Falso. A máxima RECONHECE a autoridade do rei, mas relativiza a execução de ordens que chegavam meses depois, já sem sentido. A lentidão (prudência) era vista como virtude, não como rebeldia.",
+    "fonte": "Marcello Loureiro (transcrição).",
+    "armadilha": "Ler a fórmula como desobediência, em vez de relativização prudente da execução diante da defasagem da informação."
   }
 ];
 
@@ -1419,6 +1629,42 @@ export const discursivas: QuestaoDiscursiva[] = [
     "comentario": "Relação entre as fontes: Integração entre tática naval e estratégia de ocupação colonial/econômica. Contexto histórico: Invasões Holandesas e Expulsão dos Franceses. Problema central: Dependência da comunicação marítima para a viabilidade econômica colonial. Atores envolvidos: D. Antônio Oquendo, D. Fadrique de Toledo, WIC, Vassalos locais. Meios navais/militares: Galeões, bloqueios navais e fortificações costeiras. Interesses: Monopólio do açúcar e controle do território americano. Consequência histórica: Retomada de Salvador e reforço da resistência em Pernambuco. Pontos satisfatórios: Citar a Jornada dos Vassalos e a importância das cidades costeiras. Resposta excelente: Conectar a vitória estratégica em Abrolhos com a sustentação da Fazenda Real em Lisboa.",
     "fonte": "Cezar (Ocupações Holandesas) e Bicalho (A França Antártica).",
     "armadilha": "Focar apenas no combate entre navios, ignorando que o objetivo era o desembarque de tropas e carga."
+  },
+  {
+    "id": "hnv-d-ex-01",
+    "tipo": "discursiva",
+    "topico": "06-extras",
+    "dificuldade": "medio",
+    "contexto": "Em sua aula, Marcello Loureiro afirma que o \"rei absolutista\" é um mito: Luís XIV nunca disse \"L'État, c'est moi\", o livro de Bossuet sobre o poder sagrado dos reis foi condenado pelo Papa e O Leviatã de Hobbes só ganhou leitura ampla no fim do século XIX. Para o autor, a monarquia portuguesa \"não é o próprio rei\", mas uma arquitetura de poder entre o rei, o Conselho de Estado e um conjunto de tribunais.",
+    "enunciado": "Explique por que Loureiro considera o \"rei absolutista\" um mito e descreva o modelo de governo que ele propõe no lugar dessa imagem.",
+    "gabaritoComentado": "O \"rei absolutista\" é apresentado como construção posterior (atribuída a historiadores do século XX), e não como descrição do século XVII: nenhum rei se declarou absolutista, a frase de Luís XIV é apócrifa e as teorias do direito divino (Bossuet) e do poder concentrado (Hobbes) não tinham, à época, a aceitação que se lhes atribui. No lugar disso, Loureiro descreve um Estado polissinodal — múltiplas \"cabeças\"/conselhos (Fazenda, Guerra, Justiça, Ultramarino, Estado) com autogoverno, que produzem consultas e pareceres NÃO vinculantes. O rei acata a maioria dos pareceres, mas decide em uma teia de negociação; o poder real é, portanto, distribuído e negociado, não concentrado.",
+    "criterios": [
+      "Afirma que o absolutismo/\"L'État c'est moi\" é mito/construção posterior.",
+      "Relativiza direito divino (Bossuet) e/ou Hobbes.",
+      "Descreve o Estado polissinodal (vários conselhos com autogoverno).",
+      "Aponta que as consultas/pareceres não eram vinculantes (governo por negociação)."
+    ],
+    "comentario": "Resposta excelente conecta a desconstrução do mito à mecânica concreta do governo: a decisão emerge de consultas não vinculantes e do vaivém de documentos (\"A Gestão do Labirinto\"), e o rei, embora acate ~96% dos pareceres, não governa sozinho.",
+    "fonte": "Marcello Loureiro (transcrição).",
+    "armadilha": "Limitar-se a repetir o mito do absolutismo, ou citar a desconstrução sem apresentar o modelo polissinodal que a substitui."
+  },
+  {
+    "id": "hnv-d-ex-02",
+    "tipo": "discursiva",
+    "topico": "06-extras",
+    "dificuldade": "dificil",
+    "contexto": "Loureiro usa a Guerra de Pernambuco para explicar dois conceitos. De um lado, a \"economia das mercês\": quem fazia a guerra viva esperava recompensa (título, cargo, isenção), e não soldo — Salvador Correia de Sá custeou a reconquista de Angola (1648) e foi recompensado com mercês. De outro, a \"monarquia pluricontinental\": após a vitória em Guararapes, mesmo o rei disposto a entregar Pernambuco em troca de paz, os locais venceram e impuseram a não-entrega (\"agora a gente ganhou, o senhor não entrega\").",
+    "enunciado": "Relacione a economia das mercês ao conceito de monarquia pluricontinental, usando o caso de Pernambuco/Guararapes e Salvador Correia de Sá.",
+    "gabaritoComentado": "A economia das mercês explica COMO o Império se sustentava sem um Estado fiscal-militar próprio: a Coroa terceirizava o custo da guerra para vassalos que serviam por lealdade, esperando mercês como recompensa (Salvador Correia de Sá financia Angola e recebe, em troca, títulos e cargos para si e para os filhos). A monarquia pluricontinental explica a CONSEQUÊNCIA política: como o rei dependia da gente local (indígenas, africanos e colonos) para fazer a guerra — não tinha tropas próprias —, as periferias ganhavam poder de mando e interferiam nas decisões régias. Em Guararapes, os pernambucanos vencem e impedem a entrega de Pernambuco, mesmo contra a disposição inicial do rei. Os dois conceitos se articulam: é porque a guerra se faz por mercê (esforço e recursos locais) que a periferia adquire o peso político que define o caráter pluricontinental do Império.",
+    "criterios": [
+      "Define economia das mercês (lealdade/recompensa, não soldo).",
+      "Define monarquia pluricontinental como poder de mando das periferias (não só geografia).",
+      "Usa o caso Guararapes/Pernambuco e/ou Salvador Correia de Sá.",
+      "Articula os dois conceitos (a guerra por mercê dá peso político à periferia)."
+    ],
+    "comentario": "Resposta excelente mostra a causalidade: sem tropas próprias, a Coroa depende de quem luta por mercê; quem luta e vence cobra o seu peso na decisão — daí o império ser, de fato, pluricontinental, e não apenas estar em vários continentes.",
+    "fonte": "Marcello Loureiro (transcrição).",
+    "armadilha": "Tratar mercê como salário, ou reduzir \"pluricontinental\" à geografia, perdendo o elo entre os dois conceitos."
   }
 ];
 

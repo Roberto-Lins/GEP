@@ -41,6 +41,12 @@ export const checklists: Record<string, ItemChecklist[]> = {
     { id: 'c4', texto: 'Sei a relação ambígua Portugal-Holanda e o papel da diplomacia.' },
     { id: 'c5', texto: 'Conheço a reconquista de Angola (1648) por Salvador Correia de Sá.' },
   ],
+  '06-extras': [
+    { id: 'c1', texto: 'Sei explicar por que o "rei absolutista" é um mito (Luís XIV nunca disse "L\'État c\'est moi").' },
+    { id: 'c2', texto: 'Defino Estado polissinodal e monarquia pluricontinental sem reduzir a nº de conselhos ou a geografia.' },
+    { id: 'c3', texto: 'Entendo a economia das mercês e a guerra viva (lealdade → recompensa, não mérito).' },
+    { id: 'c4', texto: 'Relaciono o "corre-corre manuscrito" e o ritmo das velas ao "obedeço, mas não cumpro".' },
+  ],
   '99-revisao-final': [
     { id: 'c1', texto: 'Treinei discursivas no modelo contexto → conceito → exemplo → consequência.' },
     { id: 'c2', texto: 'Revisei as armadilhas de prova de cada texto.' },

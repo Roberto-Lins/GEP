@@ -76,6 +76,17 @@ export const midias: Midia[] = [
     descricao: 'Restauração, nexo atlântico, Estado polissinodal e a reconquista de Angola (1648).',
   },
 
+  // ── Tópico 06 — Extras (aula do autor, Marcello Loureiro) ──
+  {
+    tipo: 'podcast',
+    topico: '06-extras',
+    titulo: 'A periferia que salvou o império português',
+    fonte: 'NotebookLM',
+    src: '/podcasts/hnv/06-extras-loureiro.m4a',
+    origem: 'local',
+    descricao: 'Debate-resumo da aula de Marcello Loureiro: Restauração, governo polissinodal, o mito do absolutismo e a economia das mercês.',
+  },
+
   // ── Mapa mental leve (versionado no repo) ──
   {
     tipo: 'mapa',

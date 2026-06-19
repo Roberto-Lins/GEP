@@ -1,0 +1,36 @@
+{
+  "ordem": 6,
+  "slug": "06-extras",
+  "titulo": "Extras — Aula com Marcello Loureiro",
+  "prioridade": "muito alta",
+  "subtitulo": "O próprio autor explica: governo polissinodal, o mito do absolutismo e a economia das mercês",
+  "tempoEstimado": "40 min",
+  "objetivo": "Aprofundar o tópico 05 pela voz do próprio Marcello Loureiro (autor do texto-base): entender por que o \"rei absolutista\" é um mito, como funcionava o governo polissinodal (consultas não vinculantes, \"obedeço mas não cumpro\"), a economia das mercês e o peso das periferias na monarquia pluricontinental.",
+  "palavrasChave": [
+    "Marcello Loureiro",
+    "Tratado de Vestfália",
+    "Guerra da Restauração",
+    "D. João IV",
+    "Conselho Ultramarino",
+    "Estado polissinodal",
+    "mito do rei absolutista",
+    "Gestão do Labirinto",
+    "obedeço mas não cumpro",
+    "economia das mercês",
+    "guerra viva",
+    "monarquia pluricontinental",
+    "Batalha de Guararapes",
+    "Salvador Correia de Sá"
+  ],
+  "fontes": ["LOUREIRO, Marcello — Transcrição da aula (pontos-chave do texto de Restauração)"],
+  "midias": [
+    {
+      "tipo": "podcast",
+      "titulo": "A periferia que salvou o império português",
+      "fonte": "NotebookLM",
+      "src": "/podcasts/hnv/06-extras-loureiro.m4a",
+      "origem": "local",
+      "descricao": "Debate-resumo (NotebookLM) sobre a aula de Marcello Loureiro: Restauração, governo polissinodal, o mito do absolutismo e a economia das mercês."
+    }
+  ]
+}

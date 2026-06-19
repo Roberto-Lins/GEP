@@ -1,7 +1,7 @@
 // Fontes/bibliografia do curso HNV. `arquivo` aponta para /public (download opcional).
-// TODO: a pasta externa ../HNV/Fontes está vazia — não há PDFs das fontes primárias
-// para versionar. Quando os textos-base estiverem disponíveis (e forem leves),
-// copie-os para /public/arquivos/cursos/hnv/ e preencha o campo `arquivo`.
+// A transcrição da aula de Loureiro já está versionada (leve, 36 KB) em
+// /public/arquivos/cursos/hnv/. TODO: os demais textos-base (Mylae, Bicalho,
+// Conquistar e Defender) existem em ../HNV/Fontes — versionar os leves quando útil.
 import type { Fonte } from '@tipos/media';
 export type { Fonte } from '@tipos/media';
 
@@ -29,6 +29,13 @@ export const fontes: Fonte[] = [
     tipo: 'livro',
     descricao: 'In: Conquistar e Defender, p. 195-214. Texto-base sobre o Estado polissinodal, a monarquia pluricontinental e o nexo atlântico Brasil-Angola.',
     topicos: ['05-brasil-holandes-restauracao-e-imperio'],
+  },
+  {
+    titulo: 'LOUREIRO, Marcello — Transcrição da aula (pontos-chave do texto de Restauração)',
+    tipo: 'observacao',
+    descricao: 'Transcrição de uma aula do próprio autor: invasões holandesas, Guerra da Restauração, governo polissinodal, o mito do rei absolutista, a "Gestão do Labirinto" ("obedeço mas não cumpro"), a economia das mercês e a monarquia pluricontinental. Base da mini-matéria Extras.',
+    arquivo: '/arquivos/cursos/hnv/transcricao-aula-loureiro.pdf',
+    topicos: ['06-extras', '05-brasil-holandes-restauracao-e-imperio'],
   },
   {
     titulo: 'Strategic Naval Evolution (slides de apoio)',

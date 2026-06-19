@@ -98,6 +98,23 @@ export const timeline: TopicoTimeline[] = [
     ],
   },
   {
+    ordem: 6,
+    slug: '06-extras',
+    titulo: 'Extras — Aula com Marcello Loureiro',
+    subtitulo: 'O autor explica: polissinodalismo, o mito do absolutismo e as mercês',
+    prioridade: 'muito alta',
+    tempoEstimado: '40 min',
+    statusInicial: 'pendente',
+    objetivo:
+      'Aprofundar o tópico 05 pela voz do próprio autor: por que o "rei absolutista" é um mito, como funcionava o governo polissinodal ("obedeço mas não cumpro"), a economia das mercês e o peso das periferias na monarquia pluricontinental.',
+    palavrasChave: [
+      'Marcello Loureiro', 'Tratado de Vestfália', 'Guerra da Restauração', 'D. João IV',
+      'Conselho Ultramarino', 'Estado polissinodal', 'mito do rei absolutista', 'Gestão do Labirinto',
+      'obedeço mas não cumpro', 'economia das mercês', 'guerra viva', 'monarquia pluricontinental',
+      'Batalha de Guararapes', 'Salvador Correia de Sá',
+    ],
+  },
+  {
     ordem: 99,
     slug: '99-revisao-final',
     titulo: 'Revisão final',
