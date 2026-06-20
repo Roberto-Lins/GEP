@@ -1,0 +1,18 @@
+{
+  "ordem": 11,
+  "slug": "11-tiristores-scr-diac-triac",
+  "titulo": "Tiristores: SCR, DIAC e TRIAC",
+  "prioridade": "muito alta",
+  "subtitulo": "Chaves eletrônicas que ligam por disparo",
+  "tempoEstimado": "55 min",
+  "objetivo": "Saber quando SCR, DIAC e TRIAC conduzem e desligam, subtrair a queda de condução e desenhar a forma de onda da corrente na carga só nos intervalos de condução.",
+  "palavrasChave": [
+    "SCR",
+    "DIAC",
+    "TRIAC",
+    "porta",
+    "corrente de retenção",
+    "I_pico = (Vp - queda)/R",
+    "forma de onda de IL"
+  ]
+}

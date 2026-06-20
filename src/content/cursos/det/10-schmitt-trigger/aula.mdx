@@ -1,0 +1,137 @@
+---
+titulo: "Comparador Schmitt-trigger — aula"
+secao: "aula"
+secaoOrdem: 2
+---
+
+## De onde viemos: o comparador comum
+
+No tópico anterior você viu o **comparador**: um amplificador operacional **em malha aberta** (ou seja,
+**sem realimentação**) que **satura**. Como o ganho de um amp-op é altíssimo, a menor diferença entre as
+entradas já joga a saída para um dos extremos: se `V+ > V−`, a saída vai para ≈ `+VCC`; se `V+ < V−`,
+vai para ≈ `−VEE`. A saída é sempre **digital** (alto ou baixo), nunca proporcional.
+
+Esse comparador tem um problema prático sério. Quando o sinal de entrada fica **tremendo bem em cima da
+referência** — por causa de ruído, sempre presente em circuitos reais — a saída fica **piscando**
+loucamente entre alto e baixo. Em detecção isso é péssimo: um alarme que deveria disparar **uma vez**
+dispara dezenas. O Schmitt-trigger nasce exatamente para curar essa doença.
+
+## A intuição: um comparador com "zona morta"
+
+O Schmitt usa **dois limiares** em vez de um. Entre eles existe uma faixa onde **nada muda** — a
+**histerese**. Depois que a saída comuta, o sinal precisa andar uma boa distância **na direção oposta**
+para comutar de novo.
+
+A melhor analogia é o **termostato**: ele liga o aquecedor a 18 °C e só desliga a 22 °C. Entre 18 e 22
+ele **ignora** as oscilações de temperatura. Sem essa folga, o aquecedor ficaria ligando e desligando a
+cada décimo de grau. O Schmitt faz o mesmo com a tensão.
+
+<BlocoConceito titulo="A grande ideia">
+A saída do Schmitt depende **não só do valor atual da entrada**, mas também do **estado anterior** da
+saída. Por isso dizemos que ele tem **memória** — e é por isso que existem dois limiares: **UTP**
+(*Upper Trigger Point*, o limiar de subida) e **LTP** (*Lower Trigger Point*, o limiar de descida).
+</BlocoConceito>
+
+## Por que dois limiares? A realimentação positiva
+
+Aqui está o coração do circuito, e vale ir devagar. **Realimentar** significa pegar um pedaço da saída
+e mandar de volta para a entrada. Há dois jeitos:
+
+- **Realimentação negativa** (de volta para a entrada `−`): ela **se opõe** à mudança e **estabiliza** o
+  circuito. É o que torna um amp-op um amplificador linear bem-comportado.
+- **Realimentação positiva** (de volta para a entrada `+`): ela **reforça** a mudança. Quando a saída
+  começa a subir, ela empurra a entrada para subir ainda mais — um efeito "bola de neve" que faz a
+  saída **estalar** de um extremo ao outro e **travar** lá. É isso que dá **memória** ao Schmitt.
+
+No Schmitt, a referência da entrada `+` **não é fixa**: ela é uma **fração da própria saída**, tirada
+por um **divisor de tensão** (dois resistores). Como a saída só assume dois valores (`+VCC` ou `−VEE`),
+a referência também só assume **dois valores** — e são justamente eles os nossos dois limiares.
+
+![Circuito do Schmitt-trigger inversor: amp-op com realimentação positiva — R1 leva a saída de volta à entrada +, e R2 vai ao terra.](/imagens/cursos/det/10-schmitt-circuito.svg)
+
+*Schmitt **inversor**: o sinal entra em V−; a referência V+ vem da saída pelo divisor R1–R2. Quando a saída troca de estado, a referência troca junto. Adaptado dos slides do Prof. Fragoso.*
+
+## As fórmulas (e o que cada símbolo significa)
+
+- **Fração do divisor:** `β = Rbaixo / (Rcima + Rbaixo)`.
+  - `Rbaixo` é o resistor que liga a entrada `+` ao **terra**; `Rcima`, o que liga a entrada `+` à
+    **saída**. `β` (beta) é só a **fatia** da saída que chega à entrada `+` — um número entre 0 e 1.
+- **Referência na entrada +:** `Vref = β · Vo`. Como `Vo` é `+VCC` ou `−VEE`, surgem dois valores:
+- **Limiar superior** (com a saída **alta**, `Vo = +VCC`): `UTP = β · (+VCC)`.
+- **Limiar inferior** (com a saída **baixa**, `Vo = −VEE`): `LTP = β · (−VEE)`.
+- **Histerese** (a largura da zona morta): `H = UTP − LTP`.
+
+> **Quando isso vale:** estas fórmulas assumem **realimentação positiva** (resistor da saída para a
+> entrada `+`). Se, no circuito, o **sinal** entrar no `+` e a **referência** no `−`, é a versão
+> **não-inversora** — a lógica dos limiares é a mesma; muda só qual entrada recebe o sinal e o sentido
+> em que a saída vira.
+
+## O roteiro de resolução (5 passos)
+
+1. Ache o **elo de realimentação** (o resistor que volta da saída para a entrada `+`).
+2. Calcule **β** com o divisor.
+3. Calcule a referência com a saída em `+VCC` **e** em `−VEE` → batize de **UTP** e **LTP**.
+4. Analise a entrada **subindo** e **descendo** separadamente (é a histerese que obriga isso).
+5. Desenhe a saída trocando **apenas nos limiares** — nunca no cruzamento por zero.
+
+## Exemplo resolvido 1 — slide (±12 V, 12 kΩ / 24 kΩ)
+
+> **Dados:** `VCC = ±12 V`; sinal `Vi` na entrada **−** (portanto, inversor); divisor de realimentação
+> com `Rcima = 12 kΩ` (vindo da saída) e `Rbaixo = 24 kΩ` (indo ao terra).
+
+1. **β** = `24 / (12 + 24)` = `24/36` = **2/3**. *(a entrada `+` enxerga 2/3 da saída.)*
+2. **UTP** — a saída está **alta**, em +12 V, então a referência vale `(2/3)·(+12)` = **+8 V**.
+   Enquanto a entrada não passar de +8 V, o circuito "vê" +8 V como o ponto de virada.
+3. **LTP** — assim que a saída vira **baixa**, −12 V, a referência muda para `(2/3)·(−12)` = **−8 V**.
+4. **Histerese** = `+8 − (−8)` = **16 V** de zona morta.
+5. **Forma de onda** (inversor): enquanto a entrada está **abaixo de +8 V**, a saída fica em **+12 V**.
+   Quando a entrada **sobe e cruza +8 V (UTP)**, a saída **estala para −12 V** e **trava** lá — mesmo
+   que a entrada volte a descer um pouco — **até cruzar −8 V (LTP)**, quando a saída **volta a +12 V**.
+
+![Formas de onda: a entrada triangular cruzando os limiares UTP (+8 V) e LTP (−8 V), e a saída quadrada inversora resultante. As linhas tracejadas mostram que a comutação ocorre exatamente nos limiares.](/imagens/cursos/det/10-schmitt-ondas.svg)
+
+*Repare no detalhe que a prova adora cobrar: a saída **não** comuta no cruzamento por zero. Ela cai quando a entrada passa de UTP (subindo) e sobe quando passa de LTP (descendo).*
+
+## Exemplo resolvido 2 — treino com outro β
+
+> **Exemplo montado para treino** (mesma lógica do slide, valores diferentes): `VCC = ±10 V`,
+> `Rcima = 10 kΩ`, `Rbaixo = 10 kΩ`.
+
+1. **β** = `10 / (10 + 10)` = **1/2**.
+2. **UTP** = `(1/2)·(+10)` = **+5 V**.
+3. **LTP** = `(1/2)·(−10)` = **−5 V**.
+4. **Histerese** = `+5 − (−5)` = **10 V**.
+
+Compare com o Exemplo 1: ali `β = 2/3` deu uma zona morta de 16 V; aqui `β = 1/2` deu 10 V. A lição:
+**quanto maior o `Rbaixo` em relação ao `Rcima`, maior o β e mais larga a histerese** — ou seja, mais
+imune a ruído, porém menos sensível a sinais pequenos. É um compromisso de projeto.
+
+<BlocoConceito titulo="Atenção aos casos da Lista (gabarito oficial)">
+Na Lista aparecem limiares **assimétricos**, como `UTP = +8 / LTP = +4` e `UTP = +2 / LTP = 0` — os
+dois do **mesmo lado**. Isso acontece quando há uma **tensão de referência DC** somada ao divisor, que
+desloca os dois limiares juntos. A conta de `β` é a mesma; depois é só **somar** essa referência ao
+resultado. Confira o circuito exato da lista para os valores numéricos.
+</BlocoConceito>
+
+## A curva de histerese
+
+Uma forma poderosa de "ver" o Schmitt é plotar a saída `Vo` **em função** da entrada `Vi`. O resultado
+é um **laço**: subindo, a saída segue um caminho; descendo, segue outro. A distância horizontal entre os
+dois ramos é exatamente a histerese. Um comparador comum, no mesmo gráfico, seria só **uma linha
+vertical** no ponto da referência — sem laço, sem memória.
+
+![Característica de transferência (Vo × Vi) do Schmitt inversor: um laço retangular. Subindo, a saída cai em UTP; descendo, a saída sobe em LTP.](/imagens/cursos/det/10-schmitt-histerese.svg)
+
+*O laço é a "assinatura" do Schmitt. A largura do laço é a histerese `UTP − LTP`.*
+
+## Para onde vamos
+
+Guarde a ideia de **realimentação que trava a saída em dois estados**: ela reaparece dentro do **CI
+555**, que usa **dois comparadores internos** com limiares em ⅓ e ⅔ de VCC para gerar pulsos e
+oscilações. Schmitt e 555 são primos próximos.
+
+## Alerta de prova
+
+- Sempre **dois** limiares — nunca trate o Schmitt como comparador comum.
+- O limiar **muda** quando a saída comuta: reavalie a referência a cada troca.
+- A saída comuta **nos limiares**, não em zero. (Mais armadilhas na seção **Pegadinhas**.)

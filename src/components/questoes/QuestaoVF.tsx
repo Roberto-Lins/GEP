@@ -56,7 +56,7 @@ export default function QuestaoVF({ questao, indice, onResponder }: Props) {
           <p className={`mb-1 text-sm font-semibold ${acertou ? 'text-progresso' : 'text-alerta'}`}>
             {acertou ? '✓ Você acertou' : `✗ O correto é: ${questao.correta ? 'Verdadeiro' : 'Falso'}`}
           </p>
-          <p className="text-sm text-nevoa/85">{questao.comentario}</p>
+          <p className="whitespace-pre-line text-sm text-nevoa/85">{questao.comentario}</p>
           {questao.armadilha && (
             <p className="mt-2 text-xs text-alerta/80"><strong>Armadilha:</strong> {questao.armadilha}</p>
           )}

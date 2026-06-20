@@ -1,0 +1,17 @@
+{
+  "ordem": 2,
+  "slug": "02-fontes-cc-reguladas",
+  "titulo": "Fontes CC reguladas",
+  "prioridade": "alta",
+  "subtitulo": "Do retificador ao regulador",
+  "tempoEstimado": "35 min",
+  "objetivo": "Entender a cadeia CA → retificador → filtro → regulador → carga e por que o capacitor de filtro suaviza, mas não estabiliza a saída.",
+  "palavrasChave": [
+    "retificador",
+    "filtro",
+    "regulador",
+    "Zener",
+    "referência",
+    "IL = VO/RL"
+  ]
+}

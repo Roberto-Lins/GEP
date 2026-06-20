@@ -1,0 +1,62 @@
+---
+titulo: "Reguladores chaveados e PWM — aula"
+secao: "aula"
+secaoOrdem: 2
+---
+
+## O problema do regulador linear
+
+Vimos que o regulador linear (transistor série ou CI) **dissipa** `(VI − VO)·I` em forma de calor. Se a
+entrada é 20 V e a saída 5 V com 1 A, são **15 W** virando calor — desperdício enorme. O regulador
+**chaveado** resolve isso com uma mudança radical: em vez de o transistor trabalhar como um resistor
+variável, ele vira uma **chave** que só abre e fecha.
+
+## Chave, não resistor
+
+Como chave, o transistor fica sempre em um de dois estados:
+
+- **corte** — não passa corrente (`I ≈ 0`), então `V·I ≈ 0`;
+- **saturação** — quase não cai tensão sobre ele (`V ≈ 0`), então `V·I ≈ 0`.
+
+Nos dois casos a potência dissipada é mínima. Ele só "gasta" energia no breve instante da transição. Por
+isso o chaveado é **muito mais eficiente** que o linear — é o que há dentro de praticamente toda fonte
+moderna.
+
+## Ciclo de trabalho e a saída
+
+Se o transistor liga e desliga rapidamente, a carga "sente" a **média** da tensão chaveada. Essa média
+depende de **quanto tempo** ele fica ligado em cada ciclo — o **ciclo de trabalho**:
+
+- `D = ton / T` (fração do período em nível alto)
+- Conversor buck ideal: `VOUT = D · VIN`
+
+![Sinal PWM: o tempo ligado (ton) dentro do período (T) define o ciclo de trabalho e, com ele, o valor médio de saída.](/imagens/cursos/det/05-pwm.svg)
+
+Detalhe que a prova cobra: a **frequência do PWM é constante** — o que muda para regular é apenas o
+**tempo ligado** (`ton`). Aumentou o ton, subiu a média; diminuiu o ton, caiu a média.
+
+> **Exemplo resolvido:** `VIN = 20 V`, `D = 0,3` → `VOUT = D·VIN = 0,3 · 20 = `**`6 V`**.
+> Repare: a saída média (6 V) é bem menor que o pico instantâneo (20 V). Confundir os dois é erro comum.
+
+## A realimentação que mantém a saída no lugar
+
+Como o circuito sabe qual `D` usar? Ele **se vigia**. Uma amostra da saída volta por um divisor:
+
+`VFB = VOUT · Rbaixo / (Rcima + Rbaixo)`
+
+Em regime regulado, esse `VFB` é comparado a uma referência fixa e o sistema ajusta o duty até que
+`VFB ≈ VREF`. A correção é automática e intuitiva:
+
+- `VOUT` **sobe** → `VFB` sobe → o circuito **diminui** o duty → `VOUT` volta ao alvo.
+- `VOUT` **cai** → `VFB` cai → o circuito **aumenta** o duty → `VOUT` volta ao alvo.
+
+<BlocoConceito titulo="Por que dissipa tão pouco">
+Porque o transistor passa o tempo quase todo **desligado ou saturado** — nunca na região linear, onde
+tensão e corrente seriam altas ao mesmo tempo. É a chave que torna a fonte eficiente.
+</BlocoConceito>
+
+## Para onde vamos
+
+Com isto fechamos o **bloco de fontes** (estabilizar tensão CC). A partir do próximo tópico mudamos de
+assunto: em vez de manter a tensão constante, vamos **mexer de propósito na forma da onda** — começando
+pelos **limitadores**.

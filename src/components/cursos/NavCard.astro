@@ -1,0 +1,42 @@
+---
+// Card de navegação da hierarquia (ano, turma ou época). Mesmo visual
+// naval-command dos cards de curso, mas estático (sem progresso).
+interface Props {
+  href: string;
+  titulo: string;
+  descricao?: string;
+  /** etiqueta superior (ex.: categoria/semestre) */
+  badge?: string;
+  /** meta inferior (ex.: "2 matérias") */
+  meta?: string;
+  /** texto do call-to-action (default "Abrir →") */
+  cta?: string;
+  /** quando true, aplica estilo "desabilitado" (sem matérias) */
+  vazio?: boolean;
+}
+const { href, titulo, descricao, badge, meta, cta = 'Abrir →', vazio = false } = Astro.props;
+const Tag = vazio ? 'div' : 'a';
+---
+<Tag
+  href={vazio ? undefined : href}
+  class:list={[
+    'card group relative flex flex-col gap-4 p-6',
+    vazio ? 'cursor-default opacity-50' : 'card-hover',
+  ]}
+  aria-disabled={vazio ? 'true' : undefined}
+>
+  <div>
+    {badge && (
+      <span class="chip mb-2 inline-block border border-dourado/30 bg-dourado/10 text-[10px] uppercase tracking-wider text-dourado">
+        {badge}
+      </span>
+    )}
+    <h3 class={`font-serif text-2xl font-semibold text-marfim ${vazio ? '' : 'group-hover:text-dourado'}`}>{titulo}</h3>
+    {descricao && <p class="mt-1 text-sm text-nevoa/75">{descricao}</p>}
+  </div>
+
+  <div class="mt-auto flex items-center justify-between pt-2 text-xs text-nevoa/60">
+    <span>{meta}</span>
+    {!vazio && <span class="font-medium text-dourado">{cta}</span>}
+  </div>
+</Tag>

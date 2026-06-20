@@ -1,0 +1,59 @@
+---
+titulo: "Tiristores: SCR, DIAC e TRIAC — aula"
+secao: "aula"
+secaoOrdem: 2
+---
+
+## De decidir a chavear
+
+Nos tópicos anteriores, comparadores e Schmitt **decidiam** (saída alta/baixa). Agora vêm componentes
+que **executam**: os **tiristores** funcionam como **chaves eletrônicas** que ligam por um **disparo** e
+desligam quando a corrente cai. São usados para controlar **cargas potentes**. Na prova, a pergunta é
+sempre a mesma: **quando conduz, quando desliga e como fica a corrente na carga**.
+
+## Os três e seus símbolos
+
+![Símbolos do SCR (com porta, unidirecional), do DIAC (sem porta, bidirecional) e do TRIAC (com porta, bidirecional).](/imagens/cursos/det/11-tiristores-simbolos.svg)
+
+- **SCR** (retificador controlado de silício): conduz em **um sentido** só. Para **ligar** precisa de
+  **duas** condições juntas — anodo-catodo **diretamente polarizado** E **pulso positivo na porta (G)**.
+  Para **desligar**, a corrente direta deve cair **abaixo da corrente de retenção** (I_holding). Em
+  condução, tem uma queda da ordem de **1,5 V** e age como chave fechada.
+- **DIAC**: **não tem porta**. Conduz em **qualquer polaridade** quando o módulo da tensão atinge a
+  ruptura (`|V| ≥ VBR`). É um disparador bidirecional.
+- **TRIAC**: **bidirecional com porta** — dispara por pulso de porta e conduz nos **dois sentidos**.
+  Desliga na **passagem da corrente por zero**.
+
+## A corrente na carga
+
+A regra de cálculo, depois de saber que está conduzindo:
+
+`I_pico = (V_pico − queda de condução) / R_carga`
+
+Sempre **subtraia a queda informada** antes de calcular — e desenhe a corrente **apenas nos intervalos
+de condução**.
+
+## Exemplo resolvido — SCR (slide, Exemplo 01)
+
+> **Dados:** `V2_pico = 30 V`; o componente em série tem queda de condução de **2,3 V**; um pulso de
+> porta dispara o SCR durante o semiciclo positivo.
+
+1. **Semiciclo negativo:** o SCR está reversamente polarizado → **não conduz** (o pulso de porta seria
+   ignorado). IL = 0.
+2. **Semiciclo positivo, antes do pulso:** ainda não disparou → IL = 0.
+3. **A partir do pulso:** o SCR liga e conduz. A corrente passa a seguir
+   `IL = (V2 − 2,3 V) / R_carga`, até a corrente cair a zero no fim do semiciclo (aí o SCR **desliga**
+   sozinho).
+4. **Resultado:** IL existe **só** num pedaço do semiciclo positivo, a partir do disparo.
+
+![Tensão de entrada e corrente na carga: IL só existe no semiciclo direto, a partir do pulso de porta, e zera na passagem por zero.](/imagens/cursos/det/11-scr-ondas.svg)
+
+<BlocoConceito titulo="Sinal de que você dominou">
+Você olha a senoide e **marca exatamente os intervalos em que IL existe** — lembrando de subtrair a
+queda de condução e de que o SCR não liga reversamente polarizado.
+</BlocoConceito>
+
+## Para onde vamos
+
+Existe um quarto componente dessa família que é, ao mesmo tempo, uma chave de disparo e um **gerador de
+onda**: o **UJT**. Ele é a ponte natural para o último bloco do curso — a base de tempo.

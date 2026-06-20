@@ -1,0 +1,19 @@
+{
+  "ordem": 9,
+  "slug": "09-multivibradores-555",
+  "titulo": "Multivibradores com 555",
+  "prioridade": "máxima",
+  "subtitulo": "Astável, monoestável e biestável",
+  "tempoEstimado": "60 min",
+  "objetivo": "Classificar o multivibrador e calcular tempos e frequência: astável (T_ALTO, T_BAIXO, f) e monoestável (LP = 1,1·RA·C).",
+  "palavrasChave": [
+    "555",
+    "astável",
+    "monoestável",
+    "biestável",
+    "T_ALTO",
+    "T_BAIXO",
+    "LP = 1,1·RA·C",
+    "frequência"
+  ]
+}

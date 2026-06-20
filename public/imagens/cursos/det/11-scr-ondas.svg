@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 300" width="520" height="300" role="img" aria-label="SCR: tensão senoidal de entrada e corrente na carga, que só existe após o pulso de porta, no semiciclo direto">
+  <rect x="0.75" y="0.75" width="518.5" height="298.5" rx="14" fill="#0B1220" stroke="#1E3A5F" stroke-width="1.5"/>
+  <text x="20" y="26" font-family="Inter, sans-serif" font-size="14" fill="#CBD5E1">SCR: corrente na carga (IL)</text>
+
+  <!-- plot superior: V2 -->
+  <text x="24" y="60" font-family="JetBrains Mono, monospace" font-size="12" fill="#CBD5E1">V2</text>
+  <line x1="60" y1="85" x2="490" y2="85" stroke="#334155" stroke-width="1"/>
+  <path d="M60 85 Q165 30 270 85 Q375 140 480 85" fill="none" stroke="#CBD5E1" stroke-width="2.5"/>
+
+  <!-- pulso de porta -->
+  <line x1="150" y1="85" x2="150" y2="60" stroke="#D6A84F" stroke-width="2"/>
+  <polygon points="146,64 154,64 150,56" fill="#D6A84F"/>
+  <text x="120" y="50" font-family="Inter, sans-serif" font-size="10" fill="#D6A84F">pulso na porta</text>
+
+  <!-- guias -->
+  <line x1="150" y1="85" x2="150" y2="255" stroke="#D6A84F" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+  <line x1="270" y1="85" x2="270" y2="255" stroke="#D6A84F" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+
+  <!-- plot inferior: IL -->
+  <text x="24" y="210" font-family="JetBrains Mono, monospace" font-size="12" fill="#CBD5E1">IL</text>
+  <line x1="60" y1="255" x2="490" y2="255" stroke="#334155" stroke-width="1"/>
+  <path d="M60 255 H150 Q200 185 270 255 H480" fill="none" stroke="#D6A84F" stroke-width="3" stroke-linejoin="round"/>
+
+  <text x="156" y="248" font-family="Inter, sans-serif" font-size="10" fill="#94A3B8">conduz</text>
+  <text x="276" y="248" font-family="Inter, sans-serif" font-size="10" fill="#94A3B8">desliga em I≈0</text>
+  <text x="300" y="285" font-family="JetBrains Mono, monospace" font-size="11" fill="#D6A84F">IL = (V_pico − queda) / R_carga</text>
+</svg>

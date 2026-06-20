@@ -1,0 +1,24 @@
+---
+// Trilha de navegação da hierarquia. Recebe os itens já montados
+// (ver buildBreadcrumb / construção manual nas páginas /ano/...).
+interface Item {
+  label: string;
+  href?: string;
+}
+interface Props {
+  itens: Item[];
+}
+const { itens } = Astro.props;
+---
+<nav aria-label="Trilha" class="mb-6 flex flex-wrap items-center gap-1.5 text-sm text-nevoa/60">
+  {itens.map((item, i) => (
+    <>
+      {i > 0 && <span class="text-nevoa/30">/</span>}
+      {item.href && i < itens.length - 1 ? (
+        <a href={item.href} class="transition hover:text-dourado">{item.label}</a>
+      ) : (
+        <span class="text-marfim">{item.label}</span>
+      )}
+    </>
+  ))}
+</nav>

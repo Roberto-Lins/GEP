@@ -1,0 +1,63 @@
+---
+titulo: "Reguladores integrados — aula"
+secao: "aula"
+secaoOrdem: 2
+---
+
+## A mesma ideia, agora dentro de um chip
+
+No tópico anterior, montamos a regulação com transistores **discretos** (Q1, Q2, Zener, resistores).
+O regulador **integrado** faz exatamente a mesma coisa — referência + controle — só que tudo vem
+**pronto dentro de um circuito integrado de três terminais**. Você não precisa mais analisar o interior;
+passa a trabalhar com as **especificações** do CI: tensão regulada, tensão mínima de entrada, corrente
+máxima e corrente de polarização.
+
+## Reguladores fixos (família 78xx)
+
+A regra mais útil: **o valor de saída está no código**.
+
+- **7805** → saída de **5 V**; **7812** → saída de **12 V** (os dois últimos dígitos são a tensão).
+- Só regula se a **entrada superar a tensão mínima de entrada** (`VImín`) — abaixo disso, o CI "desiste".
+- A corrente da carga deve ficar **abaixo de `Imáx`** (um limite, não uma obrigação).
+
+Como a tensão é fixa, a menor carga segura é aquela que puxa exatamente `Imáx`:
+
+`Rmín = VO / Imáx`
+
+> **Exemplo resolvido (7805, Imáx = 400 mA):**
+> 1. O 7805 regula `VO = 5 V`.
+> 2. `Rmín = VO / Imáx = 5 V / 0,4 A = `**`12,5 Ω`**.
+>
+> Qualquer carga **menor** que 12,5 Ω puxaria **mais** de 400 mA e estouraria o limite.
+
+## Regulador ajustável (LM317)
+
+Quando a saída precisa ser **ajustável**, entra o LM317. Dois resistores externos definem `VO`:
+
+![LM317: regulador de três terminais (IN, OUT, ADJ) com R1 entre OUT e ADJ e R2 do ADJ ao terra, definindo a tensão de saída.](/imagens/cursos/det/04-lm317.svg)
+
+`VO = VREG · (1 + R2/R1) + IQ · R2`, com `VREG ≈ 1,25 V`.
+
+Entendendo os termos: o LM317 mantém **1,25 V fixos** entre OUT e ADJ (é o `VREG`). Essa tensão sobre
+`R1` gera uma corrente que também passa por `R2`, e a soma das quedas define `VO`. O termo `IQ · R2` é
+uma pequena correção da **corrente de ajuste** — só entra na conta **quando o enunciado fornece `IQ`**.
+
+> **Exemplo resolvido (Lista 1 — Q2):** dados `VO` mínimo = 1,25 V, `VO` máximo = 8,75 V e `IQ` = 50 µA.
+> 1. O `VO` **mínimo** ocorre com o resistor de ajuste no mínimo — e vale exatamente a referência.
+>    Logo `VREG = `**`1,25 V`**.
+> 2. Impondo `VO` máximo = 8,75 V na equação (com a montagem da lista) e isolando, chega-se a
+>    `Rx = `**`5 kΩ`** (gabarito oficial, Lista 2).
+
+## Potência dissipada no CI
+
+Como no regulador série, o CI "queima" a diferença de tensão vezes a corrente:
+
+`P ≈ (VI − VO) · Iout`
+
+É por isso que reguladores lineares esquentam: quanto maior a diferença `VI − VO`, mais potência vira
+calor. Esse desperdício é justamente o que o **regulador chaveado** (próximo tópico) vem resolver.
+
+## Para onde vamos
+
+Fechando o bloco de fontes, o tópico seguinte troca a regulação **linear** pela **chaveada**: o
+transistor deixa de ser um resistor variável e vira uma **chave**, dissipando muito menos.

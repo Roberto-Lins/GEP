@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="480" height="300" role="img" aria-label="555 como astável: RA da alimentação ao pino 7, RB ao nó dos pinos 6 e 2, e capacitor ao terra">
+  <rect x="0.75" y="0.75" width="478.5" height="298.5" rx="14" fill="#0B1220" stroke="#1E3A5F" stroke-width="1.5"/>
+  <text x="20" y="26" font-family="Inter, sans-serif" font-size="14" fill="#CBD5E1">555 astável</text>
+
+  <!-- trilhos -->
+  <line x1="60" y1="44" x2="360" y2="44" stroke="#F7F3EA" stroke-width="2"/>
+  <text x="364" y="48" font-family="JetBrains Mono, monospace" font-size="11" fill="#94A3B8">+VCC</text>
+  <line x1="60" y1="276" x2="360" y2="276" stroke="#F7F3EA" stroke-width="2"/>
+  <text x="364" y="280" font-family="JetBrains Mono, monospace" font-size="11" fill="#94A3B8">GND</text>
+
+  <!-- CI 555 (retângulo) -->
+  <rect x="200" y="110" width="110" height="110" rx="6" fill="#13243B" stroke="#D6A84F" stroke-width="2"/>
+  <text x="232" y="170" font-family="Inter, sans-serif" font-size="16" fill="#D6A84F" font-weight="bold">555</text>
+  <text x="206" y="132" font-family="Inter, sans-serif" font-size="9" fill="#94A3B8">7</text>
+  <text x="206" y="178" font-family="Inter, sans-serif" font-size="9" fill="#94A3B8">6</text>
+  <text x="206" y="206" font-family="Inter, sans-serif" font-size="9" fill="#94A3B8">2</text>
+  <text x="300" y="160" font-family="Inter, sans-serif" font-size="9" fill="#94A3B8">3</text>
+  <text x="250" y="124" font-family="Inter, sans-serif" font-size="9" fill="#94A3B8">8</text>
+  <text x="250" y="216" font-family="Inter, sans-serif" font-size="9" fill="#94A3B8">1</text>
+
+  <!-- pino 8 (VCC) e pino 1 (GND) -->
+  <line x1="255" y1="110" x2="255" y2="44" stroke="#F7F3EA" stroke-width="2"/>
+  <line x1="255" y1="220" x2="255" y2="276" stroke="#F7F3EA" stroke-width="2"/>
+
+  <!-- RA: VCC -> pino 7 -->
+  <line x1="110" y1="44" x2="110" y2="60" stroke="#F7F3EA" stroke-width="2"/>
+  <path d="M110 60 l-7 6 l14 6 l-14 6 l14 6 l-14 6 l7 6" fill="none" stroke="#F7F3EA" stroke-width="2"/>
+  <text x="84" y="86" font-family="Inter, sans-serif" font-size="11" fill="#CBD5E1">RA</text>
+  <line x1="110" y1="96" x2="110" y2="128" stroke="#F7F3EA" stroke-width="2"/>
+  <circle cx="110" cy="128" r="3.5" fill="#D6A84F"/>
+  <line x1="110" y1="128" x2="200" y2="128" stroke="#F7F3EA" stroke-width="2"/>
+
+  <!-- RB: pino 7 -> nó dos pinos 6/2 -->
+  <line x1="110" y1="128" x2="110" y2="144" stroke="#F7F3EA" stroke-width="2"/>
+  <path d="M110 144 l-7 6 l14 6 l-14 6 l14 6 l-14 6 l7 6" fill="none" stroke="#F7F3EA" stroke-width="2"/>
+  <text x="84" y="170" font-family="Inter, sans-serif" font-size="11" fill="#CBD5E1">RB</text>
+  <line x1="110" y1="180" x2="110" y2="200" stroke="#F7F3EA" stroke-width="2"/>
+  <circle cx="110" cy="200" r="3.5" fill="#D6A84F"/>
+
+  <!-- nó 6/2 ligado ao RB e ao CI -->
+  <line x1="110" y1="174" x2="200" y2="174" stroke="#F7F3EA" stroke-width="2"/>
+  <line x1="150" y1="174" x2="150" y2="202" stroke="#F7F3EA" stroke-width="2"/>
+  <line x1="150" y1="202" x2="200" y2="202" stroke="#F7F3EA" stroke-width="2"/>
+
+  <!-- C: nó 6/2 -> GND -->
+  <line x1="110" y1="200" x2="110" y2="228" stroke="#F7F3EA" stroke-width="2"/>
+  <line x1="96" y1="228" x2="124" y2="228" stroke="#F7F3EA" stroke-width="2.5"/>
+  <line x1="96" y1="236" x2="124" y2="236" stroke="#F7F3EA" stroke-width="2.5"/>
+  <text x="128" y="236" font-family="Inter, sans-serif" font-size="11" fill="#CBD5E1">C</text>
+  <line x1="110" y1="236" x2="110" y2="276" stroke="#F7F3EA" stroke-width="2"/>
+
+  <!-- saída pino 3 -->
+  <line x1="310" y1="150" x2="380" y2="150" stroke="#F7F3EA" stroke-width="2"/>
+  <circle cx="380" cy="150" r="4" fill="#D6A84F"/>
+  <text x="388" y="146" font-family="JetBrains Mono, monospace" font-size="11" fill="#CBD5E1">Vo</text>
+
+  <text x="150" y="296" font-family="JetBrains Mono, monospace" font-size="11" fill="#D6A84F">TALTO=0,7(RA+RB)C   TBAIXO=0,7·RB·C</text>
+</svg>

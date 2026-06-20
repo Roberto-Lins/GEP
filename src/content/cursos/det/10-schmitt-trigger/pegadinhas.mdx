@@ -1,0 +1,18 @@
+---
+titulo: "Comparador Schmitt-trigger — pegadinhas"
+secao: "pegadinhas"
+secaoOrdem: 5
+---
+
+<BlocoPegadinha titulo="Usar uma só referência">
+No Schmitt há **dois** limiares. Tratar como comparador comum (uma referência) é o erro central.
+</BlocoPegadinha>
+
+<BlocoPegadinha titulo="O limiar muda quando a saída troca">
+Depois que a saída comuta, a referência passa a ser o **outro** limiar. Reavalie a cada troca.
+</BlocoPegadinha>
+
+<BlocoPegadinha titulo="Não separar subida e descida">
+Analise a entrada **subindo** (até UTP) e **descendo** (até LTP) em separado. É isso que produz a
+histerese no desenho.
+</BlocoPegadinha>

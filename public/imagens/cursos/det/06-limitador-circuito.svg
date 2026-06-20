@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 250" width="480" height="250" role="img" aria-label="Limitador paralelo: resistor em série e ramo com diodo e fonte DC que ceifa o pico">
+  <rect x="0.75" y="0.75" width="478.5" height="248.5" rx="14" fill="#0B1220" stroke="#1E3A5F" stroke-width="1.5"/>
+  <text x="20" y="28" font-family="Inter, sans-serif" font-size="14" fill="#CBD5E1">Limitador com diodo + fonte DC</text>
+
+  <!-- entrada -->
+  <circle cx="36" cy="80" r="4" fill="#D6A84F"/>
+  <text x="18" y="74" font-family="JetBrains Mono, monospace" font-size="11" fill="#CBD5E1">Vi</text>
+  <line x1="36" y1="80" x2="70" y2="80" stroke="#F7F3EA" stroke-width="2"/>
+  <!-- R série (ziguezague) -->
+  <path d="M70 80 l6 -7 l6 14 l6 -14 l6 14 l6 -14 l6 7" fill="none" stroke="#F7F3EA" stroke-width="2"/>
+  <text x="82" y="68" font-family="Inter, sans-serif" font-size="11" fill="#CBD5E1">R</text>
+  <line x1="106" y1="80" x2="320" y2="80" stroke="#F7F3EA" stroke-width="2"/>
+  <!-- nó A -->
+  <circle cx="220" cy="80" r="4" fill="#D6A84F"/>
+  <text x="206" y="68" font-family="Inter, sans-serif" font-size="11" fill="#94A3B8">A</text>
+  <!-- saída -->
+  <circle cx="320" cy="80" r="4" fill="#D6A84F"/>
+  <text x="328" y="76" font-family="JetBrains Mono, monospace" font-size="11" fill="#CBD5E1">Vo</text>
+
+  <!-- ramo: diodo (anodo em cima) + fonte DC -->
+  <line x1="220" y1="80" x2="220" y2="108" stroke="#F7F3EA" stroke-width="2"/>
+  <!-- diodo vertical, conduz para baixo: triângulo (base em cima = anodo), barra embaixo = catodo -->
+  <polygon points="213,108 227,108 220,122" fill="none" stroke="#F7F3EA" stroke-width="2"/>
+  <line x1="211" y1="122" x2="229" y2="122" stroke="#F7F3EA" stroke-width="2.5"/>
+  <text x="234" y="118" font-family="Inter, sans-serif" font-size="11" fill="#CBD5E1">D</text>
+  <line x1="220" y1="122" x2="220" y2="148" stroke="#F7F3EA" stroke-width="2"/>
+  <!-- fonte DC (bateria): placa longa (+) e curta (−) -->
+  <line x1="208" y1="148" x2="232" y2="148" stroke="#F7F3EA" stroke-width="2.5"/>
+  <line x1="213" y1="156" x2="227" y2="156" stroke="#F7F3EA" stroke-width="2"/>
+  <text x="236" y="154" font-family="Inter, sans-serif" font-size="10" fill="#94A3B8">+</text>
+  <text x="234" y="172" font-family="JetBrains Mono, monospace" font-size="11" fill="#CBD5E1">VDC</text>
+  <line x1="220" y1="156" x2="220" y2="190" stroke="#F7F3EA" stroke-width="2"/>
+  <!-- terra -->
+  <line x1="208" y1="190" x2="232" y2="190" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="212" y1="195" x2="228" y2="195" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="216" y1="200" x2="224" y2="200" stroke="#CBD5E1" stroke-width="2"/>
+
+  <text x="20" y="232" font-family="Inter, sans-serif" font-size="11" fill="#64748B">O diodo conduz quando VA passa de VDC + 0,7 V — daí o pico é ceifado nesse nível.</text>
+</svg>

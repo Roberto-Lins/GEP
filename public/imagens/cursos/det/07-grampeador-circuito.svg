@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 250" width="480" height="250" role="img" aria-label="Grampeador positivo: capacitor em série e diodo para o terra">
+  <rect x="0.75" y="0.75" width="478.5" height="248.5" rx="14" fill="#0B1220" stroke="#1E3A5F" stroke-width="1.5"/>
+  <text x="20" y="28" font-family="Inter, sans-serif" font-size="14" fill="#CBD5E1">Grampeador positivo</text>
+
+  <!-- entrada -->
+  <circle cx="36" cy="80" r="4" fill="#D6A84F"/>
+  <text x="18" y="74" font-family="JetBrains Mono, monospace" font-size="11" fill="#CBD5E1">Vi</text>
+  <line x1="36" y1="80" x2="78" y2="80" stroke="#F7F3EA" stroke-width="2"/>
+  <!-- capacitor (duas placas) -->
+  <line x1="78" y1="66" x2="78" y2="94" stroke="#F7F3EA" stroke-width="2.5"/>
+  <line x1="88" y1="66" x2="88" y2="94" stroke="#F7F3EA" stroke-width="2.5"/>
+  <text x="74" y="58" font-family="Inter, sans-serif" font-size="11" fill="#CBD5E1">C</text>
+  <line x1="88" y1="80" x2="320" y2="80" stroke="#F7F3EA" stroke-width="2"/>
+  <!-- nó A -->
+  <circle cx="200" cy="80" r="4" fill="#D6A84F"/>
+  <text x="186" y="68" font-family="Inter, sans-serif" font-size="11" fill="#94A3B8">A</text>
+  <!-- saída -->
+  <circle cx="320" cy="80" r="4" fill="#D6A84F"/>
+  <text x="328" y="76" font-family="JetBrains Mono, monospace" font-size="11" fill="#CBD5E1">Vo</text>
+
+  <!-- diodo do nó A ao terra (anodo embaixo: conduz para cima, grampeador positivo) -->
+  <line x1="200" y1="80" x2="200" y2="108" stroke="#F7F3EA" stroke-width="2"/>
+  <line x1="193" y1="108" x2="207" y2="108" stroke="#F7F3EA" stroke-width="2.5"/>  <!-- catodo (barra, lado do nó) -->
+  <polygon points="193,124 207,124 200,110" fill="none" stroke="#F7F3EA" stroke-width="2"/> <!-- anodo embaixo, aponta p/ cima -->
+  <text x="214" y="120" font-family="Inter, sans-serif" font-size="11" fill="#CBD5E1">D</text>
+  <line x1="200" y1="124" x2="200" y2="150" stroke="#F7F3EA" stroke-width="2"/>
+  <!-- terra -->
+  <line x1="188" y1="150" x2="212" y2="150" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="192" y1="155" x2="208" y2="155" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="196" y1="160" x2="204" y2="160" stroke="#CBD5E1" stroke-width="2"/>
+
+  <text x="20" y="200" font-family="Inter, sans-serif" font-size="11" fill="#64748B">O diodo conduz no semiciclo em que carrega C; depois C vira uma fonte DC</text>
+  <text x="20" y="216" font-family="Inter, sans-serif" font-size="11" fill="#64748B">que soma o pico à entrada — a onda inteira sobe.</text>
+</svg>

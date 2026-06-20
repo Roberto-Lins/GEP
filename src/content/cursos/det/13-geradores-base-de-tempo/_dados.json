@@ -1,0 +1,18 @@
+{
+  "ordem": 13,
+  "slug": "13-geradores-base-de-tempo",
+  "titulo": "Geradores de base de tempo",
+  "prioridade": "alta",
+  "subtitulo": "Rampas lineares como referência temporal",
+  "tempoEstimado": "45 min",
+  "objetivo": "Entender por que a rampa precisa ser linear (dV/dt = I/C), calcular inclinação e tempo, e analisar a base de tempo com UJT (VV→VP) e com 555 (0→⅔VCC).",
+  "palavrasChave": [
+    "base de tempo",
+    "rampa linear",
+    "dente-de-serra",
+    "dV/dt = I/C",
+    "fonte de corrente",
+    "UJT",
+    "555"
+  ]
+}

@@ -1,0 +1,52 @@
+---
+titulo: "Comparadores com amp-op — aula"
+secao: "aula"
+secaoOrdem: 2
+---
+
+## A virada: de tratar o sinal a decidir sobre ele
+
+Nos tópicos anteriores o sinal era cortado (limitador) ou deslocado (grampeador), mas continuava
+analógico. O **comparador** faz algo novo: ele **toma uma decisão** — "a entrada está acima ou abaixo de
+uma referência?" — e responde com uma saída **digital** (alto ou baixo). É a ponte entre o mundo
+analógico e o mundo das decisões, e o **bloco que está dentro** do 555 e do Schmitt.
+
+## Por que a saída satura
+
+O comparador é um amplificador operacional usado **em malha aberta** (sem realimentação). Como o ganho
+de um amp-op é gigantesco (dezenas de milhares), **qualquer** diferença minúscula entre as entradas é
+amplificada até a saída **bater no limite** da alimentação. Resultado: a saída só assume dois valores.
+
+- `V+ > V−`  →  `Vo ≈ +VCC`
+- `V+ < V−`  →  `Vo ≈ −VEE`
+
+![Comparador: o sinal Vi numa entrada, a referência Vref na outra, e a saída saturada Vo.](/imagens/cursos/det/08-comparador-circuito.svg)
+
+## Roteiro
+
+1. Identifique qual sinal entra em **V+** e qual em **V−**.
+2. Calcule ou leia a **tensão de referência**.
+3. Compare **ponto a ponto**: V+ está acima ou abaixo de V−?
+4. Marque as **mudanças de estado** exatamente nos **cruzamentos** com a referência.
+5. Desenhe a saída **retangular** — nunca proporcional à entrada.
+
+## Exemplo resolvido — desenhar a saída
+
+> **Dados:** `Vi` (triangular) na entrada `+`; referência fixa `Vref` na entrada `−`.
+
+1. Enquanto `Vi` está **abaixo** de `Vref`, temos `V+ < V−` → `Vo = −VEE` (baixo).
+2. No instante em que `Vi` **cruza** `Vref` subindo, a saída **pula** para `+VCC` (alto).
+3. A saída fica alta enquanto `Vi > Vref` e volta a baixo quando `Vi` cruza `Vref` descendo.
+
+![A entrada triangular cruza a referência; a saída comuta entre os extremos exatamente nos cruzamentos.](/imagens/cursos/det/08-comparador-ondas.svg)
+
+<BlocoConceito titulo="Comum × Schmitt (guarde para depois)">
+O comparador comum tem **uma** referência fixa — por isso comuta toda vez que o sinal cruza esse único
+ponto (e fica sensível a ruído). O **Schmitt** (tópico 10) terá **duas** referências, criadas por
+realimentação positiva, e por isso será imune a ruído.
+</BlocoConceito>
+
+## Para onde vamos
+
+O comparador é a peça fundamental dos próximos dois tópicos. O **555** usa **dois comparadores
+internos** (em ⅓ e ⅔ de VCC) para gerar pulsos e oscilações — é o nosso próximo assunto.

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 280" width="520" height="280" role="img" aria-label="Forma de onda do limitador: a senoide de entrada tem o pico positivo ceifado na saída">
+  <rect x="0.75" y="0.75" width="518.5" height="278.5" rx="14" fill="#0B1220" stroke="#1E3A5F" stroke-width="1.5"/>
+  <text x="20" y="28" font-family="Inter, sans-serif" font-size="14" fill="#CBD5E1">Entrada × saída do limitador</text>
+
+  <!-- eixo central -->
+  <line x1="50" y1="150" x2="478" y2="150" stroke="#334155" stroke-width="1"/>
+
+  <!-- nível de ceifamento -->
+  <line x1="50" y1="95" x2="478" y2="95" stroke="#D6A84F" stroke-width="1" stroke-dasharray="4 4"/>
+  <text x="386" y="89" font-family="JetBrains Mono, monospace" font-size="11" fill="#D6A84F">VDC + 0,7 V</text>
+
+  <!-- entrada (senoide cheia, tracejada/clara) -->
+  <path d="M50 150 Q155 -20 260 150 Q365 320 470 150" fill="none" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="5 4" opacity="0.7"/>
+
+  <!-- saída (pico positivo ceifado) -->
+  <path d="M50 150 Q100 95 140 95 H210 Q245 118 260 150 Q365 320 470 150" fill="none" stroke="#D6A84F" stroke-width="3"/>
+
+  <!-- legendas -->
+  <line x1="60" y1="250" x2="90" y2="250" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="96" y="254" font-family="Inter, sans-serif" font-size="11" fill="#94A3B8">Vi (entrada)</text>
+  <line x1="220" y1="250" x2="250" y2="250" stroke="#D6A84F" stroke-width="3"/>
+  <text x="256" y="254" font-family="Inter, sans-serif" font-size="11" fill="#94A3B8">Vo (saída ceifada)</text>
+</svg>

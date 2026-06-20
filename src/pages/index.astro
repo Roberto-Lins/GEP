@@ -1,21 +1,15 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
-import CourseDashboard from '@components/cursos/CourseDashboard.tsx';
+import NavCard from '@components/cursos/NavCard.astro';
 import BackupProgresso from '@components/progresso/BackupProgresso.tsx';
-import { listarCursos } from '@utils/courses';
-import { dadosDoCurso } from '@utils/content';
+import { ANOS, ANO_LABELS, contarMaterias, SEM_CONTEUDO } from '@utils/hierarchy';
 
-const cursos = listarCursos().map((c) => {
-  const dados = dadosDoCurso(c.slug);
-  return {
-    slug: c.slug,
-    titulo: c.titulo,
-    subtitulo: c.subtitulo,
-    descricao: c.descricao,
-    categoria: c.categoria,
-    totalMaterias: dados ? dados.topicosEstudo.length : 0,
-  };
-});
+const fmtMat = (n: number) => (n === 0 ? SEM_CONTEUDO : n === 1 ? '1 matéria' : `${n} matérias`);
+const anos = ANOS.map((ano) => ({
+  ano,
+  label: ANO_LABELS[ano],
+  meta: fmtMat(contarMaterias({ ano })),
+}));
 ---
 <BaseLayout titulo="Bússola dos Aspirantes" largura="larga">
   <!-- HERO -->
@@ -28,17 +22,32 @@ const cursos = listarCursos().map((c) => {
       </p>
       <h1 class="text-balance text-4xl font-bold leading-tight sm:text-5xl">Bússola dos Aspirantes</h1>
       <p class="mt-4 max-w-xl text-lg text-nevoa/85">
-        Escolha um curso e siga a <strong class="text-marfim">trilha de estudo</strong> na ordem certa:
-        aulas, resumos, mídias, exercícios comentados e revisão final — com o seu progresso salvo no
-        navegador, sem login.
+        Escolha o <strong class="text-marfim">ano</strong>, depois a turma e a época de prova, e siga a
+        trilha de estudo de cada matéria — aulas, resumos, mídias, exercícios comentados e revisão final,
+        com o seu progresso salvo no navegador, sem login.
       </p>
     </div>
   </section>
 
-  <!-- CURSOS -->
+  <!-- ANOS -->
   <section class="mb-12">
-    <h2 class="mb-5 text-2xl font-bold">Cursos disponíveis</h2>
-    <CourseDashboard cursos={cursos} client:load />
+    <h2 class="mb-5 text-2xl font-bold">Escolha o ano</h2>
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {anos.map(({ ano, label, meta }) => (
+        <NavCard href={`/ano/${ano}`} titulo={label} meta={meta} cta="Abrir →" />
+      ))}
+    </div>
+  </section>
+
+  <!-- CONTRIBUIR -->
+  <section class="mb-12">
+    <a href="/adicionar-curso" class="card card-hover flex items-center gap-4 p-6">
+      <span class="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-dourado/40 bg-dourado/10 text-2xl text-dourado">+</span>
+      <span class="flex flex-col">
+        <span class="font-serif text-xl text-marfim">Adicionar matéria</span>
+        <span class="text-sm text-nevoa/70">Contribuir — monte um Course Kit e baixe o .zip para o mantenedor instalar.</span>
+      </span>
+    </a>
   </section>
 
   <!-- BACKUP -->

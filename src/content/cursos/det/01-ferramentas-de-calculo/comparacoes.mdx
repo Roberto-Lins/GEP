@@ -1,0 +1,21 @@
+---
+titulo: "Ferramentas de cálculo — comparações"
+secao: "comparacoes"
+secaoOrdem: 4
+---
+
+## Carga do capacitor: dois modelos
+
+| | Carga por resistor (tensão) | Carga por fonte de corrente |
+|---|---|---|
+| Forma | Exponencial (RC) | Linear |
+| Fórmula | `v(t) = V(1 − e^(−t/RC))` | `dV/dt = I/C` |
+| Onde aparece | UJT (carga via R), 555 RC | Base de tempo, rampa linear |
+
+## Três caras da potência
+
+| Conheço… | Uso |
+|---|---|
+| V e I | `P = V·I` |
+| I e R | `P = I²·R` |
+| V e R | `P = V²/R` |

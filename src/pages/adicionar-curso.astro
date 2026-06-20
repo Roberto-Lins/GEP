@@ -1,0 +1,18 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumb from '@components/cursos/Breadcrumb.astro';
+import AddCourseWizard from '@components/course-builder/AddCourseWizard.tsx';
+---
+<BaseLayout titulo="Adicionar matéria" largura="larga">
+  <Breadcrumb itens={[{ label: 'Início', href: '/' }, { label: 'Adicionar matéria' }]} />
+
+  <header class="mb-8">
+    <h1 class="text-3xl font-bold sm:text-4xl">Adicionar matéria</h1>
+    <p class="mt-2 max-w-2xl text-nevoa/75">
+      Monte um Course Kit e baixe o .zip para entregar ao mantenedor. Nada é enviado para servidor —
+      tudo acontece no seu navegador.
+    </p>
+  </header>
+
+  <AddCourseWizard client:load />
+</BaseLayout>

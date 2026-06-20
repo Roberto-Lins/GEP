@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 380" width="540" height="380" role="img" aria-label="Comparador: a entrada cruza a referência e a saída comuta entre os extremos">
+  <rect x="0.75" y="0.75" width="538.5" height="378.5" rx="14" fill="#0B1220" stroke="#1E3A5F" stroke-width="1.5"/>
+  <text x="20" y="26" font-family="Inter, sans-serif" font-size="14" fill="#CBD5E1">Entrada × saída do comparador</text>
+
+  <!-- plot superior: entrada + referência -->
+  <text x="22" y="48" font-family="Inter, sans-serif" font-size="13" fill="#CBD5E1">Vi</text>
+  <line x1="60" y1="90" x2="500" y2="90" stroke="#334155" stroke-width="1"/>
+  <line x1="60" y1="70" x2="500" y2="70" stroke="#D6A84F" stroke-width="1" stroke-dasharray="4 4"/>
+  <text x="455" y="64" font-family="JetBrains Mono, monospace" font-size="11" fill="#D6A84F">Vref</text>
+  <!-- entrada triangular -->
+  <path d="M60 144 L280 36 L500 144" fill="none" stroke="#CBD5E1" stroke-width="2.5" stroke-linejoin="round"/>
+  <circle cx="212" cy="70" r="3.5" fill="#D6A84F"/>
+  <circle cx="354" cy="70" r="3.5" fill="#D6A84F"/>
+
+  <!-- guias -->
+  <line x1="212" y1="70" x2="212" y2="344" stroke="#D6A84F" stroke-width="1" stroke-dasharray="3 3" opacity="0.45"/>
+  <line x1="354" y1="70" x2="354" y2="344" stroke="#D6A84F" stroke-width="1" stroke-dasharray="3 3" opacity="0.45"/>
+
+  <!-- plot inferior: saída -->
+  <text x="22" y="248" font-family="Inter, sans-serif" font-size="13" fill="#CBD5E1">Vo</text>
+  <line x1="60" y1="290" x2="500" y2="290" stroke="#334155" stroke-width="1"/>
+  <text x="34" y="240" font-family="Inter, sans-serif" font-size="11" fill="#64748B">+VCC</text>
+  <text x="34" y="350" font-family="Inter, sans-serif" font-size="11" fill="#64748B">−VEE</text>
+  <!-- saída: alta enquanto Vi &gt; Vref (entre os cruzamentos) -->
+  <path d="M60 344 H212 V236 H354 V344 H500" fill="none" stroke="#D6A84F" stroke-width="3" stroke-linejoin="round"/>
+
+  <text x="100" y="372" font-family="Inter, sans-serif" font-size="11" fill="#64748B">A saída é saturada (retangular): pula entre os extremos ao cruzar a referência.</text>
+</svg>

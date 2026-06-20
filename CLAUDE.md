@@ -3,12 +3,18 @@
 ## Visão geral
 
 Plataforma **multi-curso** 100% estática, estilo "campus de estudos". O aluno entra no
-**dashboard** (`/`), escolhe um **curso** e, dentro dele, segue uma **trilha sequencial**
-(timeline) de mini-matérias que dá sensação de progressão contínua.
+**dashboard** (`/`), navega pela hierarquia da Escola Naval
+(**Ano → [Turma, no 3°/4°] → Semestre → Época → Matéria**), escolhe uma **matéria/curso** e,
+dentro dele, segue uma **trilha sequencial** (timeline) de mini-matérias que dá sensação de
+progressão contínua.
 
-Hoje existe **um único curso real: GEP** (Gestão Pública — P1), com o tema visual
-*naval-command* (a antiga identidade "GEP Command Deck"). Qualquer outro curso citado nesta
-documentação é **exemplo hipotético** — nunca uma pasta real com conteúdo.
+Hoje existem **2 cursos reais**, ambos com o tema visual *naval-command*:
+- **GEP** (Gestão Pública — P1): `ano 4 · semestre 1 · época P1 · turma geral`.
+- **HNV** (História Naval): `ano 4 · semestre 1 · época P1 · turma geral`.
+
+`turma: "geral"` = matéria comum a todas as turmas do ano (mas, na navegação, aparece **só** em
+GERAL, não dentro das turmas especializadas). Outros cursos citados nesta documentação (ex.:
+`historia-naval`, `direito-constitucional`) são **exemplos hipotéticos** — nunca pastas reais.
 
 ## Stack
 
@@ -19,7 +25,8 @@ Conteúdo:       MDX + Content Collections
 Estilo:         Tailwind CSS + temas por curso
 Interatividade: React apenas em ilhas (client:*)
 Progresso:      localStorage (sem backend)
-Scripts:        tsx (create-course, validate-content, audit-media)
+Scripts:        tsx (create-course, validate-content, audit-media, migrate-gep)
+Course Kit:     wizard client-side + JSZip (rota /adicionar-curso) → gera .zip
 Deploy:         Vercel / Netlify / GitHub Pages
 ```
 
@@ -30,10 +37,16 @@ administrativo.
 
 | Nível | Onde vive | Define |
 |-------|-----------|--------|
-| **Plataforma** | dashboard `src/pages/index.astro` | lista cursos lendo todos os `_config.json` |
-| **Curso** | `src/content/cursos/<slug>/_config.json` | título, tema, rotas, `features` |
+| **Plataforma** | dashboard `src/pages/index.astro` | lista anos; navegação em `src/pages/ano/[...segmentos].astro` |
+| **Hierarquia** | campos do `_config.json` + `src/utils/hierarchy.ts` | ano/semestre/época/turma e os filtros de navegação |
+| **Curso** | `src/content/cursos/<slug>/_config.json` | título, tema, posição na hierarquia, `features` |
 | **Mini-matéria** | `src/content/cursos/<slug>/NN-nome/` | `_dados.json` + `.mdx` de seções |
 | **Conteúdo/banco** | `src/data/cursos/<slug>/*.ts` | timeline, questões, checklists, mídias, fontes |
+
+> **Camada de navegação:** os cursos continuam **canônicos** em `/<slug>` (rotas e redirects
+> intactos). A hierarquia Ano→Turma→Semestre→Época é só uma camada de **descoberta** sob `/ano/...`
+> que lista as matérias e linka para `/<slug>`. As seções padrão (anos, turmas, semestres, épocas)
+> existem **sempre**, mesmo vazias (mostram "Nada adicionado ainda").
 
 ## Estrutura de pastas (resumo — completa em `docs/PLATFORM.md`)
 
@@ -47,16 +60,24 @@ src/
 │           ├── _dados.json
 │           └── {index,aula,resumo,comparacoes,pegadinhas,
 │               exercicios,respostas-comentadas,checklist,referencias}.mdx
-├── data/cursos/<slug>/{timeline,exercicios,checklists,midias,fontes}.ts
-├── components/{ui,layout,estudo,midia,questoes,cursos,progresso}/
-├── layouts/{BaseLayout,DashboardLayout,CourseLayout,LessonLayout,ReviewLayout}.astro
+├── data/cursos/<slug>/{timeline,exercicios,checklists,midias,fontes,index}.ts
+├── components/
+│   ├── {layout,estudo,midia,questoes,progresso}/
+│   ├── cursos/{CourseDashboard.tsx,NavCard.astro,Breadcrumb.astro}
+│   └── course-builder/                # wizard do Course Kit (ilha React)
+├── layouts/{BaseLayout,LessonLayout,ReviewLayout}.astro
 ├── pages/
-│   ├── index.astro                    # DASHBOARD da Bússola
-│   └── [curso]/{index,timeline,questoes,simulados,fontes,revisao-final}.astro
+│   ├── index.astro                    # DASHBOARD (cards de ano + "Adicionar matéria")
+│   ├── adicionar-curso.astro          # Course Kit Generator
+│   ├── ano/[...segmentos].astro       # navegação Ano→[Turma]→Semestre→Época→matérias
+│   ├── [curso]/{index,timeline,questoes,simulados,fontes,revisao-final}.astro
 │   └── [curso]/[materia].astro
-├── utils/{courses,content,progress,backup,migration,media,slug,formatarTempo,filtrarQuestoes}.ts
+├── utils/
+│   ├── {courses,content,progress,backup,migration,media,slug,formatarTempo,filtrarQuestoes}.ts
+│   ├── hierarchy.ts + hierarchy-constants.ts   # navegação por ano/turma/sem/época
+│   └── course-kit/                    # parse, gerar prompt/manifest, JSZip
 ├── styles/{global,tokens,themes,prose}.css
-└── types/{course,lesson,question,media,progress}.ts
+└── types/{course,lesson,question,media,progress,course-kit}.ts
 
 public/{imagens,mapas-mentais,arquivos}/cursos/<slug>/...
 templates/curso/                       # esqueleto copiado ao criar um curso
@@ -69,7 +90,12 @@ backups/{gep-original,progresso-exportado,fontes-originais,versoes-antigas}/
 
 | Rota | Função |
 |------|--------|
-| `/` | Dashboard (cards de cursos, progresso geral, exportar/importar) |
+| `/` | Dashboard (4 cards de ano + card "Adicionar matéria" + backup) |
+| `/adicionar-curso` | Course Kit Generator (wizard → baixa `.zip`) |
+| `/ano/<ano>` | 1°/2°: semestres · 3°/4°: turmas |
+| `/ano/<ano>/<turma>` | (3°/4°) semestres da turma |
+| `/ano/<ano>/[<turma>/]<semestre>` | épocas (T1·P1 ou T2·P2) |
+| `/ano/<ano>/[<turma>/]<semestre>/<epoca>` | matérias daquele período → cards p/ `/<curso>` |
 | `/<curso>` | Home do curso (ex.: `/gep`) |
 | `/<curso>/timeline` | Linha do tempo do curso |
 | `/<curso>/<materia>` | Mini-matéria (ex.: `/gep/02-weber-e-burocracia`) |
@@ -77,6 +103,10 @@ backups/{gep-original,progresso-exportado,fontes-originais,versoes-antigas}/
 | `/<curso>/simulados` | Simulados |
 | `/<curso>/fontes` | Fontes |
 | `/<curso>/revisao-final` | Revisão final |
+
+As rotas `/ano/...` são geradas por um único arquivo catch-all `pages/ano/[...segmentos].astro`
+(profundidade variável). O cabeçalho dentro de um curso tem **Voltar** (volta à listagem da matéria,
+via `listingPathDoCurso`) e **Bússola** (volta ao `/`); há também botão flutuante de voltar ao topo.
 
 **Aliases legados (GEP)** via `redirects` em `astro.config.mjs`:
 `/timeline→/gep/timeline` · `/materias/<s>→/gep/<s>` · `/questoes→/gep/questoes` ·
@@ -91,7 +121,11 @@ backups/{gep-original,progresso-exportado,fontes-originais,versoes-antigas}/
   "subtitulo": "Trilha de estudo para a prova de Gestão Pública",
   "descricao": "...",
   "categoria": "Carreira Naval",
-  "ordem": 1,                  // posição no dashboard
+  "ano": "4",                  // "1"|"2"|"3"|"4"
+  "semestre": "1",             // "1"|"2"
+  "epoca": "P1",               // "T1"|"P1"|"T2"|"P2"
+  "turma": "geral",            // só 3°/4° ano; CA-HE…IM ou "geral" (comum a todas)
+  "ordem": 1,                  // posição dentro do período (época)
   "temaVisual": "naval-command",
   "corTema": "dourado",
   "icone": "/imagens/cursos/gep/icone.svg",
@@ -101,8 +135,9 @@ backups/{gep-original,progresso-exportado,fontes-originais,versoes-antigas}/
 }
 ```
 
-O dashboard lista os cursos lendo todos os `_config.json` (ordenados por `ordem`). Cada curso
-renderiza **condicionalmente** conforme o seu bloco `features`.
+A plataforma descobre os cursos lendo todos os `_config.json` (via `listarCursos`); o dashboard os
+**agrupa pela hierarquia** (ano → [turma] → semestre → época), e dentro de um período ordena por
+`ordem`. Cada curso renderiza **condicionalmente** conforme o seu bloco `features`.
 
 ### `features` — liga/desliga por curso
 
@@ -126,19 +161,30 @@ em `src/components/cursos/<slug>/` e são listados em `componentesExtras`.
 
 ## Contrato de "curso válido"
 
-- `_config.json` na raiz da pasta do curso (schema Zod em `src/content/config.ts`).
+- `_config.json` na raiz da pasta do curso (schemas Zod em `src/content/schemas.ts`,
+  reexportados por `src/content/config.ts`).
+- Campos de hierarquia **obrigatórios** no `_config.json`: `ano`, `semestre`, `epoca`
+  (e `turma` para 3°/4° ano). Sem eles `validate-content`/`build` falham.
 - Cada mini-matéria precisa de `_dados.json` **e** dos `.mdx` de seção.
 - `_dados.json` obrigatórios: `ordem`, `slug`, `titulo`, `prioridade`. Opcionais: `subtitulo`,
   `tempoEstimado`, `objetivo`, `palavrasChave`, `midias`, `fontes`, `exercicios`.
 - Bancos pesados (questões, checklists) ficam em `src/data/cursos/<slug>/*.ts`, keyed por slug.
 - `npm run validate-content` valida `_config.json` e os `_dados.json` de todos os cursos.
 
-## ⭐ Como criar um novo curso (manual)
+## ⭐ Como criar um novo curso
+
+Dois caminhos:
+
+- **Course Kit Generator (`/adicionar-curso`):** colaborador preenche o wizard (metadados +
+  hierarquia + linha do tempo + exercícios + mídias) e baixa um `.zip` com `course-kit.json`,
+  `manifest.json` e um **`PROMPT_CLAUDE.md`** dinâmico. O mantenedor cola o `PROMPT_CLAUDE.md` no
+  Claude Code, que instala o curso. (Ver "Course Kit Generator" abaixo.)
+- **Manual:**
 
 ```bash
 npm run create-course <slug>     # 1. copia templates/curso/ → src/content/cursos/<slug>/
 ```
-2. Edite `_config.json` (título, subtítulo, categoria, ordem, temaVisual, corTema, ícone, capa, `features`).
+2. Edite `_config.json` (título, subtítulo, categoria, **ano/semestre/epoca/turma**, ordem, temaVisual, corTema, ícone, capa, `features`).
 3. Crie as mini-matérias `00-…`, `01-…`, … `99-revisao-final`.
 4. Preencha os `.mdx` de seção **e** o `_dados.json` de cada mini-matéria.
 5. Adicione imagens leves em `public/imagens/cursos/<slug>/`.
@@ -151,6 +197,22 @@ npm run create-course <slug>     # 1. copia templates/curso/ → src/content/cur
 `features.simulados: false` — ilustra como um curso novo difere do GEP **só pelo config**, sem
 alterar a plataforma. Outro exemplo: `direito-constitucional` com `graficoProgressoAvancado: true`.
 Esses cursos vivem **apenas neste texto**.
+
+## Course Kit Generator (`/adicionar-curso`)
+
+Wizard React (ilha `client:load`) que **não usa backend**: roda no navegador e gera um `.zip` para
+download. Etapas: intro → metadados (com a hierarquia ano/semestre/época/turma) → linha do tempo
+(parse de `.md/.txt/.json`) → exercícios (grade dificuldade × tipo) → materiais (URLs + arquivos
+**< 20 MB**; acima disso só URL) → revisão/geração.
+
+- **Componentes:** `src/components/course-builder/` (orquestrador `AddCourseWizard.tsx`).
+- **Lógica:** `src/utils/course-kit/` — `parseTimeline`, `parseQuestions`, `normalizeSlug`,
+  `classifyFile` (regra 20 MB), `generateCourseKit`/`generateManifest`/`generatePrompt`, `buildZip` (JSZip).
+- **Saída (`.zip`):** `course-kit.json` (fonte da verdade), `manifest.json`, `PROMPT_CLAUDE.md`
+  (instruções dinâmicas de instalação), `INSTRUCOES.md` e pastas `linha-do-tempo/`, `exercicios/`,
+  `audios|videos|slides/referencias.json`, `fontes/`, `resumos/`.
+- **Tipos:** `src/types/course-kit.ts`. Constantes de hierarquia puras (sem glob) em
+  `src/utils/hierarchy-constants.ts`, para o bundle do cliente não arrastar o conteúdo dos cursos.
 
 ## Sistema de mídia (protocolo — detalhe em `docs/MEDIA-PROTOCOL.md`)
 
@@ -184,19 +246,27 @@ Tipografia: **Newsreader** (títulos, serifada), **Inter** (corpo), **JetBrains 
 Cada curso aponta o seu `temaVisual`/`corTema` no `_config.json`; cursos futuros podem ter paletas
 próprias sem alterar o GEP.
 
-## Curso GEP (config específica)
+## Cursos reais (config específica)
 
+**GEP** (`ano 4 · sem 1 · P1 · turma geral`):
 - 11 tópicos (`00`–`10`) + `99-revisao-final`. Timeline/prioridades/tempos:
   `src/data/cursos/gep/timeline.ts`.
 - Banco: **60 múltipla + 40 V/F + 5 grupos correlação** (`src/data/cursos/gep/exercicios.ts`).
 - Prioridade **máxima**: `07-pdrae-e-reforma-de-1995` e `99-revisao-final`.
-- Mídia atual em `public/.../cursos/gep/` (a externalizar no futuro).
 - Detalhes: `docs/courses/GEP.md`.
+
+**HNV — História Naval** (`ano 4 · sem 1 · P1 · turma geral`):
+- 7 tópicos (`00`–`06`) + `99-revisao-final`. Dados em `src/data/cursos/hnv/`.
+- Usa **questões discursivas** (campo opcional `discursivas` em `src/utils/content.ts`).
+
+Mídia atual ainda em `public/.../cursos/<slug>/` (a externalizar no futuro).
 
 ## Lacunas / pendências conhecidas
 
-- **Mídia pesada** ainda versionada (~300 MB em podcasts/vídeos) — externalizar p/ CDN/YouTube
-  quando houver links; `npm run audit-media` aponta os arquivos.
+- **Mídia pesada** ainda versionada (~648 MB em `public/`, podcasts/vídeos de GEP+HNV) —
+  externalizar p/ CDN/YouTube quando houver links; `npm run audit-media` aponta os arquivos.
 - **Revisão final** do GEP montada a partir do banco — revisar se reflete a prova real.
 - `_dados.json` por matéria começam mínimos (metadados) — enriquecer conforme necessário.
+- Hierarquia: só há cursos de **4° ano**; 1°/2°/3° aparecem vazios ("Nada adicionado ainda") até
+  surgirem matérias.
 ```

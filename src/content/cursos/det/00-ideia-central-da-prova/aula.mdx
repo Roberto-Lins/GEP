@@ -1,0 +1,74 @@
+---
+titulo: "A lógica-mãe da PP1 — aula"
+secao: "aula"
+secaoOrdem: 2
+---
+
+## O que esta prova realmente mede
+
+Detecção é uma disciplina de **eletrônica aplicada**, e a PP1 é uma prova **de exatas**. Isso muda tudo
+na forma de estudar. Não adianta decorar que "isto é um TRIAC" ou "aquilo é um regulador": a questão vai
+te entregar um **circuito** e perguntar o que ele **faz** — quanto vale a tensão na saída, que corrente
+circula, quanto tempo dura um pulso, e **como fica a forma de onda**.
+
+Ou seja, o examinador quer ver se você consegue **simular o circuito na cabeça**. Quem treina esse
+raciocínio resolve até circuitos que nunca viu; quem só decora trava no primeiro circuito diferente.
+
+<BlocoConceito titulo="A mudança de chave">
+Pare de perguntar "que componente é esse?" e comece a perguntar **"o que esse componente está fazendo
+agora?"** — está conduzindo ou cortado? regulando ou chaveando? ligado ou desligado? Essa é a pergunta
+que abre toda questão.
+</BlocoConceito>
+
+## As cinco famílias de circuito
+
+Apesar da variedade de circuitos, **tudo na PP1 cai em uma de cinco famílias**. Saber reconhecê-las já é
+metade da resposta, porque cada família tem o seu tipo de conta.
+
+![As cinco famílias de circuito da PP1: fontes reguladas, limitadores/grampeadores, comparadores/555/Schmitt, tiristores/UJT e base de tempo.](/imagens/cursos/det/00-familias.svg)
+
+- **Fontes reguladas** — pegam uma CC instável e a transformam em uma CC **estável e controlada**.
+- **Limitadores e grampeadores** — mexem na **forma da onda**: o limitador **corta** um pedaço; o
+  grampeador **desloca** a onda inteira para cima ou para baixo.
+- **Comparadores, 555 e Schmitt** — convertem uma variação **analógica** numa saída **saturada** ou
+  **temporizada** (níveis altos/baixos, pulsos, oscilações).
+- **Tiristores e UJT** — funcionam como **chaves** que ligam por um **disparo** e desligam quando a
+  corrente cai.
+- **Base de tempo** — geram uma **rampa linear** (dente-de-serra) para servir de relógio/referência.
+
+## O ciclo que resolve qualquer questão
+
+Decore este roteiro, não as fórmulas. Ele evita o erro mais comum: começar pela fórmula errada.
+
+1. **Que circuito é esse?** Classifique a família.
+2. **O que a questão pede?** Tensão de saída, corrente, potência, frequência, largura de pulso, ciclo
+   de trabalho ou forma de onda.
+3. **Quem conduz e quem corta?** Marque o estado de cada diodo, transistor, tiristor e Zener.
+4. **Qual conta governa?** Lei de Ohm, divisor de tensão, potência, PWM, carga RC exponencial, carga
+   por corrente constante ou frequência.
+5. **Como fica a forma de onda?** Em eletrônica, **o desenho é parte da resposta** — marque máximos,
+   mínimos e tempos.
+6. **Faz sentido?** Confira unidade, polaridade e ordem de grandeza.
+
+<BlocoConceito titulo="Sinal de que você dominou">
+Você olha um circuito desconhecido e **decide que tipo de conta ele pede antes de substituir qualquer
+número**. Esse é o objetivo de toda a trilha.
+</BlocoConceito>
+
+## Como esta trilha foi montada (a ordem importa)
+
+Os tópicos foram colocados em uma **sequência que se constrói**: cada um usa o anterior.
+
+- Primeiro, o **kit de cálculo** (tópico 01) — as ferramentas que se repetem em tudo.
+- Depois, **estabilizar tensão**: fontes e reguladores (02 a 05).
+- Em seguida, **mexer no sinal**: limitar e grampear (06 e 07).
+- Então, **comparar e temporizar**: comparadores, 555 e Schmitt (08 a 10).
+- Por fim, **chavear e gerar rampa**: tiristores, UJT e base de tempo (11 a 13).
+
+Siga nessa ordem e cada assunto vai parecer uma consequência natural do anterior.
+
+## Radar de pulso? Fica para o T2
+
+O **radar de pulso não é conteúdo central da PP1** (orientação do professor). Ele aparece apenas como
+**motivação** para a base de tempo — a ideia de gerar uma referência temporal precisa. O estudo
+aprofundado de radar vem no T2.

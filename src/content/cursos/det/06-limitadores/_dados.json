@@ -1,0 +1,17 @@
+{
+  "ordem": 6,
+  "slug": "06-limitadores",
+  "titulo": "Limitadores (ceifadores)",
+  "prioridade": "muito alta",
+  "subtitulo": "Cortar parte da forma de onda",
+  "tempoEstimado": "50 min",
+  "objetivo": "Desenhar a saída de limitadores analisando semiciclo a semiciclo, decidindo condução/corte e somando fontes DC e quedas para achar o nível de corte e os valores máximo/mínimo.",
+  "palavrasChave": [
+    "limitador",
+    "ceifador",
+    "nível de corte",
+    "diodo + fonte DC",
+    "Zener",
+    "forma de onda"
+  ]
+}

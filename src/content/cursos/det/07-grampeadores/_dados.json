@@ -1,0 +1,16 @@
+{
+  "ordem": 7,
+  "slug": "07-grampeadores",
+  "titulo": "Grampeadores CC",
+  "prioridade": "muito alta",
+  "subtitulo": "Deslocar o nível DC sem deformar a onda",
+  "tempoEstimado": "45 min",
+  "objetivo": "Entender o grampeador: o capacitor carrega no pico e passa a somar/subtrair esse valor da entrada, deslocando o nível médio (VO = VI ± Vm).",
+  "palavrasChave": [
+    "grampeador",
+    "nível DC",
+    "capacitor carregado",
+    "VO = VI ± Vm",
+    "positivo × negativo"
+  ]
+}

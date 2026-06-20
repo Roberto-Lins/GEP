@@ -1,0 +1,17 @@
+{
+  "ordem": 1,
+  "slug": "01-ferramentas-de-calculo",
+  "titulo": "Ferramentas de cálculo",
+  "prioridade": "muito alta",
+  "subtitulo": "O kit que sustenta todas as questões",
+  "tempoEstimado": "40 min",
+  "objetivo": "Dominar divisor de tensão, Lei de Ohm, potência, modelo do diodo e carga de capacitor (exponencial × corrente constante) e conversão de unidades.",
+  "palavrasChave": [
+    "divisor de tensão",
+    "Lei de Ohm",
+    "potência",
+    "capacitor",
+    "dV/dt = I/C",
+    "unidades"
+  ]
+}

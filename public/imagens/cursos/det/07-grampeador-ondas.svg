@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 290" width="520" height="290" role="img" aria-label="Forma de onda do grampeador positivo: a onda de entrada é deslocada para cima, sem mudar de forma">
+  <rect x="0.75" y="0.75" width="518.5" height="288.5" rx="14" fill="#0B1220" stroke="#1E3A5F" stroke-width="1.5"/>
+  <text x="20" y="28" font-family="Inter, sans-serif" font-size="14" fill="#CBD5E1">Grampeamento positivo: a onda sobe</text>
+
+  <!-- nível 0 V -->
+  <line x1="50" y1="170" x2="478" y2="170" stroke="#334155" stroke-width="1"/>
+  <text x="22" y="174" font-family="JetBrains Mono, monospace" font-size="11" fill="#64748B">0 V</text>
+
+  <!-- níveis de referência -->
+  <line x1="50" y1="50" x2="478" y2="50" stroke="#475569" stroke-width="1" stroke-dasharray="4 4"/>
+  <text x="430" y="44" font-family="JetBrains Mono, monospace" font-size="11" fill="#94A3B8">+2Vm</text>
+
+  <!-- entrada: senoide centrada em 0 (−Vm a +Vm), clara/tracejada -->
+  <path d="M50 170 Q155 50 260 170 Q365 290 470 170" fill="none" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="5 4" opacity="0.7"/>
+  <text x="262" y="248" font-family="JetBrains Mono, monospace" font-size="10" fill="#64748B">−Vm</text>
+
+  <!-- saída: mesma forma deslocada +Vm para cima (0 a +2Vm), cheia -->
+  <path d="M50 110 Q155 -10 260 110 Q365 230 470 110" fill="none" stroke="#D6A84F" stroke-width="3"/>
+
+  <!-- legendas -->
+  <line x1="60" y1="268" x2="90" y2="268" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="96" y="272" font-family="Inter, sans-serif" font-size="11" fill="#94A3B8">Vi (−Vm a +Vm)</text>
+  <line x1="250" y1="268" x2="280" y2="268" stroke="#D6A84F" stroke-width="3"/>
+  <text x="286" y="272" font-family="Inter, sans-serif" font-size="11" fill="#94A3B8">Vo (0 a +2Vm)</text>
+</svg>

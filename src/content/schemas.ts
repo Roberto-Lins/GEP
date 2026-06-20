@@ -20,6 +20,12 @@ export const cursoConfigSchema = z.object({
   subtitulo: z.string().optional(),
   descricao: z.string().optional(),
   categoria: z.string().optional(),
+  // Hierarquia Ano → Semestre/Época → Turma (camada de navegação /ano/...).
+  ano: z.enum(['1', '2', '3', '4']),
+  semestre: z.enum(['1', '2']),
+  epoca: z.enum(['T1', 'P1', 'T2', 'P2']),
+  // turma só relevante p/ 3°/4° ano; 'geral' = comum a todas as turmas.
+  turma: z.enum(['CA-HE', 'CA-HM', 'CA-HS', 'FN-HE', 'FN-HM', 'FN-HS', 'IM', 'geral']).optional(),
   ordem: z.number(),
   temaVisual: z.string(),
   corTema: z.string().optional(),

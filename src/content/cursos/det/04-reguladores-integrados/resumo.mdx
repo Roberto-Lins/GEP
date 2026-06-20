@@ -1,0 +1,10 @@
+---
+titulo: "Reguladores integrados — resumo"
+secao: "resumo"
+secaoOrdem: 3
+---
+
+- **78xx fixos**: valor no código (7805 = 5 V, 7812 = 12 V); precisa de `VI ≥ VImín` e `Iload ≤ Imáx`.
+- Menor carga segura: `Rmín = VO/Imáx`.
+- **LM317**: `VO = VREG·(1 + R2/R1) + IQ·R2`, VREG ≈ 1,25 V.
+- Potência: `P ≈ (VI − VO)·Iout`.

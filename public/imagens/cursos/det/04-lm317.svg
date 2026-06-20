@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 250" width="480" height="250" role="img" aria-label="Regulador ajustável LM317 com resistores R1 e R2 (em ziguezague) definindo a tensão de saída">
+  <rect x="0.75" y="0.75" width="478.5" height="248.5" rx="14" fill="#0B1220" stroke="#1E3A5F" stroke-width="1.5"/>
+  <text x="20" y="28" font-family="Inter, sans-serif" font-size="14" fill="#CBD5E1">LM317: regulador de 3 terminais</text>
+
+  <!-- corpo do CI (retângulo é o símbolo correto p/ circuito integrado) -->
+  <rect x="150" y="70" width="120" height="70" rx="8" fill="#13243B" stroke="#D6A84F" stroke-width="2"/>
+  <text x="178" y="100" font-family="Inter, sans-serif" font-size="15" fill="#D6A84F" font-weight="bold">LM317</text>
+  <text x="160" y="122" font-family="Inter, sans-serif" font-size="10" fill="#94A3B8">IN</text>
+  <text x="245" y="122" font-family="Inter, sans-serif" font-size="10" fill="#94A3B8">OUT</text>
+  <text x="196" y="156" font-family="Inter, sans-serif" font-size="10" fill="#94A3B8">ADJ</text>
+
+  <!-- entrada -->
+  <circle cx="40" cy="92" r="4" fill="#D6A84F"/>
+  <text x="22" y="84" font-family="JetBrains Mono, monospace" font-size="11" fill="#CBD5E1">VI</text>
+  <line x1="40" y1="92" x2="150" y2="92" stroke="#F7F3EA" stroke-width="2"/>
+
+  <!-- saída -->
+  <line x1="270" y1="92" x2="360" y2="92" stroke="#F7F3EA" stroke-width="2"/>
+  <circle cx="360" cy="92" r="4" fill="#D6A84F"/>
+  <text x="368" y="88" font-family="JetBrains Mono, monospace" font-size="11" fill="#CBD5E1">VO</text>
+
+  <!-- R1 entre OUT e ADJ (ziguezague vertical) -->
+  <line x1="320" y1="92" x2="320" y2="116" stroke="#F7F3EA" stroke-width="2"/>
+  <path d="M320 116 l-7 6 l14 6 l-14 6 l14 6 l-14 6 l7 6" fill="none" stroke="#F7F3EA" stroke-width="2"/>
+  <text x="296" y="142" font-family="Inter, sans-serif" font-size="12" fill="#D6A84F">R1</text>
+  <line x1="320" y1="152" x2="320" y2="172" stroke="#F7F3EA" stroke-width="2"/>
+
+  <!-- nó ADJ -->
+  <line x1="210" y1="140" x2="210" y2="172" stroke="#F7F3EA" stroke-width="2"/>
+  <line x1="210" y1="172" x2="320" y2="172" stroke="#F7F3EA" stroke-width="2"/>
+  <circle cx="320" cy="172" r="3.5" fill="#D6A84F"/>
+
+  <!-- R2 do nó ADJ ao terra (ziguezague vertical) -->
+  <line x1="210" y1="172" x2="210" y2="186" stroke="#F7F3EA" stroke-width="2"/>
+  <path d="M210 186 l-7 6 l14 6 l-14 6 l14 6 l-14 6 l7 6" fill="none" stroke="#F7F3EA" stroke-width="2"/>
+  <text x="186" y="212" font-family="Inter, sans-serif" font-size="12" fill="#D6A84F">R2</text>
+  <line x1="210" y1="222" x2="210" y2="238" stroke="#F7F3EA" stroke-width="2"/>
+  <line x1="200" y1="238" x2="220" y2="238" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="204" y1="243" x2="216" y2="243" stroke="#CBD5E1" stroke-width="2"/>
+
+  <text x="350" y="150" font-family="JetBrains Mono, monospace" font-size="11" fill="#D6A84F">VO = VREG·(1+R2/R1)</text>
+  <text x="350" y="167" font-family="JetBrains Mono, monospace" font-size="11" fill="#D6A84F">       + IQ·R2</text>
+  <text x="350" y="190" font-family="Inter, sans-serif" font-size="11" fill="#94A3B8">VREG ≈ 1,25 V</text>
+</svg>

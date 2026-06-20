@@ -1,0 +1,17 @@
+{
+  "ordem": 4,
+  "slug": "04-reguladores-integrados",
+  "titulo": "Reguladores integrados",
+  "prioridade": "muito alta",
+  "subtitulo": "7805, 7812 e LM317",
+  "tempoEstimado": "40 min",
+  "objetivo": "Calcular VO em reguladores fixos e ajustáveis (LM317), a menor carga segura (Rmín = VO/Imáx) e a potência dissipada.",
+  "palavrasChave": [
+    "7805",
+    "7812",
+    "LM317",
+    "VREG",
+    "Rmín = VO/Imáx",
+    "corrente de polarização"
+  ]
+}

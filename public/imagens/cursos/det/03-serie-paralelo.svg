@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 290" width="560" height="290" role="img" aria-label="Regulador série versus paralelo, com transistores NPN desenhados com base, coletor e emissor">
+  <defs>
+    <marker id="emi" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#F7F3EA"/>
+    </marker>
+  </defs>
+  <rect x="0.75" y="0.75" width="558.5" height="288.5" rx="14" fill="#0B1220" stroke="#1E3A5F" stroke-width="1.5"/>
+
+  <!-- ===================== SÉRIE ===================== -->
+  <text x="20" y="28" font-family="Inter, sans-serif" font-size="13" fill="#D6A84F" font-weight="bold">SÉRIE</text>
+  <text x="20" y="46" font-family="Inter, sans-serif" font-size="11" fill="#CBD5E1">Q conduz a corrente da carga</text>
+  <text x="64" y="74" font-family="Inter, sans-serif" font-size="10" fill="#64748B">corrente da carga →</text>
+
+  <!-- entrada VI -->
+  <circle cx="40" cy="86" r="4" fill="#D6A84F"/>
+  <text x="22" y="80" font-family="JetBrains Mono, monospace" font-size="11" fill="#CBD5E1">VI</text>
+  <line x1="40" y1="86" x2="160" y2="86" stroke="#F7F3EA" stroke-width="2"/>
+
+  <!-- transistor NPN (X=160, Y=118) -->
+  <circle cx="155" cy="118" r="20" fill="none" stroke="#F7F3EA" stroke-width="1.5"/>
+  <line x1="150" y1="104" x2="150" y2="132" stroke="#F7F3EA" stroke-width="2.5"/>        <!-- base bar -->
+  <line x1="126" y1="118" x2="150" y2="118" stroke="#F7F3EA" stroke-width="2"/>          <!-- base lead -->
+  <line x1="150" y1="110" x2="160" y2="102" stroke="#F7F3EA" stroke-width="2"/>          <!-- coletor diagonal -->
+  <line x1="160" y1="102" x2="160" y2="86" stroke="#F7F3EA" stroke-width="2"/>           <!-- coletor terminal -->
+  <line x1="150" y1="126" x2="160" y2="134" stroke="#F7F3EA" stroke-width="2" marker-end="url(#emi)"/> <!-- emissor (seta NPN) -->
+  <line x1="160" y1="134" x2="160" y2="152" stroke="#F7F3EA" stroke-width="2"/>          <!-- emissor terminal -->
+  <text x="178" y="100" font-family="Inter, sans-serif" font-size="12" fill="#F7F3EA">Q1</text>
+  <text x="120" y="108" font-family="Inter, sans-serif" font-size="9" fill="#64748B">B</text>
+
+  <!-- base p/ controle -->
+  <line x1="90" y1="118" x2="126" y2="118" stroke="#D6A84F" stroke-width="2"/>
+  <text x="60" y="135" font-family="Inter, sans-serif" font-size="9" fill="#64748B">controle</text>
+
+  <!-- saída VO + carga -->
+  <line x1="160" y1="152" x2="160" y2="185" stroke="#F7F3EA" stroke-width="2"/>
+  <line x1="160" y1="185" x2="235" y2="185" stroke="#F7F3EA" stroke-width="2"/>
+  <circle cx="235" cy="185" r="4" fill="#D6A84F"/>
+  <text x="242" y="181" font-family="JetBrains Mono, monospace" font-size="11" fill="#CBD5E1">VO</text>
+  <!-- RL (ziguezague) -->
+  <line x1="235" y1="185" x2="235" y2="200" stroke="#F7F3EA" stroke-width="2"/>
+  <path d="M235 200 l-7 6 l14 6 l-14 6 l14 6 l-14 6 l7 6" fill="none" stroke="#F7F3EA" stroke-width="2"/>
+  <text x="248" y="226" font-family="Inter, sans-serif" font-size="11" fill="#CBD5E1">RL</text>
+  <line x1="235" y1="236" x2="235" y2="252" stroke="#F7F3EA" stroke-width="2"/>
+  <line x1="223" y1="252" x2="247" y2="252" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="227" y1="257" x2="243" y2="257" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="231" y1="262" x2="239" y2="262" stroke="#CBD5E1" stroke-width="2"/>
+
+  <!-- divisória -->
+  <line x1="288" y1="20" x2="288" y2="270" stroke="#1E3A5F" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+  <!-- ===================== PARALELO ===================== -->
+  <text x="308" y="28" font-family="Inter, sans-serif" font-size="13" fill="#D6A84F" font-weight="bold">PARALELO</text>
+  <text x="308" y="46" font-family="Inter, sans-serif" font-size="11" fill="#CBD5E1">Q desvia corrente em paralelo</text>
+
+  <!-- entrada VI + R série -->
+  <circle cx="320" cy="86" r="4" fill="#D6A84F"/>
+  <text x="302" y="80" font-family="JetBrains Mono, monospace" font-size="11" fill="#CBD5E1">VI</text>
+  <line x1="320" y1="86" x2="348" y2="86" stroke="#F7F3EA" stroke-width="2"/>
+  <path d="M348 86 l6 -7 l6 14 l6 -14 l6 14 l6 -14 l6 7" fill="none" stroke="#F7F3EA" stroke-width="2"/>
+  <text x="360" y="74" font-family="Inter, sans-serif" font-size="11" fill="#CBD5E1">R</text>
+  <line x1="384" y1="86" x2="430" y2="86" stroke="#F7F3EA" stroke-width="2"/>
+  <circle cx="430" cy="86" r="4" fill="#D6A84F"/>
+  <line x1="430" y1="86" x2="500" y2="86" stroke="#F7F3EA" stroke-width="2"/>
+  <circle cx="500" cy="86" r="4" fill="#D6A84F"/>
+  <text x="506" y="82" font-family="JetBrains Mono, monospace" font-size="11" fill="#CBD5E1">VO</text>
+
+  <!-- transistor NPN shunt (X=430, Y=140) -->
+  <line x1="430" y1="86" x2="430" y2="106" stroke="#D6A84F" stroke-width="2"/>
+  <circle cx="425" cy="140" r="20" fill="none" stroke="#F7F3EA" stroke-width="1.5"/>
+  <line x1="420" y1="126" x2="420" y2="154" stroke="#F7F3EA" stroke-width="2.5"/>
+  <line x1="396" y1="140" x2="420" y2="140" stroke="#F7F3EA" stroke-width="2"/>
+  <line x1="420" y1="132" x2="430" y2="124" stroke="#F7F3EA" stroke-width="2"/>
+  <line x1="430" y1="124" x2="430" y2="106" stroke="#F7F3EA" stroke-width="2"/>
+  <line x1="420" y1="148" x2="430" y2="156" stroke="#F7F3EA" stroke-width="2" marker-end="url(#emi)"/>
+  <line x1="430" y1="156" x2="430" y2="206" stroke="#F7F3EA" stroke-width="2"/>
+  <text x="448" y="124" font-family="Inter, sans-serif" font-size="12" fill="#F7F3EA">Q</text>
+  <line x1="360" y1="140" x2="396" y2="140" stroke="#D6A84F" stroke-width="2"/>
+  <text x="330" y="157" font-family="Inter, sans-serif" font-size="9" fill="#64748B">controle</text>
+
+  <!-- carga RL em paralelo -->
+  <line x1="500" y1="86" x2="500" y2="106" stroke="#F7F3EA" stroke-width="2"/>
+  <path d="M500 106 l-7 6 l14 6 l-14 6 l14 6 l-14 6 l7 6" fill="none" stroke="#F7F3EA" stroke-width="2"/>
+  <text x="513" y="132" font-family="Inter, sans-serif" font-size="11" fill="#CBD5E1">RL</text>
+  <line x1="500" y1="142" x2="500" y2="206" stroke="#F7F3EA" stroke-width="2"/>
+
+  <!-- terra comum -->
+  <line x1="430" y1="206" x2="500" y2="206" stroke="#F7F3EA" stroke-width="2"/>
+  <line x1="453" y1="206" x2="477" y2="206" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="457" y1="211" x2="473" y2="211" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="461" y1="216" x2="469" y2="216" stroke="#CBD5E1" stroke-width="2"/>
+</svg>

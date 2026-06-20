@@ -1,0 +1,17 @@
+{
+  "ordem": 5,
+  "slug": "05-reguladores-chaveados-pwm",
+  "titulo": "Reguladores chaveados e PWM",
+  "prioridade": "alta",
+  "subtitulo": "Regulação por chaveamento e ciclo de trabalho",
+  "tempoEstimado": "35 min",
+  "objetivo": "Entender o transistor como chave, o ciclo de trabalho (D = ton/T), a saída do buck (VOUT = D·VIN) e a realimentação que mantém VFB ≈ VREF.",
+  "palavrasChave": [
+    "PWM",
+    "ciclo de trabalho",
+    "VOUT = D·VIN",
+    "buck",
+    "realimentação",
+    "VFB ≈ VREF"
+  ]
+}

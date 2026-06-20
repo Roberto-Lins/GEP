@@ -1,0 +1,61 @@
+---
+titulo: "Grampeadores CC — aula"
+secao: "aula"
+secaoOrdem: 2
+---
+
+## Do corte ao deslocamento
+
+O grampeador vem logo depois do limitador porque usa os **mesmos ingredientes** — diodo e capacitor —
+mas o efeito é o oposto: em vez de **cortar** a onda, ele a **desloca** inteira para cima ou para baixo.
+A forma não muda; muda o **nível médio (DC)**.
+
+## A intuição: o capacitor vira uma bateria
+
+A peça nova é o **capacitor em série**. A ideia central, e que resolve toda questão do tópico:
+
+> Num semiciclo, o diodo conduz e **carrega o capacitor até o valor de pico**. A partir daí, o capacitor
+> guarda essa carga e passa a se comportar como uma **fonte DC em série** com a entrada — somando (ou
+> subtraindo) o pico a cada instante. O resultado é a onda inteira **empurrada** para um lado.
+
+![Grampeador positivo: capacitor em série com a entrada e um diodo do nó de saída para o terra.](/imagens/cursos/det/07-grampeador-circuito.svg)
+
+## Como resolver, passo a passo
+
+1. Desenhe a entrada e marque `+Vm` e `−Vm`.
+2. Descubra **em qual semiciclo o diodo conduz** e carrega o capacitor.
+3. Depois de carregado, trate o capacitor como uma **fonte DC ≈ Vm**.
+4. Veja a **polaridade** dessa "fonte capacitor".
+5. **Some ou subtraia** essa tensão da entrada.
+6. Desenhe a **mesma forma**, apenas **deslocada**.
+7. Marque o novo máximo e o novo mínimo.
+
+## Positivo × negativo
+
+- Grampeador **positivo**: `VO = VI + Vm` — empurra a onda **para cima**.
+- Grampeador **negativo**: `VO = VI − Vm` — empurra a onda **para baixo**.
+
+Com a queda real do diodo, o deslocamento muda pelo valor dessa queda (≈ 0,7 V).
+
+## Exemplo resolvido
+
+> **Dados:** entrada senoidal de `−12 V a +12 V` (Vm = 12 V), grampeador **positivo** (ideal).
+
+1. No semiciclo negativo, o diodo conduz e carrega o capacitor até **Vm = 12 V**.
+2. O capacitor passa a somar **+12 V** a toda a entrada: `VO = VI + 12`.
+3. O mínimo da entrada (`−12 V`) vira `−12 + 12 = `**`0 V`**; o máximo (`+12 V`) vira
+   `+12 + 12 = `**`+24 V`**.
+4. **Resultado:** a mesma senoide, agora variando de **0 V a +24 V** — deslocada, não deformada.
+
+![Forma de onda: a entrada de −Vm a +Vm é deslocada para cima, passando a variar de 0 a +2Vm, mantendo a forma.](/imagens/cursos/det/07-grampeador-ondas.svg)
+
+<BlocoConceito titulo="O teste de uma frase">
+Se você consegue transformar uma onda de `−12 V a +12 V` em `0 V a +24 V` (positivo) ou
+`−24 V a 0 V` (negativo) **sem mudar a forma**, dominou o grampeador.
+</BlocoConceito>
+
+## Para onde vamos
+
+Encerramos o tratamento "passivo" do sinal (cortar e deslocar). A partir do próximo tópico entramos nos
+circuitos **ativos** que tomam decisões: o **comparador**, que transforma uma entrada analógica numa
+saída saturada — base do 555 e do Schmitt.

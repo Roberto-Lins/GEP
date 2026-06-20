@@ -52,5 +52,29 @@ const tituloCompleto = titulo === PLATAFORMA ? titulo : `${titulo} · ${PLATAFOR
       <slot />
     </main>
     <Footer />
+
+    <button
+      id="voltar-topo"
+      type="button"
+      aria-label="Voltar ao topo"
+      class="fixed bottom-5 right-5 z-50 hidden h-12 w-12 items-center justify-center rounded-full border border-dourado/40 bg-naval/90 text-dourado shadow-lg backdrop-blur transition hover:bg-dourado hover:text-naval"
+    >
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </button>
+
+    <script is:inline>
+      (() => {
+        const btn = document.getElementById('voltar-topo');
+        if (!btn) return;
+        const toggle = () => {
+          const mostrar = window.scrollY > 400;
+          btn.classList.toggle('hidden', !mostrar);
+          btn.classList.toggle('flex', mostrar);
+        };
+        window.addEventListener('scroll', toggle, { passive: true });
+        btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        toggle();
+      })();
+    </script>
   </body>
 </html>

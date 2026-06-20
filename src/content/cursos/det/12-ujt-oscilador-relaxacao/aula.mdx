@@ -1,0 +1,56 @@
+---
+titulo: "UJT e oscilador de relaxação — aula"
+secao: "aula"
+secaoOrdem: 2
+---
+
+## O UJT: uma chave que também oscila
+
+O UJT (transistor de unijunção) aparece junto com os tiristores porque também é uma **chave por
+disparo**. Mas ele tem um talento extra: montado com um R e um C, vira um **oscilador de relaxação** que
+gera um **dente-de-serra** — e por isso é a ponte direta para a base de tempo (próximo tópico).
+
+A ideia de funcionamento é simples e resolve tudo:
+
+> O UJT **liga** quando a tensão no emissor atinge o **pico VP**, e **desliga** quando ela cai até o
+> **vale VV**. Como o emissor está num capacitor que carrega devagar e descarrega rápido, isso produz um
+> **dente-de-serra**.
+
+![Oscilador de relaxação com UJT: R carrega C devagar; ao atingir VP o UJT dispara e descarrega C rápido por B1.](/imagens/cursos/det/12-ujt-circuito.svg)
+
+## Os parâmetros
+
+A partir de `RBB`, `η` (eta, a razão intrínseca) e `VV`:
+
+- `RB1 = η · RBB`  e  `RB2 = RBB − RB1`
+- `VK = η · VCC`  (a tensão no ponto de junção, pelo divisor entre as bases)
+- `VP = VK + 0,7 V`  (a queda de junção do emissor)
+
+## Tempos e frequência
+
+- **Carga** (de VV até VP, **exponencial** porque é via resistor):
+  `t1 = R1 · C · ln[(VCC − VV) / (VCC − VP)]`
+- **Descarga** (rápida, por `RB1(ON)` + resistor de descarga):
+  `t2 = (RB1(ON) + R2) · C · ln(VP / VV)`
+- `T = t1 + t2`  ;  `f = 1 / T`
+
+## Exemplo resolvido (slide)
+
+> **Dados:** `η = 0,61`, `RBB = 7 kΩ`, `VCC = 12 V`.
+
+1. `RB1 = η · RBB = 0,61 · 7 = `**`4,3 kΩ`**.
+2. `RB2 = RBB − RB1 = 7 − 4,3 = `**`2,7 kΩ`**.
+3. `VK = η · VCC = 0,61 · 12 = `**`7,3 V`**.
+4. `VP = VK + 0,7 = `**`8 V`** → é nesse valor que o UJT dispara.
+
+![Dente-de-serra: o capacitor sobe devagar de VV a VP (carga) e cai rápido para VV (descarga).](/imagens/cursos/det/12-ujt-ondas.svg)
+
+<BlocoConceito titulo="Cuidado com o RB1">
+Na **descarga**, use `RB1(ON)` (valor baixo, com o UJT ligado), nunca `RB1(OFF)`. E lembre: aqui a carga
+é **exponencial** (via resistor) — diferente da rampa **linear** da base de tempo, que vem a seguir.
+</BlocoConceito>
+
+## Para onde vamos
+
+O UJT gera um dente-de-serra, mas a subida é **exponencial**. No último tópico veremos como obter uma
+rampa **perfeitamente linear** — o que uma base de tempo de verdade exige.

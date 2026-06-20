@@ -1,0 +1,59 @@
+---
+titulo: "Multivibradores com 555 — aula"
+secao: "aula"
+secaoOrdem: 2
+---
+
+## O que é um multivibrador
+
+Um **multivibrador** é um circuito que gera **onda retangular**. O CI **555** é o multivibrador mais
+famoso — e, por dentro, ele nada mais é que **dois comparadores** (do tópico anterior) vigiando a tensão
+de um capacitor em **⅓ VCC** e **⅔ VCC**, mais um flip-flop que comuta a saída. Entender isso desmistifica
+todas as fórmulas: elas só descrevem o **tempo de carga/descarga** desse capacitor entre esses dois
+limiares. É um tópico de **prioridade máxima**.
+
+## Classifique primeiro
+
+- **Astável** — oscila sozinho, sem disparo. É um oscilador de onda retangular contínua.
+- **Monoestável** — gera **um único pulso** de duração finita após um disparo, e volta ao repouso.
+- **Biestável** — tem **dois estados estáveis** (funciona como memória/flip-flop).
+
+## 555 astável
+
+![555 astável: RA da alimentação ao pino 7, RB até o nó dos pinos 6 e 2, e o capacitor C ao terra.](/imagens/cursos/det/09-555-astavel.svg)
+
+O capacitor carrega por `RA + RB` (saída alta) e descarrega por `RB` (saída baixa), oscilando entre ⅓ e
+⅔ de VCC. Daí saem os tempos:
+
+- `T_ALTO = 0,7 · (RA + RB) · C`  (carga)
+- `T_BAIXO = 0,7 · RB · C`  (descarga)
+- `T = T_ALTO + T_BAIXO`
+- `f = 1 / T`
+
+![A tensão no capacitor sobe (carga) e desce (descarga) entre ⅓ e ⅔ de VCC; a saída fica alta na carga e baixa na descarga.](/imagens/cursos/det/09-555-ondas.svg)
+
+## 555 monoestável
+
+Com apenas `RA` e `C`, o 555 gera **um pulso** após o disparo:
+
+- `LP = 1,1 · RA · C`  (largura do pulso)
+
+## Exemplos resolvidos
+
+> **Astável (slide):** com os valores do slide, `T = 1,6 ms` → `f = 1/T = 1/0,0016 = `**`625 Hz`**.
+
+> **Monoestável (slide):** `RA = 7,5 kΩ`, `C = 0,1 µF` →
+> `LP = 1,1 · 7 500 · 0,1×10⁻⁶ = `**`0,83 ms`**. (Converta `kΩ` e `µF` antes!)
+
+> **Astável (Lista 1 — Q3):** resultado oficial `f = `**`659 Hz`** (Lista 2).
+
+<BlocoConceito titulo="Sinal de que você dominou">
+Você recebe `RA`, `RB` e `C` e entrega `T_ALTO`, `T_BAIXO`, `T` e `f` sem travar — e desenha tanto a
+saída quanto a tensão no capacitor.
+</BlocoConceito>
+
+## Para onde vamos
+
+Note como tudo aqui gira em torno de **comparar a tensão do capacitor com limiares**. No próximo tópico,
+o **Schmitt-trigger**, levamos a comparação a um novo nível: dois limiares criados pela própria saída,
+gerando histerese.

@@ -1,0 +1,17 @@
+{
+  "ordem": 3,
+  "slug": "03-reguladores-com-transistor",
+  "titulo": "Reguladores com transistor",
+  "prioridade": "máxima",
+  "subtitulo": "Série, paralelo e limitador de corrente",
+  "tempoEstimado": "55 min",
+  "objetivo": "Distinguir regulador série de paralelo pela posição do transistor e analisar o limitador de corrente com RSC e Q2 (I_Lmáx ≈ 0,7/RSC).",
+  "palavrasChave": [
+    "regulador série",
+    "regulador paralelo",
+    "limitador de corrente",
+    "RSC",
+    "corrente de curto",
+    "potência no transistor"
+  ]
+}

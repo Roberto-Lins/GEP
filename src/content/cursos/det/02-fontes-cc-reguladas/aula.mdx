@@ -1,0 +1,66 @@
+---
+titulo: "Fontes CC reguladas — aula"
+secao: "aula"
+secaoOrdem: 2
+---
+
+## O problema que a fonte resolve
+
+Circuitos eletrônicos precisam de uma alimentação **CC limpa e constante**. Mas a tomada fornece **CA**,
+e mesmo depois de retificada essa tensão fica **instável**: ela oscila, varia com a corrente que a carga
+puxa e muda com a temperatura. A função de uma **fonte regulada** é entregar, no fim da linha, uma
+tensão CC que **quase não se mexe**, aconteça o que acontecer na entrada ou na carga.
+
+Usando as ferramentas do tópico anterior (divisor, Ohm, potência), agora começamos a analisar circuitos
+de verdade. Este é o **primeiro bloco** da matéria e a base para os reguladores integrados e chaveados.
+
+## A cadeia completa
+
+Toda fonte segue a mesma sequência de estágios:
+
+![Cadeia da fonte: rede CA, retificador, filtro, regulador e carga, com a forma de onda em cada estágio.](/imagens/cursos/det/02-cadeia-fonte.svg)
+
+- **Retificador** — converte a CA em CC **pulsante** (só "bumps", todos do mesmo lado).
+- **Filtro** (capacitor) — **suaviza** esses bumps, deixando uma CC com **ondulação** (ripple).
+- **Regulador** — **estabiliza** de vez, entregando uma CC praticamente plana.
+- **Carga** — o circuito que consome a energia.
+
+## Por que o filtro não basta
+
+Aqui mora um conceito que a prova adora. O capacitor de filtro **reduz a ondulação**, mas não resolve
+dois problemas:
+
+1. Se a **carga** puxar mais corrente, o capacitor descarrega mais entre os picos → o ripple aumenta e a
+   tensão média cai.
+2. Se a **entrada** variar, a saída varia junto.
+
+O regulador é o estágio que **isola** a saída dessas variações. Por isso a frase-chave:
+**o filtro suaviza; o regulador estabiliza.**
+
+## Os dois papéis de todo regulador
+
+Independentemente do tipo, todo regulador tem dois elementos. Identificá-los é o primeiro passo de
+qualquer questão:
+
+- **Elemento de referência** — quase sempre um **Zener** ou um **divisor de tensão**. Ele fixa o "alvo",
+  o valor que a saída deve seguir.
+- **Elemento de controle** — um **transistor** (tópico 03) ou um **CI** (tópico 04). Ele ajusta a saída
+  para bater na referência.
+
+## As contas básicas do bloco
+
+- Corrente na carga: `IL = VO / RL`
+- Potência no transistor série (a energia que ele "queima" para regular): `P ≈ (VI − VO) · IL`
+- Potência no Zener: `PZ = VZ · IZ`
+
+<BlocoConceito titulo="Cuidado com VO = VZ">
+É tentador escrever `VO = VZ` direto, mas nem sempre é verdade. Se houver um transistor no caminho,
+some ou subtraia a queda base-emissor `VBE` (≈ 0,7 V) conforme o circuito. A referência **não é
+automaticamente** igual à saída — confira o caminho.
+</BlocoConceito>
+
+## Para onde vamos
+
+Agora que você sabe **o que** um regulador faz e **quem** são a referência e o controle, o próximo
+tópico mostra **como** o transistor faz esse controle — em série, em paralelo, e com proteção contra
+curto-circuito.

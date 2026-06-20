@@ -1,0 +1,82 @@
+---
+titulo: "Ferramentas de cálculo — aula"
+secao: "aula"
+secaoOrdem: 2
+---
+
+## Por que começar por aqui
+
+No tópico anterior vimos que a prova pede para **prever o comportamento** do circuito. Mas prever exige
+**ferramentas**. A boa notícia: são poucas, e elas **se repetem em todos os tópicos seguintes**. A prova
+troca o circuito, mas reaproveita as mesmas contas. Domine este tópico e você terá tirado o "atrito" de
+todos os outros.
+
+## Passo zero: pense em estados
+
+Antes de qualquer fórmula, transforme cada componente num **modelo simples** conforme o que ele está
+fazendo:
+
+- **diodo:** conduz (vira uma queda fixa, p. ex. 0,7 V) **ou** corta (vira um circuito aberto);
+- **transistor:** regula (controla a tensão) **ou** chaveia (liga/desliga);
+- **tiristor:** ligado (curto) **ou** desligado (aberto).
+
+Com os estados definidos, o circuito vira um punhado de resistores e fontes — e aí as fórmulas abaixo
+resolvem.
+
+## Divisor de tensão
+
+É a ferramenta nº 1. Quando um nó fica **entre dois resistores em série**, ligados entre a fonte e o
+terra, a tensão nesse nó é uma **fração** da fonte:
+
+`Vnó = Vfonte · Rbaixo / (Rcima + Rbaixo)`
+
+A ideia intuitiva: o resistor de baixo "fica" com uma fatia da tensão proporcional ao seu tamanho.
+
+> **Exemplo rápido:** `Vfonte = 12 V`, `Rcima = 4 kΩ`, `Rbaixo = 8 kΩ` →
+> `Vnó = 12 · 8/(4+8) = 12 · 2/3 = 8 V`.
+
+Essa mesma fórmula reaparece nas referências de reguladores, no Schmitt (cálculo de UTP/LTP) e na
+realimentação do PWM. Vale a pena automatizá-la.
+
+## Lei de Ohm e potência
+
+- Lei de Ohm: `V = R · I`
+- Potência: `P = V · I = I² · R = V² / R`
+
+As três formas da potência são a **mesma** equação — use a que combina com o que você já conhece. E uma
+regra de ouro: **só calcule potência depois** de ter a tensão **e** a corrente reais no componente.
+
+## Capacitor: o divisor de águas da matéria
+
+Esta distinção decide muitas questões — e é a armadilha favorita da prova:
+
+- **Carga por resistor** (a partir de uma fonte de tensão): a tensão no capacitor sobe de forma
+  **exponencial** — rápido no começo, depois desacelera rumo a um teto. É o modelo RC clássico.
+- **Carga por fonte de corrente** (corrente constante): a tensão sobe em **linha reta** (rampa):
+
+  `dV/dt = I / C`   e, portanto,   `t = C · ΔV / I`
+
+![Carga do capacitor: por resistor a tensão sobe em curva exponencial; por fonte de corrente, sobe em rampa linear.](/imagens/cursos/det/01-carga-capacitor.svg)
+
+*Por que a fonte de corrente dá uma reta? Porque `dV/dt = I/C` é constante quando `I` é constante — inclinação fixa é uma reta. É esse o princípio da base de tempo (tópico 13).*
+
+<BlocoConceito titulo="Quando usar cada modelo">
+Capacitor carregando **através de um resistor** → exponencial (RC). Capacitor carregando por uma
+**fonte de corrente constante** → linear (`dV/dt = I/C`). Trocar os dois é o erro clássico do curso.
+</BlocoConceito>
+
+## Frequência, período e ciclo de trabalho
+
+- `f = 1 / T` (e `T = 1/f`)
+- `D = ton / T` — o **ciclo de trabalho**: a fração do período em que o sinal está em nível alto.
+
+## Unidades: o erro mais barato de evitar
+
+Antes de calcular, **converta tudo** para as unidades base: `kΩ → Ω`, `mA → A`, `µF → F`, `ms → s`. Uma
+conversão esquecida erra o resultado por fatores de 1000. No fim, **confira a ordem de grandeza** — se
+deu uma frequência de 6 MHz num circuito com capacitor de microfarad, algo está errado.
+
+## Para onde vamos
+
+Guarde divisor, Ohm, potência e os dois modelos de carga do capacitor. A partir do próximo tópico
+(fontes reguladas) começamos a aplicá-los em circuitos reais — e eles não saem mais de cena.

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 230" width="480" height="230" role="img" aria-label="Comparador com amp-op: sinal numa entrada, referência na outra, saída saturada">
+  <rect x="0.75" y="0.75" width="478.5" height="228.5" rx="14" fill="#0B1220" stroke="#1E3A5F" stroke-width="1.5"/>
+  <text x="20" y="28" font-family="Inter, sans-serif" font-size="14" fill="#CBD5E1">Comparador (malha aberta)</text>
+
+  <!-- amp-op -->
+  <polygon points="190,60 190,180 320,120" fill="none" stroke="#F7F3EA" stroke-width="2.5" stroke-linejoin="round"/>
+  <text x="246" y="54" font-family="Inter, sans-serif" font-size="11" fill="#94A3B8">+VCC</text>
+  <text x="248" y="200" font-family="Inter, sans-serif" font-size="11" fill="#94A3B8">−VEE</text>
+
+  <!-- entrada + (sinal Vi) -->
+  <line x1="80" y1="88" x2="190" y2="88" stroke="#F7F3EA" stroke-width="2"/>
+  <text x="200" y="92" font-family="Inter, sans-serif" font-size="15" fill="#F7F3EA">+</text>
+  <circle cx="80" cy="88" r="4" fill="none" stroke="#CBD5E1" stroke-width="1.5"/>
+  <text x="40" y="92" font-family="Inter, sans-serif" font-size="14" fill="#CBD5E1">Vi</text>
+
+  <!-- entrada − (referência) -->
+  <line x1="120" y1="150" x2="190" y2="150" stroke="#F7F3EA" stroke-width="2"/>
+  <text x="200" y="154" font-family="Inter, sans-serif" font-size="15" fill="#F7F3EA">−</text>
+  <!-- bateria de referência -->
+  <line x1="108" y1="150" x2="120" y2="150" stroke="#F7F3EA" stroke-width="2"/>
+  <line x1="100" y1="142" x2="100" y2="158" stroke="#F7F3EA" stroke-width="2.5"/>
+  <line x1="92" y1="146" x2="92" y2="154" stroke="#F7F3EA" stroke-width="2"/>
+  <text x="60" y="172" font-family="JetBrains Mono, monospace" font-size="11" fill="#CBD5E1">Vref</text>
+  <line x1="92" y1="150" x2="84" y2="150" stroke="#F7F3EA" stroke-width="2"/>
+  <line x1="76" y1="142" x2="84" y2="158" stroke="#CBD5E1" stroke-width="2"/>
+
+  <!-- saída -->
+  <line x1="320" y1="120" x2="430" y2="120" stroke="#F7F3EA" stroke-width="2"/>
+  <circle cx="430" cy="120" r="4" fill="#D6A84F"/>
+  <text x="408" y="112" font-family="Inter, sans-serif" font-size="14" fill="#CBD5E1">Vo</text>
+
+  <text x="20" y="216" font-family="JetBrains Mono, monospace" font-size="12" fill="#D6A84F">Vi &gt; Vref → Vo ≈ +VCC      Vi &lt; Vref → Vo ≈ −VEE</text>
+</svg>

@@ -1,0 +1,119 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumb from '@components/cursos/Breadcrumb.astro';
+import NavCard from '@components/cursos/NavCard.astro';
+import CourseDashboard from '@components/cursos/CourseDashboard.tsx';
+import {
+  ANO_LABELS,
+  SEMESTRE_LABELS,
+  EPOCA_LABELS,
+  TURMA_LABELS,
+  TURMAS_COM_GERAL,
+  SEMESTRES,
+  EPOCAS_POR_SEMESTRE,
+  SEM_CONTEUDO,
+  enumerarSegmentos,
+  parseSegmentos,
+  parentPath,
+  breadcrumbDe,
+  contarMaterias,
+  filtrarCursos,
+} from '@utils/hierarchy';
+import { dadosDoCurso } from '@utils/content';
+
+export async function getStaticPaths() {
+  return enumerarSegmentos().map((segs) => ({ params: { segmentos: segs.join('/') } }));
+}
+
+const segs = (Astro.params.segmentos ?? '').split('/').filter(Boolean);
+const info = parseSegmentos(segs)!;
+const { ano, turma, semestre, epoca, nivel } = info;
+
+const crumbs = breadcrumbDe(segs);
+const voltarHref = parentPath(segs);
+
+// Título contextual: 4° Ano · GERAL · 1° Semestre · P1
+const contexto = [
+  turma && TURMA_LABELS[turma],
+  semestre && SEMESTRE_LABELS[semestre],
+  epoca && EPOCA_LABELS[epoca],
+].filter(Boolean) as string[];
+const tituloPagina = [ANO_LABELS[ano], ...contexto].join(' · ');
+
+const fmtMat = (n: number) => (n === 0 ? SEM_CONTEUDO : n === 1 ? '1 matéria' : `${n} matérias`);
+
+const prefixo = `/ano/${segs.join('/')}`;
+
+// Cards de cada nível intermediário (sempre renderizados, mesmo vazios).
+type Card = { href: string; titulo: string; badge?: string; meta: string };
+let cards: Card[] = [];
+if (nivel === 'turmas') {
+  cards = TURMAS_COM_GERAL.map((t) => ({
+    href: `/ano/${ano}/${t}`,
+    titulo: TURMA_LABELS[t],
+    badge: t === 'geral' ? 'Comum a todos' : undefined,
+    meta: fmtMat(contarMaterias({ ano, turma: t })),
+  }));
+} else if (nivel === 'semestres') {
+  cards = SEMESTRES.map((s) => ({
+    href: `${prefixo}/${s}`,
+    titulo: SEMESTRE_LABELS[s],
+    meta: fmtMat(contarMaterias({ ano, turma, semestre: s })),
+  }));
+} else if (nivel === 'epocas') {
+  cards = EPOCAS_POR_SEMESTRE[semestre!].map((e) => ({
+    href: `${prefixo}/${e}`,
+    titulo: EPOCA_LABELS[e],
+    meta: fmtMat(contarMaterias({ ano, turma, semestre, epoca: e })),
+  }));
+}
+
+// Folha: matérias deste período.
+const cursosLeaf =
+  nivel === 'materias'
+    ? filtrarCursos({ ano, turma, semestre, epoca }).map((c) => ({
+        slug: c.slug,
+        titulo: c.titulo,
+        subtitulo: c.subtitulo,
+        descricao: c.descricao,
+        categoria: c.categoria,
+        totalMaterias: dadosDoCurso(c.slug)?.topicosEstudo.length ?? 0,
+      }))
+    : [];
+
+const descricaoNivel: Record<typeof nivel, string> = {
+  turmas: 'Escolha a turma. As matérias gerais ficam só em GERAL.',
+  semestres: 'Escolha o semestre.',
+  epocas: 'Escolha o período de prova.',
+  materias: 'Matérias deste período de prova.',
+};
+---
+<BaseLayout titulo={tituloPagina} largura="larga">
+  <Breadcrumb itens={crumbs} />
+
+  <div class="mb-6">
+    <a href={voltarHref} class="btn-ghost inline-flex items-center gap-2 text-sm">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Voltar
+    </a>
+  </div>
+
+  <header class="mb-8">
+    <h1 class="text-3xl font-bold sm:text-4xl">{tituloPagina}</h1>
+    <p class="mt-2 text-nevoa/75">{descricaoNivel[nivel]}</p>
+  </header>
+
+  {nivel === 'materias' ? (
+    cursosLeaf.length === 0 ? (
+      <div class="card p-8 text-center text-nevoa/70">{SEM_CONTEUDO}</div>
+    ) : (
+      <CourseDashboard cursos={cursosLeaf} client:load />
+    )
+  ) : (
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {cards.map((c) => (
+        <NavCard href={c.href} titulo={c.titulo} badge={c.badge} meta={c.meta} cta="Abrir →" />
+      ))}
+    </div>
+  )}
+</BaseLayout>

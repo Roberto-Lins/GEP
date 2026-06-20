@@ -86,6 +86,9 @@
   .prosa a { @apply text-dourado underline underline-offset-4 hover:text-dourado-soft; }
   .prosa ul { @apply list-disc space-y-1.5 pl-6 marker:text-dourado/70; }
   .prosa ol { @apply list-decimal space-y-1.5 pl-6 marker:text-dourado/70; }
+  .prosa img { @apply mx-auto my-7 block w-full max-w-2xl rounded-xl; }
+  .prosa figure { @apply my-7; }
+  .prosa figcaption { @apply mt-2 text-center text-sm not-italic text-nevoa/55; }
   .prosa blockquote {
     @apply rounded-r-lg border-l-4 border-aco-light bg-white/5 py-2 pl-4 pr-3 italic text-marfim/80;
   }

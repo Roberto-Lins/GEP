@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 300" width="520" height="300" role="img" aria-label="Circuito do Schmitt-trigger inversor: amp-op (triângulo) com realimentação positiva por R1 e R2 em ziguezague">
+  <rect x="0.75" y="0.75" width="518.5" height="298.5" rx="14" fill="#0B1220" stroke="#1E3A5F" stroke-width="1.5"/>
+  <text x="20" y="28" font-family="Inter, sans-serif" font-size="14" fill="#CBD5E1">Schmitt-trigger inversor</text>
+
+  <!-- amp-op (triângulo é o símbolo correto) -->
+  <polygon points="190,80 190,220 330,150" fill="none" stroke="#F7F3EA" stroke-width="2.5" stroke-linejoin="round"/>
+  <text x="240" y="74" font-family="Inter, sans-serif" font-size="12" fill="#94A3B8">+VCC</text>
+  <text x="242" y="240" font-family="Inter, sans-serif" font-size="12" fill="#94A3B8">−VEE</text>
+
+  <!-- entrada inversora (sinal Vi) -->
+  <line x1="90" y1="112" x2="190" y2="112" stroke="#F7F3EA" stroke-width="2"/>
+  <text x="200" y="116" font-family="Inter, sans-serif" font-size="15" fill="#F7F3EA">−</text>
+  <circle cx="90" cy="112" r="4" fill="none" stroke="#CBD5E1" stroke-width="1.5"/>
+  <text x="46" y="116" font-family="Inter, sans-serif" font-size="14" fill="#CBD5E1">Vi</text>
+
+  <!-- entrada não-inversora (referência) -->
+  <line x1="150" y1="188" x2="190" y2="188" stroke="#F7F3EA" stroke-width="2"/>
+  <text x="200" y="192" font-family="Inter, sans-serif" font-size="15" fill="#F7F3EA">+</text>
+  <circle cx="150" cy="188" r="3.5" fill="#D6A84F"/>
+
+  <!-- saída -->
+  <line x1="330" y1="150" x2="470" y2="150" stroke="#F7F3EA" stroke-width="2"/>
+  <circle cx="470" cy="150" r="4" fill="#D6A84F"/>
+  <text x="478" y="146" font-family="Inter, sans-serif" font-size="14" fill="#CBD5E1">Vo</text>
+
+  <!-- R1: realimentação da saída para a entrada + (ziguezague no trecho de cima) -->
+  <line x1="150" y1="188" x2="150" y2="60" stroke="#D6A84F" stroke-width="2"/>
+  <line x1="150" y1="60" x2="244" y2="60" stroke="#D6A84F" stroke-width="2"/>
+  <path d="M244 60 l6 -7 l6 14 l6 -14 l6 14 l6 -14 l6 7" fill="none" stroke="#D6A84F" stroke-width="2"/>
+  <text x="256" y="50" font-family="Inter, sans-serif" font-size="13" fill="#D6A84F">R1</text>
+  <line x1="280" y1="60" x2="410" y2="60" stroke="#D6A84F" stroke-width="2"/>
+  <line x1="410" y1="60" x2="410" y2="150" stroke="#D6A84F" stroke-width="2"/>
+  <circle cx="410" cy="150" r="3.5" fill="#D6A84F"/>
+
+  <!-- R2: entrada + para o terra (ziguezague vertical) -->
+  <line x1="150" y1="188" x2="150" y2="200" stroke="#D6A84F" stroke-width="2"/>
+  <path d="M150 200 l-7 6 l14 6 l-14 6 l14 6 l-14 6 l7 6" fill="none" stroke="#D6A84F" stroke-width="2"/>
+  <text x="162" y="226" font-family="Inter, sans-serif" font-size="13" fill="#D6A84F">R2</text>
+  <line x1="150" y1="236" x2="150" y2="252" stroke="#D6A84F" stroke-width="2"/>
+  <line x1="138" y1="252" x2="162" y2="252" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="142" y1="257" x2="158" y2="257" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="146" y1="262" x2="154" y2="262" stroke="#CBD5E1" stroke-width="2"/>
+
+  <text x="318" y="262" font-family="JetBrains Mono, monospace" font-size="13" fill="#D6A84F">V+ = β·Vo,  β = R2/(R1+R2)</text>
+</svg>

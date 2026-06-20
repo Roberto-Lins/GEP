@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 260" width="520" height="260" role="img" aria-label="Tensão dente-de-serra no capacitor do UJT: sobe devagar de VV a VP e cai rápido">
+  <rect x="0.75" y="0.75" width="518.5" height="258.5" rx="14" fill="#0B1220" stroke="#1E3A5F" stroke-width="1.5"/>
+  <text x="20" y="26" font-family="Inter, sans-serif" font-size="14" fill="#CBD5E1">UJT: dente-de-serra no capacitor</text>
+
+  <!-- limiares -->
+  <line x1="60" y1="70" x2="480" y2="70" stroke="#D6A84F" stroke-width="1" stroke-dasharray="4 4"/>
+  <text x="486" y="74" font-family="JetBrains Mono, monospace" font-size="11" fill="#D6A84F">VP</text>
+  <line x1="60" y1="190" x2="480" y2="190" stroke="#D6A84F" stroke-width="1" stroke-dasharray="4 4"/>
+  <text x="486" y="194" font-family="JetBrains Mono, monospace" font-size="11" fill="#D6A84F">VV</text>
+
+  <!-- VC: carga lenta (curva) + descarga rápida (vertical) -->
+  <path d="M60 190 Q120 95 180 70 L180 190 Q240 95 300 70 L300 190 Q360 95 420 70 L420 190 Q450 130 480 110"
+        fill="none" stroke="#CBD5E1" stroke-width="2.5"/>
+
+  <text x="92" y="150" font-family="Inter, sans-serif" font-size="10" fill="#64748B">carga lenta</text>
+  <text x="184" y="150" font-family="Inter, sans-serif" font-size="10" fill="#64748B">descarga rápida</text>
+  <text x="20" y="244" font-family="Inter, sans-serif" font-size="11" fill="#64748B">t1 (carga) ≫ t2 (descarga). Aqui a carga é exponencial (via R), não linear.</text>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 260" width="540" height="260" role="img" aria-label="Sinal PWM: tempo ligado, período, ciclo de trabalho e valor médio de saída">
+  <rect x="0.75" y="0.75" width="538.5" height="258.5" rx="14" fill="#0B1220" stroke="#1E3A5F" stroke-width="1.5"/>
+  <text x="20" y="28" font-family="Inter, sans-serif" font-size="14" fill="#CBD5E1">PWM: o tempo ligado define a média</text>
+
+  <!-- eixo -->
+  <line x1="50" y1="180" x2="500" y2="180" stroke="#334155" stroke-width="1"/>
+  <text x="28" y="84" font-family="JetBrains Mono, monospace" font-size="11" fill="#64748B">VIN</text>
+  <text x="38" y="184" font-family="JetBrains Mono, monospace" font-size="11" fill="#64748B">0</text>
+
+  <!-- valor médio -->
+  <line x1="50" y1="138" x2="500" y2="138" stroke="#22C55E" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="356" y="132" font-family="Inter, sans-serif" font-size="11" fill="#22C55E">valor médio = D·VIN</text>
+
+  <!-- onda PWM -->
+  <path d="M50 180 V80 H100 V180 H170 V80 H220 V180 H290 V80 H340 V180 H410 V80 H460 V180 H500"
+        fill="none" stroke="#D6A84F" stroke-width="3" stroke-linejoin="round"/>
+
+  <!-- marcações ton e T -->
+  <line x1="50" y1="200" x2="100" y2="200" stroke="#CBD5E1" stroke-width="1"/>
+  <line x1="50" y1="196" x2="50" y2="204" stroke="#CBD5E1" stroke-width="1"/>
+  <line x1="100" y1="196" x2="100" y2="204" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="62" y="215" font-family="JetBrains Mono, monospace" font-size="11" fill="#CBD5E1">ton</text>
+
+  <line x1="50" y1="226" x2="170" y2="226" stroke="#CBD5E1" stroke-width="1"/>
+  <line x1="50" y1="222" x2="50" y2="230" stroke="#CBD5E1" stroke-width="1"/>
+  <line x1="170" y1="222" x2="170" y2="230" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="104" y="241" font-family="JetBrains Mono, monospace" font-size="11" fill="#CBD5E1">T</text>
+
+  <text x="300" y="240" font-family="JetBrains Mono, monospace" font-size="12" fill="#D6A84F">D = ton/T   ·   VOUT = D·VIN</text>
+</svg>

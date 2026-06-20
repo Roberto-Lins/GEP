@@ -1,0 +1,33 @@
+---
+titulo: "Revisão — resumo geral"
+secao: "resumo-geral"
+secaoOrdem: 2
+---
+
+## Tabela-mestra de fórmulas
+
+| Assunto | Fórmula | Quando usar |
+|---|---|---|
+| Divisor | `Vnó = Vfonte·Rbaixo/(Rcima+Rbaixo)` | Referências, Schmitt, realimentação |
+| Potência | `P = V·I = I²R = V²/R` | Transistor, Zener, CI, carga |
+| Carga (corrente) | `dV/dt = I/C` | Base de tempo, rampa linear |
+| Regulador fixo | `Rmín = VO/Imáx` | 7805/7812 |
+| LM317 | `VO = VREG·(1+R2/R1)+IQ·R2` | Regulador ajustável |
+| Buck/PWM | `VOUT = D·VIN` | Regulador chaveado |
+| 555 astável | `T_ALTO=0,7(RA+RB)C`, `T_BAIXO=0,7·RB·C`, `f=1/T` | Oscilador |
+| 555 monoestável | `LP = 1,1·RA·C` | Pulso único |
+| Schmitt | `UTP/LTP = β·VO`, `β = Rb/(Ra+Rb)` | Histerese |
+| Limitador de corrente | `I_Lmáx ≈ 0,7/RSC` | Proteção de curto |
+| Tiristor | `I_pico = (V_pico − queda)/R` | Corrente na carga |
+| UJT | `VP = VK + 0,7`, `VK = η·VCC` | Oscilador de relaxação |
+
+## Tabela "quando conduz / corta / dispara"
+
+| Componente | Liga/conduz quando… | Desliga/corta quando… |
+|---|---|---|
+| Diodo | Diretamente polarizado | Reversamente polarizado |
+| SCR | Direto **+** pulso na porta | I < I_retenção |
+| DIAC | `\|V\| ≥ VBR` | I → 0 |
+| TRIAC | Pulso de porta (bidirecional) | Passagem por zero |
+| UJT | V_emissor = VP | V_emissor = VV |
+| Q2 (limitador) | `V_RSC ≈ 0,7 V` | Corrente normal |

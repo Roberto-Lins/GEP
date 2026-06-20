@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 300" width="520" height="300" role="img" aria-label="Carga do capacitor: curva exponencial (por resistor) versus rampa linear (por fonte de corrente)">
+  <rect x="0.75" y="0.75" width="518.5" height="298.5" rx="14" fill="#0B1220" stroke="#1E3A5F" stroke-width="1.5"/>
+  <text x="20" y="28" font-family="Inter, sans-serif" font-size="14" fill="#CBD5E1">Carga do capacitor: os dois modelos</text>
+
+  <!-- eixos -->
+  <line x1="60" y1="60" x2="60" y2="250" stroke="#334155" stroke-width="1.2"/>
+  <line x1="60" y1="250" x2="480" y2="250" stroke="#334155" stroke-width="1.2"/>
+  <text x="30" y="64" font-family="Inter, sans-serif" font-size="12" fill="#CBD5E1">V</text>
+  <text x="470" y="270" font-family="Inter, sans-serif" font-size="12" fill="#CBD5E1">t</text>
+
+  <!-- assintota da exponencial -->
+  <line x1="60" y1="92" x2="480" y2="92" stroke="#475569" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <!-- exponencial (por resistor) -->
+  <path d="M60 250 C 150 140 280 100 470 94" fill="none" stroke="#CBD5E1" stroke-width="3"/>
+  <text x="250" y="135" font-family="Inter, sans-serif" font-size="12" fill="#CBD5E1">por resistor (RC): exponencial</text>
+
+  <!-- linear (por fonte de corrente) -->
+  <path d="M60 250 L 430 70" fill="none" stroke="#D6A84F" stroke-width="3"/>
+  <text x="150" y="210" font-family="Inter, sans-serif" font-size="12" fill="#D6A84F">por fonte de corrente: linear</text>
+  <text x="150" y="227" font-family="JetBrains Mono, monospace" font-size="12" fill="#D6A84F">dV/dt = I/C</text>
+</svg>

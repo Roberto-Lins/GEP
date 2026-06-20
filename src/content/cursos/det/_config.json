@@ -1,0 +1,27 @@
+{
+  "slug": "det",
+  "titulo": "Detecção — PP1",
+  "subtitulo": "Eletrônica aplicada: fontes reguladas, sinais, temporização e tiristores",
+  "descricao": "Trilha para a PP1 de Detecção: regular tensão CC, deformar e deslocar formas de onda, comparar e temporizar com 555 e Schmitt, disparar tiristores e gerar bases de tempo — com cálculo passo a passo e desenho de onda.",
+  "categoria": "Carreira Naval",
+  "ano": "4",
+  "semestre": "1",
+  "epoca": "P1",
+  "turma": "CA-HE",
+  "ordem": 2,
+  "temaVisual": "naval-command",
+  "corTema": "dourado",
+  "icone": "/imagens/cursos/det/icone.svg",
+  "capa": "/imagens/cursos/det/capa.svg",
+  "features": {
+    "timeline": true,
+    "simulados": true,
+    "mapasMentais": true,
+    "podcasts": false,
+    "animacoesHero": true,
+    "animacoesTransicao": false,
+    "modoRevisaoVespera": true,
+    "graficoProgressoAvancado": false
+  },
+  "componentesExtras": []
+}

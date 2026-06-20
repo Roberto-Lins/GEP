@@ -1,0 +1,16 @@
+{
+  "ordem": 0,
+  "slug": "00-ideia-central-da-prova",
+  "titulo": "A lógica-mãe da PP1",
+  "prioridade": "alta",
+  "subtitulo": "O que a prova de Detecção realmente cobra",
+  "tempoEstimado": "15 min",
+  "objetivo": "Entender que a PP1 é uma prova de raciocínio eletrônico: prever qual componente conduz, que tensão/corrente aparece, qual o tempo e como fica a forma de onda — e reconhecer as famílias de circuito.",
+  "palavrasChave": [
+    "raciocínio",
+    "estados do circuito",
+    "forma de onda",
+    "famílias de circuito",
+    "radar fica no T2"
+  ]
+}

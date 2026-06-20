@@ -1,0 +1,79 @@
+---
+titulo: "Reguladores com transistor — aula"
+secao: "aula"
+secaoOrdem: 2
+---
+
+## Onde estamos
+
+No tópico anterior vimos que todo regulador tem uma **referência** e um **controle**. Agora o controle
+ganha rosto: é um **transistor**. A primeira decisão de qualquer questão deste tipo é descobrir **onde**
+esse transistor está em relação à carga — e isso define se o regulador é **série** ou **paralelo**. É um
+dos tópicos de **prioridade máxima** da PP1.
+
+## Série × paralelo: a posição do transistor
+
+![Regulador série (transistor no caminho da carga) versus paralelo (transistor desvia corrente em paralelo com a carga).](/imagens/cursos/det/03-serie-paralelo.svg)
+
+- **Regulador série** — o transistor fica **no caminho da corrente da carga**. Toda a corrente que
+  alimenta a carga **passa por ele** (`IE ≈ IL`). Ele se comporta como um "resistor inteligente" que
+  ajusta sua queda para manter a saída constante. **A maioria das questões é desse tipo.**
+- **Regulador paralelo (shunt)** — o transistor fica **em paralelo com a carga** e **desvia** o excesso
+  de corrente para o terra. A corrente de entrada se divide entre o transistor e a carga.
+
+<BlocoConceito titulo="A pergunta que decide tudo">
+Olhe o transistor e pergunte: *a corrente da carga passa por ele (série) ou ele desvia corrente da carga
+(paralelo)?* Responder isso já organiza a questão inteira.
+</BlocoConceito>
+
+Em ambos, costuma haver um **segundo transistor (Q2)** ou um **amp-op** que melhora a estabilidade:
+ele "vigia" a saída, compara com a referência e corrige o primeiro transistor.
+
+## Limitador de corrente (proteção contra curto)
+
+E se a saída for curto-circuitada? Sem proteção, a corrente dispararia e queimaria o transistor. O
+**limitador de corrente** evita isso. Procure no circuito um **resistor sensor RSC** em série com a
+carga (ou com o emissor) e um transistor **Q2**. A sequência é:
+
+1. Em operação normal, **Q2 está cortado** (não faz nada). É crucial entender que ele **começa
+   desligado**.
+2. Quando a corrente cresce, a queda no resistor sensor (`V_RSC = IL · RSC`) aumenta.
+3. Quando essa queda chega a ≈ **0,7 V**, há tensão suficiente para **ligar Q2** (é a VBE dele).
+4. Ao ligar, **Q2 rouba corrente da base de Q1**. Com menos base, Q1 conduz menos, e a corrente de
+   carga **para de crescer** — fica grampeada no limite.
+
+Por isso a corrente máxima (ou de curto-circuito) é:
+
+`I_Lmáx ≈ 0,7 V / RSC`
+
+## Potência nos transistores
+
+O transistor série dissipa a diferença de tensão vezes a corrente:
+
+`P_Q1 ≈ (VI − VO) · IL`
+
+Calcule primeiro a tensão sobre o transistor e a corrente que passa por ele; só então multiplique.
+
+## Exemplo resolvido — Lista 1 (Q5)
+
+> **Dados:** regulador série com referência Zener de **9,3 V** e `Rx = 13 kΩ`.
+
+**(a) e (b) — VO para VI = 62 V e para VI = 50 V.**
+A saída de um regulador é fixada pela **referência**, não pela entrada. Desde que a entrada seja
+suficiente para o circuito operar, **VO não muda**. Por isso `VO = 40 V` nos **dois** casos. Esse é o
+ponto que a questão testa: o aluno que acha que "VO acompanha VI" erra.
+
+**(c) e (d) — potências em Q1 e Q2 para VI = 35 V e VO = 20 V.**
+Agora a entrada é menor e a saída, 20 V. Aplicando `P ≈ (V sobre o transistor) · (corrente nele)` com os
+valores do circuito, o gabarito oficial dá **P_Q1 = 642 mW** e **P_Q2 = 494 mW** (Lista 2).
+
+<BlocoConceito titulo="Sinal de que você dominou">
+Você olha o circuito e diz na hora: *este transistor controla a tensão **passando** a corrente pela
+carga (série) ou **desviando** corrente da carga (paralelo)?* — e lembra que, num regulador, **a saída
+fica fixa pela referência**, não pela entrada.
+</BlocoConceito>
+
+## Para onde vamos
+
+A mesma regulação, agora **encapsulada** num circuito integrado de três terminais (7805, 7812, LM317),
+é o próximo tópico. A ideia é idêntica; muda só que o transistor e a referência vêm prontos dentro do CI.

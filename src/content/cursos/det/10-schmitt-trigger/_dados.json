@@ -1,0 +1,17 @@
+{
+  "ordem": 10,
+  "slug": "10-schmitt-trigger",
+  "titulo": "Comparador Schmitt-trigger",
+  "prioridade": "máxima",
+  "subtitulo": "Histerese: dois limiares e memória de estado",
+  "tempoEstimado": "55 min",
+  "objetivo": "Calcular UTP e LTP a partir do divisor de realimentação (Vref = β·VO), explicar a histerese e desenhar a saída trocando de estado apenas nos limiares.",
+  "palavrasChave": [
+    "Schmitt-trigger",
+    "histerese",
+    "UTP",
+    "LTP",
+    "β = Rb/(Ra+Rb)",
+    "realimentação positiva"
+  ]
+}

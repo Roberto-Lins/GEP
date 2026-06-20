@@ -1,0 +1,17 @@
+{
+  "ordem": 8,
+  "slug": "08-comparadores",
+  "titulo": "Comparadores com amp-op",
+  "prioridade": "alta",
+  "subtitulo": "Transformar entrada analógica em saída saturada",
+  "tempoEstimado": "35 min",
+  "objetivo": "Determinar a saída de um comparador em malha aberta (V+ > V- ⇒ +VCC; V+ < V- ⇒ -VEE) e desenhar a onda retangular saturada.",
+  "palavrasChave": [
+    "comparador",
+    "malha aberta",
+    "saturação",
+    "V+ e V-",
+    "referência",
+    "saída retangular"
+  ]
+}

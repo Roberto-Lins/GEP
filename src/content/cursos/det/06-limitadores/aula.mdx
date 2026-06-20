@@ -1,0 +1,65 @@
+---
+titulo: "Limitadores (ceifadores) — aula"
+secao: "aula"
+secaoOrdem: 2
+---
+
+## Mudança de assunto: agora mexemos na onda
+
+Até aqui o objetivo era **manter a tensão constante** (fontes e reguladores). A partir deste tópico o
+objetivo se inverte: vamos **modificar de propósito a forma da onda**. O primeiro tipo de tratamento é o
+**limitador** (ou ceifador): ele **corta** um pedaço do sinal.
+
+A ferramenta-chave é o **diodo**, que funciona como uma **válvula de mão única**: deixa a corrente
+passar num sentido (conduz) e bloqueia no outro (corta). Quando o diodo conduz, ele "prende" um nó num
+nível fixo — e é assim que a onda ganha um teto ou um chão.
+
+## O circuito típico
+
+![Limitador paralelo: um resistor em série e, do nó de saída para o terra, um diodo em série com uma fonte DC.](/imagens/cursos/det/06-limitador-circuito.svg)
+
+O resistor `R` fica em série; do nó de saída sai um ramo com **diodo + fonte DC**. Enquanto o diodo está
+cortado, a saída acompanha a entrada. Quando a tensão no nó tenta passar de `VDC + 0,7 V`, o diodo
+conduz e **prende** a saída nesse valor — o pico é ceifado.
+
+## Roteiro de resolução (a resposta é o desenho)
+
+1. Desenhe a entrada com os valores de **pico**.
+2. Analise o **semiciclo positivo** e o **negativo** separadamente.
+3. Em cada trecho, decida se o diodo está **direto (conduz)** ou **reverso (corta)**.
+4. Quando o diodo **conduz**, troque-o pela **queda** (0,7 V, ou o valor dado).
+5. O **nível de corte** = fonte DC `±` queda do diodo, conforme a polaridade.
+6. Quando o diodo **corta**, a saída acompanha a entrada pelo caminho resistivo.
+7. Monte a onda: trecho que acompanha + trecho ceifado.
+8. Marque **máximo e mínimo** no desenho.
+
+## Exemplo resolvido
+
+> **Dados:** entrada senoidal de `±10 V`; ramo com diodo (`0,7 V`) em série com `VDC = 4 V` (positivo,
+> para o terra), como na figura.
+
+1. **Nível de corte:** o diodo conduz quando o nó passa de `VDC + 0,7 = 4,7 V`.
+2. **Semiciclo positivo:** enquanto `Vi` está abaixo de 4,7 V, o diodo está cortado e a saída
+   **acompanha** a entrada. Quando `Vi` passa de 4,7 V, o diodo conduz e **prende** a saída em
+   **+4,7 V** — o pico de +10 V some, vira um platô em 4,7 V.
+3. **Semiciclo negativo:** o diodo fica reverso o tempo todo (corta), então a saída acompanha a entrada
+   até o mínimo de **−10 V**.
+4. **Resultado:** `Vo` vai de **−10 V** a **+4,7 V** (topo ceifado).
+
+![Forma de onda: a senoide de entrada (±10 V) com o pico positivo ceifado em VDC + 0,7 V na saída.](/imagens/cursos/det/06-limitador-ondas.svg)
+
+## As variações dos slides
+
+Os slides trazem seis exemplos do mesmo princípio: **só com diodos**, **diodo + fonte DC**, **com
+Zener** e **limitador ativo** (com amp-op). Com **Zener**, lembre: ele conduz **direto** num sentido
+(queda ≈ 0,7 V) e por **ruptura `VZ`** no outro — então o corte de cada lado é diferente.
+
+<BlocoConceito titulo="Sinal de que você dominou">
+Você consegue prever em qual valor a onda **bate no teto** ou **bate no chão** antes mesmo de desenhar —
+somando a fonte DC com a queda do diodo, atento à polaridade.
+</BlocoConceito>
+
+## Para onde vamos
+
+O limitador **corta** a onda. O próximo tópico, **grampeador**, usa os mesmos ingredientes (diodo +
+capacitor), mas com efeito diferente: em vez de cortar, ele **desloca** a onda inteira.

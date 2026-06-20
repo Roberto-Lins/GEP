@@ -1,0 +1,60 @@
+---
+titulo: "Geradores de base de tempo — aula"
+secao: "aula"
+secaoOrdem: 2
+---
+
+## O fecho da matéria
+
+Chegamos ao último bloco — e ele **junta tudo**: temporização, capacitor, fonte de corrente e UJT/555.
+No tópico anterior, o UJT gerou um dente-de-serra, mas com subida **exponencial**. Uma **base de tempo**
+de verdade precisa de algo melhor: uma rampa **linear**. Vamos ver por quê e como.
+
+> **Aviso:** este conteúdo **não está no livro** — o slide do professor é a referência.
+
+## Por que a rampa precisa ser linear
+
+Uma base de tempo serve de **régua do tempo**: ela transforma "tempo" em "tensão" para que um evento
+possa ser medido/posicionado. Como o tempo é uma grandeza **linear**, a tensão de referência também
+precisa crescer de forma **linear** — uma reta, não uma curva. Uma rampa curva (exponencial)
+distorceria a escala de tempo.
+
+## A conta que governa
+
+A subida só é uma reta se o capacitor for carregado por **corrente constante** (uma **fonte de
+corrente**), e não por um resistor. Nesse caso:
+
+- `dV/dt = I / C`  → a inclinação da rampa (em V/s), **constante**.
+- `t = ΔV / (dV/dt) = C · ΔV / I`
+
+![Base de tempo: a subida é uma reta (carga por corrente constante), diferente da curva exponencial do UJT.](/imagens/cursos/det/13-rampa-linear.svg)
+
+## Os dois circuitos
+
+- **UJT com fonte de corrente** — rampa de **VV a VP**.
+- **555 monoestável com fonte de corrente** — rampa de **0 a ⅔·VCC**; aqui a **largura do pulso
+  coincide com o tempo da rampa**.
+
+## Como achar a corrente da fonte
+
+A "fonte de corrente" costuma ser um transistor: a corrente sai do divisor na base, da queda `VBE` e do
+resistor de emissor. Exemplo dos slides:
+
+1. `Vb = 9,9 V` (divisor na base).
+2. `Ve = Vb + 0,7 = `**`10,6 V`**.
+3. `Ie = (VCC − Ve) / Re ≈ `**`0,52 mA`** — essa é a corrente (quase) constante que carrega o capacitor.
+4. Com `I` e `C`, a inclinação sai por `dV/dt = I/C`, e o tempo da rampa por `t = C·ΔV/I`.
+
+<BlocoConceito titulo="A pegadinha que fecha o curso">
+Se a carga é por **fonte de corrente**, **não** use a exponencial de RC — use `dV/dt = I/C`. A rampa
+linear **nasce** justamente da corrente constante.
+</BlocoConceito>
+
+## Fim da trilha
+
+Você percorreu as cinco famílias: estabilizou tensão (fontes), moldou o sinal (limitador/grampeador),
+decidiu e temporizou (comparador/555/Schmitt), chaveou por disparo (tiristores/UJT) e gerou uma
+referência temporal (base de tempo). O **radar de pulso**, que motiva a base de tempo, fica para o T2.
+
+Agora vá para a **Revisão final**: lá estão o roteiro de 8 passos, a tabela-mestra de fórmulas e o
+simulado para consolidar tudo antes da prova.

@@ -1,0 +1,31 @@
+---
+titulo: "Revisão — erros frequentes"
+secao: "erros-frequentes"
+secaoOrdem: 3
+---
+
+Os erros que mais derrubam nota na PP1:
+
+<BlocoPegadinha titulo="RC exponencial onde é corrente constante">
+Capacitor carregando por fonte de corrente → `dV/dt = I/C`, **nunca** a exponencial de RC.
+</BlocoPegadinha>
+
+<BlocoPegadinha titulo="Trocar fórmula do 555">
+`LP = 1,1·RA·C` é do **monoestável**; `0,7·(...)·C` é do **astável**. Não misture.
+</BlocoPegadinha>
+
+<BlocoPegadinha titulo="Schmitt com uma referência só">
+São **dois** limiares (UTP e LTP), e o limiar muda quando a saída troca.
+</BlocoPegadinha>
+
+<BlocoPegadinha titulo="SCR ligando reversamente polarizado">
+Precisa de polarização direta **e** pulso na porta. Pulso sozinho não liga.
+</BlocoPegadinha>
+
+<BlocoPegadinha titulo="VO acompanhando VI no regulador">
+A saída de um regulador é **fixa** pela referência; não sobe com a entrada.
+</BlocoPegadinha>
+
+<BlocoPegadinha titulo="Unidades e queda de condução">
+Converta `kΩ/µF/mA/ms` antes; e subtraia a queda **informada** (não 0,7 V por hábito).
+</BlocoPegadinha>

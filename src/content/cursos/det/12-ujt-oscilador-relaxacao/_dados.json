@@ -1,0 +1,17 @@
+{
+  "ordem": 12,
+  "slug": "12-ujt-oscilador-relaxacao",
+  "titulo": "UJT e oscilador de relaxação",
+  "prioridade": "alta",
+  "subtitulo": "Da chave de disparo ao dente-de-serra",
+  "tempoEstimado": "50 min",
+  "objetivo": "Calcular RB1, RB2, VK e VP do UJT (VP = VK + 0,7), os tempos de carga/descarga e a frequência, e desenhar o dente-de-serra no capacitor.",
+  "palavrasChave": [
+    "UJT",
+    "oscilador de relaxação",
+    "η (eta)",
+    "RBB",
+    "VP = VK + 0,7",
+    "dente-de-serra"
+  ]
+}

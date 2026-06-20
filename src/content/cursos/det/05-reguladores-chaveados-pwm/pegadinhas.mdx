@@ -1,0 +1,19 @@
+---
+titulo: "Reguladores chaveados e PWM — pegadinhas"
+secao: "pegadinhas"
+secaoOrdem: 5
+---
+
+<BlocoPegadinha titulo="Valor instantâneo × valor médio">
+A onda na saída do chaveador é retangular, mas o que alimenta a carga é o **valor médio**
+(`VOUT = D·VIN`). Não confunda o pico com a média.
+</BlocoPegadinha>
+
+<BlocoPegadinha titulo="Fórmula de linear no chaveado">
+Não aplique as contas do regulador linear (quedas/referência) num regulador chaveado. Aqui quem manda
+é o ciclo de trabalho.
+</BlocoPegadinha>
+
+<BlocoPegadinha titulo="Achar que a frequência varia">
+A frequência do PWM é **constante**. O que varia para regular é o tempo ligado (ton).
+</BlocoPegadinha>
