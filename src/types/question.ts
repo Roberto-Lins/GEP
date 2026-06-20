@@ -39,6 +39,7 @@ export interface GrupoCorrelacione {
   titulo: string;
   chaves: { chave: string; texto: string }[];
   itens: { texto: string; chave: string }[];
+  fonte?: string;
 }
 
 /**
