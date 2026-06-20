@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 280" width="460" height="280" role="img" aria-label="Oscilador de relaxação com DIAC: +50 V, resistor de 10 kΩ, capacitor de 10 nF e DIAC com VBR de 30 V">
+  <rect x="0.75" y="0.75" width="458.5" height="278.5" rx="14" fill="#0B1220" stroke="#1E3A5F" stroke-width="1.5"/>
+  <text x="20" y="26" font-family="Inter, sans-serif" font-size="14" fill="#CBD5E1">Oscilador de relaxação com DIAC</text>
+
+  <!-- +50 V -->
+  <text x="92" y="44" font-family="JetBrains Mono, monospace" font-size="12" fill="#94A3B8">+50 V</text>
+  <circle cx="120" cy="52" r="4" fill="#D6A84F"/>
+  <line x1="120" y1="52" x2="120" y2="66" stroke="#F7F3EA" stroke-width="2"/>
+
+  <!-- R 10k (ziguezague vertical) -->
+  <path d="M120 66 l-7 6 l14 6 l-14 6 l14 6 l-14 6 l7 6" fill="none" stroke="#F7F3EA" stroke-width="2"/>
+  <text x="60" y="92" font-family="Inter, sans-serif" font-size="12" fill="#CBD5E1">10 kΩ</text>
+  <line x1="120" y1="102" x2="120" y2="140" stroke="#F7F3EA" stroke-width="2"/>
+
+  <!-- nó / saída -->
+  <circle cx="120" cy="140" r="3.5" fill="#D6A84F"/>
+  <line x1="120" y1="140" x2="250" y2="140" stroke="#F7F3EA" stroke-width="2"/>
+  <circle cx="250" cy="140" r="4" fill="#D6A84F"/>
+  <text x="258" y="144" font-family="JetBrains Mono, monospace" font-size="12" fill="#CBD5E1">Vo</text>
+
+  <!-- capacitor 10 nF (ramo esquerdo ao terra) -->
+  <line x1="120" y1="140" x2="120" y2="164" stroke="#F7F3EA" stroke-width="2"/>
+  <line x1="104" y1="164" x2="136" y2="164" stroke="#F7F3EA" stroke-width="2.5"/>
+  <line x1="104" y1="172" x2="136" y2="172" stroke="#F7F3EA" stroke-width="2.5"/>
+  <text x="140" y="172" font-family="Inter, sans-serif" font-size="12" fill="#CBD5E1">10 nF</text>
+  <line x1="120" y1="172" x2="120" y2="206" stroke="#F7F3EA" stroke-width="2"/>
+  <line x1="108" y1="206" x2="132" y2="206" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="112" y1="211" x2="128" y2="211" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="116" y1="216" x2="124" y2="216" stroke="#CBD5E1" stroke-width="2"/>
+
+  <!-- DIAC (ramo direito ao terra) -->
+  <line x1="190" y1="140" x2="190" y2="158" stroke="#F7F3EA" stroke-width="2"/>
+  <circle cx="190" cy="140" r="3.5" fill="#D6A84F"/>
+  <polygon points="178,158 202,158 190,176" fill="none" stroke="#F7F3EA" stroke-width="2"/>
+  <polygon points="178,194 202,194 190,176" fill="none" stroke="#F7F3EA" stroke-width="2"/>
+  <text x="208" y="168" font-family="Inter, sans-serif" font-size="12" fill="#CBD5E1">S₁ (DIAC)</text>
+  <text x="208" y="186" font-family="JetBrains Mono, monospace" font-size="11" fill="#94A3B8">VBR = 30 V</text>
+  <line x1="190" y1="194" x2="190" y2="206" stroke="#F7F3EA" stroke-width="2"/>
+  <line x1="178" y1="206" x2="202" y2="206" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="182" y1="211" x2="198" y2="211" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="186" y1="216" x2="194" y2="216" stroke="#CBD5E1" stroke-width="2"/>
+
+  <text x="20" y="248" font-family="JetBrains Mono, monospace" font-size="11" fill="#D6A84F">VC = 50·(1 − e^(−t/RC)); dispara em VBR → f ≈ 10,9 kHz</text>
+  <text x="20" y="266" font-family="Inter, sans-serif" font-size="10" fill="#64748B">Fonte: SOPA PP1 2021 (gabarito oficial), 2ª questão.</text>
+</svg>

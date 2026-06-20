@@ -615,6 +615,32 @@ export const discursivas: QuestaoDiscursiva[] = [
     ],
     fonte: 'LinhaDoTempo (06) / Slides Limitadores e Grampeadores',
   },
+  {
+    id: 'dis-11-02', tipo: 'discursiva', topico: '11-tiristores-scr-diac-triac', dificuldade: 'dificil',
+    enunciado: 'Oscilador com DIAC (S₁, VBR = 30 V): fonte de +50 V, R = 10 kΩ em série e C = 10 nF em paralelo com o DIAC. Determine a frequência do sinal de saída.',
+    gabaritoComentado:
+      'O capacitor carrega por R a partir de 50 V (exponencial); quando VC atinge VBR = 30 V o DIAC dispara e descarrega C (instantâneo).\n\nRC = 10 kΩ · 10 nF = 1×10⁻⁴ s.\nVC = VCC·(1 − e^(−t/RC)) → 30 = 50·(1 − e^(−t/10⁻⁴))\n0,6 = 1 − e^(−t/10⁻⁴) → e^(−t/10⁻⁴) = 0,4 → −t/10⁻⁴ = ln 0,4 = −0,916\nt = 9,2×10⁻⁵ s → f = 1/t ≈ 10,9 kHz.',
+    criterios: [
+      'Reconheceu carga exponencial por R (não dV/dt = I/C).',
+      'Usou VBR = 30 V como alvo (não VCC).',
+      'Chegou a f ≈ 10,9 kHz.',
+    ],
+    fonte: 'SOPA PP1 2021 — 2ª questão (gabarito oficial)',
+    armadilha: 'Usar a fórmula linear (fonte de corrente); aqui a carga é por resistor.',
+  },
+  {
+    id: 'dis-10-02', tipo: 'discursiva', topico: '10-schmitt-trigger', dificuldade: 'dificil',
+    enunciado: 'Determine UTP e LTP de dois Schmitt (±12 V): (1) com Zener de 7 V em série com o divisor 10 kΩ/10 kΩ; (2) com dois diodos no divisor 15 kΩ/30 kΩ.',
+    gabaritoComentado:
+      'Circuito 1 (Zener):\n• Vo = +12 V → Zener na região Zener (cai 7 V): UTP = (12 − 7)·10k/20k = +2,5 V.\n• Vo = −12 V → Zener conduz como diodo comum (0,7 V): LTP = (−12 + 0,7)·10k/20k = −5,65 V.\n\nCircuito 2 (diodos):\n• Vo = +12 V → diodos não conduzem: UTP = 12·30k/(15k+30k) = +8 V.\n• Vo = −12 V → diodos conduzem: LTP = 2·(−0,7) = −1,4 V.\n\nGabarito oficial: C1 → UTP=+2,5 V, LTP=−5,65 V; C2 → UTP=+8 V, LTP=−1,4 V.',
+    criterios: [
+      'Reavaliou a queda do componente conforme Vo (alta × baixa).',
+      'Circuito 1: +2,5 V e −5,65 V.',
+      'Circuito 2: +8 V e −1,4 V.',
+    ],
+    fonte: 'SOPA PP1 2021 — questão de Schmitt (gabarito oficial)',
+    armadilha: 'Assumir limiares simétricos (UTP = −LTP): Zener/diodos os tornam assimétricos.',
+  },
 ];
 
 export const todasQuestoes: Questao[] = [

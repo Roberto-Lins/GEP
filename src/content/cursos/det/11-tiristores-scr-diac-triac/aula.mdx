@@ -53,6 +53,51 @@ Você olha a senoide e **marca exatamente os intervalos em que IL existe** — l
 queda de condução e de que o SCR não liga reversamente polarizado.
 </BlocoConceito>
 
+## Exemplo resolvido — oscilador de relaxação com DIAC (SOPA 2021)
+
+### Enunciado
+No circuito abaixo, `S₁` é um DIAC com tensão de ruptura `VBR = 30 V`. Determine a frequência do sinal
+na saída `Vo`.
+
+### Circuito
+![Oscilador com DIAC: +50 V, 10 kΩ em série, 10 nF e o DIAC (VBR = 30 V) em paralelo ao terra.](/imagens/cursos/det/11-diac-oscilador.svg)
+
+### O que a questão pede?
+A **frequência** de oscilação — ou seja, quanto tempo o capacitor leva para carregar até o DIAC disparar.
+
+### Dados
+- `VCC = 50 V` · `R = 10 kΩ` · `C = 10 nF` · `VBR = 30 V`.
+
+### Ideia central
+O capacitor **carrega por R** (exponencial) a partir de 50 V. Quando `VC` atinge `VBR = 30 V`, o DIAC
+**dispara** e descarrega o capacitor quase instantaneamente; depois tudo recomeça. O período é, então, o
+**tempo de carga até 30 V**.
+
+### Passo 1 — estado dos componentes
+Enquanto `VC < 30 V`, o DIAC está **aberto** (cortado) e o capacitor carrega por R. Ao chegar a 30 V, o
+DIAC **conduz** e descarrega C.
+
+### Passo 2 — fórmula
+Carga exponencial (por resistor): `VC = VCC·(1 − e^(−t/RC))`, com `RC = 10 kΩ · 10 nF = 10⁻⁴ s`.
+
+### Passo 3 — substituir
+`30 = 50·(1 − e^(−t/10⁻⁴))` → `0,6 = 1 − e^(−t/10⁻⁴)` → `e^(−t/10⁻⁴) = 0,4`
+→ `−t/10⁻⁴ = ln 0,4 = −0,916` → `t = 9,2 × 10⁻⁵ s`.
+
+### Passo 4 — interpretar
+`t` é o período de um ciclo (a descarga é desprezível). Logo `f = 1/t`.
+
+### Resposta
+**f = 1/t ≈ 10,9 kHz** (gabarito oficial, SOPA PP1 2021).
+
+### Pegadinha da questão
+Aqui a carga é **por resistor** → use a **exponencial**, não `dV/dt = I/C` (essa é a da base de tempo,
+com fonte de corrente). E o alvo é `VBR`, não `VCC`.
+
+### Como reconhecer na prova
+DIAC (ou UJT) + R + C + fonte CC = **oscilador de relaxação**: ache o tempo de carga até a tensão de
+disparo e faça `f = 1/t`.
+
 ## Para onde vamos
 
 Existe um quarto componente dessa família que é, ao mesmo tempo, uma chave de disparo e um **gerador de

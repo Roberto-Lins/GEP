@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 300" width="520" height="300" role="img" aria-label="Schmitt-trigger com diodo Zener de 7 V na realimentação e divisor 10 kΩ/10 kΩ">
+  <rect x="0.75" y="0.75" width="518.5" height="298.5" rx="14" fill="#0B1220" stroke="#1E3A5F" stroke-width="1.5"/>
+  <text x="20" y="26" font-family="Inter, sans-serif" font-size="14" fill="#CBD5E1">Schmitt com Zener na realimentação</text>
+
+  <!-- amp-op -->
+  <polygon points="180,80 180,220 320,150" fill="none" stroke="#F7F3EA" stroke-width="2.5" stroke-linejoin="round"/>
+  <text x="232" y="74" font-family="Inter, sans-serif" font-size="11" fill="#94A3B8">+12 V</text>
+  <text x="232" y="240" font-family="Inter, sans-serif" font-size="11" fill="#94A3B8">−12 V</text>
+
+  <!-- entrada inversora -->
+  <line x1="80" y1="112" x2="180" y2="112" stroke="#F7F3EA" stroke-width="2"/>
+  <text x="188" y="116" font-family="Inter, sans-serif" font-size="15" fill="#F7F3EA">−</text>
+  <circle cx="80" cy="112" r="4" fill="none" stroke="#CBD5E1" stroke-width="1.5"/>
+  <text x="44" y="116" font-family="Inter, sans-serif" font-size="14" fill="#CBD5E1">Vi</text>
+
+  <!-- entrada não-inversora -->
+  <line x1="140" y1="188" x2="180" y2="188" stroke="#F7F3EA" stroke-width="2"/>
+  <text x="188" y="192" font-family="Inter, sans-serif" font-size="15" fill="#F7F3EA">+</text>
+  <circle cx="140" cy="188" r="3.5" fill="#D6A84F"/>
+
+  <!-- saída -->
+  <line x1="320" y1="150" x2="470" y2="150" stroke="#F7F3EA" stroke-width="2"/>
+  <circle cx="470" cy="150" r="4" fill="#D6A84F"/>
+  <text x="478" y="150" font-family="Inter, sans-serif" font-size="14" fill="#CBD5E1">Vo</text>
+
+  <!-- realimentação: Vo -> Zener -> R1 -> nó + -->
+  <line x1="140" y1="188" x2="140" y2="54" stroke="#D6A84F" stroke-width="2"/>
+  <line x1="140" y1="54" x2="175" y2="54" stroke="#D6A84F" stroke-width="2"/>
+  <path d="M175 54 l6 -7 l6 14 l6 -14 l6 14 l6 -14 l6 7" fill="none" stroke="#D6A84F" stroke-width="2"/>
+  <text x="166" y="40" font-family="Inter, sans-serif" font-size="11" fill="#D6A84F">R1 10 kΩ</text>
+  <line x1="211" y1="54" x2="294" y2="54" stroke="#D6A84F" stroke-width="2"/>
+  <!-- diodo Zener -->
+  <polygon points="312,47 312,61 298,54" fill="none" stroke="#D6A84F" stroke-width="2"/>
+  <line x1="298" y1="47" x2="298" y2="61" stroke="#D6A84F" stroke-width="2"/>
+  <line x1="298" y1="47" x2="293" y2="43" stroke="#D6A84F" stroke-width="2"/>
+  <line x1="298" y1="61" x2="303" y2="65" stroke="#D6A84F" stroke-width="2"/>
+  <text x="284" y="40" font-family="Inter, sans-serif" font-size="11" fill="#D6A84F">Zener 7 V</text>
+  <line x1="294" y1="54" x2="312" y2="54" stroke="#D6A84F" stroke-width="2"/>
+  <line x1="312" y1="54" x2="420" y2="54" stroke="#D6A84F" stroke-width="2"/>
+  <line x1="420" y1="54" x2="420" y2="150" stroke="#D6A84F" stroke-width="2"/>
+  <circle cx="420" cy="150" r="3.5" fill="#D6A84F"/>
+
+  <!-- R2 ao terra -->
+  <line x1="140" y1="188" x2="140" y2="204" stroke="#D6A84F" stroke-width="2"/>
+  <path d="M140 204 l-7 6 l14 6 l-14 6 l14 6 l-14 6 l7 6" fill="none" stroke="#D6A84F" stroke-width="2"/>
+  <text x="150" y="230" font-family="Inter, sans-serif" font-size="11" fill="#D6A84F">R2 10 kΩ</text>
+  <line x1="140" y1="240" x2="140" y2="256" stroke="#D6A84F" stroke-width="2"/>
+  <line x1="128" y1="256" x2="152" y2="256" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="132" y1="261" x2="148" y2="261" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="136" y1="266" x2="144" y2="266" stroke="#CBD5E1" stroke-width="2"/>
+
+  <text x="20" y="284" font-family="JetBrains Mono, monospace" font-size="11" fill="#D6A84F">Vo=+12 → UTP=(12−7)/2=+2,5 V   Vo=−12 → LTP=(−12+0,7)/2=−5,65 V</text>
+</svg>

@@ -115,6 +115,34 @@ desloca os dois limiares juntos. A conta de `β` é a mesma; depois é só **som
 resultado. Confira o circuito exato da lista para os valores numéricos.
 </BlocoConceito>
 
+## Exemplo resolvido — Schmitt com Zener e com diodos (SOPA 2021)
+
+### Enunciado
+Determine **UTP** e **LTP** dos dois comparadores Schmitt abaixo (ambos com `±12 V`).
+
+### Circuito 1 — Zener na realimentação
+![Schmitt inversor com Zener de 7 V em série com R1 (10 kΩ) e R2 (10 kΩ) ao terra.](/imagens/cursos/det/10-schmitt-zener.svg)
+
+- **Vo = +12 V** → o Zener está na **região Zener** (cai 7 V):
+  `UTP = (12 − 7)·10k/(10k+10k) = 5/2 = `**`+2,5 V`**.
+- **Vo = −12 V** → o Zener **conduz como diodo comum** (cai 0,7 V):
+  `LTP = (−12 + 0,7)·10k/(10k+10k) = −11,3/2 = `**`−5,65 V`**.
+
+### Circuito 2 — dois diodos na realimentação (divisor 15 kΩ/30 kΩ)
+- **Vo = +12 V** → os diodos **não conduzem**: `UTP = 12·30k/(15k+30k) = 12·(2/3) = `**`+8 V`**.
+- **Vo = −12 V** → os diodos **conduzem**: `LTP = 2·(−0,7) = `**`−1,4 V`**.
+
+### Resposta
+**Circuito 1: UTP = +2,5 V, LTP = −5,65 V. Circuito 2: UTP = +8 V, LTP = −1,4 V** (gabarito oficial, SOPA PP1 2021).
+
+### Pegadinha da questão
+Zener e diodos tornam os limiares **assimétricos** — **não** assuma `UTP = −LTP`. O segredo é reavaliar a
+queda do componente conforme o **estado da saída** (Vo = +VCC vs −VEE).
+
+### Como reconhecer na prova
+Schmitt com Zener/diodo na malha de realimentação → calcule a referência **duas vezes** (saída alta e
+saída baixa), trocando a queda do componente em cada caso.
+
 ## A curva de histerese
 
 Uma forma poderosa de "ver" o Schmitt é plotar a saída `Vo` **em função** da entrada `Vi`. O resultado
