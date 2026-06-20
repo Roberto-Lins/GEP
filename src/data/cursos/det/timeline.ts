@@ -18,7 +18,7 @@ export const timeline: TopicoTimeline[] = [
     statusInicial: 'pendente',
     objetivo:
       'Entender que a PP1 é uma prova de raciocínio eletrônico: prever qual componente conduz, que tensão/corrente aparece, qual o tempo e como fica a forma de onda — e reconhecer as famílias de circuito.',
-    palavrasChave: ['raciocínio', 'estados do circuito', 'forma de onda', 'famílias de circuito', 'radar fica no T2'],
+    palavrasChave: ['raciocínio', 'estados do circuito', 'forma de onda', 'famílias de circuito'],
   },
   {
     ordem: 1,

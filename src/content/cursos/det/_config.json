@@ -23,5 +23,7 @@
     "modoRevisaoVespera": true,
     "graficoProgressoAvancado": false
   },
-  "componentesExtras": []
+  "componentesExtras": [
+    "Calculadora555", "CalculadoraSchmitt", "CalculadoraRampa", "CalculadoraRegulador"
+  ]
 }

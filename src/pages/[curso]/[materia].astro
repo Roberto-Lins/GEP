@@ -5,6 +5,10 @@ import BlocoObjetivo from '@components/estudo/BlocoObjetivo.astro';
 import BlocoConceito from '@components/estudo/BlocoConceito.astro';
 import BlocoPegadinha from '@components/estudo/BlocoPegadinha.astro';
 import BlocoComparacao from '@components/estudo/BlocoComparacao.astro';
+import Calc555 from '@components/cursos/det/Calculadora555.astro';
+import CalcSchmitt from '@components/cursos/det/CalculadoraSchmitt.astro';
+import CalcRampa from '@components/cursos/det/CalculadoraRampa.astro';
+import CalcRegulador from '@components/cursos/det/CalculadoraRegulador.astro';
 import PlayerVideo from '@components/midia/PlayerVideo.astro';
 import PlayerPodcast from '@components/midia/PlayerPodcast.astro';
 import MapaMentalPreview from '@components/midia/MapaMentalPreview.astro';
@@ -31,7 +35,10 @@ const dados = dadosDoCurso(curso!)!;
 const topico = dados.topicoPorSlug(materia!)!;
 
 // Componentes disponíveis dentro do MDX (sem precisar importar em cada arquivo).
-const mdxComponents = { BlocoConceito, BlocoPegadinha, BlocoComparacao, BlocoObjetivo };
+const mdxComponents = {
+  BlocoConceito, BlocoPegadinha, BlocoComparacao, BlocoObjetivo,
+  Calc555, CalcSchmitt, CalcRampa, CalcRegulador,
+};
 
 // Seções de conteúdo desta matéria, agrupadas pela pasta e ordenadas.
 const todas = await getCollection('cursos');

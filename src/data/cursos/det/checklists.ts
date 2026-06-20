@@ -7,7 +7,6 @@ export const checklists: Record<string, ItemChecklist[]> = {
   '00-ideia-central-da-prova': [
     { id: 'c1', texto: 'Sei que a PP1 cobra prever o comportamento do circuito, não decorar nomes.' },
     { id: 'c2', texto: 'Reconheço as famílias: regular tensão, deformar/deslocar onda, comparar/temporizar, disparar, gerar rampa.' },
-    { id: 'c3', texto: 'Lembro que radar de pulso NÃO cai na PP1 (fica para o T2).' },
   ],
   '01-ferramentas-de-calculo': [
     { id: 'c1', texto: 'Calculo um divisor de tensão sem hesitar.' },

@@ -38,6 +38,8 @@ Quando a saída precisa ser **ajustável**, entra o LM317. Dois resistores exter
 
 `VO = VREG · (1 + R2/R1) + IQ · R2`, com `VREG ≈ 1,25 V`.
 
+<CalcRegulador />
+
 Entendendo os termos: o LM317 mantém **1,25 V fixos** entre OUT e ADJ (é o `VREG`). Essa tensão sobre
 `R1` gera uma corrente que também passa por `R2`, e a soma das quedas define `VO`. O termo `IQ · R2` é
 uma pequena correção da **corrente de ajuste** — só entra na conta **quando o enunciado fornece `IQ`**.

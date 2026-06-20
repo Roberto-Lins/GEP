@@ -30,16 +30,16 @@ export const multiplaEscolha: QuestaoMultipla[] = [
   },
   {
     id: 'me-00-02', tipo: 'multipla', topico: '00-ideia-central-da-prova', dificuldade: 'facil',
-    enunciado: 'Sobre o radar de pulso na PP1 de Detecção, é correto afirmar:',
+    enunciado: 'Ao começar qualquer questão da PP1, o primeiro passo recomendado é:',
     alternativas: [
-      'É o tema central da PP1 e concentra a maior parte das questões.',
-      'Não é conteúdo central da PP1; aparece só como contexto futuro (T2), motivando a base de tempo.',
-      'Substitui o estudo de tiristores.',
-      'É pré-requisito para entender reguladores.',
+      'Escolher logo uma fórmula e substituir os números.',
+      'Classificar a que família o circuito pertence antes de escolher a conta.',
+      'Calcular a potência de todos os componentes.',
+      'Desenhar a forma de onda antes de ler o enunciado.',
     ],
-    correta: B, conceito: 'Escopo da PP1',
-    comentario: 'Conforme orientação do professor, o radar de pulso fica para o T2. Na PP1 ele só serve de motivação para os geradores de base de tempo.',
-    fonte: 'LinhaDoTempo (00)',
+    correta: B, conceito: 'Roteiro de resolução',
+    comentario: 'O roteiro começa por classificar o circuito (família) e identificar o que a questão pede; só depois se escolhe a conta. Começar pela fórmula errada é o erro mais comum.',
+    fonte: 'LinhaDoTempo (00/14)',
   },
 
   // ── 02 fontes reguladas ────────────────────────────────────────────
