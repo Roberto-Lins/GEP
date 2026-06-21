@@ -35,8 +35,9 @@ depende de **quanto tempo** ele fica ligado em cada ciclo — o **ciclo de traba
 Detalhe que a prova cobra: a **frequência do PWM é constante** — o que muda para regular é apenas o
 **tempo ligado** (`ton`). Aumentou o ton, subiu a média; diminuiu o ton, caiu a média.
 
-> **Exemplo resolvido** (ilustrativo): `VIN = 20 V`, `D = 0,3` → `VOUT = D·VIN = 0,3 · 20 = `**`6 V`**.
-> Repare: a saída média (6 V) é bem menor que o pico instantâneo (20 V). Confundir os dois é erro comum.
+> **Exemplo resolvido (slide):** `VIN = 20 V`, `VREF = 4 V`, divisor de realimentação `R1 = 8 kΩ` e
+> `R2 = 24 kΩ`. Em regime regulado `VFB = VREF`, então `VOUT = VREF·(1 + R2/R1) = 4·(1 + 24/8) = 4·4 = `**`16 V`**;
+> logo `D = VOUT/VIN = 16/20 = `**`0,8`** (80%). A saída média (16 V) vem do ciclo de trabalho, não do pico.
 
 ## A realimentação que mantém a saída no lugar
 

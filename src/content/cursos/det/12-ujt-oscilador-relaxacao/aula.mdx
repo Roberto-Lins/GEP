@@ -50,6 +50,41 @@ Na **descarga**, use `RB1(ON)` (valor baixo, com o UJT ligado), nunca `RB1(OFF)`
 é **exponencial** (via resistor) — diferente da rampa **linear** da base de tempo, que vem a seguir.
 </BlocoConceito>
 
+## Exemplo resolvido — oscilador com UJT (slide)
+
+### Enunciado
+UJT com `η = 0,8`, `RBB = 9 kΩ`, `RB1(ON) = 100 Ω`, `VV = 1 V`, carregado por `R1 = 12 kΩ` a partir de
+`VCC = 12 V`, com `C = 2 µF` e resistor de descarga `R2 = 50 Ω`. Calcule os tempos e a frequência.
+
+### Circuito
+![Oscilador de relaxação com UJT: R carrega C, que dispara o UJT em VP.](/imagens/cursos/det/12-ujt-circuito.svg)
+
+### Dados
+- `η = 0,8` · `RBB = 9 kΩ` · `RB1(ON) = 100 Ω` · `VV = 1 V` · `R1 = 12 kΩ` · `C = 2 µF` · `R2 = 50 Ω`.
+
+### Passo 1 — tensão de pico
+`VK = η·VCC = 0,8·12 = 9,6 V` → `VP = VK + 0,7 = `**`10,3 V`** (dispara aqui).
+
+### Passo 2 — tempo de carga (exponencial, via R1)
+`t1 = R1·C·ln[(VCC − VV)/(VCC − VP)] = 12k·2µF·ln[(12 − 1)/(12 − 10,3)] = 12k·2µF·ln(6,47) = `**`44,8 ms`**.
+
+### Passo 3 — tempo de descarga (rápido, via RB1(ON)+R2)
+`t2 = (RB1(ON) + R2)·C·ln(VP/VV) = (100 + 50)·2µF·ln(10,3) = `**`≈ 0,7 ms`** (muito menor que t1).
+
+### Passo 4 — período e frequência
+`T = t1 + t2 ≈ 45,5 ms` → `f = 1/T ≈ `**`22 Hz`**.
+
+### Resposta
+**VP = 10,3 V · t1 = 44,8 ms · t2 ≈ 0,7 ms · f ≈ 22 Hz.**
+
+### Pegadinha da questão
+Na **descarga** use `RB1(ON)` (valor baixo), não `RB1(OFF)`. E a carga via R1 é **exponencial** (não
+linear). `t1 ≫ t2`.
+
+### Como reconhecer na prova
+UJT + R (carga) + C → oscilador de relaxação **exponencial**: ache `VP = η·VCC + 0,7`, depois `t1` (carga
+lenta) e `t2` (descarga rápida).
+
 ## Para onde vamos
 
 O UJT gera um dente-de-serra, mas a subida é **exponencial**. No último tópico veremos como obter uma
