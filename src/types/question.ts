@@ -11,6 +11,8 @@ export interface QuestaoMultipla {
   topico: string;
   dificuldade?: Dificuldade;
   enunciado: string;
+  /** circuito/figura do enunciado — caminho do SVG em /public */
+  imagem?: string;
   alternativas: string[]; // índice 0 = A, 1 = B, ...
   correta: number;
   conceito?: string;
@@ -25,6 +27,8 @@ export interface QuestaoVF {
   topico: string;
   dificuldade?: Dificuldade;
   afirmacao: string;
+  /** circuito/figura do enunciado — caminho do SVG em /public */
+  imagem?: string;
   correta: boolean;
   comentario: string;
   fonte?: string;
@@ -53,6 +57,8 @@ export interface QuestaoDiscursiva {
   dificuldade?: Dificuldade;
   contexto?: string;
   enunciado: string; // o comando/pergunta
+  /** circuito/figura do enunciado — caminho do SVG em /public */
+  imagem?: string;
   gabaritoComentado: string;
   criterios?: string[]; // critérios de correção para autoavaliação
   comentario?: string; // explicação didática complementar

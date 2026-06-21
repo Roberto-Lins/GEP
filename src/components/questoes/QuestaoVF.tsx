@@ -27,6 +27,10 @@ export default function QuestaoVF({ questao, indice, onResponder }: Props) {
         <p className="whitespace-pre-line font-medium text-marfim">{questao.afirmacao}</p>
       </div>
 
+      {questao.imagem && (
+        <img src={questao.imagem} alt="Circuito do enunciado" loading="lazy" className="mb-4 block w-full max-w-lg rounded-lg" />
+      )}
+
       <div className="flex gap-3">
         {[true, false].map((valor) => {
           const escolhida = escolha === valor;

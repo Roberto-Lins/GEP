@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 230" width="420" height="230" role="img" aria-label="Regulador 7805 com entrada, saída de 5 V e carga RL">
+  <rect x="0.75" y="0.75" width="418.5" height="228.5" rx="14" fill="#0B1220" stroke="#1E3A5F" stroke-width="1.5"/>
+  <text x="20" y="26" font-family="Inter, sans-serif" font-size="13" fill="#CBD5E1">Regulador fixo 7805</text>
+
+  <!-- entrada -->
+  <circle cx="40" cy="86" r="4" fill="#D6A84F"/>
+  <text x="22" y="80" font-family="JetBrains Mono, monospace" font-size="11" fill="#CBD5E1">VI</text>
+  <line x1="40" y1="86" x2="140" y2="86" stroke="#F7F3EA" stroke-width="2"/>
+
+  <!-- CI 7805 -->
+  <rect x="140" y="60" width="120" height="56" rx="6" fill="#13243B" stroke="#D6A84F" stroke-width="2"/>
+  <text x="168" y="93" font-family="Inter, sans-serif" font-size="15" fill="#D6A84F" font-weight="bold">7805</text>
+  <text x="146" y="78" font-family="Inter, sans-serif" font-size="9" fill="#94A3B8">IN</text>
+  <text x="238" y="78" font-family="Inter, sans-serif" font-size="9" fill="#94A3B8">OUT</text>
+  <text x="190" y="110" font-family="Inter, sans-serif" font-size="9" fill="#94A3B8">GND</text>
+
+  <!-- saída 5 V -->
+  <line x1="260" y1="86" x2="340" y2="86" stroke="#F7F3EA" stroke-width="2"/>
+  <circle cx="340" cy="86" r="4" fill="#D6A84F"/>
+  <text x="300" y="78" font-family="JetBrains Mono, monospace" font-size="11" fill="#CBD5E1">Vo = 5 V</text>
+
+  <!-- GND do CI -->
+  <line x1="200" y1="116" x2="200" y2="180" stroke="#F7F3EA" stroke-width="2"/>
+
+  <!-- carga RL -->
+  <line x1="340" y1="86" x2="340" y2="110" stroke="#F7F3EA" stroke-width="2"/>
+  <path d="M340 110 l-7 6 l14 6 l-14 6 l14 6 l-14 6 l7 6" fill="none" stroke="#F7F3EA" stroke-width="2"/>
+  <text x="352" y="136" font-family="Inter, sans-serif" font-size="11" fill="#CBD5E1">RL</text>
+  <line x1="340" y1="146" x2="340" y2="180" stroke="#F7F3EA" stroke-width="2"/>
+
+  <!-- terra comum -->
+  <line x1="200" y1="180" x2="340" y2="180" stroke="#F7F3EA" stroke-width="2"/>
+  <line x1="258" y1="180" x2="282" y2="180" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="262" y1="185" x2="278" y2="185" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="266" y1="190" x2="274" y2="190" stroke="#CBD5E1" stroke-width="2"/>
+
+  <text x="20" y="214" font-family="JetBrains Mono, monospace" font-size="11" fill="#D6A84F">Imáx = 400 mA → Rmín = VO/Imáx = 5/0,4 = 12,5 Ω</text>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 250" width="540" height="250" role="img" aria-label="Dois 555: o monoestável habilita o astável pelo pino RESET">
+  <rect x="0.75" y="0.75" width="538.5" height="248.5" rx="14" fill="#0B1220" stroke="#1E3A5F" stroke-width="1.5"/>
+  <text x="20" y="26" font-family="Inter, sans-serif" font-size="13" fill="#CBD5E1">Dois 555: monoestável habilita astável</text>
+
+  <!-- trilhos -->
+  <line x1="40" y1="48" x2="500" y2="48" stroke="#F7F3EA" stroke-width="1.5"/>
+  <text x="504" y="52" font-family="JetBrains Mono, monospace" font-size="10" fill="#94A3B8">+VCC</text>
+  <line x1="40" y1="214" x2="500" y2="214" stroke="#F7F3EA" stroke-width="1.5"/>
+  <text x="504" y="218" font-family="JetBrains Mono, monospace" font-size="10" fill="#94A3B8">GND</text>
+
+  <!-- 555 #1 monoestável -->
+  <rect x="90" y="92" width="110" height="84" rx="6" fill="#13243B" stroke="#D6A84F" stroke-width="2"/>
+  <text x="118" y="130" font-family="Inter, sans-serif" font-size="14" fill="#D6A84F" font-weight="bold">555 #1</text>
+  <text x="112" y="150" font-family="Inter, sans-serif" font-size="10" fill="#CBD5E1">monoestável</text>
+  <line x1="145" y1="92" x2="145" y2="48" stroke="#F7F3EA" stroke-width="2"/>
+  <line x1="145" y1="176" x2="145" y2="214" stroke="#F7F3EA" stroke-width="2"/>
+  <text x="60" y="120" font-family="Inter, sans-serif" font-size="9" fill="#64748B">disparo</text>
+  <line x1="60" y1="124" x2="90" y2="124" stroke="#F7F3EA" stroke-width="2"/>
+  <polygon points="78,124 90,118 90,130" fill="#D6A84F"/>
+
+  <!-- saída #1 (pino 3) -> RESET do #2 -->
+  <text x="200" y="120" font-family="Inter, sans-serif" font-size="9" fill="#94A3B8">3</text>
+  <line x1="200" y1="124" x2="300" y2="124" stroke="#D6A84F" stroke-width="2"/>
+  <text x="214" y="116" font-family="Inter, sans-serif" font-size="10" fill="#D6A84F">habilita →</text>
+  <line x1="300" y1="124" x2="300" y2="92" stroke="#D6A84F" stroke-width="2"/>
+  <text x="304" y="90" font-family="Inter, sans-serif" font-size="9" fill="#94A3B8">4 (RESET)</text>
+
+  <!-- 555 #2 astável -->
+  <rect x="320" y="92" width="110" height="84" rx="6" fill="#13243B" stroke="#D6A84F" stroke-width="2"/>
+  <text x="348" y="130" font-family="Inter, sans-serif" font-size="14" fill="#D6A84F" font-weight="bold">555 #2</text>
+  <text x="356" y="150" font-family="Inter, sans-serif" font-size="10" fill="#CBD5E1">astável</text>
+  <line x1="375" y1="92" x2="375" y2="48" stroke="#F7F3EA" stroke-width="2"/>
+  <line x1="375" y1="176" x2="375" y2="214" stroke="#F7F3EA" stroke-width="2"/>
+
+  <!-- saída final -->
+  <line x1="430" y1="134" x2="480" y2="134" stroke="#F7F3EA" stroke-width="2"/>
+  <circle cx="480" cy="134" r="4" fill="#D6A84F"/>
+  <text x="458" y="126" font-family="JetBrains Mono, monospace" font-size="11" fill="#CBD5E1">Vo</text>
+
+  <text x="20" y="240" font-family="Inter, sans-serif" font-size="10" fill="#64748B">O pulso do #1 (LP = 1,1·RA·C) habilita o #2; o astável só oscila durante essa janela.</text>
+</svg>

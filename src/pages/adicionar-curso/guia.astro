@@ -1,0 +1,59 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumb from '@components/cursos/Breadcrumb.astro';
+import { Content, getHeadings } from '../../guias/criar-conteudos.md';
+
+// Índice lateral: só as seções principais (## → depth 2).
+const secoes = getHeadings().filter((h) => h.depth === 2);
+---
+<BaseLayout titulo="Guia — Como gerar os conteúdos" largura="larga">
+  <Breadcrumb
+    itens={[
+      { label: 'Início', href: '/' },
+      { label: 'Adicionar matéria', href: '/adicionar-curso' },
+      { label: 'Guia de conteúdos' },
+    ]}
+  />
+
+  <header class="mb-8">
+    <span class="chip mb-3 inline-block border border-dourado/30 bg-dourado/10 text-[10px] uppercase tracking-wider text-dourado">
+      Guia operacional
+    </span>
+    <h1 class="text-3xl font-bold sm:text-4xl">Como gerar os conteúdos de uma matéria</h1>
+    <p class="mt-2 max-w-2xl text-nevoa/75">
+      Da matéria bruta (fontes, slides, provas, áudios) à trilha pronta para a Bússola: linha do
+      tempo, resumos, questões, áudios e vídeo — com os <strong class="text-marfim">prompts prontos</strong>
+      de cada etapa.
+    </p>
+
+    <div class="mt-5 flex flex-wrap gap-3">
+      <a href="/adicionar-curso" class="btn-ghost">← Voltar ao assistente</a>
+      <a
+        href="/arquivos/guia-criar-conteudos.docx"
+        download
+        class="btn-ghost"
+      >
+        ⬇ Baixar guia (.docx)
+      </a>
+    </div>
+  </header>
+
+  <div class="lg:grid lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-10">
+    <aside class="mb-8 lg:mb-0">
+      <nav aria-label="Seções do guia" class="lg:sticky lg:top-6">
+        <p class="mb-2 text-xs font-semibold uppercase tracking-wider text-nevoa/50">Etapas</p>
+        <ol class="space-y-1.5 text-sm">
+          {secoes.map((h) => (
+            <li>
+              <a href={`#${h.slug}`} class="link-quiet block leading-snug">{h.text}</a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+    </aside>
+
+    <article class="prosa max-w-3xl">
+      <Content />
+    </article>
+  </div>
+</BaseLayout>

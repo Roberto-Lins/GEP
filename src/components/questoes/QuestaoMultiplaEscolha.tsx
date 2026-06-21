@@ -27,6 +27,10 @@ export default function QuestaoMultiplaEscolha({ questao, indice, onResponder }:
         <p className="whitespace-pre-line font-medium text-marfim">{questao.enunciado}</p>
       </div>
 
+      {questao.imagem && (
+        <img src={questao.imagem} alt="Circuito do enunciado" loading="lazy" className="mb-4 block w-full max-w-lg rounded-lg" />
+      )}
+
       <ul className="space-y-2">
         {questao.alternativas.map((alt, i) => {
           const correta = i === questao.correta;

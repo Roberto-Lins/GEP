@@ -77,6 +77,7 @@ export const multiplaEscolha: QuestaoMultipla[] = [
   {
     id: 'me-04-01', tipo: 'multipla', topico: '04-reguladores-integrados', dificuldade: 'medio',
     enunciado: 'Um regulador 7805 tem corrente máxima de saída de 400 mA. Qual a menor resistência de carga que pode ser ligada sem ultrapassar esse limite?',
+    imagem: '/imagens/cursos/det/q-7805.svg',
     alternativas: ['8 Ω', '12,5 Ω', '20 Ω', '2 kΩ'],
     correta: B, conceito: 'Carga mínima (Rmín = VO/Imáx)',
     comentario: 'O 7805 regula 5 V. A menor carga segura é Rmín = VO/Imáx = 5 V / 0,4 A = 12,5 Ω. Abaixo disso, a corrente passaria de 400 mA.',
@@ -102,6 +103,7 @@ export const multiplaEscolha: QuestaoMultipla[] = [
   {
     id: 'me-05-01', tipo: 'multipla', topico: '05-reguladores-chaveados-pwm', dificuldade: 'medio',
     enunciado: 'Num regulador chaveado buck ideal com VIN = 20 V operando com ciclo de trabalho D = 0,3, a tensão média de saída é:',
+    imagem: '/imagens/cursos/det/q-buck.svg',
     alternativas: ['6 V', '14 V', '20 V', '60 V'],
     correta: A, conceito: 'VOUT = D·VIN',
     comentario: 'No buck ideal, VOUT = D·VIN = 0,3 × 20 V = 6 V. A frequência do PWM é constante; o que varia para regular é o tempo ligado (ton).',
@@ -142,6 +144,7 @@ export const multiplaEscolha: QuestaoMultipla[] = [
   {
     id: 'me-07-01', tipo: 'multipla', topico: '07-grampeadores', dificuldade: 'medio',
     enunciado: 'Uma onda de entrada varia de −12 V a +12 V. Após um grampeador positivo ideal (que soma o pico), a saída passa a variar de:',
+    imagem: '/imagens/cursos/det/07-grampeador-circuito.svg',
     alternativas: ['−24 V a 0 V', '0 V a +24 V', '−12 V a +12 V', '−6 V a +18 V'],
     correta: B, conceito: 'Deslocamento do grampeador',
     comentario: 'O grampeador positivo soma Vm = 12 V a toda a onda: −12+12 = 0 e +12+12 = +24. A forma é idêntica, apenas deslocada para cima (0 a +24 V).',
@@ -172,6 +175,7 @@ export const multiplaEscolha: QuestaoMultipla[] = [
   {
     id: 'me-09-02', tipo: 'multipla', topico: '09-multivibradores-555', dificuldade: 'medio',
     enunciado: 'Num 555 monoestável com RA = 7,5 kΩ e C = 0,1 µF, a largura do pulso de saída é aproximadamente:',
+    imagem: '/imagens/cursos/det/q-555-monoestavel.svg',
     alternativas: ['0,083 ms', '0,83 ms', '8,3 ms', '83 ms'],
     correta: B, conceito: 'Monoestável LP = 1,1·RA·C',
     comentario: 'LP = 1,1 · RA · C = 1,1 × 7 500 Ω × 0,1×10⁻⁶ F = 0,825×10⁻³ s ≈ 0,83 ms. Cuidado com as unidades (kΩ e µF).',
@@ -182,7 +186,8 @@ export const multiplaEscolha: QuestaoMultipla[] = [
   // ── 10 schmitt-trigger ─────────────────────────────────────────────
   {
     id: 'me-10-01', tipo: 'multipla', topico: '10-schmitt-trigger', dificuldade: 'medio',
-    enunciado: 'Num Schmitt-trigger com VO = ±12 V e divisor de realimentação de 12 kΩ (para o terra) e 24 kΩ (da saída), com β = 2/3, os limiares UTP e LTP valem:',
+    enunciado: 'Num Schmitt-trigger com VO = ±12 V e divisor de realimentação de 24 kΩ (para o terra) e 12 kΩ (da saída), com β = 2/3, os limiares UTP e LTP valem:',
+    imagem: '/imagens/cursos/det/q-schmitt-12k-24k.svg',
     alternativas: ['+12 V e −12 V', '+8 V e −8 V', '+6 V e −6 V', '+4 V e 0 V'],
     correta: B, conceito: 'UTP/LTP (Vref = β·VO)',
     comentario: 'β = 24k/(12k+24k) = 2/3. Quando VO = +12 V, V+ = (2/3)·12 = +8 V (UTP); quando VO = −12 V, V+ = (2/3)·(−12) = −8 V (LTP). A histerese é UTP − LTP = 16 V.',
@@ -219,6 +224,7 @@ export const multiplaEscolha: QuestaoMultipla[] = [
   {
     id: 'me-12-01', tipo: 'multipla', topico: '12-ujt-oscilador-relaxacao', dificuldade: 'medio',
     enunciado: 'Num UJT com η = 0,61 e RBB = 7 kΩ alimentado por VCC = 12 V, a tensão de pico VP (com VK = η·VCC) vale:',
+    imagem: '/imagens/cursos/det/12-ujt-circuito.svg',
     alternativas: ['7,3 V', '8,0 V', '12,7 V', '4,3 V'],
     correta: B, conceito: 'VP = VK + 0,7',
     comentario: 'VK = η·VCC = 0,61 × 12 = 7,3 V. VP = VK + 0,7 = 7,3 + 0,7 = 8,0 V. (RB1 = η·RBB = 4,3 kΩ; RB2 = RBB − RB1 = 2,7 kΩ.)',
@@ -229,6 +235,7 @@ export const multiplaEscolha: QuestaoMultipla[] = [
   {
     id: 'me-13-01', tipo: 'multipla', topico: '13-geradores-base-de-tempo', dificuldade: 'medio',
     enunciado: 'Um capacitor de 1 µF é carregado por uma fonte de corrente constante de 0,5 mA. A inclinação da rampa de tensão (dV/dt) é:',
+    imagem: '/imagens/cursos/det/q-fonte-corrente-cap.svg',
     alternativas: ['0,5 V/s', '2 V/ms', '0,5 V/ms', '2 V/s'],
     correta: C, conceito: 'dV/dt = I/C',
     comentario: 'Com corrente constante a carga é linear: dV/dt = I/C = 0,5×10⁻³ A / 1×10⁻⁶ F = 500 V/s = 0,5 V/ms. NÃO se usa a equação exponencial de RC aqui.',
@@ -240,6 +247,7 @@ export const multiplaEscolha: QuestaoMultipla[] = [
   // 01 ferramentas
   { id: 'me-01-01', tipo: 'multipla', topico: '01-ferramentas-de-calculo', dificuldade: 'medio',
     enunciado: 'Num divisor de tensão com Vfonte = 12 V, Rcima = 4 kΩ e Rbaixo = 8 kΩ, a tensão no nó intermediário é:',
+    imagem: '/imagens/cursos/det/q-divisor-12-4k-8k.svg',
     alternativas: ['4 V', '6 V', '8 V', '12 V'], correta: C, conceito: 'Divisor de tensão',
     comentario: 'Vnó = Vfonte·Rbaixo/(Rcima+Rbaixo) = 12·8/(4+8) = 12·(2/3) = 8 V.',
     fonte: 'LinhaDoTempo (01)' },
@@ -268,6 +276,7 @@ export const multiplaEscolha: QuestaoMultipla[] = [
   // 03 reguladores com transistor
   { id: 'me-03-02', tipo: 'multipla', topico: '03-reguladores-com-transistor', dificuldade: 'medio',
     enunciado: 'Num regulador com limitador de corrente cujo resistor sensor é RSC = 0,28 Ω, a corrente de curto-circuito é aproximadamente:',
+    imagem: '/imagens/cursos/det/q-limitador-corrente.svg',
     alternativas: ['0,7 A', '1,4 A', '2,5 A', '5 A'], correta: C, conceito: 'I_Lmáx ≈ 0,7/RSC',
     comentario: 'I_Lmáx ≈ 0,7/RSC = 0,7/0,28 ≈ 2,5 A. Q2 liga quando a queda em RSC chega a ≈ 0,7 V e limita a corrente.',
     fonte: 'Lista 1/2 — Q7 (gabarito: I_curto = 2,5 A)' },
@@ -344,6 +353,7 @@ export const multiplaEscolha: QuestaoMultipla[] = [
     fonte: 'Slides Schmitt-Trigger (Exemplo 1)' },
   { id: 'me-10-03', tipo: 'multipla', topico: '10-schmitt-trigger', dificuldade: 'medio',
     enunciado: 'Num Schmitt-trigger construído com o 555 (VCC = 12 V), os limiares UTP e LTP valem, respectivamente:',
+    imagem: '/imagens/cursos/det/q-schmitt-555.svg',
     alternativas: ['12 V e 0 V', '8 V e 4 V', '6 V e −6 V', '10 V e 2 V'], correta: B, conceito: 'Schmitt com 555 (⅔ e ⅓ VCC)',
     comentario: 'No 555, os limiares são ⅔ VCC e ⅓ VCC. Com VCC = 12 V: UTP = ⅔·12 = 8 V e LTP = ⅓·12 = 4 V.',
     fonte: 'Slides Schmitt-Trigger (Ex. 3) / Lista 2 — Q6a (UTP=8, LTP=4)' },
@@ -531,6 +541,7 @@ export const discursivas: QuestaoDiscursiva[] = [
   {
     id: 'dis-04-01', tipo: 'discursiva', topico: '04-reguladores-integrados', dificuldade: 'medio',
     enunciado: 'Um circuito com LM317 tem tensão de saída mínima de 1,25 V e máxima de 8,75 V, e o CI tem corrente de polarização de 50 µA. Determine (a) a tensão regulada VREG do LM317 e (b) o valor do resistor variável Rx, sabendo que o resistor fixo vale Rx/5 (resistor inferior = Rx, superior = Rx/5 na montagem da lista).',
+    imagem: '/imagens/cursos/det/04-lm317.svg',
     gabaritoComentado:
       '(a) A tensão de saída MÍNIMA do LM317 ocorre quando o resistor de ajuste está no mínimo: ela é exatamente a tensão de referência interna. Logo VREG = 1,25 V.\n\n(b) Use VO = VREG·(1 + R2/R1) + IQ·R2 com a montagem da lista (R1 = Rx/5, R2 = Rx) para a saída máxima de 8,75 V. Resolvendo para Rx ⇒ Rx = 5 kΩ.\n\nResposta oficial (Lista 2): a) 1,25 V; b) 5 kΩ.',
     criterios: [
@@ -544,6 +555,7 @@ export const discursivas: QuestaoDiscursiva[] = [
   {
     id: 'dis-03-01', tipo: 'discursiva', topico: '03-reguladores-com-transistor', dificuldade: 'dificil',
     enunciado: 'No regulador série da Lista 1 (referência Zener de 9,3 V, Rx = 13 kΩ), determine VO para VI = 62 V e para VI = 50 V. Em seguida, para VI = 35 V e VO = 20 V, determine a potência dissipada em Q1 e em Q2.',
+    imagem: '/imagens/cursos/det/03-serie-paralelo.svg',
     gabaritoComentado:
       'VO é fixada pela malha de referência (Zener + divisor), não pela entrada — por isso VO = 40 V tanto para VI = 62 V quanto para VI = 50 V (a entrada só precisa ser suficiente para o regulador operar).\n\nPara VI = 35 V e VO = 20 V:\n• Q1 (transistor série): P ≈ (VI − VO)·IL. Com os valores do circuito, P_Q1 = 642 mW.\n• Q2 (transistor de controle): P_Q2 = 494 mW.\n\nRespostas oficiais (Lista 2): a) 40 V; b) 40 V; c) 642 mW; d) 494 mW.',
     criterios: [
@@ -557,6 +569,7 @@ export const discursivas: QuestaoDiscursiva[] = [
   {
     id: 'dis-10-01', tipo: 'discursiva', topico: '10-schmitt-trigger', dificuldade: 'medio',
     enunciado: 'Explique, com suas palavras, o que é histerese num Schmitt-trigger e por que a saída não troca de estado quando a entrada cruza o zero.',
+    imagem: '/imagens/cursos/det/10-schmitt-circuito.svg',
     gabaritoComentado:
       'Histerese é a existência de DOIS limiares distintos (UTP e LTP) em vez de um só. Por causa da realimentação positiva, a referência do comparador (V+) depende do estado atual da saída: vale β·(+VCC) quando a saída está alta e β·(−VEE) quando está baixa.\n\nAssim, a saída só comuta quando a entrada ULTRAPASSA o limiar válido naquele momento (UTP subindo, LTP descendo), e não no cruzamento por zero. Isso dá "memória" ao circuito e imunidade a ruído.',
     criterios: [
@@ -569,6 +582,7 @@ export const discursivas: QuestaoDiscursiva[] = [
   {
     id: 'dis-12-01', tipo: 'discursiva', topico: '12-ujt-oscilador-relaxacao', dificuldade: 'dificil',
     enunciado: 'UJT: η = 0,8; RBB = 9 kΩ; VCC = 12 V; R1 = 12 kΩ; C = 2 µF; VV = 1 V. Determine RB1, RB2, VK, VP e o tempo de carga t1.',
+    imagem: '/imagens/cursos/det/12-ujt-circuito.svg',
     gabaritoComentado:
       '1) RB1 = η·RBB = 0,8·9k = 7,2 kΩ.\n2) RB2 = RBB − RB1 = 9k − 7,2k = 1,8 kΩ.\n3) VK = η·VCC ≈ 9,6 V (divisor entre as bases).\n4) VP = VK + 0,7 = 10,3 V (tensão de disparo).\n5) t1 = R1·C·ln[(VCC − VV)/(VCC − VP)] = 12k·2µF·ln[(12 − 1)/(12 − 10,3)] = 12k·2µF·ln(11/1,7) ≈ 44,8 ms.\n\nResultados do slide: RB1 = 7,2 kΩ; RB2 = 1,8 kΩ; VK = 9,6 V; VP = 10,3 V; t1 = 44,8 ms.',
     criterios: [
@@ -582,6 +596,7 @@ export const discursivas: QuestaoDiscursiva[] = [
   {
     id: 'dis-09-01', tipo: 'discursiva', topico: '09-multivibradores-555', dificuldade: 'medio',
     enunciado: 'No 555 astável, explique por que o tempo em nível alto usa (RA + RB) e o tempo em nível baixo usa apenas RB.',
+    imagem: '/imagens/cursos/det/09-555-astavel.svg',
     gabaritoComentado:
       'Na fase ALTA, o capacitor CARREGA através de RA e RB em série (a corrente vem da alimentação passando pelos dois resistores) → T_ALTO = 0,7·(RA + RB)·C.\n\nNa fase BAIXA, o pino 7 (descarga) entra em condução e o capacitor DESCARREGA apenas por RB → T_BAIXO = 0,7·RB·C.\n\nO período é T = T_ALTO + T_BAIXO e a frequência f = 1/T.',
     criterios: [
@@ -594,6 +609,7 @@ export const discursivas: QuestaoDiscursiva[] = [
   {
     id: 'dis-11-01', tipo: 'discursiva', topico: '11-tiristores-scr-diac-triac', dificuldade: 'medio',
     enunciado: 'Descreva a forma de onda da corrente na carga (IL) de um SCR alimentado por uma senoide, disparado por um pulso de porta no semiciclo positivo, sabendo que a queda de condução é 1,5 V.',
+    imagem: '/imagens/cursos/det/q-scr-carga.svg',
     gabaritoComentado:
       'Semiciclo NEGATIVO: o SCR está reversamente polarizado → não conduz, IL = 0 (o pulso de porta seria ignorado).\n\nSemiciclo POSITIVO, antes do pulso: ainda não disparou → IL = 0.\n\nA partir do PULSO: o SCR liga e IL = (V2 − 1,5)/Rcarga, acompanhando o restante da senoide.\n\nNo fim do semiciclo, quando a corrente cai a zero, o SCR DESLIGA sozinho. Logo, IL existe só num pedaço do semiciclo positivo — do disparo até a passagem por zero.',
     criterios: [
@@ -606,6 +622,7 @@ export const discursivas: QuestaoDiscursiva[] = [
   {
     id: 'dis-06-01', tipo: 'discursiva', topico: '06-limitadores', dificuldade: 'medio',
     enunciado: 'Um limitador ceifa o pico positivo de uma senoide quando o diodo conduz em VDC + 0,7 V. Descreva a forma de onda da saída.',
+    imagem: '/imagens/cursos/det/06-limitador-circuito.svg',
     gabaritoComentado:
       'Semiciclo NEGATIVO: o diodo do ramo de ceifamento fica reverso (corta) → a saída acompanha a entrada, até −Vpico.\n\nSemiciclo POSITIVO: enquanto a entrada está abaixo de VDC + 0,7, o diodo corta e a saída acompanha a entrada; ao passar de VDC + 0,7, o diodo conduz e a saída fica PRESA (platô) em VDC + 0,7.\n\nResultado: a onda acompanha a entrada, exceto o topo, que vira um platô em VDC + 0,7 V. Mínimo = −Vpico; máximo = VDC + 0,7 V.',
     criterios: [
@@ -618,6 +635,7 @@ export const discursivas: QuestaoDiscursiva[] = [
   {
     id: 'dis-11-02', tipo: 'discursiva', topico: '11-tiristores-scr-diac-triac', dificuldade: 'dificil',
     enunciado: 'Oscilador com DIAC (S₁, VBR = 30 V): fonte de +50 V, R = 10 kΩ em série e C = 10 nF em paralelo com o DIAC. Determine a frequência do sinal de saída.',
+    imagem: '/imagens/cursos/det/11-diac-oscilador.svg',
     gabaritoComentado:
       'O capacitor carrega por R a partir de 50 V (exponencial); quando VC atinge VBR = 30 V o DIAC dispara e descarrega C (instantâneo).\n\nRC = 10 kΩ · 10 nF = 1×10⁻⁴ s.\nVC = VCC·(1 − e^(−t/RC)) → 30 = 50·(1 − e^(−t/10⁻⁴))\n0,6 = 1 − e^(−t/10⁻⁴) → e^(−t/10⁻⁴) = 0,4 → −t/10⁻⁴ = ln 0,4 = −0,916\nt = 9,2×10⁻⁵ s → f = 1/t ≈ 10,9 kHz.',
     criterios: [
@@ -631,6 +649,7 @@ export const discursivas: QuestaoDiscursiva[] = [
   {
     id: 'dis-10-02', tipo: 'discursiva', topico: '10-schmitt-trigger', dificuldade: 'dificil',
     enunciado: 'Determine UTP e LTP de dois Schmitt (±12 V): (1) com Zener de 7 V em série com o divisor 10 kΩ/10 kΩ; (2) com dois diodos no divisor 15 kΩ/30 kΩ.',
+    imagem: '/imagens/cursos/det/10-schmitt-zener.svg',
     gabaritoComentado:
       'Circuito 1 (Zener):\n• Vo = +12 V → Zener na região Zener (cai 7 V): UTP = (12 − 7)·10k/20k = +2,5 V.\n• Vo = −12 V → Zener conduz como diodo comum (0,7 V): LTP = (−12 + 0,7)·10k/20k = −5,65 V.\n\nCircuito 2 (diodos):\n• Vo = +12 V → diodos não conduzem: UTP = 12·30k/(15k+30k) = +8 V.\n• Vo = −12 V → diodos conduzem: LTP = 2·(−0,7) = −1,4 V.\n\nGabarito oficial: C1 → UTP=+2,5 V, LTP=−5,65 V; C2 → UTP=+8 V, LTP=−1,4 V.',
     criterios: [
@@ -644,6 +663,7 @@ export const discursivas: QuestaoDiscursiva[] = [
   {
     id: 'dis-13-01', tipo: 'discursiva', topico: '13-geradores-base-de-tempo', dificuldade: 'dificil',
     enunciado: 'Base de tempo com UJT: VCC = 12 V, divisor de base 8,1 kΩ/18 kΩ, resistor de emissor 6 kΩ (fonte de corrente PNP), UJT com η = 0,8 e VV = 0,8 V. Determine o capacitor C para frequência de 5 kHz.',
+    imagem: '/imagens/cursos/det/13-base-tempo-circuito.svg',
     gabaritoComentado:
       '1) Corrente da fonte: Vb = 12·18k/(8,1k+18k) = 8,3 V → Ve = 8,3 + 0,7 = 9 V → I = (12 − 9)/6k = 0,5 mA.\n2) Níveis: VP = 0,7 + η·VCC = 0,7 + 0,8·12 = 10,3 V; ΔV = VP − VV = 10,3 − 0,8 = 9,5 V.\n3) Carga linear (fonte de corrente): I/C = ΔV/T, com T = 1/f = 1/5000 = 0,2 ms.\n4) C = I·T/ΔV = (0,5×10⁻³ · 0,2×10⁻³)/9,5 = 1,05×10⁻⁸ F.\n\nResposta oficial: C = 10,5 nF.',
     criterios: [
@@ -682,6 +702,7 @@ export const discursivas: QuestaoDiscursiva[] = [
   {
     id: 'dis-09-02', tipo: 'discursiva', topico: '09-multivibradores-555', dificuldade: 'medio',
     enunciado: 'Dois CI 555: o primeiro em monoestável e o segundo em astável, com a saída do monoestável habilitando o astável. Explique o comportamento da saída e em que intervalo o astável oscila.',
+    imagem: '/imagens/cursos/det/q-dois-555.svg',
     gabaritoComentado:
       'O 555 monoestável gera, após o disparo, um pulso de largura LP = 1,1·R·C. Enquanto esse pulso está ativo, ele habilita o 555 astável (pelo pino RESET), que então oscila e gera a onda retangular; fora desse intervalo o astável fica desabilitado (saída em repouso).\n\nNa SOPA, o pulso do monoestável habilita o astável na janela de ≈ 2 s a 7 s — só nesse intervalo aparece a oscilação na saída.\n\nIdeia: monoestável = "janela de tempo"; astável = oscilador habilitado dentro dela.',
     criterios: [

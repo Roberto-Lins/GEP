@@ -71,6 +71,10 @@ export default function QuestaoDiscursiva({ questao, indice, onResponder }: Prop
         </div>
       </div>
 
+      {questao.imagem && (
+        <img src={questao.imagem} alt="Circuito do enunciado" loading="lazy" className="mb-4 block w-full max-w-lg rounded-lg" />
+      )}
+
       <textarea
         value={resposta}
         onChange={(e) => {

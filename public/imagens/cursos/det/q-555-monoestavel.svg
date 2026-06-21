@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 290" width="460" height="290" role="img" aria-label="555 monoestável: RA de 7,5 kΩ ao pino 7/6, capacitor de 0,1 µF ao terra, disparo no pino 2">
+  <rect x="0.75" y="0.75" width="458.5" height="288.5" rx="14" fill="#0B1220" stroke="#1E3A5F" stroke-width="1.5"/>
+  <text x="20" y="26" font-family="Inter, sans-serif" font-size="14" fill="#CBD5E1">555 monoestável</text>
+
+  <!-- trilhos -->
+  <line x1="60" y1="44" x2="360" y2="44" stroke="#F7F3EA" stroke-width="2"/>
+  <text x="364" y="48" font-family="JetBrains Mono, monospace" font-size="11" fill="#94A3B8">+VCC</text>
+  <line x1="60" y1="266" x2="360" y2="266" stroke="#F7F3EA" stroke-width="2"/>
+  <text x="364" y="270" font-family="JetBrains Mono, monospace" font-size="11" fill="#94A3B8">GND</text>
+
+  <!-- CI 555 -->
+  <rect x="200" y="108" width="110" height="104" rx="6" fill="#13243B" stroke="#D6A84F" stroke-width="2"/>
+  <text x="232" y="166" font-family="Inter, sans-serif" font-size="16" fill="#D6A84F" font-weight="bold">555</text>
+  <text x="206" y="130" font-family="Inter, sans-serif" font-size="9" fill="#94A3B8">7</text>
+  <text x="206" y="176" font-family="Inter, sans-serif" font-size="9" fill="#94A3B8">6</text>
+  <text x="206" y="204" font-family="Inter, sans-serif" font-size="9" fill="#94A3B8">2</text>
+  <text x="300" y="150" font-family="Inter, sans-serif" font-size="9" fill="#94A3B8">3</text>
+  <text x="250" y="122" font-family="Inter, sans-serif" font-size="9" fill="#94A3B8">8</text>
+  <text x="250" y="208" font-family="Inter, sans-serif" font-size="9" fill="#94A3B8">1</text>
+
+  <!-- pino 8 (VCC) e 1 (GND) -->
+  <line x1="255" y1="108" x2="255" y2="44" stroke="#F7F3EA" stroke-width="2"/>
+  <line x1="255" y1="212" x2="255" y2="266" stroke="#F7F3EA" stroke-width="2"/>
+
+  <!-- RA: VCC -> pinos 7/6 -->
+  <line x1="110" y1="44" x2="110" y2="64" stroke="#F7F3EA" stroke-width="2"/>
+  <path d="M110 64 l-7 6 l14 6 l-14 6 l14 6 l-14 6 l7 6" fill="none" stroke="#F7F3EA" stroke-width="2"/>
+  <text x="60" y="90" font-family="Inter, sans-serif" font-size="11" fill="#CBD5E1">RA</text>
+  <text x="54" y="104" font-family="JetBrains Mono, monospace" font-size="10" fill="#94A3B8">7,5 kΩ</text>
+  <line x1="110" y1="100" x2="110" y2="126" stroke="#F7F3EA" stroke-width="2"/>
+  <circle cx="110" cy="126" r="3.5" fill="#D6A84F"/>
+  <!-- nó 7/6 -> CI -->
+  <line x1="110" y1="126" x2="200" y2="126" stroke="#F7F3EA" stroke-width="2"/>
+  <line x1="150" y1="126" x2="150" y2="172" stroke="#F7F3EA" stroke-width="2"/>
+  <line x1="150" y1="172" x2="200" y2="172" stroke="#F7F3EA" stroke-width="2"/>
+
+  <!-- C: nó 7/6 -> GND -->
+  <line x1="110" y1="126" x2="110" y2="194" stroke="#F7F3EA" stroke-width="2"/>
+  <line x1="96" y1="194" x2="124" y2="194" stroke="#F7F3EA" stroke-width="2.5"/>
+  <line x1="96" y1="202" x2="124" y2="202" stroke="#F7F3EA" stroke-width="2.5"/>
+  <text x="128" y="202" font-family="JetBrains Mono, monospace" font-size="11" fill="#CBD5E1">0,1 µF</text>
+  <line x1="110" y1="202" x2="110" y2="266" stroke="#F7F3EA" stroke-width="2"/>
+
+  <!-- disparo no pino 2 -->
+  <line x1="160" y1="198" x2="200" y2="198" stroke="#F7F3EA" stroke-width="2"/>
+  <text x="120" y="230" font-family="Inter, sans-serif" font-size="10" fill="#64748B">disparo</text>
+  <polygon points="160,198 172,192 172,204" fill="#D6A84F"/>
+  <line x1="160" y1="198" x2="160" y2="230" stroke="#F7F3EA" stroke-width="2"/>
+
+  <!-- saída pino 3 -->
+  <line x1="310" y1="140" x2="380" y2="140" stroke="#F7F3EA" stroke-width="2"/>
+  <circle cx="380" cy="140" r="4" fill="#D6A84F"/>
+  <text x="388" y="144" font-family="JetBrains Mono, monospace" font-size="11" fill="#CBD5E1">Vo</text>
+
+  <text x="20" y="285" font-family="JetBrains Mono, monospace" font-size="11" fill="#D6A84F">LP = 1,1·RA·C = 1,1·7,5 kΩ·0,1 µF ≈ 0,83 ms</text>
+</svg>

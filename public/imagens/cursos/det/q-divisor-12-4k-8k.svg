@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 250" width="360" height="250" role="img" aria-label="Divisor de tensão: 12 V, resistor de 4 kΩ em cima e 8 kΩ embaixo, com o nó intermediário">
+  <rect x="0.75" y="0.75" width="358.5" height="248.5" rx="14" fill="#0B1220" stroke="#1E3A5F" stroke-width="1.5"/>
+  <text x="20" y="26" font-family="Inter, sans-serif" font-size="13" fill="#CBD5E1">Divisor de tensão</text>
+
+  <!-- +12 V -->
+  <text x="92" y="46" font-family="JetBrains Mono, monospace" font-size="12" fill="#94A3B8">+12 V</text>
+  <circle cx="130" cy="54" r="4" fill="#D6A84F"/>
+  <line x1="130" y1="54" x2="130" y2="70" stroke="#F7F3EA" stroke-width="2"/>
+
+  <!-- R cima 4k -->
+  <path d="M130 70 l-7 6 l14 6 l-14 6 l14 6 l-14 6 l7 6" fill="none" stroke="#F7F3EA" stroke-width="2"/>
+  <text x="76" y="96" font-family="Inter, sans-serif" font-size="12" fill="#CBD5E1">4 kΩ</text>
+  <line x1="130" y1="106" x2="130" y2="135" stroke="#F7F3EA" stroke-width="2"/>
+
+  <!-- nó -->
+  <circle cx="130" cy="135" r="3.5" fill="#D6A84F"/>
+  <line x1="130" y1="135" x2="245" y2="135" stroke="#F7F3EA" stroke-width="2"/>
+  <circle cx="245" cy="135" r="4" fill="#D6A84F"/>
+  <text x="253" y="139" font-family="JetBrains Mono, monospace" font-size="12" fill="#CBD5E1">Vnó = ?</text>
+
+  <!-- R baixo 8k -->
+  <line x1="130" y1="135" x2="130" y2="150" stroke="#F7F3EA" stroke-width="2"/>
+  <path d="M130 150 l-7 6 l14 6 l-14 6 l14 6 l-14 6 l7 6" fill="none" stroke="#F7F3EA" stroke-width="2"/>
+  <text x="76" y="176" font-family="Inter, sans-serif" font-size="12" fill="#CBD5E1">8 kΩ</text>
+  <line x1="130" y1="186" x2="130" y2="206" stroke="#F7F3EA" stroke-width="2"/>
+
+  <!-- terra -->
+  <line x1="118" y1="206" x2="142" y2="206" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="122" y1="211" x2="138" y2="211" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="126" y1="216" x2="134" y2="216" stroke="#CBD5E1" stroke-width="2"/>
+</svg>
