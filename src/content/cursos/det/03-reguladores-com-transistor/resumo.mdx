@@ -4,8 +4,19 @@ secao: "resumo"
 secaoOrdem: 3
 ---
 
-- **Série**: transistor no caminho da carga (`IE ≈ IL`). **Paralelo**: transistor desvia corrente.
-- Limitador: **Q2 começa cortado** e liga quando `V_RSC ≈ 0,7 V`, limitando a corrente.
-- Corrente-limite/curto: `I_Lmáx ≈ 0,7 / RSC`.
-- Potência em Q1 (série): `P ≈ (VI − VO)·IL`.
+**Famílias e tensão de saída**
+- **Série**: transistor no caminho da carga (`IE ≈ IL`). `VO = VZ − 0,7`.
+- **Paralelo (shunt)**: transistor desvia o excesso de corrente (`IC // IL`). `VO = VZ + 0,7`.
+- Versões **aperfeiçoado** (+ Q2 amplifica o erro) e **com amp-op** (compara amostra × referência) melhoram a regulação. Nas versões com divisor: `VO = (VZ + 0,7)·(R1+R2)/R2` (com Q2) e `VO = VZ·(R1+R2)/R2` (com amp-op).
+
+**Proteção e potência**
+- Limitador: **Q2 começa cortado** e liga quando `V_RSC ≈ 0,7 V` → `I_Lmáx ≈ 0,7 / RSC`.
+- Potência em Q1 (série): `P ≈ (VI − VO)·IL`. No shunt: `P_tr = VO·IC`, com `IC = (VI−VO)/RS − IL`.
 - Num regulador, **VO não acompanha VI** — fica fixo pela referência.
+
+**Respostas dos 5 exercícios dos slides (conferência rápida)**
+- Ex1 (série simples): VO=11,3 V · P_Q1≈98 mW · P_Z≈433 mW
+- Ex2 (série aperfeiçoado): VO=15 V · P_Q1≈255 mW (P_Q2 depende do β de Q1, ausente no slide)
+- Ex3 (série com amp-op): VO=24,8 V
+- Ex4 (paralelo): VO=8,9 V · P_tr≈180 mW · P_Z≈3,3 mW
+- Ex5 (limitador): I_curto≈4,7 A

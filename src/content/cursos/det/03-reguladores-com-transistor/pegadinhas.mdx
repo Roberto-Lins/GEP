@@ -22,3 +22,18 @@ Limitar corrente de curto é diferente de regular a tensão. São funções dist
 A corrente de carga IL flui pelo **coletor/emissor** de Q1 (IL ≈ IC ≈ IE para β alto), não pela
 base. Usar IB como corrente de carga subestima IL por um fator β.
 </BlocoPegadinha>
+
+<BlocoPegadinha titulo="Sinal da VBE: série −0,7, paralelo +0,7">
+No série, VO = VZ **−** 0,7 (o emissor segue a base). No paralelo, VO = VZ **+** 0,7. Trocar o sinal
+inverte o resultado.
+</BlocoPegadinha>
+
+<BlocoPegadinha titulo="Inverter o divisor de amostragem">
+Nas versões com divisor (aperfeiçoado/amp-op), a fração amostrada usa **sempre o resistor de baixo**
+(R2): V_amostra = VO·R2/(R1+R2). Usar R1 no numerador erra VO.
+</BlocoPegadinha>
+
+<BlocoPegadinha titulo="Trocar as entradas do amp-op">
+No regulador com amp-op, a referência vai na entrada **+** e a amostra do divisor na **−**. Inverter as
+duas tira a realimentação negativa e o circuito deixa de regular.
+</BlocoPegadinha>

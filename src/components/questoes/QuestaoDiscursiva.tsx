@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import type { QuestaoDiscursiva } from '@tipos/question';
+import Markdown from './Markdown';
 
 interface Props {
   questao: QuestaoDiscursiva;
@@ -100,8 +101,8 @@ export default function QuestaoDiscursiva({ questao, indice, onResponder }: Prop
         <div className="mt-4 space-y-4">
           <div className="rounded-xl border border-white/10 bg-naval-800/60 p-4">
             <p className="mb-1 text-xs uppercase tracking-wider text-dourado/70">Gabarito comentado</p>
-            <p className="whitespace-pre-line text-sm text-nevoa/90">{questao.gabaritoComentado}</p>
-            {questao.comentario && <p className="mt-3 text-sm text-nevoa/75">{questao.comentario}</p>}
+            <Markdown className="text-sm text-nevoa/90">{questao.gabaritoComentado}</Markdown>
+            {questao.comentario && <Markdown className="mt-3 text-sm text-nevoa/75">{questao.comentario}</Markdown>}
           </div>
 
           {questao.criterios && questao.criterios.length > 0 && (

@@ -4,19 +4,31 @@ secao: "comparacoes"
 secaoOrdem: 4
 ---
 
-## Série × paralelo
+## As seis configurações dos slides
+
+| Configuração | Elemento de controle | Posição vs. carga | Vantagem | Limitação |
+|---|---|---|---|---|
+| Série simples | 1 transistor + Zener | em série (`IE = IL`) | simples | regulação modesta |
+| Série aperfeiçoado | + Q2 (amplifica o erro) | em série | melhor regulação | mais complexo |
+| Série com amp-op | amp-op | em série | máxima precisão (alto ganho) | depende da alimentação do amp-op |
+| Paralelo simples | 1 transistor + Zener | em paralelo (`IC // IL`) | proteção natural a curto | menos eficiente |
+| Paralelo aperfeiçoado | + Q2 | em paralelo | melhor regulação | mais complexo |
+| Paralelo com amp-op | amp-op | em paralelo | máxima precisão | depende do amp-op |
+
+## Série × paralelo (a decisão de partida)
 
 | | Regulador série | Regulador paralelo |
 |---|---|---|
 | Posição do transistor | **No caminho** da carga (segue a corrente) | Em **paralelo** com a carga |
 | Corrente de Q1 | `IE ≈ IL` | Desvia o excesso de corrente |
+| Tensão de saída | `VO = VZ − 0,7` | `VO = VZ + 0,7` |
 | Mais comum na prova | **Sim** | Menos cobrado |
 
 ## Ciclo de realimentação do regulador série
 
-| VI sobe → | VO tende a subir → | Vbe de Q1 cai → | Q1 conduz menos → | VO volta ao valor regulado |
+| VI sobe → | VO tende a subir → | a amostra do divisor sobe → | Q2/amp-op reduz a base de Q1 → | VO volta ao valor regulado |
 |---|---|---|---|---|
-| VI cai → | VO tende a cair → | Vbe de Q1 sobe → | Q1 conduz mais → | VO volta ao valor regulado |
+| VI cai → | VO tende a cair → | a amostra do divisor cai → | Q2/amp-op aumenta a base de Q1 → | VO volta ao valor regulado |
 
 ## Operação normal × proteção de curto (limitador de corrente Q2)
 

@@ -143,6 +143,41 @@ queda do componente conforme o **estado da saída** (Vo = +VCC vs −VEE).
 Schmitt com Zener/diodo na malha de realimentação → calcule a referência **duas vezes** (saída alta e
 saída baixa), trocando a queda do componente em cada caso.
 
+## Exercícios dos slides (resolvidos)
+
+#### Exercício nº 1 — Schmitt com Zener
+
+![Exercício 1: Schmitt ±12 V com divisor 12 kΩ/24 kΩ e Zener de 5 V; entrada triangular ±7 V.](/imagens/cursos/det/schmitt/ex1-zener.png)
+
+**Dados:** ±12 V; divisor de realimentação `12 kΩ / 24 kΩ` com **Zener de 5 V**; entrada triangular ±7 V.
+**Método:** o Zener torna os limiares **assimétricos** — reavalie a queda do componente conforme a saída
+está alta ou baixa (≈ 0,7 V conduzindo, 5 V na ruptura), como no exemplo Zener da SOPA acima. Monte `V+`
+pela contribuição da saída através do divisor, ajustada pelo Zener, em cada estado. Os limiares resultam
+**dentro de ±7 V** (por isso a triangular cruza ambos e a saída comuta). *(Os valores exatos dependem da
+orientação do Zener na figura — aplique o mesmo procedimento do exemplo anterior.)*
+
+#### Exercício nº 2 — Schmitt com diodo
+
+![Exercício 2: Schmitt ±12 V com diodo em série com 10 kΩ e mais 10 kΩ ao terra; entrada ±7 V.](/imagens/cursos/det/schmitt/ex2-diodo.png)
+
+**Dados:** ±12 V; realimentação com **diodo + 10 kΩ** (da saída ao nó V+) e `10 kΩ` (do V+ ao terra);
+entrada ±7 V.
+1. **Saída ALTA (+12 V):** o diodo **conduz** → `UTP = (12 − 0,7)·10k/(10k+10k) = 11,3·0,5 = `**`+5,65 V`**.
+2. **Saída BAIXA (−12 V):** o diodo **corta** → o V+ é puxado a 0 pelo 10 kΩ inferior → `LTP = `**`0 V`**.
+3. **Saída:** onda quadrada ±12 V; comuta para baixo quando a entrada passa de +5,65 V (subindo) e volta
+   para cima ao cruzar 0 V (descendo). Histerese = 5,65 V.
+
+#### Exercício nº 3 — Schmitt com 555
+
+![Exercício 3: Schmitt com 555 (+12 V), divisor 22 kΩ/22 kΩ polarizando a entrada AC-acoplada; entrada ±4 V.](/imagens/cursos/det/schmitt/ex3-555.png)
+
+**Dados:** 555 (+12 V); divisor `22 kΩ / 22 kΩ` polariza a entrada (acoplada por capacitor); entrada ±4 V.
+1. No 555 os limiares são fixos: `UTP = ⅔·VCC = `**`8 V`** e `LTP = ⅓·VCC = `**`4 V`**.
+2. O divisor 22k/22k polariza a entrada em `VCC/2 = 6 V`; com o acoplamento AC, a triangular de ±4 V
+   oscila em torno de 6 V → de **2 V a 10 V**, cruzando 4 V e 8 V.
+3. **Saída:** onda quadrada de 0 a +12 V, comutando quando a entrada passa de 8 V e de 4 V.
+   Histerese = ⅓·VCC = 4 V.
+
 ## A curva de histerese
 
 Uma forma poderosa de "ver" o Schmitt é plotar a saída `Vo` **em função** da entrada `Vi`. O resultado

@@ -25,6 +25,20 @@ Toda fonte segue a mesma sequência de estágios:
 - **Regulador** — **estabiliza** de vez, entregando uma CC praticamente plana.
 - **Carga** — o circuito que consome a energia.
 
+## O retificador: meia-onda × onda completa
+
+O retificador (estudado em ELT) pode ser de dois tipos:
+
+- **Meia-onda** — aproveita só um semiciclo da CA → **um** pulso por ciclo (ondulação a **60 Hz**).
+- **Onda completa** — aproveita os dois semiciclos → **dois** pulsos por ciclo (ondulação a **120 Hz**).
+
+A onda completa é melhor para a fonte: com a ondulação a 120 Hz, o capacitor de filtro tem **metade do
+tempo** para descarregar entre os picos, então o ripple fica menor (ou basta um capacitor menor para o
+mesmo ripple). A tensão de pico que o capacitor carrega é `Vm = Vrms·√2 ≈ 1,41·Vrms` — por isso um
+transformador de 12 Vrms entrega pico ≈ 17 V, e é esse valor (não os 12 Vrms) que alimenta o regulador.
+
+> 📖 **No livro:** Boylestad, cap. 19, seção 19.5 (indicado no próprio slide como leitura-base).
+
 ## Por que o filtro não basta
 
 Aqui mora um conceito que a prova adora. O capacitor de filtro **reduz a ondulação**, mas não resolve

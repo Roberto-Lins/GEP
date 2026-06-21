@@ -12,6 +12,23 @@ O regulador **integrado** faz exatamente a mesma coisa — referência + control
 passa a trabalhar com as **especificações** do CI: tensão regulada, tensão mínima de entrada, corrente
 máxima e corrente de polarização.
 
+## Características e especificações
+
+O regulador integrado tem **três terminais**, em dois arranjos:
+
+- **Saída fixa** (7805, 7812): **entrada · terra · saída**.
+- **Saída ajustável** (LM317): **entrada · ajuste · saída** (o terminal de terra vira o de **ajuste**).
+
+Como o encapsulamento é parecido com o de um transistor, só dá para ter certeza de que é um regulador
+**conferindo o código**. Da folha de dados (*data sheet*), quatro especificações importam na PP1:
+
+| Especificação | Símbolo | O que significa |
+| --- | --- | --- |
+| Tensão regulada | `VREG` | a tensão de saída (fixa) ou a referência interna (ajustável) |
+| Tensão mínima de entrada | `VImín` | abaixo dela o CI não regula |
+| Corrente máxima de saída | `IMAX` | teto de corrente que o CI entrega |
+| Corrente de polarização | `IQ` | corrente do terminal de ajuste (entra na conta do LM317) |
+
 ## Reguladores fixos (família 78xx)
 
 A regra mais útil: **o valor de saída está no código**.
@@ -44,11 +61,14 @@ Entendendo os termos: o LM317 mantém **1,25 V fixos** entre OUT e ADJ (é o `VR
 `R1` gera uma corrente que também passa por `R2`, e a soma das quedas define `VO`. O termo `IQ · R2` é
 uma pequena correção da **corrente de ajuste** — só entra na conta **quando o enunciado fornece `IQ`**.
 
-> **Exemplo resolvido (Lista 1 — Q2):** dados `VO` mínimo = 1,25 V, `VO` máximo = 8,75 V e `IQ` = 50 µA.
-> 1. O `VO` **mínimo** ocorre com o resistor de ajuste no mínimo — e vale exatamente a referência.
->    Logo `VREG = `**`1,25 V`**.
-> 2. Impondo `VO` máximo = 8,75 V na equação (com a montagem da lista) e isolando, chega-se a
->    `Rx = `**`5 kΩ`** (gabarito oficial, Lista 2).
+> **Exemplo resolvido (slide — Exercício nº 2):** `IQ = 100 µA`, `VREG = 1,25 V`, `R1 = 240 Ω` e
+> `R2 = 2,4 kΩ` (ajustável de 0 a 2,4 kΩ). Determine os valores **mínimo e máximo** de `VO`.
+> 1. **VO mínimo** (`R2 → 0`): `VO = VREG·(1+0) + IQ·0 = `**`1,25 V`** (a própria referência interna).
+> 2. **VO máximo** (`R2 = 2,4 kΩ`): `VO = 1,25·(1 + 2400/240) + 100µ·2400 = 1,25·11 + 0,24 = `
+>    **`≈ 14 V`**.
+>
+> *(Variação nas listas oficiais: com `VO` máx = 8,75 V e `IQ` = 50 µA numa outra montagem, isola-se
+> `Rx = 5 kΩ` — gabarito da Lista 2. Veja a discursiva no banco de questões.)*
 
 ## Potência dissipada no CI
 

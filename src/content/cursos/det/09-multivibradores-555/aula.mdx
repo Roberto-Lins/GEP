@@ -40,6 +40,13 @@ Com apenas `RA` e `C`, o 555 gera **um pulso** após o disparo:
 
 <Calc555 />
 
+## 555 biestável
+
+No modo **biestável**, o 555 vira um **flip-flop**: tem dois estados estáveis e **fica em cada um até
+receber um comando**. Não há capacitor definindo o tempo — o estado só muda quando uma chave aciona o
+**disparo (pino 2)** ou o **reset (pino 4)**. É uma "memória" de 1 bit: a saída permanece onde está até
+o próximo acionamento.
+
 ## Exemplos resolvidos
 
 > **Astável (slide):** com os valores do slide, `T = 1,6 ms` → `f = 1/T = 1/0,0016 = `**`625 Hz`**.
@@ -48,6 +55,48 @@ Com apenas `RA` e `C`, o 555 gera **um pulso** após o disparo:
 > `LP = 1,1 · 7 500 · 0,1×10⁻⁶ = `**`0,83 ms`**. (Converta `kΩ` e `µF` antes!)
 
 > **Astável (Lista 1 — Q3):** resultado oficial `f = `**`659 Hz`** (Lista 2).
+
+## Exercícios dos slides (resolvidos)
+
+#### Exercício nº 1 — astável
+
+![Exercício 1: 555 astável — +5 V, RA = 15 kΩ, RB = 4,7 kΩ, C = 2,2 nF.](/imagens/cursos/det/multivibradores/ex1-astavel.png)
+
+**Dados:** `+5 V`, `RA = 15 kΩ`, `RB = 4,7 kΩ`, `C = 2,2 nF` (0,01 µF no pino 5 = controle).
+1. `T_ALTO = 0,7·(RA+RB)·C = 0,7·19,7k·2,2n ≈ `**`30,3 µs`**.
+2. `T_BAIXO = 0,7·RB·C = 0,7·4,7k·2,2n ≈ `**`7,2 µs`**.
+3. `T = 37,5 µs → f = 1/T ≈ `**`26,6 kHz`** (duty ≈ 81%).
+4. **Saída:** onda retangular de **0 a +5 V** (níveis ≈ 0 e VCC).
+
+#### Exercício nº 2 — monoestável
+
+![Exercício 2: 555 monoestável — +10 V, R = 1,2 kΩ, C = 1200 µF, disparo por S1 em t = 3 s.](/imagens/cursos/det/multivibradores/ex2-monoestavel.png)
+
+**Dados:** `+10 V`, `R = 1,2 kΩ` (temporização), `C = 1200 µF`, `S1` (NA) no disparo (pino 2),
+pressionada em `t = 3 s` (o 10 kΩ é o pull-up do disparo).
+1. `LP = 1,1·R·C = 1,1·1,2k·1200µF ≈ 1,1·1,44 s = `**`1,6 s`**.
+2. Em repouso a saída fica em 0. Ao pressionar S1 em `t = 3 s`, a saída sobe para **+10 V** por `LP ≈ 1,6 s`.
+3. **Saída:** um único pulso de ≈ 1,6 s — alto de **t = 3 s a ≈ 4,6 s**, depois volta a 0.
+
+#### Exercício nº 3 — biestável
+
+![Exercício 3: 555 biestável — chave S pressionada em 3 s, 6 s, 7 s e 10 s; saída inicial em nível baixo.](/imagens/cursos/det/multivibradores/ex3-biestavel.png)
+
+**Dados:** 555 **biestável**; estado inicial da saída (pino 3) **baixo**; chave `S` pressionada em
+`3 s, 6 s, 7 s e 10 s`.
+
+No biestável a saída **troca de estado a cada acionamento** (memória). Partindo do nível baixo:
+
+| Instante | Ação | Saída (pino 3) |
+| --- | --- | --- |
+| 0–3 s | — | baixo (0 V) |
+| 3 s | 1º toque | **alto** (+VCC) |
+| 6 s | 2º toque | baixo |
+| 7 s | 3º toque | **alto** |
+| 10 s | 4º toque | baixo |
+
+**Saída:** 0 V até 3 s; +VCC de 3 a 6 s; 0 V de 6 a 7 s; +VCC de 7 a 10 s; 0 V após 10 s. *(Assume que
+cada toque alterna o estado; confirme na figura como S liga aos pinos de disparo/reset.)*
 
 <BlocoConceito titulo="Sinal de que você dominou">
 Você recebe `RA`, `RB` e `C` e entrega `T_ALTO`, `T_BAIXO`, `T` e `f` sem travar — e desenha tanto a

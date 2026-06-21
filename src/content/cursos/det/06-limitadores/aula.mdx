@@ -49,16 +49,52 @@ conduz e **prende** a saída nesse valor — o pico é ceifado.
 
 ![Forma de onda: a senoide de entrada (±10 V) com o pico positivo ceifado em VDC + 0,7 V na saída.](/imagens/cursos/det/06-limitador-ondas.png)
 
-## As variações dos slides
+## As seis variações dos slides
 
-Os slides trazem seis exemplos do mesmo princípio: **só com diodos**, **diodo + fonte DC**, **com
-Zener** e **limitador ativo** (com amp-op). Com **Zener**, lembre: ele conduz **direto** num sentido
-(queda ≈ 0,7 V) e por **ruptura `VZ`** no outro — então o corte de cada lado é diferente.
+Os slides trazem **seis exemplos** do mesmo princípio (Boylestad, cap. 2, seções 2.9 e 2.10):
+
+| Exemplo | Tipo | Nível de corte |
+| --- | --- | --- |
+| 1 e 2 | **Com diodo + fonte DC** | `VDC ± 0,7 V` (a fonte desloca o nível de ceifamento) |
+| 3 e 4 | **Somente com diodos** | múltiplos de `0,7 V` (um nível por diodo em série) |
+| 5 | **Com diodo Zener** | `VZ` num sentido (ruptura) e `≈ 0,7 V` no outro (condução direta) → cortes assimétricos |
+| 6 | **Limitador ativo** (com amp-op) | níveis fixados por diodos/zeners na realimentação, com precisão do amp-op |
 
 <BlocoConceito titulo="Sinal de que você dominou">
 Você consegue prever em qual valor a onda **bate no teto** ou **bate no chão** antes mesmo de desenhar —
 somando a fonte DC com a queda do diodo, atento à polaridade.
 </BlocoConceito>
+
+## Exercícios dos slides (resolvidos)
+
+#### Exercício nº 1 — limitador só com diodos
+
+![Exercício 1: limitador com pilhas de diodos — entrada triangular ±12 V, R = 1 kΩ.](/imagens/cursos/det/limitadores/ex1-limitador-diodos.png)
+
+**Enunciado.** Desenhe a saída da entrada triangular de ±12 V, indicando máximo e mínimo. Há um resistor
+de 1 kΩ em série e dois ramos de diodos em paralelo até o terra.
+
+**Método.** Cada ramo é uma **pilha de diodos em série**; ele só conduz quando a tensão no nó vence a
+soma das quedas — ou seja, **`n · 0,7 V`** (com `n` = número de diodos do ramo). Em cada semiciclo, o
+ramo orientado para conduzir **grampeia** a saída em `± n·0,7 V`; abaixo disso a saída acompanha a
+entrada pelo 1 kΩ. Conte os diodos de cada ramo na figura: o ramo com mais diodos ceifa num nível mais
+alto, o de menos diodos num nível mais baixo. *(Os níveis exatos = nº de diodos em série × 0,7 V, lidos
+diretamente da figura; a onda triangular fica com topo e fundo achatados nesses dois valores.)*
+
+#### Exercício nº 2 — limitador ativo (com amp-op)
+
+![Exercício 2: limitador ativo — entrada ±12 V, amp-op com diodos de 3,2 V e 1,5 V e 3,3 kΩ na realimentação.](/imagens/cursos/det/limitadores/ex2-limitador-ativo.png)
+
+**Enunciado.** Desenhe a saída (triangular ±12 V) do limitador ativo: entrada por 1 kΩ na entrada
+inversora; realimentação com `3,3 kΩ` em paralelo com **dois diodos (3,2 V e 1,5 V)**; amp-op em ±12 V;
+10 kΩ na saída.
+
+**Método.** Enquanto os diodos da realimentação **não conduzem**, o amp-op amplifica normalmente
+(realimentação pelo `3,3 kΩ`). Quando a saída atinge a tensão de um dos diodos/zeners, esse diodo
+**conduz** e **grampeia** a saída naquele nível — para um lado em `≈ 3,2 V` e para o outro em `≈ 1,5 V`
+(somadas as quedas de condução). O amp-op torna o ceifamento **preciso** (cantos bem definidos), ao
+contrário do limitador passivo. A saída fica entre **≈ +3,2 V e ≈ −1,5 V** (confirme a polaridade pela
+orientação dos diodos na figura).
 
 ## Para onde vamos
 

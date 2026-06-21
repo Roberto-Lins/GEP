@@ -6,114 +6,285 @@ secaoOrdem: 2
 
 ## Onde estamos
 
-No tópico anterior vimos que todo regulador tem uma **referência** e um **controle**. Agora o controle
-ganha rosto: é um **transistor**. A primeira decisão de qualquer questão deste tipo é descobrir **onde**
-esse transistor está em relação à carga — e isso define se o regulador é **série** ou **paralelo**. É um
-dos tópicos de **prioridade máxima** da PP1.
+No tópico anterior vimos que todo regulador tem uma **referência** (o "alvo" de tensão) e um
+**controle** (quem ajusta a saída para bater no alvo). Agora o controle ganha rosto: é um
+**transistor**. A primeira decisão de qualquer questão deste tipo é descobrir **onde** esse transistor
+está em relação à carga — isso define se o regulador é **série** ou **paralelo**. É um dos tópicos de
+**prioridade máxima** da PP1.
 
-## Série × paralelo: a posição do transistor
+## Por que precisamos regular
 
-![Regulador série (transistor no caminho da carga) versus paralelo (transistor desvia corrente em paralelo com a carga).](/imagens/cursos/det/03-serie-paralelo.svg)
+O retificador (meia-onda ou onda completa) converte CA em CC pulsante; o capacitor de filtro suaviza
+essa pulsação. Mas a tensão resultante ainda é **instável**: varia com a entrada, com a carga e com a
+temperatura. Por isso, segundo o slide, a função do estágio regulador é **reduzir a dependência do
+nível CC de saída em relação a três fatores**:
 
-- **Regulador série** — o transistor fica **no caminho da corrente da carga**. Toda a corrente que
-  alimenta a carga **passa por ele** (`IE ≈ IL`). Ele se comporta como um "resistor inteligente" que
-  ajusta sua queda para manter a saída constante. **A maioria das questões é desse tipo.**
-- **Regulador paralelo (shunt)** — o transistor fica **em paralelo com a carga** e **desvia** o excesso
-  de corrente para o terra. A corrente de entrada se divide entre o transistor e a carga.
+1. variações na **tensão de entrada**;
+2. variações na **carga**;
+3. **temperatura**.
+
+> 📖 **No livro:** Boylestad, capítulo 19, seção 19.5 (o slide indica essa leitura como base).
+
+## Família 1 — Regulador SÉRIE
+
+No regulador série o transistor fica **no caminho da corrente da carga** — em série com ela. Toda a
+corrente que alimenta a carga **passa pelo transistor** (`IE ≈ IL`). Ele se comporta como um "resistor
+inteligente" que ajusta a própria queda para manter a saída constante. **A maioria das questões da PP1
+é desse tipo.**
+
+### 1.1 Série simples
+
+![Regulador série simples: Q1 com coletor em Vi e emissor em Vo; o Zener na base fixa a referência.](/imagens/cursos/det/reguladores/serie-simples.png)
+
+A referência é o **diodo Zener** na base de Q1. Como o emissor "segue" a base (menos a queda
+base-emissor), a saída vale:
+
+`VO = VZ − VBE = VZ − 0,7 V`
 
 <BlocoConceito titulo="A pergunta que decide tudo">
-Olhe o transistor e pergunte: *a corrente da carga passa por ele (série) ou ele desvia corrente da carga
-(paralelo)?* Responder isso já organiza a questão inteira.
+Olhe o transistor e pergunte: *a corrente da carga passa por ele (série) ou ele desvia corrente da
+carga (paralelo)?* Responder isso já organiza a questão inteira.
 </BlocoConceito>
 
-Em ambos, costuma haver um **segundo transistor (Q2)** ou um **amp-op** que melhora a estabilidade:
-ele "vigia" a saída, compara com a referência e corrige o primeiro transistor.
+#### Exemplo resolvido — Exercício nº 1 (slide)
 
-## Limitador de corrente (proteção contra curto)
+![Exercício 1: regulador série simples — Vi = 20 V, R = 220 Ω, VZ = 12 V, β = 50, RL = 1 kΩ.](/imagens/cursos/det/reguladores/ex1-serie-simples.png)
+
+**Enunciado.** No circuito, determine **(a)** `VO`, **(b)** a potência dissipada em Q1 e **(c)** a
+potência dissipada no diodo Zener. Dados: `Vi = 20 V`, `R = 220 Ω`, `VZ = 12 V`, `β = 50`, `RL = 1 kΩ`.
+
+**O que a questão cobra.** Reconhecer um regulador série simples, achar `VO` pela referência Zener e
+calcular potências (`P = V·I`) em cada componente — sabendo onde está a tensão e a corrente de cada um.
+
+**Resolução passo a passo.**
+
+1. **Tensão de saída** (fixada pela referência): `VO = VZ − VBE = 12 − 0,7 = `**`11,3 V`**.
+2. **Corrente na carga:** `IL = VO/RL = 11,3 / 1000 = 11,3 mA` (é também `IE`, logo `IC ≈ 11,3 mA`).
+3. **Potência em Q1** (ele sustenta a diferença `Vi − VO` conduzindo `IC`):
+   `P_Q1 = (Vi − VO)·IC = (20 − 11,3)·11,3 mA = 8,7 · 11,3 mA ≈ `**`98 mW`**.
+4. **Corrente no Zener:** a corrente em R é `I_R = (Vi − VZ)/R = (20 − 12)/220 = 36,4 mA`; a base puxa
+   `IB = IL/β = 11,3 mA / 50 = 0,23 mA`; logo `IZ = I_R − IB = 36,4 − 0,23 ≈ 36,1 mA`.
+5. **Potência no Zener:** `P_Z = VZ·IZ = 12 · 36,1 mA ≈ `**`433 mW`**.
+
+**Verificação.** `VO = 11,3 V < Vi = 20 V` (coerente: o série sempre rebaixa). A maior parte da
+corrente de R vai para o Zener (a base puxa quase nada), como esperado.
+
+**Pegadinha.** Esquecer a queda `VBE` e responder `VO = 12 V` (igual ao Zener); o correto é `VZ − 0,7`.
+
+**Regra prática.** Série simples → `VO = VZ − 0,7`; potência no transistor = `(Vi − VO)·IL`.
+
+### 1.2 Série aperfeiçoado
+
+![Regulador série aperfeiçoado: Q1 é o transistor de passagem; Q2 amplifica o erro amostrado pelo divisor R1/R2 e pelo Zener.](/imagens/cursos/det/reguladores/serie-aperfeicoado.png)
+
+Aqui o circuito ganha um **segundo transistor (Q2)** que **amplifica o erro** e melhora muito a
+estabilidade. Como funciona a **realimentação negativa** (o coração do circuito):
+
+- O divisor `R1`/`R2` **amostra** a saída e entrega uma fração dela ao comparador.
+- O **Zener** fornece a referência fixa.
+- **Se `VO` tende a subir**, a amostra no divisor sobe, Q2 conduz mais, **rouba corrente da base de
+  Q1**, Q1 conduz menos e `VO` **volta** ao valor regulado. Se `VO` tende a cair, ocorre o oposto.
+
+A saída regulada fica:
+
+`VO = (VZ + VBE2)·(R1 + R2)/R2`
+
+#### Exemplo resolvido — Exercício nº 2 (slide)
+
+![Exercício 2: série aperfeiçoado — Vi = 32 V, R4 = 390 Ω, VZ = 8,3 V, R1 = 20 kΩ, R2 = 30 kΩ, R3 = 10 kΩ, RL = 1 kΩ.](/imagens/cursos/det/reguladores/serie-aperfeicoado.png)
+
+**Enunciado.** Determine **(a)** `VO`, **(b)** a potência em Q1 e **(c)** a potência em Q2. Dados:
+`Vi = 32 V`, `R4 = 390 Ω` (polariza a base de Q1), `VZ = 8,3 V`, divisor `R1 = 20 kΩ` (superior) e
+`R2 = 30 kΩ` (inferior), `R3 = 10 kΩ`, `RL = 1 kΩ`.
+
+**Identificação.** Série **aperfeiçoado**: Q1 = passagem (no caminho da carga); Q2 = amplificador de
+erro; `R1`/`R2` = divisor de amostragem; Zener = referência.
+
+**Resolução passo a passo.**
+
+1. **Tensão de saída:** `VO = (VZ + VBE2)·(R1 + R2)/R2 = (8,3 + 0,7)·(20k + 30k)/30k = 9 · (50/30) = `
+   **`15 V`**.
+2. **Conferência da malha:** a amostra é `V2 = VO·R2/(R1+R2) = 15·30k/50k = 9 V`, que bate com
+   `VZ + VBE2 = 8,3 + 0,7 = 9 V`. ✓
+3. **Corrente na carga:** `IL = VO/RL = 15/1k = 15 mA`.
+4. **Potência em Q1:** `P_Q1 ≈ (Vi − VO)·IL = (32 − 15)·15 mA = 17 · 15 mA ≈ `**`255 mW`**.
+5. **Potência em Q2 (método):** a corrente que alimenta a base de Q1 vem por `R4`:
+   `I_R4 = (Vi − VB1)/R4`, com `VB1 = VO + VBE1 = 15,7 V` → `I_R4 = (32 − 15,7)/390 ≈ 41,8 mA`. Q2
+   conduz a parcela dessa corrente desviada da base de Q1, com `VCE2 ≈ VB1 = 15,7 V`, de modo que
+   `P_Q2 = VCE2·IC2`. O valor exato de `IC2` depende do `β` de Q1 (não fornecido no slide) — veja a
+   nota de fidelidade abaixo.
+
+> ⚠️ **Fidelidade às fontes:** `VO = 15 V` e `P_Q1 ≈ 255 mW` saem direto dos dados. Já `P_Q2` exige o
+> `β` de Q1 para separar `IB1` de `IC2`, que **não consta no slide** — por isso fica indicado pelo
+> método (`P_Q2 = VCE2·IC2`) e não por um número fechado.
+
+**Pegadinha.** Inverter o divisor (`R1` no lugar de `R2`): a fração amostrada usa **sempre** o resistor
+**de baixo** (`R2`).
+
+**Regra prática.** Série aperfeiçoado → `VO = (VZ + 0,7)·(R1+R2)/R2`; a realimentação negativa segura
+`VO` ajustando Q1 via Q2.
+
+### 1.3 Série com amplificador operacional
+
+![Regulador série com amp-op: o amp-op compara a referência Zener com a amostra do divisor e controla a base de Q1.](/imagens/cursos/det/reguladores/serie-ampop.png)
+
+A versão mais precisa: um **amplificador operacional** faz o papel do comparador/amplificador de erro.
+A entrada **não inversora (+)** recebe a referência Zener; a **inversora (−)** recebe a amostra do
+divisor de saída. O amp-op força as duas a se igualarem (`V+ = V−`), o que fixa `VO`. Como o ganho do
+amp-op é enorme, a regulação fica excelente.
+
+`VO = VZ·(R1 + R2)/R2`  (porque a amostra `VO·R2/(R1+R2)` é igualada a `VZ`)
+
+#### Exemplo resolvido — Exercício nº 3 (slide)
+
+![Exercício 3: série com amp-op — Vi = 36 V, referência Zener 6,2 V, divisor 30 kΩ / 10 kΩ.](/imagens/cursos/det/reguladores/ex3-serie-ampop.png)
+
+**Enunciado.** Determine **(a)** `VO` e **(b)** a potência em Q1. Dados: `Vi = 36 V`, Zener de
+referência `VZ = 6,2 V` (na entrada `+`), divisor `R1 = 30 kΩ` (superior) e `R2 = 10 kΩ` (inferior) na
+entrada `−`.
+
+**Resolução passo a passo.**
+
+1. O amp-op iguala as entradas: `V− = V+ = VZ = 6,2 V`.
+2. `V−` é a amostra do divisor: `V− = VO·R2/(R1+R2) = VO·10k/40k = VO/4`.
+3. Logo `VO/4 = 6,2` → `VO = 6,2 · 4 = `**`24,8 V`**.
+4. **Potência em Q1:** `P_Q1 = (Vi − VO)·IL = (36 − 24,8)·IL = 11,2 V · IL`. Com a carga dada (a
+   corrente que o divisor + a carga puxam), multiplique por `IL`. *(O slide cobra `VO` e o método de
+   `P_Q1`; se a carga `RL` não estiver no enunciado, calcule `P_Q1` em função de `IL`.)*
+
+**Verificação.** `VO = 24,8 V < Vi = 36 V`. ✓ A precisão vem do alto ganho do amp-op.
+
+**Pegadinha.** Trocar as entradas do amp-op (`+`↔`−`): a realimentação deixaria de ser negativa e o
+circuito não regularia.
+
+**Regra prática.** Série com amp-op → `VO = VZ·(R1+R2)/R2`; o amp-op impõe `V+ = V−`.
+
+## Família 2 — Regulador PARALELO (shunt)
+
+No regulador paralelo o transistor fica **em paralelo com a carga** e **desvia** o excesso de corrente
+para o terra (`IC // IL`). A corrente de entrada se divide entre o transistor e a carga; o resistor
+série na entrada limita a corrente total.
+
+### 2.1 Paralelo simples
+
+![Regulador paralelo simples: resistor série na entrada; transistor em paralelo com a carga desvia o excesso para o terra.](/imagens/cursos/det/reguladores/paralelo-simples.png)
+
+A referência (Zener) fica na base do transistor de desvio; a saída vale `VO = VZ + VBE`. Quando `VO`
+tende a subir, o transistor conduz mais, desvia mais corrente e segura `VO`.
+
+#### Exemplo resolvido — Exercício nº 4 (slide)
+
+![Exercício 4: regulador paralelo — Vi = 22 V, RS = 120 Ω, VZ = 8,2 V, RL = 100 Ω, β = 50.](/imagens/cursos/det/reguladores/ex4-paralelo.png)
+
+**Enunciado.** Considerando `β = 50`, determine **(a)** `VO`, **(b)** a potência no Zener e **(c)** a
+potência no transistor. Dados: `Vi = 22 V`, resistor série `RS = 120 Ω`, `VZ = 8,2 V`, `RL = 100 Ω`.
+
+**Resolução passo a passo.**
+
+1. **Tensão de saída:** `VO = VZ + VBE = 8,2 + 0,7 = `**`8,9 V`**.
+2. **Corrente na carga:** `IL = VO/RL = 8,9/100 = 89 mA`.
+3. **Corrente no resistor série:** `I_RS = (Vi − VO)/RS = (22 − 8,9)/120 = 13,1/120 ≈ 109,2 mA`.
+4. **Corrente desviada pelo transistor:** `IC = I_RS − IL = 109,2 − 89 = 20,2 mA`.
+5. **Potência no transistor** (`VCE = VO`, pois o emissor está no terra):
+   `P_tr = VO·IC = 8,9 · 20,2 mA ≈ `**`180 mW`**.
+6. **Corrente / potência no Zener:** `IZ = IB = IC/β = 20,2 mA/50 = 0,40 mA` →
+   `P_Z = VZ·IZ = 8,2 · 0,40 mA ≈ `**`3,3 mW`**.
+
+**Verificação.** `I_RS = IL + IC` (109,2 ≈ 89 + 20,2). ✓ No shunt, a corrente de entrada **sempre** se
+reparte entre carga e transistor.
+
+**Pegadinha.** Tratar o paralelo como série (achar que `IL` passa pelo transistor). No shunt, o
+transistor conduz só o **excesso** (`I_RS − IL`).
+
+**Regra prática.** Paralelo → `VO = VZ + 0,7`; `I_transistor = (Vi−VO)/RS − IL`.
+
+### 2.2 Paralelo aperfeiçoado e com amp-op
+
+Assim como no série, o paralelo também tem versões melhoradas:
+
+![Regulador paralelo aperfeiçoado: Q2 na base de Q1 amplifica o erro.](/imagens/cursos/det/reguladores/paralelo-aperfeicoado.png)
+
+- **Paralelo aperfeiçoado** — acrescenta um segundo transistor (Q2) na base de Q1, **amplificando o
+  erro** e melhorando a estabilidade (mesma ideia do série aperfeiçoado, mas com o elemento de controle
+  em paralelo com a carga).
+
+![Regulador paralelo com amp-op: o amp-op controla o transistor de desvio.](/imagens/cursos/det/reguladores/paralelo-ampop.png)
+
+- **Paralelo com amp-op** — um amplificador operacional controla a condução do transistor de desvio,
+  dando a melhor precisão (alto ganho), à custa de depender da alimentação do amp-op.
+
+## Comparando as seis configurações
+
+| Configuração | Elemento de controle | Posição vs. carga | Vantagem | Limitação |
+| --- | --- | --- | --- | --- |
+| Série simples | 1 transistor + Zener | em série (`IE = IL`) | simples | regulação modesta |
+| Série aperfeiçoado | + Q2 (amplifica o erro) | em série | melhor regulação | mais complexo |
+| Série com amp-op | amp-op | em série | máxima precisão (alto ganho) | depende da alimentação do amp-op |
+| Paralelo simples | 1 transistor + Zener | em paralelo (`IC // IL`) | proteção natural a curto | menos eficiente |
+| Paralelo aperfeiçoado | + Q2 | em paralelo | melhor regulação | mais complexo |
+| Paralelo com amp-op | amp-op | em paralelo | máxima precisão | depende do amp-op |
+
+## Proteção: limitador de corrente (contra curto-circuito)
+
+![Limitador de corrente: RSC em série com a carga e Q2 sensoriando a queda em RSC; quando V(RSC) ≈ 0,7 V, Q2 liga e desvia corrente da base de Q1.](/imagens/cursos/det/reguladores/limitador-corrente.png)
 
 E se a saída for curto-circuitada? Sem proteção, a corrente dispararia e queimaria o transistor. O
-**limitador de corrente** evita isso. Procure no circuito um **resistor sensor RSC** em série com a
-carga (ou com o emissor) e um transistor **Q2**. A sequência é:
+**limitador de corrente** evita isso. Procure no circuito um **resistor sensor `RSC`** em série com a
+carga e um transistor de proteção **`Q2`**. A sequência (slide):
 
-1. Em operação normal, **Q2 está cortado** (não faz nada). É crucial entender que ele **começa
-   desligado**.
-2. Quando a corrente cresce, a queda no resistor sensor (`V_RSC = IL · RSC`) aumenta.
-3. Quando essa queda chega a ≈ **0,7 V**, há tensão suficiente para **ligar Q2** (é a VBE dele).
-4. Ao ligar, **Q2 rouba corrente da base de Q1**. Com menos base, Q1 conduz menos, e a corrente de
-   carga **para de crescer** — fica grampeada no limite.
-
-Por isso a corrente máxima (ou de curto-circuito) é:
+1. Em operação normal, **`Q2` está cortado** (começa **desligado** — ponto crucial).
+2. Quando a corrente cresce, a queda no sensor `V_RSC = IL·RSC` aumenta.
+3. Quando essa queda chega a ≈ **0,7 V**, há tensão suficiente para **ligar `Q2`** (é a `VBE` dele).
+4. Ao ligar, **`Q2` rouba corrente da base de `Q1`**: `Q1` conduz menos e a corrente de carga **para de
+   crescer** — fica grampeada no limite.
 
 `I_Lmáx ≈ 0,7 V / RSC`
 
-## Potência nos transistores
+#### Exemplo resolvido — Exercício nº 5 (slide)
 
-O transistor série dissipa a diferença de tensão vezes a corrente:
+![Exercício 5: regulador série com amp-op + limitador (RSC = 0,15 Ω).](/imagens/cursos/det/reguladores/limitador-corrente.png)
 
-`P_Q1 ≈ (VI − VO) · IL`
+**Enunciado.** Determine a **corrente máxima (ou de curto-circuito)** de saída. Dado do limitador:
+`RSC = 0,15 Ω`.
 
-Calcule primeiro a tensão sobre o transistor e a corrente que passa por ele; só então multiplique.
+**Resolução.** O transistor de proteção liga quando a queda em `RSC` chega a ≈ 0,7 V:
 
-## Exemplo resolvido — Lista 1 (Q5)
+`I_curto = 0,7 / RSC = 0,7 / 0,15 ≈ `**`4,7 A`**.
 
-> **Dados:** regulador série com referência Zener de **9,3 V** e `Rx = 13 kΩ`.
+**Verificação.** `RSC` pequeno → corrente de proteção alta (faz sentido: um sensor de baixa resistência
+só atinge 0,7 V com corrente grande).
 
-**(a) e (b) — VO para VI = 62 V e para VI = 50 V.**
-A saída de um regulador é fixada pela **referência**, não pela entrada. Desde que a entrada seja
-suficiente para o circuito operar, **VO não muda**. Por isso `VO = 40 V` nos **dois** casos. Esse é o
-ponto que a questão testa: o aluno que acha que "VO acompanha VI" erra.
+**Pegadinha.** Confundir os 0,7 **V** de disparo com uma corrente; a corrente sai da divisão `0,7/RSC`.
 
-**(c) e (d) — potências em Q1 e Q2 para VI = 35 V e VO = 20 V.**
-Agora a entrada é menor e a saída, 20 V. Aplicando `P ≈ (V sobre o transistor) · (corrente nele)` com os
-valores do circuito, o gabarito oficial dá **P_Q1 = 642 mW** e **P_Q2 = 494 mW** (Lista 2).
+**Regra prática.** Limitador → `I_curto ≈ 0,7 / RSC` (independe da carga e da entrada).
 
-<BlocoConceito titulo="Sinal de que você dominou">
-Você olha o circuito e diz na hora: *este transistor controla a tensão **passando** a corrente pela
-carga (série) ou **desviando** corrente da carga (paralelo)?* — e lembra que, num regulador, **a saída
-fica fixa pela referência**, não pela entrada.
-</BlocoConceito>
+## Potência nos transistores — o atalho
 
-## Exemplo resolvido — regulador com proteção de corrente (SOPA 2021)
+O transistor série dissipa **a diferença de tensão vezes a corrente que passa por ele**:
 
-### Enunciado
-Regulador série com **proteção de corrente**: resistor sensor `RSC = 0,35 Ω`, referência Zener
-`VZ = 1,8 V` e divisor `18 kΩ / 18 kΩ`. Determine (a) a corrente de curto-circuito; (b) `Vo` para
-`VI = 17 V`; (c) `Vo` para `VI = 12 V`.
+`P_Q1 ≈ (Vi − VO)·IL`
 
-### Circuito
-A topologia é o **regulador série** (transistor no caminho da carga) com o bloco de **limitador de
-corrente** acoplado: o resistor sensor `RSC` em série e o transistor de proteção `Q2` medindo a queda
-sobre ele (ver o diagrama série da seção anterior; aqui acrescenta-se `RSC` no caminho da carga e `Q2`
-sensoriando `RSC`).
+Calcule primeiro a tensão sobre o transistor e a corrente que o atravessa; só então multiplique. Num
+shunt, troque por `P_tr = VO·IC`, com `IC = (Vi−VO)/RS − IL`.
 
-### O que a questão pede?
-A corrente de curto e a tensão de saída em duas entradas — testando se você sabe que **Vo é fixado pela
-referência**, não pela entrada.
+## Exemplos das listas oficiais
 
-### Dados
-- `RSC = 0,35 Ω` · `VZ = 1,8 V` · divisor `18 kΩ / 18 kΩ` · `VI = 17 V` e `12 V`.
+Além dos cinco exercícios dos slides, o banco de questões traz os exemplos da **Lista 1/2** (regulador
+série, `VO = 40 V`, potências em Q1/Q2) e da **SOPA 2021** (regulador com proteção de corrente,
+`I_curto = 2 A`, `VO = 5 V`). Resolva-os na aba de questões — eles reforçam que **`VO` é fixado pela
+referência, não pela entrada**.
 
-### Passo 1 — corrente de curto (limitador)
-`Q2` liga quando a queda em `RSC` chega a ≈ 0,7 V → `I_curto = 0,7 / RSC = 0,7 / 0,35 = `**`2 A`**.
+## Pegadinhas do tópico
 
-### Passo 2 — tensão de saída (referência)
-`Vo = (VZ + VBE)·(18k + 18k)/18k = (1,8 + 0,7)·2 = 2,5 · 2 = `**`5 V`**.
-
-### Passo 3 — variar a entrada
-Com `VI = 12 V` (ainda suficiente para o regulador operar), `Vo` **permanece em 5 V**.
-
-### Resposta
-**a) I_curto = 2 A · b) Vo = 5 V · c) Vo = 5 V** (gabarito oficial, SOPA PP1 2021).
-
-### Pegadinha da questão
-`Vo` **não cai** quando `VI` cai de 17 V para 12 V — o regulador segura a saída. E `I_curto` depende só
-de `RSC` (0,7/RSC), não da carga.
-
-### Como reconhecer na prova
-Viu `RSC` em série + um transistor sensoriando-o? É **limitador de corrente** → `I_curto ≈ 0,7/RSC`. A
-saída vem da **referência** (Zener + divisor).
+- **Série × paralelo:** decida pela **posição do transistor** (no caminho da carga = série; desviando
+  corrente = paralelo), não pelo nome.
+- **`VBE` esquecida:** série → `VO = VZ − 0,7`; paralelo → `VO = VZ + 0,7`.
+- **`VO` não acompanha `Vi`:** num regulador, a saída fica travada pela referência; a sobra
+  `(Vi − VO)` só vira **calor** no transistor.
+- **`Q2` do limitador começa cortado:** ele só "acorda" quando `V_RSC ≈ 0,7 V`.
 
 ## Para onde vamos
 
 A mesma regulação, agora **encapsulada** num circuito integrado de três terminais (7805, 7812, LM317),
-é o próximo tópico. A ideia é idêntica; muda só que o transistor e a referência vêm prontos dentro do CI.
+é o próximo tópico. A ideia é idêntica; muda só que o transistor e a referência vêm prontos dentro do
+CI.

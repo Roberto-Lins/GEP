@@ -95,6 +95,20 @@ Carga por **fonte de corrente** → use `dV/dt = I/C` (rampa linear), **não** a
 Transistor como fonte de corrente + capacitor + UJT/555 = **base de tempo**: ache a corrente, os níveis
 (VV→VP ou 0→⅔VCC) e use `t = C·ΔV/I`.
 
+## Outros exercícios dos slides
+
+Os slides trazem mais dois exercícios do mesmo tipo (mesmo método):
+
+- **Exercício nº 1 — base de tempo com UJT:** `η = 0,75`, `RB1(ON) = 100 Ω`, `VV = 0,8 V`, `C = 3 nF`,
+  com fonte de corrente a transistor (resistores de 1,5 kΩ / 3,3 kΩ / 18 kΩ / 8,5 kΩ). Pede a forma de
+  onda sobre o capacitor e a **frequência de saída**. *Método:* ache `I` pela fonte de corrente,
+  `VP = η·VCC + 0,7` e `t = C·ΔV/I` → `f = 1/t` (a divisão exata dos resistores está na figura do slide).
+- **Exercício nº 2 — base de tempo com 555 monoestável:** `+15 V`, resistores `10 kΩ / 10 kΩ / 1 kΩ`.
+  Pede a **largura do pulso** (`LP = 1,1·R·C`) e a forma de onda sobre o capacitor (rampa de 0 a ⅔·VCC
+  enquanto o pulso está ativo).
+
+Em ambos, a chave é a mesma: rampa **linear** por fonte de corrente (`dV/dt = I/C`), nunca a exponencial.
+
 ## Fim da trilha
 
 Você percorreu as cinco famílias: estabilizou tensão (fontes), moldou o sinal (limitador/grampeador),

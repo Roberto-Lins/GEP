@@ -11,6 +11,10 @@ entrada é 20 V e a saída 5 V com 1 A, são **15 W** virando calor — desperd�
 **chaveado** resolve isso com uma mudança radical: em vez de o transistor trabalhar como um resistor
 variável, ele vira uma **chave** que só abre e fecha.
 
+> 📌 **Escopo (slide):** este assunto **não está na bibliografia indispensável (Boylestad)** — o
+> professor apresenta apenas uma **noção** do chaveado mais simples (buck). Ainda assim, é um regulador
+> **realimentado** e, por chavear, opera com cargas bem mais potentes que o linear.
+
 ## Chave, não resistor
 
 Como chave, o transistor fica sempre em um de dois estados:
@@ -37,9 +41,17 @@ Detalhe que a prova cobra: a **frequência do PWM é constante** — o que muda 
 
 <CalcPWM />
 
-> **Exemplo resolvido (slide):** `VIN = 20 V`, `VREF = 4 V`, divisor de realimentação `R1 = 8 kΩ` e
-> `R2 = 24 kΩ`. Em regime regulado `VFB = VREF`, então `VOUT = VREF·(1 + R2/R1) = 4·(1 + 24/8) = 4·4 = `**`16 V`**;
-> logo `D = VOUT/VIN = 16/20 = `**`0,8`** (80%). A saída média (16 V) vem do ciclo de trabalho, não do pico.
+> **Exemplo resolvido — Exercício nº 1 (slide):** `VIN = 20 V`, `VREF = 4 V`, divisor de realimentação
+> `R1 = 8 kΩ` e `R2 = 24 kΩ`. Determine VOUT, a potência no transistor e o ciclo de trabalho.
+> 1. Em regime, `VFB = VREF` → `VOUT = VREF·(1 + R2/R1) = 4·(1 + 24/8) = 4·4 = `**`16 V`**.
+> 2. **Potência no transistor:** ele opera só em **corte ou saturação** (chave), `V·I ≈ 0` → dissipação
+>    **praticamente nula** (idealmente 0 W). É exatamente a vantagem do chaveado.
+> 3. `D = VOUT/VIN = 16/20 = `**`0,8`** (80%). A saída média (16 V) vem do ciclo de trabalho, não do pico.
+>
+> **Exercício nº 2 (slide):** `VIN = 20 V`, `VREF = 2,5 V`. Como `VOUT` é fixado pela realimentação
+> (`VOUT = VREF·(1+R2/R1)`), quando a entrada sobe para **22 V** a saída **não muda** — quem se ajusta é
+> o duty (`D = VOUT/VIN`). A variação percentual é `D'/D = VIN/VIN' = 20/22` → o duty **cai**
+> **`≈ 9,1%`**, **independentemente** do valor de VOUT.
 
 ## A realimentação que mantém a saída no lugar
 

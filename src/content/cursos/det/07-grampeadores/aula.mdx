@@ -54,6 +54,30 @@ Se você consegue transformar uma onda de `−12 V a +12 V` em `0 V a +24 V` (po
 `−24 V a 0 V` (negativo) **sem mudar a forma**, dominou o grampeador.
 </BlocoConceito>
 
+## Exercício dos slides (resolvido)
+
+#### Exercício nº 3 — grampeador
+
+![Exercício 3: grampeador — entrada triangular ±12 V, capacitor de 1200 µF em série, diodo do nó ao terra e 10 kΩ.](/imagens/cursos/det/limitadores/ex3-grampeador.png)
+
+**Enunciado.** Desenhe a saída (triangular de ±12 V), indicando máximo e mínimo. Circuito: capacitor de
+**1200 µF** em série, diodo do nó de saída ao terra e `10 kΩ`.
+
+**Resolução.**
+1. **Identificação:** capacitor em série + diodo derivando o nó = **grampeador** (não corta, desloca).
+2. **Constante de tempo:** `RC = 10 kΩ · 1200 µF = 12 s` — gigantesca perto do período da onda, então o
+   capacitor **segura a carga** entre os ciclos (grampeamento ideal).
+3. **Sentido:** o diodo (anodo no nó, catodo no terra) conduz quando o nó tenta passar de `+0,7 V`,
+   prendendo o **pico positivo** em ≈ 0 V → **grampeador negativo** (`VO = VI − Vm`).
+4. **Carga do capacitor:** no pico positivo o diodo conduz e carrega o capacitor até `Vm = 12 V`.
+5. **Saída:** `VO = VI − 12` → máximo `+12 − 12 = `**`0 V`**; mínimo `−12 − 12 = `**`−24 V`**.
+
+**Resultado.** Mesma forma triangular, deslocada para baixo: **de −24 V a 0 V**. *(Se o diodo estivesse
+invertido, seria grampeador positivo: de 0 V a +24 V.)*
+
+**Pegadinha.** Um capacitor grande (1200 µF) não muda a forma — ele só garante que o nível DC fique
+estável; quem decide o sentido (cima/baixo) é a **orientação do diodo**.
+
 ## Para onde vamos
 
 Encerramos o tratamento "passivo" do sinal (cortar e deslocar). A partir do próximo tópico entramos nos

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import type { QuestaoMultipla } from '@tipos/question';
+import Markdown from './Markdown';
 
 const LETRAS = ['A', 'B', 'C', 'D', 'E'];
 
@@ -70,7 +71,7 @@ export default function QuestaoMultiplaEscolha({ questao, indice, onResponder }:
           <p className={`mb-1 text-sm font-semibold ${escolha === questao.correta ? 'text-progresso' : 'text-alerta'}`}>
             {escolha === questao.correta ? '✓ Você acertou' : `✗ Resposta correta: ${LETRAS[questao.correta]}`}
           </p>
-          <p className="whitespace-pre-line text-sm text-nevoa/85">{questao.comentario}</p>
+          <Markdown className="text-sm text-nevoa/85">{questao.comentario}</Markdown>
           {questao.conceito && (
             <p className="mt-2 text-xs uppercase tracking-wider text-dourado/70">Conceito: {questao.conceito}</p>
           )}
