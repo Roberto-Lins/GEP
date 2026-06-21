@@ -9,6 +9,9 @@ import Calc555 from '@components/cursos/det/Calculadora555.astro';
 import CalcSchmitt from '@components/cursos/det/CalculadoraSchmitt.astro';
 import CalcRampa from '@components/cursos/det/CalculadoraRampa.astro';
 import CalcRegulador from '@components/cursos/det/CalculadoraRegulador.astro';
+import CalcPWM from '@components/cursos/det/CalculadoraPWM.astro';
+import CalcDivisor from '@components/cursos/det/CalculadoraDivisor.astro';
+import CalcUJT from '@components/cursos/det/CalculadoraUJT.astro';
 import PlayerVideo from '@components/midia/PlayerVideo.astro';
 import PlayerPodcast from '@components/midia/PlayerPodcast.astro';
 import MapaMentalPreview from '@components/midia/MapaMentalPreview.astro';
@@ -37,7 +40,7 @@ const topico = dados.topicoPorSlug(materia!)!;
 // Componentes disponíveis dentro do MDX (sem precisar importar em cada arquivo).
 const mdxComponents = {
   BlocoConceito, BlocoPegadinha, BlocoComparacao, BlocoObjetivo,
-  Calc555, CalcSchmitt, CalcRampa, CalcRegulador,
+  Calc555, CalcSchmitt, CalcRampa, CalcRegulador, CalcPWM, CalcDivisor, CalcUJT,
 };
 
 // Seções de conteúdo desta matéria, agrupadas pela pasta e ordenadas.

@@ -11,10 +11,27 @@ secaoOrdem: 4
 | Referências | Uma | Duas (UTP e LTP) |
 | Realimentação | Nenhuma | Positiva |
 | Imunidade a ruído | Baixa | Alta (histerese) |
+| Comutação | Na única referência | Subida em UTP, descida em LTP |
 
 ## Estados da saída
 
 | Condição | Saída |
 |---|---|
-| `V+ > V−` | ≈ +VCC |
-| `V+ < V−` | ≈ −VEE |
+| `V+ > V−` | ≈ +VCC (saturação positiva) |
+| `V+ < V−` | ≈ −VEE (saturação negativa) |
+| `V+ = V−` | Transição instantânea (sem zona intermediária) |
+
+## Inversor × não-inversor (entrada de sinal)
+
+| Configuração | Sinal em | Referência em | Efeito de VI subindo |
+|---|---|---|---|
+| **Inversor** | V− (entrada inversora) | V+ | Saída cai de +VCC para −VEE |
+| **Não-inversor** | V+ (entrada não-inversora) | V− | Saída sobe de −VEE para +VCC |
+
+## Detector de zero × detector de limiar
+
+| | Detector de zero | Detector de limiar |
+|---|---|---|
+| Referência aplicada | GND (0 V) | VREF > 0 |
+| Muda saída quando | VI cruza 0 | VI cruza VREF |
+| Uso típico | Sincronismo, medição de fase | Limiar ajustável |

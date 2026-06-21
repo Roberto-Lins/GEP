@@ -15,13 +15,25 @@ secaoOrdem: 4
 7. **Como fica a forma de onda?** Desenhe por trechos — o desenho é parte da resposta.
 8. **Faz sentido?** Confira unidade, polaridade e ordem de grandeza.
 
-## Valores-âncora para conferir contas
+## Valores-âncora — Lista 1/2 (gabarito oficial)
 
-- 555 astável (slide): `f = 625 Hz`. Lista 1 (Q3): `f = 659 Hz`.
-- 555 monoestável: `LP = 1,1·7,5k·0,1µF = 0,83 ms`.
-- Schmitt ±12 V, 12k/24k: `UTP = +8 V`, `LTP = −8 V`.
-- LM317 (Lista 1 Q2): `VREG = 1,25 V`, `Rx = 5 kΩ`.
-- Regulador série (Lista 1 Q5): `VO = 40 V`; `P_Q1 = 642 mW`; `P_Q2 = 494 mW`.
-- Limitador de corrente (Lista 1 Q7): `VO = 12 V`; `I_curto = 2,5 A`.
+- **Q2 (LM317):** VREG = 1,25 V · Rx = 5 kΩ.
+- **Q3 (555 astável):** f = 659 Hz.
+- **Q5 (regulador série):** VO = 40 V (ambas as entradas) · P_Q1 = 642 mW · P_Q2 = 494 mW.
+- **Q7 (limitador de corrente):** VO = 12 V · I_curto = 2,5 A (RSC = 0,28 Ω).
+
+## Valores-âncora — SOPA 2021 (gabarito oficial)
+
+- **Q1 (dois 555):** astável oscila na janela do monoestável ≈ 2 s a 7 s.
+- **Q2 (DIAC oscilador):** f ≈ 10,9 kHz (R=10k, C=10n, VBR=30V, VCC=50V).
+- **Q3 (base de tempo UJT):** I = 0,5 mA · VP = 10,3 V · C = 10,5 nF para f = 5 kHz.
+- **Q (Schmitt Zener):** C1 → UTP=+2,5 V, LTP=−5,65 V · C2 → UTP=+8 V, LTP=−1,4 V.
+- **Q (regulador + limitador):** I_curto = 2 A (RSC=0,35Ω) · Vo = 5 V (em ambas as entradas).
+
+## Conferência rápida de fórmulas
+
+- Schmitt (slide): ±12 V, 12k/24k → β = 2/3 → **UTP = +8 V, LTP = −8 V**.
+- 555 monoestável: `LP = 1,1·7,5k·0,1µF = `**`0,83 ms`**.
+- UJT (slide η=0,8, RBB=9k, VCC=12V): **VP = 10,3 V** · t1 = 44,8 ms.
 
 Respire, leia o enunciado duas vezes e **classifique antes de calcular**. Boa prova.

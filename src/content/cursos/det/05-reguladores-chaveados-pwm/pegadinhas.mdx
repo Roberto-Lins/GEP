@@ -17,3 +17,9 @@ Não aplique as contas do regulador linear (quedas/referência) num regulador ch
 <BlocoPegadinha titulo="Achar que a frequência varia">
 A frequência do PWM é **constante**. O que varia para regular é o tempo ligado (ton).
 </BlocoPegadinha>
+
+<BlocoPegadinha titulo="Inverter Rcima e Rbaixo no divisor de realimentação">
+No divisor PWM: **Rbaixo** (= R1) fica entre o pino FB e o GND; **Rcima** (= R2) fica entre VOUT
+e o pino FB. A fórmula usa `VFB = VOUT·Rbaixo/(Rcima+Rbaixo)`. Inverter os dois troca o numerador
+e erra VOUT.
+</BlocoPegadinha>

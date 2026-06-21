@@ -77,7 +77,7 @@ export const multiplaEscolha: QuestaoMultipla[] = [
   {
     id: 'me-04-01', tipo: 'multipla', topico: '04-reguladores-integrados', dificuldade: 'medio',
     enunciado: 'Um regulador 7805 tem corrente máxima de saída de 400 mA. Qual a menor resistência de carga que pode ser ligada sem ultrapassar esse limite?',
-    imagem: '/imagens/cursos/det/q-7805.svg',
+    imagem: '/imagens/cursos/det/q-7805.png',
     alternativas: ['8 Ω', '12,5 Ω', '20 Ω', '2 kΩ'],
     correta: B, conceito: 'Carga mínima (Rmín = VO/Imáx)',
     comentario: 'O 7805 regula 5 V. A menor carga segura é Rmín = VO/Imáx = 5 V / 0,4 A = 12,5 Ω. Abaixo disso, a corrente passaria de 400 mA.',
@@ -103,7 +103,7 @@ export const multiplaEscolha: QuestaoMultipla[] = [
   {
     id: 'me-05-01', tipo: 'multipla', topico: '05-reguladores-chaveados-pwm', dificuldade: 'medio',
     enunciado: 'Num regulador chaveado buck ideal com VIN = 20 V operando com ciclo de trabalho D = 0,3, a tensão média de saída é:',
-    imagem: '/imagens/cursos/det/q-buck.svg',
+    imagem: '/imagens/cursos/det/q-buck.png',
     alternativas: ['6 V', '14 V', '20 V', '60 V'],
     correta: A, conceito: 'VOUT = D·VIN',
     comentario: 'No buck ideal, VOUT = D·VIN = 0,3 × 20 V = 6 V. A frequência do PWM é constante; o que varia para regular é o tempo ligado (ton).',
@@ -144,7 +144,7 @@ export const multiplaEscolha: QuestaoMultipla[] = [
   {
     id: 'me-07-01', tipo: 'multipla', topico: '07-grampeadores', dificuldade: 'medio',
     enunciado: 'Uma onda de entrada varia de −12 V a +12 V. Após um grampeador positivo ideal (que soma o pico), a saída passa a variar de:',
-    imagem: '/imagens/cursos/det/07-grampeador-circuito.svg',
+    imagem: '/imagens/cursos/det/07-grampeador-circuito.png',
     alternativas: ['−24 V a 0 V', '0 V a +24 V', '−12 V a +12 V', '−6 V a +18 V'],
     correta: B, conceito: 'Deslocamento do grampeador',
     comentario: 'O grampeador positivo soma Vm = 12 V a toda a onda: −12+12 = 0 e +12+12 = +24. A forma é idêntica, apenas deslocada para cima (0 a +24 V).',
@@ -175,7 +175,7 @@ export const multiplaEscolha: QuestaoMultipla[] = [
   {
     id: 'me-09-02', tipo: 'multipla', topico: '09-multivibradores-555', dificuldade: 'medio',
     enunciado: 'Num 555 monoestável com RA = 7,5 kΩ e C = 0,1 µF, a largura do pulso de saída é aproximadamente:',
-    imagem: '/imagens/cursos/det/q-555-monoestavel.svg',
+    imagem: '/imagens/cursos/det/q-555-monoestavel.png',
     alternativas: ['0,083 ms', '0,83 ms', '8,3 ms', '83 ms'],
     correta: B, conceito: 'Monoestável LP = 1,1·RA·C',
     comentario: 'LP = 1,1 · RA · C = 1,1 × 7 500 Ω × 0,1×10⁻⁶ F = 0,825×10⁻³ s ≈ 0,83 ms. Cuidado com as unidades (kΩ e µF).',
@@ -187,7 +187,7 @@ export const multiplaEscolha: QuestaoMultipla[] = [
   {
     id: 'me-10-01', tipo: 'multipla', topico: '10-schmitt-trigger', dificuldade: 'medio',
     enunciado: 'Num Schmitt-trigger com VO = ±12 V e divisor de realimentação de 24 kΩ (para o terra) e 12 kΩ (da saída), com β = 2/3, os limiares UTP e LTP valem:',
-    imagem: '/imagens/cursos/det/q-schmitt-12k-24k.svg',
+    imagem: '/imagens/cursos/det/q-schmitt-12k-24k.png',
     alternativas: ['+12 V e −12 V', '+8 V e −8 V', '+6 V e −6 V', '+4 V e 0 V'],
     correta: B, conceito: 'UTP/LTP (Vref = β·VO)',
     comentario: 'β = 24k/(12k+24k) = 2/3. Quando VO = +12 V, V+ = (2/3)·12 = +8 V (UTP); quando VO = −12 V, V+ = (2/3)·(−12) = −8 V (LTP). A histerese é UTP − LTP = 16 V.',
@@ -224,7 +224,7 @@ export const multiplaEscolha: QuestaoMultipla[] = [
   {
     id: 'me-12-01', tipo: 'multipla', topico: '12-ujt-oscilador-relaxacao', dificuldade: 'medio',
     enunciado: 'Num UJT com η = 0,61 e RBB = 7 kΩ alimentado por VCC = 12 V, a tensão de pico VP (com VK = η·VCC) vale:',
-    imagem: '/imagens/cursos/det/12-ujt-circuito.svg',
+    imagem: '/imagens/cursos/det/12-ujt-circuito.png',
     alternativas: ['7,3 V', '8,0 V', '12,7 V', '4,3 V'],
     correta: B, conceito: 'VP = VK + 0,7',
     comentario: 'VK = η·VCC = 0,61 × 12 = 7,3 V. VP = VK + 0,7 = 7,3 + 0,7 = 8,0 V. (RB1 = η·RBB = 4,3 kΩ; RB2 = RBB − RB1 = 2,7 kΩ.)',
@@ -235,7 +235,7 @@ export const multiplaEscolha: QuestaoMultipla[] = [
   {
     id: 'me-13-01', tipo: 'multipla', topico: '13-geradores-base-de-tempo', dificuldade: 'medio',
     enunciado: 'Um capacitor de 1 µF é carregado por uma fonte de corrente constante de 0,5 mA. A inclinação da rampa de tensão (dV/dt) é:',
-    imagem: '/imagens/cursos/det/q-fonte-corrente-cap.svg',
+    imagem: '/imagens/cursos/det/q-fonte-corrente-cap.png',
     alternativas: ['0,5 V/s', '2 V/ms', '0,5 V/ms', '2 V/s'],
     correta: C, conceito: 'dV/dt = I/C',
     comentario: 'Com corrente constante a carga é linear: dV/dt = I/C = 0,5×10⁻³ A / 1×10⁻⁶ F = 500 V/s = 0,5 V/ms. NÃO se usa a equação exponencial de RC aqui.',
@@ -247,7 +247,7 @@ export const multiplaEscolha: QuestaoMultipla[] = [
   // 01 ferramentas
   { id: 'me-01-01', tipo: 'multipla', topico: '01-ferramentas-de-calculo', dificuldade: 'medio',
     enunciado: 'Num divisor de tensão com Vfonte = 12 V, Rcima = 4 kΩ e Rbaixo = 8 kΩ, a tensão no nó intermediário é:',
-    imagem: '/imagens/cursos/det/q-divisor-12-4k-8k.svg',
+    imagem: '/imagens/cursos/det/q-divisor-12-4k-8k.png',
     alternativas: ['4 V', '6 V', '8 V', '12 V'], correta: C, conceito: 'Divisor de tensão',
     comentario: 'Vnó = Vfonte·Rbaixo/(Rcima+Rbaixo) = 12·8/(4+8) = 12·(2/3) = 8 V.',
     fonte: 'LinhaDoTempo (01)' },
@@ -273,10 +273,20 @@ export const multiplaEscolha: QuestaoMultipla[] = [
     correta: B, conceito: 'Referência × controle',
     comentario: 'A referência costuma ser um Zener ou um divisor; o elemento de controle (transistor/CI) ajusta a saída para bater nessa referência.',
     fonte: 'Slides Fontes Reguladas 1' },
+  { id: 'me-02-04', tipo: 'multipla', topico: '02-fontes-cc-reguladas', dificuldade: 'facil',
+    enunciado: 'Qual a principal vantagem do retificador de ONDA COMPLETA em relação ao de MEIA ONDA?',
+    alternativas: [
+      'Frequência de ondulação dobrada (120 Hz), permitindo capacitor menor para a mesma ondulação.',
+      'Tensão de pico na saída é maior que a do transformador.',
+      'Utiliza apenas um diodo.',
+      'Não necessita de transformador.',
+    ], correta: A, conceito: 'Onda completa × meia onda',
+    comentario: 'Com onda completa, cada semiciclo produz um pulso → ondulação a 120 Hz. A frequência maior reduz o tamanho do capacitor necessário para o mesmo nível de ripple.',
+    fonte: 'Slides Fontes Reguladas 1' },
   // 03 reguladores com transistor
   { id: 'me-03-02', tipo: 'multipla', topico: '03-reguladores-com-transistor', dificuldade: 'medio',
     enunciado: 'Num regulador com limitador de corrente cujo resistor sensor é RSC = 0,28 Ω, a corrente de curto-circuito é aproximadamente:',
-    imagem: '/imagens/cursos/det/q-limitador-corrente.svg',
+    imagem: '/imagens/cursos/det/q-limitador-corrente.png',
     alternativas: ['0,7 A', '1,4 A', '2,5 A', '5 A'], correta: C, conceito: 'I_Lmáx ≈ 0,7/RSC',
     comentario: 'I_Lmáx ≈ 0,7/RSC = 0,7/0,28 ≈ 2,5 A. Q2 liga quando a queda em RSC chega a ≈ 0,7 V e limita a corrente.',
     fonte: 'Lista 1/2 — Q7 (gabarito: I_curto = 2,5 A)' },
@@ -323,6 +333,16 @@ export const multiplaEscolha: QuestaoMultipla[] = [
     alternativas: ['0 V a +24 V', '−24 V a 0 V', '−12 V a +12 V', '−6 V a +6 V'], correta: B, conceito: 'Grampeador negativo',
     comentario: 'O grampeador negativo subtrai Vm = 12 V: −12−12 = −24 e +12−12 = 0. Mesma forma, deslocada para baixo (−24 a 0 V).',
     fonte: 'Slides Limitadores e Grampeadores / LinhaDoTempo (07)' },
+  { id: 'me-07-03', tipo: 'multipla', topico: '07-grampeadores', dificuldade: 'facil',
+    enunciado: 'Qual elemento no circuito DISTINGUE um grampeador de um limitador?',
+    alternativas: [
+      'Um capacitor em série com o diodo (grampeador) versus ausência de capacitor (limitador).',
+      'O grampeador usa dois diodos e o limitador usa apenas um.',
+      'O limitador possui capacitor em paralelo com a carga.',
+      'Não há diferença de topologia — o grampeador só tem tensão de entrada maior.',
+    ], correta: A, conceito: 'Grampeador × limitador — topologia',
+    comentario: 'O capacitor em série é o elemento que identifica o grampeador: ele armazena a tensão de pico e desloca o nível DC. Sem capacitor, o diodo corta — é limitador.',
+    fonte: 'Slides Limitadores e Grampeadores' },
   // 08 comparadores
   { id: 'me-08-02', tipo: 'multipla', topico: '08-comparadores', dificuldade: 'facil',
     enunciado: 'Num comparador em malha aberta, quando V+ < V− a saída tende a:',
@@ -353,7 +373,7 @@ export const multiplaEscolha: QuestaoMultipla[] = [
     fonte: 'Slides Schmitt-Trigger (Exemplo 1)' },
   { id: 'me-10-03', tipo: 'multipla', topico: '10-schmitt-trigger', dificuldade: 'medio',
     enunciado: 'Num Schmitt-trigger construído com o 555 (VCC = 12 V), os limiares UTP e LTP valem, respectivamente:',
-    imagem: '/imagens/cursos/det/q-schmitt-555.svg',
+    imagem: '/imagens/cursos/det/q-schmitt-555.png',
     alternativas: ['12 V e 0 V', '8 V e 4 V', '6 V e −6 V', '10 V e 2 V'], correta: B, conceito: 'Schmitt com 555 (⅔ e ⅓ VCC)',
     comentario: 'No 555, os limiares são ⅔ VCC e ⅓ VCC. Com VCC = 12 V: UTP = ⅔·12 = 8 V e LTP = ⅓·12 = 4 V.',
     fonte: 'Slides Schmitt-Trigger (Ex. 3) / Lista 2 — Q6a (UTP=8, LTP=4)' },
@@ -392,6 +412,31 @@ export const multiplaEscolha: QuestaoMultipla[] = [
     correta: A, conceito: 'Rampa linear (dV/dt = I/C)',
     comentario: 'Como o tempo é linear, a referência também precisa ser. Carregando o capacitor por corrente constante, dV/dt = I/C é constante → reta. Carga por resistor daria exponencial.',
     fonte: 'LinhaDoTempo (13) / Slides Base de Tempo' },
+  { id: 'me-13-03', tipo: 'multipla', topico: '13-geradores-base-de-tempo', dificuldade: 'medio',
+    enunciado: 'No circuito de base de tempo da SOPA PP1 2021 (UJT com η = 0,8, VCC = 12 V, VV = 0,8 V), qual é o nível superior VP da rampa?',
+    alternativas: ['9,6 V', '10,3 V', '12 V', '11,3 V'],
+    correta: B, conceito: 'VP do UJT: η·VCC + 0,7',
+    comentario: 'VP = η·VCC + 0,7 = 0,8×12 + 0,7 = 9,6 + 0,7 = 10,3 V. A alternativa A (9,6 V) é a armadilha clássica: esquece os +0,7 V da junção emissor-base.',
+    fonte: 'SOPA PP1 2021 / Slides Tiristores UJT',
+    armadilha: 'Calcular VP = η·VCC = 9,6 V e esquecer o +0,7 V.' },
+  { id: 'me-00-03', tipo: 'multipla', topico: '00-ideia-central-da-prova', dificuldade: 'facil',
+    enunciado: 'Um circuito tem capacitor em série com a carga e diodo em paralelo com o capacitor. Que família é esse circuito?',
+    alternativas: ['Limitador (ceia/corta parte da onda)', 'Grampeador (desloca o nível médio, preserva a forma)', 'Regulador série (estabiliza tensão CC)', 'Comparador (saída saturada)'],
+    correta: B, conceito: 'Identificar a família pelo circuito',
+    comentario: 'Capacitor em série + diodo em paralelo = grampeador. O capacitor retém carga e desloca o nível médio; a forma da onda é preservada. Sem capacitor em série, seria limitador.',
+    fonte: 'LinhaDoTempo (00) / Slides Limitadores e Grampeadores',
+    armadilha: 'Confundir grampeador (capacitor em série) com limitador (diodo em série, sem capacitor).' },
+  { id: 'me-rev-01', tipo: 'multipla', topico: '99-revisao-final', dificuldade: 'medio',
+    enunciado: 'Uma onda senoidal de −8 V a +8 V passa primeiro por um GRAMPEADOR POSITIVO ideal (Vm = 8 V) e depois a saída vai para a entrada V+ de um COMPARADOR em malha aberta cuja referência em V− é +10 V. Com V− = +10 V fixo, a saída do comparador fica em +VCC:',
+    alternativas: [
+      'Durante todo o período (saída sempre +VCC).',
+      'Apenas quando a saída do grampeador supera +10 V.',
+      'Nunca (saída sempre em −VEE).',
+      'Apenas no semiciclo positivo da onda original.',
+    ], correta: B, conceito: 'Grampeador + comparador (dois blocos em cascata)',
+    comentario: 'Após o grampeador positivo, a onda fica de 0 a +16 V. Com Vref = +10 V em V−, o comparador vai para +VCC somente quando a onda do grampeador supera 10 V, o que ocorre num trecho de cada semiciclo positivo.',
+    fonte: 'Revisão final — cascata de blocos',
+    armadilha: 'Esquecer que o grampeador transforma a faixa de −8:+8 V para 0:+16 V antes de comparar.' },
 ];
 
 export const verdadeiroFalso: QuestaoVF[] = [
@@ -403,6 +448,16 @@ export const verdadeiroFalso: QuestaoVF[] = [
     fonte: 'LinhaDoTempo (01)',
     armadilha: 'Misturar o modelo exponencial (RC) com o linear (fonte de corrente).',
   },
+  { id: 'vf-01-02', tipo: 'vf', topico: '01-ferramentas-de-calculo', dificuldade: 'facil',
+    afirmacao: 'Numa curva exponencial de carga RC, em t = τ (uma constante de tempo), o capacitor atingiu exatamente 63,2% da tensão final.',
+    correta: true,
+    comentario: 'Verdadeiro. Em t = τ: V = VCC·(1 − e⁻¹) = VCC·0,632 → 63,2%. É a "régua mental" da curva exponencial — memorize este valor.',
+    fonte: 'Slides Ferramentas de Cálculo / LinhaDoTempo (01)' },
+  { id: 'vf-01-03', tipo: 'vf', topico: '01-ferramentas-de-calculo', dificuldade: 'facil',
+    afirmacao: 'As três formas de calcular potência (P=V·I, P=I²·R, P=V²/R) darão o mesmo resultado, desde que V e I sejam coerentes com o mesmo resistor.',
+    correta: true,
+    comentario: 'Verdadeiro. São formas equivalentes derivadas da Lei de Ohm (V=IR). Qualquer par de V, I, R coerentes leva ao mesmo P. Escolha a que tiver os dois valores disponíveis.',
+    fonte: 'Slides Ferramentas de Cálculo' },
   {
     id: 'vf-02-01', tipo: 'vf', topico: '02-fontes-cc-reguladas', dificuldade: 'facil',
     afirmacao: 'O capacitor de filtro, sozinho, mantém a tensão de saída estável independentemente da carga e da entrada.',
@@ -410,6 +465,11 @@ export const verdadeiroFalso: QuestaoVF[] = [
     comentario: 'Falso. O capacitor de filtro apenas SUAVIZA a ondulação; a tensão ainda varia com a carga e a entrada. Quem estabiliza é o estágio regulador.',
     fonte: 'Slides Fontes Reguladas 1',
   },
+  { id: 'vf-02-02', tipo: 'vf', topico: '02-fontes-cc-reguladas', dificuldade: 'facil',
+    afirmacao: 'A tensão de pico que carrega o capacitor de filtro é maior que a tensão RMS indicada no transformador.',
+    correta: true,
+    comentario: 'Verdadeiro. Vm = Vrms × √2 ≈ 1,41 × Vrms. Um transformador de 12 Vrms entrega pico ≈ 17 V — valor que o capacitor tenta manter.',
+    fonte: 'Slides Fontes Reguladas 1' },
   {
     id: 'vf-03-01', tipo: 'vf', topico: '03-reguladores-com-transistor', dificuldade: 'medio',
     afirmacao: 'No regulador com limitador de corrente, o transistor Q2 começa conduzindo e corta quando a corrente atinge o limite.',
@@ -443,6 +503,11 @@ export const verdadeiroFalso: QuestaoVF[] = [
     comentario: 'Falso. É o contrário: a frequência do PWM é CONSTANTE e o que varia para regular é o tempo ligado (ton). D = ton/T.',
     fonte: 'Slides Fontes Reguladas 3 / LinhaDoTempo (05)',
     armadilha: 'Inverter o que é fixo (frequência) e o que varia (ton).' },
+  { id: 'vf-05-02', tipo: 'vf', topico: '05-reguladores-chaveados-pwm', dificuldade: 'facil',
+    afirmacao: 'Num conversor buck ideal, aumentar o ciclo de trabalho D resulta em maior tensão média de saída.',
+    correta: true,
+    comentario: 'Verdadeiro. VOUT = D × VIN — quanto maior D, maior a fração do tempo em que a chave está ligada e, portanto, maior a tensão média entregue à carga.',
+    fonte: 'Slides Fontes Reguladas 3' },
   { id: 'vf-06-01', tipo: 'vf', topico: '06-limitadores', dificuldade: 'facil',
     afirmacao: 'Um limitador sempre transforma a senoide de entrada em uma onda quadrada perfeita.',
     correta: false,
@@ -464,6 +529,89 @@ export const verdadeiroFalso: QuestaoVF[] = [
     correta: true,
     comentario: 'Verdadeiro. A carga (via R) é lenta e a descarga (via RB1(ON)) é rápida — no exemplo dos slides, t1 = 44,8 ms é muito maior que t2.',
     fonte: 'Slides Tiristores/UJT (t1 = 44,8 ms ≫ t2)' },
+  // ── tópicos sem VF antes ───────────────────────────────────────────
+  { id: 'vf-00-01', tipo: 'vf', topico: '00-ideia-central-da-prova', dificuldade: 'facil',
+    afirmacao: 'Para resolver qualquer questão da PP1, o primeiro passo é escolher a fórmula e substituir os valores.',
+    correta: false,
+    comentario: 'Falso. O primeiro passo é CLASSIFICAR o circuito (que família é esse?) e identificar o que a questão pede — só depois se escolhe a fórmula. Começar pela fórmula errada é o erro mais comum.',
+    fonte: 'LinhaDoTempo (00)',
+    armadilha: 'A pressa de "encaixar uma fórmula" sem antes entender o circuito.' },
+  { id: 'vf-08-01', tipo: 'vf', topico: '08-comparadores', dificuldade: 'facil',
+    afirmacao: 'Um amp-op em malha aberta amplifica a diferença entre as entradas de forma proporcional.',
+    correta: false,
+    comentario: 'Falso. O ganho em malha aberta é tão alto que a menor diferença SATURA a saída (≈ +VCC ou −VEE). A saída é retangular, nunca proporcional.',
+    fonte: 'Slides Multivibradores e Comparadores',
+    armadilha: 'Confundir amplificador linear (com realimentação negativa) com comparador (em malha aberta).' },
+  { id: 'vf-13-01', tipo: 'vf', topico: '13-geradores-base-de-tempo', dificuldade: 'medio',
+    afirmacao: 'Para gerar uma rampa linear de tensão, carrega-se o capacitor por um resistor.',
+    correta: false,
+    comentario: 'Falso. Carga por resistor produz curva EXPONENCIAL. Para uma rampa LINEAR usa-se uma FONTE DE CORRENTE CONSTANTE, pois dV/dt = I/C é constante quando I é constante.',
+    fonte: 'LinhaDoTempo (13) / Slides Base de Tempo',
+    armadilha: 'Misturar os dois modelos: resistor → exponencial; fonte de corrente → reta.' },
+  { id: 'vf-08-02', tipo: 'vf', topico: '08-comparadores', dificuldade: 'medio',
+    afirmacao: 'Num comparador ideal, inverter as entradas (trocar V+ e V−) não altera o resultado.',
+    correta: false,
+    comentario: 'Falso. Inverter as entradas inverte TODA a lógica da saída: o que dava +VCC passa a dar −VEE e vice-versa. Confira sempre qual sinal vai em qual terminal.',
+    fonte: 'Slides Multivibradores e Comparadores / LinhaDoTempo (08)' },
+  { id: 'me-08-03', tipo: 'multipla', topico: '08-comparadores', dificuldade: 'medio',
+    enunciado: 'Um comparador tem na entrada V+ uma triangular de ±10 V e na entrada V− uma referência fixa de +5 V. A saída fica em +VCC:',
+    alternativas: [
+      'Durante todo o semiciclo positivo (0 a +10 V).',
+      'Somente enquanto V+ superar +5 V.',
+      'Durante metade exata do período.',
+      'Apenas no instante em que V+ = +5 V.',
+    ], correta: B, conceito: 'Limiar do comparador',
+    comentario: 'A saída vai para +VCC quando V+ > V− = +5 V. Na triangular isso ocorre apenas na fração em que a onda está acima de 5 V — menos do que o semiciclo completo positivo.',
+    fonte: 'Slides Multivibradores e Comparadores' },
+  { id: 'vf-12-02', tipo: 'vf', topico: '12-ujt-oscilador-relaxacao', dificuldade: 'medio',
+    afirmacao: 'No UJT, VP é simplesmente η·VCC.',
+    correta: false,
+    comentario: 'Falso. VP = η·VCC + 0,7 V (a queda da junção base-emissor). Esquecer os 0,7 V é o erro clássico: VK = η·VCC é a tensão no ponto K; VP = VK + 0,7 V é o potencial que dispara o UJT.',
+    fonte: 'Slides Tiristores/UJT',
+    armadilha: 'Ignorar a queda de junção de 0,7 V sobre VK.' },
+  { id: 'vf-07-02', tipo: 'vf', topico: '07-grampeadores', dificuldade: 'medio',
+    afirmacao: 'Num grampeador positivo ideal (sem queda de diodo), a onda de saída varia entre +Vm e +2Vm.',
+    correta: false,
+    comentario: 'Falso. O grampeador positivo SOMA Vm a toda a onda: o novo mínimo é −Vm + Vm = 0 V e o máximo é +Vm + Vm = +2Vm. A saída varia de 0 a +2Vm, não de +Vm a +2Vm.',
+    fonte: 'Slides Limitadores e Grampeadores / LinhaDoTempo (07)' },
+  { id: 'vf-00-02', tipo: 'vf', topico: '00-ideia-central-da-prova', dificuldade: 'facil',
+    afirmacao: 'Todas as questões da PP1 de Detecção se encaixam em uma das cinco famílias: fontes reguladas, limitadores/grampeadores, comparadores/555/Schmitt, tiristores/UJT e geradores de base de tempo.',
+    correta: true,
+    comentario: 'Verdadeiro. Reconhecer a família é metade da solução — cada família tem seu tipo de conta. Essa é a lógica-mãe do curso.',
+    fonte: 'LinhaDoTempo (00) — "As cinco famílias de circuito"' },
+  { id: 'vf-13-02', tipo: 'vf', topico: '13-geradores-base-de-tempo', dificuldade: 'medio',
+    afirmacao: 'No circuito de base de tempo com transistor PNP, a tensão no emissor (Ve) é igual à tensão na base (Vb) mais 0,7 V.',
+    correta: true,
+    comentario: 'Verdadeiro. Para um transistor PNP conduzindo: Ve = Vb + VBE = Vb + 0,7 V. A corrente de carga do capacitor é então I = (VCC − Ve) / Re.',
+    fonte: 'Slides Base de Tempo / SOPA PP1 2021 (Vb=8,3 V → Ve=9 V → I=0,5 mA)' },
+  { id: 'vf-03-02', tipo: 'vf', topico: '03-reguladores-com-transistor', dificuldade: 'facil',
+    afirmacao: 'Num regulador série com transistor, se a tensão de entrada VI aumentar enquanto a carga permanece constante, a tensão de saída VO também aumenta proporcionalmente.',
+    correta: false,
+    comentario: 'Falso. Num regulador em malha fechada, a realimentação negativa ajusta o condutor (transistor Q1) para manter VO constante — é exatamente isso que diferencia um regulador de um simples divisor de tensão.',
+    fonte: 'Slides Fontes Reguladas 1 / LinhaDoTempo (03)',
+    armadilha: 'Confundir o regulador com um divisor resistivo onde VO segue VI.' },
+  { id: 'vf-04-02', tipo: 'vf', topico: '04-reguladores-integrados', dificuldade: 'facil',
+    afirmacao: 'No LM317, o resistor R1 fica entre o pino OUT e o pino ADJ, e o resistor R2 entre o pino ADJ e o GND. A tensão mínima de saída (R2 → 0) é igual à tensão de referência interna de 1,25 V.',
+    correta: true,
+    comentario: 'Verdadeiro. Com R2 = 0, a fórmula VO = VREF·(1+R2/R1)+IQ·R2 reduz a VO = VREF = 1,25 V. E sim: R1 vai de OUT a ADJ (superior) e R2 vai de ADJ ao GND (inferior).',
+    fonte: 'Slides Reguladores Integrados / LinhaDoTempo (04)' },
+  { id: 'vf-06-02', tipo: 'vf', topico: '06-limitadores', dificuldade: 'medio',
+    afirmacao: 'Num limitador com diodo e fonte DC de +4 V em série (série com o diodo, em paralelo com a carga), o diodo começa a conduzir — e a saída fica presa — quando a entrada ultrapassa +4,7 V.',
+    correta: true,
+    comentario: 'Verdadeiro. O diodo conduz quando VIN > VDC + Vdiodo = 4 + 0,7 = 4,7 V. Acima desse valor, o ramo diodo-fonte curto-circuita a saída em +4,7 V.',
+    fonte: 'Slides Limitadores e Grampeadores / LinhaDoTempo (06)' },
+  { id: 'vf-10-02', tipo: 'vf', topico: '10-schmitt-trigger', dificuldade: 'medio',
+    afirmacao: 'Aumentar o resistor de realimentação de um Schmitt-trigger (mantendo o resistor de entrada fixo) aumenta β e, portanto, aumenta a histerese.',
+    correta: true,
+    comentario: 'Verdadeiro. β = R_rf/(R_ent + R_rf). Ao aumentar R_rf, o numerador cresce mais depressa que o denominador, então β aumenta. Com β maior, |UTP| = |LTP| = β·VCC aumentam, ampliando a faixa de histerese.',
+    fonte: 'Slides Schmitt-Trigger',
+    armadilha: 'Confundir: é β = R_rf/(R_ent+R_rf), não R_ent/R_rf — basta ver que β→1 quando R_rf≫R_ent.' },
+  { id: 'vf-99-01', tipo: 'vf', topico: '99-revisao-final', dificuldade: 'medio',
+    afirmacao: 'Numa cascata grampeador positivo (entrada: senoide de ±8 V) + comparador (Vref = +10 V em V−), a saída do comparador fica em +VCC durante exatamente metade do período da onda original.',
+    correta: false,
+    comentario: 'Falso. Após o grampeador positivo, a onda vai de 0 a +16 V. O comparador vai a +VCC apenas quando a onda grampeada supera +10 V — o que ocorre numa FRAÇÃO (não metade) do período, correspondente ao trecho do semiciclo positivo em que a senoide deslucada está acima de 10 V.',
+    fonte: 'Revisão final — cascata grampeador + comparador',
+    armadilha: 'Confundir "semiciclo positivo da onda grampeada" com "metade do período" — o comparador comuta em 10 V, não em zero.' },
 ];
 
 export const correlacionar: GrupoCorrelacione[] = [
@@ -539,9 +687,35 @@ export const correlacionar: GrupoCorrelacione[] = [
 
 export const discursivas: QuestaoDiscursiva[] = [
   {
+    id: 'dis-01-01', tipo: 'discursiva', topico: '01-ferramentas-de-calculo', dificuldade: 'facil',
+    enunciado: 'Num divisor de tensão com Vfonte = 15 V, R1 = 10 kΩ (superior) e R2 = 5 kΩ (inferior): (a) qual a tensão no nó entre R1 e R2? (b) Qual a corrente que percorre o circuito? (c) Qual a potência dissipada em R1?',
+    gabaritoComentado:
+      '(a) Vnó = Vfonte × R2/(R1+R2) = 15 × 5/(10+5) = 15 × 1/3 = **5 V**.\n\n(b) I = Vfonte/(R1+R2) = 15/15k = **1 mA**.\n\n(c) P_R1 = I² × R1 = (1 mA)² × 10 kΩ = 1×10⁻⁶ × 10×10³ = **10 mW**.',
+    criterios: [
+      'Usou corretamente a fórmula do divisor de tensão.',
+      'Calculou a corrente de malha (15 V / 15 kΩ = 1 mA).',
+      'Aplicou P = I²R para a potência em R1.',
+    ],
+    fonte: 'Slides Ferramentas de Cálculo / LinhaDoTempo (01)',
+    armadilha: 'Usar R1 no numerador do divisor em vez de R2 (Rbaixo é sempre o denominador parcial do nó que se quer calcular).',
+  },
+  {
+    id: 'dis-02-01', tipo: 'discursiva', topico: '02-fontes-cc-reguladas', dificuldade: 'facil',
+    enunciado: 'Um transformador de 12 Vrms alimenta um retificador de onda completa seguido de filtro capacitivo e regulador 7812. (a) Qual a tensão de pico Vm na saída do retificador? (b) A tensão mínima de entrada do 7812 é VImín = 14 V. O pico obtido é suficiente? Justifique. (c) Se o consumo de carga for IL = 200 mA, qual a potência dissipada no CI?',
+    gabaritoComentado:
+      '(a) Vm = Vrms × √2 = 12 × 1,41 ≈ **17 V**.\n\n(b) Sim. Vm ≈ 17 V > VImín = 14 V: o CI recebe tensão de entrada acima do mínimo e regula normalmente.\n\n(c) VO = 12 V (regulador fixo). P ≈ (VI − VO) × IL ≈ (17 − 12) × 0,2 = **1 W** (estimativa de pior caso, com VI = Vm; na prática um pouco menos).',
+    criterios: [
+      'Converteu Vrms para Vm = Vrms × √2.',
+      'Comparou Vm com VImín para concluir se o CI regula.',
+      'Calculou P ≈ (VI − VO) × IL.',
+    ],
+    fonte: 'Slides Fontes Reguladas 1',
+    armadilha: 'Confundir a tensão RMS do transformador com a tensão de pico que o capacitor de filtro carrega.',
+  },
+  {
     id: 'dis-04-01', tipo: 'discursiva', topico: '04-reguladores-integrados', dificuldade: 'medio',
     enunciado: 'Um circuito com LM317 tem tensão de saída mínima de 1,25 V e máxima de 8,75 V, e o CI tem corrente de polarização de 50 µA. Determine (a) a tensão regulada VREG do LM317 e (b) o valor do resistor variável Rx, sabendo que o resistor fixo vale Rx/5 (resistor inferior = Rx, superior = Rx/5 na montagem da lista).',
-    imagem: '/imagens/cursos/det/04-lm317.svg',
+    imagem: '/imagens/cursos/det/04-lm317.png',
     gabaritoComentado:
       '(a) A tensão de saída MÍNIMA do LM317 ocorre quando o resistor de ajuste está no mínimo: ela é exatamente a tensão de referência interna. Logo VREG = 1,25 V.\n\n(b) Use VO = VREG·(1 + R2/R1) + IQ·R2 com a montagem da lista (R1 = Rx/5, R2 = Rx) para a saída máxima de 8,75 V. Resolvendo para Rx ⇒ Rx = 5 kΩ.\n\nResposta oficial (Lista 2): a) 1,25 V; b) 5 kΩ.',
     criterios: [
@@ -569,7 +743,7 @@ export const discursivas: QuestaoDiscursiva[] = [
   {
     id: 'dis-10-01', tipo: 'discursiva', topico: '10-schmitt-trigger', dificuldade: 'medio',
     enunciado: 'Explique, com suas palavras, o que é histerese num Schmitt-trigger e por que a saída não troca de estado quando a entrada cruza o zero.',
-    imagem: '/imagens/cursos/det/10-schmitt-circuito.svg',
+    imagem: '/imagens/cursos/det/10-schmitt-circuito.png',
     gabaritoComentado:
       'Histerese é a existência de DOIS limiares distintos (UTP e LTP) em vez de um só. Por causa da realimentação positiva, a referência do comparador (V+) depende do estado atual da saída: vale β·(+VCC) quando a saída está alta e β·(−VEE) quando está baixa.\n\nAssim, a saída só comuta quando a entrada ULTRAPASSA o limiar válido naquele momento (UTP subindo, LTP descendo), e não no cruzamento por zero. Isso dá "memória" ao circuito e imunidade a ruído.',
     criterios: [
@@ -582,7 +756,7 @@ export const discursivas: QuestaoDiscursiva[] = [
   {
     id: 'dis-12-01', tipo: 'discursiva', topico: '12-ujt-oscilador-relaxacao', dificuldade: 'dificil',
     enunciado: 'UJT: η = 0,8; RBB = 9 kΩ; VCC = 12 V; R1 = 12 kΩ; C = 2 µF; VV = 1 V. Determine RB1, RB2, VK, VP e o tempo de carga t1.',
-    imagem: '/imagens/cursos/det/12-ujt-circuito.svg',
+    imagem: '/imagens/cursos/det/12-ujt-circuito.png',
     gabaritoComentado:
       '1) RB1 = η·RBB = 0,8·9k = 7,2 kΩ.\n2) RB2 = RBB − RB1 = 9k − 7,2k = 1,8 kΩ.\n3) VK = η·VCC ≈ 9,6 V (divisor entre as bases).\n4) VP = VK + 0,7 = 10,3 V (tensão de disparo).\n5) t1 = R1·C·ln[(VCC − VV)/(VCC − VP)] = 12k·2µF·ln[(12 − 1)/(12 − 10,3)] = 12k·2µF·ln(11/1,7) ≈ 44,8 ms.\n\nResultados do slide: RB1 = 7,2 kΩ; RB2 = 1,8 kΩ; VK = 9,6 V; VP = 10,3 V; t1 = 44,8 ms.',
     criterios: [
@@ -596,7 +770,7 @@ export const discursivas: QuestaoDiscursiva[] = [
   {
     id: 'dis-09-01', tipo: 'discursiva', topico: '09-multivibradores-555', dificuldade: 'medio',
     enunciado: 'No 555 astável, explique por que o tempo em nível alto usa (RA + RB) e o tempo em nível baixo usa apenas RB.',
-    imagem: '/imagens/cursos/det/09-555-astavel.svg',
+    imagem: '/imagens/cursos/det/09-555-astavel.png',
     gabaritoComentado:
       'Na fase ALTA, o capacitor CARREGA através de RA e RB em série (a corrente vem da alimentação passando pelos dois resistores) → T_ALTO = 0,7·(RA + RB)·C.\n\nNa fase BAIXA, o pino 7 (descarga) entra em condução e o capacitor DESCARREGA apenas por RB → T_BAIXO = 0,7·RB·C.\n\nO período é T = T_ALTO + T_BAIXO e a frequência f = 1/T.',
     criterios: [
@@ -609,7 +783,7 @@ export const discursivas: QuestaoDiscursiva[] = [
   {
     id: 'dis-11-01', tipo: 'discursiva', topico: '11-tiristores-scr-diac-triac', dificuldade: 'medio',
     enunciado: 'Descreva a forma de onda da corrente na carga (IL) de um SCR alimentado por uma senoide, disparado por um pulso de porta no semiciclo positivo, sabendo que a queda de condução é 1,5 V.',
-    imagem: '/imagens/cursos/det/q-scr-carga.svg',
+    imagem: '/imagens/cursos/det/q-scr-carga.png',
     gabaritoComentado:
       'Semiciclo NEGATIVO: o SCR está reversamente polarizado → não conduz, IL = 0 (o pulso de porta seria ignorado).\n\nSemiciclo POSITIVO, antes do pulso: ainda não disparou → IL = 0.\n\nA partir do PULSO: o SCR liga e IL = (V2 − 1,5)/Rcarga, acompanhando o restante da senoide.\n\nNo fim do semiciclo, quando a corrente cai a zero, o SCR DESLIGA sozinho. Logo, IL existe só num pedaço do semiciclo positivo — do disparo até a passagem por zero.',
     criterios: [
@@ -622,7 +796,7 @@ export const discursivas: QuestaoDiscursiva[] = [
   {
     id: 'dis-06-01', tipo: 'discursiva', topico: '06-limitadores', dificuldade: 'medio',
     enunciado: 'Um limitador ceifa o pico positivo de uma senoide quando o diodo conduz em VDC + 0,7 V. Descreva a forma de onda da saída.',
-    imagem: '/imagens/cursos/det/06-limitador-circuito.svg',
+    imagem: '/imagens/cursos/det/06-limitador-circuito.png',
     gabaritoComentado:
       'Semiciclo NEGATIVO: o diodo do ramo de ceifamento fica reverso (corta) → a saída acompanha a entrada, até −Vpico.\n\nSemiciclo POSITIVO: enquanto a entrada está abaixo de VDC + 0,7, o diodo corta e a saída acompanha a entrada; ao passar de VDC + 0,7, o diodo conduz e a saída fica PRESA (platô) em VDC + 0,7.\n\nResultado: a onda acompanha a entrada, exceto o topo, que vira um platô em VDC + 0,7 V. Mínimo = −Vpico; máximo = VDC + 0,7 V.',
     criterios: [
@@ -635,7 +809,7 @@ export const discursivas: QuestaoDiscursiva[] = [
   {
     id: 'dis-11-02', tipo: 'discursiva', topico: '11-tiristores-scr-diac-triac', dificuldade: 'dificil',
     enunciado: 'Oscilador com DIAC (S₁, VBR = 30 V): fonte de +50 V, R = 10 kΩ em série e C = 10 nF em paralelo com o DIAC. Determine a frequência do sinal de saída.',
-    imagem: '/imagens/cursos/det/11-diac-oscilador.svg',
+    imagem: '/imagens/cursos/det/11-diac-oscilador.png',
     gabaritoComentado:
       'O capacitor carrega por R a partir de 50 V (exponencial); quando VC atinge VBR = 30 V o DIAC dispara e descarrega C (instantâneo).\n\nRC = 10 kΩ · 10 nF = 1×10⁻⁴ s.\nVC = VCC·(1 − e^(−t/RC)) → 30 = 50·(1 − e^(−t/10⁻⁴))\n0,6 = 1 − e^(−t/10⁻⁴) → e^(−t/10⁻⁴) = 0,4 → −t/10⁻⁴ = ln 0,4 = −0,916\nt = 9,2×10⁻⁵ s → f = 1/t ≈ 10,9 kHz.',
     criterios: [
@@ -649,7 +823,7 @@ export const discursivas: QuestaoDiscursiva[] = [
   {
     id: 'dis-10-02', tipo: 'discursiva', topico: '10-schmitt-trigger', dificuldade: 'dificil',
     enunciado: 'Determine UTP e LTP de dois Schmitt (±12 V): (1) com Zener de 7 V em série com o divisor 10 kΩ/10 kΩ; (2) com dois diodos no divisor 15 kΩ/30 kΩ.',
-    imagem: '/imagens/cursos/det/10-schmitt-zener.svg',
+    imagem: '/imagens/cursos/det/10-schmitt-zener.png',
     gabaritoComentado:
       'Circuito 1 (Zener):\n• Vo = +12 V → Zener na região Zener (cai 7 V): UTP = (12 − 7)·10k/20k = +2,5 V.\n• Vo = −12 V → Zener conduz como diodo comum (0,7 V): LTP = (−12 + 0,7)·10k/20k = −5,65 V.\n\nCircuito 2 (diodos):\n• Vo = +12 V → diodos não conduzem: UTP = 12·30k/(15k+30k) = +8 V.\n• Vo = −12 V → diodos conduzem: LTP = 2·(−0,7) = −1,4 V.\n\nGabarito oficial: C1 → UTP=+2,5 V, LTP=−5,65 V; C2 → UTP=+8 V, LTP=−1,4 V.',
     criterios: [
@@ -663,7 +837,7 @@ export const discursivas: QuestaoDiscursiva[] = [
   {
     id: 'dis-13-01', tipo: 'discursiva', topico: '13-geradores-base-de-tempo', dificuldade: 'dificil',
     enunciado: 'Base de tempo com UJT: VCC = 12 V, divisor de base 8,1 kΩ/18 kΩ, resistor de emissor 6 kΩ (fonte de corrente PNP), UJT com η = 0,8 e VV = 0,8 V. Determine o capacitor C para frequência de 5 kHz.',
-    imagem: '/imagens/cursos/det/13-base-tempo-circuito.svg',
+    imagem: '/imagens/cursos/det/13-base-tempo-circuito.png',
     gabaritoComentado:
       '1) Corrente da fonte: Vb = 12·18k/(8,1k+18k) = 8,3 V → Ve = 8,3 + 0,7 = 9 V → I = (12 − 9)/6k = 0,5 mA.\n2) Níveis: VP = 0,7 + η·VCC = 0,7 + 0,8·12 = 10,3 V; ΔV = VP − VV = 10,3 − 0,8 = 9,5 V.\n3) Carga linear (fonte de corrente): I/C = ΔV/T, com T = 1/f = 1/5000 = 0,2 ms.\n4) C = I·T/ΔV = (0,5×10⁻³ · 0,2×10⁻³)/9,5 = 1,05×10⁻⁸ F.\n\nResposta oficial: C = 10,5 nF.',
     criterios: [
@@ -688,6 +862,20 @@ export const discursivas: QuestaoDiscursiva[] = [
     armadilha: 'Achar que Vo cai quando VI cai — o regulador mantém Vo constante.',
   },
   {
+    id: 'dis-07-01', tipo: 'discursiva', topico: '07-grampeadores', dificuldade: 'medio',
+    enunciado: 'Uma senoide de −10 V a +10 V passa por um grampeador NEGATIVO ideal (capacitor em série + diodo). Descreva a forma de onda de saída e explique o papel do capacitor nesse circuito.',
+    imagem: '/imagens/cursos/det/07-grampeador-circuito.png',
+    gabaritoComentado:
+      'No grampeador negativo, o diodo conduz no semiciclo POSITIVO e carrega o capacitor até Vm = 10 V. A partir daí, o capacitor age como uma "fonte DC em série" de 10 V, mas SUBTRAINDO da entrada (polaridade invertida em relação ao grampeador positivo).\n\nResultado: VO = VI − 10 V → mínimo = −10 − 10 = −20 V e máximo = +10 − 10 = 0 V.\n\nA saída varia de −20 V a 0 V, com a mesma forma senoidal, apenas deslocada para baixo.\n\nPapel do capacitor: ele memoriza o valor de pico da entrada e o mantém como um nível DC constante em série, "empurrando" toda a onda para baixo sem deformar a forma.',
+    criterios: [
+      'Onda deslocada de −20 V a 0 V (saída = entrada − 10 V).',
+      'Forma preservada (sem deformação).',
+      'Explicou o capacitor como "memória" do pico (fonte DC em série).',
+    ],
+    fonte: 'Slides Limitadores e Grampeadores / LinhaDoTempo (07)',
+    armadilha: 'Dizer que a forma da onda muda — o grampeador apenas desloca o nível médio.',
+  },
+  {
     id: 'dis-06-02', tipo: 'discursiva', topico: '06-limitadores', dificuldade: 'medio',
     enunciado: 'Limitador ativo: amp-op (±15 V) com diodo e referência de 4 V; entrada triangular de ±2 V. Determine os valores máximo e mínimo da saída Vo.',
     gabaritoComentado:
@@ -700,9 +888,36 @@ export const discursivas: QuestaoDiscursiva[] = [
     fonte: 'SOPA PP1 2021 — questão de limitador ativo (gabarito oficial)',
   },
   {
+    id: 'dis-08-01', tipo: 'discursiva', topico: '08-comparadores', dificuldade: 'facil',
+    enunciado: 'Explique, com base no funcionamento do amp-op em malha aberta, por que a saída de um comparador é sempre retangular (nunca proporcional à diferença de entradas). Em seguida, descreva como ele funciona como detector de cruzamento por zero de uma senoide.',
+    imagem: '/imagens/cursos/det/08-comparador-circuito.png',
+    gabaritoComentado:
+      'O amp-op em malha aberta tem ganho de tensão altíssimo (100 000 × ou mais). Mesmo a menor diferença entre V+ e V− produz uma tensão de saída tão grande que ultrapassa os trilhos da alimentação — o amp-op SATURA em +VCC (se V+ > V−) ou −VEE (se V+ < V−). Por isso a saída nunca é proporcional: ela sempre vai para um dos extremos, tornando a resposta retangular.\n\nDetector de cruzamento por zero: conecta-se a referência (V−) ao terra (0 V) e o sinal senoidal a V+. Sempre que a senoide cruza o zero no sentido positivo (VI passa de − para +), V+ passa de < 0 para > 0, e a saída COMUTA de −VEE para +VCC. No cruzamento para baixo (de + para −), a saída volta a −VEE. Resultado: uma onda quadrada com as mesmas transições da senoide.',
+    criterios: [
+      'Ganho altíssimo leva à saturação — nunca resposta proporcional.',
+      'Referência em zero e sinal em V+ → detecção do cruzamento.',
+      'Saída comuta de +VCC para −VEE nos cruzamentos por zero.',
+    ],
+    fonte: 'Slides Multivibradores e Comparadores / LinhaDoTempo (08)',
+  },
+  {
+    id: 'dis-05-01', tipo: 'discursiva', topico: '05-reguladores-chaveados-pwm', dificuldade: 'medio',
+    enunciado: 'Um conversor buck ideal é alimentado com VIN = 20 V. O divisor de realimentação tem R1 = 8 kΩ (inferior) e R2 = 24 kΩ (superior), e a referência interna é VREF = 4 V. (a) Determine VOUT em regime regulado. (b) Determine o ciclo de trabalho D.',
+    imagem: '/imagens/cursos/det/05-pwm.png',
+    gabaritoComentado:
+      'Em regime regulado, VFB = VREF. O divisor amosta VOUT: VFB = VOUT · R1/(R1+R2) = VREF.\n\n(a) VOUT = VREF · (R1+R2)/R1 = 4 · (8k+24k)/8k = 4 · 4 = 16 V.\n\n(b) Buck ideal: VOUT = D · VIN → D = VOUT/VIN = 16/20 = 0,8 (80%).\n\nResposta (slide): VOUT = 16 V; D = 0,8.',
+    criterios: [
+      'Em regime: VFB = VREF → VOUT = VREF·(R1+R2)/R1 = 16 V.',
+      'D = VOUT/VIN = 0,8 (80%).',
+      'Não confundiu a frequência fixa com o que varia (D/ton).',
+    ],
+    fonte: 'Slides Fontes Reguladas 3 (Exemplo do slide, VOUT=16 V, D=0,8)',
+    armadilha: 'Achar que a frequência varia para regular — no PWM, a frequência é CONSTANTE; varia o duty.',
+  },
+  {
     id: 'dis-09-02', tipo: 'discursiva', topico: '09-multivibradores-555', dificuldade: 'medio',
     enunciado: 'Dois CI 555: o primeiro em monoestável e o segundo em astável, com a saída do monoestável habilitando o astável. Explique o comportamento da saída e em que intervalo o astável oscila.',
-    imagem: '/imagens/cursos/det/q-dois-555.svg',
+    imagem: '/imagens/cursos/det/q-dois-555.png',
     gabaritoComentado:
       'O 555 monoestável gera, após o disparo, um pulso de largura LP = 1,1·R·C. Enquanto esse pulso está ativo, ele habilita o 555 astável (pelo pino RESET), que então oscila e gera a onda retangular; fora desse intervalo o astável fica desabilitado (saída em repouso).\n\nNa SOPA, o pulso do monoestável habilita o astável na janela de ≈ 2 s a 7 s — só nesse intervalo aparece a oscilação na saída.\n\nIdeia: monoestável = "janela de tempo"; astável = oscilador habilitado dentro dela.',
     criterios: [
@@ -711,6 +926,19 @@ export const discursivas: QuestaoDiscursiva[] = [
       'Fora da janela, saída em repouso.',
     ],
     fonte: 'SOPA PP1 2021 — 1ª questão (gabarito oficial)',
+  },
+  {
+    id: 'dis-00-01', tipo: 'discursiva', topico: '00-ideia-central-da-prova', dificuldade: 'facil',
+    enunciado: 'Para cada descrição abaixo, identifique a família de circuito e explique (em uma frase) o que a questão de prova costuma pedir sobre ele: (a) circuito com capacitor em série e diodo derivando a carga; (b) circuito com amp-op sem realimentação, duas entradas e saída que vai a ±VCC; (c) circuito com transistor no caminho da corrente, Zener na base como referência, e saída CC estável.',
+    gabaritoComentado:
+      '(a) **Grampeador.** A prova pede a forma de onda de saída (deslocada em DC) e os valores máximo e mínimo após o deslocamento.\n\n(b) **Comparador.** A prova pede a forma de onda de saída (onda quadrada) e quando ela fica em +VCC ou −VEE em função dos dois limiares.\n\n(c) **Regulador série com transistor.** A prova pede VO (tensão regulada), IL (corrente de carga), e às vezes a potência dissipada em Q1.',
+    criterios: [
+      '(a) Identificou grampeador e citou deslocamento de DC (máximo/mínimo).',
+      '(b) Identificou comparador e citou saída quadrada (±VCC) com condição de disparo.',
+      '(c) Identificou regulador série e citou VO constante / potência em Q1.',
+    ],
+    fonte: 'LinhaDoTempo (00) — visão geral da PP1',
+    armadilha: 'Confundir grampeador (preserva a forma) com limitador (corta a forma).',
   },
 ];
 

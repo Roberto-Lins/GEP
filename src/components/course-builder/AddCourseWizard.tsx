@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import type { MidiaRef, TopicoTimeline, ArquivoLeve, ValidacaoItem, CourseKitMetadata } from '@tipos/course-kit';
 import { DIFICULDADES, DIFICULDADE_LABELS } from '@tipos/course-kit';
 import { anoUsaTurma } from '@utils/hierarchy-constants';
@@ -16,6 +16,7 @@ import ReviewAndGenerate from './ReviewAndGenerate';
 import ValidationAlert from './ValidationAlert';
 
 const ETAPAS = ['Matéria', 'Linha do tempo', 'Exercícios', 'Materiais', 'Revisão'];
+const DRAFT_KEY = 'bussola:course-builder:draft';
 
 const METADATA_INICIAL: WizardMetadata = {
   nome: '', slug: '', slugManual: false,
@@ -32,8 +33,51 @@ export default function AddCourseWizard() {
   const [arquivos, setArquivos] = useState<ArquivoLeve[]>([]);
   const [gerando, setGerando] = useState(false);
   const [nomeGerado, setNomeGerado] = useState<string | null>(null);
+  const [hasDraft, setHasDraft] = useState(() => {
+    try { return !!localStorage.getItem(DRAFT_KEY); } catch { return false; }
+  });
 
   const questoes = useMemo(() => Object.values(questoesCelula).flat(), [questoesCelula]);
+
+  // ── Rascunho automático ──────────────────────────────────────────────────
+  useEffect(() => {
+    if (step === 0) return;
+    try {
+      localStorage.setItem(DRAFT_KEY, JSON.stringify({ step, metadata, topicos, questoesCelula, midias }));
+      setHasDraft(true);
+    } catch { /* quota exceeded — silently ignore */ }
+  }, [step, metadata, topicos, questoesCelula, midias]);
+
+  const carregarRascunho = () => {
+    try {
+      const raw = localStorage.getItem(DRAFT_KEY);
+      if (!raw) return;
+      const d = JSON.parse(raw) as {
+        step?: number;
+        metadata?: WizardMetadata;
+        topicos?: TopicoTimeline[];
+        questoesCelula?: QuestoesPorCelula;
+        midias?: MidiaRef[];
+      };
+      if (d.metadata) setMetadata(d.metadata);
+      if (d.topicos) setTopicos(d.topicos);
+      if (d.questoesCelula) setQuestoesCelula(d.questoesCelula);
+      if (d.midias) setMidias(d.midias);
+      setStep(d.step && d.step >= 1 && d.step <= 5 ? d.step : 1);
+    } catch { /* corrupt draft — ignore */ }
+  };
+
+  const limparRascunho = () => {
+    try { localStorage.removeItem(DRAFT_KEY); } catch { /* ignore */ }
+    setHasDraft(false);
+    setStep(0);
+    setMetadata(METADATA_INICIAL);
+    setTopicos([]);
+    setQuestoesCelula({});
+    setMidias([]);
+    setArquivos([]);
+    setNomeGerado(null);
+  };
 
   // ── Validações ───────────────────────────────────────────────────────────
   const valMetadata = (): ValidacaoItem[] => {
@@ -91,7 +135,7 @@ export default function AddCourseWizard() {
     }
   };
 
-  if (step === 0) return <IntroModal onContinuar={() => setStep(1)} />;
+  if (step === 0) return <IntroModal onContinuar={() => setStep(1)} hasDraft={hasDraft} onRetomar={carregarRascunho} />;
 
   return (
     <div className="mx-auto max-w-3xl">
@@ -135,15 +179,28 @@ export default function AddCourseWizard() {
         {step < 5 && etapaAtual.length > 0 && <ValidationAlert itens={etapaAtual} className="mt-5" />}
       </div>
 
-      <div className="mt-5 flex items-center justify-between">
-        <button type="button" className="btn-ghost" onClick={() => setStep((s) => Math.max(0, s - 1))}>
-          ← Voltar
-        </button>
-        {step < 5 && (
-          <button type="button" className="btn-primary" onClick={() => podeAvancar && setStep((s) => s + 1)} disabled={!podeAvancar}>
-            Avançar →
+      <div className="mt-5 flex items-center justify-between gap-3">
+        <div className="flex items-center gap-3">
+          <button type="button" className="btn-ghost" onClick={() => setStep((s) => Math.max(0, s - 1))}>
+            ← Voltar
           </button>
-        )}
+          <button
+            type="button"
+            className="text-xs text-nevoa/50 underline-offset-2 hover:text-vermelho hover:underline"
+            onClick={limparRascunho}
+            title="Apaga todo o progresso e volta ao início"
+          >
+            Limpar e recomeçar
+          </button>
+        </div>
+        <div className="flex items-center gap-3">
+          <span className="text-xs text-nevoa/40">💾 Rascunho salvo</span>
+          {step < 5 && (
+            <button type="button" className="btn-primary" onClick={() => podeAvancar && setStep((s) => s + 1)} disabled={!podeAvancar}>
+              Avançar →
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );

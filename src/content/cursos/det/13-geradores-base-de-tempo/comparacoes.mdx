@@ -9,12 +9,21 @@ secaoOrdem: 4
 | | UJT + fonte de corrente | 555 monoestável + fonte de corrente |
 |---|---|---|
 | Níveis da rampa | VV → VP | 0 → ⅔·VCC |
-| Disparo | Automático (relaxação) | Por disparo |
-| Largura | t1 (carga) | LP = tempo da rampa |
+| Disparo | Automático (relaxação) | Por pulso externo no pino 2 |
+| Largura do pulso | t1 = C·(VP − VV) / IC | LP = 1,1·RA·C (sem fonte) |
+| Linearidade | Alta (fonte de corrente) | Alta (fonte de corrente no pino 7) |
 
-## Exponencial × linear (de novo)
+## Exponencial × linear
 
-| Carga por… | Forma | Fórmula |
+| Carga por… | Forma | Fórmula | Quando usar |
+|---|---|---|---|
+| Resistor (RC) | Exponencial | `v(t) = VCC·(1−e^{−t/RC})` | Onde rampa exata não importa |
+| Fonte de corrente | **Linear** | `t = C·ΔV / IC` | Escala de tempo precisa, base de tempo |
+
+## Fonte de corrente: transistor PNP × resistor simples
+
+| | Resistor em série | Transistor PNP (fonte de corrente) |
 |---|---|---|
-| Resistor | Exponencial | RC |
-| Fonte de corrente | **Linear** | `dV/dt = I/C` |
+| Corrente durante a carga | Cai com a tensão no capacitor | **Constante** (IC ≈ (VCC − VBE) / RE) |
+| Forma da tensão | Exponencial | Linear (rampa perfeita) |
+| Tensão no emissor | — | VCC − VBE ≈ VCC − 0,7 |

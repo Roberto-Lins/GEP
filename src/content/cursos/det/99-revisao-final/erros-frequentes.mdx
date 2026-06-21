@@ -29,3 +29,24 @@ A saída de um regulador é **fixa** pela referência; não sobe com a entrada.
 <BlocoPegadinha titulo="Unidades e queda de condução">
 Converta `kΩ/µF/mA/ms` antes; e subtraia a queda **informada** (não 0,7 V por hábito).
 </BlocoPegadinha>
+
+<BlocoPegadinha titulo="VP do UJT = η·VCC (sem o +0,7)">
+A tensão de disparo é `VP = VK + 0,7`, e VK = η·VCC. Esquecer os **+0,7 V** erra VP — e o tempo de
+carga t1 inteiro. É a armadilha número 1 do UJT.
+</BlocoPegadinha>
+
+<BlocoPegadinha titulo="Grampeador como limitador (ou vice-versa)">
+Grampeador: **forma preservada, nível médio deslocado** (usa capacitor em série). Limitador: **forma
+ceifada** (sem capacitor em série). Se a saída ficou com a mesma curva, é grampeador; se ganhou um
+platô, é limitador.
+</BlocoPegadinha>
+
+<BlocoPegadinha titulo="Q2 do limitador de corrente começa ligado">
+Falso. Q2 começa **cortado** e só liga quando `V_RSC ≈ 0,7 V`. Antes disso, ele não faz nada — e
+não deve ser desenhado conduzindo desde o início.
+</BlocoPegadinha>
+
+<BlocoPegadinha titulo="Ciclo de trabalho: inverter D e 1-D">
+No buck, `VOUT = D·VIN` e `D = ton/T`. Se a saída é **menor** que a entrada, `D < 1`. Confundir `D`
+com `(1-D)` dá o valor errado no sentido oposto.
+</BlocoPegadinha>

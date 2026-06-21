@@ -5,6 +5,8 @@ secaoOrdem: 3
 ---
 
 - Comparador em malha aberta **satura**: `V+ > V− ⇒ +VCC`; `V+ < V− ⇒ −VEE`.
-- A saída é **retangular**, não proporcional.
+- A saída é **retangular**, não proporcional — nunca existe nível intermediário.
 - Marque as trocas de estado nos **cruzamentos** com a referência.
-- É o bloco interno do **555** e do **Schmitt**.
+- **Inversor** (sinal em V−, referência em V+): saída cai quando entrada sobe.
+- **Não-inversor** (sinal em V+, referência em V−): saída sobe quando entrada sobe.
+- É o bloco interno do **555** (dois comparadores) e do **Schmitt** (com realimentação positiva).

@@ -1,0 +1,4 @@
+# Toolchain de autoria (NÃO é dependência de runtime do site).
+# Gera/retematiza os esquemáticos dos circuitos para public/imagens/cursos/<slug>/.
+schemdraw>=0.19
+Pillow>=10.0

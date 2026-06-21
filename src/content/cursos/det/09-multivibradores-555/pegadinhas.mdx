@@ -16,3 +16,8 @@ Calcule `T = T_ALTO + T_BAIXO` **primeiro**; só então `f = 1/T`. Não inverta 
 <BlocoPegadinha titulo="Esquecer o disparo do monoestável">
 O monoestável só produz o pulso **depois de um disparo**. Sem disparo, fica em repouso.
 </BlocoPegadinha>
+
+<BlocoPegadinha titulo="Duty cycle de 50% no astável">
+No 555 astável padrão, **D > 50% sempre**: RA está no caminho da carga mas não da descarga, então
+`T_ALTO = 0,7(RA+RB)C > T_BAIXO = 0,7·RB·C`. Duty exato de 50% exige modificação do circuito.
+</BlocoPegadinha>

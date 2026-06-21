@@ -65,6 +65,22 @@ timeline, mídias, fontes) em \`src/data/cursos/<slug>/\`. A hierarquia de naveg
 **Ano → (Turma p/ 3°/4°) → Semestre → Época → Matéria**, definida nos campos do \`_config.json\`.
 Validação: \`npm run validate-content\`. Geração inicial: \`npm run create-course <slug>\`.
 
+## Princípios inegociáveis
+1. **Fidelidade absoluta às fontes.** Use **somente** as fontes do kit (slides, listas, provas,
+   orientações do professor). **Não invente** valores, exemplos ou resoluções; não "complete" lacunas
+   com conhecimento externo sem marcar claramente como hipótese. As questões e as formas de resolução
+   **não podem fugir** das listas e dos slides.
+2. **Aulas profundas e claras.** Cada mini-matéria segue: intuição → fórmula/conceito → figura →
+   **exemplo resolvido passo a passo** (com os números da fonte) → fechamento que liga ao próximo tópico.
+3. **Figuras fiéis, nunca desenhadas à mão coordenada-a-coordenada.** Para circuitos/diagramas:
+   **reaproveite a figura da fonte** (recorte/print re-tematizado para a paleta naval) **ou gere com
+   símbolos padrão** — ver \`scripts/circuitos/\` (SchemDraw para esquemáticos, matplotlib para
+   ondas/gráficos). Sempre confira que a figura **bate com o texto e a legenda**.
+4. **Interatividade quando agregar.** Os cálculos cobrados viram **calculadoras React** em
+   \`src/components/cursos/${data.slug}/\`, ligadas ao \`mdxComponents\` da página de matéria.
+5. **Curso de referência:** o curso **\`det\`** (Detecção) é o padrão-ouro de profundidade, figuras e
+   calculadoras — espelhe a qualidade dele. Guia de produção de conteúdo em \`/adicionar-curso/guia\`.
+
 ## O que você vai instalar
 - **Slug:** \`${data.slug}\`
 - **Nome:** ${data.nome}
@@ -112,13 +128,46 @@ por tópico da linha do tempo acima (na ordem indicada), mais \`99-revisao-final
 \`\`\`
 
 ### 3. Criar as mini-matérias
-Para cada tópico: \`_dados.json\` (ordem, slug, titulo, prioridade, objetivo, palavrasChave) e os
-\`.mdx\` de seção (capa, aula, resumo, comparacoes, pegadinhas, referencias). Use o estilo de
-cobrança do professor para calibrar ênfase e pegadinhas.
+
+**Estrutura mínima de \`_dados.json\`:**
+\`\`\`jsonc
+{
+  "ordem": 1,
+  "slug": "NN-nome-do-topico",
+  "titulo": "Nome do Tópico",
+  "prioridade": "alta",
+  "objetivo": "O que o aluno conseguirá fazer após estudar este tópico.",
+  "palavrasChave": ["termo1", "termo2"],
+  "tempoEstimado": 45
+}
+\`\`\`
+
+**Seções de cada mini-matéria (ordem de criação):**
+| Arquivo | secaoOrdem | secao (frontmatter) | Conteúdo esperado |
+|---|---|---|---|
+| index.mdx | 1 | "capa" | Título, imagem de abertura e objetivo em 1–2 parágrafos |
+| aula.mdx | 2 | "aula" | Intuição → fórmula → figura → exemplo passo-a-passo → ponte ao próximo |
+| resumo.mdx | 3 | "resumo" | 5–8 bullet-points das ideias-chave (referência rápida) |
+| comparacoes.mdx | 4 | "comparacoes" | Tabelas comparando variantes, estados, fórmulas |
+| pegadinhas.mdx | 5 | "pegadinhas" | BlocoPegadinha por armadilha clássica da prova |
+| exercicios.mdx | 6 | "exercicios" | Boilerplate (texto padrão — copie do template) |
+| respostas-comentadas.mdx | 7 | "respostas" | Boilerplate (texto padrão — copie do template) |
+| checklist.mdx | 8 | "checklist-doc" | Boilerplate (texto padrão — copie do template) |
+| referencias.mdx | 9 | "referencias" | Links/slides, página/seção do livro-base |
+
+Use \`BlocoConceito\`, \`BlocoPegadinha\` e \`BlocoComparacao\` conforme o padrão do curso **det**.
 
 ### 4. Montar o banco de exercícios
 Converta os arquivos de \`exercicios/\` em \`src/data/cursos/${data.slug}/exercicios.ts\`, mantendo
-dificuldade e tipo. Use o gabarito detectado quando houver; escreva comentários de resolução.
+dificuldade e tipo. Cada questão **deve ter**:
+- \`id\` único (padrão: me-NN-01, vf-NN-01, dis-NN-01, cor-NN-01)
+- \`topico\`: slug da mini-matéria a que pertence
+- \`fonte\`: de onde veio (ex.: "Lista 1 — Q3", "Slides Cap. X", "SOPA 2021")
+- \`comentario\`/\`gabaritoComentado\`: resolução passo a passo (números exatos da fonte)
+- \`armadilha\` (opcional): o erro clássico que a questão testa
+
+Priorize questões com gabarito oficial (Lista de exercícios, SOPA, slides com resolução). Questões sem
+gabarito claro devem ser marcadas com \`// REVER\` e confirmadas com o mantenedor.
 
 ### 5. Registrar as mídias
 Adicione as referências de \`audios/videos/slides/referencias.json\` (e arquivos leves de

@@ -35,6 +35,8 @@ A ideia intuitiva: o resistor de baixo "fica" com uma fatia da tensão proporcio
 > **Exemplo rápido:** `Vfonte = 12 V`, `Rcima = 4 kΩ`, `Rbaixo = 8 kΩ` →
 > `Vnó = 12 · 8/(4+8) = 12 · 2/3 = 8 V`.
 
+<CalcDivisor />
+
 Essa mesma fórmula reaparece nas referências de reguladores, no Schmitt (cálculo de UTP/LTP) e na
 realimentação do PWM. Vale a pena automatizá-la.
 
@@ -56,7 +58,7 @@ Esta distinção decide muitas questões — e é a armadilha favorita da prova:
 
   `dV/dt = I / C`   e, portanto,   `t = C · ΔV / I`
 
-![Carga do capacitor: por resistor a tensão sobe em curva exponencial; por fonte de corrente, sobe em rampa linear.](/imagens/cursos/det/01-carga-capacitor.svg)
+![Carga do capacitor: por resistor a tensão sobe em curva exponencial; por fonte de corrente, sobe em rampa linear.](/imagens/cursos/det/01-carga-capacitor.png)
 
 *Por que a fonte de corrente dá uma reta? Porque `dV/dt = I/C` é constante quando `I` é constante — inclinação fixa é uma reta. É esse o princípio da base de tempo (tópico 13).*
 

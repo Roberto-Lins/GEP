@@ -10,3 +10,26 @@ secaoOrdem: 4
 |---|---|---|---|
 | Carga (VV → VP) | Via resistor R1 | Lenta | `t1 = R1·C·ln[(VCC−VV)/(VCC−VP)]` |
 | Descarga (VP → VV) | Via RB1(ON)+R2 | Rápida | `t2 = (RB1(ON)+R2)·C·ln(VP/VV)` |
+
+## UJT × DIAC — osciladores de relaxação
+
+Ambos geram oscilação por carga-e-disparo de um capacitor, mas com diferenças cruciais:
+
+| | UJT | DIAC |
+|---|---|---|
+| Terminal de disparo | Emissor (E) | Nenhum — sem porta |
+| Condição de disparo | VE ≥ VP = η·VCC + 0,7 | \|VC\| ≥ VBR |
+| Sentido de condução | Unidirecional | Bidirecional |
+| Tipo de carga | Exponencial (via R1) | Exponencial (via R) |
+| Circuito típico | R1 + C + UJT (entre B1 e B2) | R + C + DIAC (ao terra) |
+
+## Parâmetros do UJT — o que cada um significa
+
+| Parâmetro | Fórmula | O que representa |
+|---|---|---|
+| η (eta) | dado | Fração de VCC que aparece em B1 (razão intrínseca) |
+| RB1 | η·RBB | Resistência interna entre E e B1 (no estado OFF) |
+| RB2 | RBB − RB1 | Resistência interna entre E e B2 |
+| VK | η·VCC | Tensão no ponto de junção (divisor entre bases) |
+| VP | VK + 0,7 | Tensão de disparo do emissor (VK + queda de junção) |
+| VV | dado | Tensão de vale — piso da oscilação |

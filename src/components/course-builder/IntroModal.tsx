@@ -2,10 +2,12 @@ import { useState } from 'react';
 
 interface Props {
   onContinuar: () => void;
+  hasDraft?: boolean;
+  onRetomar?: () => void;
 }
 
 /** Etapa 0 — boas-vindas, atalho para o guia e checklist do que ter em mãos. */
-export default function IntroModal({ onContinuar }: Props) {
+export default function IntroModal({ onContinuar, hasDraft, onRetomar }: Props) {
   const [ciente, setCiente] = useState(false);
 
   return (
@@ -64,6 +66,23 @@ export default function IntroModal({ onContinuar }: Props) {
           <strong className="text-marfim">materiais</strong> em mãos.
         </span>
       </label>
+
+      {hasDraft && (
+        <div className="mt-5 flex items-center gap-3 rounded-lg border border-dourado/30 bg-dourado/[0.06] p-3">
+          <span className="text-sm text-dourado">💾</span>
+          <div className="flex-1">
+            <p className="text-xs font-semibold text-marfim">Rascunho salvo encontrado</p>
+            <p className="text-xs text-nevoa/70">Você saiu no meio do preenchimento. Deseja continuar de onde parou?</p>
+          </div>
+          <button
+            type="button"
+            onClick={onRetomar}
+            className="shrink-0 rounded-md border border-dourado/40 bg-dourado/10 px-3 py-1.5 text-xs font-medium text-dourado transition hover:bg-dourado/20"
+          >
+            Retomar →
+          </button>
+        </div>
+      )}
 
       <div className="mt-6 flex flex-wrap gap-3">
         <a href="/" className="btn-ghost">Preparar depois</a>

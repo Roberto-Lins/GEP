@@ -4,7 +4,10 @@ secao: "resumo"
 secaoOrdem: 3
 ---
 
-- Grampeador **desloca o nível DC**; **não deforma** a onda.
-- O capacitor **carrega no pico** e vira fonte DC somada/subtraída.
-- Positivo: `VO = VI + Vm`. Negativo: `VO = VI − Vm`.
-- Com queda de diodo, o deslocamento muda pelo valor da queda.
+- Grampeador **desloca o nível DC**; **não deforma** a onda (forma preservada = grampeador).
+- O capacitor **carrega no pico** (meio ciclo) e se comporta como fonte DC em série.
+- Positivo (ideal): `VO = VI + Vm` → saída varia de **0 a +2Vm** (mínimo chega ao zero).
+- Negativo (ideal): `VO = VI − Vm` → saída varia de **−2Vm a 0**.
+- Com queda de diodo: mínimo de saída = `+VD` (positivo) ou máximo = `−VD` (negativo).
+- Circuito: **capacitor em série** + diodo em paralelo. Diferente do limitador (diodo em série).
+- RC de descarga deve ser muito maior que T para o capacitor manter a carga.

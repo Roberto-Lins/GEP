@@ -8,13 +8,23 @@ secaoOrdem: 4
 
 | | Limitador | Grampeador |
 |---|---|---|
-| Efeito | Corta/ceifa a onda | Desloca o nível DC |
-| Forma de onda | Muda (fica "cortada") | Preservada |
-| Componente-chave | Diodo (+ fonte/Zener) | Diodo **+ capacitor** |
+| Efeito | **Corta/ceifa** a onda (platô no pico) | **Desloca** o nível DC (preserva a forma) |
+| Forma de onda | Muda (fica cortada) | Igual à entrada, mas deslocada |
+| Componente-chave | Diodo (+ fonte/Zener) — **sem capacitor em série** | Diodo **+ capacitor em série** |
+| Forma de reconhecer | Pico "chato" (platô) | Onda com mesma curva, base ou topo deslocados |
 
 ## Positivo × negativo
 
-| Tipo | Fórmula ideal | Efeito |
+| Tipo | Fórmula ideal | Faixa de saída (senoide ±Vm) |
 |---|---|---|
-| Positivo | `VO = VI + Vm` | Onda sobe |
-| Negativo | `VO = VI − Vm` | Onda desce |
+| **Positivo** | `VO = VI + Vm` | 0 a **+2Vm** (sobe toda a onda) |
+| **Negativo** | `VO = VI − Vm` | **−2Vm** a 0 (desce toda a onda) |
+
+## Ideal × real (com queda de diodo)
+
+| Configuração | Mínimo ideal | Mínimo real | Máximo ideal | Máximo real |
+|---|---|---|---|---|
+| Grampeador positivo | 0 V | +0,7 V | +2Vm | +2Vm − 0,7 V |
+| Grampeador negativo | −2Vm | −2Vm + 0,7 V | 0 V | −0,7 V |
+
+> A queda de diodo (~0,7 V) **subtrai** do deslocamento: o grampeador positivo não sobe exatamente Vm, mas Vm − 0,7 V.

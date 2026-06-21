@@ -93,6 +93,30 @@ export default function ReviewAndGenerate(props: Props) {
           {gerando ? 'Gerando…' : 'Gerar Course Kit'}
         </button>
       </section>
+
+      {nomeGerado && (
+        <section className="rounded-xl border border-verde/30 bg-verde/[0.06] p-5">
+          <h3 className="mb-3 font-serif text-lg text-marfim">Próximos passos</h3>
+          <ol className="space-y-2 text-sm text-nevoa/80">
+            <li className="flex gap-2">
+              <span className="shrink-0 font-mono text-verde">1.</span>
+              <span>Abra o <strong className="text-marfim">{nomeGerado}</strong> que foi baixado. Ele contém o <code className="text-dourado">PROMPT_CLAUDE.md</code> com as instruções de instalação.</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="shrink-0 font-mono text-verde">2.</span>
+              <span>Abra o <strong className="text-marfim">Claude Code</strong> na pasta do repositório Bússola e cole o conteúdo do <code className="text-dourado">PROMPT_CLAUDE.md</code> como mensagem.</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="shrink-0 font-mono text-verde">3.</span>
+              <span>O Claude Code instalará o curso automaticamente: criará as mini-matérias, montará o banco de questões e validará o build.</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="shrink-0 font-mono text-verde">4.</span>
+              <span>Após a instalação, rode <code className="text-dourado">npm run validate-content</code> e <code className="text-dourado">npm run build</code> para confirmar que tudo passou.</span>
+            </li>
+          </ol>
+        </section>
+      )}
     </div>
   );
 }

@@ -9,12 +9,35 @@ secaoOrdem: 4
 | | Comparador comum | Schmitt-trigger |
 |---|---|---|
 | Limiares | Um (a referência) | Dois (UTP e LTP) |
-| Depende do estado anterior? | Não | Sim (memória) |
-| Troca de estado | No cruzamento da referência | Apenas em UTP/LTP |
+| Depende do estado anterior? | Não | **Sim (memória)** |
+| Troca de estado | No cruzamento da referência | Apenas em UTP (subindo) ou LTP (descendo) |
+| Imunidade a ruído | Baixa | **Alta** (histerese = UTP − LTP) |
+| Realimentação | Nenhuma | Positiva (R da saída para V+) |
 
 ## Limiares pela saída
 
-| Estado da saída | Referência |
-|---|---|
-| `VO = +VCC` | `UTP = β·(+VCC)` |
-| `VO = −VEE` | `LTP = β·(−VEE)` |
+| Estado da saída | Limiar ativo | Fórmula |
+|---|---|---|
+| `VO = +VCC` | UTP (próxima comutação na subida) | `UTP = β·(+VCC)` |
+| `VO = −VEE` | LTP (próxima comutação na descida) | `LTP = β·(−VEE)` |
+
+onde `β = Rbaixo / (Rcima + Rbaixo)`.
+
+## Exemplo numérico (slides): ±12 V, Rcima=24kΩ, Rbaixo=12kΩ
+
+| Grandeza | Conta | Resultado |
+|---|---|---|
+| β | `12/(24+12)` | `0,333` |
+| UTP | `0,333 × (+12)` | **+4 V** |
+| LTP | `0,333 × (−12)` | **−4 V** |
+| Histerese | UTP − LTP | 8 V |
+
+> ⚠️ Caso dos slides da SOPA (Rcima=12k, Rbaixo=24k): β = 2/3 → **UTP = +8 V, LTP = −8 V**.
+
+## Schmitt × Schmitt com Zener
+
+| | Schmitt padrão (±VCC) | Schmitt com Zener |
+|---|---|---|
+| Saída | ±VCC (simétrico) | ±VZ (assimétrico ou simétrico conforme Zener) |
+| Histerese | UTP − LTP | Depende de VZ e do divisor |
+| Uso | Circuitos simétricos | Quando se precisa de limiares assimétricos |

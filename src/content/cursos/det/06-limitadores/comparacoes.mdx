@@ -6,12 +6,12 @@ secaoOrdem: 4
 
 ## Tipos de limitador (slides)
 
-| Tipo | Define o nível de corte por… |
-|---|---|
-| Só com diodos | Queda do diodo |
-| Diodo + fonte DC | Fonte DC ± queda |
-| Com Zener | VZ (ruptura) num sentido, queda no outro |
-| Limitador ativo | Amp-op + referência |
+| Tipo | Define o nível de corte por… | Saída (ex.: entrada ±10 V) |
+|---|---|---|
+| Só com diodos | Queda do diodo (~0,7 V) | Ceifado em ±0,7 V |
+| Diodo + fonte DC (VDC) | VDC ± 0,7 | Ceifado em VDC + 0,7 (positivo) ou VDC − 0,7 (negativo) |
+| Com Zener | VZ num sentido, 0,7 no outro | Ceifado em VZ e −0,7 (ou +0,7 e −VZ) |
+| Limitador ativo | Amp-op + referência | Corte preciso e independente de queda de diodo |
 
 ## Diodo conduz × corta
 
@@ -19,3 +19,21 @@ secaoOrdem: 4
 |---|---|
 | Conduz (direto) | Queda fixa; saída "presa" no nível de corte |
 | Corta (reverso) | Aberto; saída acompanha a entrada |
+
+## Limitador × Grampeador
+
+| | Limitador | Grampeador |
+|---|---|---|
+| Circuito | Diodo em **paralelo** com a saída (sem capacitor em série) | Capacitor em **série** + diodo em paralelo |
+| Efeito na onda | **Corta/ceifa** um pedaço (platô no pico) | Preserva a forma, **desloca o nível DC** |
+| Forma de onda saída | Semelhante à entrada mas com platô | Igual à entrada, porém deslocada |
+| Quando reconhecer | Pico "chato" (platô) | Onda sem platô, mas base ou topo deslocados |
+
+## Nível de corte para diferentes configurações
+
+| Configuração | Nível de corte positivo | Nível de corte negativo |
+|---|---|---|
+| Diodo + VDC (para cima) | `VDC + 0,7 V` | sem corte (diodo reverso) |
+| Diodo + VDC (para baixo) | sem corte | `−VDC − 0,7 V` |
+| Dois ramos (bilateral) | `VDC1 + 0,7` | `−VDC2 − 0,7` |
+| Zener bilateral | `VZ + 0,7` | `−VZ − 0,7` |

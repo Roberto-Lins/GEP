@@ -8,13 +8,20 @@ secaoOrdem: 4
 
 | | Regulador série | Regulador paralelo |
 |---|---|---|
-| Posição do transistor | No caminho da carga | Em paralelo com a carga |
-| Corrente | `IE ≈ IL` | Divide a corrente de entrada |
-| Mais comum na prova | Sim | Menos comum |
+| Posição do transistor | **No caminho** da carga (segue a corrente) | Em **paralelo** com a carga |
+| Corrente de Q1 | `IE ≈ IL` | Desvia o excesso de corrente |
+| Mais comum na prova | **Sim** | Menos cobrado |
 
-## Operação normal × proteção de curto
+## Ciclo de realimentação do regulador série
 
-| Situação | Estado de Q2 | Efeito |
-|---|---|---|
-| Corrente normal | Cortado | Regulação normal de VO |
-| `V_RSC ≈ 0,7 V` | Conduzindo | Limita a corrente de carga |
+| VI sobe → | VO tende a subir → | Vbe de Q1 cai → | Q1 conduz menos → | VO volta ao valor regulado |
+|---|---|---|---|---|
+| VI cai → | VO tende a cair → | Vbe de Q1 sobe → | Q1 conduz mais → | VO volta ao valor regulado |
+
+## Operação normal × proteção de curto (limitador de corrente Q2)
+
+| Situação | V_RSC | Estado Q2 | Efeito sobre Q1 |
+|---|---|---|---|
+| Corrente normal (IL < I_Lmáx) | < 0,7 V | **Cortado** | Q1 regula normalmente |
+| Curto-circuito ou sobrecarga (IL > I_Lmáx) | ≥ 0,7 V | **Conduzindo** | Desvia a base de Q1 → Q1 reduz corrente → VO cai |
+| I_Lmáx | `0,7 / RSC` | Limiar de comutação de Q2 | — |

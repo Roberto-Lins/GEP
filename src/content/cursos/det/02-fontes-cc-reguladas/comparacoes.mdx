@@ -9,5 +9,21 @@ secaoOrdem: 4
 | Estágio | Função | O que NÃO faz |
 |---|---|---|
 | Retificador | CA → CC pulsante | Não suaviza nem estabiliza |
-| Filtro (capacitor) | Suaviza a ondulação | Não estabiliza contra carga/entrada |
-| Regulador | Estabiliza VO | — |
+| Filtro (capacitor) | Suaviza a ondulação (ripple) | Não estabiliza contra carga/entrada |
+| Regulador | Estabiliza VO independente de VI e IL | — |
+
+## Capacitor de filtro: tamanho × efeito
+
+| Capacitor C | Ondulação (ripple) | Corrente de pico no retificador |
+|---|---|---|
+| Pequeno | Grande (muita ondulação) | Menor |
+| **Grande** | **Pequena (VO mais lisa)** | **Maior** |
+
+## Retificador meia-onda × onda completa
+
+| | Meia onda | Onda completa (ponte) |
+|---|---|---|
+| Diodos | 1 | 4 |
+| Frequência de ripple | f_rede (50/60 Hz) | 2·f_rede (100/120 Hz) |
+| Ondulação para o mesmo C | Maior | Menor |
+| Tensão média | ~0,45·Vp | ~0,9·Vp |

@@ -9,5 +9,23 @@ secaoOrdem: 4
 | | Regulador linear | Regulador chaveado |
 |---|---|---|
 | Transistor opera como | Resistor variável (região linear) | Chave (corte/saturação) |
-| Dissipação | Alta | Baixa |
-| Saída definida por | Referência + quedas | Ciclo de trabalho (`VOUT = D·VIN`) |
+| Dissipação | Alta — `P = (VI−VO)·IL` | Baixa — V≈0 ou I≈0 na chave |
+| Eficiência | Baixa (pior se VI ≫ VO) | Alta (~80–95%) |
+| Saída definida por | Referência + quedas (Zener/divisor) | Ciclo de trabalho (`VOUT = D·VIN`) |
+| Regulação | Contínua | Pelo controle de ton |
+
+## Efeito do ciclo de trabalho D (buck ideal)
+
+| D | VOUT = D·VIN (ex.: VIN = 20 V) | Interpretação |
+|---|---|---|
+| 0,25 | 5 V | Chave ligada 25% do tempo |
+| 0,5 | 10 V | 50% — metade da entrada |
+| 0,8 | 16 V | Exemplo do slide (referência do professor) |
+| 1,0 | 20 V | Chave sempre ligada — sem regulação |
+
+## Frequência fixa × ton variável
+
+| O que é fixo | O que varia | Efeito |
+|---|---|---|
+| Período T (frequência f = 1/T) | ton (tempo ligado) | D = ton/T muda |
+| D define VOUT = D·VIN | — | Maior ton → maior D → maior VOUT |

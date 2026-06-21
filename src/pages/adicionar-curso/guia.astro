@@ -52,8 +52,62 @@ const secoes = getHeadings().filter((h) => h.depth === 2);
       </nav>
     </aside>
 
-    <article class="prosa max-w-3xl">
+    <article id="guia-conteudo" class="prosa max-w-3xl">
       <Content />
     </article>
   </div>
+
+  <style is:global>
+    /* Blocos de prompt copiáveis — escopo só na página do guia. */
+    #guia-conteudo pre { position: relative; padding-top: 2.5rem; }
+    #guia-conteudo pre .bloco-tag {
+      position: absolute; top: 8px; left: 14px;
+      font: 600 10px/1 'JetBrains Mono', monospace; letter-spacing: .08em;
+      text-transform: uppercase; color: rgba(203,213,225,.55);
+    }
+    #guia-conteudo pre .bloco-copy {
+      position: absolute; top: 7px; right: 8px;
+      font: 600 11px/1 'JetBrains Mono', monospace;
+      color: #0B1220; background: #D6A84F; border: none;
+      padding: 5px 10px; border-radius: 7px; cursor: pointer;
+      opacity: .85; transition: opacity .15s, background .15s;
+    }
+    #guia-conteudo pre:hover .bloco-copy { opacity: 1; }
+    #guia-conteudo pre .bloco-copy:hover { background: #E0BD74; }
+    #guia-conteudo pre .bloco-copy:focus-visible { opacity: 1; outline: 2px solid #F7F3EA; }
+  </style>
+
+  <script is:inline>
+    (() => {
+      const root = document.getElementById('guia-conteudo');
+      if (!root) return;
+      root.querySelectorAll('pre').forEach((pre) => {
+        const code = pre.querySelector('code') || pre;
+        const txt = code.innerText.trim();
+        // Rótulo: prompt (vai pro ChatGPT/NotebookLM) vs. estrutura de pastas.
+        const ehPrompt = /(^|\n)\s*#\s|Você é|Use (exclusivamente|somente)/.test(txt) || txt.length > 220;
+        const tag = document.createElement('span');
+        tag.className = 'bloco-tag';
+        tag.textContent = ehPrompt ? 'Prompt — cole no ChatGPT / NotebookLM' : 'Estrutura';
+        pre.appendChild(tag);
+
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'bloco-copy';
+        btn.textContent = 'Copiar';
+        btn.addEventListener('click', async () => {
+          try {
+            await navigator.clipboard.writeText(txt);
+            btn.textContent = 'Copiado ✓';
+          } catch {
+            const r = document.createRange(); r.selectNodeContents(code);
+            const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+            btn.textContent = 'Selecionado';
+          }
+          setTimeout(() => (btn.textContent = 'Copiar'), 1600);
+        });
+        pre.appendChild(btn);
+      });
+    })();
+  </script>
 </BaseLayout>

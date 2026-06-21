@@ -6,13 +6,23 @@ secaoOrdem: 1
 
 A PP1 de Detecção integra seis blocos. Use este mapa para situar cada questão antes de calcular.
 
-| Bloco | Mini-matérias | O que cai |
-|---|---|---|
-| Fontes reguladas | 02–05 | VO, IL, potência, Rmín, LM317, `VOUT = D·VIN` |
-| Tratamento de sinal | 06–07 | Formas de onda: ceifar (limitador) e deslocar (grampeador) |
-| Comparar e temporizar | 08–10 | Saída saturada, 555 (T, f, LP) e Schmitt (UTP/LTP) |
-| Chaves de disparo | 11–12 | SCR/DIAC/TRIAC, IL; UJT e dente-de-serra |
-| Base de tempo | 13 | Rampa linear `dV/dt = I/C` |
+| Bloco | Mini-matérias | Como reconhecer no circuito | O que calcular |
+|---|---|---|---|
+| Fontes reguladas | 02–05 | Zener + transistor; código 78xx; 3 terminais; PWM com indutor | VO, IL, potência, Rmín, LM317, `D=VOUT/VIN` |
+| Tratamento de sinal | 06–07 | Diodo + fonte DC (limitador); diodo + **capacitor** em série (grampeador) | Nível de corte = VDC±0,7; deslocamento ±Vm |
+| Comparar e temporizar | 08–10 | Amp-op em malha aberta; CI 555 com RA/RB/C; amp-op com R da saída p/ V+ | Saturação; T, f, LP; UTP, LTP, histerese |
+| Chaves de disparo | 11–12 | Símbolo de tiristor (SCR/DIAC/TRIAC); UJT (3 terminais + η fornecido) | IL após disparo; RB1, VP, t1, t2, f |
+| Base de tempo | 13 | Transistor PNP/NPN como fonte de corrente + capacitor + UJT ou 555 | Corrente I; rampa `t = C·ΔV/I` |
 
 **Prioridade máxima:** `03 reguladores com transistor`, `09 multivibradores 555`, `10 Schmitt-trigger`
 e esta revisão.
+
+## Roteiro de resolução de qualquer questão
+
+1. **Classifique a família** — use a tabela acima.
+2. **Identifique o que pede** — tensão, corrente, potência, tempo, frequência ou forma de onda.
+3. **Marque os estados** — cada diodo/transistor/tiristor: conduz ou corta?
+4. **Escolha a fórmula certa** — confira a tabela-mestra do resumo geral.
+5. **Converta as unidades** (kΩ→Ω, µF→F, ms→s) **antes** de substituir.
+6. **Desenhe a forma de onda** com máximos, mínimos e instantes de comutação.
+7. **Confira a ordem de grandeza** e a polaridade — se deu MHz num circuito com µF, algo está errado.

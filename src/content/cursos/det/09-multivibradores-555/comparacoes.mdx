@@ -6,16 +6,28 @@ secaoOrdem: 4
 
 ## Os três multivibradores
 
-| Tipo | Estados | Precisa de disparo? | Saída |
+| Tipo | Estados estáveis | Precisa de disparo? | Saída |
 |---|---|---|---|
-| Astável | Nenhum estável | Não (oscila sozinho) | Onda retangular contínua |
-| Monoestável | Um estável | Sim | Um pulso (`LP = 1,1·RA·C`) |
-| Biestável | Dois estáveis | Sim (set/reset) | Nível mantido |
+| **Astável** | Nenhum | Não (oscila sozinho) | Onda retangular contínua |
+| **Monoestável** | Um | Sim (pino 2 → GND) | Um pulso de largura `LP = 1,1·RA·C` |
+| **Biestável** | Dois | Sim (set/reset) | Nível lógico mantido |
 
 ## Fórmulas do astável
 
-| Grandeza | Fórmula |
-|---|---|
-| Tempo alto | `0,7·(RA+RB)·C` |
-| Tempo baixo | `0,7·RB·C` |
-| Frequência | `f = 1/(T_ALTO+T_BAIXO)` |
+| Grandeza | Fórmula | Observação |
+|---|---|---|
+| Tempo alto | `T_ALTO = 0,7·(RA+RB)·C` | Carrega via RA+RB |
+| Tempo baixo | `T_BAIXO = 0,7·RB·C` | Descarrega via RB |
+| Período | `T = T_ALTO + T_BAIXO` | — |
+| Frequência | `f = 1,44 / [(RA+2RB)·C]` | Forma compacta (mesma coisa) |
+| Ciclo de trabalho | `D = (RA+RB)/(RA+2RB)` | Sempre D > 50% (RA sempre positivo) |
+
+## Monoestável × astável: onde estão RA e C
+
+| Parâmetro | Astável | Monoestável |
+|---|---|---|
+| Pino 8 (VCC) → pino 7 (DISC) | RA | RA |
+| Pino 7 → pino 2/6 | RB | — |
+| Capacitor (pino 6/2 → GND) | C | C |
+| Largura do pulso | Depende de RA, RB, C | `LP = 1,1·RA·C` |
+| Fórmula diferente por modo | Sim | Sim (atenção!) |

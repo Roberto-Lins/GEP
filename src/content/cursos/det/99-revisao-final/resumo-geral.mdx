@@ -8,26 +8,43 @@ secaoOrdem: 2
 
 | Assunto | Fórmula | Quando usar |
 |---|---|---|
-| Divisor | `Vnó = Vfonte·Rbaixo/(Rcima+Rbaixo)` | Referências, Schmitt, realimentação |
-| Potência | `P = V·I = I²R = V²/R` | Transistor, Zener, CI, carga |
-| Carga (corrente) | `dV/dt = I/C` | Base de tempo, rampa linear |
-| Regulador fixo | `Rmín = VO/Imáx` | 7805/7812 |
-| LM317 | `VO = VREG·(1+R2/R1)+IQ·R2` | Regulador ajustável |
-| Buck/PWM | `VOUT = D·VIN` | Regulador chaveado |
-| 555 astável | `T_ALTO=0,7(RA+RB)C`, `T_BAIXO=0,7·RB·C`, `f=1/T` | Oscilador |
-| 555 monoestável | `LP = 1,1·RA·C` | Pulso único |
-| Schmitt | `UTP/LTP = β·VO`, `β = Rb/(Ra+Rb)` | Histerese |
-| Limitador de corrente | `I_Lmáx ≈ 0,7/RSC` | Proteção de curto |
-| Tiristor | `I_pico = (V_pico − queda)/R` | Corrente na carga |
-| UJT | `VP = VK + 0,7`, `VK = η·VCC` | Oscilador de relaxação |
+| Divisor de tensão | `Vnó = Vfonte·Rbaixo/(Rcima+Rbaixo)` | Referências, Schmitt, realimentação PWM |
+| Lei de Ohm / Potência | `V = R·I` ; `P = V·I = I²R = V²/R` | Transistor, Zener, CI, carga |
+| **Limitador** | nível de corte = `VDC + 0,7 V` | Ceifamento (diodo + fonte DC) |
+| **Grampeador positivo** | `VO = VI + Vm` (saída 0 a +2Vm) | Deslocamento para cima |
+| **Grampeador negativo** | `VO = VI − Vm` (saída −2Vm a 0) | Deslocamento para baixo |
+| Comparador | `V+ > V− → +VCC`; `V+ < V− → −VEE` | Saturação (sem realimentação) |
+| Regulador fixo | `Rmín = VO/Imáx` ; `P ≈ (VI−VO)·IL` | 7805/7812; potência no CI |
+| LM317 | `VO = VREG·(1+R2/R1)+IQ·R2` | Regulador ajustável (VREG = 1,25 V) |
+| Buck/PWM | `VOUT = D·VIN` ; `D = ton/T` | Regulador chaveado |
+| Limitador de corrente | `I_Lmáx ≈ 0,7/RSC` | Proteção de curto (Q2) |
+| 555 astável | `T_ALTO=0,7(RA+RB)C` ; `T_BAIXO=0,7·RB·C` ; `f=1/T` | Oscilador contínuo |
+| 555 monoestável | `LP = 1,1·RA·C` | Um pulso por disparo |
+| Schmitt | `β = Rbaixo/(Rcima+Rbaixo)` ; `UTP = β·(+VCC)` ; `LTP = β·(−VEE)` | Histerese |
+| Tiristor (carga) | `I_pico = (V_pico − queda)/Rcarga` | Corrente após disparo |
+| UJT — parâmetros | `RB1=η·RBB` ; `VK=η·VCC` ; `VP=VK+0,7` | Tensão de disparo |
+| UJT — tempo de carga | `t1 = R1·C·ln[(VCC−VV)/(VCC−VP)]` | Carga **exponencial** (via R) |
+| DIAC (relaxação) | `t = RC·ln[VCC/(VCC−VBR)]` → `f = 1/t` | Carga por R até VBR |
+| Rampa linear | `dV/dt = I/C` ; `t = C·ΔV/I` | Base de tempo (fonte de corrente) |
 
 ## Tabela "quando conduz / corta / dispara"
 
 | Componente | Liga/conduz quando… | Desliga/corta quando… |
 |---|---|---|
-| Diodo | Diretamente polarizado | Reversamente polarizado |
-| SCR | Direto **+** pulso na porta | I < I_retenção |
-| DIAC | `\|V\| ≥ VBR` | I → 0 |
+| Diodo | Diretamente polarizado (≥ 0,7 V) | Reversamente polarizado |
+| Comparador | V+ > V− → sai +VCC | V+ < V− → sai −VEE |
+| SCR | Direto **+** pulso positivo na porta | I cai abaixo de I_retenção |
+| DIAC | `\|V\| ≥ VBR` (qualquer sentido) | I → 0 |
 | TRIAC | Pulso de porta (bidirecional) | Passagem por zero |
-| UJT | V_emissor = VP | V_emissor = VV |
-| Q2 (limitador) | `V_RSC ≈ 0,7 V` | Corrente normal |
+| UJT | V_emissor ≥ VP = η·VCC + 0,7 | V_emissor cai a VV |
+| Q2 (limitador de corrente) | `V_RSC ≥ 0,7 V` (IL alto) | Corrente normal (V_RSC < 0,7) |
+
+## Os erros mais cobrados na PP1
+
+1. **Usar a exponencial RC na rampa linear** — se há fonte de corrente, use `dV/dt = I/C`.
+2. **Esquecer o +0,7 V no VP do UJT** — VP = η·VCC **+ 0,7**, não só η·VCC.
+3. **Usar fórmula do monoestável no astável** — LP=1,1·RA·C é só do monoestável.
+4. **VO do regulador seguindo VI** — a saída é fixada pela referência (Zener/divisor).
+5. **Schmitt com um único limiar** — há sempre dois (UTP e LTP); a comutação ocorre **neles**, não em zero.
+6. **Tratar grampeador como limitador** — grampeador preserva a forma; limitador corta.
+7. **Descarregar o capacitor do UJT com RB1(OFF)** — use RB1(ON) (valor baixo).

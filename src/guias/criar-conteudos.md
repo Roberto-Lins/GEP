@@ -2,6 +2,25 @@ Guia operacional para transformar uma matéria bruta, com fontes, slides, provas
 
 O objetivo deste processo é evitar que a matéria vire um monte de blocos soltos. A lógica central é criar primeiro um **esqueleto coeso** da disciplina, depois popular cada tópico com resumos, questões, mídias, revisões e materiais prontos para o site.
 
+## 0. Como este guia se conecta ao assistente
+
+O fluxo completo é:
+
+1. **Você** lê este guia, usa os prompts nas ferramentas de IA (ChatGPT, NotebookLM) e produz os materiais.
+2. **Você** abre o assistente em **/adicionar-curso**, preenche os campos e cola o que produziu (linha do tempo, questões, links de mídias).
+3. O assistente gera um **arquivo `.zip`** com tudo organizado + um `PROMPT_CLAUDE.md` dinâmico.
+4. Você (ou o mantenedor) entrega o `.zip` ao **Claude Code**, que instala o curso na plataforma.
+
+**Formatos aceitos pelo assistente:**
+
+| Etapa no assistente | O que colar | Formatos aceitos |
+|---|---|---|
+| Linha do tempo | A lista de tópicos gerada pelo ChatGPT | Numerada (`1. Título`), markdown (`## Título`) ou chave-valor (`Título: X`) |
+| Exercícios | As questões geradas, agrupadas por dificuldade+tipo | Texto numerado, uma por bloco em branco, ou chave-valor (`Enunciado: X / Gabarito: Y`) |
+| Mídias | URLs de vídeos/áudios e arquivos ≤ 20 MB | Links diretos (YouTube, CDN) ou upload de arquivo |
+
+O assistente entende os dois formatos principais deste guia: o **numerado** (listas) e o **chave-valor** (modelo `Título:/Objetivo:/Pegadinhas:`).
+
 ## 1. Princípio geral do fluxo
 
 A produção de um curso deve seguir esta ordem:

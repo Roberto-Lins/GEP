@@ -9,6 +9,23 @@ secaoOrdem: 4
 | | SCR | DIAC | TRIAC |
 |---|---|---|---|
 | Porta | Sim | **Não** | Sim |
-| Sentidos | Um (unidirecional) | Dois | Dois (bidirecional) |
-| Liga por | Polariz. direta + pulso | `\|V\| ≥ VBR` | Pulso de porta |
-| Desliga | I < I_retenção | I → 0 | Passagem por zero |
+| Sentidos | Um (unidirecional) | **Dois (bidirecional)** | **Dois (bidirecional)** |
+| Liga por | Polariz. direta + pulso positivo na porta | `\|V\| ≥ VBR` (qualquer polaridade) | Pulso de porta (qualquer polaridade) |
+| Desliga | I < I_retenção | Corrente → 0 | Passagem por zero |
+| Queda em condução | ~1,5 V | ~1 V (breve) | ~1,5 V |
+| Uso típico | Retificador controlado CC | Oscilador de relaxação; disparar TRIAC | Controle de carga CA bidirecional |
+
+## O circuito DIAC + TRIAC (oscilador SOPA 2021)
+
+| Grandeza | Fórmula | Exemplo (slides/SOPA) |
+|---|---|---|
+| Período de carga até VBR | `t ≈ RC·ln[VCC/(VCC−VBR)]` | R=10kΩ, C=10nF, VBR=30V, VCC=50V → t ≈ 91,6 µs |
+| Frequência | `f = 1/t` | f ≈ 10,9 kHz |
+
+## Forma de onda: como reconhecer cada tiristor
+
+| Componente | Forma de saída | Onde ocorre |
+|---|---|---|
+| SCR (carga CC) | Conduz só no semiciclo positivo após disparo | CC pulsante com início controlado |
+| DIAC | Pulso estreito quando |V| ≥ VBR, em ambos os semiciclos | Disparador |
+| TRIAC (carga CA) | Conduz nos dois semiciclos após disparo | Controle de potência CA |

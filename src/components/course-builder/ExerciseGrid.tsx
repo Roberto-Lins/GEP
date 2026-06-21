@@ -10,13 +10,22 @@ interface Props {
 }
 
 export default function ExerciseGrid({ cursoSlug, questoes, onChangeCelula }: Props) {
-  const total = Object.values(questoes).reduce((acc, qs) => acc + qs.length, 0);
+  const countCell = (d: (typeof DIFICULDADES)[number], t: (typeof TIPOS_QUESTAO)[number]) =>
+    (questoes[cellKey(d, t)] ?? []).length;
+
+  const totalPorDif = (d: (typeof DIFICULDADES)[number]) =>
+    TIPOS_QUESTAO.reduce((s, t) => s + countCell(d, t), 0);
+
+  const totalPorTipo = (t: (typeof TIPOS_QUESTAO)[number]) =>
+    DIFICULDADES.reduce((s, d) => s + countCell(d, t), 0);
+
+  const total = DIFICULDADES.reduce((s, d) => s + totalPorDif(d), 0);
 
   return (
     <div className="space-y-4">
       <p className="text-sm text-nevoa/75">
-        Envie um arquivo <strong className="text-marfim">.md / .txt</strong> por célula. O assistente conta as
-        questões; a estruturação fina é feita na instalação.
+        Envie um arquivo <strong className="text-marfim">.md / .txt</strong> ou cole o texto em cada célula.
+        O assistente conta as questões; a estruturação fina é feita na instalação.
       </p>
 
       <div className="overflow-x-auto">
@@ -29,6 +38,7 @@ export default function ExerciseGrid({ cursoSlug, questoes, onChangeCelula }: Pr
                   {TIPO_QUESTAO_LABELS[t]}
                 </th>
               ))}
+              <th className="px-2 py-1 text-center text-xs font-medium text-nevoa/50">Total</th>
             </tr>
           </thead>
           <tbody>
@@ -51,15 +61,24 @@ export default function ExerciseGrid({ cursoSlug, questoes, onChangeCelula }: Pr
                     </td>
                   );
                 })}
+                <td className="px-2 py-1 text-center align-middle text-sm font-semibold text-marfim">
+                  {totalPorDif(d) || '—'}
+                </td>
               </tr>
             ))}
+            {/* Linha de totais por tipo */}
+            <tr>
+              <th className="px-2 py-1 text-left text-xs font-medium text-nevoa/50">Total</th>
+              {TIPOS_QUESTAO.map((t) => (
+                <td key={t} className="px-2 py-1 text-center text-sm font-semibold text-marfim">
+                  {totalPorTipo(t) || '—'}
+                </td>
+              ))}
+              <td className="px-2 py-1 text-center text-sm font-bold text-dourado">{total || '—'}</td>
+            </tr>
           </tbody>
         </table>
       </div>
-
-      <p className="text-sm text-nevoa/70">
-        Total de questões: <strong className="text-marfim">{total}</strong>
-      </p>
     </div>
   );
 }

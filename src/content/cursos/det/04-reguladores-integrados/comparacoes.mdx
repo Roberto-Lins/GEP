@@ -9,5 +9,30 @@ secaoOrdem: 4
 | | 78xx (fixo) | LM317 (ajustável) |
 |---|---|---|
 | VO | No código (5 V, 12 V…) | `VREG·(1+R2/R1)+IQ·R2` |
-| Terminais | Entrada, saída, terra | Entrada, saída, ajuste |
-| Cuidado | VImín e Imáx | Termo `IQ·R2` |
+| Terminais | Entrada, saída, terra | **Entrada, saída, ajuste (ADJ)** |
+| Referência interna | VZ interna | **VREG ≈ 1,25 V** (entre OUT e ADJ) |
+| Cuidado | VImín e Imáx | Término `IQ·R2` e posição de R1/R2 |
+
+## Família 78xx: decodificando o número
+
+| CI | VO | VI mínima típica | Uso comum |
+|---|---|---|---|
+| 7805 | **5 V** | ~7 V | Lógica TTL |
+| 7812 | **12 V** | ~14 V | Circuitos analógicos |
+| 7815 | **15 V** | ~17 V | Amp-op com rail único |
+
+## Regulador linear × chaveado (comparação macro)
+
+| | Linear (78xx / LM317) | Chaveado (buck/PWM) |
+|---|---|---|
+| Eficiência | Baixa — dissipa `(VI−VO)·IL` | Alta (~80–95%) |
+| Calor | Transistor esquenta | Chave mal dissipa |
+| Regulação | Contínua (tensão estável) | Via duty cycle (D = VOUT/VIN) |
+| Complexidade | Simples | Maior (indutor, diodo, controle) |
+
+## LM317: identificando R1 e R2 no circuito
+
+| Resistor | Posição | Papel |
+|---|---|---|
+| **R1** | Entre OUT e ADJ (superior) | Define a corrente de referência VREG/R1 |
+| **R2** | Entre ADJ e GND (inferior) | Multiplica a tensão; mais R2 → mais VO |

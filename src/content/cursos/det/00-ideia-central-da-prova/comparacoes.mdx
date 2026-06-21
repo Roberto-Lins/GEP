@@ -14,3 +14,18 @@ secaoOrdem: 4
 | Comparadores / 555 / Schmitt | Saída saturada / pulsos / histerese | Forma de onda, T, f, LP, UTP/LTP |
 | Tiristores / UJT | Chaves disparadas | Forma de onda de IL, frequência |
 | Base de tempo | Rampa linear | Inclinação, tempo, período |
+
+## Reconheça pelo circuito
+
+| Família | Componente-chave | Sinal de saída | Pegadinha mais comum |
+|---|---|---|---|
+| Fontes reguladas | Zener / CI 78XX / LM317 / transistor série | CC estável | Confundir VO com VI; esquecer IQ no LM317 |
+| Limitadores | Diodo **sem capacitor em série** | Onda com platô | Diodo com fonte DC muda o nível de corte |
+| Grampeadores | Capacitor **em série** com diodo | Onda deslocada (mesma forma) | Confundir deslocamento com deformação |
+| Comparadores | Amp-op sem realimentação | Onda quadrada (±VCC) | Inversor × não-inversor; ganho infinito ≠ linear |
+| 555 astável | RA, RB, C e CI 555 com pino 7 visível | Onda retangular contínua | Confundir T_ALTO (RA+RB) com T_BAIXO (só RB) |
+| Schmitt-trigger | Realimentação **positiva** (R de VO para V+) | Onda quadrada com histerese | Usar um limiar só; calcular limiares sem atualizar VO |
+| SCR | Porta (G) e dois thyristors internos | Pulso no semiciclo positivo | Desliga quando I cai a zero (não pelo pulso da porta) |
+| DIAC | Dois terminais, sem porta | Dispara nos dois sentidos acima de VBR | Confundir VBR com VCC |
+| TRIAC | Porta e condução bidirecional | Controla AC nos dois semiciclos | Diferença de disparo em MT1/MT2 e MT2/MT1 |
+| UJT / Base de tempo | UJT + resistor (ou fonte PNP) e C | Dente-de-serra (rampa) | Carga exponencial (R) × linear (fonte de corrente) |

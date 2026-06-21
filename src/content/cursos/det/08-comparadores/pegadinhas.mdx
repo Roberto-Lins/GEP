@@ -11,3 +11,15 @@ Em malha aberta o amp-op **não** amplifica proporcionalmente — ele satura. A 
 <BlocoPegadinha titulo="Trocar V+ e V−">
 Inverter as entradas inverte **toda** a resposta. Confira com cuidado qual sinal entra em cada terminal.
 </BlocoPegadinha>
+
+<BlocoPegadinha titulo="Confundir comparador com Schmitt">
+O comparador comum tem **um único limiar** (a referência). O Schmitt tem **dois** (UTP e LTP). Em
+provas, veja se há realimentação positiva no circuito: se não houver, é comparador comum — uma
+referência fixa, sem memória.
+</BlocoPegadinha>
+
+<BlocoPegadinha titulo="Saída na zona intermediária">
+A saída de um comparador nunca fica em nível intermediário: ela vai para `+VCC` ou `−VEE` sem escala
+gradual. Se a questão pede "quanto é a saída quando V+ = V−", a resposta é: **transição instantânea**
+entre os dois extremos — não existe valor médio.
+</BlocoPegadinha>

@@ -72,7 +72,9 @@ export default function QuestaoDiscursiva({ questao, indice, onResponder }: Prop
       </div>
 
       {questao.imagem && (
-        <img src={questao.imagem} alt="Circuito do enunciado" loading="lazy" className="mb-4 block w-full max-w-lg rounded-lg" />
+        <a href={questao.imagem} target="_blank" rel="noopener noreferrer" className="mb-4 block w-full max-w-2xl" title="Abrir o circuito em tela cheia">
+          <img src={questao.imagem} alt="Circuito do enunciado" loading="lazy" className="block w-full rounded-lg ring-1 ring-white/10 transition hover:ring-dourado/40" />
+        </a>
       )}
 
       <textarea

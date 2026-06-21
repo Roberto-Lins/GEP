@@ -4,8 +4,9 @@ secao: "resumo"
 secaoOrdem: 3
 ---
 
-- Transistor como **chave** (corte/saturação) → alta eficiência.
+- Transistor como **chave** (corte/saturação) → alta eficiência: V ≈ 0 ou I ≈ 0 quase sempre.
 - `D = ton/T`; buck ideal: `VOUT = D·VIN`.
-- Frequência constante; varia o **ton**.
+- Frequência constante; varia o **ton** para regular.
 - Realimentação: `VFB ≈ VREF`; `VFB = VOUT·Rbaixo/(Rcima+Rbaixo)`.
-- VOUT sobe → duty cai; VOUT cai → duty sobe.
+- VOUT sobe → VFB sobe → duty cai; VOUT cai → duty sobe.
+- Exemplo (slide): VIN=20 V, VREF=4 V, Rbaixo=8kΩ, Rcima=24kΩ → **VOUT=16 V, D=0,8**.

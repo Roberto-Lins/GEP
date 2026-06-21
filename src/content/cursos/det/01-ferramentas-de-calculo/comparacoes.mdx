@@ -19,3 +19,23 @@ secaoOrdem: 4
 | V e I | `P = V·I` |
 | I e R | `P = I²·R` |
 | V e R | `P = V²/R` |
+
+## Modelo equivalente por estado do componente
+
+| Componente | Estado | Substitua por | Tensão entre terminais |
+|---|---|---|---|
+| Diodo | Conduzindo | Fonte de 0,7 V | `VAK = 0,7 V` |
+| Diodo | Cortado | Circuito aberto | Depende do circuito externo |
+| NPN | Saturação | Curto C–E + fonte BE 0,7 V | `VCE ≈ 0 V`, `VBE = 0,7 V` |
+| NPN | Corte | Aberto C–E | `VCE = VCC` (sem corrente) |
+| PNP | Saturação | Curto E–C + fonte EB 0,7 V | `VEC ≈ 0 V`, `VEB = 0,7 V` |
+| Zener (reverso) | Conduzindo | Fonte de `VZ` | `VA − VB = VZ` |
+| Capacitor (CC) | Carregado | Circuito aberto | `V` = tensão armazenada |
+
+## Decisão: fórmula de carga RC correta
+
+| Situação | Fórmula | Tempo no limiar VP |
+|---|---|---|
+| Carga via **resistor** (exponencial) | `v(t) = V∞ − (V∞ − V0)·e^(−t/RC)` | `t = RC·ln[(V∞ − V0)/(V∞ − VP)]` |
+| Carga via **fonte de corrente** (linear) | `v(t) = V0 + (I/C)·t` | `t = C·(VP − V0)/I` |
+| Valor em t = τ = RC | `v(τ) ≈ 0,632·(V∞ − V0)` | — |
