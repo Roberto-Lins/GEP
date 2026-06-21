@@ -641,6 +641,19 @@ export const discursivas: QuestaoDiscursiva[] = [
     fonte: 'SOPA PP1 2021 — questão de Schmitt (gabarito oficial)',
     armadilha: 'Assumir limiares simétricos (UTP = −LTP): Zener/diodos os tornam assimétricos.',
   },
+  {
+    id: 'dis-13-01', tipo: 'discursiva', topico: '13-geradores-base-de-tempo', dificuldade: 'dificil',
+    enunciado: 'Base de tempo com UJT: VCC = 12 V, divisor de base 8,1 kΩ/18 kΩ, resistor de emissor 6 kΩ (fonte de corrente PNP), UJT com η = 0,8 e VV = 0,8 V. Determine o capacitor C para frequência de 5 kHz.',
+    gabaritoComentado:
+      '1) Corrente da fonte: Vb = 12·18k/(8,1k+18k) = 8,3 V → Ve = 8,3 + 0,7 = 9 V → I = (12 − 9)/6k = 0,5 mA.\n2) Níveis: VP = 0,7 + η·VCC = 0,7 + 0,8·12 = 10,3 V; ΔV = VP − VV = 10,3 − 0,8 = 9,5 V.\n3) Carga linear (fonte de corrente): I/C = ΔV/T, com T = 1/f = 1/5000 = 0,2 ms.\n4) C = I·T/ΔV = (0,5×10⁻³ · 0,2×10⁻³)/9,5 = 1,05×10⁻⁸ F.\n\nResposta oficial: C = 10,5 nF.',
+    criterios: [
+      'Achou I = 0,5 mA pela fonte de corrente.',
+      'VP = 10,3 V (= η·VCC + 0,7).',
+      'Aplicou dV/dt = I/C e chegou a C = 10,5 nF.',
+    ],
+    fonte: 'SOPA PP1 2021 — 3ª questão (gabarito oficial)',
+    armadilha: 'Usar exponencial RC; aqui a carga é por fonte de corrente (rampa linear).',
+  },
 ];
 
 export const todasQuestoes: Questao[] = [
