@@ -654,6 +654,43 @@ export const discursivas: QuestaoDiscursiva[] = [
     fonte: 'SOPA PP1 2021 — 3ª questão (gabarito oficial)',
     armadilha: 'Usar exponencial RC; aqui a carga é por fonte de corrente (rampa linear).',
   },
+  {
+    id: 'dis-03-02', tipo: 'discursiva', topico: '03-reguladores-com-transistor', dificuldade: 'dificil',
+    enunciado: 'Regulador série com proteção de corrente: resistor sensor RSC = 0,35 Ω; referência Zener (VZ = 1,8 V) com divisor 18 kΩ/18 kΩ. Determine (a) a corrente de curto-circuito; (b) Vo para VI = 17 V; (c) Vo para VI = 12 V.',
+    gabaritoComentado:
+      '(a) O transistor de proteção liga quando a queda em RSC chega a ≈ 0,7 V: I_curto = 0,7/RSC = 0,7/0,35 = 2 A.\n(b) Vo é fixada pela referência (não pela entrada): Vo = (VZ + VBE)·(18k+18k)/18k = (1,8 + 0,7)·2 = 2,5·2 = 5 V.\n(c) Com VI = 12 V (ainda suficiente para o regulador operar), Vo permanece = 5 V.\n\nGabarito oficial: a) 2 A; b) 5 V; c) 5 V.',
+    criterios: [
+      'I_curto = 0,7/RSC = 2 A.',
+      'Vo = 5 V pela referência (Zener + divisor).',
+      'Vo não muda quando VI cai de 17 V para 12 V.',
+    ],
+    fonte: 'SOPA PP1 2021 — questão de regulador com limitador (gabarito oficial)',
+    armadilha: 'Achar que Vo cai quando VI cai — o regulador mantém Vo constante.',
+  },
+  {
+    id: 'dis-06-02', tipo: 'discursiva', topico: '06-limitadores', dificuldade: 'medio',
+    enunciado: 'Limitador ativo: amp-op (±15 V) com diodo e referência de 4 V; entrada triangular de ±2 V. Determine os valores máximo e mínimo da saída Vo.',
+    gabaritoComentado:
+      'A combinação amp-op + diodo + referência ceifa a saída em dois níveis: o máximo é fixado pela referência (+4 V) e o mínimo pela condução do diodo (≈ −0,7 V). A saída alterna entre esses dois patamares conforme a entrada.\n\nGabarito oficial: Vo varia entre +4 V (máximo) e −0,7 V (mínimo).',
+    criterios: [
+      'Máximo = +4 V (fixado pela referência).',
+      'Mínimo = −0,7 V (queda do diodo).',
+      'Saída ceifada (patamares), não proporcional.',
+    ],
+    fonte: 'SOPA PP1 2021 — questão de limitador ativo (gabarito oficial)',
+  },
+  {
+    id: 'dis-09-02', tipo: 'discursiva', topico: '09-multivibradores-555', dificuldade: 'medio',
+    enunciado: 'Dois CI 555: o primeiro em monoestável e o segundo em astável, com a saída do monoestável habilitando o astável. Explique o comportamento da saída e em que intervalo o astável oscila.',
+    gabaritoComentado:
+      'O 555 monoestável gera, após o disparo, um pulso de largura LP = 1,1·R·C. Enquanto esse pulso está ativo, ele habilita o 555 astável (pelo pino RESET), que então oscila e gera a onda retangular; fora desse intervalo o astável fica desabilitado (saída em repouso).\n\nNa SOPA, o pulso do monoestável habilita o astável na janela de ≈ 2 s a 7 s — só nesse intervalo aparece a oscilação na saída.\n\nIdeia: monoestável = "janela de tempo"; astável = oscilador habilitado dentro dela.',
+    criterios: [
+      'Monoestável define a janela (LP = 1,1·R·C).',
+      'Astável só oscila enquanto habilitado.',
+      'Fora da janela, saída em repouso.',
+    ],
+    fonte: 'SOPA PP1 2021 — 1ª questão (gabarito oficial)',
+  },
 ];
 
 export const todasQuestoes: Questao[] = [

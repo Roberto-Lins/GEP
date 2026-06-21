@@ -54,6 +54,37 @@ Você recebe `RA`, `RB` e `C` e entrega `T_ALTO`, `T_BAIXO`, `T` e `f` sem trava
 saída quanto a tensão no capacitor.
 </BlocoConceito>
 
+## Exemplo resolvido — dois 555 (monoestável habilita astável) (SOPA 2021)
+
+### Enunciado
+Dois CI 555: o primeiro em **monoestável** e o segundo em **astável**, com a saída do monoestável
+**habilitando** o astável. Descreva o comportamento da saída e o intervalo em que o astável oscila.
+
+### O que a questão pede?
+Entender a **interação** entre os dois 555 — quando o oscilador (astável) está ligado.
+
+### Ideia central
+O **monoestável** cria uma **janela de tempo** (um pulso de largura `LP = 1,1·R·C`). O **astável** é um
+oscilador que só funciona enquanto está **habilitado** (pelo pino RESET). Ligando a saída do monoestável
+ao RESET do astável, o astável **só oscila durante o pulso do monoestável**.
+
+### Passo a passo
+1. Disparado em `t = 0`, o monoestável fica em nível alto por `LP = 1,1·R·C`.
+2. Esse nível alto **habilita** o astável (tira o RESET).
+3. Durante a janela, o astável oscila com `T = T_ALTO + T_BAIXO` (suas próprias fórmulas).
+4. Terminado o pulso do monoestável, o astável é **desabilitado** → saída em repouso.
+
+### Resposta
+A saída do astável aparece como uma rajada de pulsos **apenas dentro da janela do monoestável** — na
+SOPA, aproximadamente de **2 s a 7 s** (gabarito oficial).
+
+### Pegadinha da questão
+O astável **não oscila o tempo todo**: ele depende da habilitação do monoestável. Calcule a janela pelo
+monoestável (`1,1·R·C`) e a frequência interna pelo astável (`0,7…`).
+
+### Como reconhecer na prova
+Dois 555 em cascata, saída de um no RESET do outro = **um define a janela, o outro oscila dentro dela**.
+
 ## Para onde vamos
 
 Note como tudo aqui gira em torno de **comparar a tensão do capacitor com limiares**. No próximo tópico,

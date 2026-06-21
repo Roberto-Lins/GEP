@@ -73,6 +73,46 @@ carga (série) ou **desviando** corrente da carga (paralelo)?* — e lembra que,
 fica fixa pela referência**, não pela entrada.
 </BlocoConceito>
 
+## Exemplo resolvido — regulador com proteção de corrente (SOPA 2021)
+
+### Enunciado
+Regulador série com **proteção de corrente**: resistor sensor `RSC = 0,35 Ω`, referência Zener
+`VZ = 1,8 V` e divisor `18 kΩ / 18 kΩ`. Determine (a) a corrente de curto-circuito; (b) `Vo` para
+`VI = 17 V`; (c) `Vo` para `VI = 12 V`.
+
+### Circuito
+A topologia é o **regulador série** (transistor no caminho da carga) com o bloco de **limitador de
+corrente** acoplado: o resistor sensor `RSC` em série e o transistor de proteção `Q2` medindo a queda
+sobre ele (ver o diagrama série da seção anterior; aqui acrescenta-se `RSC` no caminho da carga e `Q2`
+sensoriando `RSC`).
+
+### O que a questão pede?
+A corrente de curto e a tensão de saída em duas entradas — testando se você sabe que **Vo é fixado pela
+referência**, não pela entrada.
+
+### Dados
+- `RSC = 0,35 Ω` · `VZ = 1,8 V` · divisor `18 kΩ / 18 kΩ` · `VI = 17 V` e `12 V`.
+
+### Passo 1 — corrente de curto (limitador)
+`Q2` liga quando a queda em `RSC` chega a ≈ 0,7 V → `I_curto = 0,7 / RSC = 0,7 / 0,35 = `**`2 A`**.
+
+### Passo 2 — tensão de saída (referência)
+`Vo = (VZ + VBE)·(18k + 18k)/18k = (1,8 + 0,7)·2 = 2,5 · 2 = `**`5 V`**.
+
+### Passo 3 — variar a entrada
+Com `VI = 12 V` (ainda suficiente para o regulador operar), `Vo` **permanece em 5 V**.
+
+### Resposta
+**a) I_curto = 2 A · b) Vo = 5 V · c) Vo = 5 V** (gabarito oficial, SOPA PP1 2021).
+
+### Pegadinha da questão
+`Vo` **não cai** quando `VI` cai de 17 V para 12 V — o regulador segura a saída. E `I_curto` depende só
+de `RSC` (0,7/RSC), não da carga.
+
+### Como reconhecer na prova
+Viu `RSC` em série + um transistor sensoriando-o? É **limitador de corrente** → `I_curto ≈ 0,7/RSC`. A
+saída vem da **referência** (Zener + divisor).
+
 ## Para onde vamos
 
 A mesma regulação, agora **encapsulada** num circuito integrado de três terminais (7805, 7812, LM317),
