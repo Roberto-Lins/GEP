@@ -47,12 +47,14 @@ A revisão final usa `mapa-da-prova/resumo-geral/erros-frequentes/revisao-de-ves
 
 ## Mídia (local — `origem: local`)
 
-- 8 áudios por tópico em `public/podcasts/ing4/NN-<slug>.m4a` (~90 MB no total).
-- Vídeo geral em `public/videos/ing4/revisao-geral.mp4` (~102 MB), no Tópico 00.
+- 8 áudios por tópico em `public/podcasts/ing4/NN-<slug>.m4a` (~90 MB no total, `origem: local`).
+- **Vídeo geral no YouTube (não listado):** `https://youtu.be/5JXNdweAhRg` (`origem: youtube`),
+  embutido no Tópico 00 via `PlayerVideo.astro` (iframe `youtube-nocookie`). O `.mp4` local foi
+  removido do git (excedia o limite do GitHub) e está em `.gitignore`.
 - Ícone/capa SVG em `public/imagens/cursos/ing4/`.
 - Fontes leves (PDF) em `public/arquivos/cursos/ing4/`. O *Student Book* (~48 MB) é referenciado, não
   versionado.
-- **Pendência:** mídia pesada (~190 MB) está versionada localmente; externalizar para
+- **Pendência:** os ~90 MB de áudio ainda estão versionados localmente; externalizar para
   YouTube/CDN ao escalar (ver `docs/MEDIA-PROTOCOL.md`; `npm run audit-media`).
 
 ## Área de Writing e ferramenta de auxílio à escrita

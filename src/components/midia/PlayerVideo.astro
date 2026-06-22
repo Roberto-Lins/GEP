@@ -2,12 +2,28 @@
 import type { Midia } from '@data/cursos/gep/midias';
 interface Props { midia: Midia }
 const { midia } = Astro.props;
+
+// YouTube (ex.: vídeo não listado): embute via iframe em vez de <video>.
+const ehYoutube = midia.origem === 'youtube';
+const youtubeId = (src: string) => src.match(/(?:youtu\.be\/|v=|embed\/)([\w-]{11})/)?.[1] ?? src;
+const ytId = ehYoutube ? youtubeId(midia.src) : '';
+
 const ext = midia.src.split('.').pop()?.toLowerCase();
 const mime = ext === 'webm' ? 'video/webm' : ext === 'mkv' ? 'video/x-matroska' : 'video/mp4';
 const suportado = ext !== 'mkv';
 ---
 <figure class="card overflow-hidden">
-  {suportado ? (
+  {ehYoutube ? (
+    <iframe
+      class="aspect-video w-full bg-black"
+      src={`https://www.youtube-nocookie.com/embed/${ytId}`}
+      title={midia.titulo}
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+  ) : suportado ? (
     <video controls preload="metadata" class="aspect-video w-full bg-black" poster={midia.thumb}>
       <source src={midia.src} type={mime} />
       Seu navegador não suporta vídeo.

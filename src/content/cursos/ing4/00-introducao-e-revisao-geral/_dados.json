@@ -11,9 +11,9 @@
     {
       "tipo": "video",
       "titulo": "Revisão geral da PP1 de Inglês",
-      "fonte": "Professora ING-4",
-      "src": "/videos/ing4/revisao-geral.mp4",
-      "origem": "local",
+      "fonte": "YouTube (não listado)",
+      "src": "https://youtu.be/5JXNdweAhRg",
+      "origem": "youtube",
       "descricao": "Vídeo-panorama de toda a matéria da PP1: grammar, vocabulary e writing."
     }
   ]

@@ -278,9 +278,9 @@ Mídia atual ainda em `public/.../cursos/<slug>/` (a externalizar no futuro).
 
 ## Lacunas / pendências conhecidas
 
-- **Mídia pesada** ainda versionada (~648 MB de GEP+HNV + ~190 MB de ING-4 — 8 áudios e o vídeo geral
-  de 102 MB) em `public/` — externalizar p/ CDN/YouTube quando houver links;
-  `npm run audit-media` aponta os arquivos.
+- **Mídia pesada** ainda versionada (~648 MB de GEP+HNV + ~90 MB de ING-4 — 8 áudios) em `public/` —
+  externalizar p/ CDN/YouTube quando houver links; `npm run audit-media` aponta os arquivos.
+  (O vídeo geral do ING-4 já está no YouTube não-listado; `PlayerVideo.astro` suporta `origem: youtube`.)
 - **Revisão final** do GEP montada a partir do banco — revisar se reflete a prova real.
 - `_dados.json` por matéria começam mínimos (metadados) — enriquecer conforme necessário.
 - Hierarquia: só há cursos de **4° ano**; 1°/2°/3° aparecem vazios ("Nada adicionado ainda") até

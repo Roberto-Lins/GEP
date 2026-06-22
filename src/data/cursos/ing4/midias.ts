@@ -1,10 +1,10 @@
 // Mídias do curso ING-4, por `topico` (slug). A página da mini-matéria renderiza
 // via midiasPorTopico; o vídeo geral aparece no Tópico 00.
 //
-// Áudios e vídeo estão versionados localmente em public/ (origem 'local').
-// NOTA (docs/MEDIA-PROTOCOL.md): são arquivos pesados (~90 MB de áudio + 102 MB de
-// vídeo). O ideal, ao escalar, é externalizá-los (YouTube não-listado / R2 / Bunny)
-// e trocar `origem`/`src`. Por ora ficam locais para funcionarem de imediato.
+// O vídeo geral está no YouTube (não listado), origem 'youtube'. Os 8 áudios ainda
+// estão versionados localmente em public/podcasts/ing4/ (origem 'local', ~90 MB).
+// NOTA (docs/MEDIA-PROTOCOL.md): ao escalar, externalizar também os áudios
+// (YouTube / R2 / Bunny) e trocar `origem`/`src`.
 import type { Midia } from '@tipos/media';
 export type { Midia } from '@tipos/media';
 
@@ -14,9 +14,9 @@ export const midias: Midia[] = [
     tipo: 'video',
     topico: '00-introducao-e-revisao-geral',
     titulo: 'Revisão geral da PP1 de Inglês',
-    fonte: 'Professora ING-4',
-    src: '/videos/ing4/revisao-geral.mp4',
-    origem: 'local',
+    fonte: 'YouTube (não listado)',
+    src: 'https://youtu.be/5JXNdweAhRg',
+    origem: 'youtube',
     descricao: 'Vídeo-panorama de toda a matéria da PP1: grammar, vocabulary e writing em uma única revisão.',
   },
 
