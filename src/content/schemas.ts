@@ -12,6 +12,9 @@ export const featuresSchema = z.object({
   animacoesTransicao: z.boolean(),
   modoRevisaoVespera: z.boolean(),
   graficoProgressoAvancado: z.boolean(),
+  // Aba "Writing" + ferramenta de auxílio à escrita (ex.: ING-4). Aditivo e
+  // retrocompatível: cursos sem o campo recebem `false`.
+  writing: z.boolean().default(false),
 });
 
 export const cursoConfigSchema = z.object({

@@ -1,0 +1,128 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import PageContainer from '@components/layout/PageContainer.astro';
+import BlocoConceito from '@components/estudo/BlocoConceito.astro';
+import BlocoComparacao from '@components/estudo/BlocoComparacao.astro';
+import BlocoPegadinha from '@components/estudo/BlocoPegadinha.astro';
+import WritingAnalyzer from '@components/cursos/ing4/WritingAnalyzer.tsx';
+import { listarCursos, cursoPorSlug } from '@utils/courses';
+
+// Só cursos com features.writing geram esta rota (hoje: ING-4).
+export async function getStaticPaths() {
+  return listarCursos()
+    .filter((c) => c.features.writing)
+    .map((c) => ({ params: { curso: c.slug } }));
+}
+
+const { curso } = Astro.params;
+const config = cursoPorSlug(curso!)!;
+---
+<BaseLayout titulo="Writing — Expressing Your Opinion" curso={curso}>
+  <PageContainer
+    kicker="Writing"
+    titulo="Writing — Expressing Your Opinion"
+    subtitulo="Como escrever uma redação de opinião nota 10 na PP1 — e uma ferramenta que analisa o seu texto."
+  />
+
+  <div class="prosa max-w-none">
+    <h2>1. Como apresentar a sua opinião</h2>
+    <p>
+      Comece declarando sua posição com clareza, logo no primeiro parágrafo. Escolha <strong>um
+      lado</strong> e mantenha-o até o fim — não fique “em cima do muro”.
+    </p>
+    <BlocoConceito titulo="Expressões para dar opinião">
+      <em>In my opinion…</em> · <em>I believe that…</em> · <em>Personally, I think…</em> ·
+      <em>From my point of view…</em> · <em>It seems to me that…</em>
+    </BlocoConceito>
+
+    <h2>2. Como desenvolver argumentos</h2>
+    <p>
+      Cada parágrafo de desenvolvimento deve focar em <strong>uma única razão</strong>, seguindo a
+      lógica <strong>Reason → Explanation → Example</strong>: apresente o argumento, explique por que
+      ele importa e ilustre com um exemplo concreto.
+    </p>
+
+    <h2>3. Como concordar e discordar</h2>
+    <BlocoComparacao
+      titulo="Agreeing &amp; disagreeing"
+      colunas={["Concordar", "Discordar (com educação)"]}
+      linhas={[
+        ["I completely agree that…", "I’m afraid I disagree…"],
+        ["That’s a good point.", "I see your point, but…"],
+        ["I couldn’t agree more.", "On the other hand, …"],
+        ["Exactly / Absolutely.", "I’m not sure I agree because…"],
+      ]}
+    />
+
+    <h2>4. Conectores por função</h2>
+    <BlocoComparacao
+      colunas={["Função", "Expressões"]}
+      linhas={[
+        ["Opinião", "Personally · I think · I believe that · In my opinion"],
+        ["Adição", "First of all · In addition · Furthermore · Also"],
+        ["Exemplo", "For example · For instance · Such as"],
+        ["Contraste", "However · Although · Even though · On the other hand"],
+        ["Propósito", "in order to · so as to · so that"],
+        ["Conclusão", "In conclusion · To sum up · Overall"],
+      ]}
+    />
+
+    <h2>5. Introdução, desenvolvimento e conclusão</h2>
+    <ul>
+      <li><strong>Introdução:</strong> contexto do tema + sua opinião (tese).</li>
+      <li><strong>Desenvolvimento:</strong> 2–3 parágrafos, um argumento cada, com explicação e exemplo.</li>
+      <li><strong>Conclusão:</strong> resuma e reafirme a posição — <strong>sem introduzir ideia nova</strong>.</li>
+    </ul>
+
+    <h2>6. Evitar repetições e melhorar a clareza</h2>
+    <p>
+      Varie o vocabulário (use sinônimos e pronomes), prefira frases mais curtas a períodos
+      enormes, e conecte as ideias com os conectores acima. Releia eliminando palavras repetidas e
+      frases confusas.
+    </p>
+
+    <h2>7. Erros gramaticais frequentes</h2>
+    <BlocoPegadinha titulo="Os campeões de erro na redação">
+      <ul>
+        <li><em>despite of</em> → <strong>despite</strong> (sem “of”) ou <strong>in spite of</strong>.</li>
+        <li><em>cars is bad</em> → concordância: <strong>cars are bad</strong>.</li>
+        <li><em>although … but …</em> → use apenas um conector de contraste.</li>
+        <li>Conectores fracos demais (<em>but, because</em>) → use <em>However, Furthermore, In addition</em>.</li>
+        <li>Tese confusa (“concordo em partes”) → escolha um lado.</li>
+      </ul>
+    </BlocoPegadinha>
+
+    <h2>8. Modelo comentado</h2>
+    <blockquote>
+      <p><strong>(Intro)</strong> Nowadays, traffic in city centers is becoming a major problem.
+      <strong>In my opinion</strong>, banning cars from these areas is an excellent idea
+      <strong>so that</strong> people can live in a cleaner environment.</p>
+      <p><strong>(Argument 1)</strong> <strong>First of all</strong>, removing cars improves public
+      health. <strong>Although</strong> many people enjoy their vehicles, cars emit toxic gases.
+      <strong>For example</strong>, in cities where cars were restricted, respiratory diseases have
+      decreased.</p>
+      <p><strong>(Conclusion)</strong> <strong>To sum up</strong>, banning cars makes cities
+      healthier. We should prioritize people over vehicles <strong>in order to</strong> create better
+      urban spaces.</p>
+    </blockquote>
+    <p>
+      Repare: tese clara na introdução, um conector de adição por parágrafo, razão + exemplo,
+      gramática integrada (<em>Although, so that, in order to</em>) e conclusão que resume sem trazer
+      tema novo.
+    </p>
+  </div>
+
+  <!-- Ferramenta de auxílio à escrita -->
+  <section class="mt-12 rounded-3xl border border-white/10 bg-naval-800/40 p-6 sm:p-8">
+    <div class="mb-5">
+      <p class="mb-1 inline-flex items-center gap-2 rounded-full border border-dourado/30 bg-dourado/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] text-dourado">Ferramenta</p>
+      <h2 class="text-2xl font-bold text-marfim">Analise a sua redação</h2>
+      <p class="mt-2 max-w-2xl text-nevoa/75">
+        Cole ou escreva o seu texto em inglês e receba uma análise pedagógica: ortografia, escolha de
+        palavras, concordância, conectores, repetição, clareza e estrutura argumentativa — com
+        explicações e uma versão revisada básica.
+      </p>
+    </div>
+    <WritingAnalyzer client:load />
+  </section>
+</BaseLayout>

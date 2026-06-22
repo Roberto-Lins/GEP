@@ -1,0 +1,20 @@
+{
+  "ordem": 7,
+  "slug": "07-expressing-your-opinion",
+  "titulo": "Expressing Your Opinion",
+  "prioridade": "muito alta",
+  "subtitulo": "Redação de opinião: introdução, argumentos, exemplos e conclusão",
+  "tempoEstimado": "35 min",
+  "objetivo": "Escrever uma redação argumentativa curta e organizada, apresentando opinião, desenvolvendo razões com exemplos e concluindo, usando os conectores adequados.",
+  "palavrasChave": ["writing", "opinion essay", "connectors", "In my opinion", "For example", "However", "In conclusion"],
+  "midias": [
+    {
+      "tipo": "podcast",
+      "titulo": "Additive logic versus contrast in persuasion",
+      "fonte": "NotebookLM",
+      "src": "/podcasts/ing4/07-expressing-your-opinion.m4a",
+      "origem": "local",
+      "descricao": "Como encadear argumentos (adição) e contrastes ao defender uma opinião por escrito."
+    }
+  ]
+}

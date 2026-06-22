@@ -8,9 +8,11 @@ Plataforma **multi-curso** 100% estática, estilo "campus de estudos". O aluno e
 dentro dele, segue uma **trilha sequencial** (timeline) de mini-matérias que dá sensação de
 progressão contínua.
 
-Hoje existem **2 cursos reais**, ambos com o tema visual *naval-command*:
+Hoje existem **4 cursos reais**, todos com o tema visual *naval-command*:
 - **GEP** (Gestão Pública — P1): `ano 4 · semestre 1 · época P1 · turma geral`.
 - **HNV** (História Naval): `ano 4 · semestre 1 · época P1 · turma geral`.
+- **DET** (Detecção — PP1): `ano 4 · semestre 1 · época P1 · turma CA-HE`.
+- **ING-4** (Inglês — PP1): `ano 4 · semestre 1 · época P1 · turma geral`.
 
 `turma: "geral"` = matéria comum a todas as turmas do ano (mas, na navegação, aparece **só** em
 GERAL, não dentro das turmas especializadas). Outros cursos citados nesta documentação (ex.:
@@ -150,7 +152,8 @@ A plataforma descobre os cursos lendo todos os `_config.json` (via `listarCursos
   "animacoesHero": true,        // animação na home do curso
   "animacoesTransicao": false,  // transições entre mini-matérias
   "modoRevisaoVespera": true,
-  "graficoProgressoAvancado": false
+  "graficoProgressoAvancado": false,
+  "writing": false              // aba Writing + ferramenta de escrita (ING-4). Default false.
 }
 ```
 
@@ -259,12 +262,25 @@ próprias sem alterar o GEP.
 - 7 tópicos (`00`–`06`) + `99-revisao-final`. Dados em `src/data/cursos/hnv/`.
 - Usa **questões discursivas** (campo opcional `discursivas` em `src/utils/content.ts`).
 
+**DET — Detecção** (`ano 4 · sem 1 · P1 · turma CA-HE`):
+- 14 tópicos (`00`–`13`) + `99-revisao-final`. Calculadoras próprias em
+  `src/components/cursos/det/` (listadas em `componentesExtras`).
+
+**ING-4 — Inglês** (`ano 4 · sem 1 · P1 · turma geral`):
+- 8 tópicos (`00`–`07`) + `99-revisao-final`. Dados em `src/data/cursos/ing4/`.
+- Banco **geral** (Fácil/Médio/Difícil) em `/ing4/questoes` **separado** dos exercícios **por tópico**
+  (`questoesPorTopico` filtra um array `perTopico`; `todasQuestoes` = só o geral).
+- Liga a flag `features.writing` → aba **Writing** (`/ing4/writing`) com a teoria de redação de opinião
+  e a **ferramenta de auxílio à escrita** (`src/components/cursos/ing4/WritingAnalyzer.tsx`,
+  heurística local; ver `docs/WRITING-TOOL.md`). Detalhes: `docs/courses/ING-4.md`.
+
 Mídia atual ainda em `public/.../cursos/<slug>/` (a externalizar no futuro).
 
 ## Lacunas / pendências conhecidas
 
-- **Mídia pesada** ainda versionada (~648 MB em `public/`, podcasts/vídeos de GEP+HNV) —
-  externalizar p/ CDN/YouTube quando houver links; `npm run audit-media` aponta os arquivos.
+- **Mídia pesada** ainda versionada (~648 MB de GEP+HNV + ~190 MB de ING-4 — 8 áudios e o vídeo geral
+  de 102 MB) em `public/` — externalizar p/ CDN/YouTube quando houver links;
+  `npm run audit-media` aponta os arquivos.
 - **Revisão final** do GEP montada a partir do banco — revisar se reflete a prova real.
 - `_dados.json` por matéria começam mínimos (metadados) — enriquecer conforme necessário.
 - Hierarquia: só há cursos de **4° ano**; 1°/2°/3° aparecem vazios ("Nada adicionado ainda") até

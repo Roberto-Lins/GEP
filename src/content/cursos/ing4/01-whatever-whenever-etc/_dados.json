@@ -1,0 +1,20 @@
+{
+  "ordem": 1,
+  "slug": "01-whatever-whenever-etc",
+  "titulo": "Whatever, Whenever, Etc.",
+  "prioridade": "alta",
+  "subtitulo": "Os compostos com -ever: coisa, pessoa, tempo, lugar, escolha e modo",
+  "tempoEstimado": "30 min",
+  "objetivo": "Escolher corretamente entre whatever, whoever, whenever, wherever, whichever e however de acordo com o tipo de informação da frase.",
+  "palavrasChave": ["whatever", "whoever", "whenever", "wherever", "whichever", "however", "-ever words"],
+  "midias": [
+    {
+      "tipo": "podcast",
+      "titulo": "The logic of English “-ever” words",
+      "fonte": "NotebookLM",
+      "src": "/podcasts/ing4/01-whatever-whenever-etc.m4a",
+      "origem": "local",
+      "descricao": "A lógica por trás de whatever/whoever/whenever/wherever/whichever/however."
+    }
+  ]
+}

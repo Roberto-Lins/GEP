@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Inglês — ING-4">
+  <rect width="64" height="64" rx="14" fill="#0B1220"/>
+  <!-- livro aberto -->
+  <path d="M12 20c6-3 12-3 20 0 8-3 14-3 20 0v26c-6-3-12-3-20 0-8-3-14-3-20 0V20z" fill="#1E3A5F" stroke="#D6A84F" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M32 20v26" stroke="#D6A84F" stroke-width="2" stroke-linecap="round"/>
+  <!-- linhas de texto -->
+  <g stroke="#D6A84F" stroke-width="1.6" stroke-linecap="round" opacity="0.85">
+    <path d="M17 26c4-1.5 8-1.5 12 0"/>
+    <path d="M17 32c4-1.5 8-1.5 12 0"/>
+    <path d="M35 26c4-1.5 8-1.5 12 0"/>
+    <path d="M35 32c4-1.5 8-1.5 12 0"/>
+  </g>
+  <!-- balão de fala "A" (idioma) -->
+  <circle cx="46" cy="16" r="9" fill="#D6A84F"/>
+  <text x="46" y="20" font-family="Georgia, serif" font-size="11" font-weight="700" text-anchor="middle" fill="#0B1220">A</text>
+</svg>

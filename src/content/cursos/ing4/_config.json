@@ -1,0 +1,28 @@
+{
+  "slug": "ing4",
+  "titulo": "Inglês — ING-4",
+  "subtitulo": "Trilha de revisão para a PP1 (American English File 4)",
+  "descricao": "Grammar, Vocabulary e Writing da PP1: palavras com -ever, crime & punishment, have something done, reporting verbs, clauses of contrast e of purpose, e redação de opinião — com explicação detalhada em português, exemplos em inglês, áudio por tópico, exercícios comentados e uma ferramenta de auxílio à escrita.",
+  "categoria": "Carreira Naval",
+  "ano": "4",
+  "semestre": "1",
+  "epoca": "P1",
+  "turma": "geral",
+  "ordem": 3,
+  "temaVisual": "naval-command",
+  "corTema": "dourado",
+  "icone": "/imagens/cursos/ing4/icone.svg",
+  "capa": "/imagens/cursos/ing4/capa.svg",
+  "features": {
+    "timeline": true,
+    "simulados": false,
+    "mapasMentais": false,
+    "podcasts": true,
+    "animacoesHero": true,
+    "animacoesTransicao": false,
+    "modoRevisaoVespera": true,
+    "graficoProgressoAvancado": false,
+    "writing": true
+  },
+  "componentesExtras": []
+}

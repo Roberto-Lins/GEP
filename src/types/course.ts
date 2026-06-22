@@ -32,6 +32,8 @@ export interface CursoFeatures {
   animacoesTransicao: boolean;
   modoRevisaoVespera: boolean;
   graficoProgressoAvancado: boolean;
+  /** aba "Writing" + ferramenta de auxílio à escrita (ex.: ING-4). Default off. */
+  writing?: boolean;
 }
 
 export interface CursoConfig extends CourseHierarchyMeta {

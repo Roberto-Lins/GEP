@@ -21,3 +21,4 @@ Thumbs.db
 
 # Locks temporários de escritório (LibreOffice/Word)
 .~lock.*#
+public/videos/**/*.mp4

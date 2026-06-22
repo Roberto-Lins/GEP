@@ -1,0 +1,20 @@
+{
+  "ordem": 2,
+  "slug": "02-crime-and-punishment",
+  "titulo": "Crime and Punishment",
+  "prioridade": "alta",
+  "subtitulo": "Vocabulário de crimes: crime, criminoso e verbo",
+  "tempoEstimado": "35 min",
+  "objetivo": "Reconhecer o nome do crime, do criminoso e o verbo correspondente, e distinguir palavras semelhantes (steal × rob, theft × robbery, burglary × mugging).",
+  "palavrasChave": ["crime", "criminal", "theft", "robbery", "burglary", "mugging", "steal", "rob", "vocabulary"],
+  "midias": [
+    {
+      "tipo": "podcast",
+      "titulo": "Why you cannot “rob” a car",
+      "fonte": "NotebookLM",
+      "src": "/podcasts/ing4/02-crime-and-punishment.m4a",
+      "origem": "local",
+      "descricao": "O vocabulário de crimes e a diferença entre steal e rob, theft e robbery."
+    }
+  ]
+}

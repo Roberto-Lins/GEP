@@ -1,0 +1,20 @@
+{
+  "ordem": 4,
+  "slug": "04-reporting-verbs",
+  "titulo": "Reporting Verbs",
+  "prioridade": "máxima",
+  "subtitulo": "Transformar fala direta em indireta segundo a intenção",
+  "tempoEstimado": "40 min",
+  "objetivo": "Interpretar a intenção da fala, escolher o reporting verb adequado e aplicar a estrutura que ele exige.",
+  "palavrasChave": ["reporting verbs", "offer", "promise", "refuse", "advise", "admit", "deny", "accuse of", "apologize for", "grammar"],
+  "midias": [
+    {
+      "tipo": "podcast",
+      "titulo": "Reporting verbs and the grammar of intent",
+      "fonte": "NotebookLM",
+      "src": "/podcasts/ing4/04-reporting-verbs.m4a",
+      "origem": "local",
+      "descricao": "Como a intenção da fala define o reporting verb e a estrutura que ele exige."
+    }
+  ]
+}

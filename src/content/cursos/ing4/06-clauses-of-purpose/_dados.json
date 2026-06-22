@@ -1,0 +1,20 @@
+{
+  "ordem": 6,
+  "slug": "06-clauses-of-purpose",
+  "titulo": "Clauses of Purpose",
+  "prioridade": "muito alta",
+  "subtitulo": "to / in order to / so as to · for · so that — explicar a finalidade",
+  "tempoEstimado": "30 min",
+  "objetivo": "Explicar a finalidade de uma ação diferenciando to + verb, for + noun/-ing e so that + subject + modal, incluindo a forma negativa.",
+  "palavrasChave": ["to", "in order to", "so as to", "for", "so that", "purpose", "finalidade", "grammar"],
+  "midias": [
+    {
+      "tipo": "podcast",
+      "titulo": "The logic of English purpose clauses",
+      "fonte": "NotebookLM",
+      "src": "/podcasts/ing4/06-clauses-of-purpose.m4a",
+      "origem": "local",
+      "descricao": "Quando usar to, for e so that para explicar a finalidade de uma ação."
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "ordem": 5,
+  "slug": "05-clauses-of-contrast",
+  "titulo": "Clauses of Contrast",
+  "prioridade": "máxima",
+  "subtitulo": "although / even though × despite / in spite of",
+  "tempoEstimado": "35 min",
+  "objetivo": "Escolher o conector de contraste pela estrutura que vem depois dele: oração completa (although/even though) ou substantivo/-ing (despite/in spite of).",
+  "palavrasChave": ["although", "even though", "though", "despite", "in spite of", "the fact that", "contrast", "grammar"],
+  "midias": [
+    {
+      "tipo": "podcast",
+      "titulo": "How “although” and “despite” actually work",
+      "fonte": "NotebookLM",
+      "src": "/podcasts/ing4/05-clauses-of-contrast.m4a",
+      "origem": "local",
+      "descricao": "A diferença estrutural entre although/even though e despite/in spite of."
+    }
+  ]
+}

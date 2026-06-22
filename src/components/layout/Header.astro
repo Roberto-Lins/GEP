@@ -17,6 +17,7 @@ const links = curso
       { href: `/${curso.slug}`, label: 'Início' },
       curso.features.timeline && { href: `/${curso.slug}/timeline`, label: 'Timeline' },
       { href: `/${curso.slug}/questoes`, label: 'Questões' },
+      curso.features.writing && { href: `/${curso.slug}/writing`, label: 'Writing' },
       curso.features.simulados && { href: `/${curso.slug}/simulados`, label: 'Simulados' },
       { href: `/${curso.slug}/revisao-final`, label: 'Revisão final' },
       { href: `/${curso.slug}/fontes`, label: 'Fontes' },

@@ -1,0 +1,20 @@
+{
+  "ordem": 3,
+  "slug": "03-have-something-done",
+  "titulo": "Have Something Done",
+  "prioridade": "muito alta",
+  "subtitulo": "A estrutura causativa: alguém faz um serviço para você",
+  "tempoEstimado": "30 min",
+  "objetivo": "Montar a estrutura causativa Subject + have + object + past participle em diferentes tempos verbais.",
+  "palavrasChave": ["have something done", "causative", "past participle", "serviço", "grammar"],
+  "midias": [
+    {
+      "tipo": "podcast",
+      "titulo": "The grammar of “have something done”",
+      "fonte": "NotebookLM",
+      "src": "/podcasts/ing4/03-have-something-done.m4a",
+      "origem": "local",
+      "descricao": "A estrutura causativa e como expressar que outra pessoa faz um serviço para você."
+    }
+  ]
+}

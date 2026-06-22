@@ -40,6 +40,7 @@ const totais = Object.fromEntries(dados.timeline.map((t) => [t.slug, dados.check
       <div class="mt-6 flex flex-wrap gap-3">
         <a href={urlMateria(curso!, ordenados[0].slug)} class="btn-primary">Começar pela primeira matéria</a>
         {config.features.timeline && <a href={`/${curso}/timeline`} class="btn-ghost">Ver a linha do tempo</a>}
+        {config.features.writing && <a href={`/${curso}/writing`} class="btn-ghost">Área de Writing</a>}
       </div>
       <dl class="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-sm">
         <div><dt class="text-nevoa/50">Mini matérias</dt><dd class="font-serif text-xl text-marfim">{ordenados.length}</dd></div>

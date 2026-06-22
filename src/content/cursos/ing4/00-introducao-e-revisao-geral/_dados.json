@@ -1,0 +1,20 @@
+{
+  "ordem": 0,
+  "slug": "00-introducao-e-revisao-geral",
+  "titulo": "Introdução e Revisão Geral",
+  "prioridade": "alta",
+  "subtitulo": "O que a PP1 cobra e como estudar este curso",
+  "tempoEstimado": "15 min",
+  "objetivo": "Ter a visão panorâmica da PP1: o que a professora especificou (grammar, vocabulary e writing), a sequência recomendada de estudo, como usar cada tópico e onde fica a área de Writing.",
+  "palavrasChave": ["PP1", "visão geral", "grammar", "vocabulary", "writing", "sequência de estudo", "American English File 4"],
+  "midias": [
+    {
+      "tipo": "video",
+      "titulo": "Revisão geral da PP1 de Inglês",
+      "fonte": "Professora ING-4",
+      "src": "/videos/ing4/revisao-geral.mp4",
+      "origem": "local",
+      "descricao": "Vídeo-panorama de toda a matéria da PP1: grammar, vocabulary e writing."
+    }
+  ]
+}
