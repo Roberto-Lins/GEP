@@ -221,12 +221,19 @@ function AbaVento() {
     if (!res) return null;
     const { ship, realToward } = res.vectors;
     const units = niceUnitsPerRing(Math.max(magnitude(ship), magnitude(realToward), res.speed, +f.speed));
+    // Radial "DE ONDE sopra" o vento real = recíproca do vetor "para onde" (mesmo comprimento).
+    const fromVec = bearingToVec(res.from, magnitude(realToward));
     const arrows: BoardArrow[] = [
-      { from: ORIGEM, to: ship, tone: 'own', label: 'navio' },
-      { from: ORIGEM, to: realToward, tone: 'wind', label: 'Vr' },
-      { from: ship, to: realToward, tone: 'rel', label: 'Va' },
+      { from: ORIGEM, to: ship, tone: 'own', label: 'tr (navio)' },
+      { from: ORIGEM, to: realToward, tone: 'wind', label: 'tw → p/ onde' },
+      { from: ship, to: realToward, tone: 'rel', label: 'rw (aparente)' },
     ];
-    return { units, arrows };
+    const lines: BoardLine[] = [{ from: ORIGEM, to: fromVec, tone: 'wind', dashed: true }];
+    const markers: BoardMarker[] = [
+      { pos: ORIGEM, label: 't', tone: 'aux' },
+      { pos: fromVec, label: `de ${fmtBrg(res.from)}`, tone: 'wind' },
+    ];
+    return { units, arrows, lines, markers };
   }, [res, f.speed]);
 
   return (
@@ -270,16 +277,19 @@ function AbaVento() {
         <Erro msg={err} />
         {res && (
           <Resultado>
-            <Linha rotulo="Vento real — direção" valor={fmtBrg(res.from)} />
+            <Linha rotulo="Vento real — de onde sopra" valor={fmtBrg(res.from)} />
             <Linha rotulo="Vento real — intensidade" valor={`${fmt(res.speed, 1)} kt`} />
-            <Linha rotulo="Vento aparente (verd.)" valor={fmtBrg(res.apparentFrom)} />
+            <Linha rotulo="Vento aparente — de onde (verd.)" valor={fmtBrg(res.apparentFrom)} />
           </Resultado>
         )}
       </div>
-      {board && (
+      {board && res && (
         <div className="min-w-[280px] flex-1">
           <div className="mx-auto w-full max-w-[380px]">
-            <RosaBoard titulo="Triângulo do vento" unitsPerRing={board.units} unitLabel="kt" arrows={board.arrows} markers={[{ pos: ORIGEM, label: 't', tone: 'aux' }]} />
+            <RosaBoard titulo="Triângulo do vento (tr + rw = tw)" unitsPerRing={board.units} unitLabel="kt" arrows={board.arrows} lines={board.lines} markers={board.markers} />
+            <p className="mt-1 text-center text-[10px] leading-snug text-nevoa/60">
+              As setas apontam <strong className="text-nevoa/80">para onde</strong> o vetor vai. O vento real <strong className="text-progresso">sopra de {fmtBrg(res.from)}</strong> (radial pontilhado).
+            </p>
           </div>
         </div>
       )}
@@ -315,12 +325,18 @@ function AbaConves() {
     const ship = bearingToVec(s.course, s.speed);
     const realToward = bearingToVec(reciprocal(+f.from), +f.vr);
     const units = niceUnitsPerRing(Math.max(magnitude(ship), magnitude(realToward), +f.wd));
+    const fromVec = bearingToVec(+f.from, +f.vr); // radial "de onde sopra"
     const arrows: BoardArrow[] = [
-      { from: ORIGEM, to: ship, tone: 'own', label: 'navio' },
-      { from: ORIGEM, to: realToward, tone: 'wind', label: 'Vr' },
-      { from: ship, to: realToward, tone: 'rel', label: 'convés' },
+      { from: ORIGEM, to: ship, tone: 'own', label: 'tr (navio)' },
+      { from: ORIGEM, to: realToward, tone: 'wind', label: 'tw → p/ onde' },
+      { from: ship, to: realToward, tone: 'rel', label: 'vento no convés' },
     ];
-    return { units, arrows };
+    const lines: BoardLine[] = [{ from: ORIGEM, to: fromVec, tone: 'wind', dashed: true }];
+    const markers: BoardMarker[] = [
+      { pos: ORIGEM, label: 't', tone: 'aux' },
+      { pos: fromVec, label: `de ${fmtBrg(+f.from)}`, tone: 'wind' },
+    ];
+    return { units, arrows, lines, markers };
   }, [res, f.from, f.vr, f.wd]);
 
   return (
@@ -366,7 +382,10 @@ function AbaConves() {
       {board && (
         <div className="min-w-[280px] flex-1">
           <div className="mx-auto w-full max-w-[380px]">
-            <RosaBoard titulo="Triângulo do vento (convés)" unitsPerRing={board.units} unitLabel="kt" arrows={board.arrows} markers={[{ pos: ORIGEM, label: 't', tone: 'aux' }]} />
+            <RosaBoard titulo="Triângulo do vento (convés)" unitsPerRing={board.units} unitLabel="kt" arrows={board.arrows} lines={board.lines} markers={board.markers} />
+            <p className="mt-1 text-center text-[10px] leading-snug text-nevoa/60">
+              As setas apontam <strong className="text-nevoa/80">para onde</strong> o vetor vai. O vento real <strong className="text-progresso">sopra de {fmtBrg(+f.from)}</strong> (radial pontilhado).
+            </p>
           </div>
         </div>
       )}
