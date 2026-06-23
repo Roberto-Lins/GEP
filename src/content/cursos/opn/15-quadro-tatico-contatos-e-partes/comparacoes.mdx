@@ -30,3 +30,66 @@ secaoOrdem: 4
     ["Mista", "Esclarecer/ampliar (EU TENHO, EU QUERO, AMPLIANDO, JUNTARAM, BIFURCADO)"],
   ]}
 />
+
+## Tabela de códigos do quadro tático (COA — ComOpNav-516)
+
+### Categoria do contato (1ª letra da designação)
+
+<BlocoComparacao
+  titulo="As quatro categorias"
+  colunas={["Categoria", "Letra", "Significado"]}
+  linhas={[
+    ["Desconhecido", "U", "Não identificado (unknown)"],
+    ["Inimigo / hostil", "H", "Ameaça confirmada (hostile)"],
+    ["Amigo", "R / F", "Identificado como amigo (friend)"],
+    ["Neutro", "N", "Identificado, sem ameaça (neutral)"],
+  ]}
+/>
+
+### Codinome por ambiente (e o equivalente em inglês)
+
+<BlocoComparacao
+  titulo="Como o contato é chamado na fonia"
+  colunas={["Ambiente / situação", "Português", "Inglês"]}
+  linhas={[
+    ["Superfície desconhecido (UJ)", "—", "skunk"],
+    ["Aéreo desconhecido", "vagabundo", "bogey / stray"],
+    ["Submarino", "saci", "goblin"],
+    ["Emissão eletromagnética (EW)", "ruído", "racket"],
+    ["Contato amigo", "amigo", "friend"],
+    ["Contato hostil", "hostil", "hostile"],
+  ]}
+/>
+
+### Termos de ação e status
+
+<BlocoComparacao
+  titulo="O que se anuncia sobre o contato"
+  colunas={["Português", "Inglês", "Significado"]}
+  linhas={[
+    ["Lançou buldogue", "bulldog away", "Míssil lançado pelo contato"],
+    ["Dado Belina [nº]", "alligator", "Estou transmitindo o contato por link"],
+    ["NEGAT Dado Belina", "negative alligator", "Cancelar a transmissão por link"],
+    ["Desvanecido / Esquecer", "faded / scrub", "Perdi o acompanhamento / cancelar o nº"],
+    ["Retomado", "resumed", "Retomei o acompanhamento"],
+    ["Redesignado", "now", "Mudou de categoria (UJ → R/HD)"],
+    ["Coincidente", "same position", "Dois números são o mesmo contato"],
+    ["Estou Quente / Estou Frio", "I am HOT / COLD", "Submarino: contato firme × perdido"],
+    ["Piando papagaio", "squawking parrot", "Resposta IFF do contato"],
+  ]}
+/>
+
+### Vocabulário de fonia (procedimento)
+
+<BlocoComparacao
+  titulo="PROFON — palavras de serviço"
+  colunas={["Português", "Inglês"]}
+  linhas={[
+    ["AQUI", "this is"],
+    ["separa", "break"],
+    ["câmbio", "over"],
+    ["é só", "out"],
+    ["ciente", "roger"],
+    ["NEGAT / esquecer", "negative / scrub"],
+  ]}
+/>

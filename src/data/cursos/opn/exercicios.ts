@@ -1120,6 +1120,633 @@ const perTopico: Questao[] = [
     fonte: 'Apostila EN-131, Cap. 6; mnemônicos OPN — Bloco 16.',
   },
 
+  // ═══════════════ EXPANSÃO TÉCNICA (foco: ATP, Rosa, Quadro Tático) ═══════════════
+
+  // ── 06 — ATP como linguagem operativa ──
+  {
+    id: 'opn-ex-06-05',
+    tipo: 'multipla',
+    topico: '06-atp-linguagem-operativa',
+    enunciado:
+      'No inglês operativo do ATP, um sinal diz: "The tackline MAY be omitted...". Como deve ser interpretado o termo "may" e o que isso significa para o cumprimento da ordem?',
+    alternativas: [
+      'Obrigação — a omissão da tackline é mandatória.',
+      'Recomendação — convém omitir a tackline, mas não é obrigatório.',
+      'Permissão — autoriza-se a omissão da tackline, a critério da unidade.',
+      'Proibição — a tackline nunca pode ser omitida.',
+    ],
+    correta: 2,
+    conceito: 'Termos de obrigação no ATP',
+    comentario:
+      'C) "may" exprime PERMISSÃO/opção. "shall/are to/must" = obrigação; "should" = recomendação; "may" = permissão. Interpretar o peso do verbo errado leva a cumprir como obrigatório o que era opcional.',
+    fonte: 'Extrato do ATP-1 Vol. II; Aula UE3.',
+    armadilha: 'Tratar "may" como "shall" e cumprir uma opção como se fosse ordem efetiva.',
+  },
+  {
+    id: 'opn-ex-06-06',
+    tipo: 'multipla',
+    topico: '06-atp-linguagem-operativa',
+    enunciado:
+      'Durante um exercício, o OCT transmite "INTE G FORM 2". Qual a função do galhardete INTE nesse sinal?',
+    alternativas: [
+      'Cancela a ordem de formar a Formatura 2 (resposta negativa).',
+      'Designa a unidade que será o novo Guia da Formatura 2.',
+      'Interroga a situação da força: pergunta "quem é o Guia da Formatura 2?".',
+      'Ordena, de forma imediata, a execução da Formatura 2.',
+    ],
+    correta: 2,
+    conceito: 'Grupos governantes do ATP (INTE)',
+    comentario:
+      'C) INTE é o galhardete INTERROGATIVO — abre uma pergunta sobre a situação da força. NEGAT cancela/nega; DESIG designa uma unidade; um sinal FORM ordena. INTE pergunta, não ordena.',
+    fonte: 'Extrato do ATP-1 Vol. II; Aula de Manobras Táticas.',
+    armadilha: 'Confundir INTE (pergunta) com um sinal de ordem ou com NEGAT (cancelar).',
+  },
+  {
+    id: 'opn-ex-06-07',
+    tipo: 'vf',
+    topico: '06-atp-linguagem-operativa',
+    afirmacao:
+      'Os sinais GUINA e VELOC são cumpridos pelo método executivo imediato (no próprio sinal), enquanto FORM, RUMOCOR e POS usam o método executivo normal ("aguardar execução" → "atenção... executar").',
+    correta: true,
+    comentario:
+      'Verdadeiro. O método imediato vale para ordens simples/urgentes (GUINA, VELOC); o normal, para manobras que exigem planejamento na Rosa (FORM, RUMOCOR, POS).',
+    fonte: 'Apostila EN-131, Cap. 4; Aula de Manobras Táticas.',
+    armadilha: 'Achar que toda manobra "aguarda execução" — GUINA e VELOC são imediatas.',
+  },
+
+  // ── 08 — Rosa I: movimento relativo ──
+  {
+    id: 'opn-ex-08-05',
+    tipo: 'multipla',
+    topico: '08-rosa-de-manobras-movimento-relativo',
+    enunciado:
+      'Na tela de radar (PPI, movimento relativo), um contato mantém a MARCAÇÃO CONSTANTE enquanto a DISTÂNCIA diminui. O que isso indica?',
+    alternativas: [
+      'O contato está se afastando, sem risco.',
+      'O contato está parado em relação à Terra.',
+      'Há rota de colisão: a DMR aponta para o nosso navio.',
+      'O contato mudou de rumo verdadeiro.',
+    ],
+    correta: 2,
+    conceito: 'Risco de colisão no movimento relativo',
+    comentario:
+      'C) Marcação constante + distância decrescente = rota de colisão: o contato vem direto para o centro (nós). É o alerta máximo do Oficial de Quarto.',
+    fonte: 'Manual de Rosa de Manobra; Aula UE5.',
+    armadilha: 'Achar que marcação constante significa "parado" — significa que ele vem direto para nós.',
+  },
+  {
+    id: 'opn-ex-08-06',
+    tipo: 'vf',
+    topico: '08-rosa-de-manobras-movimento-relativo',
+    afirmacao:
+      'No diagrama de velocidades, a linha que une as posições M1 e M2 (diagrama de posições) é sempre paralela ao vetor rm, no sentido de r para m.',
+    correta: true,
+    comentario:
+      'Verdadeiro. É a "regra de ouro" que liga os dois diagramas: M1-M2 ∥ rm (sempre de r para m). Junto com tr + rm = tm, permite achar o rumo e a velocidade verdadeiros do alvo.',
+    fonte: 'Manual de Rosa de Manobra; Aula UE5.',
+    armadilha: 'Traçar o rm de m para r (sentido invertido) e ler a recíproca.',
+  },
+  {
+    id: 'opn-ex-08-07',
+    tipo: 'multipla',
+    topico: '08-rosa-de-manobras-movimento-relativo',
+    enunciado:
+      'Pela regra dos 3 minutos, um navio que percorre 1.500 jardas em 3 minutos navega a que velocidade?',
+    alternativas: ['7,5 nós', '10 nós', '15 nós', '30 nós'],
+    correta: 2,
+    conceito: 'Regra dos 3 minutos',
+    comentario:
+      'C) Velocidade (nós) = distância em 3 min (jardas) ÷ 100 = 1500 ÷ 100 = 15 nós. (Pela regra dos 6 minutos, usa-se distância em milhas × 10.)',
+    fonte: 'Manual de Rosa de Manobra; Aula UE5.',
+    armadilha: 'Dividir por 1.000 (escala) em vez de 100, ou usar a regra dos 6 minutos com jardas.',
+  },
+
+  // ── 09 — Rosa II: PMA e contatos ──
+  {
+    id: 'opn-ex-09-05',
+    tipo: 'multipla',
+    topico: '09-rosa-de-manobras-pma-e-contatos',
+    enunciado:
+      'Nosso navio navega em 260°/12 kt. Um contato é plotado: M1 (0342) marcação 020°/14.000 jd; M2 (0349) marcação 015°/11.000 jd. Qual o RUMO e a VELOCIDADE verdadeiros do contato (valores aproximados)?',
+    alternativas: [
+      'Rumo 057° / 24 kt',
+      'Rumo 217° / 13,7 kt',
+      'Rumo 237° / 24 kt',
+      'Rumo 307° / 4,2 kt',
+    ],
+    correta: 2,
+    conceito: 'Elementos do contato (tr + rm = tm)',
+    comentario:
+      'C) DMR ≈ 217,5°, VMR ≈ 13,7 kt; no diagrama de velocidades, tr (260°/12) + rm (217,5°/13,7) = tm ≈ 237°/24 kt. A) é a recíproca do rumo (erro clássico); B) é a DMR/VMR; D) é a marcação/distância do PMA.',
+    fonte: 'Manual de Rosa de Manobra; exemplo conferido no motor da Rosa.',
+    armadilha: 'Responder 057° (recíproca) ou confundir o rumo do alvo com a DMR (217°).',
+  },
+  {
+    id: 'opn-ex-09-06',
+    tipo: 'multipla',
+    topico: '09-rosa-de-manobras-pma-e-contatos',
+    enunciado: 'Quais são os TRÊS elementos que definem um PMA (Ponto de Maior Aproximação)?',
+    alternativas: [
+      'Rumo, velocidade e aspecto.',
+      'Marcação, menor distância e hora.',
+      'DMR, VMR e tempo.',
+      'Latitude, longitude e profundidade.',
+    ],
+    correta: 1,
+    conceito: 'Elementos do PMA',
+    comentario:
+      'B) O PMA é o pé da perpendicular de R à reta M1-M2 e se expressa por marcação verdadeira, menor distância e hora. Esquecer a HORA é o erro que mais custa ponto.',
+    fonte: 'Manual de Rosa de Manobra; Aula UE5.',
+    armadilha: 'Dar só marcação e distância e esquecer a hora do PMA.',
+  },
+  {
+    id: 'opn-ex-09-07',
+    tipo: 'vf',
+    topico: '09-rosa-de-manobras-pma-e-contatos',
+    afirmacao:
+      'Se a reta do movimento relativo (DMR) cruza a nossa linha de rumo À VANTE do centro, o contato fará corte de proa (passará à nossa frente).',
+    correta: true,
+    comentario:
+      'Verdadeiro. Onde a DMR cruza a linha de rumo: à vante do centro = corte de proa (passa na frente); à ré = corte de popa. A hora/distância do corte saem como no PMA (de M2 ao ponto de cruzamento ÷ VMR).',
+    fonte: 'Manual de Rosa de Manobra; Aula UE5.',
+    armadilha: 'Trocar proa por popa, ou esquecer de medir a hora do corte a partir de M2.',
+  },
+
+  // ── 10 — Rosa III: vento ──
+  {
+    id: 'opn-ex-10-05',
+    tipo: 'multipla',
+    topico: '10-rosa-de-manobras-vento',
+    enunciado:
+      'Navio no rumo 060°. O anemômetro indica vento relativo de 090° por BORESTE. De qual direção verdadeira sopra o vento aparente?',
+    alternativas: ['De 030°', 'De 150°', 'De 330°', 'De 030° por boreste'],
+    correta: 1,
+    conceito: 'Conversão polar (relativo → aparente)',
+    comentario:
+      'B) Para BORESTE, soma-se o ângulo ao rumo: 060° + 090° = 150°. O vento aparente sopra de 150°. (Para bombordo, subtrai-se.)',
+    fonte: 'Manual de Rosa de Manobra; Aula UE5.',
+    armadilha: 'Subtrair (regra de bombordo) ou dar 330° (a recíproca, que é "para onde" vai o vetor).',
+  },
+  {
+    id: 'opn-ex-10-06',
+    tipo: 'vf',
+    topico: '10-rosa-de-manobras-vento',
+    afirmacao:
+      'No problema de vento sobre o convés (lançamento de aeronaves), pode haver duas soluções de rumo/velocidade, uma única, ou nenhuma — esta última quando o arco do vento real não corta a linha de proa.',
+    correta: true,
+    comentario:
+      'Verdadeiro. Como o método é gráfico (arco × linha de proa), o problema pode ter duas soluções (escolhe-se em geral a de menor velocidade), uma só, ou nenhuma — quando o arco não intercepta a linha de proa, a manobra é impossível.',
+    fonte: 'Manual de Rosa de Manobra; Aula UE5.',
+    armadilha: 'Assumir que sempre há solução única e não verificar se o arco corta a linha de proa.',
+  },
+  {
+    id: 'opn-ex-10-07',
+    tipo: 'multipla',
+    topico: '10-rosa-de-manobras-vento',
+    enunciado: 'No triângulo do vento da Rosa, qual relação vetorial fecha o vento real (tw)?',
+    alternativas: [
+      'tr + rm = tm',
+      'tr + rw = tw',
+      'tw + tr = rw',
+      'rw − tr = tw',
+    ],
+    correta: 1,
+    conceito: 'Triângulo do vento',
+    comentario:
+      'B) tr (navio) + rw (vento aparente, de r para w) = tw (vento real, de t para w). A direção DE ONDE sopra o vento real é a recíproca de tw. A) é o problema de contato; as demais invertem os vetores.',
+    fonte: 'Manual de Rosa de Manobra; Aula UE5.',
+    armadilha: 'Usar a equação do contato (tm) ou ler a direção de tw em vez da sua recíproca.',
+  },
+
+  // ── 11 — Rosa IV: entrar em posição ──
+  {
+    id: 'opn-ex-11-05',
+    tipo: 'multipla',
+    topico: '11-rosa-de-manobras-entrar-em-posicao',
+    enunciado:
+      'Ao resolver "entrar em posição" na Rosa, qual valor se usa como RAIO do compasso (a partir do centro t) para achar o ponto m e o rumo de manobra?',
+    alternativas: [
+      'A velocidade do guia.',
+      'A velocidade de manobra (do nosso navio).',
+      'A VMR do deslocamento.',
+      'A distância do posto a ocupar.',
+    ],
+    correta: 1,
+    conceito: 'Entrar em posição (papéis vetoriais)',
+    comentario:
+      'B) O raio é a VELOCIDADE DE MANOBRA do nosso navio (módulo de tm). A direção do rm (deslocamento até o posto) já é conhecida; a interseção do arco da velocidade de manobra com a reta do rm dá o ponto m. A velocidade do guia é tr.',
+    fonte: 'Manual de Rosa de Manobra; Aula UE5.',
+    armadilha: 'Usar a velocidade do guia (tr) como raio em vez da velocidade de manobra.',
+  },
+  {
+    id: 'opn-ex-11-06',
+    tipo: 'vf',
+    topico: '11-rosa-de-manobras-entrar-em-posicao',
+    afirmacao:
+      'Se a velocidade de manobra for insuficiente, o arco não corta a reta do deslocamento e o posto é inatingível — não há solução.',
+    correta: true,
+    comentario:
+      'Verdadeiro. Como no vento no convés, o arco da velocidade de manobra pode cortar a reta do rm em dois pontos (duas soluções), num só, ou em nenhum (posto inatingível com aquela velocidade).',
+    fonte: 'Manual de Rosa de Manobra; motor solveStation.',
+    armadilha: 'Forçar uma solução quando a velocidade de manobra não alcança a direção exigida.',
+  },
+
+  // ── 12 — Manobras Táticas I: formaturas e sinais ──
+  {
+    id: 'opn-ex-12-05',
+    tipo: 'multipla',
+    topico: '12-manobras-taticas-formaturas-e-sinais',
+    enunciado:
+      'Pela numeração de formaturas da Apostila (EN-131, item 4.8), o sinal FORM 3 corresponde a qual formatura?',
+    alternativas: [
+      'Coluna na sequência numérica crescente.',
+      'Coluna na sequência numérica inversa.',
+      'Linha de frente por boreste (BE).',
+      'Linha de marcação.',
+    ],
+    correta: 2,
+    conceito: 'Numeração FORM (Apostila 4.8)',
+    comentario:
+      'C) FORM 3 = linha de frente por BORESTE; FORM 4 = linha de frente por BOMBORDO. FORM 1 = coluna (crescente) e FORM 2 = coluna (inversa) — atenção: FORM 2 NÃO é linha de frente.',
+    fonte: 'Apostila EN-131, item 4.8 (extrato do ATP-1 Vol. II).',
+    armadilha: 'Achar que a linha de frente começa no FORM 2 — ela começa no FORM 3 (BE).',
+  },
+  {
+    id: 'opn-ex-12-06',
+    tipo: 'multipla',
+    topico: '12-manobras-taticas-formaturas-e-sinais',
+    enunciado:
+      'Numa mesma linha, uma fragata (navio grande, > 450 pés) é adjacente a um submarino. Qual a distância padrão a observar entre eles?',
+    alternativas: ['500 jardas', '1.000 jardas', '750 jardas', '2.000 jardas'],
+    correta: 1,
+    conceito: 'Distância padrão (Apostila 4.3.1)',
+    comentario:
+      'B) Entre navios de TIPOS DIFERENTES, observa-se a distância padrão DO MAIOR. A fragata (grande) tem 1.000 jd; o submarino, isolado, teria 500 jd. Prevalece a do maior: 1.000 jardas.',
+    fonte: 'Apostila EN-131, item 4.3.1.',
+    armadilha: 'Aplicar os 500 jd do submarino em vez da distância do maior.',
+  },
+  {
+    id: 'opn-ex-12-07',
+    tipo: 'vf',
+    topico: '12-manobras-taticas-formaturas-e-sinais',
+    afirmacao:
+      'FORM 1 e FORM 2 são ambas formaturas em COLUNA (a FORM 2 apenas inverte a sequência numérica dos navios).',
+    correta: true,
+    comentario:
+      'Verdadeiro. FORM 1 = coluna em sequência crescente (vante para ré); FORM 2 = coluna em sequência inversa. A linha de frente só aparece no FORM 3 (BE) e FORM 4 (BB).',
+    fonte: 'Apostila EN-131, item 4.8.',
+    armadilha: 'Tratar FORM 2 como linha de frente.',
+  },
+
+  // ── 13 — Manobras Táticas II: GUINA, RUMOCOR e guia ──
+  {
+    id: 'opn-ex-13-05',
+    tipo: 'multipla',
+    topico: '13-manobras-taticas-guina-rumocor-e-guia',
+    enunciado: 'Em qual manobra ocorre a MUDANÇA AUTOMÁTICA de Guia (o navio-pião/testa torna-se guia)?',
+    alternativas: [
+      'Na GUINA (conversão simultânea).',
+      'No RUMOCOR (conversão sucessiva).',
+      'No sinal VELOC.',
+      'Em nenhuma — o guia só muda por DESIG.',
+    ],
+    correta: 1,
+    conceito: 'GUINA × RUMOCOR e mudança de guia',
+    comentario:
+      'B) No RUMOCOR (sucessivo), o navio-testa/pião que guina primeiro torna-se automaticamente o guia. Na GUINA (simultânea), o guia normalmente NÃO muda. A banca adora dizer que muda na GUINA — é falso.',
+    fonte: 'Apostila EN-131, item 4.11; ATP Man Tat.',
+    armadilha: 'Dizer que o guia muda na GUINA (não muda) — a mudança automática é no RUMOCOR.',
+  },
+  {
+    id: 'opn-ex-13-06',
+    tipo: 'multipla',
+    topico: '13-manobras-taticas-guina-rumocor-e-guia',
+    enunciado:
+      'O OCT ordena FORM D (diamante), com a força em coluna. Como os navios se posicionam?',
+    alternativas: [
+      'O navio mais de ré vira guia; os demais entram na sua esteira.',
+      'O navio de vante vira guia; o 2º na alheta de BB, o 3º na alheta de BE e o 4º na esteira.',
+      'Todos guinam 90° simultaneamente para boreste.',
+      'Os navios formam pelo través de boreste do guia.',
+    ],
+    correta: 1,
+    conceito: 'FORM D (Apostila 4.8.3)',
+    comentario:
+      'B) FORM D só se forma a partir de coluna: o navio de vante torna-se automaticamente o guia; o 2º forma na alheta de bombordo, o 3º na alheta de boreste e o 4º na esteira (popa). Emprego: apoio mútuo em defesa antiaérea.',
+    fonte: 'Apostila EN-131, item 4.8.3.',
+    armadilha: 'Trocar a alheta de cada navio ou achar que o guia é o de ré (isso é FORM F).',
+  },
+  {
+    id: 'opn-ex-13-07',
+    tipo: 'vf',
+    topico: '13-manobras-taticas-guina-rumocor-e-guia',
+    afirmacao:
+      'Na FORM F (inversão de coluna), o navio mais de ré torna-se o guia e aumenta a velocidade para um nó a menos que a velocidade de evolução; os demais reduzem para 7 nós (ou o valor indicado), e a velocidade não retorna automaticamente à anterior.',
+    correta: true,
+    comentario:
+      'Verdadeiro. Na FORM F o guia é o navio mais de ré (≠ FORM D). Sobe à velocidade de evolução −1 nó e ultrapassa pelo bordo indicado; os demais reduzem a 7 nós. Só o OCT determina o retorno à velocidade anterior.',
+    fonte: 'Apostila EN-131, item 4.10.a.',
+    armadilha: 'Presumir retorno automático à velocidade anterior, ou confundir o guia da FORM F (ré) com o da FORM D (vante).',
+  },
+  {
+    id: 'opn-ex-13-08',
+    tipo: 'discursiva',
+    topico: '13-manobras-taticas-guina-rumocor-e-guia',
+    contexto: 'A força está em linha de frente e recebe o sinal RUMOCOR SIERRA 045 (guinada de busca).',
+    enunciado:
+      'Explique a manobra: quem guina primeiro e vira guia, como os demais executam e qual a formatura final.',
+    gabaritoComentado:
+      'RUMOCOR SIERRA é a guinada de busca, executada em linha de frente, com mudança de rumo entre 45° e 135°. Na execução, o navio do FLANCO OPOSTO ao bordo da guinada guina primeiro para o novo rumo (045°) e torna-se o GUIA. Os demais navios mantêm o rumo e guinam sucessivamente, cada um no momento apropriado, de modo a ficarem, ao final, PELO TRAVÉS do novo guia. A formatura final é novamente uma linha de frente, agora no rumo 045°, com o guia no flanco que iniciou a guinada.',
+    criterios: [
+      'O navio do flanco oposto ao bordo da guinada guina primeiro e vira guia.',
+      'Os demais mantêm o rumo e guinam sucessivamente.',
+      'Formatura final = linha de frente, navios pelo través do novo guia, no novo rumo.',
+    ],
+    fonte: 'Apostila EN-131, item 4.11; ATP Man Tat.',
+    armadilha: 'Dizer que é a sequência numérica (é a sequência das guinadas) ou cruzar a popa do guia.',
+  },
+
+  // ── 14 — Quadro Tático I: COC/CIC e etapas ──
+  {
+    id: 'opn-ex-14-05',
+    tipo: 'multipla',
+    topico: '14-quadro-tatico-coc-cic-e-etapas',
+    enunciado: 'Quais são, na ordem correta, as cinco etapas básicas de funcionamento do COC/CIC?',
+    alternativas: [
+      'Coleta → Apresentação → Filtragem → Disseminação → Avaliação.',
+      'Coleta → Filtragem → Apresentação → Avaliação → Disseminação.',
+      'Filtragem → Coleta → Avaliação → Apresentação → Disseminação.',
+      'Detecção → Classificação → Engajamento → Avaliação → Relato.',
+    ],
+    correta: 1,
+    conceito: 'Etapas do COC (COL-FIL-APR-AVL-DIS)',
+    comentario:
+      'B) Coleta (receber de qualquer fonte) → Filtragem (classificar/priorizar) → Apresentação (plotagens/quadros) → Avaliação (uso correto p/ o Comando) → Disseminação (distribuir sem atraso). É a espinha dorsal dos cenários da Q5.',
+    fonte: 'Apostila EN-131, Cap. 6 (item 6.2); Aula 8.1.',
+    armadilha: 'Inverter Filtragem e Apresentação, ou pôr a Disseminação antes da Avaliação.',
+  },
+  {
+    id: 'opn-ex-14-06',
+    tipo: 'multipla',
+    topico: '14-quadro-tatico-coc-cic-e-etapas',
+    enunciado: 'Quem é o oficial responsável por todo o COC/CIC?',
+    alternativas: [
+      'O Controlador Aéreo.',
+      'O Supervisor de serviço (praça OR mais antiga).',
+      'O Avaliador.',
+      'O Oficial de Ligação de AFN (OLA).',
+    ],
+    correta: 2,
+    conceito: 'Guarnecimento do COC',
+    comentario:
+      'C) O AVALIADOR é o oficial responsável por todo o COC; abaixo dele estão os oficiais de ambiente (OF GAA-GE, OF GAS, OF GSup), o Controlador Aéreo, o Supervisor e os operadores. O OLA é posto eventual.',
+    fonte: 'Apostila EN-131, Cap. 6; Aula 8.1.',
+    armadilha: 'Confundir o Avaliador (responsável geral) com um oficial de ambiente específico.',
+  },
+  {
+    id: 'opn-ex-14-07',
+    tipo: 'vf',
+    topico: '14-quadro-tatico-coc-cic-e-etapas',
+    afirmacao:
+      'A tarefa PRINCIPAL do COC/CIC é prover o controle e a assistência em operações específicas (AFN, navegação, manobras), e a SECUNDÁRIA é manter o Comando informado da situação tática.',
+    correta: false,
+    comentario:
+      'Falso — está invertido. A tarefa PRINCIPAL é manter o Comando e as estações informados da situação tática (compilação do quadro tático); a SECUNDÁRIA é prover controle e/ou assistência em operações específicas.',
+    fonte: 'Apostila EN-131, Cap. 6; Aula 8.1.',
+    armadilha: 'Inverter principal (informar) e secundária (controle/assistência).',
+  },
+
+  // ── 15 — Quadro Tático II: contatos e partes (FOCO: designar, achar, ampliar) ──
+  {
+    id: 'opn-ex-15-05',
+    tipo: 'multipla',
+    topico: '15-quadro-tatico-contatos-e-partes',
+    enunciado:
+      'No Código Operativo Abreviado, um contato de superfície ainda não identificado é DESIGNADO como "UJ 4501". O que significam o "U", o "J" e o codinome em inglês desse contato?',
+    alternativas: [
+      'U = unidade; J = Juliett; codinome "bogey".',
+      'U = desconhecido (unknown); J = plataforma de superfície; codinome "skunk".',
+      'U = urgente; J = jamming; codinome "racket".',
+      'U = amigo; J = jato; codinome "friend".',
+    ],
+    correta: 1,
+    conceito: 'Designação de contato (COA)',
+    comentario:
+      'B) A 1ª letra é a categoria (U = desconhecido/unknown) e a 2ª, a plataforma (J = superfície). Um contato de superfície desconhecido é um "skunk". Aéreo desconhecido = bogey/vagabundo; submarino = goblin/saci; emissão EW = racket/ruído.',
+    fonte: 'Slide 8.3; ComOpNav-516 (Código Operativo Abreviado).',
+    armadilha: 'Ler "J" como a bandeira Juliett ou confundir o codinome com o de outro ambiente.',
+  },
+  {
+    id: 'opn-ex-15-06',
+    tipo: 'multipla',
+    topico: '15-quadro-tatico-contatos-e-partes',
+    enunciado:
+      'O operador de radar ACHA (detecta pela primeira vez) um pesqueiro que não representa ameaça e vai disseminá-lo. Qual o tipo de parte adequado?',
+    alternativas: [
+      'Parte Instantânea.',
+      'Parte Inicial.',
+      'Parte Ampliadora.',
+      'Parte Situação de Raides (SITREP).',
+    ],
+    correta: 1,
+    conceito: 'Tipos de parte (achar/disseminar contato novo)',
+    comentario:
+      'B) Contato NOVO, sem ameaça imediata → Parte INICIAL. A Instantânea é só para ameaça imediata; a Ampliadora atualiza um contato já disseminado; o SITREP resume vários contatos.',
+    fonte: 'Slide 8.3; Apostila EN-131, Cap. 6.',
+    armadilha: 'Usar a Instantânea para um contato novo qualquer — ela é reservada à ameaça imediata.',
+  },
+  {
+    id: 'opn-ex-15-07',
+    tipo: 'multipla',
+    topico: '15-quadro-tatico-contatos-e-partes',
+    enunciado:
+      'O Avaliador determina ATUALIZAR o rumo e a velocidade do contato UJ 4501, que já havia sido disseminado e guinou. Qual parte se emprega?',
+    alternativas: [
+      'Parte Inicial (porque o contato mudou de rumo).',
+      'Parte Ampliadora.',
+      'Parte Instantânea.',
+      'Parte Mista "BIFURCADO".',
+    ],
+    correta: 1,
+    conceito: 'Parte ampliadora (atualizar contato)',
+    comentario:
+      'B) AMPLIAR/atualizar um contato já disseminado (nova posição/rumo/velocidade/identificação) é a Parte AMPLIADORA. A Inicial é só o "nascimento" do contato; a Mista BIFURCADO é quando um eco se divide em dois.',
+    fonte: 'Slide 8.3; Apostila EN-131, Cap. 6.',
+    armadilha: 'Reabrir o contato como "Inicial" a cada atualização — a partir da 2ª vez é Ampliadora.',
+  },
+  {
+    id: 'opn-ex-15-08',
+    tipo: 'multipla',
+    topico: '15-quadro-tatico-contatos-e-partes',
+    enunciado:
+      'A Fragata União (costado F45) detecta um contato e precisa atribuir-lhe um número de acompanhamento. Qual número é coerente com o seu bloco?',
+    alternativas: ['Contato 0145', 'Contato 4501', 'Contato 1450', 'Contato 5400'],
+    correta: 1,
+    conceito: 'Número e bloco de acompanhamento',
+    comentario:
+      'B) O número deriva do costado/indicativo e o bloco é a faixa da unidade: F45 → 4500–4577. O contato 4501 cai nessa faixa. Usar número fora do bloco do próprio navio gera confusão na força.',
+    fonte: 'Slide 8.3; Apostila EN-131, Cap. 6.',
+    armadilha: 'Numerar o contato fora da faixa (bloco) do próprio navio.',
+  },
+  {
+    id: 'opn-ex-15-09',
+    tipo: 'multipla',
+    topico: '15-quadro-tatico-contatos-e-partes',
+    enunciado:
+      'Uma aeronave identifica o contato UJ 1443 como o Porta-Aviões amigo "Nimitz". O FTC-S precisa mudar a categoria do contato. Como isso é informado na fonia?',
+    alternativas: [
+      'Abre-se uma nova Parte Inicial com outro número.',
+      'O contato é REDESIGNADO: "UJ 1443 redesignado R 1443" (skunk now friend).',
+      'Transmite-se "NEGAT 1443" para apagar o contato.',
+      'Emprega-se a Parte Instantânea, por se tratar de porta-aviões.',
+    ],
+    correta: 1,
+    conceito: 'Redesignação de categoria',
+    comentario:
+      'B) Mudou a categoria, REDESIGNA-SE o número mantendo o acompanhamento: "UJ 1443 redesignado R 1443" (EN: skunk NOW friend). Não se abre número novo nem se apaga o contato.',
+    fonte: 'Slide 8.3 (Disseminação no ambiente de superfície).',
+    armadilha: 'Criar um novo número em vez de redesignar o existente.',
+  },
+  {
+    id: 'opn-ex-15-10',
+    tipo: 'vf',
+    topico: '15-quadro-tatico-contatos-e-partes',
+    afirmacao:
+      'Na fonia tática, anunciar "Dado Belina 1443" (EN: alligator) significa que o contato 1443 está sendo transmitido por link de dados; "NEGAT Dado Belina 1443" cancela essa transmissão.',
+    correta: true,
+    comentario:
+      'Verdadeiro. "Dado Belina" = alligator = estou transmitindo o contato por link; "NEGAT Dado Belina" = negative alligator = cancelo a transmissão por link. Reduz o tráfego de voz.',
+    fonte: 'Slide 8.3; Link YB.',
+    armadilha: 'Achar que "Dado Belina" é o nome do contato — é o anúncio de transmissão por link.',
+  },
+  {
+    id: 'opn-ex-15-11',
+    tipo: 'multipla',
+    topico: '15-quadro-tatico-contatos-e-partes',
+    enunciado:
+      'O navio que acompanhava o contato R1443 informa: "R1443 DESVANECIDO, Azul 048.2 – 057.1 – 045 – 15, minuto 52". O que isso comunica?',
+    alternativas: [
+      'Que o contato foi destruído.',
+      'Que PERDEU o acompanhamento do contato e dá a última posição/rumo/velocidade/hora (EN: faded/lost).',
+      'Que o contato foi redesignado como hostil.',
+      'Que dois contatos se fundiram (JUNTARAM).',
+    ],
+    correta: 1,
+    conceito: 'Perda de acompanhamento (desvanecido/FADED)',
+    comentario:
+      'B) "Desvanecido" (EN: faded/lost) = perdi o acompanhamento; informa-se a última posição (grade Azul 048.2–057.1), rumo 045, veloc 15 e a hora (minuto 52). Depois pode vir "retomado" (resumed) se reaver o contato.',
+    fonte: 'Slide 8.3 (Disseminação no ambiente de superfície).',
+    armadilha: 'Interpretar "desvanecido" como destruição do alvo — é só perda de acompanhamento.',
+  },
+  {
+    id: 'opn-ex-15-12',
+    tipo: 'correlacione',
+    topico: '15-quadro-tatico-contatos-e-partes',
+    titulo: 'Associe cada codinome do Código Operativo Abreviado ao seu significado.',
+    chaves: [
+      { chave: 'SK', texto: 'skunk' },
+      { chave: 'BG', texto: 'bogey' },
+      { chave: 'GB', texto: 'goblin' },
+      { chave: 'RK', texto: 'racket' },
+      { chave: 'BD', texto: 'bulldog' },
+    ],
+    itens: [
+      { texto: 'Contato de superfície desconhecido.', chave: 'SK' },
+      { texto: 'Contato aéreo desconhecido (vagabundo).', chave: 'BG' },
+      { texto: 'Contato submarino (saci).', chave: 'GB' },
+      { texto: 'Emissão eletromagnética detectada (ruído).', chave: 'RK' },
+      { texto: 'Míssil lançado (lançou buldogue).', chave: 'BD' },
+    ],
+    fonte: 'Slide 8.3; ComOpNav-516 (Código Operativo Abreviado).',
+  },
+  {
+    id: 'opn-ex-15-13',
+    tipo: 'discursiva',
+    topico: '15-quadro-tatico-contatos-e-partes',
+    contexto:
+      'Você é o A140 (indicativo A0T) e detecta, pela CI-GSU, um contato de superfície desconhecido nº 1443 na grade Azul 037.2 – 048.0. Vai disseminar ao FTC-S (indicativo I4N).',
+    enunciado:
+      'Monte a PARTE INICIAL desse contato em PROFON e, em seguida, explique como ficaria a PARTE AMPLIADORA quando o contato passar a Azul 040.2 – 051.0, rumo 045, velocidade 15.',
+    gabaritoComentado:
+      'Parte Inicial: "I4N aqui A0T NOVO UJ 1443 Azul 037.2 – 048.0 câmbio." (EN: I4N this is A0T new skunk 1443 Blue 037.2 – 048.0 over). Estrutura: [destinatário I4N] AQUI [origem A0T] → tipo (NOVO = inicial) → COA + número (UJ 1443) → posição na grade (Azul X.X – Y.Y) → fecho (câmbio). Parte Ampliadora: "I4N aqui A0T UJ 1443 Azul 040.2 – 051.0 – 045 – 15 câmbio." — repete o número, atualiza a posição (Azul 040.2 – 051.0) e acrescenta rumo (045) e velocidade (15). A diferença essencial é que a Inicial usa "NOVO" (nascimento do contato) e a Ampliadora apenas atualiza os dados.',
+    criterios: [
+      'Inicial com "NOVO", COA (UJ) + número e posição na grade (cor X.X – Y.Y).',
+      'Estrutura [destinatário] AQUI [origem] ... câmbio.',
+      'Ampliadora repete o número e atualiza posição/rumo/velocidade (sem "NOVO").',
+    ],
+    fonte: 'Slide 8.3 (Disseminação de contato no ambiente de superfície).',
+    armadilha: 'Repetir "NOVO" na ampliadora ou esquecer o fecho (câmbio) e a cor da grade.',
+  },
+
+  // ── 16 — Quadro Tático III: plotagens, PIM e OPGEN ──
+  {
+    id: 'opn-ex-16-05',
+    tipo: 'multipla',
+    topico: '16-quadro-tatico-plotagens-pim-e-opgen',
+    enunciado: 'Qual plotagem é feita em MOVIMENTO VERDADEIRO e serve de arquivo das posições de navegação e de acompanhamento do PIM?',
+    alternativas: [
+      'Plotagem de Superfície.',
+      'Plotagem Sumária.',
+      'Plotagem Geográfica.',
+      'Plotagem de Raides.',
+    ],
+    correta: 2,
+    conceito: 'Tipos de plotagem',
+    comentario:
+      'C) A Geográfica é em movimento verdadeiro (posições reais), cobre contatos de superfície, submarinos e alguns aéreos, serve de arquivo de navegação e acompanha o PIM. Superfície e Sumária são em movimento relativo (navio no centro).',
+    fonte: 'Apostila EN-131, Cap. 6; Aula 8.4.',
+    armadilha: 'Atribuir movimento verdadeiro à Superfície/Sumária — só a Geográfica é verdadeira.',
+  },
+  {
+    id: 'opn-ex-16-06',
+    tipo: 'multipla',
+    topico: '16-quadro-tatico-plotagens-pim-e-opgen',
+    enunciado:
+      'Considere o PIM: "23º30′N – 034º53′W – 070º – 15 kt – 10 horas – 090º – 12 kt – 14 horas". O que ele descreve?',
+    alternativas: [
+      'A posição de um contato inimigo em dois instantes.',
+      'A derrota pretendida da Força em duas pernas: de 23º30′N/034º53′W no rumo 070°/15 kt até as 10h, depois rumo 090°/12 kt até as 14h.',
+      'O ponto de encontro (RDVZ) e a hora estimada de chegada (ETA).',
+      'As coordenadas de dois RDVZ sucessivos.',
+    ],
+    correta: 1,
+    conceito: 'Leitura do PIM',
+    comentario:
+      'B) O PIM é a derrota pretendida da Força (estabelecida pelo OCT), descrita como uma SEQUÊNCIA DE PERNAS: posição → rumo → velocidade → hora. Aqui são duas pernas (070°/15 kt até 10h; depois 090°/12 kt até 14h).',
+    fonte: 'Apostila EN-131, Cap. 6; Aula 8.4.',
+    armadilha: 'Ler o PIM como posições de contato (é o movimento da própria Força) ou como um RDVZ.',
+  },
+  {
+    id: 'opn-ex-16-07',
+    tipo: 'vf',
+    topico: '16-quadro-tatico-plotagens-pim-e-opgen',
+    afirmacao:
+      'O OPGEN é um documento operativo da USN/OTAN constante da publicação APP-4 (Sistema de Mensagens Táticas Marítimas), usado na MB em determinados exercícios; para a PP1 basta conhecer o conceito.',
+    correta: true,
+    comentario:
+      'Verdadeiro. OPGEN é da APP-4 (USN/OTAN), empregado em exercícios (no mar ou no SSTT do CAAML) e aprofundado em OPN-2 (U27). Não confundir com as diretivas da MB (UE2).',
+    fonte: 'Aula 8.4; orientação do professor.',
+    armadilha: 'Confundir o OPGEN (APP-4, exercícios aliados) com uma diretiva nacional da UE2.',
+  },
+  {
+    id: 'opn-ex-16-08',
+    tipo: 'multipla',
+    topico: '16-quadro-tatico-plotagens-pim-e-opgen',
+    enunciado: 'Diferencie RDVZ e ETA.',
+    alternativas: [
+      'RDVZ é a estimativa de chegada; ETA é o ponto de encontro.',
+      'RDVZ é o ponto de encontro entre grupamentos; ETA é a estimativa de horário de chegada (a um RDVZ, porto ou ponto de navegação).',
+      'Ambos significam a mesma coisa.',
+      'RDVZ é uma plotagem; ETA é um quadro informativo.',
+    ],
+    correta: 1,
+    conceito: 'RDVZ × ETA',
+    comentario:
+      'B) RDVZ (Rendez-vous) = ponto de encontro entre grupamentos operativos ou unidades; ETA (Estimated Time of Arrival) = estimativa de horário de chegada a um RDVZ, porto ou ponto de navegação.',
+    fonte: 'Apostila EN-131, Cap. 6; Aula 8.4.',
+    armadilha: 'Trocar as definições (RDVZ = lugar; ETA = hora).',
+  },
+
   // @opn-pertopico (ponto de inserção — não remover)
 ];
 
