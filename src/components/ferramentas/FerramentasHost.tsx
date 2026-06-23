@@ -1,7 +1,41 @@
-import { Suspense, lazy, useEffect, useState, type ComponentType } from 'react';
+import { Component, Suspense, lazy, useEffect, useState, type ComponentType, type ReactNode } from 'react';
 import FloatingWindow from './FloatingWindow';
 import { ferramentaPorId } from '@tools/registry';
 import type { ToolDefinition, ToolProps } from '@tipos/tools';
+
+/**
+ * Isola cada ferramenta: se o carregamento do chunk falhar (ex.: build novo
+ * deixou o chunk antigo desatualizado após um deploy/HMR sem recarregar a
+ * página), mostra um aviso recuperável em vez de derrubar o host inteiro — o
+ * que silenciava a janela e fazia parecer que ela "não abria".
+ */
+class ToolErrorBoundary extends Component<{ nome: string; children: ReactNode }, { erro: Error | null }> {
+  state: { erro: Error | null } = { erro: null };
+  static getDerivedStateFromError(erro: Error) {
+    return { erro };
+  }
+  render() {
+    if (this.state.erro) {
+      return (
+        <div className="p-6 text-sm text-nevoa">
+          <p className="mb-2 font-semibold text-marfim">Não foi possível carregar “{this.props.nome}”.</p>
+          <p className="mb-4 text-nevoa/70">
+            Isto costuma acontecer quando o site foi atualizado e esta página ficou desatualizada.
+            Recarregue para abrir a ferramenta.
+          </p>
+          <button
+            type="button"
+            onClick={() => window.location.reload()}
+            className="rounded-lg bg-dourado px-3 py-1.5 text-sm font-semibold text-naval transition hover:bg-dourado-soft"
+          >
+            Recarregar a página
+          </button>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
 
 /** Evento global para abrir uma ferramenta em janela: window.dispatchEvent(
  *  new CustomEvent('bussola:abrir-ferramenta', { detail: { id } })). */
@@ -48,11 +82,13 @@ export default function FerramentasHost() {
     <>
       {open.map((w) => (
         <FloatingWindow key={w.id} title={w.nome} onClose={() => fechar(w.id)}>
-          <Suspense
-            fallback={<div className="p-8 text-center text-sm text-nevoa">Carregando ferramenta…</div>}
-          >
-            <w.Comp modo="janela" exercicioId={w.exercicioId} />
-          </Suspense>
+          <ToolErrorBoundary nome={w.nome}>
+            <Suspense
+              fallback={<div className="p-8 text-center text-sm text-nevoa">Carregando ferramenta…</div>}
+            >
+              <w.Comp modo="janela" exercicioId={w.exercicioId} />
+            </Suspense>
+          </ToolErrorBoundary>
         </FloatingWindow>
       ))}
     </>
