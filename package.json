@@ -9,6 +9,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "create-course": "tsx scripts/create-course.ts",
     "validate-content": "tsx scripts/validate-content.ts",
     "audit-media": "tsx scripts/audit-media.ts",
@@ -31,6 +33,7 @@
     "@types/node": "^22.19.21",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
-    "tsx": "^4.22.4"
+    "tsx": "^4.22.4",
+    "vitest": "^4.1.9"
   }
 }

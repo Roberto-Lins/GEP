@@ -1,6 +1,7 @@
 ---
 import type { CursoConfig } from '@tipos/course';
 import { listingPathDoCurso } from '@utils/hierarchy';
+import MenuFerramentas from '@components/ferramentas/MenuFerramentas.astro';
 
 interface Props { curso?: CursoConfig }
 const { curso } = Astro.props;
@@ -64,6 +65,8 @@ const ativo = (href: string) =>
         </a>
       ))}
 
+      <MenuFerramentas />
+
       {curso && voltarHref && (
         <a
           href={voltarHref}
@@ -97,6 +100,9 @@ const ativo = (href: string) =>
             {l.label}
           </a>
         ))}
+        <a href="/ferramentas" class:list={['block rounded-lg px-3 py-2 text-sm', ativo('/ferramentas') ? 'bg-dourado/15 text-dourado' : 'text-nevoa hover:bg-white/5']}>
+          Ferramentas
+        </a>
         {curso && voltarHref && (
           <a href={voltarHref} class="mt-1 flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.04] px-3 py-2 text-sm text-nevoa/70">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>

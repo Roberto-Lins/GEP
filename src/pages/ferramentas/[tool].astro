@@ -1,0 +1,25 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { ferramentasDisponiveis, ferramentaPorId } from '@tools/registry';
+import RosaWorkspace from '@tools/rosa-de-manobras/components/RosaWorkspace';
+
+export function getStaticPaths() {
+  return ferramentasDisponiveis().map((f) => ({ params: { tool: f.id } }));
+}
+
+const { tool } = Astro.params;
+const def = ferramentaPorId(tool!);
+if (!def) return Astro.redirect('/ferramentas');
+---
+
+<BaseLayout titulo={def.nome} descricao={def.descricao} largura="cheia">
+  <nav class="mb-3 flex items-center gap-2 text-xs text-nevoa/70">
+    <a href="/ferramentas" class="transition hover:text-dourado">Ferramentas</a>
+    <span aria-hidden="true">/</span>
+    <span class="text-marfim">{def.nome}</span>
+  </nav>
+
+  <div class="overflow-hidden rounded-xl border border-white/10 bg-naval-900/40" style="height: min(80vh, 820px); min-height: 520px;">
+    {def.id === 'rosa-de-manobras' && <RosaWorkspace client:load modo="fullscreen" />}
+  </div>
+</BaseLayout>

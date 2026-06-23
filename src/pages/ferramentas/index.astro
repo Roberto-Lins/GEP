@@ -1,0 +1,82 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { categorias, ferramentasPorCategoria } from '@tools/registry';
+---
+
+<BaseLayout titulo="Ferramentas" descricao="Ferramentas reutilizáveis da plataforma — navegação, cálculo, eletrônica e programação." largura="larga">
+  <header class="mb-8">
+    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-dourado/80">Plataforma</p>
+    <h1 class="mt-1 font-serif text-3xl font-semibold text-marfim">Ferramentas</h1>
+    <p class="mt-2 max-w-prose text-sm text-nevoa">
+      Extensões reutilizáveis que podem ser abertas em tela cheia ou em uma janela ajustável sobre qualquer matéria.
+    </p>
+  </header>
+
+  <div class="space-y-8">
+    {
+      categorias.map((cat) => {
+        const tools = ferramentasPorCategoria(cat.id);
+        return (
+          <section>
+            <div class="mb-3 flex items-center gap-2">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" class="text-dourado" set:html={cat.icone} />
+              <h2 class="font-serif text-xl font-semibold text-marfim">{cat.nome}</h2>
+              <span class="text-xs text-nevoa/50">— {cat.descricaoCurta}</span>
+            </div>
+            <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {tools.length === 0 ? (
+                <p class="rounded-xl border border-dashed border-white/10 p-4 text-sm italic text-nevoa/40">
+                  Nada adicionado ainda.
+                </p>
+              ) : (
+                tools.map((t) =>
+                  t.status === 'disponivel' ? (
+                    <article class="flex flex-col rounded-xl border border-white/10 bg-aco/40 p-4 transition hover:border-dourado/30">
+                      <div class="mb-2 flex items-center gap-2">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="text-dourado" set:html={t.icone} />
+                        <h3 class="font-semibold text-marfim">{t.nome}</h3>
+                      </div>
+                      <p class="mb-4 flex-1 text-sm text-nevoa">{t.descricao}</p>
+                      <div class="flex flex-wrap gap-2">
+                        <a href={t.rota} class="rounded-lg bg-dourado px-3 py-1.5 text-sm font-semibold text-naval transition hover:bg-dourado-soft">
+                          Tela cheia
+                        </a>
+                        {t.suportaJanela && (
+                          <button
+                            type="button"
+                            data-abrir-ferramenta={t.id}
+                            class="rounded-lg border border-white/15 px-3 py-1.5 text-sm text-nevoa transition hover:border-dourado/40 hover:text-dourado"
+                          >
+                            Abrir em janela
+                          </button>
+                        )}
+                      </div>
+                    </article>
+                  ) : (
+                    <article class="flex flex-col rounded-xl border border-dashed border-white/10 p-4 opacity-60">
+                      <div class="mb-2 flex items-center gap-2">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="text-nevoa/60" set:html={t.icone} />
+                        <h3 class="font-semibold text-nevoa">{t.nome}</h3>
+                      </div>
+                      <p class="flex-1 text-sm text-nevoa/60">{t.descricao}</p>
+                      <span class="mt-3 inline-block w-fit rounded-full border border-white/10 px-2 py-0.5 text-[11px] text-nevoa/50">Em breve</span>
+                    </article>
+                  ),
+                )
+              )}
+            </div>
+          </section>
+        );
+      })
+    }
+  </div>
+</BaseLayout>
+
+<script>
+  document.addEventListener('click', (e) => {
+    const btn = (e.target as HTMLElement).closest<HTMLElement>('[data-abrir-ferramenta]');
+    if (!btn) return;
+    const id = btn.getAttribute('data-abrir-ferramenta');
+    if (id) window.dispatchEvent(new CustomEvent('bussola:abrir-ferramenta', { detail: { id } }));
+  });
+</script>

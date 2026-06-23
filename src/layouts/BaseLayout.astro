@@ -2,12 +2,13 @@
 import '@styles/global.css';
 import Header from '@components/layout/Header.astro';
 import Footer from '@components/layout/Footer.astro';
+import FerramentasHost from '@components/ferramentas/FerramentasHost';
 import { cursoPorSlug } from '@utils/courses';
 
 interface Props {
   titulo: string;
   descricao?: string;
-  largura?: 'normal' | 'larga';
+  largura?: 'normal' | 'larga' | 'cheia';
   /** slug do curso atual; quando ausente, é o dashboard (tema padrão) */
   curso?: string;
   /** override do tema visual (classe em themes.css); senão vem do curso */
@@ -48,10 +49,16 @@ const tituloCompleto = titulo === PLATAFORMA ? titulo : `${titulo} · ${PLATAFOR
       Pular para o conteúdo
     </a>
     <Header curso={config} />
-    <main id="conteudo" class={`mx-auto w-full px-4 py-8 sm:px-6 ${largura === 'larga' ? 'max-w-7xl' : 'max-w-6xl'}`}>
+    <main
+      id="conteudo"
+      class={`mx-auto w-full px-4 py-8 sm:px-6 ${largura === 'cheia' ? 'max-w-none' : largura === 'larga' ? 'max-w-7xl' : 'max-w-6xl'}`}
+    >
       <slot />
     </main>
     <Footer />
+
+    {/* Host global das ferramentas: inerte até ser chamado por uma janela. */}
+    <FerramentasHost client:only="react" />
 
     <button
       id="voltar-topo"
