@@ -1,0 +1,46 @@
+---
+titulo: "Estrutura da OrdOpe/OrdMov — comparações"
+secao: "comparacoes"
+secaoOrdem: 4
+---
+
+## Onde fica cada informação
+
+<BlocoComparacao
+  titulo="Documento Básico × Partes Complementares"
+  colunas={["Parte", "O que contém"]}
+  linhas={[
+    ["Cabeçalho", "Comando + numeração (FT/GT/UT/ET), navio-capitânia, Ref. Msg."],
+    ["Corpo", "Organização por Tarefa, Missão (§2), Execução/Tarefas (§3), Coordenação, Reconhecimento"],
+    ["Fecho", "Encerramento, autenticação e dados finais"],
+    ["Partes Complementares", "Anexos/apêndices/adendos: Conceito da Operação, Planos Complementares"],
+  ]}
+/>
+
+## Símbolos da capitânia e siglas QF/QA
+
+<BlocoComparacao
+  titulo="Como ler a Organização por Tarefa"
+  colunas={["Símbolo/Sigla", "Significado"]}
+  linhas={[
+    ["(CCC)", "Capitânia de Força-Tarefa"],
+    ["(CC)", "Capitânia de Grupo-Tarefa"],
+    ["(C)", "Capitânia de Unidade-Tarefa"],
+    ["(QF) Quando Formado", "Tarefas de momento de execução indeterminado"],
+    ["(QA) Quando Ativado", "Tarefas em momentos ou posições determinados"],
+  ]}
+/>
+
+## O que se extrai de cada diretiva
+
+<BlocoComparacao
+  titulo="OrdOpe × OrdMov"
+  colunas={["Ordem de Operação", "Ordem de Movimento"]}
+  linhas={[
+    ["Ameaça", "PIM (posição e intenção de movimento)"],
+    ["Conceito da operação / OCT", "Velocidade"],
+    ["Fonia tática", "ETA (hora estimada de chegada)"],
+    ["Tarefas dos Grupamentos", "RDVZ (ponto de encontro)"],
+    ["Restrições", "Eventos e fonia administrativa"],
+  ]}
+/>

@@ -1,0 +1,111 @@
+---
+titulo: "Rosa de Manobras III — Vento — aula"
+secao: "aula"
+secaoOrdem: 2
+---
+
+*A mesma lógica do contato — somar vetores na Rosa — resolve o vento. A diferença está no vocabulário:
+são três ventos, e trocá-los é o erro nº 1. Fixe primeiro a convenção de nomes; depois, o triângulo se
+monta sozinho.*
+
+## A regra de ouro do vento
+
+<BlocoConceito titulo="De onde × para onde">
+O **vento é nomeado pela direção DE ONDE sopra** (vento de 185° vem do Sul-Sudoeste). Já o **navio é
+nomeado para onde vai** (rumo 060° vai para ENE). No triângulo da Rosa, os vetores são desenhados "para
+onde" o ar se move — por isso a **marcação de onde sopra é a recíproca** do vetor traçado.
+</BlocoConceito>
+
+## Os três ventos
+
+<BlocoConceito titulo="Relativo × aparente × real">
+
+- **Vento relativo** — o que o **anemômetro** indica, medido **em relação à proa** (ângulo do bordo, BB/BE).
+- **Vento aparente** — a **direção verdadeira** correspondente ao vento relativo (a marcação de onde sopra o relativo).
+- **Vento real** — o vento da **massa de ar em relação à Terra**; obtido pelo triângulo (combina o movimento do navio com o vento relativo).
+
+</BlocoConceito>
+
+## O triângulo do vento
+
+![Triângulo do vento](/imagens/cursos/opn/rosa-vento.svg)
+
+Os vetores (todos "para onde"): **tr** (navio), **rw** (vento aparente, de r para w) e **tw** (vento
+real, de t para w). A relação: **`tr + rw = tw`**. A resposta — *de onde sopra o vento real* — é a
+**recíproca** da direção de tw.
+
+## Exemplo resolvido: vento real (conferido numericamente)
+
+> **Enunciado.** Navio no rumo **060°**, velocidade **10 nós**. O anemômetro indica vento relativo de
+> **090° por boreste (BE)**, intensidade **14 nós**. Qual o vento real (direção de onde sopra e intensidade)?
+
+**1. Converter o relativo em marcação verdadeira (vento aparente).** Para **boreste**, soma-se o ângulo
+ao rumo: 060° + 090° = **150°** → o **vento aparente sopra de 150°**.
+
+**2. Montar o triângulo.** Traça-se **tr** (060°/10 kt) a partir de t. A partir de r, traça-se o vetor do
+aparente **"para onde"** (recíproca de 150° = **330°**), com 14 kt, achando **w**.
+
+**3. Fechar tw e ler de onde sopra.** O vetor **tw = t→w** aponta "para onde" o vento real sopra; a
+marcação **de onde** é a recíproca.
+
+<BlocoConceito titulo="Resposta">
+**Vento aparente verdadeiro ≈ 150°. Vento real ≈ 185°, intensidade ≈ 17 nós.** *(Conferido com o motor
+da Rosa: 185,5°/17,2 kt.)*
+</BlocoConceito>
+
+## Conversão polar (relativo → aparente)
+
+<BlocoConceito titulo="A regra dos bordos">
+
+- **Boreste (BE):** direção aparente = **rumo + ângulo**.
+- **Bombordo (BB):** direção aparente = **rumo − ângulo** (equivalente a rumo + (360 − ângulo)).
+
+Ex.: navio 030°, vento 030° BE → aparente de 060°. Navio 213°, vento 70° BB → aparente de 143°.
+
+</BlocoConceito>
+
+*Outros exemplos conferidos:* navio **030°/15 kt** + relativo **030° BE/20 kt** → vento real **≈ 107°/10,3 kt**
+(Miguens). Navio **213°/21 kt** + relativo **70° BB/20 kt** → vento real **≈ 086°/23 kt**.
+
+## Vento no convés (lançamento de aeronaves)
+
+Problema **inverso**: dado o **vento real**, achar **rumo e velocidade do navio** para produzir um vento
+**desejado sobre o convés** (uma direção/intensidade na proa, por bordo). Método gráfico:
+
+`LINHA DE PROA FICTÍCIA (LP) → ponto a → arco do vento real → ponto b → ângulo β → rumo/velocidade`
+
+<BlocoConceito titulo="Exemplo conferido + nota de solução">
+**Vento real 315°/10 kt**, deseja-se **30 kt a 10° por bombordo** no convés → o navio deve ir ao **rumo
+≈ 346°, velocidade ≈ 21 kt** *(conferido com o motor: 346,4°/21,0 kt)*. **Atenção:** o problema pode ter
+**duas soluções** (uma de cada velocidade) ou **nenhuma** — *se o arco do vento real não cortar a linha
+de proa, não há solução*.
+</BlocoConceito>
+
+## Erros comuns
+
+<BlocoPegadinha titulo="Onde o vento derruba">
+`DE ONDE × PARA ONDE` — esquecer que o vento é nomeado **de onde** sopra (e o vetor é desenhado **para
+onde**). Trocar **BB por BE** na conversão polar. Confundir **vento aparente** (direção verdadeira do
+relativo) com **vento real**. E, no convés, ignorar a possibilidade de **duas soluções ou nenhuma**.
+</BlocoPegadinha>
+
+## Pontos que o professor pode cobrar
+
+- Diferenciar **vento relativo, aparente e real**.
+- Converter o **relativo (anemômetro)** em **aparente verdadeiro** (regra dos bordos).
+- Montar o triângulo **tr + rw = tw** e ler o vento real **de onde sopra** (recíproca).
+- Resolver o **vento no convés** e reconhecer **duas soluções / nenhuma solução**.
+
+## Modelo de resposta em prova
+
+**"Navio no rumo 060°/10 kt; anemômetro 090° BE/14 kt. Determine o vento real."**
+
+> *Solução:* O vento relativo de 090° por boreste corresponde, em marcação verdadeira, a **060° + 090° =
+> 150°** (vento aparente de 150°). No triângulo, traço **tr** (060°/10 kt) e, de r, o vetor do aparente
+> "para onde" (recíproca 330°) com 14 kt, obtendo w. O vetor **tw** fechado dá o vento real: **de onde
+> sopra ≈ 185°, intensidade ≈ 17 kt.** Confiro que usei o bordo certo (BE = soma) e a recíproca correta.
+
+## ↔ Como este tópico se conecta com o resto da matéria
+
+A Rosa deixa de ser só contato e vento e passa a calcular **como um navio entra em posição** numa
+formatura — rumo e tempo de manobra. É a Rosa de Manobras IV, a ponte para as manobras táticas (UE6).

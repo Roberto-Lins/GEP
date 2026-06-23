@@ -1,0 +1,18 @@
+{
+  "ordem": 10,
+  "slug": "10-rosa-de-manobras-vento",
+  "titulo": "Rosa de Manobras III — Vento",
+  "prioridade": "máxima",
+  "subtitulo": "Vento real, aparente e no convés de voo",
+  "tempoEstimado": "55 min",
+  "objetivo": "Aplicar a soma vetorial ao vento: distinguir vento real, relativo (anemômetro) e aparente; obter o vento real pelo triângulo (tr + rw = tw); e resolver o vento no convés para lançamento de aeronaves, reconhecendo soluções duplas ou inexistentes.",
+  "palavrasChave": [
+    "vento real", "vento aparente", "vento relativo", "tw", "rw",
+    "vento no convés", "lançamento de aeronaves", "anemômetro", "linha de proa fictícia"
+  ],
+  "fontes": [
+    "Manual de Rosa de Manobras (Marinha do Brasil)",
+    "Aula UE5 (Rosa, Aula 3 — Vento)",
+    "MIGUENS — Navegação, Cap. 14"
+  ]
+}

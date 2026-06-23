@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 280" width="420" height="280" role="img" aria-label="Diagrama de velocidades: tr + rm = tm">
+  <defs>
+    <marker id="ah-d" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0 0L7 3L0 6z" fill="#D6A84F"/></marker>
+    <marker id="ah-w" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0 0L7 3L0 6z" fill="#F7F3EA"/></marker>
+    <marker id="ah-b" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0 0L7 3L0 6z" fill="#9db4d0"/></marker>
+  </defs>
+  <rect width="420" height="280" rx="10" fill="#0B1220"/>
+  <text x="16" y="28" font-family="Georgia, serif" font-size="16" fill="#CBD5E1">Diagrama de velocidades</text>
+  <!-- t origin -->
+  <circle cx="80" cy="225" r="4" fill="#CBD5E1"/>
+  <text x="62" y="245" font-family="Georgia, serif" font-size="16" fill="#CBD5E1">t</text>
+  <!-- tr: nosso navio -->
+  <line x1="80" y1="225" x2="250" y2="95" stroke="#D6A84F" stroke-width="3" marker-end="url(#ah-d)"/>
+  <circle cx="250" cy="95" r="4" fill="#D6A84F"/>
+  <text x="258" y="92" font-family="Georgia, serif" font-size="16" fill="#D6A84F">r</text>
+  <text x="150" y="150" font-family="Georgia, serif" font-size="15" fill="#D6A84F">tr (nosso navio)</text>
+  <!-- tm: alvo -->
+  <line x1="80" y1="225" x2="350" y2="150" stroke="#F7F3EA" stroke-width="3" marker-end="url(#ah-w)"/>
+  <circle cx="350" cy="150" r="4" fill="#F7F3EA"/>
+  <text x="358" y="150" font-family="Georgia, serif" font-size="16" fill="#F7F3EA">m</text>
+  <text x="205" y="225" font-family="Georgia, serif" font-size="15" fill="#F7F3EA">tm (alvo)</text>
+  <!-- rm: movimento relativo, de r para m -->
+  <line x1="250" y1="95" x2="350" y2="150" stroke="#9db4d0" stroke-width="3" marker-end="url(#ah-b)"/>
+  <text x="296" y="110" font-family="Georgia, serif" font-size="15" fill="#9db4d0">rm</text>
+  <text x="16" y="266" font-family="Inter, sans-serif" font-size="13" fill="#94a3b8">tr + rm = tm  ·  o vetor rm vai de r para m  ·  rm ∥ linha M1-M2</text>
+</svg>

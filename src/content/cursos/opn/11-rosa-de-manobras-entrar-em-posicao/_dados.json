@@ -1,0 +1,17 @@
+{
+  "ordem": 11,
+  "slug": "11-rosa-de-manobras-entrar-em-posicao",
+  "titulo": "Rosa de Manobras IV — Entrar em posição",
+  "prioridade": "máxima",
+  "subtitulo": "Da ferramenta gráfica à manobra em formatura",
+  "tempoEstimado": "55 min",
+  "objetivo": "Calcular rumo e tempo para entrar em posição ou mudar de posto: identificar o vetor do guia, a direção do deslocamento ao novo posto e a velocidade de manobra, e obter o rumo do navio manobrador, a VMR, o tempo e o final do guia.",
+  "palavrasChave": [
+    "entrar em posição", "mudar de posto", "final do guia", "rumo de manobra",
+    "tempo de manobra", "velocidade de manobra", "DMR", "posto na formatura"
+  ],
+  "fontes": [
+    "Manual de Rosa de Manobras (Marinha do Brasil)",
+    "Aula UE5 (Rosa, Aula 4 — POS)"
+  ]
+}

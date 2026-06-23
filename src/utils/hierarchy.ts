@@ -30,11 +30,17 @@ export interface FiltroCurso {
   epoca?: Epoca;
 }
 
+/** Uma matéria pode pertencer a uma turma única ou a várias (lista). 'geral'
+ *  só casa com a seção GERAL (igualdade estrita de string). */
+export function cursoNaTurma(c: CursoConfig, turma: Turma): boolean {
+  return Array.isArray(c.turma) ? c.turma.includes(turma) : c.turma === turma;
+}
+
 export function filtrarCursos(f: FiltroCurso): CursoConfig[] {
   return listarCursos().filter(
     (c) =>
       c.ano === f.ano &&
-      (f.turma === undefined || c.turma === f.turma) &&
+      (f.turma === undefined || cursoNaTurma(c, f.turma)) &&
       (f.semestre === undefined || c.semestre === f.semestre) &&
       (f.epoca === undefined || c.epoca === f.epoca),
   );
@@ -138,7 +144,8 @@ export function buildNavPath(curso: CursoConfig): string {
  * pelo botão "Voltar" do cabeçalho ao entrar numa matéria.
  */
 export function listingPathDoCurso(c: CursoConfig): string {
+  const turma = Array.isArray(c.turma) ? c.turma[0] : c.turma;
   return anoUsaTurma(c.ano)
-    ? `/ano/${c.ano}/${c.turma ?? 'geral'}/${c.semestre}/${c.epoca}`
+    ? `/ano/${c.ano}/${turma ?? 'geral'}/${c.semestre}/${c.epoca}`
     : `/ano/${c.ano}/${c.semestre}/${c.epoca}`;
 }

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Operações Navais — OPN">
+  <rect width="64" height="64" rx="14" fill="#0B1220"/>
+  <g transform="translate(32 32)">
+    <!-- Rosa de Manobras: círculos concêntricos -->
+    <circle r="22" fill="none" stroke="#1E3A5F" stroke-width="2"/>
+    <circle r="14.5" fill="none" stroke="#334155" stroke-width="1.4"/>
+    <circle r="7" fill="none" stroke="#334155" stroke-width="1.4"/>
+    <!-- marcações cardeais -->
+    <g stroke="#334155" stroke-width="2" stroke-linecap="round">
+      <path d="M0 -22V-17"/><path d="M0 22V17"/><path d="M-22 0H-17"/><path d="M22 0H17"/>
+    </g>
+    <!-- triângulo de velocidades tr + rm = tm -->
+    <path d="M0 0 L0 -18" stroke="#D6A84F" stroke-width="2.6" stroke-linecap="round"/>
+    <path d="M0 -18 L15 -8" stroke="#9db4d0" stroke-width="2.6" stroke-linecap="round"/>
+    <path d="M0 0 L15 -8" stroke="#F7F3EA" stroke-width="2.6" stroke-linecap="round"/>
+    <path d="M15 -8 l-4.6 -0.2 l2.1 4.1z" fill="#F7F3EA"/>
+    <circle r="2" fill="#D6A84F"/>
+  </g>
+</svg>

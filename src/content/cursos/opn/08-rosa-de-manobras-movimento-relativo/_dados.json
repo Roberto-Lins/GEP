@@ -1,0 +1,18 @@
+{
+  "ordem": 8,
+  "slug": "08-rosa-de-manobras-movimento-relativo",
+  "titulo": "Rosa de Manobras I — Movimento relativo",
+  "prioridade": "máxima",
+  "subtitulo": "Os fundamentos gráficos antes de resolver problemas",
+  "tempoEstimado": "60 min",
+  "objetivo": "Dominar os fundamentos: movimento verdadeiro × relativo (DMR e VMR), diagrama das posições × diagrama das velocidades, a regra M1-M2 ∥ rm, a equação tr + rm = tm, as regras dos 3 e 6 minutos e o cuidado com escalas e recíprocas.",
+  "palavrasChave": [
+    "movimento relativo", "DMR", "VMR", "diagrama de posições", "diagrama de velocidades",
+    "tr", "rm", "tm", "regra dos 3 minutos", "regra dos 6 minutos", "escala", "recíproca"
+  ],
+  "fontes": [
+    "Manual de Rosa de Manobras (Marinha do Brasil)",
+    "MIGUENS — Navegação, Cap. 14 (Movimento Relativo)",
+    "Aula UE5 — Movimento relativo / PPI"
+  ]
+}

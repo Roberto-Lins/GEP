@@ -1,0 +1,108 @@
+---
+titulo: "Rosa de Manobras IV — Entrar em posição — aula"
+secao: "aula"
+secaoOrdem: 2
+---
+
+*Contato e vento já são vetores na Rosa. Entrar em posição é o mesmo — com um detalhe: a **referência
+agora é o guia**, e a incógnita é o **rumo e o tempo** do seu navio para alcançar o posto. Resolva isso e
+você terá a chave das manobras táticas: a UE6 será, em boa parte, este problema repetido em formatura.*
+
+## O problema
+
+Você precisa **entrar em posição** (ou **mudar de posto**) numa formatura. São dados: o **rumo e a
+velocidade do guia**, a **posição final** (o posto a ocupar) e a sua **velocidade de manobra**. Pede-se o
+**rumo** e o **tempo** de manobra.
+
+## Os papéis vetoriais
+
+<BlocoConceito titulo="Quem é quem no diagrama de velocidades">
+
+- **Guia = tr** — o vetor de referência (rumo/velocidade do guia).
+- **Manobrador (você) = tm** — o vetor a descobrir (seu rumo, com a velocidade de manobra).
+- **Deslocamento M1→M2 = rm** — a direção e a distância relativa do **posto a ocupar** (do ponto atual ao final).
+
+A relação é a de sempre: **`tr + rm = tm`**. A diferença é que aqui **conhecemos a direção do rm**
+(para o posto) e o **módulo de tm** (a velocidade de manobra), e procuramos o **rumo de tm** e o
+**módulo do rm** (a VMR).
+
+</BlocoConceito>
+
+## O roteiro
+
+`ESCALA → tr → M1 → M2 → DMR → (compasso) VELOC DE MANOBRA → tm → TEMPO → FINAL DO GUIA`
+
+![Entrar em posição](/imagens/cursos/opn/rosa-entrar-posicao.svg)
+
+## Exemplo resolvido (conferido numericamente)
+
+> **Enunciado.** O **guia** navega no rumo **090°**, velocidade **10 nós**. Seu navio deve ocupar um posto
+> cujo **deslocamento relativo** a percorrer é **135°, distância 2.800 jardas**. Sua **velocidade de
+> manobra** é **15 nós**. Determine o **rumo** e o **tempo** de manobra.
+
+**1. Escala e tr.** Plota-se **tr** = 090°/10 kt a partir de t.
+
+**2. Direção do deslocamento (rm).** O posto está em **135°** a 2.800 jd → o **rm** tem direção **135°**
+(DMR da manobra). Traça-se uma reta por **r** na direção 135°.
+
+**3. Velocidade de manobra (compasso) → tm.** Com o compasso em t e raio = **15 kt**, marca-se a
+interseção com a reta do rm: é o ponto **m**. O vetor **tm = t→m** é o seu rumo de manobra.
+
+**4. Ler rumo e VMR.**
+
+- **Rumo de manobra ≈ 107°** (direção de tm).
+- **VMR ≈ 6,2 kt** (comprimento do rm).
+
+**5. Tempo.** Tempo = distância ÷ VMR = **2.800 jd ÷ 6,2 kt**. Com 6,2 kt ≈ 207 jd/min → **≈ 13,6 min**.
+
+**6. Final do guia.** Ao chegar ao posto, o guia ficará na **recíproca** do deslocamento: recíproca de
+135° = **315°**.
+
+<BlocoConceito titulo="Resposta">
+**Rumo de manobra ≈ 107°; tempo ≈ 14 min; final do guia em 315°.** *(Conferido com o motor da Rosa
+`solveStation`: rumo 106,9°, VMR 6,2 kt, 13,6 min.)*
+</BlocoConceito>
+
+<BlocoPegadinha titulo="Pode haver duas soluções (ou nenhuma)">
+Como no vento no convés, o **arco da velocidade de manobra pode cortar a reta do rm em dois pontos** (duas
+soluções de rumo/tempo) — escolhe-se, em geral, a **mais rápida** — ou em **nenhum** (posto **inatingível**
+com aquela velocidade). Se a velocidade de manobra for insuficiente, não há solução.
+</BlocoPegadinha>
+
+## Comunicação interior
+
+Na prática, o problema vira uma comunicação curta. A leitura esperada:
+`INTERPRETAÇÃO DO SINAL → FINAL DO GUIA → RUMO → TEMPO`. Ou seja: entender o posto pedido, dizer onde
+ficará o guia, e informar o rumo e o tempo de manobra.
+
+## Erros comuns
+
+<BlocoPegadinha titulo="Onde se perde ponto">
+Tomar o **deslocamento** no sentido errado (M1→M2, não o contrário); usar a **velocidade do guia** como
+raio em vez da **velocidade de manobra**; esquecer de informar o **tempo**; e não dar o **final do guia**.
+Confira sempre se o rumo achado não é a **recíproca**.
+</BlocoPegadinha>
+
+## Pontos que o professor pode cobrar
+
+- Identificar os **papéis vetoriais** (guia = tr; manobrador = tm; deslocamento = rm).
+- Resolver o problema de **entrar em posição / mudar de posto** (rumo e tempo).
+- Usar a **velocidade de manobra** como raio (compasso) para achar tm.
+- Calcular o **tempo** pela distância e pela VMR.
+- Reconhecer **duas soluções / posto inatingível**.
+
+## Modelo de resposta em prova
+
+**"Guia em 090°/10 kt; posto a 135°/2.800 jd; velocidade de manobra 15 kt. Ache rumo e tempo."**
+
+> *Solução:* Traço **tr** (090°/10 kt). Do ponto r, lanço uma reta na direção do deslocamento (**135°**).
+> Com o compasso em t e raio igual à velocidade de manobra (**15 kt**), marco a interseção com essa reta —
+> o ponto m. O vetor **tm = t→m** dá o **rumo de manobra ≈ 107°**; o **rm** mede a VMR (**≈ 6,2 kt**). O
+> **tempo** = 2.800 jd ÷ 6,2 kt **≈ 14 min**. O **final do guia** fica na recíproca do deslocamento
+> (**315°**). Confiro que não tomei a recíproca do rumo.
+
+## ↔ Como este tópico se conecta com o resto da matéria
+
+Dominada a técnica de **entrar em posição**, a UE6 passa a ser **interpretar e explicar** as manobras em
+formatura — coluna, linha de frente, mudança de guia. O próximo tópico abre as **Manobras Táticas**:
+formaturas e sinais.

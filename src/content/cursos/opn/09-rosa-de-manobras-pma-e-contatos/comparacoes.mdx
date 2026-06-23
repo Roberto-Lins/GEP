@@ -1,0 +1,35 @@
+---
+titulo: "Rosa II — PMA e contatos — comparações"
+secao: "comparacoes"
+secaoOrdem: 4
+---
+
+## Três marcações que não se confundem
+
+No mesmo problema convivem três direções diferentes — trocá-las é erro garantido:
+
+<BlocoComparacao
+  titulo="DMR × marcação do PMA × rumo do contato"
+  colunas={["Grandeza", "O que é", "No exemplo"]}
+  linhas={[
+    ["DMR", "Direção da reta M1→M2 (movimento relativo)", "≈ 217,5°"],
+    ["Marcação do PMA", "Direção do pé da perpendicular de R", "≈ 307,5°"],
+    ["Rumo do contato (tm)", "Movimento verdadeiro do alvo (tr + rm = tm)", "≈ 237°"],
+  ]}
+/>
+
+## O procedimento como checklist
+
+<BlocoComparacao
+  titulo="Ordem dos passos"
+  colunas={["#", "Passo", "Saída"]}
+  linhas={[
+    ["1", "Plotar M1 e M2 (R no centro)", "Diagrama de posições"],
+    ["2", "Traçar M1→M2", "DMR"],
+    ["3", "Medir M1-M2 e dividir pelo tempo", "VMR"],
+    ["4", "Baixar a perpendicular de R", "PMA: marcação, distância"],
+    ["5", "Tempo M2→PMA", "Hora do PMA"],
+    ["6", "Traçar tr e, de r, o rm (DMR/VMR)", "Ponto m"],
+    ["7", "Unir t a m", "tm = rumo e velocidade do contato"],
+  ]}
+/>

@@ -1,0 +1,17 @@
+{
+  "ordem": 4,
+  "slug": "04-documentos-operativos-e-diretivas",
+  "titulo": "Documentos Operativos e Diretivas",
+  "prioridade": "muito alta",
+  "subtitulo": "Como a intenção do comandante vira ordem",
+  "tempoEstimado": "45 min",
+  "objetivo": "Diferenciar documento operativo e diretiva; conhecer os tipos e dominar a diferença crítica entre Plano de Operação (futuro não imediato, com hipótese básica) e Ordem de Operação (operação específica imediata, sem hipótese básica).",
+  "palavrasChave": [
+    "documento operativo", "diretiva", "Carta de Instrução", "Plano de Operação",
+    "Ordem de Operação", "Ordem de Movimento", "Ordem Preparatória", "hipótese básica"
+  ],
+  "fontes": [
+    "Apostila EN-131 — Cap. 2 (2.1 e 2.2)",
+    "Aula 2.1 — Tipos e finalidades de Documentos Operativos"
+  ]
+}

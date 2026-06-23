@@ -1,0 +1,17 @@
+{
+  "ordem": 6,
+  "slug": "06-atp-linguagem-operativa",
+  "titulo": "ATP como linguagem operativa",
+  "prioridade": "muito alta",
+  "subtitulo": "A linguagem padronizada de sinais e manobras",
+  "tempoEstimado": "40 min",
+  "objetivo": "Tratar o ATP-1 Vol. II como ferramenta de consulta e interpretação para as UE5 e UE6: organização, grupos governantes, TACK, e o vocabulário FORM/RUMOCOR/GUINA/VELOC/POS/DESIG, além dos termos de obrigação em inglês operativo.",
+  "palavrasChave": [
+    "ATP-1", "FORM", "RUMOCOR", "CORPEN", "GUINA", "TURN", "VELOC", "POS",
+    "TACK", "INTE", "NEGAT", "shall", "should", "may"
+  ],
+  "fontes": [
+    "Extrato do ATP-1 Vol. II",
+    "Apontamentos sobre o inglês do ATP"
+  ]
+}

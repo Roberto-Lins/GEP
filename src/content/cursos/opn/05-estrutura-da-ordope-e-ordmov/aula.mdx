@@ -1,0 +1,110 @@
+---
+titulo: "Estrutura da OrdOpe/OrdMov e dados extraídos — aula"
+secao: "aula"
+secaoOrdem: 2
+---
+
+*No tópico anterior escolhemos o documento certo. Agora aprendemos a **lê-lo como fonte de dados**. A
+Ordem de Operação (OrdOpe) e a Ordem de Movimento (OrdMov) são o que o Oficial Subalterno mais manuseia
+a bordo — e cada parte delas entrega uma informação para o serviço, a manobra e o quadro tático.*
+
+## A estrutura de uma diretiva
+
+Toda diretiva se divide em **Documento Básico** e **Partes Complementares**:
+
+- **Documento Básico** — leitura **obrigatória** para toda a Oficialidade; apresenta, de forma sucinta, a concepção da comissão, ordens e informações essenciais. Compõe-se de **Cabeçalho, Corpo e Fecho**.
+- **Partes Complementares** — anexos, apêndices e adendos (Planos Complementares) que **ampliam** o documento básico com procedimentos particularizados.
+
+## Documento Básico: cabeçalho, corpo e fecho
+
+### Cabeçalho
+
+- **Comando do Grupamento Operativo e numeração** — o Comandante do Grupamento Operativo expede a OrdOpe/OrdMov. O **Grupamento Operativo** é a parcela operativa de uma Força, escalonada em **FT → GT → UT → ET**, com lei de formação na numeração:
+
+<BlocoConceito titulo="Numeração FT / GT / UT / ET">
+
+- **Força-Tarefa (FT):** número de 2–3 algarismos — *FT 44, FT 301*.
+- **Grupo-Tarefa (GT):** número da FT + ponto + (1–99) — *GT 44.1*.
+- **Unidade-Tarefa (UT):** número do GT + ponto + (1–99) — *UT 44.1.1*.
+- **Elemento-Tarefa (ET):** número da UT + ponto + (1–99) — *ET 44.1.1.3*.
+
+A numeração "encaixa" a hierarquia: lendo `GT 44.1`, sabe-se que pertence à `FT 44`.
+
+</BlocoConceito>
+
+- **Navio-Capitânia** — o navio onde o Comandante do Grupamento Operativo está embarcado.
+- **Referência de Mensagem (Ref. Msg.)** — combinação de **4 caracteres + ano (2 dígitos)**; identifica a diretiva e serve para os destinatários acusarem recebimento/entendimento, **sem permitir correlação** com a operação (sigilo).
+
+### Corpo
+
+- **Organização por Tarefa e Navios-Capitânias** — relaciona **todos os meios adjudicados**, separados pelas tarefas de cada escalão. Simbologia da capitânia:
+
+<BlocoConceito titulo="Símbolos da capitânia e QF/QA">
+
+- **(CCC)** — Capitânia de **Força-Tarefa**; **(CC)** — Capitânia de **Grupo-Tarefa**; **(C)** — Capitânia de **Unidade-Tarefa**.
+- **(QF) Quando Formado** — meios com tarefas de **momento de execução indeterminado**.
+- **(QA) Quando Ativado** — meios com tarefas em **momentos determinados ou posições geográficas preestabelecidas**.
+
+</BlocoConceito>
+
+- **Missão (parágrafo 2)** — a missão do Comandante do Grupamento Operativo, no formato **TAREFA *a fim de* PROPÓSITO** (igual à UE1). Dela se extraem tarefa e propósito da comissão.
+- **Execução / Tarefas dos Grupamentos Operativos (parágrafo 3)** — como a operação se desenrola; se for de grande vulto, é detalhada no **Conceito da Operação** (Plano Complementar anexo), mas ao menos as **tarefas de cada Grupamento** ficam aqui.
+- **Instruções para Coordenação** — coordenação entre os Grupamentos e as Forças Amigas e o **momento de entrada em vigor** da diretiva.
+- **Instruções para Reconhecimento** — último item do Corpo; lista as OM que devem **acusar recebimento e compreensão** (via Ref. Msg. e campo DISTRIBUIÇÃO).
+
+O corpo segue, de modo geral, os parágrafos clássicos de uma ordem: **Situação · Missão · Execução ·
+Administração e Logística · Comando e Controle** — mnemônico `SIT-MIS-EXEC-ADM/LOG-C2`.
+
+### Fecho
+
+Encerra o documento básico (assinatura/autenticação e dados finais).
+
+## Partes Complementares
+
+Ampliam o documento básico: **anexos, apêndices e adendos**, frequentemente na forma de **Planos
+Complementares** (de Comunicações, de Guerra Eletrônica, Logístico, de Inteligência…). Trazem o que é
+extenso ou de divulgação mais restrita — por exemplo, um **Conceito da Operação** detalhado ou uma
+**Organização por Tarefa Detalhada**.
+
+## O que extrair de cada parte (OrdOpe × OrdMov)
+
+O objetivo prático é **virar a diretiva em dados de serviço**:
+
+<BlocoConceito titulo="Leitura por finalidade">
+
+- **Da OrdOpe:** `AMEAÇA · CONCEITO/OCT · FONIA TÁTICA · TAREFAS · RESTRIÇÕES`.
+- **Da OrdMov:** `PIM · VELOCIDADE · ETA · RDVZ · EVENTOS · FONIA ADMINISTRATIVA`.
+
+</BlocoConceito>
+
+Repare como esses dados **alimentam** o resto da matéria: a **organização por tarefa** e as **relações
+de comando** vão para a **UE4**; o **PIM, a ETA e o RDVZ** vão para o **quadro tático da UE8**.
+
+## Pontos que o professor pode cobrar
+
+- Compor a estrutura: **documento básico (cabeçalho, corpo, fecho) + partes complementares**.
+- Aplicar a **lei de formação** da numeração FT/GT/UT/ET (dado `GT 44.2`, identificar a FT).
+- Identificar os **símbolos de capitânia** (CCC/CC/C) e **QF/QA**.
+- Dizer em que parágrafo está a **Missão** (§2) e a **Execução/Tarefas** (§3).
+- Listar **dados extraídos** de uma OrdOpe e de uma OrdMov.
+
+## Modelo de resposta em prova
+
+**"Descreva a estrutura do documento básico de uma Ordem de Operação e o que se extrai de cada parte principal."**
+
+> *Estrutura:* O documento básico tem **Cabeçalho, Corpo e Fecho**. No **Cabeçalho** estão o comando e a
+> numeração do Grupamento Operativo (FT/GT/UT/ET), o **navio-capitânia** e a **Ref. Msg.**. No **Corpo**
+> estão a **Organização por Tarefa** (com os símbolos de capitânia CCC/CC/C e as siglas QF/QA), a
+> **Missão** (§2, no formato tarefa + propósito), a **Execução/Tarefas** dos Grupamentos (§3), as
+> **Instruções para Coordenação** (entrada em vigor) e as **Instruções para Reconhecimento**.
+>
+> *Extração:* da Organização por Tarefa tiram-se os **meios e a cadeia de comando**; da Missão, **tarefa
+> e propósito**; da Execução, **o que cada Grupamento fará**; das Instruções para Coordenação, **quando a
+> diretiva entra em vigor**. Esses dados alimentam diretamente a organização da força (UE4) e o quadro
+> tático (UE8).
+
+## ↔ Como este tópico se conecta com o resto da matéria
+
+A diretiva é onde a **organização por tarefa** aparece pela primeira vez — e ela volta com força na
+**UE4**. Mas, antes, é preciso a **linguagem** que executa tudo isso no mar: os **sinais do ATP**. O
+próximo tópico abre a **UE3 — o ATP como linguagem operativa**.

@@ -1,0 +1,17 @@
+{
+  "ordem": 16,
+  "slug": "16-quadro-tatico-plotagens-pim-e-opgen",
+  "titulo": "Quadro Tático III — Plotagens, PIM e OPGEN",
+  "prioridade": "muito alta",
+  "subtitulo": "Fechar a visão integrada do quadro tático",
+  "tempoEstimado": "45 min",
+  "objetivo": "Fechar o quadro tático: as plotagens em movimento relativo (superfície e sumária) e verdadeiro (geográfica) e seus elementos; o PIM (posição e intenção de movimento); o RDVZ; a ETA; e o OPGEN como documento operativo de contexto.",
+  "palavrasChave": [
+    "plotagem de superfície", "plotagem sumária", "plotagem geográfica", "PIM",
+    "RDVZ", "ETA", "OPGEN", "derrota", "legenda de acompanhamento"
+  ],
+  "fontes": [
+    "Apostila EN-131 — Cap. 6 (plotagens, PIM)",
+    "Aula 8.4 — Compilação do Quadro Tático"
+  ]
+}

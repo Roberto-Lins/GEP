@@ -1,0 +1,99 @@
+---
+titulo: "Rosa de Manobras II — PMA e contatos — aula"
+secao: "aula"
+secaoOrdem: 2
+---
+
+*No tópico anterior montamos os diagramas. Agora resolvemos o problema que mais cai: dadas duas
+plotagens de um contato, achar **quando e a que distância ele passará mais perto** (PMA) e **qual o seu
+rumo e velocidade**. É procedimento puro — siga a ordem e confira a recíproca.*
+
+## O que é o PMA/CPA
+
+<BlocoConceito titulo="Ponto de Maior Aproximação">
+O **PMA** (ou CPA, *Closest Point of Approach*) é o ponto em que a distância entre os dois navios será a
+**mínima**. Ele tem três elementos: **marcação verdadeira**, **menor distância** e **hora**. No diagrama
+de posições, o PMA é o **pé da perpendicular** baixada do centro (R) à reta do movimento relativo
+(M1-M2).
+</BlocoConceito>
+
+## O problema-tipo, em sete passos
+
+`PLOTAR M1/M2 → DMR → DREL → VMR → PERPENDICULAR (PMA) → HORA → DIAGRAMA DE VELOCIDADES (rm, tm)`
+
+## Exemplo resolvido (conferido numericamente)
+
+> **Enunciado.** Nosso navio navega no rumo **260°**, velocidade **12 nós**. Um contato é plotado:
+> **M1 às 0342 — marcação 020°, distância 14.000 jd**; **M2 às 0349 — marcação 015°, distância 11.000 jd**.
+> Pede-se a DMR, a VMR, o PMA (marcação, distância e hora) e o rumo e a velocidade do contato.
+
+**1. Dados.** Próprio: 260°/12 kt. M1 (0342): 020°/14.000 jd. M2 (0349): 015°/11.000 jd. **Δt = 7 min**.
+
+**2. Interpretação.** A distância caiu (14.000 → 11.000 jd): o contato **está se aproximando**. Esperamos
+um PMA à frente no tempo.
+
+**3. Construção (diagrama de posições).** Com R no centro, plota-se M1 e M2 por marcação verdadeira e
+distância e traça-se a reta **M1→M2**.
+
+![Diagrama de posições](/imagens/cursos/opn/rosa-diagrama-posicoes.svg)
+
+**4. Cálculo de DMR, distância relativa e VMR.**
+
+- **DMR** = direção da reta M1→M2 ≈ **217,5°**.
+- **Distância relativa** (M1→M2) ≈ **3.190 jd**.
+- **VMR** = distância relativa ÷ tempo. Em 3 min seriam 3.190 × (3/7) ≈ 1.367 jd → ÷ 100 = **≈ 13,7 nós**.
+
+**5. PMA.** Baixando a perpendicular de R à reta M1-M2:
+
+- **Marcação do PMA ≈ 307,5°**; **menor distância ≈ 4.200 jd**.
+- **Hora**: o contato leva da posição M2 até o PMA um tempo proporcional; resulta em **≈ 0411**.
+
+**6. Diagrama de velocidades → rumo e velocidade do contato.**
+
+![Diagrama de velocidades](/imagens/cursos/opn/rosa-diagrama-velocidades.svg)
+
+- Traça-se **tr** = 260°/12 kt a partir de t.
+- Do ponto r, traça-se **rm** paralelo a M1-M2 (DMR 217,5°), com comprimento = VMR (13,7 kt), achando m.
+- **tm = t→m** dá o contato: **rumo ≈ 237°, velocidade ≈ 24 nós**.
+
+**7. Resposta e verificação.**
+
+<BlocoConceito titulo="Resposta">
+**DMR ≈ 217,5° · VMR ≈ 13,7 kt · PMA: marcação ≈ 307,5°, distância ≈ 4.200 jd, hora ≈ 0411 · contato no
+rumo ≈ 237°, velocidade ≈ 24 kt.**
+</BlocoConceito>
+
+*Verificação:* o rumo 237° não é a recíproca (057°)? Confira o **sentido do rm** (de r para m). A hora do
+PMA é **depois** de M2 (0349), coerente com o contato ainda se aproximando. *(Valores conferidos com o
+motor da Rosa; na plotagem gráfica, leituras com ± são normais.)*
+
+## Erros comuns neste problema
+
+<BlocoPegadinha titulo="Os cinco que mais tiram ponto">
+`RECÍPROCA · DMR-como-RUMO · ESCALA · PONTO ERRADO · SEM HORA`. Tomar a recíproca do rumo do contato;
+usar a DMR como se fosse o rumo do alvo; trocar a escala de distância pela de velocidade; baixar a
+perpendicular do ponto errado; e **esquecer a hora** do PMA (que vale parte do ponto).
+</BlocoPegadinha>
+
+## Pontos que o professor pode cobrar
+
+- Resolver o problema completo de contato (DMR, VMR, PMA, rumo/velocidade do alvo).
+- Dar os **três elementos do PMA** (marcação, distância e **hora**).
+- Distinguir **DMR** (direção do mov. relativo) de **rumo do contato** (tm).
+- Calcular a **VMR** pela distância relativa e pelo tempo.
+- **Conferir a recíproca** antes de fechar a resposta.
+
+## Modelo de resposta em prova
+
+**"Dadas duas plotagens, descreva o procedimento para obter o rumo e a velocidade de um contato."**
+
+> *Procedimento:* (1) plotar M1 e M2 no diagrama de posições, com R no centro; (2) traçar M1→M2 e ler a
+> **DMR**; (3) medir a **distância relativa** e dividir pelo **tempo** para a **VMR**; (4) baixar a
+> perpendicular de R à reta M1-M2 para o **PMA** (marcação, distância e hora); (5) no diagrama de
+> velocidades, traçar **tr** (nosso vetor) e, de r, o **rm** (DMR/VMR); (6) unir **t a m** para obter
+> **tm = rumo e velocidade do contato** (`tr + rm = tm`). Conferir a **recíproca** e a **escala**.
+
+## ↔ Como este tópico se conecta com o resto da matéria
+
+A mesma lógica vetorial — somar movimentos com a Rosa — resolve o **vento**: relativo, aparente e real, e
+o vento sobre o convés para lançamento de aeronaves. É a Rosa de Manobras III.

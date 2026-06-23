@@ -1,0 +1,17 @@
+{
+  "ordem": 3,
+  "slug": "03-operacoes-acoes-e-atividades-navais",
+  "titulo": "Operações, Ações e Atividades Navais",
+  "prioridade": "alta",
+  "subtitulo": "Classificar o emprego do Poder Naval em níveis",
+  "tempoEstimado": "40 min",
+  "objetivo": "Classificar o emprego do Poder Naval: Operações Navais (ações militares táticas), Ações Navais (tarefas típicas por TTP padronizados), Atividades Navais (técnicas/procedimentos especializados) e Formas Transversais — sabendo distinguir uma da outra.",
+  "palavrasChave": [
+    "operações navais", "ações navais", "atividades navais", "formas transversais",
+    "TTP", "IVR", "guerra eletrônica", "ação de superfície", "antissubmarino"
+  ],
+  "fontes": [
+    "Apostila EN-131 — Cap. 1 (1.7 e 1.8)",
+    "Aula 1.3 — Operações, Ação e Atividades Navais"
+  ]
+}

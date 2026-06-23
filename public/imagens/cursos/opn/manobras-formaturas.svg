@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 230" width="520" height="230" role="img" aria-label="Formaturas em linha: coluna, linha de frente e linha de marcação">
+  <rect width="520" height="230" rx="10" fill="#0B1220"/>
+  <text x="16" y="26" font-family="Georgia, serif" font-size="15" fill="#CBD5E1">Formaturas em linha singela (G = guia)</text>
+  <!-- helper ship: triangle pointing up -->
+  <defs>
+    <g id="ship"><path d="M0 -9 L6 7 L-6 7 Z" fill="#9db4d0"/></g>
+    <g id="guide"><path d="M0 -9 L6 7 L-6 7 Z" fill="#D6A84F"/></g>
+  </defs>
+  <!-- Coluna -->
+  <text x="78" y="58" text-anchor="middle" font-family="Inter" font-size="13" fill="#F7F3EA">Coluna</text>
+  <use href="#guide" x="78" y="80"/><text x="90" y="84" font-family="Inter" font-size="11" fill="#D6A84F">G</text>
+  <use href="#ship" x="78" y="118"/>
+  <use href="#ship" x="78" y="156"/>
+  <use href="#ship" x="78" y="194"/>
+  <!-- Linha de Frente -->
+  <text x="255" y="58" text-anchor="middle" font-family="Inter" font-size="13" fill="#F7F3EA">Linha de Frente</text>
+  <use href="#guide" x="200" y="120"/><text x="200" y="146" text-anchor="middle" font-family="Inter" font-size="11" fill="#D6A84F">G</text>
+  <use href="#ship" x="237" y="120"/>
+  <use href="#ship" x="274" y="120"/>
+  <use href="#ship" x="311" y="120"/>
+  <!-- Linha de Marcação -->
+  <text x="440" y="58" text-anchor="middle" font-family="Inter" font-size="13" fill="#F7F3EA">Linha de Marcação</text>
+  <use href="#guide" x="392" y="86"/><text x="404" y="90" font-family="Inter" font-size="11" fill="#D6A84F">G</text>
+  <use href="#ship" x="420" y="116"/>
+  <use href="#ship" x="448" y="146"/>
+  <use href="#ship" x="476" y="176"/>
+  <text x="16" y="218" font-family="Inter, sans-serif" font-size="12" fill="#94a3b8">Distância padrão: grandes 1.000 jd · pequenos 500 jd · tipos diferentes → a do maior</text>
+</svg>

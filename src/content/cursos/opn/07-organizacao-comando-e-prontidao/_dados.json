@@ -1,0 +1,18 @@
+{
+  "ordem": 7,
+  "slug": "07-organizacao-comando-e-prontidao",
+  "titulo": "Organização, Comando e Prontidão",
+  "prioridade": "muito alta",
+  "subtitulo": "Quem manda, com quais relações e em que prontidão",
+  "tempoEstimado": "50 min",
+  "objetivo": "Conectar doutrina e documentos à força real: organização por tipo, por tarefa (FT/GT/UT/ET) e para o combate (CWC); as relações de comando e controle (operacional e tático); e a prontidão — condições I a V e alarmes.",
+  "palavrasChave": [
+    "organização por tarefa", "FT", "GT", "UT", "ET", "CWC",
+    "comando operacional", "controle operacional", "comando tático", "controle tático",
+    "condições de prontidão", "OCT", "alarme de ameaça"
+  ],
+  "fontes": [
+    "Apostila EN-131 — Cap. 3 (3.2 a 3.4)",
+    "Aula 4.1 — Organização, Comando e Prontidão"
+  ]
+}

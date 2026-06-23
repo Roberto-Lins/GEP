@@ -1,0 +1,17 @@
+{
+  "ordem": 5,
+  "slug": "05-estrutura-da-ordope-e-ordmov",
+  "titulo": "Estrutura da OrdOpe/OrdMov e dados extraídos",
+  "prioridade": "muito alta",
+  "subtitulo": "Ler uma diretiva como fonte de dados operativos",
+  "tempoEstimado": "45 min",
+  "objetivo": "Ler a estrutura de uma diretiva (documento básico + partes complementares): cabeçalho, organização por tarefa, missão, execução, instruções para coordenação e reconhecimento — e extrair os dados que alimentam o COC, a manobra e o quadro tático.",
+  "palavrasChave": [
+    "documento básico", "partes complementares", "organização por tarefa", "navio-capitânia",
+    "FT", "GT", "UT", "ET", "missão", "execução", "Ref. Msg.", "QF", "QA"
+  ],
+  "fontes": [
+    "Apostila EN-131 — Cap. 2 (2.3)",
+    "Aula 2.2 — Principais dados extraídos de uma OrdOpe/OrdNav"
+  ]
+}

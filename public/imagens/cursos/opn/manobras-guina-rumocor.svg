@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 250" width="520" height="250" role="img" aria-label="GUINA (simultânea) × RUMOCOR (sucessiva)">
+  <rect width="520" height="250" rx="10" fill="#0B1220"/>
+  <defs>
+    <g id="sR"><path d="M9 0 L-7 6 L-7 -6 Z" fill="#9db4d0"/></g>
+    <g id="gR"><path d="M9 0 L-7 6 L-7 -6 Z" fill="#D6A84F"/></g>
+  </defs>
+  <!-- divisor -->
+  <line x1="260" y1="20" x2="260" y2="230" stroke="#1E3A5F" stroke-width="1.5"/>
+  <!-- rumo original (coluna para o Norte) e novo rumo (Leste) -->
+  <text x="16" y="26" font-family="Georgia, serif" font-size="15" fill="#CBD5E1">GUINA — conversão simultânea</text>
+  <text x="276" y="26" font-family="Georgia, serif" font-size="15" fill="#CBD5E1">RUMOCOR — conversão sucessiva</text>
+
+  <!-- GUINA: navios mantêm posição (coluna vertical), todos guinam p/ Leste -->
+  <use href="#gR" x="120" y="70"/><text x="132" y="66" font-family="Inter" font-size="10" fill="#D6A84F">G</text>
+  <use href="#sR" x="120" y="108"/>
+  <use href="#sR" x="120" y="146"/>
+  <use href="#sR" x="120" y="184"/>
+  <text x="60" y="214" font-family="Inter" font-size="11.5" fill="#94a3b8">Todos guinam juntos · posições mantidas</text>
+  <text x="60" y="230" font-family="Inter" font-size="11.5" fill="#94a3b8">marcações verdadeiras · guia NÃO muda</text>
+
+  <!-- RUMOCOR: navios refazem a coluna no novo rumo (Leste) -->
+  <use href="#gR" x="318" y="130"/><text x="318" y="118" text-anchor="middle" font-family="Inter" font-size="10" fill="#D6A84F">testa→guia</text>
+  <use href="#sR" x="356" y="130"/>
+  <use href="#sR" x="394" y="130"/>
+  <use href="#sR" x="432" y="130"/>
+  <text x="276" y="214" font-family="Inter" font-size="11.5" fill="#94a3b8">Guinam no mesmo ponto · coluna preservada</text>
+  <text x="276" y="230" font-family="Inter" font-size="11.5" fill="#94a3b8">marcações relativas · testa/pião vira guia</text>
+</svg>

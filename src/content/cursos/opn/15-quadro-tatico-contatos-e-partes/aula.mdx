@@ -1,0 +1,106 @@
+---
+titulo: "Quadro Tático II — Contatos e partes — aula"
+secao: "aula"
+secaoOrdem: 2
+---
+
+*O COC coleta e dissemina — mas dissemina **o quê**, e **como**? Este tópico dá a estrutura do contato:
+posição, número, categoria e parte. É o conteúdo mais aplicado da prova: nos cenários táticos, você
+precisa **montar uma parte** correta a partir dos dados (muitas vezes vindos da Rosa).*
+
+## Métodos de expressar posição
+
+<BlocoConceito titulo="As quatro formas">
+
+- **Latitude/Longitude** — posição geográfica absoluta.
+- **Marcação e Distância** — a partir de um ponto de referência (o mais usado no movimento relativo).
+- **Sistema de Grade (cartesiana)** — coordenadas X/Y sobre uma grade; **X = leste/oeste**, **Y = norte/sul**; a metade **superior** usa as cores **vermelho/branco** e a **inferior**, **verde/azul**.
+- **UTM** — grade universal transversa de Mercator.
+
+</BlocoConceito>
+
+## Número e bloco de acompanhamento
+
+Cada contato recebe um **número de acompanhamento**, normalmente derivado do **indicativo/costado** da
+unidade que o disseminou, e definido por diretiva quando necessário. O **bloco de acompanhamento** é a
+faixa de números atribuída a uma unidade (ex.: costado **F45** → bloco **4500–4577**).
+
+## Categorias de contato
+
+<BlocoConceito titulo="As quatro categorias + a designação">
+
+Todo contato é classificado em **desconhecido (U), inimigo (H/hostil), amigo ou neutro**. A designação
+combina **categoria + plataforma + número de acompanhamento**. Exemplos da Apostila:
+**UNIFORM JULIET 4230** (desconhecido, plataforma J, nº 4230) e **HOTEL JULIET 4120** (inimigo). Quando
+a categoria muda, o contato é **redesignado** (ex.: UNIFORM JULIET → KILO TANGO).
+
+</BlocoConceito>
+
+## Partes de contato
+
+A **parte** é a mensagem que dissemina o contato. Os tipos:
+
+<BlocoComparacao
+  titulo="Os cinco tipos de parte"
+  colunas={["Parte", "Quando se usa"]}
+  linhas={[
+    ["Instantânea", "Ameaça IMEDIATA — prioridade máxima (ex.: lançamento detectado)"],
+    ["Inicial", "Contato NOVO sendo disseminado pela primeira vez"],
+    ["Ampliadora", "ATUALIZA um contato já disseminado (nova posição/rumo/velocidade)"],
+    ["Situação de Raides (SITREP)", "VÁRIOS contatos resumidos num período (vários raides ativos)"],
+    ["Mista", "Amplia/esclarece dados de um contato (ver abaixo)"],
+  ]}
+/>
+
+### Partes mistas
+
+São expressões que ampliam ou esclarecem um contato: **EU TENHO** (confirmo o contato no meu sensor),
+**EU QUERO** (assumo a responsabilidade de disseminar), **AMPLIANDO** (acrescento informação),
+**JUNTARAM** (dois contatos se fundem; decide-se qual número permanece) e **BIFURCADO** (um contato se
+divide; o número original fica com o mais perigoso / o de maior grupo / o que mantém o rumo).
+
+## Elementos essenciais de uma parte
+
+<BlocoConceito titulo="O que não pode faltar">
+
+`CHAMADA/PRECEDÊNCIA · CATEGORIA · NÚMERO · POSIÇÃO · RUMO E VELOCIDADE · INFORMAÇÕES COMPLEMENTARES ·
+HORA · FECHO`.
+
+O **PMA** entra na parte (marcação/distância/hora) **apenas quando necessário** por segurança ou
+interceptação — não em toda parte. *(É aqui que o resultado da Rosa de Manobras II vira informação de
+contato.)*
+
+</BlocoConceito>
+
+## Link de dados e PROFON
+
+- **Link de dados (Link-YB / Link A)** — ligação entre os computadores dos **Sistemas de Dados Táticos** dos navios, por rede de rádio; **reduz o tráfego de voz** e compartilha dados automaticamente. O **OPGEN/OPTASK LINK** dá o contexto de coordenação.
+- **PROFON (Procedimento de Fonia)** — linguagem padronizada para disseminar contato por voz: **indicativo · serviço · grade · DLRP · parte**.
+
+## Pontos que o professor pode cobrar
+
+- Listar os **métodos de expressar posição** (e a grade cartesiana com cores/eixos).
+- Explicar **número e bloco de acompanhamento** (costado → bloco).
+- Classificar um contato (**categoria + plataforma + número**).
+- Identificar o **tipo de parte** adequado (instantânea, inicial, ampliadora, SITREP, mista).
+- **Montar** uma parte inicial e uma ampliadora com os elementos essenciais.
+
+## Modelo de resposta em prova
+
+**"A partir de um contato de superfície desconhecido recém-detectado em 020°/14.000 jd, rumo 160°/16 kt, monte a parte adequada."**
+
+> *Tipo:* contato **novo** → **Parte Inicial**.
+>
+> *Elementos:* chamada (destinatário/origem) → **categoria** (desconhecido) e **número de
+> acompanhamento** → **posição** (marcação 020° / distância 14.000 jd, ou a grade correspondente) →
+> **rumo 160° e velocidade 16 kt** → informações complementares → **hora** → fecho.
+>
+> *Exemplo:* "J9V aqui N4S, **NOVO UNIFORM JULIET 4120**, marcação 020° distância 14.000, **rumo 160,
+> velocidade 16**, minuto 33, câmbio." Numa **ampliadora**, repetiria o número e atualizaria
+> posição/rumo/velocidade/hora.
+
+## ↔ Como este tópico se conecta com o resto da matéria
+
+Com os contatos numerados, classificados e disseminados, falta a **camada de apresentação e movimento**:
+os **tipos de plotagem**, o **PIM**, o **RDVZ**, a **ETA** e o **OPGEN**. É a Compilação do Quadro Tático
+III, que fecha a UE8 e a matéria.

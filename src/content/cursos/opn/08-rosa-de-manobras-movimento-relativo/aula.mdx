@@ -1,0 +1,115 @@
+---
+titulo: "Rosa de Manobras I — Movimento relativo — aula"
+secao: "aula"
+secaoOrdem: 2
+---
+
+*Já existe força, comando e prontidão. Falta a ferramenta que permite **manobrar** essa força e
+**avaliar contatos** com precisão: a Rosa de Manobras. Os próximos quatro tópicos são a UE5 — a parte
+que mais vale e mais derruba por erro mecânico. Comece pelos princípios; os cálculos vêm depois.*
+
+## Movimento verdadeiro × movimento relativo
+
+<BlocoConceito titulo="Os dois movimentos">
+
+- **Movimento verdadeiro** — rumo e velocidade de um navio **em relação à Terra** (o que se plota numa carta).
+- **Movimento relativo** — o movimento de um objeto **em relação a outro que também se move**. Tem dois elementos:
+  - **DMR** (Direção do Movimento Relativo) — a direção da linha que une as posições sucessivas do alvo em relação a nós.
+  - **VMR** (Velocidade do Movimento Relativo) — a distância relativa percorrida por unidade de tempo.
+
+</BlocoConceito>
+
+<BlocoPegadinha titulo="DMR não é o rumo do alvo">
+**Erro fatal de Aspirante:** confundir a **DMR** com o **rumo verdadeiro do alvo**. O alvo pode estar no
+rumo 026°, mas, no seu radar, parecer aproximar-se na direção 063° (DMR), por causa da **combinação dos
+dois movimentos**. A DMR é como o alvo se move *em relação a você*, não o rumo dele na Terra.
+</BlocoPegadinha>
+
+A tela de radar padrão (PPI) é uma apresentação **em movimento relativo**: seu navio fica fixo no centro
+e os contatos se movem ao redor. Se um contato mantém a **marcação constante** e a **distância diminui**,
+há **risco de colisão**.
+
+## Os dois diagramas
+
+A Rosa trabalha com dois diagramas que se conversam:
+
+### Diagrama das posições (onde o alvo está)
+
+![Diagrama de posições](/imagens/cursos/opn/rosa-diagrama-posicoes.svg)
+
+O **navio de referência (R, ou t) fica fixo no centro**. Plotam-se as posições sucessivas do alvo
+(**M1, M2**) por marcação verdadeira e distância. A linha **M1→M2** é a **trajetória relativa** do alvo.
+
+### Diagrama das velocidades (para onde cada um vai)
+
+![Diagrama de velocidades](/imagens/cursos/opn/rosa-diagrama-velocidades.svg)
+
+Aqui resolvem-se rumos e velocidades por **vetores que partem do centro t**:
+
+- **tr** — rumo e velocidade do **nosso navio** (referência).
+- **tm** — rumo e velocidade do **alvo** (manobrador).
+- **rm** — o **movimento relativo** (DMR e VMR), traçado **de r para m**.
+
+## A regra de ouro
+
+<BlocoConceito titulo="Duas relações que resolvem tudo">
+
+1. **`tr + rm = tm`** — o vetor do alvo é a soma do nosso vetor com o relativo.
+2. **A linha M1-M2 (diagrama de posições) é PARALELA ao vetor rm (diagrama de velocidades)**, sempre no sentido **de r para m**.
+
+É essa ponte entre os dois diagramas que permite, a partir de duas plotagens de radar, achar o rumo e a
+velocidade verdadeiros do alvo.
+
+</BlocoConceito>
+
+## Componentes da Rosa de Manobras
+
+- **Círculos concêntricos** — graduados de 1 a 10; servem para plotar **distâncias e velocidades**.
+- **Linhas radiais** — para **marcações** (graduação externa = verdadeiras; interna menor = recíprocas).
+- **Escalas (à direita)** — de **1:1 a 5:1**; use sempre a **maior escala possível** que comporte o problema (maior precisão).
+- **Ábaco logarítmico (à esquerda)** — alinhando uma régua entre dois valores conhecidos, acha **Tempo, Distância ou Velocidade**.
+
+## Regras dos 3 e 6 minutos
+
+Cálculos rápidos sem calculadora (com **1 milha náutica ≈ 2.000 jardas**):
+
+<BlocoConceito titulo="As duas regras">
+
+- **Regra dos 3 minutos:** Velocidade (nós) = distância em 3 min (jardas) **÷ 100**.
+- **Regra dos 6 minutos:** Velocidade (nós) = distância em 6 min (milhas) **× 10**.
+
+Ex.: percorreu **1.500 jardas em 3 min** → 1500 ÷ 100 = **15 nós**. Percorreu **1,2 milha em 6 min** →
+1,2 × 10 = **12 nós**.
+
+</BlocoConceito>
+
+## Erros comuns em prova
+
+<BlocoConceito titulo="Os quatro deslizes mecânicos">
+`ESCALA · RECÍPROCA · SENTIDO · MARCAÇÃO` — trocar a escala de distância pela de velocidade; ler a
+**recíproca** por engano; **inverter o rm** (traçar de m para r); e tratar uma **marcação relativa**
+recebida por fonia como se fosse verdadeira na Rosa.
+</BlocoConceito>
+
+## Pontos que o professor pode cobrar
+
+- Definir **movimento verdadeiro × relativo** e distinguir **DMR** do **rumo do alvo**.
+- Explicar a relação **M1-M2 ∥ rm** e a equação **tr + rm = tm**.
+- Dizer o que indica **marcação constante + distância diminuindo** (rota de colisão).
+- Aplicar as **regras dos 3 e 6 minutos**.
+- Identificar os **componentes** da Rosa (círculos, radiais, escalas, ábaco).
+
+## Modelo de resposta em prova
+
+**"O que significa, na tela de radar, um contato com marcação constante e distância decrescente — e por que?"**
+
+> *Resposta:* Significa **rota de colisão**. Na apresentação em movimento relativo (PPI), o nosso navio
+> está fixo no centro; se o contato **mantém a marcação** (a direção em que o vemos não muda) e a
+> **distância cai**, ele está vindo direto para o centro — ou seja, para nós. A DMR aponta para o nosso
+> navio. É a situação de alerta máximo para o Oficial de Quarto.
+
+## ↔ Como este tópico se conecta com o resto da matéria
+
+Com os diagramas entendidos, o próximo passo é o problema **mais cobrado** da prova: a partir de duas
+plotagens de radar, calcular o **PMA** e transformar o contato em **rumo e velocidade do alvo**. É a
+Rosa de Manobras II.

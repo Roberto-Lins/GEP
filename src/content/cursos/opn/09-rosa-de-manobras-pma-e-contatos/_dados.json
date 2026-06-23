@@ -1,0 +1,18 @@
+{
+  "ordem": 9,
+  "slug": "09-rosa-de-manobras-pma-e-contatos",
+  "titulo": "Rosa de Manobras II — PMA e contatos",
+  "prioridade": "máxima",
+  "subtitulo": "O problema mais cobrado: rumo e velocidade do contato",
+  "tempoEstimado": "60 min",
+  "objetivo": "Resolver o problema de contato passo a passo: plotar M1/M2, achar a DMR, medir a distância relativa, calcular a VMR, baixar a perpendicular para o PMA (marcação, menor distância e hora) e construir o diagrama de velocidades para obter rumo e velocidade do contato (tr + rm = tm).",
+  "palavrasChave": [
+    "PMA", "CPA", "rumo do contato", "velocidade do contato", "DMR", "VMR",
+    "distância relativa", "diagrama de velocidades", "recíproca", "hora do PMA"
+  ],
+  "fontes": [
+    "Manual de Rosa de Manobras (Marinha do Brasil)",
+    "MIGUENS — Navegação, Cap. 14",
+    "Aula UE5 (Rosa, Aula 2) — exemplo de contato"
+  ]
+}

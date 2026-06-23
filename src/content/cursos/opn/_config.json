@@ -1,0 +1,28 @@
+{
+  "slug": "opn",
+  "titulo": "Operações Navais 1 — OPN PP1",
+  "subtitulo": "Doutrina, documentos, ATP, Rosa de Manobras, manobras táticas e quadro tático",
+  "descricao": "Trilha sequencial para a PP1 de Operações Navais: da doutrina e da linguagem da Marinha aos documentos operativos, à organização da força, à Rosa de Manobras (a ferramenta que mais vale na prova), às manobras táticas e à compilação do quadro tático. Conteúdo aprofundado e fiel à Apostila EN-131, com questões de exemplo comentadas em cada mini-matéria.",
+  "categoria": "Carreira Naval",
+  "ano": "4",
+  "semestre": "1",
+  "epoca": "P1",
+  "turma": ["CA-HE", "CA-HM", "CA-HS"],
+  "ordem": 1,
+  "temaVisual": "naval-command",
+  "corTema": "dourado",
+  "icone": "/imagens/cursos/opn/icone.svg",
+  "capa": "/imagens/cursos/opn/capa.svg",
+  "features": {
+    "timeline": true,
+    "simulados": false,
+    "mapasMentais": false,
+    "podcasts": false,
+    "animacoesHero": false,
+    "animacoesTransicao": false,
+    "modoRevisaoVespera": true,
+    "graficoProgressoAvancado": false,
+    "writing": false
+  },
+  "componentesExtras": []
+}

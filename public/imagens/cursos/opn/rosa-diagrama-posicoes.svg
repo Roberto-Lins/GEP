@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 280" width="420" height="280" role="img" aria-label="Diagrama de posições: R no centro, M1, M2 e PMA">
+  <defs>
+    <marker id="ah-p" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0 0L7 3L0 6z" fill="#9db4d0"/></marker>
+  </defs>
+  <rect width="420" height="280" rx="10" fill="#0B1220"/>
+  <text x="16" y="28" font-family="Georgia, serif" font-size="16" fill="#CBD5E1">Diagrama de posições</text>
+  <!-- R no centro -->
+  <g transform="translate(150 160)">
+    <circle r="90" fill="none" stroke="#1E3A5F" stroke-width="1.5"/>
+    <circle r="60" fill="none" stroke="#27405f" stroke-width="1"/>
+    <circle r="30" fill="none" stroke="#27405f" stroke-width="1"/>
+    <line x1="0" y1="-98" x2="0" y2="-90" stroke="#334155" stroke-width="1.5"/>
+    <text x="-4" y="-104" font-family="Inter" font-size="12" fill="#94a3b8">N</text>
+    <circle r="4" fill="#D6A84F"/>
+    <text x="-20" y="6" font-family="Georgia, serif" font-size="16" fill="#D6A84F">R</text>
+  </g>
+  <!-- M1 e M2 (alvo aproximando) e linha M1-M2 (DMR) -->
+  <circle cx="300" cy="90" r="4" fill="#F7F3EA"/>
+  <text x="306" y="88" font-family="Georgia, serif" font-size="15" fill="#F7F3EA">M1</text>
+  <circle cx="250" cy="150" r="4" fill="#F7F3EA"/>
+  <text x="256" y="150" font-family="Georgia, serif" font-size="15" fill="#F7F3EA">M2</text>
+  <line x1="300" y1="90" x2="205" y2="204" stroke="#9db4d0" stroke-width="2.5" stroke-dasharray="2 0" marker-end="url(#ah-p)"/>
+  <text x="232" y="120" font-family="Georgia, serif" font-size="14" fill="#9db4d0">DMR</text>
+  <!-- PMA: pé da perpendicular de R à reta M1-M2 -->
+  <circle cx="223" cy="180" r="4" fill="#22C55E"/>
+  <text x="150" y="232" font-family="Georgia, serif" font-size="14" fill="#22C55E">PMA (perpendicular de R)</text>
+  <line x1="150" y1="160" x2="223" y2="180" stroke="#22C55E" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="16" y="266" font-family="Inter, sans-serif" font-size="13" fill="#94a3b8">R fixo no centro · M1→M2 = trajetória relativa · PMA = pé da perpendicular</text>
+</svg>

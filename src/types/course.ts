@@ -16,8 +16,12 @@ export interface CourseHierarchyMeta {
   ano: Ano;
   semestre: Semestre;
   epoca: Epoca;
-  /** só relevante p/ 3°/4° ano; 'geral' = comum a todas as turmas */
-  turma?: Turma;
+  /**
+   * Turma(s) a que a matéria pertence (só relevante p/ 3°/4° ano).
+   * 'geral' = comum a todas as turmas. Aceita uma turma única ou uma lista —
+   * ex.: matéria comum às turmas CA: ['CA-HE','CA-HM','CA-HS'].
+   */
+  turma?: Turma | Turma[];
 }
 
 export interface CursoFeatures {

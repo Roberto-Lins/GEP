@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 280" width="420" height="280" role="img" aria-label="Triângulo do vento: tr + rw = tw">
+  <defs>
+    <marker id="aw-d" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0 0L7 3L0 6z" fill="#D6A84F"/></marker>
+    <marker id="aw-b" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0 0L7 3L0 6z" fill="#9db4d0"/></marker>
+    <marker id="aw-w" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0 0L7 3L0 6z" fill="#F7F3EA"/></marker>
+  </defs>
+  <rect width="420" height="280" rx="10" fill="#0B1220"/>
+  <text x="16" y="28" font-family="Georgia, serif" font-size="16" fill="#CBD5E1">Triângulo do vento (vetores "para onde")</text>
+  <!-- t origin -->
+  <circle cx="80" cy="205" r="4" fill="#CBD5E1"/>
+  <text x="62" y="222" font-family="Georgia, serif" font-size="16" fill="#CBD5E1">t</text>
+  <!-- tr: navio -->
+  <line x1="80" y1="205" x2="225" y2="100" stroke="#D6A84F" stroke-width="3" marker-end="url(#aw-d)"/>
+  <circle cx="225" cy="100" r="4" fill="#D6A84F"/>
+  <text x="231" y="98" font-family="Georgia, serif" font-size="16" fill="#D6A84F">r</text>
+  <text x="120" y="142" font-family="Georgia, serif" font-size="15" fill="#D6A84F">tr (navio)</text>
+  <!-- tw: vento real (para onde sopra) -->
+  <line x1="80" y1="205" x2="335" y2="160" stroke="#F7F3EA" stroke-width="3" marker-end="url(#aw-w)"/>
+  <circle cx="335" cy="160" r="4" fill="#F7F3EA"/>
+  <text x="341" y="160" font-family="Georgia, serif" font-size="16" fill="#F7F3EA">w</text>
+  <text x="180" y="205" font-family="Georgia, serif" font-size="15" fill="#F7F3EA">tw (vento real)</text>
+  <!-- rw: vento relativo/aparente, de r para w -->
+  <line x1="225" y1="100" x2="335" y2="160" stroke="#9db4d0" stroke-width="3" marker-end="url(#aw-b)"/>
+  <text x="276" y="116" font-family="Georgia, serif" font-size="15" fill="#9db4d0">rw (aparente)</text>
+  <text x="16" y="262" font-family="Inter, sans-serif" font-size="12.5" fill="#94a3b8">tr + rw = tw · a marcação DE ONDE o vento sopra é a recíproca do vetor "para onde"</text>
+</svg>
