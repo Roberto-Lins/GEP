@@ -1,22 +1,18 @@
-import type {
-  QuestaoMultipla, QuestaoVF, GrupoCorrelacione, QuestaoDiscursiva, Questao,
-} from '@tipos/question';
+import type { Questao } from '@tipos/question';
 export type { Questao } from '@tipos/question';
+import {
+  multiplaEscolha, verdadeiroFalso, correlacionar, discursivas,
+} from './banco-geral';
 
 // ─────────────────────────────────────────────────────────────────────────────
-// BANCO GERAL — página /opn/questoes (e simulados, se algum dia ligados).
-// INTENCIONALMENTE VAZIO nesta etapa. O banco geral do OPN será populado DEPOIS,
-// numa etapa própria, a partir da pasta independente ../OPN/EXERCÍCIOS
-// (Fácil/Médio/Difícil: objetivas, certo-ou-errado, correlacione e discursivas).
+// BANCO GERAL — página /opn/questoes. POPULADO a partir da pasta independente
+// ../OPN/EXERCÍCIOS (Fácil/Médio/Difícil), transcrito em ./banco-geral.ts.
 //
 // IMPORTANTE: as questões de exemplo das mini-matérias vivem em `perTopico`
-// (mais abaixo) e NÃO entram aqui — os dois bancos nunca se misturam. Não migrar
-// `perTopico` para cá automaticamente (mesmo padrão adotado no curso ING-4).
+// (mais abaixo) e NÃO entram aqui — os dois bancos nunca se misturam (mesmo
+// padrão adotado no curso ING-4).
 // ─────────────────────────────────────────────────────────────────────────────
-export const multiplaEscolha: QuestaoMultipla[] = [];
-export const verdadeiroFalso: QuestaoVF[] = [];
-export const correlacionar: GrupoCorrelacione[] = [];
-export const discursivas: QuestaoDiscursiva[] = [];
+export { multiplaEscolha, verdadeiroFalso, correlacionar, discursivas };
 
 export const todasQuestoes: Questao[] = [
   ...multiplaEscolha, ...verdadeiroFalso, ...correlacionar, ...discursivas,
