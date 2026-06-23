@@ -7,15 +7,23 @@ secaoOrdem: 4
 ## As formaturas em linha
 
 <BlocoComparacao
-  titulo="Coluna × Linha de Frente × Linha de Marcação"
-  colunas={["Formatura", "Disposição dos navios", "Sinal ATP (comum)"]}
+  titulo="Coluna × Linha de Frente × Linha de Marcação (numeração da Apostila)"
+  colunas={["Formatura", "Disposição dos navios", "Sinal ATP"]}
   linhas={[
-    ["Coluna", "Um atrás do outro (na esteira do guia)", "FORM 1"],
-    ["Linha de Frente", "Lado a lado, por boreste ou bombordo do guia", "FORM 2 (BE) / FORM 3 (BB)"],
-    ["Linha de Marcação", "Numa marcação (diagonal) a partir do guia", "FORM 4 / FORM E"],
-    ["Diamante", "Losango em torno do guia", "FORM D"],
+    ["Coluna", "Proa/popa do guia (um atrás do outro)", "FORM 1 (crescente) · FORM 2 (inversa) · C/E (flexível/aberta)"],
+    ["Linha de Frente por BE", "Lado a lado, a BORESTE do posto 1", "FORM 3"],
+    ["Linha de Frente por BB", "Lado a lado, a BOMBORDO do posto 1", "FORM 4"],
+    ["Linha de Frente flexível", "Dentro de 15° do través, sequência mais rápida", "FORM Y"],
+    ["Linha de Marcação", "Diagonal (≠ proa/popa/través)", "FORM [000–359] / relativa · FORM O (flexível)"],
+    ["Diamante", "Losango a partir da coluna", "FORM D"],
   ]}
 />
+
+<BlocoPegadinha titulo="FORM 2 não é linha de frente">
+A pegadinha mais traiçoeira da UE6: **FORM 1 e FORM 2 são COLUNA** (a 2 só inverte a sequência
+numérica). A **linha de frente** começa no **FORM 3 (boreste)** e **FORM 4 (bombordo)**. Quem decora
+"2 = linha de frente" erra a identificação inteira.
+</BlocoPegadinha>
 
 ## Métodos de execução (prévia da UE6 II)
 
