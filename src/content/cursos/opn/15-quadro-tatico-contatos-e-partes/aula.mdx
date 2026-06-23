@@ -30,7 +30,8 @@ faixa de números atribuída a uma unidade (ex.: costado **F45** → bloco **450
 <BlocoConceito titulo="As quatro categorias + a designação">
 
 Todo contato é classificado em **desconhecido (U), inimigo (H/hostil), amigo ou neutro**. A designação
-combina **categoria + plataforma + número de acompanhamento**. Exemplos da Apostila:
+segue o **Código Operativo Abreviado (COA, do ComOpNav-516)**: **categoria (1ª letra) + plataforma (2ª
+letra) + número de acompanhamento**. Exemplos da Apostila:
 **UNIFORM JULIET 4230** (desconhecido, plataforma J, nº 4230) e **HOTEL JULIET 4120** (inimigo). Quando
 a categoria muda, o contato é **redesignado** (ex.: UNIFORM JULIET → KILO TANGO).
 
@@ -72,10 +73,77 @@ contato.)*
 
 </BlocoConceito>
 
-## Link de dados e PROFON
+## Link de dados
 
-- **Link de dados (Link-YB / Link A)** — ligação entre os computadores dos **Sistemas de Dados Táticos** dos navios, por rede de rádio; **reduz o tráfego de voz** e compartilha dados automaticamente. O **OPGEN/OPTASK LINK** dá o contexto de coordenação.
-- **PROFON (Procedimento de Fonia)** — linguagem padronizada para disseminar contato por voz: **indicativo · serviço · grade · DLRP · parte**.
+- **Link de dados (Link-YB / Link A)** — ligação entre os **Sistemas de Dados Táticos (SDT)** dos navios, por rede de rádio; **reduz drasticamente o tráfego de voz** e dá consciência situacional comum e silenciosa. O **Link YB** opera nos modos **Normal · Cripto · Fraterno (MB e ARA)**. A coordenação vem do **OPGEN/OPTASK LINK**, que define o **DLRP** (Data Link Reference Point — origem da grade), a NCS, a distribuição de *slots*, o modo e a frequência da rede.
+- Na fonia, anunciar **"Dado Belina [nº]"** (EN: *alligator*) significa **"estou transmitindo este contato por link"**; **"NEGAT Dado Belina"** (*negative alligator*) **cancela** a transmissão por link.
+
+## PROFON — disseminar contato por voz
+
+O **PROFON (Procedimento de Fonia)** é a linguagem padronizada para passar contatos por voz (refs.:
+**DGMM-0550** e **ComOpNav-516 — Código Operativo Abreviado**). Quem coordena é o **FTC-S** (*Force Track
+Coordination — Surface*); o controle da rede é da **NCS** (*Net Control Station*). A estrutura de uma
+parte é sempre a mesma:
+
+`[indicativo destinatário] AQUI [indicativo origem] → [tipo de parte] → [COA + número] → [posição na grade] → [rumo – veloc] → [info] → [hora] → [fecho]`
+
+<BlocoConceito titulo="Vocabulário de fonia (PT ↔ EN)">
+
+- **AQUI** = *this is* · **separa** = *break* · **câmbio** = *over* · **é só** = *out* · **ciente** = *roger*.
+- **esquecer / NEGAT** = *scrub / negative* · **redesignado** = *now* · **coincidente** = *same position*.
+- **desvanecido / FADED** = *lost / faded* (perdi o acompanhamento) · **retomado** = *resumed* · **piando papagaio** = *squawking parrot* (resposta IFF).
+
+</BlocoConceito>
+
+### Código Operativo Abreviado (COA) — a palavra do contato
+
+O COA dá o **codinome** do contato por ambiente e categoria (1ª letra = categoria, 2ª = plataforma):
+
+<BlocoComparacao
+  titulo="Codinomes que a prova usa"
+  colunas={["Português", "Inglês", "Significado"]}
+  linhas={[
+    ["Desconhecido de superfície (UJ)", "skunk", "Contato de superfície não identificado"],
+    ["Hostil (HD…)", "hostile", "Contato inimigo confirmado"],
+    ["Amigo (R…)", "friend", "Contato identificado como amigo"],
+    ["Vagabundo (aéreo)", "stray / bogey", "Contato aéreo desconhecido"],
+    ["Saci (submarino)", "goblin", "Contato submarino"],
+    ["Ruído (eletrônico)", "racket", "Emissão eletromagnética detectada"],
+    ["Buldogue", "bulldog", "Míssil lançado (lançou buldogue = bulldog away)"],
+    ["Dado Belina", "alligator", "Transmitindo o contato por link de dados"],
+  ]}
+/>
+
+Mudou a categoria? **Redesigna-se** o número: *"UJ1443 redesignado R1443"* (skunk **now** friend);
+*"UJ4577 redesignado HD4577"* (skunk **now** hostile).
+
+### Leitura da grade
+
+Posição na grade cartesiana = **cor + X.X – Y.Y** (a partir do DLRP), seguida de **rumo – velocidade**:
+*"AZUL 040.2 – 051.0 – 045 – 15"* = quadrante **azul**, X = 040.2, Y = 051.0, **rumo 045°, veloc 15 kt**.
+
+### Exemplos trabalhados (do slide, ambiente de superfície)
+
+<BlocoConceito titulo="Uma parte de cada tipo">
+
+- **Inicial** (contato novo, sem ameaça imediata):
+  > *"I4N aqui A0T **NOVO UJ 1443** Azul 037.2 – 048.0 câmbio."* (EN: *new skunk 1443 Blue 037.2 – 048.0 over*.)
+- **Ampliadora** (atualiza um contato já disseminado):
+  > *"I4N aqui A0T **UJ 1443** Azul 040.2 – 051.0 – 045 – 15 câmbio."*
+- **Instantânea** (ameaça imediata — repete-se a palavra "instantânea"):
+  > *"I4N aqui U5A **Instantânea novo UJ 4577** Verde 239.2 – 358.1 – 270 – 20 separa **UJ 4577 lançou buldogue** separa Dado Belina 4577 câmbio."*
+- **Situação de Raides (SITREP)** (resumo periódico de vários contatos):
+  > *"Z2R aqui I4N, **SITREP UNO TRÊS ZERO ZERO PAPA, Alarme de Superfície Amarelo, dois raides ativos** separa R1443 Azul 044.2 – 054.1 – 045 – 15 separa KU 2501 Vermelho 001 – 021 – parado – composição tripla câmbio."*
+- **Mista — perda e retomada:** *"R1443 **desvanecido** Azul 048.2 – 057.1 – 045 – 15 minuto 52 separa **Esquecer** R1443 câmbio"* (*FADED… scrub*); depois *"R1443 **retomado** Azul 049.2 – 058.1 – 045 – 15 separa Dado Belina 1443 câmbio"* (*resumed*).
+
+</BlocoConceito>
+
+### Nos demais ambientes (resumo)
+
+Cada ambiente tem o seu codinome e jargão: **aéreo** — *bogey/vagabundo*, interroga-se o **IFF**
+("piando papagaio modo 3A"); **eletrônico** — *racket/ruído*, manda-se **gônio** "sintonizar"; **submarino**
+— *goblin/saci*, com **"Estou Quente / Estou Frio"** (*I am HOT / COLD* — contato firme × perdido) e
+**PosSub**. O detalhamento por ambiente é treinado depois (SSTT, OPN-2/U27).
 
 ## Pontos que o professor pode cobrar
 
@@ -83,7 +151,10 @@ contato.)*
 - Explicar **número e bloco de acompanhamento** (costado → bloco).
 - Classificar um contato (**categoria + plataforma + número**).
 - Identificar o **tipo de parte** adequado (instantânea, inicial, ampliadora, SITREP, mista).
-- **Montar** uma parte inicial e uma ampliadora com os elementos essenciais.
+- **Montar** uma parte (inicial, ampliadora, instantânea) em **PROFON**, com COA, grade e fecho.
+- Traduzir o **Código Operativo Abreviado** (skunk/UJ, friend, hostile, bogey, goblin, racket, bulldog, Dado Belina/alligator).
+- Explicar a **redesignação** de categoria (UJ → R/HD) e a **perda/retomada** (desvanecido/FADED · retomado).
+- Saber o papel do **FTC-S** e da **NCS** e o que é o **DLRP**.
 
 ## Modelo de resposta em prova
 
