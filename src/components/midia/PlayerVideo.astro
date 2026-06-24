@@ -1,5 +1,5 @@
 ---
-import type { Midia } from '@data/cursos/gep/midias';
+import type { Midia } from '@tipos/media';
 interface Props { midia: Midia }
 const { midia } = Astro.props;
 
@@ -39,6 +39,17 @@ const suportado = ext !== 'mkv';
     <div>
       <p class="font-serif text-marfim">{midia.titulo}</p>
       {midia.descricao && <p class="mt-1 text-sm text-nevoa/70">{midia.descricao}</p>}
+      {ehYoutube && (
+        <a
+          href={midia.src}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-2 inline-flex items-center gap-1 text-sm text-dourado underline-offset-4 hover:underline"
+        >
+          Abrir no YouTube
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </a>
+      )}
     </div>
     <span class="chip shrink-0 border border-white/10 bg-white/5 text-xs text-nevoa/70">{midia.fonte}</span>
   </figcaption>

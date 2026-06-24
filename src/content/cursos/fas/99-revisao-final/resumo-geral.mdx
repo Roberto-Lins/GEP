@@ -1,0 +1,54 @@
+---
+titulo: "Resumo geral"
+secao: "resumo-geral"
+secaoOrdem: 2
+---
+
+## Tabela de fórmulas
+
+| Tema | Fórmula |
+|---|---|
+| Span | maior − menor valor da faixa |
+| Histerese (%) | máx\|V₀₊ − V₀₋\| ÷ FSO × 100 |
+| Linearidade (%) | máx desvio da reta ÷ FSO × 100 |
+| Sensibilidade | Δsaída / Δentrada |
+| Kline-McClintock | ΔZ = √Σ(∂Z/∂Xᵢ · ΔXᵢ)² |
+| Encoder absoluto | posições = 2ⁿ · resolução = 360°/2ⁿ |
+| Encoder incremental | passo = 360°/PPR |
+| Vazão | Q = A·v · ṁ = ρ·Q |
+| Magmeter | E = B·L·v (Faraday) |
+
+## Tabela de sensores
+
+| Sensor | Mede | Saída | Princípio |
+|---|---|---|---|
+| LVDT | deslocamento linear | analógica | indutivo; secundárias em oposição de fase |
+| Encoder absoluto | posição absoluta | digital | código binário por posição |
+| Encoder incremental | variação de posição | digital | pulsos desde a referência |
+| Resolver | posição angular | analógica | sin/cos + RDC |
+| Potenciômetro | posição | analógica | pista resistiva + cursor |
+| Placa de orifício / Venturi | vazão | — | ΔP (Bernoulli) |
+| Eletromagnético | vazão | — | Faraday (fluido condutor) |
+| Tacômetro CC/CA | velocidade | tensão | fem ∝ velocidade |
+| Acelerômetro | aceleração linear | — | força sobre massa de prova |
+| Giroscópio | velocidade angular | — | referência de atitude |
+
+## Tabela de sincros
+
+| Elemento | Entrada | Saída | Rotor em 115 VAC? |
+|---|---|---|---|
+| TX | rotor mecânico + CA | elétrica (3 linhas) | Sim |
+| TR | 3 linhas + CA | **mecânica** | Sim |
+| CX | rotor mecânico + CA | elétrica | Sim |
+| CT | sinal do CX + rotor mecânico | elétrica (∝ sen erro) | **Não** |
+| TDX | sinal do TX + rotor mecânico | elétrica | Não |
+| TDR | duas entradas síncronas | **mecânica** | Não |
+
+## Perguntas rápidas (responda de cabeça)
+
+1. Por que o LVDT dá 0 V no centro? *(secundárias iguais em oposição de fase → cancelam.)*
+2. Resolução de um encoder de 4 bits? *(360°/16 = 22,5°.)*
+3. O que não afeta o magmeter? *(densidade, viscosidade, temperatura, pressão.)*
+4. Quem indica o sentido: tacômetro CC ou CA? *(CC, pela polaridade.)*
+5. Por que o erro do INS cresce? *(a deriva é integrada e se acumula.)*
+6. Tensão do CT no nulo? *(0 V — rotor a 90° do campo.)*

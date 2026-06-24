@@ -1,0 +1,56 @@
+---
+titulo: "Diagramas — aula"
+secao: "aula"
+secaoOrdem: 2
+---
+
+## As três grandezas que têm de sair na ponta da língua
+
+- **Variável controlada:** a grandeza **medida e controlada** — em geral a **saída** do processo (ex.: a temperatura real da água).
+- **Variável manipulada:** a grandeza que o **controlador altera** para corrigir a controlada (ex.: a vazão de vapor/aquecimento).
+- **Set point:** o **valor de referência desejado** (ex.: a temperatura-alvo).
+
+<BlocoPegadinha titulo="A manipulada não é a saída">
+Em qualquer malha, saiba apontar quem é a controlada e quem é a manipulada. A **manipulada é o que o
+controlador mexe** — não confunda com a saída do processo (essa é a controlada).
+</BlocoPegadinha>
+
+## Ler a etiqueta (tag) dos instrumentos
+
+Cada instrumento = **letras (função)** + **número (a malha)**. A leitura segue a norma ISA:
+
+- **1ª letra = a variável de processo:** **T** temperatura · **L** nível · **F** vazão · **P** pressão.
+- **Letras seguintes = a função:** **E** elemento sensor/primário · **T** transmissor · **I** indicador · **C** controlador · **V** válvula · **Y** conversor/transdutor.
+
+Exemplos: **TE** (sensor de temperatura), **TT** (transmissor), **TIC** (controlador indicador de
+temperatura), **TCV** (válvula de controle de temperatura), além de **LT, LIC, FT, FIC, PIC**…
+
+<BlocoPegadinha titulo="A 1ª letra segue a variável de processo (cai!)">
+A 1ª letra é a **variável medida**, não a construção do aparelho nem a manipulada. Um transmissor de
+**pressão diferencial** que mede **nível** é **LT** (não PDT). Uma válvula que varia **vazão** por
+ordem de um controlador de **nível** é **LV** (não FV).
+</BlocoPegadinha>
+
+## Exemplo principal: aquecimento de água
+
+<figure>
+  <img src="/imagens/cursos/fas/diagramas/aquecimento-agua-malha-fechada.png" alt="Processo de aquecimento de água: tanque com vapor, sensor TE, transmissor TT, controlador TIC, conversor TY (i/p) e válvula de controle TCV, com a legenda dos instrumentos." />
+  <figcaption>Fonte: Aula SUE 1.2B — Diagrama de Instrumentação, slide 30.</figcaption>
+</figure>
+
+Interpretando a malha de controle de **temperatura** da água:
+
+- **TE** — elemento sensor: mede a temperatura real da água (a **variável controlada**).
+- **TT** — transmissor: condiciona a medida e a converte em **sinal padrão de 4 a 20 mA CC**.
+- **TIC** — controlador indicador: compara a temperatura medida com o **set point** e calcula a correção.
+- **TY** — conversor/transdutor **i/p** (corrente → pressão): traduz o sinal elétrico do controlador em sinal pneumático para a válvula.
+- **TCV** — válvula de controle: o **elemento final**, que varia a vazão de **vapor** (a **variável manipulada**).
+- A medida do TE que volta ao TIC é a **realimentação** (feedback) que fecha a malha.
+
+## Tipo de ligação / sinal: elétrico × pneumático
+
+- **Sinal elétrico padrão:** **4 a 20 mA CC** — o zero da escala é 4 mA (corrente nula denuncia cabo rompido: é o **zero vivo**). Costuma ser representado por linha **tracejada**.
+- **Sinal pneumático padrão:** **20 a 100 kPa** (≈ 3–15 psi). Costuma ser representado por linha com **traços cruzados (//)**.
+
+Saiba, no desenho, **qual linha é elétrica e qual é pneumática**, e dizer a função de cada elemento
+que ela conecta (sensor → transmissor → controlador → conversor → válvula).

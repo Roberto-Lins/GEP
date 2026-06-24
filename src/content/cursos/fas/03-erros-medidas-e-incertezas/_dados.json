@@ -1,0 +1,10 @@
+{
+  "ordem": 3,
+  "slug": "03-erros-medidas-e-incertezas",
+  "titulo": "Erros, medidas e incertezas",
+  "prioridade": "muito alta",
+  "subtitulo": "Sistemático × aleatório, exatidão × precisão e Kline-McClintock · 1,3 ponto",
+  "tempoEstimado": "1 h 30",
+  "objetivo": "Classificar o tipo de erro numa situação dada e fazer uma propagação de Kline completa, terminando em \"valor ± incerteza\", sem consultar.",
+  "palavrasChave": ["erro sistemático", "erro aleatório", "erro grosseiro", "exatidão", "precisão", "incerteza", "medição direta", "medição indireta", "Kline e McClintock", "propagação de incertezas"]
+}

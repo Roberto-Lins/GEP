@@ -1,0 +1,10 @@
+{
+  "ordem": 4,
+  "slug": "04-fundamentos-de-sensores-e-transdutores",
+  "titulo": "Fundamentos dos sensores e transdutores",
+  "prioridade": "alta",
+  "subtitulo": "Sensor × transdutor, condicionamento e sinais · base dos 3,0",
+  "tempoEstimado": "40 min",
+  "objetivo": "Diferenciar sensor de transdutor, entender elemento primário, transmissor e condicionamento de sinais (analógico × digital, 4–20 mA e zero vivo).",
+  "palavrasChave": ["sensor", "transdutor", "elemento primário", "transmissor", "condicionamento de sinais", "sinal analógico", "sinal digital", "4 a 20 mA", "zero vivo"]
+}

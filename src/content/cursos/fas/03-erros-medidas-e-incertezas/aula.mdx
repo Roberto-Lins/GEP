@@ -1,0 +1,63 @@
+---
+titulo: "Erros — aula"
+secao: "aula"
+secaoOrdem: 2
+---
+
+## Medida, erro e incerteza
+
+Toda medida tem **três componentes**: valor numérico + **incerteza** + unidade. Ex.: R = 300 ± 6 Ω.
+
+- **Erro:** a diferença entre o valor **medido** e o **verdadeiro** (Eₐ = x_m − x_v). Em geral é **desconhecido** (o verdadeiro é desconhecido).
+- **Incerteza:** uma **estimativa** do erro; caracteriza a **dispersão** e define um intervalo de confiança em torno da média.
+
+## Os três tipos de erro
+
+| Tipo | Origem | Comportamento | Prejudica |
+|---|---|---|---|
+| **Sistemático** | fontes **identificáveis/previsíveis** | medidas **consistentemente acima ou abaixo**; pode ser **compensado** por calibração | **Exatidão** |
+| **Aleatório** | flutuações **incontroláveis** | variam a cada medição, em torno da média; **reduzem-se aumentando o nº de observações** | **Precisão** |
+| **Grosseiro** | **falha humana** | grande e **óbvio** (ex.: ler a escala errada) | — |
+
+<BlocoPegadinha titulo="Reduzir ≠ compensar">
+O **aleatório** se **reduz** fazendo mais medições (a média atenua). O **sistemático** se **compensa**
+por calibração. Repetir a medição **não elimina** automaticamente um erro sistemático.
+</BlocoPegadinha>
+
+## Exatidão × precisão
+
+- **Exatidão (acurácia):** quão **perto do valor verdadeiro** — ligada à **média**, revela **erro sistemático**.
+- **Precisão:** **consistência/repetibilidade** das medidas — ligada ao **desvio padrão**, revela **erro aleatório**; **não garante** estar certo.
+
+Analogia do tiro: tiros **agrupados** (mesmo longe do alvo) = **preciso**; tiros **espalhados em torno
+do alvo** = exato na média, pouco preciso.
+
+## Medições diretas × indiretas
+
+- **Direta:** o instrumento dá o valor sem cálculo (amperímetro lê a corrente).
+- **Indireta:** o valor vem de uma fórmula com outras grandezas (P = U·I).
+
+## Kline e McClintock (o cálculo que vale a etapa)
+
+Para uma medida **indireta** Z = f(X₁, …, Xₙ), com incertezas ΔX₁…ΔXₙ:
+
+> ΔZ = √[ (∂Z/∂X₁ · ΔX₁)² + (∂Z/∂X₂ · ΔX₂)² + … + (∂Z/∂Xₙ · ΔXₙ)² ]
+
+**Roteiro de resolução:**
+
+1. **Identifique** quais grandezas têm incerteza e **converta % em valor absoluto**.
+2. Calcule a **derivada parcial** de Z em relação a cada uma (a sensibilidade).
+3. **Multiplique** cada derivada pela sua incerteza, **eleve ao quadrado**, **some** e tire a **raiz**.
+4. **Apresente** Z = valor ± ΔZ.
+
+<BlocoConceito titulo="Exemplo-modelo (potência num resistor, P = U²/R)">
+U = 100 V ± 2% (ΔU = 2 V); R = 50 Ω ± 2% (ΔR = 1 Ω).
+
+- P = 100²/50 = **200 W**.
+- ∂P/∂U = 2U/R = 4 → (4·2) = 8.
+- ∂P/∂R = −U²/R² = −4 → (−4·1) = −4.
+- ΔP = √(8² + 4²) = √80 ≈ **8,9 W** → **P = 200 ± 8,9 W** (≈ ±4,5%).
+</BlocoConceito>
+
+**Variação comum — resistências em série** (R = R₁ + R₂): ∂R/∂R₁ = ∂R/∂R₂ = 1 → ΔR = √(ΔR₁² + ΔR₂²);
+depois propaga em P = U²/R. (Veja a resolução completa nos exercícios deste tópico.)

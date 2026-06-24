@@ -1,0 +1,55 @@
+---
+titulo: "Inerciais — aula"
+secao: "aula"
+secaoOrdem: 2
+---
+
+## As grandezas medidas (a base de tudo)
+
+- **Acelerômetro → mede aceleração linear** (translação do corpo no espaço).
+- **Giroscópio → mede velocidade angular** (como o corpo **gira** no espaço).
+
+<BlocoPegadinha titulo="A diferença que mais cai">
+Aceleração **linear** (acelerômetro) × velocidade **angular** (giroscópio). **Não troque um pelo
+outro** — é a pegadinha mais frequente do bloco.
+</BlocoPegadinha>
+
+## Acelerômetro (o que permanece)
+
+Detecta a força/aceleração sobre uma **massa de prova**. O **Acelerômetro Pendular Servo Controlado
+(APSC)**: uma massa numa barra articulada; sob aceleração, injeta-se **corrente** nas bobinas para
+manter a massa **no zero** — essa **corrente é a medida da aceleração** (sistema com **realimentação**,
+**1 grau de liberdade**).
+
+## Giroscópio (o que permanece — sem rigidez/precessão)
+
+Sensor de orientação/rotação. O giroscópio mecânico tende a **manter o eixo de rotação fixo no
+espaço**, servindo de referência de atitude. Os **giroscópios modernos (rate gyros)** medem velocidade
+angular **sem peças girantes**: **RLG** (laser, efeito Sagnac), **FOG** (fibra ótica) e **MEMS** (Coriolis).
+
+## Sistema de Navegação Inercial (INS)
+
+<figure>
+  <img src="/imagens/cursos/fas/inerciais/sistema-inercial-blocos.png" alt="Diagrama de blocos do sistema inercial: Giroscópios & Acelerômetros alimentam o Sistema Inercial, que fornece Posição e Atitude (roll, pitch, yaw)." />
+  <figcaption>Fonte: Aula SUE 2.5 — Aplicações de Sensores, slide 4.</figcaption>
+</figure>
+
+- **Conceito:** detecta **posição, velocidade e atitude** do veículo **sem fontes externas** (sem GPS/rádio) → autonomia e **furtividade**. Composição típica: **3 acelerômetros + 3 giroscópios**, de 1 grau de liberdade.
+- **Integração:** os **giroscópios** dão a **atitude** (roll, pitch, yaw); os **acelerômetros** dão a aceleração, que **integrada 1 vez → velocidade** e **integrada de novo → posição**.
+- **Saídas:** posição, velocidade e atitude (rumo).
+
+### Concepções: gimbal × strapdown
+
+<figure>
+  <img src="/imagens/cursos/fas/inerciais/plataforma-gimbal-imu.png" alt="Concepção gimbal: plataforma estável com giroscópios e acelerômetros, suspensa por gimbals (balancins) e mantida por motores de torque (roll, pitch, yaw)." />
+  <figcaption>Fonte: Aula SUE 2.5 — Aplicações de Sensores, slide 46 (Figura 2: stable platform IMU).</figcaption>
+</figure>
+
+- **Gimbal:** sensores numa **plataforma estável** isolada por anéis/servomotores.
+- **Strapdown:** sensores **fixos à estrutura**; o alinhamento é feito por **cálculo/matriz de transformação** num computador rápido.
+
+<BlocoConceito titulo="Por que o erro do INS cresce com o tempo">
+Velocidade e posição vêm da **integração** das medidas; os pequenos erros dos sensores (**viés e
+deriva/drift**) são integrados junto e **se acumulam** — quanto mais longa a navegação, maior o erro de
+posição. Por isso o INS é **corrigido periodicamente** por referência externa.
+</BlocoConceito>

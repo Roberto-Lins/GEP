@@ -1,0 +1,10 @@
+{
+  "ordem": 2,
+  "slug": "02-caracteristicas-estaticas-e-ambientais",
+  "titulo": "Características estáticas e ambientais",
+  "prioridade": "alta",
+  "subtitulo": "Range, span, histerese, IP e o cálculo de histerese · 1,0 ponto",
+  "tempoEstimado": "1 h",
+  "objetivo": "Reconhecer cada característica pela definição e resolver o cálculo de histerese (e linearidade) sem consultar. Dominar IP (1º dígito sólidos, 2º água).",
+  "palavrasChave": ["range", "span", "exatidão", "precisão", "resolução", "sensibilidade", "linearidade", "histerese", "zona morta", "estabilidade", "deriva", "IP"]
+}

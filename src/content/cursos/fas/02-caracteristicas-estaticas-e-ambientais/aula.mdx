@@ -1,0 +1,64 @@
+---
+titulo: "Características — aula"
+secao: "aula"
+secaoOrdem: 2
+---
+
+## As características estáticas (decore pela palavra-chave)
+
+| Característica | Definição como cai na prova |
+|---|---|
+| **Range (faixa)** | os **limites superior e inferior** da medição. Ex.: −30 a 220 °C. |
+| **Span (alcance)** | a **diferença** entre o maior e o menor valor da faixa. Ex.: −30 a 220 → span = **250 °C**. |
+| **Sensibilidade** | **Δsaída/Δentrada** — a **inclinação** da curva. Ex.: termopar 40 µV/°C. |
+| **Resolução** | a **menor variação** da grandeza que produz mudança perceptível; menor divisão da escala. |
+| **Linearidade** | o **máximo desvio** da curva real em relação à **reta** de calibração (% do FSO). |
+| **Histerese** | a **máxima diferença na saída**, para a mesma entrada, conforme o sinal **sobe ou desce**. |
+| **Zona morta** | a **faixa em que a entrada varia sem mudança na saída**. |
+| **Estabilidade / deriva (drift)** | manter o desempenho no tempo; o desvio lento da saída é a **deriva**. |
+
+## O gráfico de histerese
+
+<figure>
+  <img src="/imagens/cursos/fas/caracteristicas/grafico-histerese-subida-descida.png" alt="Curva de histerese: a saída (out) em função da entrada (in) descreve um laço, com a curva de subida acima da de descida; a maior diferença vertical entre elas, h, é a histerese." />
+  <figcaption>Fonte: Aula SUE 2.1 — Caracterização de Sensor, slide 41.</figcaption>
+</figure>
+
+As curvas **ascendente** (subindo) e **descendente** (descendo) não coincidem. A maior distância
+vertical entre elas, **h**, é a histerese.
+
+## Cálculo de histerese (refaça o do slide — a prova será igual)
+
+A partir de uma tabela com leituras **subindo (V₀₊)** e **descendo (V₀₋)** para os mesmos valores de entrada:
+
+1. **FSO** = saída_máx − saída_mín (faixa de saída).
+2. Para cada ponto, calcule **|saída_subindo − saída_descendo|**.
+3. **Histerese (%) = (maior dessas diferenças) ÷ FSO × 100**.
+
+<figure>
+  <img src="/imagens/cursos/fas/caracteristicas/exercicio-histerese-linearidade.png" alt="Tabela do slide com níveis 1 a 5, saídas subindo e descendo, diferenças ΔV0+, ΔV0- e ΔV0+-; abaixo, FSO = 0,8 V, Linearidade = 0,08/0,8 = 10% e Histerese = 0,09/0,8 = 11,25%." />
+  <figcaption>Fonte: Aula SUE 2.1 — Caracterização de Sensor, slide 48 (exercício-modelo).</figcaption>
+</figure>
+
+No exercício-modelo do slide: **FSO = 1,0 − 0,2 = 0,8 V**. A **linearidade** sai do maior desvio em
+relação à reta (0,08) → **0,08/0,8 = 10%**; a **histerese** sai do maior |subida − descida| (0,09) →
+**0,09/0,8 = 11,25%**. Saiba calcular as duas no mesmo exercício.
+
+<BlocoConceito titulo="Fórmulas">
+**Histerese (%)** = máx|V₀₊ − V₀₋| ÷ FSO × 100 · **Linearidade (%)** = máx desvio da reta ÷ FSO × 100.
+</BlocoConceito>
+
+## Características ambientais e o IP
+
+O ambiente afeta o instrumento por **desvio do zero (zero drift)** e **deriva da sensibilidade**. As
+faixas ambientais de operação são **temperatura, umidade e altitude** (impactam operação e vida útil).
+
+O **Índice de Proteção (IP)** é um padrão IEC: as letras **IP** + 2 dígitos.
+
+- **1º dígito → proteção contra sólidos** (poeira, corpos sólidos, contato).
+- **2º dígito → proteção contra líquidos/água** (gotejamento, jatos, imersão).
+
+<BlocoPegadinha titulo="IP não tem a ver com UV">
+O IP mede proteção contra **sólidos e água**, nunca contra radiação ultravioleta. Essa troca é
+clássica em Certo/Errado.
+</BlocoPegadinha>

@@ -16,6 +16,8 @@ export interface CursoData {
   PRIORIDADE_META: Record<Prioridade, { label: string; peso: number; classe: string }>;
   midias: Midia[];
   midiasPorTopico: (slug: string) => { videos: Midia[]; podcasts: Midia[]; mapas: Midia[] };
+  /** opcional — mídias gerais (áudio/vídeo) reaproveitadas na revisão final (ex.: FAS) */
+  midiasGerais?: Midia[];
   multiplaEscolha: QuestaoMultipla[];
   verdadeiroFalso: QuestaoVF[];
   correlacionar: GrupoCorrelacione[];
@@ -24,6 +26,8 @@ export interface CursoData {
   todasQuestoes: Questao[];
   totalQuestoes: { multipla: number; vf: number; correlacione: number; discursiva?: number };
   questoesPorTopico: (slug: string) => Questao[];
+  /** opcional — simulado final com questões próprias (variações), separado do banco principal (ex.: FAS) */
+  simuladoFinal?: Questao[];
   checklists: Record<string, { id: string; texto: string }[]>;
   checklistDe: (slug: string) => { id: string; texto: string }[];
   fontes: Fonte[];

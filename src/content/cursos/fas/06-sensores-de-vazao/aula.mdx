@@ -1,0 +1,58 @@
+---
+titulo: "Sensores de vazão — aula"
+secao: "aula"
+secaoOrdem: 2
+---
+
+## Conceito-base
+
+Vazão = quantidade de fluido por unidade de tempo. **Volumétrica:** Q = A·v. **Mássica:** ṁ = ρ·Q
+(densidade × vazão volumétrica).
+
+## Vazão por pressão diferencial (Bernoulli)
+
+Cria-se uma **restrição** na tubulação; pela equação de **Bernoulli**, o fluido **acelera** e a
+**pressão cai**. Mede-se a **diferença de pressão (ΔP)** antes/depois da restrição — a vazão é
+proporcional a **√ΔP**.
+
+### Placa de orifício
+
+<figure>
+  <img src="/imagens/cursos/fas/vazao/placa-de-orificio.png" alt="Placa de orifício instalada na tubulação, com transmissor de pressão diferencial medindo a queda de pressão através do orifício." />
+  <figcaption>Fonte: Aula SUE 2.3 — Sensores de Vazão, slide 22.</figcaption>
+</figure>
+
+Simples e econômica. Como o escoamento “contrai” **abruptamente** ao passar pelo orifício, a
+recuperação de pressão é incompleta → **maior perda de carga**.
+
+### Tubo Venturi
+
+<figure>
+  <img src="/imagens/cursos/fas/vazao/tubo-venturi.png" alt="Tubo Venturi: seção que se estreita gradualmente (convergente), garganta e difusor gradual, com a curva de recuperação de pressão ao longo do tubo." />
+  <figcaption>Fonte: Aula SUE 2.3 — Sensores de Vazão, slide 23.</figcaption>
+</figure>
+
+A restrição é **gradual** (convergente → garganta → difusor). A transição suave reduz a turbulência e
+promove **melhor recuperação de pressão** → **menor perda de carga**, bom para **altas vazões** (mais
+caro que a placa).
+
+## Medidor eletromagnético (magmeter)
+
+<figure>
+  <img src="/imagens/cursos/fas/vazao/medidor-vazao-eletromagnetico.png" alt="Medidor eletromagnético de vazão: bobinas geram um campo magnético perpendicular ao fluxo; o fluido condutor induz uma tensão E = B·L·v captada por dois eletrodos na parede do tubo." />
+  <figcaption>Fonte: Aula SUE 2.3 — Sensores de Vazão, slide 8.</figcaption>
+</figure>
+
+**Princípio — lei de Faraday:** um **fluido condutor** em movimento dentro de um campo magnético
+induz uma **tensão proporcional à velocidade**, captada por **dois eletrodos** na parede do tubo
+(E = B·L·v).
+
+- **Exige fluido condutor** (não serve para óleo, gás ou água ultrapura).
+- **Sem partes móveis e sem obstrução** ao fluxo.
+- **Independe de densidade, viscosidade, temperatura e pressão** — basta o fluido ser condutor (por isso é “universal”).
+
+## Outros (citar)
+
+- **Ultrassônico:** tempo de trânsito ou efeito Doppler; não invasivo (*clamp-on*).
+- **Coriolis:** mede **vazão mássica** diretamente (defasagem do tubo vibrante); alta precisão.
+- **Deslocamento positivo:** enche/esvazia câmaras de volume conhecido e conta os enchimentos; bom para alta viscosidade.

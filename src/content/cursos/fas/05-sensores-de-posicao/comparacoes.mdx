@@ -1,0 +1,32 @@
+---
+titulo: "Sensores de posição — comparações"
+secao: "comparacoes"
+secaoOrdem: 4
+---
+
+## Encoder absoluto × incremental
+
+| | Absoluto | Incremental |
+|---|---|---|
+| Saída | código binário **único por posição** | trem de **pulsos** |
+| Mede | posição **absoluta** | **variação** de posição |
+| Resolução | **360°/2ⁿ** (bits) | **PPR** (pulsos/volta) |
+| Falta de energia | **mantém** a posição | **perde** a contagem (precisa da referência) |
+| Aplicação típica | radar, controle de armas | velocidade de motores, rastreamento |
+
+## Tipo de saída por sensor
+
+| Sensor | Princípio | Saída |
+|---|---|---|
+| Potenciômetro | pista resistiva + cursor | analógica |
+| LVDT | indutivo, secundárias em oposição de fase | analógica |
+| Resolver | sin/cos + RDC | analógica |
+| Encoders | disco/escala codificada | digital |
+
+## Contas que têm de sair na hora
+
+| Pergunta | Fórmula | Exemplo |
+|---|---|---|
+| Nº de posições (absoluto) | 2ⁿ | 4 bits → 16 |
+| Resolução angular (absoluto) | 360°/2ⁿ | 4 bits → 22,5° |
+| Passo (incremental) | 360°/PPR | 3600 PPR → 0,1° |

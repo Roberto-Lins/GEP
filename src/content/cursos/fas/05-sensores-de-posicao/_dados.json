@@ -1,0 +1,10 @@
+{
+  "ordem": 5,
+  "slug": "05-sensores-de-posicao",
+  "titulo": "Sensores de posição e deslocamento",
+  "prioridade": "máxima",
+  "subtitulo": "LVDT, encoders, resolver e potenciômetro · parte dos 3,0",
+  "tempoEstimado": "1 h 30",
+  "objetivo": "Explicar cada sensor em 1–2 frases, dizer se a saída é analógica ou digital e calcular na hora a resolução de um encoder absoluto (360°/2ⁿ) e o passo de um incremental.",
+  "palavrasChave": ["LVDT", "núcleo móvel", "oposição de fase", "condição de nulo", "encoder absoluto", "encoder incremental", "2ⁿ posições", "resolução angular", "resolver", "potenciômetro"]
+}

@@ -1,0 +1,84 @@
+---
+titulo: "Sincros — aula"
+secao: "aula"
+secaoOrdem: 2
+---
+
+## O que é um sincro
+
+Dispositivo **eletromagnético** que **transfere posição angular** (rumo, leme, elevação de canhão) por
+via elétrica. É um **transformador rotativo** com **3 enrolamentos no estator** + um rotor cujo
+**acoplamento varia com a posição** relativa. A alimentação **CA vai ao rotor** por **anéis coletores**
+(por isso quase não há escovas a trocar).
+
+## TX e TR (transmissor e receptor de torque)
+
+- **TX (transmissor):** **entrada** = rotor **posicionado mecanicamente** + CA no rotor; **saída** = **3 linhas de sinal sincro** pelo estator.
+- **TR (receptor):** eletricamente **idêntico ao TX**, com amortecimento; **entrada** = as 3 linhas sincro no estator + CA no rotor; **saída = mecânica** (o rotor **assume a posição** do TX).
+
+**Como reproduzem a posição:** as tensões do estator do TX criam um campo cuja **direção corresponde ao
+ângulo do rotor do TX**; esse trio vai ao estator do TR, recriando **o mesmo campo**; o rotor do TR
+sofre torque até **se alinhar** → para no **mesmo ângulo**. **Rotores alinhados ⇒ torque e corrente ≈ 0.**
+
+## CX e CT (transmissor e transformador de controle)
+
+<figure>
+  <img src="/imagens/cursos/fas/sincros/cx-ct-transmissor-transformador-controle.png" alt="Par CX/CT: o Transmissor de Controle (CX) com rotor energizado em 115 V e o Transformador de Controle (CT) com rotor não energizado, ligados pelas três linhas de estator." />
+  <figcaption>Fonte: Aula SUE 3.1 — Sincros (parte 1), slide 40.</figcaption>
+</figure>
+
+- **CX (transmissor de controle):** igual ao TX, mas **alimenta um CT**. É **o único do par com o rotor energizado** (115 VAC).
+- **CT (transformador de controle):** **rotor NÃO energizado**. **Entradas:** sinal sincro do CX (no estator) + **giro mecânico** do rotor (acoplado à carga). **Saída:** uma **tensão CA no rotor proporcional ao seno da diferença** entre a posição do rotor e a direção do campo → é o **detetor de erro**.
+
+<figure>
+  <img src="/imagens/cursos/fas/sincros/cx-ct-condicao-de-nulo.png" alt="Esquema elétrico do CX e do CT com S1/S2/S3 e R1/R2; o CX em 0° (115 V) e o CT em 90°, ilustrando a condição de nulo em que a tensão de saída é mínima." />
+  <figcaption>Fonte: Aula SUE 3.1 — Sincros (parte 1), slide 41.</figcaption>
+</figure>
+
+**Condição de nulo:** quando o rotor do CT está a **90° do campo**, sen(0) = 0 → **tensão de saída = 0 V**.
+
+**Aplicação — servomecanismo de posição:** o sinal de erro do CT é **amplificado** e aciona um **motor**
+que reposiciona a carga (e o rotor do CT) **até zerar o erro**.
+
+<figure>
+  <img src="/imagens/cursos/fas/sincros/sinal-de-erro-servo-ct.png" alt="Malha do sinal de erro: desalinhamento da carga gera uma FEM no rotor do CT, amplificada e enviada ao motor, que move a carga até anular o sinal de erro." />
+  <figcaption>Fonte: Aula SUE 3.1 — Sincros (parte 2), slide 4.</figcaption>
+</figure>
+
+## TDX e TDR (sincros diferenciais)
+
+Recebem **dois** dados de posição e fornecem **soma ou diferença** (θ_saída = θ_entrada ± θ_diferencial).
+Têm **3 enrolamentos no rotor e 3 no estator** e **nenhum é ligado aos 115 VAC**.
+
+<figure>
+  <img src="/imagens/cursos/fas/sincros/tdx-transmissor-diferencial.png" alt="Sincro transmissor diferencial de torque TDX: sinal de entrada mecânico no rotor, sinal de entrada síncrono no estator e sinal de saída síncrono; três enrolamentos cada." />
+  <figcaption>Fonte: Aula SUE 3.1 — Sincros (parte 2), slide 8.</figcaption>
+</figure>
+
+- **TDX (transmissor diferencial):** **entrada** = sinal sincro do TX (estator) **+** giro **mecânico** do rotor; **saída** = **sinal sincro elétrico** (soma/diferença). → *entra elétrico + mecânico, sai elétrico.*
+
+<figure>
+  <img src="/imagens/cursos/fas/sincros/tdr-receptor-diferencial.png" alt="Sincro receptor diferencial de torque TDR: entrada síncrona nº 1 (45°), entrada síncrona nº 2 (60°) e saída mecânica resultante; não ligado à linha de 115 VAC." />
+  <figcaption>Fonte: Aula SUE 3.1 — Sincros (parte 2), slide 11.</figcaption>
+</figure>
+
+- **TDR (receptor diferencial):** **entrada** = **duas** entradas síncronas (uma no estator, uma no rotor); **saída = mecânica** (rotor na soma/diferença). → *entram dois elétricos, sai mecânico.*
+
+## A tabela-mestre (preencha de memória)
+
+<figure>
+  <img src="/imagens/cursos/fas/sincros/tabela-sincros.png" alt="Tabela 3.1 — Tipos de sincros: TX, CX, TDX, CDX, TR, TDR e CT com simbologia, sinais de entrada e sinais de saída." />
+  <figcaption>Fonte: Tabela de Sincros (material do professor).</figcaption>
+</figure>
+
+| Elemento | Função | Entrada | Saída | Rotor em 115 VAC? |
+|---|---|---|---|---|
+| **TX** | transmite posição angular | rotor mecânico + CA | 3 linhas sincro (elétrica) | **Sim** |
+| **TR** | reproduz a posição do TX | 3 linhas sincro + CA | **mecânica** (rotor alinha) | **Sim** |
+| **CX** | transmite p/ controle (alimenta CT) | rotor mecânico + CA | 3 linhas sincro (elétrica) | **Sim** |
+| **CT** | comparador / detetor de erro | sinal do CX + rotor mecânico | tensão ∝ **sen(erro)** (elétrica) | **Não** |
+| **TDX** | soma/subtrai ângulos | sinal do TX + rotor mecânico | sinal sincro (elétrica) | **Não** |
+| **TDR** | soma/subtrai e reproduz | duas entradas síncronas | **mecânica** | **Não** |
+
+**Chaves de memória:** saída **mecânica** → TR, TDR. Saída **elétrica** → TX, CX, TDX, **CT**. **Só o CT**
+dá tensão ∝ **seno do erro** (é o comparador).

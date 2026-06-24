@@ -1,0 +1,34 @@
+---
+titulo: "Revisão de véspera"
+secao: "revisao-de-vespera"
+secaoOrdem: 4
+---
+
+Checklist priorizado pelo peso — passe os olhos na véspera:
+
+**🔴 Sensores (3,0)**
+- LVDT: indutivo; oposição de fase; centro = 0 V; sentido = fase; saída analógica.
+- Encoder absoluto: 2ⁿ posições, 360°/2ⁿ; mantém posição sem energia.
+- Encoder incremental: pulsos desde a referência; PPR; perde a contagem sem energia.
+- Saída: analógica = potenciômetro/LVDT/resolver · digital = encoders.
+- Vazão: ΔP (orifício/Venturi, Bernoulli) · eletromagnético (Faraday, fluido condutor). Sem Pitot.
+- Tacômetro CC (ímã no estator, escovas, polaridade = sentido) × CA (campo no rotor, sem escovas, sem sentido).
+
+**🔴 Sincros (2,0)**
+- TX/TR (reproduz ângulo) · CX/CT (compara → erro; CT rotor não energizado; nulo = 0 V) · TDX/TDR (soma/diferença).
+- Preencher a tabela-mestre de cabeça.
+
+**🟠 Inerciais (1,7)**
+- Acelerômetro = aceleração linear; giroscópio = velocidade angular.
+- INS: 3 + 3; integra (acel → veloc → posição); saída posição/veloc/atitude; erro cresce com o tempo.
+
+**🟠 Erros (1,3)**
+- Sistemático × aleatório × grosseiro; exatidão × precisão; Kline completo (valor ± incerteza).
+
+**🟡 Características (1,0)**
+- Range × span; resolução × sensibilidade; histerese × zona morta; cálculo de histerese; IP (1º sólidos, 2º água).
+
+**🟡 Diagramas (1,0)**
+- Tags ISA; controlada × manipulada × set point; elétrico (4–20 mA) × pneumático (20–100 kPa).
+
+Depois, faça o **simulado final** logo abaixo e confira no gabarito comentado.

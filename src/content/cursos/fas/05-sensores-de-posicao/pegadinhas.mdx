@@ -1,0 +1,18 @@
+---
+titulo: "Sensores de posição — pegadinhas"
+secao: "pegadinhas"
+secaoOrdem: 5
+---
+
+<BlocoPegadinha titulo="LVDT linear no curso todo?">
+**Não.** Nos extremos a **saturação magnética** encurva a reta. O LVDT só é linear na **faixa central**.
+</BlocoPegadinha>
+
+<BlocoPegadinha titulo="Por que o LVDT dá zero no centro?">
+Não é “porque não há tensão”. As duas secundárias geram tensões **iguais**, mas em **oposição de
+fase** — elas **se cancelam**. É a **condição de nulo**.
+</BlocoPegadinha>
+
+<BlocoPegadinha titulo="Encoder dá tensão analógica?">
+**Não** — é **digital**. Quem perde a posição ao desligar é o **incremental**; o **absoluto** mantém.
+</BlocoPegadinha>

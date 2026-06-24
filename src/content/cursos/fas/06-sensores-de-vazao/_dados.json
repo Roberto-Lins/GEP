@@ -1,0 +1,10 @@
+{
+  "ordem": 6,
+  "slug": "06-sensores-de-vazao",
+  "titulo": "Sensores de vazão",
+  "prioridade": "máxima",
+  "subtitulo": "Placa de orifício, Venturi e eletromagnético · parte dos 3,0",
+  "tempoEstimado": "1 h",
+  "objetivo": "Dizer, para cada medidor, o princípio, a grandeza medida e como se obtém a vazão; dominar pressão diferencial (Bernoulli) e o eletromagnético (Faraday, fluido condutor).",
+  "palavrasChave": ["vazão volumétrica", "vazão mássica", "placa de orifício", "tubo Venturi", "Bernoulli", "medidor eletromagnético", "lei de Faraday", "fluido condutor", "deslocamento positivo", "Coriolis"]
+}

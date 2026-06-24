@@ -1,0 +1,10 @@
+{
+  "ordem": 7,
+  "slug": "07-sensores-de-velocidade-e-conversao",
+  "titulo": "Sensores de velocidade e conversão de sinais",
+  "prioridade": "máxima",
+  "subtitulo": "Tacômetros CC/CA e a conversão A/D · parte dos 3,0",
+  "tempoEstimado": "1 h",
+  "objetivo": "Diferenciar tacômetro CC de CA (sentido pela polaridade só no CC) e obter velocidade da posição; conhecer as 4 fases da conversão A/D e o erro de quantização.",
+  "palavrasChave": ["tacômetro CC", "tacômetro CA", "polaridade", "sentido de rotação", "escovas", "comutador", "amostragem", "retenção", "quantização", "codificação", "erro de quantização"]
+}

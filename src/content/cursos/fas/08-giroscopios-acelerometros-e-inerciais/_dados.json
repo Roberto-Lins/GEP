@@ -1,0 +1,10 @@
+{
+  "ordem": 8,
+  "slug": "08-giroscopios-acelerometros-e-inerciais",
+  "titulo": "Giroscópios, acelerômetros e sistemas inerciais",
+  "prioridade": "muito alta",
+  "subtitulo": "Aceleração linear × velocidade angular e o INS · 1,7 ponto",
+  "tempoEstimado": "1 h 45",
+  "objetivo": "Não confundir acelerômetro (aceleração linear) com giroscópio (velocidade angular) e explicar, em uma frase, por que o erro do INS cresce com o tempo.",
+  "palavrasChave": ["acelerômetro", "giroscópio", "aceleração linear", "velocidade angular", "roll", "pitch", "yaw", "INS", "integração", "atitude", "deriva", "APSC"]
+}

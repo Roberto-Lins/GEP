@@ -274,6 +274,18 @@ próprias sem alterar o GEP.
   e a **ferramenta de auxílio à escrita** (`src/components/cursos/ing4/WritingAnalyzer.tsx`,
   heurística local; ver `docs/WRITING-TOOL.md`). Detalhes: `docs/courses/ING-4.md`.
 
+**FAS — Fundamentos de Automação de Sistemas** (`ano 4 · sem 1 · P1 · turmas CA-HM/HE/HS + FN-HM/HE/HS`):
+- Base **única** compartilhada pelos 6 públicos via `turma` como **lista** (sem cópias). 10 tópicos
+  (`00`–`09`) + `99-revisao-final`. Dados em `src/data/cursos/fas/`.
+- Banco de questões com **dois bancos** (`src/data/cursos/fas/questoes.ts`): a **SOPA** (prova antiga)
+  em `todasQuestoes` → Central `/fas/questoes` catalogada por assunto (com avisos de *conteúdo
+  retirado* e *figura ausente*); e **100 variações** por tópico/dificuldade (não entram em
+  `todasQuestoes`) → `questoesPorTopico` + `simuladoFinal`.
+- Campos opcionais aditivos em `CursoData` (usados só pelo FAS): `simuladoFinal` (revisão final usa as
+  variações em vez do simulado-relâmpago) e `midiasGerais` (áudio + vídeo reaproveitados na revisão
+  final). Vídeo geral no YouTube (`EAZy7ZrJuDU`), URL centralizada em `midias.ts`; `PlayerVideo` ganhou
+  link "Abrir no YouTube". Figuras técnicas **extraídas dos slides** (sem SVG), em `public/imagens/cursos/fas/`.
+
 Mídia atual ainda em `public/.../cursos/<slug>/` (a externalizar no futuro).
 
 ## Lacunas / pendências conhecidas

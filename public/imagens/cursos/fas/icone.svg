@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Fundamentos de Automação de Sistemas">
+  <rect width="64" height="64" rx="14" fill="#0B1220"/>
+  <rect x="0.75" y="0.75" width="62.5" height="62.5" rx="13.25" fill="none" stroke="#1E3A5F" stroke-width="1.5"/>
+  <!-- mostrador de instrumento (gauge) -->
+  <path d="M16 40 A16 16 0 0 1 48 40" fill="none" stroke="#334155" stroke-width="3" stroke-linecap="round"/>
+  <path d="M16 40 A16 16 0 0 1 38 25.4" fill="none" stroke="#D6A84F" stroke-width="3" stroke-linecap="round"/>
+  <!-- marcações -->
+  <path d="M16 40 l3 -1" stroke="#CBD5E1" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M32 24 v3" stroke="#CBD5E1" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M48 40 l-3 -1" stroke="#CBD5E1" stroke-width="1.4" stroke-linecap="round"/>
+  <!-- ponteiro -->
+  <path d="M32 40 L41 31" stroke="#F7F3EA" stroke-width="2.4" stroke-linecap="round"/>
+  <circle cx="32" cy="40" r="2.6" fill="#D6A84F"/>
+  <!-- saída de sinal -->
+  <path d="M14 51 H24 V47 H32 V51 H40 V47 H50" fill="none" stroke="#D6A84F" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,29 @@
+---
+titulo: "Inerciais — comparações"
+secao: "comparacoes"
+secaoOrdem: 4
+---
+
+## Acelerômetro × giroscópio
+
+| | Acelerômetro | Giroscópio |
+|---|---|---|
+| Mede | aceleração **linear** | velocidade **angular** |
+| No INS | integra → velocidade → posição | dá a **atitude** (roll, pitch, yaw) |
+
+## Gimbal × strapdown
+
+| | Gimbal | Strapdown |
+|---|---|---|
+| Sensores | em plataforma estável (isolada) | fixos à estrutura |
+| Alinhamento | mecânico (servomotores) | por cálculo (matriz) |
+| Vantagem | exige menos linearidade dos sensores | mecânica simples e robusta |
+| Desvantagem | suspensão cara/complexa | exige sensores de larga faixa + computador rápido |
+
+## Cadeia de integração do INS
+
+| Grandeza | Operação | Resultado |
+|---|---|---|
+| Aceleração | 1ª integral | velocidade |
+| Velocidade | 2ª integral | posição |
+| (giroscópios) | — | atitude (roll, pitch, yaw) |

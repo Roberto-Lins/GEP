@@ -1,0 +1,10 @@
+{
+  "ordem": 1,
+  "slug": "01-diagramas-de-instrumentacao",
+  "titulo": "Diagramas de instrumentação",
+  "prioridade": "alta",
+  "subtitulo": "Ler a malha: tags ISA, ligações e variáveis · 1,0 ponto",
+  "tempoEstimado": "45 min",
+  "objetivo": "Interpretar um diagrama pequeno: nomear os instrumentos pela tag, separar ligação elétrica de pneumática e apontar variável controlada, manipulada e set point.",
+  "palavrasChave": ["set point", "variável controlada", "variável manipulada", "TIC", "LIC", "FIC", "TT", "LT", "FT", "sensor", "transmissor", "controlador", "atuador", "realimentação"]
+}

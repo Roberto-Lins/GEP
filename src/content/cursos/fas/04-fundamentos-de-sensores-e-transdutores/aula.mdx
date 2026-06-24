@@ -1,0 +1,35 @@
+---
+titulo: "Fundamentos — aula"
+secao: "aula"
+secaoOrdem: 2
+---
+
+## Sensor, transdutor e a cadeia de medição
+
+- **Sensor:** recebe na entrada uma **grandeza física** (estímulo) e **reage** a ela, produzindo na saída um **sinal** (geralmente elétrico).
+- **Transdutor:** **converte** um sinal de uma forma física para outra (ex.: pressão → corrente; temperatura → tensão).
+- **Elemento primário / detector:** a parte que está em contato direto com a grandeza medida.
+- **Transmissor:** condiciona e **padroniza** o sinal do sensor (ex.: para 4 a 20 mA) para ser transmitido e interpretado pelo controlador.
+- **Condicionamento de sinais:** amplificar, filtrar, linearizar e padronizar a saída do sensor.
+
+<BlocoConceito titulo="Sensor × transdutor (cai direto)">
+**Sensor detecta**; **transdutor converte**. Todo transdutor envolve uma conversão de forma de
+energia; nem toda detecção precisa converter de forma física.
+</BlocoConceito>
+
+## Tipos de sinal
+
+- **Analógico:** contínuo no tempo e na amplitude (ex.: 4–20 mA, 0–10 V).
+- **Digital:** discreto/**quantizado** (ex.: código binário de um encoder).
+- **Elétrico × pneumático:** padrões **4–20 mA CC** (elétrico) e **20–100 kPa** (pneumático).
+
+### O padrão 4 a 20 mA e o “zero vivo”
+
+No padrão **4 a 20 mA**, o **4 mA representa o zero da escala** — é o **zero vivo**. A vantagem: se a
+corrente cair a **0 mA**, isso não é “medida mínima”, e sim **falha** (cabo rompido, sensor
+desconectado). O sistema distingue “medi o menor valor” de “perdi o sinal”.
+
+<BlocoPegadinha titulo="Analógico não é quantizado">
+**Sensor analógico gera saída contínua.** Quem gera saída **quantizada** é o **digital**. Trocar isso
+é Certo/Errado clássico.
+</BlocoPegadinha>

@@ -5,6 +5,8 @@ import BlocoConceito from '@components/estudo/BlocoConceito.astro';
 import BlocoPegadinha from '@components/estudo/BlocoPegadinha.astro';
 import BlocoComparacao from '@components/estudo/BlocoComparacao.astro';
 import BancoQuestoes from '@components/questoes/BancoQuestoes.tsx';
+import PlayerVideo from '@components/midia/PlayerVideo.astro';
+import PlayerPodcast from '@components/midia/PlayerPodcast.astro';
 import { listarCursos, cursoPorSlug } from '@utils/courses';
 import { dadosDoCurso } from '@utils/content';
 import { embaralhar } from '@utils/filtrarQuestoes';
@@ -40,10 +42,22 @@ const simuladoRelampago = [
   ...embaralhar(dados.verdadeiroFalso, 7).slice(0, 8),
   ...dados.correlacionar.slice(0, 2),
 ];
+// Cursos com simulado próprio (variações, ex.: FAS) usam-no; os demais, o relâmpago.
+const usaSimuladoFinal = !!(dados.simuladoFinal && dados.simuladoFinal.length > 0);
+const simulado = usaSimuladoFinal ? dados.simuladoFinal! : simuladoRelampago;
+const tituloSimulado = usaSimuladoFinal ? 'Simulado final' : 'Simulado-relâmpago';
+const descSimulado = usaSimuladoFinal
+  ? `${simulado.length} questões na forma da prova, distribuídas pelos pesos do professor.`
+  : `${simulado.length} questões variadas dos temas mais prováveis.`;
+// Mídias gerais (áudio/vídeo) reaproveitadas na revisão final (ex.: FAS).
+const midiasGerais = dados.midiasGerais ?? [];
+const videosGerais = midiasGerais.filter((m) => m.tipo === 'video');
+const podcastsGerais = midiasGerais.filter((m) => m.tipo === 'podcast');
 
 const navItens = [
   MapaProva && { id: 'mapa', label: 'Mapa da prova' },
-  { id: 'simulado', label: 'Simulado-relâmpago' },
+  { id: 'simulado', label: tituloSimulado },
+  midiasGerais.length > 0 && { id: 'midias', label: 'Áudio e vídeo' },
   ResumoGeral && { id: 'resumo-geral', label: 'Resumo geral' },
   ErrosFrequentes && { id: 'erros', label: 'Erros frequentes' },
   config.features.modoRevisaoVespera && RevisaoVespera && { id: 'vespera', label: 'Revisão de véspera' },
@@ -72,11 +86,23 @@ const navItens = [
 
   <section id="simulado" class="scroll-mt-24 mb-14">
     <div class="mb-5 border-l-4 border-dourado pl-4">
-      <h2 class="text-2xl font-bold">Simulado-relâmpago</h2>
-      <p class="text-nevoa/70">{simuladoRelampago.length} questões variadas dos temas mais prováveis.</p>
+      <h2 class="text-2xl font-bold">{tituloSimulado}</h2>
+      <p class="text-nevoa/70">{descSimulado}</p>
     </div>
-    <BancoQuestoes questoes={simuladoRelampago} curso={curso} registrar={true} client:visible />
+    <BancoQuestoes questoes={simulado} curso={curso} registrar={true} filtros={true} client:visible />
   </section>
+
+  {midiasGerais.length > 0 && (
+    <section id="midias" class="scroll-mt-24 mb-14">
+      <h2 class="mb-4 text-2xl font-bold">Áudio e vídeo de revisão</h2>
+      {videosGerais.length > 0 && (
+        <div class="mb-6 grid gap-4 lg:grid-cols-2">{videosGerais.map((m) => <PlayerVideo midia={m} />)}</div>
+      )}
+      {podcastsGerais.length > 0 && (
+        <div class="grid gap-4 sm:grid-cols-2">{podcastsGerais.map((m) => <PlayerPodcast midia={m} />)}</div>
+      )}
+    </section>
+  )}
 
   {ResumoGeral && (
     <section id="resumo-geral" class="scroll-mt-24 mb-14">

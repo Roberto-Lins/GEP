@@ -1,0 +1,27 @@
+{
+  "slug": "fas",
+  "titulo": "Fundamentos de Automação de Sistemas — FAS P1",
+  "subtitulo": "Instrumentação, sensores, sistemas inerciais e sincros — preparação direta para a prova",
+  "descricao": "Trilha conceitual da FAS P1: diagramas de instrumentação, características estáticas, erros e incertezas, sensores de posição/vazão/velocidade, giroscópios e sistemas inerciais e sincros — alinhada aos pesos do professor, com a SOPA catalogada por assunto, figuras dos slides e simulado final.",
+  "categoria": "Carreira Naval",
+  "ano": "4",
+  "semestre": "1",
+  "epoca": "P1",
+  "turma": ["CA-HM", "CA-HE", "CA-HS", "FN-HM", "FN-HE", "FN-HS"],
+  "ordem": 3,
+  "temaVisual": "naval-command",
+  "corTema": "dourado",
+  "icone": "/imagens/cursos/fas/icone.svg",
+  "capa": "/imagens/cursos/fas/capa.svg",
+  "features": {
+    "timeline": true,
+    "simulados": false,
+    "mapasMentais": false,
+    "podcasts": true,
+    "animacoesHero": true,
+    "animacoesTransicao": false,
+    "modoRevisaoVespera": true,
+    "graficoProgressoAvancado": false
+  },
+  "componentesExtras": []
+}

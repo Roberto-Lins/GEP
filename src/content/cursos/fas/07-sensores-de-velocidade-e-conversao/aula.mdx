@@ -1,0 +1,59 @@
+---
+titulo: "Velocidade e conversão — aula"
+secao: "aula"
+secaoOrdem: 2
+---
+
+## Velocidade a partir da posição
+
+Os sensores de posição também medem **velocidade**, pois velocidade = **taxa de variação da posição**:
+
+- **LVDT:** derivar a saída no tempo.
+- **Encoder incremental:** a velocidade vem da **frequência dos pulsos** (frequência ∝ velocidade).
+- **Encoder absoluto / resolver:** taxa de variação do código / via RDC.
+
+<BlocoPegadinha titulo="Derivar amplifica ruído">
+O ruído da posição é de baixa amplitude mas **alta frequência**; a derivação multiplica a amplitude
+pela frequência → relação sinal-ruído ruim. **Por isso as leis de controle, em geral, não derivam os
+sinais dos sensores.**
+</BlocoPegadinha>
+
+## Tacômetros elétricos
+
+Um tacômetro gera **tensão proporcional à velocidade de rotação** (o movimento relativo entre bobina e
+campo induz uma fem ∝ velocidade).
+
+<figure>
+  <img src="/imagens/cursos/fas/velocidade/tacometro-cc.png" alt="Tacômetro DC: rotor (armadura) com bobina que gira, ímã permanente no estator (N/S), escovas e comutador, ligado a um voltímetro que lê a tensão CC proporcional à velocidade." />
+  <figcaption>Fonte: Aula SUE 2.3 — Sensores de Posição e Velocidade (parte 2), slide 41.</figcaption>
+</figure>
+
+<figure>
+  <img src="/imagens/cursos/fas/velocidade/tacometro-ca.png" alt="Tacômetro AC (gerador): ímã permanente no rotor, armadura estática, sem escovas; a saída CA passa por um retificador em ponte e um circuito de suavização até um voltímetro." />
+  <figcaption>Fonte: Aula SUE 2.3 — Sensores de Posição e Velocidade (parte 2), slide 44.</figcaption>
+</figure>
+
+- **Tacômetro CC:** ímã permanente **no estator**, **armadura/bobina gira**; tem **comutador e escovas**. Saída CC ∝ velocidade; a **polaridade indica o sentido** de rotação. Desvantagem: escovas/comutador exigem manutenção.
+- **Tacômetro CA:** **armadura estática**, **campo gira no rotor** (ímã no rotor); **sem comutador/escovas**. Saída CA (amplitude/frequência ∝ velocidade), em geral retificada. **Não indica o sentido**; exige circuito eletrônico extra.
+
+<BlocoPegadinha titulo="Cuidado com a generalização">
+O fluxo do tacômetro costuma vir de um ímã permanente, mas **não afirme que todo tacômetro CC usa
+obrigatoriamente ímã permanente** — o que a prova cobra é a posição do campo (estator no CC, rotor no CA).
+</BlocoPegadinha>
+
+## Conversão analógico-digital (A/D)
+
+As **4 fases** do condicionamento, na ordem:
+
+1. **Amostragem** — coleta o valor do sinal em instantes regulares.
+2. **Retenção** — segura o valor amostrado (sample-and-hold).
+3. **Quantização** — aproxima o valor ao **nível** mais próximo (gera o **erro de quantização**).
+4. **Codificação** — gera o **código binário** correspondente.
+
+Relações: **número de níveis = 2ⁿ** (n bits); **resolução = faixa de entrada / 2ⁿ**; o **erro de
+quantização** é da ordem de meio nível.
+
+<BlocoPegadinha titulo="Escopo da conversão A/D">
+🚫 A conversão A/D **aparece na SOPA antiga**, mas, pelas orientações do professor, **não está
+priorizada** nesta prova. Saiba a **sequência** das 4 fases (cai como múltipla escolha), sem aprofundar.
+</BlocoPegadinha>

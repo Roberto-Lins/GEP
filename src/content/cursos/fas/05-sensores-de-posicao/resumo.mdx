@@ -1,0 +1,11 @@
+---
+titulo: "Sensores de posição — resumo"
+secao: "resumo"
+secaoOrdem: 3
+---
+
+- **LVDT:** indutivo; secundárias em **oposição de fase**; **centro = 0 V**; saída ∝ deslocamento; **fase = sentido**; saída **analógica**; linear só na faixa central (saturação nos extremos).
+- **Encoder absoluto:** **2ⁿ posições**, **resolução = 360°/2ⁿ** (4 bits = 22,5°); mantém a posição sem energia; digital.
+- **Encoder incremental:** conta **pulsos** desde a referência; resolução em **PPR** (360 PPR = 1°); **perde a contagem** sem energia.
+- **Resolver:** sin/cos + RDC; analógico; muito confiável. **Potenciômetro:** pista resistiva; analógico.
+- **Saída:** analógica = potenciômetro/LVDT/resolver · digital = encoders.
