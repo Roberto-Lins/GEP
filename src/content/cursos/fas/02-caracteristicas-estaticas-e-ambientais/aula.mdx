@@ -4,18 +4,28 @@ secao: "aula"
 secaoOrdem: 2
 ---
 
-## As características estáticas (decore pela palavra-chave)
+"**Estática**" quer dizer que a grandeza **não está mudando** durante a medição — o instrumento está em
+regime, parado num valor. Toda a questão aqui é **definir com precisão** e **calcular a histerese**. O
+professor reaproveita as mesmas frases de definição ano após ano, então vale conhecê-las quase ao pé da
+letra.
+
+## As características estáticas, uma a uma
 
 | Característica | Definição como cai na prova |
 |---|---|
-| **Range (faixa)** | os **limites superior e inferior** da medição. Ex.: −30 a 220 °C. |
-| **Span (alcance)** | a **diferença** entre o maior e o menor valor da faixa. Ex.: −30 a 220 → span = **250 °C**. |
-| **Sensibilidade** | **Δsaída/Δentrada** — a **inclinação** da curva. Ex.: termopar 40 µV/°C. |
-| **Resolução** | a **menor variação** da grandeza que produz mudança perceptível; menor divisão da escala. |
-| **Linearidade** | o **máximo desvio** da curva real em relação à **reta** de calibração (% do FSO). |
-| **Histerese** | a **máxima diferença na saída**, para a mesma entrada, conforme o sinal **sobe ou desce**. |
-| **Zona morta** | a **faixa em que a entrada varia sem mudança na saída**. |
-| **Estabilidade / deriva (drift)** | manter o desempenho no tempo; o desvio lento da saída é a **deriva**. |
+| **Range (faixa)** | o conjunto de valores entre o **limite inferior e o superior** da medição. Ex.: −30 a 220 °C. É o *onde* o instrumento trabalha (os **dois** extremos). |
+| **Span (alcance)** | a **diferença algébrica** entre o maior e o menor valor da faixa. Ex.: 220 − (−30) = **250 °C**. É um **valor escalar único** (a largura da janela). |
+| **Sensibilidade** | a razão **Δsaída/Δentrada** — a **inclinação** da curva de calibração (o "ganho"). Ex.: termopar 20 µV/°C. Se a curva é linear, é constante. |
+| **Resolução** | a **menor variação** da grandeza que produz mudança **perceptível e assegurada** na indicação (a menor divisão da escala; em digital, o LSB). |
+| **Linearidade** | o **máximo desvio** da curva real em relação à **reta** ideal, em % do FSO. Só para sensores analógicos. |
+| **Zona morta** | a faixa em que a entrada varia **sem mudança observável** na saída (uma insensibilidade; em geral % do span). |
+| **Histerese** | a **máxima diferença na saída**, para a mesma entrada, dependendo de se o valor foi atingido **subindo ou descendo** (as curvas de ida e volta não coincidem; o instrumento "lembra" do caminho). |
+| **Estabilidade / drift** | manter o desempenho ao longo do tempo sob entrada fixa; o desvio lento da saída é o **drift (deriva)**, e exige recalibração. |
+
+<BlocoConceito titulo="Sensibilidade não é resolução">
+**Sensibilidade** = o *ganho* (quanto a saída cresce por unidade de entrada). **Resolução** = o *degrau*
+mínimo que dá para ler. Um sensor pode ter alto ganho e baixa resolução, e vice-versa.
+</BlocoConceito>
 
 ## O gráfico de histerese
 
@@ -24,25 +34,38 @@ secaoOrdem: 2
   <figcaption>Fonte: Aula SUE 2.1 — Caracterização de Sensor, slide 41.</figcaption>
 </figure>
 
-As curvas **ascendente** (subindo) e **descendente** (descendo) não coincidem. A maior distância
-vertical entre elas, **h**, é a histerese.
+As curvas **ascendente** (subindo) e **descendente** (descendo) não coincidem; a maior distância vertical
+entre elas, **h**, é a histerese.
 
-## Cálculo de histerese (refaça o do slide — a prova será igual)
+## Como se calcula a histerese (o exercício que sempre volta)
 
-A partir de uma tabela com leituras **subindo (V₀₊)** e **descendo (V₀₋)** para os mesmos valores de entrada:
+Você calibra medindo a saída **subindo** a entrada e depois **descendo**, anotando as duas leituras por
+ponto. O procedimento:
 
-1. **FSO** = saída_máx − saída_mín (faixa de saída).
-2. Para cada ponto, calcule **|saída_subindo − saída_descendo|**.
-3. **Histerese (%) = (maior dessas diferenças) ÷ FSO × 100**.
+1. **FSO** (fundo de escala de saída) = maior saída − menor saída.
+2. Para cada ponto, ache **|saída subindo − saída descendo|**.
+3. **Histerese (%) = (maior diferença) ÷ FSO × 100**.
 
 <figure>
-  <img src="/imagens/cursos/fas/caracteristicas/exercicio-histerese-linearidade.png" alt="Tabela do slide com níveis 1 a 5, saídas subindo e descendo, diferenças ΔV0+, ΔV0- e ΔV0+-; abaixo, FSO = 0,8 V, Linearidade = 0,08/0,8 = 10% e Histerese = 0,09/0,8 = 11,25%." />
+  <img src="/imagens/cursos/fas/caracteristicas/exercicio-histerese-linearidade.png" alt="Tabela do slide com níveis 1 a 5, saídas subindo e descendo, diferenças e os cálculos: FSO = 0,8 V, Linearidade = 0,08/0,8 = 10% e Histerese = 0,09/0,8 = 11,25%." />
   <figcaption>Fonte: Aula SUE 2.1 — Caracterização de Sensor, slide 48 (exercício-modelo).</figcaption>
 </figure>
 
-No exercício-modelo do slide: **FSO = 1,0 − 0,2 = 0,8 V**. A **linearidade** sai do maior desvio em
-relação à reta (0,08) → **0,08/0,8 = 10%**; a **histerese** sai do maior |subida − descida| (0,09) →
-**0,09/0,8 = 11,25%**. Saiba calcular as duas no mesmo exercício.
+No exercício-modelo do slide (sensor de nível, saídas em V):
+
+| Nível (m) | Vₑ (ideal) | V₀₋ (subindo) | V₀₊ (descendo) | desvio da reta | \|V₀₊ − V₀₋\| |
+|---|---|---|---|---|---|
+| 1 | 0,2 | 0,20 | 0,22 | 0,02 | 0,02 |
+| 2 | 0,4 | 0,38 | 0,41 | 0,02 | 0,03 |
+| 3 | 0,6 | 0,63 | 0,60 | 0,03 | 0,03 |
+| 4 | 0,8 | 0,79 | 0,88 | **0,08** | **0,09** |
+| 5 | 1,0 | 1,03 | 1,02 | 0,03 | 0,01 |
+
+- **FSO** = 1,0 − 0,2 = **0,8 V**.
+- **Linearidade** = maior desvio da reta ÷ FSO = 0,08/0,8 = **10%**.
+- **Histerese** = maior |subida − descida| ÷ FSO = 0,09/0,8 = **11,25%**.
+
+Saber fazer as **duas no mesmo exercício** é o que garante o ponto.
 
 <BlocoConceito titulo="Fórmulas">
 **Histerese (%)** = máx|V₀₊ − V₀₋| ÷ FSO × 100 · **Linearidade (%)** = máx desvio da reta ÷ FSO × 100.
@@ -50,15 +73,34 @@ relação à reta (0,08) → **0,08/0,8 = 10%**; a **histerese** sai do maior |s
 
 ## Características ambientais e o IP
 
-O ambiente afeta o instrumento por **desvio do zero (zero drift)** e **deriva da sensibilidade**. As
-faixas ambientais de operação são **temperatura, umidade e altitude** (impactam operação e vida útil).
+Nenhum instrumento vive num laboratório perfeito. O ambiente mexe com ele de duas formas:
 
-O **Índice de Proteção (IP)** é um padrão IEC: as letras **IP** + 2 dígitos.
+- **Desvio do zero (zero drift / viés):** toda a curva **sobe ou desce** (deslocamento **vertical**, inclinação mantida) — o instrumento marca algo mesmo com entrada zero.
+- **Deriva da sensibilidade (sensibility drift):** a **inclinação** muda — o erro cresce proporcionalmente à entrada.
 
-- **1º dígito → proteção contra sólidos** (poeira, corpos sólidos, contato).
-- **2º dígito → proteção contra líquidos/água** (gotejamento, jatos, imersão).
+As condições que mais afetam operação e vida útil são **temperatura, umidade e altitude**; o
+**coeficiente de temperatura** quantifica quanto a resposta muda por grau.
+
+O **Índice de Proteção (IP)** é uma norma IEC: as letras IP + 2 dígitos.
+
+- **1º dígito (0 a 6) → proteção contra sólidos** (poeira, corpos sólidos, contato).
+- **2º dígito (0 a 9K) → proteção contra líquidos/água** (gotas, jatos, imersão).
+
+Quanto maior cada dígito, maior a proteção.
 
 <BlocoPegadinha titulo="IP não tem a ver com UV">
-O IP mede proteção contra **sólidos e água**, nunca contra radiação ultravioleta. Essa troca é
-clássica em Certo/Errado.
+O IP refere-se **exclusivamente a sólidos e água**, nunca a radiação ultravioleta. Essa troca é Certo/
+Errado clássico.
 </BlocoPegadinha>
+
+## Como isso cai na prova (e na SOPA)
+
+Vale **1,0 ponto**, e o formato é **1 correlacionar colunas + 1 cálculo de histerese + 2 de múltipla
+escolha**. Na SOPA apareceu como:
+
+- **Correlacionar características** (Blocos 1 e 2): ligar definição × nome. Atenção ao **distrator** — a frase "relação entre o valor da grandeza medida e o deslocamento da indicação" (**sensibilidade**) costuma ficar **sem par** → marque **(–)**.
+- **Cálculo de histerese** numa calibração 0–4 mV: monte a tabela, ache a maior |subida − descida|, divida pelo FSO e multiplique por 100.
+- **Certo/Errado de definições trocadas:** "exatidão = máxima diferença em direções diferentes" (é **histerese** → errado); "IP indica resistência a UV" (errado); "linearidade = máxima diferença leitura × reta" (certo).
+- **Lacunas:** zona morta, resolução, sensibilidade etc., a partir das frases-padrão do professor.
+
+Treine na <a href="/fas/questoes">Central</a> filtrando por **Características**.

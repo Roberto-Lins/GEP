@@ -4,64 +4,84 @@ secao: "aula"
 secaoOrdem: 2
 ---
 
-## LVDT (o mais importante do bloco)
+O bloco de sensores é o de maior peso (3,0). A cobrança é de **reconhecimento e princípio**: dado o nome
+ou o desenho, dizer **o que mede, em que princípio se baseia, como obtém a grandeza e se a saída é
+analógica ou digital**. Respostas curtas e diretas. Posição pode ser **linear** ou **angular**.
 
-**O que mede:** **deslocamento linear** (posição) de uma haste. **Saída: analógica.**
-**Princípio (indutivo):** uma bobina **primária** (excitada em CA) e **duas secundárias ligadas em
-série e em oposição de fase**; o objeto monitorado é acoplado a um **núcleo ferromagnético móvel** que
-desliza pelo centro das bobinas.
+## LVDT — o queridinho da prova
+
+O **LVDT** (Transformador Diferencial Variável Linear) mede **deslocamento linear** e é **indutivo** (sem
+contato elétrico de atrito). Por dentro é um pequeno transformador: uma **bobina primária** excitada em
+**CA** e **duas secundárias** ligadas **em série e em oposição de fase**. No centro desliza uma **haste
+ferromagnética** — o **núcleo móvel** — presa ao objeto cuja posição se mede.
 
 <figure>
   <img src="/imagens/cursos/fas/posicao/lvdt-estrutura-formas-de-onda.png" alt="LVDT: bobina primária ao centro, secundário 1 e secundário 2 nas pontas, núcleo móvel; e as formas de onda V1, V2 e Vnet para a haste à esquerda, no centro (Vnet = 0) e à direita." />
   <figcaption>Fonte: Aula SUE 2.3 — Sensores de Posição e Velocidade (parte 2), slide 8.</figcaption>
 </figure>
 
-Pontos que o professor cobra:
+O funcionamento, ponto a ponto (é onde a prova bate):
 
-- **Núcleo no centro → saída ZERO:** as tensões nas duas secundárias se **igualam** e, em **oposição de fase**, se **cancelam** (condição de nulo).
-- **Saída ∝ deslocamento:** ao sair do centro, cresce a tensão na secundária do lado do movimento e diminui na outra; a diferença é proporcional ao deslocamento.
-- **Sentido pela fase:** o lado para onde o núcleo vai define qual secundária domina → a **fase/polaridade** da saída indica a **direção**.
-- **Vantagens:** **sem contato mecânico** (sem atrito, durável); usado em superfícies aeronáuticas (flaps), estabilizadores em navios e máquinas de precisão.
-- **Limite de linearidade:** nos extremos do curso a **saturação magnética** encurva a reta — o LVDT só é linear na **faixa central**.
+- O núcleo conduz o fluxo do primário para os secundários. Ao **deslocar-se para um lado**, a tensão induzida na secundária **daquele lado aumenta** e na outra **diminui**; a **diferença** é a saída.
+- Por isso a **saída é proporcional ao deslocamento** (dentro da faixa linear).
+- **Na posição central (nula):** o núcleo alimenta os dois secundários **por igual**; as tensões ficam iguais e, **em oposição de fase, se cancelam → saída ZERO**. É o detalhe que mais cai.
+- **O sentido aparece na fase da saída:** ir para um lado dá um sinal **em fase** com a excitação; ir para o outro dá a fase **invertida (180°)**. O LVDT diz não só *quanto*, mas *para que lado*.
+- **Limite de linearidade:** nos **extremos** do curso a **saturação magnética** encurva a reta — só é linear na **faixa central**.
+- **Vantagens:** **sem atrito** (o núcleo não toca as bobinas), alta resolução, durabilidade quase infinita, robustez. **Saída analógica** (diferença de tensão tratada por condicionador). **Aplicações:** flaps de aeronaves, estabilizadores de navios, máquinas de medição de precisão.
 
 ## Encoder absoluto
 
-Sensor de posição **digital**: um disco codificado em que **cada posição tem um código binário único**
-(leitura ótica; uma fotocélula por trilha).
+Sensor **digital** de posição em que **cada posição tem um código binário único** (em geral **código
+Gray**, que muda um bit por passo) gravado num disco lido por óptica/magnetismo — **uma fotocélula por
+trilha**.
 
 <figure>
   <img src="/imagens/cursos/fas/posicao/encoder-absoluto-4-bits.png" alt="Disco de encoder absoluto de 4 bits dividido em 16 seções (0 a 15), com padrão em código binário; preto = saída 1." />
   <figcaption>Fonte: Aula SUE 2.3 — Sensores de Posição e Velocidade (parte 2), slide 25.</figcaption>
 </figure>
 
-- **Número de posições = 2ⁿ** (n = bits/trilhas).
-- **Resolução angular = 360° / 2ⁿ.** Ex.: 4 bits → 16 seções → **22,5°**; 12 bits → 4096 posições; 16 bits → 65 536 posições.
-- **Vantagem:** mantém a **posição absoluta mesmo após queda de energia** — não precisa de referência inicial.
+- **Número de posições = 2ⁿ** (n = bits/trilhas) · **Resolução = 360°/2ⁿ**.
+- Exemplos: 4 bits → 16 → **22,5°**; 10 bits → **1024 posições**; 12 bits → 4096 (≈ 5,27′); 16 bits → 65 536. Mais bits = mais posições = maior precisão.
+- **Não-volátil:** mantém a posição **mesmo após queda de energia** — ao religar, dá a posição **sem mover o eixo** para buscar referência. Por isso é usado em radar, controle de armas e robôs.
 
 ## Encoder incremental
 
-Gera **pulsos** ao girar e **conta os pulsos a partir de um ponto de referência** → mede a **variação**
-de posição, não a absoluta.
+Gera **pulsos** ao girar e a posição vem da **contagem dos pulsos a partir de uma referência** → mede a
+**variação**, não a posição absoluta.
 
 <figure>
-  <img src="/imagens/cursos/fas/posicao/encoder-linear-pulsos.png" alt="Encoder (linear) com escala que interrompe um feixe e gera pulsos lidos por um sensor; a contagem dos pulsos dá o deslocamento." />
+  <img src="/imagens/cursos/fas/posicao/encoder-linear-pulsos.png" alt="Encoder com escala que interrompe um feixe e gera pulsos lidos por um sensor; a contagem dos pulsos dá o deslocamento." />
   <figcaption>Fonte: Aula SUE 2.3 — Sensores de Posição e Velocidade (parte 2), slide 13.</figcaption>
 </figure>
 
-- **Resolução em PPR (pulsos por revolução).** Ex.: 360 PPR → 1°; 3600 PPR → 0,1°.
-- **Precisa de referência:** sem energia **perde a contagem** e precisa reencontrar o ponto de partida. (O sentido vem de dois canais defasados, A/B.)
+- **Resolução em PPR** (pulsos por revolução): 360 PPR → 1°; 3600 PPR → 0,1° (mais fino).
+- **Sentido de rotação:** dois canais **A e B** defasados **90° (quadratura)** — qual canal lidera diz se o giro é horário ou anti-horário.
+- **Referência:** um **canal Z (index)** dá **um pulso por volta** para a rotina de busca de zero.
+- **Volátil:** sem energia **perde a contagem** e precisa reencontrar a referência. Bom para velocidade de motores e rastreamento.
 
 <BlocoConceito titulo="O encoder é um A/D eletromecânico">
-Um encoder é um **sensor digital que mede uma grandeza analógica** (posição angular): a leitura ótica
-do padrão codificado já produz o **código binário** da posição.
+É um **sensor digital medindo uma grandeza analógica** (a posição angular): a leitura óptica do padrão
+codificado já produz o **código binário** da posição.
 </BlocoConceito>
 
 ## Resolver e potenciômetro
 
-- **Resolver:** dispositivo eletromecânico **muito confiável**; gera **sinais senoidais e cossenoidais proporcionais ao ângulo**, processados por um **conversor resolver-digital (RDC)**. **Saída: analógica.** Emprego: controle do canhão Bofors 40 mm.
-- **Potenciômetro:** **pista resistiva** com um **cursor** que se move com a posição → resistência/tensão proporcional. Versões linear e rotativa. **Saída: analógica.**
+- **Resolver:** sensor de **posição angular** muito confiável; gera **um sinal senoidal e um cossenoidal** cujas amplitudes variam com o ângulo, processados por um **conversor resolver-digital (RDC)**. **Saída analógica.** Aparece no controle do canhão **Bofors 40 mm** (Fragatas classe Niterói).
+- **Potenciômetro:** um **resistor variável** — pista resistiva fixa + **cursor** acoplado ao movimento; a resistência (e a tensão) varia proporcionalmente. **Saída analógica.** Simples e barato, mas **depende de contato físico** → atrito e desgaste. Usado em azimute de antenas e pistões hidráulicos.
 
 ## Tipo de saída (cai em V/F e múltipla escolha)
 
 - **Analógica:** potenciômetro, **LVDT**, **resolver**.
 - **Digital:** encoders (absoluto e incremental, lineares e rotativos).
+
+## Como isso cai na prova (e na SOPA)
+
+Na SOPA, sensores de posição apareceram como:
+
+- **Encoder (figura):** dizer o componente (**encoder**), a função (**posição angular → digital**) e uma vantagem (**digital, mantém a posição sem energia**).
+- **Nº de posições de um encoder de 4 sensores óticos** → 2⁴ = **16**.
+- **LVDT (curva):** o que limita a linearidade nos extremos (**saturação magnética**) e **por quê** (o circuito magnético satura e a reta encurva).
+- **C/E:** "o encoder absoluto dos SDA fornece diretamente uma tensão analógica" (**errado** — é digital).
+- **Tipo de saída:** analógica = potenciômetro/LVDT/resolver · digital = encoders.
+
+Treine na <a href="/fas/questoes">Central</a> filtrando por **Sensores de posição**.

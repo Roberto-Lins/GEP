@@ -4,55 +4,67 @@ secao: "aula"
 secaoOrdem: 2
 ---
 
-## Conceito-base
+Para **cada** medidor, saiba: **princípio físico · grandeza medida · como se obtém a vazão · vantagens e
+limitações · diferenças** para os outros. As respostas são curtas. **(Tubo de Pitot não cai — pule.)**
 
-Vazão = quantidade de fluido por unidade de tempo. **Volumétrica:** Q = A·v. **Mássica:** ṁ = ρ·Q
-(densidade × vazão volumétrica).
+## Conceito-base: vazão volumétrica × mássica
 
-## Vazão por pressão diferencial (Bernoulli)
+Vazão é quanto fluido passa por um ponto por unidade de tempo.
 
-Cria-se uma **restrição** na tubulação; pela equação de **Bernoulli**, o fluido **acelera** e a
-**pressão cai**. Mede-se a **diferença de pressão (ΔP)** antes/depois da restrição — a vazão é
-proporcional a **√ΔP**.
+- **Volumétrica (Q) = A·v** (área × velocidade) — foca no **espaço** ocupado; vale quando a densidade é constante. Unidades: m³/s, L/s.
+- **Mássica (ṁ) = ρ·Q** (densidade × vazão volumétrica) — foca na **massa real** em trânsito. É fundamental quando o fluido sofre variações de **pressão e temperatura**, que mudam o volume mas não a massa.
 
-### Placa de orifício
+## Por pressão diferencial (placa de orifício e tubo Venturi)
+
+Princípio: **Bernoulli**. Ao criar uma **restrição**, o fluido **acelera** ao passar por ela e a
+**pressão cai**. Medindo a **diferença de pressão (ΔP)** antes/depois, obtém-se a velocidade — e a vazão,
+que é **proporcional a √ΔP**.
 
 <figure>
   <img src="/imagens/cursos/fas/vazao/placa-de-orificio.png" alt="Placa de orifício instalada na tubulação, com transmissor de pressão diferencial medindo a queda de pressão através do orifício." />
   <figcaption>Fonte: Aula SUE 2.3 — Sensores de Vazão, slide 22.</figcaption>
 </figure>
 
-Simples e econômica. Como o escoamento “contrai” **abruptamente** ao passar pelo orifício, a
-recuperação de pressão é incompleta → **maior perda de carga**.
-
-### Tubo Venturi
+- **Placa de orifício:** chapa com um furo. Simples, barata, fácil de instalar; mas a contração **brusca** gera turbulência e **maior perda de carga** permanente.
 
 <figure>
-  <img src="/imagens/cursos/fas/vazao/tubo-venturi.png" alt="Tubo Venturi: seção que se estreita gradualmente (convergente), garganta e difusor gradual, com a curva de recuperação de pressão ao longo do tubo." />
+  <img src="/imagens/cursos/fas/vazao/tubo-venturi.png" alt="Tubo Venturi: cone convergente, garganta e difusor gradual, com a curva de recuperação de pressão ao longo do tubo." />
   <figcaption>Fonte: Aula SUE 2.3 — Sensores de Vazão, slide 23.</figcaption>
 </figure>
 
-A restrição é **gradual** (convergente → garganta → difusor). A transição suave reduz a turbulência e
-promove **melhor recuperação de pressão** → **menor perda de carga**, bom para **altas vazões** (mais
-caro que a placa).
+- **Tubo Venturi:** restrição **gradual** (cone convergente → garganta → difusor). A geometria suave minimiza turbulência → **menor perda de carga** e melhor recuperação de pressão; preferido em **altas vazões**, mas mais caro e volumoso.
 
-## Medidor eletromagnético (magmeter)
+São os **dois medidores por pressão diferencial** que a prova pede de cor.
+
+## Eletromagnético (magmeter)
+
+Princípio: **lei de Faraday**. Bobinas externas criam um **campo magnético perpendicular** ao tubo; o
+**fluido condutor**, ao atravessá-lo, induz uma **tensão proporcional à velocidade**, captada por dois
+**eletrodos** na parede (E = B·L·v).
 
 <figure>
   <img src="/imagens/cursos/fas/vazao/medidor-vazao-eletromagnetico.png" alt="Medidor eletromagnético de vazão: bobinas geram um campo magnético perpendicular ao fluxo; o fluido condutor induz uma tensão E = B·L·v captada por dois eletrodos na parede do tubo." />
   <figcaption>Fonte: Aula SUE 2.3 — Sensores de Vazão, slide 8.</figcaption>
 </figure>
 
-**Princípio — lei de Faraday:** um **fluido condutor** em movimento dentro de um campo magnético
-induz uma **tensão proporcional à velocidade**, captada por **dois eletrodos** na parede do tubo
-(E = B·L·v).
-
-- **Exige fluido condutor** (não serve para óleo, gás ou água ultrapura).
-- **Sem partes móveis e sem obstrução** ao fluxo.
-- **Independe de densidade, viscosidade, temperatura e pressão** — basta o fluido ser condutor (por isso é “universal”).
+- **Exige fluido condutor** — ótimo para água, efluentes e polpas; **inadequado para hidrocarbonetos puros e gases**.
+- **Sem partes móveis nem obstrução** (tubo livre, sem perda de carga, sem entupir).
+- A leitura **independe de densidade, viscosidade, temperatura e pressão** — daí ser chamado de flexível e universal.
 
 ## Outros (citar)
 
-- **Ultrassônico:** tempo de trânsito ou efeito Doppler; não invasivo (*clamp-on*).
-- **Coriolis:** mede **vazão mássica** diretamente (defasagem do tubo vibrante); alta precisão.
-- **Deslocamento positivo:** enche/esvazia câmaras de volume conhecido e conta os enchimentos; bom para alta viscosidade.
+- **Ultrassônico:** por **tempo de trânsito** (a onda a favor do fluxo chega mais rápido; exige fluido **limpo**) ou por **efeito Doppler** (reflexão em partículas/bolhas; exige **impurezas**). Pode ser **não invasivo (clamp-on)**.
+- **Coriolis:** tubo vibrante; a massa em movimento causa uma **torção proporcional à vazão mássica**. Mede **massa direto**, com alta precisão — usado em **transferência de combustível** em navios-tanque, onde a densidade muda com a temperatura.
+- **Deslocamento positivo:** enche/esvazia **câmaras de volume conhecido** e **conta** os ciclos. Bom para **líquidos viscosos** (óleos, combustíveis em postos); tem partes móveis (desgaste).
+
+## Como isso cai na prova (e na SOPA)
+
+A vazão cai como **dissertativas curtas**. Na SOPA:
+
+- **"Como se mede vazão por pressão diferencial?"** → cria-se uma **restrição** e mede-se a **ΔP** (Bernoulli).
+- **"Dois medidores por ΔP"** → **placa de orifício** e **tubo Venturi**.
+- **"Princípio do eletromagnético"** → **Faraday**: fluido condutor em campo magnético induz tensão captada por eletrodos.
+- **"Duas características do fluido que NÃO impactam o magmeter"** → quaisquer duas entre **densidade, viscosidade, temperatura e pressão**.
+- **Orifício × Venturi:** para **minimizar a perda de carga** em alta vazão → **Venturi** (restrição gradual).
+
+Treine na <a href="/fas/questoes">Central</a> filtrando por **Sensores de vazão**.

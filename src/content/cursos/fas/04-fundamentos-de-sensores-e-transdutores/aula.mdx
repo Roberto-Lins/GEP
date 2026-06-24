@@ -4,32 +4,48 @@ secao: "aula"
 secaoOrdem: 2
 ---
 
+Antes dos sensores específicos (que valem 3,0 no total), fixe o vocabulário-base: o que é sensor, o que
+é transdutor, como o sinal é condicionado e que tipos de sinal existem. São questões conceituais curtas,
+completar lacunas e V/F.
+
 ## Sensor, transdutor e a cadeia de medição
 
-- **Sensor:** recebe na entrada uma **grandeza física** (estímulo) e **reage** a ela, produzindo na saída um **sinal** (geralmente elétrico).
-- **Transdutor:** **converte** um sinal de uma forma física para outra (ex.: pressão → corrente; temperatura → tensão).
-- **Elemento primário / detector:** a parte que está em contato direto com a grandeza medida.
-- **Transmissor:** condiciona e **padroniza** o sinal do sensor (ex.: para 4 a 20 mA) para ser transmitido e interpretado pelo controlador.
-- **Condicionamento de sinais:** amplificar, filtrar, linearizar e padronizar a saída do sensor.
+- **Sensor:** recebe na entrada uma **grandeza física** (o estímulo) e **reage** a ela, produzindo na saída um **sinal**, em geral elétrico. Ele **detecta**.
+- **Transdutor:** **converte** um sinal de uma forma física para outra (pressão → corrente, temperatura → tensão). Todo transdutor envolve uma **conversão de energia/sinal**.
+- **Elemento primário / detector:** a parte que está em **contato direto** com a grandeza e a sente primeiro, convertendo-a num sinal processável.
+- **Transmissor:** recebe o sinal do sensor e o transforma num **sinal de transmissão padronizado**, proporcional à medida, para enviar a longas distâncias sem perdas.
+- **Condicionamento de sinais:** o tratamento entre o sensor e o controlador — **amplificar, filtrar, linearizar e padronizar** a saída.
 
 <BlocoConceito titulo="Sensor × transdutor (cai direto)">
-**Sensor detecta**; **transdutor converte**. Todo transdutor envolve uma conversão de forma de
-energia; nem toda detecção precisa converter de forma física.
+**Sensor detecta** uma grandeza e reage; **transdutor converte** a forma do sinal. Nem toda detecção
+precisa converter de forma física, mas todo transdutor faz uma conversão.
 </BlocoConceito>
 
 ## Tipos de sinal
 
-- **Analógico:** contínuo no tempo e na amplitude (ex.: 4–20 mA, 0–10 V).
-- **Digital:** discreto/**quantizado** (ex.: código binário de um encoder).
+- **Analógico:** **contínuo** no tempo e na amplitude (ex.: 4–20 mA, 0–10 V).
+- **Digital:** **discreto/quantizado** (ex.: o código binário de um encoder).
 - **Elétrico × pneumático:** padrões **4–20 mA CC** (elétrico) e **20–100 kPa** (pneumático).
 
-### O padrão 4 a 20 mA e o “zero vivo”
+### O padrão 4 a 20 mA e o "zero vivo"
 
 No padrão **4 a 20 mA**, o **4 mA representa o zero da escala** — é o **zero vivo**. A vantagem: se a
-corrente cair a **0 mA**, isso não é “medida mínima”, e sim **falha** (cabo rompido, sensor
-desconectado). O sistema distingue “medi o menor valor” de “perdi o sinal”.
+corrente cai a **0 mA**, isso não é "medida mínima", e sim **falha** (cabo rompido, sensor desconectado).
+O sistema distingue "medi o menor valor" de "perdi o sinal".
 
 <BlocoPegadinha titulo="Analógico não é quantizado">
-**Sensor analógico gera saída contínua.** Quem gera saída **quantizada** é o **digital**. Trocar isso
-é Certo/Errado clássico.
+**Sensor analógico gera saída contínua.** Quem gera saída **quantizada** é o **digital**. E o **encoder**
+(digital) **não fornece tensão analógica** — entrega um **código** de posição.
 </BlocoPegadinha>
+
+## Como isso cai na prova (e na SOPA)
+
+É a base dos 3,0 de sensores. Na SOPA apareceu como:
+
+- **"O que um sensor recebe e produz?"** → recebe a **grandeza física** (estímulo) e produz um **sinal** (geralmente elétrico).
+- **"Cite dois sensores usados em sistemas de armas"** → ex.: giroscópio e acelerômetro (inerciais); encoder/resolver (posição); tacômetro (velocidade).
+- **Sensor × transdutor** (Bloco 3): o sensor detecta e reage; o transdutor converte de uma forma física para outra.
+- **C/E:** "sensores analógicos geram saída quantizada" (**errado** — quantizado é o digital).
+- **Resolução de um potenciômetro de 10 V com A/D de 4 bits** = 10/2⁴ = **0,625 V** — *atenção: a conversão A/D não está priorizada nesta prova (ver Tópico 07)*.
+
+Treine na <a href="/fas/questoes">Central</a> filtrando por **Fundamentos de sensores**.

@@ -4,53 +4,80 @@ secao: "aula"
 secaoOrdem: 2
 ---
 
-## As três grandezas que têm de sair na ponta da língua
+Um diagrama de instrumentação é a **planta de um processo vista pelos seus instrumentos**: onde estão
+os sensores, os controladores e as válvulas, e como eles conversam. A representação segue uma norma
+padronizada (**ISA**, como a S51), que globaliza o entendimento. Para esta prova você **não precisa
+decorar tipos de sistema** — precisa olhar um **diagrama pequeno e explicá-lo**: nomear os
+instrumentos, separar as ligações e apontar as variáveis.
 
-- **Variável controlada:** a grandeza **medida e controlada** — em geral a **saída** do processo (ex.: a temperatura real da água).
-- **Variável manipulada:** a grandeza que o **controlador altera** para corrigir a controlada (ex.: a vazão de vapor/aquecimento).
-- **Set point:** o **valor de referência desejado** (ex.: a temperatura-alvo).
+## As três variáveis que organizam tudo
 
-<BlocoPegadinha titulo="A manipulada não é a saída">
-Em qualquer malha, saiba apontar quem é a controlada e quem é a manipulada. A **manipulada é o que o
-controlador mexe** — não confunda com a saída do processo (essa é a controlada).
-</BlocoPegadinha>
+Pense no aquecimento de água de uma caldeira, com alvo de 80 °C.
 
-## Ler a etiqueta (tag) dos instrumentos
+- A **variável controlada** é a grandeza que você **mede e quer manter** no valor certo: a **temperatura
+  da água na saída**. Ela é quase sempre a **saída** (o *efeito*) do processo, e é o que o sistema "luta"
+  para manter fiel ao set point — sem se confundir com as **perturbações**, que tentam desviá-la.
+- A **variável manipulada** é aquilo que o controlador **mexe** para corrigir a controlada: a **vazão de
+  vapor**. É a *causa*, a "alavanca" que o sistema puxa — **não é a saída do processo**.
+- O **set point** é o **valor de referência** que você definiu (os 80 °C). É só o **alvo**, não a condição
+  atual; ele é constantemente **comparado** com a medida real.
 
-Cada instrumento = **letras (função)** + **número (a malha)**. A leitura segue a norma ISA:
+O controlador compara a controlada com o set point; a diferença é o **erro** (≠ set point — o set point
+é o alvo, o erro é a distância até ele). É o erro que faz o controlador abrir ou fechar a manipulada.
 
-- **1ª letra = a variável de processo:** **T** temperatura · **L** nível · **F** vazão · **P** pressão.
-- **Letras seguintes = a função:** **E** elemento sensor/primário · **T** transmissor · **I** indicador · **C** controlador · **V** válvula · **Y** conversor/transdutor.
+<BlocoConceito titulo="Causa × efeito">
+**Manipulada = causa** (o que você mexe). **Controlada = efeito** (o que você observa). Num controle de
+**nível**, a controlada é o nível; a manipulada é a vazão de entrada (a abertura da válvula).
+</BlocoConceito>
 
-Exemplos: **TE** (sensor de temperatura), **TT** (transmissor), **TIC** (controlador indicador de
-temperatura), **TCV** (válvula de controle de temperatura), além de **LT, LIC, FT, FIC, PIC**…
+## Ler a etiqueta (tag) de cada instrumento
 
-<BlocoPegadinha titulo="A 1ª letra segue a variável de processo (cai!)">
+Cada instrumento tem uma **tag**: letras + um número (a malha). As letras contam o que ele faz.
+
+- A **1ª letra = a variável de processo:** **T** temperatura · **L** nível · **F** vazão · **P** pressão.
+- As **letras seguintes = a função:** **E** elemento sensor/primário · **T** transmissor · **I** indicador · **C** controlador · **V** válvula · **Y** conversor/transdutor.
+
+Assim, **TE** é o sensor de temperatura, **TT** o transmissor, **TIC** o controlador indicador, **TCV** a
+válvula de controle. Troque o T por L, F ou P e tem as malhas de nível, vazão e pressão (LT, LIC, FT,
+FIC, PT, PIC…).
+
+<BlocoPegadinha titulo="A 1ª letra segue a variável de processo (a regra que mais derruba)">
 A 1ª letra é a **variável medida**, não a construção do aparelho nem a manipulada. Um transmissor de
-**pressão diferencial** que mede **nível** é **LT** (não PDT). Uma válvula que varia **vazão** por
-ordem de um controlador de **nível** é **LV** (não FV).
+**pressão diferencial** que mede **nível** é **LT** (não PDT). Uma válvula que varia **vazão** mas obedece
+a um controlador de **nível** é **LV** (não FV) — ela pertence à malha de nível.
 </BlocoPegadinha>
 
-## Exemplo principal: aquecimento de água
+## O exemplo principal: aquecimento de água
 
 <figure>
   <img src="/imagens/cursos/fas/diagramas/aquecimento-agua-malha-fechada.png" alt="Processo de aquecimento de água: tanque com vapor, sensor TE, transmissor TT, controlador TIC, conversor TY (i/p) e válvula de controle TCV, com a legenda dos instrumentos." />
   <figcaption>Fonte: Aula SUE 1.2B — Diagrama de Instrumentação, slide 30.</figcaption>
 </figure>
 
-Interpretando a malha de controle de **temperatura** da água:
+Percorrendo a malha de **temperatura** de ponta a ponta:
 
-- **TE** — elemento sensor: mede a temperatura real da água (a **variável controlada**).
-- **TT** — transmissor: condiciona a medida e a converte em **sinal padrão de 4 a 20 mA CC**.
-- **TIC** — controlador indicador: compara a temperatura medida com o **set point** e calcula a correção.
-- **TY** — conversor/transdutor **i/p** (corrente → pressão): traduz o sinal elétrico do controlador em sinal pneumático para a válvula.
-- **TCV** — válvula de controle: o **elemento final**, que varia a vazão de **vapor** (a **variável manipulada**).
-- A medida do TE que volta ao TIC é a **realimentação** (feedback) que fecha a malha.
+- **TE** — elemento sensor/primário: **sente** a temperatura da água (a controlada).
+- **TT** — transmissor: transforma a medida num **sinal padronizado** (4 a 20 mA) que viaja sem perdas.
+- **TIC** — controlador indicador: **compara** a medida com o set point e decide a correção.
+- **TY** — conversor/transdutor **i/p**: faz a **interface entre sinais**, convertendo o elétrico do controlador (4–20 mA) em **pneumático** (20–100 kPa) para acionar a válvula.
+- **TCV** — válvula de controle: o **elemento final**, que varia a vazão de **vapor** (a manipulada).
+- A medida do TE que volta ao TIC é a **realimentação** que fecha a malha.
 
-## Tipo de ligação / sinal: elétrico × pneumático
+## Como o sinal viaja: elétrico × pneumático
 
-- **Sinal elétrico padrão:** **4 a 20 mA CC** — o zero da escala é 4 mA (corrente nula denuncia cabo rompido: é o **zero vivo**). Costuma ser representado por linha **tracejada**.
-- **Sinal pneumático padrão:** **20 a 100 kPa** (≈ 3–15 psi). Costuma ser representado por linha com **traços cruzados (//)**.
+- **Elétrico — 4 a 20 mA CC.** O zero da escala é **4 mA**, não 0 mA (o **zero vivo**): se o fio rompe e a corrente cai a zero, o sistema percebe a **falha**. No desenho, costuma ser **linha tracejada**.
+- **Pneumático — 20 a 100 kPa** (≈ 3–15 psi), ar comprimido — usado para acionar grandes válvulas com força e segurança. No desenho, **linha contínua com dois traços transversais (//)**.
 
-Saiba, no desenho, **qual linha é elétrica e qual é pneumática**, e dizer a função de cada elemento
-que ela conecta (sensor → transmissor → controlador → conversor → válvula).
+Distinguir as duas linhas e dizer a função do elemento que cada uma conecta é exatamente o que a
+interpretação do diagrama cobra.
+
+## Como isso cai na prova (e na SOPA)
+
+Vale **1,0 ponto**, num **diagrama pequeno** para interpretar (menor que o do teste). As cobranças reais
+da SOPA foram:
+
+- **Máquina do leme:** apontar, na figura, o **sinal de referência** (entrada/set point = ângulo de leme desejado) e o(s) **sinal(is) de realimentação** (o ângulo real medido que volta para comparação). É o uso direto da tríade controlada/manipulada/set point + realimentação.
+- **Malhas TIC/LIC/FIC:** descrever os **6 elementos** (sensor/primário, transmissor, controlador, conversor/transdutor, atuador e elemento final/válvula) e, em cada malha, dizer a **controlada e a manipulada** — e qual variável é a "mais fácil de controlar" (a **vazão**, por responder mais rápido aos atuadores).
+- **Set point num diagrama de blocos:** simplesmente reconhecer o **valor de referência desejado**.
+
+Treine essas questões na <a href="/fas/questoes">Central</a> filtrando por **Diagramas**.

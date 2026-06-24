@@ -4,53 +4,84 @@ secao: "aula"
 secaoOrdem: 2
 ---
 
-## Medida, erro e incerteza
+Aqui mora o único cálculo "pesado" garantido (Kleine-McClintock) e um punhado de conceitos que a SOPA
+adora embaralhar. A ideia central: **medir é sempre conviver com a dúvida**, e a engenharia trata essa
+dúvida de forma quantitativa.
 
-Toda medida tem **três componentes**: valor numérico + **incerteza** + unidade. Ex.: R = 300 ± 6 Ω.
+## O que é uma medida
 
-- **Erro:** a diferença entre o valor **medido** e o **verdadeiro** (Eₐ = x_m − x_v). Em geral é **desconhecido** (o verdadeiro é desconhecido).
-- **Incerteza:** uma **estimativa** do erro; caracteriza a **dispersão** e define um intervalo de confiança em torno da média.
+Uma medida **nunca é só um número**. Ela tem **três componentes**: o **valor numérico**, a **incerteza** e
+a **unidade**. Escrever R = 300 ± 6 Ω é dizer "o valor está por volta de 300, com uma dúvida de 6, em
+ohms". Sem a incerteza, a medida quase não significa nada, porque você não sabe **o quanto confiar** nela.
+
+## Erro não é incerteza
+
+- **Erro** é a diferença entre o valor **medido** e o **verdadeiro**: **Eₐ = x_m − x_v**. O problema é que o valor verdadeiro quase nunca é conhecido — então o erro real, na prática, é **desconhecido**.
+- **Incerteza** é a **estimativa estatística** desse erro. Ela descreve a **dispersão** das medidas e define um **intervalo de confiança** em torno da média, onde o valor verdadeiro provavelmente está.
+
+Em resumo: o **erro** é o desvio real (que você não vê); a **incerteza** é a melhor estimativa que você
+faz dele.
 
 ## Os três tipos de erro
 
 | Tipo | Origem | Comportamento | Prejudica |
 |---|---|---|---|
-| **Sistemático** | fontes **identificáveis/previsíveis** | medidas **consistentemente acima ou abaixo**; pode ser **compensado** por calibração | **Exatidão** |
-| **Aleatório** | flutuações **incontroláveis** | variam a cada medição, em torno da média; **reduzem-se aumentando o nº de observações** | **Precisão** |
-| **Grosseiro** | **falha humana** | grande e **óbvio** (ex.: ler a escala errada) | — |
+| **Sistemático** | fontes **identificáveis/previsíveis** (descalibração, offset, efeito de temperatura) | **viés constante**: todas as medidas para o mesmo lado; **não some** aumentando leituras — corrige-se por **calibração** | **Exatidão** |
+| **Aleatório** | flutuações **incontroláveis** | varia a cada medição, espalhando em torno da **média**; **reduz-se aumentando as observações** (média) | **Precisão** |
+| **Grosseiro** | **falha humana** óbvia (ler/anotar errado, faixa errada) | grande e fácil de identificar; **descarta-se** | — |
 
 <BlocoPegadinha titulo="Reduzir ≠ compensar">
-O **aleatório** se **reduz** fazendo mais medições (a média atenua). O **sistemático** se **compensa**
-por calibração. Repetir a medição **não elimina** automaticamente um erro sistemático.
+O **aleatório** se **reduz** com mais medições. O **sistemático** se **compensa** por calibração.
+Repetir a medição **não elimina** um erro sistemático.
 </BlocoPegadinha>
 
-## Exatidão × precisão
+## Exatidão × precisão — a confusão favorita da prova
 
 - **Exatidão (acurácia):** quão **perto do valor verdadeiro** — ligada à **média**, revela **erro sistemático**.
-- **Precisão:** **consistência/repetibilidade** das medidas — ligada ao **desvio padrão**, revela **erro aleatório**; **não garante** estar certo.
+- **Precisão:** quão **repetíveis/concordantes** são as medidas **entre si**, sem garantir que estejam certas — ligada ao **desvio padrão**, revela **erro aleatório**.
 
-Analogia do tiro: tiros **agrupados** (mesmo longe do alvo) = **preciso**; tiros **espalhados em torno
-do alvo** = exato na média, pouco preciso.
+A analogia do **alvo de tiro** fecha o conceito:
 
-## Medições diretas × indiretas
+| Caso | Tiros | Leitura |
+|---|---|---|
+| Exato e preciso | agrupados no centro | o ideal |
+| Preciso, não exato | agrupados, mas longe do centro | há erro sistemático (dá para corrigir a mira) |
+| Exato, não preciso | espalhados, mas a média acerta o centro | erro aleatório grande |
+| Nem um nem outro | dispersos e longe | ruim em tudo |
 
-- **Direta:** o instrumento dá o valor sem cálculo (amperímetro lê a corrente).
-- **Indireta:** o valor vem de uma fórmula com outras grandezas (P = U·I).
+<BlocoPegadinha titulo="A frase que cai como “errada”">
+"Precisão é o grau de concordância entre o valor medido e o valor **real**" → isso é **exatidão**.
+Precisão é concordância das medidas **entre si**. Alta precisão **não** garante estar certo.
+</BlocoPegadinha>
 
-## Kline e McClintock (o cálculo que vale a etapa)
+## Medidas diretas e indiretas
 
-Para uma medida **indireta** Z = f(X₁, …, Xₙ), com incertezas ΔX₁…ΔXₙ:
+- **Direta:** o instrumento dá o valor de cara, sem conta (o amperímetro lê a corrente).
+- **Indireta:** o valor vem de uma **fórmula** com outras grandezas medidas (P = U²/R, f = 1/T).
 
-> ΔZ = √[ (∂Z/∂X₁ · ΔX₁)² + (∂Z/∂X₂ · ΔX₂)² + … + (∂Z/∂Xₙ · ΔXₙ)² ]
+Na medida indireta, **cada grandeza traz sua própria incerteza, e elas se combinam** no resultado —
+combiná-las é o trabalho de Kleine-McClintock.
 
-**Roteiro de resolução:**
+## Propagação de incertezas: Kleine e McClintock
 
-1. **Identifique** quais grandezas têm incerteza e **converta % em valor absoluto**.
-2. Calcule a **derivada parcial** de Z em relação a cada uma (a sensibilidade).
-3. **Multiplique** cada derivada pela sua incerteza, **eleve ao quadrado**, **some** e tire a **raiz**.
-4. **Apresente** Z = valor ± ΔZ.
+Para Z = f(X₁, X₂, …), com incertezas ΔXᵢ:
 
-<BlocoConceito titulo="Exemplo-modelo (potência num resistor, P = U²/R)">
+> ΔZ = √[ (∂Z/∂X₁ · ΔX₁)² + (∂Z/∂X₂ · ΔX₂)² + … ]
+
+**Por que raiz da soma dos quadrados, e não soma simples?** Erros aleatórios independentes tendem a se
+**cancelar parcialmente**; somar direto seria pessimista demais. Eles se combinam "**em quadratura**",
+como os catetos de um triângulo. A **derivada parcial** ∂Z/∂Xᵢ é a **sensibilidade**: diz o quanto Z muda
+quando Xᵢ muda um pouquinho — se Z depende muito de uma grandeza, a incerteza dela **pesa mais**.
+
+**Roteiro que não falha:**
+
+1. **Identifique** quais grandezas têm incerteza e **converta % em absoluto** (2% de 100 V = 2 V).
+2. **Derive Z** em relação a cada grandeza (uma de cada vez).
+3. Em cada termo, **multiplique a derivada pela incerteza** e **eleve ao quadrado**.
+4. **Some** os termos e tire a **raiz**.
+5. **Escreva** Z = valor ± incerteza (e, se quiser, em %).
+
+<BlocoConceito titulo="Exemplo resolvido (P = U²/R)">
 U = 100 V ± 2% (ΔU = 2 V); R = 50 Ω ± 2% (ΔR = 1 Ω).
 
 - P = 100²/50 = **200 W**.
@@ -59,5 +90,19 @@ U = 100 V ± 2% (ΔU = 2 V); R = 50 Ω ± 2% (ΔR = 1 Ω).
 - ΔP = √(8² + 4²) = √80 ≈ **8,9 W** → **P = 200 ± 8,9 W** (≈ ±4,5%).
 </BlocoConceito>
 
-**Variação comum — resistências em série** (R = R₁ + R₂): ∂R/∂R₁ = ∂R/∂R₂ = 1 → ΔR = √(ΔR₁² + ΔR₂²);
-depois propaga em P = U²/R. (Veja a resolução completa nos exercícios deste tópico.)
+**Variante com resistências em série (R = R₁ + R₂):** como R é só a soma, ∂R/∂R₁ = ∂R/∂R₂ = 1, então
+ΔR = √(ΔR₁² + ΔR₂²). Calcule R e ΔR primeiro; depois propague em P = U²/R, agora com **três termos** (U,
+R₁ e R₂). Sempre converta cada tolerância em valor absoluto antes (3% de 50 Ω = 1,5 Ω).
+
+## Como isso cai na prova (e na SOPA)
+
+Vale **1,3 ponto**: pelo menos **um Kleine** + conceituais. Na SOPA apareceu como:
+
+- **V/F sistemático × aleatório** (Bloco 1): a pegadinha favorita é "aleatórios podem ser **compensados**" (falso) e "sistemáticos distribuem-se em torno da **média**" (falso — quem se distribui é o aleatório).
+- **Kleine com R em série** (Bloco 1): 100 V ± 2%, R₁ = 50 ± 3%, R₂ = 30 ± 2% → **P = 125 ± 5,6 W**.
+- **Kleine simples** (Bloco 3): 100 V ± 2%, R = 50 ± 2% → **P = 200 ± 8,9 W**.
+- **Resistores em série como "manobra do Ten. Frederico"** (Bloco 2): equivalente 11 kΩ ± ~1% → dentro dos ±5% originais.
+- **Exatidão em %FSO, %span e %valor lido** (Bloco 3): a base **fundo de escala** dá o **maior** intervalo.
+- **C/E:** "Kleine-McClintock avalia a propagação de erros" (certo); "aleatórios estão ligados à variabilidade" (certo).
+
+Resolva tudo passo a passo na <a href="/fas/questoes">Central</a> filtrando por **Erros**.

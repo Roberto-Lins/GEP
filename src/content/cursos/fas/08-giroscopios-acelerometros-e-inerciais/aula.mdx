@@ -4,39 +4,57 @@ secao: "aula"
 secaoOrdem: 2
 ---
 
-## As grandezas medidas (a base de tudo)
+As respostas aqui são **curtas e diretas** (~6 dissertativas + V/F de 6 itens). **Não caem:** acelerômetro
+**sísmico**, **precessão** e **rigidez** do giroscópio mecânico. O foco é: o que cada sensor mede, como se
+combinam num sistema de navegação e por que o erro cresce.
 
-- **Acelerômetro → mede aceleração linear** (translação do corpo no espaço).
-- **Giroscópio → mede velocidade angular** (como o corpo **gira** no espaço).
+## As grandezas medidas (a base que não pode confundir)
+
+- O **acelerômetro** mede **aceleração linear** — como o corpo **translada** no espaço (muda de posição geográfica).
+- O **giroscópio** mede **velocidade angular** — como o corpo **gira** em torno dos próprios eixos (muda de orientação/atitude).
 
 <BlocoPegadinha titulo="A diferença que mais cai">
-Aceleração **linear** (acelerômetro) × velocidade **angular** (giroscópio). **Não troque um pelo
-outro** — é a pegadinha mais frequente do bloco.
+Aceleração **linear** (acelerômetro) × velocidade **angular** (giroscópio). Uma mede o deslocamento entre
+pontos; a outra, a variação do ângulo de apontamento. **Não troque uma pela outra.**
 </BlocoPegadinha>
 
 ## Acelerômetro (o que permanece)
 
-Detecta a força/aceleração sobre uma **massa de prova**. O **Acelerômetro Pendular Servo Controlado
-(APSC)**: uma massa numa barra articulada; sob aceleração, injeta-se **corrente** nas bobinas para
-manter a massa **no zero** — essa **corrente é a medida da aceleração** (sistema com **realimentação**,
-**1 grau de liberdade**).
+O princípio geral: detectar a **força/aceleração** sobre uma **massa de prova**, que tende a permanecer
+no estado de movimento inicial (inércia), gerando um deslocamento relativo convertido em sinal.
+
+O **Acelerômetro Pendular Servo Controlado (APSC):** uma massa numa **barra articulada** num campo
+eletromagnético. Em repouso, o pêndulo fica no **zero**. Sob aceleração, um sistema de **realimentação
+(servo)** injeta uma **corrente** nas bobinas para manter a massa **no zero** — e a **corrente necessária
+é a medida da aceleração**. Tem **1 grau de liberdade** e é usado na navegação de **submarinos** (onde a
+furtividade é essencial).
 
 ## Giroscópio (o que permanece — sem rigidez/precessão)
 
-Sensor de orientação/rotação. O giroscópio mecânico tende a **manter o eixo de rotação fixo no
-espaço**, servindo de referência de atitude. Os **giroscópios modernos (rate gyros)** medem velocidade
-angular **sem peças girantes**: **RLG** (laser, efeito Sagnac), **FOG** (fibra ótica) e **MEMS** (Coriolis).
+Função básica: servir de **referência de orientação/rotação**. Os modernos medem velocidade angular
+**sem peças girantes**:
 
-## Sistema de Navegação Inercial (INS)
+- **RLG (laser em anel):** efeito **Sagnac** — um feixe dividido percorre um anel em sentidos opostos; ao girar, surge uma diferença de fase/tempo proporcional à velocidade angular.
+- **FOG (fibra óptica):** mesmo princípio Sagnac, em fibra; usado em **agulhas giroscópicas navais**.
+- **MEMS:** estrutura microvibrante que sente a força de **Coriolis** ao girar; compacto e escalável.
+
+## Sistema de Navegação Inercial (INS) — o coração do bloco
+
+Determina **posição, velocidade e atitude** **sem fontes externas** (sem GPS/rádio) → **autonomia e
+furtividade**: o veículo não emite nem precisa receber nada (imune a contramedidas eletrônicas).
+Composição típica: **3 acelerômetros + 3 giroscópios** de 1 grau de liberdade, nos eixos ortogonais.
 
 <figure>
   <img src="/imagens/cursos/fas/inerciais/sistema-inercial-blocos.png" alt="Diagrama de blocos do sistema inercial: Giroscópios & Acelerômetros alimentam o Sistema Inercial, que fornece Posição e Atitude (roll, pitch, yaw)." />
   <figcaption>Fonte: Aula SUE 2.5 — Aplicações de Sensores, slide 4.</figcaption>
 </figure>
 
-- **Conceito:** detecta **posição, velocidade e atitude** do veículo **sem fontes externas** (sem GPS/rádio) → autonomia e **furtividade**. Composição típica: **3 acelerômetros + 3 giroscópios**, de 1 grau de liberdade.
-- **Integração:** os **giroscópios** dão a **atitude** (roll, pitch, yaw); os **acelerômetros** dão a aceleração, que **integrada 1 vez → velocidade** e **integrada de novo → posição**.
-- **Saídas:** posição, velocidade e atitude (rumo).
+Como se combinam:
+
+- Os **giroscópios** dão a **atitude** — *roll* (rolagem), *pitch* (arfagem) e *yaw* (guinada/rumo).
+- Os **acelerômetros** dão a **aceleração**; **integrada uma vez → velocidade**, **integrada de novo → posição**.
+
+Saída do INS: **posição + velocidade + atitude**.
 
 ### Concepções: gimbal × strapdown
 
@@ -45,11 +63,25 @@ angular **sem peças girantes**: **RLG** (laser, efeito Sagnac), **FOG** (fibra 
   <figcaption>Fonte: Aula SUE 2.5 — Aplicações de Sensores, slide 46 (Figura 2: stable platform IMU).</figcaption>
 </figure>
 
-- **Gimbal:** sensores numa **plataforma estável** isolada por anéis/servomotores.
-- **Strapdown:** sensores **fixos à estrutura**; o alinhamento é feito por **cálculo/matriz de transformação** num computador rápido.
+- **Gimbal (plataforma estável):** sensores numa plataforma **isolada** das manobras por anéis; **servomotores comandados pelos giroscópios** a mantêm estável e alinhada ao referencial inercial. Os sensores trabalham sempre perto do mesmo ponto (exigem menos linearidade), mas a suspensão é **cara e complexa**.
+- **Strapdown (vinculada):** sensores **fixos à estrutura**; o alinhamento é feito por **cálculo** (matriz de transformação de coordenadas em tempo real). Exige sensores de larga faixa linear (RLG) e computador rápido, mas é mecanicamente simples e robusta.
 
-<BlocoConceito titulo="Por que o erro do INS cresce com o tempo">
-Velocidade e posição vêm da **integração** das medidas; os pequenos erros dos sensores (**viés e
-deriva/drift**) são integrados junto e **se acumulam** — quanto mais longa a navegação, maior o erro de
-posição. Por isso o INS é **corrigido periodicamente** por referência externa.
-</BlocoConceito>
+## Por que o erro de um INS cresce com o tempo
+
+Cada sensor tem pequenos erros — um **viés (bias)** constante e uma **deriva (drift)**. Como o INS obtém
+velocidade e posição **integrando** as medidas, esses errinhos são **integrados também e se acumulam**: um
+pequeno viés de aceleração vira um erro de velocidade que cresce, e um erro de posição que cresce ainda
+mais rápido. Resultado: quanto **mais longa** a navegação, **maior** o erro (ex.: ~1 milha náutica após
+8 h). Por isso o INS é **corrigido periodicamente** por referência externa (GPS, observação astronômica/
+geográfica), que "zera" o erro acumulado.
+
+## Como isso cai na prova (e na SOPA)
+
+Na SOPA, inerciais apareceram como:
+
+- **APSC:** aplicação no submarino (integra o **INS**, furtividade) e **1 grau de liberdade**.
+- **Diferença acelerômetro × giroscópio:** aceleração linear × velocidade angular.
+- **V/F:** "o INS depende de GPS" (**falso** — é autônomo); "3 acelerômetros + 3 giroscópios de 1 GDL" (certo); "acelerômetro mede velocidade angular e giroscópio aceleração linear" (**falso** — invertido).
+- 🚫 **Giroscópio mecânico (rigidez/precessão, raios A/B/C):** está na SOPA, mas **retirado** desta prova.
+
+Treine na <a href="/fas/questoes">Central</a> filtrando por **Sistemas inerciais**.

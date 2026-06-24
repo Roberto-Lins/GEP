@@ -4,42 +4,48 @@ secao: "aula"
 secaoOrdem: 2
 ---
 
-## Velocidade a partir da posição
+Fecha os 3,0 de sensores. O ponto quente é o **par tacômetro DC × AC** (V/F por troca de propriedades).
+A conversão A/D aparece junto, mas com ressalva de escopo.
 
-Os sensores de posição também medem **velocidade**, pois velocidade = **taxa de variação da posição**:
+## Velocidade a partir da posição (e a armadilha do ruído)
+
+Velocidade é a **taxa de variação da posição no tempo** — então qualquer sensor de posição pode dar
+velocidade se você **derivar** o sinal:
 
 - **LVDT:** derivar a saída no tempo.
-- **Encoder incremental:** a velocidade vem da **frequência dos pulsos** (frequência ∝ velocidade).
-- **Encoder absoluto / resolver:** taxa de variação do código / via RDC.
+- **Encoder incremental:** a velocidade vem da **frequência dos pulsos** num intervalo.
+- **Encoder absoluto:** a **taxa de variação do código**.
+- **Resolver:** o RDC entrega posição **e** velocidade.
 
-<BlocoPegadinha titulo="Derivar amplifica ruído">
-O ruído da posição é de baixa amplitude mas **alta frequência**; a derivação multiplica a amplitude
-pela frequência → relação sinal-ruído ruim. **Por isso as leis de controle, em geral, não derivam os
-sinais dos sensores.**
+<BlocoPegadinha titulo="Derivar amplifica o ruído">
+O sinal de posição carrega um ruído de **baixa amplitude e alta frequência**; ao derivar, a amplitude do
+ruído é **multiplicada pela frequência**, e a relação sinal-ruído fica péssima. **Por isso as leis de
+controle, em geral, evitam derivar os sinais dos sensores** — preferem medir a velocidade diretamente.
 </BlocoPegadinha>
 
-## Tacômetros elétricos
+## Tacômetros (DC e AC)
 
-Um tacômetro gera **tensão proporcional à velocidade de rotação** (o movimento relativo entre bobina e
-campo induz uma fem ∝ velocidade).
+Um **tacômetro** gera **tensão proporcional à velocidade de rotação**. O princípio é o do gerador: o
+movimento relativo entre uma **bobina** e o **campo de um ímã** induz uma fem ∝ rotação.
 
 <figure>
   <img src="/imagens/cursos/fas/velocidade/tacometro-cc.png" alt="Tacômetro DC: rotor (armadura) com bobina que gira, ímã permanente no estator (N/S), escovas e comutador, ligado a um voltímetro que lê a tensão CC proporcional à velocidade." />
   <figcaption>Fonte: Aula SUE 2.3 — Sensores de Posição e Velocidade (parte 2), slide 41.</figcaption>
 </figure>
 
+- **Tacômetro DC:** ímã permanente **no estator** (campo parado) e **armadura/bobina gira**, com **comutador e escovas** levando a tensão para fora (≈ gerador CC). **Vantagens:** a **polaridade indica o sentido** de rotação; ~10 mV/rpm (lê-se com voltímetro CC); boa precisão e resposta rápida. **Desvantagens:** comutador e escovas **exigem manutenção** e geram ruído; a resistência de contato das escovas pode introduzir erro.
+
 <figure>
-  <img src="/imagens/cursos/fas/velocidade/tacometro-ca.png" alt="Tacômetro AC (gerador): ímã permanente no rotor, armadura estática, sem escovas; a saída CA passa por um retificador em ponte e um circuito de suavização até um voltímetro." />
+  <img src="/imagens/cursos/fas/velocidade/tacometro-ca.png" alt="Tacômetro AC: ímã permanente no rotor, armadura estática, sem escovas; a saída CA passa por um retificador em ponte e um circuito de suavização até um voltímetro." />
   <figcaption>Fonte: Aula SUE 2.3 — Sensores de Posição e Velocidade (parte 2), slide 44.</figcaption>
 </figure>
 
-- **Tacômetro CC:** ímã permanente **no estator**, **armadura/bobina gira**; tem **comutador e escovas**. Saída CC ∝ velocidade; a **polaridade indica o sentido** de rotação. Desvantagem: escovas/comutador exigem manutenção.
-- **Tacômetro CA:** **armadura estática**, **campo gira no rotor** (ímã no rotor); **sem comutador/escovas**. Saída CA (amplitude/frequência ∝ velocidade), em geral retificada. **Não indica o sentido**; exige circuito eletrônico extra.
+- **Tacômetro AC:** **armadura estática** e **campo magnético gira no rotor** (ímã no rotor) → **sem comutador nem escovas**. A tensão sai **alternada** e é retificada (capacitor tira o *ripple*); a **amplitude ou a frequência** indica a velocidade. **Vantagem:** menos manutenção. **Desvantagens:** **não indica o sentido** e precisa de eletrônica extra para virar um sinal de velocidade utilizável.
 
-<BlocoPegadinha titulo="Cuidado com a generalização">
-O fluxo do tacômetro costuma vir de um ímã permanente, mas **não afirme que todo tacômetro CC usa
-obrigatoriamente ímã permanente** — o que a prova cobra é a posição do campo (estator no CC, rotor no CA).
-</BlocoPegadinha>
+<BlocoConceito titulo="A chave de memória DC × AC">
+**Escovas + "polaridade dá o sentido" = DC.** **"Sem escovas" + "campo gira no rotor" = AC.** A SOPA
+troca exatamente essas propriedades para fazer afirmativas falsas.
+</BlocoConceito>
 
 ## Conversão analógico-digital (A/D)
 
@@ -47,13 +53,22 @@ As **4 fases** do condicionamento, na ordem:
 
 1. **Amostragem** — coleta o valor do sinal em instantes regulares.
 2. **Retenção** — segura o valor amostrado (sample-and-hold).
-3. **Quantização** — aproxima o valor ao **nível** mais próximo (gera o **erro de quantização**).
-4. **Codificação** — gera o **código binário** correspondente.
+3. **Quantização** — aproxima o valor ao **nível** mais próximo (gera o **erro de quantização**, ~½ nível).
+4. **Codificação** — gera o **código binário**.
 
-Relações: **número de níveis = 2ⁿ** (n bits); **resolução = faixa de entrada / 2ⁿ**; o **erro de
-quantização** é da ordem de meio nível.
+Relações: **nº de níveis = 2ⁿ** (n bits); **resolução = faixa de entrada / 2ⁿ**. Ex.: 10 V com 4 bits →
+10/16 = **0,625 V** por nível.
 
 <BlocoPegadinha titulo="Escopo da conversão A/D">
 🚫 A conversão A/D **aparece na SOPA antiga**, mas, pelas orientações do professor, **não está
 priorizada** nesta prova. Saiba a **sequência** das 4 fases (cai como múltipla escolha), sem aprofundar.
 </BlocoPegadinha>
+
+## Como isso cai na prova (e na SOPA)
+
+Na SOPA, velocidade e conversão apareceram como:
+
+- **V/F de tacômetros (Bloco 2):** "no DC o fluxo é gerado no rotor" (**falso** — é no estator); "desvantagem do AC: escovas exigem manutenção" (**falso** — são do DC); "vantagem do AC: a polaridade indica o sentido" (**falso** — isso é do DC).
+- **Sequência das 4 fases do A/D (Bloco 2):** Amostragem; Retenção; Quantização; Codificação — *conteúdo não priorizado*.
+
+Treine na <a href="/fas/questoes">Central</a> filtrando por **Sensores de velocidade**.
