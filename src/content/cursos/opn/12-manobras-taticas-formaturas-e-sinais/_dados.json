@@ -5,10 +5,12 @@
   "prioridade": "muito alta",
   "subtitulo": "O vocabulário de formatura antes de explicar manobras",
   "tempoEstimado": "50 min",
-  "objetivo": "Dominar as definições (navio grande/pequeno, unidade, dispositivo, corpo principal), as formaturas em linha (coluna, linha de frente, linha de marcação, diamante), as distâncias padrão, o guia e os sinais FORM, POS, DESIG, GUINA, RUMOCOR, VELOC.",
+  "objetivo": "Dominar as definições (navio grande/pequeno, unidade, dispositivo, corpo principal) e o catálogo COMPLETO de formaturas: coluna (FORM 1, 2, Charlie, Echo), linha de frente (FORM 3, 4, Yankee), linha de marcação (FORM 000-359, 0-18, Oscar), linhas múltiplas (FORM 5-12), diamante (FORM D) e inversão de coluna (FORM F); além de distâncias padrão, intervalo de manobra, diâmetro tático, velocidades, o guia e os sinais FORM/POS/DESIG/GUINA/RUMOCOR/VELOC.",
   "palavrasChave": [
-    "formatura", "coluna", "linha de frente", "linha de marcação", "distância padrão",
-    "guia da formatura", "FORM", "POS", "DESIG", "navio grande", "navio pequeno"
+    "formatura", "coluna", "linha de frente", "linha de marcação", "linhas múltiplas",
+    "FORM 1", "FORM 2", "FORM Charlie", "FORM Yankee", "FORM D", "FORM F", "diâmetro tático",
+    "intervalo de manobra", "distância padrão", "guia da formatura", "FORM", "POS", "DESIG",
+    "navio grande", "navio pequeno"
   ],
   "fontes": [
     "Apostila EN-131 — Cap. 4 (4.2, 4.3, 4.8)",
