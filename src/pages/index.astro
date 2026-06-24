@@ -2,6 +2,7 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import NavCard from '@components/cursos/NavCard.astro';
 import BackupProgresso from '@components/progresso/BackupProgresso.tsx';
+import ApoieVisual from '@components/apoie/ApoieVisual.astro';
 import { ANOS, ANO_LABELS, contarMaterias, SEM_CONTEUDO } from '@utils/hierarchy';
 
 const fmtMat = (n: number) => (n === 0 ? SEM_CONTEUDO : n === 1 ? '1 matéria' : `${n} matérias`);
@@ -12,6 +13,9 @@ const anos = ANOS.map((ano) => ({
 }));
 ---
 <BaseLayout titulo="Bússola dos Aspirantes" largura="larga">
+  <!-- APOIE (banner) -->
+  <ApoieVisual variante="banner" />
+
   <!-- HERO -->
   <section class="relative mb-12 overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-aco/40 via-naval-800 to-naval px-6 py-12 sm:px-10 sm:py-16">
     <div class="pointer-events-none absolute inset-0 opacity-[0.07]"

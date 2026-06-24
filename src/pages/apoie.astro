@@ -1,0 +1,116 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumb from '@components/cursos/Breadcrumb.astro';
+import ApoieVisual from '@components/apoie/ApoieVisual.astro';
+import { PIX } from '@data/apoie';
+---
+
+<BaseLayout
+  titulo="Apoie a Bússola"
+  descricao="Contribua de forma simbólica e opcional via PIX para manter a Bússola dos Aspirantes no ar."
+  largura="larga"
+>
+  <Breadcrumb itens={[{ label: 'Início', href: '/' }, { label: 'Apoie' }]} />
+
+  <ApoieVisual variante="hero" />
+
+  <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+    <!-- POR QUE APOIAR -->
+    <section class="card p-6 sm:p-8">
+      <h2 class="font-serif text-2xl text-marfim">Por que apoiar?</h2>
+      <div class="mt-4 space-y-4 text-nevoa/85">
+        <p>
+          Eu faço a Bússola porque quero ajudar quem está na mesma caminhada que eu — e porque quero
+          deixar a plataforma cada vez melhor. Mas manter tudo no ar tem custos e dá bastante trabalho.
+        </p>
+        <p>
+          Por isso deixo aberta esta opção de contribuição. É totalmente <strong class="text-marfim"
+            >opcional e simbólica</strong
+          >: pode ser R$2, R$5, ou o valor com que você se sentir confortável. Cada apoio faz
+          diferença e ajuda a manter o conteúdo gratuito para todo mundo.
+        </p>
+        <p class="text-sm text-nevoa/60">
+          Não há nenhuma cobrança, login ou obrigação. Se a Bússola te ajudou, e só se você puder,
+          considere apoiar. 💛
+        </p>
+      </div>
+    </section>
+
+    <!-- BLOCO PIX -->
+    <section class="card p-6 text-center sm:p-8">
+      <h2 class="font-serif text-2xl text-marfim">Contribua via PIX</h2>
+      <p class="mt-1 text-sm text-nevoa/70">Aponte a câmera do seu banco ou copie o código.</p>
+
+      <div class="mx-auto mt-5 w-44 rounded-2xl bg-marfim p-3 shadow-card">
+        <img src={PIX.qrSvg} alt="QR Code PIX para apoiar a Bússola" class="h-full w-full" width="160" height="160" />
+      </div>
+
+      <!-- sugestões (valor é aberto no app do banco) -->
+      <div class="mt-5 flex items-center justify-center gap-2">
+        <span class="text-xs uppercase tracking-wider text-nevoa/50">Sugestões:</span>
+        <span class="chip border-dourado/30 bg-dourado/10 text-dourado">R$2</span>
+        <span class="chip border-dourado/30 bg-dourado/10 text-dourado">R$5</span>
+        <span class="chip border-dourado/30 bg-dourado/10 text-dourado">R$10</span>
+      </div>
+
+      <div class="mt-5 text-left">
+        <span class="text-xs uppercase tracking-wider text-nevoa/50">Chave PIX (aleatória)</span>
+        <p class="mt-1 break-all rounded-lg border border-white/10 bg-naval/60 px-3 py-2 font-mono text-sm text-marfim">
+          {PIX.chave}
+        </p>
+      </div>
+
+      <button
+        id="apoie-copiar"
+        type="button"
+        data-pix={PIX.copiaECola}
+        class="btn btn-primary mt-4 inline-flex w-full justify-center"
+      >
+        Copiar código PIX
+      </button>
+
+      <button
+        id="apoie-contribui"
+        type="button"
+        class="btn btn-ghost mt-3 inline-flex w-full justify-center"
+      >
+        Já contribuí 💛
+      </button>
+
+      <p class="mt-3 text-xs text-nevoa/50">
+        Beneficiário: {PIX.nome} · {PIX.cidade}
+      </p>
+    </section>
+  </div>
+</BaseLayout>
+
+<script is:inline>
+  (() => {
+    const btnCopiar = document.getElementById('apoie-copiar');
+    if (btnCopiar) {
+      const original = btnCopiar.textContent;
+      btnCopiar.addEventListener('click', async () => {
+        const pix = btnCopiar.getAttribute('data-pix') || '';
+        try {
+          await navigator.clipboard.writeText(pix);
+        } catch {
+          const ta = document.createElement('textarea');
+          ta.value = pix;
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+        }
+        btnCopiar.textContent = 'Código copiado ✓';
+        setTimeout(() => (btnCopiar.textContent = original), 2500);
+      });
+    }
+
+    const btnContribui = document.getElementById('apoie-contribui');
+    if (btnContribui) {
+      btnContribui.addEventListener('click', () => {
+        window.dispatchEvent(new CustomEvent('bussola:apoio-obrigado'));
+      });
+    }
+  })();
+</script>

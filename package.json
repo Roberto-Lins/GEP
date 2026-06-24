@@ -14,7 +14,8 @@
     "create-course": "tsx scripts/create-course.ts",
     "validate-content": "tsx scripts/validate-content.ts",
     "audit-media": "tsx scripts/audit-media.ts",
-    "migrate-gep": "tsx scripts/migrate-gep.ts"
+    "migrate-gep": "tsx scripts/migrate-gep.ts",
+    "gerar-pix": "tsx scripts/gerar-pix.ts"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
@@ -31,8 +32,10 @@
   "devDependencies": {
     "@types/jszip": "^3.4.1",
     "@types/node": "^22.19.21",
+    "@types/qrcode": "^1.5.6",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
+    "qrcode": "^1.5.4",
     "tsx": "^4.22.4",
     "vitest": "^4.1.9"
   }

@@ -30,6 +30,13 @@ const sub = curso ? (curso.subtitulo ?? curso.categoria ?? '') : 'Plataforma de 
 const inicio = curso ? `/${curso.slug}` : '/';
 
 const path = Astro.url.pathname;
+const pathNorm = path.replace(/\/+$/, '') || '/'; // sem barra final
+
+// Aba "Apoie": aparece sempre que NÃO se está no menu principal (dashboard "/")
+// nem na própria página /apoie — ou seja, dentro de cursos, /ano/..., /ferramentas.
+const mostrarApoie = pathNorm !== '/' && pathNorm !== '/apoie';
+if (mostrarApoie) links.push({ href: '/apoie', label: 'Apoie' });
+
 const ativo = (href: string) =>
   href === inicio ? path === href || path === `${href}/` : path.startsWith(href);
 ---
