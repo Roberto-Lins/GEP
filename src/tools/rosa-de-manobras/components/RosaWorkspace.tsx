@@ -1,25 +1,36 @@
-import { useMemo, useState, type ReactNode } from 'react';
+import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import type { ToolProps } from '@tipos/tools';
-import RosaBoard, { niceUnitsPerRing, type BoardArrow, type BoardLine, type BoardMarker } from './RosaBoard';
+import RosaBoard, { niceUnitsPerRing, type BoardArrow, type BoardCircle, type BoardLine, type BoardMarker } from './RosaBoard';
+import { usePersistedState } from '../persist';
+import { exerciciosRosa, exercicioPorId, type CampoGabarito } from '../exercises';
 import {
   solveContact,
   solveTrueWind,
   solveStation,
   solveDeckLaunch,
   solveDVT,
+  solveAnticolisao,
   rule3min,
   rule6min,
   bearingToVec,
   reciprocal,
+  add,
   sub,
+  scale,
   magnitude,
+  tangentsFromPoint,
+  checkBearing,
+  checkScalar,
+  diagnoseBearing,
+  diagnoseScale,
   parseHHMM,
   formatHHMM,
   type ContactResult,
+  type AnticolisaoResultado,
   type Vec2,
 } from '../engine';
 
-type Aba = 'contato' | 'vento' | 'conves' | 'posicao' | 'nomograma';
+type Aba = 'contato' | 'vento' | 'conves' | 'posicao' | 'nomograma' | 'anticolisao' | 'exercicios';
 const ORIGEM: Vec2 = { x: 0, y: 0 };
 const fmt = (n: number, d = 0) => (isFinite(n) ? n.toFixed(d) : '—');
 const fmtBrg = (n: number) => `${String(Math.round(((n % 360) + 360) % 360)).padStart(3, '0')}°`;
@@ -94,7 +105,7 @@ function Erro({ msg }: { msg: string | null }) {
 
 // ── Aba: Contato ─────────────────────────────────────────────────────────────
 function AbaContato() {
-  const [f, setF] = useState({
+  const [f, setF] = usePersistedState('contato', {
     ownCourse: '260', ownSpeed: '12',
     m1b: '020', m1r: '14000', m1t: '0342',
     m2b: '015', m2r: '11000', m2t: '0349',
@@ -197,7 +208,7 @@ function AbaContato() {
 
 // ── Aba: Vento ───────────────────────────────────────────────────────────────
 function AbaVento() {
-  const [f, setF] = useState({ course: '060', speed: '10', tipo: 'relativo', dir: '090', bordo: 'BE', intens: '14' });
+  const [f, setF] = usePersistedState('vento', { course: '060', speed: '10', tipo: 'relativo', dir: '090', bordo: 'BE', intens: '14' });
   const [res, setRes] = useState<ReturnType<typeof solveTrueWind> | null>(null);
   const [err, setErr] = useState<string | null>(null);
   const set = (k: keyof typeof f) => (v: string) => setF((s) => ({ ...s, [k]: v }));
@@ -299,7 +310,7 @@ function AbaVento() {
 
 // ── Aba: Convés (lançamento de aeronaves) ────────────────────────────────────
 function AbaConves() {
-  const [f, setF] = useState({ from: '315', vr: '10', angle: '10', bordo: 'BB', wd: '30' });
+  const [f, setF] = usePersistedState('conves', { from: '315', vr: '10', angle: '10', bordo: 'BB', wd: '30' });
   const [res, setRes] = useState<ReturnType<typeof solveDeckLaunch> | null>(null);
   const [err, setErr] = useState<string | null>(null);
   const set = (k: keyof typeof f) => (v: string) => setF((s) => ({ ...s, [k]: v }));
@@ -395,7 +406,7 @@ function AbaConves() {
 
 // ── Aba: Posição ─────────────────────────────────────────────────────────────
 function AbaPosicao() {
-  const [f, setF] = useState({ gcourse: '090', gspeed: '10', ownSpeed: '15', dispB: '135', dispD: '2800' });
+  const [f, setF] = usePersistedState('posicao', { gcourse: '090', gspeed: '10', ownSpeed: '15', dispB: '135', dispD: '2800' });
   const [res, setRes] = useState<ReturnType<typeof solveStation> | null>(null);
   const [err, setErr] = useState<string | null>(null);
   const set = (k: keyof typeof f) => (v: string) => setF((s) => ({ ...s, [k]: v }));
@@ -477,9 +488,9 @@ function AbaPosicao() {
 
 // ── Aba: Nomograma ───────────────────────────────────────────────────────────
 function AbaNomograma() {
-  const [f, setF] = useState({ d: '', v: '', t: '' });
+  const [f, setF] = usePersistedState('nomograma', { d: '', v: '', t: '' });
   const [out, setOut] = useState<string | null>(null);
-  const [milhas, setMilhas] = useState('0.75');
+  const [milhas, setMilhas] = usePersistedState('nomograma-milhas', '0.75');
   const set = (k: keyof typeof f) => (v: string) => setF((s) => ({ ...s, [k]: v }));
 
   const calcular = () => {
@@ -524,17 +535,257 @@ function AbaNomograma() {
   );
 }
 
+// ── Aba: Anticolisão (manobra evasiva) ───────────────────────────────────────
+function AbaAnticolisao() {
+  const [f, setF] = usePersistedState('anticolisao', {
+    ownCourse: '260', ownSpeed: '12',
+    ctCourse: '237', ctSpeed: '24',
+    ctBearing: '015', ctRange: '11000',
+    pma: '6000',
+  });
+  const [res, setRes] = useState<AnticolisaoResultado | null>(null);
+  const [err, setErr] = useState<string | null>(null);
+  const set = (k: keyof typeof f) => (v: string) => setF((s) => ({ ...s, [k]: v }));
+
+  const calcular = () => {
+    try {
+      setRes(
+        solveAnticolisao({
+          own: { course: +f.ownCourse, speed: +f.ownSpeed },
+          contato: { course: +f.ctCourse, speed: +f.ctSpeed },
+          posicaoContato: { bearing: +f.ctBearing, range: +f.ctRange },
+          pmaDesejada: +f.pma,
+        }),
+      );
+      setErr(null);
+    } catch (e) {
+      setErr(e instanceof Error ? e.message : 'Dados inválidos.'); setRes(null);
+    }
+  };
+  const exemplo = () =>
+    setF({ ownCourse: '260', ownSpeed: '12', ctCourse: '237', ctSpeed: '24', ctBearing: '015', ctRange: '11000', pma: '6000' });
+
+  const board = useMemo(() => {
+    if (!res) return null;
+    const d = +f.pma;
+    const M = bearingToVec(+f.ctBearing, +f.ctRange);
+    const pmaPt = bearingToVec(res.marcacaoPmaAtual, res.pmaAtual);
+    const units = niceUnitsPerRing(Math.max(+f.ctRange, d, magnitude(M)));
+    const circles: BoardCircle[] = [{ center: ORIGEM, radius: d, tone: 'pma', dashed: true, label: 'PMA mín' }];
+    const markers: BoardMarker[] = [
+      { pos: ORIGEM, label: 'R', tone: 'ref' },
+      { pos: M, label: 'M', tone: 'contato' },
+      { pos: pmaPt, label: 'PMA atual', tone: 'pma' },
+    ];
+    // reta do movimento relativo ATUAL (passa por M e pelo PMA, cortando o círculo).
+    const lines: BoardLine[] = [{ from: M, to: add(M, scale(sub(pmaPt, M), 2)), tone: 'aux', dashed: true }];
+    if (res.necessaria && res.possivel) {
+      for (const t of tangentsFromPoint(ORIGEM, d, M)) lines.push({ from: M, to: t.touch, tone: 'target' });
+    }
+    return { units, circles, markers, lines };
+  }, [res, f.ctBearing, f.ctRange, f.pma]);
+
+  const rumos = res?.manobras.filter((m) => m.tipo === 'rumo') ?? [];
+  const vels = res?.manobras.filter((m) => m.tipo === 'velocidade') ?? [];
+
+  return (
+    <div className="flex flex-wrap gap-4">
+      <div className="min-w-[280px] flex-1 space-y-3">
+        <div className="grid grid-cols-2 gap-2">
+          <Campo label="Rumo próprio" value={f.ownCourse} onChange={set('ownCourse')} suffix="°" />
+          <Campo label="Veloc. própria" value={f.ownSpeed} onChange={set('ownSpeed')} suffix="kt" />
+        </div>
+        <fieldset className="grid grid-cols-2 gap-2 rounded-lg border border-white/10 p-2">
+          <legend className="px-1 text-[11px] text-dourado/80">Contato (rumo e veloc. verdadeiros)</legend>
+          <Campo label="Rumo" value={f.ctCourse} onChange={set('ctCourse')} suffix="°" />
+          <Campo label="Velocidade" value={f.ctSpeed} onChange={set('ctSpeed')} suffix="kt" />
+        </fieldset>
+        <fieldset className="grid grid-cols-2 gap-2 rounded-lg border border-white/10 p-2">
+          <legend className="px-1 text-[11px] text-dourado/80">Posição atual do contato</legend>
+          <Campo label="Marcação" value={f.ctBearing} onChange={set('ctBearing')} suffix="°" />
+          <Campo label="Distância" value={f.ctRange} onChange={set('ctRange')} suffix="yd" />
+        </fieldset>
+        <Campo label="PMA mínima desejada" value={f.pma} onChange={set('pma')} suffix="yd" />
+        <Botoes onCalc={calcular} onExemplo={exemplo} />
+        <Erro msg={err} />
+        {res && (
+          <Resultado>
+            <Linha rotulo="PMA atual" valor={`${fmt(res.pmaAtual)} yd`} />
+            <Linha rotulo="PMA atual — marcação" valor={fmtBrg(res.marcacaoPmaAtual)} />
+            <Linha rotulo="DMR atual" valor={fmtBrg(res.dmrAtual)} />
+            <Linha rotulo="VMR atual" valor={`${fmt(res.vmrAtual, 1)} kt`} />
+          </Resultado>
+        )}
+        {res && !res.necessaria && res.possivel && (
+          <p className="rounded-lg border border-progresso/30 bg-progresso/10 p-2 text-xs text-progresso">
+            Sem manobra necessária: a PMA atual ({fmt(res.pmaAtual)} yd) já atende {fmt(+f.pma)} yd
+            {res.jaPassou ? ' (o contato já passou pelo PMA e se afasta).' : '.'}
+          </p>
+        )}
+        {res && !res.possivel && (
+          <p className="rounded-lg border border-alerta/30 bg-alerta/10 p-2 text-xs text-alerta">{res.motivo}</p>
+        )}
+        {res && res.necessaria && res.possivel && (
+          <div className="space-y-2">
+            {rumos.length > 0 && (
+              <div className="rounded-lg border border-dourado/20 bg-dourado/5 p-3">
+                <p className="mb-1.5 text-[11px] font-semibold uppercase tracking-wider text-dourado/80">Manter a velocidade — mudar o rumo</p>
+                <ul className="space-y-1.5 text-sm">
+                  {rumos.map((m, i) => (
+                    <li key={i} className="flex flex-wrap items-center justify-between gap-x-2">
+                      <span className="font-mono font-semibold text-marfim">{fmtBrg(m.novoRumo)}</span>
+                      <span className="text-xs text-nevoa/80">
+                        {Math.abs(Math.round(m.mudancaRumo ?? 0))}° p/ {m.bordo === 'BE' ? 'boreste' : 'bombordo'} · passa pela {m.lado} · VMR {fmt(m.vmr, 1)} kt
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {vels.length > 0 && (
+              <div className="rounded-lg border border-dourado/20 bg-dourado/5 p-3">
+                <p className="mb-1.5 text-[11px] font-semibold uppercase tracking-wider text-dourado/80">Manter o rumo — mudar a velocidade</p>
+                <ul className="space-y-1.5 text-sm">
+                  {vels.map((m, i) => (
+                    <li key={i} className="flex flex-wrap items-center justify-between gap-x-2">
+                      <span className="font-mono font-semibold text-marfim">{fmt(m.novaVelocidade, 1)} kt</span>
+                      <span className="text-xs text-nevoa/80">passa pela {m.lado} · VMR {fmt(m.vmr, 1)} kt</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+      {board && (
+        <div className="min-w-[280px] flex-1">
+          <div className="mx-auto w-full max-w-[380px]">
+            <RosaBoard titulo="Círculo de segurança e tangentes" unitsPerRing={board.units} unitLabel="yd" circles={board.circles} markers={board.markers} lines={board.lines} />
+            <p className="mt-1 text-center text-[10px] leading-snug text-nevoa/60">
+              A reta pontilhada é o movimento relativo <strong className="text-nevoa/80">atual</strong> (corta o círculo). As verdes <strong className="text-progresso">tangenciam</strong> o círculo: são as novas DMR a obter.
+            </p>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ── Aba: Exercícios (confira sua resposta) ───────────────────────────────────
+function AbaExercicios({ exercicioId }: { exercicioId?: string }) {
+  const idxInicial = exerciciosRosa.findIndex((e) => e.id === exercicioId);
+  const [idx, setIdx] = usePersistedState('exercicioIdx', idxInicial >= 0 ? idxInicial : 0);
+  const ex = exerciciosRosa[Math.min(idx, exerciciosRosa.length - 1)] ?? exerciciosRosa[0];
+  const gab = useMemo<CampoGabarito[]>(() => {
+    try { return ex.gabarito(); } catch { return []; }
+  }, [ex]);
+  const [resp, setResp] = useState<Record<string, string>>({});
+  const [conf, setConf] = useState<Record<string, { ok: boolean; dica: string | null }> | null>(null);
+  const [verGab, setVerGab] = useState(false);
+
+  const trocar = (novo: number) => { setIdx(novo); setResp({}); setConf(null); setVerGab(false); };
+
+  // Deep-link contextual (FerramentasHost → exercicioId): força o exercício pedido.
+  useEffect(() => {
+    const i = exerciciosRosa.findIndex((e) => e.id === exercicioId);
+    if (exercicioId && i >= 0) trocar(i);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [exercicioId]);
+
+  const conferir = () => {
+    const out: Record<string, { ok: boolean; dica: string | null }> = {};
+    for (const c of gab) {
+      const raw = (resp[c.chave] ?? '').trim();
+      if (raw === '' || !isFinite(+raw)) { out[c.chave] = { ok: false, dica: 'Responda este campo.' }; continue; }
+      const aluno = +raw;
+      if (c.tipo === 'marcacao') {
+        const chk = checkBearing(aluno, c.valor, c.tol);
+        out[c.chave] = { ok: chk.ok, dica: chk.ok ? null : diagnoseBearing(aluno, c.valor, c.tol)?.message ?? null };
+      } else {
+        const chk = checkScalar(aluno, c.valor, c.tol);
+        const dica = diagnoseScale(aluno, c.valor)?.message ?? `Diferença de ${fmt(Math.abs(aluno - c.valor), 1)} ${c.unidade}.`;
+        out[c.chave] = { ok: chk.ok, dica: chk.ok ? null : dica };
+      }
+    }
+    setConf(out);
+  };
+
+  const acertos = conf ? gab.filter((c) => conf[c.chave]?.ok).length : 0;
+
+  return (
+    <div className="mx-auto max-w-2xl space-y-4">
+      <label className="flex flex-col gap-1 text-xs text-nevoa">
+        <span className="font-medium">Exercício</span>
+        <select
+          value={idx}
+          onChange={(e) => trocar(+e.target.value)}
+          className="rounded-lg border border-white/10 bg-naval-900 px-2 py-1.5 text-sm text-marfim outline-none focus:border-dourado/50"
+        >
+          {exerciciosRosa.map((e, i) => (
+            <option key={e.id} value={i}>{e.tipo} — {e.titulo}</option>
+          ))}
+        </select>
+      </label>
+
+      <div className="rounded-lg border border-white/10 bg-naval-900/40 p-3">
+        <p className="text-[11px] font-semibold uppercase tracking-wider text-dourado/80">{ex.tipo}</p>
+        <p className="mt-1 text-sm leading-relaxed text-nevoa">{ex.enunciado}</p>
+      </div>
+
+      <div className="grid gap-x-3 gap-y-2 sm:grid-cols-2">
+        {gab.map((c) => {
+          const r = conf?.[c.chave];
+          return (
+            <div key={c.chave} className="space-y-1">
+              <Campo label={c.rotulo} value={resp[c.chave] ?? ''} onChange={(v) => setResp((s) => ({ ...s, [c.chave]: v }))} suffix={c.unidade} />
+              {r && <p className={`text-[11px] ${r.ok ? 'text-progresso' : 'text-alerta'}`}>{r.ok ? '✓ correto' : `✗ ${r.dica ?? 'incorreto'}`}</p>}
+              {verGab && (
+                <p className="text-[11px] text-dourado/80">
+                  resposta: <span className="font-mono">{c.tipo === 'marcacao' ? fmtBrg(c.valor) : `${fmt(c.valor, c.unidade === 'yd' ? 0 : 1)} ${c.unidade}`}</span>
+                </p>
+              )}
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="flex flex-wrap items-center gap-2">
+        <button type="button" onClick={conferir} className="flex-1 rounded-lg bg-dourado py-2 text-sm font-semibold text-naval transition hover:bg-dourado-soft">
+          Conferir
+        </button>
+        <button type="button" onClick={() => setVerGab((v) => !v)} className="rounded-lg border border-white/15 px-3 py-2 text-xs text-nevoa transition hover:border-dourado/40 hover:text-dourado">
+          {verGab ? 'Ocultar resolução' : 'Ver resolução'}
+        </button>
+      </div>
+
+      {conf && (
+        <p className="rounded-lg border border-dourado/20 bg-dourado/5 p-2 text-center text-sm text-marfim">
+          {acertos} de {gab.length} corretos.
+        </p>
+      )}
+    </div>
+  );
+}
+
 // ── Orquestrador ─────────────────────────────────────────────────────────────
 const ABAS: { id: Aba; nome: string }[] = [
   { id: 'contato', nome: 'Contato / PMA' },
   { id: 'vento', nome: 'Vento' },
   { id: 'conves', nome: 'Convés (lançamento)' },
   { id: 'posicao', nome: 'Entrar em posição' },
+  { id: 'anticolisao', nome: 'Anticolisão' },
   { id: 'nomograma', nome: 'Nomograma' },
+  { id: 'exercicios', nome: 'Exercícios' },
 ];
 
-export default function RosaWorkspace(_props: ToolProps) {
-  const [aba, setAba] = useState<Aba>('contato');
+export default function RosaWorkspace({ exercicioId }: ToolProps) {
+  const [aba, setAba] = usePersistedState<Aba>('aba', 'contato');
+  // Abertura contextual: se vier um exercício, abre direto na aba Exercícios.
+  useEffect(() => {
+    if (exercicioId && exercicioPorId(exercicioId)) setAba('exercicios');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [exercicioId]);
   return (
     <div className="flex h-full flex-col bg-naval text-marfim">
       <nav className="flex flex-wrap gap-1 border-b border-white/10 bg-naval-900/60 p-2" aria-label="Problemas">
@@ -557,7 +808,9 @@ export default function RosaWorkspace(_props: ToolProps) {
         {aba === 'vento' && <AbaVento />}
         {aba === 'conves' && <AbaConves />}
         {aba === 'posicao' && <AbaPosicao />}
+        {aba === 'anticolisao' && <AbaAnticolisao />}
         {aba === 'nomograma' && <AbaNomograma />}
+        {aba === 'exercicios' && <AbaExercicios exercicioId={exercicioId} />}
       </div>
     </div>
   );

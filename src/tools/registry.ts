@@ -37,7 +37,7 @@ export const ferramentas: ToolDefinition[] = [
     categoria: 'navegacao',
     status: 'disponivel',
     descricao:
-      'Resolve e visualiza contato/PMA, vento real, vento no convés (lançamento) e entrada em posição na placa de manobra (DHN-0618-1).',
+      'Resolve e visualiza contato/PMA, vento real, vento no convés (lançamento), entrada em posição e anticolisão (manobra evasiva) na placa de manobra (DHN-0618-1), com exercícios e correção automática.',
     icone:
       '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3"/>',
     rota: '/ferramentas/rosa-de-manobras',

@@ -6,4 +6,5 @@ export * from './relativeMotion';
 export * from './wind';
 export * from './station';
 export * from './nomogram';
+export * from './collision';
 export * from './verify';

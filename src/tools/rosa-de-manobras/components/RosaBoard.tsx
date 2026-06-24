@@ -20,6 +20,14 @@ export interface BoardLine {
   tone?: Tone;
   dashed?: boolean;
 }
+export interface BoardCircle {
+  center: Vec2;
+  /** Raio na unidade do diagrama. */
+  radius: number;
+  tone?: Tone;
+  dashed?: boolean;
+  label?: string;
+}
 
 interface Props {
   /** Valor de cada anel (10 anéis) na unidade do diagrama. */
@@ -29,6 +37,7 @@ interface Props {
   markers?: BoardMarker[];
   arrows?: BoardArrow[];
   lines?: BoardLine[];
+  circles?: BoardCircle[];
   size?: number;
 }
 
@@ -74,6 +83,7 @@ export default function RosaBoard({
   markers = [],
   arrows = [],
   lines = [],
+  circles = [],
   size = 520,
 }: Props) {
   const cx = size / 2;
@@ -166,6 +176,29 @@ export default function RosaBoard({
 
         {/* cruz central */}
         <path d={`M${cx - 5} ${cy}H${cx + 5}M${cx} ${cy - 5}V${cy + 5}`} className="stroke-marfim/60" strokeWidth={1} />
+
+        {/* círculos destacados (ex.: distância mínima de segurança) */}
+        {circles.map((c, i) => {
+          const p = toScreen(c.center);
+          const stroke = TONE_STROKE[c.tone ?? 'pma'];
+          return (
+            <g key={`c${i}`}>
+              <circle
+                cx={p.x}
+                cy={p.y}
+                r={c.radius * k}
+                className={`fill-none ${stroke}/60`}
+                strokeWidth={1.2}
+                strokeDasharray={c.dashed ? '5 4' : undefined}
+              />
+              {c.label && (
+                <text x={p.x} y={p.y - c.radius * k - 4} className={`${TONE_FILL[c.tone ?? 'pma']} font-mono`} fontSize={9} textAnchor="middle">
+                  {c.label}
+                </text>
+              )}
+            </g>
+          );
+        })}
 
         {/* retas auxiliares (DMR, perpendicular do PMA) */}
         {lines.map((ln, i) => {
