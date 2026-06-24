@@ -5,13 +5,13 @@
   "prioridade": "muito alta",
   "subtitulo": "A linguagem padronizada de sinais e manobras",
   "tempoEstimado": "40 min",
-  "objetivo": "Tratar o ATP-1 Vol. II como ferramenta de consulta e interpretação para as UE5 e UE6: organização, grupos governantes, TACK, e o vocabulário FORM/RUMOCOR/GUINA/VELOC/POS/DESIG, além dos termos de obrigação em inglês operativo.",
+  "objetivo": "Tratar o ATP-1(E) Vol. II como ferramenta de consulta e interpretação para as UE5 e UE6: organização, grupos governantes e supplementing signals, TACK, o Método Executivo (Normal × Imediato), distance × range, o inglês operativo (termos de obrigação, falsos cognatos, posições/direções) e o vocabulário FORM/RUMOCOR/GUINA/VELOC/POS/DESIG.",
   "palavrasChave": [
-    "ATP-1", "FORM", "RUMOCOR", "CORPEN", "GUINA", "TURN", "VELOC", "POS",
-    "TACK", "INTE", "NEGAT", "shall", "should", "may"
+    "ATP-1(E)", "MTP-1", "FORM", "RUMOCOR", "CORPEN", "GUINA", "TURN", "VELOC", "POS",
+    "TACK", "INTE", "NEGAT", "shall", "should", "may", "Método Executivo", "distance", "range", "wheel"
   ],
   "fontes": [
-    "Extrato do ATP-1 Vol. II",
-    "Apontamentos sobre o inglês do ATP"
+    "Extrato do ATP-1(E) Vol. II — Allied Maritime Tactical Signal and Maneuvering Book",
+    "Apontamentos sobre o inglês do ATP (CMG Pedro Gomes dos Santos Filho)"
   ]
 }

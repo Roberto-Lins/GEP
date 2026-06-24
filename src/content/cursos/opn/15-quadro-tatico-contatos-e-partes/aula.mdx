@@ -8,34 +8,99 @@ secaoOrdem: 2
 posição, número, categoria e parte. É o conteúdo mais aplicado da prova: nos cenários táticos, você
 precisa **montar uma parte** correta a partir dos dados (muitas vezes vindos da Rosa).*
 
-## Métodos de expressar posição
+## Métodos de expressar posição (Apostila 6.3)
 
 <BlocoConceito titulo="As quatro formas">
 
+- **Marcação e Distância** — a marcação é **verdadeira** (a menos que dito o contrário). Sequência:
+  **marcação° + ponto de referência + distância em milhas**. Ex.: `310 ZZ 7'` (de uma posição padrão da
+  Força), `237 MANILLA 12'` (de um navio, pela sua chamada fonia), `118 CABO FRIO 12'`. *Dentro do
+  próprio navio* usam-se marcações **relativas** (ex.: do vigia para o CIC/COC).
 - **Latitude/Longitude** — posição geográfica absoluta.
-- **Marcação e Distância** — a partir de um ponto de referência (o mais usado no movimento relativo).
-- **Sistema de Grade (cartesiana)** — coordenadas X/Y sobre uma grade; **X = leste/oeste**, **Y = norte/sul**; a metade **superior** usa as cores **vermelho/branco** e a **inferior**, **verde/azul**.
-- **UTM** — grade universal transversa de Mercator.
+- **GEOREF** — sistema **universal de referência geográfica**.
+- **Grade** — coordenadas **cartesianas (CCG)** ou **UTM** (ver abaixo).
 
 </BlocoConceito>
 
-## Número e bloco de acompanhamento
+### Sistema cartesiano de coordenadas de grade (CCG)
 
-Cada contato recebe um **número de acompanhamento**, normalmente derivado do **indicativo/costado** da
-unidade que o disseminou, e definido por diretiva quando necessário. O **bloco de acompanhamento** é a
-faixa de números atribuída a uma unidade (ex.: costado **F45** → bloco **4500–4577**).
+A origem fica sobre uma **posição geográfica de referência** (o **DLRP**), promulgada pelo **OCT**, e
+comum a todas as unidades. Mede-se primeiro **LESTE/OESTE (eixo X)**, depois **NORTE/SUL (eixo Y)**, em
+**milhas (1 milha = 2.000 jd)**.
 
-## Categorias de contato
+<BlocoConceito titulo="Cores, ordem e leitura da grade">
 
-<BlocoConceito titulo="As quatro categorias + a designação">
-
-Todo contato é classificado em **desconhecido (U), inimigo (H/hostil), amigo ou neutro**. A designação
-segue o **Código Operativo Abreviado (COA, do ComOpNav-516)**: **categoria (1ª letra) + plataforma (2ª
-letra) + número de acompanhamento**. Exemplos da Apostila:
-**UNIFORM JULIET 4230** (desconhecido, plataforma J, nº 4230) e **HOTEL JULIET 4120** (inimigo). Quando
-a categoria muda, o contato é **redesignado** (ex.: UNIFORM JULIET → KILO TANGO).
+- Os quadrantes recebem cores que, **lidas de NW no sentido horário**, são **VERMELHO · BRANCO · AZUL ·
+  VERDE** (logo: NW = vermelho, NE = branco, SE = azul, SW = verde).
+- Transmite-se: **cor do quadrante → 3 algarismos no eixo X → 3 algarismos no eixo Y**.
+  Ex.: `BRANCO 200 TACK 042`, `VERDE 170 TACK 110`.
+- Sistemas como o **SICONTA MK II** (Fragatas "Niterói" / Corvetas "Barroso") usam **4 dígitos**, o último
+  representando **décimos de milha** (ex.: `AZUL 040.2 – 051.0`).
 
 </BlocoConceito>
+
+O gradeado **UTM** é o sistema militar de grades, em **metros**, usado principalmente em **Apoio de Fogo
+Naval (AFN)** — não serve para Navegação de precisão.
+
+## Número e bloco de acompanhamento (Apostila 6.4)
+
+Qualquer **acompanhamento** (contato aéreo/superfície/submarino, ponto auxiliar, emissão eletrônica…)
+recebe um **número de acompanhamento** individual, para poder ser referido sem erro depois.
+
+<BlocoConceito titulo="Por que o número é OCTAL">
+Como os Sistemas de Dados Táticos usam **computadores digitais**, a numeração é feita no **sistema octal**
+— igual ao decimal, **mas sem os algarismos 8 e 9**. A sequência é `0,1,2,3,4,5,6,7, 10,11…17, 20…77`,
+dando **64 números** (8 × 8). Todo acompanhamento tem **4 algarismos octais** (ex.: `4502`, `2567` são
+válidos; **`4389` é impossível** — tem 8 e 9).
+</BlocoConceito>
+
+Cada unidade recebe um **número individual** e um **bloco** (um "estoque" de números para batizar os
+contatos que detectar). O **OCT** distribui os blocos — por **diretiva**, mensagem **OPGEN** ou pelos
+canais de comunicações. Exemplos: `V34 → 0034 / 3400–3477` · `F41 → 0041 / 4100–4177` ·
+`A140 → 0014 / 1400–1477`. Ao esgotar o bloco (`…4377`), volta-se ao início (`4300`).
+
+<BlocoConceito titulo="Um contato guarda o número — salvo 4 exceções">
+O número é retido durante toda a "vida" do contato (mesmo mudando de **categoria**). As exceções:
+
+1. **Bifurcou** — um dos novos contatos retém o número original; em regra, o que **representa a maior
+   ameaça**. Os demais recebem números novos.
+2. **Juntaram** — se o acompanhamento resultante ficar **a menos de 1 milha** e **sem bifurcação em 3
+   min**, **cancela-se o número do menor** (menos significativo).
+3. **Desconhecido → amigo** — o número inicial é **cancelado** e substituído pelo **número de
+   identificação** do amigo.
+4. **Ruído de GE correlacionado** — se um **ruído** e um contato com números diferentes forem depois
+   relacionados, o contato **assume o número do ruído**.
+
+</BlocoConceito>
+
+<BlocoConceito titulo="Regra de ouro do número (vale na Força inteira)">
+Numa mesma Força: **(1)** não pode haver **dois números para o mesmo contato**; e **(2)** não pode haver
+**o mesmo número em dois contatos**.
+</BlocoConceito>
+
+## Categorias de contato (Apostila 6.4.2)
+
+A identificação é **categoria primária (1 letra) + categoria secundária (1 letra ou número) + número de
+acompanhamento (NA)**, segundo o **Código Operativo Abreviado (COA — ComOpNav-516)**.
+
+<BlocoConceito titulo="Como a designação se monta">
+
+- **Inimigo / Desconhecido** — a **1ª letra** é a **categoria**: **U** (*unknown*/desconhecido) ou **H**
+  (*hostile*/inimigo). A **2ª letra** é o **tipo**, conforme o ambiente:
+  **superfície** (A auxiliar · C cruzador · **D** CT/Fragata/Corveta/Escolta · **J** navio não
+  especificado · **K** navio não militar · M navio militar · P patrulha · Q submarino na superfície · R
+  navio-aeródromo); **aéreo** (**B** ataque/bombardeio · G míssil · I interceptador · L patrulha · T
+  transporte · W AEW · Y helicóptero); **submarino** (1 possível · 2 provável · 3 positivo · N nuclear ·
+  S convencional).
+  Ex.: **UJ 4302** (desconhecido, navio não especificado) · **HB 4312** (inimigo, aeronave de ataque).
+- **Amigo / Neutro** — usa diretamente **letras de tipo**. Ex.: **R** = navio-aeródromo (`R1443`); **KU**
+  = navio não militar/pesqueiro (`KU 2501`, "composição tripla"); **KT** = navio não militar/rebocador;
+  **Z** = aeronave neutra.
+
+</BlocoConceito>
+
+Mudou a categoria? O contato é **redesignado** mantendo o número (ex.: `UJ1443 → R1443`, *skunk now
+friend*; `UJ4577 → HD4577`, *skunk now hostile*).
 
 ## Partes de contato
 
@@ -53,12 +118,39 @@ A **parte** é a mensagem que dissemina o contato. Os tipos:
   ]}
 />
 
+### O que muda em cada tipo (componentes — Apostila 6.5)
+
+<BlocoConceito titulo="Detalhes que a prova cobra">
+
+- **Instantânea** — leva a palavra **"INSTANTÂNEA"** como precedência entre a chamada e o contato; se a
+  rede está em uso, interrompe-se o tráfego com **"INSTANTÂNEA, INSTANTÂNEA, INSTANTÂNEA"**. Vai por
+  redes táticas e de controle aéreo, **só para alertar** (não dá informação periódica).
+- **Inicial** — só **após avaliação completa**, com o máximo de dados — mas **normalmente NÃO leva rumo e
+  velocidade** (diferente da ampliadora). Sempre que possível, o contato é **também transmitido pelo
+  LINK**.
+- **Ampliadora** — mantém a plotagem das outras unidades atualizada (posição, rumo, velocidade, direção
+  do movimento, rumo de colisão). O **PMA vai em jardas e só por segurança**; com colisão prevista usa-se
+  **"PMA COLISÃO + categoria/número"**, e se já foi cruzado, **"PMA AFASTANDO-SE"**.
+- **Situação de Raides (SITREP)** — disseminada por **CGT, CGS ou FTC-S**, em intervalos de **~20–30
+  min** (ou a pedido). Estrutura: `SITREP + HORA(4 díg + fuso) → Alarme de Superfície → nº de raides
+  ativos → contatos HOSTIS/SUSPEITOS (no sentido horário) → DESCONHECIDOS → NEUTROS/AMIGOS → ações em
+  andamento → fecho`. Se houver muitos contatos, divide-se em partes de **≤ 30 s**.
+
+</BlocoConceito>
+
 ### Partes mistas
 
-São expressões que ampliam ou esclarecem um contato: **EU TENHO** (confirmo o contato no meu sensor),
-**EU QUERO** (assumo a responsabilidade de disseminar), **AMPLIANDO** (acrescento informação),
-**JUNTARAM** (dois contatos se fundem; decide-se qual número permanece) e **BIFURCADO** (um contato se
-divide; o número original fica com o mais perigoso / o de maior grupo / o que mantém o rumo).
+Ampliam ou esclarecem um contato — note quem fala e o efeito:
+
+- **EU TENHO** — outra unidade (ou o CGT) **confirma** o contato no **seu próprio sensor**.
+- **EU QUERO** — o CGT/outra unidade confirma o contato e **exige que a responsabilidade de disseminar
+  passe a ser dela**.
+- **AMPLIANDO** — acrescenta informação (em regra, de quem está **mais perto** ou tem dado **mais preciso**).
+- **JUNTARAM** — dois+ contatos se fundem e **permanecem** assim por tempo significativo; o **CGT decide
+  qual número fica** (normalmente segue "esquecer" o outro).
+- **BIFURCADO** — um contato se divide; o número original fica com **(1)** o mais perigoso, **(2)** o
+  grupo com mais contatos, ou **(3)** o que mantém o rumo. Em superfície, há bifurcação quando os ecos se
+  afastam **mais de 1 milha**.
 
 ## Elementos essenciais de uma parte
 
@@ -73,10 +165,34 @@ contato.)*
 
 </BlocoConceito>
 
-## Link de dados
+## Link de dados — LINK-YB (Apostila 6.7)
 
-- **Link de dados (Link-YB / Link A)** — ligação entre os **Sistemas de Dados Táticos (SDT)** dos navios, por rede de rádio; **reduz drasticamente o tráfego de voz** e dá consciência situacional comum e silenciosa. O **Link YB** opera nos modos **Normal · Cripto · Fraterno (MB e ARA)**. A coordenação vem do **OPGEN/OPTASK LINK**, que define o **DLRP** (Data Link Reference Point — origem da grade), a NCS, a distribuição de *slots*, o modo e a frequência da rede.
-- Na fonia, anunciar **"Dado Belina [nº]"** (EN: *alligator*) significa **"estou transmitindo este contato por link"**; **"NEGAT Dado Belina"** (*negative alligator*) **cancela** a transmissão por link.
+O **LINK-YB** liga os **computadores dos Sistemas de Dados Táticos (SDT)** dos navios da MB por rede de
+rádio, trocando **acompanhamentos** e **mensagens de comando**. Ele **substitui a Parte Ampliadora**:
+depois da Parte Inicial, a unidade responsável **não precisa mais passar rumo/velocidade por fonia** —
+basta **atualizar o LINK** (só alerta o **FTC-S** por voz se houver mudança significativa de atitude).
+Isso descongestiona a rede **CI-GSU**.
+
+<BlocoConceito titulo="Dois conjuntos de modos — não confunda">
+
+- **Modos de operação (sigilo):** **Normal** (sem tratamento) · **Cripto** (codificado por chave) ·
+  **Fraterno** (adaptação para operar com a Armada Argentina — **ARA**).
+- **Modos de operação da REDE:** **Time Slot** (normal — cada unidade tem 1+ dos **24 slots** do ciclo; a
+  **NCS** ocupa o **slot 1** e sincroniza) · **Single Report** (silêncio rádio; só o slot 1 transmite o
+  essencial) · **Radio Silence** (só recepção; complementa o Single Report, p/ silêncio eletrônico).
+
+</BlocoConceito>
+
+<BlocoConceito titulo="OPTASK LINK — a mensagem de instrução do Controlador">
+O **OCT** designa **dois Controladores** do LINK YB (**Principal e Reserva**). O Controlador Principal
+promulga, por mensagem **OPTASK LINK**, os **8 parâmetros**: **(I)** DLRP — *Data Link Reference Point*
+(origem comum das posições) · **(II)** NCS Principal e Reserva · **(III)** distribuição dos slots ·
+**(IV)** modo de operação da rede · **(V)** velocidade de transmissão · **(VI)** comprimento da rede
+(nº máx. de slots) · **(VII)** frequência de transmissão · **(VIII)** rede de coordenação (**CI-GSU**).
+</BlocoConceito>
+
+Na fonia, anunciar **"Dado Belina [nº]"** (EN: *alligator*) significa **"estou transmitindo este contato
+por link"**; **"NEGAT Dado Belina"** (*negative alligator*) **cancela** a transmissão por link.
 
 ## PROFON — disseminar contato por voz
 

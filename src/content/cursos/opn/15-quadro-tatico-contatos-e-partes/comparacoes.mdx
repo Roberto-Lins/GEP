@@ -93,3 +93,44 @@ secaoOrdem: 4
     ["NEGAT / esquecer", "negative / scrub"],
   ]}
 />
+
+### Categoria secundária (2ª letra = tipo) — as que mais caem
+
+<BlocoComparacao
+  titulo="Tipo do contato (inimigo/desconhecido) por ambiente"
+  colunas={["Ambiente", "Letra", "Tipo"]}
+  linhas={[
+    ["Superfície", "D", "CT / Fragata / Corveta / Escolta"],
+    ["Superfície", "J", "Navio não especificado"],
+    ["Superfície", "K", "Navio não militar"],
+    ["Superfície", "M / A / R", "Navio militar / auxiliar / navio-aeródromo"],
+    ["Aéreo", "B", "Aeronave de ataque / bombardeio"],
+    ["Aéreo", "G / I / W / Y", "Míssil / interceptador / AEW / helicóptero"],
+    ["Submarino", "1 · 2 · 3", "Possível · provável · positivo submarino"],
+    ["Submarino", "N / S", "Nuclear / convencional"],
+  ]}
+/>
+
+### Número de acompanhamento — regras de renumeração
+
+<BlocoComparacao
+  titulo="Quando o número muda (exceções)"
+  colunas={["Situação", "Quem fica com o número original"]}
+  linhas={[
+    ["Bifurcou", "O contato de MAIOR ameaça (os demais ganham número novo)"],
+    ["Juntaram (< 1 milha, sem bifurcar em 3 min)", "Cancela-se o número do MENOR/menos significativo"],
+    ["Desconhecido → amigo", "Cancela o nº inicial; usa o nº de identificação do amigo"],
+    ["Ruído de GE correlacionado", "O contato ASSUME o número do ruído"],
+  ]}
+/>
+
+### LINK-YB — dois conjuntos de modos (não confundir)
+
+<BlocoComparacao
+  titulo="Operação (sigilo) × Rede"
+  colunas={["Família", "Modos"]}
+  linhas={[
+    ["Operação (sigilo)", "Normal · Cripto · Fraterno (com a ARA)"],
+    ["Rede", "Time Slot (24 slots; NCS = slot 1) · Single Report · Radio Silence"],
+  ]}
+/>

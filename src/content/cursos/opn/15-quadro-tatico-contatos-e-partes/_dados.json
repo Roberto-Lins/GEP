@@ -5,13 +5,15 @@
   "prioridade": "máxima",
   "subtitulo": "O coração dos cenários táticos da Questão 5",
   "tempoEstimado": "55 min",
-  "objetivo": "Preparar os cenários táticos: métodos de expressar posição (lat/long, marcação e distância, grade, UTM), número e bloco de acompanhamento, categorias de contato, partes de contato (instantânea, inicial, ampliadora, mista) e seus elementos, o Link de dados e o PROFON.",
+  "objetivo": "Preparar os cenários táticos: métodos de expressar posição (marcação e distância, lat/long, GEOREF, grade cartesiana/UTM), número de acompanhamento octal e regras de renumeração, categorias primária/secundária do COA, partes de contato (instantânea, inicial, ampliadora, situação de raides, mista) e seus componentes, o LINK-YB (modos e OPTASK LINK) e o PROFON.",
   "palavrasChave": [
-    "contato", "categoria", "número de acompanhamento", "bloco", "parte inicial",
-    "parte ampliadora", "marcação e distância", "grade", "Link de dados", "PROFON"
+    "contato", "categoria", "número de acompanhamento", "octal", "bloco", "COA",
+    "parte inicial", "parte ampliadora", "SITREP", "marcação e distância", "grade",
+    "LINK-YB", "OPTASK LINK", "DLRP", "PROFON"
   ],
   "fontes": [
-    "Apostila EN-131 — Cap. 6 (6.3, 6.4, partes de contato, 6.7)",
-    "Aulas 8.2 e 8.3 — Compilação do Quadro Tático"
+    "Apostila EN-131 — Cap. 6 (6.3 posição, 6.4 acompanhamento, 6.5 partes, 6.6 disseminação, 6.7 Link-YB)",
+    "Aulas 8.2 e 8.3 — Compilação do Quadro Tático",
+    "ComOpNav-516 — Código Operativo Abreviado · DGMM-0550"
   ]
 }

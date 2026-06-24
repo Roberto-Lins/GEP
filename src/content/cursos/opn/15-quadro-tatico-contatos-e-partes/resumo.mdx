@@ -4,13 +4,13 @@ secao: "resumo"
 secaoOrdem: 3
 ---
 
-- **Métodos de posição:** lat/long · **marcação e distância** · **grade cartesiana** (X = L/O, Y = N/S; superior **vermelho/branco**, inferior **verde/azul**) · UTM.
-- **Número de acompanhamento:** derivado do **costado**/indicativo; **bloco** = faixa da unidade (F45 → 4500–4577).
-- **Categorias:** **desconhecido (U) · inimigo (H) · amigo · neutro**. Designação = **categoria + plataforma + número** (ex.: UNIFORM JULIET 4230).
-- **Partes:** **Instantânea** (ameaça imediata) · **Inicial** (contato novo) · **Ampliadora** (atualiza) · **Situação de Raides/SITREP** (vários contatos) · **Mista** (EU TENHO/EU QUERO/AMPLIANDO/JUNTARAM/BIFURCADO).
+- **Métodos de posição:** **marcação e distância** (marcação **verdadeira**; `310 ZZ 7'`) · lat/long · **GEOREF** · **grade** (CCG/UTM). Grade: cores de **NW horário = vermelho/branco/azul/verde**; **X (L/O) antes de Y (N/S)**; **1 milha = 2.000 jd**; SICONTA usa 4 díg (último = décimo).
+- **Número de acompanhamento:** **octal** (sem 8 e 9 → 64 números), **4 algarismos**; cada unidade tem nº individual + **bloco** (V34 → 0034/3400–3477), distribuído pelo **OCT**. Renumera só em 4 casos: **bifurca** (fica com o de maior ameaça) · **junta** (cancela o menor) · **U→amigo** (usa o nº de ID) · **ruído correlacionado** (assume o nº do ruído). Nunca dois nº p/ 1 contato nem 1 nº p/ 2 contatos.
+- **Categorias (COA):** **1ª letra = categoria** (U desconhecido / H inimigo) + **2ª letra = tipo** (D escolta · J não especificado · K não militar · B aeronave de ataque…). Amigo/neutro usam **letras de tipo** (R navio-aeródromo, KU pesqueiro, Z aeronave neutra). Muda a categoria → **redesignado** com o mesmo número.
+- **Partes:** **Instantânea** (ameaça imediata; "INSTANTÂNEA ×3") · **Inicial** (contato novo — **sem rumo/veloc**, vai pelo LINK) · **Ampliadora** (atualiza; PMA só por segurança → **PMA COLISÃO / PMA AFASTANDO-SE**) · **SITREP** (CGT/CGS/FTC-S, ~20–30 min) · **Mista** (EU TENHO/EU QUERO/AMPLIANDO/JUNTARAM/BIFURCADO).
 - **Elementos essenciais:** `CHAMADA/PRECEDÊNCIA · CATEGORIA · NÚMERO · POSIÇÃO · RUMO/VELOCIDADE · INFO · HORA · FECHO`.
 - **PMA na parte:** só quando necessário por **segurança/interceptação** (é onde o resultado da Rosa II entra).
-- **Link de dados (YB/A):** liga os SDT dos navios, **reduz o tráfego de voz**; modos Normal/Cripto/Fraterno; origem da grade = **DLRP** (do OPGEN/OPTASK LINK). **"Dado Belina" = alligator** (transmitindo por link); **"NEGAT Dado Belina"** cancela.
+- **LINK-YB:** liga os **SDT** dos navios, **substitui a Parte Ampliadora** (atualiza rumo/veloc sem fonia) e descongestiona a **CI-GSU**. **Dois conjuntos de modos:** sigilo (**Normal/Cripto/Fraterno**) × rede (**Time Slot** [24 slots, NCS = slot 1] / **Single Report** / **Radio Silence**). **OPTASK LINK** = 8 parâmetros (DLRP, NCS principal/reserva, slots, modo, velocidade, comprimento, frequência, rede de coordenação). **"Dado Belina" = alligator**; **"NEGAT Dado Belina"** cancela.
 - **PROFON:** `[destinatário] AQUI [origem] → parte → COA+nº → grade (cor X.X–Y.Y) → rumo–veloc → info → hora → fecho`. Coordena o **FTC-S**; rede sob a **NCS**.
 - **Código Operativo Abreviado (COA):** **skunk = UJ** (superfície desconhecido) · **friend** (amigo) · **hostile** (inimigo) · **bogey/vagabundo** (aéreo) · **goblin/saci** (submarino) · **racket/ruído** (EW) · **bulldog/buldogue** (míssil lançado).
 - **Vocabulário:** AQUI=*this is* · separa=*break* · câmbio=*over* · é só=*out* · ciente=*roger* · esquecer/NEGAT=*scrub/negative* · redesignado=*now* · desvanecido/FADED · retomado=*resumed*.
