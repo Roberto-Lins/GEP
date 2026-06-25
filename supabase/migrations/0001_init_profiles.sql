@@ -133,7 +133,10 @@ as $$
     );
 $$;
 
-revoke execute on function public.username_available(text) from public;
+-- O Supabase concede EXECUTE a anon/authenticated via default privileges; por isso
+-- revogamos de `anon` EXPLICITAMENTE (não basta revogar de `public`) para impedir
+-- enumeração de usernames por visitantes não autenticados.
+revoke execute on function public.username_available(text) from public, anon;
 grant execute on function public.username_available(text) to authenticated, service_role;
 
 -- ----------------------------------------------------------------------------

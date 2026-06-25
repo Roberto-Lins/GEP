@@ -14,6 +14,7 @@
     "test:watch": "vitest",
     "audit": "npm audit --audit-level=high",
     "check:secrets": "tsx scripts/check-bundle-secrets.ts",
+    "verify:supabase": "tsx scripts/verify-supabase.ts",
     "create-course": "tsx scripts/create-course.ts",
     "validate-content": "tsx scripts/validate-content.ts",
     "audit-media": "tsx scripts/audit-media.ts",
