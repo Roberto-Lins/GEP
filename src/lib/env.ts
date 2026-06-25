@@ -75,4 +75,15 @@ export function getAppUrl(): string {
   return appUrl.replace(/\/+$/, '');
 }
 
+/**
+ * Origem para callbacks de e-mail. Usa APP_URL se definida (preferido, sem depender
+ * de headers); senão cai para `fallback` (a origem da própria requisição) — assim a
+ * ausência de APP_URL NÃO derruba o endpoint com 500. O Supabase ainda valida o
+ * redirect contra a allowlist de Redirect URLs, então a origem precisa estar lá.
+ */
+export function getAppOrigin(fallback: string): string {
+  const appUrl = readServer('APP_URL');
+  return (nonEmpty(appUrl) ? appUrl : fallback).replace(/\/+$/, '');
+}
+
 export { EnvError };

@@ -1,7 +1,7 @@
 import type { APIRoute } from 'astro';
 import { signupSchema, parseForm, isReservedUsername } from '@lib/validation/auth';
 import { isUsernameAvailable } from '@lib/supabase/admin';
-import { getAppUrl } from '@lib/env';
+import { getAppOrigin } from '@lib/env';
 import { rateLimit, clientKey } from '@lib/rate-limit';
 import { isSameOrigin, forbidden } from '@lib/security/origin';
 
@@ -40,7 +40,7 @@ export const POST: APIRoute = async ({ request, url, locals, redirect }) => {
     password,
     options: {
       data: { username, display_name },
-      emailRedirectTo: `${getAppUrl()}/auth/callback?next=${enc('/app')}`,
+      emailRedirectTo: `${getAppOrigin(url.origin)}/auth/callback?next=${enc('/app')}`,
     },
   });
 

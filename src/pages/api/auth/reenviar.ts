@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro';
 import { resendSchema, parseForm } from '@lib/validation/auth';
-import { getAppUrl } from '@lib/env';
+import { getAppOrigin } from '@lib/env';
 import { rateLimit, clientKey } from '@lib/rate-limit';
 import { isSameOrigin, forbidden } from '@lib/security/origin';
 
@@ -20,7 +20,7 @@ export const POST: APIRoute = async ({ request, url, locals, redirect }) => {
       await locals.supabase.auth.resend({
         type: 'signup',
         email: parsed.data.email,
-        options: { emailRedirectTo: `${getAppUrl()}/auth/callback?next=${enc('/app')}` },
+        options: { emailRedirectTo: `${getAppOrigin(url.origin)}/auth/callback?next=${enc('/app')}` },
       });
     }
   }

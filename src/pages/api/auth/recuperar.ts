@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro';
 import { recoverSchema, parseForm } from '@lib/validation/auth';
-import { getAppUrl } from '@lib/env';
+import { getAppOrigin } from '@lib/env';
 import { rateLimit, clientKey } from '@lib/rate-limit';
 import { isSameOrigin, forbidden } from '@lib/security/origin';
 
@@ -19,7 +19,7 @@ export const POST: APIRoute = async ({ request, url, locals, redirect }) => {
     const parsed = parseForm(recoverSchema, form);
     if (parsed.ok) {
       await locals.supabase.auth.resetPasswordForEmail(parsed.data.email, {
-        redirectTo: `${getAppUrl()}/auth/callback?next=${enc('/redefinir-senha')}`,
+        redirectTo: `${getAppOrigin(url.origin)}/auth/callback?next=${enc('/redefinir-senha')}`,
       });
     }
   }
