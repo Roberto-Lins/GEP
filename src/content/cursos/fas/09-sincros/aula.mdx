@@ -76,7 +76,7 @@ o erro **cai a zero** → o motor para. O conjunto **CX + CT** é o **detetor de
 **CT o rotor não é**.
 </BlocoPegadinha>
 
-## TDX e TDR — sincros diferenciais (somam ou subtraem ângulos)
+## TDX, CDX e TDR — sincros diferenciais (somam ou subtraem ângulos)
 
 Combinam **dois** dados de posição e dão a **soma ou a diferença**: **θ_saída = θ_entrada ± θ_diferencial**.
 Têm **três enrolamentos no rotor E três no estator**, e **nenhum é ligado aos 115 VAC** — a marca dos
@@ -95,6 +95,7 @@ diferenciais.
 </figure>
 
 - **TDR (receptor diferencial):** entradas = **duas entradas síncronas** (uma no estator, uma no rotor); saída = **mecânica** (rotor na soma/diferença). → *entram dois elétricos, sai mecânico.*
+- **CDX (transmissor diferencial de controle):** é o **TDX na versão "de controle"** — funciona igual ao TDX, mas a **entrada síncrona vem usualmente do CX** e a **saída só alimenta um CT ou outro CDX** (nunca um receptor de torque). Como o TDX: rotor de **3 enrolamentos**, **fora dos 115 VAC**, saída **elétrica**. *É para o TDX o que o CX é para o TX.* Costuma ser **a linha esquecida** na hora de completar a tabela.
 
 <BlocoConceito titulo="Exemplo numérico (do slide)">
 Com **TX/TDX/TR**: o TX recebe **75°** mecânicos → vira sinal sincro → o TDX **subtrai** seus **30°**
@@ -108,29 +109,43 @@ mecânica**. E os **rotores**: o **diferencial (TDR)** tem rotor de **três enro
 síncrona** (não excitado por CA, fora dos 115 VAC), enquanto o **receptor comum (TR)** tem rotor
 **monofásico excitado em CA**.
 
-## A tabela-mestre (saber preencher de cabeça)
+## ⭐ A tabela-mestre — "completar a tabela" vale 0,7 ponto
+
+O professor confirmou: **0,7 ponto** da prova é **completar esta tabela** (a *TABELA 3.1 — Tipos de
+Sincros*). É o print abaixo — ele é o **gabarito**. As colunas que você precisa saber preencher de cabeça
+são **Categoria · Simbologia (sigla) · Sinais de entrada · Sinais de saída**, para os **7 elementos**. O
+mais esquecido é o **CDX** — não deixe a linha em branco.
 
 <figure>
-  <img src="/imagens/cursos/fas/sincros/tabela-sincros.png" alt="Tabela 3.1 — Tipos de sincros: TX, CX, TDX, CDX, TR, TDR e CT com simbologia, sinais de entrada e sinais de saída." />
-  <figcaption>Fonte: Tabela de Sincros (material do professor).</figcaption>
+  <img src="/imagens/cursos/fas/sincros/tabela-sincros.png" alt="TABELA 3.1 — Tipos de sincros: TX, CX, TDX, CDX, TR, TDR e CT, com categoria, simbologia, sinais de entrada e sinais de saída." />
+  <figcaption>Fonte: TABELA SINCROS NOVA (material do professor) — é exatamente esta tabela que cai (0,7 ponto).</figcaption>
 </figure>
 
-| Elemento | Função | Entrada | Saída | Rotor em 115 VAC? |
-|---|---|---|---|---|
-| **TX** | transmite posição angular | rotor mecânico + CA | 3 linhas sincro (elétrica) | **Sim** |
-| **TR** | reproduz a posição do TX | 3 linhas sincro + CA | **mecânica** (rotor alinha) | **Sim** |
-| **CX** | transmite p/ controle (alimenta CT) | rotor mecânico + CA | 3 linhas sincro (elétrica) | **Sim** |
-| **CT** | comparador / detetor de erro | sinal do CX + rotor mecânico | tensão ∝ **sen(erro)** (elétrica) | **Não** |
-| **TDX** | soma/subtrai ângulos | sinal do TX + rotor mecânico | sinal sincro (elétrica) | **Não** |
-| **TDR** | soma/subtrai e reproduz | duas entradas síncronas | **mecânica** | **Não** |
+Versão enxuta para decorar, **na mesma ordem da tabela oficial** (a coluna extra *Rotor em 115 VAC?* é só
+apoio de memória, não aparece na prova):
 
-**Chaves de memória:** saída **mecânica** → TR, TDR. Saída **elétrica** → TX, CX, TDX, **CT**. Rotor
-**energizado** → TX, TR, CX. **Só o CT** dá tensão ∝ **seno do erro** (é o comparador).
+| Categoria | Sigla | Sinais de entrada | Sinais de saída | Rotor em 115 VAC? |
+|---|---|---|---|---|
+| Transmissor de torque | **TX** | rotor posicionado (mec.) + CA no rotor | 3 linhas sincro (elétrica) → TDX/TR/TDR | **Sim** |
+| Transmissor controlador | **CX** | igual ao TX | igual ao TX, mas alimenta **CT ou CDX** | **Sim** |
+| Transmissor diferencial de torque | **TDX** | sinal sincro do TX (estator) + rotor mecânico | 3 linhas sincro = **soma/diferença** (elétrica) | **Não** |
+| Transmissor diferencial de controle | **CDX** | igual ao TDX, mas entrada vem do **CX** | igual ao TDX, mas só alimenta **CT ou CDX** | **Não** |
+| Receptor de torque | **TR** | 3 linhas sincro (do TX/TDX) + CA no rotor | **mecânica** — rotor assume a posição | **Sim** |
+| Receptor diferencial de torque | **TDR** | **duas** entradas síncronas (rotor + estator) | **mecânica** = soma/diferença | **Não** |
+| Transformador de controle | **CT** | sinal sincro do CX/TX (estator) + rotor mecânico | tensão CA ∝ **sen(erro)** (elétrica) | **Não** |
+
+**Chaves de memória:** saída **mecânica** → só os receptores **TR e TDR**. Saída **elétrica** → todos os
+transmissores **TX, CX, TDX, CDX** + o **CT**. Rotor **energizado (115 VAC)** → só **TX, TR e CX**; os
+**diferenciais e o CT nunca** vão aos 115 VAC. **Só o CT** dá tensão ∝ **seno do erro**. Macete dos
+diferenciais: **TDX → TDR** é a malha de **torque**; **CDX → CT** é a malha de **controle** (o "C" entrega
+para a malha de erro).
 
 ## Como isso cai na prova (e na SOPA)
 
-Vale **2,0 pontos**: V/F de TX/TR (4) + V/F de CX/CT (4) + dissertativa + múltipla de TDX/TDR. Na SOPA:
+Vale **2,0 pontos**, e o professor já adiantou que **0,7 desses pontos é "completar a tabela"** (a TABELA
+3.1, com os 7 elementos). O resto cai como V/F de TX/TR + V/F de CX/CT + dissertativa + múltipla de TDX/TDR. Na SOPA:
 
+- **Completar a TABELA 3.1 (0,7 pt):** dar, para cada um dos **7** elementos (TX, CX, TDX, **CDX**, TR, TDR, CT), a **categoria/sigla**, os **sinais de entrada** e os **sinais de saída**. Treine cobrindo a tabela acima e o print.
 - **Mecanismo TX → TR:** descrever passo a passo a reprodução do ângulo (campo, alinhamento, corrente ≈ 0).
 - **Tensão do CT na posição mostrada (nulo):** **0 V**, porque o rotor está a 90° do campo (seno nulo).
 - **Diferença de alimentação receptor × CT:** no receptor o rotor é energizado; no CT, não.

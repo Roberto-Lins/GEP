@@ -6,5 +6,5 @@
   "subtitulo": "TX/TR, CX/CT e TDX/TDR — a tabela-mestre · 2,0 pontos",
   "tempoEstimado": "2 h",
   "objetivo": "Preencher a tabela-mestre de cabeça e explicar em poucas linhas o funcionamento de TX/TR, CX/CT e TDX/TDR, com entradas, saídas e condição de nulo.",
-  "palavrasChave": ["sincro", "TX", "TR", "CX", "CT", "TDX", "TDR", "rotor", "estator", "condição de nulo", "sinal de erro", "transmissão diferencial"]
+  "palavrasChave": ["sincro", "TX", "TR", "CX", "CT", "TDX", "CDX", "TDR", "rotor", "estator", "condição de nulo", "sinal de erro", "transmissão diferencial", "tabela 3.1", "completar a tabela"]
 }
