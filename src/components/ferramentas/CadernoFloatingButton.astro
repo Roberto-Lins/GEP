@@ -1,0 +1,38 @@
+---
+// Botão flutuante do Caderno — renderizado pelo BaseLayout SOMENTE quando há um
+// curso atual (prop `curso` definida), ou seja, apenas dentro de um curso. Em
+// páginas gerais (dashboard, /ano, /ferramentas, /apoie) o BaseLayout não o
+// monta. Astro + script inline (padrão do "voltar-topo"): não carrega o TipTap;
+// só dispara o evento que o FerramentasHost escuta para abrir a janela.
+interface Props { cursoId: string }
+const { cursoId } = Astro.props;
+---
+
+<button
+  id="abrir-caderno"
+  type="button"
+  data-curso={cursoId}
+  aria-label="Abrir Caderno"
+  title="Abrir Caderno"
+  class="fixed right-4 top-[4.5rem] z-40 flex h-11 w-11 items-center justify-center rounded-full border border-dourado/40 bg-naval/90 text-dourado shadow-lg backdrop-blur transition hover:bg-dourado hover:text-naval focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dourado"
+>
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+    <path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z" />
+    <path d="M8 3v18" />
+    <path d="M11.5 8h4M11.5 12h4" />
+  </svg>
+  <span class="sr-only">Abrir Caderno</span>
+</button>
+
+<script is:inline>
+  (() => {
+    const btn = document.getElementById('abrir-caderno');
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      const cursoId = btn.getAttribute('data-curso') || undefined;
+      window.dispatchEvent(
+        new CustomEvent('bussola:abrir-ferramenta', { detail: { id: 'caderno', cursoId } }),
+      );
+    });
+  })();
+</script>

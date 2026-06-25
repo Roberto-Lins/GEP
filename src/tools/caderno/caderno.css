@@ -1,0 +1,144 @@
+/* Estilo do conteúdo do editor (TipTap/ProseMirror) — segue o visual de leitura
+   das aulas (.prosa) usando os tokens de tema por curso (rgb(var(--c-*))), então
+   o Caderno se adapta à paleta do curso automaticamente. */
+
+.caderno-prosa {
+  color: rgb(var(--c-nevoa));
+  font-size: 0.975rem;
+  line-height: 1.7;
+  word-wrap: break-word;
+}
+
+.caderno-prosa :first-child {
+  margin-top: 0;
+}
+
+.caderno-prosa p {
+  margin: 0.6em 0;
+}
+
+.caderno-prosa h1,
+.caderno-prosa h2,
+.caderno-prosa h3,
+.caderno-prosa h4 {
+  font-family: 'Newsreader', Georgia, serif;
+  color: rgb(var(--c-marfim));
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 1.1em 0 0.4em;
+}
+.caderno-prosa h1 { font-size: 1.7rem; }
+.caderno-prosa h2 { font-size: 1.4rem; }
+.caderno-prosa h3 { font-size: 1.18rem; }
+.caderno-prosa h4 { font-size: 1.03rem; letter-spacing: 0.01em; }
+
+.caderno-prosa ul,
+.caderno-prosa ol {
+  margin: 0.6em 0;
+  padding-left: 1.4em;
+}
+.caderno-prosa ul { list-style: disc; }
+.caderno-prosa ol { list-style: decimal; }
+.caderno-prosa li { margin: 0.2em 0; }
+.caderno-prosa li p { margin: 0.2em 0; }
+
+/* Checklist (TaskList) */
+.caderno-prosa ul[data-type='taskList'] {
+  list-style: none;
+  padding-left: 0.2em;
+}
+.caderno-prosa ul[data-type='taskList'] li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55em;
+}
+.caderno-prosa ul[data-type='taskList'] li > label {
+  margin-top: 0.18em;
+  flex-shrink: 0;
+  user-select: none;
+}
+.caderno-prosa ul[data-type='taskList'] li > div {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.caderno-prosa ul[data-type='taskList'] input[type='checkbox'] {
+  width: 1.05em;
+  height: 1.05em;
+  accent-color: rgb(var(--c-dourado));
+  cursor: pointer;
+}
+.caderno-prosa ul[data-type='taskList'] li[data-checked='true'] > div {
+  color: rgb(var(--c-nevoa) / 0.5);
+  text-decoration: line-through;
+}
+
+.caderno-prosa blockquote {
+  border-left: 3px solid rgb(var(--c-dourado) / 0.6);
+  padding-left: 1em;
+  margin: 0.8em 0;
+  color: rgb(var(--c-nevoa) / 0.85);
+  font-style: italic;
+}
+
+.caderno-prosa a {
+  color: rgb(var(--c-dourado));
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+
+.caderno-prosa code {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.85em;
+  background: rgb(var(--c-naval-900) / 0.7);
+  border: 1px solid rgb(255 255 255 / 0.08);
+  border-radius: 0.3em;
+  padding: 0.12em 0.35em;
+}
+.caderno-prosa pre {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  background: rgb(var(--c-naval-900) / 0.8);
+  border: 1px solid rgb(255 255 255 / 0.08);
+  border-radius: 0.5em;
+  padding: 0.85em 1em;
+  margin: 0.8em 0;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+.caderno-prosa pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+}
+
+.caderno-prosa hr {
+  border: none;
+  border-top: 1px solid rgb(255 255 255 / 0.15);
+  margin: 1.2em 0;
+}
+
+/* Marca-texto — texto escuro p/ contraste sobre o destaque claro. */
+.caderno-prosa mark {
+  border-radius: 0.2em;
+  padding: 0.05em 0.15em;
+  color: #1a1610;
+}
+
+.caderno-prosa :focus {
+  outline: none;
+}
+
+/* Placeholder (extensão Placeholder) */
+.caderno-prosa p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+  color: rgb(var(--c-nevoa) / 0.4);
+}
+
+.caderno-prosa ::selection {
+  background: rgb(var(--c-dourado) / 0.3);
+}

@@ -6,7 +6,11 @@ interface Props {
   onClose: () => void;
   children: ReactNode;
   initial?: { width: number; height: number };
+  /** Markup interno de um <svg viewBox="0 0 24 24"> (default: bússola). */
+  icon?: string;
 }
+
+const ICONE_PADRAO = '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/>';
 
 interface Rect { x: number; y: number; w: number; h: number; }
 type Interaction = { mode: 'move' | 'resize'; px: number; py: number; start: Rect };
@@ -15,7 +19,7 @@ const MIN_W = 340;
 const MIN_H = 280;
 
 /** Janela flutuante arrastável e redimensionável, renderizada sobre toda a página. */
-export default function FloatingWindow({ title, onClose, children, initial }: Props) {
+export default function FloatingWindow({ title, onClose, children, initial, icon = ICONE_PADRAO }: Props) {
   const [rect, setRect] = useState<Rect>(() => {
     const w = Math.min(initial?.width ?? 900, window.innerWidth - 32);
     const h = Math.min(initial?.height ?? 640, window.innerHeight - 96);
@@ -97,9 +101,16 @@ export default function FloatingWindow({ title, onClose, children, initial }: Pr
         className="flex cursor-move items-center justify-between gap-2 border-b border-white/10 bg-naval-700/80 px-3 py-2 backdrop-blur"
       >
         <span className="flex items-center gap-2 truncate text-sm font-semibold text-marfim">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="text-dourado">
-            <circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="3.5" />
-          </svg>
+          <svg
+            width="15"
+            height="15"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.6"
+            className="shrink-0 text-dourado"
+            dangerouslySetInnerHTML={{ __html: icon }}
+          />
           {title}
         </span>
         <span className="flex items-center gap-1">

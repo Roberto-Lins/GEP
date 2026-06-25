@@ -1,6 +1,11 @@
 ---
 // Popover "Ferramentas" do menu principal — lê o registro (zero JS além do dispatch do evento).
 import { categorias, ferramentasPorCategoria } from '@tools/registry';
+
+// `curso` (slug), quando dentro de um curso: deixa ferramentas por curso (Caderno)
+// abrirem já no curso atual em vez de pedir a seleção.
+interface Props { curso?: string }
+const { curso } = Astro.props;
 ---
 
 <details class="relative">
@@ -35,6 +40,7 @@ import { categorias, ferramentasPorCategoria } from '@tools/registry';
                     <button
                       type="button"
                       data-abrir-ferramenta={t.id}
+                      data-curso={t.id === 'caderno' ? curso : undefined}
                       class="flex-1 text-left text-sm font-medium text-marfim"
                       title="Abrir em janela sobre a página atual"
                     >
@@ -76,7 +82,8 @@ import { categorias, ferramentasPorCategoria } from '@tools/registry';
     if (!btn) return;
     const id = btn.getAttribute('data-abrir-ferramenta');
     if (!id) return;
-    window.dispatchEvent(new CustomEvent('bussola:abrir-ferramenta', { detail: { id } }));
+    const cursoId = btn.getAttribute('data-curso') || undefined;
+    window.dispatchEvent(new CustomEvent('bussola:abrir-ferramenta', { detail: { id, cursoId } }));
     btn.closest('details')?.removeAttribute('open');
   });
 </script>

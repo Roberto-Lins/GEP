@@ -19,6 +19,11 @@ A CA chega ao rotor por **anéis coletores**, não por comutador. O contato é s
 por isso a substituição de escovas é **pouco frequente**.
 </BlocoConceito>
 
+**Características operacionais (padrão MIL/Navy):** os sincros operam em **60 Hz ou 400 Hz** (os de 400 Hz
+são mais compactos e eficientes — os sistemas de direção de tiro e mísseis usam 400 Hz quase
+exclusivamente) e em **115 VAC ou 26 VAC** na alimentação dos rotores. *Nunca* se liga um sincro de
+400 Hz a 60 Hz: a impedância cai e a corrente excessiva queima os enrolamentos.
+
 ## TX e TR — transmissor e receptor de torque (reproduzem um ângulo)
 
 - **TX (transmissor):** você **posiciona o rotor mecanicamente** e o alimenta com **CA (115 VAC)**. A saída são **três linhas de sinal sincro** pelo estator. É a **origem** da informação.
@@ -90,6 +95,13 @@ diferenciais.
 </figure>
 
 - **TDR (receptor diferencial):** entradas = **duas entradas síncronas** (uma no estator, uma no rotor); saída = **mecânica** (rotor na soma/diferença). → *entram dois elétricos, sai mecânico.*
+
+<BlocoConceito titulo="Exemplo numérico (do slide)">
+Com **TX/TDX/TR**: o TX recebe **75°** mecânicos → vira sinal sincro → o TDX **subtrai** seus **30°**
+mecânicos → o TR mostra **75° − 30° = 45°**. Sem inversão das ligações, **θ_R = θ_X − θ_DX**; invertendo
+S1×S3, faz a **soma** (θ_R = θ_X + θ_DX). Com **TX1/TDR/TX2**, o TDR dá a saída mecânica da diferença:
+**θ_DR = θ_X1 − θ_X2** (ex.: 75° − 30° = 45°).
+</BlocoConceito>
 
 Diferença que a múltipla escolha explora: o **TDX entrega sinal elétrico**; o **TDR entrega posição
 mecânica**. E os **rotores**: o **diferencial (TDR)** tem rotor de **três enrolamentos** com **entrada

@@ -50,8 +50,10 @@ function getLazy(def: ToolDefinition): ComponentType<ToolProps> {
 interface OpenWin {
   id: string;
   nome: string;
+  icone: string;
   Comp: ComponentType<ToolProps>;
   exercicioId?: string;
+  cursoId?: string;
 }
 
 /**
@@ -69,7 +71,17 @@ export default function FerramentasHost() {
       setOpen((cur) =>
         cur.some((w) => w.id === def.id)
           ? cur
-          : [...cur, { id: def.id, nome: def.nome, Comp: getLazy(def), exercicioId: detail.exercicioId }],
+          : [
+              ...cur,
+              {
+                id: def.id,
+                nome: def.nome,
+                icone: def.icone,
+                Comp: getLazy(def),
+                exercicioId: detail.exercicioId,
+                cursoId: detail.cursoId,
+              },
+            ],
       );
     };
     window.addEventListener(EVENTO_ABRIR, handler);
@@ -81,12 +93,12 @@ export default function FerramentasHost() {
   return (
     <>
       {open.map((w) => (
-        <FloatingWindow key={w.id} title={w.nome} onClose={() => fechar(w.id)}>
+        <FloatingWindow key={w.id} title={w.nome} icon={w.icone} onClose={() => fechar(w.id)}>
           <ToolErrorBoundary nome={w.nome}>
             <Suspense
               fallback={<div className="p-8 text-center text-sm text-nevoa">Carregando ferramenta…</div>}
             >
-              <w.Comp modo="janela" exercicioId={w.exercicioId} />
+              <w.Comp modo="janela" exercicioId={w.exercicioId} cursoId={w.cursoId} />
             </Suspense>
           </ToolErrorBoundary>
         </FloatingWindow>

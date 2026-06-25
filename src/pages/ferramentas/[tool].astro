@@ -2,6 +2,7 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { ferramentasDisponiveis, ferramentaPorId } from '@tools/registry';
 import RosaWorkspace from '@tools/rosa-de-manobras/components/RosaWorkspace';
+import CadernoWorkspace from '@tools/caderno/CadernoWorkspace';
 
 export function getStaticPaths() {
   return ferramentasDisponiveis().map((f) => ({ params: { tool: f.id } }));
@@ -21,5 +22,6 @@ if (!def) return Astro.redirect('/ferramentas');
 
   <div class="overflow-hidden rounded-xl border border-white/10 bg-naval-900/40" style="height: min(80vh, 820px); min-height: 520px;">
     {def.id === 'rosa-de-manobras' && <RosaWorkspace client:load modo="fullscreen" />}
+    {def.id === 'caderno' && <CadernoWorkspace client:only="react" modo="fullscreen" />}
   </div>
 </BaseLayout>

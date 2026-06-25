@@ -8,13 +8,26 @@ Antes dos sensores específicos (que valem 3,0 no total), fixe o vocabulário-ba
 é transdutor, como o sinal é condicionado e que tipos de sinal existem. São questões conceituais curtas,
 completar lacunas e V/F.
 
-## Sensor, transdutor e a cadeia de medição
+## Instrumentação, sensor e transdutor
 
+- **Instrumentação:** o desenvolvimento ou uso de **instrumentos de medida** para **observação, monitoramento ou controle**.
 - **Sensor:** recebe na entrada uma **grandeza física** (o estímulo) e **reage** a ela, produzindo na saída um **sinal**, em geral elétrico. Ele **detecta**.
-- **Transdutor:** **converte** um sinal de uma forma física para outra (pressão → corrente, temperatura → tensão). Todo transdutor envolve uma **conversão de energia/sinal**.
-- **Elemento primário / detector:** a parte que está em **contato direto** com a grandeza e a sente primeiro, convertendo-a num sinal processável.
-- **Transmissor:** recebe o sinal do sensor e o transforma num **sinal de transmissão padronizado**, proporcional à medida, para enviar a longas distâncias sem perdas.
-- **Condicionamento de sinais:** o tratamento entre o sensor e o controlador — **amplificar, filtrar, linearizar e padronizar** a saída.
+- **Transdutor:** **converte** um sinal de uma forma física para outra (pressão → corrente, temperatura → tensão). *Qualquer sensor é um conversor de energia? Raramente essa conversão é direta — daí a necessidade de transdutores.*
+
+## A cadeia de medição
+
+Tomando um **sistema de medição de vazão** como exemplo (do slide), o sinal passa por uma cadeia de
+funções até virar uma medida utilizável:
+
+- **Elemento primário:** cria as **condições** da medição (na figura, uma **placa de orifício** que gera a ΔP).
+- **Detector:** **detecta** a variável monitorada.
+- **Transdutor:** **converte** a magnitude do parâmetro para um sinal de outra forma física.
+- **Amplificador:** **aumenta** a magnitude do sinal detectado.
+- **Transmissor:** transforma o sinal num **padrão** (ex.: 4–20 mA), proporcional à medida, para enviar a longas distâncias sem perdas.
+
+Em muitos sistemas, as funções de **medição, conversão e amplificação** ficam tão acopladas que se
+especificam como um **todo** — e a esse conjunto se chama simplesmente "sensor". O tratamento global do
+sinal (amplificar, filtrar, linearizar e padronizar) é o **condicionamento de sinais**.
 
 <BlocoConceito titulo="Sensor × transdutor (cai direto)">
 **Sensor detecta** uma grandeza e reage; **transdutor converte** a forma do sinal. Nem toda detecção

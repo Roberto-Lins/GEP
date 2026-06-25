@@ -28,6 +28,12 @@ export const categorias: ToolCategory[] = [
     descricaoCurta: 'Ferramentas auxiliares de código.',
     icone: '<polyline points="8 6 3 12 8 18"/><polyline points="16 6 21 12 16 18"/>',
   },
+  {
+    id: 'educacional',
+    nome: 'Educacional',
+    descricaoCurta: 'Apoio ao estudo: anotações e organização.',
+    icone: '<path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M8 3v18"/>',
+  },
 ];
 
 export const ferramentas: ToolDefinition[] = [
@@ -43,6 +49,19 @@ export const ferramentas: ToolDefinition[] = [
     rota: '/ferramentas/rosa-de-manobras',
     suportaJanela: true,
     carregar: () => import('./rosa-de-manobras/components/RosaWorkspace'),
+  },
+  {
+    id: 'caderno',
+    nome: 'Caderno',
+    categoria: 'educacional',
+    status: 'disponivel',
+    descricao:
+      'Editor de anotações para os estudos: várias páginas por curso, títulos, listas e checklists, cores e marca-texto. Salva automaticamente no seu dispositivo. Cada curso tem o seu próprio caderno.',
+    icone:
+      '<path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M8 3v18"/><path d="M11.5 8h4M11.5 12h4"/>',
+    rota: '/ferramentas/caderno',
+    suportaJanela: true,
+    carregar: () => import('./caderno/CadernoWorkspace'),
   },
 ];
 

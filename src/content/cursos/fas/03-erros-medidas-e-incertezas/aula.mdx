@@ -22,6 +22,21 @@ ohms". Sem a incerteza, a medida quase não significa nada, porque você não sa
 Em resumo: o **erro** é o desvio real (que você não vê); a **incerteza** é a melhor estimativa que você
 faz dele.
 
+## Como se quantifica o erro e a exatidão
+
+A exatidão de uma leitura pode ser expressa de três formas — e a prova explora justamente a **base** usada:
+
+- **Erro absoluto:** Eₐ = |x_m − x_v| (na mesma unidade da grandeza).
+- **Erro relativo:** Eₐ ÷ x_v (adimensional).
+- **Erro percentual:** o relativo × 100. Pode ser tomado em **% do valor lido**, **% do span** ou **% do fundo de escala (FSO)** — e cada base dá um número diferente.
+
+> **Exemplo do slide:** FSO = 100 bar, valor verdadeiro x_v = 75 bar, valor medido x_m = 76 bar.
+> Eₐ = |76 − 75| = **1 bar** → exatidão em **%FSO** = (1 / 100) × 100 = **1%**.
+
+Na SOPA, o mesmo molde aparece com **três bases ao mesmo tempo** (range 20–180 °C, leitura 100 °C, 2%):
+2% de 180 = ±3,6 (FSO) > 2% de 160 = ±3,2 (span) > 2% de 100 = ±2,0 (valor lido) — a base **fundo de
+escala** dá o **maior** intervalo.
+
 ## Os três tipos de erro
 
 | Tipo | Origem | Comportamento | Prejudica |

@@ -63,6 +63,20 @@ Percorrendo a malha de **temperatura** de ponta a ponta:
 - **TCV** — válvula de controle: o **elemento final**, que varia a vazão de **vapor** (a manipulada).
 - A medida do TE que volta ao TIC é a **realimentação** que fecha a malha.
 
+O mesmo processo pode crescer em **malhas combinadas**: junta-se um controle de **vazão** (FT, FIC
+acionando a bomba de descarga) e um de **nível** (manipulando a vazão de entrada — o nível constante
+ainda ajuda a controlar a temperatura). Entre essas variáveis, a **vazão é a mais fácil de controlar**,
+por responder mais rápido aos atuadores.
+
+## Diagrama de blocos × diagrama de instrumentação
+
+Não confunda as duas representações. No **diagrama de blocos** (norma ISA), **as funções aparecem acima
+dos blocos e os dispositivos físicos dentro deles**; é a visão da malha como **entrada → comparação (set
+point) → controlador → processo → saída**, com a realimentação fechando o laço. Já o **diagrama de
+instrumentação** mostra os instrumentos reais com suas **tags** e **linhas de ligação**. A SOPA pede para
+apontar o **set point** e os componentes num diagrama de blocos, e para interpretar as **tags** num
+diagrama de instrumentação.
+
 ## Como o sinal viaja: elétrico × pneumático
 
 - **Elétrico — 4 a 20 mA CC.** O zero da escala é **4 mA**, não 0 mA (o **zero vivo**): se o fio rompe e a corrente cai a zero, o sistema percebe a **falha**. No desenho, costuma ser **linha tracejada**.
