@@ -56,6 +56,9 @@ export const checklists: Record<string, ItemChecklist[]> = {
     { id: 'c2', texto: 'INS: 3 acelerômetros + 3 giroscópios; integra aceleração → velocidade → posição.' },
     { id: 'c3', texto: 'Saídas do INS: posição, velocidade e atitude; sem referências externas (furtividade).' },
     { id: 'c4', texto: 'Explico por que o erro do INS cresce e se acumula com o tempo (deriva integrada).' },
+    { id: 'c5', texto: 'Rigidez (eixo fixo no espaço, maior raio → maior) × precessão (resposta a 90° do torque, menor raio → maior).' },
+    { id: 'c6', texto: 'Agulha giroscópica (gyrocompass): aponta o NORTE VERDADEIRO; não sofre desvio magnético (≠ bússola magnética).' },
+    { id: 'c7', texto: 'Efeito Sagnac: dois feixes no mesmo anel em sentidos opostos → defasagem ∝ Ω; base do RLG (frequência, lock-in) e do FOG (fase, sem lock-in).' },
   ],
   '09-sincros': [
     { id: 'c1', texto: 'TX/TR reproduzem ângulo (TR tem saída mecânica; rotores energizados).' },

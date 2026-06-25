@@ -4,9 +4,17 @@ secao: "aula"
 secaoOrdem: 2
 ---
 
-As respostas aqui são **curtas e diretas** (~6 dissertativas + V/F de 6 itens). **Não caem:** acelerômetro
-**sísmico**, **precessão** e **rigidez** do giroscópio mecânico. O foco é: o que cada sensor mede, como se
-combinam num sistema de navegação e por que o erro cresce.
+As respostas aqui são **curtas e diretas** (~6 dissertativas + V/F de 6 itens). O foco é: o que cada sensor
+mede, como se combinam num sistema de navegação e por que o erro cresce — **e, agora, a agulha giroscópica
+(gyrocompass) e o efeito Sagnac**, que o professor avisou que vão cair.
+
+<BlocoConceito titulo="📣 Aviso do professor (jun/2026)">
+O professor adiantou que esta prova vai **cobrar a agulha giroscópica (gyrocompass)** e **aprofundar o
+efeito Sagnac**. Por isso este tópico foi reforçado: a **rigidez** e a **precessão** do giroscópio — antes
+fora — **voltam**, porque são justamente o que faz a agulha giroscópica achar o norte. Estude as duas
+seções novas abaixo (**Agulha giroscópica** e **Efeito Sagnac**) com atenção. Continua **fora** só o
+acelerômetro **sísmico**.
+</BlocoConceito>
 
 ## As grandezas medidas (a base que não pode confundir)
 
@@ -29,14 +37,102 @@ eletromagnético. Em repouso, o pêndulo fica no **zero**. Sob aceleração, um 
 é a medida da aceleração**. Tem **1 grau de liberdade** e é usado na navegação de **submarinos** (onde a
 furtividade é essencial).
 
-## Giroscópio (o que permanece — sem rigidez/precessão)
+## Giroscópio
 
-Função básica: servir de **referência de orientação/rotação**. Os modernos medem velocidade angular
-**sem peças girantes**:
+Função básica: servir de **referência de orientação/rotação** — manter ou medir a direção do eixo.
 
-- **RLG (laser em anel):** efeito **Sagnac** — um feixe dividido percorre um anel em sentidos opostos; ao girar, surge uma diferença de fase/tempo proporcional à velocidade angular.
-- **FOG (fibra óptica):** mesmo princípio Sagnac, em fibra; usado em **agulhas giroscópicas navais**.
-- **MEMS:** estrutura microvibrante que sente a força de **Coriolis** ao girar; compacto e escalável.
+### As duas propriedades do giroscópio mecânico (rigidez e precessão)
+
+Um rotor pesado girando rápido tem duas propriedades fundamentais — são **elas** que fazem a agulha
+giroscópica funcionar (por isso voltaram para a prova):
+
+- **Rigidez no espaço (inércia giroscópica):** o eixo de rotação tende a **manter a direção fixa em
+  relação ao espaço (inercial)**, resistindo a forças que tentam mudá-la. Quanto **maior o momento angular**
+  (mais massa, mais raio, mais rotação), **maior a rigidez**.
+- **Precessão:** quando um **torque** é aplicado ao eixo, o giroscópio **não cede na direção do torque** —
+  ele responde **a 90°**, girando lentamente o eixo no sentido determinado pela regra do produto vetorial.
+  Para o **mesmo torque**, quanto **menor o momento angular**, **maior a precessão**.
+
+<BlocoConceito titulo="Rigidez × precessão (a comparação A·B·C)">
+Três rotores de **mesma massa** girando à mesma velocidade, com raios **A &lt; B &lt; C**:
+**maior rigidez → o de maior raio (C)** (maior momento de inércia → maior momento angular);
+**maior precessão para o mesmo torque → o de menor raio (A)** (menor momento angular cede mais rápido).
+</BlocoConceito>
+
+### Giroscópios modernos (sem peças girantes)
+
+Os giroscópios atuais medem velocidade angular **sem rotor mecânico**:
+
+- **RLG (laser em anel):** efeito **Sagnac** — um feixe dividido percorre um anel em sentidos opostos; ao girar, surge uma diferença de **frequência/fase** proporcional à velocidade angular.
+- **FOG (fibra óptica):** mesmo princípio **Sagnac**, numa bobina de fibra; usado nas **agulhas giroscópicas navais** modernas.
+- **MEMS:** estrutura microvibrante que sente a força de **Coriolis** ao girar; compacto e barato (celulares, drones).
+
+## Efeito Sagnac — o coração do giroscópio óptico
+
+O **efeito Sagnac** é o princípio físico que permite medir rotação **com luz, sem nenhuma peça girando**.
+
+Imagine um **anel óptico** (uma bobina de fibra ou uma cavidade com espelhos). Um feixe de laser é
+**dividido** por um separador de feixe e os dois feixes percorrem **o mesmo anel em sentidos opostos**
+(um horário, outro anti-horário) até se reencontrarem.
+
+- Se o anel está **parado**, os dois feixes percorrem **exatamente a mesma distância** e chegam **juntos**
+  (em fase).
+- Se o anel **gira** com velocidade angular **Ω**, o feixe que gira **no mesmo sentido da rotação**
+  (co‑rotante) precisa "**correr atrás**" do ponto de chegada, que se afastou → percorre um **caminho óptico
+  maior**. O feixe contra‑rotante percorre um caminho **menor**. Surge uma **diferença de tempo / fase**
+  **proporcional a Ω**, medida na recombinação dos feixes.
+
+<figure>
+  <img src="/imagens/cursos/fas/inerciais/sagnac-interferometro.svg" alt="Interferômetro de Sagnac: um laser é dividido por um separador de feixe; os dois feixes percorrem o mesmo anel óptico em sentidos opostos. Com o anel girando (Ω), o feixe co-rotante percorre caminho maior e o contra-rotante caminho menor, gerando uma diferença de fase proporcional a Ω, lida no detector." />
+  <figcaption>Diagrama esquemático (autoral) do efeito Sagnac. Δt = 4AΩ/c²; no FOG a defasagem é Δφ = 8πNAΩ/(λc) e no RLG mede-se o batimento de frequência Δf = 4AΩ/(λL).</figcaption>
+</figure>
+
+O ponto-chave para a prova: **a diferença de fase (ou de frequência) é proporcional à velocidade angular Ω**.
+Por isso o anel óptico funciona como um **giroscópio** — quanto mais rápido ele gira, maior a defasagem
+medida. Como **nada gira mecanicamente**, o sensor é **robusto, sem desgaste e liga instantaneamente**.
+
+### RLG × FOG (as duas famílias Sagnac)
+
+- **RLG (Ring Laser Gyro):** o anel é uma **cavidade ressonante ativa** (laser de He‑Ne dentro do próprio
+  anel). A rotação muda a **frequência** de ressonância de cada sentido; mede‑se o **batimento (Δf)** entre
+  as duas. Muito preciso, mas sofre o **"lock‑in"** (em rotações muito lentas as duas frequências
+  "**travam**" juntas e o giro não acusa nada) — corrigido com um **dithering** (uma pequena vibração
+  mecânica forçada).
+- **FOG (Fiber Optic Gyro):** o anel é uma **bobina passiva de fibra óptica** (com **N** espiras, que
+  multiplicam o efeito). A luz vem de uma fonte externa e mede‑se a **diferença de fase (Δφ)**. **Não tem
+  lock‑in**, é mais barato e robusto — é o tipo usado na **agulha giroscópica naval** e em INS strapdown.
+
+<BlocoConceito titulo="Por que Sagnac é a base do giroscópio óptico (resuma assim)">
+Dois feixes de luz no mesmo anel, em sentidos opostos. Com o anel girando, um percorre caminho **maior** e
+outro **menor** → **defasagem ∝ Ω**. Sem peças girantes. **RLG** mede **frequência** (e sofre lock‑in);
+**FOG** mede **fase** (sem lock‑in, com várias espiras de fibra).
+</BlocoConceito>
+
+## Agulha giroscópica (gyrocompass) — acha o NORTE VERDADEIRO
+
+A **agulha giroscópica** (gyrocompass) é o instrumento que aponta o **norte geográfico (verdadeiro)** do
+navio — diferente da **bússola magnética**, que aponta o **norte magnético** e sofre desvios.
+
+**Como um giroscópio acha o norte (concepção mecânica clássica):** parte da **rigidez no espaço** (o eixo
+quer ficar fixo no referencial inercial). Como a **Terra gira**, do ponto de vista do navio o eixo parece
+"derivar". Adicionando uma **força controlada (peso/gravidade)** que aplica um pequeno **torque**, entra a
+**precessão**: o eixo é levado, por oscilações que amortecem, a se alinhar com o **meridiano** — ou seja,
+ele **procura e estaciona apontando o norte verdadeiro** (é um sensor *north‑seeking*).
+
+**Concepção moderna:** as agulhas atuais não usam rotor; usam um **FOG** (efeito **Sagnac**) que mede a
+**componente da rotação da Terra** sentida em cada eixo e, por cálculo, deduz onde está o norte verdadeiro.
+Ganha em robustez, parte rápido e não tem peças se desgastando.
+
+<BlocoComparacao titulo="Agulha giroscópica × bússola magnética">
+
+| | Agulha giroscópica | Bússola magnética |
+|---|---|---|
+| Aponta | norte **verdadeiro** (geográfico) | norte **magnético** |
+| Princípio | rigidez + precessão (ou FOG/Sagnac) | alinhamento ao campo magnético |
+| Sofre desvio magnético? | **não** | **sim** (massas de ferro, correntes, carga) |
+| Precisa de energia? | **sim** (rotor/óptica + eletrônica) | não |
+
+</BlocoComparacao>
 
 ## Sistema de Navegação Inercial (INS) — o coração do bloco
 
@@ -77,11 +173,14 @@ o erro acumulado.
 
 ## Como isso cai na prova (e na SOPA)
 
-Na SOPA, inerciais apareceram como:
+Pelo aviso do professor, prepare‑se principalmente para:
 
+- 🎯 **Agulha giroscópica (gyrocompass):** o que é, como acha o **norte verdadeiro** e por que é melhor que a bússola magnética (não sofre desvio magnético).
+- 🎯 **Efeito Sagnac:** explicar o princípio (dois feixes em sentidos opostos no mesmo anel → defasagem ∝ Ω) e por que é a base do **RLG** e do **FOG**.
+- **Rigidez × precessão (raios A/B/C):** maior rigidez = **maior raio**; maior precessão (mesmo torque) = **menor raio** — voltaram porque sustentam o gyrocompass.
 - **APSC:** aplicação no submarino (integra o **INS**, furtividade) e **1 grau de liberdade**.
 - **Diferença acelerômetro × giroscópio:** aceleração linear × velocidade angular.
 - **V/F:** "o INS depende de GPS" (**falso** — é autônomo); "3 acelerômetros + 3 giroscópios de 1 GDL" (certo); "acelerômetro mede velocidade angular e giroscópio aceleração linear" (**falso** — invertido).
-- 🚫 **Giroscópio mecânico (rigidez/precessão, raios A/B/C):** está na SOPA, mas **retirado** desta prova.
+- 🚫 **Continua fora:** acelerômetro **sísmico**.
 
 Treine na <a href="/fas/questoes">Central</a> filtrando por **Sistemas inerciais**.

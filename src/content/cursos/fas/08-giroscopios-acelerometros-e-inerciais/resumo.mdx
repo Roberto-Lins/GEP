@@ -5,9 +5,10 @@ secaoOrdem: 3
 ---
 
 - **Acelerômetro = aceleração linear** · **Giroscópio = velocidade angular** (não troque).
+- **Rigidez** = eixo fixo no espaço (maior raio → maior); **precessão** = resposta a 90° do torque (menor raio → maior, p/ mesmo torque).
+- **Agulha giroscópica (gyrocompass):** aponta o **norte verdadeiro** (não o magnético); usa rigidez + precessão (ou FOG/Sagnac). Não sofre desvio magnético.
+- **Efeito Sagnac:** dois feixes no mesmo anel em sentidos opostos → com rotação Ω, um caminho **maior** e outro **menor** → **defasagem ∝ Ω**. Base do **RLG** (mede frequência, sofre lock‑in) e do **FOG** (mede fase, sem lock‑in).
 - **APSC:** massa mantida no zero por corrente; a corrente é a medida; **1 grau de liberdade**.
-- **INS:** 3 acelerômetros + 3 giroscópios; giros dão **atitude**; acelerômetros → integra → **velocidade** → integra → **posição**.
-- **Saídas do INS:** posição, velocidade e atitude; **sem fontes externas** (furtividade).
-- **Gimbal** (plataforma estável) × **strapdown** (fixo + cálculo).
-- **Erro cresce com o tempo** porque a deriva é **integrada** e se acumula.
-- **Fora:** sísmico, rigidez e precessão do giroscópio mecânico.
+- **INS:** 3 acelerômetros + 3 giroscópios; giros dão **atitude**; acelerômetros → integra → **velocidade** → integra → **posição**. Saídas: posição, velocidade e atitude, **sem fontes externas** (furtividade).
+- **Gimbal** (plataforma estável) × **strapdown** (fixo + cálculo). **Erro cresce com o tempo** porque a deriva é **integrada** e se acumula.
+- **Fora:** só o acelerômetro **sísmico**.

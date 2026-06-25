@@ -143,15 +143,16 @@ export const timeline: TopicoTimeline[] = [
     ordem: 8,
     slug: '08-giroscopios-acelerometros-e-inerciais',
     titulo: 'Giroscópios, acelerômetros e sistemas inerciais',
-    subtitulo: 'Aceleração linear × velocidade angular e o INS · 1,7 ponto',
+    subtitulo: 'Aceleração linear × velocidade angular, o INS, a agulha giroscópica e o efeito Sagnac · 1,7 ponto',
     prioridade: 'muito alta',
-    tempoEstimado: '1 h 45',
+    tempoEstimado: '2 h',
     statusInicial: 'pendente',
     objetivo:
-      'Não confundir acelerômetro (aceleração linear) com giroscópio (velocidade angular) e explicar, em uma frase, por que o erro do INS cresce com o tempo.',
+      'Não confundir acelerômetro (aceleração linear) com giroscópio (velocidade angular); explicar por que o erro do INS cresce com o tempo; e — reforçados pelo professor — a agulha giroscópica (norte verdadeiro) e o efeito Sagnac (base do RLG/FOG).',
     palavrasChave: [
       'acelerômetro', 'giroscópio', 'aceleração linear', 'velocidade angular', 'roll', 'pitch', 'yaw',
       'INS', 'integração', 'atitude', 'deriva', 'acúmulo de erro', 'APSC',
+      'agulha giroscópica', 'gyrocompass', 'norte verdadeiro', 'efeito Sagnac', 'RLG', 'FOG', 'rigidez', 'precessão',
     ],
   },
   {

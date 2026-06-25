@@ -27,3 +27,29 @@ secaoOrdem: 4
 | Aceleração | 1ª integral | velocidade |
 | Velocidade | 2ª integral | posição |
 | (giroscópios) | — | atitude (roll, pitch, yaw) |
+
+## Rigidez × precessão (giroscópio mecânico)
+
+| | Rigidez | Precessão |
+|---|---|---|
+| O que é | eixo **fixo no espaço** (inercial) | resposta a **90°** de um torque aplicado |
+| Cresce com | **maior** momento angular (maior raio/massa/rotação) | **menor** momento angular (p/ o mesmo torque) |
+| Raios A&lt;B&lt;C | maior em **C** (maior raio) | maior em **A** (menor raio) |
+
+## RLG × FOG (giroscópios Sagnac)
+
+| | RLG (laser em anel) | FOG (fibra óptica) |
+|---|---|---|
+| Anel | cavidade **ativa** (laser dentro) | bobina **passiva** de fibra (N espiras) |
+| Mede | **batimento de frequência** (Δf) | **diferença de fase** (Δφ) |
+| Defeito | **lock‑in** em baixas rotações (precisa de *dithering*) | **sem** lock‑in |
+| Uso | inerciais de alta precisão | **agulha giroscópica naval**, INS strapdown |
+
+## Agulha giroscópica × bússola magnética
+
+| | Agulha giroscópica | Bússola magnética |
+|---|---|---|
+| Aponta | norte **verdadeiro** (geográfico) | norte **magnético** |
+| Princípio | rigidez + precessão (ou FOG/Sagnac) | alinhamento ao campo magnético |
+| Desvio magnético | **não** sofre | **sim** sofre |
+| Energia | **precisa** | não precisa |
