@@ -1,6 +1,5 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "_comment": "Cabeçalhos de segurança para TODAS as rotas (inclui as estáticas servidas pelo CDN, que o middleware Astro não alcança). O valor de Content-Security-Policy DEVE permanecer idêntico ao de src/lib/security/headers.ts (CSP) — há um teste que valida a sincronia. Em outro host (ex.: Netlify), o equivalente seria public/_headers.",
   "headers": [
     {
       "source": "/(.*)",
