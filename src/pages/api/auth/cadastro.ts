@@ -31,7 +31,9 @@ export const POST: APIRoute = async ({ request, url, locals, redirect }) => {
     if (!(await isUsernameAvailable(username))) {
       return redirect(`/cadastro?erro=username&email=${enc(email)}`, 303);
     }
-  } catch {
+  } catch (e) {
+    // Log no servidor (aparece nos logs da função na Vercel) — sem expor ao usuário.
+    console.error('[cadastro] checagem de username falhou:', e instanceof Error ? e.message : e);
     return redirect('/cadastro?erro=falha', 303);
   }
 
@@ -46,6 +48,9 @@ export const POST: APIRoute = async ({ request, url, locals, redirect }) => {
 
   // Anti-enumeração: e-mail já existente NÃO gera erro (com confirmação de e-mail
   // ligada) → mostramos a mesma página de "verifique seu e-mail".
-  if (error) return redirect('/cadastro?erro=falha', 303);
+  if (error) {
+    console.error('[cadastro] signUp falhou:', error.message);
+    return redirect('/cadastro?erro=falha', 303);
+  }
   return redirect('/verifique-email?enviado=1', 303);
 };
