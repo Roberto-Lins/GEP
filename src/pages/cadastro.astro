@@ -1,0 +1,65 @@
+---
+export const prerender = false;
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { CADASTRO_ERROS, msgDe } from '@lib/auth/messages';
+import { safeRedirectPath } from '@lib/security/redirect';
+
+const params = Astro.url.searchParams;
+const erroMsg = msgDe(CADASTRO_ERROS, params.get('erro'));
+const email = params.get('email') ?? '';
+const next = safeRedirectPath(params.get('next'), '/app');
+const loginHref = next !== '/app' ? `/login?next=${encodeURIComponent(next)}` : '/login';
+---
+<BaseLayout titulo="Criar conta" descricao="Crie sua conta na Bússola dos Aspirantes.">
+  <div class="mx-auto max-w-md">
+    <div class="card p-7 sm:p-8">
+      <h1 class="mb-1 text-2xl font-bold">Criar conta</h1>
+      <p class="mb-6 text-sm text-nevoa/70">É grátis. Você poderá montar suas próprias estruturas de estudo.</p>
+
+      {erroMsg && <p class="alert-erro mb-4" role="alert">{erroMsg}</p>}
+
+      <form method="POST" action="/api/auth/cadastro" class="space-y-4">
+        <input type="hidden" name="next" value={next} />
+        <div>
+          <label class="label" for="display_name">Nome de exibição</label>
+          <input class="input" id="display_name" name="display_name" type="text"
+                 autocomplete="name" required maxlength="80" placeholder="Como quer ser chamado" />
+        </div>
+        <div>
+          <label class="label" for="username">Nome de usuário</label>
+          <input class="input" id="username" name="username" type="text" autocomplete="username"
+                 required minlength="3" maxlength="30" pattern="[a-z0-9_]{3,30}"
+                 placeholder="ex.: aspirante_silva" />
+          <p class="field-hint">Letras minúsculas, números e _ (3–30). Será único.</p>
+        </div>
+        <div>
+          <label class="label" for="email">E-mail</label>
+          <input class="input" id="email" name="email" type="email" autocomplete="email"
+                 inputmode="email" required value={email} placeholder="voce@exemplo.com" />
+        </div>
+        <div>
+          <label class="label" for="password">Senha</label>
+          <input class="input" id="password" name="password" type="password"
+                 autocomplete="new-password" required minlength="8" maxlength="72"
+                 placeholder="Mínimo 8 caracteres" />
+        </div>
+        <div>
+          <label class="label" for="confirm">Confirmar senha</label>
+          <input class="input" id="confirm" name="confirm" type="password"
+                 autocomplete="new-password" required minlength="8" maxlength="72"
+                 placeholder="Repita a senha" />
+        </div>
+        <label class="flex items-start gap-2 text-sm text-nevoa/80">
+          <input type="checkbox" name="terms" value="on" required class="mt-1 accent-dourado" />
+          <span>Li e aceito os <a class="link-quiet text-dourado" href="/termos">termos de uso</a> e a política de privacidade.</span>
+        </label>
+        <button class="btn-primary w-full" type="submit">Criar conta</button>
+      </form>
+
+      <p class="mt-5 text-sm text-nevoa/70">
+        Já tem conta?
+        <a class="link-quiet font-medium text-dourado" href={loginHref}>Entrar</a>
+      </p>
+    </div>
+  </div>
+</BaseLayout>

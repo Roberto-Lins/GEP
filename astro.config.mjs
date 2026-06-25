@@ -2,11 +2,17 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
+import vercel from '@astrojs/vercel/serverless';
 
-// Bússola dos Aspirantes — plataforma estática multi-curso.
-// Ajuste `site` ao publicar (Vercel/Netlify/GitHub Pages).
+// Bússola dos Aspirantes — plataforma de estudos.
+// Arquitetura HÍBRIDA (ver docs/adr/0001-astro-hibrido.md):
+//   - Tudo é pré-renderizado (estático) POR PADRÃO — landing, cursos curados, /ano, etc.
+//   - Só as rotas de auth/app fazem SSR, optando via `export const prerender = false`.
+// Ajuste `site` ao publicar.
 export default defineConfig({
   site: 'https://bussola-aspirantes.local',
+  output: 'hybrid',
+  adapter: vercel(),
   integrations: [
     tailwind({ applyBaseStyles: false }),
     mdx(),

@@ -71,6 +71,19 @@
     @apply text-nevoa underline-offset-4 transition hover:text-dourado hover:underline;
   }
 
+  /* Formulários (auth, perfil, configurações) */
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-marfim;
+  }
+  .input {
+    @apply w-full rounded-xl border border-white/10 bg-naval-800/60 px-4 py-3 text-marfim placeholder:text-nevoa/40 transition focus:border-dourado/50 focus:outline-none focus:ring-2 focus:ring-dourado/30;
+  }
+  .field-hint { @apply mt-1 text-xs text-nevoa/55; }
+  .alert { @apply rounded-xl border px-4 py-3 text-sm; }
+  .alert-erro { @apply alert border-alerta/40 bg-alerta/10 text-alerta; }
+  .alert-ok { @apply alert border-progresso/40 bg-progresso/10 text-progresso; }
+  .alert-info { @apply alert border-dourado/30 bg-dourado/10 text-dourado-soft; }
+
   /* Conteúdo editorial das mini matérias (MDX) */
   .prosa {
     @apply text-[17.5px] leading-relaxed text-nevoa/95;

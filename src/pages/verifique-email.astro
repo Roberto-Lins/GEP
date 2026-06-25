@@ -1,0 +1,31 @@
+---
+export const prerender = false;
+import BaseLayout from '@layouts/BaseLayout.astro';
+
+const reenviado = Astro.url.searchParams.get('reenviado') === '1';
+---
+<BaseLayout titulo="Verifique seu e-mail" descricao="Confirme seu e-mail para ativar a conta.">
+  <div class="mx-auto max-w-md">
+    <div class="card p-7 text-center sm:p-8">
+      <div class="mx-auto mb-4 grid h-14 w-14 place-items-center rounded-full border border-dourado/40 bg-dourado/10 text-2xl" aria-hidden="true">✉️</div>
+      <h1 class="mb-2 text-2xl font-bold">Verifique seu e-mail</h1>
+      <p class="text-sm text-nevoa/75">
+        Enviamos um link de confirmação para o seu e-mail. Clique nele para ativar sua conta e entrar.
+      </p>
+      {reenviado && (
+        <p class="alert-ok mt-4" role="status">
+          Se a conta existir e ainda não estiver confirmada, reenviamos o link.
+        </p>
+      )}
+
+      <form method="POST" action="/api/auth/reenviar" class="mt-6 space-y-3 text-left">
+        <label class="label" for="email">Não recebeu? Reenviar para:</label>
+        <input class="input" id="email" name="email" type="email" autocomplete="email"
+               inputmode="email" required placeholder="voce@exemplo.com" />
+        <button class="btn-ghost w-full" type="submit">Reenviar link</button>
+      </form>
+
+      <a class="link-quiet mt-6 inline-block" href="/login">Já confirmei — ir para o login</a>
+    </div>
+  </div>
+</BaseLayout>

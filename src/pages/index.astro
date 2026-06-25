@@ -1,68 +1,106 @@
 ---
+// Landing pública da PLATAFORMA. Comunica a visão de rede colaborativa de estudos.
+// NÃO destaca a Escola Naval (curso privado por link — ver ADR 0010). O campus de
+// estudo vive em /estudar, alcançável por link. Página estática (pré-renderizada).
 import BaseLayout from '@layouts/BaseLayout.astro';
-import NavCard from '@components/cursos/NavCard.astro';
-import BackupProgresso from '@components/progresso/BackupProgresso.tsx';
-import ApoieVisual from '@components/apoie/ApoieVisual.astro';
-import { ANOS, ANO_LABELS, contarMaterias, SEM_CONTEUDO } from '@utils/hierarchy';
 
-const fmtMat = (n: number) => (n === 0 ? SEM_CONTEUDO : n === 1 ? '1 matéria' : `${n} matérias`);
-const anos = ANOS.map((ano) => ({
-  ano,
-  label: ANO_LABELS[ano],
-  meta: fmtMat(contarMaterias({ ano })),
-}));
+const disponivel = [
+  { titulo: 'Conta e login', desc: 'Cadastro, verificação de e-mail e recuperação de senha.' },
+  { titulo: 'Conteúdo de estudo', desc: 'Trilhas, exercícios comentados e mídias já publicados.' },
+  { titulo: 'Progresso no navegador', desc: 'Seu avanço é salvo localmente, com backup exportável.' },
+];
+const emBreve = [
+  { titulo: 'Criar seus cursos', desc: 'Abra um espaço de estudo seu, público ou privado.' },
+  { titulo: 'Estruturas livres', desc: 'Pastas, subpastas e páginas organizadas do seu jeito — sem hierarquia obrigatória.' },
+  { titulo: 'Progresso na conta', desc: 'Sincronize entre dispositivos.' },
+  { titulo: 'Colaboração', desc: 'Contribua e descubra estruturas de outras pessoas.' },
+];
 ---
-<BaseLayout titulo="Bússola dos Aspirantes" largura="larga">
-  <!-- APOIE (banner) -->
-  <ApoieVisual variante="banner" />
-
+<BaseLayout
+  titulo="Bússola dos Aspirantes"
+  descricao="Uma rede colaborativa de estudos: crie cursos, monte sua estrutura e acompanhe seu progresso."
+  largura="larga"
+>
   <!-- HERO -->
-  <section class="relative mb-12 overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-aco/40 via-naval-800 to-naval px-6 py-12 sm:px-10 sm:py-16">
+  <section class="reveal relative mb-14 overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-aco/40 via-naval-800 to-naval px-6 py-16 sm:px-10 sm:py-20">
     <div class="pointer-events-none absolute inset-0 opacity-[0.07]"
       style="background-image:radial-gradient(circle at 1px 1px, #D6A84F 1px, transparent 0);background-size:26px 26px"></div>
     <div class="relative max-w-2xl">
-      <p class="mb-3 inline-flex items-center gap-2 rounded-full border border-dourado/30 bg-dourado/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] text-dourado">
-        Campus de estudos
+      <p class="mb-4 inline-flex items-center gap-2 rounded-full border border-dourado/30 bg-dourado/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] text-dourado">
+        Rede colaborativa de estudos
       </p>
-      <h1 class="text-balance text-4xl font-bold leading-tight sm:text-5xl">Bússola dos Aspirantes</h1>
-      <p class="mt-4 max-w-xl text-lg text-nevoa/85">
-        Escolha o <strong class="text-marfim">ano</strong>, depois a turma e a época de prova, e siga a
-        trilha de estudo de cada matéria — aulas, resumos, mídias, exercícios comentados e revisão final,
-        com o seu progresso salvo no navegador, sem login.
+      <h1 class="text-balance text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
+        Estude do seu jeito. Organize como quiser.
+      </h1>
+      <p class="mt-5 max-w-xl text-lg text-nevoa/85">
+        A Bússola está virando uma plataforma onde você cria cursos, monta sua própria estrutura de
+        pastas e páginas, e acompanha seu progresso — sem ser obrigado a seguir a organização de
+        ninguém.
       </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a class="btn-primary" href="/cadastro">Criar conta grátis</a>
+        <a class="btn-ghost" href="/login">Entrar</a>
+      </div>
     </div>
   </section>
 
-  <!-- ANOS -->
-  <section class="mb-12">
-    <h2 class="mb-5 text-2xl font-bold">Escolha o ano</h2>
-    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-      {anos.map(({ ano, label, meta }) => (
-        <NavCard href={`/ano/${ano}`} titulo={label} meta={meta} cta="Abrir →" />
+  <!-- DISPONÍVEL AGORA -->
+  <section class="reveal mb-14">
+    <div class="mb-5 flex items-center gap-3">
+      <span class="chip border border-progresso/40 bg-progresso/10 text-progresso">✓ Disponível agora</span>
+      <h2 class="text-2xl font-bold">O que já funciona</h2>
+    </div>
+    <div class="grid gap-5 sm:grid-cols-3">
+      {disponivel.map((f) => (
+        <div class="card p-6">
+          <h3 class="font-serif text-lg text-marfim">{f.titulo}</h3>
+          <p class="mt-2 text-sm text-nevoa/70">{f.desc}</p>
+        </div>
       ))}
     </div>
   </section>
 
-  <!-- CONTRIBUIR -->
-  <section class="mb-12">
-    <a href="/adicionar-curso" class="card card-hover flex items-center gap-4 p-6">
-      <span class="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-dourado/40 bg-dourado/10 text-2xl text-dourado">+</span>
-      <span class="flex flex-col">
-        <span class="font-serif text-xl text-marfim">Adicionar matéria</span>
-        <span class="text-sm text-nevoa/70">Contribuir — monte um Course Kit e baixe o .zip para o mantenedor instalar.</span>
-      </span>
-    </a>
+  <!-- EM DESENVOLVIMENTO -->
+  <section class="reveal mb-14">
+    <div class="mb-5 flex items-center gap-3">
+      <span class="chip border border-dourado/30 bg-dourado/10 text-dourado-soft">⏳ Em desenvolvimento</span>
+      <h2 class="text-2xl font-bold">O que vem por aí</h2>
+    </div>
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {emBreve.map((f) => (
+        <div class="card p-6 opacity-90">
+          <h3 class="font-serif text-lg text-marfim">{f.titulo}</h3>
+          <p class="mt-2 text-sm text-nevoa/70">{f.desc}</p>
+        </div>
+      ))}
+    </div>
+    <p class="mt-5 max-w-2xl text-sm text-nevoa/55">
+      Cada pessoa poderá organizar seus estudos como preferir — por temas, semanas, projetos, o que
+      fizer sentido. Nomes como “ano”, “turma” ou “semestre” são apenas <em class="not-italic text-dourado-soft">uma</em>
+      das formas possíveis, não uma regra.
+    </p>
   </section>
 
-  <!-- BACKUP -->
-  <section class="mb-4">
-    <div class="card p-6">
-      <h2 class="mb-1 font-serif text-xl text-marfim">Seu progresso</h2>
-      <p class="mb-4 text-sm text-nevoa/70">
-        Tudo fica salvo apenas neste navegador. Exporte um backup para guardar ou levar para outro
-        dispositivo.
-      </p>
-      <BackupProgresso client:load />
+  <!-- CTA FINAL -->
+  <section class="reveal mb-6">
+    <div class="card flex flex-col items-start gap-4 p-8 sm:flex-row sm:items-center sm:justify-between">
+      <div>
+        <h2 class="font-serif text-2xl text-marfim">Pronto para começar?</h2>
+        <p class="mt-1 text-sm text-nevoa/70">Crie sua conta e acompanhe a plataforma evoluir.</p>
+      </div>
+      <a class="btn-primary shrink-0" href="/cadastro">Criar conta grátis</a>
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  /* Animação leve de entrada, desativada para quem prefere menos movimento. */
+  .reveal { opacity: 0; transform: translateY(12px); animation: reveal 0.6s ease forwards; }
+  .reveal:nth-of-type(2) { animation-delay: 0.08s; }
+  .reveal:nth-of-type(3) { animation-delay: 0.16s; }
+  .reveal:nth-of-type(4) { animation-delay: 0.24s; }
+  @keyframes reveal { to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; animation: none; }
+  }
+</style>

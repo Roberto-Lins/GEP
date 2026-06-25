@@ -1,0 +1,74 @@
+---
+export const prerender = false;
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { PERFIL_ERROS, msgDe } from '@lib/auth/messages';
+
+const user = Astro.locals.user!;
+const params = Astro.url.searchParams;
+const erroMsg = msgDe(PERFIL_ERROS, params.get('erro'));
+const ok = params.get('ok') === '1';
+
+// Carrega o perfil (RLS: só a própria linha). Fallback para metadados se ainda não existir.
+const meta = (user.user_metadata ?? {}) as Record<string, unknown>;
+let perfil = {
+  username: (meta.username as string) ?? '',
+  display_name: (meta.display_name as string) ?? '',
+  bio: '',
+};
+try {
+  const { data } = await Astro.locals.supabase
+    .from('profiles')
+    .select('username, display_name, bio')
+    .eq('id', user.id)
+    .maybeSingle();
+  if (data) {
+    perfil = {
+      username: data.username ?? perfil.username,
+      display_name: data.display_name ?? perfil.display_name,
+      bio: data.bio ?? '',
+    };
+  }
+} catch {
+  /* sem banco provisionado → usa metadados */
+}
+
+const inicial = (perfil.display_name || perfil.username || user.email || '?').charAt(0).toUpperCase();
+---
+<BaseLayout titulo="Perfil" descricao="Edite seu perfil público.">
+  <div class="mx-auto max-w-2xl">
+    <a class="link-quiet mb-4 inline-block text-sm" href="/app">← Voltar ao painel</a>
+    <div class="card p-7 sm:p-8">
+      <div class="mb-6 flex items-center gap-4">
+        <div class="grid h-16 w-16 place-items-center rounded-full border border-dourado/40 bg-dourado/10 text-2xl font-serif text-dourado" aria-hidden="true">{inicial}</div>
+        <div>
+          <h1 class="text-2xl font-bold">Seu perfil</h1>
+          <p class="text-sm text-nevoa/60">Upload de avatar chega em uma fase futura.</p>
+        </div>
+      </div>
+
+      {ok && <p class="alert-ok mb-4" role="status">Perfil atualizado!</p>}
+      {erroMsg && <p class="alert-erro mb-4" role="alert">{erroMsg}</p>}
+
+      <form method="POST" action="/api/perfil" class="space-y-4">
+        <div>
+          <label class="label" for="display_name">Nome de exibição</label>
+          <input class="input" id="display_name" name="display_name" type="text"
+                 required maxlength="80" value={perfil.display_name} />
+        </div>
+        <div>
+          <label class="label" for="username">Nome de usuário</label>
+          <input class="input" id="username" name="username" type="text"
+                 required minlength="3" maxlength="30" pattern="[a-z0-9_]{3,30}" value={perfil.username} />
+          <p class="field-hint">Letras minúsculas, números e _ (3–30). Único.</p>
+        </div>
+        <div>
+          <label class="label" for="bio">Bio</label>
+          <textarea class="input min-h-24" id="bio" name="bio" maxlength="280"
+                    placeholder="Conte um pouco sobre você (opcional).">{perfil.bio}</textarea>
+          <p class="field-hint">Até 280 caracteres.</p>
+        </div>
+        <button class="btn-primary" type="submit">Salvar alterações</button>
+      </form>
+    </div>
+  </div>
+</BaseLayout>

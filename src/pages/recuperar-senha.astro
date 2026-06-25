@@ -1,0 +1,37 @@
+---
+export const prerender = false;
+import BaseLayout from '@layouts/BaseLayout.astro';
+
+const enviado = Astro.url.searchParams.get('enviado') === '1';
+---
+<BaseLayout titulo="Recuperar senha" descricao="Recupere o acesso à sua conta.">
+  <div class="mx-auto max-w-md">
+    <div class="card p-7 sm:p-8">
+      <h1 class="mb-1 text-2xl font-bold">Recuperar senha</h1>
+      {enviado ? (
+        <>
+          <p class="alert-info mt-4" role="status">
+            Se existir uma conta com esse e-mail, enviamos um link para redefinir a senha.
+            Verifique sua caixa de entrada (e o spam).
+          </p>
+          <a class="link-quiet mt-5 inline-block" href="/login">Voltar ao login</a>
+        </>
+      ) : (
+        <>
+          <p class="mb-6 text-sm text-nevoa/70">
+            Informe seu e-mail e enviaremos um link para criar uma nova senha.
+          </p>
+          <form method="POST" action="/api/auth/recuperar" class="space-y-4">
+            <div>
+              <label class="label" for="email">E-mail</label>
+              <input class="input" id="email" name="email" type="email" autocomplete="email"
+                     inputmode="email" required placeholder="voce@exemplo.com" />
+            </div>
+            <button class="btn-primary w-full" type="submit">Enviar link</button>
+          </form>
+          <a class="link-quiet mt-5 inline-block" href="/login">Voltar ao login</a>
+        </>
+      )}
+    </div>
+  </div>
+</BaseLayout>

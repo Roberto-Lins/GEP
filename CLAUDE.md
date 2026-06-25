@@ -32,8 +32,45 @@ Course Kit:     wizard client-side + JSZip (rota /adicionar-curso) → gera .zip
 Deploy:         Vercel / Netlify / GitHub Pages
 ```
 
-**Evitar:** Next.js, backend, banco de dados, login, autenticação, Supabase, Firebase, painel
-administrativo.
+**Evitar (mas leia a seção "Evolução" abaixo):** Next.js como reescrita do projeto; backend/banco/
+login para áreas que **não** precisam de servidor; complexidade desnecessária. A restrição histórica
+"100% estático, sem backend/Supabase" valia para o objetivo antigo (site estático) e **continua
+valendo só onde não há necessidade de execução no servidor** — o conteúdo curado (cursos, MDX, ilhas,
+temas, navegação `/ano`) permanece estático. **Backend, autenticação, banco e Supabase agora são
+autorizados** para a camada multiusuário (ver abaixo).
+
+## Evolução: plataforma colaborativa (em andamento)
+
+O produto está evoluindo de site estático para **plataforma colaborativa multiusuário** (cadastro,
+contas, cursos/estruturas de usuário, social, moderação) — **por fases, sem reescrever nem quebrar o
+existente**. Referência arquitetural: [`docs/PLANEJAMENTO-EVOLUCAO-BUSSOLA.md`](docs/PLANEJAMENTO-EVOLUCAO-BUSSOLA.md)
+e os [ADRs](docs/adr/README.md). Estado atual: **Fase 1 — protótipo autenticado**
+(ver [`docs/implementation/PHASE-01-AUTHENTICATION.md`](docs/implementation/PHASE-01-AUTHENTICATION.md)).
+
+Regras que passam a valer (não negociáveis):
+
+- **Astro híbrido:** `output: 'hybrid'` + adapter Vercel. Tudo continua **pré-renderizado por
+  padrão**; só rotas de auth/app fazem SSR (`export const prerender = false`). MDX, Content
+  Collections, ilhas React e temas **seguem como hoje** para o conteúdo curado.
+- **Backend/banco/auth via Supabase** (PostgreSQL + Auth + RLS). Migrações SQL versionadas em
+  `supabase/migrations/`.
+- **Dois tipos de conteúdo** ([ADR 0004](docs/adr/0004-conteudo-curated-vs-community.md)):
+  `curated` (mantenedores, MDX + React, no repo) × `community` (usuários, **blocos sanitizados, nunca
+  código**). **Conteúdo de usuário NUNCA executa MDX/JSX/JS arbitrário**
+  ([ADR 0006](docs/adr/0006-proibir-codigo-arbitrario-ugc.md)).
+- **Autorização sempre no servidor + reforçada no banco (RLS `default-deny`)**; o front é só UX. A
+  **service role key** vive só no servidor — nunca no bundle do cliente
+  ([ADR 0005](docs/adr/0005-autorizacao-no-servidor.md)).
+- **Curso ≠ estrutura criada por usuário.** A hierarquia Ano→Turma→Semestre→Época→Matéria é a
+  **estrutura que o Roberto criou** dentro do espaço "Escola Naval" — **não** o modelo obrigatório de
+  todos os cursos. O núcleo futuro será uma **árvore genérica** `courses/structures/nodes/content`.
+  **NÃO** criar regras permanentes por slug (`if (slug === 'escola-naval' | 'gep' …)`); "curado" e
+  "privado" são **capacidades** atribuíveis a qualquer curso. Ver
+  [ADR 0008–0010](docs/adr/README.md) e [`docs/architecture/COURSES-STRUCTURES-AND-CONTENT.md`](docs/architecture/COURSES-STRUCTURES-AND-CONTENT.md).
+- **Preservação:** rotas, URLs, redirects, conteúdo curado e o progresso em `localStorage`
+  (`bussola:v1`) **permanecem**. O `localStorage` segue como fonte de verdade do progresso **nesta
+  fase** (migração para conta é fase futura). A página inicial `/` virou **landing pública**; o campus
+  atual (anos/turmas) vive em **`/estudar`** (Escola Naval = curso privado por link, fora da vitrine).
 
 ## Arquitetura: Plataforma → Curso → Mini-matéria → Conteúdo
 
@@ -92,7 +129,11 @@ backups/{gep-original,progresso-exportado,fontes-originais,versoes-antigas}/
 
 | Rota | Função |
 |------|--------|
-| `/` | Dashboard (4 cards de ano + card "Adicionar matéria" + backup) |
+| `/` | **Landing pública** (visão colaborativa + Entrar/Criar conta). SSG. |
+| `/estudar` | **Campus** de estudo (cards de ano + backup) — antes era `/`. Escola Naval por link. SSG. |
+| `/login` · `/cadastro` · `/recuperar-senha` · `/redefinir-senha` · `/verifique-email` | Fluxos de auth (SSR). |
+| `/app` · `/app/perfil` · `/app/configuracoes` | Área autenticada, protegida pelo middleware (SSR). |
+| `/auth/callback` · `/api/auth/*` · `/api/{me,perfil}` · `/api/conta/senha` | Endpoints SSR de auth/perfil. |
 | `/adicionar-curso` | Course Kit Generator (wizard → baixa `.zip`) |
 | `/ano/<ano>` | 1°/2°: semestres · 3°/4°: turmas |
 | `/ano/<ano>/<turma>` | (3°/4°) semestres da turma |
@@ -108,7 +149,7 @@ backups/{gep-original,progresso-exportado,fontes-originais,versoes-antigas}/
 
 As rotas `/ano/...` são geradas por um único arquivo catch-all `pages/ano/[...segmentos].astro`
 (profundidade variável). O cabeçalho dentro de um curso tem **Voltar** (volta à listagem da matéria,
-via `listingPathDoCurso`) e **Bússola** (volta ao `/`); há também botão flutuante de voltar ao topo.
+via `listingPathDoCurso`) e **Bússola** (volta ao campus `/estudar`); há também botão flutuante de voltar ao topo.
 
 **Aliases legados (GEP)** via `redirects` em `astro.config.mjs`:
 `/timeline→/gep/timeline` · `/materias/<s>→/gep/<s>` · `/questoes→/gep/questoes` ·

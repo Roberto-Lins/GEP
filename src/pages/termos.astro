@@ -1,0 +1,34 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+// Página estática (pré-renderizada). RASCUNHO — os documentos legais definitivos
+// (termos de uso, política de privacidade, cookies, moderação) serão elaborados e
+// validados juridicamente em fase futura. Ver docs/PLANEJAMENTO-EVOLUCAO-BUSSOLA.md §9.
+---
+<BaseLayout titulo="Termos de uso" descricao="Termos de uso e privacidade (rascunho).">
+  <div class="mx-auto max-w-prose">
+    <div class="card p-7 sm:p-8">
+      <p class="chip mb-3 border border-dourado/30 bg-dourado/10 text-dourado">Rascunho</p>
+      <h1 class="mb-3 text-3xl font-bold">Termos de uso & Privacidade</h1>
+      <div class="prosa">
+        <p>
+          Esta é uma versão <strong>preliminar</strong>. A Bússola dos Aspirantes está em evolução
+          para uma plataforma colaborativa, e os documentos legais definitivos (termos de uso,
+          política de privacidade, cookies e moderação) ainda estão sendo elaborados e passarão por
+          <em>validação jurídica</em>.
+        </p>
+        <h2>Enquanto isso, em resumo</h2>
+        <ul>
+          <li>Seus dados de conta (e-mail, nome de usuário) servem apenas para operar a sua conta.</li>
+          <li>Sua senha é armazenada com hash forte — nunca em texto puro.</li>
+          <li>Seu progresso de estudos é seu; nesta fase ele ainda fica no seu navegador.</li>
+          <li>Você poderá exportar seus dados e excluir sua conta (funcionalidades em desenvolvimento).</li>
+        </ul>
+        <p>
+          Ao continuar, você reconhece que esta é uma fase inicial e que estes termos serão
+          atualizados. Dúvidas: <a href="/apoie">fale com o mantenedor</a>.
+        </p>
+      </div>
+      <a class="btn-ghost mt-6" href="/cadastro">← Voltar ao cadastro</a>
+    </div>
+  </div>
+</BaseLayout>

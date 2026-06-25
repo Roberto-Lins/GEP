@@ -1,0 +1,75 @@
+---
+// Campus de estudos (antes era a home "/"). Agora é a estrutura PRIVADA POR LINK do
+// Roberto (espaço "Escola Naval"), fora da vitrine pública. Todas as rotas profundas
+// (/ano, /<curso>) seguem intactas. Ver ADR 0010.
+import BaseLayout from '@layouts/BaseLayout.astro';
+import NavCard from '@components/cursos/NavCard.astro';
+import BackupProgresso from '@components/progresso/BackupProgresso.tsx';
+import ApoieVisual from '@components/apoie/ApoieVisual.astro';
+import { ANOS, ANO_LABELS, contarMaterias, SEM_CONTEUDO } from '@utils/hierarchy';
+
+const fmtMat = (n: number) => (n === 0 ? SEM_CONTEUDO : n === 1 ? '1 matéria' : `${n} matérias`);
+const anos = ANOS.map((ano) => ({
+  ano,
+  label: ANO_LABELS[ano],
+  meta: fmtMat(contarMaterias({ ano })),
+}));
+---
+<BaseLayout titulo="Escola Naval — estudo" largura="larga">
+  <!-- APOIE (banner) -->
+  <ApoieVisual variante="banner" />
+
+  <!-- HERO -->
+  <section class="relative mb-12 overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-aco/40 via-naval-800 to-naval px-6 py-12 sm:px-10 sm:py-16">
+    <div class="pointer-events-none absolute inset-0 opacity-[0.07]"
+      style="background-image:radial-gradient(circle at 1px 1px, #D6A84F 1px, transparent 0);background-size:26px 26px"></div>
+    <div class="relative max-w-2xl">
+      <p class="mb-3 inline-flex items-center gap-2 rounded-full border border-dourado/30 bg-dourado/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] text-dourado">
+        Espaço de estudos · Escola Naval
+      </p>
+      <h1 class="text-balance text-4xl font-bold leading-tight sm:text-5xl">Estrutura da Escola Naval</h1>
+      <p class="mt-4 max-w-xl text-lg text-nevoa/85">
+        Trilhas de estudo organizadas por <strong class="text-marfim">ano</strong>, turma e época de
+        prova — aulas, resumos, mídias, exercícios comentados e revisão final, com o seu progresso
+        salvo no navegador.
+      </p>
+      <p class="mt-3 max-w-xl text-sm text-nevoa/60">
+        Esta é <em class="text-dourado-soft not-italic">uma das formas</em> de organizar o estudo
+        (criada pelo Roberto). Em breve você poderá montar a sua própria estrutura.
+      </p>
+    </div>
+  </section>
+
+  <!-- ANOS -->
+  <section class="mb-12">
+    <h2 class="mb-5 text-2xl font-bold">Escolha o ano</h2>
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {anos.map(({ ano, label, meta }) => (
+        <NavCard href={`/ano/${ano}`} titulo={label} meta={meta} cta="Abrir →" />
+      ))}
+    </div>
+  </section>
+
+  <!-- CONTRIBUIR -->
+  <section class="mb-12">
+    <a href="/adicionar-curso" class="card card-hover flex items-center gap-4 p-6">
+      <span class="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-dourado/40 bg-dourado/10 text-2xl text-dourado">+</span>
+      <span class="flex flex-col">
+        <span class="font-serif text-xl text-marfim">Adicionar matéria</span>
+        <span class="text-sm text-nevoa/70">Contribuir — monte um Course Kit e baixe o .zip para o mantenedor instalar.</span>
+      </span>
+    </a>
+  </section>
+
+  <!-- BACKUP -->
+  <section class="mb-4">
+    <div class="card p-6">
+      <h2 class="mb-1 font-serif text-xl text-marfim">Seu progresso</h2>
+      <p class="mb-4 text-sm text-nevoa/70">
+        Tudo fica salvo apenas neste navegador. Exporte um backup para guardar ou levar para outro
+        dispositivo.
+      </p>
+      <BackupProgresso client:load />
+    </div>
+  </section>
+</BaseLayout>

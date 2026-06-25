@@ -1,0 +1,79 @@
+---
+export const prerender = false;
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { CONFIG_ERROS, msgDe } from '@lib/auth/messages';
+
+const user = Astro.locals.user!;
+const params = Astro.url.searchParams;
+const erroMsg = msgDe(CONFIG_ERROS, params.get('erro'));
+const okSenha = params.get('ok') === 'senha';
+const verificado = Boolean(user.email_confirmed_at);
+---
+<BaseLayout titulo="Configurações" descricao="Gerencie sua conta.">
+  <div class="mx-auto max-w-2xl">
+    <a class="link-quiet mb-4 inline-block text-sm" href="/app">← Voltar ao painel</a>
+    <h1 class="mb-6 text-3xl font-bold">Configurações</h1>
+
+    {okSenha && <p class="alert-ok mb-4" role="status">Senha alterada com sucesso.</p>}
+    {erroMsg && <p class="alert-erro mb-4" role="alert">{erroMsg}</p>}
+
+    <!-- Conta -->
+    <section class="card mb-6 p-6">
+      <h2 class="mb-3 font-serif text-lg text-marfim">Conta</h2>
+      <dl class="space-y-2 text-sm">
+        <div class="flex items-center justify-between gap-4">
+          <dt class="text-nevoa/60">E-mail</dt>
+          <dd class="text-marfim">{user.email}</dd>
+        </div>
+        <div class="flex items-center justify-between gap-4">
+          <dt class="text-nevoa/60">Verificação</dt>
+          <dd>
+            {verificado
+              ? <span class="chip border border-progresso/40 bg-progresso/10 text-progresso">✓ Verificado</span>
+              : <span class="chip border border-alerta/40 bg-alerta/10 text-alerta">! Pendente</span>}
+          </dd>
+        </div>
+      </dl>
+      {!verificado && (
+        <a class="link-quiet mt-3 inline-block text-sm" href="/verifique-email">Reenviar verificação</a>
+      )}
+    </section>
+
+    <!-- Trocar senha -->
+    <section class="card mb-6 p-6">
+      <h2 class="mb-4 font-serif text-lg text-marfim">Alterar senha</h2>
+      <form method="POST" action="/api/conta/senha" class="space-y-4">
+        <div>
+          <label class="label" for="current_password">Senha atual</label>
+          <input class="input" id="current_password" name="current_password" type="password"
+                 autocomplete="current-password" required maxlength="72" />
+        </div>
+        <div>
+          <label class="label" for="password">Nova senha</label>
+          <input class="input" id="password" name="password" type="password"
+                 autocomplete="new-password" required minlength="8" maxlength="72" />
+        </div>
+        <div>
+          <label class="label" for="confirm">Confirmar nova senha</label>
+          <input class="input" id="confirm" name="confirm" type="password"
+                 autocomplete="new-password" required minlength="8" maxlength="72" />
+        </div>
+        <button class="btn-primary" type="submit">Alterar senha</button>
+      </form>
+    </section>
+
+    <!-- Dados / sessão -->
+    <section class="card mb-6 p-6">
+      <h2 class="mb-2 font-serif text-lg text-marfim">Seus dados</h2>
+      <p class="text-sm text-nevoa/65">
+        Exportação de dados e exclusão de conta estarão disponíveis em uma fase futura
+        (conforme a LGPD). Por enquanto, fale com o mantenedor se precisar.
+      </p>
+    </section>
+
+    <!-- Logout -->
+    <form method="POST" action="/api/auth/logout">
+      <button class="btn-ghost" type="submit">Sair da conta</button>
+    </form>
+  </div>
+</BaseLayout>

@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# Sem segredos: o build precisa passar mesmo sem credenciais Supabase
+# (clients são criados lazy; nenhuma rota SSR é pré-renderizada). Ver
+# docs/implementation/PHASE-01-AUTHENTICATION.md.
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run check
+
+      - name: Unit tests
+        run: npm run test
+
+      - name: Build
+        run: npm run build
+
+      - name: Secret scan (service role must NOT be in the client bundle)
+        run: npm run check:secrets
+
+      - name: Audit — hard gate on CRITICAL
+        run: npm audit --audit-level=critical
+
+      # Informacional: há advisories HIGH pré-existentes no Astro 4.x (corrigidos só
+      # no Astro 5, upgrade fora do escopo desta fase — ver PHASE-01-AUTHENTICATION.md
+      # "Segurança / riscos aceitos"). Mantido visível, sem bloquear o pipeline.
+      - name: Audit — report HIGH (non-blocking)
+        run: npm audit --audit-level=high
+        continue-on-error: true

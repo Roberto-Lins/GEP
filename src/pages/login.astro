@@ -1,0 +1,47 @@
+---
+export const prerender = false;
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { LOGIN_ERROS, msgDe } from '@lib/auth/messages';
+import { safeRedirectPath } from '@lib/security/redirect';
+
+const params = Astro.url.searchParams;
+const erroMsg = msgDe(LOGIN_ERROS, params.get('erro'));
+const email = params.get('email') ?? '';
+const next = safeRedirectPath(params.get('next'), '/app');
+const redefinido = params.get('redefinido') === '1';
+const cadastroHref = next !== '/app' ? `/cadastro?next=${encodeURIComponent(next)}` : '/cadastro';
+---
+<BaseLayout titulo="Entrar" descricao="Acesse sua conta da Bússola dos Aspirantes.">
+  <div class="mx-auto max-w-md">
+    <div class="card p-7 sm:p-8">
+      <h1 class="mb-1 text-2xl font-bold">Entrar</h1>
+      <p class="mb-6 text-sm text-nevoa/70">Acesse sua conta para continuar.</p>
+
+      {redefinido && <p class="alert-ok mb-4" role="status">Senha redefinida! Entre com a nova senha.</p>}
+      {erroMsg && <p class="alert-erro mb-4" role="alert">{erroMsg}</p>}
+
+      <form method="POST" action="/api/auth/login" class="space-y-4">
+        <input type="hidden" name="next" value={next} />
+        <div>
+          <label class="label" for="email">E-mail</label>
+          <input class="input" id="email" name="email" type="email" autocomplete="email"
+                 inputmode="email" required value={email} placeholder="voce@exemplo.com" />
+        </div>
+        <div>
+          <label class="label" for="password">Senha</label>
+          <input class="input" id="password" name="password" type="password"
+                 autocomplete="current-password" required placeholder="••••••••" />
+        </div>
+        <button class="btn-primary w-full" type="submit">Entrar</button>
+      </form>
+
+      <div class="mt-5 flex flex-col gap-2 text-sm">
+        <a class="link-quiet" href="/recuperar-senha">Esqueci minha senha</a>
+        <p class="text-nevoa/70">
+          Não tem conta?
+          <a class="link-quiet font-medium text-dourado" href={cadastroHref}>Criar conta</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

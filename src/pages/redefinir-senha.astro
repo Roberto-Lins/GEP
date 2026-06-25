@@ -1,0 +1,43 @@
+---
+export const prerender = false;
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { REDEFINIR_ERROS, msgDe } from '@lib/auth/messages';
+
+const erroMsg = msgDe(REDEFINIR_ERROS, Astro.url.searchParams.get('erro'));
+const temSessao = Astro.locals.user !== null;
+---
+<BaseLayout titulo="Redefinir senha" descricao="Crie uma nova senha.">
+  <div class="mx-auto max-w-md">
+    <div class="card p-7 sm:p-8">
+      <h1 class="mb-1 text-2xl font-bold">Redefinir senha</h1>
+      {erroMsg && <p class="alert-erro mb-4" role="alert">{erroMsg}</p>}
+      {temSessao ? (
+        <>
+          <p class="mb-6 text-sm text-nevoa/70">Crie uma nova senha para sua conta.</p>
+          <form method="POST" action="/api/auth/redefinir" class="space-y-4">
+            <div>
+              <label class="label" for="password">Nova senha</label>
+              <input class="input" id="password" name="password" type="password"
+                     autocomplete="new-password" required minlength="8" maxlength="72"
+                     placeholder="Mínimo 8 caracteres" />
+            </div>
+            <div>
+              <label class="label" for="confirm">Confirmar nova senha</label>
+              <input class="input" id="confirm" name="confirm" type="password"
+                     autocomplete="new-password" required minlength="8" maxlength="72"
+                     placeholder="Repita a nova senha" />
+            </div>
+            <button class="btn-primary w-full" type="submit">Salvar nova senha</button>
+          </form>
+        </>
+      ) : (
+        <>
+          <p class="alert-info mt-4" role="status">
+            Abra esta página pelo link enviado ao seu e-mail. Se o link expirou, solicite um novo.
+          </p>
+          <a class="btn-ghost mt-5 w-full" href="/recuperar-senha">Solicitar novo link</a>
+        </>
+      )}
+    </div>
+  </div>
+</BaseLayout>

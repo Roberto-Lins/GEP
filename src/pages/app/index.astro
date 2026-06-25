@@ -1,0 +1,75 @@
+---
+export const prerender = false;
+import BaseLayout from '@layouts/BaseLayout.astro';
+
+// Protegida pelo middleware: só chega aqui quem está autenticado.
+const user = Astro.locals.user!;
+const meta = (user.user_metadata ?? {}) as Record<string, unknown>;
+const displayName =
+  (meta.display_name as string) || (meta.username as string) || user.email || 'aspirante';
+const verificado = Boolean(user.email_confirmed_at);
+
+const emDesenvolvimento = [
+  { titulo: 'Criar curso', desc: 'Abrir um espaço de estudo seu.' },
+  { titulo: 'Montar estrutura', desc: 'Pastas, trilhas e páginas do seu jeito.' },
+  { titulo: 'Sincronizar progresso', desc: 'Levar seu progresso para a conta.' },
+];
+---
+<BaseLayout titulo="Meu painel" descricao="Sua área na Bússola dos Aspirantes.">
+  <div class="mx-auto max-w-4xl">
+    <header class="mb-8">
+      <p class="text-sm uppercase tracking-[0.2em] text-dourado/80">Meu painel</p>
+      <h1 class="mt-1 text-3xl font-bold">Olá, {displayName} 👋</h1>
+    </header>
+
+    <!-- Estado da conta -->
+    <section class="mb-8 grid gap-4 sm:grid-cols-2">
+      <div class="card p-6">
+        <h2 class="mb-2 font-serif text-lg text-marfim">Sua conta</h2>
+        <p class="text-sm text-nevoa/75">{user.email}</p>
+        <p class="mt-3">
+          {verificado ? (
+            <span class="chip border border-progresso/40 bg-progresso/10 text-progresso">✓ E-mail verificado</span>
+          ) : (
+            <span class="chip border border-alerta/40 bg-alerta/10 text-alerta">! E-mail não verificado</span>
+          )}
+        </p>
+        {!verificado && (
+          <a class="link-quiet mt-3 inline-block text-sm" href="/verifique-email">Verificar agora</a>
+        )}
+      </div>
+
+      <div class="card p-6">
+        <h2 class="mb-3 font-serif text-lg text-marfim">Atalhos</h2>
+        <div class="flex flex-col gap-2 text-sm">
+          <a class="link-quiet" href="/app/perfil">→ Editar perfil</a>
+          <a class="link-quiet" href="/app/configuracoes">→ Configurações da conta</a>
+          <a class="link-quiet" href="/estudar">→ Conteúdo de estudo</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Em desenvolvimento -->
+    <section class="mb-8">
+      <h2 class="mb-4 text-xl font-bold">Em breve</h2>
+      <div class="grid gap-4 sm:grid-cols-3">
+        {emDesenvolvimento.map((f) => (
+          <div class="card p-5 opacity-80">
+            <span class="chip mb-2 border border-white/10 bg-white/5 text-nevoa/70">Em desenvolvimento</span>
+            <h3 class="font-serif text-marfim">{f.titulo}</h3>
+            <p class="mt-1 text-sm text-nevoa/65">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+      <p class="mt-4 text-sm text-nevoa/60">
+        A criação de cursos e estruturas chega nas próximas fases. Por enquanto, explore o
+        <a class="link-quiet text-dourado" href="/estudar">conteúdo de estudo</a> disponível.
+      </p>
+    </section>
+
+    <!-- Logout -->
+    <form method="POST" action="/api/auth/logout">
+      <button class="btn-ghost" type="submit">Sair da conta</button>
+    </form>
+  </div>
+</BaseLayout>
