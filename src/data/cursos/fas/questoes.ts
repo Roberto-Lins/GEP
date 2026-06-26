@@ -20,7 +20,6 @@ const FIG_AUSENTE =
   '⚠️ Atenção à figura: a figura original necessária para responder integralmente esta questão não foi localizada ou não está legível nas fontes (a SOPA fornecida contém apenas o texto). O enunciado e o gabarito conceitual foram preservados.';
 const RETIRADO =
   '🚫 Conteúdo presente em prova antiga, mas retirado ou não priorizado para a prova atual.';
-const AVISO_PROF = 'Aviso do professor — FAS P1 (jun/2026)';
 
 // ───────────────────────────────────────────────────────────────────────────
 // 1. BANCO SOPA (catalogado por assunto)
@@ -360,30 +359,6 @@ export const discursivas: QuestaoDiscursiva[] = [
     enunciado: 'Considere o circuito de posicionamento (servomecanismo). Rotule os componentes e os sinais envolvidos.',
     gabaritoComentado: 'Componentes: **transmissor de controle (CX)**, **transformador de controle (CT)**, **amplificador**, **motor**, **trem de engrenagens** e **carga**. Sinais: **entrada elétrica** (sinal sincro do CX no estator do CT), **entrada mecânica** (giro do rotor do CT acoplado à carga) e **saída elétrica de erro** (tensão do CT, amplificada, que aciona o motor até zerar o erro).',
     criterios: ['Cita CX, CT, amplificador, motor, engrenagens, carga', 'Sinal de erro do CT → amplificador → motor → carga'], fonte: SOPA },
-  { id: 'prof-d-tabela-sincros', tipo: 'discursiva', topico: '09-sincros',
-    contexto: `${AVISO_PROF} — o professor adiantou que 0,7 ponto da prova é completar a TABELA 3.1 — Tipos de Sincros. Não esqueça a linha do CDX (a mais esquecida). Cubra o gabarito e preencha de cabeça.`,
-    enunciado: 'Reproduza e complete a TABELA 3.1 — Tipos de Sincros. Para os 7 tipos (TX, CX, TDX, CDX, TR, TDR e CT), escreva a categoria, os sinais de entrada e os sinais de saída de cada um.',
-    gabaritoComentado: `| Categoria | Sigla | Sinais de entrada | Sinais de saída |
-| --- | --- | --- | --- |
-| Transmissor de torque | **TX** | rotor posicionado (mec.) + CA no rotor | 3 linhas sincro (elétrica) → TDX/TR/TDR |
-| Transmissor controlador | **CX** | igual ao TX | igual ao TX, mas alimenta **CT ou CDX** |
-| Transmissor diferencial de torque | **TDX** | sinal sincro do TX (estator) + rotor mecânico | 3 linhas sincro = soma/diferença (elétrica) |
-| Transmissor diferencial de controle | **CDX** | igual ao TDX, entrada vinda do **CX** | igual ao TDX, mas só alimenta **CT ou CDX** |
-| Receptor de torque | **TR** | 3 linhas sincro (do TX/TDX) + CA no rotor | **mecânica** — rotor assume a posição |
-| Receptor diferencial de torque | **TDR** | duas entradas síncronas (rotor + estator) | **mecânica** = soma/diferença |
-| Transformador de controle | **CT** | sinal sincro do CX/TX (estator) + rotor mecânico | tensão CA ∝ **sen(erro)** (elétrica) |
-
-**Macetes para conferir:** saída **mecânica** só nos receptores **TR e TDR** — todo o resto tem saída **elétrica**. Rotor **energizado (115 VAC)** só em **TX, TR e CX**; diferenciais e CT **nunca**. Só o **CT** dá tensão ∝ **seno do erro**.`,
-    criterios: [
-      'TX: rotor mecânico + CA → 3 linhas sincro (elétrica)',
-      'CX: igual ao TX, mas alimenta CT/CDX',
-      'TDX: sinal do TX (estator) + rotor mecânico → sinal sincro soma/diferença (elétrica)',
-      'CDX: igual ao TDX, entrada do CX, só alimenta CT/CDX — NÃO esquecer esta linha',
-      'TR: 3 linhas sincro + CA → saída mecânica',
-      'TDR: duas entradas síncronas → saída mecânica (soma/diferença)',
-      'CT: sinal do CX/TX (estator) + rotor mecânico → tensão ∝ sen(erro) (elétrica)',
-    ],
-    fonte: AVISO_PROF },
 ];
 
 export const todasQuestoes: Questao[] = [
