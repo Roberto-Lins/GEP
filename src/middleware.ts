@@ -63,7 +63,11 @@ export const onRequest = defineMiddleware(async (context, next) => {
       const { data: sessionData } = await supabase.auth.getSession();
       session = sessionData.session ?? null;
     }
-  } catch {
+  } catch (e) {
+    // Log no servidor (Runtime Logs da Vercel) — falha ao criar o client/validar a
+    // sessão NÃO deve ficar silenciosa: foi esse catch mudo que escondeu o erro de
+    // WebSocket do realtime-js em Node < 22. Rotas protegidas seguem redirecionando.
+    console.error('[middleware] sessão/Supabase falhou:', e instanceof Error ? e.message : e);
     user = null;
     session = null;
   }

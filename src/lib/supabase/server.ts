@@ -7,6 +7,7 @@
 // Como são httpOnly, a sessão é gerida SÓ no servidor (este cliente + middleware);
 // o estado para a UI vem do endpoint /api/me.
 
+import './ws-polyfill'; // Node < 22: registra WebSocket global ANTES de criar o client.
 import { createServerClient } from '@supabase/ssr';
 import type { AstroCookies } from 'astro';
 import type { Database } from './types';

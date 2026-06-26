@@ -5,6 +5,7 @@
 //  • Guard explícito contra uso no navegador.
 //  • A service role NUNCA entra no bundle do cliente (lida via env de servidor).
 
+import './ws-polyfill'; // Node < 22: registra WebSocket global ANTES de criar o client.
 import { createClient } from '@supabase/supabase-js';
 import type { Database } from './types';
 import { getServerEnv } from '../env';
