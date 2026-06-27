@@ -45,7 +45,7 @@ const fmtMat = (n: number) => (n === 0 ? SEM_CONTEUDO : n === 1 ? '1 matéria' :
 const prefixo = `/ano/${segs.join('/')}`;
 
 // Cards de cada nível intermediário (sempre renderizados, mesmo vazios).
-type Card = { href: string; titulo: string; badge?: string; meta: string };
+type Card = { href: string; titulo: string; badge?: string; meta: string; imagem?: string };
 let cards: Card[] = [];
 if (nivel === 'turmas') {
   cards = TURMAS_COM_GERAL.map((t) => ({
@@ -53,6 +53,7 @@ if (nivel === 'turmas') {
     titulo: TURMA_LABELS[t],
     badge: t === 'geral' ? 'Comum a todos' : undefined,
     meta: fmtMat(contarMaterias({ ano, turma: t })),
+    imagem: `/imagens/plataforma/turmas/${t.toLowerCase()}.webp`,
   }));
 } else if (nivel === 'semestres') {
   cards = SEMESTRES.map((s) => ({
@@ -78,6 +79,7 @@ const cursosLeaf =
         descricao: c.descricao,
         categoria: c.categoria,
         totalMaterias: dadosDoCurso(c.slug)?.topicosEstudo.length ?? 0,
+        imagem: `/imagens/plataforma/cursos/${c.slug}.webp`,
       }))
     : [];
 
@@ -112,7 +114,7 @@ const descricaoNivel: Record<typeof nivel, string> = {
   ) : (
     <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {cards.map((c) => (
-        <NavCard href={c.href} titulo={c.titulo} badge={c.badge} meta={c.meta} cta="Abrir →" />
+        <NavCard href={c.href} titulo={c.titulo} badge={c.badge} meta={c.meta} imagem={c.imagem} cta="Abrir →" />
       ))}
     </div>
   )}

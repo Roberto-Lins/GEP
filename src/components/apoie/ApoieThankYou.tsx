@@ -74,7 +74,7 @@ export default function ApoieThankYou() {
         </button>
 
         <img
-          src="/imagens/plataforma/apoie-avatar-continencia.png"
+          src="/imagens/plataforma/apoie-avatar-continencia.webp"
           alt="Roberto prestando continência em agradecimento"
           className="mx-auto h-44 w-44 object-contain drop-shadow-[0_8px_24px_rgba(0,0,0,0.45)]"
           loading="eager"

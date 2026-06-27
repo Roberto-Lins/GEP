@@ -34,7 +34,7 @@ inteligente" que ajusta a própria queda para manter a saída constante. **A mai
 
 ### 1.1 Série simples
 
-![Regulador série simples: Q1 com coletor em Vi e emissor em Vo; o Zener na base fixa a referência.](/imagens/cursos/det/reguladores/serie-simples.png)
+![Regulador série simples: Q1 com coletor em Vi e emissor em Vo; o Zener na base fixa a referência.](/imagens/cursos/det/reguladores/serie-simples.webp)
 
 A referência é o **diodo Zener** na base de Q1. Como o emissor "segue" a base (menos a queda
 base-emissor), a saída vale:
@@ -48,7 +48,7 @@ carga (paralelo)?* Responder isso já organiza a questão inteira.
 
 #### Exemplo resolvido — Exercício nº 1 (slide)
 
-![Exercício 1: regulador série simples — Vi = 20 V, R = 220 Ω, VZ = 12 V, β = 50, RL = 1 kΩ.](/imagens/cursos/det/reguladores/ex1-serie-simples.png)
+![Exercício 1: regulador série simples — Vi = 20 V, R = 220 Ω, VZ = 12 V, β = 50, RL = 1 kΩ.](/imagens/cursos/det/reguladores/ex1-serie-simples.webp)
 
 **Enunciado.** No circuito, determine **(a)** `VO`, **(b)** a potência dissipada em Q1 e **(c)** a
 potência dissipada no diodo Zener. Dados: `Vi = 20 V`, `R = 220 Ω`, `VZ = 12 V`, `β = 50`, `RL = 1 kΩ`.
@@ -75,7 +75,7 @@ corrente de R vai para o Zener (a base puxa quase nada), como esperado.
 
 ### 1.2 Série aperfeiçoado
 
-![Regulador série aperfeiçoado: Q1 é o transistor de passagem; Q2 amplifica o erro amostrado pelo divisor R1/R2 e pelo Zener.](/imagens/cursos/det/reguladores/serie-aperfeicoado.png)
+![Regulador série aperfeiçoado: Q1 é o transistor de passagem; Q2 amplifica o erro amostrado pelo divisor R1/R2 e pelo Zener.](/imagens/cursos/det/reguladores/serie-aperfeicoado.webp)
 
 Aqui o circuito ganha um **segundo transistor (Q2)** que **amplifica o erro** e melhora muito a
 estabilidade. Como funciona a **realimentação negativa** (o coração do circuito):
@@ -91,7 +91,7 @@ A saída regulada fica:
 
 #### Exemplo resolvido — Exercício nº 2 (slide)
 
-![Exercício 2: série aperfeiçoado — Vi = 32 V, R4 = 390 Ω, VZ = 8,3 V, R1 = 20 kΩ, R2 = 30 kΩ, R3 = 10 kΩ, RL = 1 kΩ.](/imagens/cursos/det/reguladores/serie-aperfeicoado.png)
+![Exercício 2: série aperfeiçoado — Vi = 32 V, R4 = 390 Ω, VZ = 8,3 V, R1 = 20 kΩ, R2 = 30 kΩ, R3 = 10 kΩ, RL = 1 kΩ.](/imagens/cursos/det/reguladores/serie-aperfeicoado.webp)
 
 **Enunciado.** Determine **(a)** `VO`, **(b)** a potência em Q1 e **(c)** a potência em Q2. Dados:
 `Vi = 32 V`, `R4 = 390 Ω` (polariza a base de Q1), `VZ = 8,3 V`, divisor `R1 = 20 kΩ` (superior) e
@@ -126,7 +126,7 @@ erro; `R1`/`R2` = divisor de amostragem; Zener = referência.
 
 ### 1.3 Série com amplificador operacional
 
-![Regulador série com amp-op: o amp-op compara a referência Zener com a amostra do divisor e controla a base de Q1.](/imagens/cursos/det/reguladores/serie-ampop.png)
+![Regulador série com amp-op: o amp-op compara a referência Zener com a amostra do divisor e controla a base de Q1.](/imagens/cursos/det/reguladores/serie-ampop.webp)
 
 A versão mais precisa: um **amplificador operacional** faz o papel do comparador/amplificador de erro.
 A entrada **não inversora (+)** recebe a referência Zener; a **inversora (−)** recebe a amostra do
@@ -137,7 +137,7 @@ amp-op é enorme, a regulação fica excelente.
 
 #### Exemplo resolvido — Exercício nº 3 (slide)
 
-![Exercício 3: série com amp-op — Vi = 36 V, referência Zener 6,2 V, divisor 30 kΩ / 10 kΩ.](/imagens/cursos/det/reguladores/ex3-serie-ampop.png)
+![Exercício 3: série com amp-op — Vi = 36 V, referência Zener 6,2 V, divisor 30 kΩ / 10 kΩ.](/imagens/cursos/det/reguladores/ex3-serie-ampop.webp)
 
 **Enunciado.** Determine **(a)** `VO` e **(b)** a potência em Q1. Dados: `Vi = 36 V`, Zener de
 referência `VZ = 6,2 V` (na entrada `+`), divisor `R1 = 30 kΩ` (superior) e `R2 = 10 kΩ` (inferior) na
@@ -167,14 +167,14 @@ série na entrada limita a corrente total.
 
 ### 2.1 Paralelo simples
 
-![Regulador paralelo simples: resistor série na entrada; transistor em paralelo com a carga desvia o excesso para o terra.](/imagens/cursos/det/reguladores/paralelo-simples.png)
+![Regulador paralelo simples: resistor série na entrada; transistor em paralelo com a carga desvia o excesso para o terra.](/imagens/cursos/det/reguladores/paralelo-simples.webp)
 
 A referência (Zener) fica na base do transistor de desvio; a saída vale `VO = VZ + VBE`. Quando `VO`
 tende a subir, o transistor conduz mais, desvia mais corrente e segura `VO`.
 
 #### Exemplo resolvido — Exercício nº 4 (slide)
 
-![Exercício 4: regulador paralelo — Vi = 22 V, RS = 120 Ω, VZ = 8,2 V, RL = 100 Ω, β = 50.](/imagens/cursos/det/reguladores/ex4-paralelo.png)
+![Exercício 4: regulador paralelo — Vi = 22 V, RS = 120 Ω, VZ = 8,2 V, RL = 100 Ω, β = 50.](/imagens/cursos/det/reguladores/ex4-paralelo.webp)
 
 **Enunciado.** Considerando `β = 50`, determine **(a)** `VO`, **(b)** a potência no Zener e **(c)** a
 potência no transistor. Dados: `Vi = 22 V`, resistor série `RS = 120 Ω`, `VZ = 8,2 V`, `RL = 100 Ω`.
@@ -202,13 +202,13 @@ transistor conduz só o **excesso** (`I_RS − IL`).
 
 Assim como no série, o paralelo também tem versões melhoradas:
 
-![Regulador paralelo aperfeiçoado: Q2 na base de Q1 amplifica o erro.](/imagens/cursos/det/reguladores/paralelo-aperfeicoado.png)
+![Regulador paralelo aperfeiçoado: Q2 na base de Q1 amplifica o erro.](/imagens/cursos/det/reguladores/paralelo-aperfeicoado.webp)
 
 - **Paralelo aperfeiçoado** — acrescenta um segundo transistor (Q2) na base de Q1, **amplificando o
   erro** e melhorando a estabilidade (mesma ideia do série aperfeiçoado, mas com o elemento de controle
   em paralelo com a carga).
 
-![Regulador paralelo com amp-op: o amp-op controla o transistor de desvio.](/imagens/cursos/det/reguladores/paralelo-ampop.png)
+![Regulador paralelo com amp-op: o amp-op controla o transistor de desvio.](/imagens/cursos/det/reguladores/paralelo-ampop.webp)
 
 - **Paralelo com amp-op** — um amplificador operacional controla a condução do transistor de desvio,
   dando a melhor precisão (alto ganho), à custa de depender da alimentação do amp-op.
@@ -226,7 +226,7 @@ Assim como no série, o paralelo também tem versões melhoradas:
 
 ## Proteção: limitador de corrente (contra curto-circuito)
 
-![Limitador de corrente: RSC em série com a carga e Q2 sensoriando a queda em RSC; quando V(RSC) ≈ 0,7 V, Q2 liga e desvia corrente da base de Q1.](/imagens/cursos/det/reguladores/limitador-corrente.png)
+![Limitador de corrente: RSC em série com a carga e Q2 sensoriando a queda em RSC; quando V(RSC) ≈ 0,7 V, Q2 liga e desvia corrente da base de Q1.](/imagens/cursos/det/reguladores/limitador-corrente.webp)
 
 E se a saída for curto-circuitada? Sem proteção, a corrente dispararia e queimaria o transistor. O
 **limitador de corrente** evita isso. Procure no circuito um **resistor sensor `RSC`** em série com a
@@ -242,7 +242,7 @@ carga e um transistor de proteção **`Q2`**. A sequência (slide):
 
 #### Exemplo resolvido — Exercício nº 5 (slide)
 
-![Exercício 5: regulador série com amp-op + limitador (RSC = 0,15 Ω).](/imagens/cursos/det/reguladores/limitador-corrente.png)
+![Exercício 5: regulador série com amp-op + limitador (RSC = 0,15 Ω).](/imagens/cursos/det/reguladores/limitador-corrente.webp)
 
 **Enunciado.** Determine a **corrente máxima (ou de curto-circuito)** de saída. Dado do limitador:
 `RSC = 0,15 Ω`.

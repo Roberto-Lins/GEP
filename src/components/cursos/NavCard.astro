@@ -13,8 +13,10 @@ interface Props {
   cta?: string;
   /** quando true, aplica estilo "desabilitado" (sem matérias) */
   vazio?: boolean;
+  /** emblema opcional exibido como faixa no topo do card (ex.: arte da turma) */
+  imagem?: string;
 }
-const { href, titulo, descricao, badge, meta, cta = 'Abrir →', vazio = false } = Astro.props;
+const { href, titulo, descricao, badge, meta, cta = 'Abrir →', vazio = false, imagem } = Astro.props;
 const Tag = vazio ? 'div' : 'a';
 ---
 <Tag
@@ -25,6 +27,17 @@ const Tag = vazio ? 'div' : 'a';
   ]}
   aria-disabled={vazio ? 'true' : undefined}
 >
+  {imagem && (
+    <div class="-mx-6 -mt-6 mb-2 overflow-hidden rounded-t-xl border-b border-dourado/20">
+      <img
+        src={imagem}
+        alt={`Emblema da turma ${titulo}`}
+        loading="lazy"
+        class="aspect-square w-full object-cover transition-transform duration-300 group-hover:scale-105"
+      />
+    </div>
+  )}
+
   <div>
     {badge && (
       <span class="chip mb-2 inline-block border border-dourado/30 bg-dourado/10 text-[10px] uppercase tracking-wider text-dourado">
