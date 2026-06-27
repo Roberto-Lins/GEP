@@ -53,7 +53,7 @@ if (nivel === 'turmas') {
     titulo: TURMA_LABELS[t],
     badge: t === 'geral' ? 'Comum a todos' : undefined,
     meta: fmtMat(contarMaterias({ ano, turma: t })),
-    imagem: `/imagens/plataforma/turmas/${t.toLowerCase()}.png`,
+    imagem: `/imagens/plataforma/turmas/${t.toLowerCase()}.webp`,
   }));
 } else if (nivel === 'semestres') {
   cards = SEMESTRES.map((s) => ({
@@ -79,6 +79,7 @@ const cursosLeaf =
         descricao: c.descricao,
         categoria: c.categoria,
         totalMaterias: dadosDoCurso(c.slug)?.topicosEstudo.length ?? 0,
+        imagem: `/imagens/plataforma/cursos/${c.slug}.webp`,
       }))
     : [];
 

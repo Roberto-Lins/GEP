@@ -47,7 +47,7 @@ No Schmitt, a referência da entrada `+` **não é fixa**: ela é uma **fração
 por um **divisor de tensão** (dois resistores). Como a saída só assume dois valores (`+VCC` ou `−VEE`),
 a referência também só assume **dois valores** — e são justamente eles os nossos dois limiares.
 
-![Circuito do Schmitt-trigger inversor: amp-op com realimentação positiva — R1 leva a saída de volta à entrada +, e R2 vai ao terra.](/imagens/cursos/det/10-schmitt-circuito.png)
+![Circuito do Schmitt-trigger inversor: amp-op com realimentação positiva — R1 leva a saída de volta à entrada +, e R2 vai ao terra.](/imagens/cursos/det/10-schmitt-circuito.webp)
 
 *Schmitt **inversor**: o sinal entra em V−; a referência V+ vem da saída pelo divisor R1–R2. Quando a saída troca de estado, a referência troca junto. Adaptado dos slides do Prof. Fragoso.*
 
@@ -90,7 +90,7 @@ a referência também só assume **dois valores** — e são justamente eles os 
    Quando a entrada **sobe e cruza +8 V (UTP)**, a saída **estala para −12 V** e **trava** lá — mesmo
    que a entrada volte a descer um pouco — **até cruzar −8 V (LTP)**, quando a saída **volta a +12 V**.
 
-![Formas de onda: a entrada triangular cruzando os limiares UTP (+8 V) e LTP (−8 V), e a saída quadrada inversora resultante. As linhas tracejadas mostram que a comutação ocorre exatamente nos limiares.](/imagens/cursos/det/10-schmitt-ondas.png)
+![Formas de onda: a entrada triangular cruzando os limiares UTP (+8 V) e LTP (−8 V), e a saída quadrada inversora resultante. As linhas tracejadas mostram que a comutação ocorre exatamente nos limiares.](/imagens/cursos/det/10-schmitt-ondas.webp)
 
 *Repare no detalhe que a prova adora cobrar: a saída **não** comuta no cruzamento por zero. Ela cai quando a entrada passa de UTP (subindo) e sobe quando passa de LTP (descendo).*
 
@@ -121,7 +121,7 @@ resultado. Confira o circuito exato da lista para os valores numéricos.
 Determine **UTP** e **LTP** dos dois comparadores Schmitt abaixo (ambos com `±12 V`).
 
 ### Circuito 1 — Zener na realimentação
-![Schmitt inversor com Zener de 7 V em série com R1 (10 kΩ) e R2 (10 kΩ) ao terra.](/imagens/cursos/det/10-schmitt-zener.png)
+![Schmitt inversor com Zener de 7 V em série com R1 (10 kΩ) e R2 (10 kΩ) ao terra.](/imagens/cursos/det/10-schmitt-zener.webp)
 
 - **Vo = +12 V** → o Zener está na **região Zener** (cai 7 V):
   `UTP = (12 − 7)·10k/(10k+10k) = 5/2 = `**`+2,5 V`**.
@@ -147,7 +147,7 @@ saída baixa), trocando a queda do componente em cada caso.
 
 #### Exercício nº 1 — Schmitt com Zener
 
-![Exercício 1: Schmitt ±12 V com divisor 12 kΩ/24 kΩ e Zener de 5 V; entrada triangular ±7 V.](/imagens/cursos/det/schmitt/ex1-zener.png)
+![Exercício 1: Schmitt ±12 V com divisor 12 kΩ/24 kΩ e Zener de 5 V; entrada triangular ±7 V.](/imagens/cursos/det/schmitt/ex1-zener.webp)
 
 **Dados:** ±12 V; divisor de realimentação `12 kΩ / 24 kΩ` com **Zener de 5 V**; entrada triangular ±7 V.
 **Método:** o Zener torna os limiares **assimétricos** — reavalie a queda do componente conforme a saída
@@ -158,7 +158,7 @@ orientação do Zener na figura — aplique o mesmo procedimento do exemplo ante
 
 #### Exercício nº 2 — Schmitt com diodo
 
-![Exercício 2: Schmitt ±12 V com diodo em série com 10 kΩ e mais 10 kΩ ao terra; entrada ±7 V.](/imagens/cursos/det/schmitt/ex2-diodo.png)
+![Exercício 2: Schmitt ±12 V com diodo em série com 10 kΩ e mais 10 kΩ ao terra; entrada ±7 V.](/imagens/cursos/det/schmitt/ex2-diodo.webp)
 
 **Dados:** ±12 V; realimentação com **diodo + 10 kΩ** (da saída ao nó V+) e `10 kΩ` (do V+ ao terra);
 entrada ±7 V.
@@ -169,7 +169,7 @@ entrada ±7 V.
 
 #### Exercício nº 3 — Schmitt com 555
 
-![Exercício 3: Schmitt com 555 (+12 V), divisor 22 kΩ/22 kΩ polarizando a entrada AC-acoplada; entrada ±4 V.](/imagens/cursos/det/schmitt/ex3-555.png)
+![Exercício 3: Schmitt com 555 (+12 V), divisor 22 kΩ/22 kΩ polarizando a entrada AC-acoplada; entrada ±4 V.](/imagens/cursos/det/schmitt/ex3-555.webp)
 
 **Dados:** 555 (+12 V); divisor `22 kΩ / 22 kΩ` polariza a entrada (acoplada por capacitor); entrada ±4 V.
 1. No 555 os limiares são fixos: `UTP = ⅔·VCC = `**`8 V`** e `LTP = ⅓·VCC = `**`4 V`**.
@@ -185,7 +185,7 @@ Uma forma poderosa de "ver" o Schmitt é plotar a saída `Vo` **em função** da
 dois ramos é exatamente a histerese. Um comparador comum, no mesmo gráfico, seria só **uma linha
 vertical** no ponto da referência — sem laço, sem memória.
 
-![Característica de transferência (Vo × Vi) do Schmitt inversor: um laço retangular. Subindo, a saída cai em UTP; descendo, a saída sobe em LTP.](/imagens/cursos/det/10-schmitt-histerese.png)
+![Característica de transferência (Vo × Vi) do Schmitt inversor: um laço retangular. Subindo, a saída cai em UTP; descendo, a saída sobe em LTP.](/imagens/cursos/det/10-schmitt-histerese.webp)
 
 *O laço é a "assinatura" do Schmitt. A largura do laço é a histerese `UTP − LTP`.*
 

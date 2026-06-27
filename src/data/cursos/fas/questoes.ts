@@ -824,7 +824,7 @@ const variacaoHistereseCalc: QuestaoDiscursiva = {
   id: 'var-d-hist-slide', tipo: 'discursiva', topico: '02-caracteristicas-estaticas-e-ambientais', dificuldade: 'medio',
   contexto: 'A figura traz a tabela de calibração do slide (níveis 1 a 5; saídas subindo V₀₊ e descendo V₀₋; FSO = 0,8 V).',
   enunciado: 'A partir da tabela, calcule a histerese e a linearidade, em porcentagem.',
-  imagem: '/imagens/cursos/fas/caracteristicas/exercicio-histerese-linearidade.png',
+  imagem: '/imagens/cursos/fas/caracteristicas/exercicio-histerese-linearidade.webp',
   gabaritoComentado: '**FSO** = V₀max − V₀min = 1,0 − 0,2 = 0,8 V.\n**Linearidade** = erro máx |ΔV₀+ ou ΔV₀−| ÷ FSO = 0,08/0,8 = **0,10 = 10%**.\n**Histerese** = erro máx |ΔV₀+−| ÷ FSO = 0,09/0,8 = **0,1125 = 11,25%**.',
   criterios: ['FSO = 0,8 V', 'Linearidade = 10%', 'Histerese = 11,25%'],
   fonte: 'Slide SUE 2.1, slide 48' };

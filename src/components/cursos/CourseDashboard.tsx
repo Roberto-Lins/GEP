@@ -9,6 +9,8 @@ export interface CursoCard {
   descricao?: string;
   categoria?: string;
   totalMaterias: number;
+  /** emblema/imagem do curso exibido no topo do card */
+  imagem?: string;
 }
 
 interface Props { cursos: CursoCard[] }
@@ -36,6 +38,16 @@ export default function CourseDashboard({ cursos }: Props) {
         const iniciado = pct > 0 || q.respondidas > 0;
         return (
           <a key={c.slug} href={`/${c.slug}`} className="card card-hover group relative flex flex-col gap-4 p-6">
+            {c.imagem && (
+              <div className="-mx-6 -mt-6 mb-2 overflow-hidden rounded-t-xl border-b border-dourado/20">
+                <img
+                  src={c.imagem}
+                  alt={`Imagem do curso ${c.titulo}`}
+                  loading="lazy"
+                  className="aspect-square w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+            )}
             <div className="flex items-start justify-between gap-3">
               <div>
                 {c.categoria && (

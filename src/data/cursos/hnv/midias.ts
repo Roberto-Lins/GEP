@@ -93,7 +93,7 @@ export const midias: Midia[] = [
     topico: '05-brasil-holandes-restauracao-e-imperio',
     titulo: 'Mapa mental — Governo do Império (texto de Marcello Loureiro)',
     fonte: 'Marcello Loureiro',
-    src: '/mapas-mentais/cursos/hnv/mapa-loureiro-governo-imperio.png',
+    src: '/mapas-mentais/cursos/hnv/mapa-loureiro-governo-imperio.webp',
     origem: 'local',
     descricao: 'Síntese visual do Estado polissinodal, da monarquia pluricontinental e da crise da Restauração.',
   },
