@@ -1,0 +1,31 @@
+{
+  "ordem": 4,
+  "slug": "04-estado-nacao-soberania-e-federacao",
+  "titulo": "Teoria Geral do Estado, Nação, Soberania e Federação",
+  "subtitulo": "O Estado como organização política e jurídica",
+  "prioridade": "muito alta",
+  "tempoEstimado": "45 min",
+  "objetivo": "Diferenciar Estado × Nação, soberania × autonomia e federação × confederação.",
+  "palavrasChave": [
+    "Teoria Geral do Estado",
+    "Estado",
+    "Nação",
+    "povo",
+    "território",
+    "governo",
+    "soberania",
+    "autonomia",
+    "confederação",
+    "federação"
+  ],
+  "midias": [
+    {
+      "tipo": "podcast",
+      "titulo": "Estado e Nação são a mesma coisa?",
+      "fonte": "NotebookLM",
+      "src": "/podcasts/dir/04-estado-nacao-soberania-e-federacao.m4a",
+      "origem": "local",
+      "descricao": "Estado × Nação, soberania × autonomia e federação × confederação."
+    }
+  ]
+}

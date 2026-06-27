@@ -1,0 +1,30 @@
+{
+  "ordem": 7,
+  "slug": "07-tres-poderes-e-funcoes-essenciais",
+  "titulo": "Três Poderes e Funções Essenciais à Justiça",
+  "subtitulo": "Separação dos Poderes e as instituições que auxiliam a Justiça",
+  "prioridade": "muito alta",
+  "tempoEstimado": "45 min",
+  "objetivo": "Dominar a separação dos Poderes, funções típicas × atípicas e as funções essenciais à Justiça.",
+  "palavrasChave": [
+    "separação dos Poderes",
+    "Legislativo",
+    "Executivo",
+    "Judiciário",
+    "funções típicas e atípicas",
+    "Congresso Nacional",
+    "Ministério Público",
+    "Defensoria Pública",
+    "Advocacia Pública"
+  ],
+  "midias": [
+    {
+      "tipo": "podcast",
+      "titulo": "A realidade por trás dos poderes brasileiros",
+      "fonte": "NotebookLM",
+      "src": "/podcasts/dir/07-tres-poderes-e-funcoes-essenciais.m4a",
+      "origem": "local",
+      "descricao": "Separação dos Poderes e funções essenciais à Justiça."
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "dir",
+  "titulo": "Direito — DIR P1",
+  "subtitulo": "Trilha de estudo para a P1 de Direito (Introdução ao Estudo do Direito + Direito Constitucional)",
+  "descricao": "Curso da P1 de Direito cobrindo o Capítulo 1 (Introdução ao Estudo do Direito) e o Capítulo 2 (Direito Constitucional) da apostila, mais os slides e os comentários do professor. Cada tópico traz visão geral, conceitos essenciais, raciocínio jurídico, estudos de caso, quadros comparativos, pegadinhas, áudio, checklist e questões de validação — preparando para os cinco formatos da prova: múltipla escolha, V/F, correlacione, resposta curta e caso hipotético.",
+  "categoria": "Carreira Naval",
+  "ano": "4",
+  "semestre": "1",
+  "epoca": "P1",
+  "turma": "geral",
+  "ordem": 4,
+  "temaVisual": "naval-command",
+  "corTema": "dourado",
+  "icone": "/imagens/cursos/dir/icone.svg",
+  "capa": "/imagens/cursos/dir/capa.png",
+  "features": {
+    "timeline": true,
+    "simulados": false,
+    "mapasMentais": false,
+    "podcasts": true,
+    "animacoesHero": true,
+    "animacoesTransicao": false,
+    "modoRevisaoVespera": true,
+    "graficoProgressoAvancado": false,
+    "writing": false
+  },
+  "componentesExtras": []
+}

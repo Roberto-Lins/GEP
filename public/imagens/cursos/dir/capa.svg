@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-label="Direito — DIR P1">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1220"/>
+      <stop offset="0.6" stop-color="#1E3A5F"/>
+      <stop offset="1" stop-color="#0B1220"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <!-- ondas sutis -->
+  <g opacity="0.4" stroke="#D6A84F" stroke-width="1" fill="none">
+    <path d="M0 350 Q200 320 400 350 T800 350"/>
+    <path d="M0 380 Q200 350 400 380 T800 380"/>
+  </g>
+  <!-- balança da Justiça central -->
+  <g transform="translate(400 225)" stroke="#D6A84F" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- haste e base -->
+    <path d="M0 -120V95" stroke-width="6"/>
+    <path d="M-55 100H55" stroke-width="6"/>
+    <path d="M-30 95h60" stroke-width="6"/>
+    <!-- travessão -->
+    <path d="M-150 -110H150" stroke-width="6"/>
+    <circle cx="0" cy="-122" r="7" fill="#D6A84F" stroke="none"/>
+    <!-- correntes -->
+    <g stroke-width="3" opacity="0.9">
+      <path d="M-150 -110l-26 60M-150 -110l26 60M150 -110l-26 60M150 -110l26 60"/>
+    </g>
+    <!-- pratos -->
+    <path d="M-192 -50a42 22 0 0 0 84 0z" fill="#0B1220" stroke-width="5"/>
+    <path d="M108 -50a42 22 0 0 0 84 0z" fill="#0B1220" stroke-width="5"/>
+  </g>
+  <!-- selo dourado -->
+  <g transform="translate(648 96)">
+    <circle r="42" fill="#D6A84F"/>
+    <text x="0" y="13" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" text-anchor="middle" fill="#0B1220">§</text>
+  </g>
+</svg>

@@ -1,0 +1,31 @@
+{
+  "ordem": 5,
+  "slug": "05-governo-democracia-e-constituicao",
+  "titulo": "Formas de Governo, Democracia, Sistemas de Governo e Constituição",
+  "subtitulo": "Da organização política do Estado à Constituição",
+  "prioridade": "muito alta",
+  "tempoEstimado": "45 min",
+  "objetivo": "Diferenciar formas e sistemas de governo, instrumentos da democracia e dominar a Constituição.",
+  "palavrasChave": [
+    "monarquia",
+    "república",
+    "presidencialismo",
+    "parlamentarismo",
+    "democracia",
+    "plebiscito",
+    "referendo",
+    "Constituição",
+    "poder constituinte",
+    "cláusulas pétreas"
+  ],
+  "midias": [
+    {
+      "tipo": "podcast",
+      "titulo": "Presidencialismo não é forma de governo",
+      "fonte": "NotebookLM",
+      "src": "/podcasts/dir/05-governo-democracia-e-constituicao.m4a",
+      "origem": "local",
+      "descricao": "Formas × sistemas de governo, democracia e Constituição."
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "ordem": 3,
+  "slug": "03-fontes-divisoes-e-sistemas-do-direito",
+  "titulo": "Fontes, Divisões, Filosofia e Sistemas do Direito",
+  "subtitulo": "A origem, a classificação e a visão filosófica do Direito",
+  "prioridade": "muito alta",
+  "tempoEstimado": "45 min",
+  "objetivo": "Reconhecer as fontes e a integração do Direito, as divisões Público/Privado/Social e os sistemas jurídicos.",
+  "palavrasChave": [
+    "fontes do Direito",
+    "lei",
+    "costume",
+    "jurisprudência",
+    "doutrina",
+    "LINDB",
+    "integração",
+    "Direito Público e Privado",
+    "Direito Natural e Positivo",
+    "sistemas jurídicos"
+  ],
+  "midias": [
+    {
+      "tipo": "podcast",
+      "titulo": "O Direito além da lei escrita",
+      "fonte": "NotebookLM",
+      "src": "/podcasts/dir/03-fontes-divisoes-e-sistemas-do-direito.m4a",
+      "origem": "local",
+      "descricao": "Fontes, integração, divisões e sistemas jurídicos."
+    }
+  ]
+}

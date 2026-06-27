@@ -1,0 +1,31 @@
+{
+  "ordem": 6,
+  "slug": "06-organizacao-do-estado-e-competencias",
+  "titulo": "Organização do Estado Brasileiro e Competências dos Entes Federativos",
+  "subtitulo": "União, Estados, DF e Municípios — quem pode o quê",
+  "prioridade": "muito alta",
+  "tempoEstimado": "40 min",
+  "objetivo": "Compreender a organização da Federação e distinguir as competências dos entes.",
+  "palavrasChave": [
+    "República Federativa do Brasil",
+    "União",
+    "Estados",
+    "Distrito Federal",
+    "Municípios",
+    "autonomia",
+    "competência exclusiva",
+    "competência privativa",
+    "competência comum",
+    "competência concorrente"
+  ],
+  "midias": [
+    {
+      "tipo": "podcast",
+      "titulo": "O federalismo brasileiro é centralizador ou cooperativo?",
+      "fonte": "NotebookLM",
+      "src": "/podcasts/dir/06-organizacao-do-estado-e-competencias.m4a",
+      "origem": "local",
+      "descricao": "Organização da Federação e repartição de competências."
+    }
+  ]
+}
