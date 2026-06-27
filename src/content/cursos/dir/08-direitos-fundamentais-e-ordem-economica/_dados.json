@@ -1,0 +1,31 @@
+{
+  "ordem": 8,
+  "slug": "08-direitos-fundamentais-e-ordem-economica",
+  "titulo": "Direitos Fundamentais, Direitos Sociais e Ordem Econômica",
+  "subtitulo": "Direitos individuais e sociais, remédios constitucionais e seus limites",
+  "prioridade": "máxima",
+  "tempoEstimado": "50 min",
+  "objetivo": "Compreender os direitos fundamentais (não absolutos), os remédios constitucionais e a ordem econômica.",
+  "palavrasChave": [
+    "direitos e garantias individuais",
+    "caráter não absoluto",
+    "habeas corpus",
+    "habeas data",
+    "mandado de segurança",
+    "direito de petição",
+    "direitos sociais",
+    "ordem econômica",
+    "estado de defesa",
+    "estado de sítio"
+  ],
+  "midias": [
+    {
+      "tipo": "podcast",
+      "titulo": "Direitos individuais são absolutos na Constituição?",
+      "fonte": "NotebookLM",
+      "src": "/podcasts/dir/08-direitos-fundamentais-e-ordem-economica.m4a",
+      "origem": "local",
+      "descricao": "Direitos fundamentais e limites, remédios e ordem econômica."
+    }
+  ]
+}

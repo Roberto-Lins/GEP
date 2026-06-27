@@ -1,0 +1,30 @@
+{
+  "ordem": 1,
+  "slug": "01-sociedade-moral-religiao-e-norma",
+  "titulo": "Sociedade, Direito, Moral, Religião e Norma Jurídica",
+  "subtitulo": "O que separa a norma jurídica das outras formas de controle social",
+  "prioridade": "máxima",
+  "tempoEstimado": "45 min",
+  "objetivo": "Diferenciar Direito, Moral e Religião e dominar as quatro características da norma jurídica.",
+  "palavrasChave": [
+    "norma jurídica",
+    "Moral",
+    "Religião",
+    "coercitividade",
+    "heteronomia",
+    "bilateralidade",
+    "generalidade",
+    "teoria dos círculos",
+    "igualdade formal e material"
+  ],
+  "midias": [
+    {
+      "tipo": "podcast",
+      "titulo": "O Direito deve seguir a Moral?",
+      "fonte": "NotebookLM",
+      "src": "/podcasts/dir/01-sociedade-moral-religiao-e-norma.m4a",
+      "origem": "local",
+      "descricao": "Direito × Moral × Religião e as características da norma jurídica."
+    }
+  ]
+}

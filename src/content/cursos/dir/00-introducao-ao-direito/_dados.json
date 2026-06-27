@@ -1,0 +1,50 @@
+{
+  "ordem": 0,
+  "slug": "00-introducao-ao-direito",
+  "titulo": "Introdução ao Direito e Visão Geral da Matéria",
+  "subtitulo": "O que é o Direito, por que existe e como a P1 cobra",
+  "prioridade": "alta",
+  "tempoEstimado": "20 min",
+  "objetivo": "Ter o mapa geral da disciplina e entender o Direito como ciência social normativa. Comece pelos três vídeos-panorama.",
+  "palavrasChave": [
+    "Direito",
+    "ciência social",
+    "norma de convivência",
+    "ubi societas ibi jus",
+    "formato da P1"
+  ],
+  "midias": [
+    {
+      "tipo": "video",
+      "titulo": "Direito P1 — Vídeo-aula · Parte 1 de 3",
+      "fonte": "YouTube (não listado)",
+      "src": "https://youtu.be/JRvBycN43yA",
+      "origem": "youtube",
+      "descricao": "Parte 1 do panorama de toda a matéria da P1. Assista na ordem 1 → 2 → 3."
+    },
+    {
+      "tipo": "video",
+      "titulo": "Direito P1 — Vídeo-aula · Parte 2 de 3",
+      "fonte": "YouTube (não listado)",
+      "src": "https://youtu.be/SMaUTvn38M8",
+      "origem": "youtube",
+      "descricao": "Parte 2 do panorama de toda a matéria da P1."
+    },
+    {
+      "tipo": "video",
+      "titulo": "Direito P1 — Vídeo-aula · Parte 3 de 3",
+      "fonte": "YouTube (não listado)",
+      "src": "https://youtu.be/5TC7TXJ1f1s",
+      "origem": "youtube",
+      "descricao": "Parte 3 do panorama de toda a matéria da P1."
+    },
+    {
+      "tipo": "podcast",
+      "titulo": "O Direito é moral ou força bruta?",
+      "fonte": "NotebookLM",
+      "src": "/podcasts/dir/00-introducao-ao-direito.m4a",
+      "origem": "local",
+      "descricao": "Debate de abertura sobre por que o Direito existe."
+    }
+  ]
+}

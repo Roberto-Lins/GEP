@@ -1,0 +1,32 @@
+{
+  "ordem": 2,
+  "slug": "02-direito-subjetivo-pessoas-relacao-juridica",
+  "titulo": "Direito Objetivo, Direito Subjetivo, Pessoas e Relação Jurídica",
+  "subtitulo": "Da norma abstrata às relações concretas entre pessoas",
+  "prioridade": "máxima",
+  "tempoEstimado": "50 min",
+  "objetivo": "Distinguir Direito objetivo de subjetivo, dominar a capacidade das pessoas e os elementos da relação jurídica.",
+  "palavrasChave": [
+    "Direito objetivo",
+    "Direito subjetivo",
+    "norma agendi",
+    "facultas agendi",
+    "pessoa natural",
+    "pessoa jurídica",
+    "capacidade",
+    "incapacidade",
+    "emancipação",
+    "relação jurídica",
+    "objeto imediato e mediato"
+  ],
+  "midias": [
+    {
+      "tipo": "podcast",
+      "titulo": "O duelo entre norma e vontade humana",
+      "fonte": "NotebookLM",
+      "src": "/podcasts/dir/02-direito-subjetivo-pessoas-relacao-juridica.m4a",
+      "origem": "local",
+      "descricao": "Direito objetivo × subjetivo, capacidade e relação jurídica."
+    }
+  ]
+}
