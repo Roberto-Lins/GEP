@@ -27,6 +27,18 @@ const totais = Object.fromEntries(dados.timeline.map((t) => [t.slug, dados.check
 <BaseLayout titulo={config.titulo} descricao={config.descricao} curso={curso} largura="larga">
   <!-- HERO -->
   <section class="relative mb-10 overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-aco/40 via-naval-800 to-naval px-6 py-12 sm:px-10 sm:py-16">
+    {config.capa && (
+      <img
+        src={config.capa}
+        alt=""
+        aria-hidden="true"
+        class="pointer-events-none absolute inset-0 h-full w-full object-cover object-center"
+        loading="eager"
+      />
+    )}
+    <!-- véus de contraste para o texto sobre a capa -->
+    <div class="pointer-events-none absolute inset-0 bg-gradient-to-r from-naval via-naval/80 to-naval/25"></div>
+    <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-naval/70 via-transparent to-transparent"></div>
     <div class="pointer-events-none absolute inset-0 opacity-[0.07]"
       style="background-image:radial-gradient(circle at 1px 1px, #D6A84F 1px, transparent 0);background-size:26px 26px"></div>
     <div class="relative max-w-2xl">

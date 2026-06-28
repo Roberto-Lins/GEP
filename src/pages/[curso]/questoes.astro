@@ -2,6 +2,7 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import PageContainer from '@components/layout/PageContainer.astro';
 import CentralQuestoes from '@components/questoes/CentralQuestoes.tsx';
+import BlocoEmBreve from '@components/estudo/BlocoEmBreve.astro';
 import ProgressoScript from '@components/estudo/ProgressoScript.astro';
 import { listarCursos } from '@utils/courses';
 import { dadosDoCurso } from '@utils/content';
@@ -32,6 +33,15 @@ const totais = Object.fromEntries(dados.timeline.map((t) => [t.slug, dados.check
     titulo="Central de questões"
     subtitulo={`${totalQ} questões comentadas — ${partes.join(', ')}. Filtre por matéria e responda com gabarito imediato.`}
   />
-  <CentralQuestoes questoes={dados.todasQuestoes} topicos={opcoes} curso={curso} client:load />
+  {totalQ > 0 ? (
+    <CentralQuestoes questoes={dados.todasQuestoes} topicos={opcoes} curso={curso} client:load />
+  ) : (
+    <BlocoEmBreve tipo="questoes" titulo="Banco de questões em construção">
+      O banco de questões deste curso será adicionado posteriormente. Por se tratar de uma
+      disciplina subjetiva, as questões serão de aplicação geopolítica e no estilo discursivo da
+      prova. Enquanto isso, estude o conteúdo de cada mini-matéria e treine as perguntas-mãe e a
+      revisão final.
+    </BlocoEmBreve>
+  )}
   <ProgressoScript curso={curso} totais={totais} />
 </BaseLayout>

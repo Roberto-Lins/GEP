@@ -12,7 +12,7 @@
   "temaVisual": "naval-command",
   "corTema": "dourado",
   "icone": "/imagens/cursos/hnv/icone.svg",
-  "capa": "/imagens/cursos/hnv/capa.svg",
+  "capa": "/imagens/cursos/hnv/capa.webp",
   "features": {
     "timeline": true,
     "simulados": true,

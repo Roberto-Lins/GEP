@@ -12,7 +12,7 @@
   "temaVisual": "naval-command",
   "corTema": "dourado",
   "icone": "/imagens/cursos/fas/icone.svg",
-  "capa": "/imagens/cursos/fas/capa.svg",
+  "capa": "/imagens/cursos/fas/capa.webp",
   "features": {
     "timeline": true,
     "simulados": false,

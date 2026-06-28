@@ -1,0 +1,46 @@
+---
+// Placeholder elegante de conteúdo "em breve" (mídias, questões ou prints de slide).
+// Usado por cursos cujo banco/midia ainda será adicionado (ex.: REL). Disponível dentro
+// do MDX das mini-matérias (registrado em pages/[curso]/[materia].astro) e reutilizável
+// em páginas .astro. Não inventa conteúdo — apenas comunica que a seção está preparada.
+interface Props {
+  tipo?: 'midia' | 'questoes' | 'slide' | 'midia-questoes';
+  titulo?: string;
+}
+const { tipo = 'midia-questoes', titulo } = Astro.props;
+
+const COPY: Record<NonNullable<Props['tipo']>, { titulo: string; texto: string }> = {
+  midia: {
+    titulo: 'Mídias deste tópico — em breve',
+    texto:
+      'Os vídeos, podcasts e áudios deste tópico serão adicionados posteriormente. Por enquanto, utilize o conteúdo escrito e os prints dos slides como base principal de estudo.',
+  },
+  questoes: {
+    titulo: 'Questões deste tópico — em breve',
+    texto:
+      'As questões de fixação e validação serão adicionadas posteriormente. Nesta etapa, foque em compreender o raciocínio do tópico e suas conexões com os demais temas do curso.',
+  },
+  slide: {
+    titulo: 'Print do slide — em breve',
+    texto:
+      'O gráfico/mapa correspondente deste slide será inserido aqui posteriormente. Por enquanto, acompanhe a descrição no texto acima.',
+  },
+  'midia-questoes': {
+    titulo: 'Mídias e questões deste tópico — em breve',
+    texto:
+      'As mídias (vídeos, podcasts) e as questões de fixação serão adicionadas posteriormente. Nesta etapa, foque em compreender o raciocínio do tópico e suas conexões com os demais temas do curso — usando o conteúdo escrito e os prints dos slides como base.',
+  },
+};
+
+const { titulo: tituloPadrao, texto } = COPY[tipo];
+const h = titulo ?? tituloPadrao;
+---
+<aside class="my-6 rounded-xl border border-dashed border-dourado/30 bg-dourado/[0.04] p-5">
+  <div class="mb-1.5 flex items-center gap-2 text-dourado/90">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    <h3 class="font-serif text-base font-semibold text-dourado-soft">{h}</h3>
+  </div>
+  <p class="text-sm leading-relaxed text-nevoa/75"><slot>{texto}</slot></p>
+</aside>

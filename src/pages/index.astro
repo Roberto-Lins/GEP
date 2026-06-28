@@ -10,7 +10,7 @@ const anos = ANOS.map((ano) => ({
   ano,
   label: ANO_LABELS[ano],
   meta: fmtMat(contarMaterias({ ano })),
-  imagem: ano === '4' ? '/imagens/plataforma/anos/4.webp' : undefined,
+  imagem: `/imagens/plataforma/anos/${ano}.webp`,
 }));
 ---
 <BaseLayout titulo="Bússola dos Aspirantes" largura="larga">

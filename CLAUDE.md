@@ -81,7 +81,10 @@ src/
 ├── styles/{global,tokens,themes,prose}.css
 └── types/{course,lesson,question,media,progress,course-kit}.ts
 
-public/{imagens,mapas-mentais,arquivos}/cursos/<slug>/...
+public/imagens/cursos/<slug>/...             # capa.webp (hero) + ícone + imagens do conteúdo
+public/imagens/plataforma/cursos/<slug>.webp # thumbnail QUADRADA do card na listagem de matérias
+public/imagens/plataforma/anos/<ano>.webp    # mascote do card de ano no dashboard
+public/{mapas-mentais,arquivos}/cursos/<slug>/...
 templates/curso/                       # esqueleto copiado ao criar um curso
 scripts/{create-course,validate-content,audit-media,migrate-gep}.ts
 docs/{PLATFORM,MEDIA-PROTOCOL,PROGRESS-BACKUP}.md  +  docs/courses/{GEP,TEMPLATE-CURSO}.md
@@ -131,7 +134,7 @@ via `listingPathDoCurso`) e **Bússola** (volta ao `/`); há também botão flut
   "temaVisual": "naval-command",
   "corTema": "dourado",
   "icone": "/imagens/cursos/gep/icone.svg",
-  "capa": "/imagens/cursos/gep/capa.svg",
+  "capa": "/imagens/cursos/gep/capa.webp",   // raster SEM texto — vira o fundo do hero (ver passo 5)
   "features": { /* ver abaixo */ },
   "componentesExtras": []
 }
@@ -190,7 +193,16 @@ npm run create-course <slug>     # 1. copia templates/curso/ → src/content/cur
 2. Edite `_config.json` (título, subtítulo, categoria, **ano/semestre/epoca/turma**, ordem, temaVisual, corTema, ícone, capa, `features`).
 3. Crie as mini-matérias `00-…`, `01-…`, … `99-revisao-final`.
 4. Preencha os `.mdx` de seção **e** o `_dados.json` de cada mini-matéria.
-5. Adicione imagens leves em `public/imagens/cursos/<slug>/`.
+5. **Imagens do curso — são DOIS caminhos distintos e ambos obrigatórios** (esquecer o 2º já deixou
+   card sem imagem mais de uma vez):
+   - **Capa / hero:** `public/imagens/cursos/<slug>/capa.webp` (apontada por `capa` no `_config.json`).
+     É **raster, SEM texto**, porque vira o **fundo do hero** da home `/<curso>` (`src/pages/[curso]/index.astro`).
+   - **Thumbnail do card:** `public/imagens/plataforma/cursos/<slug>.webp` — **quadrada (1024²)**, é a
+     imagem do card na **listagem de matérias** `/ano/.../<epoca>` (`CourseDashboard.tsx`, path montado
+     em `src/pages/ano/[...segmentos].astro`). Pode ser derivada da capa:
+     `sharp(capa).resize(1024,1024,{fit:"cover",position:"centre"})` (se o símbolo for centralizado).
+   - Demais imagens leves de conteúdo: `public/imagens/cursos/<slug>/`. Capa e thumbnail raster são
+     **geradas pelo Codex**; conversão PNG→webp com `sharp` (não há cwebp/convert/magick no PATH).
 6. Suba mídia pesada para YouTube não-listado / CDN e registre os links no `_dados.json` (`origem` + `src`).
 7. Rode `npm run validate-content`.
 8. Pronto: o curso aparece sozinho no dashboard (a plataforma lê os `_config.json`).

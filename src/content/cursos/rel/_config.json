@@ -1,0 +1,28 @@
+{
+  "slug": "rel",
+  "titulo": "Relações Internacionais — REL P1",
+  "subtitulo": "Trilha de estudo para a prova subjetiva de Relações Internacionais",
+  "descricao": "Curso da P1 de Relações Internacionais montado como uma linha de raciocínio única — das lentes teóricas (Realismo, Liberalismo, Construtivismo) à síntese Brasil-Marinha. A disciplina é subjetiva: a prova não cobra definições isoladas, e sim contextualização geopolítica e geoeconômica. Cada tópico ensina a pensar RI pelo método contexto → atores → interesses → instrumentos de poder → vulnerabilidades → consequências → Brasil/Marinha, conectando-se sempre ao tópico anterior e preparando o próximo. Mídias e banco de questões serão adicionados posteriormente.",
+  "categoria": "Carreira Naval",
+  "ano": "4",
+  "semestre": "1",
+  "epoca": "P1",
+  "turma": "geral",
+  "ordem": 5,
+  "temaVisual": "naval-command",
+  "corTema": "dourado",
+  "icone": "/imagens/cursos/rel/icone.svg",
+  "capa": "/imagens/cursos/rel/capa.webp",
+  "features": {
+    "timeline": true,
+    "simulados": false,
+    "mapasMentais": false,
+    "podcasts": false,
+    "animacoesHero": true,
+    "animacoesTransicao": false,
+    "modoRevisaoVespera": true,
+    "graficoProgressoAvancado": false,
+    "writing": false
+  },
+  "componentesExtras": []
+}

@@ -5,6 +5,7 @@ import BlocoObjetivo from '@components/estudo/BlocoObjetivo.astro';
 import BlocoConceito from '@components/estudo/BlocoConceito.astro';
 import BlocoPegadinha from '@components/estudo/BlocoPegadinha.astro';
 import BlocoComparacao from '@components/estudo/BlocoComparacao.astro';
+import BlocoEmBreve from '@components/estudo/BlocoEmBreve.astro';
 import Calc555 from '@components/cursos/det/Calculadora555.astro';
 import CalcSchmitt from '@components/cursos/det/CalculadoraSchmitt.astro';
 import CalcRampa from '@components/cursos/det/CalculadoraRampa.astro';
@@ -39,7 +40,7 @@ const topico = dados.topicoPorSlug(materia!)!;
 
 // Componentes disponíveis dentro do MDX (sem precisar importar em cada arquivo).
 const mdxComponents = {
-  BlocoConceito, BlocoPegadinha, BlocoComparacao, BlocoObjetivo,
+  BlocoConceito, BlocoPegadinha, BlocoComparacao, BlocoObjetivo, BlocoEmBreve,
   Calc555, CalcSchmitt, CalcRampa, CalcRegulador, CalcPWM, CalcDivisor, CalcUJT,
 };
 
