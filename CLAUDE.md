@@ -295,9 +295,10 @@ próprias sem alterar o GEP.
   `src/components/cursos/det/` (listadas em `componentesExtras`).
 
 **DET-T2 — Detecção / Radar de Pulso** (`ano 4 · sem 2 · T2 · turma CA-HE`):
-- 8 tópicos (`00`–`07`) + `99-revisao-final`; M01–M04 estão publicados e M05–M07 aparecem como
-  lacunas explícitas até a chegada das próximas execuções acadêmicas.
-- Banco inicial com 42 grupos identificados por `DET-T2-*`; fórmulas em LaTeX renderizadas por KaTeX.
+- 9 tópicos (`00`–`08`) + `99-revisao-final`, todos publicados.
+- Banco completo com 84 grupos identificados por `DET-T2-*`: 72 exercícios de módulo e 12 questões
+  distribuídas nos simulados A/B/C. Fórmulas em LaTeX são renderizadas por KaTeX.
+- Exporta `simuladosCompletos` para manter tempo, pontuação e questões próprias de cada prova.
 - Detalhes: `docs/courses/DET-T2.md`.
 
 **ING-4 — Inglês** (`ano 4 · sem 1 · P1 · turma geral`):

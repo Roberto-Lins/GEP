@@ -1,8 +1,8 @@
 {
   "slug": "det-t2",
   "titulo": "Detecção — T2",
-  "subtitulo": "Radar de pulso: fundamentos, desempenho, transmissão e recepção",
-  "descricao": "Trilha progressiva para a T2 de Detecção do CA-HE, baseada na apostila, nas SUE e em provas anteriores, com foco em função de blocos, cálculos encadeados e diagnóstico de pegadinhas.",
+  "subtitulo": "Radar de pulso: fundamentos, desempenho, circuitos, equação radar e simulados",
+  "descricao": "Curso completo para a T2 de Detecção do CA-HE, baseado na apostila, nas SUE e em provas anteriores, com 9 módulos progressivos, 72 exercícios e 3 simulados no perfil da banca.",
   "categoria": "Carreira Naval",
   "ano": "4",
   "semestre": "2",
@@ -15,7 +15,7 @@
   "capa": "/imagens/cursos/det-t2/capa.webp",
   "features": {
     "timeline": true,
-    "simulados": false,
+    "simulados": true,
     "mapasMentais": false,
     "podcasts": false,
     "animacoesHero": true,

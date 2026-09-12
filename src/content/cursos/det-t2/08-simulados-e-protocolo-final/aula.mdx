@@ -1,0 +1,145 @@
+---
+titulo: "Simulados, protocolo de correção e diagnóstico final — aula"
+secao: "aula"
+secaoOrdem: 2
+---
+> **Este módulo não tem teoria nova.** Ele existe para que os três simulados sejam usados como **instrumento de medida**, não como mais uma lista de exercícios. Um simulado feito de qualquer jeito não mede nada.
+
+## Posição na trilha
+
+`M00 → M01 → M02 → M03 → M04 → M05 → M06 → M07 → **M08**`
+
+---
+
+## 1. Os três simulados
+
+| | Simulado | Nível | Duração | Quando fazer |
+|---|---|---|---|---|
+| **A** | Consolidação | N3 | 100 min | Depois de M01–M06. **Não espere M07** |
+| **B** | Integração | N3/N4 | 110 min | Depois de tirar **≥ 8,0** no A |
+| **C** | Segurança | N4 | 120 min | Depois de tirar **≥ 7,0** no B. Idealmente **2 dias antes** da prova |
+
+**Os três têm exatamente a estrutura da T2 2024:** 4 questões, 10,0 pontos, Q1 correlação de 16 itens (4,8), Q2 problema encadeado de 7 itens (2,8), Q3 equação radar de 2 itens (0,8), Q4 conceitual de 4 itens (1,6).
+
+**O que muda entre eles:**
+
+| | Simulado A | Simulado B | Simulado C |
+|---|---|---|---|
+| **Eixo da Q1** | bloco → **função** | grandeza → **efeito** | bloco → **consequência de falha** |
+| **Q2** | parâmetros pareados, como em 2024 | encadeia M02 → M04 → M06 e termina numa decisão de projeto | equação radar **invertida** + parâmetros pareados |
+| **Q3** | equação radar direta + MAGE | equação radar **invertida** (dá `R`, pede `P`) | assimetria do MAGE no extremo |
+| **Q4** | "de que forma afeta" | "efeito **e** mecanismo" | "o que se **ganha** e o que se **perde**" |
+| **Dificuldade vs. a T2 real** | igual | um pouco acima | **deliberadamente acima** |
+
+> **O Simulado C é mais difícil que a prova de propósito.** Tirar 7,0 nele é um bom resultado. O objetivo não é confortar — é achar o que ainda falta enquanto há tempo de corrigir.
+
+---
+
+## 2. Como fazer — as condições que tornam a medida válida
+
+1. **Cronometrado**, num único bloco, sem pausa. O relógio é parte do teste: a Q1 tem 16 itens e é fácil gastar 25 minutos nela.
+2. **Sem consultar nada.** Nem `formula-sheet.md`, nem os módulos, nem a calculadora do celular com fórmulas salvas. Calculadora simples, sim.
+3. **Numa folha à parte**, escrevendo como se fosse a prova: **fórmula → substituição → resultado**, e a linha "Resposta:" preenchida **com unidade**.
+4. **Nada em branco na Q1.** O enunciado da banca avisa que *"respostas em branco são incorretas"*. Chute com critério — eliminar dois blocos improváveis já dobra a chance.
+5. **Só abra o gabarito depois de terminar tudo.** Corrigir questão a questão contamina as seguintes.
+
+---
+
+## 3. Como corrigir — e como transformar erro em diagnóstico
+
+Cada gabarito traz um **espelho de correção** com o valor de cada item e, ao final, duas tabelas: a de **leitura do resultado** e a de **mapa erro → conteúdo**.
+
+**O procedimento, em quatro passos:**
+
+1. **Pontue item a item pelo espelho**, sem arredondar a seu favor. Em questão discursiva, se o espelho pede "efeito **e** mecanismo" e você escreveu só o efeito, é **metade** do item.
+2. **Classifique cada erro** em uma das quatro categorias abaixo — isso é o que vira plano de estudo:
+
+| Categoria | O que significa | O que fazer |
+|---|---|---|
+| **Desconhecimento** | Você não sabia o conteúdo | Volte ao módulo, seção específica |
+| **Pegadinha** | Você sabia, mas caiu na armadilha | Releia a pegadinha em `course-map.md` e refaça **só** os itens daquele tipo |
+| **Conta** | Rota certa, aritmética errada | Não é falta de estudo. Treine a **verificação inversa** |
+| **Tempo** | Não chegou a responder | Problema de ordem de ataque, não de conteúdo — veja §5 |
+
+3. **Anote os IDs de pegadinha** (P-01 a P-20) em que você caiu. Se o mesmo P- aparecer em dois simulados, ele é o seu ponto fraco real.
+4. **Só então volte ao conteúdo** — e volte à **seção** indicada no mapa, não ao módulo inteiro.
+
+---
+
+## 4. O que fazer com cada nota
+
+| Nota no A | Diagnóstico | Ação |
+|---|---|---|
+| ≥ 9,0 | Base sólida | Vá para o B |
+| 7,5 – 8,9 | Pontos soltos | Identifique **a questão** onde perdeu e volte ao módulo dela antes do B |
+| 6,0 – 7,4 | Base não firme | **Não avance.** Refaça os exercícios `ESSENCIAL_ATÉ_DOMINGO` dos módulos onde perdeu |
+| &lt; 6,0 | Refazer **M02 e M04** inteiros, nessa ordem — juntos valem 7,2 dos 10 pontos | Repita o A depois |
+
+| Nota no B | Ação |
+|---|---|
+| ≥ 8,5 | Vá para o C |
+| 7,0 – 8,4 | Normal. Reveja só os itens errados e vá para o C |
+| 5,5 – 6,9 | A base está boa, as **ligações** não. Releia as sete costuras em M07 e a cadeia `LP → B → P_n → S_mín → R_máx` |
+| &lt; 5,5 | Volte ao A. Se lá a nota foi alta, refaça os exercícios **MB** de M02, M04 e M06 |
+
+| Nota no C | Ação |
+|---|---|
+| ≥ 8,0 | Margem confortável. **Pare de estudar conteúdo novo** — só revise |
+| 6,5 – 7,9 | **Faixa normal e boa.** Corrija os itens e revise |
+| 5,0 – 6,4 | Falta profundidade. Foque nos **MB** de M04 e M06 e refaça a Q2 do C |
+| &lt; 5,0 | Se A e B foram bons, não é desastre — o C é severo. Se A e B também foram baixos, volte a M02 e M04 |
+
+---
+
+## 5. Protocolo do dia da prova
+
+**Antes de escrever qualquer coisa — 2 minutos.**
+1. Leia as quatro questões inteiras.
+2. Na Q2, verifique se os parâmetros vêm **em pares**. Se vierem, escreva na margem, item por item, **qual valor de cada par** aquele item exige. Isso é a pegadinha **P-01** e sozinha responde por boa parte da Q2.
+
+**Ordem de ataque: Q1 → Q4 → Q2 → Q3.**
+A Q1 é a maior e a mais rápida. A Q4 pede **uma linha** por item. A Q2 é longa mas mecânica. A Q3 é a que mais dá errado sob pressão — deixe para o fim e faça com calma.
+
+**Regras de escrita, tiradas da rubrica oficial:**
+- **fórmula → substituição → resultado**, os três, sempre;
+- **linha "Resposta:" preenchida, com unidade**;
+- **nada em branco** na Q1;
+- na Q4, **uma relação por característica**;
+- errar um item **não contamina** o seguinte — a pontuação é por item.
+
+**Os cinco números na ponta da língua:** `c = 3×10⁸ m/s` · `12,36 µs` = 1 milha radar náutica · **150 m** por µs de LP no PSD · `θ₀ = RPM × 6` · `(4π)² = 157,914`.
+
+---
+
+## 6. Diagnóstico e revisão adaptativa
+
+Depois de cada simulado corrigido, a informação útil não é a nota — é **o padrão dos erros**.
+
+| Padrão observado | O que ele indica | Reforço |
+|---|---|---|
+| Erra sempre o **mesmo bloco** na Q1 | Memorização funcional incompleta | Refaça o diagrama de blocos **de memória**, em papel, três vezes |
+| Erra o item que pede **mínimo/máximo** | Pegadinha P-01/P-02/P-03/P-04 | Refaça as Q2 dos três simulados **só** olhando qual valor do par usar |
+| Acerta a rota e erra o número | Aritmética sob pressão | Adote a **verificação inversa** como hábito: recoloque o resultado na fórmula |
+| Erra a conversão dBm → W | P-08 | Regra fixa: `dBm → mW → W`. Dois passos, sempre |
+| Usa `(4π)²R⁴` no MAGE | P-11 — a mais cara | Teste verbal: *o sinal volta?* Se não volta, **um** `4πR²` |
+| Termina sem fazer a Q3 | Gestão de tempo | Mude a ordem de ataque: Q3 antes da Q2 |
+| Escreve parágrafos na Q4 | Excesso que custa tempo | A rubrica aceita **uma linha** |
+
+> **Para correção pelo sistema docente:** envie suas respostas junto com o identificador do simulado (`SG01`, `SG02` ou `SG03`). A correção produz o registro de desempenho por conceito e por vulnerabilidade, e a partir dele a **revisão adaptativa** — que reordena o que estudar em função dos seus erros reais, não do peso geral da prova.
+
+---
+
+## 7. O que permanece em aberto neste curso
+
+Declarado, não escondido:
+
+| Lacuna | Situação |
+|---|---|
+| **L-05 / L-06** | Páginas 1-70 a 1-87 da apostila não extraíveis; os **7 problemas** da equação radar continuam perdidos. Fecha se as páginas **1-77 a 1-81** forem enviadas |
+| **L-04** | `SOPA DET P1 2021` e `P1 marinha det/*` não lidos — mais amostras aumentariam a confiança no perfil da banca |
+| **L-07** | 30 figuras localizadas, nenhuma extraída. Os diagramas críticos foram **reconstruídos e declarados** como reconstrução |
+| **L-08** | **Sem diagnóstico do aluno** — os simulados ainda não foram feitos. Fecha quando as respostas forem enviadas para correção |
+
+---
+
+**Este é o último módulo.** O curso cobre o Capítulo 1 da apostila por inteiro, com 72 exercícios de módulo, 12 questões de simulado e 30,0 pontos de prova simulada. Bom estudo.

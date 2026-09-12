@@ -28,6 +28,15 @@ export interface CursoData {
   questoesPorTopico: (slug: string) => Questao[];
   /** opcional — simulado final com questões próprias (variações), separado do banco principal (ex.: FAS) */
   simuladoFinal?: Questao[];
+  /** opcional — provas nomeadas e cronometradas, cada uma com seu próprio conjunto de questões */
+  simuladosCompletos?: Array<{
+    id: string;
+    titulo: string;
+    descricao: string;
+    duracaoMinutos: number;
+    pontos: number;
+    questoes: Questao[];
+  }>;
   checklists: Record<string, { id: string; texto: string }[]>;
   checklistDe: (slug: string) => { id: string; texto: string }[];
   fontes: Fonte[];

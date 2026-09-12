@@ -1,0 +1,501 @@
+---
+titulo: "Equação radar: densidade de potência, ganho, abertura e alcance máximo — aula"
+secao: "aula"
+secaoOrdem: 2
+---
+> 🔴 **AVISO DE FONTE — leia antes de estudar este módulo.**
+> A **Seção 8 do Capítulo 1 da apostila (p. 1-77 a 1-81)**, que é a redação oficial deste assunto, **não é extraível por este canal**: a extração termina deterministicamente na p. 1-69 (`L-05`, verificado duas vezes, 105.128 caracteres nas duas leituras). O próprio `SUE6.11` remete a ela no slide final: *"Resolva os (sete) exercícios presentes no final da seção 8 do capítulo 1 da apostila"* — **esses sete problemas estão perdidos para este minicurso**.
+>
+> **Mitigação aplicada:** este módulo é construído sobre (1) o `SUE6.11` **lido integralmente nas duas versões**, que traz a derivação completa slide a slide, e (2) a **rubrica oficial da 3ª questão da T2 2024**, que é um problema resolvido pelo próprio professor, com os valores e o encadeamento que ele cobra. Os 12 exercícios deste módulo substituem, em quantidade e em variedade de rota, os sete problemas perdidos. O que não se recupera é a **redação** da apostila e a eventual existência de um tópico exclusivo dela.
+> **Impacto declarado:** `[LACUNA DE COBERTURA]` parcial em C039 e C040 quanto à formulação textual da apostila. Nenhum impacto detectado na capacidade de resolver a Q3 — a rota da rubrica está integralmente reconstruída e reconferida. Ver `L-05` em `source-audit.md`.
+
+## Posição na trilha
+
+`M00 → M01 → M02 → M03 → M04 → M05 → **M06** → M07 → M08`
+
+## Pré-requisitos
+
+**M02 e M04 completos.** Você está pronto se: sabe que `R_máx = c/(2·FRP)` é o alcance **sem ambiguidade** (limite de temporização) e percebe que aqui vamos calcular outra coisa; sabe o que é `S_mín` e de onde ele vem (`S_mín = F_n·k·T₀·B_n·(S/N)_mín`, M04).
+
+**Por que M06 vem depois de M04, e não depois de M02.** A equação radar termina em `S_mín`. Quem chega aqui sem M04 usa `S_mín` como um número dado na prova e nunca entende por que **diminuir `S_mín` é a solução ótima** — que é exatamente a frase de fechamento do professor. `S_mín` é a sanção do receptor sobre o alcance: M04 explica **como** ele se forma, M06 explica **quanto** ele custa.
+
+## Resumo executivo
+
+A ideia que organiza o módulo inteiro está no primeiro slide ‹`SUE6.11`›:
+
+> *"O estudo da equação radar nada mais é que a **análise do alcance** do radar de pulso com um olhar voltado **apenas para a questão da energia eletromagnética irradiada**."*
+
+Isso é uma delimitação, não um floreio. Em M02 você calculou alcance **sem ambiguidade** — um limite de **tempo**: se o eco chega depois do próximo pulso, o radar erra a distância. Aqui o limite é de **energia**: se o eco chega fraco demais, o radar simplesmente não o vê. São dois tetos independentes, e o alcance real de um radar é o **menor** dos dois.
+
+O professor abre com uma analogia ‹`SUE6.11`›: um megafone. Gritando sem megafone você é ouvido a `R₁ = 3 MN`; com o megafone, a `R₂ = ???`. O megafone não gera energia — ele **concentra** a mesma energia numa direção. Esse é o significado físico de **ganho**, e é por isso que o ganho entra multiplicando na equação radar do mesmo jeito que a potência.
+
+**O que este módulo vale na prova.** A 3ª questão da T2 2024 é **0,8 ponto em dois itens de 0,4**, e é a única questão da prova inteira construída sobre este módulo. Os dois itens são de rota longa — cinco conversões antes da primeira substituição — e o item (b) esconde a armadilha mais cara do exame: a interceptação por MAGE é **caminho de ida apenas**. Com M06 fechado, os 10,0 pontos do exame ficam mapeados.
+
+---
+
+## Conceitos fundamentais
+
+### C037 — Densidade de potência e ganho de antena
+‹fonte: `SUE6.11` slides 3–9› · criticidade: **crítica** · competências: explicar, calcular
+
+**O ponto de partida é a antena isotrópica.** Uma antena isotrópica irradia **igualmente em todas as direções**. Toda a potência `P` entregue a ela se espalha, a uma distância `R`, sobre a superfície de uma **esfera de raio `R`**, cuja área é `4πR²`. Logo a densidade de potência é
+
+`S₁ = P / (4πR²)`   [W/m²]
+
+| Símbolo | Significado | Unidade |
+|---|---|---|
+| `S₁` | densidade de potência da antena isotrópica a uma distância `R` | W/m² |
+| `P` | potência de pico entregue à antena | W |
+| `R` | distância entre a antena e o ponto considerado | m |
+| `4πR²` | **área da superfície da esfera** de raio `R` | m² |
+
+**Interpretação física.** O `4πR²` não é uma constante escolhida: é geometria. Dobrar a distância quadruplica a área sobre a qual a mesma energia se espalha, e portanto **divide a densidade por 4**. É a lei do inverso do quadrado, e ela vai aparecer **duas vezes** na equação radar — uma na ida, outra na volta.
+
+**O ganho é a razão entre a antena real e a isotrópica.** Nenhum radar usa antena isotrópica: o radar precisa saber **a marcação** do alvo (M01), e para isso o feixe tem de ser estreito. A antena real concentra a potência numa direção, e a medida dessa concentração é o **ganho**:
+
+`G_t = S₂ / S₁`   ⇒   `S₂ = P·G_t / (4πR²)`
+
+| Símbolo | Significado | Unidade |
+|---|---|---|
+| `G_t` | ganho da antena transmissora (adimensional; comumente expresso em dB) | — |
+| `S₂` | densidade de potência **na direção do feixe**, à distância `R` | W/m² |
+
+> **O ganho não cria energia.** `G_t` multiplica `S₂` na direção do feixe porque **retira** densidade das outras direções. É exatamente o megafone: a mesma voz, redistribuída. Confundir ganho com amplificação de potência é o erro conceitual que faz o aluno somar ganho e potência em vez de multiplicar.
+
+**A potência interceptada pelo alvo.** O alvo é um obstáculo de uma certa área efetiva `A_a` banhado por `S₂`:
+
+`P_a = A_a · S₂ = P·G_t·A_a / (4πR²)`   [W]
+
+| Símbolo | Significado | Unidade |
+|---|---|---|
+| `A_a` | **área efetiva do alvo** — a *seção reta radar* | m² |
+| `P_a` | potência que o alvo intercepta | W |
+
+⚠️ **Atenção à notação da EN.** Na nomenclatura usada pelo professor e pela rubrica, **`A_a` é a área do ALVO** (seção reta radar) e **`A` é a área efetiva da ANTENA**. A rubrica da T2 2024 é inequívoca: *"seção reta radar de 180 m²"* entra como `A_a = 180 m²`, enquanto `A = 2 m²` é obtido da antena por `G = 4πA/λ²`. Trocar as duas é o erro mais barato de cometer e o mais caro de pagar — ver `Pegadinha provável`.
+
+**O alvo reirradia de volta, e reirradia mal.** O alvo não é uma antena: ele reirradia a potência interceptada **omnidirecionalmente** ‹`SUE6.11`›. Então a mesma geometria de esfera se repete no caminho de volta:
+
+`S₃ = P_a / (4πR²) = P·G_t·A_a / (4πR²)²`   [W/m²]
+
+O `(4πR²)²` é o **coração** da equação radar: o eco sofre a lei do inverso do quadrado **duas vezes**, e é por isso que a potência recebida cai com `R⁴`.
+
+### C038 — Relação ganho ↔ área efetiva
+‹fonte: `SUE6.11` slides 10–13; rubrica T2 2024 Q3a e Q3b› · criticidade: **crítica** · competências: calcular, aplicar
+
+**Fechando a equação.** A antena do radar recebe o eco com sua própria área efetiva. Como transmissão e recepção usam **a mesma antena** (M05 — a chave de antena existe por isso), vale `A_t = A_r = A` e `G_t = G_r = G`. Então:
+
+`P_r = A · S₃ = P·G·A_a·A / (4πR²)²`   [W]
+
+**Mas os enunciados nunca dão `A` — dão `G` em dB.** A ponte é a relação fundamental antena-ganho:
+
+`G = 4πA / λ²`   ⇒   `A = G·λ² / (4π)`   com   `λ = c/f`
+
+| Símbolo | Significado | Unidade |
+|---|---|---|
+| `G` | ganho da antena (linear, não em dB) | — |
+| `A` | **área efetiva da antena** | m² |
+| `λ` | comprimento de onda da portadora | m |
+| `f` | frequência de operação do radar | Hz |
+
+**Forma alternativa.** Substituindo `A` na equação de `P_r` obtém-se ‹`SUE6.11`›:
+
+`P_r = P·G²·λ²·A_a / [(4π)³·R⁴]`
+
+As duas formas são a mesma coisa. **Use a primeira** (`P_r = P·G·A_a·A / (4πR²)²`): é a que a rubrica usa, e ela deixa `A` explícito, o que evita erro de expoente no `(4π)`.
+
+> **Leitura física de `G = 4πA/λ²`.** Para um mesmo tamanho físico de antena, **quanto menor o comprimento de onda, maior o ganho** — porque o feixe fica mais estreito. Essa é a mesma física que, em M02, fazia o `PSM` angular depender da largura do feixe. Radar de navegação opera em banda X (λ ≈ 3 cm) justamente para ter feixe estreito com refletor pequeno o bastante para caber num mastro.
+
+### C039 — A equação radar e a dependência de quarta raiz
+‹fonte: `SUE6.11` slides 13–17; apostila Seção 8 (p. 1-77 a 1-81) NÃO EXTRAÍVEL — `L-05`› · criticidade: **crítica** · competências: calcular, analisar, avaliar
+
+**O alcance máximo é a distância em que o eco cai exatamente no mínimo sinal detectável.** Fazendo `P_r = S_mín` e isolando `R`:
+
+`S_mín = P·G·A_a·A / [(4π)²·R_máx⁴]`   ⇒   **`R_máx = [ P·G·A_a·A / ((4π)²·S_mín) ]^(1/4)`**
+
+| Símbolo | Significado | Unidade |
+|---|---|---|
+| `R_máx` | maior distância em que o alvo ainda produz eco detectável | m |
+| `P` | potência de **pico** de transmissão | W |
+| `G` | ganho da antena (**linear**) | — |
+| `A_a` | seção reta radar do alvo | m² |
+| `A` | área efetiva da antena | m² |
+| `S_mín` | mínimo sinal detectável / sensibilidade do receptor | W |
+
+**Os quatro modos de aumentar o alcance** ‹`SUE6.11`, slide 16›: aumentar `P`; aumentar `G`; aumentar `A`; **diminuir `λ`**. E o mínimo sinal detectável entra como quinto, por baixo — diminuindo `S_mín`.
+
+**A consideração final do professor é a parte cobrável do assunto** ‹`SUE6.11`, "Considerações finais"›:
+
+> *"Um aumento de **16 vezes** na potência de pico apenas **dobra** o alcance."*
+
+É a quarta raiz falando. Multiplicar `P` por 16 multiplica `R_máx` por `16^(1/4) = 2`. Multiplicar `P` por 2 multiplica o alcance por `2^(1/4) = 1,189` — **apenas 19%**. Dobrar a potência de um transmissor de 1 MW é um problema de engenharia sério; ganhar 19% de alcance com isso é um péssimo negócio.
+
+O mesmo vale para o crescimento da área efetiva: *"limitado estruturalmente"* — uma antena não pode crescer indefinidamente num navio. E por isso a conclusão:
+
+> *"O **decréscimo no mínimo sinal detectável** (`S_mín`) é a **solução ótima**, pois envolve **apenas aperfeiçoamentos no receptor**."*
+
+**Por que essa é a solução ótima, em uma frase:** porque não custa potência, não custa estrutura e não custa banda — custa projeto de receptor, que é a única variável da equação radar que se melhora sem pagar em tamanho, peso ou energia. É a ligação direta com M04 (figura de ruído, banda passante, amplificação em cascata).
+
+### C040 — Mínimo sinal detectável e o nível de threshold
+‹fonte: `SUE6.11` slides 18–20; apostila p. 1-80 NÃO EXTRAÍVEL — `L-05`; `SUE6.5`› · criticidade: **alta** · competências: explicar, analisar
+
+**O problema é de decisão, não de amplificação.** O professor coloca a questão em três palavras no slide: **"Alvo ou ruído?"**. O receptor sempre tem ruído na saída (a *"grama"* que você viu na tela do tipo-A em M05). Um eco fraco não é invisível: ele está **misturado** ao ruído. Amplificar mais não resolve, porque o amplificador amplifica os dois igualmente (M04: a figura de ruído mede exatamente essa degradação).
+
+**O critério é um nível de limiar (*threshold*)** ‹`SUE6.11`›: estabelece-se um nível de tensão na **saída do receptor**; o que ultrapassa é declarado alvo, o que não ultrapassa é declarado ruído.
+
+**As duas maneiras de errar** `[APROFUNDAMENTO ANALÍTICO DE SUPORTE]` — a fonte enuncia o critério de threshold e remete à estatística; a leitura dos dois modos de erro é desenvolvimento didático coerente com a fonte, não literalidade dela:
+
+| Threshold | Consequência |
+|---|---|
+| **Baixo demais** | picos de ruído ultrapassam o limiar → **falso alarme** (tela suja, alvos inexistentes) |
+| **Alto demais** | ecos reais e fracos não ultrapassam o limiar → **perda de detecção** (alvo real invisível) |
+
+Não existe escolha que zere os dois. Por isso a fonte é explícita quanto ao método:
+
+> *"solução **estatística** baseada em **teste de hipóteses** com o uso de **curvas de distribuição de probabilidades**."*
+
+**Ligação com a equação radar.** `S_mín` **é** esse limiar transportado para a entrada do receptor. Em M04 você o calculou: `S_mín = F_n·k·T₀·B_n·(S/N)_mín`. Aqui ele aparece como o denominador que define o alcance. Os dois módulos falam do mesmo número por dois lados.
+
+### C041 — Conversões dB, dBm e linear
+‹fonte: rubrica T2 2024 Q3a e Q3b; `SUE6.11`› · criticidade: **crítica** · competências: calcular, aplicar
+
+Nenhuma fonte da EN dedica um tópico a isto — mas **a prova inteira da Q3 começa por aqui**, e a rubrica gasta três linhas com conversões antes de chegar à equação. Trate como conteúdo de primeira classe.
+
+| Conversão | Fórmula | Regra prática |
+|---|---|---|
+| **Ganho em dB → linear** | `G(dB) = 10·log G` ⇒ `G = 10^(G(dB)/10)` | 10 dB = 10 · 20 dB = 100 · **40 dB = 10.000** · 25 dB = 316,23 |
+| **dBm → W** | `S(dBm) = 10·log(S / 1 mW)` | **dois passos**: chega-se a mW, depois divide-se por 1000 |
+| **Frequência → λ** | `λ = c/f` | 6 GHz → **0,05 m** · 9,4 GHz → 3,19 cm · 3 GHz → 0,10 m |
+
+**O passo que mais custa ponto é o dBm.** A rubrica: `−80 = 10·log(S/1 mW)` ⇒ `S = 10⁻⁸ mW` ⇒ **`S = 10⁻¹¹ W`**. Quem para em `10⁻⁸` erra por um fator **1.000** no `S_mín` — e como o `S_mín` está sob quarta raiz, o alcance sai errado por `1000^(1/4) = 5,6 vezes`. O resultado fica plausível o suficiente para não disparar alarme, e é ponto perdido inteiro.
+
+> **Regra de bolso para checar dB de cabeça.** Cada 10 dB é um fator 10; cada 3 dB é um fator 2 (aproximadamente). Então 33 dB = 30 dB + 3 dB ≈ 1.000 × 2 = **2.000** — e o valor exato é 1.995,26. Serve para conferir a calculadora, não para substituir a conta.
+
+### C042 — Interceptação por MAGE: caminho de ida apenas
+‹fonte: rubrica T2 2024 Q3b; `SUE8.1a2-guerra-eletronica.pdf`› · criticidade: **crítica** · competências: analisar, avaliar, integrar
+
+**O que muda quando o receptor não é o radar.** A equação radar tem `(4πR²)²` porque o sinal faz **dois** percursos: vai até o alvo e volta. Um receptor **MAGE** (Medidas de Apoio à Guerra Eletrônica) não devolve nada: ele apenas **escuta** o pulso do radar. O sinal faz **um** percurso. Logo:
+
+`P_rx = P·G_t·A_rx / (4πR²)`   ← **`4πR²`, nunca `(4π)²R⁴`**
+
+| Símbolo | Significado |
+|---|---|
+| `P_rx` | potência que o receptor MAGE capta |
+| `G_t` | ganho da antena **do radar** (quem transmite) |
+| `A_rx` | área efetiva da antena **do MAGE**, obtida de `G_rx` e do **λ do radar** |
+| `R` | distância entre o radar e o MAGE |
+
+**Nota sobre `λ`.** O `λ` usado para calcular `A_rx` é o **do radar interceptado**, porque é a onda que o MAGE está recebendo. A rubrica usa `λ = 0,05 m` nos dois itens da Q3 pela mesma razão.
+
+**A consequência tática — e é isto que o professor está cobrando.** Comparando, com os mesmos parâmetros e a mesma distância, a potência que o MAGE capta com a potência do eco que volta ao radar, a razão é de **várias ordens de grandeza** (ver `Exemplo 6.5`, onde dá ~95 dB). Ou seja:
+
+> **O MAGE detecta o radar muito antes de o radar detectar o navio que carrega o MAGE.** Isso é consequência direta da equação radar, e é o fundamento da guerra eletrônica de apoio ‹`SUE8.1a2`›: o emissor sempre se denuncia primeiro.
+
+Esse é também o motivo pelo qual controle de emissão (EMCON) existe.
+
+### C043 — Banda passante, largura de pulso e a cadeia que fecha o alcance
+‹fonte: `SUE6.11` "Considerações finais"; `SUE6.5`› · criticidade: **alta** · competências: integrar, analisar
+
+O `SUE6.11` fecha com uma relação que parece deslocada no meio de um assunto de energia:
+
+`BW ≈ 1/τ`   (banda passante necessária ≈ inverso da largura de pulso)
+
+Ela não está deslocada: ela é a **dobradiça** entre M02, M04 e M06. O encadeamento completo:
+
+```
+ LP menor  →  BW maior  →  Pn = kTB maior  →  S_mín maior  →  R_máx menor
+   (M02)        (M04)          (M04)            (M04)        (M06, ^1/4)
+```
+
+**Leitura.** Encurtar o pulso melhora o poder de separação em distância e a distância mínima (M02) — e **custa alcance**, porque obriga a alargar a banda do receptor, o que admite mais ruído térmico e eleva `S_mín`. É o compromisso central do projeto de radar, e nenhuma das duas pontas é grátis.
+
+**O amortecedor é a quarta raiz.** `S_mín` dez vezes maior não divide o alcance por dez: divide por `10^(1/4) = 1,78` — queda de **43,8%**. A quarta raiz, que em C039 tornava o aumento de potência um mau negócio, aqui trabalha a favor: torna o custo de alargar a banda menos brutal do que parece. A mesma matemática, com sinais opostos, nas duas pontas.
+
+---
+
+## Exemplos resolvidos
+
+### Exemplo 6.1 — Da esfera ao alvo: as três densidades  `C037`
+
+Um radar entrega 200 kW de pico a uma antena de ganho 30 dB. Um alvo de seção reta radar 50 m² está a 40 km. Calcule `S₁`, `S₂`, `P_a` e `S₃`.
+
+**Passo 1 — ganho linear.** `G = 10^(30/10) = 1.000`.
+**Passo 2 — área da esfera.** `4πR² = 4π(4×10⁴)² = 2,0106×10¹⁰ m²`.
+**Passo 3 — isotrópica.** `S₁ = 2×10⁵ / 2,0106×10¹⁰ = 9,948×10⁻⁶ W/m²`.
+**Passo 4 — com ganho.** `S₂ = S₁·G = 9,948×10⁻³ W/m²`. *(o megafone: mil vezes mais densidade, mesma potência)*
+**Passo 5 — interceptada pelo alvo.** `P_a = A_a·S₂ = 50 × 9,948×10⁻³ = 0,4974 W`.
+**Passo 6 — reirradiada de volta, omnidirecional.** `S₃ = P_a/(4πR²) = 0,4974 / 2,0106×10¹⁰ = 2,474×10⁻¹¹ W/m²`.
+
+**O que ler no resultado.** De 200.000 W entregues à antena, o alvo intercepta **meio watt**, e o que volta à distância do radar é `2,5×10⁻¹¹ W/m²`. A queda é de onze ordens de grandeza — e nem chegamos à antena receptora. É isto que a equação radar formaliza.
+
+### Exemplo 6.2 — Conversões: as cinco linhas antes da primeira substituição  `C041`
+
+Radar de navegação: `f = 9,4 GHz`, ganho de antena **33 dB**, sensibilidade do receptor **−95 dBm**. Prepare os dados para a equação radar.
+
+| Passo | Conta | Resultado |
+|---|---|---|
+| λ | `3×10⁸ / 9,4×10⁹` | **`λ = 0,03191 m`** (3,19 cm) |
+| `G` linear | `10^(33/10)` | **`G = 1.995,26`** |
+| `A` da antena | `G·λ²/(4π) = 1.995,26 × 1,0182×10⁻³ / 12,566` | **`A = 0,1617 m²`** |
+| `S_mín` em mW | `10^(−95/10)` | `3,1623×10⁻¹⁰ mW` |
+| `S_mín` em W | `÷ 1.000` | **`S_mín = 3,1623×10⁻¹³ W`** |
+
+**Conferência de ordem de grandeza.** 33 dB ≈ 30 dB + 3 dB ≈ 1.000 × 2 = 2.000 ✔. `A = 0,16 m²` é um refletor de ~40 cm × 40 cm equivalente — coerente com uma antena de radar de navegação. `−95 dBm` em W tem de terminar em `10⁻¹³`, porque `−90 dBm = 10⁻¹² W` e faltam 5 dB ✔.
+
+### Exemplo 6.3 — Alcance máximo, rota completa  `C039`
+
+Radar de busca: `f = 3 GHz`, `P = 200 kW`, ganho **35 dB**, sensibilidade **−90 dBm**. Qual a maior distância em que detecta um alvo de seção reta radar **100 m²**?
+
+**Passo 1 — λ.** `λ = 3×10⁸/3×10⁹ = 0,10 m`.
+**Passo 2 — `G` linear.** `G = 10^(35/10) = 3.162,28`.
+**Passo 3 — `A` da antena.** `A = G·λ²/(4π) = 3.162,28 × 0,01 / 12,566 = 2,5165 m²`.
+**Passo 4 — `S_mín`.** `−90 dBm = 10⁻⁹ mW = 1×10⁻¹² W`.
+**Passo 5 — equação radar.**
+
+`R_máx = [ (2×10⁵ × 3.162,28 × 100 × 2,5165) / ((4π)² × 10⁻¹²) ]^(1/4)`
+`R_máx = [ 1,5917×10¹¹ / 1,5791×10⁻¹⁰ ]^(1/4) = (1,00795×10²¹)^(1/4)`
+
+**`R_máx = 1,7818×10⁵ m ≈ 178 km`**
+
+**Verificação por rota independente.** Substituindo `R = 178.176 m` de volta em `P_r = P·G·A_a·A/(4πR²)²` obtém-se `P_r = 1,000×10⁻¹² W`, que é exatamente o `S_mín` ✔. Esta é a única conferência que vale a pena numa prova: recalcular `P_r` no `R` encontrado e ver se bate no `S_mín`.
+
+### Exemplo 6.4 — A 3ª questão da T2 2024, item (a), resolvida integralmente  `C038` `C039` `C041`
+‹fonte: `SOPA DET T2 2024.pdf`, 3ª QUESTÃO, com rubrica oficial›
+
+> *"Um radar opera em 6 GHz com 150 kW de potência de pico de transmissão. Sabendo-se que sua antena tem ganho de 40 dB e seu receptor tem sensibilidade mínima de −80 dBm, determine: (a) a maior distância em que esse radar será capaz de detectar um alvo com seção reta radar de 180 m²."*
+
+**Rota da rubrica, passo a passo:**
+
+1. `40 = 10·log G` ⇒ **`G = 10.000`**
+2. `−80 = 10·log(S_mín/1 mW)` ⇒ `S_mín = 10⁻⁸ mW` ⇒ **`S_mín = 10⁻¹¹ W`**
+3. `λ = 3×10⁸/6×10⁹` ⇒ **`λ = 0,05 m`**
+4. `G = 4πA/λ²` ⇒ `10.000 = 4πA/(0,05)²` ⇒ **`A = 2 m²`** *(área da ANTENA)*
+5. `A_a = 180 m²` *(seção reta radar — o dado do enunciado)*
+6. `R_máx = [ (150.000 × 10.000 × 180 × 2) / ((4π)² × 10⁻¹¹) ]^(1/4)`
+   `= [ 5,4×10¹¹ / 1,5791×10⁻⁹ ]^(1/4) = (3,4197×10²⁰)^(1/4)`
+
+**`R_máx = 1,3599×10⁵ m ≈ 136 km`** ✔ *(idêntico ao gabarito oficial)*
+
+> **Nota de precisão.** Com `A` exato (`1,98944 m²` em vez dos 2 m² arredondados da rubrica) o resultado é **135,8 km**. A rubrica arredonda `A` para 2 m² e chega a 135,99 km. Os dois caminhos arredondam para **136 km** — use o arredondamento da rubrica, que é o que o professor espera ver escrito.
+
+**Onde estão os 0,4 pontos.** Não na equação final: nos **quatro** passos de conversão antes dela. Cada um é uma chance de perder tudo, e os dois mais perigosos são o `10⁻¹¹ W` (P-08) e a distinção `A` × `A_a` (P-14).
+
+### Exemplo 6.5 — Interceptação por MAGE e a assimetria de detecção  `C042`
+
+Radar de 10 GHz, `P = 1 MW`, ganho da antena **38 dB**. Um receptor MAGE com antena de ganho **20 dB** está a **300 km**. (a) Que potência o MAGE capta? (b) Compare com o eco que o radar receberia de um alvo de 5 m² na mesma distância.
+
+**(a) Caminho de ida.**
+`λ = 0,03 m` · `G_t = 10^3,8 = 6.309,57` · `G_rx = 100`
+`A_rx = G_rx·λ²/(4π) = 100 × 9×10⁻⁴ / 12,566 = 7,162×10⁻³ m²`
+`4πR² = 4π(3×10⁵)² = 1,131×10¹² m²`
+`P_rx = P·G_t·A_rx / (4πR²) = (10⁶ × 6.309,57 × 7,162×10⁻³) / 1,131×10¹²`
+
+**`P_rx = 3,996×10⁻⁵ W ≈ 40 µW`**
+
+**(b) Caminho de ida e volta.**
+`A` da antena do radar `= 6.309,57 × 9×10⁻⁴/12,566 = 0,4519 m²`
+`P_r = P·G·A_a·A / (4πR²)² = (10⁶ × 6.309,57 × 5 × 0,4519) / (1,131×10¹²)²`
+
+**`P_r = 1,115×10⁻¹⁴ W ≈ 0,011 pW`**
+
+**A razão:** `P_rx / P_r = 3,58×10⁹`, ou **95,5 dB**.
+
+> **Conclusão tática.** Na mesma distância, o MAGE recebe do radar **três bilhões e meio de vezes** mais potência do que o radar recebe de volta do alvo. Não é uma diferença de sensibilidade de equipamento — é **geometria**: um `4πR²` contra dois, e mais o fato de o alvo reirradiar omnidirecionalmente uma fração ínfima do que intercepta. Por isso um radar ligado é detectado muito antes de detectar, e por isso EMCON é um problema operativo real.
+
+**Erro que anula o item.** Aplicar `(4π)²R⁴` ao MAGE dá `3,53×10⁻¹⁷ W` — nove ordens de grandeza abaixo. O número sai tão pequeno que "parece" certo para quem espera um sinal fraco, e é exatamente por isso que a pegadinha funciona.
+
+### Exemplo 6.6 — A cadeia LP → banda → ruído → alcance  `C043` `C040`
+
+Um radar opera com `LP = 1 µs`, figura de ruído **6 dB** e exige `(S/N)_mín = 10 dB`. Para melhorar o poder de separação em distância, o projetista reduz a LP para **0,1 µs**. Que impacto isso tem no alcance?
+
+**Antes (`LP = 1 µs`):**
+`B = 1/τ = 1 MHz` · `F_n = 10^0,6 = 3,981` · `(S/N)_mín = 10`
+`S_mín = F_n·k·T₀·B_n·(S/N)_mín = 3,981 × 4×10⁻²¹ × 10⁶ × 10` = **`1,592×10⁻¹³ W`** (−98,0 dBm)
+
+**Depois (`LP = 0,1 µs`):**
+`B = 10 MHz` ⇒ `S_mín = 1,592×10⁻¹² W` (−88,0 dBm) — **dez vezes maior**.
+
+**Impacto no alcance.** `R_máx ∝ S_mín^(−1/4)` ⇒ `R_novo/R_velho = (1/10)^(1/4) = 0,5623`.
+
+**O alcance cai 43,8%.**
+
+**O que ganhou em troca:** `PSD = c·LP/2` passa de **150 m** para **15 m**, e `R_mín` cai de 150 m para 15 m (M02). Discriminação dez vezes melhor, alcance quase pela metade.
+
+> **Este é o compromisso central do projeto de radar**, e é também a razão de existirem radares com **duas LP selecionáveis** — exatamente como o radar da 2ª questão da T2 2024 (3 µs **ou** 10 µs). O operador escolhe: pulso longo para busca em alcance, pulso curto para navegação em porto.
+
+---
+
+## Diagramas
+
+### D6.1 — A equação radar montada termo a termo
+`[Diagrama didático reconstruído a partir das fontes]` ‹`SUE6.11` slides 3–15›
+
+```
+ TRANSMISSOR                    IDA                         ALVO
+ ┌──────────┐        S1 = P/(4πR²)   [isotrópica]        ┌────────┐
+ │   P (W)  │──►ANT──────────────────────────────────────►│  A_a   │
+ └──────────┘   G_t   S2 = P·G_t/(4πR²)  [com ganho]      │ (σ,m²) │
+                                                          └───┬────┘
+                              P_a = A_a·S2  ◄────── intercepta │
+                                                               │
+                                    VOLTA (reirradia OMNIdirecional)
+                ┌──────────────────────────────────────────────┘
+                ▼
+        S3 = P_a/(4πR²) = P·G_t·A_a/(4πR²)²
+                │
+                ▼   antena do radar, área efetiva A  (A = G·λ²/4π)
+        P_r = A·S3 = P·G·A_a·A / (4πR²)²   ◄── COMPARA com S_mín
+                                                      │
+                 P_r ≥ S_mín ? ──► SIM: alvo detectado │
+                                └► NÃO: abaixo do threshold
+```
+
+**Como ler.** Os dois blocos `4πR²` são a **mesma** lei aplicada duas vezes. O ganho `G_t` entra uma vez na ida (concentra) e a área `A` entra uma vez na volta (coleta) — e `G` e `A` são o mesmo objeto físico visto de dois lados, ligados por `G = 4πA/λ²`.
+
+### D6.2 — Ida (MAGE) contra ida-e-volta (eco): por que muda o expoente
+`[Diagrama didático reconstruído a partir das fontes]` ‹rubrica T2 2024 Q3b; `SUE8.1a2`›
+
+```
+        RADAR                                          MAGE
+      ┌───────┐        um único percurso            ┌───────┐
+      │ P·G_t │═══════════════════════════════════► │ A_rx  │
+      └───────┘              R                      └───────┘
+                   P_rx = P·G_t·A_rx / (4πR²)        UM 4πR²
+
+
+        RADAR                    ALVO                 RADAR
+      ┌───────┐   ida    ┌──────┐   volta   ┌───────┐
+      │ P·G_t │═════════►│ A_a  │══════════►│   A   │
+      └───────┘    R     └──────┘     R     └───────┘
+                P_r = P·G·A_a·A / (4πR²)²    DOIS 4πR²
+```
+
+**A pergunta que decide qual fórmula usar:** *o sinal volta?* Se o receptor é o próprio radar → **dois** `4πR²`. Se o receptor é outro equipamento escutando → **um** `4πR²`. Não há caso intermediário.
+
+### D6.3 — O threshold: alvo ou ruído?
+`[Diagrama didático reconstruído a partir das fontes]` ‹`SUE6.11` slides 18–20›
+
+```
+ tensão na saída do receptor
+   │
+   │        ▲alvo forte
+   │        █
+   │──────█─█──────────█──────────────── THRESHOLD ALTO  → perde o alvo fraco
+   │      █ █    ▲alvo fraco
+   │──────█─█────█─────█──────────────── THRESHOLD ÓTIMO
+   │   ▄▄ █ █ ▄▄ █ ▄▄  █  ▄▄   ▄
+   │──▄█▄▄█▄█▄██▄█▄██▄▄█▄▄██▄▄▄█─────── THRESHOLD BAIXO → picos de ruído viram falso alarme
+   │  ruído (a "grama" da tela, M05)
+   └──────────────────────────────────► tempo (= distância)
+```
+
+**A decisão não é determinística** — é *"solução estatística baseada em teste de hipóteses com o uso de curvas de distribuição de probabilidades"* ‹`SUE6.11`›. Baixar o threshold aumenta a probabilidade de detecção **e** a de falso alarme, sempre juntas.
+
+---
+
+## 📝 Como o professor pode cobrar
+
+| Formato | O que ele pede | Onde já apareceu |
+|---|---|---|
+| **Problema encadeado de 2 itens (0,4 cada)** | dB → linear, dBm → W, `f` → λ, `G` → `A`, então `R_máx` | **T2 2024, Q3a** — literalmente |
+| **Item de interceptação** | mesma cabeça de enunciado, mas o receptor é um MAGE a uma distância dada | **T2 2024, Q3b** — literalmente |
+| **Conceitual de efeito (0,4)** | *"de que forma a potência de transmissão afeta o desempenho do radar?"* | **T2 2024, Q4d** — resposta: *"a potência afeta o alcance máximo de um radar"* |
+| **Correlação (0,3/item)** | grandeza da equação ↔ efeito sobre o alcance | formato da Q1 aplicado a este conteúdo |
+| **Discursiva de julgamento** | *"por que aumentar a potência não é a melhor forma de aumentar o alcance?"* | *"Considerações finais"* do `SUE6.11` — é a frase que ele grifou |
+
+**O que ele quase certamente NÃO cobra:** a forma alternativa `P_r = P·G²λ²A_a/[(4π)³R⁴]`. Ela está no slide, mas a rubrica usa a forma com `A` explícito nos dois itens. Saiba que existe; resolva pela outra.
+
+---
+
+## ⚠️ Pegadinha provável
+
+**P-08 — parar no miliwatt.** `−80 dBm` → `10⁻⁸` **mW** → `10⁻¹¹ W`. Quem entrega `10⁻⁸ W` erra `S_mín` por 1.000 e o alcance por 5,6×.
+
+**P-09 — tentar usar `G` onde a equação pede `A`.** A equação radar tem `G` **e** `A`. São grandezas diferentes da mesma antena. Sem calcular `λ` primeiro, não há como obter `A`, e o problema trava no passo 3.
+
+**P-10 — esquecer a quarta raiz.** Sair com `R_máx` sem elevar a `1/4` produz um número da ordem de `10²⁰` — e a unidade "metro" torna o absurdo invisível para quem não olha a ordem de grandeza.
+
+**P-11 — aplicar a equação radar inteira ao MAGE.** A mais cara da prova. O MAGE escuta; não há eco. **Um** `4πR²`.
+
+**P-14 — trocar `A_a` por `A`.** ⭐ *nova em M06.* A rubrica dá `A_a = 180 m²` (alvo, no enunciado) e calcula `A = 2 m²` (antena, pelo ganho). Quem inverte os dois no numerador `P·G·A_a·A` **não altera o produto** — e passa. Mas quem usa 180 m² **nos dois lugares**, ou 2 m² nos dois, erra por fator **90** (ou 1/90) dentro da raiz — isto é, `90^(1/4) = 3,08` no alcance. O sintoma é um `R_máx` de **~419 km** ou de **~44 km** em vez de 136 km.
+
+**P-15 — confundir os dois `R_máx`.** Existem dois na disciplina, com o mesmo nome: o de **M02** (`c/2·FRP`, sem ambiguidade, limite de **tempo**) e o de **M06** (equação radar, limite de **energia**). Se o enunciado dá FRP, é M02. Se dá potência, ganho e sensibilidade, é M06. O alcance operativo real é o **menor dos dois** `[INFERÊNCIA PEDAGÓGICA]`.
+
+---
+
+## Erros comuns
+
+| Erro | Por que acontece | Correção |
+|---|---|---|
+| Somar ganho e potência | "ganho" sugere amplificação aditiva | `G` **multiplica**: `S₂ = S₁·G` |
+| Usar `G` em dB dentro da equação | o enunciado dá dB, a equação pede linear | converta **sempre** antes da primeira substituição |
+| `4πR²` escrito como `4πR` ou `πR²` | memorização do símbolo sem a geometria | é a **área da superfície da esfera** de raio `R` |
+| `(4π)²R⁴` escrito como `4πR⁴` | ao elevar `(4πR²)` ao quadrado, esquece-se do `4π` | `(4πR²)² = (4π)²·R⁴ = 157,91·R⁴` |
+| Concluir que dobrar a potência dobra o alcance | intuição linear | `2^(1/4) = 1,189` → **+19%** |
+| Dizer que basta amplificar mais para detectar eco fraco | confunde ganho com relação sinal-ruído | o ruído é amplificado junto (M04, figura de ruído) |
+| Usar o λ do MAGE em vez do λ do radar | "é a antena do MAGE, então é o λ dele" | o MAGE recebe **a onda do radar** — use o λ do radar |
+
+---
+
+## ✅ Checklist de domínio — M06
+
+Marque só o que você faz **sem consultar**:
+
+- [ ] Escrevo `S₁ = P/(4πR²)` e digo em uma frase por que o denominador é esse
+- [ ] Explico o ganho pela analogia do megafone, deixando claro que não se cria energia
+- [ ] Monto a equação radar do zero, em cinco passos, sem decorar o resultado
+- [ ] Converto 40 dB, 35 dB, 25 dB e 20 dB para linear de cabeça
+- [ ] Converto `−80 dBm`, `−90 dBm` e `−95 dBm` para watts nos **dois** passos
+- [ ] Obtenho `A` a partir de `G` e `f`, nessa ordem
+- [ ] Distingo `A_a` (alvo) de `A` (antena) olhando o enunciado
+- [ ] Resolvo a Q3a da T2 2024 em menos de 6 minutos
+- [ ] Reconheço um enunciado de MAGE e uso **um** `4πR²`
+- [ ] Digo por que `16×` na potência dá `2×` no alcance
+- [ ] Digo qual é a **solução ótima** para aumentar alcance, e por quê
+- [ ] Explico o threshold em termos de falso alarme × perda de detecção
+- [ ] Encadeio `LP ↓ → BW ↑ → P_n ↑ → S_mín ↑ → R_máx ↓`
+- [ ] Distingo o `R_máx` de M02 do `R_máx` de M06 pelo dado que o enunciado fornece
+
+---
+
+## Revisão ativa
+
+1. Por que a equação radar tem `R⁴` e não `R²`? Responda sem usar a palavra "fórmula".
+2. Uma antena de 2 m² efetivos operando em 6 GHz tem que ganho? E em 3 GHz?
+3. O enunciado diz *"seção reta radar de 180 m²"*. Esse número é `A` ou `A_a`?
+4. Quanto é `−80 dBm` em watts? Diga os dois passos em voz alta.
+5. Um MAGE a 200 km capta 188 µW de um radar. O eco desse radar, vindo de um alvo àquela distância, seria maior ou menor? Por quantas ordens de grandeza, aproximadamente?
+6. Um projetista dobra a potência de pico. Quanto ganha de alcance?
+7. Por que diminuir `S_mín` é melhor negócio que aumentar `P`?
+8. O operador baixa o threshold. O que melhora e o que piora?
+9. Reduzir a LP de 10 µs para 1 µs melhora o quê e custa o quê?
+10. Em que situação os dois `R_máx` da disciplina dão respostas diferentes, e qual vale?
+
+---
+
+## Ligação explícita com M07
+
+| O que M06 entrega | Como M07 usa |
+|---|---|
+| `P_r ∝ 1/R⁴` e o custo energético do eco | justifica por que radares de **rastreamento** têm feixe muito estreito e alta diretividade |
+| `S_mín` e o threshold estatístico | base para o **MTI**, que decide por variação de fase em vez de amplitude |
+| Caminho de ida (MAGE) | entra direto em **Guerra Eletrônica** (`SUE8.1a2`): MAGE, MAE, MPE |
+| Compromisso `BW ↔ S/N` | explica por que **CW-Doppler** e **CW-FM** trocam o pulso por outra forma de medir |
+| `G = 4πA/λ²` | fundamenta o **IFF**, que opera em frequência diferente com antena própria |
+
+---
+
+## Referências deste módulo
+
+| Fonte | Localização | Uso |
+|---|---|---|
+| `SUE6.11-radar_de_pulso-equação_radar.odp` | slides 1–23, **lido integralmente** | C037, C038, C039, C040, C043 — derivação completa |
+| `SUE6.11-...pdf` | slides 1–23 | conferência de equivalência (teste `L-02` nº 4: **equivalente**, sem truncamento) |
+| `T2/SOPA DET T2 2024.pdf` | 3ª QUESTÃO, itens (a) e (b), com rubrica | C038, C039, C041, C042 — rota oficial e valores de referência |
+| `T2/SOPA DET T2 2024.pdf` | 4ª QUESTÃO, item (d) | ligação potência ↔ alcance máximo |
+| `SUE6.5` | banda passante e ruído | C043 — ponte com M04 |
+| `SUE8.1a2-guerra-eletronica.pdf` | MAGE/MAE/MPE | C042 — contexto operativo da interceptação |
+| `apostila_DET_2022.pdf` | Cap. I, **Seção 8, p. 1-77 a 1-81** | ⛔ **NÃO EXTRAÍVEL** — `L-05`. Inclui os 7 problemas remetidos pelo `SUE6.11` |
+
+---
+
+**Próximo:** `M07 — Integração, adjacências, revisão e preparação final`. Os exercícios e gabaritos comentados do M06 estão disponíveis na área de questões deste módulo.
