@@ -20,18 +20,23 @@ import { PIX } from '@data/apoie';
       <h2 class="font-serif text-2xl text-marfim">Por que apoiar?</h2>
       <div class="mt-4 space-y-4 text-nevoa/85">
         <p>
-          Eu faço a Bússola porque quero ajudar quem está na mesma caminhada que eu — e porque quero
-          deixar a plataforma cada vez melhor. Mas manter tudo no ar tem custos e dá bastante trabalho.
+          Eu faço a Bússola porque quero ajudar quem está na mesma caminhada que eu. Além do tempo
+          dedicado, as ferramentas de IA usadas para estruturar e revisar os cursos estão sendo pagas
+          com recursos próprios.
         </p>
         <p>
-          Por isso deixo aberta esta opção de contribuição. É totalmente <strong class="text-marfim"
-            >opcional e simbólica</strong
-          >: pode ser R$2, R$5, ou o valor com que você se sentir confortável. Cada apoio faz
-          diferença e ajuda a manter o conteúdo gratuito para todo mundo.
+          O ChatGPT já foi pago por R$467,00, com R$15,79 de IOF, e o Claude Max custa a partir de
+          R$550 por mês. Por isso, deixo aberta uma sugestão de R$10 por pessoa. É totalmente
+          <strong class="text-marfim">opcional</strong>: cada apoio ajuda, mas nenhum conteúdo ou
+          recurso depende de pagamento.
+        </p>
+        <p>
+          Se cerca de metade da turma participar, esse apoio já ajuda a custear os modelos usados na
+          produção e a manter um ritmo melhor de entregas.
         </p>
         <p class="text-sm text-nevoa/60">
           Não há nenhuma cobrança, login ou obrigação. Se a Bússola te ajudou, e só se você puder,
-          considere apoiar. 💛
+          considere apoiar. Responsável: Roberto Lins Brigída Junior. 💛
         </p>
       </div>
     </section>
@@ -45,11 +50,9 @@ import { PIX } from '@data/apoie';
         <img src={PIX.qrSvg} alt="QR Code PIX para apoiar a Bússola" class="h-full w-full" width="160" height="160" />
       </div>
 
-      <!-- sugestões (valor é aberto no app do banco) -->
+      <!-- sugestão (valor continua aberto no app do banco) -->
       <div class="mt-5 flex items-center justify-center gap-2">
-        <span class="text-xs uppercase tracking-wider text-nevoa/50">Sugestões:</span>
-        <span class="chip border-dourado/30 bg-dourado/10 text-dourado">R$2</span>
-        <span class="chip border-dourado/30 bg-dourado/10 text-dourado">R$5</span>
+        <span class="text-xs uppercase tracking-wider text-nevoa/50">Sugestão voluntária:</span>
         <span class="chip border-dourado/30 bg-dourado/10 text-dourado">R$10</span>
       </div>
 
@@ -78,10 +81,36 @@ import { PIX } from '@data/apoie';
       </button>
 
       <p class="mt-3 text-xs text-nevoa/50">
-        Beneficiário: {PIX.nome} · {PIX.cidade}
+        Responsável: Roberto Lins Brigída Junior<br />
+        Beneficiário no código: {PIX.nome} · {PIX.cidade}
       </p>
     </section>
   </div>
+
+  <section class="card mt-8 p-6 sm:p-8" aria-labelledby="custos-comprovantes">
+    <div class="max-w-3xl">
+      <p class="text-xs font-semibold uppercase tracking-[0.18em] text-dourado">Transparência</p>
+      <h2 id="custos-comprovantes" class="mt-2 font-serif text-2xl text-marfim">Custos e comprovantes</h2>
+      <p class="mt-2 text-sm leading-relaxed text-nevoa/70">
+        As imagens abaixo são os registros reais apresentados para esta campanha. Clique em qualquer
+        comprovante para abrir a versão completa.
+      </p>
+    </div>
+    <div class="mt-6 grid gap-6 sm:grid-cols-2">
+      <figure>
+        <a href="/imagens/plataforma/apoio-ia/chatgpt-comprovante.webp" target="_blank" rel="noreferrer" class="block overflow-hidden rounded-2xl border border-white/10 bg-white">
+          <img src="/imagens/plataforma/apoio-ia/chatgpt-comprovante.webp" alt="Comprovante da compra do ChatGPT por R$ 467,00 e IOF de R$ 15,79" class="h-80 w-full object-cover object-top sm:h-96" loading="lazy" />
+        </a>
+        <figcaption class="mt-2 text-sm text-nevoa/60">ChatGPT — R$467,00, com IOF de R$15,79.</figcaption>
+      </figure>
+      <figure>
+        <a href="/imagens/plataforma/apoio-ia/claude-max.webp" target="_blank" rel="noreferrer" class="block overflow-hidden rounded-2xl border border-white/10 bg-[#1f1f1d]">
+          <img src="/imagens/plataforma/apoio-ia/claude-max.webp" alt="Página do plano Claude Max indicando preço a partir de R$ 550 por mês" class="h-80 w-full object-contain sm:h-96" loading="lazy" />
+        </a>
+        <figcaption class="mt-2 text-sm text-nevoa/60">Claude Max — a partir de R$550 por mês.</figcaption>
+      </figure>
+    </div>
+  </section>
 </BaseLayout>
 
 <script is:inline>

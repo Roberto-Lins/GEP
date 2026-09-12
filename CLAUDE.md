@@ -253,6 +253,16 @@ download. Etapas: intro → metadados (com a hierarquia ano/semestre/época/turm
 - Backup (`docs/PROGRESS-BACKUP.md`): botões Exportar / Importar / Reset →
   arquivo `bussola-dos-aspirantes-backup-AAAA-MM-DD.json`.
 
+## Campanha de apoio às ferramentas de IA
+
+- A página inicial monta `ApoioIaCampaign.tsx`: modal acessível na primeira visita e cartão discreto
+  para reabertura. O fluxo reutiliza `src/data/apoie.ts` e o QR estático já usado em `/apoie`.
+- A dispensa é isolada do progresso na chave versionada
+  `bussola:v1:apoio-ia:<versao>:dispensado`; uma nova campanha deve trocar somente a versão em
+  `src/utils/apoio-campaign.ts`.
+- Custos e comprovantes também aparecem em `/apoie`. Nunca substituir o QR ou o código Pix sem rodar
+  `npm run gerar-pix` a partir dos dados autorizados.
+
 ## Tema visual por curso
 
 A paleta do GEP vira o tema **`naval-command`** em `src/styles/themes.css`:
