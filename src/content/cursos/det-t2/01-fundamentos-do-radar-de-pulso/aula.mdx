@@ -1,0 +1,435 @@
+---
+titulo: "Fundamentos do radar de pulso — aula"
+secao: "aula"
+secaoOrdem: 2
+---
+
+## Posição na trilha
+
+`M00 → **M01** → M02 → M03 → M04 → M05 → M06 → M07 → M08`
+
+**Este módulo não tem pré-requisito interno.** Ele é a base de tudo o que vem depois, por uma razão específica:
+
+> A relação **d = c·t/2** construída na Aula 1.3 é a **única** equação de M01 — e todas as fórmulas de distância de M02 são casos particulares dela.
+> PSD, R_mín e R_máx sem ambiguidade não são três fórmulas novas: são **a mesma fórmula**, com três interpretações diferentes de `t`.
+> Quem decora as três separadamente erra a escolha do parâmetro sob pressão. Quem entende que são uma só, não erra.
+
+---
+
+## Resumo executivo
+
+O radar de pulso mede **distância** cronometrando o tempo de ida-e-volta de um pulso eletromagnético, e mede **marcação** porque o sistema é direcional. Tudo o mais — transmissor, receptor, controles, equação radar — existe para viabilizar essas duas medidas. Este módulo estabelece o vocabulário, a única equação de base, o sistema de unidades da disciplina (incluindo a idiossincrática "milha radar") e o esqueleto de cinco blocos que M03, M04 e M05 vão detalhar.
+
+**Peso direto na T2 2024:** baixo (≈ 0,3 pt, via o item "chave de antena" e o vocabulário da Q1).
+**Peso indireto:** total. Nenhum dos 10 pontos é acessível sem este módulo.
+
+---
+
+## Aula 1.1 — O que é RADAR
+
+`conceitos: C001 · C002`
+
+**RADAR** é acrônimo de **RA**dio **D**etection **A**nd **R**anging. Designa um sistema eletrônico que, utilizando ondas eletromagnéticas, **detecta a presença de objetos (alvos) e determina a sua posição**. ‹apostila_DET_2022.pdf p. 1-2› ‹SUE6.1 slide "INTRODUÇÃO"›
+
+Repare na estrutura da definição — ela tem **duas** obrigações, e a banca cobra a distinção:
+
+| Obrigação | Palavra no acrônimo | Grandeza entregue |
+|---|---|---|
+| Detectar a presença | **D**etection | existe / não existe alvo |
+| Determinar a posição | **R**anging | distância **e** marcação |
+
+> **[INFERÊNCIA PEDAGÓGICA]** "Ranging" traduz-se por *telemetria* — a medida de distância. Mas a definição da apostila diz "**posição**", não "distância". Posição = distância + marcação. A distância vem do tempo; a marcação vem da **direcionalidade**. São dois mecanismos físicos independentes, e a Aula 1.3 separa os dois.
+
+### Linha do tempo
+
+A apostila e o slide não são idênticos: o slide destaca 5 marcos; a apostila lista 12 e acrescenta 1922, 1936 e 1938. **As duas versões são compatíveis** — o slide é um recorte. Marcos que aparecem nas **duas** fontes (os de maior probabilidade de cobrança):
+
+| Ano | Marco | Fonte |
+|---|---|---|
+| **1871** | Marco inicial — trabalhos de **Maxwell** | apostila 1-2; SUE6.1 |
+| 1888 | Confirmação experimental de Maxwell; velocidade das ondas = velocidade da luz; existência de objetos refletores — **Hertz** | apostila 1-2 |
+| 1904 | Patente de dispositivo de prevenção de colisão por rádio-detecção — **Hulsmeyer** | apostila 1-2 |
+| **1917** | Disparo de pulsos concentrados de alta potência e interceptação após reflexão, com apresentação em tela fluorescente — **Nikola Tesla** | apostila 1-3; SUE6.1 |
+| 1922 | Primeiro trabalho registrado sobre rádio-detecção — **Marconi** | apostila 1-2 **apenas** |
+| **1931** | Interceptação de um avião a **50 milhas**, com sistema **CW de 60 Hz** | apostila 1-3; SUE6.1 |
+| 1936 | Inglaterra produz radar com alcance de 30 milhas | apostila 1-2 **apenas** |
+| **1937** | Radares **SCR 268** e **SCR 270** | apostila 1-3; SUE6.1 |
+| 1938 | **ASV** (Air to Surface Vessel) e **AI** (Aircraft Interception) — ingleses | apostila 1-3 **apenas** |
+| **1940** | **Magnetron** — válvula de pulsos de alta potência, Universidade de **Birmingham** | apostila 1-2; SUE6.1 |
+
+> 🎯 **Como o professor pode cobrar**
+> Item de V/F ou correlação ano↔evento. Os quatro pares mais prováveis, por estarem nas duas fontes: **1871–Maxwell**, **1917–Tesla**, **1937–SCR 268/270**, **1940–Magnetron/Birmingham**.
+> Cobrança indireta e mais provável: *"por que a Magnetron foi decisiva?"* → porque **possibilitou a construção de equipamentos de menor porte** ‹apostila p. 1-2›. Este fio reaparece em M03: a magnetron é oscilador **autoexcitado** e por isso **dispensa amplificador de potência** — exatamente o que a Q1 da T2 2024 cobrou no bloco (B).
+
+> ⚠️ **Pegadinha provável**
+> Trocar **1931** (interceptação a 50 milhas, CW 60 Hz) por 1917 (Tesla, pulsos). São experimentos de naturezas opostas: 1917 é **pulso**; 1931 é **CW**. A confusão é sedutora porque ambos envolvem "interceptar um alvo".
+
+---
+
+## Aula 1.2 — Princípio de funcionamento
+
+`conceitos: C003`
+
+O radar baseia-se na propriedade que têm as ondas eletromagnéticas de **se refletirem na superfície de um objeto**. ‹apostila p. 1-3›
+
+A cadeia física completa, na ordem em que a apostila a apresenta:
+
+1. O feixe de RF varre a região.
+2. O feixe atinge um objeto refletor.
+3. Surgem correntes induzidas no objeto.
+4. O objeto reirradia parte da energia como eco.
+5. O receptor de elevada sensibilidade recebe o eco e viabiliza a detecção.
+
+Duas afirmações da fonte que carregam consequência e costumam passar despercebidas:
+
+1. **"Quanto mais intensas as correntes induzidas no objeto, maior quantidade de energia na onda refletida."** ‹p. 1-3›
+   → Esta frase é a **semente da seção reta radar** (σ ou A_a), que só será formalizada em M06. O eco não depende só da distância: depende de **tamanho, geometria e material** do alvo ‹SUE6.11, slide SUMÁRIO›.
+
+2. **"A determinação da distância e da marcação do objeto resultam dos seguintes fatos: a velocidade de propagação da onda eletromagnética é constante e o sistema de recepção é direcional."** ‹p. 1-3›
+   → **Dois fatos, duas grandezas, em correspondência exata:**
+
+| Grandeza | Fato físico que a viabiliza | Onde vira fórmula |
+|---|---|---|
+| **Distância** | velocidade de propagação **constante** | M01, Aula 1.3 · M02 (PSD, R_mín, R_máx) |
+| **Marcação** | sistema de recepção **direcional** | M02 (poder separador em marcação) · M05 (antena) |
+
+> 🎯 **Como o professor pode cobrar**
+> Q4 da T2 2024 é exatamente esta tabela, aplicada às características. A largura de **pulso** e a **FRP** vivem do primeiro fato (tempo); a largura do **feixe** vive do segundo (direcionalidade). Quem tem essa correspondência clara acerta os 4 itens de Q4 (1,6 pt) sem pensar.
+
+> ⚠️ **Pegadinha provável**
+> Atribuir a medida de **marcação** ao tempo, ou a de **distância** à direcionalidade. A prova pode escrever "a largura do feixe afeta o poder de separação em distância" — **falso**: afeta em **marcação**.
+
+---
+
+## Aula 1.3 — O método de transmissão por pulsos e a equação fundamental
+
+`conceitos: C006`
+
+### Como o pulso é emitido
+
+O transmissor irradia durante um intervalo **muito curto** — por exemplo, **2 µs** — seguido de um intervalo **comparativamente longo** sem transmitir — por exemplo, **2.000 µs** — ao fim do qual o ciclo se repete. ‹apostila p. 1-4, fig. 1.1.1›
+
+```
+ ├─LP─┤                                                    ├─LP─┤
+ ┌────┐                                                    ┌────┐
+ │ TX │◄────────────── recepção dos ecos ──────────────────►│ TX │
+─┘    └────────────────────────────────────────────────────┘    └──
+ ├───────────────────────── TRP ────────────────────────────┤
+```
+`Diagrama didático reconstruído a partir das fontes` — apostila fig. 1.1.1 + SUE6.1 slide "LARGURA DE PULSO".
+
+> **[INFERÊNCIA PEDAGÓGICA]** A razão 2 µs : 2.000 µs (1:1000) não é decorativa. Ela antecipa o **ciclo de trabalho** de M02 (CT = LP/TRP = 10⁻³) e explica por que a potência **média** é mil vezes menor que a de **pico**. Guarde a ordem de grandeza: o radar passa ~99,9% do tempo **ouvindo**.
+
+### A equação fundamental
+
+O pulso percorre o caminho **de ida e volta** em um intervalo `t`. Como a velocidade é constante e o caminho é duplo:
+
+$$
+\boxed{\;d = \frac{c \cdot t}{2}\;}
+$$
+
+Com c = 3×10⁸ m/s e `t` em microssegundos, a apostila fixa a forma de trabalho: ‹p. 1-4›
+
+$$
+d(\text{m}) = \frac{3\times10^{8}\ \text{m/s}}{2}\times t(\mu s)\times 10^{-6} = \boxed{150\cdot t(\mu s)}
+$$
+
+| Símbolo | Significado | Unidade |
+|---|---|---|
+| `d` | distância **radar-alvo** (um só trecho) | m |
+| `c` | velocidade de propagação da onda EM | 3×10⁸ m/s **sempre**, por convenção da EN |
+| `t` | tempo **total** de ida-e-volta | s (ou µs, com o fator 150) |
+| `2` | o caminho é duplo | adimensional |
+
+**Interpretação física do fator 2:** o cronômetro mede o percurso completo; o alvo está na **metade** dele. Todo erro clássico neste tema é esquecer ou duplicar esse 2.
+
+**Constante operacional a memorizar:** a onda percorre **300 m por microssegundo** ‹apostila Tab. 1.1.1›. Logo **150 m/µs de distância radar**.
+
+### Exemplo resolvido 1.3-A  `C006`
+
+*O eco de um alvo retorna 412 µs após a transmissão. Qual a distância do alvo?*
+
+>
+> **1. Identificar o que é `t`.** 412 µs é o tempo **total** de ida-e-volta (o enunciado diz "retorna").
+> **2. Aplicar a forma de trabalho.** d = 150 × t(µs)
+> **3. Substituir.** d = 150 × 412 = **61.800 m = 61,8 km**
+> **4. Verificação independente pela via longa:** d = (3×10⁸ × 412×10⁻⁶)/2 = (3×10⁸ × 4,12×10⁻⁴)/2 = 1,236×10⁵/2 = 6,18×10⁴ m ✔
+
+### Exemplo resolvido 1.3-B — caminho inverso  `C006`
+
+*A que tempo de eco corresponde um alvo a 27 km?*
+
+>
+> t = 2d/c = (2 × 27.000)/(3×10⁸) = 1,8×10⁻⁴ s = **180 µs**
+> Verificação: 150 × 180 = 27.000 m ✔
+
+---
+
+## Aula 1.4 — A milha radar
+
+`conceitos: C007 · C006`
+
+Esta é uma unidade **própria da disciplina** e uma fonte clássica de erro, porque ela mede **tempo**, não distância.
+
+> **MILHA RADAR NÁUTICA** = o intervalo de tempo representativo de uma distância de **uma milha náutica**, igual a **12,36 µs**. ‹apostila p. 1-5›
+> **MILHA RADAR TERRESTRE** = o intervalo representativo de **uma milha terrestre**, igual a **10,75 µs**. ‹apostila p. 1-5›
+
+**De onde vem o 12,36:** para um alvo a 1 milha náutica (1.852 m), o pulso percorre **2 milhas** (3.704 m). A 3×10⁸ m/s, isso leva 3.704/(3×10⁸) = 1,2347×10⁻⁵ s ≈ **12,36 µs**.
+
+> ⚠️ **A armadilha central desta aula**
+> A milha radar náutica corresponde a **1 milha náutica de distância radar**, embora o pulso percorra **2** milhas. O "2" já está **dentro** da definição. Quem aplica d = c·t/2 sobre um valor já expresso em milhas radar **divide por 2 duas vezes**.
+>
+> **Regra prática:** milha radar → multiplique. Microssegundo cru → divida por 2 (ou use 150·t).
+
+> 🔴 **`[POSSÍVEL ERRO NA FONTE]` — divergência D-02**
+> A p. 1-5 define 1 milha radar náutica = 12,36 µs. O **problema 3** da p. 1-8 pede: *"Mostre que **2 mi radar náutica** corresponde a 12,36 µs"*. Sob a definição da própria apostila, 2 milhas radar = 24,72 µs.
+> Leitura provável: o enunciado refere-se às **2 milhas de percurso** (ida-e-volta), não a 2 milhas radar. **Na prova, use sempre a definição da p. 1-5.** Não reproduza a redação do problema 3.
+
+### Tabela de conversão consolidada ‹apostila Tab. 1.1.1›
+
+| Grandeza | Milha náutica | Milha terrestre | Metro |
+|---|---|---|---|
+| Comprimento | 1.852 m | 1.609 m | 1 m |
+| Distância percorrida por µs | 0,162 mn | 0,186 mi | **300 m** |
+| µs por unidade de distância (percurso) | 6,18 µs | 5,375 µs | — |
+| **Milha radar (ida-e-volta)** | **12,36 µs** | **10,75 µs** | — |
+
+Nota da fonte: *"É prática comum considerar 1 mi náutica = 2000 jds"* ‹Tab. 1.1.1›.
+
+### Exemplo resolvido 1.4-A  `C007` `C006`
+
+*Um eco retorna 218 µs após a transmissão. A que distância está o alvo, em metros?*
+
+>
+> **Via milha radar** (a que a apostila usa na fig. 1.2.4):
+> 12,36 µs ─── 1.852 m
+> 218 µs ─── x → x = (218/12,36) × 1.852 = 17,637 × 1.852 = **32.664 m ≈ 33.000 m** ✔ (confere com a apostila p. 1-14)
+>
+> **Via fórmula direta:** d = 150 × 218 = **32.700 m**
+>
+> **Δ = 36 m (0,11%).** `[CONFLITO ENTRE FONTES — arredondamento, D-04]` A diferença vem do arredondamento de 12,3467 → 12,36. **Escolha uma rota e não misture.** A banca, na T2 2024, usou **sempre a via direta com c = 3×10⁸**.
+
+> 🎯 **Como o professor pode cobrar**
+> (a) Pedir a distância em **milhas náuticas** quando os dados estão em µs — força a conversão.
+> (b) Dar a distância em **jardas** e exigir o tempo — força a nota das 2000 jd.
+> (c) Pedir a demonstração do 12,36 µs (é literalmente o problema 3 da apostila).
+
+---
+
+## Aula 1.5 — Usos, métodos e frequências
+
+`conceitos: C004 · C005 · C008 · C009 · C018`
+
+### Classificação quanto ao uso ‹apostila p. 1-3/1-4; SUE6.1›
+
+| Instalação | Empregos apresentados nas fontes |
+|---|---|
+| **Baseados em terra** | detecção, localização e acompanhamento de alvos aéreos e espaciais; controle de tráfego aéreo |
+| **Embarcados em navios e aeronaves** | auxílio à navegação; busca de superfície; busca aérea; direção de tiro; altímetro |
+
+Os **três** empregos citados nominalmente a bordo de navios de guerra, com o nome em inglês na fonte — a redação mais provável de aparecer literalmente numa alternativa:
+**busca de superfície** (*Surface Search Radar*), **busca aérea** (*Air Search Radar*), **direção de tiro** (*Fire Control Radar*). ‹p. 1-4›
+
+O emprego do radar "fica determinado por suas características, entre as quais: **peso, tamanho, alcance, poder separador em marcação e em distância, frequência radar, frequência de repetição de pulsos, largura de pulso**" ‹p. 1-3›. → **Esta lista é o sumário antecipado de M02.**
+
+### Classificação quanto ao método de transmissão ‹apostila p. 1-4; SUE6.1›
+
+| Grupo | Subtipos | Observação da fonte |
+|---|---|---|
+| **Radar CW** | CW-Doppler, CW-FM | — |
+| **Radar de Pulso** | Navegação, Busca, Direção de Tiro, **MTI** | "os de emprego mais generalizado na Marinha de Guerra" |
+
+> ⚠️ **Pegadinha provável — de altíssima probabilidade**
+> **O MTI pertence ao grupo do radar de PULSO**, embora utilize o efeito Doppler. ‹apostila p. 1-4, literal: "bem como o radar MTI que utiliza o efeito Doppler"› ‹SUE6.1, slide de classificação, coloca MTI sob "Radar de pulso"›
+> A pegadinha é oferecer "MTI" como exemplo de radar CW porque "usa Doppler". **As duas fontes independentes concordam: MTI é pulso.**
+
+### Frequências radar ‹apostila p. 1-5/1-6, Tab. 1.1.2; SUE6.1›
+
+| Banda | Faixa normal | Bandas radar (apostila) |
+|---|---|---|
+| VHF | 30 – 300 MHz | 138–144 e 216–225 MHz |
+| UHF | 300 – 1000 MHz | 420–450 e 890–942 MHz |
+| L | 1000 – 2000 MHz | 1215–1400 MHz |
+| S | 2000 – 4000 MHz | 2300–2500 e 2700–3700 MHz |
+| C | 4000 – 8000 MHz | 5250–5925 MHz |
+| X | 8000 – 12000 MHz | 8500–10680 MHz |
+| Ku | 12 – 18 GHz | 13,4–14 e 15,7–17,7 GHz |
+| K | 18 – 27 GHz | 24,5–24,25 MHz *(sic — ver nota)* |
+| Ka | 27 – 40 GHz | 33,4–36 GHz |
+| mm | 40 – 300 GHz | — |
+
+> `[POSSÍVEL ERRO NA FONTE]` A linha da banda K traz "24,5 – 24,25 GHz", com limite inferior **maior** que o superior. Trata-se de erro de digitação da apostila. **A faixa normal (18–27 GHz) é o que importa e está correta.** Não perca tempo com a sub-banda.
+
+A fonte adverte: existem radares **fora** desses limites — HF (4 ou 5 MHz) e ondas milimétricas (94 GHz). ‹p. 1-5›
+
+#### Por que a faixa é limitada — a tabela que a banca adora
+
+| Limite | Razões (apostila p. 1-6) |
+|---|---|
+| **Inferior** (por que não descer mais) | 1. dificuldade de obter **antenas diretivas** em frequências baixas<br/>2. **pouca reflexão** em alvos de dimensões muito menores que λ<br/>3. **baixa precisão** na determinação da distância |
+| **Superior** (por que não subir mais) | 1. dificuldade técnica de **gerar e receber** (válvulas produzem menos potência; **ruído do receptor cresce** com a frequência)<br/>2. **maior absorção atmosférica** (chuva, fog, neve) → **redução do alcance** |
+
+> **[INFERÊNCIA PEDAGÓGICA]** Estas seis razões condensam-se no par que o SUE6.1 enuncia como regra de bolso e que reaparece em M02:
+> **Frequência maior → alcance menor. Frequência maior → melhor diretividade.**
+> Os dois efeitos são **opostos**, e é por isso que a escolha da portadora é um compromisso, nunca uma otimização.
+
+> 🎯 **Como o professor pode cobrar**
+> Q4-estilo: *"de que forma a frequência de operação afeta o desempenho do radar?"* → **diretividade e alcance** (as duas, em sentidos opostos). Repare que o exercício do próprio `SUE6.1` (slide 87 do .odp) tem a alternativa "Diretividade e alcance" reservada exclusivamente à **frequência**.
+
+---
+
+## Aula 1.6 — Organização básica de um radar de pulso
+
+`conceitos: C010`
+
+> A fonte é explícita: *"o RADAR de pulso é organizado da seguinte forma (**isto não é um diagrama de blocos**)"* ‹SUE6.1›. A apostila chama-o de *"diagrama de blocos extremamente simplificado"* ‹p. 1-7›. **O diagrama de blocos real é assunto de M05.**
+
+**Caminho de sincronismo:** sincronizador → transmissor e indicador.
+
+**Caminho de transmissão:** transmissor → pulso de RF de alta potência → antena.
+
+**Caminho do eco:** antena → receptor → vídeo → indicador.
+
+*Organização didática reconstruída a partir das fontes — apostila, fig. 1.1.3.*
+
+| Bloco | Função **literal** da fonte ‹apostila p. 1-7› |
+|---|---|
+| **Sincronizador** | "gera pulsos de sincronismo para o **Indicador** e para o **Transmissor**, de modo a sincronizar os circuitos de medição de tempo com o pulso de RF transmitido" |
+| **Transmissor** | "gera os pulsos de alta frequência e elevada potência que são irradiados pela antena" |
+| **Antena** | irradia e capta (elemento comum aos dois caminhos) |
+| **Receptor** | "os ecos eletromagnéticos detectados são amplificados pelo receptor" |
+| **Indicador** | "reproduzidos em forma de vídeo no Indicador, que fornece as informações radar (display)" |
+
+> ⚠️ **Pegadinha provável — a mais importante de M01**
+> O sincronizador manda pulso para **DOIS** destinos: transmissor **e** indicador. Não é um detalhe decorativo: é **a razão de o radar conseguir medir tempo**. O indicador precisa saber o instante **zero** para que a posição do eco na tela signifique distância.
+> Uma afirmativa do tipo *"o sincronizador dispara apenas o transmissor"* é **falsa**, e é exatamente o tipo de item que compõe a Q1.
+
+> 🎯 **Como o professor pode cobrar**
+> Na T2 2024, o bloco (C) Sincronizador foi associado a *"Determina a FRP do radar"*. Esse é o elo M01→M03: **quem gera o sincronismo, define a cadência** — e a cadência é a FRP. Guarde a tripla que a prova cobrou:
+> **sincronizador → FRP · modulador → largura de pulso · oscilador → frequência da portadora.**
+
+### Por que estudar as características (ponte para M02)
+
+O `SUE6.1` justifica o módulo seguinte com uma analogia explícita ao televisor analógico: antena mal posicionada → chuviscos; brilho/contraste fora do ponto → imagem ruim; imagem rolando → ajuste do vertical. A moral declarada: *"entender como um equipamento funciona é essencial para melhor operá-lo"*, e isso vale para *"qualquer sistema: radar, sonar, MAGE etc."*
+
+As **cinco características principais** que M02 vai quantificar ‹SUE6.1›:
+
+1. Potência de pico de transmissão
+2. Frequência de operação (portadora)
+3. Largura de pulso
+4. Frequência de repetição de pulsos
+5. Largura do feixe da antena
+
+
+### Exemplo resolvido 1.5-A — leitura de banda  `C008` `C009` `C018`
+
+*Um radar de navegação opera em 9,4 GHz. Em que banda ele está, qual o seu λ, e o que a escolha dessa frequência custa em alcance?*
+
+1. **Banda:** 8.000–12.000 MHz → **banda X** ‹Tab. 1.1.2›.
+2. **λ = c/f** = 3×10⁸ / 9,4×10⁹ = **0,0319 m ≈ 3,19 cm**.
+3. **Custo:** frequência alta → maior absorção atmosférica (chuva, fog, neve) e maior ruído do receptor → **alcance menor**. O ganho é a **diretividade**: feixe mais estreito, melhor separação em marcação. ‹apostila p. 1-6; SUE6.1›
+
+### Exemplo resolvido 1.5-B — classificação  `C004` `C005` `C002`
+
+*Um radar embarcado de direção de tiro que emprega efeito Doppler para suprimir ecos fixos. Classifique-o quanto ao uso e quanto ao método.*
+
+- **Quanto ao uso:** *Fire Control Radar* (direção de tiro), radar embarcado ‹apostila p. 1-4›.
+- **Quanto ao método:** **radar de PULSO**. O emprego do efeito Doppler caracteriza o **MTI**, que a apostila lista **dentro** do grupo do radar de pulso ‹p. 1-4›. Responder "CW" é o erro E-04.
+- **Nota histórica ‹C002›:** a viabilidade de radares embarcados compactos como este decorre da **Magnetron** (1940, Birmingham), que "veio possibilitar a construção de equipamentos de menor porte" ‹apostila p. 1-2›.
+
+### Exemplo resolvido 1.6-A — leitura do fluxo  `C010` `C003` `C001`
+
+*Percorra o caminho completo de uma detecção, nomeando o bloco responsável em cada etapa.*
+
+1. O **sincronizador** ‹C010› define o instante zero e o comunica **ao transmissor e ao indicador**.
+2. O **transmissor** gera o pulso de alta frequência e elevada potência.
+3. A **antena** irradia. A onda se propaga a velocidade constante.
+4. A onda encontra o alvo e **reflete** ‹C003› — quanto mais intensas as correntes induzidas, mais energia no eco.
+5. A **antena** capta o eco; o **receptor** o amplifica.
+6. O **indicador** apresenta o vídeo. Como conhece o instante zero, a posição do eco na tela **significa distância**; como conhece a direção da antena, **significa marcação** — as duas metades de "determinar a posição" ‹C001›.
+
+---
+
+## Erros comuns em M01
+
+| # | Erro | Por que acontece | Correção |
+|---|---|---|---|
+| E-01 | Esquecer o **/2** em d = c·t/2 | O enunciado fala de "tempo do eco" e a mente calcula percurso | O alvo está na **metade** do percurso. Sempre |
+| E-02 | Dividir por 2 **de novo** ao usar milha radar | O 2 já está embutido na definição de 12,36 µs | Milha radar → multiplique direto |
+| E-03 | Usar 150·t com t em segundos | O 150 já traz o 10⁻⁶ | Com t em µs: 150·t. Com t em s: c·t/2 |
+| E-04 | Classificar **MTI como radar CW** | Ele usa Doppler | MTI é **pulso**, em ambas as fontes |
+| E-05 | Atribuir marcação ao tempo | Tudo no radar "parece" tempo | Marcação vem da **direcionalidade** |
+| E-06 | Dizer que o sincronizador só alimenta o transmissor | O nome sugere "disparar a transmissão" | Alimenta **transmissor e indicador** |
+| E-07 | Confundir 1917 (Tesla, pulso) com 1931 (CW 60 Hz) | Ambos "interceptam alvo" | 1917 = pulso · 1931 = CW |
+| E-08 | Tratar a organização básica como o diagrama de blocos | Parecem a mesma figura | As fontes negam explicitamente. Diagrama real = M05 |
+| E-09 | Usar c = 2,998×10⁸ | Rigor físico mal aplicado | A EN usa **3×10⁸** em toda rubrica |
+
+---
+
+## Checklist de domínio — M01
+
+Marque apenas o que consegue fazer **sem consultar**:
+
+- [ ] Enuncio a definição de RADAR com as **duas** obrigações (detectar / determinar posição)
+- [ ] Cito os **dois fatos físicos** e digo qual entrega distância e qual entrega marcação
+- [ ] Escrevo d = c·t/2 e a forma de trabalho d = 150·t(µs)
+- [ ] Converto 412 µs → metros e 27 km → µs, nos dois sentidos
+- [ ] Sei que 1 milha radar náutica = **12,36 µs** e que o fator 2 já está dentro
+- [ ] Sei que 1 milha radar terrestre = **10,75 µs**
+- [ ] Sei que a onda percorre **300 m/µs** (⇒ 150 m/µs de distância radar)
+- [ ] Classifico radares quanto ao uso e digo os 3 empregos a bordo de navios de guerra
+- [ ] Sei que **MTI é radar de pulso**
+- [ ] Recito a tabela de bandas VHF→mm com as faixas
+- [ ] Justifico os limites **inferior** (3 razões) e **superior** (2 razões) da frequência radar
+- [ ] Desenho a organização básica e digo a função dos 5 elementos
+- [ ] Sei que o sincronizador alimenta **transmissor e indicador**
+- [ ] Enumero as 5 características principais que M02 vai quantificar
+
+**Critério de aprovação do módulo: 13 de 14.** Abaixo disso, releia as aulas correspondentes antes de ir para M02.
+
+---
+
+## Revisão ativa (5 minutos, sem consulta)
+
+1. Complete: RADAR = **RA**___ **D**___ **A**___ **R**___.
+2. Quais são os **dois fatos** que permitem determinar a posição de um alvo?
+3. Um eco retorna em 300 µs. Distância em metros? E em milhas náuticas?
+4. Por que não se usam frequências radar muito baixas? (3 razões)
+5. O MTI é radar CW ou de pulso?
+6. Para quem o sincronizador envia pulsos, e por quê?
+7. Quanto vale, em µs, a milha radar terrestre?
+8. Por que a Magnetron (1940) foi decisiva?
+
+*Respostas: 1) Radio Detection And Ranging · 2) velocidade de propagação constante (distância) e sistema de recepção direcional (marcação) · 3) 45.000 m = 45 km; 300/12,36 = 24,3 mn · 4) antenas pouco diretivas, pouca reflexão em alvos menores que λ, baixa precisão na distância · 5) **pulso** · 6) transmissor e indicador, para sincronizar a medição de tempo com o pulso de RF · 7) 10,75 µs · 8) permitiu equipamentos de menor porte.*
+
+---
+
+## Ligação explícita com M02
+
+M01 entregou **o que o radar mede** e **com que equação**. M02 responde **com que qualidade**.
+
+| Conceito entregue por M01 | Vira, em M02 |
+|---|---|
+| d = c·t/2 | **PSD** = c·LP/2 · **R_mín** = c·LP/2 · **R_máx** = c·TRP/2 |
+| "sistema direcional" | **poder separador em marcação**: x = 2πRθ/360 |
+| "intervalo longo sem transmitir" | **TRP**, **FRP** e **ciclo de trabalho** |
+| "pulso de 2 µs em 2.000 µs" | **potência de pico × potência média** |
+| As 5 características **nomeadas** | As 5 características **quantificadas** |
+
+> **M02 é o módulo de maior peso da prova** (Q2 + Q4 = 4,4 dos 10 pontos). Não avance sem o checklist de M01 em 13/14.
+
+---
+
+## Referências deste módulo
+
+| Fonte | Localização exata | Conteúdo usado | Confiança |
+|---|---|---|---|
+| `apostila_DET_2022.pdf` | Cap. I, Seção 1, **p. 1-1 a 1-8** | Definição, histórico, princípio, usos, métodos, pulsos, milha radar, frequências, organização básica | **Alta** — lido integralmente |
+| `apostila_DET_2022.pdf` | Cap. I, Seção 2, **p. 1-10, 1-14** | Fig. 1.2.4 (verificação do exemplo 1.4-A); lista de características | **Alta** — lido integralmente |
+| `apostila_DET_2022.pdf` | **Tab. 1.1.1** (p. 1-5) e **Tab. 1.1.2** (p. 1-6) | Conversões e bandas | **Alta** |
+| `SUE6.1-...intro&caracteristicas.odp` | slides **1 a 32** | Acrônimo, linha do tempo, classificações, espectro, princípio, organização básica, analogia do televisor, 5 características | **Alta** — lido integralmente |
+| `SUE6.1-...intro&caracteristicas.pdf` | deck exportado | Mesmo conteúdo; **truncado** a partir do slide ~82 (ver D-01) | Alta, com ressalva |
+| `SUE6.11-...equação_radar.pdf` | slide SUMÁRIO | Seção reta radar depende de tamanho, geometria e material (citado como antecipação de M06) | Alta |
+| `T2/SOPA DET T2 2024.pdf` | Q1, Q4 | Verificação do que a banca cobra do vocabulário de M01 | **Alta** — com rubrica oficial |
+
+**Nenhuma informação externa foi usada neste módulo.** Zero marcações `[APROFUNDAMENTO ANALÍTICO DE SUPORTE]` e zero `RATIFICAÇÃO EXTERNA`: todo o conteúdo vem das fontes da Escola Naval.

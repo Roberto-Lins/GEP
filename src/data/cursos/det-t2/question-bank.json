@@ -1,0 +1,2506 @@
+{
+ "materia": "DET",
+ "avaliacao": "T2",
+ "gerado_em": "2026-09-12",
+ "nota_sobre_ids": "Campo 'id' segue o padrao canonico do schema da skill (validado por validar_banco.py). Campo 'id_publico' segue o padrao pedido pelo usuario ([ID: DET-T2-M03-CAL-N4-007]) e e o que aparece nos .md e no site. Os tipos CAL e DIA pedidos pelo usuario nao existem no enum do schema (OBJ/VF/COR/DIS); foram mapeados para DIS, preservando o rotulo original em id_publico. Niveis N3/N4 do usuario mapeados para MED/BAS e MB/DIF.",
+ "questoes": [
+  {
+   "id": "DET-M01-COR-MED-001",
+   "id_publico": "DET-T2-M01-COR-N3-001",
+   "tipo": "COR",
+   "dificuldade": "MED",
+   "nivel_usuario": "N3",
+   "modulo": "M01",
+   "conceitos": [
+    "C003",
+    "C006"
+   ],
+   "vulnerabilidades": [
+    "V014"
+   ],
+   "competencia": "comparar",
+   "enunciado": "Associe cada fato fisico ou caracteristica do sistema (I-V) a consequencia operativa que ele viabiliza. Uma entrada pode repetir; nenhuma linha fica em branco.",
+   "gabarito": "I; II; III; IV; V; III",
+   "justificativa": "A apostila enuncia DOIS fatos independentes: velocidade de propagacao constante (entrega distancia) e sistema de recepcao direcional (entrega marcacao). A reflexao (III) aparece duas vezes: e a condicao de existencia do eco e o que torna possivel a deteccao de presenca - fenomeno e resultado operativo sao distintos na redacao da fonte.",
+   "origem": "apostila_DET_2022.pdf p.1-3",
+   "tempo_estimado_s": 240,
+   "essencial_ate_domingo": true,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "integracao": [],
+   "justificativa_distratores": "O distrator forte e marcar (I) para marcacao: no radar tudo parece ser tempo, e a antena de fato varre ao longo do tempo. Mas o que informa a marcacao e a direcao para onde a antena aponta, nao o relogio.",
+   "correlacao": {
+    "coluna_a": [
+     "I velocidade de propagacao constante",
+     "II recepcao direcional",
+     "III reflexao na superficie",
+     "IV intensidade das correntes induzidas",
+     "V intervalo longo sem transmitir"
+    ],
+    "coluna_b": [
+     "distancia",
+     "marcacao",
+     "existencia do eco",
+     "energia na onda refletida",
+     "receptor escuta antes do proximo pulso",
+     "deteccao da presenca"
+    ],
+    "pares": {
+     "distancia": "I",
+     "marcacao": "II",
+     "existencia do eco": "III",
+     "energia na onda refletida": "IV",
+     "receptor escuta antes do proximo pulso": "V",
+     "deteccao da presenca": "III"
+    }
+   }
+  },
+  {
+   "id": "DET-M01-VF-MED-002",
+   "id_publico": "DET-T2-M01-VF-N3-002",
+   "tipo": "VF",
+   "dificuldade": "MED",
+   "nivel_usuario": "N3",
+   "modulo": "M01",
+   "conceitos": [
+    "C005",
+    "C007",
+    "C010",
+    "C003",
+    "C006",
+    "C002",
+    "C004"
+   ],
+   "vulnerabilidades": [
+    "V015",
+    "V016",
+    "V017"
+   ],
+   "competencia": "explicar",
+   "enunciado": "Julgue os itens; para cada FALSO, reescreva-o tornando-o verdadeiro.",
+   "gabarito": "a) F  b) V  c) F  d) F  e) V  f) V  g) V",
+   "justificativa": "a) O MTI e radar DE PULSO, embora use efeito Doppler (apostila p.1-4, literal). c) O sincronizador alimenta transmissor E indicador (p.1-7). d) A largura do feixe determina o poder separador em MARCACAO; a distancia vem do tempo de ida-e-volta. b) e e) reproduzem literalmente a fonte.",
+   "origem": "apostila_DET_2022.pdf p.1-4, p.1-5, p.1-7; p.1-2; p.1-4",
+   "tempo_estimado_s": 300,
+   "essencial_ate_domingo": true,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "integracao": [],
+   "justificativa_distratores": "Em (a) a associacao automatica Doppler=>CW e o gancho. Em (c) o nome 'sincronizador' sugere apenas disparar a transmissao. Em (d) a palavra 'alcance' embutida na ideia de feixe puxa para distancia.",
+   "itens_vf": [
+    {
+     "texto": "O radar MTI pertence ao grupo dos radares CW, pois utiliza o efeito Doppler.",
+     "valor": "F",
+     "justificativa": "MTI e radar de pulso; a apostila o lista explicitamente no grupo do radar de pulso."
+    },
+    {
+     "texto": "A milha radar nautica vale 12,36 us e corresponde a uma distancia radar de 1 milha nautica.",
+     "valor": "V",
+     "justificativa": "Definicao literal da p.1-5; o fator 2 do percurso ja esta embutido."
+    },
+    {
+     "texto": "O sincronizador envia pulsos de sincronismo exclusivamente ao transmissor.",
+     "valor": "F",
+     "justificativa": "Envia ao transmissor E ao indicador, para sincronizar a medicao de tempo com o pulso de RF."
+    },
+    {
+     "texto": "A largura do feixe da antena e o que permite ao radar determinar a distancia do alvo.",
+     "valor": "F",
+     "justificativa": "Determina o poder separador em marcacao; a distancia vem do tempo."
+    },
+    {
+     "texto": "A onda eletromagnetica percorre aproximadamente 300 m a cada microssegundo.",
+     "valor": "V",
+     "justificativa": "Tab. 1.1.1, p.1-5. Implica 150 m/us de distancia radar."
+    },
+    {
+     "texto": "A Magnetron, desenvolvida em 1940 na Universidade de Birmingham, e uma valvula de pulsos de alta potencia cujo merito foi possibilitar a construcao de equipamentos de menor porte.",
+     "valor": "V",
+     "justificativa": "apostila p.1-2, literal."
+    },
+    {
+     "texto": "A bordo de navios de guerra, os radares de busca de superficie, busca aerea e direcao de tiro sao designados, respectivamente, Surface Search Radar, Air Search Radar e Fire Control Radar.",
+     "valor": "V",
+     "justificativa": "apostila p.1-4, nomes em ingles literais na fonte."
+    }
+   ]
+  },
+  {
+   "id": "DET-M01-DIS-MED-003",
+   "id_publico": "DET-T2-M01-CAL-N3-003",
+   "tipo": "DIS",
+   "dificuldade": "MED",
+   "nivel_usuario": "N3",
+   "modulo": "M01",
+   "conceitos": [
+    "C006",
+    "C007"
+   ],
+   "vulnerabilidades": [
+    "V014",
+    "V015"
+   ],
+   "competencia": "calcular",
+   "enunciado": "Eco retorna 247,2 us apos a transmissao. (a) distancia em metros; (b) em milhas nauticas via milha radar; (c) em milhas nauticas convertendo (a); (d) os resultados coincidem? Justifique.",
+   "gabarito": "a) 37.080 m = 37,08 km | b) 20,00 mn | c) 20,02 mn | d) Nao; divergencia de 0,02 mn (~40 m, 0,11%) por arredondamento de 12,3467 para 12,36 us na fonte",
+   "justificativa": "a) d = 150 x 247,2 = 37.080 m. Verificacao: (3e8 x 247,2e-6)/2 = 37.080 m. b) 247,2/12,36 = 20,00 mn. c) 37.080/1.852 = 20,02 mn. d) A milha radar exata seria 2x1852/3e8 = 12,3467 us; a apostila arredonda para 12,36, e um divisor maior produz quociente menor.",
+   "origem": "apostila_DET_2022.pdf p.1-4 e Tab.1.1.1 p.1-5",
+   "tempo_estimado_s": 240,
+   "essencial_ate_domingo": true,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "integracao": [],
+   "justificativa_distratores": "O erro dominante e responder 74.160 m, esquecendo o /2: o enunciado diz que o eco 'retorna', e a leitura apressada converte o percurso inteiro em distancia.",
+   "espelho_correcao": [
+    {
+     "etapa": "Aplica d = c.t/2 ou 150.t",
+     "pontos": 0.4,
+     "criterio": "formula explicita"
+    },
+    {
+     "etapa": "Resultado em metros correto",
+     "pontos": 0.4,
+     "criterio": "37.080 m"
+    },
+    {
+     "etapa": "Conversao via milha radar",
+     "pontos": 0.4,
+     "criterio": "20,00 mn"
+    },
+    {
+     "etapa": "Conversao via metros",
+     "pontos": 0.4,
+     "criterio": "20,02 mn"
+    },
+    {
+     "etapa": "Identifica o arredondamento como causa",
+     "pontos": 0.4,
+     "criterio": "cita 12,3467 vs 12,36"
+    }
+   ]
+  },
+  {
+   "id": "DET-M01-DIS-DIF-004",
+   "id_publico": "DET-T2-M01-DIA-N4-004",
+   "tipo": "DIS",
+   "dificuldade": "DIF",
+   "nivel_usuario": "N4",
+   "modulo": "M01",
+   "conceitos": [
+    "C010",
+    "C001",
+    "C003"
+   ],
+   "vulnerabilidades": [
+    "V017"
+   ],
+   "competencia": "analisar",
+   "enunciado": "Rompe-se a linha de sincronismo sincronizador->INDICADOR; a linha para o transmissor permanece integra. (a) O radar continua transmitindo? (b) O receptor continua produzindo video? (c) Qual das duas obrigacoes da definicao de RADAR fica comprometida, e por que fisicamente?",
+   "gabarito": "a) Sim | b) Sim | c) A determinacao da POSICAO - especificamente a distancia (Ranging); a deteccao da presenca (Detection) sobrevive",
+   "justificativa": "O transmissor segue disparado normalmente e o receptor nao depende do sincronizador para amplificar ecos. O que se perde e a referencia temporal de origem no indicador: a posicao do eco na tela so significa distancia porque a varredura comeca no mesmo instante em que o pulso de RF parte. A marcacao permanece integra, pois depende da posicao da antena.",
+   "origem": "apostila_DET_2022.pdf p.1-2 (definicao) e p.1-7 (funcoes) [INFERENCIA PEDAGOGICA: cenario de falha construido a partir das funcoes declaradas]",
+   "tempo_estimado_s": 300,
+   "essencial_ate_domingo": true,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "integracao": [],
+   "justificativa_distratores": "O caminho errado plausivel e concluir que 'o radar para de funcionar', porque o nome sincronizador sugere maestro de todo o sistema. A distincao fina: ele sincroniza a MEDICAO DE TEMPO, nao a geracao de energia.",
+   "espelho_correcao": [
+    {
+     "etapa": "Transmissao continua, com justificativa",
+     "pontos": 0.4,
+     "criterio": "cita linha integra ao TX"
+    },
+    {
+     "etapa": "Video continua, com justificativa",
+     "pontos": 0.4,
+     "criterio": "receptor independe do sincronizador"
+    },
+    {
+     "etapa": "Identifica Ranging como comprometido e Detection preservado",
+     "pontos": 0.4,
+     "criterio": "usa as duas obrigacoes"
+    },
+    {
+     "etapa": "Explica a perda do instante zero",
+     "pontos": 0.4,
+     "criterio": "varredura x pulso de RF"
+    }
+   ],
+   "nota_reclassificacao": "Promovida de N3 para N4 apos alerta do validador: competencia 'analisar' sobre cenario de falha ausente da fonte."
+  },
+  {
+   "id": "DET-M01-COR-BAS-005",
+   "id_publico": "DET-T2-M01-COR-N3-005",
+   "tipo": "COR",
+   "dificuldade": "BAS",
+   "nivel_usuario": "N3",
+   "modulo": "M01",
+   "conceitos": [
+    "C010"
+   ],
+   "vulnerabilidades": [
+    "V017"
+   ],
+   "competencia": "reconhecer",
+   "enunciado": "Associe cada bloco da organizacao basica (A-E) a sua funcao, conforme a apostila.",
+   "gabarito": "B; D; A; E; C",
+   "justificativa": "Redacao literal da p.1-7: transmissor gera pulsos de alta frequencia e elevada potencia; receptor amplifica os ecos; sincronizador sincroniza os circuitos de medicao de tempo com o pulso de RF transmitido; indicador reproduz em video e fornece as informacoes radar; antena irradia e capta.",
+   "origem": "apostila_DET_2022.pdf p.1-7",
+   "tempo_estimado_s": 180,
+   "essencial_ate_domingo": false,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "integracao": [],
+   "justificativa_distratores": "O distrator natural e trocar (B) e (A) na terceira linha: a expressao 'pulso de RF transmitido' aparece na frase do sincronizador e a palavra 'transmitido' puxa para o transmissor. O verbo da oracao, porem, e sincronizar.",
+   "correlacao": {
+    "coluna_a": [
+     "A Sincronizador",
+     "B Transmissor",
+     "C Antena",
+     "D Receptor",
+     "E Indicador"
+    ],
+    "coluna_b": [
+     "gera pulsos de alta frequencia e elevada potencia",
+     "amplifica os ecos detectados",
+     "sincroniza os circuitos de medicao de tempo",
+     "reproduz em video as informacoes radar",
+     "irradia e capta"
+    ],
+    "pares": {
+     "gera pulsos de alta frequencia e elevada potencia": "B",
+     "amplifica os ecos detectados": "D",
+     "sincroniza os circuitos de medicao de tempo": "A",
+     "reproduz em video as informacoes radar": "E",
+     "irradia e capta": "C"
+    }
+   }
+  },
+  {
+   "id": "DET-M01-DIS-DIF-006",
+   "id_publico": "DET-T2-M01-CAL-N4-006",
+   "tipo": "DIS",
+   "dificuldade": "DIF",
+   "nivel_usuario": "N4",
+   "modulo": "M01",
+   "conceitos": [
+    "C006",
+    "C007"
+   ],
+   "vulnerabilidades": [
+    "V015",
+    "V014"
+   ],
+   "competencia": "aplicar",
+   "enunciado": "Alvo a 15 milhas TERRESTRES. (a) tempo de eco via milha radar terrestre; (b) distancia em metros a partir de (a); (c) distancia em metros convertendo as 15 milhas pela tabela; (d) quantifique a divergencia e identifique a causa exata; (e) que valor entregar se o professor nao especificar a rota, e por que.",
+   "gabarito": "a) 161,25 us | b) 24.187,5 m | c) 24.135 m | d) 52,5 m = 0,22%, por arredondamento: 10,75 us implica milha terrestre de 1.612,5 m contra 1.609 m da tabela (3,5 m/milha x 15) | e) 24.187,5 m, a rota que parte do tempo com c = 3e8",
+   "justificativa": "a) 15 x 10,75 = 161,25 us. b) 150 x 161,25 = 24.187,5 m. c) 15 x 1.609 = 24.135 m. d) Diferenca de 52,5 m; 10,75 x 150 = 1.612,5 m contra 1.609 m tabelados, ou seja 3,5 m por milha, e 15 x 3,5 = 52,5 m - fecha exatamente. e) Na rubrica oficial da SOPA DET T2 2024 todos os itens de distancia partem de c = 3e8 e do tempo; a banca nao usa a tabela de milhas como rota de calculo.",
+   "origem": "apostila_DET_2022.pdf p.1-5 e Tab.1.1.1; T2/SOPA DET T2 2024.pdf Q2 (rubrica oficial)",
+   "tempo_estimado_s": 360,
+   "essencial_ate_domingo": true,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "integracao": [],
+   "justificativa_distratores": "O erro dominante e usar 12,36 us (nautica) em vez de 10,75 us (terrestre), produzindo t = 185,4 us e d = 27.810 m. 12,36 e o valor mais memorizado da disciplina e 'milha' sem adjetivo, em contexto naval, e lida automaticamente como nautica. O enunciado diz TERRESTRES.",
+   "espelho_correcao": [
+    {
+     "etapa": "Usa 10,75 us (terrestre)",
+     "pontos": 0.4,
+     "criterio": "nao confunde com 12,36"
+    },
+    {
+     "etapa": "t = 161,25 us",
+     "pontos": 0.4,
+     "criterio": "valor exato"
+    },
+    {
+     "etapa": "d = 24.187,5 m pela via do tempo",
+     "pontos": 0.4,
+     "criterio": "valor exato"
+    },
+    {
+     "etapa": "d = 24.135 m pela tabela",
+     "pontos": 0.4,
+     "criterio": "valor exato"
+    },
+    {
+     "etapa": "Quantifica 52,5 m / 0,22%",
+     "pontos": 0.4,
+     "criterio": "ambos"
+    },
+    {
+     "etapa": "Identifica 1.612,5 vs 1.609 m como causa",
+     "pontos": 0.4,
+     "criterio": "causa exata, nao generica"
+    },
+    {
+     "etapa": "Escolhe a rota da banca com justificativa",
+     "pontos": 0.4,
+     "criterio": "cita a rubrica"
+    }
+   ]
+  },
+  {
+   "id": "DET-M01-VF-DIF-007",
+   "id_publico": "DET-T2-M01-VF-N4-007",
+   "tipo": "VF",
+   "dificuldade": "DIF",
+   "nivel_usuario": "N4",
+   "modulo": "M01",
+   "conceitos": [
+    "C008",
+    "C009",
+    "C018"
+   ],
+   "vulnerabilidades": [
+    "V018"
+   ],
+   "competencia": "avaliar",
+   "enunciado": "Julgue e corrija as falsas, sobre limites da faixa radar e bandas.",
+   "gabarito": "a) F  b) F  c) V  d) V  e) F",
+   "justificativa": "a) A dificuldade de obter antenas diretivas limita a faixa por BAIXO, nao por cima. b) Frequencia maior melhora a diretividade mas REDUZ o alcance - efeitos opostos. c) Correto: e a segunda razao do limite inferior. d) Banda X = 8.000-12.000 MHz; 9,4 GHz esta dentro (lambda = 3,19 cm). e) O ruido dos receptores CRESCE com a frequencia, o que DESFAVORECE bandas muito elevadas.",
+   "origem": "apostila_DET_2022.pdf p.1-6 e Tab.1.1.2; SUE6.1 slides de FREQUENCIA DE OPERACAO",
+   "tempo_estimado_s": 300,
+   "essencial_ate_domingo": false,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "integracao": [],
+   "justificativa_distratores": "Em (a) a troca inferior<->superior e invisivel na leitura rapida porque ambas as listas sao plausiveis isoladamente. Em (b) opera a crenca de que 'mais diretivo = melhor em tudo'. Em (e) a inversao de um verbo de tendencia (cresce/diminui) e a falsificacao mais barata e mais eficaz que uma banca pode fazer.",
+   "itens_vf": [
+    {
+     "texto": "O limite superior das frequencias radar e imposto, entre outros fatores, pela dificuldade de obter antenas diretivas.",
+     "valor": "F",
+     "justificativa": "E razao do limite INFERIOR."
+    },
+    {
+     "texto": "Aumentar a frequencia da portadora melhora simultaneamente a diretividade e o alcance.",
+     "valor": "F",
+     "justificativa": "Melhora a diretividade e REDUZ o alcance."
+    },
+    {
+     "texto": "A pouca reflexao em alvos muito menores que o comprimento de onda e razao para nao usar frequencias muito baixas.",
+     "valor": "V",
+     "justificativa": "Segunda razao do limite inferior, p.1-6."
+    },
+    {
+     "texto": "Um radar operando em 9,4 GHz situa-se na banda X.",
+     "valor": "V",
+     "justificativa": "Banda X = 8.000-12.000 MHz (Tab.1.1.2)."
+    },
+    {
+     "texto": "O nivel de ruido dos receptores diminui com o aumento da frequencia, o que favorece bandas milimetricas.",
+     "valor": "F",
+     "justificativa": "O ruido CRESCE com a frequencia; e razao do limite superior."
+    }
+   ]
+  },
+  {
+   "id": "DET-M01-DIS-MB-008",
+   "id_publico": "DET-T2-M01-DIS-N4-008",
+   "tipo": "DIS",
+   "dificuldade": "MB",
+   "nivel_usuario": "N4",
+   "modulo": "M01",
+   "conceitos": [
+    "C009",
+    "C018",
+    "C008"
+   ],
+   "vulnerabilidades": [
+    "V018",
+    "V013"
+   ],
+   "competencia": "integrar",
+   "enunciado": "Escolha da portadora de um radar de busca de superficie: (a) por que e um compromisso, com base nas razoes dos limites; (b) as duas regras de bolso; (c) dois erros fisicos no argumento 'suba a frequencia ao maximo'; (d) relacione com duas das cinco caracteristicas de M02.",
+   "gabarito": "a) Os dois limites existem por razoes de naturezas opostas: descer esbarra em antenas pouco diretivas, pouca reflexao em alvos menores que lambda e baixa precisao na distancia; subir esbarra na dificuldade de gerar/receber (menor potencia das valvulas, ruido do receptor crescente) e na maior absorcao atmosferica com reducao do alcance. b) Frequencia maior -> alcance menor; frequencia maior -> melhor diretividade. c) Ignora a atenuacao atmosferica (perda de alcance) e ignora o crescimento do ruido do receptor (perda de sensibilidade); aceitavel tambem a reducao da difracao. d) Frequencia de operacao (diretividade) e largura do feixe da antena (poder de separacao em marcacao); secundariamente a potencia de pico, que precisa compensar o alcance perdido.",
+   "justificativa": "A resposta exige articular as cinco razoes da p.1-6 como um trade-off, e nao como duas listas memorizadas. O item (d) e o que separa N4 de N3: exige projetar o conceito de M01 sobre as caracteristicas que M02 vai quantificar.",
+   "origem": "apostila_DET_2022.pdf p.1-6; SUE6.1 slides de FREQUENCIA DE OPERACAO",
+   "tempo_estimado_s": 480,
+   "essencial_ate_domingo": false,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "integracao": [],
+   "justificativa_distratores": "O caminho errado mais comum e responder apenas (b) - as duas regras de bolso - e considerar a questao encerrada. A regra de bolso e a parte memoravel, mas o item (a) pede o porque, e a rubrica da banca pontua por item, nao pela resposta global.",
+   "espelho_correcao": [
+    {
+     "etapa": "Explica o compromisso citando razoes dos DOIS limites",
+     "pontos": 0.4,
+     "criterio": "minimo 2 razoes de cada lado"
+    },
+    {
+     "etapa": "Enuncia as duas regras de bolso",
+     "pontos": 0.4,
+     "criterio": "ambas"
+    },
+    {
+     "etapa": "Aponta dois erros fisicos concretos",
+     "pontos": 0.4,
+     "criterio": "atenuacao e ruido"
+    },
+    {
+     "etapa": "Relaciona a duas caracteristicas de M02",
+     "pontos": 0.4,
+     "criterio": "portadora e largura do feixe"
+    }
+   ]
+  },
+  {
+   "id": "DET-M01-DIS-MB-009",
+   "id_publico": "DET-T2-M01-DIS-N4-009",
+   "tipo": "DIS",
+   "dificuldade": "MB",
+   "nivel_usuario": "N4",
+   "modulo": "M01",
+   "conceitos": [
+    "C001",
+    "C003",
+    "C006",
+    "C010"
+   ],
+   "vulnerabilidades": [
+    "V014",
+    "V017"
+   ],
+   "competencia": "integrar",
+   "integracao": [],
+   "enunciado": "Uma falha intermitente atrasa em 8 us o pulso de sincronismo enviado ao INDICADOR. O pulso enviado ao transmissor permanece correto e todos os demais blocos operam normalmente. Um alvo real encontra-se a 20 milhas nauticas, na marcacao 045. (a) O eco aparecera mais perto ou mais longe do que a posicao real? Justifique fisicamente. (b) De quanto, em metros, sera o erro de distancia indicada? (c) A marcacao indicada e afetada? Justifique. (d) Generalize: qual das duas obrigacoes contidas na definicao de RADAR e vulneravel a erro de temporizacao, e por que a outra nao e?",
+   "gabarito": "a) Mais PERTO | b) 1.200 m | c) Nao | d) A determinacao da POSICAO pelo lado da DISTANCIA (Ranging); a marcacao nao e vulneravel porque nao deriva do tempo, e sim da direcionalidade da antena",
+   "justificativa": "a) O indicador inicia a varredura 8 us DEPOIS do instante real de transmissao. O eco chega no mesmo instante fisico de sempre, mas e medido contra um zero atrasado: o intervalo aparente encolhe em 8 us e o alvo e desenhado mais proximo do centro da PPI. b) Erro = 150 x 8 = 1.200 m; a distancia indicada e d - 1.200 m. O erro e CONSTANTE em metros, independente da distancia do alvo - assinatura tipica de erro de temporizacao. c) Nao. A marcacao e lida a partir da posicao angular da antena, que continua sincronizada com a rotacao; nenhum atraso no eixo do tempo a desloca. d) Ranging depende de que a origem do tempo no indicador coincida com o instante de partida do pulso de RF; erro nessa origem vira erro de distancia. A marcacao depende do segundo fato fisico enunciado pela apostila - o sistema de recepcao ser direcional - independente do relogio.",
+   "justificativa_distratores": "O caminho errado dominante e responder 'mais longe', por raciocinar que atraso implica eco que demora mais. O atraso, porem, e do ZERO de referencia, nao do eco: adiantar o zero afastaria o alvo; atrasa-lo o aproxima. O segundo erro comum e aplicar d = c.t/2 sobre o proprio erro e responder 2.400 m, esquecendo que os 8 us deslocam o eixo de tempo do indicador e nao representam percurso de ida-e-volta adicional.",
+   "origem": "apostila_DET_2022.pdf p.1-2 (definicao), p.1-3 (dois fatos fisicos), p.1-4 (d = 150.t), p.1-7 (funcao do sincronizador) [INFERENCIA PEDAGOGICA: cenario de falha construido a partir das funcoes declaradas]",
+   "tempo_estimado_s": 420,
+   "essencial_ate_domingo": false,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "espelho_correcao": [
+    {
+     "etapa": "Direcao do erro (mais perto) com justificativa fisica",
+     "pontos": 0.4,
+     "criterio": "zero atrasado encolhe o intervalo aparente"
+    },
+    {
+     "etapa": "Erro de 1.200 m",
+     "pontos": 0.4,
+     "criterio": "150 x 8"
+    },
+    {
+     "etapa": "Observa que o erro e constante em metros",
+     "pontos": 0.2,
+     "criterio": "bonus de profundidade"
+    },
+    {
+     "etapa": "Marcacao nao afetada, com justificativa",
+     "pontos": 0.4,
+     "criterio": "direcionalidade independe do tempo"
+    },
+    {
+     "etapa": "Generaliza usando as duas obrigacoes e os dois fatos fisicos",
+     "pontos": 0.4,
+     "criterio": "Ranging x direcionalidade"
+    }
+   ]
+  },
+  {
+   "id": "DET-M02-COR-MED-001",
+   "id_publico": "DET-T2-M02-COR-N3-001",
+   "tipo": "COR",
+   "dificuldade": "MED",
+   "nivel_usuario": "N3",
+   "modulo": "M02",
+   "conceitos": [
+    "C011",
+    "C012",
+    "C013",
+    "C014",
+    "C016",
+    "C017"
+   ],
+   "vulnerabilidades": [
+    "V001",
+    "V002",
+    "V003",
+    "V004",
+    "V007"
+   ],
+   "competencia": "aplicar",
+   "integracao": [
+    "M01"
+   ],
+   "enunciado": "Enunciado com parametros em duplicata. Associar cada objetivo de desempenho a escolha de parametro que o atende (LP min/max, FRP min/max, rotacao max, feixe min). Escolhas podem repetir; 9 objetivos.",
+   "gabarito": "A; A; C; B; B; D; E; C; F",
+   "justificativa": "PSD e Rmin sao a mesma formula c.LP/2, logo ambos melhoram com LP minima. Rmax = c/(2.FRP) e inverso: FRP minima. Pior caso de PSD exige LP maxima. Pmed = Ppico.LP.FRP cresce com qualquer dos dois. NB = (thetaB/theta0).FRP tem theta0 no denominador e FRP no numerador, logo NB minimo exige rotacao maxima OU FRP minima. PSM = thetaB melhora com feixe minimo.",
+   "justificativa_distratores": "O distrator dominante e marcar FRP maxima para 'maior alcance sem ambiguidade': a palavra maximo na pergunta puxa maximo no parametro, mas a FRP esta no denominador. Segundo distrator: usar a mesma escolha nas duas linhas de potencia media, sem perceber que uma age pela LP e outra pela FRP.",
+   "origem": "apostila_DET_2022.pdf p.1-10 a 1-17; T2/SOPA DET T2 2024.pdf Q2",
+   "tempo_estimado_s": 300,
+   "essencial_ate_domingo": true,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "correlacao": {
+    "coluna_a": [
+     "A LP minima",
+     "B LP maxima",
+     "C FRP minima",
+     "D FRP maxima",
+     "E rotacao maxima",
+     "F feixe minimo"
+    ],
+    "coluna_b": [
+     "melhor PSD",
+     "menor Rmin",
+     "maior Rmax sem ambiguidade",
+     "pior caso de PSD",
+     "maior Pmed so pela LP",
+     "maior Pmed so pela FRP",
+     "menor NB so pela rotacao",
+     "menor NB so pela FRP",
+     "melhor PSM"
+    ],
+    "pares": {
+     "melhor PSD": "A",
+     "menor Rmin": "A",
+     "maior Rmax sem ambiguidade": "C",
+     "pior caso de PSD": "B",
+     "maior Pmed so pela LP": "B",
+     "maior Pmed so pela FRP": "D",
+     "menor NB so pela rotacao": "E",
+     "menor NB so pela FRP": "C",
+     "melhor PSM": "F"
+    }
+   }
+  },
+  {
+   "id": "DET-M02-VF-MED-002",
+   "id_publico": "DET-T2-M02-VF-N3-002",
+   "tipo": "VF",
+   "dificuldade": "MED",
+   "nivel_usuario": "N3",
+   "modulo": "M02",
+   "conceitos": [
+    "C011",
+    "C012",
+    "C013",
+    "C014",
+    "C016"
+   ],
+   "vulnerabilidades": [
+    "V003",
+    "V007",
+    "V012",
+    "V013"
+   ],
+   "competencia": "explicar",
+   "integracao": [
+    "M01"
+   ],
+   "enunciado": "Seis itens V/F sobre FRP, LP, feixe, banda do receptor, PSM linear e potencia media; corrigir as falsas.",
+   "gabarito": "a) F  b) V  c) F  d) V  e) F  f) F",
+   "justificativa": "a) A REDUCAO da FRP aumenta o alcance (p.1-13, literal). c) A largura do feixe afeta a separacao em MARCACAO; a separacao em distancia vem da LP. e) O PSM LINEAR cresce com R (x = 0,01745.R.theta); so o angular e constante. f) Pmed = Ppico.LP.FRP, nao Ppico/TRP. b) e d) sao literais da fonte (p.1-11/1-12).",
+   "justificativa_distratores": "Em (a) o reflexo e que aumentar um parametro melhora o desempenho. Em (c) a troca distancia<->marcacao e exatamente o que a Q4 da prova testa. Em (e) a simetria com o PSD, que e constante, sugere que o PSM tambem seria. Em (f) a palavra media evoca divisao por tempo.",
+   "origem": "apostila_DET_2022.pdf p.1-10 a 1-16",
+   "tempo_estimado_s": 360,
+   "essencial_ate_domingo": true,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "itens_vf": [
+    {
+     "texto": "Aumentar a FRP aumenta o alcance maximo sem ambiguidade.",
+     "valor": "F",
+     "justificativa": "Rmax = c/(2.FRP); a reducao da FRP e que aumenta o alcance (p.1-13)."
+    },
+    {
+     "texto": "O poder separador em distancia e a distancia minima de deteccao sao calculados pela mesma expressao.",
+     "valor": "V",
+     "justificativa": "Ambos valem c.LP/2; muda a leitura, nao a formula."
+    },
+    {
+     "texto": "A largura do feixe da antena afeta o poder de separacao em distancia.",
+     "valor": "F",
+     "justificativa": "Afeta a separacao em MARCACAO."
+    },
+    {
+     "texto": "Um pulso mais estreito melhora o PSD mas exige receptor de faixa mais larga, reduzindo ganho e aumentando ruido.",
+     "valor": "V",
+     "justificativa": "Literal da p.1-12."
+    },
+    {
+     "texto": "O poder separador em marcacao, em medida linear, e constante e independe da distancia.",
+     "valor": "F",
+     "justificativa": "x = 0,01745.R.theta cresce com R; so o valor angular e constante."
+    },
+    {
+     "texto": "A potencia media e obtida dividindo-se a potencia de pico pelo TRP.",
+     "valor": "F",
+     "justificativa": "Pmed = Ppico.LP/TRP = Ppico.LP.FRP."
+    }
+   ],
+   "nota_reclassificacao": "Competencia ajustada de avaliar para explicar apos alerta do validador: em nivel N3 o item pede a CORRECAO da afirmativa falsa, operacao de explicacao, e nao julgamento de merito."
+  },
+  {
+   "id": "DET-M02-DIS-MED-003",
+   "id_publico": "DET-T2-M02-CAL-N3-003",
+   "tipo": "DIS",
+   "dificuldade": "MED",
+   "nivel_usuario": "N3",
+   "modulo": "M02",
+   "conceitos": [
+    "C012",
+    "C013"
+   ],
+   "vulnerabilidades": [
+    "V002"
+   ],
+   "competencia": "calcular",
+   "integracao": [
+    "M01"
+   ],
+   "enunciado": "LP selecionavel 0,5 us ou 2,5 us. (a) PSD em cada; (b) Rmin em cada; (c) dois alvos a 200 m na mesma marcacao sao discriminados em qual posicao; (d) por que (a) e (b) coincidem numericamente e o que muda entre as grandezas.",
+   "gabarito": "a) 75 m e 375 m | b) 75 m e 375 m | c) discriminados apenas em LP = 0,5 us | d) mesma formula c.LP/2; muda contra o que a extensao e comparada e qual LP escolher na prova",
+   "justificativa": "PSD = Rmin = c.LP/2. Para 0,5 us: 3e8 x 0,5e-6/2 = 75 m. Para 2,5 us: 375 m. Alvos a 200 m: 200 > 75 (discriminados) e 200 < 375 (nao discriminados). O pulso ocupa fisicamente c.LP/2 de extensao em distancia; no PSD isso e comparado a separacao entre dois alvos, no Rmin a distancia de um alvo ao radar. Na prova, PSD pede LP maxima (pior caso) e Rmin pede LP minima.",
+   "justificativa_distratores": "O erro dominante e usar 2,5 us no item (b) por inercia do item (a): os itens sao consecutivos, a formula e a mesma e o cerebro reaproveita o ultimo numero. E exatamente a armadilha que a banca montou em 2024 entre a Q2a e a Q2d.",
+   "origem": "apostila_DET_2022.pdf p.1-11/1-12; SUE6.1 .odp slides 53-64",
+   "tempo_estimado_s": 300,
+   "essencial_ate_domingo": true,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "espelho_correcao": [
+    {
+     "etapa": "PSD nas duas LP",
+     "pontos": 0.4,
+     "criterio": "75 e 375 m"
+    },
+    {
+     "etapa": "Rmin nas duas LP",
+     "pontos": 0.4,
+     "criterio": "75 e 375 m"
+    },
+    {
+     "etapa": "Decisao de discriminacao",
+     "pontos": 0.4,
+     "criterio": "so em 0,5 us"
+    },
+    {
+     "etapa": "Explica identidade e diferenca de leitura",
+     "pontos": 0.4,
+     "criterio": "cita escolha de LP oposta"
+    }
+   ]
+  },
+  {
+   "id": "DET-M02-DIS-MED-004",
+   "id_publico": "DET-T2-M02-CAL-N3-004",
+   "tipo": "DIS",
+   "dificuldade": "MED",
+   "nivel_usuario": "N3",
+   "modulo": "M02",
+   "conceitos": [
+    "C014",
+    "C015"
+   ],
+   "vulnerabilidades": [
+    "V003",
+    "V006"
+   ],
+   "competencia": "calcular",
+   "integracao": [
+    "M01"
+   ],
+   "enunciado": "FRP de 500 Hz ou 2.000 Hz. (a) TRP em cada; (b) Rmax sem ambiguidade em cada; (c) alvo real a 100 km apresenta ambiguidade em qual FRP; (d) a que distancia sera indicado nessa FRP.",
+   "gabarito": "a) 2.000 us e 500 us | b) 300 km e 75 km | c) em 2.000 Hz | d) 25 km",
+   "justificativa": "TRP = 1/FRP. Rmax = c/(2.FRP): 3e8/1000 = 300 km e 3e8/4000 = 75 km. Alvo a 100 km: 100 < 300 (sem ambiguidade) e 100 > 75 (com ambiguidade). Indicado = Rreal - Rmax = 100 - 75 = 25 km. Verificacao da ordem: 100 < 2 x 75 = 150, logo ambiguidade de primeira ordem e a formula simples vale.",
+   "justificativa_distratores": "O erro dominante e responder 175 km em (d), somando em vez de subtrair, porque a relacao memorizada e Rreal = Rmax + Rind. Aqui o enunciado da o REAL e pede o INDICADO: e a mesma equacao resolvida para a outra incognita.",
+   "origem": "apostila_DET_2022.pdf p.1-13/1-14",
+   "tempo_estimado_s": 360,
+   "essencial_ate_domingo": true,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "espelho_correcao": [
+    {
+     "etapa": "TRP nas duas FRP",
+     "pontos": 0.4,
+     "criterio": "2.000 e 500 us"
+    },
+    {
+     "etapa": "Rmax nas duas FRP",
+     "pontos": 0.4,
+     "criterio": "300 e 75 km"
+    },
+    {
+     "etapa": "Identifica a FRP ambigua",
+     "pontos": 0.4,
+     "criterio": "2.000 Hz com comparacao numerica"
+    },
+    {
+     "etapa": "Distancia indicada",
+     "pontos": 0.4,
+     "criterio": "25 km"
+    }
+   ]
+  },
+  {
+   "id": "DET-M02-DIS-MED-005",
+   "id_publico": "DET-T2-M02-CAL-N3-005",
+   "tipo": "DIS",
+   "dificuldade": "MED",
+   "nivel_usuario": "N3",
+   "modulo": "M02",
+   "conceitos": [
+    "C011",
+    "C014"
+   ],
+   "vulnerabilidades": [
+    "V007"
+   ],
+   "competencia": "calcular",
+   "integracao": [
+    "M01"
+   ],
+   "enunciado": "Ppico 400 kW, LP 4 us, FRP 750 Hz. (a) TRP em us; (b) ciclo de trabalho; (c) potencia media; (d) FRP dobrada mantida a LP: nova Pmed e efeito sobre o alcance sem ambiguidade.",
+   "gabarito": "a) 1.333,33 us | b) 3e-3 | c) 1.200 W = 1,2 kW | d) 2.400 W; Rmax cai de 200 km para 100 km",
+   "justificativa": "TRP = 1/750 = 1,3333e-3 s. CT = LP.FRP = 4e-6 x 750 = 3e-3 (verificacao: LP/TRP = 4/1333,33 = 3e-3). Pmed = Ppico.CT = 4e5 x 3e-3 = 1.200 W. Dobrando a FRP para 1.500 Hz, Pmed = 2.400 W (Pmed proporcional a FRP) e Rmax = c/(2x1500) = 100 km, metade dos 200 km originais. Interpretacao: dobrar a FRP dobra a carga termica E corta o alcance ao meio - duas penalidades por um ajuste.",
+   "justificativa_distratores": "O erro dominante e nao converter a LP para segundos: 4e5 x 4 x 750 = 1,2e9 W. O enunciado da '4 us' e a unidade some na transcricao para a folha. O resultado implausivel e o proprio sinal de alerta.",
+   "origem": "apostila_DET_2022.pdf p.1-10 e p.1-18 (obs. do problema 2)",
+   "tempo_estimado_s": 300,
+   "essencial_ate_domingo": true,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "espelho_correcao": [
+    {
+     "etapa": "TRP",
+     "pontos": 0.4,
+     "criterio": "1.333,33 us"
+    },
+    {
+     "etapa": "CT",
+     "pontos": 0.4,
+     "criterio": "3e-3"
+    },
+    {
+     "etapa": "Pmed",
+     "pontos": 0.4,
+     "criterio": "1.200 W com LP em segundos"
+    },
+    {
+     "etapa": "Nova Pmed e efeito no alcance",
+     "pontos": 0.4,
+     "criterio": "2.400 W e 100 km"
+    }
+   ]
+  },
+  {
+   "id": "DET-M02-DIS-MED-006",
+   "id_publico": "DET-T2-M02-CAL-N3-006",
+   "tipo": "DIS",
+   "dificuldade": "MED",
+   "nivel_usuario": "N3",
+   "modulo": "M02",
+   "conceitos": [
+    "C016"
+   ],
+   "vulnerabilidades": [
+    "V012"
+   ],
+   "competencia": "calcular",
+   "integracao": [
+    "M01"
+   ],
+   "enunciado": "Feixe de 1,2 grau no PH. (a) PSM angular; (b) PSM linear a 8 km; (c) dois alvos a 8 km separados por 150 m sao discriminados; (d) ate que distancia 150 m ainda seriam discriminados.",
+   "gabarito": "a) 1,2 grau | b) 167,55 m | c) nao | d) 7.162 m ~ 7,16 km",
+   "justificativa": "O valor angular do PSM e a propria abertura do feixe (p.1-16). Linear: x = 0,01745.R.theta = 0,01745 x 8000 x 1,2 = 167,55 m (verificacao por regra de tres: 2pi x 8000 x 1,2/360 = 167,55). Como 150 < 167,55, os alvos nao sao discriminados. Invertendo: R = x/(0,01745.theta) = 150/0,020944 = 7.162 m. Interpretacao: o PSM linear PIORA com a distancia, ao contrario do PSD, que e constante.",
+   "justificativa_distratores": "O erro dominante e responder o item (a) em metros, calculando 0,01745 x 1,2. O enunciado pede o valor ANGULAR e a mente ja esta em modo calculo; o valor angular e o proprio thetaB, sem conta a fazer.",
+   "origem": "apostila_DET_2022.pdf p.1-15/1-16; rubrica da Q2f de 2024",
+   "tempo_estimado_s": 360,
+   "essencial_ate_domingo": true,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "espelho_correcao": [
+    {
+     "etapa": "PSM angular = thetaB",
+     "pontos": 0.4,
+     "criterio": "1,2 grau, sem conta"
+    },
+    {
+     "etapa": "PSM linear",
+     "pontos": 0.4,
+     "criterio": "167,55 m"
+    },
+    {
+     "etapa": "Decisao de discriminacao",
+     "pontos": 0.4,
+     "criterio": "nao, com comparacao"
+    },
+    {
+     "etapa": "Distancia limite invertida",
+     "pontos": 0.4,
+     "criterio": "7,16 km"
+    }
+   ]
+  },
+  {
+   "id": "DET-M02-DIS-MED-007",
+   "id_publico": "DET-T2-M02-CAL-N3-007",
+   "tipo": "DIS",
+   "dificuldade": "MED",
+   "nivel_usuario": "N3",
+   "modulo": "M02",
+   "conceitos": [
+    "C017",
+    "C016",
+    "C014"
+   ],
+   "vulnerabilidades": [
+    "V005"
+   ],
+   "competencia": "calcular",
+   "integracao": [
+    "M01"
+   ],
+   "enunciado": "Feixe 2,5 graus, FRP 1.500 Hz, antena a 15 RPM. (a) rotacao em graus/s; (b) numero de pulsos por varredura; (c) menor FRP para atingir 50 pulsos sem mudar feixe nem rotacao; (d) preco dessa mudanca, quantificado.",
+   "gabarito": "a) 90 graus/s | b) 41 pulsos | c) 1.800 Hz | d) Rmax cai de 100 km para 83,33 km (perda de 16,67 km, 16,7%); Pmed sobe 20%",
+   "justificativa": "theta0 = 15 x 6 = 90 graus/s. NB = (2,5/90) x 1500 = 41,67, truncado para 41 pulsos (a rubrica de 2024 truncou 55,55 para 55). Para NB >= 50: FRP >= 50 x 90/2,5 = 1.800 Hz. Rmax(1500) = 100 km; Rmax(1800) = 83,33 km.",
+   "justificativa_distratores": "O erro dominante e usar 15 diretamente no denominador: (2,5/15) x 1500 = 250 pulsos. O enunciado diz 15 RPM e o numero esta pronto; a formula exige graus por segundo. Erro por fator 6.",
+   "origem": "apostila_DET_2022.pdf p.1-17; rubrica da Q2e de 2024",
+   "tempo_estimado_s": 360,
+   "essencial_ate_domingo": true,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "espelho_correcao": [
+    {
+     "etapa": "Conversao RPM -> graus/s",
+     "pontos": 0.4,
+     "criterio": "90 graus/s"
+    },
+    {
+     "etapa": "NB truncado",
+     "pontos": 0.4,
+     "criterio": "41 pulsos"
+    },
+    {
+     "etapa": "FRP minima",
+     "pontos": 0.4,
+     "criterio": "1.800 Hz"
+    },
+    {
+     "etapa": "Preco quantificado",
+     "pontos": 0.4,
+     "criterio": "83,33 km"
+    }
+   ]
+  },
+  {
+   "id": "DET-M02-COR-BAS-008",
+   "id_publico": "DET-T2-M02-COR-N3-008",
+   "tipo": "COR",
+   "dificuldade": "BAS",
+   "nivel_usuario": "N3",
+   "modulo": "M02",
+   "conceitos": [
+    "C011",
+    "C012",
+    "C013",
+    "C014",
+    "C016",
+    "C017"
+   ],
+   "vulnerabilidades": [],
+   "competencia": "reconhecer",
+   "integracao": [
+    "M01"
+   ],
+   "enunciado": "Associar cada grandeza de desempenho a expressao que a determina (8 grandezas, 7 expressoes - uma se repete).",
+   "gabarito": "A; A; B; G; C; D; E; F",
+   "justificativa": "PSD e Rmin compartilham c.LP/2. Rmax = c/(2.FRP). TRP = 1/FRP. Pmed = Ppico.LP.FRP. NB = (thetaB/theta0).FRP. PSM linear = 0,01745.R.theta. PSM angular = thetaB.",
+   "justificativa_distratores": "O distrator estrutural e a assimetria: 8 linhas para 7 expressoes sugere que sobra uma, quando na verdade uma se REPETE. Quem assume que grandezas distintas exigem formulas distintas procura uma oitava expressao inexistente.",
+   "origem": "apostila_DET_2022.pdf p.1-10 a 1-17",
+   "tempo_estimado_s": 240,
+   "essencial_ate_domingo": false,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "correlacao": {
+    "coluna_a": [
+     "A c.LP/2",
+     "B c/(2.FRP)",
+     "C Ppico.LP.FRP",
+     "D (thetaB/theta0).FRP",
+     "E 0,01745.R.theta",
+     "F thetaB",
+     "G 1/FRP"
+    ],
+    "coluna_b": [
+     "PSD",
+     "Rmin",
+     "Rmax sem ambiguidade",
+     "TRP",
+     "Pmed",
+     "NB",
+     "PSM em metros",
+     "PSM em graus"
+    ],
+    "pares": {
+     "PSD": "A",
+     "Rmin": "A",
+     "Rmax sem ambiguidade": "B",
+     "TRP": "G",
+     "Pmed": "C",
+     "NB": "D",
+     "PSM em metros": "E",
+     "PSM em graus": "F"
+    }
+   }
+  },
+  {
+   "id": "DET-M02-DIS-DIF-009",
+   "id_publico": "DET-T2-M02-CAL-N4-009",
+   "tipo": "DIS",
+   "dificuldade": "DIF",
+   "nivel_usuario": "N4",
+   "modulo": "M02",
+   "conceitos": [
+    "C011",
+    "C012",
+    "C013",
+    "C014"
+   ],
+   "vulnerabilidades": [
+    "V002",
+    "V003"
+   ],
+   "competencia": "aplicar",
+   "integracao": [
+    "M01"
+   ],
+   "enunciado": "Projeto reverso. Requisitos: discriminar alvos a 100 m; detectar a partir de 150 m; Rmax sem ambiguidade >= 60 km. (a) maior LP pelo requisito de PSD; (b) maior LP pelo requisito de Rmin; (c) qual requisito limita; (d) maior FRP admitida; (e) Ppico para Pmed de 900 W com LP 0,6 us e FRP 2.500 Hz.",
+   "gabarito": "a) 0,667 us | b) 1,0 us | c) o de separacao em distancia, por ser mais restritivo | d) 2.500 Hz | e) 600 kW",
+   "justificativa": "a) PSD <= 100 -> LP <= 2x100/3e8 = 0,667 us. b) Rmin <= 150 -> LP <= 1,0 us. c) 0,667 < 1,0: qualquer LP que satisfaca (a) satisfaz (b), mas nao o contrario. Como PSD = Rmin, o requisito de menor valor sempre manda. d) Rmax >= 60 km -> FRP <= c/120.000 = 2.500 Hz. e) Ppico = 900/(0,6e-6 x 2500) = 900/1,5e-3 = 600.000 W. Verificacao: 600.000 x 1,5e-3 = 900 W.",
+   "justificativa_distratores": "O erro dominante esta em (d): calcular e concluir 'FRP MINIMA de 2.500 Hz'. O requisito diz 'no minimo 60 km' e o minimo migra para a FRP. Como Rmax e inversamente proporcional a FRP, um piso no alcance vira um TETO na FRP - a desigualdade inverte.",
+   "origem": "apostila_DET_2022.pdf p.1-10 a 1-13 [INFERENCIA PEDAGOGICA: formato de projeto reverso construido; fisica e formulas integralmente da fonte]",
+   "tempo_estimado_s": 480,
+   "essencial_ate_domingo": false,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "espelho_correcao": [
+    {
+     "etapa": "LP pelo PSD",
+     "pontos": 0.4,
+     "criterio": "0,667 us"
+    },
+    {
+     "etapa": "LP pelo Rmin",
+     "pontos": 0.4,
+     "criterio": "1,0 us"
+    },
+    {
+     "etapa": "Identifica o limitante com justificativa",
+     "pontos": 0.4,
+     "criterio": "o mais restritivo"
+    },
+    {
+     "etapa": "FRP maxima com desigualdade correta",
+     "pontos": 0.4,
+     "criterio": "2.500 Hz, teto"
+    },
+    {
+     "etapa": "Ppico",
+     "pontos": 0.4,
+     "criterio": "600 kW"
+    }
+   ]
+  },
+  {
+   "id": "DET-M02-DIS-MB-010",
+   "id_publico": "DET-T2-M02-CAL-N4-010",
+   "tipo": "DIS",
+   "dificuldade": "MB",
+   "nivel_usuario": "N4",
+   "modulo": "M02",
+   "conceitos": [
+    "C014",
+    "C015"
+   ],
+   "vulnerabilidades": [
+    "V006"
+   ],
+   "competencia": "analisar",
+   "integracao": [
+    "M01"
+   ],
+   "enunciado": "Contato indicado a 30 km com FRP de 1.500 Hz; ao mudar para 1.000 Hz passa a ser indicado a 130 km. (a) Rmax em cada FRP; (b) ha ambiguidade em 1.000 Hz; (c) distancia real; (d) coerencia com a indicacao original; (e) por que mudar a FRP identifica um alvo em segunda varredura.",
+   "gabarito": "a) 100 km e 150 km | b) nao, pois 130 < 150 | c) 130 km | d) em 1.500 Hz, 130 - 100 = 30 km, exatamente o observado | e) a distancia real nao muda com a FRP, mas a indicada muda somente se houver ambiguidade",
+   "justificativa": "a) Rmax = c/(2.FRP): 3e8/3000 = 100 km e 3e8/2000 = 150 km. b) 130 < 150, logo a indicacao em 1.000 Hz e a distancia verdadeira. c) Rreal = 130 km. d) Em 1.500 Hz, como 130 > 100, ha ambiguidade de primeira ordem e o indicado e 130 - 100 = 30 km, coincidindo com o relato. e) Um alvo sem ambiguidade mantem a indicacao ao trocar a FRP; um alvo ambiguo salta. O salto e a assinatura diagnostica.",
+   "justificativa_distratores": "O erro dominante e aplicar Rreal = Rmax + Rind na FRP de 1.000 Hz e responder 150 + 130 = 280 km. A formula e usada mecanicamente sem testar a condicao de validade: ela so vale se houver ambiguidade, e em 1.000 Hz nao ha. Testar Rind < Rmax ANTES de somar e o passo decisivo.",
+   "origem": "apostila_DET_2022.pdf p.1-13/1-14; estrutura confirmada pela Q2g de 2024",
+   "tempo_estimado_s": 420,
+   "essencial_ate_domingo": false,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "espelho_correcao": [
+    {
+     "etapa": "Rmax nas duas FRP",
+     "pontos": 0.4,
+     "criterio": "100 e 150 km"
+    },
+    {
+     "etapa": "Testa a condicao de validade antes de somar",
+     "pontos": 0.4,
+     "criterio": "130 < 150"
+    },
+    {
+     "etapa": "Distancia real",
+     "pontos": 0.4,
+     "criterio": "130 km"
+    },
+    {
+     "etapa": "Fecha a coerencia com os 30 km",
+     "pontos": 0.4,
+     "criterio": "130 - 100"
+    },
+    {
+     "etapa": "Explica o metodo operacional",
+     "pontos": 0.4,
+     "criterio": "real nao muda, indicada muda"
+    }
+   ]
+  },
+  {
+   "id": "DET-M02-DIS-DIF-011",
+   "id_publico": "DET-T2-M02-DIA-N4-011",
+   "tipo": "DIS",
+   "dificuldade": "DIF",
+   "nivel_usuario": "N4",
+   "modulo": "M02",
+   "conceitos": [
+    "C011",
+    "C012",
+    "C013",
+    "C014",
+    "C016",
+    "C017"
+   ],
+   "vulnerabilidades": [
+    "V007"
+   ],
+   "competencia": "analisar",
+   "integracao": [
+    "M01"
+   ],
+   "enunciado": "Diagnostico apos manutencao, com seis sintomas e a informacao de que Ppico e FRP nao mudaram. (a) que caracteristica mudou e em que sentido; (b) por qual fator, pelo sintoma da potencia media; (c) LP nova a partir de 0,4 us e verificacao do sintoma das boias; (d) por que tres sintomas nao mudaram; (e) refutar a hipotese de aumento da potencia de pico.",
+   "gabarito": "a) A largura de pulso aumentou | b) fator 3 | c) 1,2 us; Rmin passa de 60 m para 180 m, e a boia a 100 m deixa de aparecer | d) PSM, Rmax e NB nao dependem da LP | e) Ppico nao aparece em Rmin nem no PSD, logo nao explicaria os sintomas 1 e 2",
+   "justificativa": "b) Pmed = Ppico.LP.FRP com Ppico e FRP constantes implica Pmed proporcional a LP; 300 -> 900 W e fator 3. c) LP 0,4 -> 1,2 us; Rmin de 60 m para 180 m; a boia a 100 m estava acima de 60 e agora esta abaixo de 180. O PSD tambem passou de 60 para 180 m, explicando o sintoma 2. d) PSM depende do feixe e da distancia; Rmax depende so da FRP; NB depende de feixe, rotacao e FRP - nenhum contem LP. e) Um aumento de 3x na Ppico tambem levaria Pmed a 900 W, logo o sintoma 5 sozinho nao distingue as hipoteses; mas Ppico nao entra em Rmin nem no PSD, e as boias continuariam visiveis com eco ate mais forte. Os sintomas 1 e 2 sao os discriminantes.",
+   "justificativa_distratores": "O erro dominante e concluir 'aumentou a potencia de pico' olhando apenas o sintoma 5, que e o unico numerico - o instinto ancora no numero. Os sintomas qualitativos 1 e 2 e que carregam a informacao decisiva.",
+   "origem": "apostila_DET_2022.pdf p.1-10 a 1-17 [INFERENCIA PEDAGOGICA: cenario de manutencao construido; todas as dependencias usadas sao declaradas pela fonte]",
+   "tempo_estimado_s": 480,
+   "essencial_ate_domingo": true,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "espelho_correcao": [
+    {
+     "etapa": "Identifica LP aumentada",
+     "pontos": 0.4,
+     "criterio": "caracteristica e sentido"
+    },
+    {
+     "etapa": "Fator 3 justificado pela Pmed",
+     "pontos": 0.4,
+     "criterio": "Pmed proporcional a LP"
+    },
+    {
+     "etapa": "LP nova e verificacao do Rmin",
+     "pontos": 0.4,
+     "criterio": "1,2 us; 180 m > 100 m"
+    },
+    {
+     "etapa": "Explica os tres sintomas invariantes",
+     "pontos": 0.4,
+     "criterio": "nenhuma formula contem LP"
+    },
+    {
+     "etapa": "Refuta a hipotese alternativa",
+     "pontos": 0.4,
+     "criterio": "usa os sintomas 1 e 2"
+    }
+   ]
+  },
+  {
+   "id": "DET-M02-DIS-MB-012",
+   "id_publico": "DET-T2-M02-CAL-N4-012",
+   "tipo": "DIS",
+   "dificuldade": "MB",
+   "nivel_usuario": "N4",
+   "modulo": "M02",
+   "conceitos": [
+    "C011",
+    "C012",
+    "C013",
+    "C014",
+    "C016",
+    "C017"
+   ],
+   "vulnerabilidades": [
+    "V001",
+    "V005"
+   ],
+   "competencia": "integrar",
+   "integracao": [
+    "M01"
+   ],
+   "enunciado": "Dois modos de operacao (A: LP 0,25 us, FRP 3.000 Hz, 24 RPM; B: LP 1,2 us, FRP 750 Hz, 12 RPM), com Ppico 60 kW e feixe 1,8 grau comuns. Calcular PSD, Rmin, Rmax, Pmed e NB em cada modo; escolher o modo para aguas restritas e para busca de longo alcance; explicar por que o iluminamento piorou no modo B apesar da rotacao tambem ter caido.",
+   "gabarito": "a) 37,5 m e 180 m | b) 37,5 m e 180 m | c) 50 km e 200 km | d) 45 W e 54 W | e) 37 e 18 pulsos | f) Modo A | g) Modo B | h) NB e proporcional a FRP/theta0; a FRP caiu por 4 e a rotacao so por 2",
+   "justificativa": "Modo A: PSD = Rmin = 3e8 x 0,25e-6/2 = 37,5 m; Rmax = 3e8/6000 = 50 km; Pmed = 60e3 x 0,25e-6 x 3000 = 45 W; theta0 = 144 graus/s, NB = (1,8/144) x 3000 = 37,5 -> 37. Modo B: PSD = Rmin = 180 m; Rmax = 3e8/1500 = 200 km; Pmed = 60e3 x 1,2e-6 x 750 = 54 W; theta0 = 72 graus/s, NB = (1,8/72) x 750 = 18,75 -> 18. f) Modo A: Rmin 37,5 m e PSD 37,5 m permitem ver boias e cais proximos. g) Modo B: 200 km sem ambiguidade. h) NB proporcional a FRP/theta0: FRP caiu por 4 e theta0 por 2, logo NB cai por 2. Para preservar os 37 pulsos seria preciso reduzir a rotacao por fator 4, para 6 RPM.",
+   "justificativa_distratores": "O erro dominante em (e) e usar 24 e 12 diretamente como theta0. O item (h) ja fala em rotacao reduzida e os numeros estao a mao. Sem o x6 os dois NB saem 6 vezes maiores, e - pior - a RAZAO entre eles se mantem, de modo que o item (h) ainda fecha, escondendo o erro.",
+   "origem": "apostila_DET_2022.pdf p.1-10 a 1-17; estrutura de decisao operacional em p.1-14",
+   "tempo_estimado_s": 720,
+   "essencial_ate_domingo": true,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "espelho_correcao": [
+    {
+     "etapa": "PSD e Rmin nos dois modos",
+     "pontos": 0.4,
+     "criterio": "37,5 e 180 m"
+    },
+    {
+     "etapa": "Rmax nos dois modos",
+     "pontos": 0.4,
+     "criterio": "50 e 200 km"
+    },
+    {
+     "etapa": "Pmed nos dois modos",
+     "pontos": 0.4,
+     "criterio": "45 e 54 W"
+    },
+    {
+     "etapa": "NB com conversao RPM e truncamento",
+     "pontos": 0.4,
+     "criterio": "37 e 18"
+    },
+    {
+     "etapa": "Escolha para aguas restritas com dois numeros",
+     "pontos": 0.4,
+     "criterio": "Modo A"
+    },
+    {
+     "etapa": "Escolha para longo alcance com um numero",
+     "pontos": 0.4,
+     "criterio": "Modo B"
+    },
+    {
+     "etapa": "Explica a queda do iluminamento pela razao FRP/theta0",
+     "pontos": 0.4,
+     "criterio": "fator 4 contra fator 2"
+    }
+   ]
+  },
+  {
+   "id": "DET-M02-DIS-MB-013",
+   "id_publico": "DET-T2-M02-DIS-N4-013",
+   "tipo": "DIS",
+   "dificuldade": "MB",
+   "nivel_usuario": "N4",
+   "modulo": "M02",
+   "conceitos": [
+    "C011",
+    "C012",
+    "C013",
+    "C014",
+    "C017",
+    "C018"
+   ],
+   "vulnerabilidades": [
+    "V013"
+   ],
+   "competencia": "avaliar",
+   "integracao": [
+    "M01"
+   ],
+   "enunciado": "Exigencia: aumentar o alcance sem trocar antena nem valvula de potencia. (a) as duas maneiras de aumentar a energia do eco segundo a apostila e qual e a mais conveniente; (b) custo operacional dessa; (c) efeito de reduzir a FRP; (d) efeito de reduzir a portadora; (e) por que a escolha e sempre compromisso.",
+   "gabarito": "a) aumentar Ppico (limitada por hardware) ou aumentar a LP - a fonte prefere a LP | b) degrada o poder separador em distancia e, junto, a distancia minima; alem do custo termico | c) melhora Rmax sem ambiguidade, piora NB | d) aumenta o alcance, piora a diretividade | e) nenhuma alavanca melhora uma grandeza sem degradar outra",
+   "justificativa": "a) Literal da p.1-12: aumentar a potencia de pico, limitado pelo tamanho e qualidade da magnetron, guias de onda e componentes; ou aumentar a largura de pulso, em geral a solucao mais conveniente. O enunciado proibe trocar a valvula, o que descarta a primeira. b) Literal: embora reduza o poder de resolucao em distancia. Como PSD = Rmin, ambos pioram na mesma proporcao; e Pmed sobe. c) Rmax = c/2FRP melhora; NB proporcional a FRP piora. d) Frequencia menor: maior alcance (menos absorcao, menos ruido) e pior diretividade (feixe mais largo). e) O SUE6.1 enuncia: se aumentamos ou diminuimos o valor de uma caracteristica, sempre havera consequencias boas e ruins.",
+   "justificativa_distratores": "O erro dominante e responder (a) citando apenas 'aumentar a potencia' - resposta intuitiva para aumentar alcance, e ja bloqueada pelo enunciado. A fonte apresenta DUAS maneiras e declara qual prefere; ler a p.1-12 ate o fim e o que da o item.",
+   "origem": "apostila_DET_2022.pdf p.1-6, p.1-10, p.1-12, p.1-17; SUE6.1 .odp slide 85",
+   "tempo_estimado_s": 480,
+   "essencial_ate_domingo": false,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "espelho_correcao": [
+    {
+     "etapa": "As duas maneiras e a preferida",
+     "pontos": 0.4,
+     "criterio": "cita a limitacao de hardware"
+    },
+    {
+     "etapa": "Custo em resolucao em distancia",
+     "pontos": 0.4,
+     "criterio": "nomeia a grandeza"
+    },
+    {
+     "etapa": "Efeito de reduzir a FRP",
+     "pontos": 0.4,
+     "criterio": "melhora e piora nomeadas"
+    },
+    {
+     "etapa": "Efeito de reduzir a portadora",
+     "pontos": 0.4,
+     "criterio": "dois sentidos opostos"
+    },
+    {
+     "etapa": "Conclusao sobre compromisso",
+     "pontos": 0.4,
+     "criterio": "generaliza as quatro alavancas"
+    }
+   ]
+  },
+  {
+   "id": "DET-M02-VF-DIF-014",
+   "id_publico": "DET-T2-M02-VF-N4-014",
+   "tipo": "VF",
+   "dificuldade": "DIF",
+   "nivel_usuario": "N4",
+   "modulo": "M02",
+   "conceitos": [
+    "C014",
+    "C015",
+    "C016",
+    "C017",
+    "C018"
+   ],
+   "vulnerabilidades": [
+    "V006",
+    "V012"
+   ],
+   "competencia": "avaliar",
+   "integracao": [
+    "M01"
+   ],
+   "enunciado": "Seis itens V/F sobre condicoes-limite: ordem da ambiguidade, PSM angular teorico, alcance sem ambiguidade x alcance energetico, efeito da rotacao, truncamento de NB e efeito da portadora sobre o feixe.",
+   "gabarito": "a) F  b) V  c) F  d) V  e) F  f) V",
+   "justificativa": "a) Alem de 2.Rmax a relacao passa a Rreal = n.Rmax + Rind. c) Rmax sem ambiguidade e grandeza TEMPORAL: garante que o eco chega antes do pulso seguinte, nao que tenha energia para ser detectado - isso e a equacao radar (M06). e) NB e contagem de pulsos e deve ser TRUNCADO; a rubrica de 2024 obteve 55,55 e respondeu 55. b), d) e f) sao literais das fontes.",
+   "justificativa_distratores": "Em (a) a formula e memorizada sem a condicao de validade. Em (c) as duas grandezas se chamam alcance mas tem naturezas diferentes - e a confusao que a banca tem material pronto para explorar, ja que cobra M02 e M06 na mesma prova. Em (e) arredondar e habito; contar pulsos que nao existem superestima o iluminamento.",
+   "origem": "apostila_DET_2022.pdf p.1-13 a 1-17; SUE6.1; rubrica da Q2e de 2024",
+   "tempo_estimado_s": 420,
+   "essencial_ate_domingo": false,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "itens_vf": [
+    {
+     "texto": "Se um alvo estiver alem do dobro do Rmax sem ambiguidade, Rreal = Rmax + Rind continua valida sem modificacao.",
+     "valor": "F",
+     "justificativa": "Passa a Rreal = n.Rmax + Rind, com n igual ao numero de ciclos transcorridos."
+    },
+    {
+     "texto": "O valor angular do PSM e igual a abertura do feixe no PH, resultado apresentado como teorico e condicionado a alvo punctual.",
+     "valor": "V",
+     "justificativa": "p.1-15/1-16, literal."
+    },
+    {
+     "texto": "Um radar com Rmax sem ambiguidade de 200 km necessariamente detecta alvos a 200 km.",
+     "valor": "F",
+     "justificativa": "Rmax e grandeza temporal; a deteccao depende da energia do eco (equacao radar)."
+    },
+    {
+     "texto": "Elevar a rotacao da antena reduz o numero de pulsos por alvo e aumenta a possibilidade de areas com alvos nao detectados.",
+     "valor": "V",
+     "justificativa": "p.1-17, literal."
+    },
+    {
+     "texto": "Como NB e contagem de pulsos, 41,67 deve ser arredondado para 42.",
+     "valor": "F",
+     "justificativa": "Deve ser truncado para 41; a rubrica de 2024 truncou 55,55 para 55."
+    },
+    {
+     "texto": "Aumentar a portadora reduz a largura do feixe e melhora o poder separador em marcacao.",
+     "valor": "V",
+     "justificativa": "SUE6.1: frequencias mais altas propagam de forma mais retilinea, reduzindo a largura do feixe."
+    }
+   ]
+  },
+  {
+   "id": "DET-M03-COR-MED-001",
+   "id_publico": "DET-T2-M03-COR-N3-001",
+   "tipo": "COR",
+   "dificuldade": "MED",
+   "nivel_usuario": "N3",
+   "modulo": "M03",
+   "conceitos": [
+    "C019",
+    "C020",
+    "C021",
+    "C022"
+   ],
+   "vulnerabilidades": [
+    "V021",
+    "V022"
+   ],
+   "competencia": "comparar",
+   "integracao": [
+    "M01",
+    "M02"
+   ],
+   "enunciado": "Associar nove afirmativas a seis blocos/componentes do transmissor (sincronizador, modulador, oscilador, amplificador de potencia, thyratron, transformador de pulsos). Blocos podem repetir.",
+   "gabarito": "A; B; C; B; C; E; F; D; A",
+   "justificativa": "As tres primeiras afirmativas sao literalmente tres das 16 da Q1 de 2024: sincronizador determina a FRP, modulador determina a LP, oscilador determina a portadora. Ligar/desligar a valvula transmissora e funcao do modulador (p.1-33). Autoexcitado que dispensa amplificador e o oscilador. Thyratron chaveia a descarga da RFP (p.1-36). Transformador de pulsos casa 50 ohms da RFP com 500 ohms da valvula (p.1-37). Amplificador de potencia e escolhido quando potencia e estabilidade sao preponderantes (p.1-21). A tensao de disparo a partir de onda quadrada diferenciada e limitada e do sincronizador (fig. 1.3.2 B).",
+   "justificativa_distratores": "O distrator dominante e marcar Modulador para 'determina a FRP': o modulador e quem liga e desliga, e ligar/desligar sugere cadencia. Mas ele so age quando o sincronizador manda - decide QUANTO TEMPO fica ligado (LP), nao DE QUANTO EM QUANTO TEMPO liga (FRP).",
+   "origem": "apostila_DET_2022.pdf p.1-20, 1-21, 1-33, 1-36, 1-37; T2/SOPA DET T2 2024.pdf Q1 blocos A, B e C",
+   "tempo_estimado_s": 300,
+   "essencial_ate_domingo": true,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "correlacao": {
+    "coluna_a": [
+     "A Sincronizador",
+     "B Modulador",
+     "C Oscilador (magnetron)",
+     "D Amplificador de potencia",
+     "E Thyratron",
+     "F Transformador de pulsos"
+    ],
+    "coluna_b": [
+     "determina a FRP",
+     "determina a largura de pulso",
+     "determina a portadora",
+     "liga e desliga a valvula transmissora",
+     "se autoexcitado dispensa amplificador",
+     "chaveia a descarga da RFP",
+     "casa 50 ohms com 500 ohms",
+     "potencia e estabilidade preponderantes",
+     "gera a tensao de disparo"
+    ],
+    "pares": {
+     "determina a FRP": "A",
+     "determina a largura de pulso": "B",
+     "determina a portadora": "C",
+     "liga e desliga a valvula transmissora": "B",
+     "se autoexcitado dispensa amplificador": "C",
+     "chaveia a descarga da RFP": "E",
+     "casa 50 ohms com 500 ohms": "F",
+     "potencia e estabilidade preponderantes": "D",
+     "gera a tensao de disparo": "A"
+    }
+   },
+   "nota_reclassificacao": "Competencia ajustada de reconhecer para comparar apos alerta do validador: com blocos repetidos e a armadilha FRP x LP, a operacao exigida e comparar candidatos contra cada afirmativa, nao apenas reconhecer."
+  },
+  {
+   "id": "DET-M03-COR-BAS-002",
+   "id_publico": "DET-T2-M03-COR-N3-002",
+   "tipo": "COR",
+   "dificuldade": "BAS",
+   "nivel_usuario": "N3",
+   "modulo": "M03",
+   "conceitos": [
+    "C020"
+   ],
+   "vulnerabilidades": [
+    "V023"
+   ],
+   "competencia": "reconhecer",
+   "integracao": [
+    "M01",
+    "M02"
+   ],
+   "enunciado": "Associar os seis componentes do modulador tipo linha ao problema que cada um resolve.",
+   "gabarito": "A; B; C; D; E; F",
+   "justificativa": "RFP acumula energia em taxa baixa entre pulsos. Impedancia de carga (um indutor) limita essa taxa com dissipacao muito menor. Thyratron faz o chaveamento em velocidade incompativel com chave comum. Diodo de carga torna o TRP independente de Lch e C. Diodo de by-pass escoa a carga invertida por descasamento. Transformador de pulsos casa as impedancias.",
+   "justificativa_distratores": "O distrator dominante e trocar diodo de carga por diodo de by-pass: os dois sao diodos, os dois protegem o circuito e os nomes nao dizem o que fazem. Mnemonico: o de CARGA cuida da carga (libera a thyratron de disparar no pico); o de BY-PASS cuida do que sobra.",
+   "origem": "apostila_DET_2022.pdf p.1-33, 1-36, 1-37, 1-39/1-40",
+   "tempo_estimado_s": 240,
+   "essencial_ate_domingo": false,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "correlacao": {
+    "coluna_a": [
+     "A RFP",
+     "B Impedancia de carga",
+     "C Thyratron",
+     "D Diodo de carga",
+     "E Diodo de by-pass",
+     "F Transformador de pulsos"
+    ],
+    "coluna_b": [
+     "acumula energia em taxa baixa",
+     "limita a taxa de acumulo com baixa dissipacao",
+     "chaveamento de alta velocidade",
+     "torna o TRP independente de Lch e C",
+     "escoa a carga invertida",
+     "compatibiliza impedancias"
+    ],
+    "pares": {
+     "acumula energia em taxa baixa": "A",
+     "limita a taxa de acumulo com baixa dissipacao": "B",
+     "chaveamento de alta velocidade": "C",
+     "torna o TRP independente de Lch e C": "D",
+     "escoa a carga invertida": "E",
+     "compatibiliza impedancias": "F"
+    }
+   }
+  },
+  {
+   "id": "DET-M03-VF-MED-003",
+   "id_publico": "DET-T2-M03-VF-N3-003",
+   "tipo": "VF",
+   "dificuldade": "MED",
+   "nivel_usuario": "N3",
+   "modulo": "M03",
+   "conceitos": [
+    "C019",
+    "C020",
+    "C021",
+    "C022"
+   ],
+   "vulnerabilidades": [
+    "V022",
+    "V023"
+   ],
+   "competencia": "explicar",
+   "integracao": [
+    "M01",
+    "M02"
+   ],
+   "enunciado": "Seis itens V/F sobre magnetron, RFP, modo pi, modulacao de Klystron/TWT, numero de modos e modulacao pelo catodo; corrigir as falsas.",
+   "gabarito": "a) F  b) V  c) V  d) F  e) F  f) V",
+   "justificativa": "a) A magnetron e OSCILADOR autoexcitado e dispensa amplificador; Klystron, TWT e CFA e que sao amplificadoras (p.1-21). d) Transmissores com Klystron ou TWT PODEM ser modulados em baixo nivel, pela grade moduladora (p.1-33). e) O numero de modos e N/2, nao N (p.1-26): 8 cavidades dao 4 modos, 6 dao 3. b), c) e f) sao literais das fontes.",
+   "justificativa_distratores": "Em (a) a magnetron e a valvula de maior potencia que o aluno conhece e potencia evoca amplificador. Em (d) associa-se alta potencia de saida a alta potencia de modulacao - no amplificador o modulador age no controle, nao na potencia principal. Em (e) a razao e sempre 2, mas quem nao faz a conta assume identidade entre cavidades e modos.",
+   "origem": "apostila_DET_2022.pdf p.1-21, 1-22, 1-26, 1-28, 1-33, 1-35",
+   "tempo_estimado_s": 360,
+   "essencial_ate_domingo": true,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "itens_vf": [
+    {
+     "texto": "A magnetron e uma valvula amplificadora, razao pela qual exige um oscilador de baixa potencia que a excite.",
+     "valor": "F",
+     "justificativa": "E oscilador de cavidades autoexcitado; dispensa amplificador."
+    },
+    {
+     "texto": "Numa RFP casada, a largura do pulso e igual ao tempo de propagacao da onda ida-e-volta atraves da linha.",
+     "valor": "V",
+     "justificativa": "p.1-35, literal."
+    },
+    {
+     "texto": "O modo pi e o mais eficiente porque cria o maior numero de feixes de eletrons.",
+     "valor": "V",
+     "justificativa": "p.1-28, literal."
+    },
+    {
+     "texto": "Transmissores com Klystron ou TWT exigem obrigatoriamente moduladores de alta potencia.",
+     "valor": "F",
+     "justificativa": "Podem ser modulados em baixo nivel pela grade moduladora (p.1-33)."
+    },
+    {
+     "texto": "O numero de modos de operacao de uma magnetron e igual ao seu numero de cavidades.",
+     "valor": "F",
+     "justificativa": "E N/2 (p.1-26)."
+    },
+    {
+     "texto": "A magnetron e modulada por tensao negativa no catodo, e nao positiva na carcaca, para evitar risco de choque em alta tensao.",
+     "valor": "V",
+     "justificativa": "p.1-22, literal; a carcaca e o anodo e esta aterrada."
+    }
+   ]
+  },
+  {
+   "id": "DET-M03-DIS-MED-004",
+   "id_publico": "DET-T2-M03-CAL-N3-004",
+   "tipo": "DIS",
+   "dificuldade": "MED",
+   "nivel_usuario": "N3",
+   "modulo": "M03",
+   "conceitos": [
+    "C020"
+   ],
+   "vulnerabilidades": [
+    "V023"
+   ],
+   "competencia": "calcular",
+   "integracao": [
+    "M01",
+    "M02"
+   ],
+   "enunciado": "RFP de 50 ohms carregada a 24 kV, tempo de propagacao ida-e-volta 1,5 us, carga casada. (a) largura do pulso; (b) tensao na carga; (c) potencia de pico; (d) potencia media com FRP 500 Hz; (e) explicar o erro de quem responde 24 kV em (b).",
+   "gabarito": "a) 1,5 us | b) 12 kV | c) 2,88 MW | d) 2.160 W = 2,16 kW | e) usar E em vez de E/2; como P vai com o quadrado da tensao, fator 2 em tensao vira fator 4 em potencia",
+   "justificativa": "a) LP = T por definicao (p.1-35). b) Carga casada implica divisor: eL = E/2 = 12 kV. c) P = eL^2/RL = 12.000^2/50 = 2,88e6 W. d) Pmed = Ppico.LP.FRP = 2,88e6 x 1,5e-6 x 500 = 2.160 W (verificacao: CT = 1,5e-6 x 500 = 7,5e-4; 2,88e6 x 7,5e-4 = 2.160). e) 24.000^2/50 = 11,52 MW, exatamente 4 vezes 2,88 MW.",
+   "justificativa_distratores": "O erro dominante e responder E em vez de E/2: o enunciado diz 'carregada a 24 kV' e e natural supor que essa tensao chega inteira a carga. Com RL = RC, metade da tensao fica sobre a impedancia caracteristica da propria linha.",
+   "origem": "apostila_DET_2022.pdf p.1-34/1-35, figs. 1.4.3 a 1.4.6",
+   "tempo_estimado_s": 360,
+   "essencial_ate_domingo": true,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "espelho_correcao": [
+    {
+     "etapa": "LP = T",
+     "pontos": 0.4,
+     "criterio": "1,5 us, justificado"
+    },
+    {
+     "etapa": "Tensao E/2",
+     "pontos": 0.4,
+     "criterio": "12 kV"
+    },
+    {
+     "etapa": "Potencia de pico",
+     "pontos": 0.4,
+     "criterio": "2,88 MW"
+    },
+    {
+     "etapa": "Potencia media",
+     "pontos": 0.4,
+     "criterio": "2.160 W"
+    },
+    {
+     "etapa": "Explica o fator 4",
+     "pontos": 0.4,
+     "criterio": "quadrado da tensao"
+    }
+   ]
+  },
+  {
+   "id": "DET-M03-DIS-MED-005",
+   "id_publico": "DET-T2-M03-CAL-N3-005",
+   "tipo": "DIS",
+   "dificuldade": "MED",
+   "nivel_usuario": "N3",
+   "modulo": "M03",
+   "conceitos": [
+    "C021"
+   ],
+   "vulnerabilidades": [],
+   "competencia": "calcular",
+   "integracao": [
+    "M01",
+    "M02"
+   ],
+   "enunciado": "Magnetron de 12 cavidades. (a) quantos modos; (b) feixes no modo pi; (c) feixes no modo 2pi/3; (d) duas razoes para o modo pi ser preferido; (e) dispositivo que garante a operacao no modo pi e seu funcionamento.",
+   "gabarito": "a) 6 modos | b) 6 feixes | c) 4 feixes | d) maior eficiencia (numero maximo de feixes) e maior estabilidade | e) os straps",
+   "justificativa": "a) N/2 = 6. b) Modo pi forma um feixe a cada duas cavidades: 12/2 = 6. c) No modo 2pi/3 sao necessarias tres cavidades por feixe: 12/3 = 4. d) p.1-28: e desejavel obter numero maximo de feixes para transformacoes maximas de energia; e p.1-27 cita maior estabilidade. e) Straps: dois aneis metalicos que conectam todos os segmentos do anodo com mesmo potencial no modo pi, separando sua frequencia das demais e impedindo salto de modo. Verificacao contra os exemplos da fonte: 8 cavidades dao 4 modos; 6 dao 3; 6 no modo pi dao 3 feixes; 6 no modo 2pi/3 dao 2 feixes.",
+   "justificativa_distratores": "O erro dominante e responder 12 modos, pela associacao intuitiva 'cada cavidade, um modo'. Nota fina: os itens (a) e (b) dao o MESMO numero 6, mas contam coisas diferentes - 6 modos possiveis da valvula e 6 feixes dentro de um desses modos. Coincidencia algebrica, nao identidade conceitual.",
+   "origem": "apostila_DET_2022.pdf p.1-26 a 1-28, fig. 1.3.9",
+   "tempo_estimado_s": 300,
+   "essencial_ate_domingo": false,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "espelho_correcao": [
+    {
+     "etapa": "Numero de modos N/2",
+     "pontos": 0.4,
+     "criterio": "6"
+    },
+    {
+     "etapa": "Feixes no modo pi",
+     "pontos": 0.4,
+     "criterio": "6"
+    },
+    {
+     "etapa": "Feixes no modo 2pi/3",
+     "pontos": 0.4,
+     "criterio": "4"
+    },
+    {
+     "etapa": "Duas razoes",
+     "pontos": 0.4,
+     "criterio": "eficiencia e estabilidade"
+    },
+    {
+     "etapa": "Straps e mecanismo",
+     "pontos": 0.4,
+     "criterio": "aneis em segmentos equipotenciais"
+    }
+   ]
+  },
+  {
+   "id": "DET-M03-DIS-MED-006",
+   "id_publico": "DET-T2-M03-DIA-N3-006",
+   "tipo": "DIS",
+   "dificuldade": "MED",
+   "nivel_usuario": "N3",
+   "modulo": "M03",
+   "conceitos": [
+    "C019",
+    "C020",
+    "C021"
+   ],
+   "vulnerabilidades": [
+    "V021"
+   ],
+   "competencia": "explicar",
+   "integracao": [
+    "M01",
+    "M02"
+   ],
+   "enunciado": "Sequencia temporal t0-t3 de um transmissor com oscilador autoexcitado. (a) nomear os blocos; (b) por que o sinal senoidal cessa; (c) que caracteristica cada etapa fixa; (d) efeito de reduzir a metade o intervalo entre disparos.",
+   "gabarito": "a) t1 modulador, t2 oscilador, t3 fim da alta tensao do modulador | b) o sinal existe enquanto existir a alta tensao do modulador | c) t0 FRP, t1-t3 largura de pulso, t2 portadora | d) a FRP dobra e o alcance maximo sem ambiguidade cai a metade",
+   "justificativa": "b) O SUE6.2a4 e literal: 'este sinal senoidal e produzido enquanto existir a alta tensao do modulador'. Cessando a polarizacao, cessa a oscilacao - e por isso que quem determina a LP e o modulador. d) Reduzir a metade o intervalo dobra a FRP; por Rmax = c/(2.FRP) o alcance sem ambiguidade cai a metade. Secundariamente Pmed dobra e NB dobra.",
+   "justificativa_distratores": "O erro dominante e dizer que o sinal cessa 'porque o oscilador se esgota' ou 'porque a energia acaba' - explicacao energetica plausivel mas errada. A causa e de POLARIZACAO.",
+   "origem": "SUE6.2a4 .odp slides 48-56; apostila_DET_2022.pdf p.1-20; integracao com M02 (Rmax)",
+   "tempo_estimado_s": 300,
+   "essencial_ate_domingo": true,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "espelho_correcao": [
+    {
+     "etapa": "Nomeia os tres blocos",
+     "pontos": 0.4,
+     "criterio": "modulador, oscilador, modulador"
+    },
+    {
+     "etapa": "Explica o cessar por polarizacao",
+     "pontos": 0.4,
+     "criterio": "enquanto existir a alta tensao"
+    },
+    {
+     "etapa": "Associa as tres caracteristicas",
+     "pontos": 0.4,
+     "criterio": "FRP, LP, portadora"
+    },
+    {
+     "etapa": "Efeito quantitativo sobre Rmax",
+     "pontos": 0.4,
+     "criterio": "cai a metade"
+    }
+   ],
+   "nota_reclassificacao": "Competencia ajustada de analisar para explicar apos alerta do validador: os itens (a)-(c) pedem explicacao da cadeia; o item (d) apenas aplica uma relacao ja estabelecida em M02."
+  },
+  {
+   "id": "DET-M03-DIS-DIF-007",
+   "id_publico": "DET-T2-M03-CAL-N4-007",
+   "tipo": "DIS",
+   "dificuldade": "DIF",
+   "nivel_usuario": "N4",
+   "modulo": "M03",
+   "conceitos": [
+    "C021"
+   ],
+   "vulnerabilidades": [],
+   "competencia": "aplicar",
+   "integracao": [
+    "M01",
+    "M02"
+   ],
+   "enunciado": "Magnetron no modo pi com B = 0,32 T, d = 4 mm e E = 2,4e6 V/m. (a) frequencia e banda; (b) verificacao dimensional; (c) nova frequencia e desvio se d aumentar 2% por dilatacao; (d) dois metodos de sintonia e que grandeza cada um altera; (e) que circuito do receptor lida com esse tipo de deriva.",
+   "gabarito": "a) 937,5 MHz, banda UHF | b) (V/m)/(T.m) = V/(V.s) = 1/s, hertz | c) 919,1 MHz; desvio de -18,4 MHz | d) vareta condutora nas cavidades altera L; anel entre os straps altera C | e) o CAF",
+   "justificativa": "a) No modo pi n = 2: f = E/(n.B.d) = 2,4e6/(2 x 0,32 x 0,004) = 2,4e6/2,56e-3 = 9,375e8 Hz. Banda UHF (300-1000 MHz), dentro da faixa construtiva da magnetron mas abaixo da faixa usual de projeto (acima de 1 GHz). b) Como 1 T = 1 V.s/m2, V/(T.m2) = V/(V.s) = s^-1. Esta verificacao e o que descarta a forma f = n.B.d.E, que daria V.s. c) f proporcional a 1/d: 937,5/1,02 = 919,1 MHz. d) p.1-29/1-30: as cavidades fazem o papel de L e os canais de C. e) O CAF amostra o pulso transmitido e corrige o oscilador local, mantendo a FI constante.",
+   "justificativa_distratores": "O erro dominante e usar n = 12 (numero de cavidades) em vez de n = 2. A fonte define n como 'numero de cavidades participantes da criacao de CADA FEIXE', nao o total; no modo pi sao duas. Usar 12 daria 156,25 MHz, seis vezes menor.",
+   "origem": "apostila_DET_2022.pdf p.1-29/1-30 [PONTO DE INCERTEZA D-10: barra de fracao perdida na extracao, reconstruida pela deducao da propria pagina e confirmada dimensionalmente]",
+   "tempo_estimado_s": 420,
+   "essencial_ate_domingo": false,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "espelho_correcao": [
+    {
+     "etapa": "Usa n = 2 no modo pi",
+     "pontos": 0.4,
+     "criterio": "nao confunde com N"
+    },
+    {
+     "etapa": "Frequencia e banda",
+     "pontos": 0.4,
+     "criterio": "937,5 MHz, UHF"
+    },
+    {
+     "etapa": "Verificacao dimensional",
+     "pontos": 0.4,
+     "criterio": "chega a 1/s"
+    },
+    {
+     "etapa": "Deriva termica",
+     "pontos": 0.4,
+     "criterio": "919,1 MHz e -18,4 MHz"
+    },
+    {
+     "etapa": "Sintonia e CAF",
+     "pontos": 0.4,
+     "criterio": "L e C; CAF"
+    }
+   ]
+  },
+  {
+   "id": "DET-M03-DIS-DIF-008",
+   "id_publico": "DET-T2-M03-DIA-N4-008",
+   "tipo": "DIS",
+   "dificuldade": "DIF",
+   "nivel_usuario": "N4",
+   "modulo": "M03",
+   "conceitos": [
+    "C019",
+    "C020",
+    "C021",
+    "C022"
+   ],
+   "vulnerabilidades": [
+    "V021",
+    "V022"
+   ],
+   "competencia": "analisar",
+   "integracao": [
+    "M01",
+    "M02"
+   ],
+   "enunciado": "Tres radares identicos com defeitos distintos (A: FRP erratica; B: portadora derivando; C: LP maior que a nominal). (a) bloco falho em cada; (b) propriedade da RFP que explica o radar C; (c) tres causas possiveis para o radar B; (d) o radar B teria a mesma vulnerabilidade com Klystron; (e) qual defeito afeta o alcance maximo sem ambiguidade.",
+   "gabarito": "a) A sincronizador, B oscilador, C modulador/RFP | b) o comprimento eletrico da linha artificial: LP = T | c) corrente anodica, campo magnetico, ajuste da carga (tambem temperatura e corrente catodo-anodo) | d) menos vulneravel: com Klystron a frequencia vem de um oscilador estavel de baixa potencia | e) o do radar A, pois Rmax = c/(2.FRP)",
+   "justificativa": "a) Cada bloco fixa uma caracteristica; as caracteristicas intactas isentam os demais blocos. b) LP = T (p.1-35): qualquer alteracao em L ou C da rede alonga o pulso; o oscilador apenas permanece polarizado por mais tempo. c) p.1-28/1-29 lista variacao na corrente anodica, na intensidade do campo magnetico ou no ajuste da carga como causadoras de salto de modo. d) p.1-22: a elevada estabilidade da Klystron e fator importante em radares Doppler e MTI; na arquitetura com amplificador a frequencia e definida por oscilador estavel e a valvula so amplifica. e) Com FRP erratica o alcance sem ambiguidade varia de forma imprevisivel e alvos podem alternar entre indicacao correta e segunda varredura.",
+   "justificativa_distratores": "O erro dominante e atribuir o radar C ao oscilador: e ele que EMITE durante a LP, entao 'pulso mais longo' parece defeito dele. Mas o oscilador e escravo da polarizacao - oscila exatamente enquanto o modulador o alimenta.",
+   "origem": "apostila_DET_2022.pdf p.1-20, 1-22, 1-28/1-29, 1-35 [INFERENCIA PEDAGOGICA: cenarios de falha construidos; dependencias declaradas pela fonte]",
+   "tempo_estimado_s": 480,
+   "essencial_ate_domingo": false,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "espelho_correcao": [
+    {
+     "etapa": "Tres blocos corretos",
+     "pontos": 0.4,
+     "criterio": "A, B, C"
+    },
+    {
+     "etapa": "LP = T no radar C",
+     "pontos": 0.4,
+     "criterio": "comprimento eletrico da linha"
+    },
+    {
+     "etapa": "Tres causas para o radar B",
+     "pontos": 0.4,
+     "criterio": "da lista da fonte"
+    },
+    {
+     "etapa": "Comparacao com Klystron",
+     "pontos": 0.4,
+     "criterio": "cita estabilidade e arquitetura"
+    },
+    {
+     "etapa": "Identifica o defeito que afeta Rmax",
+     "pontos": 0.4,
+     "criterio": "radar A com formula"
+    }
+   ]
+  },
+  {
+   "id": "DET-M03-DIS-MB-009",
+   "id_publico": "DET-T2-M03-DIS-N4-009",
+   "tipo": "DIS",
+   "dificuldade": "MB",
+   "nivel_usuario": "N4",
+   "modulo": "M03",
+   "conceitos": [
+    "C019",
+    "C020",
+    "C021",
+    "C022"
+   ],
+   "vulnerabilidades": [
+    "V022"
+   ],
+   "competencia": "avaliar",
+   "integracao": [
+    "M01",
+    "M02"
+   ],
+   "enunciado": "Dois projetos (lancha-patrulha com espaco e peso limitados; busca aerea de longo alcance com MTI, em terra). (a) arquitetura e valvula para cada, com criterios; (b) razao de seguranca para preferir a magnetron; (c) tres caracteristicas desejaveis da forma do pulso e o que cada uma otimiza; (d) por que o patamar plano e mais critico com magnetron.",
+   "gabarito": "a) Projeto 1: oscilador autoexcitado com magnetron; Projeto 2: amplificador de potencia com Klystron | b) a magnetron opera com tensoes nao muito altas, e tensoes muito elevadas produzem raios X perigosos | c) portico anterior ingreme - precisao na distancia; patamar plano - frequencia constante; portico posterior ingreme - melhor PSD e menor alcance minimo | d) porque na magnetron a tensao aplicada define a frequencia (f = E/nBd)",
+   "justificativa": "a) p.1-21: magnetron para tamanho reduzido e simplicidade, quando potencia e estabilidade nao sao preponderantes; amplificador quando potencia e estabilidade sao determinantes e o tamanho nao e restricao. p.1-22 acrescenta que a estabilidade da Klystron e fator importante em radares Doppler e MTI. b) p.1-21, literal. c) p.1-40, literal. d) Pela relacao f = E/(n.B.d), uma variacao no patamar e uma variacao em E e portanto na portadora. Num transmissor com amplificador a frequencia vem de oscilador independente e a ondulacao afeta a amplitude, nao a frequencia.",
+   "justificativa_distratores": "O erro dominante e indicar Klystron para o Projeto 1 'porque e melhor' - ela tem mais potencia e mais estabilidade e parece estritamente superior. A fonte e explicita em que a escolha e por RESTRICAO DOMINANTE: numa lancha-patrulha espaco e peso mandam, e o transmissor com amplificador em geral toma maior espaco.",
+   "origem": "apostila_DET_2022.pdf p.1-21, 1-22, 1-40; SUE6.2a4 .odp slide 30",
+   "tempo_estimado_s": 360,
+   "essencial_ate_domingo": false,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "espelho_correcao": [
+    {
+     "etapa": "Arquitetura e valvula nos dois projetos",
+     "pontos": 0.4,
+     "criterio": "com criterios da fonte"
+    },
+    {
+     "etapa": "Razao de seguranca",
+     "pontos": 0.4,
+     "criterio": "raios X"
+    },
+    {
+     "etapa": "Tres formas do pulso",
+     "pontos": 0.4,
+     "criterio": "as tres, com o que otimizam"
+    },
+    {
+     "etapa": "Patamar plano e f = E/nBd",
+     "pontos": 0.4,
+     "criterio": "liga tensao a frequencia"
+    }
+   ]
+  },
+  {
+   "id": "DET-M04-COR-MED-001",
+   "id_publico": "DET-T2-M04-COR-N3-001",
+   "tipo": "COR",
+   "dificuldade": "MED",
+   "nivel_usuario": "N3",
+   "modulo": "M04",
+   "conceitos": [
+    "C023",
+    "C024",
+    "C025",
+    "C026",
+    "C027",
+    "C028",
+    "C029",
+    "C030"
+   ],
+   "vulnerabilidades": [
+    "V019",
+    "V020",
+    "V025"
+   ],
+   "competencia": "comparar",
+   "integracao": [
+    "M02",
+    "M03",
+    "M06"
+   ],
+   "enunciado": "Associar onze afirmativas a nove blocos do receptor (OL, misturador, CAF, amplif. FI, CAG, detector de video, STC, FTC, amplif. de video). Blocos repetem.",
+   "gabarito": "A; B; C; C; D; E; E; F; G; H; I",
+   "justificativa": "Dez das onze afirmativas sao redacao literal da Q1 da SOPA T2 2024, que atribuiu duas afirmativas ao CAF e duas ao CAG. A decima primeira (amplificador de video somando marca de proa e marcas de distancia) vem de fig. 1.5.15 e do SUE6.5 e nao caiu em 2024.",
+   "justificativa_distratores": "O distrator dominante e marcar o MISTURADOR para 'definem a banda passante do receptor': ele gera a FI, e parece razoavel que quem gera defina a banda. A fonte e categorica - a faixa de passagem e essencialmente determinada pelo AMPLIFICADOR DE FI, pelos seus estagios sintonizados. Segundo distrator: distribuir as afirmativas do CAF e do CAG em blocos diferentes, apesar do aviso de que blocos repetem.",
+   "origem": "T2/SOPA DET T2 2024.pdf Q1 (blocos D, E, F, G, H, I, J, L); apostila_DET_2022.pdf p.1-42, 1-44, 1-50, 1-55, 1-57; SUE6.5 .odp",
+   "tempo_estimado_s": 360,
+   "essencial_ate_domingo": true,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "correlacao": {
+    "coluna_a": [
+     "A Oscilador local",
+     "B Misturador",
+     "C CAF",
+     "D Amplificador de FI",
+     "E CAG",
+     "F Detector de video",
+     "G STC",
+     "H FTC",
+     "I Amplificador de video"
+    ],
+    "coluna_b": [
+     "produz frequencia estavel para FI estavel",
+     "gera o sinal de FI",
+     "amostra o sinal transmitido",
+     "controla a frequencia do oscilador local",
+     "estagios sintonizados definem a banda passante",
+     "referencia no nivel medio CC",
+     "controla o ganho do amplificador de FI",
+     "extrai a envoltoria do sinal de FI",
+     "reduz o ganho nas distancias menores",
+     "reduz o efeito da superposicao de ecos",
+     "soma marca de proa e marcas de distancia"
+    ],
+    "pares": {
+     "produz frequencia estavel para FI estavel": "A",
+     "gera o sinal de FI": "B",
+     "amostra o sinal transmitido": "C",
+     "controla a frequencia do oscilador local": "C",
+     "estagios sintonizados definem a banda passante": "D",
+     "referencia no nivel medio CC": "E",
+     "controla o ganho do amplificador de FI": "E",
+     "extrai a envoltoria do sinal de FI": "F",
+     "reduz o ganho nas distancias menores": "G",
+     "reduz o efeito da superposicao de ecos": "H",
+     "soma marca de proa e marcas de distancia": "I"
+    }
+   }
+  },
+  {
+   "id": "DET-M04-COR-MED-002",
+   "id_publico": "DET-T2-M04-COR-N3-002",
+   "tipo": "COR",
+   "dificuldade": "MED",
+   "nivel_usuario": "N3",
+   "modulo": "M04",
+   "conceitos": [
+    "C025",
+    "C026",
+    "C029",
+    "C030"
+   ],
+   "vulnerabilidades": [
+    "V020",
+    "V027"
+   ],
+   "competencia": "aplicar",
+   "integracao": [
+    "M02",
+    "M03",
+    "M06"
+   ],
+   "enunciado": "Associar seis sintomas observados na tela ou na operacao ao circuito responsavel (STC, FTC, CAF, CAG, ganho manual).",
+   "gabarito": "A; B; B; C; D; E",
+   "justificativa": "Retorno do mar ate 1.000 jardas e STC (p.1-55, literal). Alvo mascarado por massa de terra e alvo dentro de chuva ou neve sao ambos FTC - mesmo mecanismo de eco extenso mascarando eco pequeno (p.1-56, fig. 1.5.22). Ecos enfraquecendo com necessidade de sintonia manual indica CAF inoperante (p.1-43). Clutter de pulso longo e CAG (p.1-44, literal). O ajuste que no maximo satura o receptor com alvos proximos e o ganho manual (p.1-55).",
+   "justificativa_distratores": "O distrator dominante e marcar STC para o clutter de pulso longo: ambos sao anti-clutter. Mas a fonte atribui explicitamente os pulsos longos de clutter ao CAG; o STC e definido pela DISTANCIA, nao pela duracao do eco.",
+   "origem": "apostila_DET_2022.pdf p.1-43, 1-44, 1-55, 1-56, figs. 1.5.21 e 1.5.22",
+   "tempo_estimado_s": 300,
+   "essencial_ate_domingo": true,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "correlacao": {
+    "coluna_a": [
+     "A STC",
+     "B FTC",
+     "C CAF",
+     "D CAG",
+     "E Ganho manual"
+    ],
+    "coluna_b": [
+     "retorno do mar ate 1000 jardas",
+     "alvo mascarado por massa de terra",
+     "alvo dentro de chuva ou neve",
+     "ecos enfraquecendo com sintonia manual",
+     "clutter de pulso longo saturando a tela",
+     "ajuste que no maximo satura o receptor"
+    ],
+    "pares": {
+     "retorno do mar ate 1000 jardas": "A",
+     "alvo mascarado por massa de terra": "B",
+     "alvo dentro de chuva ou neve": "B",
+     "ecos enfraquecendo com sintonia manual": "C",
+     "clutter de pulso longo saturando a tela": "D",
+     "ajuste que no maximo satura o receptor": "E"
+    }
+   }
+  },
+  {
+   "id": "DET-M04-COR-BAS-003",
+   "id_publico": "DET-T2-M04-COR-N3-003",
+   "tipo": "COR",
+   "dificuldade": "BAS",
+   "nivel_usuario": "N3",
+   "modulo": "M04",
+   "conceitos": [
+    "C025",
+    "C029",
+    "C030"
+   ],
+   "vulnerabilidades": [
+    "V027"
+   ],
+   "competencia": "reconhecer",
+   "integracao": [
+    "M02",
+    "M03",
+    "M06"
+   ],
+   "enunciado": "Associar oito componentes ou sinais aos circuitos a que pertencem (CAF, CAG, STC, FTC, detector de video, misturador balanceado).",
+   "gabarito": "A; B; C; D; E; F; A; C",
+   "justificativa": "Discriminador de frequencia e atenuador da amostra do pulso transmitido pertencem ao CAF (p.1-43). Filtro RC em realimentacao negativa e o CAG (p.1-44). MV monoestavel disparado a cada t0 e resistor variavel R1 da curva de recuperacao pertencem ao STC (fig. 1.5.17). Constante de tempo rapida R1C1 que diferencia e o FTC (fig. 1.5.18). Retificador mais filtro passa-baixas e o detector de video (p.1-57). Dois cristais a lambda/2 e o misturador balanceado (p.1-45).",
+   "justificativa_distratores": "O distrator dominante e atribuir o 'atenuador' ao STC ou ao CAG, porque atenuar soa como controle de ganho. O atenuador do CAF nao atenua o sinal recebido: reduz a amostra do pulso TRANSMITIDO a um nivel que o misturador do CAF suporte.",
+   "origem": "apostila_DET_2022.pdf p.1-43, 1-44, 1-45, 1-55, 1-56, 1-57",
+   "tempo_estimado_s": 240,
+   "essencial_ate_domingo": false,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "correlacao": {
+    "coluna_a": [
+     "A CAF",
+     "B CAG",
+     "C STC",
+     "D FTC",
+     "E Detector de video",
+     "F Misturador balanceado"
+    ],
+    "coluna_b": [
+     "discriminador de frequencia",
+     "filtro RC em realimentacao negativa",
+     "MV monoestavel disparado a cada t0",
+     "constante de tempo rapida R1C1",
+     "retificador e filtro passa-baixas",
+     "dois cristais separados por lambda/2",
+     "atenuador da amostra do pulso transmitido",
+     "resistor variavel R1 da curva de recuperacao"
+    ],
+    "pares": {
+     "discriminador de frequencia": "A",
+     "filtro RC em realimentacao negativa": "B",
+     "MV monoestavel disparado a cada t0": "C",
+     "constante de tempo rapida R1C1": "D",
+     "retificador e filtro passa-baixas": "E",
+     "dois cristais separados por lambda/2": "F",
+     "atenuador da amostra do pulso transmitido": "A",
+     "resistor variavel R1 da curva de recuperacao": "C"
+    }
+   }
+  },
+  {
+   "id": "DET-M04-VF-MED-004",
+   "id_publico": "DET-T2-M04-VF-N3-004",
+   "tipo": "VF",
+   "dificuldade": "MED",
+   "nivel_usuario": "N3",
+   "modulo": "M04",
+   "conceitos": [
+    "C023",
+    "C024",
+    "C027",
+    "C028",
+    "C031"
+   ],
+   "vulnerabilidades": [
+    "V025",
+    "V026"
+   ],
+   "competencia": "explicar",
+   "integracao": [
+    "M02",
+    "M03",
+    "M06"
+   ],
+   "enunciado": "Sete itens V/F sobre banda passante, detector de video, misturador balanceado, estagios de FI, pre-amplificador, escolha da FI e excesso de STC; corrigir as falsas.",
+   "gabarito": "a) F  b) F  c) V  d) F  e) V  f) V  g) F",
+   "justificativa": "a) A banda e determinada pelo AMPLIFICADOR DE FI (p.1-50). b) O detector EXTRAI a envoltoria; quem amplifica e o amplificador de video (p.1-42, 1-57). d) Mais estagios de FI aumentam o ganho e DIMINUEM a banda, por constancia do produto ganho-largura de faixa (p.1-50). g) STC forte demais provoca PERDA DE MUITOS ALVOS PROXIMOS (fig. 1.5.21 C). c), e) e f) sao literais da fonte.",
+   "justificativa_distratores": "Em (b) os dois blocos sao adjacentes e ambos tratam o video; a banca cobrou o verbo exato 'extrai a envoltoria'. Em (d) 'mais estagios, mais de tudo' e a intuicao - o produto ganho-banda e que e constante. Em (g) reduzir clutter soa sempre bom e 'conservador' sugere seguranca; a fonte mostra os tres casos lado a lado para provar que o excesso apaga alvos reais.",
+   "origem": "apostila_DET_2022.pdf p.1-42, 1-45/1-46, 1-50, 1-57, fig. 1.5.21",
+   "tempo_estimado_s": 420,
+   "essencial_ate_domingo": false,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "itens_vf": [
+    {
+     "texto": "A banda passante do receptor e essencialmente determinada pelo estagio misturador.",
+     "valor": "F",
+     "justificativa": "E determinada pelo amplificador de FI, pelos seus estagios sintonizados (p.1-50)."
+    },
+    {
+     "texto": "O detector de video amplifica a envoltoria do sinal de FI para apresentacao no indicador.",
+     "valor": "F",
+     "justificativa": "Ele EXTRAI a envoltoria; quem amplifica e o amplificador de video."
+    },
+    {
+     "texto": "No misturador balanceado, o ruido do oscilador local chega aos dois cristais em fase e por isso e cancelado.",
+     "valor": "V",
+     "justificativa": "p.1-45/1-46, literal."
+    },
+    {
+     "texto": "Aumentar o numero de estagios de FI aumenta o ganho e tambem a faixa de passagem.",
+     "valor": "F",
+     "justificativa": "Aumenta o ganho e DIMINUI a banda (produto ganho-largura de faixa constante)."
+    },
+    {
+     "texto": "O pre-amplificador de RF de baixo ruido reduz a figura de ruido porque o misturador gera mais ruido que ele.",
+     "valor": "V",
+     "justificativa": "p.1-42, literal."
+    },
+    {
+     "texto": "FI mais elevada facilita a rejeicao da imagem mas da figura de ruido maior e seletividade menor.",
+     "valor": "V",
+     "justificativa": "p.1-50, literal."
+    },
+    {
+     "texto": "Um ajuste forte demais do STC e conservador, pois no maximo reduz clutter em excesso.",
+     "valor": "F",
+     "justificativa": "Provoca a perda de muitos alvos proximos (fig. 1.5.21 C)."
+    }
+   ]
+  },
+  {
+   "id": "DET-M04-DIS-MED-005",
+   "id_publico": "DET-T2-M04-CAL-N3-005",
+   "tipo": "DIS",
+   "dificuldade": "MED",
+   "nivel_usuario": "N3",
+   "modulo": "M04",
+   "conceitos": [
+    "C023",
+    "C024"
+   ],
+   "vulnerabilidades": [
+    "V019"
+   ],
+   "competencia": "calcular",
+   "integracao": [
+    "M02",
+    "M03",
+    "M06"
+   ],
+   "enunciado": "Radar transmite em 9.400 MHz, FI de projeto 60 MHz. (a) frequencias possiveis do OL; (b) qual segue a convencao do exemplo da apostila; (c) nova FI se o TX derivar para 9.408 MHz com OL fixo; (d) consequencia para a deteccao; (e) circuito que corrige e para que valor leva o OL.",
+   "gabarito": "a) 9.340 MHz ou 9.460 MHz | b) 9.340 MHz, pois no exemplo da p.1-42 o OL (9.970) esta abaixo da portadora (10.000) | c) 68 MHz | d) fora da banda do amplificador de FI: os ecos somem ou enfraquecem drasticamente | e) o CAF, elevando o OL para 9.348 MHz",
+   "justificativa": "a) FI = |feco - fOL| = 60 admite OL abaixo ou acima. b) O exemplo da apostila fixa o OL abaixo. c) 9.408 - 9.340 = 68 MHz, 8 MHz fora do projeto. d) O amplificador de FI e um conjunto de estagios sintonizados em 60 MHz com banda de poucos MHz; 68 MHz cai fora da faixa. e) O misturador do CAF compara a amostra do TX com a do OL, o discriminador acusa o desvio e o circuito de controle eleva o OL para 9.348, restaurando 60 MHz.",
+   "justificativa_distratores": "O erro dominante e responder que o CAF corrige o TRANSMISSOR, devolvendo-o a 9.400 MHz - e o que faria sentido 'consertar'. Mas o transmissor e uma magnetron de alta potencia cuja frequencia deriva por causas fisicas incontrolaveis; o que se ajusta e o oscilador local, de baixa potencia e sintonizavel. A afirmativa da banca e literal: 'controla a frequencia do oscilador local'.",
+   "origem": "apostila_DET_2022.pdf p.1-42, 1-43/1-44; T2/SOPA DET T2 2024.pdf Q1 bloco D",
+   "tempo_estimado_s": 360,
+   "essencial_ate_domingo": true,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "espelho_correcao": [
+    {
+     "etapa": "Duas solucoes para o OL",
+     "pontos": 0.4,
+     "criterio": "9.340 e 9.460 MHz"
+    },
+    {
+     "etapa": "Escolhe a convencao da fonte com citacao",
+     "pontos": 0.4,
+     "criterio": "cita o exemplo 10.000/9.970"
+    },
+    {
+     "etapa": "Nova FI",
+     "pontos": 0.4,
+     "criterio": "68 MHz"
+    },
+    {
+     "etapa": "Consequencia na banda do amplif. de FI",
+     "pontos": 0.4,
+     "criterio": "sai da faixa"
+    },
+    {
+     "etapa": "CAF corrige o OL para 9.348",
+     "pontos": 0.4,
+     "criterio": "nao corrige o TX"
+    }
+   ]
+  },
+  {
+   "id": "DET-M04-DIS-DIF-006",
+   "id_publico": "DET-T2-M04-CAL-N4-006",
+   "tipo": "DIS",
+   "dificuldade": "DIF",
+   "nivel_usuario": "N4",
+   "modulo": "M04",
+   "conceitos": [
+    "C027",
+    "C031"
+   ],
+   "vulnerabilidades": [
+    "V025"
+   ],
+   "competencia": "aplicar",
+   "integracao": [
+    "M02",
+    "M03",
+    "M06"
+   ],
+   "enunciado": "Radar com LP selecionavel 3 us ou 0,5 us. (a) banda com n=1 em cada; (b) banda com n=1,4 para 0,5 us e o que esse n privilegia; (c) razao entre as bandas comparada a razao das LP; (d) aumento do ruido em dB; (e) fator de reducao do alcance por R proporcional a Smin^(-1/4); (f) enunciar o compromisso.",
+   "gabarito": "a) 333,3 kHz e 2 MHz | b) 2,8 MHz; privilegia a maxima relacao sinal-ruido | c) razao 6, exatamente a inversa da razao das LP | d) 7,78 dB | e) alcance cai para 64% (perda de cerca de 36%) | f) melhorar o PSD de 450 m para 75 m custa 7,78 dB de sensibilidade e cerca de 36% do alcance",
+   "justificativa": "a) B = n/T: 1/3e-6 = 333,3 kHz; 1/0,5e-6 = 2 MHz. b) 1,4/0,5e-6 = 2,8 MHz; a fonte diz que n entre 1 e 1,4 e adotado quando se deseja a maxima relacao sinal-ruido (p.1-50). c) 2e6/333,3e3 = 6; as LP estao na razao 3/0,5 = 6, logo a razao das bandas e a inversa, como exige B proporcional a 1/T. d) Pn = kT0Bn e proporcional a Bn: 10.log6 = 7,78 dB. e) Smin tambem piora por fator 6; (1/6)^(1/4) = 0,639.",
+   "justificativa_distratores": "O erro dominante e concluir que o alcance cai por fator 6: o ruido cresce 6x e a tentacao e transportar o fator direto para o alcance. Entre Smin e R existe a QUARTA RAIZ da equacao radar - fator 6 em potencia vira fator 1,57 em distancia.",
+   "origem": "apostila_DET_2022.pdf p.1-47 e p.1-50; SUE6.11 (quarta raiz) [INFERENCIA PEDAGOGICA: o encadeamento B -> Pn -> Smin -> R nao e feito por nenhuma fonte; cada elo e, a composicao e minha]",
+   "tempo_estimado_s": 480,
+   "essencial_ate_domingo": false,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "espelho_correcao": [
+    {
+     "etapa": "Bandas com n=1",
+     "pontos": 0.4,
+     "criterio": "333,3 kHz e 2 MHz"
+    },
+    {
+     "etapa": "Banda com n=1,4 e o criterio",
+     "pontos": 0.4,
+     "criterio": "2,8 MHz; maxima S/N"
+    },
+    {
+     "etapa": "Razao inversa",
+     "pontos": 0.4,
+     "criterio": "6, comparada as LP"
+    },
+    {
+     "etapa": "Aumento do ruido em dB",
+     "pontos": 0.4,
+     "criterio": "7,78 dB"
+    },
+    {
+     "etapa": "Fator de alcance com quarta raiz",
+     "pontos": 0.4,
+     "criterio": "0,639"
+    },
+    {
+     "etapa": "Enuncia o compromisso citando o PSD",
+     "pontos": 0.4,
+     "criterio": "liga a M02"
+    }
+   ]
+  },
+  {
+   "id": "DET-M04-DIS-MB-007",
+   "id_publico": "DET-T2-M04-CAL-N4-007",
+   "tipo": "DIS",
+   "dificuldade": "MB",
+   "nivel_usuario": "N4",
+   "modulo": "M04",
+   "conceitos": [
+    "C023",
+    "C024",
+    "C027",
+    "C028",
+    "C031"
+   ],
+   "vulnerabilidades": [
+    "V026"
+   ],
+   "competencia": "integrar",
+   "integracao": [
+    "M02",
+    "M03",
+    "M06"
+   ],
+   "enunciado": "Receptor com Bn = 2 MHz, T0 = 290 K, (S/N)min = 10 dB. Config A sem pre-amplificador (1o estagio cristal G1=0,5, F1=6 dB; 2o FI F2=3 dB) e Config B com pre-amplificador (G1=20 dB, F1=2 dB; 2o estagio F2=9 dB). (a) ruido termico em W e dBm; (b) F0 de A; (c) F0 de B; (d) Smin de cada; (e) ganho de sensibilidade; (f) ganho de alcance; (g) explicar pela formula de cascata.",
+   "gabarito": "a) 8e-15 W = -111,0 dBm | b) 7,76 dB | c) 2,19 dB | d) -93,2 dBm e -98,8 dBm | e) 5,57 dB | f) cerca de 38% mais alcance | g) com G1 < 1 dividir por G1 e multiplicar, e o termo do 2o estagio passa a dominar",
+   "justificativa": "a) Pn = kT0.Bn = 4e-21 x 2e6 = 8e-15 W; 10.log(8e-12) = -111,0 dBm. b) F1 = 3,981; F2 = 1,995; F0 = 3,981 + 0,995/0,5 = 5,972 = 7,76 dB. c) F1 = 1,585; F2 = 7,943; G1 = 100; F0 = 1,585 + 6,943/100 = 1,654 = 2,19 dB. d) Em dB: Smin = Pn + F0 + (S/N)min. e) 7,76 - 2,19 = 5,57 dB = fator 3,61. f) 3,61^(1/4) = 1,378. g) Na configuracao B, G1 = 100 faz o termo (7,943-1) encolher para 0,069 mesmo com um 2o estagio ruidosissimo; na A, G1 = 0,5 transforma 0,995 em 1,991, que passa a dominar F0. E a ressalva literal da p.1-49 sobre o cristal com G1 < 1.",
+   "justificativa_distratores": "O erro dominante e somar figuras de ruido em decibeis (6 + 3 = 9 dB). Decibeis somam quando se trata de GANHOS em cascata; figuras de ruido nao somam - combinam pela formula de cascata e so depois se converte o resultado para dB.",
+   "origem": "apostila_DET_2022.pdf p.1-47 a 1-49, fig. 1.5.6; SUE6.11 (quarta raiz)",
+   "tempo_estimado_s": 600,
+   "essencial_ate_domingo": false,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "espelho_correcao": [
+    {
+     "etapa": "Ruido termico em W e dBm",
+     "pontos": 0.4,
+     "criterio": "8e-15 W; -111 dBm"
+    },
+    {
+     "etapa": "F0 da configuracao A",
+     "pontos": 0.4,
+     "criterio": "7,76 dB"
+    },
+    {
+     "etapa": "F0 da configuracao B",
+     "pontos": 0.4,
+     "criterio": "2,19 dB"
+    },
+    {
+     "etapa": "Smin nas duas, somando em dB",
+     "pontos": 0.4,
+     "criterio": "-93,2 e -98,8 dBm"
+    },
+    {
+     "etapa": "Ganho de sensibilidade",
+     "pontos": 0.4,
+     "criterio": "5,57 dB"
+    },
+    {
+     "etapa": "Ganho de alcance com quarta raiz",
+     "pontos": 0.4,
+     "criterio": "cerca de 38%"
+    },
+    {
+     "etapa": "Explica G1 < 1 pela formula",
+     "pontos": 0.4,
+     "criterio": "dividir por 0,5 e multiplicar por 2"
+    }
+   ]
+  },
+  {
+   "id": "DET-M04-DIS-MED-008",
+   "id_publico": "DET-T2-M04-DIA-N3-008",
+   "tipo": "DIS",
+   "dificuldade": "MED",
+   "nivel_usuario": "N3",
+   "modulo": "M04",
+   "conceitos": [
+    "C023",
+    "C024",
+    "C027",
+    "C028"
+   ],
+   "vulnerabilidades": [
+    "V019",
+    "V027"
+   ],
+   "competencia": "explicar",
+   "integracao": [
+    "M02",
+    "M03",
+    "M06"
+   ],
+   "enunciado": "Eco chegando a antena de um radar de micro-ondas SEM pre-amplificador. (a) ordem dos blocos ate o indicador; (b) onde o sinal deixa de ser alta frequencia; (c) que bloco protege o primeiro estagio e de que; (d) dois blocos que atuam sobre o amplificador de FI sem estar no caminho do sinal; (e) que outros sinais entram no amplificador de video.",
+   "gabarito": "a) antena, chave de antena (TR), misturador, amplificador de FI, detector de video, amplificador de video, indicador | b) no detector de video | c) a unidade TR, protege o cristal misturador do pulso de transmissao | d) CAG (nivel medio CC) e STC (tempo/distancia) | e) marca de proa e marcas de distancia fixas e movel",
+   "justificativa": "a) Sem pre-amplificador o misturador e o primeiro estagio - caso explicitamente analisado na p.1-43. b) Ate o detector o sinal e de alta frequencia (RF e depois FI); o detector extrai a envoltoria e dai em diante e video. c) p.1-43: o cristal, por ser muito delicado, seria danificado pelo pulso de transmissao. d) Ambos atuam sobre o amplificador de FI sem estar no caminho do sinal; o CAF tambem esta fora do caminho, mas atua no oscilador local. e) fig. 1.5.15 e SUE6.5.",
+   "justificativa_distratores": "O erro dominante e colocar o OSCILADOR LOCAL na sequencia do item (a): ele e indispensavel para gerar a FI, entao parece fazer parte da cadeia. Mas o sinal do eco nao passa por ele - o OL INJETA um sinal no misturador. Distinguir 'esta no caminho' de 'atua sobre o caminho' e o que o item (d) cobra.",
+   "origem": "apostila_DET_2022.pdf p.1-42, 1-43, 1-54, 1-57, fig. 1.5.15; SUE6.5 .odp",
+   "tempo_estimado_s": 360,
+   "essencial_ate_domingo": true,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "espelho_correcao": [
+    {
+     "etapa": "Sequencia correta dos blocos",
+     "pontos": 0.4,
+     "criterio": "sem incluir o OL"
+    },
+    {
+     "etapa": "Ponto de transicao RF-video",
+     "pontos": 0.4,
+     "criterio": "detector de video"
+    },
+    {
+     "etapa": "TR protegendo o cristal",
+     "pontos": 0.4,
+     "criterio": "cita o pulso de transmissao"
+    },
+    {
+     "etapa": "CAG e STC fora do caminho",
+     "pontos": 0.4,
+     "criterio": "com a grandeza de controle de cada"
+    },
+    {
+     "etapa": "Sinais auxiliares do video",
+     "pontos": 0.4,
+     "criterio": "marca de proa e marcas de distancia"
+    }
+   ]
+  },
+  {
+   "id": "DET-M04-DIS-DIF-009",
+   "id_publico": "DET-T2-M04-DIA-N4-009",
+   "tipo": "DIS",
+   "dificuldade": "DIF",
+   "nivel_usuario": "N4",
+   "modulo": "M04",
+   "conceitos": [
+    "C023",
+    "C024",
+    "C025",
+    "C026",
+    "C027",
+    "C028",
+    "C029",
+    "C030"
+   ],
+   "vulnerabilidades": [
+    "V019",
+    "V020",
+    "V027"
+   ],
+   "competencia": "analisar",
+   "integracao": [
+    "M02",
+    "M03",
+    "M06"
+   ],
+   "enunciado": "Quatro ocorrencias num radar de superficie: (1) retorno randomico ate 1.000 jd; (2) alvo aereo mascarado por massa de terra; (3) ecos enfraquecendo, exigindo sintonia manual; (4) contato em distancia correta e marcacao falsa. (a) circuito de cada; (b) onde age fisicamente; (c) duas causas de deriva do transmissor, uma de M03 e outra de M04; (d) origem fisica do contato falso; (e) efeito colateral do STC no maximo.",
+   "gabarito": "a) 1 STC, 2 FTC, 3 CAF inoperante, 4 STC | b) STC e CAG no amplificador de FI; FTC no acoplamento detector-amplificador de video; CAF no oscilador local | c) M03: corrente anodica, campo magnetico, ajuste da carga, salto de modo, dilatacao termica. M04: a impedancia da antena varia com o proprio movimento, variando a carga do transmissor | d) lobulo secundario da antena detectou alvo proximo de eco intenso: distancia vem do tempo (correta) e marcacao vem da direcao do lobulo principal (falsa) | e) perda de muitos alvos proximos",
+   "justificativa": "A causa de M04 e a mais instrutiva: a antena gira o tempo todo, logo a deriva e continua e inevitavel - nao um defeito, mas condicao de operacao. Dai o CAF ser automatico. O item (d) conecta M04 ao SUE6.8: o lobulo lateral entrega distancia certa e marcacao errada, e o circuito que minimiza isso e o STC, conforme p.1-55.",
+   "justificativa_distratores": "O erro dominante e atribuir a ocorrencia 4 ao FTC: 'contato falso' sugere clutter, e FTC e o circuito de limpar a tela. Mas o eco do lobulo lateral nao e extenso nem mascarador - e forte e proximo, exatamente o caso que a fonte lista sob STC, junto com o retorno do mar.",
+   "origem": "apostila_DET_2022.pdf p.1-28/1-29, 1-43, 1-55, 1-56, figs. 1.5.21 e 1.5.22; SUE6.8 exercicios (c) e (d)",
+   "tempo_estimado_s": 540,
+   "essencial_ate_domingo": true,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "espelho_correcao": [
+    {
+     "etapa": "Quatro circuitos corretos",
+     "pontos": 0.4,
+     "criterio": "incluindo STC para o lobulo lateral"
+    },
+    {
+     "etapa": "Ponto de atuacao de cada",
+     "pontos": 0.4,
+     "criterio": "FI, video, OL"
+    },
+    {
+     "etapa": "Duas causas de deriva, de modulos diferentes",
+     "pontos": 0.4,
+     "criterio": "interna e externa"
+    },
+    {
+     "etapa": "Origem fisica do contato falso",
+     "pontos": 0.4,
+     "criterio": "distancia do tempo, marcacao da direcao"
+    },
+    {
+     "etapa": "Efeito colateral do excesso de STC",
+     "pontos": 0.4,
+     "criterio": "perda de alvos proximos"
+    }
+   ]
+  },
+  {
+   "id": "DET-M04-DIS-MB-010",
+   "id_publico": "DET-T2-M04-DIS-N4-010",
+   "tipo": "DIS",
+   "dificuldade": "MB",
+   "nivel_usuario": "N4",
+   "modulo": "M04",
+   "conceitos": [
+    "C023",
+    "C025",
+    "C026",
+    "C029",
+    "C030"
+   ],
+   "vulnerabilidades": [
+    "V019",
+    "V020",
+    "V027"
+   ],
+   "competencia": "avaliar",
+   "integracao": [
+    "M02",
+    "M03",
+    "M06"
+   ],
+   "enunciado": "Os quatro controles automaticos do receptor. (a) tabela distinguindo por grandeza controlada, ponto de atuacao e problema que resolve; (b) diferenca essencial entre CAG e STC, que agem no mesmo bloco; (c) por que o CAF e o unico que depende de sinal vindo do transmissor; (d) por que o CAF e praticamente obrigatorio com magnetron e menos critico com Klystron.",
+   "gabarito": "a) CAF frequencia/OL/deriva; CAG ganho/amplif. FI/clutter de pulso longo; STC ganho/amplif. FI/alvos proximos e retorno do mar; FTC constante de tempo/acoplamento do video/eco extenso mascarador | b) a variavel de controle: nivel medio (CAG) x tempo e portanto distancia (STC) | c) e a unica realimentacao transmissor-receptor do radar | d) com magnetron a frequencia e gerada pela propria valvula de potencia e deriva; com Klystron vem de um oscilador estavel de baixa potencia",
+   "justificativa": "b) O CAG e realimentacao continua por filtro RC com referencia no nivel medio CC; o STC e disparado a cada pulso por um MV monoestavel, com a curva de recuperacao fixada pelo resistor variavel R1. Um responde a 'quao forte esta o sinal', o outro a 'quao perto esta o alvo'. c) O CAF precisa saber em que frequencia o pulso REALMENTE saiu, e a unica fonte dessa informacao e uma amostra do proprio pulso transmitido, tomada por um atenuador. d) p.1-22: a elevada estabilidade da Klystron e fator importante em radares Doppler e MTI; com a portadora estavel o CAF tem muito menos trabalho, embora a variacao de carga da antena permaneca.",
+   "justificativa_distratores": "O erro dominante e dizer que o CAG combate 'alvos proximos' e o STC 'sinais fortes': as duas descricoes sao vagas o bastante para caberem nos dois. O criterio que nao falha e o do item (b) - distancia (STC) contra nivel medio (CAG).",
+   "origem": "apostila_DET_2022.pdf p.1-22, 1-43, 1-44, 1-55, 1-56; SUE6.5 .odp; T2/SOPA DET T2 2024.pdf Q1",
+   "tempo_estimado_s": 420,
+   "essencial_ate_domingo": false,
+   "status": "ativa",
+   "criada_em": "2026-09-12",
+   "versao": 1,
+   "espelho_correcao": [
+    {
+     "etapa": "Tabela com os quatro controles",
+     "pontos": 0.4,
+     "criterio": "tres colunas corretas"
+    },
+    {
+     "etapa": "Diferenca CAG x STC",
+     "pontos": 0.4,
+     "criterio": "variavel de controle"
+    },
+    {
+     "etapa": "CAF como unica realimentacao TX-RX",
+     "pontos": 0.4,
+     "criterio": "amostra do pulso transmitido"
+    },
+    {
+     "etapa": "Magnetron x Klystron",
+     "pontos": 0.4,
+     "criterio": "onde a frequencia e gerada"
+    }
+   ]
+  }
+ ]
+}

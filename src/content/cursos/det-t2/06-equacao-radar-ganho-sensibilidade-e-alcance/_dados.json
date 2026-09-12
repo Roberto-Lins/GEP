@@ -1,0 +1,17 @@
+{
+  "ordem": 6,
+  "slug": "06-equacao-radar-ganho-sensibilidade-e-alcance",
+  "titulo": "Equação radar, ganho, sensibilidade e alcance",
+  "prioridade": "muito alta",
+  "subtitulo": "Do balanço de potência ao alcance máximo e à interceptação por MAGE",
+  "tempoEstimado": "80 min",
+  "objetivo": "Relacionar potência, ganho, abertura, seção reta radar, sensibilidade e alcance, incluindo as conversões necessárias e a diferença entre eco radar e interceptação por MAGE.",
+  "palavrasChave": [
+    "equação radar",
+    "ganho",
+    "área efetiva",
+    "sensibilidade",
+    "alcance",
+    "MAGE"
+  ]
+}

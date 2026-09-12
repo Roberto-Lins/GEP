@@ -1,0 +1,19 @@
+{
+  "ordem": 4,
+  "slug": "04-recepcao-e-processamento-do-eco",
+  "titulo": "Recepção e processamento do eco",
+  "prioridade": "máxima",
+  "subtitulo": "Super-heteródino, FI, CAF, CAG, STC, FTC e ruído",
+  "tempoEstimado": "75 min",
+  "objetivo": "Explicar os estágios do receptor, calcular a frequência intermediária, distinguir os controles automáticos e relacionar banda passante, ruído, sensibilidade e alcance.",
+  "palavrasChave": [
+    "oscilador local",
+    "misturador",
+    "FI",
+    "CAF",
+    "CAG",
+    "STC",
+    "FTC",
+    "ruído"
+  ]
+}

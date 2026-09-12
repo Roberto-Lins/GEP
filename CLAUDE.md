@@ -8,11 +8,16 @@ Plataforma **multi-curso** 100% estática, estilo "campus de estudos". O aluno e
 dentro dele, segue uma **trilha sequencial** (timeline) de mini-matérias que dá sensação de
 progressão contínua.
 
-Hoje existem **4 cursos reais**, todos com o tema visual *naval-command*:
+Hoje existem **9 cursos reais**, todos com o tema visual *naval-command*:
 - **GEP** (Gestão Pública — P1): `ano 4 · semestre 1 · época P1 · turma geral`.
 - **HNV** (História Naval): `ano 4 · semestre 1 · época P1 · turma geral`.
 - **DET** (Detecção — PP1): `ano 4 · semestre 1 · época P1 · turma CA-HE`.
+- **DET-T2** (Detecção — T2): `ano 4 · semestre 2 · época T2 · turma CA-HE`.
 - **ING-4** (Inglês — PP1): `ano 4 · semestre 1 · época P1 · turma geral`.
+- **DIR** (Direito — P1): `ano 4 · semestre 1 · época P1 · turma geral`.
+- **FAS** (Fundamentos de Automação de Sistemas — P1): `ano 4 · semestre 1 · época P1 · seis turmas CA/FN`.
+- **OPN** (Operações Navais 1 — PP1): `ano 4 · semestre 1 · época P1 · turmas CA-HE/CA-HM/CA-HS`.
+- **REL** (Relações Internacionais — P1): `ano 4 · semestre 1 · época P1 · turma geral`.
 
 `turma: "geral"` = matéria comum a todas as turmas do ano (mas, na navegação, aparece **só** em
 GERAL, não dentro das turmas especializadas). Outros cursos citados nesta documentação (ex.:
@@ -24,6 +29,7 @@ GERAL, não dentro das turmas especializadas). Outros cursos citados nesta docum
 Framework:      Astro (output estático)
 Linguagem:      TypeScript
 Conteúdo:       MDX + Content Collections
+Fórmulas:       remark-math + KaTeX
 Estilo:         Tailwind CSS + temas por curso
 Interatividade: React apenas em ilhas (client:*)
 Progresso:      localStorage (sem backend)
@@ -277,6 +283,12 @@ próprias sem alterar o GEP.
 **DET — Detecção** (`ano 4 · sem 1 · P1 · turma CA-HE`):
 - 14 tópicos (`00`–`13`) + `99-revisao-final`. Calculadoras próprias em
   `src/components/cursos/det/` (listadas em `componentesExtras`).
+
+**DET-T2 — Detecção / Radar de Pulso** (`ano 4 · sem 2 · T2 · turma CA-HE`):
+- 8 tópicos (`00`–`07`) + `99-revisao-final`; M01–M04 estão publicados e M05–M07 aparecem como
+  lacunas explícitas até a chegada das próximas execuções acadêmicas.
+- Banco inicial com 42 grupos identificados por `DET-T2-*`; fórmulas em LaTeX renderizadas por KaTeX.
+- Detalhes: `docs/courses/DET-T2.md`.
 
 **ING-4 — Inglês** (`ano 4 · sem 1 · P1 · turma geral`):
 - 8 tópicos (`00`–`07`) + `99-revisao-final`. Dados em `src/data/cursos/ing4/`.

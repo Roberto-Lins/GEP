@@ -1,0 +1,17 @@
+{
+  "ordem": 7,
+  "slug": "07-integracao-adjacencias-e-preparacao-final",
+  "titulo": "Integração, adjacências e preparação final",
+  "prioridade": "alta",
+  "subtitulo": "Rastreamento, CW, MTI, GE, IFF e fechamento da trilha",
+  "tempoEstimado": "55 min",
+  "objetivo": "Integrar o radar de pulso aos assuntos adjacentes previstos no escopo e consolidar as diferenças que podem aparecer como contraste na avaliação.",
+  "palavrasChave": [
+    "rastreamento",
+    "CW",
+    "MTI",
+    "GE",
+    "IFF",
+    "integração"
+  ]
+}

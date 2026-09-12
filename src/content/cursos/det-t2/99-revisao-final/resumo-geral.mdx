@@ -1,0 +1,110 @@
+---
+titulo: "Folha de fórmulas"
+secao: "resumo-geral"
+secaoOrdem: 2
+---
+
+> `c = 3×10⁸ m/s` **sempre**. Convenção verificada na rubrica oficial da `SOPA DET T2 2024`.
+
+## §1 — As cinco características e o que cada uma afeta `M01→M02`
+
+| Característica | Afeta | Quantas grandezas |
+|---|---|---|
+| **Largura de pulso (LP)** | poder de separação em **distância** **e** distância **mínima** | **duas** |
+| **FRP** | alcance máximo **sem ambiguidade** | uma |
+| **Largura do feixe (θ_B)** | poder de separação em **marcação** | uma |
+| **Potência de transmissão** | **alcance** máximo | uma |
+| **Frequência da portadora** | **diretividade** e **alcance** (em sentidos opostos) | duas, em conflito |
+
+## §2 — Distância e desempenho `M01–M02` — origem comum
+
+Tudo abaixo descende de **`d = c·t/2`** ‹apostila p. 1-4›. Muda só o significado de `t`.
+
+| Grandeza | Fórmula | `t` é… | Qual valor escolher |
+|---|---|---|---|
+| Distância do alvo | `d = c·t/2 = 150·t(µs)` | tempo do eco | — |
+| **PSD** (separação em distância) | `PSD = c·LP/2` | a largura de pulso | **LP máxima** (pior caso) |
+| **R_mín** (distância mínima) | `R_mín = c·LP/2` | a largura de pulso | **LP mínima** (melhor caso) |
+| **R_máx** sem ambiguidade | `R_máx = c·TRP/2 = c/(2·FRP)` | o período entre pulsos | **FRP mínima** |
+| **R_real** (alvo ambíguo) | `R_real = R_máx + R_ind` | — | depois **reindique** na nova FRP |
+| **TRP** | `TRP = 1/FRP` | — | — |
+| **Potência média** | `P_méd = P_pico·LP·FRP = P_pico·LP/TRP` | — | **máx.**: LP máx **e** FRP máx |
+| **Ciclo de trabalho** | `CT = LP/TRP = LP·FRP` | — | — |
+| **PSM linear** | `x = 2π·R·θ°/360 = 0,01745·R·θ°` | — | θ em **graus** |
+| **PSM angular** | `= θ_B` (a própria abertura do feixe) | — | — |
+| **N_B** (pulsos sobre o alvo) | `N_B = (θ_B/θ₀)·FRP` | — | **mín.**: FRP mín **e** θ₀ máx |
+| **θ₀** (rotação) | `θ₀(°/s) = RPM × 6` | — | 18 RPM = 108 °/s |
+
+**Milha radar** ‹p. 1-5› — mede **tempo**: náutica **12,36 µs** · terrestre **10,75 µs**. O fator 2 já está dentro.
+**Constante de bolso:** 300 m/µs de percurso ⇒ **150 m/µs de distância radar**.
+
+## §3 — Equação radar `M06`
+
+| Etapa | Fórmula |
+|---|---|
+| Densidade de potência (isotrópica) | `S₁ = P/(4πR²)` |
+| Com ganho | `S₂ = P·G_t/(4πR²)` |
+| Potência interceptada pelo alvo | `P_a = A_a·S₂` |
+| Densidade refletida de volta | `S₃ = P·G_t·A_a/[(4πR²)²]` |
+| Potência recebida | `P_r = A·S₃ = P·G·A·A_a/[(4π)²R⁴]` |
+| **Ganho ↔ área efetiva** | `G = 4πA/λ²`  ⇒  `A = G·λ²/(4π)` |
+| Comprimento de onda | `λ = c/f` |
+| **Alcance máximo** | `R_máx = [P·G·A·A_a / ((4π)²·S_mín)]^(1/4)` |
+| **Banda × pulso** | `BW ≈ 1/τ` |
+| **MAGE — só ida** | `P_rx = P·G_t·A_rx/(4πR²)`  ← **4πR², nunca (4π)²R⁴** |
+
+**Conversões** · `G(dB) = 10·log G` ⇒ 40 dB = 10⁴ · 25 dB = 316,23
+`S(dBm) = 10·log(S/1 mW)` ⇒ **−80 dBm = 10⁻⁸ mW = 10⁻¹¹ W** (dois passos)
+**Quarta raiz:** 16× em P ⇒ 2× em R.
+
+## §3b — Transmissor `M03`
+
+| Grandeza | Fórmula / regra | Observação |
+|---|---|---|
+| **Largura de pulso da RFP** | `LP = T` | `T` = propagação **ida-e-volta** na linha artificial |
+| **Tensão na carga casada** | `e_L = E/2` | válido só se `R_L = R_C` |
+| **Potência de pico da RFP** | `P = (E/2)²/R_C` | erro de fator 2 na tensão ⇒ **fator 4** na potência |
+| **TRP sem diodo de carga** | `T_r = π·√(L_ch·C)` | carga CC ressonante: TRP **fixo** |
+| **Nº de modos da magnetron** | `N/2` | `N` = cavidades, **sempre par** |
+| **Feixes no modo π** | `N/2` | um feixe a cada **2** cavidades |
+| **Feixes no modo 2π/3** | `N/3` | **3** cavidades por feixe |
+| **Frequência de oscilação** | `f = E/(n·B·d)` | `n = 2` no modo π · `d` = distância entre cavidades adjacentes |
+| **Raio do elétron** | `R = m·v/(q·B)` | E↑ ⇒ R↑ · B↑ ⇒ R↓ |
+
+**A tripla que vale 1,5 ponto:** sincronizador → **FRP** · modulador → **LP** · oscilador → **portadora**.
+**Arquiteturas:** magnetron = **oscilador autoexcitado** (dispensa amplificador) · Klystron/TWT/CFA = **amplificadores**.
+**Forma do pulso:** pórtico anterior íngreme → precisão na distância · patamar plano → frequência constante · pórtico posterior íngreme → PSD e `R_mín` melhores.
+
+## §3c — Receptor `M04`
+
+| Grandeza | Fórmula | Observação |
+|---|---|---|
+| **Frequência intermediária** | `FI = \|f_eco − f_OL\|` | típica 30 ou 60 MHz · faixa geral 0,1–100 MHz |
+| **Banda passante do receptor** | `B = n/T` | `n` entre **1 e 10**; **1 a 1,4** para máxima S/N. Definida pelo **amplificador de FI** |
+| **Ruído térmico** | `P_n = k·T·B_n` | `k = 1,38×10⁻²³ J/K` · a 290 K, **`kT₀ = 4×10⁻²¹ W/Hz`** |
+| **Figura de ruído** | `F_n = (S_i/N_i)/(S_0/N_0)` | degradação da relação sinal-ruído |
+| **Mínimo sinal detectável** | `S_mín = F_n·k·T₀·B_n·(S/N)_mín` | em dB vira **soma**: `S_mín(dBm) = P_n(dBm) + F₀(dB) + (S/N)_mín(dB)` |
+| **Cascata** | `F₀ = F₁ + (F₂−1)/G₁ + (F₃−1)/(G₁G₂) + …` | **`G₁ < 1` multiplica** o termo em vez de dividir |
+
+**A cadeia que liga três módulos:** `LP menor` → `B maior` → `P_n maior` → `S_mín maior` → **`alcance menor`** (com quarta raiz).
+**Os quatro controles:** CA**F** = frequência, no **OL** · CA**G** = ganho pelo **nível médio (CC)**, no amplif. de FI · **STC** = ganho pelo **tempo**, no amplif. de FI · **FTC** = **diferencia**, no acoplamento do vídeo.
+
+## §4 — Os 12 blocos da Q1 `M03–M05`
+
+| Bloco | Faz | Determina |
+|---|---|---|
+| Sincronizador | gera o pulso de sincronismo p/ TX **e** indicador | **FRP** |
+| Modulador | liga/desliga o oscilador ou o amplif. de potência | **largura de pulso** |
+| Oscilador | gera o sinal de RF; se **autoexcitado** (magnetron), dispensa amplificador | **portadora** |
+| Chave de antena | protege o receptor da alta potência do TX | — |
+| Oscilador local | sinal de frequência **estável** p/ FI estável | — |
+| Misturador | **gera a FI** (bate eco com OL) | FI = 30 / 60 MHz |
+| **CAF** | amostra o pulso **transmitido**; controla o **oscilador local** | FI constante |
+| Amplif. de FI | estágios **sintonizados** | **banda passante** do receptor |
+| **CAG** | realimenta o amplif. de FI pelo **nível médio (CC)** | **ganho** |
+| Detector de vídeo | extrai a **envoltória** da FI | — |
+| **STC** | reduz o ganho **perto** e o aumenta **longe** (anti-clutter **sea**) | — |
+| **FTC** | reduz o efeito da **superposição de ecos** (anti-clutter **rain**) | — |
+
+**CAF ≠ CAG:** CA**F** = **F**requência (age no OL) · CA**G** = **G**anho (age no amplif. de FI).
+**STC ≠ FTC:** **S**TC = mar/perto, varia no **tempo** · **FTC** = chuva, superposição.

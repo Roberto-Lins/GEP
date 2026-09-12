@@ -1,0 +1,16 @@
+{
+  "ordem": 1,
+  "slug": "01-fundamentos-do-radar-de-pulso",
+  "titulo": "Fundamentos do radar de pulso",
+  "prioridade": "alta",
+  "subtitulo": "Princípio físico, distância, marcação e organização básica",
+  "tempoEstimado": "40 min",
+  "objetivo": "Definir RADAR, explicar o princípio físico de funcionamento, aplicar d = c·t/2, converter a milha radar, classificar os sistemas e identificar os cinco elementos da organização básica.",
+  "palavrasChave": [
+    "RADAR",
+    "d = c·t/2",
+    "milha radar",
+    "frequência",
+    "organização básica"
+  ]
+}

@@ -1,0 +1,149 @@
+---
+titulo: "Mapa da T2 e matriz de cobertura"
+secao: "mapa-da-prova"
+secaoOrdem: 1
+---
+
+### Mapa do curso, perfil da banca, matriz de cobertura e linha progressiva M00–M08
+
+> Profundidade-alvo: **T3 — Domínio / 10 absoluto**.
+> Este documento não promete nota. Ele garante cobertura declarada, prática dirigida e diagnóstico de lacuna.
+
+---
+
+## 1. Perfil de cobrança — inferido de fonte lida, não de suposição
+
+**Base probatória:** `T2/SOPA DET T2 2024.pdf` (ID `1BYfKZ9F...`), 5 páginas, lido integralmente **com a RUBRICA DO ASPIRANTE** — ou seja, com o gabarito oficial manuscrito do professor, incluindo as fórmulas exatas que ele escreveu e os arredondamentos que ele aceitou. Reforço secundário: `DET SOPA T1 2024 (1).pdf` (ID `1HVFfZBT...`), lido integralmente.
+
+### 1.1 Estrutura real da T2 2024
+
+| Q | Tipo | Pontos | Granularidade | O que exigiu |
+|---|---|---|---|---|
+| 1 | Correlação bloco↔afirmativa | **4,8** | 0,3 × 16 itens | 12 blocos (A–L) para 16 afirmativas. **Blocos repetem**; nenhuma afirmativa fica em branco |
+| 2 | Problema encadeado | **2,8** | 0,4 × 7 itens | 1 conjunto de parâmetros com **valores duplos** (FRP, LP, RPM) → 7 resultados |
+| 3 | Equação radar avançada | **0,8** | 0,4 × 2 itens | dB→linear, dBm→W, G↔A_ef, λ, R_máx, e **MAGE (caminho de ida só)** |
+| 4 | Conceitual | **1,6** | 0,4 × 4 itens | "de que forma X afeta o desempenho" — resposta de **uma linha** |
+
+**Peso acumulado: 76% da prova é reconhecimento funcional de bloco + cálculo encadeado.**
+
+### 1.2 Assinatura da banca (confirmada nas duas provas)
+
+- **Rubrica item a item.** Cada item vale isolado. Errar (a) não contamina (b).
+- **Resposta final em caixa.** A T2 2024 tem linha "Resposta: ____" em todo item.
+- **Desenvolvimento obrigatório.** A rubrica mostra o professor escrevendo fórmula → substituição → resultado.
+- **Justificativa curta exigida** quando o enunciado diz "Justifique" (Q2a).
+- **c = 3×10⁸ m/s sempre.** Nunca 2,998×10⁸.
+- **Unidade de saída mista e proposital**: km, m, W, kW, pulsos, µW.
+
+### 1.3 Classificação do perfil
+
+| Dimensão | Nível | Evidência |
+|---|---|---|
+| Literalidade | **ALTA** | Q1 usa a redação literal dos slides ("extrai a envoltória do sinal de FI", "define a banda passante do receptor") |
+| Cálculo | **ALTA** | 9 dos 16 pontos-item são numéricos |
+| Detalhismo | **ALTO** | Distingue CAF de CAG, STC de FTC, oscilador de modulador |
+| Memorização funcional | **ALTA** | Q1 inteira é "qual bloco faz o quê" |
+| Integração entre assuntos | **ALTA** | Q2 mistura LP, FRP, feixe, RPM num só enunciado |
+| Interpretação | **MÉDIA/ALTA** | Q2a e Q2g exigem decidir o que o enunciado quer antes de calcular |
+| Pegadinhas | **MÉDIA/ALTA** | Valores duplos em Q2; "máximos", "menor", "maior" |
+| Aplicação inédita | **MÉDIA/ALTA** | Q3b (MAGE) não tem exemplo resolvido em slide algum |
+
+### 1.4 Catálogo de pegadinhas — extraído da prova real
+
+| # | Pegadinha | Onde apareceu | Regra de sobrevivência |
+|---|---|---|---|
+| P-01 | **Parâmetro com dois valores** e o item pede "máximo"/"mínimo" | Q2 inteira | Antes de calcular, escreva a lista: qual valor de FRP/LP/RPM maximiza **esta** grandeza? |
+| P-02 | PSD usa **LP máxima**; R_mín usa **LP mínima** | Q2a vs Q2d | São a mesma fórmula `c·LP/2` com escolhas opostas de LP |
+| P-03 | R_máx s/ambiguidade usa **FRP mínima** | Q2c | FRP menor → TRP maior → alcance maior |
+| P-04 | N_B mínimo usa **FRP mínima E rotação máxima** | Q2e | Dois parâmetros puxados ao mesmo tempo, em sentidos opostos |
+| P-05 | **RPM → °/s**: θ₀ = RPM × 6 | Q2e | 18 RPM = 108 °/s. Esquecer isso erra por fator 6 |
+| P-06 | Ambiguidade: R_real = R_máx + R_ind, **mas depois é preciso reindicar na nova FRP** | Q2g | Se R_real < R_máx(nova FRP), o indicado passa a ser o próprio R_real |
+| P-07 | Potência **média** = P_pico × LP × FRP (não P_pico/TRP) | Q2b | Ciclo de trabalho CT = LP/TRP = LP × FRP |
+| P-08 | dBm → W: −80 dBm = 10⁻⁸ mW = **10⁻¹¹ W** | Q3a | Dois passos. Parar no mW custa 10³ |
+| P-09 | G → A_ef exige λ: A = Gλ²/4π | Q3a | Sem calcular λ primeiro, trava |
+| P-10 | **Quarta raiz** na equação radar | Q3a | 16× na potência = 2× no alcance |
+| P-11 | **MAGE é caminho de IDA só**: 4πR², não (4π)²R⁴ | Q3b | O eco volta; a interceptação não. Esta é a pegadinha mais cara da prova |
+| P-12 | PSM linear: x = 2πRθ/360 | Q2f | Não confundir com o valor **angular** do poder separador em marcação (que é o próprio θ_B) |
+| P-13 | Q4 quer **uma** relação por característica | Q4 | LP → R_mín **e** PSD. FRP → só ambiguidade. Feixe → só marcação. Potência → só alcance |
+
+---
+
+## 2. Linha progressiva M00–M08 — por que esta ordem
+
+A ordem **não** segue a numeração das SUE. Ela segue a dependência lógica: nenhum módulo usa um conceito que ainda não foi construído.
+
+| Mód. | Título | Por que vem aqui (pré-requisito que ele resolve) | Fontes | Exercícios |
+|---|---|---|---|---|
+| **M00** | Diagnóstico, mapa da T2 e trilha | Estabelece o alvo antes do esforço: a estrutura de pontos da prova decide onde investir. Sem isso, o estudo distribui tempo igualmente entre um item de 4,8 e um de 0,8. | SOPA T2 2024 | — |
+| **M01** | **Fundamentos do radar de pulso** | Constrói o objeto: o que é radar, como ele mede distância (d = c·t/2) e marcação, e quais são as cinco peças da organização básica. **Sem `d = c·t/2` nenhuma fórmula de M02 existe** — PSD, R_mín e R_máx são todas casos particulares dela. | Apostila 1-1→1-8; SUE6.1 (1ª metade) | 8 (5 N3 + 3 N4) |
+| **M02** | Características e parâmetros de desempenho | Pega as 5 características nomeadas em M01 e as transforma em números. É o módulo de maior peso da prova (Q2 inteira + Q4 inteira = 4,4 pontos). Exige `d = c·t/2` de M01. | Apostila 1-9→1-18; SUE6.1 (2ª metade, **via ODP**) | 14 (8 N3 + 6 N4) |
+| **M03** | Transmissão e formação do pulso | Agora que se sabe **o que** LP, FRP e f_portadora significam (M02), estuda-se **quem as gera**: modulador ↔ LP, sincronizador ↔ FRP, oscilador ↔ portadora. Essa tripla é 3 dos 16 itens da Q1. | Apostila 1-20→1-41; SUE6.2a4; SUE6.7 (parcial) | 9 (6 N3 + 3 N4) |
+| **M04** | Recepção e processamento do eco | Espelho de M03 no caminho de volta. Depende de M02 (a banda passante do receptor é determinada pela LP) e de M03 (o CAF amostra o pulso transmitido). CAF, CAG, misturador, OL, FI, detector de vídeo, STC, FTC = 8 dos 16 itens da Q1. | Apostila 1-42→1-61; SUE6.5; SUE6.6 | 10 (6 N3 + 4 N4) |
+| **M05** | Diagrama de blocos, controles e fluxo do sinal | Só faz sentido depois de M03 e M04: costura os dois caminhos num único mapa e adiciona chave de antena, indicador e controles externos. É a chave de leitura da Q1 completa. | Apostila 1-62→1-75, 1-84→1-87; SUE6.9a10; SUE6.7; SUE6.8 | 11 (7 N3 + 4 N4) |
+| **M06** | Equação radar, ganho, abertura, sensibilidade e alcance | Reabre "alcance" (visto qualitativamente em M02) pelo lado energético. Exige o vocabulário de antena de M05 (ganho, área efetiva) e o de receptor de M04 (sensibilidade, mínimo sinal detectável). | Apostila 1-77→1-81; SUE6.11; SUE6.8; SUE8.1a2 (MAGE) | 12 (7 N3 + 5 N4) |
+| **M07** | Integração, adjacências e preparação final | Fecha o circuito: rastreamento, CW/MTI, GE/IFF — o que a banca pode puxar como "redondeza". Só depois de M01–M06, porque cada adjacência é um contraste com o radar de pulso. | SUE6.12; SUE7.x; SUE8.x; SUE10.1a2 | 8 (5 N3 + 3 N4) |
+| **M08** | Simulados e diagnóstico de prontidão | Último porque simulado antes de cobertura mede ansiedade, não domínio. | Todo o corpus | Simulados A/B/C |
+
+**Total planejado: 72 exercícios = 44 N3 + 28 N4.** Tipos: 18 COR · 10 VF · 24 CAL · 10 DIA · 10 DIS.
+
+---
+
+## 3. Matriz de cobertura conceito × avaliação
+
+`T` teoria · `E` exemplo resolvido · `Q3` questão N3 · `Q4` questão N4 · `S` simulado
+Status: ✅ coberto nesta execução · ⏳ planejado · 🔴 lacuna crítica
+
+| ID | Conceito | Criticidade | Mód. | T | E | Q3 | Q4 | S | Origem |
+|---|---|---|---|---|---|---|---|---|---|
+| C001 | RADAR: acrônimo e definição | 🟡 | M01 | ✅ | ✅ | ✅ | — | ⏳ | apostila 1-2; SUE6.1 |
+| C002 | Linha do tempo (1871→1940) | 🟡 | M01 | ✅ | — | ✅ | — | ⏳ | apostila 1-2/1-3; SUE6.1 |
+| C003 | Princípio: reflexão, eco, direcionalidade | 🔴 | M01 | ✅ | ✅ | ✅ | ✅ | ⏳ | apostila 1-3 |
+| C004 | Classificação quanto ao uso | 🟡 | M01 | ✅ | — | ✅ | — | ⏳ | apostila 1-3/1-4; SUE6.1 |
+| C005 | Classificação quanto ao método (CW × pulso) | 🟠 | M01 | ✅ | — | ✅ | — | ⏳ | apostila 1-4 |
+| C006 | **d = c·t/2 = 150·t(µs)** | 🔴 | M01 | ✅ | ✅ | ✅ | ✅ | ⏳ | apostila 1-4 |
+| C007 | Milha radar náutica (12,36 µs) e terrestre (10,75 µs) | 🟠 | M01 | ✅ | ✅ | ✅ | ✅ | ⏳ | apostila 1-5 |
+| C008 | Bandas de frequência radar (VHF→mm) | 🟠 | M01 | ✅ | — | ✅ | — | ⏳ | apostila 1-5/1-6; SUE6.1 |
+| C009 | Limites inferior e superior da frequência radar | 🟠 | M01 | ✅ | — | — | ✅ | ⏳ | apostila 1-6 |
+| C010 | Organização básica (5 elementos) | 🔴 | M01 | ✅ | ✅ | ✅ | ✅ | ⏳ | apostila 1-6/1-7; SUE6.1 |
+| C011 | Potência de pico × média; CT | 🔴 | M02 | ✅ | ✅ | ✅ | ✅ | ⏳ | apostila 1-10 |
+| C012 | LP → PSD (poder separador em distância) | 🔴 | M02 | ✅ | ✅ | ✅ | ✅ | ⏳ | apostila 1-11; SUE6.1 |
+| C013 | LP → R_mín | 🔴 | M02 | ✅ | ✅ | ✅ | ✅ | ⏳ | apostila 1-11/1-12 |
+| C014 | FRP → TRP → R_máx s/ambiguidade | 🔴 | M02 | ✅ | ✅ | ✅ | ✅ | ⏳ | apostila 1-13 |
+| C015 | Ambiguidade em distância / 2ª varredura | 🔴 | M02 | ✅ | ✅ | ✅ | ✅ | ⏳ | apostila 1-13/1-14 |
+| C016 | Largura do feixe → PSM angular e linear | 🔴 | M02 | ✅ | ✅ | ✅ | ✅ | ⏳ | apostila 1-15/1-16 |
+| C017 | N_B = (θ_B/θ₀)·FRP | 🔴 | M02 | ✅ | ✅ | ✅ | ✅ | ⏳ | apostila 1-17; **SUE6.1 ODP** |
+| C018 | Frequência da portadora → diretividade × alcance | 🟠 | M02 | ✅ | ✅ | ✅ | ✅ | ⏳ | apostila 1-10; SUE6.1 |
+| C019 | Sincronizador → FRP | 🔴 | M03 | ✅ | ✅ | ✅ | ✅ | ⏳ | SUE6.2a4; apostila 1-20 |
+| C020 | Modulador → LP; tipo linha; RFP; thyratron | 🔴 | M03 | ✅ | ✅ | ✅ | ✅ | ⏳ | SUE6.2a4; apostila 1-33→1-40 |
+| C021 | Oscilador → portadora; magnetron autoexcitada | 🔴 | M03 | ✅ | ✅ | ✅ | ✅ | ⏳ | SUE6.2a4; apostila 1-22→1-31 |
+| C022 | Arquitetura c/ amplificador (Klystron, TWT, CFA) | 🟠 | M03 | ✅ | ✅ | ✅ | ✅ | ⏳ | SUE6.2a4 |
+| C023 | Oscilador local → FI estável | 🔴 | M04 | ✅ | ✅ | ✅ | ✅ | ⏳ | SUE6.5 |
+| C024 | Misturador → gera a FI (30/60 MHz) | 🔴 | M04 | ✅ | ✅ | ✅ | ✅ | ⏳ | SUE6.5 |
+| C025 | CAF → controla o OL, amostra o TX | 🔴 | M04 | ✅ | ✅ | ✅ | ✅ | ⏳ | SUE6.5 |
+| C026 | CAG → controla ganho do amplif. FI (nível CC) | 🔴 | M04 | ✅ | ✅ | ✅ | ✅ | ⏳ | SUE6.5 |
+| C027 | Amplif. FI → estágios sintonizados = banda passante | 🔴 | M04 | ✅ | ✅ | ✅ | ✅ | ⏳ | SUE6.5 |
+| C028 | Detector de vídeo → envoltória da FI | 🔴 | M04 | ✅ | ✅ | ✅ | ✅ | ⏳ | SUE6.5 |
+| C029 | STC → anti-clutter sea; ganho ↑ com o tempo | 🔴 | M04 | ✅ | ✅ | ✅ | ✅ | ⏳ | SUE6.5; SUE6.9a10 |
+| C030 | FTC → anti-clutter rain; superposição de ecos | 🔴 | M04 | ✅ | ✅ | ✅ | ✅ | ⏳ | SUE6.5; SUE6.9a10 |
+| C031 | Ruído: P_n = kTB_n; figura de ruído | 🟠 | M04 | ✅ | ✅ | ✅ | ✅ | ⏳ | SUE6.5 |
+| C032 | Chave de antena: TR/ATR, duplexer, circulador | 🔴 | M05 | ⏳ | ⏳ | ⏳ | ⏳ | ⏳ | SUE6.7; apostila 1-62 |
+| C033 | Tempo de recuperação da TR afeta R_mín | 🟠 | M05 | ⏳ | ⏳ | — | ⏳ | ⏳ | SUE6.7 (exerc. 3) |
+| C034 | Indicador: tipo-A × PPI; marcas fixas e móvel | 🟠 | M05 | ⏳ | ⏳ | ⏳ | — | ⏳ | SUE6.6; apostila 1-66→1-75 |
+| C035 | Diagrama de blocos completo e formas de onda | 🔴 | M05 | ⏳ | ⏳ | ⏳ | ⏳ | ⏳ | SUE6.9a10; apostila 1-84 |
+| C036 | Controles externos: ganho, brilho, STC, FTC, seletor | 🟠 | M05 | ⏳ | ⏳ | ⏳ | — | ⏳ | SUE6.9a10 |
+| C037 | Densidade de potência S = P/4πR²; ganho | 🔴 | M06 | ⏳ | ⏳ | ⏳ | ⏳ | ⏳ | SUE6.11 |
+| C038 | G = 4πA/λ² (ganho ↔ área efetiva) | 🔴 | M06 | ⏳ | ⏳ | ⏳ | ⏳ | ⏳ | SUE6.11 |
+| C039 | Equação radar e a dependência de 4ª raiz | 🔴 | M06 | ⏳ | ⏳ | ⏳ | ⏳ | ⏳ | SUE6.11; apostila 1-77 |
+| C040 | Mínimo sinal detectável / threshold | 🟠 | M06 | ⏳ | ⏳ | ⏳ | ⏳ | ⏳ | SUE6.11; apostila 1-80 |
+| C041 | Conversões dB / dBm / linear | 🔴 | M06 | ⏳ | ⏳ | ⏳ | ⏳ | ⏳ | SOPA T2 2024 Q3 |
+| C042 | Interceptação por MAGE (caminho de ida) | 🔴 | M06 | ⏳ | ⏳ | ⏳ | ⏳ | ⏳ | SOPA T2 2024 Q3b; SUE8.1a2 |
+| C043 | BW ≈ 1/τ (compromisso banda × S/N) | 🟠 | M06 | ⏳ | ⏳ | — | ⏳ | ⏳ | SUE6.11; SUE6.5 |
+| C044 | Antenas: parabólica, −3 dB, phased array | 🟡 | M05/M06 | ⏳ | ⏳ | ⏳ | — | ⏳ | SUE6.8 |
+| C045 | Adjacências: rastreamento, CW, MTI, IFF, GE | 🟡 | M07 | ⏳ | — | ⏳ | ⏳ | ⏳ | SUE6.12; SUE7.x; SUE8.x |
+
+**Cobertura até aqui:** C001 a C031 (**31/45 conceitos**) — 100% dos conceitos de M01 a M04, todos com origem em fonte lida.
+**Nenhum `[LACUNA DE COBERTURA]` de teoria, exemplo ou exercício em M01 a M04.** A única lacuna aberta nesses módulos é a coluna `simulado`, que fecha em M08 por desenho da trilha. C032 a C045 estão ⏳ planejados, não omitidos.
+
+**Peso da prova já coberto:** M02 responde por **4,4 dos 10 pontos** (Q2 + Q4), M03 acrescenta **1,5** e M04 acrescenta **2,4** — este último é o módulo de maior peso isolado da Q1 (8 das 16 afirmativas). Com M01 a M04 concluídos, estão cobertos **8,3 dos 10 pontos**: Q2 (2,8), Q4 (1,6) e **3,9 dos 4,8 da Q1**.
+
+**O que falta:** a chave de antena e o indicador (M05, os 0,9 restantes da Q1) e a equação radar (M06, Q3 = 0,8).

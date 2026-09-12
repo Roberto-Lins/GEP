@@ -99,8 +99,12 @@
     @apply overflow-x-auto rounded-xl border border-white/10 p-4 text-sm;
   }
   .prosa pre code { @apply bg-transparent p-0 text-inherit; }
+  .prosa .katex-display {
+    @apply overflow-x-auto overflow-y-hidden py-2;
+  }
   .prosa table {
-    @apply my-4 w-full overflow-hidden rounded-xl border border-white/10 text-sm;
+    @apply my-4 w-full overflow-x-auto rounded-xl border border-white/10 text-sm;
+    display: block;
   }
   .prosa thead { @apply bg-aco/60; }
   .prosa th {

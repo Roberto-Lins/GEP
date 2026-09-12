@@ -1,0 +1,376 @@
+---
+titulo: "Características e parâmetros de desempenho — aula"
+secao: "aula"
+secaoOrdem: 2
+---
+
+## Posição na trilha
+
+`M00 → M01 → **M02** → M03 → M04 → M05 → M06 → M07 → M08`
+
+## Pré-requisitos
+
+**M01 completo.** Você está pronto para M02 se consegue, sem consultar:
+
+- escrever `d = c·t/2` e a forma de trabalho `d = 150·t(µs)`;
+- explicar por que existe o fator 2;
+- dizer que 300 m/µs é percurso e 150 m/µs é distância radar;
+- nomear as cinco características principais.
+
+Se falhou em qualquer um, volte a M01 Aula 1.3 antes de continuar. **Todas as cinco fórmulas de distância deste módulo são `d = c·t/2` com um `t` diferente.**
+
+## Resumo executivo
+
+Este é o módulo de maior peso da T2. Na prova de 2024, M02 respondeu sozinho por **4,4 dos 10 pontos** (Q2 inteira, 2,8 + Q4 inteira, 1,6) e não exigiu **nenhum** conceito de circuito. Cinco características, cinco fórmulas, e um conjunto de armadilhas que não está na fórmula e sim na **escolha do parâmetro** que entra nela.
+
+O erro que mais custa nota neste módulo não é errar conta. É aplicar a fórmula certa ao **valor errado** de um parâmetro que o enunciado deu em duplicata.
+
+---
+
+## Conceitos fundamentais
+
+### C011 — Potência de pico, potência média e ciclo de trabalho
+‹fonte: apostila_DET_2022.pdf p. 1-10, fig. 1.2.1; SUE6.1 .odp slides 40–42› · criticidade: **crítica** · competências: calcular, interpretar
+
+A fonte separa as duas potências pelo intervalo a que cada uma se associa: *"aos pulsos extremamente curtos está associada a **potência de pico** e aos longos intervalos de não transmissão está associada a **potência média**"* ‹p. 1-10›.
+
+$$
+P_{méd} = \frac{P_{pico}\cdot \Delta t}{TRP}
+$$
+
+| Símbolo | Significado | Unidade |
+|---|---|---|
+| `P_méd` | potência média | W |
+| `P_pico` | potência de pico de transmissão | W |
+| `Δt` | largura de pulso (LP) | s |
+| `TRP` | tempo de repetição de pulsos | s |
+
+Como `TRP = 1/FRP`, a forma operacional — a que a rubrica da banca usa — é:
+
+$$
+\boxed{P_{méd} = P_{pico}\cdot LP \cdot FRP}
+$$
+
+E o **ciclo de trabalho** ‹apostila p. 1-18, obs. do problema 2›:
+
+$$
+CT = \frac{\Delta t}{TRP} = LP \cdot FRP \qquad\Rightarrow\qquad P_{méd} = P_{pico}\cdot CT
+$$
+
+**Interpretação física.** O radar transmite ~0,1 % do tempo. A potência média é a potência de pico **diluída** nesse ciclo. Por isso a fonte diz que *"uma potência de pico elevada é desejável para que ecos fortes sejam obtidos e uma baixa potência média permite o uso de componentes menores e mais compactos"* ‹p. 1-10›.
+
+**Condição de validade.** A fórmula supõe pulso **retangular** e P_pico constante durante a LP. Pulso com subida/descida lenta entrega menos energia que `P_pico·LP`.
+
+> ⚠️ `V007` A banca dá LP em µs e FRP em Hz. **Converta a LP para segundos**, ou o resultado sai 10⁶ vezes maior.
+
+---
+
+### C018 — Frequência da portadora
+‹fonte: apostila_DET_2022.pdf p. 1-10, p. 1-6; SUE6.1 .odp slides 43–45› · criticidade: **alta** · competências: explicar, comparar
+
+*"É a frequência em que a energia eletromagnética é irradiada. Para a escolha da frequência da portadora são fatores determinantes, entre outros, a **diretividade desejada**, o **alcance desejado** e ainda as **dificuldades tecnológicas** na geração e na recepção da energia de RF"* ‹p. 1-10›.
+
+Regras de bolso ‹SUE6.1 .odp slide 45›:
+
+- **Frequência maior → alcance menor** (mais absorção atmosférica; ruído do receptor cresce)
+- **Frequência maior → melhor diretividade** (propagação mais "retilínea", feixe mais estreito)
+
+Os dois efeitos são **opostos**. É a única característica cujos dois efeitos brigam entre si — daí ela ser a decisão de projeto mais delicada.
+
+> 🎯 **Como o professor pode cobrar** — Q4 de 2024 **não** cobrou a portadora. Cobrou LP, FRP, feixe e potência. A portadora é, por isso, a candidata mais provável a entrar no lugar de uma delas numa Q4 nova. Resposta de uma linha: **"afeta a diretividade e o alcance, em sentidos opostos"**.
+
+---
+
+### C012 — Largura de pulso → poder separador em distância (PSD)
+‹fonte: apostila_DET_2022.pdf p. 1-11, fig. 1.2.2; SUE6.1 .odp slides 50–59› · criticidade: **crítica** · competências: calcular, interpretar
+
+$$
+\boxed{PSD = \frac{c\cdot LP}{2}}
+$$
+
+**Definição da fonte:** *"À capacidade do sistema de distinguir alvos na mesma marcação mas em distâncias diferentes dá-se o nome de **poder separador em distância**"* — também chamado **poder discriminador em distância** ‹p. 1-11›.
+
+**Mecanismo físico**, na redação da fonte: *"o lado posterior do eco do alvo mais próximo é alcançado pelo lado anterior do eco do alvo mais distante, parecendo, então, apenas **um eco de duração maior**"* ‹p. 1-11›. O `SUE6.1` traduz: se não há discriminação, *"o pulso varreu os alvos simultaneamente"*.
+
+**Leitura do resultado:** dois alvos separados por **menos** que o PSD aparecem como **um só**. Quanto **mais estreito** o pulso, **melhor** o poder separador.
+
+**Vocabulário.** Três nomes para a mesma coisa: poder **separador**, poder **discriminador**, poder de **resolução** em distância ‹p. 1-11, p. 1-15›. A banca alterna entre eles.
+
+---
+
+### C013 — Largura de pulso → distância mínima de detecção
+‹fonte: apostila_DET_2022.pdf p. 1-11/1-12, fig. 1.2.3; SUE6.1 .odp slides 61–64› · criticidade: **crítica** · competências: calcular, interpretar
+
+$$
+\boxed{R_{mín} = \frac{c\cdot LP}{2}}
+$$
+
+**É a mesma expressão de C012.** O que muda é a pergunta.
+
+**Mecanismo.** *"Se o alvo estiver tão próximo que o lado anterior do eco chegue antes de ser completado o pulso transmitido, será impossível medir a sua distância na tela da VRC"* ‹p. 1-12›. O `SUE6.1` acrescenta a razão de hardware: *"durante a transmissão do pulso, se um eco de um alvo muito próximo chegar à antena, ele não será levado para o receptor pois o mesmo estará **desconectado da antena** durante a largura de pulso"*.
+
+> **[INFERÊNCIA PEDAGÓGICA]** A fonte dá **duas** explicações para o mesmo fenômeno, e elas não são a mesma: a da apostila é de **medição** (o eco se perde dentro do pulso transmitido); a do slide é de **comutação** (a chave de antena mantém o receptor desligado). Ambas levam à mesma fórmula. Guarde a do slide — ela é a ponte para a chave de antena de M05, onde o **tempo de recuperação da TR** acrescenta um termo a esta fórmula.
+
+**Efeito colateral da LP, frequentemente ignorado** ‹p. 1-12›: *"pulsos estreitos, devido a seu conteúdo harmônico, implicarão o projeto de receptores de faixa bastante larga. Disto resultará a **redução do ganho** bem como do **aumento de ruído**"*. → Esta frase é a ponte direta para a banda passante do receptor (M04) e para `BW ≈ 1/τ` (M06).
+
+**As duas formas de aumentar a energia do eco** ‹p. 1-12›: aumentar `P_pico` (limitado pela magnetron, guias de onda e componentes) ou aumentar a LP — *"em geral, a solução mais conveniente, embora **reduza o poder de resolução em distância**"*.
+
+---
+
+### C014 — FRP → alcance máximo sem ambiguidade
+‹fonte: apostila_DET_2022.pdf p. 1-13; SUE6.1 .odp slides 65–67, 72–81› · criticidade: **crítica** · competências: calcular, interpretar
+
+$$
+TRP = \frac{1}{FRP} \qquad\qquad \boxed{R_{máx} = \frac{c\cdot TRP}{2} = \frac{c}{2\cdot FRP}}
+$$
+
+**Definição da FRP:** *"o número de pulsos transmitidos na unidade de tempo"* ‹p. 1-13›. **TRP:** *"o intervalo entre o início de um pulso e o início do pulso seguinte"* ‹p. 1-13›.
+
+**A regra que governa tudo** ‹p. 1-13; SUE6.1›: *"todos os ecos esperados após a transmissão de um pulso deverão ocorrer **antes que um novo pulso seja transmitido**"*.
+
+**Consequência declarada:** *"a redução da FRP **aumenta** o alcance"* ‹p. 1-13›. Relação **inversa** — e é aqui que a banca arma a armadilha `V003`.
+
+**O segundo efeito da FRP, que quase ninguém cita** ‹p. 1-14›: *"quanto maior a FRP, mais **iluminado** é o alvo... o que resultará em eco mais forte"*. E a regra operacional: *"em grandes distâncias se requer uma FRP **baixa** e em pequenas distâncias, como é o caso de navegação em águas restritas ou para interceptação aérea, usa-se naturalmente **elevada** FRP"*.
+
+> ⚠️ **Cuidado com a Q4.** A pergunta "de que forma a FRP afeta o desempenho?" tem resposta **única** na rubrica de 2024: *"a FRP afeta o alcance sem ambiguidade"*. A iluminação do alvo é efeito real, mas não foi o que a rubrica pediu. Responda o alcance sem ambiguidade primeiro; acrescente a iluminação só se houver espaço.
+
+---
+
+### C015 — Ambiguidade em distância e segunda varredura
+‹fonte: apostila_DET_2022.pdf p. 1-13/1-14, fig. 1.2.4; SUE6.1 .odp slides 68–81› · criticidade: **crítica** · competências: calcular, analisar
+
+**Definição** ‹p. 1-13›: *"o eco de um alvo que esteja demasiadamente afastado poderá ser detectado **após o transmissor ter irradiado um novo pulso**, condição esta denominada 'ambiguidade em distância'. Neste caso, teremos uma informação **incorreta** sobre a posição do alvo."* O `SUE6.1` chama o mesmo fenômeno de **"segunda varredura"**.
+
+$$
+\boxed{R_{real} = R_{máx} + R_{ind}}
+$$
+
+onde `R_ind` é a distância **indicada** na tela e `R_máx` é o alcance sem ambiguidade da FRP em uso.
+
+**Condição de validade — e aqui mora a pegadinha `V006`.** A fórmula vale para ambiguidade de **primeira ordem** (o eco chega durante o ciclo seguinte). Se o alvo estiver além de `2·R_máx`, o termo é `2·R_máx + R_ind`, e assim por diante. **E, uma vez encontrado `R_real`, se a FRP mudar é preciso reindicar:** se `R_real < R_máx(nova FRP)`, o alvo passa a ser indicado na **própria distância real**.
+
+**Como o operador resolve na prática** ‹inferido do procedimento da Q2g de 2024›: **muda a FRP**. Um alvo sem ambiguidade mantém a distância indicada; um alvo ambíguo **salta**. `[INFERÊNCIA PEDAGÓGICA]` — a fonte descreve o fenômeno; o uso diagnóstico é leitura minha, confirmada pela estrutura do item Q2g da prova.
+
+---
+
+### C016 — Largura do feixe → poder separador em marcação
+‹fonte: apostila_DET_2022.pdf p. 1-14 a 1-16, figs. 1.2.5 a 1.2.7; SUE6.1 .odp slides 82–83› · criticidade: **crítica** · competências: calcular, interpretar
+
+**Definição** ‹p. 1-15›: *"a capacidade do sistema em distinguir alvos à **mesma distância** do ponto de transmissão, mas com **marcações diferentes**"*. Nomes alternativos: poder **discriminador** em marcação, poder de **resolução** em marcação.
+
+**Forma angular** ‹p. 1-16›: *"o valor angular do poder separador em marcação é **teoricamente igual à abertura do feixe no PH**"*.
+
+$$
+PSM_{angular} = \theta_B
+$$
+
+**Forma linear** ‹p. 1-16›, por regra de três sobre a circunferência de raio `R`:
+
+$$
+\boxed{x = \frac{2\pi R\,\alpha^\circ}{360^\circ} = 0{,}01745\cdot R\cdot\alpha^\circ}
+$$
+
+com `R` e `x` em metros. Para `R` em milhas náuticas e `x` em metros, a fonte fornece a forma já convertida: `x = 32,3225·R(mn)·α°`.
+
+> 🔴 `[PONTO DE INCERTEZA — REQUER VERIFICAÇÃO]` **O texto extraído da apostila p. 1-16 está corrompido neste ponto**: a frase *"À 360° correspondem 2π ___ a distância entre o ponto de transmissão e os alvos"* perdeu o símbolo `R`, e a fórmula aparece como `x = 2πα/360`, **sem o R**. A leitura correta é inequívoca — a própria frase diz que o `2π` multiplica *"a distância entre o ponto de transmissão e os alvos"*, e o fator 1852 na versão em milhas só faz sentido se `R` estiver lá. **Confirmação independente:** a rubrica oficial da Q2f de 2024 escreve `180 m = 2πRθ/360` e obtém `R = 2.063 m`, o que só fecha com `R` presente. Use a fórmula **com R**.
+
+**Mecanismo** ‹p. 1-15, fig. 1.2.6›: um feixe de 10° faz o eco aparecer **5° antes** de a antena apontar para o alvo e desaparecer **5° depois**. *"Sendo de 10° a largura do feixe, intui-se que o alvo terá 10° de largura, considerando que o alvo seja punctual."*
+
+**Ordens de grandeza da fonte** ‹p. 1-15›: abertura no plano **horizontal** é *"em geral bastante pequena (1° ou 2°)"*; no plano **vertical**, *"pode atingir ângulos da ordem de 20° a 30°"*.
+
+> **[INFERÊNCIA PEDAGÓGICA]** O PSM linear **cresce com a distância** — é o oposto do PSD, que é constante. Dois alvos separados por 150 m são discriminados de perto e deixam de ser discriminados longe. Nenhuma fonte enuncia isso como regra; é consequência direta de `x ∝ R`, e é um ângulo de cobrança natural.
+
+---
+
+### C017 — Número de pulsos sobre o alvo
+‹fonte: apostila_DET_2022.pdf p. 1-17; SUE6.1 .odp slide 84› · criticidade: **crítica** · competências: calcular, interpretar
+
+$$
+\boxed{N_B = \frac{\theta_B}{\theta_0}\cdot FRP}
+$$
+
+| Símbolo | Significado ‹redação literal da p. 1-17› | Unidade |
+|---|---|---|
+| `N_B` | número de ecos (**iluminamento**) | pulsos |
+| `θ_B` | largura do feixe **em graus** | ° |
+| `θ_0` | velocidade de rotação da antena, **em graus/s** | °/s |
+| `FRP` | frequência de repetição de pulsos | pps (Hz) |
+
+> ⚠️ `V005` **A antena é especificada em RPM; a fórmula exige °/s.**
+> $$\theta_0(°/s) = RPM \times 6$$
+> 18 RPM = 108 °/s · 12 RPM = 72 °/s · 24 RPM = 144 °/s. Esquecer isso erra por fator 6.
+
+**Consequência do aumento da rotação** ‹p. 1-17›: *"o número de pulsos por alvo, a cada passagem da antena, será **menor** e, também, a possibilidade de existirem áreas com alvos que **não serão detectados** aumenta"*.
+
+**O compromisso declarado pela fonte** ‹p. 1-17›: *"aumentando-se a FRP, pode-se manter sobre o alvo o mesmo número de pulsos, desde que se aumente a velocidade de giro da antena. Assim, uma FRP maior fará com que o eco na tela se **renove mais rapidamente**, não precisando ter a tela, por conseguinte, **alta persistência**."*
+
+**Referência operacional** ‹p. 1-14›: *"10 ou mais no caso de busca"*.
+
+**Resultado fracionário.** `N_B` conta pulsos inteiros. A rubrica de 2024 obteve 55,55 e respondeu **55** — trunca, não arredonda.
+
+---
+
+## Exemplos resolvidos
+
+### Exemplo 2.1 — Potência de pico, média e ciclo de trabalho  `C011`
+
+*`P_pico` = 250 kW, LP = 2 µs, FRP = 1.000 Hz. Determine TRP, CT e `P_méd`.*
+
+**DADOS** → P_pico = 2,5×10⁵ W · LP = 2×10⁻⁶ s · FRP = 10³ Hz
+**FÓRMULAS** → `TRP = 1/FRP` · `CT = LP·FRP` · `P_méd = P_pico·CT`
+**CÁLCULO** →
+`TRP = 1/1000 = 10⁻³ s = ` **`1.000 µs`**
+`CT = 2×10⁻⁶ × 10³ = ` **`2×10⁻³`**
+`P_méd = 2,5×10⁵ × 2×10⁻³ = ` **`500 W`**
+**INTERPRETAÇÃO** → o transmissor entrega 250 kW durante 0,2 % do tempo; a fonte de alimentação e a dissipação térmica são dimensionadas para **500 W**, não para 250 kW. É exatamente o que a fonte quer dizer com *"baixa potência média permite componentes menores"*.
+
+### Exemplo 2.2 — PSD e R_mín: a mesma fórmula, duas perguntas  `C012` `C013`
+
+*Um radar tem LP = 6,18 µs. Determine o poder separador em distância e a distância mínima de detecção.*
+
+`PSD = c·LP/2 = 3×10⁸ × 6,18×10⁻⁶ / 2 = ` **`927 m`**
+`R_mín = c·LP/2 = ` **`927 m`**
+
+**INTERPRETAÇÃO — e esta é a razão de o exemplo existir.** O número é o mesmo; as leituras são opostas:
+
+| | PSD = 927 m | R_mín = 927 m |
+|---|---|---|
+| Pergunta | dois alvos separados por menos de 927 m aparecem como um? | um alvo a menos de 927 m aparece? |
+| Resposta | **sim, aparecem como um só** | **não aparece** |
+| Na prova, qual LP usar | **LP máxima** (pior caso de separação) | **LP mínima** (melhor caso de detecção próxima) |
+
+**Confirmação na fonte:** 927 m ≈ 0,5 milha náutica (926 m) — exatamente o poder separador que a apostila calcula para este pulso ‹p. 1-11›, já que 6,18 µs é o tempo de percurso de 1 mn.
+
+### Exemplo 2.3 — Ambiguidade em distância  `C014` `C015`
+
+*FRP = 1.600 Hz. Um alvo é indicado a 20 km e sabe-se que está em segunda varredura. Qual a distância real?*
+
+`R_máx = c/(2·FRP) = 3×10⁸/(2×1600) = 93.750 m = ` **`93,75 km`**
+`R_real = R_máx + R_ind = 93,75 + 20 = ` **`113,75 km`**
+
+**VERIFICAÇÃO da condição de validade:** 113,75 km < 2 × 93,75 = 187,5 km → a ambiguidade é de **primeira ordem**, e a fórmula simples se aplica. Se o alvo estivesse além de 187,5 km, o termo seria `2·R_máx + R_ind`.
+
+**INTERPRETAÇÃO** → o eco chegou depois do pulso seguinte ter partido, e o indicador o mediu contra o zero errado.
+
+### Exemplo 2.4 — Poder separador em marcação  `C016`
+
+*Feixe de 3° no plano horizontal. (a) PSM angular; (b) PSM linear a 12 km; (c) dois alvos separados por 500 m a 12 km, à mesma distância, são discriminados?*
+
+(a) `PSM_angular = θ_B = ` **`3°`**
+(b) `x = 0,01745 × 12.000 × 3 = ` **`628,3 m`**
+(c) 500 m < 628,3 m → **não são discriminados**; aparecem como um só alvo.
+
+**INTERPRETAÇÃO** → diferente do PSD, que é constante, o PSM linear **cresce com a distância**. Os mesmos dois alvos seriam discriminados se estivessem a menos de `500/(0,01745×3) = 9.551 m ≈ 9,55 km`.
+
+### Exemplo 2.5 — Pulsos sobre o alvo  `C017` `C016`
+
+*Feixe 1,5°, FRP 2.000 Hz, antena a 20 RPM. Quantos pulsos iluminam um alvo por varredura?*
+
+**Passo obrigatório:** `θ_0 = 20 × 6 = ` **`120 °/s`**
+`N_B = (θ_B/θ_0)·FRP = (1,5/120) × 2.000 = 0,0125 × 2.000 = ` **`25 pulsos`**
+
+**INTERPRETAÇÃO** → acima da referência de *"10 ou mais no caso de busca"* ‹p. 1-14›. Dobrar a rotação para 40 RPM levaria a 12,5 → **12 pulsos**, ainda aceitável; quadruplicar levaria a 6, abaixo do mínimo prático.
+
+### Exemplo 2.6 — Escolha da portadora  `C018`
+
+*Um mesmo casco receberá dois radares: um de navegação em águas restritas e um de busca aérea de longo alcance. Qual deve operar na frequência mais alta, e o que se paga por isso?*
+
+**Navegação em águas restritas → frequência mais alta** (tipicamente banda X). Justificativa pela fonte: frequência maior → **melhor diretividade** → feixe estreito → melhor poder separador em **marcação**, que é o que separa uma boia de um cais a 500 m.
+**O preço:** frequência maior → **alcance menor**, por maior absorção atmosférica e maior ruído do receptor ‹p. 1-6, p. 1-10›. Em águas restritas isso não importa: o alcance útil é de poucas milhas.
+**Busca aérea de longo alcance → frequência mais baixa** (banda S ou L): aceita-se um feixe mais largo em troca de alcance.
+
+**INTERPRETAÇÃO** → a escolha não otimiza, **arbitra**. É o único parâmetro cujos dois efeitos apontam em sentidos contrários.
+
+---
+
+## Aplicações
+
+- **Navegação em águas restritas** — LP curta e FRP alta: o que importa é enxergar boias e margens perto e com boa separação, não alcance ‹p. 1-14›.
+- **Busca aérea / interceptação** — FRP alta para iluminação do alvo; a fonte cita explicitamente *"interceptação aérea"* como caso de FRP elevada ‹p. 1-14›.
+- **Busca de superfície de longo alcance** — FRP baixa para alcance sem ambiguidade, aceitando menos pulsos por alvo.
+- **Dimensionamento do transmissor** — a potência **média** define fonte, dissipação e tamanho dos componentes ‹p. 1-10›.
+
+## Exceções e condições-limite
+
+| Situação | O que quebra | Fonte |
+|---|---|---|
+| Pulso não retangular | `P_méd = P_pico·LP·FRP` superestima a energia real | `[INFERÊNCIA PEDAGÓGICA]` — decorre da definição de média |
+| Alvo além de `2·R_máx` | `R_real = R_máx + R_ind` vira `n·R_máx + R_ind` | consequência da definição ‹p. 1-13› |
+| Alvo não punctual | `PSM_angular = θ_B` é valor **teórico**; a fonte diz *"considerando que o alvo seja punctual"* | p. 1-15 |
+| Pulsos muito estreitos | exigem receptor de faixa larga → **menos ganho, mais ruído** | p. 1-12 |
+| Chave de antena com tempo de recuperação | `R_mín` passa a incluir esse tempo além da LP | SUE6.7 (M05) |
+| `N_B` fracionário | trunca-se para baixo (55,55 → 55) | rubrica SOPA T2 2024 Q2e |
+
+## Limitações do modelo
+
+Todas as fórmulas deste módulo são **geométricas e temporais**: não contêm potência, ganho, seção reta radar nem sensibilidade. Elas dizem o que o radar **consegue separar e quando**, jamais se o eco terá **energia suficiente para ser detectado**. Essa segunda pergunta é M06 — a equação radar. Um radar pode ter `R_máx sem ambiguidade` de 200 km e alcance energético real de 40 km; os dois números são independentes e a banca pode explorar exatamente essa diferença.
+
+---
+
+## Vulnerabilidades — a banca vai te dar X esperando que você faça Y
+
+| ID | A armadilha | O que a banca faz | O que você faz |
+|---|---|---|---|
+| `V001` | **Parâmetro em duplicata** | Dá FRP, LP e RPM com **dois valores cada** e pede "máximo"/"mínimo" | Antes de calcular, escreva: *qual valor maximiza **esta** grandeza?* |
+| `V002` | **PSD × R_mín** | Usa a mesma fórmula em dois itens do mesmo problema | PSD → **LP máxima** (pior caso). R_mín → **LP mínima** (menor distância de detecção) |
+| `V003` | **FRP invertida** | Pede alcance máximo sem ambiguidade com duas FRPs | **FRP mínima** → TRP maior → alcance maior |
+| `V004` | **N_B com dois parâmetros** | Pede o **menor** número de pulsos | **FRP mínima E rotação máxima**, simultaneamente |
+| `V005` | **RPM × °/s** | Dá a rotação em RPM | `θ_0 = RPM × 6`. Sempre |
+| `V006` | **Ambiguidade em dois tempos** | Muda a FRP depois de você achar `R_real` | Reindique: se `R_real < R_máx(nova)`, o indicado **é** o real |
+| `V007` | **Potência média** | Espera `P_pico/TRP` | `P_méd = P_pico·LP·FRP`. Máxima → **LP máxima E FRP máxima** |
+| `V012` | **PSM angular × linear** | Pergunta "o poder separador em marcação" sem dizer qual | Angular = `θ_B` (número em graus). Linear = `0,01745·R·θ` (em metros) |
+| `V013` | **Q4 conceitual** | Pede "de que forma X afeta o desempenho" | LP afeta **duas** grandezas (R_mín e PSD). FRP, feixe e potência afetam **uma** cada |
+
+---
+
+## Integração
+
+**Com M01.** Cada fórmula deste módulo é `d = c·t/2` com um `t` diferente:
+
+| Fórmula de M02 | O que é o `t` |
+|---|---|
+| `PSD = c·LP/2` | `t` = largura de pulso |
+| `R_mín = c·LP/2` | `t` = largura de pulso |
+| `R_máx = c·TRP/2` | `t` = período entre pulsos |
+
+**Com M03.** Cada característica tem um bloco que a produz: **sincronizador → FRP**, **modulador → LP**, **oscilador → portadora**. A Q1 da prova cobra exatamente essa tripla.
+
+**Com M04.** A LP determina a **banda passante** exigida do receptor ‹p. 1-12›; pulso mais estreito → banda mais larga → mais ruído.
+
+**Com M05.** O tempo de recuperação da chave de antena acrescenta um termo a `R_mín`.
+
+**Com M06.** M02 responde *o que o radar separa*; M06 responde *se o eco tem energia para ser detectado*. Os dois alcances — o sem ambiguidade e o energético — são independentes.
+
+---
+
+## Checklist de domínio — M02
+
+- [ ] Escrevo `P_méd = P_pico·LP·FRP` e sei que `CT = LP·FRP`
+- [ ] Converto LP de µs para s antes de multiplicar
+- [ ] Escrevo `PSD = c·LP/2` e sei que uso **LP máxima**
+- [ ] Escrevo `R_mín = c·LP/2` e sei que uso **LP mínima**
+- [ ] Explico por que PSD e R_mín têm a mesma fórmula e leituras opostas
+- [ ] Escrevo `R_máx = c/(2·FRP)` e sei que uso **FRP mínima**
+- [ ] Resolvo ambiguidade com `R_real = R_máx + R_ind` e **reindico** se a FRP mudar
+- [ ] Sei que `PSM_angular = θ_B` e que `PSM_linear = 0,01745·R·θ`
+- [ ] Sei que o PSM linear **cresce** com a distância e o PSD **não**
+- [ ] Converto RPM em °/s multiplicando por 6
+- [ ] Escrevo `N_B = (θ_B/θ_0)·FRP` e trunco o resultado
+- [ ] Sei que `N_B` mínimo exige **FRP mínima E rotação máxima**
+- [ ] Digo, para cada uma das 5 características, exatamente quais grandezas ela afeta
+- [ ] Sei que só a **LP** afeta duas grandezas
+- [ ] Sei que a **portadora** afeta diretividade e alcance em sentidos opostos
+
+**Critério de aprovação: 14 de 15.** M02 vale 4,4 pontos da prova; abaixo disso, refaça os exercícios antes de M03.
+
+---
+
+## Referências deste módulo
+
+| Fonte | Localização | Conteúdo | Confiança |
+|---|---|---|---|
+| `apostila_DET_2022.pdf` | Cap. I, Seção 2, **p. 1-9 a 1-18** | As cinco características, todas as fórmulas, figs. 1.2.1 a 1.2.7 | **Alta** — lido integralmente |
+| `SUE6.1-...odp` | slides **33 a 90** | PSD, R_mín, FRP, ambiguidade, largura do feixe, `N_B`, conclusão sobre compromisso | **Alta** — versão completa (o `.pdf` está truncado, D-01) |
+| `T2/SOPA DET T2 2024.pdf` | **Q2** (7 itens) e **Q4** (4 itens), com rubrica | Convenções da banca, escolha de parâmetros, truncamento de `N_B` | **Alta** — rubrica oficial |
+
+**Marcações deste módulo:** 3 `[INFERÊNCIA PEDAGÓGICA]` · 1 `[PONTO DE INCERTEZA — REQUER VERIFICAÇÃO]` (fórmula do PSM com OCR corrompido, resolvida por confirmação na rubrica) · 0 `[APROFUNDAMENTO ANALÍTICO DE SUPORTE]` · 0 `[LACUNA DE COBERTURA]`.
