@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import type { GrupoCorrelacione } from '@tipos/question';
+import Markdown from './Markdown';
 
 interface Props {
   questao: GrupoCorrelacione;
@@ -86,9 +87,21 @@ export default function QuestaoCorrelacione({ questao, indice, onResponder }: Pr
           Verificar correlações
         </button>
       ) : (
-        <p className={`mt-4 text-sm font-semibold ${questao.itens.every((it, i) => respostas[i] === it.chave) ? 'text-progresso' : 'text-alerta'}`}>
-          {questao.itens.every((it, i) => respostas[i] === it.chave) ? '✓ Correlações corretas!' : '✗ Confira as correções acima.'}
-        </p>
+        <div className="mt-4 space-y-3">
+          <p className={`text-sm font-semibold ${questao.itens.every((it, i) => respostas[i] === it.chave) ? 'text-progresso' : 'text-alerta'}`}>
+            {questao.itens.every((it, i) => respostas[i] === it.chave) ? '✓ Correlações corretas!' : '✗ Confira as correções acima.'}
+          </p>
+          {questao.comentario && (
+            <div className="rounded-xl border border-white/10 bg-naval-800/60 p-4">
+              <p className="mb-1 text-xs uppercase tracking-wider text-dourado/70">Comentário</p>
+              <Markdown className="text-sm text-nevoa/85">{questao.comentario}</Markdown>
+            </div>
+          )}
+          {questao.armadilha && (
+            <p className="text-xs text-alerta/80"><strong>Armadilha:</strong> {questao.armadilha}</p>
+          )}
+          {questao.fonte && <p className="text-xs text-nevoa/50">Fonte: {questao.fonte}</p>}
+        </div>
       )}
     </div>
   );

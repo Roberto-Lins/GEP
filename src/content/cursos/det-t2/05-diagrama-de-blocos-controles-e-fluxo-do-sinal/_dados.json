@@ -1,0 +1,16 @@
+{
+  "ordem": 5,
+  "slug": "05-diagrama-de-blocos-controles-e-fluxo-do-sinal",
+  "titulo": "Diagrama de blocos, controles e fluxo do sinal",
+  "prioridade": "máxima",
+  "subtitulo": "Integração do transmissor, receptor, chave de antena e indicador",
+  "tempoEstimado": "70 min",
+  "objetivo": "Integrar o caminho de transmissão e o caminho do eco em um único diagrama funcional, incluindo chave de antena, indicador e controles externos.",
+  "palavrasChave": [
+    "diagrama de blocos",
+    "chave de antena",
+    "indicador",
+    "controles",
+    "fluxo do sinal"
+  ]
+}

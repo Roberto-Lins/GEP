@@ -1,0 +1,18 @@
+{
+  "ordem": 2,
+  "slug": "02-caracteristicas-e-parametros-de-desempenho",
+  "titulo": "Características e parâmetros de desempenho",
+  "prioridade": "máxima",
+  "subtitulo": "Potência, resolução, ambiguidade, marcação e pulsos sobre o alvo",
+  "tempoEstimado": "75 min",
+  "objetivo": "Calcular potência média, PSD, distância mínima, alcance sem ambiguidade, poder separador em marcação e número de pulsos sobre o alvo, escolhendo corretamente os parâmetros máximos e mínimos.",
+  "palavrasChave": [
+    "largura de pulso",
+    "FRP",
+    "PSD",
+    "R_mín",
+    "R_máx",
+    "poder separador em marcação",
+    "N_B"
+  ]
+}

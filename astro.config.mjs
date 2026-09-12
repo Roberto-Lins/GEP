@@ -2,6 +2,8 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 // Bússola dos Aspirantes — plataforma estática multi-curso.
 // Ajuste `site` ao publicar (Vercel/Netlify/GitHub Pages).
@@ -14,6 +16,8 @@ export default defineConfig({
   ],
   markdown: {
     shikiConfig: { theme: 'css-variables' },
+    remarkPlugins: [remarkMath],
+    rehypePlugins: [[rehypeKatex, { strict: 'ignore' }]],
   },
   // Compatibilidade com as rotas antigas do GEP (curso único → /gep/...).
   // As rotas de matéria são enumeradas (build estático não expande [slug] em redirect).

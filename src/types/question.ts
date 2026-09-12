@@ -43,6 +43,10 @@ export interface GrupoCorrelacione {
   titulo: string;
   chaves: { chave: string; texto: string }[];
   itens: { texto: string; chave: string }[];
+  /** explicação exibida após a correção do grupo */
+  comentario?: string;
+  /** erro provável ou critério de atenção associado ao grupo */
+  armadilha?: string;
   fonte?: string;
 }
 

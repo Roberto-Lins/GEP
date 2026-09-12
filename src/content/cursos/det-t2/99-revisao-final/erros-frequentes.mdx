@@ -1,0 +1,103 @@
+---
+titulo: "Erros recorrentes"
+secao: "erros-frequentes"
+secaoOrdem: 3
+---
+
+> Leia inteiro, em voz alta, no bloco final da revisão.
+
+## Bloco A — Aritmética e unidades
+
+| # | Erro | Correção |
+|---|---|---|
+| A1 | Esquecer o **/2** em `d = c·t/2` | O alvo está na **metade** do percurso |
+| A2 | Dividir por 2 **de novo** ao usar milha radar | O 2 já está dentro de 12,36 / 10,75 µs |
+| A3 | Usar `150·t` com `t` em segundos | O 150 já embute o 10⁻⁶ |
+| A4 | Trocar milha radar **náutica** (12,36) por **terrestre** (10,75) | "Milha" sem adjetivo, em contexto naval, é lida como náutica. **Leia o enunciado** |
+| A5 | Esquecer `θ₀ = RPM × 6` | 18 RPM = 108 °/s. Erra por fator 6 |
+| A6 | Parar no mW ao converter dBm | −80 dBm = 10⁻⁸ **mW** = 10⁻¹¹ **W** |
+| A7 | Usar `c = 2,998×10⁸` | A EN usa **3×10⁸** em toda rubrica |
+| A8 | Misturar rotas de conversão no mesmo item | Escolha uma e mantenha (divergência D-04) |
+
+## Bloco B — Escolha de parâmetro (a família que mais custa pontos)
+
+| # | Erro | Correção |
+|---|---|---|
+| B1 | Usar LP mínima no **PSD** | PSD é o **pior caso** → **LP máxima** |
+| B2 | Usar LP máxima no **R_mín** | "Menor distância de detecção" → **LP mínima** |
+| B3 | Usar FRP máxima no **R_máx sem ambiguidade** | FRP menor → TRP maior → **alcance maior** |
+| B4 | Em `N_B` mínimo, puxar só um parâmetro | **FRP mínima E rotação máxima**, simultaneamente |
+| B5 | Em `P_méd` máxima, esquecer que são dois | **LP máxima E FRP máxima** |
+| B6 | Parar em `R_real = R_máx + R_ind` | Depois **reindique** na nova FRP: se `R_real < R_máx(nova)`, o indicado **é** o R_real |
+
+## Bloco C — Equação radar
+
+| # | Erro | Correção |
+|---|---|---|
+| C1 | Esquecer a **quarta raiz** | 16× em P ⇒ apenas 2× em R |
+| C2 | Usar `(4π)²R⁴` para o **MAGE** | MAGE é **caminho de ida**: `4πR²`. O eco volta; a interceptação não |
+| C3 | Tentar `A_ef` sem calcular λ antes | `λ = c/f`, depois `A = Gλ²/4π` |
+| C4 | Tratar dB como fator linear | 40 dB = 10⁴, não 40 |
+
+## Bloco C2 — Transmissor `M03`
+
+| # | Erro | Correção |
+|---|---|---|
+| T1 | Dizer que o **modulador** determina a FRP | Modulador → **LP**. Sincronizador → **FRP** |
+| T2 | Chamar a magnetron de **amplificadora** | É **oscilador autoexcitado**; dispensa amplificador |
+| T3 | Usar `E` em vez de `E/2` na carga casada da RFP | `e_L = E/2`. Em potência o erro vira **fator 4** |
+| T4 | Achar que a LP da RFP é ajustável por software | `LP = T`, propriedade **física** da linha artificial |
+| T5 | Responder `N` modos para `N` cavidades | São `N/2` |
+| T6 | Usar `n = N` na fórmula `f = E/(nBd)` | `n` = cavidades **por feixe**; no modo π, `n = 2` |
+| T7 | Trocar diodo de **carga** por diodo de **by-pass** | Carga → libera a thyratron do disparo no pico. By-pass → escoa a carga invertida |
+| T8 | Afirmar que Klystron/TWT exigem modulador de alta potência | **Podem** ser modulados em baixo nível, pela grade |
+| T9 | Dar a data da magnetron sem ressalva | A apostila diz **1939** no corpo e **1940** na cronologia — conflito D-08 |
+
+## Bloco C3 — Receptor `M04`
+
+| # | Erro | Correção |
+|---|---|---|
+| R1 | Dizer que o **misturador** define a banda passante | É o **amplificador de FI**, pelos estágios sintonizados |
+| R2 | Dizer que o detector de vídeo **amplifica** a envoltória | Ele **extrai**; quem amplifica é o amplificador de vídeo |
+| R3 | Achar que mais estágios de FI aumentam a banda | Aumentam o ganho e **diminuem** a banda |
+| R4 | Somar figuras de ruído em dB | Não somam: use a fórmula de cascata e só então converta |
+| R5 | Esquecer que `G₁ < 1` **piora** a cascata | Dividir por 0,5 é multiplicar por 2 |
+| R6 | Transportar o fator de ruído direto para o alcance | Entre `S_mín` e `R` há a **quarta raiz** |
+| R7 | Dizer que o CAF corrige o **transmissor** | Corrige o **oscilador local** |
+| R8 | Confundir a referência do CAG | **Nível médio (CC)** do sinal demodulado |
+| R9 | Achar que STC em excesso é conservador | **Apaga alvos próximos reais** |
+| R10 | Atribuir clutter de **pulso longo** ao STC | É o **CAG** |
+| R11 | Pôr o oscilador local na cadeia do sinal | Ele **injeta** no misturador; o eco não passa por ele |
+
+## Bloco D — Blocos e funções
+
+| # | Erro | Correção |
+|---|---|---|
+| D1 | Trocar **CAF** por **CAG** | CA**F** = **F**requência, age no **oscilador local** · CA**G** = **G**anho, age no **amplif. de FI** |
+| D2 | Trocar **STC** por **FTC** | **STC** = anti-clutter **sea**, ganho varia com o tempo · **FTC** = anti-clutter **rain**, superposição de ecos |
+| D3 | Atribuir a **banda passante** ao misturador | É o **amplificador de FI** (estágios sintonizados) |
+| D4 | Atribuir a **FRP** ao modulador | FRP = **sincronizador**. LP = **modulador**. Portadora = **oscilador** |
+| D5 | Dizer que o sincronizador só alimenta o TX | Alimenta **TX e indicador** |
+| D6 | Achar que a **chave de antena** filtra ruído | Ela **protege o receptor** da alta potência do transmissor |
+
+## Bloco E — Conceituais
+
+| # | Erro | Correção |
+|---|---|---|
+| E1 | Classificar **MTI como CW** | MTI é **radar de pulso**, embora use Doppler |
+| E2 | Atribuir **marcação** ao tempo | Marcação vem da **direcionalidade** |
+| E3 | Inverter limite **inferior** × **superior** da faixa radar | Antenas pouco diretivas e pouca reflexão = limite **inferior** |
+| E4 | Dizer que frequência maior melhora tudo | Melhora a **diretividade**, **reduz** o alcance |
+| E5 | Em Q4, dar duas relações para FRP ou feixe | Só a **LP** afeta **duas** grandezas |
+| E6 | Confundir 1917 (Tesla, **pulso**) com 1931 (**CW** 60 Hz) | 1917 = pulso · 1931 = CW |
+| E7 | Tratar a organização básica como o diagrama de blocos | As fontes negam explicitamente |
+
+## Bloco F — Erros de prova (não de matéria)
+
+| # | Erro | Correção |
+|---|---|---|
+| F1 | Entregar só o resultado | A rubrica mostra **fórmula → substituição → resultado**. Escreva os três |
+| F2 | Deixar afirmativa de correlação em branco | O enunciado avisa: *"respostas em branco são incorretas"*. **Chute com critério** |
+| F3 | Escrever parágrafo na Q4 | A rubrica oficial aceita **uma linha** por item |
+| F4 | Não preencher a linha "Resposta:" | Ela é onde a rubrica procura. Preencha **com unidade** |
+| F5 | Abandonar o item seguinte após errar o anterior | A pontuação é **por item**. Errar (a) não contamina (b) |

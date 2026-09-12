@@ -1,0 +1,478 @@
+---
+titulo: "Recepção e processamento do eco — aula"
+secao: "aula"
+secaoOrdem: 2
+---
+
+## Posição na trilha
+
+`M00 → M01 → M02 → M03 → **M04** → M05 → M06 → M07 → M08`
+
+## Pré-requisitos
+
+**M02 e M03 completos.** Você está pronto se responde, sem consultar:
+
+- o que a largura de pulso afeta (M02);
+- que o oscilador determina a portadora e o modulador a LP (M03);
+- por que a frequência da magnetron deriva (M03).
+
+**Por que M04 vem depois de M03.** O receptor não é o espelho do transmissor: ele é a **resposta aos problemas que o transmissor cria**. O CAF existe porque a portadora deriva. A banda passante do amplificador de FI é imposta pela largura de pulso que o modulador escolheu. Estudar o receptor antes do transmissor seria ver as soluções antes dos problemas.
+
+## Resumo executivo
+
+**Este é o módulo de maior peso da Q1 da T2 2024: 8 das 16 afirmativas** — oscilador local, misturador, CAF, amplificador de FI, CAG, detector de vídeo, STC e FTC — valendo **2,4 pontos**. Somados aos 1,5 de M03, os dois módulos de circuito respondem por **3,9 dos 4,8 pontos da Q1**.
+
+E nenhuma das oito exigiu um cálculo. Todas cobraram **função de bloco**, com redação literal dos slides. A tabela abaixo é o que vale 2,4 pontos:
+
+| Bloco | Faz | Palavra-chave da banca |
+|---|---|---|
+| **Oscilador local** | produz frequência estável | *"para garantir uma FI estável"* |
+| **Misturador** | bate eco com OL | *"gera o sinal de FI"* |
+| **CAF** | amostra o pulso transmitido | *"controla a frequência do oscilador local"* |
+| **Amplif. de FI** | estágios sintonizados | *"definem a banda passante do receptor"* |
+| **CAG** | realimentação negativa | *"tendo como referência o nível médio (CC)"* · *"controla o ganho do amplificador de FI"* |
+| **Detector de vídeo** | retifica e filtra | *"extrai a envoltória do sinal de FI"* |
+| **STC** | varia ganho no tempo | *"reduz o ganho nas distâncias menores e o aumenta nas maiores"* |
+| **FTC** | diferencia o vídeo | *"reduz o efeito provocado pela superposição de ecos"* |
+
+---
+
+## Conceitos fundamentais
+
+### C023 — O oscilador local
+‹fonte: apostila_DET_2022.pdf p. 1-42; SUE6.5 .odp slide 15› · criticidade: **crítica** · competências: explicar, calcular
+
+**Função** ‹p. 1-42›: *"é o oscilador que gera o sinal que vai ser misturado com o sinal do eco"*. O slide acrescenta o **porquê**: *"produz uma frequência **estável** para produção da FI"*.
+
+**A relação numérica que a fonte fixa** ‹p. 1-42›: *"o oscilador local fornece ao misturador uma frequência muito elevada, **bem próxima à frequência de transmissão**. Por exemplo, para um pulso de **10.000 MHz** e para um OL gerando **9.970 MHz**, a frequência intermediária produzida será de **30 MHz**."*
+
+> **[INFERÊNCIA PEDAGÓGICA]** Repare no que esse exemplo decide. O OL está **abaixo** da portadora, e a FI sai como `f_eco − f_OL`. Esta é a **única passagem em todas as fontes que fixa o sinal da diferença com números**, e é o que resolve a divergência D-03 registrada em `source-audit.md` (o `SUE6.5` escreve `FI = f_eco − f_OL` num slide e `FI = f_osc − f_eco` em outro). A grandeza física é a **frequência diferença** — a apostila usa exatamente essa expressão — e o módulo do batimento; o exemplo numérico da fonte adota o OL abaixo.
+
+**Implementação** ‹p. 1-44›: o Anexo C da apostila descreve a **Klystron de Repulsão** (*reflex klystron*) como oscilador local.
+
+---
+
+### C024 — O misturador e a FI
+‹fonte: apostila_DET_2022.pdf p. 1-42, 1-44 a 1-46, figs. 1.5.3 a 1.5.5; SUE6.5 .odp slides 23–26› · criticidade: **crítica** · competências: explicar, calcular
+
+**Função** ‹p. 1-42, literal›: *"é o estágio que produz a frequência intermediária (FI) resultante da mistura do sinal vindo da antena (eco) com um sinal gerado pelo oscilador local (OL)"*.
+
+$$
+\boxed{FI = |f_{eco} - f_{OL}|}
+$$
+
+| Faixa | Valor | Fonte |
+|---|---|---|
+| FI, faixa geral | **0,1 MHz a 100 MHz** | apostila p. 1-42 |
+| FI típica em micro-ondas | **30 MHz ou 60 MHz** | apostila p. 1-44; SUE6.5 |
+
+**Como se obtém** ‹p. 1-44›: *"pela heterodinagem do sinal de RF (eco) com o sinal do oscilador local em um **elemento não linear**, um cristal, por exemplo, do qual é extraída a **frequência diferença**"*. Outras frequências também são geradas; *"a impedância de carga para o estágio misturador deve ser desprezível, **exceto para a frequência intermediária**"* — é o circuito LCR sintonizado que seleciona só a FI.
+
+**Por que o misturador precisa da proteção da TR** ‹p. 1-43›: *"o misturador pode ser, por exemplo, um cristal, que **por ser muito delicado facilmente seria danificado pelo pulso de transmissão**, não fosse a proteção proporcionada pela unidade TR"*. → Elo direto com a chave de antena de M05.
+
+#### Misturador balanceado ‹p. 1-45/1-46›
+
+| Elemento | Geometria |
+|---|---|
+| Cristais 1 e 2 | separados por **λ/2** do sinal de entrada |
+| Cada cristal | a **λ/4** dos terminais da linha |
+| Ponta de prova do OL | **equidistante** dos cristais |
+
+**O efeito que justifica a topologia:** o sinal do OL chega aos dois cristais **em fase e com a mesma intensidade**; o eco chega com **defasagem de 180°** (por causa do λ/2). Resultado: os sinais de FI **se somam** na entrada do amplificador de FI, enquanto *"qualquer ruído proveniente do Oscilador Local aparece nos cristais **em fase**, e portanto será **cancelado**"*.
+
+Variante com **T-mágico** ‹fig. 1.5.5›: *"em um dos diodos aparece a **soma** desses sinais e no outro a **diferença**"*, com o mesmo cancelamento do ruído do OL.
+
+---
+
+### C025 — O CAF (Controle Automático de Frequência)
+‹fonte: apostila_DET_2022.pdf p. 1-43/1-44; SUE6.5 .odp slides 19–20› · criticidade: **crítica** · competências: explicar, analisar
+
+**Por que ele existe — e aqui a fonte acrescenta uma causa que M03 não tinha** ‹p. 1-43›:
+
+> *"Os transmissores radar têm geralmente uma **estabilidade de frequência relativamente pobre**. A **impedância da antena varia com o seu próprio movimento**, assim variando a carga apresentada ao transmissor, o que faz com que a frequência deste varie. Daí o receptor ser provido de um Controle Automático de Frequência (CAF), que **sintoniza o receptor com o transmissor**."*
+
+> **[INFERÊNCIA PEDAGÓGICA] — as duas causas da deriva, agora completas.**
+> **M03** deu as causas **internas** à válvula: temperatura (dilatação das cavidades), corrente anódica, ajuste da carga, salto de modo.
+> **M04** dá a causa **externa**: a antena **gira**, e ao girar muda sua impedância, mudando a carga vista pelo transmissor — que muda de frequência. É por isso que a deriva é **contínua e inevitável**, não um defeito. O CAF não conserta o transmissor: ele **persegue** o transmissor.
+
+**Composição** ‹p. 1-43›: **misturador do CAF + discriminador de frequência + circuito de controle**.
+
+**Como funciona** ‹p. 1-43/1-44 e SUE6.5›:
+
+```
+amostra do pulso TX ──► ATENUADOR ──┐
+                                    ├──► MISTURADOR ──► amplif. FI ──► DISCRIMINADOR ──► CIRCUITO ──► corrige o
+amostra do osc. local ──────────────┘        do CAF        do CAF                        DE CONTROLE   OSC. LOCAL
+```
+`Diagrama didático reconstruído a partir das fontes` — apostila p. 1-43 + `SUE6.5` slide 20.
+
+| Situação | Saída do discriminador |
+|---|---|
+| Frequência **correta** | **nula** |
+| Desvio **positivo** | pulsos de uma polaridade |
+| Desvio **negativo** | pulsos da polaridade oposta |
+
+O circuito de controle *"determinará a variação de frequência do **OL** para recolocar a frequência intermediária no seu valor correto"*.
+
+> ⚠️ `V019` **O CAF não corrige o transmissor — corrige o oscilador local.** Foi exatamente isso que a Q1 de 2024 cobrou: *"Realiza uma amostragem do sinal transmitido a fim de garantir uma FI constante"* **e** *"Controla a frequência do oscilador local"* — duas afirmativas, o mesmo bloco (D).
+
+---
+
+### C026 — O CAG (Controle Automático de Ganho)
+‹fonte: apostila_DET_2022.pdf p. 1-44; SUE6.5 .odp slides 21–22› · criticidade: **crítica** · competências: explicar, comparar
+
+**Definição** ‹p. 1-44, literal›: *"consiste em um **filtro RC** que é o elo de **realimentação negativa** para o controle de ganho do amplificador de FI"*.
+
+**O que ele resolve** ‹p. 1-44›: *"**pulsos longos, provenientes de clutter**, são atenuados devido à redução de ganho do amplificador de FI"*.
+
+**A referência que a banca cobrou:** *"Realiza sua função tendo como referência o **nível médio (CC)** do sinal demodulado"* ‹SOPA T2 2024, Q1, bloco H›. É essa palavra — **nível médio** — que distingue o CAG do STC.
+
+> ⚠️ `V027` **CAG e STC agem no MESMO bloco** (o amplificador de FI) e ambos mexem no **mesmo parâmetro** (o ganho). A distinção é a **variável de controle**:
+>
+> | | CAG | STC |
+> |---|---|---|
+> | Varia o ganho em função de | **nível médio (CC)** do sinal | **tempo** decorrido desde `t₀` (⇒ distância) |
+> | Disparado por | realimentação contínua | o temporizador, **a cada pulso** |
+> | Combate | clutter de **pulso longo** | saturação por alvos **próximos** |
+> | Circuito | filtro RC de realimentação negativa | MV monoestável + carga/descarga de `C₁` |
+
+---
+
+### C027 — O amplificador de FI e a banda passante
+‹fonte: apostila_DET_2022.pdf p. 1-42, 1-43, 1-50; SUE6.5 .odp slides 16, 31–32› · criticidade: **crítica** · competências: calcular, interpretar
+
+**Função** ‹p. 1-42›: *"em geral, constituído de vários estágios, amplifica o sinal de FI, maximizando a relação sinal-ruído do receptor"*. E, decisivo: *"a faixa de passagem do receptor é **essencialmente determinada** pela faixa de passagem do amplificador de FI"* ‹p. 1-50›.
+
+$$
+\boxed{B = \frac{n}{T}}
+$$
+
+| Símbolo | Significado ‹p. 1-50› |
+|---|---|
+| `B` | faixa de passagem do amplificador de FI (= do receptor) |
+| `T` | largura de pulso |
+| `n` | número **entre 1 e 10**, dependendo das circunstâncias; **entre 1 e 1,4** se for desejável a **máxima relação sinal-ruído** |
+
+> **[INFERÊNCIA PEDAGÓGICA]** O caso `n = 1` é exatamente o `BW ≈ 1/τ` que o `SUE6.11` apresenta como *"solução de compromisso (ótima)"* na aula da equação radar. As duas fontes dizem a mesma coisa em módulos diferentes: **M04 dá a faixa (`1 ≤ n ≤ 10`), M06 dá o ponto ótimo (`n ≈ 1`).**
+
+**O compromisso, na frase da fonte** ‹p. 1-50›: *"se são desejáveis pulsos com lados bastante verticais (para uma boa resolução) torna-se necessária uma faixa larga. No entanto, há que se considerar também que o **alargamento de faixa reduz o alcance**, devido à maior presença de ruído."*
+
+> ⚠️ `V025` **A cadeia causal completa, que vale uma questão inteira:**
+> `LP menor` → `B maior` (B = n/T) → `mais ruído` (P_n = kTB_n) → `S_mín maior` → **`alcance menor`**.
+> Ou seja: melhorar a resolução em distância (M02) **custa alcance** (M06). O elo é este bloco.
+
+**A escolha da FI é um compromisso** ‹p. 1-50›:
+
+| FI mais **alta** | FI mais **baixa** |
+|---|---|
+| ✅ facilita a **rejeição da frequência imagem** | ✅ menor figura de ruído |
+| ✅ componentes (L e C) **menores** | ✅ maior seletividade |
+| ❌ figura de ruído **elevada** | ❌ imagem mais difícil de rejeitar |
+| ❌ seletividade **menor** | ❌ componentes maiores |
+
+Daí os valores de compromisso usuais: **30 MHz ou 60 MHz**.
+
+**Ganho × banda** ‹p. 1-50›: *"à medida que se aumenta o número de estágios de FI, o **ganho aumenta e a faixa de passagem diminui**, devido à **constância do produto ganho-largura de faixa**"*. Contramedidas citadas: **circuitos duplamente sintonizados** (transformador com superacoplamento) e **sintonia descalada** (*stagger tuning*).
+
+**Ordem de grandeza** ‹p. 1-58›: até **nove estágios** de FI em cascata; ganhos da ordem de **10⁸**.
+
+---
+
+### C028 — O detector de vídeo e o amplificador de vídeo
+‹fonte: apostila_DET_2022.pdf p. 1-42, 1-50 a 1-54, 1-57, figs. 1.5.8 a 1.5.20; SUE6.5 .odp slides 38–51› · criticidade: **crítica** · competências: explicar
+
+**Detector de vídeo** ‹p. 1-57›: *"é o circuito do receptor onde a **envoltória** do pulso de FI é extraída"*. Estrutura: **elemento retificador + filtro passa-baixas**. O capacitor `C` carrega através do diodo e descarrega através de `R`; o indutor `L` sintoniza a saída do estágio final de FI e, com a capacitância distribuída, *"formam uma seção a mais de filtro passa-baixas, **atenuando as componentes de FI**"*.
+
+> **Detalhe que quase ninguém guarda** ‹p. 1-57›: a forma de onda de saída *"corresponde a um pulso de vídeo **negativo** com um **'ripple' superposto**, resultado da descarga do capacitor C"*.
+
+**Amplificador de vídeo** ‹p. 1-42›: *"amplifica a envoltória do sinal a um nível adequado para a posterior apresentação na tela da VRC"*. Soma ao vídeo do detector os **sinais auxiliares**: marca de proa, marcas de distância fixas e móvel ‹SUE6.5; fig. 1.5.15›.
+
+**A física da distorção** ‹p. 1-51›, em duas frases que a banca pode inverter:
+
+| Circuito | Efeito de `τ = RC` |
+|---|---|
+| **Passa-baixas** (remove altas) | quanto **maior** τ, **menos verticais** os lados do pulso |
+| **Passa-altas** (remove baixas) | quanto **menor** τ, maior a **inclinação** e maior o **overshoot** |
+
+**Compensações** ‹figs. 1.5.11 a 1.5.14›: **em derivação** (`L` em série com `R₁`, ressonando com `C_o + C_i` nas altas), **série** (`L` em série com `C_c`) e **de baixas frequências** (filtro `R_f C_f`, que aumenta a impedância de carga e estende a resposta para baixo). Existe circuito de **compensação simultânea**.
+
+**Circuito de marca de proa** ‹p. 1-54›: um MV é disparado *"desde que as **cames na antena** abram o circuito para a terra, no instante em que a antena passa pela **proa**"*; oscila na ordem de **100 kHz**.
+
+---
+
+### C029 — O STC (Controle de Sensibilidade com o Tempo)
+‹fonte: apostila_DET_2022.pdf p. 1-55/1-56, fig. 1.5.17 e 1.5.21; SUE6.5 .odp slides 52–54› · criticidade: **crítica** · competências: explicar, analisar
+
+**O problema** ‹p. 1-55›: podem saturar o receptor, com o ganho no máximo —
+
+1. ecos fortes de alvos **muito próximos**;
+2. o **retorno do mar**, *"o que pode ocorrer em distância até **1000 jardas**"*;
+3. ecos de alvos próximos captados por **lóbulos secundários** — *"que aparecem na **distância correta** mas com **falsa marcação**"*.
+
+> **Detalhe de alto valor.** O item 3 conecta M04 a `SUE6.8` (antenas): o lóbulo lateral entrega **distância certa e marcação errada**, e o circuito que minimiza isso é o **STC**. É exatamente o exercício (c)/(d) do `SUE6.8`.
+
+**A solução** ‹p. 1-55›: *"reduz automaticamente o ganho para as **distâncias menores** e vai **aumentando** o ganho na medida em que a distância vai se tornando maior"*.
+
+**Como o circuito faz isso** ‹fig. 1.5.17›: em `t₀` (início de cada pulso) um temporizador dispara o **MV monoestável do STC**; a onda quadrada resultante — cuja largura é fixada pelo **Controle de Polarização** — faz o cristal conduzir e **carregar rapidamente** `C₁` (constante pequena, dominada por `R₂`); em `t₁` o MV volta ao repouso e `C₁` **descarrega lentamente** através do **resistor variável `R₁`**. Essa tensão, invertida por um amplificador de vídeo polarizado próximo ao corte, é aplicada ao **amplificador de FI**: reduz o ganho em `t₀`, mantém até `t₁` e depois o faz **crescer gradualmente**.
+
+**O efeito na PPI** ‹fig. 1.5.21›:
+
+| Ajuste | Resultado |
+|---|---|
+| (A) STC **desligado** | retorno do mar forte, ofuscando alvos pequenos |
+| (B) STC **correto** | retorno reduzido a pequenos pontos; pequenos alvos observáveis |
+| (C) STC **forte demais** | *"observa-se a **perda de muitos alvos próximos**"* |
+
+> ⚠️ Excesso de STC **não é conservador**: apaga alvos reais. A fonte é explícita.
+
+---
+
+### C030 — O FTC (Circuito de Constante de Tempo Rápida)
+‹fonte: apostila_DET_2022.pdf p. 1-56/1-57, figs. 1.5.18 e 1.5.19, 1.5.22; SUE6.5 .odp slides 55–57› · criticidade: **crítica** · competências: explicar
+
+**O problema** ‹p. 1-56›: *"se um alvo aéreo estiver voando sobre uma **massa de terra** à baixa altitude, dificilmente ele será detectado... o eco da massa de terra **mascararia** o eco do alvo aéreo"*.
+
+**Como funciona** ‹fig. 1.5.18›: uma chave altera a **constante de tempo do acoplamento entre o detector de vídeo e o amplificador de vídeo**. Com a chave aberta, `C₁` entra no acoplamento; sendo `R₁C₁` uma **constante de tempo rápida**, *"o sinal será **diferenciado**, e esta diferenciação **reduz o agrupamento** dos sinais (ecos) correspondentes aos alvos na tela do indicador, obtendo-se uma apresentação mais clara"*.
+
+**Efeito na PPI** ‹fig. 1.5.22›: com FTC desligado, *"um alvo dentro da **chuva ou neve** não seria distinguido"*; ligado, os ecos diferenciados tornam o alvo observável.
+
+> ⚠️ `V020` **STC ≠ FTC.** Nomes parecidos, controles de clutter ambos — e tudo o mais é diferente:
+>
+> | | STC | FTC |
+> |---|---|---|
+> | Nome comercial | anti-clutter **sea** | anti-clutter **rain** |
+> | Combate | retorno do **mar**, alvos próximos | eco **extenso** que mascara (terra, chuva, neve) |
+> | Age em | **amplificador de FI** | acoplamento **detector → amplificador de vídeo** |
+> | Mecanismo | varia o **ganho** com o tempo | **diferencia** o sinal |
+> | Palavra da banca | *"reduz o ganho nas distâncias menores"* | *"reduz o efeito da **superposição de ecos**"* |
+
+---
+
+### C031 — O ruído no receptor
+‹fonte: apostila_DET_2022.pdf p. 1-47 a 1-49, fig. 1.5.6; SUE6.5 .odp slide 27› · criticidade: **alta** · competências: calcular, interpretar
+
+**O ruído inevitável** ‹p. 1-47›: mesmo num meio isento de ruído e com receptor perfeito, resta o **ruído térmico** (ou de **Johnson**), da agitação térmica dos elétrons.
+
+$$
+\boxed{P_n = k\,T\,B_n}
+$$
+
+| Símbolo | Significado | Valor |
+|---|---|---|
+| `k` | constante de Boltzmann | **1,38 × 10⁻²³ J/K** |
+| `T` | temperatura do circuito | K |
+| `B_n` | largura de faixa sobre a qual o ruído é medido | Hz |
+
+**Verificação dimensional, feita pela própria fonte** ‹p. 1-47›: `[J/K]·[K]·[1/s] = [W]` ✔
+**Constante operacional** ‹p. 1-47›: para `T₀ = 290 K` (ambiente), **`kT₀ = 4 × 10⁻²¹ W/Hz`**.
+
+**Figura de ruído** ‹p. 1-48›:
+
+$$
+F_n = \frac{N_0}{k\,T_0\,B_n\,G} = \frac{S_i/N_i}{S_0/N_0}
+$$
+
+*"é a razão entre o ruído na saída de um receptor **real** e o ruído na saída de um receptor **ideal**"* — e, equivalentemente, *"uma medida da **degradação da relação sinal-ruído**"*.
+
+**Mínimo sinal detectável** ‹p. 1-48›:
+
+$$
+\boxed{S_{mín} = F_n \cdot k\,T_0\,B_n \cdot \left(\frac{S}{N}\right)_{mín}}
+$$
+
+> **[INFERÊNCIA PEDAGÓGICA]** Este `S_mín` **é** o `S_mín` da equação radar de M06. M04 diz **de que ele é feito**: figura de ruído × ruído térmico × relação sinal-ruído exigida. E como `R_máx ∝ (1/S_mín)^{1/4}`, cada decibel ganho aqui vira alcance lá — com a quarta raiz no meio.
+
+**Cascata** ‹p. 1-49›:
+
+$$
+F_0 = F_1 + \frac{F_2 - 1}{G_1} + \frac{F_3 - 1}{G_1G_2} + \cdots + \frac{F_N - 1}{G_1G_2\cdots G_{N-1}}
+$$
+
+**A conclusão que justifica o pré-amplificador** ‹p. 1-49, literal›: *"a contribuição do segundo estágio na figura de ruído global `F₀` pode ser tornada **desprezível se o ganho do primeiro estágio for suficientemente grande**. Aí está um fator importante no projeto de um receptor radar que utiliza um **pré-amplificador de baixo ruído e ganho elevado**."*
+
+> ⚠️ `V026` **E a ressalva que a banca pode explorar** ‹p. 1-49›: *"se o primeiro estágio **não for um amplificador**, mas, por exemplo, um **cristal (`G₁ < 1`)**, então a figura de ruído do segundo estágio **cresce em importância**."*
+> Com `G₁ < 1`, dividir por `G₁` **amplifica** o termo `(F₂ − 1)`. É a razão técnica de o pré-amplificador existir — e de sua ausência custar caro.
+
+**O papel do pré-amplificador** ‹p. 1-42›: *"como o misturador **gera mais ruído** que o pré-amplificador, a introdução deste **diminui a Figura de Ruído** do receptor (aumento de sensibilidade). Em alguns receptores, contudo, o estágio de RF é **omitido**."*
+
+**Threshold** ‹SUE6.5 slide 29›: *"o nível rms do ruído afeta a probabilidade de detecção... A escolha do limiar de detecção determina a maior ou menor ocorrência de falsos positivos, falsos negativos e as detecções. Essa escolha é fruto de um **estudo estatístico**."*
+
+---
+
+## Exemplos resolvidos
+
+### Exemplo 4.1 — Oscilador local e FI  `C023` `C024`
+
+*Um radar transmite em 9.400 MHz e o receptor foi projetado para FI de 60 MHz. (a) Que frequências o OL pode ter? (b) Qual delas segue a convenção do exemplo da apostila? (c) Se o transmissor derivar para 9.408 MHz com o OL fixo, qual a nova FI? (d) O que o CAF faz?*
+
+(a) `FI = |f_eco − f_OL| = 60 MHz` ⇒ `f_OL = 9.400 − 60 = ` **`9.340 MHz`** ou `f_OL = 9.400 + 60 = ` **`9.460 MHz`**
+(b) A da fonte: **9.340 MHz** — no exemplo da p. 1-42, o OL (9.970) está **abaixo** da portadora (10.000).
+(c) `FI = 9.408 − 9.340 = ` **`68 MHz`** — deslocada 8 MHz, provavelmente **fora da banda** do amplificador de FI, e o eco deixa de ser amplificado.
+(d) O CAF detecta o desvio no discriminador e o circuito de controle **eleva o OL para 9.348 MHz**, restaurando `FI = 9.408 − 9.348 = ` **`60 MHz`**.
+
+**INTERPRETAÇÃO** → o CAF não devolve o transmissor à frequência nominal. Ele **move o receptor atrás dele**. Por isso a afirmativa da banca é *"controla a frequência do oscilador local"*, e não "do transmissor".
+
+### Exemplo 4.2 — Banda passante imposta pela largura de pulso  `C027` `C031`
+
+*Um radar tem LP selecionável entre 3 µs e 0,5 µs. Adotando `n = 1`: (a) banda em cada caso; (b) razão entre elas; (c) custo em ruído e alcance.*
+
+(a) `B = n/T`
+LP = 3 µs → `B = 1/3×10⁻⁶ = ` **`333,3 kHz`**
+LP = 0,5 µs → `B = 1/0,5×10⁻⁶ = ` **`2 MHz`**
+(b) `2×10⁶ / 333,3×10³ = ` **`6×`** — exatamente o inverso da razão entre as larguras de pulso (3/0,5 = 6).
+(c) `P_n = kT₀B_n` é **proporcional a `B`**: o ruído cresce **6 vezes**, ou `10·log 6 = ` **`7,78 dB`**. Como `S_mín ∝ B_n`, a sensibilidade piora os mesmos 7,78 dB.
+
+**INTERPRETAÇÃO — a conta que liga três módulos.** Passar de 3 µs para 0,5 µs melhora o poder separador em distância de 450 m para 75 m (M02). O preço, calculado aqui, é 7,78 dB de sensibilidade. E em M06, `R ∝ S_mín^{−1/4}`: 7,78 dB = fator 6 em potência ⇒ o alcance cai por `6^{1/4} = 1,57`, ou seja, para **64 %** do original. **Resolução em distância e alcance são trocados um pelo outro, e a taxa de câmbio é esta.**
+
+### Exemplo 4.3 — Ruído, cascata e o valor do pré-amplificador  `C031` `C023` `C024`
+
+*Receptor com `B_n = 2 MHz`, `T₀ = 290 K`, `(S/N)_mín = 10 dB`. Duas configurações:*
+*— **A (sem pré-amplificador):** 1º estágio é o misturador a cristal, `G₁ = 0,5` (perda de 3 dB) e `F₁ = 6 dB`; 2º estágio, amplificador de FI com `F₂ = 3 dB`.*
+*— **B (com pré-amplificador):** 1º estágio `G₁ = 20 dB`, `F₁ = 2 dB`; 2º estágio (misturador + FI) `F₂ = 9 dB`.*
+
+**1. Ruído térmico na entrada**
+`P_n = kT₀·B_n = 4×10⁻²¹ × 2×10⁶ = 8×10⁻¹⁵ W`
+Em dBm: `10·log(8×10⁻¹⁵/10⁻³) = ` **`−111,0 dBm`**
+
+**2. Figura de ruído da configuração A**
+`F₁ = 10^0,6 = 3,981` · `F₂ = 10^0,3 = 1,995` · `G₁ = 0,5`
+`F₀ = 3,981 + (1,995 − 1)/0,5 = 3,981 + 1,991 = 5,972` → **`7,76 dB`**
+
+**3. Figura de ruído da configuração B**
+`F₁ = 10^0,2 = 1,585` · `F₂ = 10^0,9 = 7,943` · `G₁ = 100`
+`F₀ = 1,585 + (7,943 − 1)/100 = 1,585 + 0,069 = 1,654` → **`2,19 dB`**
+
+**4. Mínimo sinal detectável** — em dB a fórmula vira soma:
+`S_mín(dBm) = P_n(dBm) + F₀(dB) + (S/N)_mín(dB)`
+A: `−111,0 + 7,76 + 10 = ` **`−93,2 dBm`**
+B: `−111,0 + 2,19 + 10 = ` **`−98,8 dBm`**
+
+**5. O que isso vale em alcance** `[INFERÊNCIA PEDAGÓGICA]`
+Ganho de sensibilidade: **5,57 dB** = fator **3,61** em potência. Pela equação radar (M06), `R ∝ S_mín^{−1/4}`:
+`3,61^{1/4} = 1,378` → o pré-amplificador entrega **≈ 38 % mais alcance**, sem tocar em potência, antena ou largura de pulso.
+
+**INTERPRETAÇÃO** → é a demonstração numérica da frase do `SUE6.11`: *"o decréscimo no mínimo sinal detectável é a **solução ótima**, pois envolve apenas aperfeiçoamentos no receptor"*. E note **por que** a configuração A é tão ruim: com `G₁ = 0,5`, o termo `(F₂ − 1)/G₁` é **multiplicado por 2** em vez de dividido — exatamente a ressalva da p. 1-49 sobre o cristal com `G₁ < 1`.
+
+### Exemplo 4.4 — Quatro sintomas, quatro controles  `C025` `C026` `C029` `C030`
+
+| Sintoma na PPI | Circuito | Onde age |
+|---|---|---|
+| Retorno randômico forte até ~1.000 jd do centro | **STC** | amplificador de FI — reduz o ganho em `t₀` |
+| Alvo aéreo sumido dentro de um eco extenso de terra ou chuva | **FTC** | acoplamento detector → amplif. de vídeo — diferencia |
+| Ecos enfraquecendo ao longo de minutos, normalizando só com sintonia manual | **CAF** inoperante | corrige o **oscilador local** |
+| Clutter de **pulso longo** saturando a tela | **CAG** | amplificador de FI — realimentação pelo **nível médio** |
+
+**INTERPRETAÇÃO** → STC e CAG agem no **mesmo bloco**. O que os separa não é onde, é **em função de quê**: STC varia o ganho com o **tempo** (⇒ distância), CAG com o **nível médio do sinal**.
+
+### Exemplo 4.5 — Do sinal de FI à tela: o que o detector faz e o que ele não faz  `C028` `C027`
+
+*Um pulso de eco chega ao último estágio de FI como uma portadora de 60 MHz modulada em amplitude por um envelope de 1 µs. Descreva o que sai do detector de vídeo e o que chega ao indicador.*
+
+**1. Entrada do detector** — pulso de **FI**: oscilação de 60 MHz dentro de um envelope retangular de 1 µs.
+
+**2. Dentro do detector** ‹p. 1-57›: **elemento retificador + filtro passa-baixas**. O capacitor `C` carrega através do diodo e descarrega através de `R`. O indutor `L` sintoniza a saída do último estágio de FI e, com a capacitância distribuída, *"formam uma seção a mais de filtro passa-baixas, atenuando as componentes de FI"*.
+
+**3. Saída do detector** — o envelope, sem a portadora. E, literalmente na fonte, *"um pulso de vídeo **negativo** com um **'ripple' superposto**, resultado da descarga do capacitor C"*.
+
+**4. Amplificador de vídeo** ‹fig. 1.5.15› — amplifica esse envelope **e soma a ele**: sinal do circuito de **marca de proa** e as **marcas de distância** (fixas e móvel).
+
+**5. Indicador** — o vídeo composto acende a tela.
+
+| Bloco | Verbo exato da fonte |
+|---|---|
+| Detector de vídeo | **extrai** a envoltória |
+| Amplificador de vídeo | **amplifica** a envoltória e **soma** os sinais auxiliares |
+
+**INTERPRETAÇÃO — por que isso vale um item de prova.** Os dois blocos são adjacentes e ambos "tratam vídeo", mas fazem coisas diferentes, e a banca cobrou o verbo: *"Extrai a envoltória do sinal de FI"* ‹Q1, bloco I›. Quem responde "amplifica a envoltória" acerta o bloco errado.
+
+**Detalhe de segunda ordem, do amplificador de vídeo** ‹p. 1-51›: a fidelidade do pulso depende de `τ = RC` no acoplamento. Num passa-baixas, **τ maior** ⇒ **lados menos verticais**; num passa-altas, **τ menor** ⇒ **mais inclinação e mais overshoot**. É por isso que a fonte descreve três compensações — em derivação, série e de baixas frequências — para manter a resposta plana. E é o mesmo raciocínio de forma de pulso que M03 aplicou ao **modulador**: pórtico íngreme, patamar plano.
+
+---
+
+## Aplicações
+
+- **Navegação em porto** — STC no ponto: sem ele o retorno do mar apaga as boias; em excesso, apaga também os alvos próximos ‹fig. 1.5.21›.
+- **Busca aérea sobre costa** — FTC diferencia o eco extenso da massa de terra e revela o alvo baixo ‹fig. 1.5.19›.
+- **Operação com chuva** — FTC como *anti-clutter rain* ‹fig. 1.5.22›.
+- **Radar com magnetron** — CAF obrigatório: a portadora deriva por temperatura (M03) e pelo giro da antena (M04).
+- **Projeto de alcance** — reduzir `S_mín` é a via mais barata de ganhar alcance: só depende do receptor.
+
+## Exceções e condições-limite
+
+| Situação | O que muda | Fonte |
+|---|---|---|
+| Receptor **sem** pré-amplificador | `G₁ < 1` ⇒ `(F₂−1)/G₁` cresce em vez de encolher | p. 1-49 |
+| `n` fora de 1–1,4 | banda maior que a ótima ⇒ pior relação sinal-ruído | p. 1-50 |
+| Muitos estágios de FI | ganho ↑, **banda ↓** (produto ganho-banda constante) | p. 1-50 |
+| STC forte demais | **perda de alvos próximos reais** | fig. 1.5.21 (C) |
+| FI muito alta | melhor rejeição de imagem, **pior** figura de ruído e seletividade | p. 1-50 |
+| `T ≠ 290 K` | `kT₀ = 4×10⁻²¹ W/Hz` deixa de valer; recalcule | p. 1-47 |
+
+## Limitações do modelo
+
+`P_n = kTB_n` descreve **apenas o ruído térmico**. A própria fonte adverte ‹p. 1-47› que *"nos receptores reais a potência de ruído gerada internamente é **muito maior**"* — e é justamente isso que a figura de ruído `F_n` absorve, sem que se precise conhecer a origem exata dos demais ruídos. E a sensibilidade real depende ainda de fatores não elétricos: *"a **persistência da tela** do Indicador e a **experiência do operador**"* ‹p. 1-58›.
+
+---
+
+## Vulnerabilidades
+
+| ID | A armadilha | O que a banca faz | O que você faz |
+|---|---|---|---|
+| `V019` | **CAF × CAG** | Afirmativas quase gêmeas na Q1 | CA**F** = **F**requência, amostra o **TX**, corrige o **OL**. CA**G** = **G**anho, referência no **nível médio (CC)**, corrige o **amplif. de FI** |
+| `V020` | **STC × FTC** | *"reduz o ganho nas distâncias menores"* × *"reduz o efeito da superposição de ecos"* | **S**TC = **sea**, ganho × tempo, no amplif. de FI. **F**TC = rain, diferenciação, no acoplamento do vídeo |
+| `V025` | **Banda × largura de pulso** | Pede a banda a partir da LP, ou o efeito de estreitar o pulso | `B = n/T`. Pulso **mais estreito** ⇒ banda **maior** ⇒ mais ruído ⇒ **menos alcance** |
+| `V026` | **O pré-amplificador ausente** | Dá um receptor cujo 1º estágio é o cristal | `G₁ < 1` **amplifica** o termo do 2º estágio. Sem pré-amplificador a figura de ruído piora muito |
+| `V027` | **STC × CAG no mesmo bloco** | Ambos agem no amplificador de FI | Distinga pela **variável de controle**: tempo (STC) × nível médio (CAG) |
+| — | **Quem define a banda** | Oferece "o misturador define a banda passante" | É o **amplificador de FI**, pelos seus **estágios sintonizados** |
+| — | **O que o detector faz** | Oferece "amplifica a envoltória" | Ele **extrai** a envoltória; quem **amplifica** é o amplificador de vídeo |
+
+---
+
+## Integração
+
+**Com M03.** O CAF existe porque o transmissor deriva — por causas internas (M03) e pelo **giro da antena** (M04). O CAF amostra **o pulso do transmissor**: é a única realimentação TX → RX do radar.
+
+**Com M02.** A largura de pulso escolhida no modulador **impõe** a banda do receptor (`B = n/T`), e a banda **impõe** o ruído. A cadeia `LP → B → P_n → S_mín` é o elo quantitativo entre resolução e alcance.
+
+**Com M05.** A unidade **TR** protege o cristal misturador do pulso de transmissão. O amplificador de vídeo recebe **marca de proa** e **marcas de distância** — assunto do indicador.
+
+**Com M06.** O `S_mín` calculado aqui **é** o `S_mín` da equação radar. `R_máx ∝ S_mín^{−1/4}`.
+
+**Com `SUE6.8`.** Os ecos por **lóbulo secundário** — distância certa, marcação errada — são minimizados pelo **STC**.
+
+---
+
+## Checklist de domínio — M04
+
+- [ ] Nomeio os seis estágios do super-heterodino e a função de cada um
+- [ ] Calculo `f_OL` dadas a portadora e a FI, nos dois sentidos
+- [ ] Sei que a FI típica em micro-ondas é **30 ou 60 MHz** e a faixa geral **0,1 a 100 MHz**
+- [ ] Explico por que o misturador balanceado **cancela o ruído do OL** (λ/2 e λ/4)
+- [ ] Digo do que o CAF é feito e **onde** ele atua
+- [ ] Cito as **duas** causas da deriva de frequência do transmissor
+- [ ] Distingo CAF de CAG por função, referência e ponto de atuação
+- [ ] Sei que o CAG tem como referência o **nível médio (CC)**
+- [ ] Escrevo `B = n/T` e sei que `n` fica entre **1 e 1,4** para máxima S/N
+- [ ] Sei que a banda do receptor é determinada pelo **amplificador de FI**
+- [ ] Explico o compromisso da escolha da FI (imagem × ruído × seletividade)
+- [ ] Sei que o detector **extrai** a envoltória e que a saída é um pulso **negativo** com ripple
+- [ ] Distingo STC de FTC por: nome comercial, alvo, ponto de atuação e mecanismo
+- [ ] Sei que STC em excesso **apaga alvos próximos reais**
+- [ ] Escrevo `P_n = kTB_n` e sei que `kT₀ = 4×10⁻²¹ W/Hz` a 290 K
+- [ ] Escrevo `S_mín = F_n·kT₀·B_n·(S/N)_mín` e sei somar em dB
+- [ ] Escrevo a fórmula de cascata e explico por que `G₁ < 1` piora tudo
+
+**Critério de aprovação: 15 de 17.** M04 vale 2,4 pontos da Q1 — é o módulo de maior peso isolado da questão.
+
+---
+
+## Referências deste módulo
+
+| Fonte | Localização | Conteúdo | Confiança |
+|---|---|---|---|
+| `apostila_DET_2022.pdf` | Cap. I, **Seção 5, p. 1-41 a 1-60** | Estágios, faixa de passagem, misturador balanceado, ruído e figura de ruído, amplificador de FI e de vídeo, marca de proa, STC, FTC, detector de vídeo | **Alta** — lido integralmente |
+| `SUE6.5-...receptor.odp` | **60 slides** | Diagrama do receptor de micro-ondas, CAF, CAG, misturador, ruído, FI, detector, STC, FTC | **Alta** — lido integralmente. **Sem truncamento** vs. `.pdf` |
+| `T2/SOPA DET T2 2024.pdf` | **Q1**, blocos D, E, F, G, H, I, J, L | **8 das 16 afirmativas = 2,4 pontos** | **Alta** — rubrica oficial |
+| `SUE6.8` | exercícios (c) e (d) | Lóbulo lateral e o circuito que o minimiza | Alta |
+
+**Marcações:** 5 × `[INFERÊNCIA PEDAGÓGICA]` · 0 × `[CONFLITO ENTRE FONTES]` novo — **D-03 foi resolvida** pelo exemplo numérico da p. 1-42 (ver `source-audit.md`) · 0 × `[APROFUNDAMENTO ANALÍTICO DE SUPORTE]` · 0 × `[LACUNA DE COBERTURA]`.
