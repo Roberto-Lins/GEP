@@ -1,0 +1,351 @@
+---
+titulo: "Diagrama de blocos, controles e fluxo completo do sinal — aula"
+secao: "aula"
+secaoOrdem: 2
+---
+> 🔴 **AVISO DE FONTE — leia antes de estudar este módulo.**
+> A extração da `apostila_DET_2022.pdf` por este canal **termina na página 1-69**, no meio da Seção 7. Isso foi verificado **duas vezes**, com resultado idêntico (105.128 caracteres nas duas leituras). Ficaram inacessíveis:
+> - **Seção 7, p. 1-70 a 1-75** — circuito gerador de varredura em detalhe, marcas de distância fixas e marca de distância móvel;
+> - **Seção 9 inteira, p. 1-84 a 1-87** — *"O diagrama de blocos de um radar de pulso"*, *"Formas de onda"*, *"O ganho e o brilho"*.
+>
+> **Mitigação:** esses assuntos são cobertos pelos slides `SUE6.6` e `SUE6.9a10`, ambos **lidos integralmente**, e o próprio `SUE6.9a10` declara tratar da *"seção 9 do capítulo 1"*. O que se perdeu foi a **redação da apostila**, não o conteúdo. Ver `L-05` em `source-audit.md`.
+
+## Posição na trilha
+
+`M00 → M01 → M02 → M03 → M04 → **M05** → M06 → M07 → M08`
+
+## Pré-requisitos
+
+**M03 e M04 completos.** Você está pronto se: nomeia os três blocos do transmissor e o que cada um determina; nomeia os seis estágios do receptor; distingue CAF, CAG, STC e FTC.
+
+**Por que M05 vem por último entre os módulos de circuito.** Ele não acrescenta blocos novos ao caminho do sinal — acrescenta **a costura**. Transmissor (M03) e receptor (M04) compartilham **uma única antena**, e é preciso um dispositivo que os alterne; o resultado de tudo precisa **aparecer numa tela**, e é preciso um indicador; e o operador precisa **ajustar** o conjunto. Sem M03 e M04, este módulo seria uma lista de caixas.
+
+## Resumo executivo
+
+M05 fecha os **0,9 pontos restantes da Q1** — a chave de antena (bloco K: *"Protege o receptor contra a alta potência gerada pelo transmissor"*) e o vocabulário de controles que dá sentido aos itens de STC e FTC. Mas seu valor real é outro: é aqui que os quatro módulos anteriores viram **um sistema**.
+
+A frase que o professor usa para encerrar o assunto ‹`SUE6.9a10`› vale como método de estudo:
+
+> *"O diagrama de blocos de qualquer equipamento é como uma **partitura musical**. A chave para compreender as formas de onda está na **temporização** dos blocos, e não apenas em seu formato."*
+
+---
+
+## Conceitos fundamentais
+
+### C032 — A chave de antena (duplexer)
+‹fonte: apostila_DET_2022.pdf p. 1-61 a 1-64, figs. 1.6.1 e 1.6.2; SUE6.7› · criticidade: **crítica** · competências: explicar, calcular
+
+**Definição** ‹p. 1-61›: *"a chave de antena, comumente conhecida como **Duplexer**, é um dispositivo que permite **uma só antena** servir tanto para a transmissão quanto para a recepção"*.
+
+**As duas obrigações** ‹p. 1-61›: *"deve **proteger o receptor durante a transmissão**, mas durante a recepção deve **canalizar o eco** para o receptor"*.
+
+**O número que a fonte fixa** ‹p. 1-61›: com potência de pico de **1 MW** e receptor tolerando no máximo **1 W**, *"o duplexer deve fornecer **mais de 60 dB** de isolação entre o transmissor e o receptor"*.
+
+$$\text{Isolação (dB)} = 10\log\frac{P_{pico}}{P_{tolerada}}$$
+
+> **Exigência esquecida** ‹p. 1-61›: *"no **intervalo entre pulsos**, o receptor deve ser protegido contra a irradiação de alta potência de **outros radares próximos**, a qual, embora não tenha intensidade para **ativar o duplexer**, é suficiente para **avariar o receptor**."* — o duplexer tem de proteger também daquilo que não o dispara.
+
+#### Os três tipos
+
+| | **Circulador** | **Duplexer tipo ramal** | **Duplexer balanceado** |
+|---|---|---|---|
+| Princípio | anel de **ferrite magnetizada**; sentido único de circulação | válvulas de gás **TR e ATR** + reflexão de impedância em ramais de λ/4 | duas válvulas **TR duais** + duas **junções híbridas** |
+| Banda | — | **estreita** — *"o comprimento dos ramais é função do comprimento de onda"* ‹p. 1-63› | **larga** — *"supera tal dificuldade"* ‹p. 1-63› |
+| Isolação | **baixa** — *"seu emprego em radares de alta potência não é indicado"* ‹`SUE6.7`› | boa | boa |
+| Na apostila? | **NÃO** — *"não está contemplado na apostila!"* ‹`SUE6.7`› | sim, fig. 1.6.1 | sim, fig. 1.6.2 |
+| Vantagem singular | *"mantém o receptor **conectado à antena o tempo todo**, e isso possibilita a detecção de alvos em distâncias **inferiores à menor distância de detecção**"* ‹`SUE6.7`› | — | mais comum em **alta potência** |
+
+**Como o duplexer tipo ramal manobra o sinal** ‹p. 1-62/1-63›:
+
+| Fase | TR | ATR | Efeito |
+|---|---|---|---|
+| **Transmissão** | ioniza → curto-circuito | ioniza → curto-circuito | a TR em curto *"reflete uma alta impedância na linha, **desconectando o receptor**"*. A ATR *"não tem nenhum efeito durante a transmissão"* |
+| **Recepção** | não ioniza → aberta | não ioniza → aberta | a ATR aberta *"se reflete em '1' como um **curto-circuito** e em '2' como uma **alta impedância**, tornando o **transmissor efetivamente desligado da linha**"*, e o eco é totalmente canalizado ao receptor |
+
+> **[INFERÊNCIA PEDAGÓGICA]** A assimetria é a chave: a **TR protege o receptor**, a **ATR desliga o transmissor**. Cada uma trabalha numa fase. Por isso o problema 2 da apostila ‹p. 1-64› pergunta *"que efeito acarreta"* omitir a ATR: sem ela, na recepção o transmissor continua **carregando a linha**, e parte da energia do eco se perde nele em vez de ir ao receptor.
+
+**Duplexer balanceado — o mecanismo** ‹p. 1-63; `SUE6.7`›: a junção híbrida *"avança de 90° a fase do sinal que a atravessa"*. Na **transmissão**, as TR em curto refletem a energia; no ponto "a" a interferência é **positiva** e a onda vai à antena; a fração que escapa vai para a **carga fantasma** (ponto "b", interferência positiva); para o receptor *"não escapa energia, uma vez que no ponto 'c' a interferência é **negativa**"*. Na **recepção**, a energia atravessa as TR e no ponto "c" a interferência é **positiva**, dirigindo tudo ao receptor.
+
+> 🎯 **Cobrado em 2024:** bloco (K) — *"Protege o receptor contra a alta potência gerada pelo transmissor"*.
+
+---
+
+### C033 — O tempo de recuperação da TR e a distância mínima
+‹fonte: SUE6.7, considerações finais e exercício 3; apostila p. 1-64, problema 3› · criticidade: **alta** · competências: calcular
+
+O `SUE6.7` fecha a aula com uma advertência: *"o tempo de chaveamento (mudança de estado das válvulas) é muito curto, mas ainda assim **afeta a distância mínima de detecção**"*.
+
+$$\boxed{R_{mín} = \frac{c\,(LP + t_{rec})}{2}}$$
+
+> ⚠️ `V029` **Este é o `R_mín` real.** O `R_mín = c·LP/2` de M02 é o caso idealizado, em que a chave comuta instantaneamente. Quando o enunciado der o **tempo de recuperação da TR**, ele **soma-se** à largura de pulso — e o erro de ignorá-lo não é pequeno: com `LP = 1,2 µs` e `t_rec = 1,8 µs`, ignorar a TR dá 180 m contra os 450 m reais, ou seja, **40 % do valor correto**.
+
+> **[INFERÊNCIA PEDAGÓGICA]** É por isso que o **circulador** tem a propriedade singular de detectar abaixo da distância mínima: ele **não comuta**. Não havendo válvula que ionize e desionize, não há tempo de recuperação a somar. O preço é a isolação baixa, que o proíbe em alta potência. Trade-off explícito entre `R_mín` e potência transmissível.
+
+---
+
+### C034 — O indicador
+‹fonte: apostila_DET_2022.pdf p. 1-65 a 1-69 (parcial — ver aviso); SUE6.6› · criticidade: **alta** · competências: comparar, calcular
+
+**Os dois métodos de apresentação** ‹p. 1-66›:
+
+| | **Tipo-A** | **PPI** |
+|---|---|---|
+| Modulação do feixe | **em deflexão** | **em intensidade** |
+| VRC | **eletrostática** | **magnética** |
+| O que acontece | *"o pulso de vídeo causa uma deflexão momentânea no feixe, produzindo um **'pip'** no traço"* | *"o sinal de vídeo é aplicado ao elemento que controla a **intensidade** do feixe, e o alvo aparece como um **ponto brilhante**"* |
+| Coordenadas | distância × amplitude | **polares**: distância e marcação |
+| Análogo a | um **osciloscópio** | um **mapa** da área coberta |
+| Emprego ‹`SUE6.6`; p. 1-67› | radares de **rastreamento** e **manutenção** | *"o tipo de apresentação **mais usado** em radares de busca e de navegação"* |
+
+> ⚠️ `V031` **Tipo-A = deflexão = eletrostática. PPI = intensidade = magnética.** Três pares que andam juntos, e a banca pode trocar qualquer um deles.
+
+**O que se vê num tipo-A** ‹p. 1-67›: o **primeiro "pip"** é o do **pulso transmitido**, *"aplicado **deliberadamente** à VRC como referência"*; ao longo de toda a varredura aparece o ruído do receptor, *"mais conhecido como **grama** (grass)"*; e depois os ecos.
+
+**Apresentação expandida** ‹p. 1-67, fig. 1.7.2›: *"atrasando-se o início da varredura e fazendo-a mais rápida"*, para análise acurada de um setor.
+
+**Operação do PPI** ‹p. 1-68›: a tensão de disparo do sincronizador — *"também aplicada ao transmissor"* — aciona em `t₀` o **MV monoestável de varredura**; o **gerador de corrente de varredura** produz uma **corrente dente de serra** nas **bobinas de deflexão**, criando o campo que leva o feixe do **centro para a periferia**. *"O instante `t₁` em microssegundos equivale à **máxima distância a ser coberta**."* O mesmo MV fornece o **pulso intensificador** ao catodo.
+
+**Sincronismo antena × tela** ‹p. 1-69, fig. 1.7.7›: o **motor da antena** gira a antena; o **gerador-sincro** envia a posição angular ao **motor-sincro**, que posiciona as **bobinas de deflexão** em sincronismo com a antena. *(Variante: dois pares de bobinas ortogonais fixos, com circuitos especiais girando o campo magnético.)*
+
+> **[INFERÊNCIA PEDAGÓGICA] — a segunda saída do sincronizador, finalmente fechada.**
+> Em M01 ficou estabelecido que o sincronizador alimenta **transmissor e indicador**. Aqui se vê **o que ele faz no indicador**: dispara o MV de varredura em `t₀`. É esse pulso que faz a posição radial do eco na tela **significar distância** — e é a razão pela qual a falha simulada no exercício `DIA-N4-004` de M01 destrói o *Ranging* e preserva o *Detection*.
+
+**Marcas de distância e marca de proa.** As **fixas** são anéis concêntricos: *"pulsos de vídeo muito estreitos são aplicados à grade de controle, intensificando a tela com círculos concêntricos e equidistantes"* ‹`SUE6.6`›. A **móvel** é posicionada pelo **controle de degrau** no indicador tipo-A ‹`SUE6.9a10`›. A **marca de proa** vem de um MV disparado *"desde que as cames na antena abram o circuito para a terra, no instante em que a antena passa pela proa"* ‹p. 1-54›.
+
+**Indicador sintético** ‹`SUE6.6`›: monitor digital de varredura; coordenadas polares convertidas em **retangulares**; se for **totalmente digital**, *"não há a figura do retraço, pois o acesso a cada pixel deixa de ser sequencial"*; permite **fusão de dados** com outros sensores.
+
+---
+
+### C035 — O diagrama de blocos completo
+‹fonte: SUE6.9a10 .odp (46 slides); composição dos blocos de M03 e M04› · criticidade: **crítica** · competências: integrar, analisar
+
+> 🔴 **Nota de fonte.** O deck `SUE6.9a10` apresenta o diagrama como **uma imagem** repetida slide a slide, com destaques progressivos. O canal de acesso extrai **texto, não imagem**. O diagrama abaixo é uma **reconstrução** montada a partir dos blocos e ligações que as fontes descrevem **em texto** — apostila Seções 3, 4, 5 e 6, mais os slides `SUE6.2a4`, `SUE6.5`, `SUE6.6` e `SUE6.7`. Cada ligação é rastreável; o desenho é meu.
+
+```
+                         ┌──────────── amostra do pulso TX ────────────┐
+                         │                                             ▼
+   ┌──────────────┐   ┌──┴───────┐   ┌────────────┐              ┌──────────┐
+   │ SINCRONIZADOR│──►│ MODULADOR│──►│  OSCILADOR │              │ ATENUADOR│
+   │   (→ FRP)    │   │  (→ LP)  │   │(→ portadora)│              └────┬─────┘
+   └──────┬───────┘   └──────────┘   └─────┬──────┘                    ▼
+          │                                │              ┌────────────────────────┐
+          │                                ▼              │  MISTURADOR DO CAF  →  │
+          │                        ┌───────────────┐      │  amplif. FI do CAF  →  │
+          │                        │ CHAVE DE ANTENA│     │  DISCRIMINADOR      →  │
+          │                        │   (TR / ATR)   │     │  CIRC. DE CONTROLE     │
+          │                        └───┬────────┬───┘     └───────────┬────────────┘
+          │                            │        │                     │ corrige
+          │                          ANTENA     │                     ▼
+          │                            ▲        ▼               ┌───────────┐
+          │                            │   ┌─────────┐          │OSC. LOCAL │
+          │                          eco   │MISTURADOR│◄─────────┘───────────┘
+          │                                └────┬─────┘
+          │                                     ▼
+          │                             ┌────────────────┐◄──── CAG (nível médio CC)
+          │                             │ AMPLIF. DE FI  │◄──── STC (ganho × tempo)
+          │                             └───────┬────────┘
+          │                                     ▼
+          │                            ┌──────────────────┐
+          │                            │DETECTOR DE VÍDEO │
+          │                            └────────┬─────────┘
+          │                                     │ ◄── FTC (chave de acoplamento)
+          │                                     ▼
+          │        marca de proa ──────►┌──────────────────┐
+          │     marcas de distância ───►│AMPLIF. DE VÍDEO  │
+          │                             └────────┬─────────┘
+          │  pulso de sincronismo               ▼
+          └────────────────────────────►┌──────────────────┐
+                                        │    INDICADOR     │◄── posição da antena
+                                        │  (tipo-A / PPI)  │    (gerador-sincro)
+                                        └──────────────────┘
+```
+`Diagrama didático reconstruído a partir das fontes.`
+
+**Os três agrupamentos que o professor destaca** ‹`SUE6.9a10`, slides 17–31›: **Transmissor**, **Receptor**, **Indicador** (tipo A e PPI).
+
+**O método de leitura que ele ensina** ‹slide 14›: *"é importante saber se localizar dentro de um diagrama de blocos tal como em um mapa. Em equipamentos deste tipo, **procure logo a antena** e vá destrinchando-o."*
+
+**A regra das formas de onda** ‹slide 44›: *"a chave para melhor compreender as formas de onda presentes na entrada/saída de cada bloco está na **temporização** dos mesmos e **não apenas em seu formato**."*
+
+| Ponto do diagrama | Forma de onda | Temporização |
+|---|---|---|
+| Saída do sincronizador | pulso estreito de disparo | define `t₀`, repete a cada TRP |
+| Saída do modulador | pulso retangular de **alta tensão** | largura = **LP** |
+| Saída do oscilador | **senoide** de alta frequência | existe só durante a LP |
+| Saída da antena (TX) | pulso de RF irradiado | idem |
+| Entrada do misturador | eco de RF, atenuado | chega em `t = 2R/c` |
+| Saída do misturador | eco em **FI** (30/60 MHz) | mesma posição temporal |
+| Saída do detector de vídeo | **envoltória** (pulso de vídeo negativo, com ripple) | mesma posição temporal |
+| Saída do amplif. de vídeo | vídeo + marca de proa + marcas de distância | composto |
+| Bobinas de deflexão | **dente de serra** | começa em `t₀`, termina em `t₁` = alcance de tela |
+
+---
+
+### C036 — Os controles externos
+‹fonte: SUE6.9a10 .odp, slides 32–42› · criticidade: **alta** · competências: reconhecer, explicar
+
+| Controle | Age sobre | Efeito |
+|---|---|---|
+| **Ganho** | receptor | *"se for excessivo, ecos fortes **borrarão a tela e ofuscarão ecos mais fracos**; se for muito baixo, os ecos de menor intensidade **não serão visualizados**"* |
+| **Brilho e contraste** | indicador | *"configuração do aspecto da tela, contribuindo para melhor leitura pelo operador"* |
+| **Anti-clutter sea (STC)** | amplificador de FI | ganho × tempo |
+| **Anti-clutter rain (FTC)** | acoplamento do vídeo | diferenciação |
+| **Seletor de distância** | indicador | *"o **alcance de tela** é configurado pelo seletor de distância"* — fixa `t₁` |
+| **Controle de degrau** | indicador tipo-A | *"escolhe-se a **posição da marca de distância móvel**"* |
+| **Marcas fixas de distância** | indicador PPI | *"determina a **quantidade de anéis** na PPI"* |
+
+> **[INFERÊNCIA PEDAGÓGICA]** O **seletor de distância** é o único controle externo que interage com uma característica de M02: ele fixa `t₁`, o alcance de tela. E o alcance de tela **não pode exceder** o alcance máximo sem ambiguidade — se exceder, o operador verá alvos de segunda varredura desenhados como se fossem próximos. É o elo operacional entre o painel e a FRP.
+
+---
+
+### C044 — As antenas
+‹fonte: SUE6.8› · criticidade: **moderada** · competências: reconhecer, explicar
+
+- **Definição:** *"antenas são transdutores que transferem a energia eletromagnética proveniente de uma linha de transmissão para o espaço livre"*.
+- **Parabólica** — o padrão nos radares modernos de micro-ondas: *"direciona toda onda que incide paralelamente ao seu eixo para um único ponto, chamado **foco**, onde instala-se o **feeder**"*. Tipos por posição do alimentador: **ponto focal**, **off-set**, **cassegrain**.
+- **Largura de feixe:** definida *"a partir dos pontos de **−3 dB**"* do diagrama de irradiação horizontal. Uma antena de busca ou navegação deve ter *"abertura larga no plano **vertical** e estreita no plano **horizontal**"* — exatamente as ordens de grandeza da apostila (1°–2° no PH, 20°–30° no PV) ‹p. 1-15›.
+- **Cossecante ao quadrado:** parábola deformada, usada em **vigilância aérea**; *"consegue-se intensidade de sinal constante no receptor a partir de um alvo se aproximando a uma **altitude fixa**"*.
+- **Phased array:** matriz de dipolos curtos; feixe formado por **interferência construtiva** e diretividade por **destrutiva**; permite **varredura eletrônica**. Vantagens: alto ganho, mudança rápida de direção, varredura arbitrária, *dwell time* selecionável, multifunção, e *"a falha de alguns componentes **não resulta em falha completa** do sistema"*. Desvantagens: varredura limitada a ~120°, deformação do padrão, baixa agilidade em frequência, estrutura complexa, custo alto.
+- **Controle da antena:** o **encoder** *"fornece a velocidade e a posição instantânea da antena"* — é ele que alimenta o sincronismo tela × antena.
+- **Lóbulo lateral:** um alvo próximo detectado por lóbulo secundário aparece com **distância correta e marcação falsa**; o circuito que minimiza é o **STC** (M04).
+
+> **Nota da fonte** ‹`SUE6.8`›: *"esta SUE **não é contemplada** em nossa apostila"*. Conteúdo só de slide — e, como a T2 2024 mostrou ao cobrar STC e FTC, isso **não** o torna menos cobrável.
+
+---
+
+## Exemplos resolvidos
+
+### Exemplo 5.1 — Isolação exigida do duplexer  `C032`
+
+*Radar com potência de pico de 750 kW; o receptor tolera no máximo 0,25 W. (a) Isolação mínima? (b) Se o duplexer real fornece 70 dB, que potência chega ao receptor?*
+
+(a) `Isolação = 10·log(750.000/0,25) = 10·log(3×10⁶) = ` **`64,77 dB`**
+(b) 70 dB = fator 10⁷ ⇒ `P_receptor = 750.000/10⁷ = ` **`0,075 W = 75 mW`** — folgadamente abaixo do limite de 0,25 W.
+
+**VERIFICAÇÃO contra a fonte:** o exemplo da apostila (1 MW → 1 W) dá `10·log(10⁶) = 60 dB`, e a fonte diz *"mais de 60 dB"* ✔ A regra está aplicada corretamente.
+
+**INTERPRETAÇÃO** → a isolação é a **razão de potências em dB**, não uma propriedade mágica da válvula. E note a ordem de grandeza: seis a sete décadas. É por isso que a chave de antena é um componente crítico e não um mero comutador.
+
+### Exemplo 5.2 — Distância mínima com tempo de recuperação da TR  `C033` `C032`
+
+*Radar com `LP = 1,2 µs` e TR com tempo de recuperação de `1,8 µs`. (a) `R_mín` pela fórmula de M02; (b) `R_mín` real; (c) o que muda; (d) que chave permitiria detectar mais perto.*
+
+(a) `R_mín = c·LP/2 = 3×10⁸ × 1,2×10⁻⁶/2 = ` **`180 m`**
+(b) `R_mín = c(LP + t_rec)/2 = 3×10⁸ × 3,0×10⁻⁶/2 = ` **`450 m`**
+(c) O valor idealizado é **40 %** do real — subestima em **270 m**. Num radar de navegação em águas restritas, isso é a diferença entre enxergar e não enxergar o cais.
+(d) O **circulador**: *"mantém o receptor conectado à antena o tempo todo e isso possibilita a detecção de alvos em distâncias inferiores à menor distância de detecção"* ‹`SUE6.7`›. Não há válvula ionizando, logo não há `t_rec` a somar. **O preço** é a baixa isolação, que o desqualifica para alta potência.
+
+### Exemplo 5.3 — Marcas de distância e alcance de tela  `C034` `C035`
+
+*Um PPI deve cobrir 60 milhas náuticas com 6 anéis fixos equidistantes. (a) Distância entre anéis; (b) intervalo entre os pulsos de marca; (c) instante `t₁`; (d) FRP máxima compatível; (e) frequência do oscilador de marcas.*
+
+(a) `60/6 = ` **`10 MN`** entre anéis
+(b) Cada milha náutica de distância radar vale **12,36 µs** (M01):
+`Δt = 10 × 12,36 = ` **`123,6 µs`**
+(c) `t₁ = 60 × 12,36 = ` **`741,6 µs`** — *"o instante `t₁` em microssegundos equivale à máxima distância a ser coberta"* ‹p. 1-68›
+(d) A varredura precisa caber dentro do TRP: `TRP ≥ 741,6 µs` ⇒ `FRP ≤ 1/741,6×10⁻⁶ = ` **`1.348 Hz`**
+(e) `f = 1/123,6×10⁻⁶ = ` **`8,09 kHz`**
+
+**INTERPRETAÇÃO — a conta que une M01, M02 e M05.** O alcance de tela escolhido no **seletor de distância** impõe um **teto à FRP**. Escolher 60 MN obriga `FRP ≤ 1.348 Hz`; e `R_máx = c/(2·1.348) = 111 km = 60 MN` ✔ — exatamente o alcance de tela, como tem de ser. **Alcance de tela e alcance sem ambiguidade são a mesma restrição vista de dois lados.**
+
+### Exemplo 5.4 — Percorrendo o diagrama nos dois sentidos  `C035` `C032` `C036`
+
+*Um pulso nasce e um eco volta. Descreva os dois percursos, nomeando o bloco e a forma de onda.*
+
+**Ida (transmissão)**
+`sincronizador` (pulso de disparo, define `t₀` e a FRP) → `modulador` (pulso retangular de alta tensão, largura = LP) → `oscilador` (senoide de alta frequência e alta potência, só enquanto durar a alta tensão) → `chave de antena` (**TR e ATR ionizadas**; receptor desconectado) → `antena` → espaço.
+*Em paralelo:* `sincronizador` → `indicador`, disparando o **MV de varredura** e o **dente de serra** nas bobinas.
+
+**Volta (recepção)**
+`antena` (eco, em `t = 2R/c`) → `chave de antena` (**TR e ATR desionizadas**; transmissor desligado da linha) → `misturador` (+ `oscilador local`) → **FI** → `amplificador de FI` (onde **CAG** e **STC** agem sobre o ganho) → `detector de vídeo` (**envoltória**, pulso negativo com ripple; aqui o **FTC** age no acoplamento) → `amplificador de vídeo` (+ marca de proa + marcas de distância) → `indicador`.
+*Em paralelo:* `amostra do pulso TX` → `atenuador` → `misturador do CAF` → `discriminador` → `circuito de controle` → corrige o **oscilador local**.
+
+**INTERPRETAÇÃO — por que "partitura".** Todos os blocos tocam **ao mesmo tempo**, em compasso fixado pelo sincronizador. O eco de um alvo a 15 km chega em `t = 2×15.000/3×10⁸ = 100 µs` após `t₀` — e é **exatamente aí** que o dente de serra já percorreu a fração correspondente da tela. A posição na tela é distância **porque os dois relógios partiram juntos**.
+
+---
+
+## Aplicações
+
+- **Navegação em águas restritas** — `R_mín` real (com `t_rec`) decide se o cais aparece; seletor de distância no menor alcance.
+- **Manutenção** — o indicador **tipo-A** é o instrumento de ajuste: *"com este tipo de apresentação muitos ajustes do receptor são feitos"* ‹p. 1-67›.
+- **Vigilância aérea** — antena **cossecante ao quadrado**: sinal constante para alvo em altitude fixa.
+- **Alta potência** — **duplexer balanceado**, pela banda larga e boa isolação; circulador fica fora.
+- **Sistemas modernos** — **phased array** com varredura eletrônica e redundância; **indicador sintético** com fusão de dados.
+
+## Exceções e condições-limite
+
+| Situação | O que muda | Fonte |
+|---|---|---|
+| Duplexer **sem ATR** | na recepção o transmissor continua carregando a linha; perde-se energia do eco | p. 1-64, problema 2 |
+| **Circulador** em alta potência | isolação insuficiente — não indicado | `SUE6.7` |
+| Alcance de tela > `R_máx` sem ambiguidade | alvos de 2ª varredura desenhados como próximos | `[INFERÊNCIA PEDAGÓGICA]` |
+| **Ganho excessivo** | ecos fortes borram a tela e ofuscam os fracos | `SUE6.9a10` |
+| Indicador **totalmente digital** | não há retraço — acesso a pixel é aleatório | `SUE6.6` |
+| Phased array | varredura limitada a ~120° em azimute e elevação | `SUE6.8` |
+
+## Limitações do modelo
+
+O diagrama de blocos é uma **abstração funcional**: como a própria apostila admite em M03 ‹p. 1-20›, um transmissor real *"pode estabelecer sua própria largura de pulso, a FRP e ainda fornecer o sincronismo"* — a separação em caixas é didática. E o diagrama **não mostra temporização**, que é justamente o que o professor declara ser a chave. Por isso as formas de onda são estudadas **sobre** o diagrama, não dentro dele.
+
+---
+
+## Vulnerabilidades
+
+| ID | A armadilha | O que você faz |
+|---|---|---|
+| `V028` | **O que a chave de antena faz** | **Protege o receptor** da alta potência do TX e permite antena única. Não filtra, não amplifica, não comuta frequência |
+| `V029` | **`R_mín` com tempo de recuperação** | Se o enunciado der `t_rec`, some: `R_mín = c(LP + t_rec)/2` |
+| `V030` | **O circulador** | Detecta **abaixo** da distância mínima (não comuta), mas **não serve** para alta potência |
+| `V031` | **Tipo-A × PPI** | Tipo-A = **deflexão** = eletrostática. PPI = **intensidade** = magnética |
+| — | **TR × ATR** | **TR protege o receptor** (transmissão). **ATR desliga o transmissor** (recepção) |
+| — | **Banda do duplexer** | **Ramal = faixa estreita** (ramais função de λ). **Balanceado = faixa larga** |
+| — | **Seletor de distância** | Fixa `t₁`, o **alcance de tela** — limitado pelo alcance sem ambiguidade |
+
+---
+
+## Integração
+
+**Com M01.** A segunda saída do sincronizador — a que vai ao indicador — é o **MV de varredura**. Fecha o que M01 abriu.
+**Com M02.** O alcance de tela impõe teto à FRP; `R_mín` ganha o termo `t_rec`.
+**Com M03.** O transmissor entrega o pulso à chave de antena; a amostra do pulso vai ao CAF.
+**Com M04.** A **TR** protege o cristal misturador; **CAG** e **STC** agem no amplificador de FI; **FTC** no acoplamento do vídeo; marca de proa e marcas de distância entram no amplificador de vídeo.
+**Com M06.** O **ganho** e a **área efetiva** da antena (C044) são parâmetros da equação radar.
+
+---
+
+## Checklist de domínio — M05
+
+- [ ] Digo as **duas** obrigações da chave de antena
+- [ ] Calculo a isolação em dB a partir das potências
+- [ ] Sei que o receptor precisa ser protegido também **entre** pulsos, de radares próximos
+- [ ] Distingo circulador, duplexer ramal e balanceado por princípio, banda e isolação
+- [ ] Sei que **TR protege o receptor** e **ATR desliga o transmissor**
+- [ ] Sei que o duplexer **ramal é de faixa estreita** e o **balanceado, larga**
+- [ ] Somo o tempo de recuperação da TR ao calcular `R_mín`
+- [ ] Sei por que o **circulador** detecta abaixo da distância mínima
+- [ ] Distingo tipo-A (deflexão, eletrostática) de PPI (intensidade, magnética)
+- [ ] Sei que o **primeiro pip** do tipo-A é o pulso transmitido, posto como referência
+- [ ] Sei o que é **grama (grass)** na tela
+- [ ] Descrevo a operação do PPI: MV de varredura, dente de serra, bobinas, `t₁`
+- [ ] Explico o sincronismo antena × tela (gerador-sincro → motor-sincro)
+- [ ] Percorro o diagrama de blocos nos **dois** sentidos sem consultar
+- [ ] Associo cada forma de onda ao bloco que a produz **e** ao seu instante
+- [ ] Nomeio os sete controles externos e sobre que bloco cada um age
+- [ ] Sei que o **seletor de distância** fixa `t₁` e é limitado pela FRP
+
+**Critério de aprovação: 15 de 17.**
+
+---
+
+## Referências deste módulo
+
+| Fonte | Localização | Conteúdo | Confiança |
+|---|---|---|---|
+| `apostila_DET_2022.pdf` | **Seção 6, p. 1-61 a 1-64** | Chave de antena, duplexer ramal e balanceado, isolação, problemas | **Alta** — lido integralmente |
+| `apostila_DET_2022.pdf` | **Seção 7, p. 1-65 a 1-69** | Indicador, VRC, tipo-A, PPI, operação básica, sincronismo | **Alta na parte extraída** — **p. 1-70 a 1-75 NÃO extraídas** (L-05) |
+| `apostila_DET_2022.pdf` | **Seção 9, p. 1-84 a 1-87** | Diagrama de blocos, formas de onda, ganho e brilho | 🔴 **NÃO EXTRAÍDA** (L-05) — suprida pelo `SUE6.9a10` |
+| `SUE6.9a10-...odp` | 46 slides | Agrupamentos, controles externos, regra da temporização | **Alta** — lido integralmente; **sem truncamento** vs `.pdf`. Diagrama é **imagem**, não extraível |
+| `SUE6.7` · `SUE6.6` · `SUE6.8` | decks completos | Chave de antena, indicador, antenas | **Alta** — lidos integralmente |
+| `T2/SOPA DET T2 2024.pdf` | Q1, bloco **K** | Chave de antena = 0,3 ponto | **Alta** — rubrica oficial |
+
+**Marcações:** 5 × `[INFERÊNCIA PEDAGÓGICA]` · 1 × nota de reconstrução de diagrama · **1 × lacuna de fonte declarada (L-05)** · 0 × `[CONFLITO ENTRE FONTES]` novo · 0 × `[LACUNA DE COBERTURA]`.

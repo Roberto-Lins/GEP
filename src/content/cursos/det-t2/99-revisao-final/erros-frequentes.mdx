@@ -1,10 +1,9 @@
 ---
-titulo: "Erros recorrentes"
+titulo: "Erros recorrentes de toda a T2"
 secao: "erros-frequentes"
 secaoOrdem: 3
 ---
-
-> Leia inteiro, em voz alta, no bloco final da revisão.
+> Leia inteiro, em voz alta, no bloco final de domingo.
 
 ## Bloco A — Aritmética e unidades
 
@@ -69,6 +68,21 @@ secaoOrdem: 3
 | R10 | Atribuir clutter de **pulso longo** ao STC | É o **CAG** |
 | R11 | Pôr o oscilador local na cadeia do sinal | Ele **injeta** no misturador; o eco não passa por ele |
 
+## Bloco C4 — Chave de antena e indicador `M05`
+
+| # | Erro | Correção |
+|---|---|---|
+| K1 | Dizer que a chave de antena **filtra** ou **amplifica** | Ela **protege o receptor** e permite antena única |
+| K2 | Trocar **TR** por **ATR** | TR → protege o **receptor**. ATR → desliga o **transmissor** |
+| K3 | Dizer que o **balanceado** é de faixa estreita | O **ramal** é estreito (ramais função de λ); o balanceado é **largo** |
+| K4 | Esquecer `t_rec` no `R_mín` | `R_mín = c(LP + t_rec)/2` |
+| K5 | Achar que o circulador serve para alta potência | **Não serve** — baixa isolação. Mas detecta **abaixo** do `R_mín` |
+| K6 | Trocar tipo-A por PPI | Tipo-A = **deflexão/eletrostática**. PPI = **intensidade/magnética** |
+| K7 | Dizer que o primeiro pip do tipo-A é um eco | É o **pulso transmitido**, posto como referência |
+| K8 | Achar o seletor de distância livre | O alcance de tela é **limitado pela FRP** |
+| K9 | Confundir controle de **degrau** com **marcas fixas** | Degrau = marca **móvel** no tipo-A. Marcas fixas = **anéis** na PPI |
+| K10 | Achar que o receptor está seguro entre pulsos | **Outros radares** podem avariá-lo sem disparar o duplexer |
+
 ## Bloco D — Blocos e funções
 
 | # | Erro | Correção |
@@ -101,3 +115,37 @@ secaoOrdem: 3
 | F3 | Escrever parágrafo na Q4 | A rubrica oficial aceita **uma linha** por item |
 | F4 | Não preencher a linha "Resposta:" | Ela é onde a rubrica procura. Preencha **com unidade** |
 | F5 | Abandonar o item seguinte após errar o anterior | A pontuação é **por item**. Errar (a) não contamina (b) |
+
+## Bloco G — Equação radar `M06`
+
+| # | Erro | Correção |
+|---|---|---|
+| G1 | Parar em **mW** ao converter dBm | `−80 dBm = 10⁻⁸ mW = **10⁻¹¹ W**`. Dois passos, sempre |
+| G2 | Aplicar `(4π)²R⁴` a uma **interceptação por MAGE** | O MAGE escuta: **um** `4πR²`. O eco volta; a interceptação não |
+| G3 | Trocar `A_a` (alvo) por `A` (antena) | `A_a` **vem no enunciado** (seção reta radar); `A` é **calculado** por `G·λ²/4π` |
+| G4 | Expandir `(4πR²)²` como `4π·R⁴` | `(4πR²)² = (4π)²·R⁴ = **157,914·R⁴**` |
+| G5 | Esquecer a **quarta raiz** | O resultado sai da ordem de `10²⁰` "metros". Confira a ordem de grandeza |
+| G6 | Achar que dobrar `P` dobra o alcance | `2^(1/4) = 1,189` → **+19%**. Dobrar exige **16×** |
+| G7 | Usar `G` **em dB** dentro da equação | Converta **antes** da primeira substituição |
+| G8 | Calcular `A_rx` do MAGE com "o λ dele" | O λ em jogo é o do **radar interceptado** |
+| G9 | Dizer que alargar a banda aumenta o alcance | `B ↑ → P_n = kTB ↑ → S_mín ↑ → **alcance ↓**` |
+| G10 | Confundir os dois `R_máx` da disciplina | Enunciado com **FRP** → M02 (tempo). Com **potência, ganho e sensibilidade** → M06 (energia) |
+| G11 | Dizer que basta amplificar mais para ver eco fraco | O ruído é amplificado junto. O que decide é a **relação sinal-ruído** (M04, figura de ruído) |
+| G12 | Achar que o nível de threshold "ótimo" elimina os erros | Baixar o limiar aumenta detecção **e** falso alarme, sempre juntos |
+
+## Bloco H — Adjacências `M07`
+
+| # | Erro | Correção |
+|---|---|---|
+| H1 | Classificar o **MTI como CW** | É **radar de pulso** (apostila p. 1-4; `SUE7.4`). Usa Doppler, mas transmite pulsos |
+| H2 | Achar que o **CW-Doppler mede distância** | Mede **só velocidade relativa**. Não há codificação temporal |
+| H3 | Querer **isolação TX–RX total** no CW-Doppler | A energia de escape é a **referência** do desvio. Isolação total mata a medida |
+| H4 | Trocar **COHO** por **STALO** | COHO = frequência da **FI**, referência de fase · STALO = **RF**, também é o OL do receptor |
+| H5 | Esperar o **butterfly no PPI** | Só aparece no **tipo-A**: o PPI modula intensidade, não deflexão |
+| H6 | Calcular velocidades cegas e não comparar com a do alvo | Se `v_alvo = v_n`, o alvo **some da tela** junto com o clutter |
+| H7 | Classificar **furtividade como MPE** | A fonte a coloca em **MAE não destrutiva**: degrada o sensor **inimigo** |
+| H8 | Supor que o **MAGE obtém distância** | Não emite ⇒ não há `t` para `d = c·t/2`. Obtém **marcação** |
+| H9 | Dizer que o **IFF é não cooperativo** | É **cooperativo** (exige transponder). O não cooperativo é o **radar primário** |
+| H10 | Confundir os ecos de **cônica × monopulso** | Cônica: **vários** ecos sucessivos · Monopulso: **um só**, 4 alimentadores simultâneos |
+| H11 | Procurar o **máximo** no radiogoniômetro | A direção sai do **mínimo (nulo)** — e o receptor **não tem CAG**, de propósito |
+| H12 | Achar que aumentar potência resolve bloqueio (GE) | Mais potência = mais assinatura, e a quarta raiz (M06) dá pouco alcance em troca |

@@ -1,0 +1,509 @@
+---
+titulo: "Integração, adjacências e preparação final — aula"
+secao: "aula"
+secaoOrdem: 2
+---
+> 🟡 **LEIA ISTO ANTES DE COMEÇAR — o peso real deste módulo.**
+> Todo o conteúdo das adjacências deste módulo está no **Capítulo 2** (rastreamento, CW-Doppler, CW-FM, MTI), no **Capítulo 4** (Guerra Eletrônica) ou **fora da apostila** (IFF, radiogoniômetro). A indicação formal do professor limita a **T2 ao Capítulo 1**, e a prova de 2024 confirma: **nenhum dos seus 10 pontos** saiu daqui.
+> **Então por que este módulo existe?** Por três razões concretas, nesta ordem de importância:
+> 1. **A classificação CW × pulso ESTÁ no Capítulo 1** (Seção 1, p. 1-4) e ficou com lacuna declarada desde M01. Ela fecha aqui.
+> 2. **A metade final do módulo é revisão e integração** — o mapa único do curso e o protocolo de prova. Isso vale mais para a sua nota do que qualquer adjacência.
+> 3. **Seguro barato.** Se o professor puxar uma "redondeza" (um item de correlação sobre MTI, uma pergunta conceitual sobre o que o CW-Doppler mede), você não perde ponto por não conhecer a palavra.
+>
+> **Se o tempo for curto:** faça o `COR-N3-001` e pule direto para a seção **Integração final** e o **Protocolo de prova**. O resto é bônus.
+
+## Posição na trilha
+
+`M00 → M01 → M02 → M03 → M04 → M05 → M06 → **M07** → M08`
+
+## Pré-requisitos
+
+**Todos os módulos anteriores.** Cada adjacência aqui só faz sentido como **contraste** com o radar de pulso: o CW-Doppler é "o que sobra quando se tira o pulso", o CW-FM é "como devolver a distância sem o pulso", o MTI é "o pulso com coerência de fase". Sem M01–M06 isto vira lista de nomes.
+
+## Resumo executivo
+
+Este módulo tem duas metades que não se parecem.
+
+**A primeira metade fecha o mapa.** O radar de pulso que você estudou em seis módulos é **um** ponto num espaço de soluções, e todas as outras soluções existem porque o pulso tem limitações que você já conhece: `R_mín = c·LP/2` (M02, M05), a ambiguidade em `c/2·FRP` (M02), a incapacidade de separar alvo móvel de clutter (M04), e o fato de que **um radar ligado se denuncia** (M06). Cada adjacência ataca uma dessas.
+
+**A segunda metade prepara a prova.** Aqui está o mapa único dos seis módulos, o protocolo de execução da T2 minuto a minuto e a revisão final.
+
+**Uma constatação de fonte que vale a pena registrar.** O `SUE6.12` — a aula imediatamente seguinte à equação radar — abre assim:
+
+> *"Em nossa última aula, nós estudamos a Equação Radar e **encerramos o capítulo 1 da Apostila**, que trata do Radar de Pulso."*
+
+Isso é a confirmação documental, dita pelo próprio professor, de que **o conteúdo da T2 termina exatamente onde o M06 terminou**. M01 a M06 cobrem o Capítulo 1 inteiro. Não há um sétimo assunto escondido.
+
+---
+
+## Parte I — As adjacências
+
+### C045 — A classificação geral: pulso × onda contínua
+‹fonte: apostila p. 1-4 (Cap. 1, Seção 1); `SUE6.12`; `SUE7.1a2`; `SUE7.4`› · criticidade: **média** · competências: comparar, explicar
+
+**A pergunta que organiza tudo:** *o que permite a um radar medir distância?*
+
+Resposta: **uma marca temporal no sinal transmitido**. O radar de pulso tem a marca mais óbvia possível — o próprio pulso, que começa em `t₀` e acaba. Mede-se o tempo de ida e volta e aplica-se `d = c·t/2` (M01).
+
+O `SUE7.3` enuncia a regra geral:
+
+> *"Eles [os radares CW] não medem distância, pois **não possuem referência temporal que possa ser medida**, ou seja, o sinal transmitido **não é codificado**. Para que um radar seja capaz de obter a distância de um objeto, é necessário **modular o sinal que ele transmite** (amplitude, frequência ou fase)."*
+
+**O quadro completo:**
+
+| Sistema | Transmissão | Mede distância? | Mede velocidade? | Como |
+|---|---|---|---|---|
+| **Radar de pulso** | pulsada | **Sim** | não (sozinho) | tempo de ida e volta |
+| **Radar de rastreamento** | pulsada | **Sim** | — | pulso + *range gate* |
+| **CW-Doppler** | contínua, não modulada | **Não** | **Sim** | desvio Doppler |
+| **CW-FM** | contínua, **modulada em frequência** | **Sim** | **Sim** | frequência de batimento |
+| **MTI** | **pulsada**, coerente em fase | **Sim** | **Sim** (relativa) | fase entre pulsos sucessivos |
+
+> ⚠️ **O item que a banca já mostrou que sabe cobrar.** O **MTI é radar de PULSO**, não CW — ele usa o efeito Doppler, mas transmite pulsos. A apostila (p. 1-4) o lista explicitamente no grupo do radar de pulso, e o `SUE7.4` confirma: *"Um radar de **pulso** que faz essa separação dos alvos em movimento é o MTI"*. Esta é a pegadinha **P-16**, e é a única adjacência com ancoragem direta no Capítulo 1.
+
+### C046 — Radar de rastreamento: varredura cônica e monopulso
+‹fonte: `SUE6.12`, 23 slides — apostila Cap. 2, Seção 4› · criticidade: **média** · competências: comparar, explicar
+
+**Para que serve.** *"Seu principal emprego é como radar de **direção de tiro**"* ‹`SUE6.12`, sumário›. Ele *"mede as coordenadas do objeto e processa os dados a fim de permitir a determinação da sua **posição futura**"*.
+
+**Os dois tipos de acompanhamento:** contínuo (o objeto de estudo) e **TWS** (*Tracking While Scan*), que *"realiza a amostragem de um ou mais objetos"* enquanto continua buscando.
+
+**Princípio.** A antena busca permanentemente se posicionar sobre o alvo através de **um sinal de erro que alimenta um sistema servo**. Como a máxima concentração de energia está no eixo da antena, um alvo fora do eixo devolve eco mais fraco — e a diferença é a medida do erro. A fonte usa a analogia do **holofote do helicóptero** numa perseguição: o piloto percebe o veículo saindo do centro do facho e corrige.
+
+**Características que o distinguem do radar de busca** ‹`SUE6.12`›:
+
+| Característica | Valor | Por quê |
+|---|---|---|
+| Frequência | **elevada, 3 a 10 GHz** | feixe estreito com antena pequena (`G = 4πA/λ²`, M06) |
+| Antena | **pequena e muito diretiva** | alto poder de separação em marcação **e elevação** |
+| FRP | **alta** | maior "iluminamento" do objeto (mais pulsos por alvo — `N_B`, M02) |
+| Potência | **baixa** | opera a distâncias menores que o radar de busca |
+| Largura de pulso | **décimos de µs** | elevada resolução em distância (`PSD = c·LP/2`, M02) |
+
+**Os métodos de acompanhamento:**
+
+- **Sequenciais** — chaveamento de lóbulo e **varredura cônica**.
+- **Simultâneo** — **monopulso**.
+
+**Varredura cônica.** Gira-se continuamente o lóbulo em torno de um eixo de rotação, normalmente pelo **alimentador (*feeder*)** da antena; o feixe descreve um cone em torno do alvo. A sequência de ecos sucessivos forma uma **modulação em amplitude**, e *"o **índice de modulação** depende do grau de afastamento do alvo em relação ao eixo"*. Alvo no eixo ⇒ ecos todos iguais ⇒ índice de modulação nulo.
+
+O motor da varredura está acoplado a um **gerador de referência** que produz **dois sinais defasados de 90°** (`sen 2πft` e `cos 2πft`). O vídeo de saída do receptor é comparado com eles, e daí saem os **erros angulares de elevação e azimute** — níveis CC que alimentam os servoamplificadores e os servomotores.
+
+**Monopulso.** *"Necessita apenas de um **único eco** para poder determinar os erros angulares"*: compara-se a intensidade do eco em **4 pontos** da antena (quatro alimentadores, A B C D) **simultaneamente**. Consequência declarada pela fonte: *"menor interferência das **variações na seção reta radar** do alvo sobre o seu acompanhamento"* — porque a comparação é feita no mesmo instante, sobre o mesmo eco.
+
+**As equações de acompanhamento** ‹`SUE6.12`›, com `Σ₁ = A + C`, `Δ₁ = A − C`, `Σ₂ = B + D`, `Δ₂ = B − D`:
+
+| Canal | Expressão | Serve para |
+|---|---|---|
+| **Σ₃ (soma)** | `(A+B) + (C+D) = A+B+C+D` | detecção do alvo e **distância** |
+| **Δ₃ (azimute)** | `(A+C) − (B+D)` | erro angular em azimute |
+| **Σ₄ (elevação)** | `(A+B) − (C+D)` | erro angular em elevação |
+
+**O sentido do erro** vem da **fase**, não da amplitude: *"os sinais são alternados, por isso não há como saber quem é maior a partir das amplitudes"*. Σ e Δ **em fase** ⇒ erro para um lado; **defasados 180°** ⇒ erro para o outro. As conexões dos alimentadores usam o **T-mágico**.
+
+**Acompanhamento em distância — o *range gate*.** *"O *range gate* é um pulso que cria uma janela para o acompanhamento do alvo escolhido"*. Ele é dividido em **early gate** e **late gate**, e o erro é
+
+`ERRO = (early gate × eco) − (late gate × eco)`
+
+Erro **nulo** ⇒ o eco está centrado na janela ⇒ acompanhamento travado. Erro positivo ou negativo ⇒ a janela se desloca para reencontrar o eco.
+
+### C047 — CW-Doppler
+‹fonte: `SUE7.1a2` — apostila Cap. 2, Seção 1› · criticidade: **média** · competências: calcular, explicar
+
+**O efeito Doppler** (Christian Doppler, 1842): a frequência percebida depende do **movimento relativo** entre fonte e observador. No eletromagnético: *"quando um alvo móvel reflete energia de volta ao radar, a frequência do eco é diferente da frequência transmitida"*.
+
+| Situação | Relação |
+|---|---|
+| Alvo **se aproxima** | desvio **positivo**: `f_tx < f_eco` |
+| Alvo **se afasta** | desvio **negativo**: `f_tx > f_eco` |
+
+**A dedução da fonte**, em quatro passos: o número de comprimentos de onda no percurso radar (ida e volta) é `n = 2R/λ`; a excursão angular é `ø = 4πR/λ`; derivando no tempo, `ω_d = 4π·v_r/λ`; e portanto
+
+**`f_d = 2·v_r/λ = 2·v_r·f₀/c`**
+
+| Símbolo | Significado | Unidade |
+|---|---|---|
+| `f_d` | frequência Doppler (desvio) | Hz |
+| `v_r` | velocidade **radial relativa** alvo–radar | m/s |
+| `λ`, `f₀` | comprimento de onda e frequência transmitida | m, Hz |
+
+> **"Radial relativa" não é decoração.** Só a componente da velocidade **na direção do radar** produz desvio. Um alvo cruzando perpendicularmente ao radar tem `v_r = 0` e desvio Doppler **nulo**, por mais rápido que vá — é exatamente o que o exercício 3 do `SUE7.1a2` cobra ao pedir o esboço de `f_d` ao longo de um segmento que passa em frente à antena.
+
+**A isolação transmissor–receptor.** Aqui há um ponto contraintuitivo e cobrável:
+
+> *"A isolação **não deve ser completa** a ponto de eliminar completamente a **energia de escape** (amostra) do transmissor para o receptor, pois **esse sinal vem a ser a referência necessária** à detecção do desvio Doppler."*
+
+| Solução | Isolação |
+|---|---|
+| Uma antena + **junção híbrida** | 20 a 30 dB |
+| Uma antena + **circulador** | 20 a 50 dB |
+| Uma antena + **polarizações ortogonais** | pouca — radares de pequeno alcance |
+| **Duas antenas** (uma TX, uma RX), alto ganho | **80 dB ou mais** |
+
+**O sinal do desvio.** Saber só o módulo de `f_d` dá a velocidade, não o **sentido**. A solução da fonte: **transferir o sinal do desvio para a fase**, usando dois misturadores e um defasador de −90°. Alvo se aproximando ⇒ a saída do misturador B está **adiantada** em relação à de A; se afastando ⇒ **atrasada**.
+
+**Banda passante.** Deve ser larga o bastante para abrigar as frequências Doppler — e banda larga custa ruído (M04, C043). A solução da fonte é a mesma de sempre, por outro caminho: **banco de filtros de faixa estreita** após o amplificador de FI, um detector por filtro.
+
+**Sumário da fonte** — quatro afirmações literais:
+1. *"O radar CW-Doppler **não mede distância**. Ele é capaz de indicar apenas a velocidade relativa do alvo."*
+2. *"Em relação ao radar de pulso, o radar CW-Doppler opera com **menor potência**."*
+3. *"Ele é capaz de detectar **alvos muito próximos**, pois o receptor está conectado à antena continuamente."*
+4. *"Ele possui **melhor performance** do que os radares de pulso na **rejeição de alvos estacionários**."*
+
+> **O item 3 é o eco de M05.** Lá, o circulador *"mantém o receptor conectado à antena o tempo todo e permite detectar abaixo da distância mínima"*. É a mesma física: sem comutação, não há `R_mín`.
+
+**Aplicações:** meteorologia, navegação aérea, **radar de velocidade veicular (PRF)**, velocidade de aproximação no pouso, medida da velocidade de saída do projétil em canhões.
+
+### C048 — CW-FM
+‹fonte: `SUE7.3` — apostila Cap. 2, Seção 3› · criticidade: **média** · competências: calcular, explicar
+
+**O problema e a solução em uma frase.** O CW não mede distância porque não tem marca temporal; o CW-FM **cria** a marca variando a frequência da portadora continuamente. *"O eco chega atrasado **com um valor diferente de frequência**. Essa diferença indica a distância do alvo."*
+
+**Modulação linear.** Com a frequência variando a uma taxa `df/dt`, e o eco atrasado de `T = 2R/c`, a **frequência de batimento** é
+
+`f_b = (df/dt)·T = (df/dt)·(2R/c)`   ⇒   **`R = c·f_b / (2·df/dt)`**
+
+**Modulação triangular** (a forma usada na prática), com `f_m` a frequência da onda triangular modulante e `Δf = f_máx − f_mín`:
+
+`f_b = 2·f_m·Δf·(2R/c)`   ⇒   **`R = c·f_b / (4·f_m·Δf)`**
+
+| Símbolo | Significado |
+|---|---|
+| `f_b` | frequência de batimento (total) |
+| `f_r` | componente do batimento devida à **distância** |
+| `f_d` | componente devida à **velocidade** (Doppler) |
+| `f_m` | frequência da onda triangular modulante |
+| `Δf` | excursão de frequência, `f_máx − f_mín` |
+
+**Alvo estacionário:** `f_b` é constante (exceto pelos "bicos" nas inversões da triangular) e **diretamente proporcional à distância**.
+
+**Alvo móvel:** o Doppler se superpõe, e `f_b = f_r ± f_d`. Como o sinal do Doppler se inverte entre a rampa crescente e a decrescente, obtêm-se **dois** valores de batimento por ciclo, e daí se separam as duas componentes:
+
+| Caso | `f_r` | `f_d` |
+|---|---|---|
+| **Caso 1** — alvo lento e distante (`f_r > f_d`) | `(f_bup + f_bdown)/2` | `(f_bup − f_bdown)/2` |
+| **Caso 2** — alvo rápido e próximo (`f_r < f_d`) | `(f_bup − f_bdown)/2` | `(f_bup + f_bdown)/2` |
+
+> **A regra mnemônica que a própria fonte dá:** *"há apenas uma **inversão dos sinais** quando muda-se do caso 1 para o caso 2"*. Some para a grandeza dominante, subtraia para a outra.
+
+**Considerações finais** ‹`SUE7.3`›:
+- *"O poder de discriminação em distância de um radar CW-FM é **teoricamente infinito**, permitindo-o medir com precisão alvos bem próximos à antena e entre si."* — não há `LP`, logo não há `PSD = c·LP/2`.
+- Por isso é *"um excelente radar de **busca e navegação**"*. Mas *"seu transmissor é mais sofisticado e, por isso, o torna um radar **mais caro**"*.
+- *"Radares CW-FM permitem, com **poucos watts** de potência transmitida, obter resultados equivalentes aos radares pulsados que transmitem com **dezenas de quilowatts** de potência de pico."*
+- *"O espectro de potência de um radar FMCW é aproximadamente **retangular** em toda a banda de transmissão, **dificultando seu monitoramento pelos equipamentos de MAGE**. Isto o torna um radar de **baixa probabilidade de interceptação (LPI)**."*
+
+> **Este último item liga M06 a M07 e a Guerra Eletrônica.** Em M06 você provou que o emissor se denuncia primeiro (≈ 95 dB de vantagem para o MAGE). O CW-FM é a resposta de engenharia a esse problema: espalhar a potência em banda larga e em tempo contínuo, em vez de concentrá-la num pulso de megawatt que o MAGE enxerga a centenas de quilômetros.
+
+**Empregos reais citados:** radar **altímetro** (o exemplo mais popular), o **Pilot (SAAB)** nas corvetas Classe *Visby* da Suécia e o **Scout (Thales)** nas fragatas Classe *De Zeven Provinciën* dos Países Baixos.
+
+### C049 — MTI e a velocidade cega
+‹fonte: `SUE7.4` — apostila Cap. 2, Seção 2› · criticidade: **média** · competências: calcular, analisar
+
+**O problema.** *"O uso do Doppler para **discriminar pequenos alvos em movimento na presença de clutter** é, provavelmente, de maior interesse."* Compare com M04: o **FTC** e o **STC** atacam o clutter **apagando sinal**; o MTI o ataca **distinguindo alvo móvel de alvo parado**.
+
+**A chave é a fase.** Com transmissão estável em fase, os ecos de alvos **estacionários** chegam sempre com **a mesma fase**; os de alvos **móveis** chegam com **fase diferente a cada pulso**.
+
+**O problema do radar de pulso convencional:** *"não possui estabilidade em frequência ou fase para a discriminação de alvos móveis"* — a magnetron é um **oscilador autoexcitado** (M03) e produz **pulsos não coerentes, de fase aleatória de um pulso para outro**. Pulsos **coerentes** exigem **amplificador de potência + oscilador**: TWT, Klystron, CFA (M03).
+
+> **Isto fecha um círculo aberto em M03.** Lá você aprendeu que magnetron dispensa amplificador e que Klystron/TWT/CFA são amplificadores. Aqui aparece **a razão prática** de escolher a arquitetura mais cara: coerência de fase — e, com ela, MTI.
+
+**Os dois osciladores do MTI:**
+
+| Sigla | Nome | Frequência | Papel |
+|---|---|---|---|
+| **COHO** | *COHerent Oscillator* | **igual à FI** do receptor | gera o sinal de **referência de fase** |
+| **STALO** | *STAble Local Oscillator* | RF, muito estável | misturado com a FI gera a frequência transmitida **e** serve de oscilador local do receptor |
+
+*"Qualquer desvio de fase gerado na transmissão pelo STALO é **cancelado na recepção**, pois o STALO age como oscilador local do receptor."* Na saída do **detector de fase**, o vídeo é **constante** para alvo estacionário e **função do tempo** para alvo móvel.
+
+**O efeito "butterfly".** No **indicador tipo-A**, varreduras sucessivas mostram amplitude constante para alvo parado e amplitude variando no tempo para alvo móvel — o desenho que resulta é a "borboleta". **Atenção:** *"o efeito butterfly permite a identificação de alvos móveis em um indicador tipo A, **mas não em um indicador tipo PPI**"* — porque o PPI modula **intensidade**, não deflexão (M05, C034).
+
+**A supressão dos estacionários, para o PPI.** Divide-se o vídeo em duas partes; uma recebe **atraso igual ao TRP** e é **subtraída** da outra. Alvo parado ⇒ os dois vídeos são idênticos ⇒ a subtração dá zero ⇒ some da tela. Alvo móvel ⇒ resta sinal.
+
+**A velocidade cega.** O subtrator elimina também os alvos móveis cuja fase avance exatamente `n·360°` entre pulsos consecutivos — esses ecos ficam idênticos e são cancelados junto com o clutter. As frequências Doppler eliminadas são `f_d = n·FRP`, e portanto:
+
+**`v_n = n·FRP·λ / 2`**   com `n = 0, 1, 2, …`
+
+**Como escapar de uma velocidade cega baixa** ‹`SUE7.4`› — e o preço de cada saída:
+
+| Ação | Efeito colateral |
+|---|---|
+| **Aumentar λ** (baixar a portadora) | feixe mais largo ⇒ **pior poder de separação em marcação** (M02, M06) |
+| **Aumentar a FRP** | **mais ambiguidade em distância** (`R_máx = c/2·FRP`, M02) |
+
+*"Conclusão: deve-se empregar uma **solução de compromisso**."* — a mesma frase que fecha M02, M04 e M06. É o padrão da disciplina inteira.
+
+### C050 — Guerra Eletrônica: MAGE, MAE e MPE
+‹fonte: `SUE8.1a2` — apostila Cap. 4, Seções 1 e 2› · criticidade: **média** · competências: reconhecer, explicar
+
+**Definição oficial** ‹Art. 4 da Política de GE de Defesa, Portaria 333/MD de 24/03/2004, citada no slide›:
+
+> *"Conjunto de ações que visam **assegurar o uso do espectro eletromagnético pelas forças amigas** e **impedir, reduzir ou prevenir seu uso pelas forças inimigas**."*
+
+**As três medidas:**
+
+| Sigla | Nome | O que faz |
+|---|---|---|
+| **MAGE** | Medidas de **Apoio** à GE | busca, interceptação, **análise**, identificação, localização e registro |
+| **MAE** | Medidas de **Ataque** Eletrônico | bloqueio, despistamento, chaff/flare, furtividade; e as destrutivas |
+| **MPE** | Medidas de **Proteção** Eletrônica | anti-MAGE, anti-MAE, CIEMA, evasiva tática |
+
+**O que o MAGE extrai** ‹`SUE8.1a2`› — e isto é o complemento direto de M06/C042: *"ele é capaz de identificar a **frequência da portadora**, **tipo de modulação**, **FRP**, **largura de pulso** etc."* A tabela do slide mostra a saída típica: por alvo, **marcação, frequência, modulação, tipo de varredura, FRP e LP**.
+
+> **O que o MAGE NÃO obtém: a distância.** Ele mede marcação (de onde vem) e caracteriza a emissão, mas não tem referência temporal própria — não emitiu nada, logo não há `t` para aplicar em `d = c·t/2`. É o exercício 1 do próprio deck, e a resposta está inteiramente dentro do que você já sabe de M01.
+
+**MAE não destrutivas ("soft kill"):**
+- **Bloqueio eletrônico** — *"emite um sinal de onda contínua na mesma frequência de operação do radar a ser bloqueado"*. Na PPI aparece como um **setor de ruído** numa marcação.
+- **Despistamento** — *"recebe um pulso emitido por um radar, produz um **atraso**, amplifica-o e transmite de volta"*, criando **alvos falsos**. Na PPI, ecos numa marcação a distâncias que não existem.
+- **Bloqueio mecânico** — **CHAFF** (RF) e **FLARES** (IR), lançados pelo SLDM.
+- **Furtividade (*stealth*)** — tinta absorvedora de micro-ondas e **geometria furtiva** (*"não há ângulos retos, todos são oblíquos"*). Ambas reduzem a **seção reta radar** — que é o `A_a` da equação radar de M06.
+
+**MAE destrutivas ("hard kill"):** **mísseis antirradiação** (MAR-1, HARM AGM-88 — este *"possui memória digital, o que possibilita estimar a localização do radar mesmo que este seja desligado"*) e **armas de energia direcionada** (laser, IR, micro-ondas).
+
+**MPE** ‹`SUE8.1a2`› — e note como cada uma é um assunto deste curso:
+- **radares LPI**, por exemplo **o CW-FM** (C048);
+- **agilidade em frequência, FRP ou LP** em radares de pulso — os três parâmetros de M02;
+- **MTI contra nuvem de chaff** (C049): o chaff flutua, mas é praticamente estacionário em velocidade radial — o subtrator o apaga;
+- **mudar a frequência de operação** para sair da sintonia de um bloqueio por ruído.
+
+**Na Marinha do Brasil:** orientação **CON**; banco de dados **CGEM**; equipamentos **IPqM**; supervisão **DSAM** (GE radar) e **DTM** (GE de comunicações). Sistema de informações **FÊNIX**, que gera as **Bibliotecas de Missão Eletrônicas (BME)**. Equipamentos **CME-1A** (Defensora, Liberal) e **CME-2** (Independência, com *phased array* e memória digital de RF).
+
+### C051 — IFF: o radar secundário
+‹fonte: `SUE8.3`› · criticidade: **média** · competências: explicar, comparar
+
+> ⚠️ **Esta aula NÃO está na apostila.** O slide diz, literalmente: *"Atenção! Essa aula NÃO está contida na apostila de Detecção!"* — exatamente como STC e FTC, que a T2 2024 **cobrou assim mesmo** (dois itens da Q1). Conteúdo só de slide é cobrável.
+
+**Definição** ‹citada pelo slide do *Journal of Aerospace Technology and Management*, v.2 n.3, 2010›: uma forma de reconhecimento executada por uma **"pergunta" padrão** (pulso de interrogação) feita por um **interrogador**, e uma **"resposta" codificada** (pulso de resposta) emitida por um **transponder** na outra plataforma.
+
+**Primário × secundário — a distinção que a banca cobraria:**
+
+| | Radar primário | Radar secundário (IFF / SSR) |
+|---|---|---|
+| Sinal de volta | **eco**, reflexão | **resposta gerada** pelo transponder |
+| Depende do alvo? | **não** — não cooperativo | **sim** — **cooperativo** |
+| Intensidade do retorno | fraquíssima (`1/R⁴`, M06) | **forte e codificada** |
+| Informação | distância e marcação | **+ altitude, identidade, emergências** |
+| Clutter | sofre | **imune** — transmite numa frequência e recebe em outra |
+
+**As duas unidades:** **unidade interrogadora** (codificador → transmissor; receptor → decodificador) e **transponder** (TRANSmitter + resPONDER; receptor → decodificador → codificador → transmissor).
+
+**As frequências — decore o par:** interrogação em **1.030 MHz**, resposta em **1.090 MHz**. É essa diferença que torna o IFF imune ao clutter.
+
+**Sincronismo:** *"O IFF necessita de um **pulso de sincronismo do radar primário**"* para sincronizar-se com o PPI — o mesmo sincronizador de M03/M05, servindo a um terceiro cliente. A antena do IFF é normalmente montada **sobre** a antena do radar primário.
+
+**Os modos.** A interrogação usa **três pulsos: P1, P2 e P3**, e *"o modo de operação é definido pelo **intervalo entre os pulsos P1 e P3**"*. A resposta é codificada entre os pulsos F1 e F2.
+
+| Modo | Uso |
+|---|---|
+| **1** | função, missão ou tipo de aeronave (vários podem responder igual) |
+| **2** | identificação **individual** da aeronave |
+| **3 / A** | identidade para controle de tráfego aéreo — 12 bits, **4.096 valores** |
+| **C** | **altitude** de voo (altímetro barométrico ou radar-altímetro) |
+| **4** | militar, **criptografado** (IFF Mk XII) |
+| **5** | consciência situacional ampliada: PIN, proa, posição, combustível, velocidade, estado das armas, avarias |
+
+Em tempo de paz, os mais usados são **A** (civil) e **3** (militar). Códigos civis pela **ICAO**; militares pela OTAN (**STANAG 4193**). Códigos notáveis: **7700** emergência geral, **7600** perda de comunicação, **7500** sequestro.
+
+**A supressão dos lóbulos secundários — o papel do P2.** Junto à antena direcional existe outra, **omnidirecional**, que transmite **P2**. No **lóbulo principal**, P2 chega **9 dB menor** que P1 ⇒ o transponder responde. Nos **lóbulos secundários**, P2 chega **tão ou mais intenso** que P1 ⇒ o transponder **não responde**. É a mesma preocupação com lóbulos secundários que aparece nas antenas de M05 — resolvida aqui por comparação de amplitude entre dois pulsos.
+
+**Parente próximo:** o **RFID** *"tem seu princípio de operação baseado no IFF"* — pedágio, bilhetagem, NFC, controle de estoque.
+
+### C052 — Radiogoniômetro
+‹fonte: `SUE10.1a2`› · criticidade: **baixa** · competências: reconhecer
+
+> ⚠️ **Também NÃO consta da apostila** — o slide o diz explicitamente.
+
+**O que é.** *"Radiogoniometria é o método que tem por objetivo determinar, mediante o emprego de ondas eletromagnéticas, a **direção entre duas estações**, uma transmissora e uma receptora."* Ele **não** emite: é um **receptor super-heteródino** (os mesmos estágios de M04) que obtém **marcação** de radiofaróis, navios, aviões e emissoras comerciais.
+
+**Três fatos que valem por si:**
+
+1. **A direção é obtida pelo MÍNIMO, não pelo máximo.** *"É mais fácil distinguir entre um som fraco e a ausência de som do que entre sons fortes de gradações diferentes"*, e a variação de sinal por grau de giro é **muito maior** perto do nulo. Portanto: *"em radiogoniometria **não se obtém a direção pela determinação do máximo, e sim do mínimo de sinal (nulo)**"*.
+2. **Não há CAG.** *"A **ausência do CAG** aumenta a sensibilidade do equipamento."* — o contraste exato com o receptor de M04, e pela razão certa: o CAG achataria justamente a variação de amplitude que constitui a medida.
+3. **Quadro dá direção; antena de sentido dá sentido.** A antena de quadro sozinha é ambígua em 180°. Acoplando a **antena de sentido** ao braço voltado para a estação o sinal **aumenta**; ao braço oposto, **diminui**.
+
+**Sistemas de antena:** **Kolster–Dunmore** (gira a **antena**) e **Bellini–Tosi** (gira a **bobina exploradora**, com quadros cruzados fixos — o usado nos Avisos).
+
+**Radiofaróis:** direcionais (feixe de 15° a 30°, navegação aérea), rotativos (**não existem no Brasil**) e **circulares** (omnidirecionais, uso exclusivamente marítimo, **283,5 kHz a 330 kHz**).
+
+---
+
+## Exemplos resolvidos
+
+> Os quatro exemplos abaixo resolvem **exercícios propostos pelo próprio professor** nos slides, identificados como tais. São **resolução comentada de material da banca**, não questões deste banco.
+
+### Exemplo 7.1 — Desvio Doppler nos dois sentidos  `C047`
+‹`SUE7.1a2`, exercícios 1 e 2›
+
+**(1)** *"Um radar CW-Doppler opera em 5 GHz. Determine a frequência do eco de um alvo que se **afasta** com velocidade radial relativa de 360 km/h."*
+
+`λ = 3×10⁸/5×10⁹ = 0,06 m` · `v_r = 360/3,6 = 100 m/s`
+`f_d = 2·v_r/λ = 200/0,06 = ` **`3.333,33 Hz`**
+Afastando ⇒ desvio **negativo** ⇒ `f_eco = f₀ − f_d = 5×10⁹ − 3.333,33 = ` **`4,99999667 GHz`**
+
+**(2)** *"Um radar CW-Doppler que opera em 2 GHz recebe um eco de 2,000005 GHz. O alvo aproxima-se ou afasta-se? Determine sua velocidade radial relativa."*
+
+`f_d = 2,000005×10⁹ − 2×10⁹ = 5.000 Hz` — **positivo ⇒ o alvo se APROXIMA**.
+`λ = 0,15 m` · `v_r = f_d·λ/2 = 5.000 × 0,15/2 = ` **`375 m/s = 1.350 km/h`**
+
+**O que ler.** Em (1) o desvio é de 3,3 kHz sobre uma portadora de 5 GHz — **uma parte em 1,5 milhão**. É por isso que o CW-Doppler exige estabilidade de frequência extrema e por isso que a fonte insiste em **não** eliminar a energia de escape: sem a referência do próprio transmissor, não há como medir uma diferença tão pequena.
+
+### Exemplo 7.2 — CW-FM: separar distância de velocidade  `C048`
+‹`SUE7.3`, exercício 1›
+
+*"Um radar CW-FM opera em 4 GHz ± 350 MHz com taxa de modulação triangular de 1 MHz/µs. Determine a distância e a velocidade radial relativa de um alvo cujas frequências de batimento são `f_bup = 400,012 MHz` e `f_bdown = 399,988 MHz`, para o caso 1 (`f_r > f_d`)."*
+
+**Passo 1 — separar as componentes (caso 1: soma para `f_r`, diferença para `f_d`).**
+`f_r = (400,012 + 399,988)/2 = ` **`400,000 MHz = 4×10⁸ Hz`**
+`f_d = (400,012 − 399,988)/2 = 0,012/2 = ` **`0,012 MHz = 12 kHz`**
+
+**Passo 2 — distância, pela taxa de modulação.** `df/dt = 1 MHz/µs = 10¹² Hz/s`
+`R = c·f_r/(2·df/dt) = (3×10⁸ × 4×10⁸)/(2 × 10¹²) = 1,2×10¹⁷/2×10¹² = ` **`60.000 m = 60 km`**
+
+**Passo 3 — velocidade, pelo Doppler.** `λ = 3×10⁸/4×10⁹ = 0,075 m`
+`v_r = f_d·λ/2 = 12.000 × 0,075/2 = ` **`450 m/s = 1.620 km/h`**
+
+**Onde mora o erro.** Trocar as fórmulas do caso 1 pelas do caso 2. O enunciado **avisa** qual é o caso; se não avisasse, o critério é físico: `f_r > f_d` significa alvo **distante e lento**, `f_r < f_d` significa **próximo e rápido**.
+
+### Exemplo 7.3 — Velocidades cegas, nos dois sentidos  `C049`
+‹`SUE7.4`, exercícios 1 e 2›
+
+**(1)** *"Quais são as três primeiras velocidades cegas de um radar MTI que opera em 4,5 GHz com uma FRP de 1.200 Hz?"*
+
+`λ = 3×10⁸/4,5×10⁹ = 0,0667 m` · `v_n = n·FRP·λ/2 = n × 1.200 × 0,0667/2 = n × 40 m/s`
+
+| `n` | `v_n` |
+|---|---|
+| 1 | **40 m/s = 144 km/h** |
+| 2 | **80 m/s = 288 km/h** |
+| 3 | **120 m/s = 432 km/h** |
+
+**(2)** *"Um radar MTI transmite em 6 GHz. Sabendo que sua **quinta** velocidade cega é de 2.250 km/h, determine seu alcance sem ambiguidade."*
+
+`λ = 0,05 m` · `v₅ = 2.250/3,6 = 625 m/s`
+`625 = 5 × FRP × 0,05/2 = 0,125·FRP` ⇒ **`FRP = 5.000 Hz`**
+`R_máx = c/(2·FRP) = 3×10⁸/10.000 = ` **`30.000 m = 30 km`**
+
+**O que este item ensina.** Ele é um problema de **M02 disfarçado**: a velocidade cega serve apenas para descobrir a FRP, e o alcance sem ambiguidade sai da fórmula que você usa desde o segundo módulo. E o resultado exibe o compromisso de C049 em números: FRP de 5 kHz empurra a primeira velocidade cega para 125 m/s, mas derruba o alcance sem ambiguidade para **30 km**.
+
+### Exemplo 7.4 — Ler uma tela de MAGE  `C050`
+‹`SUE8.1a2`, tabela do receptor MAGE›
+
+O slide mostra a saída de um receptor MAGE com três emissores detectados:
+
+| Alvo | Marcação | Frequência | Modulação | Varredura | FRP | LP |
+|---|---|---|---|---|---|---|
+| #1 | 32° | 2,2 GHz | PULSADO | circular | 1.200 | 1 |
+| #2 | 105° | 3,1 GHz | PULSADO | **cônica** | 950 | 2 |
+| #3 | 271° | 5,7 GHz | **CW-FM** | circular | — | — |
+
+**Leitura tática, usando só o que este curso ensinou:**
+
+- **#2 é o mais perigoso.** Varredura **cônica** é assinatura de **radar de rastreamento** (C046), cujo *"principal emprego é como radar de **direção de tiro**"*. Um radar de busca varre em círculo procurando; um radar de direção de tiro em varredura cônica **já escolheu** um alvo.
+- **#1 é um radar de busca/navegação.** Pulsado, varredura circular, FRP 1.200 Hz e LP 1 µs — os números de um radar de superfície comum. Confira com M02: `R_máx = c/2·FRP = 125 km`, `PSD = c·LP/2 = 150 m`.
+- **#3 não tem FRP nem LP** — e não é falha do MAGE: um **CW-FM não é pulsado**, logo essas duas colunas não existem para ele. Repare que o MAGE **conseguiu** detectá-lo, apesar do caráter LPI (C048): LPI significa *difícil*, não *impossível*.
+- **Nenhuma das colunas é distância.** O MAGE não mede distância — ele não emitiu nada, e sem sinal transmitido não existe o `t` de `d = c·t/2`.
+
+---
+
+## Parte II — Integração final
+
+### O mapa único do curso
+
+```
+                              ┌─── SINCRONIZADOR ── define FRP ──┐
+                              │        (M03)                     │
+                              ▼                                  ▼
+   M02: FRP, LP, RPM ──► MODULADOR ── define LP ──► OSCILADOR ──► CHAVE ──► ANTENA
+        as 8 fórmulas         (M03)                  (M03)        (M05)      (M05)
+              │                                                      │          │
+              │                                                      ▼          ▼
+              │                                              ┌── RECEPTOR ──────┘
+              │                                              │  (M04) 6 estágios
+              ▼                                              │  + CAF CAG STC FTC
+     PSD · R_mín · R_máx(FRP) · P_méd · PSM · N_B            ▼
+              │                                        S_mín (M04)
+              │                                              │
+              └──────────────► M06: EQUAÇÃO RADAR ◄──────────┘
+                              R_máx = [P·G·A_a·A/((4π)²·S_mín)]^(1/4)
+                                            │
+                                            ▼
+                                  M05: INDICADOR (tipo-A / PPI)
+```
+
+### As sete costuras que atravessam módulos
+
+| # | A cadeia | Módulos |
+|---|---|---|
+| 1 | `LP ↓` → `PSD ↓` e `R_mín ↓` → **mas** `B = 1/LP ↑` → `P_n ↑` → `S_mín ↑` → `R_máx ↓` | M02 → M04 → M06 |
+| 2 | `FRP ↑` → `N_B ↑` (mais pulsos no alvo) → **mas** `R_máx = c/2·FRP ↓` | M02 |
+| 3 | Magnetron = oscilador autoexcitado → **pulsos não coerentes** → **sem MTI** | M03 → M07 |
+| 4 | Sincronizador alimenta **TX, indicador e IFF** | M03 → M05 → M07 |
+| 5 | Circulador mantém o receptor sempre ligado → detecta **abaixo** de `R_mín` — a mesma razão pela qual o CW-Doppler vê alvos muito próximos | M05 → M07 |
+| 6 | Emissor se denuncia primeiro (`4πR²` × `(4π)²R⁴`) → **EMCON**, **LPI**, **CW-FM** | M06 → M07 |
+| 7 | Toda escolha de projeto é **solução de compromisso** — a frase aparece em M02, M04, M06 e M07 | todos |
+
+### Protocolo de prova — T2
+
+**Antes de escrever qualquer coisa (2 min).**
+1. Leia as quatro questões inteiras. Localize a Q2 (2,8 pts, sete itens) e confirme se os parâmetros vêm **em pares** — foi assim em 2024 (FRP 1.200 **ou** 2.000; LP 3 **ou** 10 µs; 12 **ou** 18 RPM).
+2. Numa margem, escreva a lista: *para cada item, qual valor do par eu preciso?* Esta é a pegadinha **P-01** e ela sozinha responde por boa parte da Q2.
+
+**Ordem de ataque.** Q1 (4,8) → Q4 (1,6) → Q2 (2,8) → Q3 (0,8). A Q1 é a maior e a mais rápida; a Q4 pede **uma linha por item**; a Q2 é longa mas mecânica; a Q3 é a que mais dá errado sob pressão — deixe-a por último e faça-a com calma.
+
+**Regras de escrita, tiradas da rubrica oficial.**
+- **Fórmula → substituição → resultado**, os três, sempre. A rubrica do professor mostra exatamente esse encadeamento.
+- **Preencha a linha "Resposta:"** — é onde a rubrica procura — **com unidade**.
+- Na Q1, **nunca deixe afirmativa em branco**: o enunciado avisa que *"respostas em branco são incorretas"*. Chute com critério.
+- Na Q4, **uma relação por característica**. LP → `R_mín` **e** PSD. FRP → só ambiguidade. Feixe → só marcação. Potência → só alcance.
+- Errar um item **não contamina** o seguinte: a pontuação é por item.
+
+**Os cinco números que valem a pena ter na ponta da língua:** `c = 3×10⁸ m/s` (sempre) · `12,36 µs` = 1 milha radar náutica · `150 m` por µs de LP no PSD · `θ₀ = RPM × 6` (°/s) · `(4π)² = 157,914`.
+
+### Revisão final — 15 minutos, na véspera
+
+Percorra nesta ordem, sem consultar, e marque só o que sair inteiro:
+
+- [ ] As **oito fórmulas de M02**, escritas de memória
+- [ ] A **tripla de M03**: sincronizador → FRP · modulador → LP · oscilador → portadora
+- [ ] Os **seis estágios do receptor** em ordem, e o que cada controle (CAF/CAG/STC/FTC) faz e **onde** age
+- [ ] **TR protege o receptor · ATR desliga o transmissor**
+- [ ] **Tipo-A = deflexão = eletrostática** · **PPI = intensidade = magnética**
+- [ ] A **equação radar** montada do zero, e `R_máx` com a quarta raiz
+- [ ] **dBm → W em dois passos**, e `A = G·λ²/4π`
+- [ ] **MAGE = caminho de ida** — um só `4πR²`
+- [ ] **MTI é radar de pulso**
+- [ ] As **16 afirmativas da Q1 de 2024** respondidas em menos de 8 minutos
+
+---
+
+## ⚠️ Pegadinhas novas em M07
+
+**P-16 — classificar o MTI como CW.** Ele usa Doppler, e Doppler "soa" CW. Mas é **pulsado**, e a apostila o lista no grupo do radar de pulso (p. 1-4). Esta é a única pegadinha de M07 com ancoragem no Capítulo 1 — e portanto a única realmente cobrável na T2.
+
+**P-17 — achar que o CW-Doppler mede distância.** Ele mede **apenas velocidade relativa**. Quem mede distância entre os CW é o **CW-FM**, e só porque **modula** a portadora.
+
+**P-18 — supor que isolação TX/RX total é sempre melhor.** No CW-Doppler, **não**: a energia de escape do transmissor é a **referência** para detectar o desvio. Isolação total mata a medida.
+
+**P-19 — confundir o que cada método de rastreamento precisa.** Varredura cônica precisa de **vários ecos sucessivos** (modulação em amplitude); monopulso precisa de **um só** (quatro alimentadores comparados ao mesmo tempo). Daí o monopulso sofrer menos com variação da seção reta radar.
+
+**P-20 — no radiogoniômetro, procurar o máximo.** A direção sai do **mínimo (nulo)**. E o receptor **não tem CAG** — de propósito.
+
+---
+
+## Referências deste módulo
+
+| Fonte | Localização | Uso |
+|---|---|---|
+| `SUE6.12-radar_de_rastreamento.pdf` | 23 slides, **lido integralmente** | C046 — apostila Cap. 2, Seção 4 |
+| `SUE7.1a2-radar_CW-Doppler.pdf` | **lido integralmente** | C047 — apostila Cap. 2, Seção 1 |
+| `SUE7.3-radar_CW-FM.pdf` | **lido integralmente** | C048 — apostila Cap. 2, Seção 3 |
+| `SUE7.4-radar_MTI.pdf` | **lido integralmente** | C049 — apostila Cap. 2, Seção 2 |
+| `SUE8.1a2-guerra-eletronica.pdf` | **lido integralmente** | C050 — apostila Cap. 4, Seções 1 e 2 |
+| `SUE8.3-IFF.pdf` | **lido integralmente** | C051 — ⚠️ **não consta da apostila** |
+| `SUE10.1a2-radiogoniometro.pdf` | **lido integralmente** | C052 — ⚠️ **não consta da apostila** |
+| `apostila_DET_2022.pdf` | Cap. 1, Seção 1, p. 1-4 | C045 — a classificação, único conteúdo de M07 dentro do escopo da T2 |
+| `T2/SOPA DET T2 2024.pdf` | prova integral | Protocolo de prova e revisão final |
+
+---
+
+**Próximo:** `M08 — Simulados A, B e C`, com gabaritos comentados e a auditoria final do curso.

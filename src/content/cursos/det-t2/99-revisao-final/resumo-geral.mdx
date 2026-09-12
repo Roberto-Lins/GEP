@@ -1,9 +1,8 @@
 ---
-titulo: "Folha de fórmulas"
+titulo: "Folha de fórmulas completa"
 secao: "resumo-geral"
 secaoOrdem: 2
 ---
-
 > `c = 3×10⁸ m/s` **sempre**. Convenção verificada na rubrica oficial da `SOPA DET T2 2024`.
 
 ## §1 — As cinco características e o que cada uma afeta `M01→M02`
@@ -53,9 +52,14 @@ Tudo abaixo descende de **`d = c·t/2`** ‹apostila p. 1-4›. Muda só o signi
 | **Banda × pulso** | `BW ≈ 1/τ` |
 | **MAGE — só ida** | `P_rx = P·G_t·A_rx/(4πR²)`  ← **4πR², nunca (4π)²R⁴** |
 
+⚠️ **`A_a` é o ALVO** (seção reta radar, vem no enunciado) · **`A` é a ANTENA** (calculada por `G·λ²/4π`).
+⚠️ **No MAGE, `A_rx` usa o λ do RADAR interceptado**, não um λ "do MAGE".
+⚠️ `(4πR²)² = (4π)²·R⁴ = **157,914·R⁴**`
+
 **Conversões** · `G(dB) = 10·log G` ⇒ 40 dB = 10⁴ · 25 dB = 316,23
 `S(dBm) = 10·log(S/1 mW)` ⇒ **−80 dBm = 10⁻⁸ mW = 10⁻¹¹ W** (dois passos)
-**Quarta raiz:** 16× em P ⇒ 2× em R.
+**Quarta raiz:** 16× em P ⇒ 2× em R · 2× em P ⇒ +19% · `S_mín` ×10 ⇒ −44% · +3 dB em G ⇒ +19% (= dobrar P) · +12 dB em G ⇒ ×2.
+**Dois `R_máx` na disciplina:** enunciado com **FRP** → `c/2·FRP` (M02, tempo) · com **potência/ganho/sensibilidade** → equação radar (M06, energia). O alcance operativo é o **menor** dos dois.
 
 ## §3b — Transmissor `M03`
 
@@ -89,6 +93,20 @@ Tudo abaixo descende de **`d = c·t/2`** ‹apostila p. 1-4›. Muda só o signi
 **A cadeia que liga três módulos:** `LP menor` → `B maior` → `P_n maior` → `S_mín maior` → **`alcance menor`** (com quarta raiz).
 **Os quatro controles:** CA**F** = frequência, no **OL** · CA**G** = ganho pelo **nível médio (CC)**, no amplif. de FI · **STC** = ganho pelo **tempo**, no amplif. de FI · **FTC** = **diferencia**, no acoplamento do vídeo.
 
+## §3d — Chave de antena e indicador `M05`
+
+| Grandeza | Fórmula / regra |
+|---|---|
+| **Isolação do duplexer** | `10·log(P_pico/P_tolerada)` — o caso da fonte: 1 MW → 1 W = **60 dB** |
+| **`R_mín` real** | `R_mín = c·(LP + t_rec)/2` — o tempo de recuperação da TR **soma-se** à LP |
+| **Instante `t₁`** | alcance de tela em µs; em MN: `t₁ = MN × 12,36 µs` |
+| **FRP máxima pelo alcance de tela** | `FRP ≤ 1/t₁` — a varredura tem de caber no TRP |
+| **Marcas fixas** | `Δt = (MN entre anéis) × 12,36 µs` · `f_osc = 1/Δt` |
+
+**TR × ATR:** **TR protege o receptor** (transmissão) · **ATR desliga o transmissor** (recepção).
+**Bandas:** ramal = **estreita** · balanceado = **larga** · circulador = baixa isolação, mas detecta **abaixo** do `R_mín`.
+**Indicadores:** tipo-A = **deflexão** = eletrostática = osciloscópio = rastreamento/manutenção · PPI = **intensidade** = magnética = polares = busca/navegação.
+
 ## §4 — Os 12 blocos da Q1 `M03–M05`
 
 | Bloco | Faz | Determina |
@@ -108,3 +126,25 @@ Tudo abaixo descende de **`d = c·t/2`** ‹apostila p. 1-4›. Muda só o signi
 
 **CAF ≠ CAG:** CA**F** = **F**requência (age no OL) · CA**G** = **G**anho (age no amplif. de FI).
 **STC ≠ FTC:** **S**TC = mar/perto, varia no **tempo** · **FTC** = chuva, superposição.
+
+## §5 — Adjacências `M07` *(fora do escopo da T2 — Capítulos 2 e 4)*
+
+| Grandeza | Fórmula | Sistema |
+|---|---|---|
+| **Desvio Doppler** | `f_d = 2·v_r/λ = 2·v_r·f₀/c` | CW-Doppler, MTI |
+| **Velocidade a partir do desvio** | `v_r = f_d·λ/2` | CW-Doppler |
+| **CW-FM — batimento (linear)** | `f_b = (df/dt)·(2R/c)` ⇒ `R = c·f_b/(2·df/dt)` | CW-FM |
+| **CW-FM — batimento (triangular)** | `R = c·f_b/(4·f_m·Δf)` | CW-FM |
+| **CW-FM — caso 1** (`f_r > f_d`) | `f_r = (f_bup + f_bdown)/2` · `f_d = (f_bup − f_bdown)/2` | alvo lento e distante |
+| **CW-FM — caso 2** (`f_r < f_d`) | `f_r = (f_bup − f_bdown)/2` · `f_d = (f_bup + f_bdown)/2` | alvo rápido e próximo |
+| **Velocidade cega** | `v_n = n·FRP·λ/2`, `n = 0, 1, 2, …` | MTI |
+| **Monopulso — distância** | `Σ₃ = A + B + C + D` | rastreamento |
+| **Monopulso — azimute** | `Δ₃ = (A+C) − (B+D)` | rastreamento |
+| **Monopulso — elevação** | `Σ₄ = (A+B) − (C+D)` | rastreamento |
+| **Range gate** | `ERRO = (early × eco) − (late × eco)`; nulo = travado | rastreamento |
+
+**Quem mede o quê:** pulso = distância · CW-Doppler = **só velocidade** · CW-FM = distância **e** velocidade · MTI = distância, velocidade **e** apaga estacionários.
+**MTI é radar de PULSO.** · **COHO** = FI (fase) · **STALO** = RF (também o OL do receptor).
+**IFF:** interroga em **1.030 MHz**, responde em **1.090 MHz**; modo definido pelo intervalo **P1–P3**; **P2** suprime lóbulos secundários (−9 dB no lóbulo principal).
+**Radiogoniômetro:** direção pelo **NULO**; **sem CAG**; quadro dá direção, antena de sentido dá sentido.
+**GE:** **MAGE** (apoio) · **MAE** (ataque — inclui furtividade) · **MPE** (proteção — inclui LPI, agilidade, MTI contra chaff).

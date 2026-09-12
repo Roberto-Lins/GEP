@@ -1,12 +1,16 @@
 import type { Fonte } from '@tipos/media';
 export type { Fonte } from '@tipos/media';
 
-const PUBLICADOS = [
+const TODO_O_CURSO = [
   '00-mapa-da-t2-e-diagnostico',
   '01-fundamentos-do-radar-de-pulso',
   '02-caracteristicas-e-parametros-de-desempenho',
   '03-transmissao-e-formacao-do-pulso',
   '04-recepcao-e-processamento-do-eco',
+  '05-diagrama-de-blocos-controles-e-fluxo-do-sinal',
+  '06-equacao-radar-ganho-sensibilidade-e-alcance',
+  '07-integracao-adjacencias-e-preparacao-final',
+  '08-simulados-e-protocolo-final',
   '99-revisao-final',
 ];
 
@@ -15,7 +19,7 @@ export const fontes: Fonte[] = [
     titulo: 'Apostila de Detecção 2022 — Capítulo I',
     tipo: 'livro',
     descricao: 'Fonte-base lida para fundamentos, características, transmissor e receptor. As páginas utilizadas são indicadas dentro de cada módulo.',
-    topicos: PUBLICADOS,
+    topicos: TODO_O_CURSO,
   },
   {
     titulo: 'SUE6.1 — Radar de pulso: introdução e características',
@@ -38,32 +42,32 @@ export const fontes: Fonte[] = [
   {
     titulo: 'SUE6.6 — Indicador',
     tipo: 'slide',
-    descricao: 'Fonte lida e reservada para a integração com o indicador; o conteúdo definitivo entra em M05.',
+    descricao: 'Fonte lida e usada em M05 para indicador tipo-A, PPI, sincronismo e integração visual do eco.',
     topicos: ['05-diagrama-de-blocos-controles-e-fluxo-do-sinal'],
   },
   {
     titulo: 'SUE6.7, SUE6.8 e SUE6.9a10',
     tipo: 'slide',
-    descricao: 'Fontes previstas para chave de antena, antenas, controles e diagrama de blocos no M05.',
+    descricao: 'Fontes lidas e usadas para chave de antena, antenas, controles e diagrama de blocos no M05.',
     topicos: ['05-diagrama-de-blocos-controles-e-fluxo-do-sinal'],
   },
   {
     titulo: 'SUE6.11 e SUE8.1a2',
     tipo: 'slide',
-    descricao: 'Fontes previstas para equação radar, ganho, sensibilidade, alcance e interceptação por MAGE no M06.',
+    descricao: 'Fontes lidas e usadas para equação radar, ganho, sensibilidade, alcance e interceptação por MAGE no M06.',
     topicos: ['06-equacao-radar-ganho-sensibilidade-e-alcance'],
   },
   {
-    titulo: 'SUE6.12, SUE7.x, SUE8.x e SUE10.1a2',
+    titulo: 'SUE6.12; SUE7.1a2, SUE7.3 e SUE7.4; SUE8.3; SUE10.1a2',
     tipo: 'slide',
-    descricao: 'Fontes ainda a processar para as adjacências planejadas do M07.',
+    descricao: 'Fontes lidas e usadas em M07 para rastreamento, CW-Doppler, CW-FM, MTI, Guerra Eletrônica, IFF e radiogoniometria.',
     topicos: ['07-integracao-adjacencias-e-preparacao-final'],
   },
   {
     titulo: 'SOPA DET T2 2024 — prova com rubrica oficial',
     tipo: 'prova',
     descricao: 'Base principal do diagnóstico de cobrança, da distribuição histórica de pontos e de exercícios reproduzidos ou derivados com rastreabilidade explícita.',
-    topicos: PUBLICADOS,
+    topicos: TODO_O_CURSO,
   },
   {
     titulo: 'SOPA DET T1 2024',

@@ -1,11 +1,105 @@
 ---
-titulo: "Revisão de véspera — estado atual"
+titulo: "Plano intensivo de revisão e protocolo de véspera"
 secao: "revisao-de-vespera"
 secaoOrdem: 4
 ---
+**Hoje: sábado, 12/09/2026.** Suposição assumida (declarada, não inferida em silêncio): a T2 ocorre **na segunda-feira, 14/09**. Se a data for outra, o plano-base não muda — muda apenas quantos ciclos do plano expandido cabem.
 
-## Revisão ainda progressiva
+**Plano-base: 4 h totais = 2 dias × 120 min.** Este é o mínimo viável para cobrir os 10 pontos da prova.
 
-Use a folha de fórmulas, os erros recorrentes e o simulado gerado a partir das 42 questões atualmente publicadas. A versão final desta seção será concluída junto com M05, M06, M07 e os simulados A/B/C do M08.
+---
 
-Até lá, trate o resultado do simulado como diagnóstico **apenas de M01 a M04**. Ele ainda não mede domínio de todo o escopo planejado da T2.
+## Regra de ouro do fim de semana
+
+> A Q1 vale **4,8 pontos** e não exige uma única conta. A Q2 vale **2,8** e usa cinco fórmulas que cabem num cartão.
+> **7,6 dos 10 pontos estão em M02 + M04 + M05.** Se o tempo acabar, ele acaba em M03, M06 e M07 — nunca nesses três.
+
+---
+
+## SÁBADO — 120 min · "As fórmulas e o que elas fazem"
+
+| Bloco | min | O que fazer | Entregável de saída |
+|---|---|---|---|
+| **S1 — Diagnóstico** | 10 | Sem consultar nada, escreva de memória: as 5 características do radar de pulso e o que **cada uma** afeta no desempenho. Depois confira contra `formula-sheet.md` §1. | Lista de acertos/erros = seu mapa de ataque |
+| **S2 — M01 teoria** | 20 | Ler as aulas 1.1 a 1.5 do **M01 — Fundamentos do radar de pulso**. Foco absoluto em **d = c·t/2** e na milha radar. | Saber converter µs↔m↔mn nos dois sentidos |
+| **S3 — M01 prática** | 20 | Resolver os exercícios do M01 na área de questões e conferir os gabaritos comentados. | ≥ 6/8. Abaixo disso, reler 1.3 e 1.4 |
+| **S4 — M02 teoria** | 30 | Apostila **1-9 a 1-18** + `SUE6.1` **pelo arquivo .odp** (o .pdf está truncado — ver D-01). Construir o cartão das 5 fórmulas: PSD, R_mín, R_máx, P_méd, N_B. | `formula-sheet.md` §2 escrito à mão |
+| **S5 — Q2 integral** | 30 | Resolver a **Questão 2 da SOPA T2 2024 inteira** (7 itens) com a folha em branco, cronometrando. Depois comparar com a rubrica oficial. | 7/7. Este é o item de maior retorno por minuto do fim de semana |
+| **S6 — Fechamento** | 10 | Escrever, numa linha cada, as pegadinhas P-01 a P-07 do `course-map.md`. | Cartão de pegadinhas |
+
+**Checklist de encerramento do sábado** — só encerre se responder "sim" a todas:
+- [ ] Converto 412 µs em metros e em milhas náuticas sem consultar nada?
+- [ ] Sei, sem pensar, que PSD usa LP **máxima** e R_mín usa LP **mínima**?
+- [ ] Converto 18 RPM em °/s de cabeça?
+- [ ] Sei que P_méd = P_pico × LP × FRP?
+
+---
+
+## DOMINGO — 120 min · "Quem faz o quê, e a energia"
+
+| Bloco | min | O que fazer | Entregável de saída |
+|---|---|---|---|
+| **D1 — Aquecimento** | 10 | Refazer **de memória** 3 itens da Q2 de sábado. Se travar, o problema é fórmula, não conta. | Confirmação de retenção |
+| **D2 — M03+M04 funcional** | 35 | **Não estude circuito.** Estude **função de bloco**. Para cada um dos 12 blocos da Q1 (modulador, oscilador, sincronizador, CAF, misturador, OL, amplif. FI, CAG, detector de vídeo, STC, FTC, chave de antena), escreva **uma frase**: "este bloco faz ___ e determina ___". | Tabela de 12 linhas |
+| **D3 — Q1 integral** | 25 | Resolver a **Questão 1 da SOPA T2 2024** (16 afirmativas) sem consulta. Corrigir. Para cada erro, voltar à frase do bloco em D2 e reescrevê-la. | 16/16. Vale 4,8 pontos |
+| **D4 — M05 fluxo** | 15 | Percorrer o diagrama de blocos (`SUE6.9a10`) **seguindo o sinal**: antena → chave → misturador → FI → detector → vídeo → indicador. Em paralelo: sincronizador → modulador → oscilador → chave → antena. | Desenhar o diagrama de memória |
+| **D5 — M06 equação radar** | 25 | Seção 3 do **Resumo geral** + módulo **M06 — Equação radar**. Fazer o **Exemplo 6.4** (a própria Q3a) e depois os dois exercícios essenciais: `CAL-N3-005` (conversões) e `CAL-N4-008` (MAGE). | Acertar a 4ª raiz, os dois passos do dBm e o caminho de ida |
+| **D6 — Revisão final** | 10 | Ler `common-errors.md` inteiro em voz alta. Reler o cartão de pegadinhas. | Encerrado |
+
+**Checklist final antes de fechar o caderno:**
+- [ ] Digo a função dos 12 blocos sem hesitar?
+- [ ] Distingo CAF (frequência, controla o OL) de CAG (ganho, controla o amplif. FI)?
+- [ ] Distingo STC (mar, perto, ganho cresce com o tempo) de FTC (chuva, superposição de ecos)?
+- [ ] −80 dBm são quantos watts?
+- [ ] MAGE: 4πR² ou (4π)²R⁴?
+- [ ] Q4: LP afeta **duas** coisas; FRP, feixe e potência afetam **uma** cada?
+
+---
+
+## Plano expandido — se sobrar tempo, nesta ordem
+
+1. **+30 min** — Simulado A (consolidação N3), estrutura idêntica à T2 2024.
+2. **+30 min** — M05 completo: chave de antena (TR/ATR, duplexer balanceado, circulador) e indicador (tipo-A × PPI).
+3. **+25 min** — M03 detalhado: modulador tipo linha, RFP, thyratron, magnetron. Vale se a banca fugir do funcional para o construtivo.
+4. **+25 min** — Simulado B (N3/N4).
+5. **+20 min** — M07: faça **só** o `COR-N3-001` (classificação pulso × CW — é o único item de M07 dentro do Capítulo 1) e leia as seções **Integração final** e **Protocolo de prova**. O resto de M07 é Capítulo 2 e 4, **posterior à T2**.
+6. **+40 min** — Simulado C (N4 de segurança).
+
+## Regra de abandono — o que largar sem culpa
+
+Abandone **temporariamente**, nesta ordem, se o tempo apertar:
+
+| Largar | Por quê | Custo máximo |
+|---|---|---|
+| Detalhes construtivos da magnetron (campos, raio do elétron, cavidades) | A T2 2024 cobrou o oscilador **funcionalmente** ("determina a portadora", "se autoexcitado dispensa amplificador") | ~0,6 pt |
+| Circuito interno do misturador (T-mágico, cristais, λ/4) | Cobrado como função, não como topologia | ~0,3 pt |
+| Ruído quantitativo (kTB_n, figura de ruído em cascata) | Não apareceu na T2 2024 | ~0,4 pt |
+| Marcas de distância móvel, indicador sintético, fusão de dados | Periférico ao diagrama de blocos | ~0,3 pt |
+| Capítulo II inteiro (CW, MTI, rastreamento) | O professor indicou **Capítulo 1** | ~0,4 pt |
+| SONAR, IFF, radiogoniômetro | Fora do escopo declarado da T2 | 0 |
+
+**Nunca largue:** as 5 fórmulas de M02, as 12 funções de bloco, as conversões dB/dBm, e a 4ª raiz.
+
+## Momento recomendado para os simulados
+
+- **Simulado A** — domingo, só **depois** de D3. Simulado antes de cobertura mede ansiedade, não domínio.
+- **Simulado B** — segunda de manhã, se houver ≥ 45 min livres.
+- **Simulado C** — apenas se A e B fecharem acima de 8,0. Abaixo disso, o retorno está em refazer os erros de A, não em ver questão nova.
+
+
+---
+
+## Onde entram os três simulados
+
+| Momento | Simulado | Duração | Condição para fazer |
+|---|---|---|---|
+| **Depois de fechar M01–M06** | **A — Consolidação** (N3) | 100 min | Não espere M07. Se tirar &lt; 6,0, **não avance** — refaça M02 e M04 |
+| **Depois de ≥ 8,0 no A** | **B — Integração** (N3/N4) | 110 min | Se tirar &lt; 5,5, volte ao A |
+| **2 dias antes da prova** | **C — Segurança** (N4) | 120 min | Deliberadamente mais difícil que a T2. **6,5 a 7,9 é faixa normal e boa** |
+| **Véspera** | nenhum | 15 min | Só a **Revisão final** de M07 e o **Protocolo de prova** |
+
+**Condições que tornam a medida válida:** cronometrado, num bloco só, sem consultar nada, em folha à parte, escrevendo **fórmula → substituição → resultado**, com a linha "Resposta:" preenchida **com unidade** e **nada em branco** na Q1.
+
+**Regra da véspera:** não se aprende conteúdo novo em 24 horas — se aprende a **não errar o que já se sabe**. Na véspera, só revisão e protocolo.
+
+O procedimento completo de correção e diagnóstico está no módulo **M08 — Simulados e protocolo final**.

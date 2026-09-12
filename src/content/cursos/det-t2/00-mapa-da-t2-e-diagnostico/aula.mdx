@@ -1,42 +1,120 @@
 ---
-titulo: "Mapa da T2 e diagnóstico — aula"
+titulo: "Auditoria das fontes e perfil da banca — aula"
 secao: "aula"
 secaoOrdem: 2
 ---
+> **Este é o módulo zero: ele não ensina radar. Ele diz em que você pode confiar.** Leia-o antes de M01 e volte a ele sempre que quiser saber a origem de uma afirmação. Tempo: 25 minutos.
 
-## Estrutura observada na T2 de 2024
+## Posição na trilha
 
-| Questão | Formato | Pontos | O que exigiu |
-|---|---|---:|---|
-| Q1 | Correlação entre blocos e afirmativas | 4,8 | Reconhecimento literal e funcional de blocos; alternativas podiam se repetir |
-| Q2 | Problema encadeado | 2,8 | Sete resultados a partir de parâmetros com valores duplos |
-| Q3 | Equação radar avançada | 0,8 | Conversões, ganho, área efetiva, alcance e MAGE |
-| Q4 | Conceitual | 1,6 | Relações curtas entre características e desempenho |
+`**M00** → M01 → M02 → M03 → M04 → M05 → M06 → M07 → M08`
 
-Na prova analisada, **76% da nota** concentrou-se em reconhecimento funcional de blocos e cálculo encadeado. Isso explica por que M02 e M04 recebem prioridade máxima na trilha.
+---
 
-## Assinatura de cobrança identificada
+## 1. O que foi auditado
 
-- cada item recebeu pontuação isolada;
-- o desenvolvimento mostrou fórmula, substituição e resultado;
-- itens com “justifique” exigiram uma justificativa curta;
-- a rubrica adotou `c = 3 × 10⁸ m/s`;
-- as unidades de saída variaram deliberadamente entre km, m, W, kW, pulsos e µW;
-- houve cobrança literal da função de blocos, combinada com interpretação dos parâmetros adequados.
+**134 arquivos registrados**, um por linha, em `source-audit.md` — com caminho, nome exato, formato, ID do Drive, condição de leitura, assunto, papel, módulo de destino, prioridade e relação de duplicata. Nenhum foi ignorado silenciosamente; os que não puderam ser lidos estão nomeados.
 
-## Rota progressiva
+| Condição | Qtd |
+|---|---|
+| **LIDO** — conteúdo extraído e ingerido | **20** |
+| VERIF — metadados confirmados, conteúdo não extraído | 23 |
+| NÃO-LIDO — registrado, conteúdo não extraído | 91 |
 
-| Etapa | Situação atual | Função na aprendizagem |
+**Por que 91 continuam não lidos, e por que isso não é buraco de conteúdo.** A grande maioria é **duplicata de formato** (o mesmo deck em `.pdf`, `.pptx` e `.odp`), **cópia em outra pasta** (`P2/Aulas P2/…`) ou **material de SONAR e ecobatimetria**, fora do escopo da T2 por indicação formal do professor. Depois dos 20 lidos, **todo o Capítulo 1 acessível da apostila e todos os decks de radar** estão cobertos.
+
+**Regra que nunca foi quebrada:** duplicata de formato **nunca** foi contada como confirmação independente. Quando o `.pdf` e o `.odp` do mesmo deck concordam, isso é **um** testemunho, não dois.
+
+---
+
+## 2. A hierarquia de fontes usada em todo o curso
+
+1. **Slides da Escola Naval** (`SUE…`) — a voz do professor, e o que ele efetivamente apresentou
+2. **Apostila `apostila_DET_2022.pdf`, Capítulo 1** — a redação oficial
+3. Demais materiais da EN
+4. **Provas anteriores** (`SOPA DET T2 2024`, `SOPA DET T1 2024`) — o padrão de cobrança
+5. Skolnik · 6. Boylestad · 7. Fontes externas — **apenas ratificação**, nunca substituição
+
+**Terminologia:** a da Escola Naval, sempre. Onde a literatura usa outro nome, o nome da EN vem primeiro e o outro entre parênteses.
+
+---
+
+## 3. O perfil da banca — o que a T2 2024 provou
+
+| Questão | Tipo | Pontos | Itens | Módulos que respondem |
+|---|---|---|---|---|
+| **1ª** | Correlação: 12 blocos × 16 afirmativas | **4,8** | 16 × 0,3 | M03, M04, M05 |
+| **2ª** | Problema encadeado com parâmetros pareados | **2,8** | 7 × 0,4 | M02 |
+| **3ª** | Equação radar + interceptação por MAGE | **0,8** | 2 × 0,4 | M06 |
+| **4ª** | Conceitual: efeito de cada característica | **1,6** | 4 × 0,4 | M02, M06 |
+
+**Níveis de exigência medidos na prova:** literalidade **ALTA** · cálculo **ALTA** · detalhismo **ALTO** · memorização funcional **ALTA** · integração **ALTA** · interpretação **MÉDIA/ALTA** · pegadinhas **MÉDIA/ALTA** · aplicação inédita **MÉDIA/ALTA**.
+
+**Três fatos que mudam a forma de estudar:**
+
+1. **`c = 3×10⁸ m/s` sempre.** A rubrica inteira usa esse valor, nunca `2,998×10⁸`.
+2. **Conteúdo que só existe em slide é cobrável.** STC e FTC não estão na parte acessível da apostila e responderam por **dois itens** da 1ª questão.
+3. **A rubrica mostra fórmula → substituição → resultado.** Entregar só o resultado é entregar parte da resposta.
+
+### Onde estão os pontos — a ordem de estudo que isso impõe
+
+| Módulo | Pontos que responde | Prioridade |
 |---|---|---|
-| M01 | Publicado | Constrói o princípio do radar e a relação `d = c·t/2` |
-| M02 | Publicado | Transforma as características do radar em grandezas calculáveis |
-| M03 | Publicado | Explica quem produz FRP, largura de pulso e portadora |
-| M04 | Publicado | Explica como o eco é recebido e processado |
-| M05 | Em produção | Integrará diagrama, chave de antena, indicador e controles |
-| M06 | Em produção | Desenvolverá a equação radar, ganho, sensibilidade e alcance |
-| M07 | Em produção | Fechará as adjacências e a integração final |
-| M08 | Em produção | Trará simulados completos e diagnóstico de prontidão |
+| **M02** características e desempenho | **4,4** (Q2 + Q4) | 🔴 máxima |
+| **M04** recepção | **2,4** (8 das 16 afirmativas da Q1) | 🔴 máxima |
+| **M03** transmissão | **1,5** (Q1) | 🟠 alta |
+| **M05** diagrama e controles | **0,9** (Q1) | 🟠 alta |
+| **M06** equação radar | **0,8** (Q3) | 🟡 média |
+| **M01** fundamentos | pré-requisito de tudo | 🟡 média |
+| **M07** adjacências | **0** direto — Capítulos 2 e 4 | 🟢 seguro |
 
-## Regra prática de estudo
+**M02 + M04 + M05 = 7,7 dos 10 pontos.** Se o tempo acabar, ele acaba em M03, M06 e M07 — nunca nesses três.
 
-Não memorize fórmulas como peças independentes. M01 mostra que `PSD`, `R_mín` e `R_máx` derivam da mesma relação distância–tempo; M02 muda apenas a interpretação do intervalo considerado. Em paralelo, M03 e M04 devem ser estudados perguntando sempre: **qual bloco faz o quê e qual característica ele determina ou controla?**
+---
+
+## 4. O que as fontes têm de errado — 10 divergências detectadas
+
+Todas estão detalhadas em `source-audit.md`. As que mudam o que você estuda:
+
+| ID | O que é | Como foi resolvida |
+|---|---|---|
+| **D-01** | O export PDF do `SUE6.1` está **truncado** em 8 slides — inclusive a fórmula de `N_B` e os dois slides de exercício que são os ancestrais diretos da Q1 de 2024 | Regra: **estude pelo `.odp`**. Testado depois em mais três decks: só o `SUE6.1` tem o problema |
+| **D-03** | O `SUE6.5` se contradiz internamente sobre o sinal da FI (`f_eco − f_OL` × `f_osc − f_eco`) | Resolvida pelo único exemplo numérico da apostila (p. 1-42) |
+| **D-06** | A rubrica da Q3b imprime *"188 W"*; o expoente foi perdido no OCR | Recalculado: **188 µW**. O número está certo, a unidade impressa está corrompida |
+| **D-08** | A própria apostila diz **1939** num ponto e **1940** noutro para a magnetron | As duas versões preservadas; nenhuma escolhida unilateralmente |
+
+**D-07 e D-10** são outras duas corrupções de OCR, detectadas e reparadas por derivação e verificação independente.
+
+---
+
+## 5. O que se perdeu — e o impacto declarado
+
+| Lacuna | O que é | Impacto |
+|---|---|---|
+| 🔴 **L-05** | A extração da apostila **termina na p. 1-69**, verificado duas vezes. Inacessíveis: Seção 7 (p. 1-70 a 1-75), **Seção 8** (p. 1-77 a 1-81, equação radar) e Seção 9 (p. 1-84 a 1-87) | **Médio.** Mitigado pelos slides `SUE6.6`, `SUE6.9a10` e `SUE6.11`, todos lidos integralmente, e pela rubrica oficial da Q3 |
+| 🔴 **L-06** | Os **7 problemas** do fim da Seção 8, para os quais o `SUE6.11` remete explicitamente | **Médio.** São os únicos exercícios da banca sobre equação radar. Substituídos por 12 exercícios originais em M06 |
+| 🟠 **L-04** | `SOPA DET P1 2021` e `P1 marinha det/*` não lidos | Baixo/médio. O perfil da banca se apoia em **2** provas lidas integralmente |
+| 🟡 **L-07** | 30 figuras localizadas, nenhuma extraída — o conector entrega texto, não imagem | Baixo. Os diagramas críticos foram **reconstruídos e declarados** como reconstrução |
+
+**Como fechar L-05 e L-06:** enviar as páginas **1-77 a 1-81** da apostila.
+
+---
+
+## 6. O que este curso entrega
+
+| Artefato | Conteúdo |
+|---|---|
+| **Módulos M01 a M07** | Teoria, exemplos, exercícios e gabaritos comentados por assunto |
+| **Banco de questões** | 72 exercícios de módulo, preservados com seus IDs públicos |
+| **Área de simulados** | Simulados A, B e C — 10,0 pontos cada, estrutura idêntica à T2 2024 |
+| `question-bank.json` | **72 exercícios** de módulo + **12 questões** de simulado, filtráveis |
+| `course-map.md` | Perfil da banca · 20 pegadinhas · matriz de 52 conceitos |
+| `formula-sheet.md` | Todas as fórmulas, por módulo |
+| `common-errors.md` | 8 blocos de erros comuns |
+| `study-plan-weekend.md` | O cronograma de fim de semana |
+| `source-audit.md` | Os 134 arquivos, as 10 divergências, as 8 lacunas |
+| `VALIDACAO_M0X.md` | Um relatório de validação por execução |
+
+---
+
+**Próximo:** `M01 — Fundamentos do radar de pulso`.
