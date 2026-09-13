@@ -49,7 +49,7 @@ export default function QuestaoCorrelacione({ questao, indice, onResponder }: Pr
               }`}
             >
               <span className="flex-1 text-sm text-nevoa">{item.texto}</span>
-              <div className="flex items-center gap-1.5">
+              <div className="flex max-w-full flex-wrap items-center gap-1.5">
                 {questao.chaves.map((c) => {
                   const sel = escolha === c.chave;
                   return (

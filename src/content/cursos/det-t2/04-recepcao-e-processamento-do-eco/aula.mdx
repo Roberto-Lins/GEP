@@ -52,6 +52,9 @@ E nenhuma das oito exigiu um cálculo. Todas cobraram **função de bloco**, com
 
 ---
 
+
+<FiguraFonte figura="sue6-5-p015" />
+
 ### C024 — O misturador e a FI
 ‹fonte: apostila_DET_2022.pdf p. 1-42, 1-44 a 1-46, figs. 1.5.3 a 1.5.5; SUE6.5 .odp slides 23–26› · criticidade: **crítica** · competências: explicar, calcular
 
@@ -70,6 +73,9 @@ $$
 
 **Por que o misturador precisa da proteção da TR** ‹p. 1-43›: *"o misturador pode ser, por exemplo, um cristal, que **por ser muito delicado facilmente seria danificado pelo pulso de transmissão**, não fosse a proteção proporcionada pela unidade TR"*. → Elo direto com a chave de antena de M05.
 
+
+<FiguraFonte figura="sue6-5-p024" />
+
 #### Misturador balanceado ‹p. 1-45/1-46›
 
 | Elemento | Geometria |
@@ -84,6 +90,12 @@ Variante com **T-mágico** ‹fig. 1.5.5›: *"em um dos diodos aparece a **soma
 
 ---
 
+
+<FiguraFonte figura="sue6-5-p025" />
+
+
+<FiguraFonte figura="sue6-5-p026" />
+
 ### C025 — O CAF (Controle Automático de Frequência)
 ‹fonte: apostila_DET_2022.pdf p. 1-43/1-44; SUE6.5 .odp slides 19–20› · criticidade: **crítica** · competências: explicar, analisar
 
@@ -95,22 +107,22 @@ Variante com **T-mágico** ‹fig. 1.5.5›: *"em um dos diodos aparece a **soma
 > **M03** deu as causas **internas** à válvula: temperatura (dilatação das cavidades), corrente anódica, ajuste da carga, salto de modo.
 > **M04** dá a causa **externa**: a antena **gira**, e ao girar muda sua impedância, mudando a carga vista pelo transmissor — que muda de frequência. É por isso que a deriva é **contínua e inevitável**, não um defeito. O CAF não conserta o transmissor: ele **persegue** o transmissor.
 
-**Composição** ‹p. 1-43›: **misturador do CAF + discriminador de frequência + circuito de controle**.
+**Composição:** amostras do transmissor e do OL alimentam o **misturador do CAF**; em seguida vêm o **amplificador de FI do CAF**, o **discriminador** e o **circuito de controle**, que atua sobre o OL ‹SUE6.5, páginas 18–19 do PDF›.
 
 **Como funciona** ‹p. 1-43/1-44 e SUE6.5›:
 
-```
-amostra do pulso TX ──► ATENUADOR ──┐
-                                    ├──► MISTURADOR ──► amplif. FI ──► DISCRIMINADOR ──► CIRCUITO ──► corrige o
-amostra do osc. local ──────────────┘        do CAF        do CAF                        DE CONTROLE   OSC. LOCAL
-```
-`Diagrama didático reconstruído a partir das fontes` — apostila p. 1-43 + `SUE6.5` slide 20.
+
+<FiguraFonte figura="sue6-5-p018" />
+
+
 
 | Situação | Saída do discriminador |
 |---|---|
 | Frequência **correta** | **nula** |
 | Desvio **positivo** | pulsos de uma polaridade |
 | Desvio **negativo** | pulsos da polaridade oposta |
+
+> **Nota de leitura da fonte:** o texto sobreposto na página 19 do PDF chama de “Misturador do CAF” o estágio de saída nula e pulsos de erro. A apostila, páginas impressas 1-43/1-44, atribui essa função ao **discriminador**; o próprio desenho do slide mostra misturador, FI, discriminador e controle como blocos distintos. Preserve essa diferença ao comparar os materiais.
 
 O circuito de controle *"determinará a variação de frequência do **OL** para recolocar a frequência intermediária no seu valor correto"*.
 
@@ -137,6 +149,9 @@ O circuito de controle *"determinará a variação de frequência do **OL** para
 > | Circuito | filtro RC de realimentação negativa | MV monoestável + carga/descarga de `C₁` |
 
 ---
+
+
+<FiguraFonte figura="sue6-5-p021" />
 
 ### C027 — O amplificador de FI e a banda passante
 ‹fonte: apostila_DET_2022.pdf p. 1-42, 1-43, 1-50; SUE6.5 .odp slides 16, 31–32› · criticidade: **crítica** · competências: calcular, interpretar
@@ -178,6 +193,12 @@ Daí os valores de compromisso usuais: **30 MHz ou 60 MHz**.
 
 ---
 
+
+<FiguraFonte figura="sue6-5-p031" />
+
+
+<FiguraFonte figura="sue6-5-p036" />
+
 ### C028 — O detector de vídeo e o amplificador de vídeo
 ‹fonte: apostila_DET_2022.pdf p. 1-42, 1-50 a 1-54, 1-57, figs. 1.5.8 a 1.5.20; SUE6.5 .odp slides 38–51› · criticidade: **crítica** · competências: explicar
 
@@ -199,6 +220,12 @@ Daí os valores de compromisso usuais: **30 MHz ou 60 MHz**.
 **Circuito de marca de proa** ‹p. 1-54›: um MV é disparado *"desde que as **cames na antena** abram o circuito para a terra, no instante em que a antena passa pela **proa**"*; oscila na ordem de **100 kHz**.
 
 ---
+
+
+<FiguraFonte figura="sue6-5-p039" />
+
+
+<FiguraFonte figura="sue6-5-p050" />
 
 ### C029 — O STC (Controle de Sensibilidade com o Tempo)
 ‹fonte: apostila_DET_2022.pdf p. 1-55/1-56, fig. 1.5.17 e 1.5.21; SUE6.5 .odp slides 52–54› · criticidade: **crítica** · competências: explicar, analisar
@@ -227,6 +254,9 @@ Daí os valores de compromisso usuais: **30 MHz ou 60 MHz**.
 
 ---
 
+
+<FiguraFonte figura="sue6-5-p053" />
+
 ### C030 — O FTC (Circuito de Constante de Tempo Rápida)
 ‹fonte: apostila_DET_2022.pdf p. 1-56/1-57, figs. 1.5.18 e 1.5.19, 1.5.22; SUE6.5 .odp slides 55–57› · criticidade: **crítica** · competências: explicar
 
@@ -247,6 +277,9 @@ Daí os valores de compromisso usuais: **30 MHz ou 60 MHz**.
 > | Palavra da banca | *"reduz o ganho nas distâncias menores"* | *"reduz o efeito da **superposição de ecos**"* |
 
 ---
+
+
+<FiguraFonte figura="sue6-5-p056" />
 
 ### C031 — O ruído no receptor
 ‹fonte: apostila_DET_2022.pdf p. 1-47 a 1-49, fig. 1.5.6; SUE6.5 .odp slide 27› · criticidade: **alta** · competências: calcular, interpretar
@@ -269,7 +302,13 @@ $$
 **Figura de ruído** ‹p. 1-48›:
 
 $$
-F_n = \frac{N_0}{k\,T_0\,B_n\,G} = \frac{S_i/N_i}{S_0/N_0}
+F_n = \frac{N_0}{k\,T_0\,B_n\,G}
+$$
+
+Equivalentemente, pela razão entre as relações sinal-ruído de entrada e saída:
+
+$$
+F_n = \frac{S_i/N_i}{S_0/N_0}
 $$
 
 *"é a razão entre o ruído na saída de um receptor **real** e o ruído na saída de um receptor **ideal**"* — e, equivalentemente, *"uma medida da **degradação da relação sinal-ruído**"*.
@@ -298,6 +337,9 @@ $$
 **Threshold** ‹SUE6.5 slide 29›: *"o nível rms do ruído afeta a probabilidade de detecção... A escolha do limiar de detecção determina a maior ou menor ocorrência de falsos positivos, falsos negativos e as detecções. Essa escolha é fruto de um **estudo estatístico**."*
 
 ---
+
+
+<FiguraFonte figura="sue6-5-p029" />
 
 ## Exemplos resolvidos
 

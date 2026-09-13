@@ -1,0 +1,31 @@
+---
+import figuras from '@data/cursos/det-t2/figuras.json';
+interface Props { figura: string }
+const { figura } = Astro.props;
+const item = figuras.find((entry) => entry.id === figura);
+if (!item) throw new Error(`Figura não cadastrada: ${figura}`);
+---
+<figure class="figura-fonte not-prose" id={`fig-${figura}`}>
+  <a class="imagem" href={item.arquivo_gerado} target="_blank" rel="noopener" aria-label={`Ampliar: ${item.legenda} (abre a imagem em outra aba)`}>
+    <img src={item.arquivo_gerado} alt={item.alt} width={item.largura} height={item.altura} loading="lazy" decoding="async" />
+    <span class="ampliar">Ampliar figura ↗</span>
+  </a>
+  <figcaption>
+    <strong>{item.legenda}</strong>
+    <p><b>Como ler:</b> {item.leitura}</p>
+    <small>{item.nivel_fidelidade === 'V1' ? 'Figura original' : 'Gráfico didático calculado a partir da fonte · V3'} · {item.arquivo_fonte} · {item.localizacao}</small>
+  </figcaption>
+</figure>
+<style>
+  .figura-fonte { margin: 1.8rem 0; border: 1px solid var(--border, #475569); border-radius: .8rem; overflow: hidden; }
+  .imagem { display: block; position: relative; background: #080b10; text-decoration: none; }
+  .imagem:focus-visible { outline: 3px solid #eab54d; outline-offset: -3px; }
+  img { display: block; width: 100%; height: auto; max-height: 760px; object-fit: contain; margin: 0 auto; }
+  .ampliar { display: block; padding: .6rem 1rem; color: #fff; background: #172235; font-size: .85rem; text-align: right; }
+  .figura-fonte figcaption { color: #cbd5e1; text-align: left; margin: 0; padding: 1rem 1.2rem; line-height: 1.6; }
+  figcaption strong { display: block; font-size: 1.05rem; }
+  figcaption p { margin: .5rem 0; font-size: .95rem; }
+  figcaption small { display: block; font-size: .78rem; opacity: .8; overflow-wrap: anywhere; }
+  @media (max-width: 640px) { .figura-fonte figcaption { color: #cbd5e1; text-align: left; margin: 0; padding: .9rem; } img { max-height: none; } }
+  @media print { .figura-fonte { break-inside: avoid; } .ampliar { display: none; } }
+</style>

@@ -14,7 +14,7 @@ Curso do **4º ano, 2º semestre, T2, CA-HE**, disponível na rota canônica `/d
 
 O conteúdo foi consolidado a partir do pacote completo fornecido por Roberto Lins, conferido contra as sete execuções cumulativas. Cada módulo preserva referências por página/slide, marcações de inferência pedagógica e conflitos entre fontes.
 
-As lacunas documentais declaradas pela própria fonte permanecem transparentes: duas páginas/problemas da apostila não estavam acessíveis e foram mitigados pelos slides; fontes SOPA antigas adicionais seriam apenas reforço opcional; e 30 figuras do corpus não foram extraídas, com os diagramas críticos reconstruídos em texto. O estado de realização pessoal dos simulados não é apresentado como conteúdo do curso.
+A revisão visual recuperou os bytes dos slides e da apostila completa (238 páginas). As antigas lacunas de extração L-05/L-06 foram resolvidas; os sete problemas originais estão em M06. L-07 foi tratada com figuras originais junto às aulas. Fontes SOPA antigas adicionais continuam como reforço opcional; não houve nova revisão do banco nem diagnóstico do aluno nesta atualização.
 
 ## Estrutura
 
@@ -33,4 +33,4 @@ As lacunas documentais declaradas pela própria fonte permanecem transparentes: 
 
 ## Assets
 
-O curso reutiliza a linguagem visual já aprovada para DET, com cópias próprias em `public/imagens/cursos/det-t2/` e `public/imagens/plataforma/cursos/det-t2.webp`. As figuras ausentes do pacote-fonte não foram substituídas por ilustrações inventadas; os diagramas essenciais aparecem como reconstruções textuais rastreáveis nos módulos.
+O curso reutiliza a linguagem visual já aprovada para DET, com cópias próprias em `public/imagens/cursos/det-t2/` e `public/imagens/plataforma/cursos/det-t2.webp`. As figuras acadêmicas estão em `public/imagens/cursos/det-t2/figuras/`, registradas em `src/data/cursos/det-t2/figuras.json` e apresentadas por `FiguraFonte.astro`. Capturas preservam conexões e sobreposições dos slides. O gráfico normalizado de alcance é calculado por código, com condições e origem explícitas.

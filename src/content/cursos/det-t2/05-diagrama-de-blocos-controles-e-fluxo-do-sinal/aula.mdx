@@ -70,6 +70,18 @@ $$\text{Isolação (dB)} = 10\log\frac{P_{pico}}{P_{tolerada}}$$
 
 ---
 
+
+<FiguraFonte figura="sue6-7-p024" />
+
+
+<FiguraFonte figura="sue6-7-p028" />
+
+
+<FiguraFonte figura="sue6-7-p029" />
+
+
+<FiguraFonte figura="sue6-7-p033" />
+
 ### C033 — O tempo de recuperação da TR e a distância mínima
 ‹fonte: SUE6.7, considerações finais e exercício 3; apostila p. 1-64, problema 3› · criticidade: **alta** · competências: calcular
 
@@ -116,50 +128,21 @@ $$\boxed{R_{mín} = \frac{c\,(LP + t_{rec})}{2}}$$
 
 ---
 
+
+<FiguraFonte figura="sue6-6-p019" />
+
+
+<FiguraFonte figura="sue6-6-p022" />
+
 ### C035 — O diagrama de blocos completo
 ‹fonte: SUE6.9a10 .odp (46 slides); composição dos blocos de M03 e M04› · criticidade: **crítica** · competências: integrar, analisar
 
-> 🔴 **Nota de fonte.** O deck `SUE6.9a10` apresenta o diagrama como **uma imagem** repetida slide a slide, com destaques progressivos. O canal de acesso extrai **texto, não imagem**. O diagrama abaixo é uma **reconstrução** montada a partir dos blocos e ligações que as fontes descrevem **em texto** — apostila Seções 3, 4, 5 e 6, mais os slides `SUE6.2a4`, `SUE6.5`, `SUE6.6` e `SUE6.7`. Cada ligação é rastreável; o desenho é meu.
+> **Leia em três passagens.** A figura abaixo é a imagem original embutida no ODP, agora recuperada. Primeiro acompanhe transmissão e recepção; depois as entradas dos indicadores; por último, CAF e controles. Os slides seguintes preservam os destaques e as setas adicionados pelo professor.
 
-```
-                         ┌──────────── amostra do pulso TX ────────────┐
-                         │                                             ▼
-   ┌──────────────┐   ┌──┴───────┐   ┌────────────┐              ┌──────────┐
-   │ SINCRONIZADOR│──►│ MODULADOR│──►│  OSCILADOR │              │ ATENUADOR│
-   │   (→ FRP)    │   │  (→ LP)  │   │(→ portadora)│              └────┬─────┘
-   └──────┬───────┘   └──────────┘   └─────┬──────┘                    ▼
-          │                                │              ┌────────────────────────┐
-          │                                ▼              │  MISTURADOR DO CAF  →  │
-          │                        ┌───────────────┐      │  amplif. FI do CAF  →  │
-          │                        │ CHAVE DE ANTENA│     │  DISCRIMINADOR      →  │
-          │                        │   (TR / ATR)   │     │  CIRC. DE CONTROLE     │
-          │                        └───┬────────┬───┘     └───────────┬────────────┘
-          │                            │        │                     │ corrige
-          │                          ANTENA     │                     ▼
-          │                            ▲        ▼               ┌───────────┐
-          │                            │   ┌─────────┐          │OSC. LOCAL │
-          │                          eco   │MISTURADOR│◄─────────┘───────────┘
-          │                                └────┬─────┘
-          │                                     ▼
-          │                             ┌────────────────┐◄──── CAG (nível médio CC)
-          │                             │ AMPLIF. DE FI  │◄──── STC (ganho × tempo)
-          │                             └───────┬────────┘
-          │                                     ▼
-          │                            ┌──────────────────┐
-          │                            │DETECTOR DE VÍDEO │
-          │                            └────────┬─────────┘
-          │                                     │ ◄── FTC (chave de acoplamento)
-          │                                     ▼
-          │        marca de proa ──────►┌──────────────────┐
-          │     marcas de distância ───►│AMPLIF. DE VÍDEO  │
-          │                             └────────┬─────────┘
-          │  pulso de sincronismo               ▼
-          └────────────────────────────►┌──────────────────┐
-                                        │    INDICADOR     │◄── posição da antena
-                                        │  (tipo-A / PPI)  │    (gerador-sincro)
-                                        └──────────────────┘
-```
-`Diagrama didático reconstruído a partir das fontes.`
+
+<FiguraFonte figura="sue6-9a10-p012" />
+
+
 
 **Os três agrupamentos que o professor destaca** ‹`SUE6.9a10`, slides 17–31›: **Transmissor**, **Receptor**, **Indicador** (tipo A e PPI).
 
@@ -181,6 +164,15 @@ $$\boxed{R_{mín} = \frac{c\,(LP + t_{rec})}{2}}$$
 
 ---
 
+
+<FiguraFonte figura="sue6-9a10-p021" />
+
+
+<FiguraFonte figura="sue6-9a10-p028" />
+
+
+<FiguraFonte figura="sue6-9a10-p043" />
+
 ### C036 — Os controles externos
 ‹fonte: SUE6.9a10 .odp, slides 32–42› · criticidade: **alta** · competências: reconhecer, explicar
 
@@ -198,6 +190,9 @@ $$\boxed{R_{mín} = \frac{c\,(LP + t_{rec})}{2}}$$
 
 ---
 
+
+<FiguraFonte figura="sue6-9a10-p038" />
+
 ### C044 — As antenas
 ‹fonte: SUE6.8› · criticidade: **moderada** · competências: reconhecer, explicar
 
@@ -212,6 +207,21 @@ $$\boxed{R_{mín} = \frac{c\,(LP + t_{rec})}{2}}$$
 > **Nota da fonte** ‹`SUE6.8`›: *"esta SUE **não é contemplada** em nossa apostila"*. Conteúdo só de slide — e, como a T2 2024 mostrou ao cobrar STC e FTC, isso **não** o torna menos cobrável.
 
 ---
+
+
+<FiguraFonte figura="sue6-8-p034" />
+
+
+<FiguraFonte figura="sue6-8-p035" />
+
+
+<FiguraFonte figura="sue6-8-p041" />
+
+
+<FiguraFonte figura="sue6-8-p052" />
+
+
+<FiguraFonte figura="sue6-8-p058" />
 
 ## Exemplos resolvidos
 
@@ -343,9 +353,9 @@ O diagrama de blocos é uma **abstração funcional**: como a própria apostila 
 |---|---|---|---|
 | `apostila_DET_2022.pdf` | **Seção 6, p. 1-61 a 1-64** | Chave de antena, duplexer ramal e balanceado, isolação, problemas | **Alta** — lido integralmente |
 | `apostila_DET_2022.pdf` | **Seção 7, p. 1-65 a 1-69** | Indicador, VRC, tipo-A, PPI, operação básica, sincronismo | **Alta na parte extraída** — **p. 1-70 a 1-75 NÃO extraídas** (L-05) |
-| `apostila_DET_2022.pdf` | **Seção 9, p. 1-84 a 1-87** | Diagrama de blocos, formas de onda, ganho e brilho | 🔴 **NÃO EXTRAÍDA** (L-05) — suprida pelo `SUE6.9a10` |
-| `SUE6.9a10-...odp` | 46 slides | Agrupamentos, controles externos, regra da temporização | **Alta** — lido integralmente; **sem truncamento** vs `.pdf`. Diagrama é **imagem**, não extraível |
+| `apostila_DET_2022.pdf` | **Seção 9, p. 1-84 a 1-87** | Diagrama de blocos, formas de onda, ganho e brilho | Fonte recuperada em bytes; figuras conferidas em conjunto com `SUE6.9a10` |
+| `SUE6.9a10-...odp` | 46 slides | Agrupamentos, controles externos, regra da temporização | **Alta** — lido integralmente; **sem truncamento** vs `.pdf`. Diagrama original recuperado e incorporado com ampliação |
 | `SUE6.7` · `SUE6.6` · `SUE6.8` | decks completos | Chave de antena, indicador, antenas | **Alta** — lidos integralmente |
 | `T2/SOPA DET T2 2024.pdf` | Q1, bloco **K** | Chave de antena = 0,3 ponto | **Alta** — rubrica oficial |
 
-**Marcações:** 5 × `[INFERÊNCIA PEDAGÓGICA]` · 1 × nota de reconstrução de diagrama · **1 × lacuna de fonte declarada (L-05)** · 0 × `[CONFLITO ENTRE FONTES]` novo · 0 × `[LACUNA DE COBERTURA]`.
+**Figuras:** originais dos slides, com arquivo, localização e leitura guiada nas legendas. As tabelas organizam as funções sem substituir as conexões dos esquemas.

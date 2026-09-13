@@ -1,0 +1,114 @@
+[
+  {
+    "mod": "01-fundamentos-do-radar-de-pulso",
+    "width": 1440,
+    "figures": 4,
+    "overflow": false,
+    "broken": [],
+    "errors": []
+  },
+  {
+    "mod": "02-caracteristicas-e-parametros-de-desempenho",
+    "width": 1440,
+    "figures": 7,
+    "overflow": false,
+    "broken": [],
+    "errors": []
+  },
+  {
+    "mod": "03-transmissao-e-formacao-do-pulso",
+    "width": 1440,
+    "figures": 15,
+    "overflow": false,
+    "broken": [],
+    "errors": []
+  },
+  {
+    "mod": "04-recepcao-e-processamento-do-eco",
+    "width": 1440,
+    "figures": 13,
+    "overflow": false,
+    "broken": [],
+    "errors": []
+  },
+  {
+    "mod": "05-diagrama-de-blocos-controles-e-fluxo-do-sinal",
+    "width": 1440,
+    "figures": 16,
+    "overflow": false,
+    "broken": [],
+    "errors": []
+  },
+  {
+    "mod": "06-equacao-radar-ganho-sensibilidade-e-alcance",
+    "width": 1440,
+    "figures": 7,
+    "overflow": false,
+    "broken": [],
+    "errors": []
+  },
+  {
+    "mod": "07-integracao-adjacencias-e-preparacao-final",
+    "width": 1440,
+    "figures": 14,
+    "overflow": false,
+    "broken": [],
+    "errors": []
+  },
+  {
+    "mod": "01-fundamentos-do-radar-de-pulso",
+    "width": 390,
+    "figures": 4,
+    "overflow": false,
+    "broken": [],
+    "errors": []
+  },
+  {
+    "mod": "02-caracteristicas-e-parametros-de-desempenho",
+    "width": 390,
+    "figures": 7,
+    "overflow": false,
+    "broken": [],
+    "errors": []
+  },
+  {
+    "mod": "03-transmissao-e-formacao-do-pulso",
+    "width": 390,
+    "figures": 15,
+    "overflow": false,
+    "broken": [],
+    "errors": []
+  },
+  {
+    "mod": "04-recepcao-e-processamento-do-eco",
+    "width": 390,
+    "figures": 13,
+    "overflow": false,
+    "broken": [],
+    "errors": []
+  },
+  {
+    "mod": "05-diagrama-de-blocos-controles-e-fluxo-do-sinal",
+    "width": 390,
+    "figures": 16,
+    "overflow": false,
+    "broken": [],
+    "errors": []
+  },
+  {
+    "mod": "06-equacao-radar-ganho-sensibilidade-e-alcance",
+    "width": 390,
+    "figures": 7,
+    "overflow": false,
+    "broken": [],
+    "errors": []
+  },
+  {
+    "mod": "07-integracao-adjacencias-e-preparacao-final",
+    "width": 390,
+    "figures": 14,
+    "overflow": false,
+    "broken": [],
+    "errors": []
+  }
+]

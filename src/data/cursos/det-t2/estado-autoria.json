@@ -1,0 +1,360 @@
+{
+  "versao": 1,
+  "curso": "det-t2",
+  "data": "2026-09-13",
+  "revisao_base": "1da95228feab9f71ce7af8e82724586180a9b087",
+  "tipo": "migracao_parcial_do_estado_real_para_autoria_visual",
+  "escopo": "Revisão de M03 e figuras das aulas M01–M07, sem nova geração de questões",
+  "ids_questoes": [
+    {
+      "id": "DET-M01-COR-MED-001",
+      "id_publico": "DET-T2-M01-COR-N3-001"
+    },
+    {
+      "id": "DET-M01-VF-MED-002",
+      "id_publico": "DET-T2-M01-VF-N3-002"
+    },
+    {
+      "id": "DET-M01-DIS-MED-003",
+      "id_publico": "DET-T2-M01-CAL-N3-003"
+    },
+    {
+      "id": "DET-M01-DIS-DIF-004",
+      "id_publico": "DET-T2-M01-DIA-N4-004"
+    },
+    {
+      "id": "DET-M01-COR-BAS-005",
+      "id_publico": "DET-T2-M01-COR-N3-005"
+    },
+    {
+      "id": "DET-M01-DIS-DIF-006",
+      "id_publico": "DET-T2-M01-CAL-N4-006"
+    },
+    {
+      "id": "DET-M01-VF-DIF-007",
+      "id_publico": "DET-T2-M01-VF-N4-007"
+    },
+    {
+      "id": "DET-M01-DIS-MB-008",
+      "id_publico": "DET-T2-M01-DIS-N4-008"
+    },
+    {
+      "id": "DET-M01-DIS-MB-009",
+      "id_publico": "DET-T2-M01-DIS-N4-009"
+    },
+    {
+      "id": "DET-M02-COR-MED-001",
+      "id_publico": "DET-T2-M02-COR-N3-001"
+    },
+    {
+      "id": "DET-M02-VF-MED-002",
+      "id_publico": "DET-T2-M02-VF-N3-002"
+    },
+    {
+      "id": "DET-M02-DIS-MED-003",
+      "id_publico": "DET-T2-M02-CAL-N3-003"
+    },
+    {
+      "id": "DET-M02-DIS-MED-004",
+      "id_publico": "DET-T2-M02-CAL-N3-004"
+    },
+    {
+      "id": "DET-M02-DIS-MED-005",
+      "id_publico": "DET-T2-M02-CAL-N3-005"
+    },
+    {
+      "id": "DET-M02-DIS-MED-006",
+      "id_publico": "DET-T2-M02-CAL-N3-006"
+    },
+    {
+      "id": "DET-M02-DIS-MED-007",
+      "id_publico": "DET-T2-M02-CAL-N3-007"
+    },
+    {
+      "id": "DET-M02-COR-BAS-008",
+      "id_publico": "DET-T2-M02-COR-N3-008"
+    },
+    {
+      "id": "DET-M02-DIS-DIF-009",
+      "id_publico": "DET-T2-M02-CAL-N4-009"
+    },
+    {
+      "id": "DET-M02-DIS-MB-010",
+      "id_publico": "DET-T2-M02-CAL-N4-010"
+    },
+    {
+      "id": "DET-M02-DIS-DIF-011",
+      "id_publico": "DET-T2-M02-DIA-N4-011"
+    },
+    {
+      "id": "DET-M02-DIS-MB-012",
+      "id_publico": "DET-T2-M02-CAL-N4-012"
+    },
+    {
+      "id": "DET-M02-DIS-MB-013",
+      "id_publico": "DET-T2-M02-DIS-N4-013"
+    },
+    {
+      "id": "DET-M02-VF-DIF-014",
+      "id_publico": "DET-T2-M02-VF-N4-014"
+    },
+    {
+      "id": "DET-M03-COR-MED-001",
+      "id_publico": "DET-T2-M03-COR-N3-001"
+    },
+    {
+      "id": "DET-M03-COR-BAS-002",
+      "id_publico": "DET-T2-M03-COR-N3-002"
+    },
+    {
+      "id": "DET-M03-VF-MED-003",
+      "id_publico": "DET-T2-M03-VF-N3-003"
+    },
+    {
+      "id": "DET-M03-DIS-MED-004",
+      "id_publico": "DET-T2-M03-CAL-N3-004"
+    },
+    {
+      "id": "DET-M03-DIS-MED-005",
+      "id_publico": "DET-T2-M03-CAL-N3-005"
+    },
+    {
+      "id": "DET-M03-DIS-MED-006",
+      "id_publico": "DET-T2-M03-DIA-N3-006"
+    },
+    {
+      "id": "DET-M03-DIS-DIF-007",
+      "id_publico": "DET-T2-M03-CAL-N4-007"
+    },
+    {
+      "id": "DET-M03-DIS-DIF-008",
+      "id_publico": "DET-T2-M03-DIA-N4-008"
+    },
+    {
+      "id": "DET-M03-DIS-MB-009",
+      "id_publico": "DET-T2-M03-DIS-N4-009"
+    },
+    {
+      "id": "DET-M04-COR-MED-001",
+      "id_publico": "DET-T2-M04-COR-N3-001"
+    },
+    {
+      "id": "DET-M04-COR-MED-002",
+      "id_publico": "DET-T2-M04-COR-N3-002"
+    },
+    {
+      "id": "DET-M04-COR-BAS-003",
+      "id_publico": "DET-T2-M04-COR-N3-003"
+    },
+    {
+      "id": "DET-M04-VF-MED-004",
+      "id_publico": "DET-T2-M04-VF-N3-004"
+    },
+    {
+      "id": "DET-M04-DIS-MED-005",
+      "id_publico": "DET-T2-M04-CAL-N3-005"
+    },
+    {
+      "id": "DET-M04-DIS-DIF-006",
+      "id_publico": "DET-T2-M04-CAL-N4-006"
+    },
+    {
+      "id": "DET-M04-DIS-MB-007",
+      "id_publico": "DET-T2-M04-CAL-N4-007"
+    },
+    {
+      "id": "DET-M04-DIS-MED-008",
+      "id_publico": "DET-T2-M04-DIA-N3-008"
+    },
+    {
+      "id": "DET-M04-DIS-DIF-009",
+      "id_publico": "DET-T2-M04-DIA-N4-009"
+    },
+    {
+      "id": "DET-M04-DIS-MB-010",
+      "id_publico": "DET-T2-M04-DIS-N4-010"
+    },
+    {
+      "id": "DET-M05-COR-MED-001",
+      "id_publico": "DET-T2-M05-COR-N3-001"
+    },
+    {
+      "id": "DET-M05-COR-MED-002",
+      "id_publico": "DET-T2-M05-COR-N3-002"
+    },
+    {
+      "id": "DET-M05-COR-BAS-003",
+      "id_publico": "DET-T2-M05-COR-N3-003"
+    },
+    {
+      "id": "DET-M05-COR-MED-004",
+      "id_publico": "DET-T2-M05-COR-N3-004"
+    },
+    {
+      "id": "DET-M05-VF-MED-005",
+      "id_publico": "DET-T2-M05-VF-N3-005"
+    },
+    {
+      "id": "DET-M05-DIS-MED-006",
+      "id_publico": "DET-T2-M05-CAL-N3-006"
+    },
+    {
+      "id": "DET-M05-DIS-MED-007",
+      "id_publico": "DET-T2-M05-CAL-N3-007"
+    },
+    {
+      "id": "DET-M05-DIS-DIF-008",
+      "id_publico": "DET-T2-M05-CAL-N4-008"
+    },
+    {
+      "id": "DET-M05-VF-DIF-009",
+      "id_publico": "DET-T2-M05-VF-N4-009"
+    },
+    {
+      "id": "DET-M05-DIS-DIF-010",
+      "id_publico": "DET-T2-M05-DIA-N4-010"
+    },
+    {
+      "id": "DET-M05-DIS-MB-011",
+      "id_publico": "DET-T2-M05-DIS-N4-011"
+    },
+    {
+      "id": "DET-M06-COR-MED-001",
+      "id_publico": "DET-T2-M06-COR-N3-001"
+    },
+    {
+      "id": "DET-M06-COR-BAS-002",
+      "id_publico": "DET-T2-M06-COR-N3-002"
+    },
+    {
+      "id": "DET-M06-COR-DIF-003",
+      "id_publico": "DET-T2-M06-COR-N4-003"
+    },
+    {
+      "id": "DET-M06-VF-MED-004",
+      "id_publico": "DET-T2-M06-VF-N3-004"
+    },
+    {
+      "id": "DET-M06-DIS-MED-005",
+      "id_publico": "DET-T2-M06-CAL-N3-005"
+    },
+    {
+      "id": "DET-M06-DIS-MED-006",
+      "id_publico": "DET-T2-M06-CAL-N3-006"
+    },
+    {
+      "id": "DET-M06-DIS-MED-007",
+      "id_publico": "DET-T2-M06-CAL-N3-007"
+    },
+    {
+      "id": "DET-M06-DIS-DIF-008",
+      "id_publico": "DET-T2-M06-CAL-N4-008"
+    },
+    {
+      "id": "DET-M06-DIS-MB-009",
+      "id_publico": "DET-T2-M06-CAL-N4-009"
+    },
+    {
+      "id": "DET-M06-DIS-MED-010",
+      "id_publico": "DET-T2-M06-DIA-N3-010"
+    },
+    {
+      "id": "DET-M06-DIS-DIF-011",
+      "id_publico": "DET-T2-M06-DIA-N4-011"
+    },
+    {
+      "id": "DET-M06-DIS-MB-012",
+      "id_publico": "DET-T2-M06-DIS-N4-012"
+    },
+    {
+      "id": "DET-M07-COR-MED-001",
+      "id_publico": "DET-T2-M07-COR-N3-001"
+    },
+    {
+      "id": "DET-M07-COR-MED-002",
+      "id_publico": "DET-T2-M07-COR-N3-002"
+    },
+    {
+      "id": "DET-M07-VF-MED-003",
+      "id_publico": "DET-T2-M07-VF-N3-003"
+    },
+    {
+      "id": "DET-M07-DIS-MED-004",
+      "id_publico": "DET-T2-M07-DIA-N3-004"
+    },
+    {
+      "id": "DET-M07-DIS-MED-005",
+      "id_publico": "DET-T2-M07-DIS-N3-005"
+    },
+    {
+      "id": "DET-M07-DIS-MED-006",
+      "id_publico": "DET-T2-M07-DIS-N3-006"
+    },
+    {
+      "id": "DET-M07-DIS-DIF-007",
+      "id_publico": "DET-T2-M07-DIS-N4-007"
+    },
+    {
+      "id": "DET-SG01-COR-MED-001",
+      "id_publico": "DET-T2-SIM-A-Q1"
+    },
+    {
+      "id": "DET-SG01-DIS-MED-002",
+      "id_publico": "DET-T2-SIM-A-Q2"
+    },
+    {
+      "id": "DET-SG01-DIS-MED-003",
+      "id_publico": "DET-T2-SIM-A-Q3"
+    },
+    {
+      "id": "DET-SG01-DIS-MED-004",
+      "id_publico": "DET-T2-SIM-A-Q4"
+    },
+    {
+      "id": "DET-SG02-COR-DIF-001",
+      "id_publico": "DET-T2-SIM-B-Q1"
+    },
+    {
+      "id": "DET-SG02-DIS-DIF-002",
+      "id_publico": "DET-T2-SIM-B-Q2"
+    },
+    {
+      "id": "DET-SG02-DIS-DIF-003",
+      "id_publico": "DET-T2-SIM-B-Q3"
+    },
+    {
+      "id": "DET-SG02-DIS-DIF-004",
+      "id_publico": "DET-T2-SIM-B-Q4"
+    },
+    {
+      "id": "DET-SG03-COR-MB-001",
+      "id_publico": "DET-T2-SIM-C-Q1"
+    },
+    {
+      "id": "DET-SG03-DIS-MB-002",
+      "id_publico": "DET-T2-SIM-C-Q2"
+    },
+    {
+      "id": "DET-SG03-DIS-MB-003",
+      "id_publico": "DET-T2-SIM-C-Q3"
+    },
+    {
+      "id": "DET-SG03-DIS-MB-004",
+      "id_publico": "DET-T2-SIM-C-Q4"
+    }
+  ],
+  "hash_banco": "6c0493e1675017dea0262c432a5f5b35a34795001e73debb6cfd800fef44ad4b",
+  "hash_checklists": "e7a3fc33184d7a4626e375c3e819d2984b13207d40dfc08f272eff8b17495e2d",
+  "inventario_figuras": "src/data/cursos/det-t2/figuras.json",
+  "lacunas_resolvidas": [
+    "L-05",
+    "L-06",
+    "L-07 (entrega visual do curso)"
+  ],
+  "pendencias_herdadas": [
+    "L-04: provas adicionais não lidas",
+    "L-08: diagnóstico depende de respostas do aluno"
+  ],
+  "revisao_claude": "não realizada nesta atualização",
+  "nota": "Este estado registra a revisão visual e os IDs reais do banco; não inventa histórico de tentativas dos alunos."
+}

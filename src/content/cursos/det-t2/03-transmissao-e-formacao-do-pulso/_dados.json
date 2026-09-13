@@ -4,8 +4,8 @@
   "titulo": "Transmissão e formação do pulso",
   "prioridade": "muito alta",
   "subtitulo": "Sincronizador, modulador, magnetron e arquiteturas de transmissor",
-  "tempoEstimado": "60 min",
-  "objetivo": "Associar sincronizador, modulador e oscilador às características que determinam, explicar a magnetron e a rede formadora de pulso e distinguir as arquiteturas de transmissor.",
+  "tempoEstimado": "80 min",
+  "objetivo": "Associar sincronizador, modulador e oscilador às características que determinam e explicar, por meio de formas de onda e do circuito construído por funções, a magnetron, a RFP e as arquiteturas de transmissor.",
   "palavrasChave": [
     "sincronizador",
     "modulador",
