@@ -39,7 +39,12 @@ function escreverMateria(dir: string, titulo: string, dados: Record<string, unkn
   for (const [arquivo, secao, ordem] of SECOES) {
     writeFileSync(
       join(dir, `${arquivo}.mdx`),
-      mdx(`${titulo} — ${arquivo}`, secao, ordem, `_TODO: conteúdo de ${arquivo}._`),
+      mdx(
+        `${titulo} — ${arquivo}`,
+        secao,
+        ordem,
+        `_TODO: conteúdo de ${arquivo}._\n\n<!-- Fórmulas: use $...$ (inline) e $$...$$ (bloco). Ver docs/MATH-NOTATION.md. -->`,
+      ),
     );
   }
   writeFileSync(join(dir, '_dados.json'), JSON.stringify(dados, null, 2) + '\n');
@@ -77,7 +82,15 @@ const revSecoes: Array<[string, string, number]> = [
   ['revisao-de-vespera', 'revisao-de-vespera', 4],
 ];
 for (const [arquivo, secao, ordem] of revSecoes) {
-  writeFileSync(join(revDir, `${arquivo}.mdx`), mdx(`Revisão — ${arquivo}`, secao, ordem, `_TODO: ${arquivo}._`));
+  writeFileSync(
+    join(revDir, `${arquivo}.mdx`),
+    mdx(
+      `Revisão — ${arquivo}`,
+      secao,
+      ordem,
+      `_TODO: ${arquivo}._\n\n<!-- Fórmulas: use $...$ (inline) e $$...$$ (bloco). Ver docs/MATH-NOTATION.md. -->`,
+    ),
+  );
 }
 writeFileSync(join(revDir, '_dados.json'), JSON.stringify({
   ordem: 99, slug: '99-revisao-final', titulo: 'Revisão final', prioridade: 'máxima',
@@ -98,4 +111,5 @@ console.log('Próximos passos:');
 console.log(`  1. Edite ${contentDir}/_config.json (título, categoria, ordem, temaVisual, features).`);
 console.log(`  2. Preencha as mini-matérias (.mdx + _dados.json) e adicione novas pastas NN-....`);
 console.log(`  3. Preencha os dados em ${dataDir}/ (timeline, exercicios, checklists, midias, fontes).`);
-console.log(`  4. Rode: npm run validate-content`);
+console.log('  4. Fórmulas: use LaTeX com $...$ / $$...$$; nunca pseudocódigo linear.');
+console.log('  5. Rode: npm run validate-math && npm run validate-content && npm run build');
