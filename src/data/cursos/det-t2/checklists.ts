@@ -55,9 +55,9 @@ export const checklists: Record<string, ItemChecklist[]> = {
     { id: 'c11', texto: 'Explico a função dos straps.' },
     { id: 'c12', texto: 'Aplico f = E/(nBd) com n adequado ao modo.' },
     { id: 'c13', texto: 'Diferencio os dois métodos de sintonia da magnetron.' },
-    { id: 'c14', texto: 'Uso LP = T e E/2 na carga casada da RFP.' },
-    { id: 'c15', texto: 'Explico a função dos componentes do modulador tipo linha.' },
-    { id: 'c16', texto: 'Relaciono a forma do pulso às grandezas de desempenho.' },
+    { id: 'c14', texto: 'Deduzo LP = T pela ida e volta na linha e E/2 pelo casamento da RFP.' },
+    { id: 'c15', texto: 'Reconstruo o modulador tipo linha explicando o problema resolvido por cada componente.' },
+    { id: 'c16', texto: 'Comparo a descarga exponencial com o pulso da RFP e relaciono pórticos e patamar ao desempenho.' },
   ],
   '04-recepcao-e-processamento-do-eco': [
     { id: 'c01', texto: 'Nomeio os seis estágios do receptor super-heteródino e a função de cada um.' },

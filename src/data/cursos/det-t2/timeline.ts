@@ -42,9 +42,9 @@ export const timeline: TopicoTimeline[] = [
     titulo: 'Transmissão e formação do pulso',
     subtitulo: 'Sincronizador, modulador, magnetron e arquiteturas de transmissor',
     prioridade: 'muito alta',
-    tempoEstimado: '60 min',
+    tempoEstimado: '80 min',
     statusInicial: 'pendente',
-    objetivo: 'Associar os blocos do transmissor às características que determinam e explicar magnetron, RFP e arquiteturas de transmissão.',
+    objetivo: 'Associar os blocos do transmissor às características que determinam e explicar, por meio de formas de onda e do circuito construído por funções, magnetron, RFP e arquiteturas de transmissão.',
     palavrasChave: ['sincronizador', 'modulador', 'magnetron', 'RFP', 'FRP', 'largura de pulso'],
   },
   {
