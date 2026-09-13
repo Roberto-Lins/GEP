@@ -1,0 +1,1519 @@
+[
+  {
+    "id": "sue6-1-p049",
+    "arquivo_fonte": "SUE6.1-radar_de_pulso-intro&caracteristicas.pdf",
+    "sha256_fonte": "e28aa8c9f703b1c941275188b028d1b017990763ab8f10bf94570b5331af5f14",
+    "pagina_pdf": 49,
+    "localizacao": "página 49 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-1-p049.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Pulso transmitido e intervalo de recepção",
+    "alt": "Localize os pequenos trens de senoides: cada trem é um pulso de RF. Entre eles, o transmissor fica inativo e o radar pode receber ecos.",
+    "leitura": "Localize os pequenos trens de senoides: cada trem é um pulso de RF. Entre eles, o transmissor fica inativo e o radar pode receber ecos.",
+    "modulos": [
+      "M01"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-1-p027",
+    "arquivo_fonte": "SUE6.1-radar_de_pulso-intro&caracteristicas.pdf",
+    "sha256_fonte": "e28aa8c9f703b1c941275188b028d1b017990763ab8f10bf94570b5331af5f14",
+    "pagina_pdf": 27,
+    "localizacao": "página 27 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-1-p027.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Do cenário à posição na tela",
+    "alt": "Compare os alvos à esquerda com os ecos no indicador à direita. O atraso fornece distância; a orientação da antena fornece marcação.",
+    "leitura": "Compare os alvos à esquerda com os ecos no indicador à direita. O atraso fornece distância; a orientação da antena fornece marcação.",
+    "modulos": [
+      "M01"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-1-p028",
+    "arquivo_fonte": "SUE6.1-radar_de_pulso-intro&caracteristicas.pdf",
+    "sha256_fonte": "e28aa8c9f703b1c941275188b028d1b017990763ab8f10bf94570b5331af5f14",
+    "pagina_pdf": 28,
+    "localizacao": "página 28 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-1-p028.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Organização básica do radar de pulso",
+    "alt": "Comece no sincronizador: um ramo comanda o transmissor e outro o indicador. A chave compartilha a antena entre transmissão e recepção; o receptor envia vídeo ao indicador.",
+    "leitura": "Comece no sincronizador: um ramo comanda o transmissor e outro o indicador. A chave compartilha a antena entre transmissão e recepção; o receptor envia vídeo ao indicador.",
+    "modulos": [
+      "M01"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-1-p021",
+    "arquivo_fonte": "SUE6.1-radar_de_pulso-intro&caracteristicas.pdf",
+    "sha256_fonte": "e28aa8c9f703b1c941275188b028d1b017990763ab8f10bf94570b5331af5f14",
+    "pagina_pdf": 21,
+    "localizacao": "página 21 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-1-p021.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Pulso e onda contínua",
+    "alt": "Compare a presença de intervalos sem transmissão no radar de pulso com a senoide contínua do CW. O desenho representa o método de transmissão.",
+    "leitura": "Compare a presença de intervalos sem transmissão no radar de pulso com a senoide contínua do CW. O desenho representa o método de transmissão.",
+    "modulos": [
+      "M01"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-2a4-p056",
+    "arquivo_fonte": "SUE6.2a4-radar_de_pulso-transmissor.pdf",
+    "sha256_fonte": "a7ab50b556cd09b02d206d297924f4fd7632f7a1bb7462c10c5e6061f9a1372f",
+    "pagina_pdf": 56,
+    "localizacao": "página 56 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-2a4-p056.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "LP, TRP e portadora no mesmo cronograma",
+    "alt": "Leia as três linhas no mesmo eixo de tempo: disparos do sincronizador, pulsos de tensão do modulador e trens senoidais do oscilador. LP é a duração de um trem; TRP é o intervalo entre inícios.",
+    "leitura": "Leia as três linhas no mesmo eixo de tempo: disparos do sincronizador, pulsos de tensão do modulador e trens senoidais do oscilador. LP é a duração de um trem; TRP é o intervalo entre inícios.",
+    "modulos": [
+      "M02",
+      "M03"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-1-p044",
+    "arquivo_fonte": "SUE6.1-radar_de_pulso-intro&caracteristicas.pdf",
+    "sha256_fonte": "e28aa8c9f703b1c941275188b028d1b017990763ab8f10bf94570b5331af5f14",
+    "pagina_pdf": 44,
+    "localizacao": "página 44 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-1-p044.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Comprimento de onda e interação com o alvo",
+    "alt": "Compare os comprimentos de onda desenhados com o tamanho dos corpos. A fonte usa essa comparação para discutir reflexão e difração; não é uma escala numérica.",
+    "leitura": "Compare os comprimentos de onda desenhados com o tamanho dos corpos. A fonte usa essa comparação para discutir reflexão e difração; não é uma escala numérica.",
+    "modulos": [
+      "M02"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-1-p052",
+    "arquivo_fonte": "SUE6.1-radar_de_pulso-intro&caracteristicas.pdf",
+    "sha256_fonte": "e28aa8c9f703b1c941275188b028d1b017990763ab8f10bf94570b5331af5f14",
+    "pagina_pdf": 52,
+    "localizacao": "página 52 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-1-p052.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Separação de dois ecos em distância",
+    "alt": "Compare as duas larguras de pulso e suas apresentações no indicador. Pulsos que se sobrepõem impedem distinguir dois alvos na mesma marcação.",
+    "leitura": "Compare as duas larguras de pulso e suas apresentações no indicador. Pulsos que se sobrepõem impedem distinguir dois alvos na mesma marcação.",
+    "modulos": [
+      "M02"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-1-p063",
+    "arquivo_fonte": "SUE6.1-radar_de_pulso-intro&caracteristicas.pdf",
+    "sha256_fonte": "e28aa8c9f703b1c941275188b028d1b017990763ab8f10bf94570b5331af5f14",
+    "pagina_pdf": 63,
+    "localizacao": "página 63 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-1-p063.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Por que existe uma distância mínima",
+    "alt": "Siga o retorno do eco do alvo próximo. Se ele chega durante a transmissão, encontra o receptor ainda protegido pela chave de antena.",
+    "leitura": "Siga o retorno do eco do alvo próximo. Se ele chega durante a transmissão, encontra o receptor ainda protegido pela chave de antena.",
+    "modulos": [
+      "M02"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-1-p071",
+    "arquivo_fonte": "SUE6.1-radar_de_pulso-intro&caracteristicas.pdf",
+    "sha256_fonte": "e28aa8c9f703b1c941275188b028d1b017990763ab8f10bf94570b5331af5f14",
+    "pagina_pdf": 71,
+    "localizacao": "página 71 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-1-p071.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Eco atrasado e segunda varredura",
+    "alt": "Comece no pulso transmitido e siga o eco que chega após o disparo seguinte. O indicador o associa ao ciclo atual e mostra uma distância ambígua.",
+    "leitura": "Comece no pulso transmitido e siga o eco que chega após o disparo seguinte. O indicador o associa ao ciclo atual e mostra uma distância ambígua.",
+    "modulos": [
+      "M02"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-1-p083",
+    "arquivo_fonte": "SUE6.1-radar_de_pulso-intro&caracteristicas.pdf",
+    "sha256_fonte": "e28aa8c9f703b1c941275188b028d1b017990763ab8f10bf94570b5331af5f14",
+    "pagina_pdf": 83,
+    "localizacao": "página 83 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-1-p083.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Separação em marcação",
+    "alt": "Compare os dois alvos com a abertura do feixe amarelo. A largura angular do feixe limita a capacidade de separá-los na mesma distância.",
+    "leitura": "Compare os dois alvos com a abertura do feixe amarelo. A largura angular do feixe limita a capacidade de separá-los na mesma distância.",
+    "modulos": [
+      "M02"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-1-p084",
+    "arquivo_fonte": "SUE6.1-radar_de_pulso-intro&caracteristicas.pdf",
+    "sha256_fonte": "e28aa8c9f703b1c941275188b028d1b017990763ab8f10bf94570b5331af5f14",
+    "pagina_pdf": 84,
+    "localizacao": "página 84 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-1-p084.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Tempo de iluminação e número de ecos",
+    "alt": "Identifique largura do feixe, velocidade de rotação e FRP na expressão da fonte. O número de pulsos depende do tempo em que o feixe permanece sobre o alvo.",
+    "leitura": "Identifique largura do feixe, velocidade de rotação e FRP na expressão da fonte. O número de pulsos depende do tempo em que o feixe permanece sobre o alvo.",
+    "modulos": [
+      "M02"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-2a4-p022",
+    "arquivo_fonte": "SUE6.2a4-radar_de_pulso-transmissor.pdf",
+    "sha256_fonte": "a7ab50b556cd09b02d206d297924f4fd7632f7a1bb7462c10c5e6061f9a1372f",
+    "pagina_pdf": 22,
+    "localizacao": "página 22 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-2a4-p022.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Os três blocos do transmissor",
+    "alt": "Siga sincronizador, modulador e oscilador. As pequenas formas de onda mostram a diferença entre disparo, pulso de modulação e sinal de RF.",
+    "leitura": "Siga sincronizador, modulador e oscilador. As pequenas formas de onda mostram a diferença entre disparo, pulso de modulação e sinal de RF.",
+    "modulos": [
+      "M03"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-2a4-p025",
+    "arquivo_fonte": "SUE6.2a4-radar_de_pulso-transmissor.pdf",
+    "sha256_fonte": "a7ab50b556cd09b02d206d297924f4fd7632f7a1bb7462c10c5e6061f9a1372f",
+    "pagina_pdf": 25,
+    "localizacao": "página 25 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-2a4-p025.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Arquiteturas do sincronizador",
+    "alt": "Siga cada linha da esquerda para a direita e compare as formas de onda entre blocos. Uma cadeia começa com oscilador senoidal; a outra começa com multivibrador.",
+    "leitura": "Siga cada linha da esquerda para a direita e compare as formas de onda entre blocos. Uma cadeia começa com oscilador senoidal; a outra começa com multivibrador.",
+    "modulos": [
+      "M03"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "apostila-p046",
+    "arquivo_fonte": "apostila_DET_2022.pdf",
+    "sha256_fonte": "deee0fe0dc8d4c45df73a18bea59b30bc6b6281e73b59070a38393c305543343",
+    "pagina_pdf": 46,
+    "localizacao": "página 46 do PDF · página impressa 1-35 · figs. 1.4.4–1.4.5",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/apostila-p046.webp",
+    "largura": 1800,
+    "altura": 2546,
+    "legenda": "Pulso na carga casada e aplicação à magnetron",
+    "alt": "No gráfico superior, a tensão na carga é E/2 e o pulso termina em T. No circuito inferior, confira a RFP de 36 kV, 1,2 kΩ e 1 µs alimentando a magnetron.",
+    "leitura": "No gráfico superior, a tensão na carga é E/2 e o pulso termina em T. No circuito inferior, confira a RFP de 36 kV, 1,2 kΩ e 1 µs alimentando a magnetron.",
+    "modulos": [
+      "M03"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "apostila-p206",
+    "arquivo_fonte": "apostila_DET_2022.pdf",
+    "sha256_fonte": "deee0fe0dc8d4c45df73a18bea59b30bc6b6281e73b59070a38393c305543343",
+    "pagina_pdf": 206,
+    "localizacao": "página 206 do PDF · Anexo B · fig. 1 · rodapé A-6",
+    "recorte_normalizado": [
+      0.11,
+      0.295,
+      0.9,
+      0.742
+    ],
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/apostila-p206.webp",
+    "largura": 1801,
+    "altura": 1442,
+    "legenda": "O que existe dentro de uma linha artificial",
+    "alt": "Compare as malhas em T, π e L. As bobinas representam indutores; as duas placas representam capacitores. Siga os dois condutores e observe como cada capacitor está ligado entre eles.",
+    "leitura": "Compare as malhas em T, π e L. As bobinas representam indutores; as duas placas representam capacitores. Siga os dois condutores e observe como cada capacitor está ligado entre eles.",
+    "modulos": [
+      "M03"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "apostila-p045",
+    "arquivo_fonte": "apostila_DET_2022.pdf",
+    "sha256_fonte": "deee0fe0dc8d4c45df73a18bea59b30bc6b6281e73b59070a38393c305543343",
+    "pagina_pdf": 45,
+    "localizacao": "página 45 do PDF · página impressa 1-34 · figs. 1.4.2–1.4.3",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/apostila-p045.webp",
+    "largura": 1800,
+    "altura": 2546,
+    "legenda": "A mesma RFP em carga e em descarga",
+    "alt": "Primeiro leia a ligação da fonte pela impedância de carga. Depois compare a ligação à carga RL pela chave: a extremidade oposta continua aberta nos dois desenhos.",
+    "leitura": "Primeiro leia a ligação da fonte pela impedância de carga. Depois compare a ligação à carga RL pela chave: a extremidade oposta continua aberta nos dois desenhos.",
+    "modulos": [
+      "M03"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-2a4-p046",
+    "arquivo_fonte": "SUE6.2a4-radar_de_pulso-transmissor.pdf",
+    "sha256_fonte": "a7ab50b556cd09b02d206d297924f4fd7632f7a1bb7462c10c5e6061f9a1372f",
+    "pagina_pdf": 46,
+    "localizacao": "página 46 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-2a4-p046.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Modulador tipo linha completo",
+    "alt": "Localize fonte AT, indutor e diodo de carga antes da RFP. Depois encontre thyratron, diodo de bypass e transformador de pulsos. Siga os fios reais até a magnetron; os componentes não formam uma simples fila.",
+    "leitura": "Localize fonte AT, indutor e diodo de carga antes da RFP. Depois encontre thyratron, diodo de bypass e transformador de pulsos. Siga os fios reais até a magnetron; os componentes não formam uma simples fila.",
+    "modulos": [
+      "M03"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-2a4-p042",
+    "arquivo_fonte": "SUE6.2a4-radar_de_pulso-transmissor.pdf",
+    "sha256_fonte": "a7ab50b556cd09b02d206d297924f4fd7632f7a1bb7462c10c5e6061f9a1372f",
+    "pagina_pdf": 42,
+    "localizacao": "página 42 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-2a4-p042.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Carga e descarga seguem caminhos diferentes",
+    "alt": "Compare o trajeto verde de carga com o vermelho de descarga. O elemento armazenador recebe energia entre disparos e a entrega à carga durante o pulso.",
+    "leitura": "Compare o trajeto verde de carga com o vermelho de descarga. O elemento armazenador recebe energia entre disparos e a entrega à carga durante o pulso.",
+    "modulos": [
+      "M03"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-2a4-p031",
+    "arquivo_fonte": "SUE6.2a4-radar_de_pulso-transmissor.pdf",
+    "sha256_fonte": "a7ab50b556cd09b02d206d297924f4fd7632f7a1bb7462c10c5e6061f9a1372f",
+    "pagina_pdf": 31,
+    "localizacao": "página 31 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-2a4-p031.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Magnetron: foto e corte identificado",
+    "alt": "Use a foto para reconhecer a válvula; no corte, localize catodo central, cavidades ressonantes, canais e espira de acoplamento que extrai RF.",
+    "leitura": "Use a foto para reconhecer a válvula; no corte, localize catodo central, cavidades ressonantes, canais e espira de acoplamento que extrai RF.",
+    "modulos": [
+      "M03"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-2a4-p037",
+    "arquivo_fonte": "SUE6.2a4-radar_de_pulso-transmissor.pdf",
+    "sha256_fonte": "a7ab50b556cd09b02d206d297924f4fd7632f7a1bb7462c10c5e6061f9a1372f",
+    "pagina_pdf": 37,
+    "localizacao": "página 37 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-2a4-p037.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Campos e trajetórias na magnetron",
+    "alt": "No desenho, compare as trajetórias dos elétrons com as cavidades. Leia separadamente o campo magnético fixo, o campo elétrico radial e o campo de RF das cavidades.",
+    "leitura": "No desenho, compare as trajetórias dos elétrons com as cavidades. Leia separadamente o campo magnético fixo, o campo elétrico radial e o campo de RF das cavidades.",
+    "modulos": [
+      "M03"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "apostila-p041",
+    "arquivo_fonte": "apostila_DET_2022.pdf",
+    "sha256_fonte": "deee0fe0dc8d4c45df73a18bea59b30bc6b6281e73b59070a38393c305543343",
+    "pagina_pdf": 41,
+    "localizacao": "página 41 do PDF · página impressa 1-30",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/apostila-p041.webp",
+    "largura": 1800,
+    "altura": 2546,
+    "legenda": "Conferência da fórmula de frequência",
+    "alt": "A fração original mostra E no numerador e nBd no denominador. Leia a dedução do modo π e depois a generalização, sem depender do texto extraído por OCR.",
+    "leitura": "A fração original mostra E no numerador e nBd no denominador. Leia a dedução do modo π e depois a generalização, sem depender do texto extraído por OCR.",
+    "modulos": [
+      "M03"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-2a4-p029",
+    "arquivo_fonte": "SUE6.2a4-radar_de_pulso-transmissor.pdf",
+    "sha256_fonte": "a7ab50b556cd09b02d206d297924f4fd7632f7a1bb7462c10c5e6061f9a1372f",
+    "pagina_pdf": 29,
+    "localizacao": "página 29 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-2a4-p029.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Escolha da arquitetura do transmissor",
+    "alt": "Compare a cadeia com magnetron e a cadeia com amplificador. Relacione tamanho e simplicidade à primeira, e potência e estabilidade à segunda, conforme os critérios do slide.",
+    "leitura": "Compare a cadeia com magnetron e a cadeia com amplificador. Relacione tamanho e simplicidade à primeira, e potência e estabilidade à segunda, conforme os critérios do slide.",
+    "modulos": [
+      "M03"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-5-p015",
+    "arquivo_fonte": "SUE6.5-radar_de_pulso-receptor.pdf",
+    "sha256_fonte": "1a66c4fac31652ec246249e16ff1e475b126464af05fc6b1a328c9aa2eac68ae",
+    "pagina_pdf": 15,
+    "localizacao": "página 15 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-5-p015.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Receptor super-heteródino",
+    "alt": "Siga o eco até o misturador e identifique a entrada separada do oscilador local. Depois acompanhe FI, detector e amplificador de vídeo até o indicador.",
+    "leitura": "Siga o eco até o misturador e identifique a entrada separada do oscilador local. Depois acompanhe FI, detector e amplificador de vídeo até o indicador.",
+    "modulos": [
+      "M04"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-5-p024",
+    "arquivo_fonte": "SUE6.5-radar_de_pulso-receptor.pdf",
+    "sha256_fonte": "1a66c4fac31652ec246249e16ff1e475b126464af05fc6b1a328c9aa2eac68ae",
+    "pagina_pdf": 24,
+    "localizacao": "página 24 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-5-p024.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Misturador: circuito e sinais",
+    "alt": "Compare as duas frequências aplicadas ao misturador e a forma resultante. O filtro seleciona a componente de diferença usada como FI.",
+    "leitura": "Compare as duas frequências aplicadas ao misturador e a forma resultante. O filtro seleciona a componente de diferença usada como FI.",
+    "modulos": [
+      "M04"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-5-p025",
+    "arquivo_fonte": "SUE6.5-radar_de_pulso-receptor.pdf",
+    "sha256_fonte": "1a66c4fac31652ec246249e16ff1e475b126464af05fc6b1a328c9aa2eac68ae",
+    "pagina_pdf": 25,
+    "localizacao": "página 25 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-5-p025.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Misturador balanceado em linha coaxial",
+    "alt": "Siga as entradas de RF e do oscilador local até os dois diodos. Compare os percursos e a saída de FI antes de ler a explicação do balanceamento.",
+    "leitura": "Siga as entradas de RF e do oscilador local até os dois diodos. Compare os percursos e a saída de FI antes de ler a explicação do balanceamento.",
+    "modulos": [
+      "M04"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-5-p026",
+    "arquivo_fonte": "SUE6.5-radar_de_pulso-receptor.pdf",
+    "sha256_fonte": "1a66c4fac31652ec246249e16ff1e475b126464af05fc6b1a328c9aa2eac68ae",
+    "pagina_pdf": 26,
+    "localizacao": "página 26 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-5-p026.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Misturador balanceado em T-mágico",
+    "alt": "Localize as portas de RF e OL, os diodos e a saída de FI. As diferenças de fase dos percursos explicam quais componentes se somam ou se cancelam.",
+    "leitura": "Localize as portas de RF e OL, os diodos e a saída de FI. As diferenças de fase dos percursos explicam quais componentes se somam ou se cancelam.",
+    "modulos": [
+      "M04"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-5-p018",
+    "arquivo_fonte": "SUE6.5-radar_de_pulso-receptor.pdf",
+    "sha256_fonte": "1a66c4fac31652ec246249e16ff1e475b126464af05fc6b1a328c9aa2eac68ae",
+    "pagina_pdf": 18,
+    "localizacao": "página 18 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-5-p018.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "CAF dentro do receptor",
+    "alt": "Siga a amostra do transmissor pelo atenuador até o misturador do CAF. Compare-a com a amostra do oscilador local; depois siga FI do CAF, discriminador e circuito de controle de volta ao oscilador local.",
+    "leitura": "Siga a amostra do transmissor pelo atenuador até o misturador do CAF. Compare-a com a amostra do oscilador local; depois siga FI do CAF, discriminador e circuito de controle de volta ao oscilador local.",
+    "modulos": [
+      "M04"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-5-p021",
+    "arquivo_fonte": "SUE6.5-radar_de_pulso-receptor.pdf",
+    "sha256_fonte": "1a66c4fac31652ec246249e16ff1e475b126464af05fc6b1a328c9aa2eac68ae",
+    "pagina_pdf": 21,
+    "localizacao": "página 21 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-5-p021.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "CAG e realimentação do ganho",
+    "alt": "Localize o detector de CAG e siga a ligação de controle até os estágios de FI. Essa malha regula amplitude; não é a malha de frequência do CAF.",
+    "leitura": "Localize o detector de CAG e siga a ligação de controle até os estágios de FI. Essa malha regula amplitude; não é a malha de frequência do CAF.",
+    "modulos": [
+      "M04"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-5-p031",
+    "arquivo_fonte": "SUE6.5-radar_de_pulso-receptor.pdf",
+    "sha256_fonte": "1a66c4fac31652ec246249e16ff1e475b126464af05fc6b1a328c9aa2eac68ae",
+    "pagina_pdf": 31,
+    "localizacao": "página 31 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-5-p031.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Banda passante da FI",
+    "alt": "Compare a largura da faixa no gráfico com as exigências do pulso. Uma faixa maior preserva mais componentes do sinal, mas também admite mais ruído.",
+    "leitura": "Compare a largura da faixa no gráfico com as exigências do pulso. Uma faixa maior preserva mais componentes do sinal, mas também admite mais ruído.",
+    "modulos": [
+      "M04"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-5-p036",
+    "arquivo_fonte": "SUE6.5-radar_de_pulso-receptor.pdf",
+    "sha256_fonte": "1a66c4fac31652ec246249e16ff1e475b126464af05fc6b1a328c9aa2eac68ae",
+    "pagina_pdf": 36,
+    "localizacao": "página 36 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-5-p036.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Estágios do amplificador de FI",
+    "alt": "Siga as setas através dos estágios sintonizados. Identifique os circuitos LC e a entrada do detector de vídeo na saída da cadeia.",
+    "leitura": "Siga as setas através dos estágios sintonizados. Identifique os circuitos LC e a entrada do detector de vídeo na saída da cadeia.",
+    "modulos": [
+      "M04"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-5-p039",
+    "arquivo_fonte": "SUE6.5-radar_de_pulso-receptor.pdf",
+    "sha256_fonte": "1a66c4fac31652ec246249e16ff1e475b126464af05fc6b1a328c9aa2eac68ae",
+    "pagina_pdf": 39,
+    "localizacao": "página 39 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-5-p039.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Detector de vídeo: da FI à envoltória",
+    "alt": "Comece na senoide de FI modulada pelo eco. Compare retificação e filtragem com a envoltória de saída: o detector retira a portadora e conserva a informação do pulso.",
+    "leitura": "Comece na senoide de FI modulada pelo eco. Compare retificação e filtragem com a envoltória de saída: o detector retira a portadora e conserva a informação do pulso.",
+    "modulos": [
+      "M04"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-5-p050",
+    "arquivo_fonte": "SUE6.5-radar_de_pulso-receptor.pdf",
+    "sha256_fonte": "1a66c4fac31652ec246249e16ff1e475b126464af05fc6b1a328c9aa2eac68ae",
+    "pagina_pdf": 50,
+    "localizacao": "página 50 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-5-p050.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Vídeo, marcas de distância e marca de proa",
+    "alt": "Leia as formas de onda à direita e encontre as marcas correspondentes no PPI à esquerda. O vídeo apresentado combina ecos e sinais auxiliares.",
+    "leitura": "Leia as formas de onda à direita e encontre as marcas correspondentes no PPI à esquerda. O vídeo apresentado combina ecos e sinais auxiliares.",
+    "modulos": [
+      "M04"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-5-p053",
+    "arquivo_fonte": "SUE6.5-radar_de_pulso-receptor.pdf",
+    "sha256_fonte": "1a66c4fac31652ec246249e16ff1e475b126464af05fc6b1a328c9aa2eac68ae",
+    "pagina_pdf": 53,
+    "localizacao": "página 53 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-5-p053.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "STC: ganho que varia após o disparo",
+    "alt": "Alinhe o pulso do modulador com os sinais A, B, C e D do circuito. Observe a tensão que reduz o ganho de FI logo após a transmissão e sua recuperação com o tempo.",
+    "leitura": "Alinhe o pulso do modulador com os sinais A, B, C e D do circuito. Observe a tensão que reduz o ganho de FI logo após a transmissão e sua recuperação com o tempo.",
+    "modulos": [
+      "M04"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-5-p056",
+    "arquivo_fonte": "SUE6.5-radar_de_pulso-receptor.pdf",
+    "sha256_fonte": "1a66c4fac31652ec246249e16ff1e475b126464af05fc6b1a328c9aa2eac68ae",
+    "pagina_pdf": 56,
+    "localizacao": "página 56 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-5-p056.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "FTC: efeitos na forma do eco",
+    "alt": "Compare o sinal de vídeo antes e depois do circuito. O FTC destaca transições de ecos e reduz a extensão de retornos prolongados; não aumenta seletivamente o ganho com o tempo.",
+    "leitura": "Compare o sinal de vídeo antes e depois do circuito. O FTC destaca transições de ecos e reduz a extensão de retornos prolongados; não aumenta seletivamente o ganho com o tempo.",
+    "modulos": [
+      "M04"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-5-p029",
+    "arquivo_fonte": "SUE6.5-radar_de_pulso-receptor.pdf",
+    "sha256_fonte": "1a66c4fac31652ec246249e16ff1e475b126464af05fc6b1a328c9aa2eac68ae",
+    "pagina_pdf": 29,
+    "localizacao": "página 29 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-5-p029.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Ruído, eco e limiar",
+    "alt": "Compare os três quadros: ruído, sinal do alvo e soma dos dois. Um pico na saída pode atravessar o limiar tanto por sinal quanto por flutuação do ruído.",
+    "leitura": "Compare os três quadros: ruído, sinal do alvo e soma dos dois. Um pico na saída pode atravessar o limiar tanto por sinal quanto por flutuação do ruído.",
+    "modulos": [
+      "M04"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-7-p024",
+    "arquivo_fonte": "SUE6.7-radar_de_pulso-chave_de_antena.pdf",
+    "sha256_fonte": "6588dd311a6f83d15311d47b55dd91ef89b5d966e8a789f085f8ee8522485124",
+    "pagina_pdf": 24,
+    "localizacao": "página 24 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-7-p024.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Circulador durante transmissão e recepção",
+    "alt": "Compare as duas setas coloridas: o transmissor envia à antena; o eco vindo da antena segue ao receptor. Confira as portas em vez de imaginar uma chave de duas posições.",
+    "leitura": "Compare as duas setas coloridas: o transmissor envia à antena; o eco vindo da antena segue ao receptor. Confira as portas em vez de imaginar uma chave de duas posições.",
+    "modulos": [
+      "M05"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-7-p028",
+    "arquivo_fonte": "SUE6.7-radar_de_pulso-chave_de_antena.pdf",
+    "sha256_fonte": "6588dd311a6f83d15311d47b55dd91ef89b5d966e8a789f085f8ee8522485124",
+    "pagina_pdf": 28,
+    "localizacao": "página 28 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-7-p028.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Duplexer tipo ramal em transmissão",
+    "alt": "Siga a seta verde do transmissor até a antena. Observe o estado das válvulas e o papel dos trechos de um quarto de onda na proteção do receptor.",
+    "leitura": "Siga a seta verde do transmissor até a antena. Observe o estado das válvulas e o papel dos trechos de um quarto de onda na proteção do receptor.",
+    "modulos": [
+      "M05"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-7-p029",
+    "arquivo_fonte": "SUE6.7-radar_de_pulso-chave_de_antena.pdf",
+    "sha256_fonte": "6588dd311a6f83d15311d47b55dd91ef89b5d966e8a789f085f8ee8522485124",
+    "pagina_pdf": 29,
+    "localizacao": "página 29 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-7-p029.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Duplexer tipo ramal em recepção",
+    "alt": "Agora siga o retorno da antena para o receptor. Compare o estado das válvulas com o slide de transmissão e a impedância refletida pelo ramo ATR.",
+    "leitura": "Agora siga o retorno da antena para o receptor. Compare o estado das válvulas com o slide de transmissão e a impedância refletida pelo ramo ATR.",
+    "modulos": [
+      "M05"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-7-p033",
+    "arquivo_fonte": "SUE6.7-radar_de_pulso-chave_de_antena.pdf",
+    "sha256_fonte": "6588dd311a6f83d15311d47b55dd91ef89b5d966e8a789f085f8ee8522485124",
+    "pagina_pdf": 33,
+    "localizacao": "página 33 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-7-p033.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Duplexer balanceado em recepção",
+    "alt": "Siga os dois percursos pelo guia e a recombinação no receptor. Compare as regiões marcadas como interferência construtiva e destrutiva.",
+    "leitura": "Siga os dois percursos pelo guia e a recombinação no receptor. Compare as regiões marcadas como interferência construtiva e destrutiva.",
+    "modulos": [
+      "M05"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-6-p019",
+    "arquivo_fonte": "SUE6.6-radar_de_pulso-indicador.pdf",
+    "sha256_fonte": "d048b7d90ba359fd72b63fe73c555b2734b37f8e6a3e1957b5687a61ed6c570f",
+    "pagina_pdf": 19,
+    "localizacao": "página 19 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-6-p019.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Do sinal tipo A ao indicador PPI",
+    "alt": "Compare cada traço de vídeo com a apresentação polar correspondente. A posição temporal do eco vira distância radial; a marcação vem da posição da antena.",
+    "leitura": "Compare cada traço de vídeo com a apresentação polar correspondente. A posição temporal do eco vira distância radial; a marcação vem da posição da antena.",
+    "modulos": [
+      "M05"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-6-p022",
+    "arquivo_fonte": "SUE6.6-radar_de_pulso-indicador.pdf",
+    "sha256_fonte": "d048b7d90ba359fd72b63fe73c555b2734b37f8e6a3e1957b5687a61ed6c570f",
+    "pagina_pdf": 22,
+    "localizacao": "página 22 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-6-p022.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Como são formadas as marcas de distância",
+    "alt": "Siga os pulsos auxiliares pelo amplificador de vídeo e encontre os anéis no PPI. A separação temporal constante produz distâncias radiais equidistantes.",
+    "leitura": "Siga os pulsos auxiliares pelo amplificador de vídeo e encontre os anéis no PPI. A separação temporal constante produz distâncias radiais equidistantes.",
+    "modulos": [
+      "M05"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-9a10-p012",
+    "arquivo_fonte": "SUE6.9a10-radar_de_pulso-controles&diagrama_blocos.odp",
+    "sha256_fonte": "682384962e59c7efb03ee871c8e3b12121d42dedec25909f4a36377f98800158",
+    "pagina_pdf": 12,
+    "localizacao": "slide 12 · mídia original Pictures (diagrama sem sobreposições)",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-9a10-p012.webp",
+    "largura": 1524,
+    "altura": 1652,
+    "legenda": "Diagrama completo do radar de pulso",
+    "alt": "Comece pelo sincronizador. Faça uma leitura para transmitir e outra para receber; depois siga separadamente as ligações para os indicadores tipo A e PPI. Amplie para ler cada conexão.",
+    "leitura": "Comece pelo sincronizador. Faça uma leitura para transmitir e outra para receber; depois siga separadamente as ligações para os indicadores tipo A e PPI. Amplie para ler cada conexão.",
+    "modulos": [
+      "M05"
+    ],
+    "status": "verificada",
+    "extracao": "midia_embutida",
+    "caminho_no_zip": "Pictures/10000000000005F400000674215326917F5040D9.png"
+  },
+  {
+    "id": "sue6-9a10-p021",
+    "arquivo_fonte": "SUE6.9a10-radar_de_pulso-controles&diagrama_blocos.pdf",
+    "sha256_fonte": "e58506f23467bb1ede064ba0097fabf2f2737a9a885a2a5c5956df1e19228369",
+    "pagina_pdf": 21,
+    "localizacao": "página 21 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-9a10-p021.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Transmissor localizado no diagrama completo",
+    "alt": "O retângulo destaca os blocos de transmissão. A seta liga a saída do oscilador ao trem de RF, permitindo associar o bloco à forma de onda.",
+    "leitura": "O retângulo destaca os blocos de transmissão. A seta liga a saída do oscilador ao trem de RF, permitindo associar o bloco à forma de onda.",
+    "modulos": [
+      "M05"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-9a10-p028",
+    "arquivo_fonte": "SUE6.9a10-radar_de_pulso-controles&diagrama_blocos.pdf",
+    "sha256_fonte": "e58506f23467bb1ede064ba0097fabf2f2737a9a885a2a5c5956df1e19228369",
+    "pagina_pdf": 28,
+    "localizacao": "página 28 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-9a10-p028.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Receptor e extração do vídeo",
+    "alt": "Localize o conjunto destacado e siga misturador, FI, detector e amplificador de vídeo. Compare o pulso de vídeo com o trem de RF mostrado para o transmissor.",
+    "leitura": "Localize o conjunto destacado e siga misturador, FI, detector e amplificador de vídeo. Compare o pulso de vídeo com o trem de RF mostrado para o transmissor.",
+    "modulos": [
+      "M05"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-9a10-p043",
+    "arquivo_fonte": "SUE6.9a10-radar_de_pulso-controles&diagrama_blocos.pdf",
+    "sha256_fonte": "e58506f23467bb1ede064ba0097fabf2f2737a9a885a2a5c5956df1e19228369",
+    "pagina_pdf": 43,
+    "localizacao": "página 43 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-9a10-p043.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Formas de onda nos pontos do radar",
+    "alt": "Siga uma seta laranja por vez, do ponto do circuito à forma de onda correspondente. Compare disparo, modulação, RF e varredura sem confundir suas amplitudes ou funções.",
+    "leitura": "Siga uma seta laranja por vez, do ponto do circuito à forma de onda correspondente. Compare disparo, modulação, RF e varredura sem confundir suas amplitudes ou funções.",
+    "modulos": [
+      "M05"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-9a10-p038",
+    "arquivo_fonte": "SUE6.9a10-radar_de_pulso-controles&diagrama_blocos.pdf",
+    "sha256_fonte": "e58506f23467bb1ede064ba0097fabf2f2737a9a885a2a5c5956df1e19228369",
+    "pagina_pdf": 38,
+    "localizacao": "página 38 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-9a10-p038.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Onde atuam STC e FTC",
+    "alt": "Encontre os controles destacados no diagrama. STC atua sobre a sensibilidade com o tempo; FTC modifica o tratamento do vídeo. Refaça o percurso de cada controle antes de comparar seus efeitos.",
+    "leitura": "Encontre os controles destacados no diagrama. STC atua sobre a sensibilidade com o tempo; FTC modifica o tratamento do vídeo. Refaça o percurso de cada controle antes de comparar seus efeitos.",
+    "modulos": [
+      "M05"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-8-p034",
+    "arquivo_fonte": "SUE6.8-radar_de_pulso-antenas.pdf",
+    "sha256_fonte": "fd1f4054677d43d641cca400566317ff64145c40916b9fe9174e1a8959f7a137",
+    "pagina_pdf": 34,
+    "localizacao": "página 34 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-8-p034.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Antenas parabólicas reais",
+    "alt": "Observe as fotografias das antenas. Relacione o refletor físico à função de concentrar energia discutida no texto.",
+    "leitura": "Observe as fotografias das antenas. Relacione o refletor físico à função de concentrar energia discutida no texto.",
+    "modulos": [
+      "M05"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-8-p035",
+    "arquivo_fonte": "SUE6.8-radar_de_pulso-antenas.pdf",
+    "sha256_fonte": "fd1f4054677d43d641cca400566317ff64145c40916b9fe9174e1a8959f7a137",
+    "pagina_pdf": 35,
+    "localizacao": "página 35 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-8-p035.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Alimentador, foco e frente de onda",
+    "alt": "Localize alimentador, foco e refletor parabólico. Siga os raios até a frente de onda plana; depois leia o mesmo percurso no sentido da recepção.",
+    "leitura": "Localize alimentador, foco e refletor parabólico. Siga os raios até a frente de onda plana; depois leia o mesmo percurso no sentido da recepção.",
+    "modulos": [
+      "M05"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-8-p041",
+    "arquivo_fonte": "SUE6.8-radar_de_pulso-antenas.pdf",
+    "sha256_fonte": "fd1f4054677d43d641cca400566317ff64145c40916b9fe9174e1a8959f7a137",
+    "pagina_pdf": 41,
+    "localizacao": "página 41 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-8-p041.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Lóbulo principal e largura de feixe",
+    "alt": "No diagrama polar, encontre o lóbulo principal e os pontos de menos 3 dB. A abertura entre eles define a largura de feixe; os demais lóbulos não desaparecem.",
+    "leitura": "No diagrama polar, encontre o lóbulo principal e os pontos de menos 3 dB. A abertura entre eles define a largura de feixe; os demais lóbulos não desaparecem.",
+    "modulos": [
+      "M05"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-8-p052",
+    "arquivo_fonte": "SUE6.8-radar_de_pulso-antenas.pdf",
+    "sha256_fonte": "fd1f4054677d43d641cca400566317ff64145c40916b9fe9174e1a8959f7a137",
+    "pagina_pdf": 52,
+    "localizacao": "página 52 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-8-p052.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Phased array: direção por defasagem",
+    "alt": "Compare as fases aplicadas aos elementos com a frente de onda inclinada. O direcionamento resulta da composição dos campos dos elementos.",
+    "leitura": "Compare as fases aplicadas aos elementos com a frente de onda inclinada. O direcionamento resulta da composição dos campos dos elementos.",
+    "modulos": [
+      "M05"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-8-p058",
+    "arquivo_fonte": "SUE6.8-radar_de_pulso-antenas.pdf",
+    "sha256_fonte": "fd1f4054677d43d641cca400566317ff64145c40916b9fe9174e1a8959f7a137",
+    "pagina_pdf": 58,
+    "localizacao": "página 58 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-8-p058.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Formas físicas de antenas de radar",
+    "alt": "Compare os exemplos fotografados de antenas e painéis. Use o quadro para reconhecer o equipamento antes de associá-lo aos modelos de feixe.",
+    "leitura": "Compare os exemplos fotografados de antenas e painéis. Use o quadro para reconhecer o equipamento antes de associá-lo aos modelos de feixe.",
+    "modulos": [
+      "M05"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-11-p012",
+    "arquivo_fonte": "SUE6.11-radar_de_pulso-equação_radar.pdf",
+    "sha256_fonte": "8b5664ba15400b543e68eab637d1ba6567984331d0dc42d63678daf96140d54b",
+    "pagina_pdf": 12,
+    "localizacao": "página 12 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-11-p012.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Espalhamento da potência com a distância",
+    "alt": "Compare a energia distribuída pela superfície esférica com a área que a intercepta. O denominador 4πR² expressa esse espalhamento no percurso de ida.",
+    "leitura": "Compare a energia distribuída pela superfície esférica com a área que a intercepta. O denominador 4πR² expressa esse espalhamento no percurso de ida.",
+    "modulos": [
+      "M06"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-11-p016",
+    "arquivo_fonte": "SUE6.11-radar_de_pulso-equação_radar.pdf",
+    "sha256_fonte": "8b5664ba15400b543e68eab637d1ba6567984331d0dc42d63678daf96140d54b",
+    "pagina_pdf": 16,
+    "localizacao": "página 16 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-11-p016.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Área efetiva, ganho e equação radar",
+    "alt": "Leia primeiro a relação entre ganho e área efetiva. Depois acompanhe a substituição na equação de alcance máximo, mantendo as condições do modelo.",
+    "leitura": "Leia primeiro a relação entre ganho e área efetiva. Depois acompanhe a substituição na equação de alcance máximo, mantendo as condições do modelo.",
+    "modulos": [
+      "M06"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-11-p015",
+    "arquivo_fonte": "SUE6.11-radar_de_pulso-equação_radar.pdf",
+    "sha256_fonte": "8b5664ba15400b543e68eab637d1ba6567984331d0dc42d63678daf96140d54b",
+    "pagina_pdf": 15,
+    "localizacao": "página 15 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-11-p015.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Da potência incidente ao eco recebido",
+    "alt": "Siga a potência que o alvo intercepta, a reirradiação e a fração recolhida pela área efetiva da antena. Há um espalhamento na ida e outro na volta.",
+    "leitura": "Siga a potência que o alvo intercepta, a reirradiação e a fração recolhida pela área efetiva da antena. Há um espalhamento na ida e outro na volta.",
+    "modulos": [
+      "M06"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-11-p020",
+    "arquivo_fonte": "SUE6.11-radar_de_pulso-equação_radar.pdf",
+    "sha256_fonte": "8b5664ba15400b543e68eab637d1ba6567984331d0dc42d63678daf96140d54b",
+    "pagina_pdf": 20,
+    "localizacao": "página 20 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-11-p020.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Limiar de detecção e incerteza",
+    "alt": "Compare os picos do sinal com a linha de threshold. Os destaques da fonte perguntam se cada ocorrência é alvo ou ruído: ultrapassar o limiar não elimina a incerteza estatística.",
+    "leitura": "Compare os picos do sinal com a linha de threshold. Os destaques da fonte perguntam se cada ocorrência é alvo ou ruído: ultrapassar o limiar não elimina a incerteza estatística.",
+    "modulos": [
+      "M06"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-1-p022",
+    "arquivo_fonte": "SUE6.1-radar_de_pulso-intro&caracteristicas.pdf",
+    "sha256_fonte": "e28aa8c9f703b1c941275188b028d1b017990763ab8f10bf94570b5331af5f14",
+    "pagina_pdf": 22,
+    "localizacao": "página 22 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-1-p022.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Famílias de radar",
+    "alt": "Leia a classificação pelo método de transmissão e localize pulso, MTI, CW-Doppler e CW-FM. A classificação organiza a comparação seguinte.",
+    "leitura": "Leia a classificação pelo método de transmissão e localize pulso, MTI, CW-Doppler e CW-FM. A classificação organiza a comparação seguinte.",
+    "modulos": [
+      "M07"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-12-p027",
+    "arquivo_fonte": "SUE6.12-radar_de_rastreamento.pdf",
+    "sha256_fonte": "05676abf56954ddb1d030a086f36a9be187c4643b3578ad733e58afa629158cb",
+    "pagina_pdf": 27,
+    "localizacao": "página 27 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-12-p027.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Varredura cônica e modulação do eco",
+    "alt": "Compare o alvo centrado com os alvos deslocados. A amplitude dos ecos varia durante a rotação do feixe quando há erro angular.",
+    "leitura": "Compare o alvo centrado com os alvos deslocados. A amplitude dos ecos varia durante a rotação do feixe quando há erro angular.",
+    "modulos": [
+      "M07"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue6-12-p036",
+    "arquivo_fonte": "SUE6.12-radar_de_rastreamento.pdf",
+    "sha256_fonte": "05676abf56954ddb1d030a086f36a9be187c4643b3578ad733e58afa629158cb",
+    "pagina_pdf": 36,
+    "localizacao": "página 36 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue6-12-p036.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Monopulso: soma e diferenças",
+    "alt": "Localize os quatro quadrantes e siga os canais de soma, diferença de azimute e diferença de elevação. As combinações usam ecos recebidos simultaneamente.",
+    "leitura": "Localize os quatro quadrantes e siga os canais de soma, diferença de azimute e diferença de elevação. As combinações usam ecos recebidos simultaneamente.",
+    "modulos": [
+      "M07"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue7-1a2-p020",
+    "arquivo_fonte": "SUE7.1a2-radar_CW-Doppler.pdf",
+    "sha256_fonte": "80b3e6c9113b60b56653d5db279182dd9c34bfec2a0fb5238a476d9e4081cc4d",
+    "pagina_pdf": 20,
+    "localizacao": "página 20 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue7-1a2-p020.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "CW-Doppler: comparação entre emissão e eco",
+    "alt": "Siga uma amostra da transmissão e o eco até o misturador. A diferença de frequência fornece a velocidade radial; não fornece sozinha a distância.",
+    "leitura": "Siga uma amostra da transmissão e o eco até o misturador. A diferença de frequência fornece a velocidade radial; não fornece sozinha a distância.",
+    "modulos": [
+      "M07"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue7-1a2-p030",
+    "arquivo_fonte": "SUE7.1a2-radar_CW-Doppler.pdf",
+    "sha256_fonte": "80b3e6c9113b60b56653d5db279182dd9c34bfec2a0fb5238a476d9e4081cc4d",
+    "pagina_pdf": 30,
+    "localizacao": "página 30 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue7-1a2-p030.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Doppler em quadratura",
+    "alt": "Compare os dois canais que recebem sinais defasados de 90 graus. A relação de fase entre saídas permite distinguir o sentido do movimento radial.",
+    "leitura": "Compare os dois canais que recebem sinais defasados de 90 graus. A relação de fase entre saídas permite distinguir o sentido do movimento radial.",
+    "modulos": [
+      "M07"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue7-3-p024",
+    "arquivo_fonte": "SUE7.3-radar_CW-FM.pdf",
+    "sha256_fonte": "5497fbc7f3946f334ba82be7ac07a370035dbe7fb68549e0a9579fe70bb18a65",
+    "pagina_pdf": 24,
+    "localizacao": "página 24 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue7-3-p024.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "CW-FM: atraso e frequência de batimento",
+    "alt": "Compare as rampas da frequência transmitida e recebida. O deslocamento horizontal é o atraso; a diferença vertical produz a frequência de batimento mostrada abaixo.",
+    "leitura": "Compare as rampas da frequência transmitida e recebida. O deslocamento horizontal é o atraso; a diferença vertical produz a frequência de batimento mostrada abaixo.",
+    "modulos": [
+      "M07"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue7-3-p040",
+    "arquivo_fonte": "SUE7.3-radar_CW-FM.pdf",
+    "sha256_fonte": "5497fbc7f3946f334ba82be7ac07a370035dbe7fb68549e0a9579fe70bb18a65",
+    "pagina_pdf": 40,
+    "localizacao": "página 40 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue7-3-p040.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Blocos do radar CW-FM",
+    "alt": "Siga o modulador até o transmissor e a amostra enviada ao misturador. Depois siga a frequência de batimento pelo processamento até a indicação de distância.",
+    "leitura": "Siga o modulador até o transmissor e a amostra enviada ao misturador. Depois siga a frequência de batimento pelo processamento até a indicação de distância.",
+    "modulos": [
+      "M07"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue7-4-p023",
+    "arquivo_fonte": "SUE7.4-radar_MTI.pdf",
+    "sha256_fonte": "720b2d3cf2c896c295a15b58d4862eb40a99d032c172ec34a07efefa0403480f",
+    "pagina_pdf": 23,
+    "localizacao": "página 23 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue7-4-p023.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "MTI: STALO, COHO e detector de fase",
+    "alt": "Localize as referências de frequência e fase. Siga a FI até a comparação de fase e observe a amostra do transmissor que estabelece a referência coerente.",
+    "leitura": "Localize as referências de frequência e fase. Siga a FI até a comparação de fase e observe a amostra do transmissor que estabelece a referência coerente.",
+    "modulos": [
+      "M07"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue7-4-p026",
+    "arquivo_fonte": "SUE7.4-radar_MTI.pdf",
+    "sha256_fonte": "720b2d3cf2c896c295a15b58d4862eb40a99d032c172ec34a07efefa0403480f",
+    "pagina_pdf": 26,
+    "localizacao": "página 26 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue7-4-p026.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "MTI: comparação de varreduras sucessivas",
+    "alt": "Compare a entrada direta com a entrada atrasada em um TRP no subtrator. Ecos iguais se cancelam; ecos que mudam de fase podem permanecer na saída.",
+    "leitura": "Compare a entrada direta com a entrada atrasada em um TRP no subtrator. Ecos iguais se cancelam; ecos que mudam de fase podem permanecer na saída.",
+    "modulos": [
+      "M07"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue7-4-p027",
+    "arquivo_fonte": "SUE7.4-radar_MTI.pdf",
+    "sha256_fonte": "720b2d3cf2c896c295a15b58d4862eb40a99d032c172ec34a07efefa0403480f",
+    "pagina_pdf": 27,
+    "localizacao": "página 27 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue7-4-p027.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Como surge a velocidade cega",
+    "alt": "Observe os instantes separados por TRP marcados sobre a senoide. Quando as amostras repetem a fase, a subtração pode cancelar também o eco de um alvo móvel.",
+    "leitura": "Observe os instantes separados por TRP marcados sobre a senoide. Quando as amostras repetem a fase, a subtração pode cancelar também o eco de um alvo móvel.",
+    "modulos": [
+      "M07"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue8-1a2-p014",
+    "arquivo_fonte": "SUE8.1a2-guerra-eletronica.pdf",
+    "sha256_fonte": "59aabeeefe61efa3d6a19b39f22dcf168abed8dea3a8a87a06260f1255c6974e",
+    "pagina_pdf": 14,
+    "localizacao": "página 14 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue8-1a2-p014.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Organização da Guerra Eletrônica na fonte",
+    "alt": "Leia os ramos de medidas de apoio, ataque e proteção eletrônica. Use o organograma para separar a finalidade de cada categoria antes de decorar siglas.",
+    "leitura": "Leia os ramos de medidas de apoio, ataque e proteção eletrônica. Use o organograma para separar a finalidade de cada categoria antes de decorar siglas.",
+    "modulos": [
+      "M07"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue8-1a2-p021",
+    "arquivo_fonte": "SUE8.1a2-guerra-eletronica.pdf",
+    "sha256_fonte": "59aabeeefe61efa3d6a19b39f22dcf168abed8dea3a8a87a06260f1255c6974e",
+    "pagina_pdf": 21,
+    "localizacao": "página 21 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue8-1a2-p021.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "MAGE: marcações e parâmetros de emissões",
+    "alt": "Relacione cada contato marcado à tabela de parâmetros abaixo da tela. O sistema organiza informações da emissão interceptada para apoiar identificação e análise.",
+    "leitura": "Relacione cada contato marcado à tabela de parâmetros abaixo da tela. O sistema organiza informações da emissão interceptada para apoiar identificação e análise.",
+    "modulos": [
+      "M07"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue8-3-p019",
+    "arquivo_fonte": "SUE8.3-IFF.pdf",
+    "sha256_fonte": "1eb24f775cf8dec4ac82b3cb02b79d22cd8d2b5c266a1026b03c3fd245e69a6c",
+    "pagina_pdf": 19,
+    "localizacao": "página 19 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue8-3-p019.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "IFF: interrogação e resposta",
+    "alt": "Siga a seta de interrogação até o transponder e a seta de resposta de volta. Compare codificador e decodificador em cada unidade; a resposta é uma nova emissão.",
+    "leitura": "Siga a seta de interrogação até o transponder e a seta de resposta de volta. Compare codificador e decodificador em cada unidade; a resposta é uma nova emissão.",
+    "modulos": [
+      "M07"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "sue8-3-p035",
+    "arquivo_fonte": "SUE8.3-IFF.pdf",
+    "sha256_fonte": "1eb24f775cf8dec4ac82b3cb02b79d22cd8d2b5c266a1026b03c3fd245e69a6c",
+    "pagina_pdf": 35,
+    "localizacao": "página 35 do PDF",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "pagina_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/sue8-3-p035.webp",
+    "largura": 1800,
+    "altura": 1273,
+    "legenda": "Supressão de respostas pelos lóbulos secundários",
+    "alt": "Compare a intensidade de P1 com P2 em cada direção. O pulso omnidirecional auxilia a impedir respostas indevidas provocadas por lóbulos secundários.",
+    "leitura": "Compare a intensidade de P1 com P2 em cada direção. O pulso omnidirecional auxilia a impedir respostas indevidas provocadas por lóbulos secundários.",
+    "modulos": [
+      "M07"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "apostila-p038",
+    "arquivo_fonte": "apostila_DET_2022.pdf",
+    "sha256_fonte": "deee0fe0dc8d4c45df73a18bea59b30bc6b6281e73b59070a38393c305543343",
+    "pagina_pdf": 38,
+    "localizacao": "página 38 do PDF · página impressa 1-27",
+    "recorte_normalizado": [
+      0.1,
+      0.5,
+      0.9,
+      0.84
+    ],
+    "nivel_fidelidade": "V1",
+    "tipo": "figura_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/apostila-p038.webp",
+    "largura": 1800,
+    "altura": 1083,
+    "legenda": "Feixes de elétrons no modo π",
+    "alt": "Conte as seis cavidades e os três feixes. Leia as indicações de campo acelerador e desacelerador e siga a seta de rotação. A relação é um feixe para cada duas cavidades.",
+    "leitura": "Conte as seis cavidades e os três feixes. Leia as indicações de campo acelerador e desacelerador e siga a seta de rotação. A relação é um feixe para cada duas cavidades.",
+    "modulos": [
+      "M03"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "apostila-p039",
+    "arquivo_fonte": "apostila_DET_2022.pdf",
+    "sha256_fonte": "deee0fe0dc8d4c45df73a18bea59b30bc6b6281e73b59070a38393c305543343",
+    "pagina_pdf": 39,
+    "localizacao": "página 39 do PDF · página impressa 1-28",
+    "recorte_normalizado": [
+      0.2,
+      0.63,
+      0.8,
+      0.82
+    ],
+    "nivel_fidelidade": "V1",
+    "tipo": "figura_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/apostila-p039.webp",
+    "largura": 1800,
+    "altura": 807,
+    "legenda": "Straps: conexões alternadas dos segmentos do anodo",
+    "alt": "Siga cada anel separadamente. Os contatos marcados unem segmentos que têm o mesmo potencial no modo π; os anéis não curto-circuitam todos os segmentos entre si.",
+    "leitura": "Siga cada anel separadamente. Os contatos marcados unem segmentos que têm o mesmo potencial no modo π; os anéis não curto-circuitam todos os segmentos entre si.",
+    "modulos": [
+      "M03"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "apostila-p048",
+    "arquivo_fonte": "apostila_DET_2022.pdf",
+    "sha256_fonte": "deee0fe0dc8d4c45df73a18bea59b30bc6b6281e73b59070a38393c305543343",
+    "pagina_pdf": 48,
+    "localizacao": "página 48 do PDF · página impressa 1-37",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "figura_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/apostila-p048.webp",
+    "largura": 1800,
+    "altura": 2546,
+    "legenda": "Circuito elétrico do modulador e equivalente de carga",
+    "alt": "No circuito superior, siga cada ramo até a RFP, a chave e o transformador. No equivalente inferior, a RFP é representada pela capacitância durante a carga; trata-se de uma simplificação específica dessa etapa.",
+    "leitura": "No circuito superior, siga cada ramo até a RFP, a chave e o transformador. No equivalente inferior, a RFP é representada pela capacitância durante a carga; trata-se de uma simplificação específica dessa etapa.",
+    "modulos": [
+      "M03"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "apostila-p092",
+    "arquivo_fonte": "apostila_DET_2022.pdf",
+    "sha256_fonte": "deee0fe0dc8d4c45df73a18bea59b30bc6b6281e73b59070a38393c305543343",
+    "pagina_pdf": 92,
+    "localizacao": "página 92 do PDF · página impressa 1-81",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "figura_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/apostila-p092.webp",
+    "largura": 1800,
+    "altura": 2546,
+    "legenda": "Problemas da equação radar — primeira página",
+    "alt": "Na parte superior, compare os ecos A, B e C com o limiar. Na parte inferior começam os problemas: os itens 1 a 5 estão completos e o item 6 continua na página seguinte.",
+    "leitura": "Na parte superior, compare os ecos A, B e C com o limiar. Na parte inferior começam os problemas: os itens 1 a 5 estão completos e o item 6 continua na página seguinte.",
+    "modulos": [
+      "M06"
+    ],
+    "status": "verificada",
+    "qualidade_webp": 82
+  },
+  {
+    "id": "apostila-p093",
+    "arquivo_fonte": "apostila_DET_2022.pdf",
+    "sha256_fonte": "deee0fe0dc8d4c45df73a18bea59b30bc6b6281e73b59070a38393c305543343",
+    "pagina_pdf": 93,
+    "localizacao": "página 93 do PDF · página impressa 1-82",
+    "recorte_normalizado": null,
+    "nivel_fidelidade": "V1",
+    "tipo": "figura_original",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/apostila-p093.webp",
+    "largura": 1800,
+    "altura": 2546,
+    "legenda": "Problemas da equação radar — continuação",
+    "alt": "Continue pelos dados e pedidos do item 6, depois resolva o item 7. Leia as unidades diretamente na página original antes de converter ou substituir valores.",
+    "leitura": "Continue pelos dados e pedidos do item 6, depois resolva o item 7. Leia as unidades diretamente na página original antes de converter ou substituir valores.",
+    "modulos": [
+      "M06"
+    ],
+    "status": "verificada"
+  },
+  {
+    "id": "alcance-normalizado",
+    "arquivo_fonte": "apostila_DET_2022.pdf",
+    "localizacao": "páginas impressas 1-78 e 1-79 · relações da equação radar",
+    "nivel_fidelidade": "V3",
+    "tipo": "grafico_quantitativo",
+    "arquivo_gerado": "/imagens/cursos/det-t2/figuras/alcance-normalizado.png",
+    "largura": 1620,
+    "altura": 900,
+    "legenda": "Comparação quantitativa do alcance",
+    "alt": "Compare as curvas: multiplicar a potência por 16 ou a área efetiva por 4 dobra o alcance. Em cada curva, só o fator indicado varia. Na curva da área, a frequência é fixa e o ganho acompanha a área; os demais termos e a sensibilidade permanecem constantes.",
+    "leitura": "Compare as curvas: multiplicar a potência por 16 ou a área efetiva por 4 dobra o alcance. Em cada curva, só o fator indicado varia. Na curva da área, a frequência é fixa e o ganho acompanha a área; os demais termos e a sensibilidade permanecem constantes.",
+    "modulos": [
+      "M06"
+    ],
+    "status": "verificada",
+    "codigo": "scripts/figuras/alcance_normalizado.py"
+  }
+]

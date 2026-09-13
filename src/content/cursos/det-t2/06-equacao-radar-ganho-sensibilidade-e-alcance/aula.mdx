@@ -3,11 +3,7 @@ titulo: "Equação radar: densidade de potência, ganho, abertura e alcance máx
 secao: "aula"
 secaoOrdem: 2
 ---
-> 🔴 **AVISO DE FONTE — leia antes de estudar este módulo.**
-> A **Seção 8 do Capítulo 1 da apostila (p. 1-77 a 1-81)**, que é a redação oficial deste assunto, **não é extraível por este canal**: a extração termina deterministicamente na p. 1-69 (`L-05`, verificado duas vezes, 105.128 caracteres nas duas leituras). O próprio `SUE6.11` remete a ela no slide final: *"Resolva os (sete) exercícios presentes no final da seção 8 do capítulo 1 da apostila"* — **esses sete problemas estão perdidos para este minicurso**.
->
-> **Mitigação aplicada:** este módulo é construído sobre (1) o `SUE6.11` **lido integralmente nas duas versões**, que traz a derivação completa slide a slide, e (2) a **rubrica oficial da 3ª questão da T2 2024**, que é um problema resolvido pelo próprio professor, com os valores e o encadeamento que ele cobra. Os 12 exercícios deste módulo substituem, em quantidade e em variedade de rota, os sete problemas perdidos. O que não se recupera é a **redação** da apostila e a eventual existência de um tópico exclusivo dela.
-> **Impacto declarado:** `[LACUNA DE COBERTURA]` parcial em C039 e C040 quanto à formulação textual da apostila. Nenhum impacto detectado na capacidade de resolver a Q3 — a rota da rubrica está integralmente reconstruída e reconferida. Ver `L-05` em `source-audit.md`.
+> **Fontes disponíveis.** A Seção 8 da apostila foi recuperada diretamente do PDF completo. A aula mantém a explicação dos slides e passa a oferecer as páginas originais dos sete problemas, ao final da seção de diagramas. A limitação anterior era da extração de texto.
 
 ## Posição na trilha
 
@@ -79,6 +75,9 @@ O professor abre com uma analogia ‹`SUE6.11`›: um megafone. Gritando sem meg
 
 O `(4πR²)²` é o **coração** da equação radar: o eco sofre a lei do inverso do quadrado **duas vezes**, e é por isso que a potência recebida cai com `R⁴`.
 
+
+<FiguraFonte figura="sue6-11-p012" />
+
 ### C038 — Relação ganho ↔ área efetiva
 ‹fonte: `SUE6.11` slides 10–13; rubrica T2 2024 Q3a e Q3b› · criticidade: **crítica** · competências: calcular, aplicar
 
@@ -106,7 +105,7 @@ As duas formas são a mesma coisa. **Use a primeira** (`P_r = P·G·A_a·A / (4�
 > **Leitura física de `G = 4πA/λ²`.** Para um mesmo tamanho físico de antena, **quanto menor o comprimento de onda, maior o ganho** — porque o feixe fica mais estreito. Essa é a mesma física que, em M02, fazia o `PSM` angular depender da largura do feixe. Radar de navegação opera em banda X (λ ≈ 3 cm) justamente para ter feixe estreito com refletor pequeno o bastante para caber num mastro.
 
 ### C039 — A equação radar e a dependência de quarta raiz
-‹fonte: `SUE6.11` slides 13–17; apostila Seção 8 (p. 1-77 a 1-81) NÃO EXTRAÍVEL — `L-05`› · criticidade: **crítica** · competências: calcular, analisar, avaliar
+‹fonte: `SUE6.11` slides 13–17; apostila Seção 8 (p. 1-77 a 1-82), recuperada› · criticidade: **crítica** · competências: calcular, analisar, avaliar
 
 **O alcance máximo é a distância em que o eco cai exatamente no mínimo sinal detectável.** Fazendo `P_r = S_mín` e isolando `R`:
 
@@ -135,8 +134,13 @@ O mesmo vale para o crescimento da área efetiva: *"limitado estruturalmente"* �
 
 **Por que essa é a solução ótima, em uma frase:** porque não custa potência, não custa estrutura e não custa banda — custa projeto de receptor, que é a única variável da equação radar que se melhora sem pagar em tamanho, peso ou energia. É a ligação direta com M04 (figura de ruído, banda passante, amplificação em cascata).
 
+
+<FiguraFonte figura="sue6-11-p016" />
+
+<FiguraFonte figura="alcance-normalizado" />
+
 ### C040 — Mínimo sinal detectável e o nível de threshold
-‹fonte: `SUE6.11` slides 18–20; apostila p. 1-80 NÃO EXTRAÍVEL — `L-05`; `SUE6.5`› · criticidade: **alta** · competências: explicar, analisar
+‹fonte: `SUE6.11` slides 18–20; apostila p. 1-80/1-81, recuperada; `SUE6.5`› · criticidade: **alta** · competências: explicar, analisar
 
 **O problema é de decisão, não de amplificação.** O professor coloca a questão em três palavras no slide: **"Alvo ou ruído?"**. O receptor sempre tem ruído na saída (a *"grama"* que você viu na tela do tipo-A em M05). Um eco fraco não é invisível: ele está **misturado** ao ruído. Amplificar mais não resolve, porque o amplificador amplifica os dois igualmente (M04: a figura de ruído mede exatamente essa degradação).
 
@@ -201,10 +205,12 @@ O `SUE6.11` fecha com uma relação que parece deslocada no meio de um assunto d
 
 Ela não está deslocada: ela é a **dobradiça** entre M02, M04 e M06. O encadeamento completo:
 
-```
- LP menor  →  BW maior  →  Pn = kTB maior  →  S_mín maior  →  R_máx menor
-   (M02)        (M04)          (M04)            (M04)        (M06, ^1/4)
-```
+| Alteração, mantendo as demais condições | Consequência |
+|---|---|
+| LP diminui | A banda necessária para preservar o pulso aumenta |
+| Banda aumenta | Mais potência de ruído entra no receptor |
+| Ruído aumenta | Piora a sensibilidade para o mesmo critério de detecção |
+| Sinal mínimo detectável aumenta | O alcance calculado diminui |
 
 **Leitura.** Encurtar o pulso melhora o poder de separação em distância e a distância mínima (M02) — e **custa alcance**, porque obriga a alargar a banda do receptor, o que admite mais ruído térmico e eleva `S_mín`. É o compromisso central do projeto de radar, e nenhuma das duas pontas é grátis.
 
@@ -327,70 +333,48 @@ Um radar opera com `LP = 1 µs`, figura de ruído **6 dB** e exige `(S/N)_mín =
 ## Diagramas
 
 ### D6.1 — A equação radar montada termo a termo
-`[Diagrama didático reconstruído a partir das fontes]` ‹`SUE6.11` slides 3–15›
 
-```
- TRANSMISSOR                    IDA                         ALVO
- ┌──────────┐        S1 = P/(4πR²)   [isotrópica]        ┌────────┐
- │   P (W)  │──►ANT──────────────────────────────────────►│  A_a   │
- └──────────┘   G_t   S2 = P·G_t/(4πR²)  [com ganho]      │ (σ,m²) │
-                                                          └───┬────┘
-                              P_a = A_a·S2  ◄────── intercepta │
-                                                               │
-                                    VOLTA (reirradia OMNIdirecional)
-                ┌──────────────────────────────────────────────┘
-                ▼
-        S3 = P_a/(4πR²) = P·G_t·A_a/(4πR²)²
-                │
-                ▼   antena do radar, área efetiva A  (A = G·λ²/4π)
-        P_r = A·S3 = P·G·A_a·A / (4πR²)²   ◄── COMPARA com S_mín
-                                                      │
-                 P_r ≥ S_mín ? ──► SIM: alvo detectado │
-                                └► NÃO: abaixo do threshold
-```
+
+<FiguraFonte figura="sue6-11-p015" />
+
+
 
 **Como ler.** Os dois blocos `4πR²` são a **mesma** lei aplicada duas vezes. O ganho `G_t` entra uma vez na ida (concentra) e a área `A` entra uma vez na volta (coleta) — e `G` e `A` são o mesmo objeto físico visto de dois lados, ligados por `G = 4πA/λ²`.
 
 ### D6.2 — Ida (MAGE) contra ida-e-volta (eco): por que muda o expoente
-`[Diagrama didático reconstruído a partir das fontes]` ‹rubrica T2 2024 Q3b; `SUE8.1a2`›
 
-```
-        RADAR                                          MAGE
-      ┌───────┐        um único percurso            ┌───────┐
-      │ P·G_t │═══════════════════════════════════► │ A_rx  │
-      └───────┘              R                      └───────┘
-                   P_rx = P·G_t·A_rx / (4πR²)        UM 4πR²
-
-
-        RADAR                    ALVO                 RADAR
-      ┌───────┐   ida    ┌──────┐   volta   ┌───────┐
-      │ P·G_t │═════════►│ A_a  │══════════►│   A   │
-      └───────┘    R     └──────┘     R     └───────┘
-                P_r = P·G·A_a·A / (4πR²)²    DOIS 4πR²
-```
+| Recepção | Percurso | Potência recebida | Dependência com R |
+|---|---|---|---|
+| MAGE escuta a emissão | Radar → receptor MAGE | `P·G_t·A_rx/(4πR²)` | `1/R²` |
+| Radar recebe o eco | Radar → alvo → radar | `P·G·A_a·A/(4πR²)²` | `1/R⁴` |
 
 **A pergunta que decide qual fórmula usar:** *o sinal volta?* Se o receptor é o próprio radar → **dois** `4πR²`. Se o receptor é outro equipamento escutando → **um** `4πR²`. Não há caso intermediário.
 
 ### D6.3 — O threshold: alvo ou ruído?
-`[Diagrama didático reconstruído a partir das fontes]` ‹`SUE6.11` slides 18–20›
 
-```
- tensão na saída do receptor
-   │
-   │        ▲alvo forte
-   │        █
-   │──────█─█──────────█──────────────── THRESHOLD ALTO  → perde o alvo fraco
-   │      █ █    ▲alvo fraco
-   │──────█─█────█─────█──────────────── THRESHOLD ÓTIMO
-   │   ▄▄ █ █ ▄▄ █ ▄▄  █  ▄▄   ▄
-   │──▄█▄▄█▄█▄██▄█▄██▄▄█▄▄██▄▄▄█─────── THRESHOLD BAIXO → picos de ruído viram falso alarme
-   │  ruído (a "grama" da tela, M05)
-   └──────────────────────────────────► tempo (= distância)
-```
+
+<FiguraFonte figura="sue6-11-p020" />
+
+
 
 **A decisão não é determinística** — é *"solução estatística baseada em teste de hipóteses com o uso de curvas de distribuição de probabilidades"* ‹`SUE6.11`›. Baixar o threshold aumenta a probabilidade de detecção **e** a de falso alarme, sempre juntas.
 
 ---
+
+## Problemas originais recuperados da apostila
+
+As páginas abaixo contêm os sete problemas indicados ao final da Seção 8. São atividades da fonte, para treino complementar; não entram como questões inéditas no banco do site. O item 6 começa na primeira página e continua na segunda.
+
+<details>
+<summary>Abrir os sete problemas da fonte</summary>
+
+<FiguraFonte figura="apostila-p092" />
+
+<FiguraFonte figura="apostila-p093" />
+
+
+
+</details>
 
 ## 📝 Como o professor pode cobrar
 
@@ -494,7 +478,7 @@ Marque só o que você faz **sem consultar**:
 | `T2/SOPA DET T2 2024.pdf` | 4ª QUESTÃO, item (d) | ligação potência ↔ alcance máximo |
 | `SUE6.5` | banda passante e ruído | C043 — ponte com M04 |
 | `SUE8.1a2-guerra-eletronica.pdf` | MAGE/MAE/MPE | C042 — contexto operativo da interceptação |
-| `apostila_DET_2022.pdf` | Cap. I, **Seção 8, p. 1-77 a 1-81** | ⛔ **NÃO EXTRAÍVEL** — `L-05`. Inclui os 7 problemas remetidos pelo `SUE6.11` |
+| `apostila_DET_2022.pdf` | Cap. I, **Seção 8, p. 1-77 a 1-81** | **Recuperada** — páginas 88–93 do PDF, incluindo os 7 problemas em 1-81/1-82 |
 
 ---
 

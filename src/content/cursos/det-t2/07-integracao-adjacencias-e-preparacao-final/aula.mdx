@@ -61,6 +61,9 @@ O `SUE7.3` enuncia a regra geral:
 
 > ⚠️ **O item que a banca já mostrou que sabe cobrar.** O **MTI é radar de PULSO**, não CW — ele usa o efeito Doppler, mas transmite pulsos. A apostila (p. 1-4) o lista explicitamente no grupo do radar de pulso, e o `SUE7.4` confirma: *"Um radar de **pulso** que faz essa separação dos alvos em movimento é o MTI"*. Esta é a pegadinha **P-16**, e é a única adjacência com ancoragem direta no Capítulo 1.
 
+
+<FiguraFonte figura="sue6-1-p022" />
+
 ### C046 — Radar de rastreamento: varredura cônica e monopulso
 ‹fonte: `SUE6.12`, 23 slides — apostila Cap. 2, Seção 4› · criticidade: **média** · competências: comparar, explicar
 
@@ -106,6 +109,12 @@ O motor da varredura está acoplado a um **gerador de referência** que produz *
 `ERRO = (early gate × eco) − (late gate × eco)`
 
 Erro **nulo** ⇒ o eco está centrado na janela ⇒ acompanhamento travado. Erro positivo ou negativo ⇒ a janela se desloca para reencontrar o eco.
+
+
+<FiguraFonte figura="sue6-12-p027" />
+
+
+<FiguraFonte figura="sue6-12-p036" />
 
 ### C047 — CW-Doppler
 ‹fonte: `SUE7.1a2` — apostila Cap. 2, Seção 1› · criticidade: **média** · competências: calcular, explicar
@@ -154,6 +163,12 @@ Erro **nulo** ⇒ o eco está centrado na janela ⇒ acompanhamento travado. Err
 
 **Aplicações:** meteorologia, navegação aérea, **radar de velocidade veicular (PRF)**, velocidade de aproximação no pouso, medida da velocidade de saída do projétil em canhões.
 
+
+<FiguraFonte figura="sue7-1a2-p020" />
+
+
+<FiguraFonte figura="sue7-1a2-p030" />
+
 ### C048 — CW-FM
 ‹fonte: `SUE7.3` — apostila Cap. 2, Seção 3› · criticidade: **média** · competências: calcular, explicar
 
@@ -196,6 +211,12 @@ Erro **nulo** ⇒ o eco está centrado na janela ⇒ acompanhamento travado. Err
 
 **Empregos reais citados:** radar **altímetro** (o exemplo mais popular), o **Pilot (SAAB)** nas corvetas Classe *Visby* da Suécia e o **Scout (Thales)** nas fragatas Classe *De Zeven Provinciën* dos Países Baixos.
 
+
+<FiguraFonte figura="sue7-3-p024" />
+
+
+<FiguraFonte figura="sue7-3-p040" />
+
 ### C049 — MTI e a velocidade cega
 ‹fonte: `SUE7.4` — apostila Cap. 2, Seção 2› · criticidade: **média** · competências: calcular, analisar
 
@@ -233,6 +254,15 @@ Erro **nulo** ⇒ o eco está centrado na janela ⇒ acompanhamento travado. Err
 
 *"Conclusão: deve-se empregar uma **solução de compromisso**."* — a mesma frase que fecha M02, M04 e M06. É o padrão da disciplina inteira.
 
+
+<FiguraFonte figura="sue7-4-p023" />
+
+
+<FiguraFonte figura="sue7-4-p026" />
+
+
+<FiguraFonte figura="sue7-4-p027" />
+
 ### C050 — Guerra Eletrônica: MAGE, MAE e MPE
 ‹fonte: `SUE8.1a2` — apostila Cap. 4, Seções 1 e 2› · criticidade: **média** · competências: reconhecer, explicar
 
@@ -267,6 +297,12 @@ Erro **nulo** ⇒ o eco está centrado na janela ⇒ acompanhamento travado. Err
 - **mudar a frequência de operação** para sair da sintonia de um bloqueio por ruído.
 
 **Na Marinha do Brasil:** orientação **CON**; banco de dados **CGEM**; equipamentos **IPqM**; supervisão **DSAM** (GE radar) e **DTM** (GE de comunicações). Sistema de informações **FÊNIX**, que gera as **Bibliotecas de Missão Eletrônicas (BME)**. Equipamentos **CME-1A** (Defensora, Liberal) e **CME-2** (Independência, com *phased array* e memória digital de RF).
+
+
+<FiguraFonte figura="sue8-1a2-p014" />
+
+
+<FiguraFonte figura="sue8-1a2-p021" />
 
 ### C051 — IFF: o radar secundário
 ‹fonte: `SUE8.3`› · criticidade: **média** · competências: explicar, comparar
@@ -307,6 +343,12 @@ Em tempo de paz, os mais usados são **A** (civil) e **3** (militar). Códigos c
 **A supressão dos lóbulos secundários — o papel do P2.** Junto à antena direcional existe outra, **omnidirecional**, que transmite **P2**. No **lóbulo principal**, P2 chega **9 dB menor** que P1 ⇒ o transponder responde. Nos **lóbulos secundários**, P2 chega **tão ou mais intenso** que P1 ⇒ o transponder **não responde**. É a mesma preocupação com lóbulos secundários que aparece nas antenas de M05 — resolvida aqui por comparação de amplitude entre dois pulsos.
 
 **Parente próximo:** o **RFID** *"tem seu princípio de operação baseado no IFF"* — pedágio, bilhetagem, NFC, controle de estoque.
+
+
+<FiguraFonte figura="sue8-3-p019" />
+
+
+<FiguraFonte figura="sue8-3-p035" />
 
 ### C052 — Radiogoniômetro
 ‹fonte: `SUE10.1a2`› · criticidade: **baixa** · competências: reconhecer
@@ -409,26 +451,15 @@ O slide mostra a saída de um receptor MAGE com três emissores detectados:
 
 ### O mapa único do curso
 
-```
-                              ┌─── SINCRONIZADOR ── define FRP ──┐
-                              │        (M03)                     │
-                              ▼                                  ▼
-   M02: FRP, LP, RPM ──► MODULADOR ── define LP ──► OSCILADOR ──► CHAVE ──► ANTENA
-        as 8 fórmulas         (M03)                  (M03)        (M05)      (M05)
-              │                                                      │          │
-              │                                                      ▼          ▼
-              │                                              ┌── RECEPTOR ──────┘
-              │                                              │  (M04) 6 estágios
-              ▼                                              │  + CAF CAG STC FTC
-     PSD · R_mín · R_máx(FRP) · P_méd · PSM · N_B            ▼
-              │                                        S_mín (M04)
-              │                                              │
-              └──────────────► M06: EQUAÇÃO RADAR ◄──────────┘
-                              R_máx = [P·G·A_a·A/((4π)²·S_mín)]^(1/4)
-                                            │
-                                            ▼
-                                  M05: INDICADOR (tipo-A / PPI)
-```
+| Etapa do estudo | O que ligar ao restante do sistema |
+|---|---|
+| M01 — Fundamentos | Tempo de ida e volta e direção da antena localizam o alvo |
+| M02 — Parâmetros | LP, FRP e feixe condicionam resolução, ambiguidades e iluminação |
+| M03 — Transmissor | Sincronizador define cadência; modulador forma o pulso; oscilador gera RF |
+| M04 — Receptor | Converte o eco em vídeo e trata frequência, ganho, ruído e clutter |
+| M05 — Integração | Chave compartilha a antena; indicador apresenta vídeo com sincronismo e marcação |
+| M06 — Equação radar | Compara o eco recebido com a sensibilidade e calcula o alcance do modelo |
+| M07 — Adjacências | Compara rastreamento, CW, MTI, GE e identificação |
 
 ### As sete costuras que atravessam módulos
 

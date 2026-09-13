@@ -30,7 +30,10 @@ A tripla que resolve esses 1,5 ponto cabe em três linhas:
 | **Modulador** | liga e desliga a válvula transmissora | **largura de pulso** |
 | **Oscilador** | gera o sinal de RF de alta potência | **frequência da portadora** |
 
-<DiagramaRfp tipo="cadeia" />
+
+<FiguraFonte figura="sue6-2a4-p022" />
+
+
 
 O resto do módulo existe para que essa tripla não seja decoreba — e porque a banca pode descer ao construtivo.
 
@@ -52,12 +55,15 @@ O resto do módulo existe para que essa tripla não seja decoreba — e porque a
 | **A — senoidal** | oscilador | `oscilador → amplificador sobre-excitado → diferenciador → limitador` | pulso curto de disparo |
 | **B — quadrada** | multivibrador | `multivibrador → diferenciador → limitador` | o mesmo pulso curto de disparo |
 
+
+<FiguraFonte figura="sue6-2a4-p025" />
+
 **Como ler os blocos:** o amplificador sobre-excitado transforma a senoide em uma forma quase quadrada; o diferenciador marca as transições; o limitador conserva o pulso útil e ceifa o restante. Na arquitetura B, o multivibrador já entrega a forma quadrada, por isso a primeira conversão desaparece.
 
 `Reconstrução didática a partir das fontes` — apostila fig. 1.3.2 (A) e (B).
 
 > **[INFERÊNCIA PEDAGÓGICA] — a ponte com a T1 que quase ninguém faz.**
-> Os blocos dessas duas arquiteturas **são a matéria da primeira parte da disciplina**: o **multivibrador** é `SUE3.1a4`, o **limitador** é `SUE2.1a2`, e o disparo por limiar é o **Schmitt trigger** de `SUE3.5`. A T1 de 2024 cobrou exatamente 555, grampeadores e Schmitt. Se a banca quiser integrar T1 e T2 numa questão, **é por aqui que ela entra** — o sincronizador é a única porta de ligação entre as duas metades da disciplina.
+> Os blocos dessas duas arquiteturas **são a matéria da primeira parte da disciplina**: o **multivibrador** é `SUE3.1a4`, o **limitador** é `SUE2.1a2`, e o disparo por limiar é o **Schmitt trigger** de `SUE3.5`. A T1 de 2024 cobrou exatamente 555, grampeadores e Schmitt. Se a banca quiser integrar T1 e T2 numa questão, **é por aqui que ela entra** — o sincronizador é uma ligação entre as duas partes da disciplina.
 
 **Observação de escopo da fonte** ‹p. 1-20›: *"conquanto o transmissor possa estabelecer sua própria largura de pulso, a FRP e ainda fornecer o sincronismo para outras unidades do sistema, faremos referência a um sincronizador **em separado**"*. Ou seja: a separação em blocos é **didática**, não obrigatória. Um item de prova que afirme "o sincronizador é fisicamente indispensável" é falso.
 
@@ -74,7 +80,10 @@ O resto do módulo existe para que essa tripla não seja decoreba — e porque a
 
 Considere `LP = 1 µs` e `FRP = 1.000 Hz`. O período entre pulsos é `TRP = 1 ms`: a magnetron fica ligada durante apenas **0,1% do ciclo**. No exemplo da fonte, ela recebe **18 kV** e **15 A**, isto é, exige **270 kW enquanto o pulso existe**.
 
-<DiagramaRfp tipo="ciclo" />
+
+<FiguraFonte figura="sue6-2a4-p056" />
+
+
 
 A fonte não precisa fornecer essa potência de pico continuamente. Ela carrega um elemento armazenador ao longo do intervalo entre pulsos; o elemento descarrega a energia em um intervalo muito curto. É a mesma diferença entre potência média e potência de pico estudada em M02.
 
@@ -98,7 +107,10 @@ A fonte não precisa fornecer essa potência de pico continuamente. Ela carrega 
 
 Um capacitor isolado armazena energia, mas sua descarga sobre uma resistência cai exponencialmente. O radar precisa de uma forma mais próxima de um retângulo: começo nítido, nível constante e término nítido.
 
-<DiagramaRfp tipo="formas" />
+
+<FiguraFonte figura="apostila-p046" />
+
+
 
 | Parte do pulso | Por que importa |
 |---|---|
@@ -112,16 +124,22 @@ Um capacitor isolado armazena energia, mas sua descarga sobre uma resistência c
 
 Uma linha de transmissão real possui indutância e capacitância distribuídas e impõe um tempo de propagação. Para reproduzir esse comportamento sem instalar centenas de metros de cabo no transmissor, a RFP agrupa seções `L–C` em uma estrutura compacta.
 
-<DiagramaRfp tipo="linha" />
 
-Pense em uma fila de reservatórios: cada capacitor `C` armazena carga; cada indutor `L` limita a rapidez da transferência para a seção seguinte. Ao fechar a chave, uma **frente de descarga** percorre a linha, reflete na terminação aberta e retorna. Enquanto ela viaja, as seções sustentam o patamar; quando a frente retorna à chave, a descarga termina.
+<FiguraFonte figura="apostila-p206" />
+
+
+
+**[INFERÊNCIA PEDAGÓGICA]** Pense em uma fila de reservatórios: cada capacitor `C` armazena carga; cada indutor `L` limita a rapidez da transferência para a seção seguinte. Ao fechar a chave, uma **frente de descarga** percorre a linha, reflete na terminação aberta e retorna. Enquanto ela viaja, as seções sustentam o patamar; quando a frente retorna à chave, a descarga termina.
 
 Essa imagem mental explica as duas propriedades importantes sem exigir decoreba:
 
 1. o pulso dura o tempo total da viagem de **ida e volta**;
 2. a energia é entregue em um patamar aproximadamente constante enquanto essa viagem ocorre.
 
-> **Limite da explicação:** a apostila remete os detalhes de linhas artificiais ao Anexo B, que não estava extraível no conjunto original. A representação acima é uma **reconstrução didática** baseada na Seção 4 e é suficiente para interpretar as relações usadas na disciplina; não substitui uma análise completa de linha de transmissão.
+> **Condição do modelo — Anexo B, páginas 206–208 do PDF.** A linha artificial se aproxima de uma linha real quando as componentes relevantes do sinal ficam abaixo de sua frequência de corte. Por seção, o anexo obtém o atraso `√(LC)` e a impedância `√(L/C)`. Atenção à notação: o anexo usa `T` para o atraso de **uma seção**; a Seção 4 usa `T` para a viagem de **ida e volta da RFP inteira**. Não são o mesmo intervalo.
+
+
+<FiguraFonte figura="apostila-p045" />
 
 **As três relações que a prova pode cobrar** ‹p. 1-34/1-35›:
 
@@ -146,7 +164,7 @@ $$
 
 Se houver casamento, `R_L = R_C`, e portanto `e_L = E/2` ‹fig. 1.4.4›.
 
-> ⚠️ `V023` **A largura de pulso do radar é uma propriedade física da linha artificial, não um ajuste de software.** E a tensão entregue é **metade** da tensão de carga. Responder `E` em vez de `E/2` é erro de fator 2 na tensão e de **fator 4 na potência**.
+> ⚠️ `V023` **No modulador tipo linha estudado, a LP decorre do tempo de propagação ida e volta da RFP.** Não generalize isso para todas as arquiteturas de radar ou para todos os modos selecionáveis. E a tensão entregue é **metade** da tensão de carga. Responder `E` em vez de `E/2` é erro de fator 2 na tensão e de **fator 4 na potência**.
 
 **Exemplo numérico da própria fonte** ‹fig. 1.4.5/1.4.6›: RFP carregada com **36 kV**, ponto de operação da magnetron em **18 kV / 15 A**, logo `e_b/i_b = 1,2 kΩ` — igual à impedância característica, confirmando o casamento. Pulso resultante: **1 µs**, tensão **E/2**.
 
@@ -154,7 +172,10 @@ Se houver casamento, `R_L = R_C`, e portanto `e_L = E/2` ‹fig. 1.4.4›.
 
 Comece pelo mínimo: `fonte → elemento de carga → RFP → chave → magnetron`. Ele funciona no papel, mas cria cinco problemas práticos. Cada componente abaixo entra para corrigir exatamente um deles.
 
-<DiagramaRfp tipo="circuito" />
+
+<FiguraFonte figura="sue6-2a4-p046" />
+
+
 
 | Se o circuito tivesse… | O problema seria… | A solução é… |
 |---|---|---|
@@ -165,6 +186,11 @@ Comece pelo mínimo: `fonte → elemento de carga → RFP → chave → magnetro
 | ligação direta RFP–magnetron | as impedâncias típicas de **50 Ω** e **500 Ω** não casariam | **transformador de pulsos** |
 
 > **A conexão escondida entre as peças e a tripla:** sem o diodo de carga, o período ficaria preso à ressonância `L_ch–C`. Com o diodo, a RFP permanece no pico até a ordem de disparo; assim, o **sincronizador continua determinando a FRP**.
+
+
+<FiguraFonte figura="sue6-2a4-p042" />
+
+<FiguraFonte figura="apostila-p048" />
 
 **Carga CC ressonante** ‹p. 1-39›: vantagem — *"a tensão disponível na RFP ser aproximadamente **duas vezes** a tensão da fonte"*. Desvantagem — TRP fixado por `L_ch` e `C`.
 
@@ -231,6 +257,9 @@ Comece pelo mínimo: `fonte → elemento de carga → RFP → chave → magnetro
 
 > 🔴 `[CONFLITO ENTRE FONTES]` — **D-09.** A apostila p. 1-22 diz que as cavidades são *"sempre em número par (entre **6 e 32**)"*. O slide `SUE6.2a4` diz *"(6 a **18**)"*. Faixas diferentes, ambas com o mesmo piso. **Preserve as duas.** O que **não** diverge — e é o que a prova cobraria — é que o número é **sempre par**.
 
+
+<FiguraFonte figura="sue6-2a4-p031" />
+
 #### Os três campos ‹p. 1-23/1-24›
 
 | Campo | Origem | Papel |
@@ -253,6 +282,9 @@ $$
 
 **Mecanismo de transferência de energia** ‹p. 1-26›: elétrons que passam por uma cavidade em meio-ciclo **acelerador** voltam ao catodo e *"apenas provocam o aquecimento do catodo, sem nenhum efeito na operação"*. Os que encontram meio-ciclo **desacelerador** avançam para o anodo e **entregam energia cinética ao campo CA**, fortalecendo-o. Os elétrons se organizam em **feixes (grupos)**.
 
+
+<FiguraFonte figura="sue6-2a4-p037" />
+
 #### Modos de operação ‹p. 1-26/1-27›
 
 $$
@@ -274,10 +306,14 @@ $$
 
 *(a fonte deduz o segundo caso: no modo 2π/3 *"seriam necessárias **três** cavidades para a formação de cada feixe"*)*
 
+<FiguraFonte figura="apostila-p038" />
+
 **Por que π é o mais eficiente** ‹p. 1-28›: *"como é desejável obter-se um número **máximo de feixes** para que se atinjam transformações máximas de energia"*.
 
 **O problema que os modos criam** ‹p. 1-28›: a magnetron pode oscilar em qualquer das frequências associadas aos modos, e *"uma pequena variação na corrente anódica ou na intensidade do campo magnético ou no ajuste da carga pode provocar uma variação no modo de operação com a consequente variação de frequência"*.
 **A solução:** os **"straps"** — *"dois anéis metálicos que conectam todos os segmentos do anodo que têm o mesmo potencial no modo π"* ‹fig. 1.3.9›.
+
+<FiguraFonte figura="apostila-p039" />
 
 #### Frequência de oscilação ‹p. 1-29/1-30›
 
@@ -293,8 +329,10 @@ $$
 | `n` | número de cavidades participantes da criação de **cada feixe** (no modo π, `n = 2`) |
 | `d` | distância entre duas cavidades adjacentes |
 
-> 🔴 `[PONTO DE INCERTEZA — REQUER VERIFICAÇÃO]` — **D-10.** O texto extraído da p. 1-30 perdeu a barra de fração e mostra `f = nBd E`. A dedução da própria página fecha a questão: `d = v₀·T/2`, com `v₀ = E/B` (do casamento `qE = qv₀B`), logo `d = E/(2fB)` e portanto **`f = E/(2Bd)`** no modo π — generalizada para `f = E/(nBd)`.
-> **Verificação dimensional independente:** `[V/m] / ([T]·[m]) = V/(T·m²) = V/(V·s) = 1/s` ✔ — resulta em hertz, como deve. A forma `f = n·B·d·E` daria `T·m²·V/m = V·s`, que **não é** frequência. A reconstrução está correta.
+> **D-10 — conferido na página original.** A página impressa 1-30 mostra `f = E/(nBd)`, com `E` no numerador. A perda da barra ocorreu na extração de texto, não na fórmula impressa. A figura abaixo permite verificar a dedução e a notação.
+
+
+<FiguraFonte figura="apostila-p041" />
 
 **Outros fatores que desviam a frequência** ‹p. 1-29›: temperatura (expansão das cavidades — *"problema sério devido ao fato que considerável energia é irradiada"*), corrente catodo-anodo (por aquecimento do anodo e por campo magnético adicional), e o número de cavidades por feixe.
 
@@ -317,6 +355,9 @@ $$
 | Estrutura | a válvula de potência **é** o oscilador | oscilador estável de **baixa** potência → amplificador |
 | Precisa de amplificador? | **não** | sim, por definição |
 | Escolhe-se quando | *"tamanho reduzido, simplicidade de fabricação"*; *"potência e estabilidade **não** sejam fatores preponderantes"* | *"potência e estabilidade **sejam** fatores preponderantes"*; *"tamanho não seja restrição"* |
+
+
+<FiguraFonte figura="sue6-2a4-p029" />
 
 **Cronologia das válvulas de potência** ‹p. 1-21›: triodos/pentodos em VHF (antes da 2ª Guerra) → **Magnetron** (oscilador de cavidades) → **Klystron**, 1950, *"de maior potência que a Magnetron que, por ser uma válvula **amplificadora**, permite formas de onda mais sofisticadas"* → **TWT**, *"parente próxima da Klystron, porém de faixa mais larga"* → **CFA**, 1960, *"bastante compacto e de faixa larga, mas de **ganho modesto**, implicando em geral a adição de mais um estágio"*.
 
@@ -442,7 +483,7 @@ A fonte trata o transmissor como **cadeia de três blocos ideais**. Na prática,
 
 **Com M01.** O sincronizador alimenta transmissor **e** indicador — a dupla saída de M01 Aula 1.6. Aqui se vê o ramo do transmissor; o ramo do indicador aparece em M05.
 
-**Com a T1 da disciplina.** Multivibrador, limitador e Schmitt trigger, matéria da primeira parte, **são** os circuitos do sincronizador. Única porta de integração entre as duas metades de DET.
+**Com a T1 da disciplina.** Multivibrador, limitador e Schmitt trigger, matéria da primeira parte, **são** os circuitos do sincronizador. Uma das ligações entre as duas partes de DET.
 
 **Com M04.** A deriva de frequência da magnetron (temperatura, corrente anódica, salto de modo) é **o motivo de existir o CAF** no receptor. O modulador também fornece ao CAF a **amostra do pulso transmitido** — foi isso que a Q1 de 2024 cobrou no bloco (D).
 
@@ -484,4 +525,4 @@ A fonte trata o transmissor como **cadeia de três blocos ideais**. Na prática,
 | `SUE6.2a4-...transmissor.odp` | **60 slides** | Arquiteturas, magnetron, modulador tipo linha, cronograma do transmissor | **Alta** — lido integralmente. **Sem truncamento** em relação ao `.pdf` (ver §L-02 em `source-audit.md`) |
 | `T2/SOPA DET T2 2024.pdf` | **Q1**, blocos (A), (B), (C) | 5 das 16 afirmativas = 1,5 ponto | **Alta** — rubrica oficial |
 
-**Marcações:** 4 × `[INFERÊNCIA PEDAGÓGICA]` · 2 × `[CONFLITO ENTRE FONTES]` (D-08, D-09) · 1 × `[PONTO DE INCERTEZA]` (D-10) · 1 × `[APROFUNDAMENTO ANALÍTICO DE SUPORTE]` · 0 × `[LACUNA DE COBERTURA]`.
+**Conferência visual:** figuras originais dos slides e da apostila, com localização e orientação de leitura em cada legenda. D-08 e D-09 continuam como conflitos entre fontes; D-10 foi resolvido pela inspeção da página original.

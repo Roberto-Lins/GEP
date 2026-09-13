@@ -1,8 +1,8 @@
 import type { Midia } from '@tipos/media';
 export type { Midia } from '@tipos/media';
 
-// Os manifests fornecidos registram figuras ainda não extraídas. Nenhum asset
-// acadêmico provisório é publicado antes da extração e validação correspondentes.
+// Figuras acadêmicas estão em figuras.json e são apresentadas junto à aula.
+// Este registro permanece reservado a vídeos, podcasts e mapas de estudo.
 export const midias: Midia[] = [];
 
 export function midiasPorTopico(slug: string) {
