@@ -4,6 +4,7 @@ import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
+import remarkGepMath from './src/plugins/remark-gep-math.mjs';
 
 // Bússola dos Aspirantes — plataforma estática multi-curso.
 // Ajuste `site` ao publicar (Vercel/Netlify/GitHub Pages).
@@ -16,8 +17,11 @@ export default defineConfig({
   ],
   markdown: {
     shikiConfig: { theme: 'css-variables' },
-    remarkPlugins: [remarkMath],
-    rehypePlugins: [[rehypeKatex, { strict: 'ignore' }]],
+    // remark-math cobre o padrão novo ($...$ / $$...$$).
+    // remark-gep-math mantém cursos antigos legíveis ao promover fórmulas
+    // históricas entre crases para inlineMath sem alterar seus valores.
+    remarkPlugins: [remarkMath, remarkGepMath],
+    rehypePlugins: [[rehypeKatex, { strict: 'ignore', throwOnError: false }]],
   },
   // Compatibilidade com as rotas antigas do GEP (curso único → /gep/...).
   // As rotas de matéria são enumeradas (build estático não expande [slug] em redirect).
