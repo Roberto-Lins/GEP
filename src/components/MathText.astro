@@ -1,0 +1,62 @@
+---
+import katex from 'katex';
+
+interface Props {
+  math: string;
+  display?: boolean;
+  class?: string;
+  label?: string;
+}
+
+const {
+  math,
+  display = false,
+  class: className = '',
+  label,
+} = Astro.props;
+
+function stripDelimiters(value: string): string {
+  const trimmed = String(value ?? '').trim();
+  if (trimmed.startsWith('$$') && trimmed.endsWith('$$') && trimmed.length >= 4) {
+    return trimmed.slice(2, -2).trim();
+  }
+  if (trimmed.startsWith('$') && trimmed.endsWith('$') && trimmed.length >= 2) {
+    return trimmed.slice(1, -1).trim();
+  }
+  return trimmed;
+}
+
+const expression = stripDelimiters(math);
+const html = katex.renderToString(expression, {
+  displayMode: display,
+  throwOnError: false,
+  strict: 'warn',
+  trust: false,
+  output: 'htmlAndMathml',
+});
+---
+
+<span
+  class:list={['math-text', display && 'math-text--display', className]}
+  aria-label={label}
+  set:html={html}
+/>
+
+<style>
+  .math-text {
+    max-width: 100%;
+  }
+
+  .math-text--display {
+    display: block;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0.15rem 0;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .math-text--display :global(.katex-display) {
+    margin: 0.8rem 0;
+    min-width: max-content;
+  }
+</style>
