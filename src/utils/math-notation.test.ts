@@ -3,12 +3,13 @@ import { describe, expect, it } from 'vitest';
 import { looksLikeMath, normalizeLegacyMath } from './math-notation.mjs';
 
 describe('math notation compatibility', () => {
-  it('recognizes formulas but not course/source identifiers', () => {
+  it('recognizes formulas but not course/source/navigation identifiers', () => {
     expect(looksLikeMath('S₁ = P / (4πR²)')).toBe(true);
     expect(looksLikeMath('R_máx')).toBe(true);
     expect(looksLikeMath('SUE6.11')).toBe(false);
     expect(looksLikeMath('M06')).toBe(false);
     expect(looksLikeMath('P-08')).toBe(false);
+    expect(looksLikeMath('M00 → M01 → M02')).toBe(false);
   });
 
   it('turns simple legacy division into a real fraction', () => {
