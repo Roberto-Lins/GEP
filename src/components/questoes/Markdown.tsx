@@ -1,18 +1,14 @@
 import { Fragment, type ReactNode } from 'react';
+import katex from 'katex';
 
 /**
- * Renderizador Markdown minimalista e sem dependências, feito sob medida para os
- * gabaritos comentados das questões. Cobre exatamente o subconjunto que os
- * gabaritos usam:
- *   • **negrito**, *itálico* e `código` inline;
- *   • títulos `#`…`######`;
- *   • listas não ordenadas (`-`, `•`, `*`) e ordenadas (`1.`);
- *   • citações (`>`);
- *   • tabelas GFM (cabeçalho + linha separadora `| --- |`);
- *   • parágrafos separados por linha em branco (quebra simples vira <br/>).
+ * Renderizador Markdown minimalista, feito sob medida para enunciados/gabaritos.
+ * Além do subconjunto Markdown já usado no banco, aceita notação matemática:
+ *   • $...$ para matemática inline;
+ *   • $$...$$ para equações em bloco (inclusive multilinha).
  *
- * NÃO interpreta `_` como itálico de propósito: a notação elétrica usa muitos
- * subscritos (T_ALTO, R_rf, P_R1) que não devem virar ênfase.
+ * NÃO interpreta `_` como itálico de propósito: a notação técnica usa muitos
+ * subscritos (T_ALTO, R_rf, P_R1). Em fórmulas, `_` é processado pelo KaTeX.
  */
 
 interface Props {
@@ -20,8 +16,27 @@ interface Props {
   className?: string;
 }
 
-// ── inline: **negrito**, *itálico*, `código` ────────────────────────────────
-const INLINE = /(\*\*[^*]+\*\*|`[^`]+`|\*[^*\s][^*]*\*)/g;
+function mathHtml(expression: string, displayMode: boolean): string {
+  return katex.renderToString(expression.trim(), {
+    displayMode,
+    throwOnError: false,
+    strict: 'warn',
+    trust: false,
+    output: 'htmlAndMathml',
+  });
+}
+
+function MathToken({ expression, display = false }: { expression: string; display?: boolean }) {
+  return (
+    <span
+      className={display ? 'block max-w-full overflow-x-auto overflow-y-hidden py-1' : 'inline max-w-full'}
+      dangerouslySetInnerHTML={{ __html: mathHtml(expression, display) }}
+    />
+  );
+}
+
+// Ordem importa: código vem antes de matemática para não interpretar $ dentro de `...`.
+const INLINE = /(`[^`]+`|\$[^$\n]+\$|\*\*[^*]+\*\*|\*[^*\s][^*]*\*)/g;
 
 function inline(text: string, keyBase: string): ReactNode[] {
   const out: ReactNode[] = [];
@@ -31,17 +46,20 @@ function inline(text: string, keyBase: string): ReactNode[] {
     const idx = m.index ?? 0;
     if (idx > last) out.push(text.slice(last, idx));
     const tok = m[0];
-    if (tok.startsWith('**')) {
-      out.push(
-        <strong key={`${keyBase}-b${i}`} className="font-semibold text-marfim">
-          {tok.slice(2, -2)}
-        </strong>,
-      );
-    } else if (tok.startsWith('`')) {
+
+    if (tok.startsWith('`')) {
       out.push(
         <code key={`${keyBase}-c${i}`} className="rounded bg-white/10 px-1 py-0.5 font-mono text-[0.85em] text-dourado">
           {tok.slice(1, -1)}
         </code>,
+      );
+    } else if (tok.startsWith('$')) {
+      out.push(<MathToken key={`${keyBase}-m${i}`} expression={tok.slice(1, -1)} />);
+    } else if (tok.startsWith('**')) {
+      out.push(
+        <strong key={`${keyBase}-b${i}`} className="font-semibold text-marfim">
+          {tok.slice(2, -2)}
+        </strong>,
       );
     } else {
       out.push(
@@ -61,6 +79,7 @@ const BULLET = /^\s*[-•*]\s+/;
 const ORDERED = /^\s*\d+\.\s+/;
 const QUOTE = /^\s*>\s?/;
 const HEADING = /^(#{1,6})\s+(.*)$/;
+const DISPLAY_MATH_START = /^\s*\$\$/;
 
 function splitRow(line: string): string[] {
   return line
@@ -74,6 +93,18 @@ function splitRow(line: string): string[] {
 function isTableSep(line: string): boolean {
   if (!line.includes('|') || !line.includes('-')) return false;
   return splitRow(line).every((c) => /^:?-{2,}:?$/.test(c));
+}
+
+function isSpecialBlock(line: string): boolean {
+  return (
+    line.trim() === '' ||
+    HEADING.test(line) ||
+    BULLET.test(line) ||
+    ORDERED.test(line) ||
+    QUOTE.test(line) ||
+    line.trim().startsWith('|') ||
+    DISPLAY_MATH_START.test(line)
+  );
 }
 
 const HEADING_CLASS: Record<number, string> = {
@@ -96,6 +127,47 @@ export default function Markdown({ children, className }: Props) {
 
     if (line.trim() === '') {
       i++;
+      continue;
+    }
+
+    // matemática em bloco: $$...$$ ou bloco multilinha.
+    if (DISPLAY_MATH_START.test(line)) {
+      const mathLines: string[] = [];
+      let current = line.replace(/^\s*\$\$/, '');
+      let closed = false;
+
+      if (current.includes('$$')) {
+        mathLines.push(current.slice(0, current.indexOf('$$')));
+        closed = true;
+        i++;
+      } else {
+        if (current.trim()) mathLines.push(current);
+        i++;
+        while (i < lines.length) {
+          current = lines[i];
+          const end = current.indexOf('$$');
+          if (end >= 0) {
+            mathLines.push(current.slice(0, end));
+            closed = true;
+            i++;
+            break;
+          }
+          mathLines.push(current);
+          i++;
+        }
+      }
+
+      const expression = mathLines.join('\n').trim();
+      if (closed && expression) {
+        blocks.push(
+          <div key={`dm${key++}`} className="my-3 max-w-full overflow-x-auto overflow-y-hidden text-center">
+            <MathToken expression={expression} display />
+          </div>,
+        );
+      } else {
+        // Se o delimitador estiver incompleto, preserva o texto em vez de escondê-lo.
+        blocks.push(<p key={`dmerr${key++}`} className="my-1">{`$$${mathLines.join('\n')}`}</p>);
+      }
       continue;
     }
 
@@ -207,15 +279,7 @@ export default function Markdown({ children, className }: Props) {
     // parágrafo (acumula linhas até branco/bloco especial)
     const para: string[] = [line];
     i++;
-    while (
-      i < lines.length &&
-      lines[i].trim() !== '' &&
-      !HEADING.test(lines[i]) &&
-      !BULLET.test(lines[i]) &&
-      !ORDERED.test(lines[i]) &&
-      !QUOTE.test(lines[i]) &&
-      !lines[i].trim().startsWith('|')
-    ) {
+    while (i < lines.length && !isSpecialBlock(lines[i])) {
       para.push(lines[i]);
       i++;
     }
