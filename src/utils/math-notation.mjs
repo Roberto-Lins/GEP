@@ -46,24 +46,19 @@ function replaceNamedSubscripts(s) {
   return s.replace(/_([A-Za-zÀ-ÿ]+)(?![A-Za-zÀ-ÿ])/g, (_m, name) => `_{\\mathrm{${name}}}`);
 }
 
-function matchingOuterPair(s) {
-  const pairs = [['(', ')'], ['[', ']']];
-  for (const [open, close] of pairs) {
-    if (!(s.startsWith(open) && s.endsWith(close))) continue;
-    let depth = 0;
-    for (let i = 0; i < s.length; i++) {
-      if (s[i] === open) depth++;
-      if (s[i] === close) depth--;
-      if (depth === 0 && i < s.length - 1) return null;
+function findMatchingClose(s, start) {
+  const open = s[start];
+  const close = open === '(' ? ')' : open === '[' ? ']' : null;
+  if (!close) return -1;
+  let depth = 0;
+  for (let i = start; i < s.length; i++) {
+    if (s[i] === open) depth++;
+    else if (s[i] === close) {
+      depth--;
+      if (depth === 0) return i;
     }
-    return [open, close];
   }
-  return null;
-}
-
-function stripOuterGrouping(s) {
-  const t = s.trim();
-  return matchingOuterPair(t) ? t.slice(1, -1).trim() : t;
+  return -1;
 }
 
 function findTopLevelSlash(s) {
@@ -90,13 +85,64 @@ function ratioParentheses(s) {
   );
 }
 
+function splitDenominator(rest) {
+  const leading = rest.match(/^\s*/)?.[0] ?? '';
+  const start = leading.length;
+  if (start >= rest.length) return null;
+
+  if (rest[start] === '(' || rest[start] === '[') {
+    const close = findMatchingClose(rest, start);
+    if (close < 0) return null;
+    return {
+      denominator: rest.slice(start + 1, close).trim(),
+      tail: rest.slice(close + 1),
+    };
+  }
+
+  // Divisão e multiplicação têm a mesma precedência e associatividade à esquerda:
+  // x^2/r * b * d = (x^2/r) * b * d. Portanto o denominador é só o
+  // próximo fator, não tudo o que vem depois da barra.
+  const op = rest.slice(start).search(/\s+\\(?:cdot|times)\s+/);
+  if (op >= 0) {
+    const end = start + op;
+    return {
+      denominator: rest.slice(start, end).trim(),
+      tail: rest.slice(end),
+    };
+  }
+
+  return { denominator: rest.slice(start).trim(), tail: '' };
+}
+
+function prettyPowerGroup(s) {
+  const t = s.trim();
+  if (!(t.startsWith('[') || t.startsWith('('))) return null;
+  const close = findMatchingClose(t, 0);
+  if (close <= 0) return null;
+  const after = t.slice(close + 1).trim();
+  const exponent = /^\^\{(.+)\}$/.exec(after);
+  if (!exponent) return null;
+
+  const inner = prettySide(t.slice(1, close));
+  const power = prettySide(exponent[1]);
+  const left = t[0] === '[' ? '\\left[' : '\\left(';
+  const right = t[0] === '[' ? '\\right]' : '\\right)';
+  return `${left}${inner}${right}^{${power}}`;
+}
+
 function prettySide(side) {
   let s = ratioParentheses(side.trim());
+
+  const poweredGroup = prettyPowerGroup(s);
+  if (poweredGroup) return poweredGroup;
+
   const slash = findTopLevelSlash(s);
   if (slash >= 0) {
-    const numerator = stripOuterGrouping(s.slice(0, slash));
-    const denominator = stripOuterGrouping(s.slice(slash + 1));
-    if (numerator && denominator) s = `\\frac{${numerator}}{${denominator}}`;
+    const numerator = s.slice(0, slash).trim();
+    const split = splitDenominator(s.slice(slash + 1));
+    if (numerator && split?.denominator) {
+      s = `\\frac{${numerator}}{${split.denominator}}${split.tail}`;
+    }
   }
   return s;
 }
@@ -131,7 +177,12 @@ export function normalizeLegacyMath(value) {
   s = s
     .replace(/\^\s*\(([^)]+)\)/g, '^{$1}')
     .replace(/\^\s*([+\-−]?\d+(?:[.,]\d+)?)/g, '^{$1}')
-    .replace(/\bpi\b/gi, '\\pi')
+    .replace(/π/g, '\\pi ')
+    .replace(/λ/g, '\\lambda ')
+    .replace(/τ/g, '\\tau ')
+    .replace(/μ/g, '\\mu ')
+    .replace(/Ω/g, '\\Omega ')
+    .replace(/\bpi\b/gi, '\\pi ')
     .replace(/√\s*\(([^)]+)\)/g, '\\sqrt{$1}')
     .replace(/√\s*([A-Za-z0-9]+)/g, '\\sqrt{$1}')
     .replace(/·/g, '\\cdot ')
