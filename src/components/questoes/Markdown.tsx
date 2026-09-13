@@ -1,11 +1,15 @@
 import { Fragment, type ReactNode } from 'react';
 import katex from 'katex';
+// Utilitário ESM compartilhado também pelo pipeline Markdown/MDX.
+// @ts-ignore — o módulo é JavaScript deliberadamente para ser carregado pelo astro.config.mjs.
+import { looksLikeMath, normalizeLegacyMath } from '../../utils/math-notation.mjs';
 
 /**
  * Renderizador Markdown minimalista, feito sob medida para enunciados/gabaritos.
  * Além do subconjunto Markdown já usado no banco, aceita notação matemática:
  *   • $...$ para matemática inline;
- *   • $$...$$ para equações em bloco (inclusive multilinha).
+ *   • $$...$$ para equações em bloco (inclusive multilinha);
+ *   • compatibilidade com fórmulas antigas entre crases.
  *
  * NÃO interpreta `_` como itálico de propósito: a notação técnica usa muitos
  * subscritos (T_ALTO, R_rf, P_R1). Em fórmulas, `_` é processado pelo KaTeX.
@@ -48,11 +52,16 @@ function inline(text: string, keyBase: string): ReactNode[] {
     const tok = m[0];
 
     if (tok.startsWith('`')) {
-      out.push(
-        <code key={`${keyBase}-c${i}`} className="rounded bg-white/10 px-1 py-0.5 font-mono text-[0.85em] text-dourado">
-          {tok.slice(1, -1)}
-        </code>,
-      );
+      const code = tok.slice(1, -1);
+      if (looksLikeMath(code)) {
+        out.push(<MathToken key={`${keyBase}-lm${i}`} expression={normalizeLegacyMath(code)} />);
+      } else {
+        out.push(
+          <code key={`${keyBase}-c${i}`} className="rounded bg-white/10 px-1 py-0.5 font-mono text-[0.85em] text-dourado">
+            {code}
+          </code>,
+        );
+      }
     } else if (tok.startsWith('$')) {
       out.push(<MathToken key={`${keyBase}-m${i}`} expression={tok.slice(1, -1)} />);
     } else if (tok.startsWith('**')) {
