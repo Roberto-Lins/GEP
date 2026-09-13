@@ -26,13 +26,15 @@ export function looksLikeMath(value) {
   if (/^[A-Z]{1,4}-\d{1,4}$/i.test(s)) return false;
   if (/^M\d{2}$/i.test(s)) return false;
 
-  const hasEquation = /(?:=|≈|≃|≤|≥|<|>|⇒|→)/.test(s);
+  const hasRelation = /(?:=|≈|≃|≤|≥|<|>)/.test(s);
+  const hasArrow = /(?:⇒|→)/.test(s);
   const hasMathGlyph = /[πλτμΩ°×·÷√∑∆Δ⁰¹²³⁴⁵⁶⁷⁸⁹₀₁₂₃₄₅₆₇₈₉]/.test(s);
   const hasVariableSubscript = /\b[A-Za-z][A-Za-z0-9]*_[A-Za-zÀ-ÿ0-9]+/.test(s);
   const hasOperator = /(?:\^|\/|\*|·|×)/.test(s);
   const looksNumericScientific = /\d\s*[×·]\s*10/.test(s);
+  const arrowInsideMath = hasArrow && (hasMathGlyph || hasVariableSubscript || hasOperator);
 
-  return hasEquation || hasMathGlyph || hasVariableSubscript || looksNumericScientific ||
+  return hasRelation || hasMathGlyph || hasVariableSubscript || looksNumericScientific || arrowInsideMath ||
     (hasOperator && /[A-Za-z0-9πλτμΩ]/.test(s));
 }
 
