@@ -23,6 +23,9 @@ const painelTopicos = ordenados.map((t) => ({
   slug: t.slug, titulo: t.titulo, ordem: t.ordem, totalChecklist: dados.checklistDe(t.slug).length,
 }));
 const totais = Object.fromEntries(dados.timeline.map((t) => [t.slug, dados.checklistDe(t.slug).length]));
+const caderno = config.features.cadernoRevisao
+  ? config.downloads.find((item) => item.tipo === 'caderno_de_revisao')
+  : undefined;
 ---
 <BaseLayout titulo={config.titulo} descricao={config.descricao} curso={curso} largura="larga">
   <!-- HERO -->
@@ -53,6 +56,17 @@ const totais = Object.fromEntries(dados.timeline.map((t) => [t.slug, dados.check
         <a href={urlMateria(curso!, ordenados[0].slug)} class="btn-primary">Começar pela primeira matéria</a>
         {config.features.timeline && <a href={`/${curso}/timeline`} class="btn-ghost">Ver a linha do tempo</a>}
         {config.features.writing && <a href={`/${curso}/writing`} class="btn-ghost">Área de Writing</a>}
+        {caderno && (
+          <a
+            href={caderno.arquivo}
+            class="btn-ghost"
+            download
+            aria-label={`${caderno.rotulo} — ${caderno.paginas} páginas, ${caderno.tamanho_kb} KB`}
+          >
+            {caderno.rotulo}
+            <span class="sr-only"> — {caderno.paginas} páginas, {caderno.tamanho_kb} KB</span>
+          </a>
+        )}
       </div>
       <dl class="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-sm">
         <div><dt class="text-nevoa/50">Mini matérias</dt><dd class="font-serif text-xl text-marfim">{ordenados.length}</dd></div>

@@ -15,6 +15,26 @@ export const featuresSchema = z.object({
   // Aba "Writing" + ferramenta de auxílio à escrita (ex.: ING-4). Aditivo e
   // retrocompatível: cursos sem o campo recebem `false`.
   writing: z.boolean().default(false),
+  // Download impresso de revisão. Capability global, ativação explícita por curso.
+  cadernoRevisao: z.boolean().default(false),
+});
+
+export const downloadSchema = z.object({
+  tipo: z.literal('caderno_de_revisao'),
+  rotulo: z.string().min(1),
+  arquivo: z.string().startsWith('/').endsWith('.pdf'),
+  materia: z.string().min(1),
+  avaliacao: z.string().min(1),
+  paginas: z.number().int().min(1).max(15),
+  tamanho_kb: z.number().int().positive(),
+  gerado_em: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+  versao: z.number().int().positive(),
+  hash_sha256: z.string().regex(/^[a-f0-9]{64}$/),
+  fonte_usada: z.string().min(1),
+  estilo_derivado_de: z.array(z.string().min(1)).min(1),
+  conteudo: z.array(z.enum(['resumo', 'exercicios', 'gabarito', 'formulario'])).min(3),
+  regenerar_se_mudar: z.array(z.string().min(1)).min(1),
+  origem_sha256: z.string().regex(/^[a-f0-9]{64}$/),
 });
 
 // Enum das turmas da Escola Naval (3°/4° ano). Reusado abaixo para aceitar
@@ -41,6 +61,7 @@ export const cursoConfigSchema = z.object({
   capa: z.string().optional(),
   features: featuresSchema,
   componentesExtras: z.array(z.string()).default([]),
+  downloads: z.array(downloadSchema).default([]),
 });
 
 export const midiaSchema = z.object({

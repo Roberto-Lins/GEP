@@ -66,13 +66,13 @@ export const fontes: Fonte[] = [
   {
     titulo: 'SOPA DET T2 2024 — prova com rubrica oficial',
     tipo: 'prova',
-    descricao: 'Base principal do diagnóstico de cobrança, da distribuição histórica de pontos e de exercícios reproduzidos ou derivados com rastreabilidade explícita.',
+    descricao: 'Base principal do diagnóstico de cobrança e da distribuição histórica de pontos. No Caderno de Revisão, serve apenas para derivar estilo, tipos e pesos: enunciados e respostas não são copiados nem parafraseados.',
     topicos: TODO_O_CURSO,
   },
   {
     titulo: 'SOPA DET T1 2024',
     tipo: 'prova',
-    descricao: 'Reforço secundário para identificar a assinatura de correção e o estilo da banca.',
+    descricao: 'Reforço secundário para identificar a assinatura de correção e o estilo da banca; não fornece enunciados ao Caderno de Revisão.',
     topicos: ['00-mapa-da-t2-e-diagnostico', '99-revisao-final'],
   },
 ];

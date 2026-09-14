@@ -38,6 +38,26 @@ export interface CursoFeatures {
   graficoProgressoAvancado: boolean;
   /** aba "Writing" + ferramenta de auxílio à escrita (ex.: ING-4). Default off. */
   writing?: boolean;
+  /** PDF impresso de revisão; só aparece quando ativado explicitamente no curso. */
+  cadernoRevisao?: boolean;
+}
+
+export interface CursoDownload {
+  tipo: 'caderno_de_revisao';
+  rotulo: string;
+  arquivo: string;
+  materia: string;
+  avaliacao: string;
+  paginas: number;
+  tamanho_kb: number;
+  gerado_em: string;
+  versao: number;
+  hash_sha256: string;
+  fonte_usada: string;
+  estilo_derivado_de: string[];
+  conteudo: Array<'resumo' | 'exercicios' | 'gabarito' | 'formulario'>;
+  regenerar_se_mudar: string[];
+  origem_sha256: string;
 }
 
 export interface CursoConfig extends CourseHierarchyMeta {
@@ -56,4 +76,6 @@ export interface CursoConfig extends CourseHierarchyMeta {
   features: CursoFeatures;
   /** componentes/animações exclusivos do curso (src/components/cursos/<slug>/) */
   componentesExtras?: string[];
+  /** Downloads derivados e versionados disponíveis apenas neste curso. */
+  downloads?: CursoDownload[];
 }
