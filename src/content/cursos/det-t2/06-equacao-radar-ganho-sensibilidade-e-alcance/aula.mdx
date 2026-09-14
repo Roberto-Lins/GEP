@@ -36,7 +36,11 @@ O professor abre com uma analogia ‹`SUE6.11`›: um megafone. Gritando sem meg
 
 **O ponto de partida é a antena isotrópica.** Uma antena isotrópica irradia **igualmente em todas as direções**. Toda a potência `P` entregue a ela se espalha, a uma distância `R`, sobre a superfície de uma **esfera de raio `R`**, cuja área é `4πR²`. Logo a densidade de potência é
 
-`S₁ = P / (4πR²)`   [W/m²]
+$$
+S_1 = \frac{P}{4\pi R^2}
+$$
+
+Unidade: W/m².
 
 | Símbolo | Significado | Unidade |
 |---|---|---|
@@ -49,7 +53,11 @@ O professor abre com uma analogia ‹`SUE6.11`›: um megafone. Gritando sem meg
 
 **O ganho é a razão entre a antena real e a isotrópica.** Nenhum radar usa antena isotrópica: o radar precisa saber **a marcação** do alvo (M01), e para isso o feixe tem de ser estreito. A antena real concentra a potência numa direção, e a medida dessa concentração é o **ganho**:
 
-`G_t = S₂ / S₁`   ⇒   `S₂ = P·G_t / (4πR²)`
+$$
+G_t = \frac{S_2}{S_1}
+\quad\Longrightarrow\quad
+S_2 = \frac{P G_t}{4\pi R^2}
+$$
 
 | Símbolo | Significado | Unidade |
 |---|---|---|
@@ -60,7 +68,11 @@ O professor abre com uma analogia ‹`SUE6.11`›: um megafone. Gritando sem meg
 
 **A potência interceptada pelo alvo.** O alvo é um obstáculo de uma certa área efetiva `A_a` banhado por `S₂`:
 
-`P_a = A_a · S₂ = P·G_t·A_a / (4πR²)`   [W]
+$$
+P_a = A_a S_2 = \frac{P G_t A_a}{4\pi R^2}
+$$
+
+Unidade: W.
 
 | Símbolo | Significado | Unidade |
 |---|---|---|
@@ -71,7 +83,12 @@ O professor abre com uma analogia ‹`SUE6.11`›: um megafone. Gritando sem meg
 
 **O alvo reirradia de volta, e reirradia mal.** O alvo não é uma antena: ele reirradia a potência interceptada **omnidirecionalmente** ‹`SUE6.11`›. Então a mesma geometria de esfera se repete no caminho de volta:
 
-`S₃ = P_a / (4πR²) = P·G_t·A_a / (4πR²)²`   [W/m²]
+$$
+S_3 = \frac{P_a}{4\pi R^2}
+= \frac{P G_t A_a}{\left(4\pi R^2\right)^2}
+$$
+
+Unidade: W/m².
 
 O `(4πR²)²` é o **coração** da equação radar: o eco sofre a lei do inverso do quadrado **duas vezes**, e é por isso que a potência recebida cai com `R⁴`.
 
@@ -83,11 +100,22 @@ O `(4πR²)²` é o **coração** da equação radar: o eco sofre a lei do inver
 
 **Fechando a equação.** A antena do radar recebe o eco com sua própria área efetiva. Como transmissão e recepção usam **a mesma antena** (M05 — a chave de antena existe por isso), vale `A_t = A_r = A` e `G_t = G_r = G`. Então:
 
-`P_r = A · S₃ = P·G·A_a·A / (4πR²)²`   [W]
+$$
+P_r = A S_3
+= \frac{P G A_a A}{\left(4\pi R^2\right)^2}
+= \frac{P G A_a A}{(4\pi)^2 R^4}
+$$
+
+Unidade: W.
 
 **Mas os enunciados nunca dão `A` — dão `G` em dB.** A ponte é a relação fundamental antena-ganho:
 
-`G = 4πA / λ²`   ⇒   `A = G·λ² / (4π)`   com   `λ = c/f`
+$$
+G = \frac{4\pi A}{\lambda^2}
+\quad\Longrightarrow\quad
+A = \frac{G\lambda^2}{4\pi},
+\qquad \lambda = \frac{c}{f}
+$$
 
 | Símbolo | Significado | Unidade |
 |---|---|---|
@@ -98,7 +126,9 @@ O `(4πR²)²` é o **coração** da equação radar: o eco sofre a lei do inver
 
 **Forma alternativa.** Substituindo `A` na equação de `P_r` obtém-se ‹`SUE6.11`›:
 
-`P_r = P·G²·λ²·A_a / [(4π)³·R⁴]`
+$$
+P_r = \frac{P G^2 \lambda^2 A_a}{(4\pi)^3 R^4}
+$$
 
 As duas formas são a mesma coisa. **Use a primeira** (`P_r = P·G·A_a·A / (4πR²)²`): é a que a rubrica usa, e ela deixa `A` explícito, o que evita erro de expoente no `(4π)`.
 
@@ -109,7 +139,11 @@ As duas formas são a mesma coisa. **Use a primeira** (`P_r = P·G·A_a·A / (4�
 
 **O alcance máximo é a distância em que o eco cai exatamente no mínimo sinal detectável.** Fazendo `P_r = S_mín` e isolando `R`:
 
-`S_mín = P·G·A_a·A / [(4π)²·R_máx⁴]`   ⇒   **`R_máx = [ P·G·A_a·A / ((4π)²·S_mín) ]^(1/4)`**
+$$
+S_{\min} = \frac{P G A_a A}{(4\pi)^2 R_{\max}^4}
+\quad\Longrightarrow\quad
+\boxed{R_{\max} = \left[\frac{P G A_a A}{(4\pi)^2 S_{\min}}\right]^{1/4}}
+$$
 
 | Símbolo | Significado | Unidade |
 |---|---|---|
@@ -179,7 +213,12 @@ Nenhuma fonte da EN dedica um tópico a isto — mas **a prova inteira da Q3 com
 
 **O que muda quando o receptor não é o radar.** A equação radar tem `(4πR²)²` porque o sinal faz **dois** percursos: vai até o alvo e volta. Um receptor **MAGE** (Medidas de Apoio à Guerra Eletrônica) não devolve nada: ele apenas **escuta** o pulso do radar. O sinal faz **um** percurso. Logo:
 
-`P_rx = P·G_t·A_rx / (4πR²)`   ← **`4πR²`, nunca `(4π)²R⁴`**
+$$
+P_{rx} = \frac{P G_t A_{rx}}{4\pi R^2}
+\qquad\text{(um percurso: somente ida)}
+$$
+
+O denominador é **`4πR²`, nunca `(4π)²R⁴`**.
 
 | Símbolo | Significado |
 |---|---|
@@ -402,7 +441,7 @@ As páginas abaixo contêm os sete problemas indicados ao final da Seção 8. S�
 
 **P-14 — trocar `A_a` por `A`.** ⭐ *nova em M06.* A rubrica dá `A_a = 180 m²` (alvo, no enunciado) e calcula `A = 2 m²` (antena, pelo ganho). Quem inverte os dois no numerador `P·G·A_a·A` **não altera o produto** — e passa. Mas quem usa 180 m² **nos dois lugares**, ou 2 m² nos dois, erra por fator **90** (ou 1/90) dentro da raiz — isto é, `90^(1/4) = 3,08` no alcance. O sintoma é um `R_máx` de **~419 km** ou de **~44 km** em vez de 136 km.
 
-**P-15 — confundir os dois `R_máx`.** Existem dois na disciplina, com o mesmo nome: o de **M02** (`c/2·FRP`, sem ambiguidade, limite de **tempo**) e o de **M06** (equação radar, limite de **energia**). Se o enunciado dá FRP, é M02. Se dá potência, ganho e sensibilidade, é M06. O alcance operativo real é o **menor dos dois** `[INFERÊNCIA PEDAGÓGICA]`.
+**P-15 — confundir os dois `R_máx`.** Existem dois na disciplina, com o mesmo nome: o de **M02** (`c/(2·FRP)`, sem ambiguidade, limite de **tempo**) e o de **M06** (equação radar, limite de **energia**). Se o enunciado dá FRP, é M02. Se dá potência, ganho e sensibilidade, é M06. O alcance operativo real é o **menor dos dois** `[INFERÊNCIA PEDAGÓGICA]`.
 
 ---
 

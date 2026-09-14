@@ -24,7 +24,7 @@ secaoOrdem: 2
 
 Este módulo tem duas metades que não se parecem.
 
-**A primeira metade fecha o mapa.** O radar de pulso que você estudou em seis módulos é **um** ponto num espaço de soluções, e todas as outras soluções existem porque o pulso tem limitações que você já conhece: `R_mín = c·LP/2` (M02, M05), a ambiguidade em `c/2·FRP` (M02), a incapacidade de separar alvo móvel de clutter (M04), e o fato de que **um radar ligado se denuncia** (M06). Cada adjacência ataca uma dessas.
+**A primeira metade fecha o mapa.** O radar de pulso que você estudou em seis módulos é **um** ponto num espaço de soluções, e todas as outras soluções existem porque o pulso tem limitações que você já conhece: `R_mín = c·LP/2` (M02, M05), a ambiguidade em `c/(2·FRP)` (M02), a incapacidade de separar alvo móvel de clutter (M04), e o fato de que **um radar ligado se denuncia** (M06). Cada adjacência ataca uma dessas.
 
 **A segunda metade prepara a prova.** Aqui está o mapa único dos seis módulos, o protocolo de execução da T2 minuto a minuto e a revisão final.
 
@@ -250,7 +250,7 @@ Erro **nulo** ⇒ o eco está centrado na janela ⇒ acompanhamento travado. Err
 | Ação | Efeito colateral |
 |---|---|
 | **Aumentar λ** (baixar a portadora) | feixe mais largo ⇒ **pior poder de separação em marcação** (M02, M06) |
-| **Aumentar a FRP** | **mais ambiguidade em distância** (`R_máx = c/2·FRP`, M02) |
+| **Aumentar a FRP** | **mais ambiguidade em distância** (`R_máx = c/(2·FRP)`, M02) |
 
 *"Conclusão: deve-se empregar uma **solução de compromisso**."* — a mesma frase que fecha M02, M04 e M06. É o padrão da disciplina inteira.
 
@@ -441,7 +441,7 @@ O slide mostra a saída de um receptor MAGE com três emissores detectados:
 **Leitura tática, usando só o que este curso ensinou:**
 
 - **#2 é o mais perigoso.** Varredura **cônica** é assinatura de **radar de rastreamento** (C046), cujo *"principal emprego é como radar de **direção de tiro**"*. Um radar de busca varre em círculo procurando; um radar de direção de tiro em varredura cônica **já escolheu** um alvo.
-- **#1 é um radar de busca/navegação.** Pulsado, varredura circular, FRP 1.200 Hz e LP 1 µs — os números de um radar de superfície comum. Confira com M02: `R_máx = c/2·FRP = 125 km`, `PSD = c·LP/2 = 150 m`.
+- **#1 é um radar de busca/navegação.** Pulsado, varredura circular, FRP 1.200 Hz e LP 1 µs — os números de um radar de superfície comum. Confira com M02: `R_máx = c/(2·FRP) = 125 km`, `PSD = c·LP/2 = 150 m`.
 - **#3 não tem FRP nem LP** — e não é falha do MAGE: um **CW-FM não é pulsado**, logo essas duas colunas não existem para ele. Repare que o MAGE **conseguiu** detectá-lo, apesar do caráter LPI (C048): LPI significa *difícil*, não *impossível*.
 - **Nenhuma das colunas é distância.** O MAGE não mede distância — ele não emitiu nada, e sem sinal transmitido não existe o `t` de `d = c·t/2`.
 
@@ -466,7 +466,7 @@ O slide mostra a saída de um receptor MAGE com três emissores detectados:
 | # | A cadeia | Módulos |
 |---|---|---|
 | 1 | `LP ↓` → `PSD ↓` e `R_mín ↓` → **mas** `B = 1/LP ↑` → `P_n ↑` → `S_mín ↑` → `R_máx ↓` | M02 → M04 → M06 |
-| 2 | `FRP ↑` → `N_B ↑` (mais pulsos no alvo) → **mas** `R_máx = c/2·FRP ↓` | M02 |
+| 2 | `FRP ↑` → `N_B ↑` (mais pulsos no alvo) → **mas** `R_máx = c/(2·FRP) ↓` | M02 |
 | 3 | Magnetron = oscilador autoexcitado → **pulsos não coerentes** → **sem MTI** | M03 → M07 |
 | 4 | Sincronizador alimenta **TX, indicador e IFF** | M03 → M05 → M07 |
 | 5 | Circulador mantém o receptor sempre ligado → detecta **abaixo** de `R_mín` — a mesma razão pela qual o CW-Doppler vê alvos muito próximos | M05 → M07 |

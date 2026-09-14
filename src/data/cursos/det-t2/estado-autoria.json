@@ -1,10 +1,10 @@
 {
-  "versao": 2,
+  "versao": 3,
   "curso": "det-t2",
   "data": "2026-09-14",
-  "revisao_base": "1da95228feab9f71ce7af8e82724586180a9b087",
-  "tipo": "atualizacao_do_estado_real_com_caderno_de_revisao",
-  "escopo": "Caderno de Revisão aplicado somente a DET-T2, sem alterar ou ativar outras matérias",
+  "revisao_base": "53bb4a45c989aba211921d1b31d7ef8a79022054",
+  "tipo": "correcao_de_formulas_e_regeneracao_do_caderno",
+  "escopo": "Fórmulas e Caderno de Revisão corrigidos somente em DET-T2, sem alterar ou ativar outras matérias",
   "ids_questoes": [
     {
       "id": "DET-M01-COR-MED-001",
@@ -357,8 +357,8 @@
   ],
   "revisao_claude": "não realizada nesta atualização",
   "caderno_revisao": {
-    "versao": 1,
-    "arquivo": "/arquivos/cursos/det-t2/downloads/DET-T2-caderno-de-revisao-v1.pdf",
+    "versao": 2,
+    "arquivo": "/arquivos/cursos/det-t2/downloads/DET-T2-caderno-de-revisao-v2.pdf",
     "paginas": 13,
     "composicao": {"resumo": 6, "exercicios": 4, "gabarito": 2, "formulario": 1},
     "fonte_usada": "Liberation Sans (substituto métrico de Arial)",
@@ -370,8 +370,8 @@
       "DET-T2-M02-DIS-N4-013"
     ],
     "sopa_usada_como_conteudo": false,
-    "auditoria_pdf": "aprovada sem violações",
+    "auditoria_pdf": "aprovada sem violações; 13 páginas renderizadas e inspecionadas; cadeia S1, S2, Pa, S3, Pr e Rmax corrigida",
     "lacuna": "DET-CAD-L01 — sem asset real de brasão/logo; usado cabeçalho textual"
   },
-  "nota": "Este estado registra a revisão visual, os IDs reais do banco e o caderno derivado; não inventa histórico de tentativas dos alunos."
+  "nota": "Este estado registra a revisão visual, os IDs reais do banco, o caderno derivado e a correção das fórmulas de radar conferidas nas fontes; não inventa histórico de tentativas dos alunos."
 }
