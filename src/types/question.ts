@@ -1,4 +1,5 @@
 // Tipos do banco de questões de um curso.
+import type { ModalidadeEstudoId } from './study-mode';
 
 export type TipoQuestao = 'multipla' | 'vf' | 'correlacione' | 'discursiva';
 
@@ -19,6 +20,10 @@ export interface QuestaoMultipla {
   comentario: string;
   fonte?: string;
   armadilha?: string;
+  /** conceitos canônicos ensinados que esta questão efetivamente cobra */
+  conceptIds?: string[];
+  /** modalidades em que pode aparecer, sem alterar id, enunciado ou gabarito */
+  modalidades?: ModalidadeEstudoId[];
 }
 
 export interface QuestaoVF {
@@ -33,6 +38,8 @@ export interface QuestaoVF {
   comentario: string;
   fonte?: string;
   armadilha?: string;
+  conceptIds?: string[];
+  modalidades?: ModalidadeEstudoId[];
 }
 
 export interface GrupoCorrelacione {
@@ -48,6 +55,8 @@ export interface GrupoCorrelacione {
   /** erro provável ou critério de atenção associado ao grupo */
   armadilha?: string;
   fonte?: string;
+  conceptIds?: string[];
+  modalidades?: ModalidadeEstudoId[];
 }
 
 /**
@@ -68,6 +77,8 @@ export interface QuestaoDiscursiva {
   comentario?: string; // explicação didática complementar
   fonte?: string;
   armadilha?: string;
+  conceptIds?: string[];
+  modalidades?: ModalidadeEstudoId[];
 }
 
 export type Questao =

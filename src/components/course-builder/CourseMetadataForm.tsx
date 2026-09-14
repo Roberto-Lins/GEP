@@ -13,6 +13,8 @@ import {
 import { normalizeSlug } from '@utils/course-kit/normalizeSlug';
 import type { WizardMetadata } from './shared';
 import { inputCls, labelCls, selectCls } from './shared';
+import { EIXOS_PERFIL_COBRANCA, type EixoPerfilCobranca, type NivelPerfilCobranca } from '@tipos/course-kit';
+import { MODALIDADE_RESUMOS, MODALIDADES_ESTUDO, type ModalidadeEstudoId } from '@tipos/study-mode';
 
 interface Props {
   valor: WizardMetadata;
@@ -21,6 +23,7 @@ interface Props {
 
 export default function CourseMetadataForm({ valor, onChange }: Props) {
   const set = (patch: Partial<WizardMetadata>) => onChange({ ...valor, ...patch });
+  const linhas = (texto: string) => texto.split('\n').map((item) => item.trim()).filter(Boolean);
 
   const onNome = (nome: string) =>
     set({ nome, slug: valor.slugManual ? valor.slug : normalizeSlug(nome) });
@@ -106,6 +109,104 @@ export default function CourseMetadataForm({ valor, onChange }: Props) {
           placeholder="O que a matéria cobre, recorte temático, foco da prova…"
         />
       </div>
+
+      <fieldset className="rounded-xl border border-white/10 p-4">
+        <legend className="px-2 text-sm font-semibold text-marfim">Perfil de cobrança baseado nas fontes</legend>
+        <p className="mb-4 text-xs text-nevoa/60">Marque como incerta qualquer dimensão sem evidência suficiente; não complete por suposição.</p>
+        <label className="mb-4 block text-xs text-nevoa/75" htmlFor="perfil-status">
+          <span className="mb-1 block">Estado do perfil</span>
+          <select
+            id="perfil-status"
+            className={selectCls}
+            value={valor.perfilCobranca.status}
+            onChange={(e) => set({ perfilCobranca: { ...valor.perfilCobranca, status: e.target.value as 'pendente' | 'confirmado' } })}
+          >
+            <option value="pendente">Pendente — evidência insuficiente</option>
+            <option value="confirmado">Confirmado nas fontes</option>
+          </select>
+        </label>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {EIXOS_PERFIL_COBRANCA.map((eixo) => (
+            <label key={eixo} className="text-xs text-nevoa/75">
+              <span className="mb-1 block capitalize">{eixo.replace('aplicacaoInedita', 'aplicação inédita')}</span>
+              <select
+                className={selectCls}
+                value={valor.perfilCobranca.classificacao[eixo]}
+                onChange={(e) => set({
+                  perfilCobranca: {
+                    ...valor.perfilCobranca,
+                    classificacao: {
+                      ...valor.perfilCobranca.classificacao,
+                      [eixo as EixoPerfilCobranca]: e.target.value as NivelPerfilCobranca,
+                    },
+                  },
+                })}
+              >
+                <option value="incerta">Incerta</option>
+                <option value="baixa">Baixa</option>
+                <option value="media">Média</option>
+                <option value="alta">Alta</option>
+              </select>
+            </label>
+          ))}
+        </div>
+        <div className="mt-4 grid gap-4 sm:grid-cols-2">
+          <label className="text-xs text-nevoa/75" htmlFor="perfil-evidencias">
+            <span className="mb-1 block">Evidências de cobrança (uma por linha)</span>
+            <textarea
+              id="perfil-evidencias"
+              className={`${inputCls} min-h-[110px]`}
+              value={valor.perfilCobranca.evidencias.join('\n')}
+              onChange={(e) => set({ perfilCobranca: { ...valor.perfilCobranca, evidencias: linhas(e.target.value) } })}
+              placeholder="Prova P1 2025, questão 4: integra dois conceitos"
+            />
+          </label>
+          <label className="text-xs text-nevoa/75" htmlFor="perfil-fontes">
+            <span className="mb-1 block">Fontes localizadas (uma por linha)</span>
+            <textarea
+              id="perfil-fontes"
+              className={`${inputCls} min-h-[110px]`}
+              value={valor.perfilCobranca.fontes_localizadas.join('\n')}
+              onChange={(e) => set({ perfilCobranca: { ...valor.perfilCobranca, fontes_localizadas: linhas(e.target.value) } })}
+              placeholder="prova-p1-2025.pdf, p. 3, questão 4"
+            />
+          </label>
+        </div>
+        <label className="mt-4 block text-xs text-nevoa/75" htmlFor="perfil-incertezas">
+          <span className="mb-1 block">Incertezas reais (uma por linha)</span>
+          <textarea
+            id="perfil-incertezas"
+            className={`${inputCls} min-h-[80px]`}
+            value={valor.perfilCobranca.incertezas.join('\n')}
+            onChange={(e) => set({ perfilCobranca: { ...valor.perfilCobranca, incertezas: linhas(e.target.value) } })}
+            placeholder="Não há prova discursiva no corpus para classificar esse eixo."
+          />
+        </label>
+      </fieldset>
+
+      <fieldset className="rounded-xl border border-white/10 p-4">
+        <legend className="px-2 text-sm font-semibold text-marfim">Duração estimada por modalidade</legend>
+        <p className="mb-4 text-xs text-nevoa/60">Preencha somente depois de calcular a duração a partir do conteúdo real.</p>
+        <div className="grid gap-3 sm:grid-cols-3">
+          {MODALIDADES_ESTUDO.map((modo) => (
+            <label key={modo} className="text-xs text-nevoa/75">
+              <span className="mb-1 block">{MODALIDADE_RESUMOS[modo].rotulo} (min)</span>
+              <input
+                type="number"
+                min={1}
+                className={inputCls}
+                value={valor.duracaoMinutos[modo] ?? ''}
+                onChange={(e) => set({
+                  duracaoMinutos: {
+                    ...valor.duracaoMinutos,
+                    [modo as ModalidadeEstudoId]: e.target.value ? Number(e.target.value) : null,
+                  },
+                })}
+              />
+            </label>
+          ))}
+        </div>
+      </fieldset>
 
       <div>
         <label className={labelCls} htmlFor="estilo">Estilo de cobrança do professor</label>

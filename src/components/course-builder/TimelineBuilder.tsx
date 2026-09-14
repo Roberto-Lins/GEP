@@ -3,6 +3,7 @@ import type { TopicoTimeline } from '@tipos/course-kit';
 import { parseTimeline } from '@utils/course-kit/parseTimeline';
 import { readFileAsText } from '@utils/course-kit/readFile';
 import { inputCls, labelCls } from './shared';
+import { MODALIDADE_RESUMOS, MODALIDADES_ESTUDO, type ModalidadeEstudoId } from '@tipos/study-mode';
 
 interface Props {
   topicos: TopicoTimeline[];
@@ -30,6 +31,22 @@ export default function TimelineBuilder({ topicos, onChange }: Props) {
     onChange(novo);
   };
 
+  const editarConceptId = (i: number, conceptId: string) => {
+    onChange(topicos.map((t, idx) => (idx === i ? { ...t, conceptId: conceptId.toUpperCase().replace(/[^A-Z0-9-]/g, '-') } : t)));
+  };
+
+  const toggleModalidade = (i: number, modalidade: ModalidadeEstudoId) => {
+    if (modalidade === 'completo') return;
+    onChange(topicos.map((t, idx) => {
+      if (idx !== i) return t;
+      const atuais = t.modalidades ?? ['completo'];
+      const modalidades = atuais.includes(modalidade)
+        ? atuais.filter((m) => m !== modalidade)
+        : [...atuais, modalidade];
+      return { ...t, modalidades: MODALIDADES_ESTUDO.filter((m) => modalidades.includes(m)) };
+    }));
+  };
+
   const remover = (i: number) => {
     onChange(topicos.filter((_, idx) => idx !== i).map((t, idx) => ({ ...t, ordem: idx })));
   };
@@ -51,7 +68,18 @@ export default function TimelineBuilder({ topicos, onChange }: Props) {
   const adicionarManual = () => {
     const titulo = novoTitulo.trim();
     if (!titulo) return;
-    onChange([...topicos, { ordem: topicos.length, titulo }]);
+    onChange([...topicos, {
+      ordem: topicos.length,
+      titulo,
+      conceptId: `CON-${String(topicos.length + 1).padStart(3, '0')}`,
+      examinavel: true,
+      modalidades: ['completo'],
+      dependencias: [],
+      fonteLocalizada: [],
+      evidenciaPrioridade: [],
+      profundidadePorModalidade: { completo: 'integral' },
+      justificativaPorModalidade: {},
+    }]);
     setNovoTitulo('');
   };
 
@@ -99,7 +127,8 @@ export default function TimelineBuilder({ topicos, onChange }: Props) {
         ) : (
           <ol className="space-y-2">
             {topicos.map((t, i) => (
-              <li key={i} className="flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 p-2">
+              <li key={t.conceptId ?? i} className="rounded-lg border border-white/10 bg-white/5 p-3">
+                <div className="flex items-center gap-2">
                 <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-dourado/15 text-xs font-mono text-dourado">
                   {String(i).padStart(2, '0')}
                 </span>
@@ -134,6 +163,33 @@ export default function TimelineBuilder({ topicos, onChange }: Props) {
                   >
                     ✕
                   </button>
+                </div>
+                </div>
+                <div className="mt-3 grid gap-3 border-t border-white/10 pt-3 sm:grid-cols-[12rem_1fr]">
+                  <label className="text-[11px] text-nevoa/60">
+                    <span className="mb-1 block uppercase tracking-wider">concept_id estável</span>
+                    <input
+                      className={`${inputCls} font-mono text-xs`}
+                      value={t.conceptId ?? ''}
+                      onChange={(e) => editarConceptId(i, e.target.value)}
+                    />
+                  </label>
+                  <fieldset>
+                    <legend className="mb-1 text-[11px] uppercase tracking-wider text-nevoa/60">Presença por modalidade</legend>
+                    <div className="flex flex-wrap gap-2">
+                      {MODALIDADES_ESTUDO.map((modo) => (
+                        <label key={modo} className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 px-2 py-1 text-xs text-nevoa/80">
+                          <input
+                            type="checkbox"
+                            checked={(t.modalidades ?? ['completo']).includes(modo)}
+                            disabled={modo === 'completo'}
+                            onChange={() => toggleModalidade(i, modo)}
+                          />
+                          {MODALIDADE_RESUMOS[modo].rotulo}
+                        </label>
+                      ))}
+                    </div>
+                  </fieldset>
                 </div>
               </li>
             ))}

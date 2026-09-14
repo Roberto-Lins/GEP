@@ -1,0 +1,55 @@
+---
+import type { FamiliaCurso } from '@utils/study-modes';
+import { formatarDuracaoModalidade, modalidadeNormalizada } from '@utils/study-modes';
+
+interface Props {
+  familia: FamiliaCurso;
+}
+
+const { familia } = Astro.props;
+const opcoes = familia.modalidadesDisponiveis
+  .map((id) => familia.cursos[id])
+  .filter(Boolean)
+  .map((curso) => ({ curso: curso!, meta: modalidadeNormalizada(curso!) }));
+---
+
+<section aria-labelledby="titulo-modalidade-estudo" class="mx-auto max-w-5xl">
+  <header class="mb-7 text-center">
+    <p class="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-dourado">{familia.titulo}</p>
+    <h1 id="titulo-modalidade-estudo" class="text-3xl font-bold sm:text-4xl">Modalidade de estudo</h1>
+    <p class="mx-auto mt-3 max-w-2xl text-nevoa/75">
+      Escolha pela finalidade, pela abrangência e pelo tempo disponível. A dificuldade das questões
+      permanece alinhada ao perfil da prova dentro do conteúdo ensinado em cada modalidade.
+    </p>
+  </header>
+
+  <div class="grid gap-5 lg:grid-cols-3">
+    {opcoes.map(({ curso, meta }) => (
+      <article class="card flex h-full flex-col p-6">
+        <div class="mb-4 flex items-start justify-between gap-3">
+          <div>
+            <p class="text-xs uppercase tracking-[0.18em] text-dourado/75">Modalidade</p>
+            <h2 class="mt-1 font-serif text-2xl text-marfim">{meta.rotulo}</h2>
+          </div>
+          <span class="chip border border-dourado/30 bg-dourado/10 text-dourado-soft">
+            {formatarDuracaoModalidade(meta.duracaoMinutos)}
+          </span>
+        </div>
+        <p class="text-sm leading-relaxed text-nevoa/85">{meta.descricao}</p>
+        <dl class="mt-5 space-y-4 text-sm">
+          <div>
+            <dt class="font-medium text-marfim">Finalidade</dt>
+            <dd class="mt-1 text-nevoa/70">{meta.finalidade}</dd>
+          </div>
+          <div>
+            <dt class="font-medium text-marfim">Abrangência</dt>
+            <dd class="mt-1 text-nevoa/70">{meta.cobertura}</dd>
+          </div>
+        </dl>
+        <a href={`/${curso.slug}`} class="btn-primary mt-6 justify-center">
+          Estudar em {meta.rotulo}
+        </a>
+      </article>
+    ))}
+  </div>
+</section>

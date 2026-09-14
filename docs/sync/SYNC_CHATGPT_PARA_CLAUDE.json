@@ -1,0 +1,218 @@
+{
+  "protocol": "gep-skill-sync",
+  "schema_version": "1.0.0",
+  "schema_migration": {
+    "previous_version": null,
+    "instructions": "Primeira versão. Em versões futuras, validar pelo schema indicado e aplicar a migração documentada antes de decidir qualquer item."
+  },
+  "message_id": "chatgpt:docente-en:modalidades:20260914:v1",
+  "created_at": "2026-09-14T23:37:07Z",
+  "source": {
+    "agent": "chatgpt",
+    "skill": "docente-en",
+    "skill_version": "2.0.0"
+  },
+  "target": {
+    "agent": "claude",
+    "skill": "Docente e Avaliador Chefe — Escola Naval",
+    "skill_version": null
+  },
+  "change": {
+    "type": "course_contract_update",
+    "summary": "Adotar três modalidades editoriais independentes, matriz de cobertura, perfil de cobrança e sincronização governada.",
+    "breaking": false,
+    "contract_version": "1.0.0"
+  },
+  "rules": [
+    {
+      "id": "GEP-MOD-001",
+      "category": "modalidades",
+      "normative_text": "Toda nova família de curso deve conter Rápido, Pra Safar e Completo como autorias independentes derivadas da mesma matriz de cobertura e das mesmas fontes; é proibido truncar uma modalidade para gerar outra.",
+      "reason": "Extensão, abrangência, profundidade, adjacências, tempo e finalidade mudam sem reduzir a integridade editorial.",
+      "origin": "Comando de execução — Modalidades de estudo do GEP",
+      "impact_by_mode": {
+        "rapido": "Revisão concentrada, compacta e aplicável do núcleo relevante.",
+        "pra-safar": "Todo o escopo examinável com aprofundamento proporcional à cobrança.",
+        "completo": "Domínio integral, incluindo conexões sustentadas e todo o Pra Safar."
+      },
+      "requested_operation": "add"
+    },
+    {
+      "id": "GEP-SRC-001",
+      "category": "fontes",
+      "normative_text": "Usar somente o corpus autorizado, manter localizações exatas e registrar lacunas; PDF, ODP e PPTX do mesmo material contam como um testemunho acadêmico.",
+      "reason": "Evitar falsa corroboração e conhecimento externo promovido a autoridade.",
+      "origin": "Contrato pedagógico GEP 1.0.0",
+      "impact_by_mode": {
+        "rapido": "Prioridade sustentada pelo corpus.",
+        "pra-safar": "Escopo examinável sustentado pelo corpus.",
+        "completo": "Adjacências somente quando sustentadas pelo corpus."
+      },
+      "requested_operation": "preserve"
+    },
+    {
+      "id": "GEP-PERFIL-001",
+      "category": "personalizacao",
+      "normative_text": "Criar perfil de cobrança localizado nas fontes antes da autoria, cobrindo literalidade, interpretação, cálculo, detalhismo, memorização, pegadinhas, integração e aplicação inédita; incerteza não pode ser preenchida por perfil genérico.",
+      "reason": "A personalização pelo professor e pela prova é parte do contrato, não acabamento.",
+      "origin": "Contrato pedagógico GEP 1.0.0",
+      "impact_by_mode": {
+        "rapido": "Seleciona o núcleo de maior valor sob restrição de tempo.",
+        "pra-safar": "Define profundidade proporcional ao padrão da prova.",
+        "completo": "Orienta integrações e formas alternativas de cobrança."
+      },
+      "requested_operation": "add"
+    },
+    {
+      "id": "GEP-MATRIZ-001",
+      "category": "cobertura",
+      "normative_text": "Concluir uma matriz canônica com concept_id estável, dependências, fonte/localização, prioridade, presença, profundidade, justificativa e vínculos antes da autoria.",
+      "reason": "A matriz permite cobertura auditável sem derivação automática entre modalidades.",
+      "origin": "Contrato pedagógico GEP 1.0.0",
+      "impact_by_mode": {
+        "rapido": "Registra inclusões e exclusões justificadas.",
+        "pra-safar": "Inclui todo conceito examinável.",
+        "completo": "Inclui todo conceito e suas conexões autorizadas."
+      },
+      "requested_operation": "add"
+    },
+    {
+      "id": "GEP-QUEST-001",
+      "category": "questoes",
+      "normative_text": "Modalidade não é dificuldade: preservar o perfil difícil quando sustentado, cobrar somente conceitos ensinados e manter questão compartilhada como o mesmo objeto, ID, enunciado, gabarito e metadados.",
+      "reason": "Evitar bancos desconectados, falsa inediticidade e rebaixamento artificial.",
+      "origin": "Contrato pedagógico GEP 1.0.0",
+      "impact_by_mode": {
+        "rapido": "Questões difíceis permanecem quando pertencem ao núcleo ensinado.",
+        "pra-safar": "Questões cobrem todo o examinável ensinado.",
+        "completo": "Pode incluir integrações exclusivas ensinadas somente aqui."
+      },
+      "requested_operation": "add"
+    },
+    {
+      "id": "GEP-LEGADO-001",
+      "category": "compatibilidade",
+      "normative_text": "Cursos existentes são complete-only; preservar conteúdo, rotas, slugs, IDs e estado sem limpeza, renomeação ou duplicação silenciosa.",
+      "reason": "Manter continuidade acadêmica e progresso dos alunos.",
+      "origin": "Arquitetura retrocompatível GEP 1.0.0",
+      "impact_by_mode": {
+        "rapido": "Não é criado retroativamente.",
+        "pra-safar": "Não é criado retroativamente.",
+        "completo": "Permanece no slug e namespace históricos."
+      },
+      "requested_operation": "preserve"
+    },
+    {
+      "id": "GEP-COMP-001",
+      "category": "skills_complementares",
+      "normative_text": "Comparar o manifesto com as skills instaladas, auditar compatibilidade e precedência antes de integrar mudanças; registrar incompatíveis como nao_aplicavel ou rejeitada e nunca permitir revogação dos invariantes centrais.",
+      "reason": "Permitir especialização futura sem autoedição cega.",
+      "origin": "Mecanismo governado de compatibilidade GEP",
+      "impact_by_mode": {
+        "rapido": "Só recebe capacidades pertinentes ao escopo concentrado.",
+        "pra-safar": "Só recebe capacidades pertinentes ao examinável.",
+        "completo": "Pode receber aprofundamentos autorizados sem quebrar invariantes."
+      },
+      "requested_operation": "add"
+    },
+    {
+      "id": "GEP-SYNC-001",
+      "category": "sincronizacao",
+      "normative_text": "Toda atualização material deve emitir gep-skill-sync validado; o receptor decide regra e artefato individualmente e nenhuma proposta é aplicada automaticamente.",
+      "reason": "Trocar alterações entre IAs sem depender de interpretação livre ou autoridade presumida.",
+      "origin": "GEP_SKILL_SYNC.schema.json 1.0.0",
+      "impact_by_mode": {
+        "rapido": "Decisões ficam registradas.",
+        "pra-safar": "Decisões ficam registradas.",
+        "completo": "Decisões ficam registradas."
+      },
+      "requested_operation": "add"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "ART-SCHEMA-SYNC",
+      "path_or_name": "docs/sync/GEP_SKILL_SYNC.schema.json",
+      "version_or_hash": "1.0.0",
+      "role": "Schema canônico do envelope, regras, artefatos e decisões.",
+      "status": "created"
+    },
+    {
+      "id": "ART-SYNC-OUT",
+      "path_or_name": "docs/sync/SYNC_CHATGPT_PARA_CLAUDE.json",
+      "version_or_hash": "1.0.0",
+      "role": "Proposta preenchida desta atualização.",
+      "status": "created"
+    },
+    {
+      "id": "ART-SYNC-RETURN",
+      "path_or_name": "docs/sync/SYNC_CLAUDE_PARA_CHATGPT.template.json",
+      "version_or_hash": "1.0.0",
+      "role": "Modelo recíproco para decisões item a item.",
+      "status": "created"
+    },
+    {
+      "id": "ART-CONTRACT",
+      "path_or_name": "docs/MODALIDADES-DE-ESTUDO.md",
+      "version_or_hash": "1.0.0",
+      "role": "Contrato pedagógico e arquitetural das modalidades.",
+      "status": "created"
+    },
+    {
+      "id": "ART-PROMPT-CLAUDE",
+      "path_or_name": "prompts/ATUALIZAR_SKILL_CLAUDE_MODALIDADES_GEP.md",
+      "version_or_hash": "1.0.0",
+      "role": "Ordem independente para atualizar a skill equivalente no Claude.",
+      "status": "created"
+    },
+    {
+      "id": "ART-SKILL-DOCENTE",
+      "path_or_name": "docente-en",
+      "version_or_hash": "2.0.0",
+      "role": "Contrato acadêmico, autoria e questões.",
+      "status": "updated"
+    },
+    {
+      "id": "ART-SKILL-OPERATE",
+      "path_or_name": "operate-gep",
+      "version_or_hash": "2.0.0",
+      "role": "Integração, persistência, migração e validação no GEP.",
+      "status": "updated"
+    }
+  ],
+  "compatibility": {
+    "legacy_courses": "preserved",
+    "minimum_supported_version": "1.0.0",
+    "notes": [
+      "Cursos sem metadados de modalidade são interpretados em memória como completo sem alterar o slug.",
+      "A chave localStorage bussola:v1 e os namespaces históricos permanecem intactos."
+    ]
+  },
+  "required_actions": [
+    "Validar este pacote contra GEP_SKILL_SYNC.schema.json.",
+    "Auditar e decidir cada regra e artefato antes de editar a skill do Claude.",
+    "Atualizar somente a skill Docente e Avaliador Chefe — Escola Naval; não gerar curso.",
+    "Emitir uma resposta recíproca validada após testes e ativação da versão atualizada."
+  ],
+  "acceptance_criteria": [
+    "A skill carregada distingue modalidade de dificuldade e proíbe truncamento.",
+    "Matriz de cobertura e perfil de cobrança precedem a autoria.",
+    "Questões compartilhadas preservam identidade e dificuldade.",
+    "Manifesto de skills complementares e protocolo gep-skill-sync estão operacionais.",
+    "Versão anterior, versão nova, arquivos, testes e lacunas são relatados sem criar curso."
+  ],
+  "evidence": [
+    {
+      "kind": "file",
+      "reference": "docs/MODALIDADES-DE-ESTUDO.md",
+      "result": "Contrato 1.0.0 documentado."
+    },
+    {
+      "kind": "test",
+      "reference": "npm test e npm run validate-content",
+      "result": "Cobertura automatizada prevista no PR de implementação."
+    }
+  ],
+  "open_issues": [],
+  "response_required": true
+}

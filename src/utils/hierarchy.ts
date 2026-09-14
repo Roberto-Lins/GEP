@@ -3,7 +3,7 @@
 // Constrói tudo a partir de listarCursos() (que lê os _config.json via glob),
 // sem mudar onde os cursos vivem: as rotas dos cursos continuam canônicas em /<slug>.
 
-import { listarCursos } from '@utils/courses';
+import { listarFamilias } from '@utils/courses';
 import type { Ano, Epoca, Semestre, Turma, CursoConfig } from '@tipos/course';
 import {
   ANOS,
@@ -37,7 +37,7 @@ export function cursoNaTurma(c: CursoConfig, turma: Turma): boolean {
 }
 
 export function filtrarCursos(f: FiltroCurso): CursoConfig[] {
-  return listarCursos().filter(
+  return listarFamilias().map((familia) => familia.representante).filter(
     (c) =>
       c.ano === f.ano &&
       (f.turma === undefined || cursoNaTurma(c, f.turma)) &&
@@ -136,7 +136,7 @@ export function breadcrumbDe(segs: string[]): { label: string; href: string }[] 
 
 /** Caminho canônico de um curso (camada de navegação → rota atual intacta). */
 export function buildNavPath(curso: CursoConfig): string {
-  return `/${curso.slug}`;
+  return `/${curso.estudo?.familiaId ?? curso.slug}`;
 }
 
 /**

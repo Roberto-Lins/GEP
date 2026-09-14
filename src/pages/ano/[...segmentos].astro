@@ -20,6 +20,8 @@ import {
   filtrarCursos,
 } from '@utils/hierarchy';
 import { dadosDoCurso } from '@utils/content';
+import { familiaDoCurso } from '@utils/courses';
+import { rotaEntradaFamilia } from '@utils/study-modes';
 
 export async function getStaticPaths() {
   return enumerarSegmentos().map((segs) => ({ params: { segmentos: segs.join('/') } }));
@@ -73,13 +75,15 @@ if (nivel === 'turmas') {
 const cursosLeaf =
   nivel === 'materias'
     ? filtrarCursos({ ano, turma, semestre, epoca }).map((c) => ({
-        slug: c.slug,
-        titulo: c.titulo,
+        slug: c.estudo?.familiaId ?? c.slug,
+        href: rotaEntradaFamilia(familiaDoCurso(c)),
+        progressSlug: c.slug,
+        titulo: c.estudo?.familiaTitulo ?? c.titulo,
         subtitulo: c.subtitulo,
         descricao: c.descricao,
         categoria: c.categoria,
         totalMaterias: dadosDoCurso(c.slug)?.topicosEstudo.length ?? 0,
-        imagem: `/imagens/plataforma/cursos/${c.slug}.webp`,
+        imagem: `/imagens/plataforma/cursos/${c.estudo?.familiaId ?? c.slug}.webp`,
       }))
     : [];
 

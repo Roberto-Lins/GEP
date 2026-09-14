@@ -3,6 +3,7 @@
 // o curso. Reaproveita a hierarquia de course.ts.
 
 import type { Ano, Semestre, Epoca, Turma } from '@tipos/course';
+import type { ModalidadeEstudoId } from '@tipos/study-mode';
 
 export type DificuldadeQuestao = 'facil' | 'media' | 'dificil';
 export type TipoQuestao = 'objetiva' | 'discursiva' | 'vf' | 'correlacione';
@@ -44,6 +45,8 @@ export interface QuestaoBase {
   fonte?: string;
   comentario?: string;
   tags?: string[];
+  conceptIds?: string[];
+  modalidades?: ModalidadeEstudoId[];
 }
 
 export interface MidiaRef {
@@ -60,6 +63,36 @@ export interface TopicoTimeline {
   titulo: string;
   descricao?: string;
   dicasProfessor?: string[];
+  /** ID canônico; não deve ser regenerado ao mover o tópico. */
+  conceptId?: string;
+  dependencias?: string[];
+  fonteLocalizada?: string[];
+  evidenciaPrioridade?: string[];
+  examinavel?: boolean;
+  modalidades?: ModalidadeEstudoId[];
+  profundidadePorModalidade?: Partial<Record<ModalidadeEstudoId, string>>;
+  justificativaPorModalidade?: Partial<Record<ModalidadeEstudoId, string>>;
+  exemplos?: string[];
+  figuras?: string[];
+  vulnerabilidades?: string[];
+}
+
+export type NivelPerfilCobranca = 'baixa' | 'media' | 'alta' | 'incerta';
+
+export const EIXOS_PERFIL_COBRANCA = [
+  'literalidade', 'interpretacao', 'calculo', 'detalhismo',
+  'memorizacao', 'pegadinhas', 'integracao', 'aplicacaoInedita',
+] as const;
+
+export type EixoPerfilCobranca = (typeof EIXOS_PERFIL_COBRANCA)[number];
+
+export interface PerfilCobrancaCurso {
+  schema_version: '1.0.0';
+  status: 'pendente' | 'confirmado';
+  classificacao: Record<EixoPerfilCobranca, NivelPerfilCobranca>;
+  evidencias: string[];
+  fontes_localizadas: string[];
+  incertezas: string[];
 }
 
 /** Arquivo leve (< 20 MB) anexado ao kit, em base64 para empacotar no zip. */
@@ -75,6 +108,8 @@ export interface CourseKitMetadata {
   nome: string;
   descricao: string;
   estiloCobranca: string;
+  perfilCobranca: PerfilCobrancaCurso;
+  duracaoMinutos: Record<ModalidadeEstudoId, number | null>;
   ano: Ano;
   semestre: Semestre;
   epoca: Epoca;
@@ -82,10 +117,36 @@ export interface CourseKitMetadata {
 }
 
 export interface CourseKitData extends CourseKitMetadata {
+  contratoModalidades: '1.0.0';
+  modalidades: ModalidadeEstudoId[];
+  matrizCobertura: MatrizCoberturaCurso;
   topicos: TopicoTimeline[];
   questoes: QuestaoBase[];
   midias: MidiaRef[];
   geradoEm: string;
+}
+
+export interface CoberturaConceito {
+  concept_id: string;
+  assunto: string;
+  dependencias: string[];
+  fontes_localizadas: string[];
+  evidencia_prioridade: string[];
+  examinavel: boolean;
+  presenca: Record<ModalidadeEstudoId, boolean>;
+  profundidade: Record<ModalidadeEstudoId, string | null>;
+  justificativa: Record<ModalidadeEstudoId, string>;
+  exemplos: string[];
+  figuras: string[];
+  questoes: string[];
+  vulnerabilidades: string[];
+}
+
+export interface MatrizCoberturaCurso {
+  schema_version: '1.0.0';
+  status: 'pendente' | 'confirmada';
+  familia_id: string;
+  conceitos: CoberturaConceito[];
 }
 
 export interface CourseKitManifest {
@@ -97,6 +158,7 @@ export interface CourseKitManifest {
   totalTopicos: number;
   totalMidias: number;
   arquivos: string[];
+  contratoModalidades: '1.0.0';
 }
 
 /** Alerta de validação acumulado pelo wizard. */

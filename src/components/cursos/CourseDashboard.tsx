@@ -4,6 +4,8 @@ import type { Progresso } from '@tipos/progress';
 
 export interface CursoCard {
   slug: string;
+  href?: string;
+  progressSlug?: string;
   titulo: string;
   subtitulo?: string;
   descricao?: string;
@@ -33,11 +35,13 @@ export default function CourseDashboard({ cursos }: Props) {
   return (
     <div className="grid gap-5 sm:grid-cols-2">
       {cursos.map((c) => {
-        const pct = montado ? percentualCurso(c.slug, c.totalMaterias) : 0;
-        const q = montado ? resumoQuestoes(c.slug) : { respondidas: 0, acertos: 0, erros: 0, taxa: 0 };
+        const progressSlug = c.progressSlug ?? c.slug;
+        const href = c.href ?? `/${c.slug}`;
+        const pct = montado ? percentualCurso(progressSlug, c.totalMaterias) : 0;
+        const q = montado ? resumoQuestoes(progressSlug) : { respondidas: 0, acertos: 0, erros: 0, taxa: 0 };
         const iniciado = pct > 0 || q.respondidas > 0;
         return (
-          <a key={c.slug} href={`/${c.slug}`} className="card card-hover group relative flex flex-col gap-4 p-6">
+          <a key={c.slug} href={href} className="card card-hover group relative flex flex-col gap-4 p-6">
             {c.imagem && (
               <div className="-mx-6 -mt-6 mb-2 overflow-hidden rounded-t-xl border-b border-dourado/20">
                 <img

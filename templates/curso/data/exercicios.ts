@@ -1,12 +1,20 @@
 // Banco de questões do curso. Cada questão tem `topico` (slug da timeline).
-import type { QuestaoMultipla, QuestaoVF, GrupoCorrelacione, Questao } from '@tipos/question';
+import type { QuestaoMultipla, QuestaoVF, GrupoCorrelacione, Questao, QuestaoDiscursiva } from '@tipos/question';
 export type { Questao } from '@tipos/question';
+import { questoesCanonicas } from '../_familias/__FAMILIA__/questoes';
+import matriz from '../_familias/__FAMILIA__/matriz-cobertura.json';
+import { questoesDaModalidade } from '@utils/study-mode-questions';
 
-export const multiplaEscolha: QuestaoMultipla[] = [];
-export const verdadeiroFalso: QuestaoVF[] = [];
-export const correlacionar: GrupoCorrelacione[] = [];
+const modalidade = '__MODALIDADE__' as const;
+const conceitosEnsinados = new Set(
+  matriz.conceitos.filter((c) => c.presenca[modalidade]).map((c) => c.concept_id),
+);
+export const todasQuestoes: Questao[] = questoesDaModalidade(questoesCanonicas, modalidade, conceitosEnsinados);
 
-export const todasQuestoes: Questao[] = [...multiplaEscolha, ...verdadeiroFalso, ...correlacionar];
+export const multiplaEscolha = todasQuestoes.filter((q): q is QuestaoMultipla => q.tipo === 'multipla');
+export const verdadeiroFalso = todasQuestoes.filter((q): q is QuestaoVF => q.tipo === 'vf');
+export const correlacionar = todasQuestoes.filter((q): q is GrupoCorrelacione => q.tipo === 'correlacione');
+export const discursivas = todasQuestoes.filter((q): q is QuestaoDiscursiva => q.tipo === 'discursiva');
 
 export function questoesPorTopico(slug: string): Questao[] {
   return todasQuestoes.filter((q) => q.topico === slug);
@@ -16,4 +24,5 @@ export const totalQuestoes = {
   multipla: multiplaEscolha.length,
   vf: verdadeiroFalso.length,
   correlacione: correlacionar.length,
+  discursiva: discursivas.length,
 };
