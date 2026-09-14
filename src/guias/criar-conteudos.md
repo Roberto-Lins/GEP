@@ -1,13 +1,17 @@
 Guia operacional para transformar uma matéria bruta, com fontes, slides, provas antigas, áudios, vídeos e orientações do professor, em um curso organizado para a plataforma **Bússola dos Aspirantes**.
 
-O objetivo deste processo é evitar que a matéria vire um monte de blocos soltos. A lógica central é criar primeiro um **esqueleto coeso** da disciplina, depois popular cada tópico com resumos, questões, mídias, revisões e materiais prontos para o site.
+O objetivo deste processo é evitar que a matéria vire um monte de blocos soltos. A lógica central é
+inventariar as fontes, confirmar o perfil de cobrança, construir uma **matriz canônica de cobertura**
+e então redigir três modalidades de estudo independentes: **Rápido**, **Pra Safar** e **Completo**.
+Elas compartilham fontes, `concept_id` e questões canônicas, mas têm sequência e conteúdo próprios.
 
 ## 0. Como este guia se conecta ao assistente
 
 O fluxo completo é:
 
 1. **Você** lê este guia, usa os prompts nas ferramentas de IA (ChatGPT, NotebookLM) e produz os materiais.
-2. **Você** abre o assistente em **/adicionar-curso**, preenche os campos e cola o que produziu (linha do tempo, questões, links de mídias).
+2. **Você** abre o assistente em **/adicionar-curso**, registra o perfil de cobrança, marca a presença
+   dos conceitos em cada modalidade e cola a linha do tempo, questões e mídias.
 3. O assistente gera um **arquivo `.zip`** com tudo organizado + um `PROMPT_CLAUDE.md` dinâmico.
 4. Você (ou o mantenedor) entrega o `.zip` ao **Claude Code**, que instala o curso na plataforma.
 
@@ -25,16 +29,22 @@ O assistente entende os dois formatos principais deste guia: o **numerado** (lis
 
 A produção de um curso deve seguir esta ordem:
 
-1. **Organizar as fontes** da matéria.
-2. **Gerar a linha do tempo**, que será o esqueleto lógico do curso.
-3. **Gerar resumos longos e completos** para cada tópico.
-4. **Gerar questões por dificuldade e por tipo**.
-5. **Gerar áudios/podcasts/debates** para cada tópico.
-6. **Gerar um vídeo de revisão geral** da matéria.
-7. **Organizar tudo em pastas padronizadas**.
-8. **Entregar para o Claude Code planejar ou implementar no site**.
+1. **Organizar e localizar as fontes** da matéria, sem contar formatos duplicados como testemunhos independentes.
+2. **Confirmar o perfil de cobrança** ou registrar a incerteza quando o corpus não bastar.
+3. **Construir a matriz canônica**, com presença, profundidade e justificativa por modalidade.
+4. **Gerar três linhas do tempo editoriais**, uma para Rápido, uma para Pra Safar e uma para Completo.
+5. **Gerar conteúdo próprio por modalidade**, sem truncar o Completo para produzir as menores.
+6. **Gerar questões por dificuldade e por tipo**, vinculadas a `concept_id` e ao escopo ensinado.
+7. **Gerar mídias e revisões** pertinentes a cada modalidade.
+8. **Organizar tudo em pastas padronizadas**.
+9. **Entregar para o Claude Code planejar ou implementar no site**.
 
-A linha do tempo é a etapa mais importante. Sem ela, cada conteúdo fica independente, e o curso perde coesão. Com ela, cada aula passa a ter uma função dentro da trilha de aprendizado.
+A matriz vem antes das linhas do tempo. Ela impede lacunas, sobreposição arbitrária e redução de
+dificuldade. As linhas do tempo transformam essa cobertura comum em três percursos coerentes.
+
+Modalidade de estudo não é nível de dificuldade: dentro do conteúdo ensinado, questões difíceis e
+muito difíceis permanecem quando forem compatíveis com o padrão da prova. Nenhuma modalidade promete
+nota.
 
 ## 2. Estrutura final da pasta da matéria
 
@@ -121,7 +131,9 @@ A linha do tempo deve conter, para cada tópico:
 
 ```text
 # Contexto
-Estou criando um curso completo para a plataforma Bússola dos Aspirantes. A matéria será transformada em uma trilha de estudo sequencial, com mini-matérias numeradas, conteúdos, resumos, questões, gabaritos, imagens, mídias e revisão final.
+Estou criando uma família de curso para a plataforma Bússola dos Aspirantes. A matéria será
+transformada nas modalidades Rápido, Pra Safar e Completo, com trilhas editoriais independentes,
+derivadas da mesma matriz de cobertura e das mesmas fontes.
 
 # Fontes
 Use exclusivamente as fontes que estou enviando nesta conversa: slides, PDFs, livros, provas antigas, resumos, áudios transcritos, imagens e orientações do professor.
@@ -129,7 +141,9 @@ Use exclusivamente as fontes que estou enviando nesta conversa: slides, PDFs, li
 Não use fontes externas. Não pesquise na internet. Não complete lacunas com conhecimento não fornecido sem sinalizar claramente como hipótese.
 
 # Objetivo
-Percorra todas as fontes, entenda a lógica da matéria e crie uma Linha do Tempo de estudo. Essa linha deve ser o esqueleto do curso.
+Percorra todas as fontes, entenda a lógica da matéria e crie primeiro a matriz canônica por
+`concept_id`. Depois crie uma Linha do Tempo de estudo própria para cada modalidade. Não gere os
+modos menores por truncamento, resumo automático ou ocultação de trechos do Completo.
 
 A sequência deve começar em:
 00 - Introdução e contexto geral da matéria

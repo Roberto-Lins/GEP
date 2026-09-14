@@ -179,7 +179,8 @@ em `src/components/cursos/<slug>/` e são listados em `componentesExtras`.
   (e `turma` para 3°/4° ano). Sem eles `validate-content`/`build` falham.
 - Cada mini-matéria precisa de `_dados.json` **e** dos `.mdx` de seção.
 - `_dados.json` obrigatórios: `ordem`, `slug`, `titulo`, `prioridade`. Opcionais: `subtitulo`,
-  `tempoEstimado`, `objetivo`, `palavrasChave`, `midias`, `fontes`, `exercicios`.
+  `tempoEstimado`, `objetivo`, `palavrasChave`, `midias`, `fontes`, `exercicios`, `conceptIds` e
+  `modalidade`. Em famílias novas, `conceptIds` e `modalidade` são exigidos pelo validador global.
 - Bancos pesados (questões, checklists) ficam em `src/data/cursos/<slug>/*.ts`, keyed por slug.
 - `npm run validate-content` valida `_config.json` e os `_dados.json` de todos os cursos.
 
@@ -194,12 +195,16 @@ Dois caminhos:
 - **Manual:**
 
 ```bash
-npm run create-course <slug>     # 1. copia templates/curso/ → src/content/cursos/<slug>/
+npm run create-course <familia> "Título"  # 1. prepara Rápido, Pra Safar e Completo
 ```
-2. Edite `_config.json` (título, subtítulo, categoria, **ano/semestre/epoca/turma**, ordem, temaVisual, corTema, ícone, capa, `features`).
-3. Crie as mini-matérias `00-…`, `01-…`, … `99-revisao-final`.
-4. Preencha os `.mdx` de seção **e** o `_dados.json` de cada mini-matéria.
-5. **Imagens do curso — são DOIS caminhos distintos e ambos obrigatórios** (esquecer o 2º já deixou
+2. Confirme o inventário de fontes, o perfil de cobrança e a matriz canônica por `concept_id` em
+   `src/data/cursos/_familias/<familia>/`.
+3. Edite as três configs (título, categoria, **ano/semestre/epoca/turma**, ordem, tema, `features`,
+   metadados da modalidade e duração real).
+4. Crie sequências editoriais próprias para `rapido`, `pra-safar` e `completo`; nunca gere uma por
+   truncamento ou ocultação de outra.
+5. Preencha os `.mdx` e `_dados.json`, ligando módulos e questões ao escopo por `concept_id`.
+6. **Imagens do curso — são DOIS caminhos distintos e ambos obrigatórios** (esquecer o 2º já deixou
    card sem imagem mais de uma vez):
    - **Capa / hero:** `public/imagens/cursos/<slug>/capa.webp` (apontada por `capa` no `_config.json`).
      É **raster, SEM texto**, porque vira o **fundo do hero** da home `/<curso>` (`src/pages/[curso]/index.astro`).
@@ -209,9 +214,13 @@ npm run create-course <slug>     # 1. copia templates/curso/ → src/content/cur
      `sharp(capa).resize(1024,1024,{fit:"cover",position:"centre"})` (se o símbolo for centralizado).
    - Demais imagens leves de conteúdo: `public/imagens/cursos/<slug>/`. Capa e thumbnail raster são
      **geradas pelo Codex**; conversão PNG→webp com `sharp` (não há cwebp/convert/magick no PATH).
-6. Suba mídia pesada para YouTube não-listado / CDN e registre os links no `_dados.json` (`origem` + `src`).
-7. Rode `npm run validate-content`.
-8. Pronto: o curso aparece sozinho no dashboard (a plataforma lê os `_config.json`).
+7. Suba mídia pesada para YouTube não-listado / CDN e registre os links no `_dados.json` (`origem` + `src`).
+8. Rode `npm run validate-content` (e `npm run validate-sync` ao alterar contrato ou skills).
+9. Pronto: as variantes aparecem como uma família no dashboard e o seletor mostra finalidade,
+   abrangência e duração.
+
+O contrato completo está em `docs/MODALIDADES-DE-ESTUDO.md`. Cursos anteriores sem `estudo` são
+legados `complete-only`: mantêm slug, rotas, conteúdo e progresso exatamente como estavam.
 
 **Exemplo hipotético (NÃO criar pasta):** um curso `historia-naval` com
 `"temaVisual": "sepia"`, `"corTema": "bronze"`, `features.animacoesHero: false` e
@@ -229,9 +238,10 @@ download. Etapas: intro → metadados (com a hierarquia ano/semestre/época/turm
 - **Componentes:** `src/components/course-builder/` (orquestrador `AddCourseWizard.tsx`).
 - **Lógica:** `src/utils/course-kit/` — `parseTimeline`, `parseQuestions`, `normalizeSlug`,
   `classifyFile` (regra 20 MB), `generateCourseKit`/`generateManifest`/`generatePrompt`, `buildZip` (JSZip).
-- **Saída (`.zip`):** `course-kit.json` (fonte da verdade), `manifest.json`, `PROMPT_CLAUDE.md`
-  (instruções dinâmicas de instalação), `INSTRUCOES.md` e pastas `linha-do-tempo/`, `exercicios/`,
-  `audios|videos|slides/referencias.json`, `fontes/`, `resumos/`.
+- **Saída (`.zip`):** `course-kit.json` (fonte da verdade), `matriz-cobertura.json`,
+  `perfil-cobranca.json`, `fontes/manifesto.json`, `manifest.json`, `PROMPT_CLAUDE.md` (instruções
+  dinâmicas para instalar as três modalidades), `INSTRUCOES.md` e pastas `linha-do-tempo/`,
+  `exercicios/`, `audios|videos|slides/referencias.json`, `fontes/`, `resumos/`.
 - **Tipos:** `src/types/course-kit.ts`. Constantes de hierarquia puras (sem glob) em
   `src/utils/hierarchy-constants.ts`, para o bundle do cliente não arrastar o conteúdo dos cursos.
 
@@ -250,6 +260,9 @@ download. Etapas: intro → metadados (com a hierarquia ano/semestre/época/turm
 - Migração automática (`src/utils/migration.ts`): detecta a chave antiga `gep:progresso:v1`,
   converte para `bussola:v1.cursos.gep`, roda **uma única vez** e grava a flag
   `bussola:v1:migration:gep:done`.
+- Famílias novas usam slugs concretos `<familia>--rapido`, `<familia>--pra-safar` e
+  `<familia>--completo`, o que isola progresso sem alterar o contrato da chave. Cursos legados
+  continuam no slug antigo, interpretado como Completo em memória.
 - Backup (`docs/PROGRESS-BACKUP.md`): botões Exportar / Importar / Reset →
   arquivo `bussola-dos-aspirantes-backup-AAAA-MM-DD.json`.
 

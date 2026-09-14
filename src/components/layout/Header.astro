@@ -2,9 +2,15 @@
 import type { CursoConfig } from '@tipos/course';
 import { listingPathDoCurso } from '@utils/hierarchy';
 import MenuFerramentas from '@components/ferramentas/MenuFerramentas.astro';
+import { familiaDoCurso } from '@utils/courses';
+import { formatarDuracaoModalidade, modalidadeNormalizada } from '@utils/study-modes';
 
 interface Props { curso?: CursoConfig }
 const { curso } = Astro.props;
+const familia = curso ? familiaDoCurso(curso) : undefined;
+const modalidades = familia && familia.modalidadesDisponiveis.length > 1
+  ? familia.modalidadesDisponiveis.map((id) => familia.cursos[id]).filter(Boolean)
+  : [];
 
 // Dentro de um curso: caminho de "voltar uma instância" (a listagem onde o curso aparece).
 const voltarHref = curso ? listingPathDoCurso(curso) : null;
@@ -98,8 +104,8 @@ const ativo = (href: string) =>
     </nav>
 
     <details class="relative md:hidden">
-      <summary class="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-lg border border-white/10 text-marfim">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <summary aria-label="Abrir menu principal" class="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-lg border border-white/10 text-marfim">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
       </summary>
       <div class="absolute right-0 mt-2 w-52 rounded-xl border border-white/10 bg-naval-800 p-2 shadow-card">
         {links.map((l) => (
@@ -125,4 +131,37 @@ const ativo = (href: string) =>
       </div>
     </details>
   </div>
+  {curso && modalidades.length > 1 && (
+    <nav
+      class="border-t border-white/10 bg-naval-800/70"
+      aria-label="Modalidade de estudo"
+    >
+      <div class="mx-auto flex max-w-7xl items-center gap-2 overflow-x-auto px-4 py-2 sm:px-6">
+        <span class="mr-1 shrink-0 text-xs font-semibold uppercase tracking-[0.16em] text-nevoa/55">
+          Modalidade de estudo
+        </span>
+        {modalidades.map((opcao) => {
+          const meta = modalidadeNormalizada(opcao!);
+          const atual = opcao!.slug === curso.slug;
+          return (
+            <a
+              href={`/${opcao!.slug}`}
+              class:list={[
+                'shrink-0 rounded-lg border px-3 py-1.5 text-xs font-medium transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dourado',
+                atual
+                  ? 'border-dourado bg-dourado text-naval'
+                  : 'border-white/15 bg-white/[0.03] text-nevoa hover:border-dourado/40 hover:text-dourado',
+              ]}
+              aria-current={atual ? 'page' : undefined}
+            >
+              {meta.rotulo}
+              <span class:list={['ml-1 font-mono', atual ? 'text-naval/70' : 'text-nevoa/50']}>
+                · {formatarDuracaoModalidade(meta.duracaoMinutos)}
+              </span>
+            </a>
+          );
+        })}
+      </div>
+    </nav>
+  )}
 </header>

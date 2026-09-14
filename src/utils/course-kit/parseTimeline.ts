@@ -16,12 +16,30 @@ export function parseTimeline(texto: string, nomeArquivo = ''): TopicoTimeline[]
   const pareceJson = nomeArquivo.endsWith('.json') || /^[[{]/.test(trimmed);
   if (pareceJson) {
     const viaJson = tentarJson(trimmed);
-    if (viaJson) return viaJson;
+    if (viaJson) return completar(viaJson);
   }
   // Formato "campo: valor" gerado pelo guia (Título:/Objetivo:/Pegadinhas:…).
   const viaCampos = tentarCampos(trimmed);
-  if (viaCampos) return viaCampos;
-  return parseTexto(trimmed);
+  if (viaCampos) return completar(viaCampos);
+  return completar(parseTexto(trimmed));
+}
+
+function slugConceito(titulo: string): string {
+  return titulo.normalize('NFD').replace(/[̀-ͯ]/g, '').toUpperCase().replace(/[^A-Z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 32);
+}
+
+function completar(topicos: TopicoTimeline[]): TopicoTimeline[] {
+  return topicos.map((topico, i) => ({
+    ...topico,
+    conceptId: topico.conceptId ?? `CON-${String(i + 1).padStart(3, '0')}-${slugConceito(topico.titulo)}`,
+    dependencias: topico.dependencias ?? [],
+    fonteLocalizada: topico.fonteLocalizada ?? [],
+    evidenciaPrioridade: topico.evidenciaPrioridade ?? [],
+    examinavel: topico.examinavel ?? true,
+    modalidades: topico.modalidades?.length ? topico.modalidades : ['completo'],
+    profundidadePorModalidade: topico.profundidadePorModalidade ?? { completo: 'integral' },
+    justificativaPorModalidade: topico.justificativaPorModalidade ?? {},
+  }));
 }
 
 const semAcento = (s: string) =>

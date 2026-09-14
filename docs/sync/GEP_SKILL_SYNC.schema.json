@@ -1,0 +1,152 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gep.local/schemas/GEP_SKILL_SYNC.schema.json",
+  "title": "GEP Skill Sync",
+  "description": "Contrato de propostas e decisões entre skills acadêmicas do ChatGPT e do Claude.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "protocol", "schema_version", "schema_migration", "message_id", "created_at",
+    "source", "target", "change", "rules", "artifacts", "compatibility",
+    "required_actions", "acceptance_criteria", "evidence", "open_issues", "response_required"
+  ],
+  "properties": {
+    "protocol": { "const": "gep-skill-sync" },
+    "schema_version": { "const": "1.0.0" },
+    "schema_migration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["previous_version", "instructions"],
+      "properties": {
+        "previous_version": { "type": ["string", "null"] },
+        "instructions": { "type": "string", "minLength": 1 }
+      }
+    },
+    "message_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._:-]{7,127}$" },
+    "in_reply_to": { "type": ["string", "null"] },
+    "created_at": { "type": "string", "format": "date-time" },
+    "source": { "$ref": "#/$defs/endpoint" },
+    "target": { "$ref": "#/$defs/endpoint" },
+    "change": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "summary", "breaking", "contract_version"],
+      "properties": {
+        "type": { "enum": ["proposal", "skill_update", "course_contract_update", "review", "acknowledgement"] },
+        "summary": { "type": "string", "minLength": 1 },
+        "breaking": { "type": "boolean" },
+        "contract_version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" }
+      }
+    },
+    "rules": { "type": "array", "items": { "$ref": "#/$defs/rule" }, "uniqueItems": true },
+    "artifacts": { "type": "array", "items": { "$ref": "#/$defs/artifact" }, "uniqueItems": true },
+    "compatibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["legacy_courses", "minimum_supported_version", "notes"],
+      "properties": {
+        "legacy_courses": { "const": "preserved" },
+        "minimum_supported_version": { "type": ["string", "null"] },
+        "notes": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "required_actions": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "acceptance_criteria": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "evidence": { "type": "array", "items": { "$ref": "#/$defs/evidence" } },
+    "open_issues": { "type": "array", "items": { "type": "string" } },
+    "response_required": { "type": "boolean" },
+    "decisions": { "type": "array", "items": { "$ref": "#/$defs/decision" } }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "change": { "type": "object", "properties": { "type": { "enum": ["review", "acknowledgement"] } } } } },
+      "then": {
+        "properties": { "in_reply_to": true, "decisions": true },
+        "required": ["in_reply_to", "decisions"]
+      }
+    }
+  ],
+  "$defs": {
+    "endpoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["agent", "skill", "skill_version"],
+      "properties": {
+        "agent": { "enum": ["chatgpt", "claude"] },
+        "skill": { "type": ["string", "null"] },
+        "skill_version": { "type": ["string", "null"] }
+      }
+    },
+    "modeImpact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rapido", "pra-safar", "completo"],
+      "properties": {
+        "rapido": { "type": "string", "minLength": 1 },
+        "pra-safar": { "type": "string", "minLength": 1 },
+        "completo": { "type": "string", "minLength": 1 }
+      }
+    },
+    "rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "category", "normative_text", "reason", "origin", "impact_by_mode", "requested_operation"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^GEP-[A-Z0-9-]+$" },
+        "category": { "type": "string", "minLength": 1 },
+        "normative_text": { "type": "string", "minLength": 1 },
+        "reason": { "type": "string", "minLength": 1 },
+        "origin": { "type": "string", "minLength": 1 },
+        "impact_by_mode": { "$ref": "#/$defs/modeImpact" },
+        "requested_operation": { "enum": ["add", "replace", "preserve", "remove", "review"] }
+      }
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "path_or_name", "version_or_hash", "role", "status"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^ART-[A-Z0-9-]+$" },
+        "path_or_name": { "type": "string", "minLength": 1 },
+        "version_or_hash": { "type": ["string", "null"] },
+        "role": { "type": "string", "minLength": 1 },
+        "status": { "enum": ["created", "updated", "unchanged", "proposed", "missing"] }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "reference", "result"],
+      "properties": {
+        "kind": { "enum": ["file", "test", "commit", "review", "source"] },
+        "reference": { "type": "string", "minLength": 1 },
+        "result": { "type": "string", "minLength": 1 }
+      }
+    },
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["subject_kind", "subject_id", "status", "rationale", "evidence", "proposed_action"],
+      "properties": {
+        "subject_kind": { "enum": ["rule", "artifact"] },
+        "subject_id": { "type": "string", "minLength": 1 },
+        "status": { "enum": ["accepted", "accepted_with_changes", "rejected", "needs_evidence", "not_applicable"] },
+        "rationale": { "type": "string" },
+        "evidence": { "type": "array", "items": { "type": "string" } },
+        "proposed_action": { "type": "string" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "type": "string", "not": { "const": "accepted" } } } },
+          "then": {
+            "properties": {
+              "rationale": { "type": "string", "minLength": 1 },
+              "evidence": { "type": "array", "minItems": 1 },
+              "proposed_action": { "type": "string", "minLength": 1 }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

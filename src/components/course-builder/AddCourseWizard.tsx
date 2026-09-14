@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import type { MidiaRef, TopicoTimeline, ArquivoLeve, ValidacaoItem, CourseKitMetadata } from '@tipos/course-kit';
-import { DIFICULDADES, DIFICULDADE_LABELS } from '@tipos/course-kit';
+import { DIFICULDADES, DIFICULDADE_LABELS, EIXOS_PERFIL_COBRANCA } from '@tipos/course-kit';
 import { anoUsaTurma } from '@utils/hierarchy-constants';
 import { generateCourseKit } from '@utils/course-kit/generateCourseKit';
 import { estimateSize } from '@utils/course-kit/estimateSize';
@@ -22,6 +22,15 @@ const METADATA_INICIAL: WizardMetadata = {
   nome: '', slug: '', slugManual: false,
   ano: '1', semestre: '1', epoca: 'P1', turma: undefined,
   descricao: '', estiloCobranca: '',
+  perfilCobranca: {
+    schema_version: '1.0.0',
+    status: 'pendente',
+    classificacao: Object.fromEntries(EIXOS_PERFIL_COBRANCA.map((eixo) => [eixo, 'incerta'])) as CourseKitMetadata['perfilCobranca']['classificacao'],
+    evidencias: [],
+    fontes_localizadas: [],
+    incertezas: ['Perfil ainda não confirmado nas fontes autorizadas.'],
+  },
+  duracaoMinutos: { rapido: null, 'pra-safar': null, completo: null },
 };
 
 export default function AddCourseWizard() {
@@ -59,7 +68,35 @@ export default function AddCourseWizard() {
         questoesCelula?: QuestoesPorCelula;
         midias?: MidiaRef[];
       };
-      if (d.metadata) setMetadata(d.metadata);
+      if (d.metadata) {
+        const perfilAntigo = d.metadata.perfilCobranca as (Partial<CourseKitMetadata['perfilCobranca']> & {
+          evidencias?: string | string[];
+          fontesLocalizadas?: string[];
+        }) | undefined;
+        setMetadata({
+          ...METADATA_INICIAL,
+          ...d.metadata,
+          perfilCobranca: {
+            ...METADATA_INICIAL.perfilCobranca,
+            ...perfilAntigo,
+            evidencias: Array.isArray(perfilAntigo?.evidencias)
+              ? perfilAntigo.evidencias
+              : perfilAntigo?.evidencias ? [perfilAntigo.evidencias] : [],
+            fontes_localizadas: perfilAntigo?.fontes_localizadas ?? perfilAntigo?.fontesLocalizadas ?? [],
+            incertezas: Array.isArray(perfilAntigo?.incertezas)
+              ? perfilAntigo.incertezas
+              : METADATA_INICIAL.perfilCobranca.incertezas,
+            classificacao: {
+              ...METADATA_INICIAL.perfilCobranca.classificacao,
+              ...(perfilAntigo?.classificacao ?? {}),
+            },
+          },
+          duracaoMinutos: {
+            ...METADATA_INICIAL.duracaoMinutos,
+            ...(d.metadata.duracaoMinutos ?? {}),
+          },
+        });
+      }
       if (d.topicos) setTopicos(d.topicos);
       if (d.questoesCelula) setQuestoesCelula(d.questoesCelula);
       if (d.midias) setMidias(d.midias);
@@ -86,12 +123,30 @@ export default function AddCourseWizard() {
     if (!metadata.slug.trim()) v.push({ nivel: 'erro', mensagem: 'Informe o slug.' });
     if (!metadata.descricao.trim()) v.push({ nivel: 'erro', mensagem: 'Descreva a matéria.' });
     if (anoUsaTurma(metadata.ano) && !metadata.turma) v.push({ nivel: 'erro', mensagem: 'Selecione a turma (3°/4° ano).' });
+    if (metadata.perfilCobranca.status === 'confirmado' && !metadata.perfilCobranca.fontes_localizadas.length)
+      v.push({ nivel: 'erro', mensagem: 'Perfil confirmado exige ao menos uma fonte com localização exata.' });
+    if (!metadata.perfilCobranca.evidencias.length && !metadata.perfilCobranca.incertezas.length)
+      v.push({ nivel: 'aviso', mensagem: 'Registre evidências do perfil ou explicite a incerteza.' });
+    for (const [modo, minutos] of Object.entries(metadata.duracaoMinutos)) {
+      if (!minutos || minutos <= 0) v.push({ nivel: 'aviso', mensagem: `Duração de ${modo} ainda não calculada a partir do conteúdo.` });
+    }
     return v;
   };
 
   const valTimeline = (): ValidacaoItem[] => {
     const v: ValidacaoItem[] = [];
     if (topicos.length < 2) v.push({ nivel: 'erro', mensagem: 'Adicione ao menos 2 tópicos à linha do tempo.' });
+    if (topicos.some((t) => !t.conceptId)) v.push({ nivel: 'erro', mensagem: 'Todo tópico precisa de concept_id estável.' });
+    if (topicos.some((t) => !(t.modalidades ?? []).includes('completo')))
+      v.push({ nivel: 'erro', mensagem: 'Todo conceito precisa estar presente no modo Completo.' });
+    if (!topicos.some((t) => (t.modalidades ?? []).includes('rapido')))
+      v.push({ nivel: 'aviso', mensagem: 'A matriz ainda não seleciona nenhum conceito para Rápido.' });
+    if (topicos.some((t) => t.examinavel !== false && !(t.modalidades ?? []).includes('pra-safar')))
+      v.push({ nivel: 'aviso', mensagem: 'Há conteúdo examinável ainda fora do modo Pra Safar.' });
+    if (topicos.some((t) => !t.fonteLocalizada?.length))
+      v.push({ nivel: 'aviso', mensagem: 'Há conceitos sem arquivo e página/slide localizados; a matriz permanecerá pendente.' });
+    if (topicos.some((t) => (t.modalidades ?? []).some((modo) => !t.profundidadePorModalidade?.[modo] || !t.justificativaPorModalidade?.[modo])))
+      v.push({ nivel: 'aviso', mensagem: 'Há modalidades sem profundidade ou justificativa na matriz.' });
     if (topicos.length && !topicos.some((t) => t.dicasProfessor?.length))
       v.push({ nivel: 'aviso', mensagem: 'Nenhuma dica do professor informada (opcional).' });
     return v;
@@ -105,6 +160,8 @@ export default function AddCourseWizard() {
     }
     const semGab = questoes.filter((q) => q.tipo === 'objetiva' && !q.gabarito).length;
     if (semGab) v.push({ nivel: 'aviso', mensagem: `${semGab} questão(ões) objetiva(s) sem gabarito identificável.` });
+    const semEscopo = questoes.filter((q) => !q.conceptIds?.length || !q.modalidades?.length).length;
+    if (semEscopo) v.push({ nivel: 'aviso', mensagem: `${semEscopo} questão(ões) ainda sem concept_id ou modalidades; o instalador deve resolver antes da publicação.` });
     return v;
   };
 
@@ -212,6 +269,8 @@ function toKitMetadata(m: WizardMetadata): CourseKitMetadata {
     nome: m.nome,
     descricao: m.descricao,
     estiloCobranca: m.estiloCobranca,
+    perfilCobranca: m.perfilCobranca,
+    duracaoMinutos: m.duracaoMinutos,
     ano: m.ano,
     semestre: m.semestre,
     epoca: m.epoca,

@@ -4,6 +4,7 @@
 // ── Hierarquia da Escola Naval ────────────────────────────────────────────────
 // Ano → Semestre/Época → Turma → Matéria. A camada de navegação (páginas /ano/...)
 // usa estes campos; as rotas dos cursos continuam canônicas em /<slug>.
+import type { ModalidadeCursoConfig } from './study-mode';
 export type Ano = '1' | '2' | '3' | '4';
 export type Semestre = '1' | '2';
 export type Epoca = 'T1' | 'P1' | 'T2' | 'P2';
@@ -78,4 +79,9 @@ export interface CursoConfig extends CourseHierarchyMeta {
   componentesExtras?: string[];
   /** Downloads derivados e versionados disponíveis apenas neste curso. */
   downloads?: CursoDownload[];
+  /**
+   * Contrato de modalidade para cursos novos. Ausente nos cursos legados, que
+   * são interpretados como famílias com apenas a modalidade Completo.
+   */
+  estudo?: ModalidadeCursoConfig;
 }

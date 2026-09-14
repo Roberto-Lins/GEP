@@ -3,6 +3,24 @@
 // para funcionar fora do runtime do Astro.
 import { z } from 'zod';
 
+export const modalidadeEstudoIdSchema = z.enum(['rapido', 'pra-safar', 'completo']);
+
+export const modalidadeCursoSchema = z.object({
+  contratoVersao: z.literal('1.0.0'),
+  familiaId: z.string().regex(/^[a-z0-9][a-z0-9-]*$/),
+  familiaTitulo: z.string().min(1),
+  id: modalidadeEstudoIdSchema,
+  modalidadePadrao: modalidadeEstudoIdSchema,
+  modalidadesDisponiveis: z.array(modalidadeEstudoIdSchema).min(1),
+  legadoSomenteCompleto: z.boolean(),
+  rotulo: z.string().min(1),
+  descricao: z.string().min(1),
+  finalidade: z.string().min(1),
+  cobertura: z.string().min(1),
+  duracaoMinutos: z.number().int().positive().nullable(),
+  estadoAutoria: z.enum(['rascunho', 'publicado']),
+});
+
 export const featuresSchema = z.object({
   timeline: z.boolean(),
   simulados: z.boolean(),
@@ -62,6 +80,8 @@ export const cursoConfigSchema = z.object({
   features: featuresSchema,
   componentesExtras: z.array(z.string()).default([]),
   downloads: z.array(downloadSchema).default([]),
+  // Ausente = curso legado complete-only. Cursos novos usam o contrato 1.0.0.
+  estudo: modalidadeCursoSchema.optional(),
 });
 
 export const midiaSchema = z.object({
@@ -86,6 +106,10 @@ export const dadosMateriaSchema = z.object({
   midias: z.array(midiaSchema).optional(),
   fontes: z.array(z.string()).optional(),
   exercicios: z.array(z.string()).optional(),
+  /** conceitos canônicos ensinados neste módulo (obrigatório na publicação multimodal) */
+  conceptIds: z.array(z.string().min(1)).optional(),
+  /** modalidade editorial concreta deste módulo */
+  modalidade: modalidadeEstudoIdSchema.optional(),
 });
 
 export type CursoConfigSchema = z.infer<typeof cursoConfigSchema>;

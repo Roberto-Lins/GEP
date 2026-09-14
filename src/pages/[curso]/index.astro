@@ -3,17 +3,27 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import CardMateria from '@components/estudo/CardMateria.astro';
 import PainelInicio from '@components/estudo/PainelInicio.tsx';
 import ProgressoScript from '@components/estudo/ProgressoScript.astro';
-import { listarCursos, cursoPorSlug } from '@utils/courses';
+import SeletorModalidadeEstudo from '@components/cursos/SeletorModalidadeEstudo.astro';
+import { listarCursos, listarFamilias, cursoPorSlug, familiaPorId } from '@utils/courses';
 import { dadosDoCurso } from '@utils/content';
 import { urlMateria } from '@utils/slug';
+import { modalidadeNormalizada } from '@utils/study-modes';
 
 export async function getStaticPaths() {
-  return listarCursos().map((c) => ({ params: { curso: c.slug } }));
+  return [
+    ...listarCursos().map((c) => ({ params: { curso: c.slug } })),
+    ...listarFamilias()
+      .filter((f) => !f.legadoSomenteCompleto)
+      .map((f) => ({ params: { curso: f.id } })),
+  ];
 }
 
 const { curso } = Astro.params;
-const config = cursoPorSlug(curso!)!;
-const dados = dadosDoCurso(curso!)!;
+const configConcreto = cursoPorSlug(curso!);
+const familiaLanding = configConcreto ? undefined : familiaPorId(curso!);
+const config = configConcreto ?? familiaLanding!.representante;
+const dados = dadosDoCurso(config.slug)!;
+const modalidade = modalidadeNormalizada(config);
 
 const ordenados = [...dados.topicosEstudo].sort((a, b) => a.ordem - b.ordem);
 const prioridadeMaxima = dados.timeline.filter((t) => t.prioridade === 'máxima' && t.ordem < 99);
@@ -24,10 +34,14 @@ const painelTopicos = ordenados.map((t) => ({
 }));
 const totais = Object.fromEntries(dados.timeline.map((t) => [t.slug, dados.checklistDe(t.slug).length]));
 const caderno = config.features.cadernoRevisao
-  ? config.downloads.find((item) => item.tipo === 'caderno_de_revisao')
+  ? config.downloads?.find((item) => item.tipo === 'caderno_de_revisao')
   : undefined;
 ---
-<BaseLayout titulo={config.titulo} descricao={config.descricao} curso={curso} largura="larga">
+<BaseLayout titulo={familiaLanding?.titulo ?? config.titulo} descricao={config.descricao} curso={configConcreto?.slug} tema={config.temaVisual} largura="larga">
+  {familiaLanding ? (
+    <SeletorModalidadeEstudo familia={familiaLanding} />
+  ) : (
+  <>
   <!-- HERO -->
   <section class="relative mb-10 overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-aco/40 via-naval-800 to-naval px-6 py-12 sm:px-10 sm:py-16">
     {config.capa && (
@@ -71,6 +85,7 @@ const caderno = config.features.cadernoRevisao
       <dl class="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-sm">
         <div><dt class="text-nevoa/50">Mini matérias</dt><dd class="font-serif text-xl text-marfim">{ordenados.length}</dd></div>
         <div><dt class="text-nevoa/50">Questões comentadas</dt><dd class="font-serif text-xl text-marfim">{totalQ}</dd></div>
+        <div><dt class="text-nevoa/50">Modalidade de estudo</dt><dd class="font-serif text-xl text-marfim">{modalidade.rotulo}</dd></div>
       </dl>
     </div>
   </section>
@@ -119,4 +134,6 @@ const caderno = config.features.cadernoRevisao
   )}
 
   <ProgressoScript curso={curso} totais={totais} />
+  </>
+  )}
 </BaseLayout>

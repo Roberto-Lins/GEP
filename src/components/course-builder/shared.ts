@@ -1,6 +1,7 @@
 // Tipos e estilos compartilhados pelo wizard de Course Kit.
 import type { Ano, Semestre, Epoca, Turma } from '@tipos/course';
-import type { DificuldadeQuestao, TipoQuestao, QuestaoBase } from '@tipos/course-kit';
+import type { DificuldadeQuestao, TipoQuestao, QuestaoBase, PerfilCobrancaCurso } from '@tipos/course-kit';
+import type { ModalidadeEstudoId } from '@tipos/study-mode';
 
 export interface WizardMetadata {
   nome: string;
@@ -12,6 +13,8 @@ export interface WizardMetadata {
   turma?: Turma;
   descricao: string;
   estiloCobranca: string;
+  perfilCobranca: PerfilCobrancaCurso;
+  duracaoMinutos: Record<ModalidadeEstudoId, number | null>;
 }
 
 /** Chave de célula da grade de exercícios (dificuldade × tipo). */
