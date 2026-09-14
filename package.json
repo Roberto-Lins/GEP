@@ -13,6 +13,8 @@
     "test:watch": "vitest",
     "create-course": "tsx scripts/create-course.ts",
     "validate-content": "tsx scripts/validate-content.ts",
+    "validate-math": "node scripts/validate-math.mjs",
+    "validate-math:strict": "node scripts/validate-math.mjs --strict",
     "audit-media": "tsx scripts/audit-media.ts",
     "migrate-gep": "tsx scripts/migrate-gep.ts",
     "gerar-pix": "tsx scripts/gerar-pix.ts"
