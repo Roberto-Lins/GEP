@@ -30,14 +30,14 @@
     {
       "tipo": "caderno_de_revisao",
       "rotulo": "Baixar resumo (PDF)",
-      "arquivo": "/arquivos/cursos/det-t2/downloads/DET-T2-caderno-de-revisao-v1.pdf",
+      "arquivo": "/arquivos/cursos/det-t2/downloads/DET-T2-caderno-de-revisao-v2.pdf",
       "materia": "DET",
       "avaliacao": "T2",
       "paginas": 13,
-      "tamanho_kb": 82,
+      "tamanho_kb": 84,
       "gerado_em": "2026-09-14",
-      "versao": 1,
-      "hash_sha256": "5a81771a9843b4a8e0bac4c9de36e2df5c07d3aed0d5ea0f770f4d525a5b8ef6",
+      "versao": 2,
+      "hash_sha256": "3910fe83dd28b5b6af87fc00100aef1822e98c0edcb1864a4f643aecb82c4a5d",
       "fonte_usada": "Liberation Sans (substituto métrico de Arial)",
       "estilo_derivado_de": [
         "T2/SOPA DET T2 2024.pdf",
@@ -59,7 +59,7 @@
         "src/data/cursos/det-t2/question-bank.json",
         "src/data/cursos/det-t2/timeline.ts"
       ],
-      "origem_sha256": "877de3e09bdabf059d74fee96f9257a90380ae688fb9c176cfd9d3fe4bfd8ca8"
+      "origem_sha256": "c2f42c684d67c32f85a44e9c06c8bee6dae4f9d72252619c551d85e154f98a94"
     }
   ]
 }

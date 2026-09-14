@@ -9,7 +9,7 @@ Curso do **4º ano, 2º semestre, T2, CA-HE**, disponível na rota canônica `/d
 - Simulados completos: A, B e C, com 100, 110 e 120 minutos; `features.simulados` está ativada.
 - Banco completo: 84 grupos com IDs `DET-T2-*` — 72 exercícios dos módulos e 12 questões próprias de simulado.
 - Exercícios de módulo: 18 correlações, 10 grupos V/F modelados como correlação V/F e 44 discursivas/cálculos/diagramas.
-- Caderno de Revisão v1: PDF A4 de 13 páginas, com 6 de resumo, 4 de exercícios, 2 de gabarito e formulário final; download ativado somente neste curso.
+- Caderno de Revisão v2: PDF A4 de 13 páginas, com 6 de resumo, 4 de exercícios, 2 de gabarito e formulário final; download ativado somente neste curso. A cadeia da equação radar explicita `S₁`, `S₂`, `Pₐ`, `S₃`, `Pᵣ` e `Rₘₐₓ` com os denominadores conferidos.
 
 ## Fontes e fidelidade
 
@@ -19,7 +19,7 @@ A revisão visual recuperou os bytes dos slides e da apostila completa (238 pág
 
 ## Caderno de Revisão
 
-O arquivo `DET-T2-caderno-de-revisao-v1.pdf` usa as SOPAs T2 e T1 de 2024 exclusivamente para derivar convenções de página, tipografia, numeração, resposta e pesos. Nenhum enunciado ou gabarito de SOPA foi copiado ou parafraseado; os quatro conjuntos de exercícios preservam IDs do banco original e atribuição às fontes didáticas.
+O arquivo `DET-T2-caderno-de-revisao-v2.pdf` usa as SOPAs T2 e T1 de 2024 exclusivamente para derivar convenções de página, tipografia, numeração, resposta e pesos. Nenhum enunciado ou gabarito de SOPA foi copiado ou parafraseado; os quatro conjuntos de exercícios preservam IDs do banco original e atribuição às fontes didáticas.
 
 O PDF foi gerado em Liberation Sans, substituto métrico de Arial, e auditado com zero violações: A4, preto/cinza, 13 páginas, rodapé ético em todas as páginas, gabarito após os exercícios e formulário na última página. A lacuna `DET-CAD-L01` registra a ausência de um asset real de brasão/logo; o cabeçalho institucional é textual.
 

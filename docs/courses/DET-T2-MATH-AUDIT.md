@@ -55,7 +55,20 @@ S_{\min}=\frac{PGA_aA}{(4\pi R_{\max}^2)^2}
 R_{\max}=\left[\frac{PGA_aA}{(4\pi)^2S_{\min}}\right]^{1/4}
 ```
 
-Essas formas são compatíveis com as expressões atualmente ensinadas no módulo M06 do site, mudando apenas a apresentação para notação matemática renderizada.
+Essas são as formas adotadas no módulo M06 e no Caderno de Revisão v2. As fórmulas principais foram migradas para LaTeX explícito para que agrupamento de denominador e expoentes não dependa do conversor de notação legada.
+
+## Correção de renderização — 2026-09-14
+
+A auditoria encontrou dois defeitos de apresentação capazes de mudar a leitura matemática:
+
+| Ponto | Fonte autorizada | Apresentação anterior | Forma final |
+|---|---|---|---|
+| Densidade reirradiada pelo alvo | `SUE6.11`, p. 15; apostila 1-77 | o expoente podia ser aplicado visualmente à fração inteira | `S_3=P_a/(4\pi R^2)=PG_tA_a/(4\pi R^2)^2` |
+| Potência recebida pelo radar | `SUE6.11`, p. 16; apostila 1-78 | o expoente podia aparecer fora do denominador | `P_r=PGA_aA/(4\pi R^2)^2=PGA_aA/[(4\pi)^2R^4]` |
+| Resumo do PDF | apostila 1-77 | `S_1=PG/(4\pi R^2)`, que corresponde a `S_2` | `S_1=P/(4\pi R^2)` e `S_2=PG/(4\pi R^2)` em linhas separadas |
+| Alcance sem ambiguidade | apostila 1-13 | `c/2\cdot FRP`, visualmente ambíguo | `c/(2\cdot FRP)` |
+
+O conversor legado também passou a manter potências de grupos no denominador, a não duplicar comandos `\pi` e a ignorar marcadores editoriais/caminhos que não são fórmulas. O teste de regressão fixa essas quatro condições.
 
 ## Conflito de fonte preservado — forma alternativa de `P_r`
 

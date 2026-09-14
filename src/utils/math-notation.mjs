@@ -20,11 +20,14 @@ const SUB_RE = /[₀₁₂₃₄₅₆₇₈₉]+/g;
 export function looksLikeMath(value) {
   const s = String(value ?? '').trim();
   if (!s || s.length > 280) return false;
+  // Template literals, Markdown interno e marcadores editoriais não são fórmulas.
+  if (s.includes('${') || s.includes('**') || s.includes('```')) return false;
   if (/^(?:https?:\/\/|\/|\.\/|\.\.\/)/.test(s)) return false;
   if (/\.(?:mdx?|tsx?|jsx?|json|pdf|pptx?|odp|png|jpe?g|svg)$/i.test(s)) return false;
   if (/^SUE\d+(?:\.\d+)*(?:[a-z]\d*)?$/i.test(s)) return false;
   if (/^[A-Z]{1,4}-\d{1,4}$/i.test(s)) return false;
   if (/^M\d{2}$/i.test(s)) return false;
+  if (/^[A-ZÀ-Ý0-9]+(?:_[A-ZÀ-Ý0-9]+)+$/u.test(s)) return false;
 
   const hasRelation = /(?:=|≈|≃|≤|≥|<|>)/.test(s);
   const hasArrow = /(?:⇒|→)/.test(s);
@@ -34,8 +37,13 @@ export function looksLikeMath(value) {
   const looksNumericScientific = /\d\s*[×·]\s*10/.test(s);
   const arrowInsideMath = hasArrow && (hasMathGlyph || hasVariableSubscript || hasOperator);
 
-  return hasRelation || hasMathGlyph || hasVariableSubscript || looksNumericScientific || arrowInsideMath ||
-    (hasOperator && /[A-Za-z0-9πλτμΩ]/.test(s));
+  // Caminhos editoriais como "P2/Aulas P2/..." não viram uma fração.
+  const looksLikePath = !hasRelation && !hasMathGlyph && /[A-Za-zÀ-ÿ0-9]+\/[A-Za-zÀ-ÿ][^=<>]*/.test(s);
+
+  return !looksLikePath && (
+    hasRelation || hasMathGlyph || hasVariableSubscript || looksNumericScientific || arrowInsideMath ||
+    (hasOperator && /[A-Za-z0-9πλτμΩ]/.test(s))
+  );
 }
 
 function replaceUnicodePowers(s) {
@@ -45,7 +53,30 @@ function replaceUnicodePowers(s) {
 }
 
 function replaceNamedSubscripts(s) {
-  return s.replace(/_([A-Za-zÀ-ÿ]+)(?![A-Za-zÀ-ÿ])/g, (_m, name) => `_{\\mathrm{${name}}}`);
+  return s.replace(/_([A-Za-zÀ-ÿ]+)(?![A-Za-zÀ-ÿ])/g, (_m, name) =>
+    /[^\x00-\x7F]/.test(name) ? `_{\\text{${name}}}` : `_{\\mathrm{${name}}}`,
+  );
+}
+
+function replaceParenthesizedPowers(s) {
+  let saida = '';
+  let cursor = 0;
+
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] !== '^') continue;
+    let open = i + 1;
+    while (/\s/.test(s[open] ?? '')) open++;
+    if (s[open] !== '(') continue;
+    const close = findMatchingClose(s, open);
+    if (close < 0) continue;
+
+    saida += s.slice(cursor, i);
+    saida += `^{${prettySide(s.slice(open + 1, close))}}`;
+    cursor = close + 1;
+    i = close;
+  }
+
+  return cursor === 0 ? s : saida + s.slice(cursor);
 }
 
 function findMatchingClose(s, start) {
@@ -82,9 +113,37 @@ function findTopLevelSlash(s) {
 }
 
 function ratioParentheses(s) {
-  return s.replace(/\(([^()\/]+?)\s*\/\s*([^()\/]+?)\)/g, (_m, a, b) =>
-    `\\left(\\frac{${a.trim()}}{${b.trim()}}\\right)`,
-  );
+  let saida = '';
+  let cursor = 0;
+
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] !== '(') continue;
+    const close = findMatchingClose(s, i);
+    if (close < 0) continue;
+    const inner = s.slice(i + 1, close);
+    const slash = findTopLevelSlash(inner);
+    if (slash < 0) continue;
+
+    const numerator = inner.slice(0, slash).trim();
+    const denominator = inner.slice(slash + 1).trim();
+    if (!numerator || !denominator) continue;
+
+    saida += s.slice(cursor, i);
+    saida += `\\left(\\frac{${prettySide(numerator)}}{${prettySide(denominator)}}\\right)`;
+    cursor = close + 1;
+    i = close;
+  }
+
+  return cursor === 0 ? s : saida + s.slice(cursor);
+}
+
+function leadingPower(s, start) {
+  const match = /^\s*\^\{([^{}]+)\}/.exec(s.slice(start));
+  if (!match) return null;
+  return {
+    tex: `^{${prettySide(match[1])}}`,
+    end: start + match[0].length,
+  };
 }
 
 function splitDenominator(rest) {
@@ -95,9 +154,15 @@ function splitDenominator(rest) {
   if (rest[start] === '(' || rest[start] === '[') {
     const close = findMatchingClose(rest, start);
     if (close < 0) return null;
+    const power = leadingPower(rest, close + 1);
+    const inner = prettySide(rest.slice(start + 1, close));
+    const open = rest[start] === '(' ? '\\left(' : '\\left[';
+    const end = rest[start] === '(' ? '\\right)' : '\\right]';
     return {
-      denominator: rest.slice(start + 1, close).trim(),
-      tail: rest.slice(close + 1),
+      // O expoente imediatamente após o grupo pertence ao denominador.
+      // Ex.: P/(4πR²)² = P/[(4πR²)²], não (P/4πR²)².
+      denominator: power ? `${open}${inner}${end}${power.tex}` : inner,
+      tail: rest.slice(power?.end ?? close + 1),
     };
   }
 
@@ -177,19 +242,28 @@ export function normalizeLegacyMath(value) {
   s = replaceUnicodePowers(s);
   s = replaceNamedSubscripts(s);
   s = s
-    .replace(/\^\s*\(([^)]+)\)/g, '^{$1}')
+    .replace(/½/g, '\\frac{1}{2}')
+    .replace(/⅓/g, '\\frac{1}{3}')
+    .replace(/⅔/g, '\\frac{2}{3}')
+    .replace(/¼/g, '\\frac{1}{4}')
+    .replace(/¾/g, '\\frac{3}{4}');
+  s = replaceParenthesizedPowers(s);
+  s = s
     .replace(/\^\s*([+\-−]?\d+(?:[.,]\d+)?)/g, '^{$1}')
     .replace(/π/g, '\\pi ')
     .replace(/λ/g, '\\lambda ')
     .replace(/τ/g, '\\tau ')
     .replace(/μ/g, '\\mu ')
+    .replace(/µ/g, '\\mu ')
     .replace(/Ω/g, '\\Omega ')
-    .replace(/\bpi\b/gi, '\\pi ')
+    // Não reconverte o "pi" que acabou de ser emitido por π → \pi.
+    .replace(/(?<!\\)\bpi\b/gi, '\\pi ')
     .replace(/√\s*\(([^)]+)\)/g, '\\sqrt{$1}')
     .replace(/√\s*([A-Za-z0-9]+)/g, '\\sqrt{$1}')
     .replace(/·/g, '\\cdot ')
     .replace(/×/g, '\\times ')
     .replace(/÷/g, '\\div ')
+    .replace(/(?<!\\)%/g, '\\%')
     .replace(/\*/g, '\\cdot ')
     .replace(/\s+/g, ' ')
     .trim();
