@@ -1,0 +1,33 @@
+{
+  "derivado_de": [
+    "T2/SOPA DET T2 2024.pdf",
+    "T1/DET SOPA T1 2024 (1).pdf"
+  ],
+  "paginas_analisadas": 11,
+  "pagina": {
+    "tamanho": "A4",
+    "margens_mm": {"sup": 25, "inf": 25, "esq": 30, "dir": 20}
+  },
+  "tipografia": {
+    "familia": "Arial",
+    "corpo_pt": 12,
+    "titulo_questao_pt": 12,
+    "titulo_questao_estilo": "negrito",
+    "entrelinha": 1.15
+  },
+  "numeracao_questao": "1ª QUESTÃO (4,8 pontos - 0,3 por cada item)",
+  "numeracao_item": "a) b) c)",
+  "marcador_alternativa": "( )",
+  "linha_de_resposta": "Resposta: ______________________",
+  "rodape": "- X de Y -",
+  "cabecalho_repetido": "Identidade da avaliação no alto; substituída no caderno por cabeçalho institucional textual sem campos do avaliado.",
+  "usa_cor": false,
+  "usa_linhas_horizontais": "Não foram observadas réguas decorativas; somente contornos funcionais das áreas de resposta.",
+  "observacoes": [
+    "Questões em 12 pt negrito e itens em a), b), c).",
+    "Desenvolvimento organizado em fórmula, substituição e resultado.",
+    "Resposta final destacada em área funcional e paginação X de Y.",
+    "RUBRICA DO ASPIRANTE, códigos, datas, assinaturas e campos pessoais não serão reproduzidos.",
+    "O guia usa as SOPAs somente para convenções, tipos e pesos; nenhum enunciado ou gabarito foi transplantado."
+  ]
+}

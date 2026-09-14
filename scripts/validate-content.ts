@@ -1,6 +1,7 @@
 // Valida os _config.json (cursos) e _dados.json (mini-matérias) de todos os cursos
 // contra os schemas Zod. Uso: npm run validate-content
 import { readdirSync, readFileSync, existsSync, statSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { join } from 'node:path';
 import { cursoConfigSchema, dadosMateriaSchema } from '../src/content/schemas';
 
@@ -13,6 +14,18 @@ function aviso(msg: string) { avisos++; console.warn('  ! ' + msg); }
 
 function lerJSON(caminho: string): unknown {
   return JSON.parse(readFileSync(caminho, 'utf8'));
+}
+
+function sha256Arquivo(caminho: string): string {
+  return createHash('sha256').update(readFileSync(caminho)).digest('hex');
+}
+
+function sha256Origens(caminhos: string[]): string {
+  const hash = createHash('sha256');
+  for (const caminho of [...caminhos].sort()) {
+    hash.update(caminho).update('\0').update(readFileSync(caminho)).update('\0');
+  }
+  return hash.digest('hex');
 }
 
 if (!existsSync(CURSOS_DIR)) {
@@ -39,6 +52,36 @@ for (const curso of cursos) {
       erro(`_config.json: slug "${r.data.slug}" ≠ pasta "${curso}"`);
     } else {
       console.log('  ✓ _config.json');
+      const cadernos = r.data.downloads.filter((item) => item.tipo === 'caderno_de_revisao');
+      if (r.data.features.cadernoRevisao && cadernos.length !== 1) {
+        erro('_config.json: cadernoRevisao ativo exige exatamente um download caderno_de_revisao');
+      }
+      if (!r.data.features.cadernoRevisao && cadernos.length > 0) {
+        erro('_config.json: download caderno_de_revisao existe com a feature desligada');
+      }
+      for (const item of cadernos) {
+        const pdfPath = join('public', item.arquivo.replace(/^\//, ''));
+        if (!existsSync(pdfPath) || !statSync(pdfPath).isFile()) {
+          erro(`caderno ausente: ${pdfPath}`);
+          continue;
+        }
+        if (sha256Arquivo(pdfPath) !== item.hash_sha256) {
+          erro(`caderno alterado sem atualizar hash: ${pdfPath}`);
+        }
+        const proibido = item.regenerar_se_mudar.find((p) => /[*?\[\]]/.test(p));
+        if (proibido) {
+          erro(`regenerar_se_mudar exige caminho exato, não glob: ${proibido}`);
+          continue;
+        }
+        const ausente = item.regenerar_se_mudar.find((p) => !existsSync(p) || !statSync(p).isFile());
+        if (ausente) {
+          erro(`origem do caderno ausente: ${ausente}`);
+          continue;
+        }
+        if (sha256Origens(item.regenerar_se_mudar) !== item.origem_sha256) {
+          erro(`caderno desatualizado: entradas em regenerar_se_mudar foram alteradas`);
+        }
+      }
     }
   }
 

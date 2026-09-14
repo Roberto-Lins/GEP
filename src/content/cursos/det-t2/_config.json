@@ -22,7 +22,44 @@
     "animacoesTransicao": false,
     "modoRevisaoVespera": true,
     "graficoProgressoAvancado": false,
-    "writing": false
+    "writing": false,
+    "cadernoRevisao": true
   },
-  "componentesExtras": []
+  "componentesExtras": [],
+  "downloads": [
+    {
+      "tipo": "caderno_de_revisao",
+      "rotulo": "Baixar resumo (PDF)",
+      "arquivo": "/arquivos/cursos/det-t2/downloads/DET-T2-caderno-de-revisao-v1.pdf",
+      "materia": "DET",
+      "avaliacao": "T2",
+      "paginas": 13,
+      "tamanho_kb": 82,
+      "gerado_em": "2026-09-14",
+      "versao": 1,
+      "hash_sha256": "5a81771a9843b4a8e0bac4c9de36e2df5c07d3aed0d5ea0f770f4d525a5b8ef6",
+      "fonte_usada": "Liberation Sans (substituto métrico de Arial)",
+      "estilo_derivado_de": [
+        "T2/SOPA DET T2 2024.pdf",
+        "T1/DET SOPA T1 2024 (1).pdf"
+      ],
+      "conteudo": ["resumo", "exercicios", "gabarito", "formulario"],
+      "regenerar_se_mudar": [
+        "src/content/cursos/det-t2/01-fundamentos-do-radar-de-pulso/aula.mdx",
+        "src/content/cursos/det-t2/02-caracteristicas-e-parametros-de-desempenho/aula.mdx",
+        "src/content/cursos/det-t2/03-transmissao-e-formacao-do-pulso/aula.mdx",
+        "src/content/cursos/det-t2/04-recepcao-e-processamento-do-eco/aula.mdx",
+        "src/content/cursos/det-t2/05-diagrama-de-blocos-controles-e-fluxo-do-sinal/aula.mdx",
+        "src/content/cursos/det-t2/06-equacao-radar-ganho-sensibilidade-e-alcance/aula.mdx",
+        "src/content/cursos/det-t2/99-revisao-final/mapa-da-prova.mdx",
+        "src/content/cursos/det-t2/99-revisao-final/resumo-geral.mdx",
+        "src/data/cursos/det-t2/caderno-revisao.json",
+        "src/data/cursos/det-t2/estilo-prova.json",
+        "src/data/cursos/det-t2/fontes.ts",
+        "src/data/cursos/det-t2/question-bank.json",
+        "src/data/cursos/det-t2/timeline.ts"
+      ],
+      "origem_sha256": "877de3e09bdabf059d74fee96f9257a90380ae688fb9c176cfd9d3fe4bfd8ca8"
+    }
+  ]
 }

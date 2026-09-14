@@ -1,0 +1,255 @@
+{
+  "materia": "DET",
+  "avaliacao": "T2",
+  "versao": 1,
+  "escopo": "Radar de pulso, M01 a M06. M07 foi excluído porque o registro do curso o situa após o encerramento do capítulo cobrado na T2.",
+  "priorizacao": [
+    "SOPA T2 2024: correlação funcional 4,8 pontos; cálculo encadeado 2,8; equação radar 0,8; relações conceituais 1,6.",
+    "Criticidade registrada no mapa da prova e prioridades da timeline de DET-T2.",
+    "Não há indicação adicional do professor fora do corpus; aplicada a ordem provas anteriores por peso, depois criticidade."
+  ],
+  "fontes_conteudo": [
+    "Apostila de Detecção 2022 — Capítulo I",
+    "SUE6.1 — Radar de pulso: introdução e características",
+    "SUE6.2a4 — Radar de pulso: transmissor",
+    "SUE6.5 — Radar de pulso: receptor",
+    "SUE6.6 — Indicador",
+    "SUE6.7, SUE6.8 e SUE6.9a10",
+    "SUE6.11 — Equação radar"
+  ],
+  "provas_somente_estilo": [
+    "T2/SOPA DET T2 2024.pdf",
+    "T1/DET SOPA T1 2024 (1).pdf"
+  ],
+  "questoes_selecionadas": [
+    "DET-T2-M01-COR-N3-001",
+    "DET-T2-M02-CAL-N3-005",
+    "DET-T2-M06-CAL-N3-007",
+    "DET-T2-M02-DIS-N4-013"
+  ],
+  "cortes": [
+    "Figuras redundantes: o fluxo foi mantido em texto funcional para preservar o orçamento.",
+    "M07 e adjacências: fora do escopo documental da T2.",
+    "Exercícios adicionais: mantido um conjunto por tipo observado na T2."
+  ],
+  "lacunas": [
+    "DET-CAD-L01 — brasão/logo real não foi fornecido como asset; usado cabeçalho institucional em texto."
+  ],
+  "paginas": [
+    {
+      "secao": "resumo",
+      "blocos": [
+        {"tipo": "titulo", "texto": "RESUMO — mapa da T2"},
+        {"tipo": "texto", "texto": "Prioridade observada: reconhecer funções dos blocos e resolver cadeias de cálculo. A prova de referência distribuiu 4,8 pontos para correlação, 2,8 para problema encadeado, 0,8 para equação radar e 1,6 para relações conceituais."},
+        {"tipo": "titulo", "texto": "Princípio e organização básica"},
+        {"tipo": "texto", "texto": "O radar transmite energia, recebe o eco e usa dois fatos independentes: o tempo de ida e volta fornece distância; a direção da antena fornece marcação."},
+        {"tipo": "formula", "latex": "$d = \\frac{ct}{2} = 150\\,t_{\\mu s}$", "nota": "d em metros; c = 3 × 10⁸ m/s; t é o tempo total de ida e volta."},
+        {"tipo": "lista", "itens": [
+          "Sincronizador: define o instante e a FRP; alimenta transmissor e indicador.",
+          "Transmissor: forma o pulso de RF; o modulador define LP e o oscilador define a portadora.",
+          "Antena e duplexer: irradiam, recebem e separam os caminhos de transmissão e recepção.",
+          "Receptor: converte para FI, amplifica, detecta e entrega vídeo.",
+          "Indicador: transforma o tempo do eco em posição radial e a direção da antena em azimute."
+        ]},
+        {"tipo": "texto", "texto": "Origem: apostila, p. 1-3 a 1-7; SUE6.1."}
+      ]
+    },
+    {
+      "secao": "resumo",
+      "blocos": [
+        {"tipo": "titulo", "texto": "RESUMO — parâmetros e compromissos"},
+        {"tipo": "formula", "latex": "$TRP = \\frac{1}{FRP} \\qquad CT = LP\\,FRP \\qquad P_{med}=P_{pico}LP\\,FRP$"},
+        {"tipo": "texto", "texto": "LP e TRP em segundos; FRP em hertz; potência em watts. O ciclo de trabalho é adimensional."},
+        {"tipo": "formula", "latex": "$R_{min}=PSD=\\frac{cLP}{2} \\qquad R_{max,amb}=\\frac{c}{2FRP}$"},
+        {"tipo": "lista", "itens": [
+          "LP menor melhora a separação em distância e reduz a distância mínima, mas exige banda maior no receptor.",
+          "FRP menor aumenta o alcance sem ambiguidade, mas reduz os pulsos sobre o alvo.",
+          "Potência média cresce com potência de pico, LP e FRP; converter LP para segundos antes de substituir.",
+          "O feixe determina separação em marcação; não determina separação em distância.",
+          "PSM angular é o próprio feixe; PSM linear cresce com a distância."
+        ]},
+        {"tipo": "formula", "latex": "$x = 0{,}01745\\,R\\,\\theta_B \\qquad N_B=\\frac{\\theta_B}{6\\,RPM}FRP$"},
+        {"tipo": "texto", "texto": "Pegadinha: máximo e mínimo escolhem valores diferentes de LP, FRP e RPM. Liste a combinação antes de calcular. Origem: apostila, p. 1-10 a 1-17; SUE6.1."}
+      ]
+    },
+    {
+      "secao": "resumo",
+      "blocos": [
+        {"tipo": "titulo", "texto": "RESUMO — transmissão e formação do pulso"},
+        {"tipo": "lista", "itens": [
+          "Sincronizador determina FRP e fornece referência temporal ao transmissor e ao indicador.",
+          "Modulador determina LP e aplica o pulso de alta tensão à válvula osciladora ou amplificadora.",
+          "Oscilador determina a frequência da portadora; a magnetron é autoexcitada e opera em pulsos de alta potência.",
+          "Na arquitetura amplificadora, um oscilador estável excita estágios como Klystron, TWT ou CFA.",
+          "RFP de linha: a carga ressonante define o período de repetição quando não há diodo de carga."
+        ]},
+        {"tipo": "formula", "latex": "$T_r = \\pi\\sqrt{L_{ch}C}$", "nota": "Válida para o circuito de carga ressonante indicado no corpus."},
+        {"tipo": "titulo", "texto": "Cadeia para memorizar"},
+        {"tipo": "texto", "texto": "Sincronizador define FRP; modulador define LP; oscilador define a portadora. Não trocar o parâmetro gerado por cada bloco."},
+        {"tipo": "titulo", "texto": "Falhas prováveis"},
+        {"tipo": "texto", "texto": "FRP incorreta aponta primeiro para sincronismo; LP incorreta aponta para modulação; frequência de RF instável aponta para oscilação ou controle de frequência."},
+        {"tipo": "texto", "texto": "Origem: apostila, p. 1-20 a 1-41; SUE6.2a4."}
+      ]
+    },
+    {
+      "secao": "resumo",
+      "blocos": [
+        {"tipo": "titulo", "texto": "RESUMO — recepção, duplexer e indicador"},
+        {"tipo": "lista", "itens": [
+          "Oscilador local fornece frequência estável; misturador gera a frequência intermediária.",
+          "CAF amostra o sinal transmitido e corrige o oscilador local; CAG regula o ganho do amplificador de FI.",
+          "Amplificador de FI concentra o ganho e define essencialmente a banda passante.",
+          "Detector de vídeo extrai a envoltória da FI; amplificador de vídeo conduz o sinal ao indicador.",
+          "STC reduz ganho em pequenas distâncias contra clutter do mar; FTC reduz ecos extensos de chuva.",
+          "Na transmissão, TR e ATR ionizam; na recepção, desionizam e encaminham o eco ao receptor.",
+          "Falha da TR ameaça o receptor; falha da ATR mantém o transmissor acoplado e perde energia do eco."
+        ]},
+        {"tipo": "titulo", "texto": "Leitura do indicador"},
+        {"tipo": "texto", "texto": "O mesmo pulso de sincronismo inicia a transmissão e a varredura. Por isso o atraso do eco se converte em posição radial. No PPI, a direção da varredura acompanha a antena."},
+        {"tipo": "texto", "texto": "Pegadinha: FI não é produzida pelo amplificador de FI; nasce no misturador. Origem: apostila, p. 1-42 a 1-75; SUE6.5, SUE6.6 e SUE6.7."}
+      ]
+    },
+    {
+      "secao": "resumo",
+      "blocos": [
+        {"tipo": "titulo", "texto": "RESUMO — equação radar"},
+        {"tipo": "formula", "latex": "$S_1=\\frac{PG}{4\\pi R^2} \\qquad A=\\frac{G\\lambda^2}{4\\pi}$"},
+        {"tipo": "formula", "latex": "$P_r=\\frac{PGA_aA}{(4\\pi)^2R^4} \\qquad R_{max}=(\\frac{PGA_aA}{(4\\pi)^2S_{min}})^{1/4}$"},
+        {"tipo": "texto", "texto": "P é potência transmitida; G é ganho linear; A é área efetiva da antena; Aa é seção reta radar do alvo; Smin é o mínimo sinal detectável. A forma operacional usa R à quarta potência, conforme apostila p. 1-78 e SUE6.11."},
+        {"tipo": "formula", "latex": "$G_{lin}=10^{G_{dB}/10} \\qquad P(W)=10^{(P_{dBm}-30)/10}$"},
+        {"tipo": "lista", "itens": [
+          "O alcance varia com a quarta raiz: fator 16 em P, G, A ou Aa dobra R.",
+          "Reduzir Smin por fator 16 também dobra R; a fonte prioriza aperfeiçoar o receptor.",
+          "Ganho em dB e potência em dBm precisam ser convertidos antes da equação.",
+          "Não confundir A da antena com Aa do alvo.",
+          "Interceptação por MAGE usa caminho de ida; o eco radar usa ida e volta."
+        ]},
+        {"tipo": "texto", "texto": "Origem: apostila, p. 1-77 a 1-81; SUE6.11; SUE8.1a2 somente para o contraste MAGE."}
+      ]
+    },
+    {
+      "secao": "resumo",
+      "blocos": [
+        {"tipo": "titulo", "texto": "RESUMO — protocolo de resolução"},
+        {"tipo": "lista", "itens": [
+          "Circule máximo, mínimo, maior ou menor; eles definem a escolha do parâmetro.",
+          "Converta microsegundo, quilômetro, quilowatt, dB e dBm antes da substituição.",
+          "Na cadeia encadeada, resolva cada item isoladamente e registre sua fórmula.",
+          "Na correlação, fixe funções exclusivas; depois trate CAF/CAG e controles próximos.",
+          "Faça teste dimensional; potência absurda costuma denunciar LP não convertida.",
+          "Na equação radar, confira denominador, quarta raiz e Pr na distância obtida."
+        ]},
+        {"tipo": "titulo", "texto": "Distinções decisivas"},
+        {"tipo": "texto", "texto": "LP × FRP; distância × marcação; CAF × CAG; STC × FTC; TR × ATR; alcance sem ambiguidade × alcance energético; antena × alvo; eco de ida e volta × interceptação de ida."},
+        {"tipo": "titulo", "texto": "Escopo"},
+        {"tipo": "texto", "texto": "O caderno encerra em M06: o curso situa M07 após o fim do capítulo da T2. Origem: mapa da prova, timeline e revisão final de DET-T2."}
+      ]
+    },
+    {
+      "secao": "exercicios",
+      "blocos": [
+        {"tipo": "titulo", "texto": "EXERCÍCIOS"},
+        {"tipo": "questao", "titulo": "1ª QUESTÃO (4,8 pontos - 0,8 por cada item)", "enunciado": "Associe cada consequência (a–f) ao fato ou característica (I–V). Uma opção pode repetir; nenhuma resposta fica em branco.", "itens": [
+          "I velocidade de propagação constante; II recepção direcional; III reflexão na superfície; IV intensidade das correntes induzidas; V intervalo longo sem transmitir.",
+          "a) distância   b) marcação   c) existência do eco",
+          "d) energia na onda refletida   e) receptor escuta antes do próximo pulso",
+          "f) detecção da presença",
+          "Resposta: a)          b)          c)          d)          e)          f)"
+        ], "origem": "questão original do banco DET-T2-M01-COR-N3-001; conteúdo: apostila p. 1-3.", "espaco_resposta": 0.16}
+      ]
+    },
+    {
+      "secao": "exercicios",
+      "blocos": [
+        {"tipo": "questao", "titulo": "2ª QUESTÃO (2,8 pontos - 0,7 por cada item)", "enunciado": "Um radar opera com potência de pico de 400 kW, largura de pulso de 4 μs e FRP de 750 Hz.", "itens": [
+          "a) Determine o TRP em microsegundos.",
+          "b) Determine o ciclo de trabalho.",
+          "c) Determine a potência média em watts e em quilowatts.",
+          "d) A FRP é dobrada, mantendo-se LP. Determine a nova potência média e o novo alcance máximo sem ambiguidade; compare com o valor inicial.",
+          "Resposta: a)",
+          "b)",
+          "c)",
+          "d)"
+        ], "origem": "questão original do banco DET-T2-M02-CAL-N3-005; conteúdo: apostila p. 1-10 e p. 1-18.", "espaco_resposta": 0.06}
+      ]
+    },
+    {
+      "secao": "exercicios",
+      "blocos": [
+        {"tipo": "questao", "titulo": "3ª QUESTÃO (0,8 ponto - 0,16 por cada item)", "enunciado": "Um radar detecta determinado alvo a 100 km. Considere a dependência de quarta raiz da equação radar e mantenha constantes os parâmetros não citados.", "itens": [
+          "a) Por qual fator deve ser multiplicada a potência para chegar a 200 km?",
+          "b) Qual é o alcance com o dobro da potência?",
+          "c) Qual é o alcance com acréscimo de 3 dB no ganho e área efetiva mantida?",
+          "d) Qual é o alcance com redução de 6 dB em Smin?",
+          "e) Escolha a melhor proposta entre b), c) e d), com um argumento numérico e um argumento de engenharia.",
+          "Resposta: a)          b)          c)          d)",
+          "e)"
+        ], "origem": "questão original do banco DET-T2-M06-CAL-N3-007; conteúdo: SUE6.11, considerações finais.", "espaco_resposta": 0.07}
+      ]
+    },
+    {
+      "secao": "exercicios",
+      "blocos": [
+        {"tipo": "questao", "titulo": "4ª QUESTÃO (1,6 ponto - 0,32 por cada item)", "enunciado": "A missão exige aumentar o alcance sem trocar a antena nem a válvula de potência. Responda em uma relação causal por item.", "itens": [
+          "a) Quais são as duas formas de aumentar a energia do eco apresentadas na apostila, e qual resta disponível?",
+          "b) Qual é o custo operacional dessa escolha?",
+          "c) O que ocorre ao reduzir a FRP?",
+          "d) O que ocorre ao reduzir a frequência da portadora?",
+          "e) Por que a seleção de parâmetros é sempre um compromisso?",
+          "Resposta: a)",
+          "b)",
+          "c)",
+          "d)",
+          "e)"
+        ], "origem": "questão original do banco DET-T2-M02-DIS-N4-013; conteúdo: apostila p. 1-6, 1-10, 1-12 e 1-17; SUE6.1.", "espaco_resposta": 0.025}
+      ]
+    },
+    {
+      "secao": "gabarito",
+      "blocos": [
+        {"tipo": "titulo", "texto": "GABARITO — questões 1 e 2"},
+        {"tipo": "titulo", "texto": "1ª QUESTÃO"},
+        {"tipo": "texto", "texto": "Resposta: a) I; b) II; c) III; d) IV; e) V; f) III."},
+        {"tipo": "texto", "texto": "Desenvolvimento: tempo de propagação fornece distância; direção da recepção fornece marcação; reflexão cria o eco; correntes induzidas definem energia; o intervalo de escuta permite receber."},
+        {"tipo": "texto", "texto": "Erro provável: atribuir marcação ao tempo. A antena varre no tempo, mas a marcação vem da direção."},
+        {"tipo": "titulo", "texto": "2ª QUESTÃO"},
+        {"tipo": "formula", "latex": "$TRP=1/750=1{,}3333\\times10^{-3}\\,s=1\\,333{,}33\\,\\mu s$"},
+        {"tipo": "formula", "latex": "$CT=4\\times10^{-6}\\times750=3\\times10^{-3}$"},
+        {"tipo": "formula", "latex": "$P_{med}=4\\times10^5\\times3\\times10^{-3}=1\\,200\\,W=1{,}2\\,kW$"},
+        {"tipo": "formula", "latex": "$FRP'=1\\,500\\,Hz:\\quad P'_{med}=2\\,400\\,W;\\quad R'_{max}=100\\,km$"},
+        {"tipo": "texto", "texto": "Comparação: o alcance cai de 200 km para 100 km. Erro provável: usar a LP em microsegundos sem convertê-la para segundos."}
+      ]
+    },
+    {
+      "secao": "gabarito",
+      "blocos": [
+        {"tipo": "titulo", "texto": "GABARITO — questões 3 e 4"},
+        {"tipo": "titulo", "texto": "3ª QUESTÃO"},
+        {"tipo": "texto", "texto": "a) 16; b) 118,9 km; c) 118,9 km; d) 141,3 km; e) proposta d)."},
+        {"tipo": "formula", "latex": "$R_2=R_1(\\frac{K_2}{K_1})^{1/4};\\quad 2^{1/4}=1{,}189;\\quad 4^{1/4}=1{,}413$"},
+        {"tipo": "texto", "texto": "Justificativa: −6 dB em Smin equivale a fator 4 favorável e entrega o maior ganho. A fonte prioriza aperfeiçoamentos no receptor. Erro provável: aplicar relação linear em vez da quarta raiz."},
+        {"tipo": "titulo", "texto": "4ª QUESTÃO"},
+        {"tipo": "texto", "texto": "a) aumentar potência de pico ou LP; sem trocar a válvula, resta aumentar LP. b) Piora PSD e Rmin e eleva potência média. c) Aumenta o alcance sem ambiguidade, mas reduz pulsos sobre o alvo. d) Favorece alcance, mas piora diretividade. e) Cada alavanca melhora uma grandeza e degrada outra."},
+        {"tipo": "texto", "texto": "Erro provável: responder apenas “aumentar potência”, alternativa já bloqueada pelo enunciado."},
+        {"tipo": "titulo", "texto": "Rastreabilidade"},
+        {"tipo": "texto", "texto": "As quatro questões são originais do banco do curso. Nenhum enunciado ou gabarito de SOPA foi copiado ou parafraseado."}
+      ]
+    },
+    {
+      "secao": "formulario",
+      "blocos": [
+        {"tipo": "titulo", "texto": "FORMULÁRIO — última página"},
+        {"tipo": "tabela", "cabecalho": ["Grandeza", "Fórmula", "Símbolos\ne unidades", "Condição"], "pesos": [0.95, 1.55, 1.65, 1.35], "altura": 0.074, "linhas": [
+          ["Distância", "$d=\\frac{ct}{2}$", "d m; t s\nc=3×10⁸ m/s", "ida e volta"],
+          ["Tempo /\npotência", "$TRP=1/FRP$\n$CT=LP·FRP$\n$P_{med}=P_{pico}·CT$", "TRP, LP s\nFRP Hz; P W", "pulso\nretangular"],
+          ["PSD /\nalcance", "$PSD=R_{min}$\n$=\\frac{cLP}{2}$\n$R_{max}=\\frac{c}{2FRP}$", "distâncias\nem metros", "sem\nambiguidade"],
+          ["Marcação", "$x=0,01745Rθ_B$\n$N_B=\\frac{θ_B·FRP}{6RPM}$", "R, x m\nθB em graus", "varredura\nuniforme"],
+          ["Antena", "$λ=c/f$\n$A=\\frac{Gλ^2}{4π}$", "f Hz; λ m\nA m²; G linear", "mesma\nfrequência"],
+          ["Radar", "$P_r=$\n$\\frac{PGA_aA}{(4π)^2R^4}$", "Aa m²\nSmin W", "$P_r≥S_{min}$"],
+          ["Conversões", "$G=10^{G_{dB}/10}$\n$P(W)=10^{(P_{dBm}-30)/10}$", "dB, dBm\ne watts", "converter\nantes"],
+          ["Escala do\nalcance", "$R_2/R_1=$\n$(K_2/K_1)^{1/4}$", "K: P, G, A,\nAa ou 1/Smin", "demais\nfixos"]
+        ]}
+      ]
+    }
+  ]
+}
