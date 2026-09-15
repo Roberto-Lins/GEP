@@ -1,0 +1,24 @@
+{
+  "ordem": 3,
+  "slug": "03-ilicitude-culpabilidade-e-excludentes",
+  "titulo": "Ilicitude, culpabilidade e excludentes",
+  "prioridade": "máxima",
+  "subtitulo": "Art. 42, imputabilidade, erro e obediência hierárquica",
+  "tempoEstimado": "40 min",
+  "objetivo": "Identificar o degrau em que a responsabilidade penal é afastada e suas consequências.",
+  "palavrasChave": [
+    "legítima defesa",
+    "estado de necessidade",
+    "embriaguez",
+    "erro de direito",
+    "obediência hierárquica"
+  ],
+  "conceptIds": [
+    "DIRT2-EXCL-ILICITUDE",
+    "DIRT2-EXCL-COMANDANTE",
+    "DIRT2-IMPUTABILIDADE",
+    "DIRT2-ERRO-DIREITO",
+    "DIRT2-INEXIGIBILIDADE"
+  ],
+  "modalidade": "pra-safar"
+}

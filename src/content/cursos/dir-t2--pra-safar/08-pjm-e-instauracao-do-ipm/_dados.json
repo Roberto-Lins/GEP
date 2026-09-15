@@ -1,0 +1,25 @@
+{
+  "ordem": 8,
+  "slug": "08-pjm-e-instauracao-do-ipm",
+  "titulo": "Polícia Judiciária Militar e instauração do IPM",
+  "prioridade": "máxima",
+  "subtitulo": "DPPM, PJM, portaria, encarregado e medidas urgentes",
+  "tempoEstimado": "40 min",
+  "objetivo": "Conduzir a fase inicial da apuração com os atores e atos corretos.",
+  "palavrasChave": [
+    "PJM",
+    "portaria",
+    "encarregado",
+    "escrivão",
+    "art. 12"
+  ],
+  "conceptIds": [
+    "DIRT2-DPPM-CONCEITO",
+    "DIRT2-PJM",
+    "DIRT2-PJM-DELEGACAO",
+    "DIRT2-IPM-CONCEITO",
+    "DIRT2-IPM-INSTAURACAO",
+    "DIRT2-MEDIDAS-URGENTES"
+  ],
+  "modalidade": "pra-safar"
+}

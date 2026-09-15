@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560" font-family="Inter, Arial, sans-serif">
+  <rect width="960" height="560" fill="#0b1220"/>
+  <text x="480" y="40" fill="#f7f3ea" font-size="24" font-weight="700" text-anchor="middle">Crime = fato típico + antijurídico + culpável</text>
+  <text x="480" y="66" fill="#cbd5e1" font-size="14" text-anchor="middle">Analise na ordem: se um degrau falha, a conclusão muda e os seguintes não salvam a imputação</text>
+  <g font-size="15">
+    <rect x="30" y="95" width="280" height="400" rx="12" fill="#1e3a5f" stroke="#d6a84f" stroke-width="2"/>
+    <text x="170" y="128" fill="#d6a84f" font-size="19" font-weight="700" text-anchor="middle">1. Fato típico</text>
+    <text x="50" y="165" fill="#f7f3ea">• conduta humana voluntária</text>
+    <text x="64" y="186" fill="#cbd5e1">(ação ou omissão)</text>
+    <text x="50" y="214" fill="#f7f3ea">• tipicidade</text>
+    <text x="50" y="242" fill="#f7f3ea">• nexo de causalidade</text>
+    <text x="50" y="270" fill="#f7f3ea">• resultado</text>
+    <text x="50" y="312" fill="#d6a84f" font-weight="700">Elemento subjetivo</text>
+    <text x="50" y="338" fill="#f7f3ea">• dolo: direto; indireto</text>
+    <text x="64" y="359" fill="#cbd5e1">(alternativo ou eventual)</text>
+    <text x="50" y="385" fill="#f7f3ea">• culpa: imprudência,</text>
+    <text x="64" y="406" fill="#cbd5e1">negligência ou imperícia</text>
+    <text x="50" y="432" fill="#f7f3ea">• preterdolo</text>
+    <text x="50" y="470" fill="#ef4444">Falhou → não há crime</text>
+    <rect x="340" y="95" width="280" height="400" rx="12" fill="#1e3a5f" stroke="#d6a84f" stroke-width="2"/>
+    <text x="480" y="128" fill="#d6a84f" font-size="19" font-weight="700" text-anchor="middle">2. Antijurídico</text>
+    <text x="360" y="165" fill="#f7f3ea">Excludentes (CPM art. 42):</text>
+    <text x="360" y="195" fill="#f7f3ea">• estado de necessidade</text>
+    <text x="360" y="223" fill="#f7f3ea">• legítima defesa</text>
+    <text x="360" y="251" fill="#f7f3ea">• estrito cumprimento</text>
+    <text x="374" y="272" fill="#cbd5e1">do dever legal</text>
+    <text x="360" y="300" fill="#f7f3ea">• exercício regular de direito</text>
+    <text x="360" y="328" fill="#f7f3ea">• comandante de navio,</text>
+    <text x="374" y="349" fill="#cbd5e1">aeronave ou praça de guerra</text>
+    <text x="374" y="370" fill="#cbd5e1">(parágrafo único)</text>
+    <text x="360" y="470" fill="#ef4444">Presente → “não há crime”</text>
+    <rect x="650" y="95" width="280" height="400" rx="12" fill="#1e3a5f" stroke="#d6a84f" stroke-width="2"/>
+    <text x="790" y="128" fill="#d6a84f" font-size="19" font-weight="700" text-anchor="middle">3. Culpável</text>
+    <text x="670" y="165" fill="#f7f3ea">• imputabilidade</text>
+    <text x="684" y="186" fill="#cbd5e1">(arts. 48–49)</text>
+    <text x="670" y="214" fill="#f7f3ea">• potencial conhecimento</text>
+    <text x="684" y="235" fill="#cbd5e1">da ilicitude (art. 35)</text>
+    <text x="670" y="263" fill="#f7f3ea">• exigibilidade de</text>
+    <text x="684" y="284" fill="#cbd5e1">conduta diversa</text>
+    <text x="684" y="305" fill="#cbd5e1">(arts. 38 e 40)</text>
+    <text x="670" y="350" fill="#f7f3ea">Coação irresistível ou</text>
+    <text x="670" y="371" fill="#f7f3ea">obediência hierárquica:</text>
+    <text x="670" y="392" fill="#cbd5e1">responde quem coagiu</text>
+    <text x="670" y="413" fill="#cbd5e1">ou ordenou (art. 38, § 1º)</text>
+    <text x="670" y="470" fill="#ef4444">Ausente → típico e ilícito,</text>
+    <text x="670" y="490" fill="#ef4444">mas sem culpabilidade</text>
+  </g>
+  <path d="M312 295 h24" stroke="#d6a84f" stroke-width="4" marker-end="url(#s)"/>
+  <path d="M622 295 h24" stroke="#d6a84f" stroke-width="4" marker-end="url(#s)"/>
+  <defs><marker id="s" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#d6a84f"/></marker></defs>
+  <text x="480" y="535" fill="#94a3b8" font-size="13" text-anchor="middle">Reconstrução V3 a partir do texto dos slides 13, 15–23, 25–27, 30–31, 35–37 e 38–40 da Aula 3.1 e dos arts. 29–49 do CPM.</text>
+</svg>

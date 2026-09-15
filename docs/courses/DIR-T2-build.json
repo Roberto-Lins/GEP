@@ -1,0 +1,135 @@
+{
+  "variantes": {
+    "rapido": {
+      "slug": "dir-t2--rapido",
+      "palavras_mdx": 3752,
+      "duracao_minutos": 355,
+      "minutos_discursivas_adicionais": 179,
+      "minutos_simulados": 270,
+      "questoes_modulo": 146,
+      "questoes_simulados": {
+        "SG01": 12,
+        "SG02": 12,
+        "SG03": 9
+      },
+      "modulos": {
+        "00-mapa-e-metodo": "5 min",
+        "01-principios-e-lei-no-tempo-e-espaco": "35 min",
+        "02-fato-tipico-dolo-culpa-preterdolo": "35 min",
+        "03-ilicitude-culpabilidade-e-excludentes": "35 min",
+        "04-iter-criminis-tentativa-e-desistencia": "30 min",
+        "05-concurso-de-agentes": "35 min",
+        "06-crime-militar": "35 min",
+        "07-crimes-militares-em-especie": "35 min",
+        "08-pjm-e-instauracao-do-ipm": "25 min",
+        "09-oitivas-garantias-e-sigilo": "30 min",
+        "10-prazos-relatorio-arquivamento-e-foro": "35 min",
+        "11-jmu-e-stm": "15 min",
+        "99-revisao-final": "5 min"
+      }
+    },
+    "pra-safar": {
+      "slug": "dir-t2--pra-safar",
+      "palavras_mdx": 11774,
+      "duracao_minutos": 435,
+      "minutos_discursivas_adicionais": 189,
+      "minutos_simulados": 270,
+      "questoes_modulo": 151,
+      "questoes_simulados": {
+        "SG01": 12,
+        "SG02": 12,
+        "SG03": 10
+      },
+      "modulos": {
+        "00-mapa-e-metodo": "10 min",
+        "01-principios-e-lei-no-tempo-e-espaco": "40 min",
+        "02-fato-tipico-dolo-culpa-preterdolo": "40 min",
+        "03-ilicitude-culpabilidade-e-excludentes": "40 min",
+        "04-iter-criminis-tentativa-e-desistencia": "35 min",
+        "05-concurso-de-agentes": "40 min",
+        "06-crime-militar": "45 min",
+        "07-crimes-militares-em-especie": "40 min",
+        "08-pjm-e-instauracao-do-ipm": "40 min",
+        "09-oitivas-garantias-e-sigilo": "40 min",
+        "10-prazos-relatorio-arquivamento-e-foro": "40 min",
+        "11-jmu-e-stm": "20 min",
+        "99-revisao-final": "5 min"
+      }
+    },
+    "completo": {
+      "slug": "dir-t2--completo",
+      "palavras_mdx": 14796,
+      "duracao_minutos": 475,
+      "minutos_discursivas_adicionais": 189,
+      "minutos_simulados": 270,
+      "questoes_modulo": 154,
+      "questoes_simulados": {
+        "SG01": 12,
+        "SG02": 12,
+        "SG03": 10
+      },
+      "modulos": {
+        "00-mapa-e-metodo": "10 min",
+        "01-principios-e-lei-no-tempo-e-espaco": "45 min",
+        "02-fato-tipico-dolo-culpa-preterdolo": "45 min",
+        "03-ilicitude-culpabilidade-e-excludentes": "50 min",
+        "04-iter-criminis-tentativa-e-desistencia": "40 min",
+        "05-concurso-de-agentes": "45 min",
+        "06-crime-militar": "45 min",
+        "07-crimes-militares-em-especie": "45 min",
+        "08-pjm-e-instauracao-do-ipm": "40 min",
+        "09-oitivas-garantias-e-sigilo": "40 min",
+        "10-prazos-relatorio-arquivamento-e-foro": "40 min",
+        "11-jmu-e-stm": "20 min",
+        "99-revisao-final": "10 min"
+      }
+    }
+  },
+  "questoes": {
+    "total_canonicas": 154,
+    "contextualizadas": 117,
+    "percentual_contextualizadas": 76.0,
+    "por_tipo": {
+      "OBJ": 86,
+      "DIS": 23,
+      "VF": 34,
+      "COR": 11
+    },
+    "por_nivel": {
+      "N2": 49,
+      "N1": 12,
+      "N3": 61,
+      "N4": 32
+    },
+    "por_modalidade": {
+      "rapido": 146,
+      "pra-safar": 151,
+      "completo": 154
+    },
+    "por_modulo": {
+      "00-mapa-e-metodo": 2,
+      "01-principios-e-lei-no-tempo-e-espaco": 15,
+      "02-fato-tipico-dolo-culpa-preterdolo": 14,
+      "03-ilicitude-culpabilidade-e-excludentes": 15,
+      "04-iter-criminis-tentativa-e-desistencia": 14,
+      "05-concurso-de-agentes": 14,
+      "06-crime-militar": 14,
+      "07-crimes-militares-em-especie": 14,
+      "08-pjm-e-instauracao-do-ipm": 14,
+      "09-oitivas-garantias-e-sigilo": 14,
+      "10-prazos-relatorio-arquivamento-e-foro": 14,
+      "11-jmu-e-stm": 10
+    },
+    "posicao_correta_multipla": {
+      "1": 27,
+      "2": 27,
+      "3": 27,
+      "0": 26
+    },
+    "simulados": {
+      "SG01": 12,
+      "SG02": 12,
+      "SG03": 10
+    }
+  }
+}

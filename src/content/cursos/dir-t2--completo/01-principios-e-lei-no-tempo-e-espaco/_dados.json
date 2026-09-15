@@ -1,0 +1,26 @@
+{
+  "ordem": 1,
+  "slug": "01-principios-e-lei-no-tempo-e-espaco",
+  "titulo": "Princípios e lei penal militar no tempo e no espaço",
+  "prioridade": "muito alta",
+  "subtitulo": "Legalidade, retroatividade, tempo, lugar e navios",
+  "tempoEstimado": "45 min",
+  "objetivo": "Aplicar princípios penais e decidir tempo, lugar e alcance espacial da lei penal militar.",
+  "palavrasChave": [
+    "legalidade",
+    "retroatividade",
+    "tempo do crime",
+    "lugar do crime",
+    "navio"
+  ],
+  "conceptIds": [
+    "DIRT2-DP-CONCEITO",
+    "DIRT2-PRINC-LEGALIDADE",
+    "DIRT2-PRINC-IRRETRO",
+    "DIRT2-PRINC-GARANTIAS",
+    "DIRT2-TEMPO-CRIME",
+    "DIRT2-LUGAR-CRIME",
+    "DIRT2-TERRITORIALIDADE"
+  ],
+  "modalidade": "completo"
+}

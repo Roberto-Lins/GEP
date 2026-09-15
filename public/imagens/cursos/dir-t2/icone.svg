@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="#D6A84F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Balança da justiça sobre âncora">
+  <path d="M32 10v38"/>
+  <path d="M16 18h32"/>
+  <path d="M16 18l-8 16h16z"/>
+  <path d="M48 18l-8 16h16z"/>
+  <path d="M22 56c3 3 7 4 10 4s7-1 10-4"/>
+  <path d="M26 48h12"/>
+  <circle cx="32" cy="8" r="3"/>
+</svg>

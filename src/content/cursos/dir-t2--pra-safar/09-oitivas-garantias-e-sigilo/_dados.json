@@ -1,0 +1,24 @@
+{
+  "ordem": 9,
+  "slug": "09-oitivas-garantias-e-sigilo",
+  "titulo": "Oitivas, garantias, sigilo e defesa no IPM",
+  "prioridade": "máxima",
+  "subtitulo": "Horários, testemunha × indiciado, silêncio, advogado e sigilo",
+  "tempoEstimado": "40 min",
+  "objetivo": "Aplicar as regras de oitiva e as garantias defensivas no IPM.",
+  "palavrasChave": [
+    "oitiva",
+    "indiciado",
+    "silêncio",
+    "prova ilícita",
+    "sigilo"
+  ],
+  "conceptIds": [
+    "DIRT2-ENCARREGADO-ATRIBUICOES",
+    "DIRT2-OITIVAS",
+    "DIRT2-TESTEMUNHA-INDICIADO",
+    "DIRT2-SIGILO-ACESSO",
+    "DIRT2-INCOMUNICABILIDADE"
+  ],
+  "modalidade": "pra-safar"
+}

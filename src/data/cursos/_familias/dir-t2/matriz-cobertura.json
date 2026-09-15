@@ -1,0 +1,2915 @@
+{
+  "schema_version": "1.0.0",
+  "status": "confirmada",
+  "familia_id": "dir-t2",
+  "conceitos": [
+    {
+      "concept_id": "DIRT2-ESCOPO",
+      "assunto": "Recorte oficial da T2: Cap. 3 inteiro, Aula 4.1 inteira, Aula 4.2 só slides 1–7",
+      "dependencias": [],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slides 1–75",
+        "9 Aula 4.1.pptx, slides 1–42",
+        "10 Aula 4.2.pptx, slides 1–7 (slide 8 em diante — excluído)",
+        "MANIFESTO_FONTES_DIR.md §4 (transcrição da mensagem do professor)"
+      ],
+      "evidencia_prioridade": [
+        "Delimitação transcrita da mensagem do professor",
+        "Simulados: nenhum"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "00-mapa-e-metodo — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M00-OBJ-N2-001"
+      ],
+      "vulnerabilidades": [
+        "estudar os slides posteriores ao 7 da Aula 4.2 por estarem no mesmo deck",
+        "tratar slides 8+ da Aula 4.2 como matéria"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-METODO",
+      "assunto": "Cadeia de resolução: fatos → questão jurídica → norma → aplicação → exceção → conclusão",
+      "dependencias": [],
+      "fontes_localizadas": [
+        "perfil-cobranca.json (P1 2022 SP, P1 2023, P1 2024, SOPA T1 2024)",
+        "DIR P1 2022 SOLUÇÃO PADRÃO.pdf, p. 6–7 (espelho com tese do STF aplicada)",
+        "T1 DIREITO 2024 SOPA.pdf, p. 6–7 (casos penais militares)"
+      ],
+      "evidencia_prioridade": [
+        "Padrão de correção por fundamentação observado nas provas",
+        "Simulados: nenhum"
+      ],
+      "examinavel": false,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "00-mapa-e-metodo — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M00-DIS-N2-002"
+      ],
+      "vulnerabilidades": [
+        "responder por palavra-chave",
+        "citar artigo sem aplicar aos fatos"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-DP-CONCEITO",
+      "assunto": "Conceito de Direito Penal: poder punitivo exclusivo do Estado",
+      "dependencias": [],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slide 4"
+      ],
+      "evidencia_prioridade": [
+        "Slide conceitual de abertura",
+        "Simulados: nenhum"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "01-principios-e-lei-no-tempo-e-espaco — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M01-VF-N1-015"
+      ],
+      "vulnerabilidades": [
+        "confundir ramo público com privado"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-PRINC-LEGALIDADE",
+      "assunto": "Princípio da legalidade (reserva legal e anterioridade)",
+      "dependencias": [
+        "DIRT2-DP-CONCEITO"
+      ],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slide 5",
+        "Constituição Federal.pdf (STF, 2024, até EC 132/2023), art. 5º, XXXIX, p. 17",
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), art. 1º, p. 16"
+      ],
+      "evidencia_prioridade": [
+        "Princípio listado em slide e cobrado em P1 (reserva legal)",
+        "Simulados: nenhum"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "01-principios-e-lei-no-tempo-e-espaco — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M01-COR-N2-003",
+        "DIR-T2-M01-OBJ-N4-010",
+        "DIR-T2-M01-VF-N1-015",
+        "DIR-T2-M01-DIS-N4-014"
+      ],
+      "vulnerabilidades": [
+        "aceitar crime criado por regulamento",
+        "confundir legalidade com irretroatividade"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-PRINC-IRRETRO",
+      "assunto": "Irretroatividade da lei penal e retroatividade benéfica (abolitio e lex mitior)",
+      "dependencias": [
+        "DIRT2-PRINC-LEGALIDADE"
+      ],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slide 5",
+        "Constituição Federal.pdf (STF, 2024, até EC 132/2023), art. 5º, XL, p. 17",
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), art. 2º e §§ 1º–2º, p. 16"
+      ],
+      "evidencia_prioridade": [
+        "Slide 5; alvo típico de contrafactual temporal",
+        "Simulados: DIR-T2-SG03-OBJ-N4-001"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "01-principios-e-lei-no-tempo-e-espaco — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M01-VF-N1-001",
+        "DIR-T2-M01-COR-N2-003",
+        "DIR-T2-M01-OBJ-N3-007",
+        "DIR-T2-M01-OBJ-N4-009",
+        "DIR-T2-M01-OBJ-N4-010",
+        "DIR-T2-M01-DIS-N4-014"
+      ],
+      "vulnerabilidades": [
+        "supor que a coisa julgada impede a retroatividade benéfica",
+        "manter efeitos civis como se também cessassem"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-PRINC-GARANTIAS",
+      "assunto": "Presunção de inocência, pessoalidade, individualização e penas vedadas",
+      "dependencias": [
+        "DIRT2-PRINC-LEGALIDADE"
+      ],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slide 5",
+        "Constituição Federal.pdf (STF, 2024, até EC 132/2023), art. 5º, XLV–XLVII, p. 17; XLVIII e LVII, p. 18"
+      ],
+      "evidencia_prioridade": [
+        "SOPA T1 2024 q. 16 cobra penas vedadas (p. 5)",
+        "Simulados: nenhum"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "01-principios-e-lei-no-tempo-e-espaco — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M01-COR-N2-003",
+        "DIR-T2-M01-OBJ-N2-008",
+        "DIR-T2-M01-VF-N2-011",
+        "DIR-T2-M01-OBJ-N3-012"
+      ],
+      "vulnerabilidades": [
+        "esquecer a exceção da pena de morte em guerra declarada",
+        "estender pena a sucessores"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-TEMPO-CRIME",
+      "assunto": "Tempo do crime: teoria da atividade (CPM art. 5º) e menoridade na conduta",
+      "dependencias": [
+        "DIRT2-PRINC-IRRETRO"
+      ],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slide 6",
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), art. 5º, p. 17",
+        "Constituição Federal.pdf (STF, 2024, até EC 132/2023), art. 228, p. 202"
+      ],
+      "evidencia_prioridade": [
+        "Exemplo do professor (17 anos e 11 meses)",
+        "Simulados: DIR-T2-SG01-OBJ-N2-001, DIR-T2-SG03-OBJ-N4-001"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "01-principios-e-lei-no-tempo-e-espaco — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M01-OBJ-N3-004",
+        "DIR-T2-M01-OBJ-N4-009",
+        "DIR-T2-M01-DIS-N3-013"
+      ],
+      "vulnerabilidades": [
+        "usar a data do resultado para aferir imputabilidade",
+        "confundir tempo (atividade) com lugar (ubiquidade)"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-LUGAR-CRIME",
+      "assunto": "Lugar do crime: ubiquidade nos comissivos e atividade nos omissivos (CPM art. 6º)",
+      "dependencias": [
+        "DIRT2-TEMPO-CRIME"
+      ],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slides 7–9",
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), art. 6º, p. 17"
+      ],
+      "evidencia_prioridade": [
+        "Três slides dedicados; teoria mista é pegadinha natural",
+        "Simulados: DIR-T2-SG01-OBJ-N2-001"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "01-principios-e-lei-no-tempo-e-espaco — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M01-OBJ-N2-002",
+        "DIR-T2-M01-OBJ-N4-009",
+        "DIR-T2-M01-DIS-N3-013"
+      ],
+      "vulnerabilidades": [
+        "aplicar ubiquidade ao crime omissivo",
+        "aplicar atividade ao lugar do crime comissivo"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-TERRITORIALIDADE",
+      "assunto": "Territorialidade e extraterritorialidade da lei penal militar; navios e aeronaves",
+      "dependencias": [
+        "DIRT2-LUGAR-CRIME"
+      ],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slides 10–12",
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), art. 7º e §§ 1º–3º, p. 17–18"
+      ],
+      "evidencia_prioridade": [
+        "Três slides; alta aderência ao ambiente naval",
+        "Simulados: DIR-T2-SG02-OBJ-N3-001"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "01-principios-e-lei-no-tempo-e-espaco — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M01-OBJ-N3-005",
+        "DIR-T2-M01-VF-N3-006",
+        "DIR-T2-M01-OBJ-N4-009",
+        "DIR-T2-M01-DIS-N4-014"
+      ],
+      "vulnerabilidades": [
+        "exigir propriedade pública do navio",
+        "aplicar §2º sem lugar sujeito à administração militar e sem ataque às instituições militares"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-ELEMENTOS-CRIME",
+      "assunto": "Conceito analítico: fato típico, antijurídico e culpável",
+      "dependencias": [],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slides 13–14 (slide 14 é imagem não recuperada)",
+        "8 Aula 3.1.pptx, slides 38–40 (exercícios de estratificação)"
+      ],
+      "evidencia_prioridade": [
+        "Exercícios resolvidos do próprio professor",
+        "Simulados: nenhum"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "02-fato-tipico-dolo-culpa-preterdolo — caso guiado/resolvido da aula"
+      ],
+      "figuras": [
+        "DIRT2-FIG-CRIME-001"
+      ],
+      "questoes": [
+        "DIR-T2-M02-OBJ-N3-012",
+        "DIR-T2-M03-OBJ-N4-009",
+        "DIR-T2-M03-DIS-N3-012"
+      ],
+      "vulnerabilidades": [
+        "pular a tipicidade e ir direto à excludente",
+        "tratar ausência de culpabilidade como ausência de fato típico"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-FATO-TIPICO",
+      "assunto": "Elementos do fato típico: conduta voluntária, tipicidade, nexo causal e resultado",
+      "dependencias": [
+        "DIRT2-ELEMENTOS-CRIME"
+      ],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slide 15",
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), art. 29 e §§ 1º–2º, p. 24–25"
+      ],
+      "evidencia_prioridade": [
+        "Slide 15; art. 29 dá o suporte normativo",
+        "Simulados: DIR-T2-SG02-OBJ-N3-003"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "02-fato-tipico-dolo-culpa-preterdolo — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M02-OBJ-N2-004",
+        "DIR-T2-M02-VF-N3-006",
+        "DIR-T2-M02-OBJ-N4-009",
+        "DIR-T2-M02-OBJ-N4-010",
+        "DIR-T2-M02-DIS-N4-014"
+      ],
+      "vulnerabilidades": [
+        "ignorar a omissão relevante do garantidor",
+        "atribuir resultado produzido por causa superveniente independente"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-DOLO",
+      "assunto": "Dolo direto e indireto (alternativo e eventual) — CPM art. 33, I",
+      "dependencias": [
+        "DIRT2-FATO-TIPICO"
+      ],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slides 16–17",
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), art. 33, I, p. 26"
+      ],
+      "evidencia_prioridade": [
+        "Distinção dolo eventual × culpa consciente é distrator declarado no prompt de autoria",
+        "Simulados: DIR-T2-SG01-VF-N2-002"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "02-fato-tipico-dolo-culpa-preterdolo — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M02-OBJ-N2-002",
+        "DIR-T2-M02-COR-N2-003",
+        "DIR-T2-M02-OBJ-N3-005",
+        "DIR-T2-M02-OBJ-N4-009",
+        "DIR-T2-M02-OBJ-N4-010",
+        "DIR-T2-M02-VF-N2-011",
+        "DIR-T2-M02-DIS-N3-013"
+      ],
+      "vulnerabilidades": [
+        "confundir dolo eventual com culpa consciente",
+        "exigir que o agente queira o resultado para haver dolo"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-CULPA",
+      "assunto": "Crime culposo: elementos, imprudência, negligência, imperícia e excepcionalidade",
+      "dependencias": [
+        "DIRT2-FATO-TIPICO"
+      ],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slides 16, 18–22",
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), art. 33, II e parágrafo único, p. 26"
+      ],
+      "evidencia_prioridade": [
+        "Cinco slides; exemplos do professor",
+        "Simulados: DIR-T2-SG01-VF-N2-002"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "02-fato-tipico-dolo-culpa-preterdolo — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M02-VF-N1-001",
+        "DIR-T2-M02-COR-N2-003",
+        "DIR-T2-M02-OBJ-N3-005",
+        "DIR-T2-M02-OBJ-N2-008",
+        "DIR-T2-M02-OBJ-N4-009",
+        "DIR-T2-M02-OBJ-N3-012",
+        "DIR-T2-M02-DIS-N3-013",
+        "DIR-T2-M02-DIS-N4-014",
+        "DIR-T2-M07-OBJ-N4-010",
+        "DIR-T2-M07-DIS-N4-014"
+      ],
+      "vulnerabilidades": [
+        "punir culposamente sem previsão legal",
+        "trocar negligência (passiva) por imprudência (ativa)"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-PRETERDOLO",
+      "assunto": "Crime preterdoloso: dolo no antecedente e culpa no consequente",
+      "dependencias": [
+        "DIRT2-DOLO",
+        "DIRT2-CULPA"
+      ],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slide 23",
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), art. 34, p. 26",
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), art. 209, § 3º, p. 94"
+      ],
+      "evidencia_prioridade": [
+        "Exemplo do professor (tiro nos pés)",
+        "Simulados: DIR-T2-SG02-OBJ-N3-003, DIR-T2-SG03-DIS-N4-007"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "02-fato-tipico-dolo-culpa-preterdolo — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M02-OBJ-N3-007",
+        "DIR-T2-M02-OBJ-N4-009",
+        "DIR-T2-M02-OBJ-N4-010",
+        "DIR-T2-M02-DIS-N4-014",
+        "DIR-T2-M07-OBJ-N4-010"
+      ],
+      "vulnerabilidades": [
+        "imputar resultado agravador sem ao menos culpa",
+        "classificar como homicídio doloso"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-EXCL-ILICITUDE",
+      "assunto": "Excludentes de ilicitude do CPM art. 42 (estado de necessidade, legítima defesa, estrito cumprimento, exercício regular)",
+      "dependencias": [
+        "DIRT2-ELEMENTOS-CRIME"
+      ],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slides 24–26 (slide 24 é imagem não recuperada)",
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), arts. 42–44, p. 29"
+      ],
+      "evidencia_prioridade": [
+        "SOPA T1 2024 q. 19 correlaciona excludentes e características (p. 7)",
+        "Simulados: DIR-T2-SG01-OBJ-N2-003, DIR-T2-SG02-COR-N3-002"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "03-ilicitude-culpabilidade-e-excludentes — caso guiado/resolvido da aula"
+      ],
+      "figuras": [
+        "DIRT2-FIG-CRIME-001"
+      ],
+      "questoes": [
+        "DIR-T2-M03-VF-N1-001",
+        "DIR-T2-M03-OBJ-N2-002",
+        "DIR-T2-M03-COR-N2-003",
+        "DIR-T2-M03-OBJ-N4-009",
+        "DIR-T2-M03-OBJ-N4-010",
+        "DIR-T2-M03-DIS-N4-013"
+      ],
+      "vulnerabilidades": [
+        "trocar perigo atual (necessidade) por agressão injusta (legítima defesa)",
+        "chamar de ‘isento de pena’ o que é exclusão do crime"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-EXCL-COMANDANTE",
+      "assunto": "Excludente especial do comandante de navio, aeronave ou praça de guerra (art. 42, parágrafo único)",
+      "dependencias": [
+        "DIRT2-EXCL-ILICITUDE"
+      ],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slide 27",
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), art. 42, parágrafo único, p. 29"
+      ],
+      "evidencia_prioridade": [
+        "Dispositivo exclusivamente militar e naval",
+        "Simulados: DIR-T2-SG03-OBJ-N4-002"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "03-ilicitude-culpabilidade-e-excludentes — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M03-COR-N2-003",
+        "DIR-T2-M03-OBJ-N3-004"
+      ],
+      "vulnerabilidades": [
+        "estender a qualquer superior ou a situação sem iminência de perigo",
+        "omitir as finalidades legais"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-EXCESSO",
+      "assunto": "Excesso culposo, escusável e doloso nas excludentes (arts. 45–46)",
+      "dependencias": [
+        "DIRT2-EXCL-ILICITUDE"
+      ],
+      "fontes_localizadas": [
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), arts. 45–46, p. 30"
+      ],
+      "evidencia_prioridade": [
+        "Adjacência normativa do art. 42 — não aparece nos slides",
+        "Simulados: nenhum"
+      ],
+      "examinavel": false,
+      "presenca": {
+        "rapido": false,
+        "pra-safar": false,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": null,
+        "pra-safar": null,
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Fora do núcleo: detalhe ou adjacência reservado às modalidades mais extensas.",
+        "pra-safar": "Adjacência normativa não presente nos slides; não examinável pelo recorte.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "03-ilicitude-culpabilidade-e-excludentes — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M03-VF-N3-015"
+      ],
+      "vulnerabilidades": [
+        "supor que qualquer excesso anula toda a excludente"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-IMPUTABILIDADE",
+      "assunto": "Culpabilidade e imputabilidade: doença mental e embriaguez fortuita (arts. 48–49)",
+      "dependencias": [
+        "DIRT2-ELEMENTOS-CRIME"
+      ],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slides 28–31 (slides 28–29 são imagens não recuperadas)",
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), arts. 48–49, p. 30–31"
+      ],
+      "evidencia_prioridade": [
+        "Quatro slides",
+        "Simulados: DIR-T2-SG02-COR-N3-002"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "03-ilicitude-culpabilidade-e-excludentes — caso guiado/resolvido da aula"
+      ],
+      "figuras": [
+        "DIRT2-FIG-CRIME-001"
+      ],
+      "questoes": [
+        "DIR-T2-M03-OBJ-N3-005",
+        "DIR-T2-M03-OBJ-N4-009",
+        "DIR-T2-M03-DIS-N3-012"
+      ],
+      "vulnerabilidades": [
+        "aplicar isenção à embriaguez voluntária",
+        "confundir redução (incompleta) com isenção (completa)"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-ERRO-DIREITO",
+      "assunto": "Potencial conhecimento da ilicitude e erro de direito (LINDB art. 3º; CPM art. 35)",
+      "dependencias": [
+        "DIRT2-IMPUTABILIDADE"
+      ],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slides 32–35 (slides 33–34 são imagens não recuperadas)",
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), art. 35, p. 26"
+      ],
+      "evidencia_prioridade": [
+        "Quatro slides",
+        "Simulados: DIR-T2-SG02-COR-N3-002"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "03-ilicitude-culpabilidade-e-excludentes — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M03-OBJ-N3-007",
+        "DIR-T2-M03-VF-N2-011",
+        "DIR-T2-M03-DIS-N4-013"
+      ],
+      "vulnerabilidades": [
+        "tratar erro de direito como isenção de pena",
+        "aplicar o art. 35 a crime que atenta contra o dever militar"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-INEXIGIBILIDADE",
+      "assunto": "Inexigibilidade de conduta diversa: coação irresistível e obediência hierárquica (arts. 38 e 40)",
+      "dependencias": [
+        "DIRT2-IMPUTABILIDADE"
+      ],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slides 36–37 e 40",
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), arts. 38, 40 e 41, p. 28–29"
+      ],
+      "evidencia_prioridade": [
+        "Obediência hierárquica é tema central no ambiente militar",
+        "Simulados: DIR-T2-SG01-OBJ-N2-003, DIR-T2-SG02-COR-N3-002, DIR-T2-SG02-OBJ-N3-008, DIR-T2-SG02-DIS-N3-011"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "03-ilicitude-culpabilidade-e-excludentes — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M03-VF-N3-006",
+        "DIR-T2-M03-OBJ-N2-008",
+        "DIR-T2-M03-OBJ-N4-009",
+        "DIR-T2-M03-OBJ-N4-010",
+        "DIR-T2-M03-DIS-N4-013",
+        "DIR-T2-M07-OBJ-N3-005",
+        "DIR-T2-M07-OBJ-N3-012"
+      ],
+      "vulnerabilidades": [
+        "cumprir ordem manifestamente criminosa e alegar obediência",
+        "invocar coação moral em crime contra o dever militar"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-ESTADO-NEC-EXCULPANTE",
+      "assunto": "Estado de necessidade exculpante (art. 39) × justificante (art. 43)",
+      "dependencias": [
+        "DIRT2-EXCL-ILICITUDE",
+        "DIRT2-INEXIGIBILIDADE"
+      ],
+      "fontes_localizadas": [
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), art. 39, p. 28; art. 43, p. 29"
+      ],
+      "evidencia_prioridade": [
+        "Adjacência normativa — não aparece nos slides",
+        "Simulados: nenhum"
+      ],
+      "examinavel": false,
+      "presenca": {
+        "rapido": false,
+        "pra-safar": false,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": null,
+        "pra-safar": null,
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Fora do núcleo: detalhe ou adjacência reservado às modalidades mais extensas.",
+        "pra-safar": "Adjacência normativa não presente nos slides; não examinável pelo recorte.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "03-ilicitude-culpabilidade-e-excludentes — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M03-OBJ-N3-014"
+      ],
+      "vulnerabilidades": [
+        "tratar todo estado de necessidade como excludente de ilicitude"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-ITER",
+      "assunto": "Iter criminis: cogitação, preparação, execução e consumação",
+      "dependencias": [],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slides 41–43",
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), art. 30, I, p. 25"
+      ],
+      "evidencia_prioridade": [
+        "Exemplo detalhado do professor",
+        "Simulados: nenhum"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "04-iter-criminis-tentativa-e-desistencia — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M04-VF-N1-001",
+        "DIR-T2-M04-COR-N2-003",
+        "DIR-T2-M04-OBJ-N2-004",
+        "DIR-T2-M04-OBJ-N4-009",
+        "DIR-T2-M04-OBJ-N2-012",
+        "DIR-T2-M04-DIS-N4-014"
+      ],
+      "vulnerabilidades": [
+        "punir atos preparatórios como tentativa",
+        "fixar início da execução na compra da arma"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-TENTATIVA",
+      "assunto": "Tentativa: circunstâncias alheias e pena (1/3 a 2/3; exceção de excepcional gravidade)",
+      "dependencias": [
+        "DIRT2-ITER"
+      ],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slide 44",
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), art. 30, II e parágrafo único, p. 25"
+      ],
+      "evidencia_prioridade": [
+        "SOPA T1 2024 q. 18 (tentativa × lesão, p. 6)",
+        "Simulados: DIR-T2-SG01-OBJ-N2-004, DIR-T2-SG02-DIS-N4-012"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "04-iter-criminis-tentativa-e-desistencia — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M04-OBJ-N2-002",
+        "DIR-T2-M04-OBJ-N2-004",
+        "DIR-T2-M04-OBJ-N3-005",
+        "DIR-T2-M04-OBJ-N3-007",
+        "DIR-T2-M04-OBJ-N4-009",
+        "DIR-T2-M04-OBJ-N4-010",
+        "DIR-T2-M04-DIS-N3-013",
+        "DIR-T2-M04-DIS-N4-014"
+      ],
+      "vulnerabilidades": [
+        "ignorar a exceção do parágrafo único",
+        "classificar como tentativa a interrupção voluntária"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-DESIST-ARREP",
+      "assunto": "Desistência voluntária e arrependimento eficaz (art. 31)",
+      "dependencias": [
+        "DIRT2-TENTATIVA"
+      ],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slide 45",
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), art. 31, p. 25"
+      ],
+      "evidencia_prioridade": [
+        "Distinção expressa no slide",
+        "Simulados: DIR-T2-SG01-OBJ-N2-004"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "04-iter-criminis-tentativa-e-desistencia — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M04-OBJ-N3-005",
+        "DIR-T2-M04-VF-N3-006",
+        "DIR-T2-M04-OBJ-N3-008",
+        "DIR-T2-M04-OBJ-N4-009",
+        "DIR-T2-M04-OBJ-N4-010",
+        "DIR-T2-M04-VF-N2-011",
+        "DIR-T2-M04-DIS-N3-013",
+        "DIR-T2-M05-OBJ-N4-009"
+      ],
+      "vulnerabilidades": [
+        "confundir voluntariedade com espontaneidade",
+        "punir pela tentativa quem desistiu"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-CRIME-IMPOSSIVEL",
+      "assunto": "Crime impossível: ineficácia absoluta do meio ou impropriedade absoluta do objeto (art. 32)",
+      "dependencias": [
+        "DIRT2-TENTATIVA"
+      ],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slide 46",
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), art. 32, p. 26"
+      ],
+      "evidencia_prioridade": [
+        "SOPA T1 2024 q. 18 usa distrator de crime impossível (p. 6)",
+        "Simulados: DIR-T2-SG03-OBJ-N4-005"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "04-iter-criminis-tentativa-e-desistencia — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M04-OBJ-N3-007",
+        "DIR-T2-M04-OBJ-N4-009",
+        "DIR-T2-M04-OBJ-N4-010",
+        "DIR-T2-M04-DIS-N4-014"
+      ],
+      "vulnerabilidades": [
+        "tratar ineficácia relativa (dose insuficiente) como absoluta"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-CONCURSO-MONISTA",
+      "assunto": "Concurso de agentes e teorias; CPM adota a monista (art. 53, caput)",
+      "dependencias": [],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slides 47–49 e 53",
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), art. 53, caput, p. 32"
+      ],
+      "evidencia_prioridade": [
+        "Três slides",
+        "Simulados: DIR-T2-SG02-VF-N3-004, DIR-T2-SG03-OBJ-N4-003"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "05-concurso-de-agentes — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M05-VF-N1-001",
+        "DIR-T2-M05-VF-N3-006",
+        "DIR-T2-M05-OBJ-N4-009",
+        "DIR-T2-M05-OBJ-N4-010",
+        "DIR-T2-M05-VF-N2-011",
+        "DIR-T2-M05-DIS-N4-013"
+      ],
+      "vulnerabilidades": [
+        "atribuir crimes distintos a cada concorrente no mesmo fato",
+        "confundir monista com pluralista"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-AUTORIA-PARTICIPACAO",
+      "assunto": "Autor × partícipe e atenuação da participação de somenos importância (art. 53, § 3º)",
+      "dependencias": [
+        "DIRT2-CONCURSO-MONISTA"
+      ],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slide 50",
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), art. 53, § 3º, p. 33"
+      ],
+      "evidencia_prioridade": [
+        "SOPA T1 2024 q. 20 (civil e militar em furto, p. 7)",
+        "Simulados: DIR-T2-SG02-VF-N3-004, DIR-T2-SG02-DIS-N4-012"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "05-concurso-de-agentes — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M05-OBJ-N2-004",
+        "DIR-T2-M05-OBJ-N3-007",
+        "DIR-T2-M05-OBJ-N4-009",
+        "DIR-T2-M05-VF-N2-011",
+        "DIR-T2-M05-DIS-N3-012"
+      ],
+      "vulnerabilidades": [
+        "supor que partícipe fica impune",
+        "exigir execução do verbo para toda responsabilização"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-COAUTORIA-LIMITES",
+      "assunto": "Crimes que não admitem coautoria e crimes de autoria coletiva necessária (motim)",
+      "dependencias": [
+        "DIRT2-CONCURSO-MONISTA"
+      ],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slides 51–52",
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), art. 149, p. 73"
+      ],
+      "evidencia_prioridade": [
+        "Dois slides com exemplos",
+        "Simulados: DIR-T2-SG03-DIS-N4-008"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "05-concurso-de-agentes — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M05-OBJ-N3-005",
+        "DIR-T2-M05-VF-N3-006",
+        "DIR-T2-M05-OBJ-N3-008",
+        "DIR-T2-M05-OBJ-N4-010",
+        "DIR-T2-M05-DIS-N4-013"
+      ],
+      "vulnerabilidades": [
+        "tratar motim como crime que pode ser praticado por um só",
+        "negar qualquer participação em deserção"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-AGRAVANTES-CABECAS",
+      "assunto": "Agravação no concurso (art. 53, § 2º) e cabeças (§§ 4º–5º)",
+      "dependencias": [
+        "DIRT2-CONCURSO-MONISTA"
+      ],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slides 53–54",
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), art. 53, §§ 2º, 4º e 5º, p. 32–33"
+      ],
+      "evidencia_prioridade": [
+        "Dois slides literais",
+        "Simulados: DIR-T2-SG01-VF-N2-005, DIR-T2-SG03-DIS-N4-008"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "05-concurso-de-agentes — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M05-OBJ-N2-002",
+        "DIR-T2-M05-COR-N2-003",
+        "DIR-T2-M05-OBJ-N3-007",
+        "DIR-T2-M05-OBJ-N3-008",
+        "DIR-T2-M05-OBJ-N4-009",
+        "DIR-T2-M05-OBJ-N4-010",
+        "DIR-T2-M05-DIS-N3-012",
+        "DIR-T2-M05-DIS-N4-013"
+      ],
+      "vulnerabilidades": [
+        "esquecer que oficiais são cabeças quando o crime é cometido com inferiores",
+        "não agravar quem instiga subordinado"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-COMUNICABILIDADE",
+      "assunto": "Circunstâncias pessoais (art. 53, § 1º) e impunibilidade do ajuste não tentado (art. 54)",
+      "dependencias": [
+        "DIRT2-CONCURSO-MONISTA"
+      ],
+      "fontes_localizadas": [
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), art. 53, § 1º, p. 32; art. 54, p. 33"
+      ],
+      "evidencia_prioridade": [
+        "Adjacência normativa — não aparece nos slides",
+        "Simulados: nenhum"
+      ],
+      "examinavel": false,
+      "presenca": {
+        "rapido": false,
+        "pra-safar": false,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": null,
+        "pra-safar": null,
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Fora do núcleo: detalhe ou adjacência reservado às modalidades mais extensas.",
+        "pra-safar": "Adjacência normativa não presente nos slides; não examinável pelo recorte.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "05-concurso-de-agentes — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M05-OBJ-N3-014"
+      ],
+      "vulnerabilidades": [
+        "comunicar condição pessoal não elementar",
+        "punir ajuste de crime que nem chegou a ser tentado"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-CRIME-MILITAR-CONCEITO",
+      "assunto": "Crime militar: tipicidade indireta pelos arts. 9º (paz) ou 10 (guerra) do CPM",
+      "dependencias": [],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slide 55",
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), arts. 9º–10, p. 18–21"
+      ],
+      "evidencia_prioridade": [
+        "Slide conceitual; SOPA q. 17 (p. 6)",
+        "Simulados: DIR-T2-SG01-DIS-N3-012"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "06-crime-militar — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M06-VF-N1-001",
+        "DIR-T2-M06-VF-N3-006",
+        "DIR-T2-M06-DIS-N3-013",
+        "DIR-T2-M10-DIS-N4-014"
+      ],
+      "vulnerabilidades": [
+        "chamar de militar todo crime praticado por militar",
+        "dispensar o enquadramento em inciso do art. 9º"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-PROPRIO-IMPROPRIO",
+      "assunto": "Crime militar × crime propriamente militar (furto × deserção)",
+      "dependencias": [
+        "DIRT2-CRIME-MILITAR-CONCEITO"
+      ],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slides 56–58",
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), art. 240, p. 107; art. 187, p. 85",
+        "Constituição Federal.pdf (STF, 2024, até EC 132/2023), art. 5º, LXI, p. 18"
+      ],
+      "evidencia_prioridade": [
+        "Três slides; P1 2022/2023 cobram falta de marinheiro por dez dias (correlação de jurisdição)",
+        "Simulados: nenhum"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "06-crime-militar — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M06-OBJ-N2-004",
+        "DIR-T2-M06-OBJ-N4-010",
+        "DIR-T2-M06-DIS-N4-014"
+      ],
+      "vulnerabilidades": [
+        "classificar furto como propriamente militar",
+        "exigir oito dias exatos para a deserção"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-TRANSGRESSAO",
+      "assunto": "Crime militar × transgressão disciplinar; concurso da mesma natureza (EM art. 42, § 2º)",
+      "dependencias": [
+        "DIRT2-CRIME-MILITAR-CONCEITO"
+      ],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slide 59 (cita ‘Lei nº 6.080/80’ — [POSSÍVEL ERRO NA FONTE])",
+        "Lei 6880.pdf (Planalto, texto compilado), art. 42 e § 2º, p. 9",
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), art. 19, p. 23"
+      ],
+      "evidencia_prioridade": [
+        "Slide específico",
+        "Simulados: DIR-T2-SG03-OBJ-N4-010"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "06-crime-militar — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M06-OBJ-N3-008",
+        "DIR-T2-M06-DIS-N4-014",
+        "DIR-T2-M07-OBJ-N4-009",
+        "DIR-T2-M07-DIS-N4-014"
+      ],
+      "vulnerabilidades": [
+        "aplicar pena disciplinar e penal pelo mesmo fato da mesma natureza",
+        "citar a lei com número errado"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-ART9-I",
+      "assunto": "Art. 9º, I: crimes definidos de modo diverso ou só previstos no CPM, qualquer que seja o agente",
+      "dependencias": [
+        "DIRT2-CRIME-MILITAR-CONCEITO"
+      ],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slide 60",
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), art. 9º, I, p. 18"
+      ],
+      "evidencia_prioridade": [
+        "Slide literal",
+        "Simulados: nenhum"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "06-crime-militar — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M06-COR-N2-003",
+        "DIR-T2-M06-OBJ-N4-010",
+        "DIR-T2-M07-OBJ-N3-007"
+      ],
+      "vulnerabilidades": [
+        "exigir sujeito ativo militar no inciso I"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-ART9-II",
+      "assunto": "Art. 9º, II: crimes do CPM e da legislação penal praticados por militar nas alíneas a–e",
+      "dependencias": [
+        "DIRT2-CRIME-MILITAR-CONCEITO"
+      ],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slides 61",
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), art. 9º, II, a–e, p. 18–19"
+      ],
+      "evidencia_prioridade": [
+        "SOPA T1 2024 q. 17 (militares da ativa fora de lugar sujeito à administração militar, p. 6)",
+        "Simulados: DIR-T2-SG01-OBJ-N3-006, DIR-T2-SG02-OBJ-N3-001, DIR-T2-SG03-DIS-N4-007"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "06-crime-militar — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M06-OBJ-N2-002",
+        "DIR-T2-M06-COR-N2-003",
+        "DIR-T2-M06-OBJ-N3-005",
+        "DIR-T2-M06-VF-N3-006",
+        "DIR-T2-M06-OBJ-N4-009",
+        "DIR-T2-M06-OBJ-N4-010",
+        "DIR-T2-M06-DIS-N3-013",
+        "DIR-T2-M07-DIS-N4-014",
+        "DIR-T2-M10-OBJ-N4-010",
+        "DIR-T2-M11-DIS-N4-010"
+      ],
+      "vulnerabilidades": [
+        "exigir lugar sujeito à administração militar na alínea a",
+        "esquecer que a alínea c dispensa o lugar"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-ART9-III",
+      "assunto": "Art. 9º, III: crimes de militar da reserva, reformado ou civil contra as instituições militares",
+      "dependencias": [
+        "DIRT2-CRIME-MILITAR-CONCEITO"
+      ],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slide 62",
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), art. 9º, III, a–d, p. 19"
+      ],
+      "evidencia_prioridade": [
+        "Slide literal; base da submissão de civil à JMU",
+        "Simulados: DIR-T2-SG01-OBJ-N3-006, DIR-T2-SG02-DIS-N4-012, DIR-T2-SG03-VF-N4-004"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "06-crime-militar — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M06-COR-N2-003",
+        "DIR-T2-M06-OBJ-N3-007",
+        "DIR-T2-M06-OBJ-N4-010",
+        "DIR-T2-M06-DIS-N4-014"
+      ],
+      "vulnerabilidades": [
+        "afirmar que civil nunca comete crime militar",
+        "afirmar que todo crime de civil em quartel é militar"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-ART9-DOLOSO-VIDA",
+      "assunto": "Crimes dolosos contra a vida de civil: júri (§ 1º) e JMU nos contextos do § 2º",
+      "dependencias": [
+        "DIRT2-ART9-II"
+      ],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slide 63",
+        "9 Aula 4.1.pptx, slides 37–40",
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), art. 9º, §§ 1º–2º, p. 19–20",
+        "Código de Processo Penal Militar.pdf (STM), art. 82, § 2º, p. 54"
+      ],
+      "evidencia_prioridade": [
+        "Aparece nas duas aulas",
+        "Simulados: DIR-T2-SG02-OBJ-N4-005"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "06-crime-militar — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M06-OBJ-N4-009",
+        "DIR-T2-M06-DIS-N4-014",
+        "DIR-T2-M10-OBJ-N3-008",
+        "DIR-T2-M10-OBJ-N4-010"
+      ],
+      "vulnerabilidades": [
+        "mandar ao júri homicídio de civil em GLO das Forças Armadas",
+        "aplicar o § 2º a militar estadual"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-ART10-GUERRA",
+      "assunto": "Crimes militares em tempo de guerra (art. 10, I–IV)",
+      "dependencias": [
+        "DIRT2-CRIME-MILITAR-CONCEITO"
+      ],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slides 64–67",
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), art. 10, p. 21; art. 355, p. 154"
+      ],
+      "evidencia_prioridade": [
+        "Quatro slides",
+        "Simulados: nenhum"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": false,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": null,
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Fora do núcleo: detalhe ou adjacência reservado às modalidades mais extensas.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "06-crime-militar — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M06-VF-N2-011",
+        "DIR-T2-M06-OBJ-N3-012"
+      ],
+      "vulnerabilidades": [
+        "supor que crimes de paz deixam de ser militares na guerra"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-CRIME-160",
+      "assunto": "Desrespeito a superior (art. 160) e forma majorada",
+      "dependencias": [
+        "DIRT2-ART9-II"
+      ],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slide 68",
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), art. 160 e parágrafo único, p. 76–77"
+      ],
+      "evidencia_prioridade": [
+        "Crime do cotidiano militar",
+        "Simulados: DIR-T2-SG01-OBJ-N2-007"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "07-crimes-militares-em-especie — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M07-OBJ-N2-002",
+        "DIR-T2-M07-COR-N2-003",
+        "DIR-T2-M07-OBJ-N2-004",
+        "DIR-T2-M07-OBJ-N4-009",
+        "DIR-T2-M07-DIS-N3-013"
+      ],
+      "vulnerabilidades": [
+        "dispensar a presença de outro militar",
+        "esquecer ‘oficial de dia’ na majorante (omitido no slide)"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-CRIME-163",
+      "assunto": "Insubordinação — recusa de obediência (art. 163)",
+      "dependencias": [
+        "DIRT2-ART9-II"
+      ],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slide 69",
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), art. 163, p. 77"
+      ],
+      "evidencia_prioridade": [
+        "Relação com hierarquia e obediência",
+        "Simulados: DIR-T2-SG01-OBJ-N2-007"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "07-crimes-militares-em-especie — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M05-OBJ-N3-005",
+        "DIR-T2-M07-COR-N2-003",
+        "DIR-T2-M07-OBJ-N3-005",
+        "DIR-T2-M07-OBJ-N4-009",
+        "DIR-T2-M07-VF-N2-011"
+      ],
+      "vulnerabilidades": [
+        "tratar ordem manifestamente ilegal como ordem de serviço exigível"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-CRIME-172",
+      "assunto": "Uso indevido de uniforme, distintivo ou insígnia por qualquer pessoa (art. 172)",
+      "dependencias": [
+        "DIRT2-ART9-I"
+      ],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slide 70",
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), art. 172, p. 79; art. 171, p. 79"
+      ],
+      "evidencia_prioridade": [
+        "Tipo que admite sujeito ativo civil",
+        "Simulados: nenhum"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "07-crimes-militares-em-especie — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M07-COR-N2-003",
+        "DIR-T2-M07-OBJ-N3-007",
+        "DIR-T2-M07-DIS-N3-013"
+      ],
+      "vulnerabilidades": [
+        "confundir com o art. 171 (militar que usa insígnia superior)"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-CRIME-174",
+      "assunto": "Rigor excessivo (art. 174)",
+      "dependencias": [
+        "DIRT2-ART9-II"
+      ],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slide 71",
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), art. 174, p. 80"
+      ],
+      "evidencia_prioridade": [
+        "Pena de suspensão do exercício do posto",
+        "Simulados: DIR-T2-SG02-OBJ-N3-008"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "07-crimes-militares-em-especie — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M07-VF-N1-001",
+        "DIR-T2-M07-COR-N2-003",
+        "DIR-T2-M07-OBJ-N4-009"
+      ],
+      "vulnerabilidades": [
+        "confundir com violência contra inferior (art. 175)",
+        "supor pena de detenção"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-CRIME-203",
+      "assunto": "Dormir em serviço (art. 203)",
+      "dependencias": [
+        "DIRT2-ART9-II"
+      ],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slide 72",
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), art. 203, p. 90"
+      ],
+      "evidencia_prioridade": [
+        "Situações navais nomeadas no tipo",
+        "Simulados: DIR-T2-SG02-DIS-N3-011"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "07-crimes-militares-em-especie — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M07-COR-N2-003",
+        "DIR-T2-M07-VF-N3-006",
+        "DIR-T2-M07-OBJ-N3-012",
+        "DIR-T2-M07-DIS-N3-013"
+      ],
+      "vulnerabilidades": [
+        "exigir resultado danoso",
+        "limitar a sentinelas"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-CRIME-209-210",
+      "assunto": "Lesão corporal dolosa (art. 209) e culposa (art. 210)",
+      "dependencias": [
+        "DIRT2-DOLO",
+        "DIRT2-CULPA"
+      ],
+      "fontes_localizadas": [
+        "8 Aula 3.1.pptx, slide 73",
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), arts. 209–210, p. 94–95"
+      ],
+      "evidencia_prioridade": [
+        "Integra dolo/culpa com crime em espécie",
+        "Simulados: DIR-T2-SG02-OBJ-N3-003"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "07-crimes-militares-em-especie — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M02-OBJ-N3-007",
+        "DIR-T2-M02-OBJ-N2-008",
+        "DIR-T2-M07-OBJ-N3-008",
+        "DIR-T2-M07-OBJ-N4-010",
+        "DIR-T2-M07-DIS-N4-014"
+      ],
+      "vulnerabilidades": [
+        "enquadrar lesão culposa no art. 209",
+        "ignorar o § 6º (lesão levíssima como infração disciplinar)"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-DPPM-CONCEITO",
+      "assunto": "Direito Processual Penal Militar: conceito, CPPM (DL 1.002/69), paz e guerra",
+      "dependencias": [],
+      "fontes_localizadas": [
+        "9 Aula 4.1.pptx, slides 3–5"
+      ],
+      "evidencia_prioridade": [
+        "Objetivo 4.1 da aula",
+        "Simulados: nenhum"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "08-pjm-e-instauracao-do-ipm — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M08-VF-N1-001"
+      ],
+      "vulnerabilidades": [
+        "confundir CPM (DL 1.001) com CPPM (DL 1.002)"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-PJM",
+      "assunto": "Polícia Judiciária Militar: conceito, finalidades e titulares (CPPM arts. 7º–8º)",
+      "dependencias": [
+        "DIRT2-DPPM-CONCEITO"
+      ],
+      "fontes_localizadas": [
+        "9 Aula 4.1.pptx, slides 6–10 (slide 6 cita ‘CPMM’ — [POSSÍVEL ERRO NA FONTE])",
+        "Código de Processo Penal Militar.pdf (STM), arts. 7º–8º, p. 21–23"
+      ],
+      "evidencia_prioridade": [
+        "Objetivos 4.1–4.3",
+        "Simulados: DIR-T2-SG03-COR-N3-009"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "08-pjm-e-instauracao-do-ipm — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M08-OBJ-N2-002",
+        "DIR-T2-M08-COR-N2-003",
+        "DIR-T2-M08-OBJ-N3-007",
+        "DIR-T2-M08-OBJ-N4-010",
+        "DIR-T2-M08-OBJ-N2-012",
+        "DIR-T2-M08-DIS-N4-014"
+      ],
+      "vulnerabilidades": [
+        "atribuir PJM ao MPM ou ao juiz",
+        "tratar a PJM como órgão da Justiça Militar"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-PJM-DELEGACAO",
+      "assunto": "Delegação para instaurar IPM: posto superior ou mais antigo; infrator de posto igual ou superior",
+      "dependencias": [
+        "DIRT2-PJM"
+      ],
+      "fontes_localizadas": [
+        "9 Aula 4.1.pptx, slide 14 (‘quem receba tal delegação’)",
+        "Código de Processo Penal Militar.pdf (STM), art. 7º, §§ 1º–5º, p. 22–23; art. 10, §§ 1º e 5º, p. 25–26"
+      ],
+      "evidencia_prioridade": [
+        "Base do distrator encarregado × autoridade delegante",
+        "Simulados: DIR-T2-SG03-OBJ-N4-006"
+      ],
+      "examinavel": false,
+      "presenca": {
+        "rapido": false,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": null,
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Fora do núcleo: detalhe ou adjacência reservado às modalidades mais extensas.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "08-pjm-e-instauracao-do-ipm — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M08-OBJ-N3-008",
+        "DIR-T2-M08-OBJ-N4-009",
+        "DIR-T2-M08-DIS-N4-014"
+      ],
+      "vulnerabilidades": [
+        "delegar a oficial mais moderno que o indiciado",
+        "encarregado seguir no IPM após surgirem indícios contra oficial mais antigo"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-IPM-CONCEITO",
+      "assunto": "IPM: apuração sumária, instrução provisória e finalidade (art. 9º)",
+      "dependencias": [
+        "DIRT2-PJM"
+      ],
+      "fontes_localizadas": [
+        "9 Aula 4.1.pptx, slides 11–13",
+        "Código de Processo Penal Militar.pdf (STM), art. 9º e parágrafo único, p. 24"
+      ],
+      "evidencia_prioridade": [
+        "Objetivo 4.4",
+        "Simulados: nenhum"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "08-pjm-e-instauracao-do-ipm — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M08-OBJ-N4-010",
+        "DIR-T2-M08-VF-N2-011"
+      ],
+      "vulnerabilidades": [
+        "tratar o IPM como processo com contraditório pleno",
+        "negar valor instrutório definitivo às perícias regulares"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-IPM-INSTAURACAO",
+      "assunto": "Instauração: portaria, objeto, encarregado (art. 15), escrivão (art. 11), 48 h (DGPM-315) e modos do art. 10",
+      "dependencias": [
+        "DIRT2-IPM-CONCEITO"
+      ],
+      "fontes_localizadas": [
+        "9 Aula 4.1.pptx, slides 14–17",
+        "Código de Processo Penal Militar.pdf (STM), arts. 10, 11 e 15, p. 24–28",
+        "DGPM-315, item 8.2.2 — citado no slide 16; documento não fornecido"
+      ],
+      "evidencia_prioridade": [
+        "Quatro slides; prazo de 48 h só no slide",
+        "Simulados: DIR-T2-SG02-OBJ-N4-010, DIR-T2-SG03-DIS-N4-008"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "08-pjm-e-instauracao-do-ipm — caso guiado/resolvido da aula"
+      ],
+      "figuras": [
+        "DIRT2-FIG-IPM-002"
+      ],
+      "questoes": [
+        "DIR-T2-M08-COR-N2-003",
+        "DIR-T2-M08-OBJ-N2-004",
+        "DIR-T2-M08-VF-N3-006",
+        "DIR-T2-M08-OBJ-N3-007",
+        "DIR-T2-M08-OBJ-N4-009",
+        "DIR-T2-M08-OBJ-N4-010",
+        "DIR-T2-M08-DIS-N3-013",
+        "DIR-T2-M08-DIS-N4-014"
+      ],
+      "vulnerabilidades": [
+        "confundir o prazo administrativo de 48 h com prazo do CPPM",
+        "escrivão sargento para indiciado oficial"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-MEDIDAS-URGENTES",
+      "assunto": "Providências antes da instauração: art. 10, § 2º, e art. 12",
+      "dependencias": [
+        "DIRT2-IPM-INSTAURACAO"
+      ],
+      "fontes_localizadas": [
+        "9 Aula 4.1.pptx, slides 18–22",
+        "Código de Processo Penal Militar.pdf (STM), art. 10, § 2º, p. 25; art. 12, p. 26–27",
+        "NORDINAVRIO nº 02-1 — citado no slide 22; documento não fornecido"
+      ],
+      "evidencia_prioridade": [
+        "Cinco slides",
+        "Simulados: DIR-T2-SG01-OBJ-N2-008, DIR-T2-SG03-OBJ-N4-002, DIR-T2-SG03-OBJ-N4-005, DIR-T2-SG03-DIS-N4-007"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "08-pjm-e-instauracao-do-ipm — caso guiado/resolvido da aula"
+      ],
+      "figuras": [
+        "DIRT2-FIG-IPM-002"
+      ],
+      "questoes": [
+        "DIR-T2-M08-COR-N2-003",
+        "DIR-T2-M08-OBJ-N3-005",
+        "DIR-T2-M08-OBJ-N4-010",
+        "DIR-T2-M08-DIS-N3-013"
+      ],
+      "vulnerabilidades": [
+        "aguardar a portaria para preservar o local",
+        "supor que só o comandante pode agir"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-ENCARREGADO-ATRIBUICOES",
+      "assunto": "Atribuições do encarregado do IPM (art. 13)",
+      "dependencias": [
+        "DIRT2-IPM-INSTAURACAO"
+      ],
+      "fontes_localizadas": [
+        "9 Aula 4.1.pptx, slide 23",
+        "Código de Processo Penal Militar.pdf (STM), art. 13, p. 27–28"
+      ],
+      "evidencia_prioridade": [
+        "Slide literal",
+        "Simulados: DIR-T2-SG03-OBJ-N4-003, DIR-T2-SG03-COR-N3-009"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "09-oitivas-garantias-e-sigilo — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M08-OBJ-N4-009",
+        "DIR-T2-M09-OBJ-N4-009",
+        "DIR-T2-M09-OBJ-N4-010",
+        "DIR-T2-M09-OBJ-N2-012"
+      ],
+      "vulnerabilidades": [
+        "atribuir ao encarregado arquivamento ou denúncia"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-OITIVAS",
+      "assunto": "Regras das oitivas: 7h–18h, 4 horas, descanso e ciência da qualidade do depoente (art. 19)",
+      "dependencias": [
+        "DIRT2-ENCARREGADO-ATRIBUICOES"
+      ],
+      "fontes_localizadas": [
+        "9 Aula 4.1.pptx, slide 24",
+        "Código de Processo Penal Militar.pdf (STM), art. 19 e §§ 1º–3º, p. 29–30"
+      ],
+      "evidencia_prioridade": [
+        "Números memorizáveis",
+        "Simulados: DIR-T2-SG02-OBJ-N3-006"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "09-oitivas-garantias-e-sigilo — caso guiado/resolvido da aula"
+      ],
+      "figuras": [
+        "DIRT2-FIG-IPM-002"
+      ],
+      "questoes": [
+        "DIR-T2-M09-VF-N1-001",
+        "DIR-T2-M09-OBJ-N2-002",
+        "DIR-T2-M09-COR-N2-003",
+        "DIR-T2-M09-OBJ-N2-004",
+        "DIR-T2-M09-OBJ-N4-009",
+        "DIR-T2-M09-DIS-N3-013",
+        "DIR-T2-M09-DIS-N4-014"
+      ],
+      "vulnerabilidades": [
+        "ouvir às 22h sem urgência registrada",
+        "inquirir 5 horas seguidas"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-TESTEMUNHA-INDICIADO",
+      "assunto": "Qualidade material de investigado × rótulo de testemunha; silêncio, advogado e prova ilícita",
+      "dependencias": [
+        "DIRT2-OITIVAS"
+      ],
+      "fontes_localizadas": [
+        "9 Aula 4.1.pptx, slides 24–25 (ementa do STM HC 0000209-20.2016.7.00.0000)",
+        "Constituição Federal.pdf (STF, 2024, até EC 132/2023), art. 5º, LV, LVI e LXIII, p. 18"
+      ],
+      "evidencia_prioridade": [
+        "Caso real indicado pelo próprio professor",
+        "Simulados: DIR-T2-SG01-VF-N2-009, DIR-T2-SG02-OBJ-N4-010, DIR-T2-SG03-OBJ-N4-003, DIR-T2-SG03-DIS-N4-007"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "09-oitivas-garantias-e-sigilo — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M09-COR-N2-003",
+        "DIR-T2-M09-OBJ-N3-005",
+        "DIR-T2-M09-VF-N3-006",
+        "DIR-T2-M09-OBJ-N4-009",
+        "DIR-T2-M09-OBJ-N4-010",
+        "DIR-T2-M09-DIS-N3-013",
+        "DIR-T2-M09-DIS-N4-014"
+      ],
+      "vulnerabilidades": [
+        "aceitar o rótulo formal de testemunha",
+        "achar que a ilicitude anula todo o IPM automaticamente"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-SIGILO-ACESSO",
+      "assunto": "Sigilo do IPM × acesso do defensor aos elementos já documentados",
+      "dependencias": [
+        "DIRT2-TESTEMUNHA-INDICIADO"
+      ],
+      "fontes_localizadas": [
+        "9 Aula 4.1.pptx, slide 26",
+        "Código de Processo Penal Militar.pdf (STM), art. 16, p. 28",
+        "STF, Súmula Vinculante 14 — [NÃO CONFIRMADO NA FONTE PRIMÁRIA]: páginas oficiais bloqueadas ao acesso automatizado nesta sessão"
+      ],
+      "evidencia_prioridade": [
+        "Alerta expresso do prompt de autoria",
+        "Simulados: DIR-T2-SG02-OBJ-N3-006"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "09-oitivas-garantias-e-sigilo — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M09-COR-N2-003",
+        "DIR-T2-M09-OBJ-N3-007",
+        "DIR-T2-M09-OBJ-N4-009",
+        "DIR-T2-M09-VF-N2-011",
+        "DIR-T2-M09-DIS-N4-014"
+      ],
+      "vulnerabilidades": [
+        "ensinar sigilo absoluto contra o defensor",
+        "estender o acesso a diligências em andamento"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-INCOMUNICABILIDADE",
+      "assunto": "Incomunicabilidade (art. 17) e detenção sem flagrante (art. 18): não recepção ensinada",
+      "dependencias": [
+        "DIRT2-TESTEMUNHA-INDICIADO"
+      ],
+      "fontes_localizadas": [
+        "9 Aula 4.1.pptx, slide 27 (atribui ambos ao art. 18 — [POSSÍVEL ERRO NA FONTE])",
+        "Código de Processo Penal Militar.pdf (STM), arts. 17–18, p. 28–29",
+        "Constituição Federal.pdf (STF, 2024, até EC 132/2023), art. 5º, LXI–LXIII, p. 18; art. 136, § 3º, IV, p. 119"
+      ],
+      "evidencia_prioridade": [
+        "Slide com destaque ‘não’",
+        "Simulados: DIR-T2-SG03-OBJ-N4-006"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "09-oitivas-garantias-e-sigilo — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M09-COR-N2-003",
+        "DIR-T2-M09-OBJ-N3-008",
+        "DIR-T2-M09-OBJ-N4-010",
+        "DIR-T2-M09-DIS-N4-014"
+      ],
+      "vulnerabilidades": [
+        "aplicar incomunicabilidade de três dias",
+        "prender indiciado por 30 dias sem ordem judicial"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-PRAZOS-IPM",
+      "assunto": "Prazos: preso 20 dias (da prisão), solto 40 dias (da instauração), prorrogação de 20 só para solto",
+      "dependencias": [
+        "DIRT2-IPM-INSTAURACAO"
+      ],
+      "fontes_localizadas": [
+        "9 Aula 4.1.pptx, slide 28",
+        "Código de Processo Penal Militar.pdf (STM), art. 20 e §§ 1º–3º, p. 30–31"
+      ],
+      "evidencia_prioridade": [
+        "Prazos memorizáveis; distrator preso × solto",
+        "Simulados: DIR-T2-SG01-OBJ-N2-010, DIR-T2-SG02-OBJ-N4-010, DIR-T2-SG03-OBJ-N4-001, DIR-T2-SG03-OBJ-N4-006"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "10-prazos-relatorio-arquivamento-e-foro — caso guiado/resolvido da aula"
+      ],
+      "figuras": [
+        "DIRT2-FIG-IPM-002"
+      ],
+      "questoes": [
+        "DIR-T2-M10-OBJ-N2-002",
+        "DIR-T2-M10-OBJ-N3-005",
+        "DIR-T2-M10-OBJ-N4-009",
+        "DIR-T2-M10-DIS-N3-013"
+      ],
+      "vulnerabilidades": [
+        "prorrogar prazo de indiciado preso",
+        "contar o prazo do preso da instauração"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-RELATORIO-AUTOS",
+      "assunto": "Autos em um só volume, relatório e conclusão; solução da autoridade delegante",
+      "dependencias": [
+        "DIRT2-PRAZOS-IPM"
+      ],
+      "fontes_localizadas": [
+        "9 Aula 4.1.pptx, slide 29",
+        "Código de Processo Penal Militar.pdf (STM), arts. 21–22, p. 31–32"
+      ],
+      "evidencia_prioridade": [
+        "Slide com destaques",
+        "Simulados: DIR-T2-SG02-OBJ-N4-010, DIR-T2-SG03-OBJ-N4-010"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "10-prazos-relatorio-arquivamento-e-foro — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M10-OBJ-N2-004",
+        "DIR-T2-M10-OBJ-N4-009",
+        "DIR-T2-M10-DIS-N3-013"
+      ],
+      "vulnerabilidades": [
+        "concluir o relatório com juízo de condenação",
+        "omitir a infração disciplinar (art. 22)"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-REMESSA-ARQUIVAMENTO",
+      "assunto": "Remessa ao juízo, MPM e vedação de arquivamento pela autoridade militar",
+      "dependencias": [
+        "DIRT2-RELATORIO-AUTOS"
+      ],
+      "fontes_localizadas": [
+        "9 Aula 4.1.pptx, slides 30 e 32 (fluxo)",
+        "Código de Processo Penal Militar.pdf (STM), arts. 23–26 e 29–30, p. 32–34"
+      ],
+      "evidencia_prioridade": [
+        "Fluxo gráfico do professor",
+        "Simulados: DIR-T2-SG01-DIS-N3-012, DIR-T2-SG02-OBJ-N4-005, DIR-T2-SG03-OBJ-N4-002, DIR-T2-SG03-COR-N3-009"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "10-prazos-relatorio-arquivamento-e-foro — caso guiado/resolvido da aula"
+      ],
+      "figuras": [
+        "DIRT2-FIG-IPM-001",
+        "DIRT2-FIG-IPM-002"
+      ],
+      "questoes": [
+        "DIR-T2-M10-VF-N1-001",
+        "DIR-T2-M10-OBJ-N4-009",
+        "DIR-T2-M10-VF-N2-011",
+        "DIR-T2-M10-OBJ-N3-012",
+        "DIR-T2-M10-DIS-N3-013"
+      ],
+      "vulnerabilidades": [
+        "encarregado ou comandante arquivar",
+        "juiz arquivar de ofício sem requerimento do MPM"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-DISPENSA-IPM",
+      "assunto": "Dispensa do IPM: flagrante suficiente, honra por escrito/publicação, desacato e desobediência judicial",
+      "dependencias": [
+        "DIRT2-IPM-CONCEITO"
+      ],
+      "fontes_localizadas": [
+        "9 Aula 4.1.pptx, slide 31",
+        "Código de Processo Penal Militar.pdf (STM), arts. 27–28, p. 33–34",
+        "Codigo Penal Militar.pdf (STM, 2ª ed., 2017), arts. 341 e 349, p. 147–148"
+      ],
+      "evidencia_prioridade": [
+        "Slide literal",
+        "Simulados: DIR-T2-SG02-OBJ-N3-007, DIR-T2-SG02-DIS-N4-012, DIR-T2-SG03-OBJ-N4-005"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "10-prazos-relatorio-arquivamento-e-foro — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M10-COR-N2-003",
+        "DIR-T2-M10-VF-N3-006",
+        "DIR-T2-M10-DIS-N4-014"
+      ],
+      "vulnerabilidades": [
+        "dispensar IPM em desacato a superior hierárquico",
+        "esquecer o exame de corpo de delito no flagrante"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-SINDICANCIA",
+      "assunto": "IPM × sindicância: finalidade, prazo de 40 dias e vedações",
+      "dependencias": [
+        "DIRT2-IPM-CONCEITO"
+      ],
+      "fontes_localizadas": [
+        "9 Aula 4.1.pptx, slides 33–34",
+        "Código de Processo Penal Militar.pdf (STM), art. 10, f, p. 25",
+        "Norma administrativa da MB de origem da sindicância — não fornecida"
+      ],
+      "evidencia_prioridade": [
+        "Dois slides",
+        "Simulados: DIR-T2-SG02-OBJ-N3-007, DIR-T2-SG03-OBJ-N4-010"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "10-prazos-relatorio-arquivamento-e-foro — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M10-OBJ-N3-007",
+        "DIR-T2-M10-DIS-N4-014"
+      ],
+      "vulnerabilidades": [
+        "prender envolvido em sindicância",
+        "buscar e apreender fora da OM nomeante"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-FORO-MILITAR",
+      "assunto": "Foro militar: CF arts. 124 e 125, § 4º; CPPM art. 82; crime militar × crime de militar",
+      "dependencias": [
+        "DIRT2-ART9-DOLOSO-VIDA"
+      ],
+      "fontes_localizadas": [
+        "9 Aula 4.1.pptx, slides 35–40",
+        "Constituição Federal.pdf (STF, 2024, até EC 132/2023), art. 124, p. 108; art. 125, § 4º, p. 109",
+        "Código de Processo Penal Militar.pdf (STM), art. 82, p. 53–54",
+        "STF, HC 109.544 e Inq. 4.923 — [NÃO CONFIRMADO NA FONTE PRIMÁRIA]: páginas oficiais bloqueadas ao acesso automatizado nesta sessão"
+      ],
+      "evidencia_prioridade": [
+        "Objetivo 4.5; P1 2022/2023 correlação de jurisdição",
+        "Simulados: DIR-T2-SG01-DIS-N3-012, DIR-T2-SG02-OBJ-N4-005, DIR-T2-SG02-VF-N3-009, DIR-T2-SG03-VF-N4-004, DIR-T2-SG03-DIS-N4-007"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "10-prazos-relatorio-arquivamento-e-foro — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M10-OBJ-N3-008",
+        "DIR-T2-M10-OBJ-N4-010",
+        "DIR-T2-M10-DIS-N4-014",
+        "DIR-T2-M11-OBJ-N4-008",
+        "DIR-T2-M11-DIS-N4-010"
+      ],
+      "vulnerabilidades": [
+        "competência pela pessoa e não pelo crime",
+        "confundir JMU com Justiça Militar estadual"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-JMU-ORGAOS",
+      "assunto": "Órgãos da Justiça Militar da União listados no slide 4 (Lei 8.457/92, art. 1º)",
+      "dependencias": [
+        "DIRT2-FORO-MILITAR"
+      ],
+      "fontes_localizadas": [
+        "10 Aula 4.2.pptx, slide 4",
+        "Constituição Federal.pdf (STF, 2024, até EC 132/2023), art. 122, p. 108",
+        "Lei nº 8.457/1992 — citada no slide; texto não fornecido"
+      ],
+      "evidencia_prioridade": [
+        "Slide 4 dentro do recorte",
+        "Simulados: nenhum"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "11-jmu-e-stm — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M11-OBJ-N2-004",
+        "DIR-T2-M11-DIS-N3-009"
+      ],
+      "vulnerabilidades": [
+        "incluir o MPM entre os órgãos da JMU"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-STM-COMPOSICAO",
+      "assunto": "Composição do STM: 15 ministros vitalícios (3 MB, 4 EB, 3 FAB, 5 civis)",
+      "dependencias": [
+        "DIRT2-JMU-ORGAOS"
+      ],
+      "fontes_localizadas": [
+        "10 Aula 4.2.pptx, slides 5–6",
+        "Constituição Federal.pdf (STF, 2024, até EC 132/2023), art. 123 e parágrafo único, p. 108"
+      ],
+      "evidencia_prioridade": [
+        "Números memorizáveis; distratores naturais",
+        "Simulados: DIR-T2-SG01-OBJ-N2-011"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "11-jmu-e-stm — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M11-VF-N1-001",
+        "DIR-T2-M11-OBJ-N2-002",
+        "DIR-T2-M11-COR-N2-003",
+        "DIR-T2-M11-OBJ-N4-008",
+        "DIR-T2-M11-DIS-N3-009"
+      ],
+      "vulnerabilidades": [
+        "trocar 3 da MB por 4",
+        "esquecer a aprovação do Senado e o limite de idade dos civis"
+      ]
+    },
+    {
+      "concept_id": "DIRT2-STM-COMPETENCIA",
+      "assunto": "Competência do STM apresentada no slide 7: originária (oficiais-generais, HC, HD) e recursal",
+      "dependencias": [
+        "DIRT2-STM-COMPOSICAO"
+      ],
+      "fontes_localizadas": [
+        "10 Aula 4.2.pptx, slide 7",
+        "Constituição Federal.pdf (STF, 2024, até EC 132/2023), art. 124, parágrafo único, p. 108",
+        "Lei nº 8.457/1992 — base legal da competência; texto não fornecido"
+      ],
+      "evidencia_prioridade": [
+        "Último slide do recorte",
+        "Simulados: DIR-T2-SG01-OBJ-N2-011, DIR-T2-SG02-VF-N3-009, DIR-T2-SG03-VF-N4-004, DIR-T2-SG03-DIS-N4-008, DIR-T2-SG03-COR-N3-009"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "núcleo operacional",
+        "pra-safar": "examinável integral",
+        "completo": "integrado com mecanismos e adjacências"
+      },
+      "justificativa": {
+        "rapido": "Núcleo de incidência ou dependência crítica para resolver casos.",
+        "pra-safar": "Examinável pelo recorte ou necessário para resolver casos examináveis.",
+        "completo": "Todo conceito da matriz integra o Completo; adjacências marcadas como aprofundamento."
+      },
+      "exemplos": [
+        "11-jmu-e-stm — caso guiado/resolvido da aula"
+      ],
+      "figuras": [],
+      "questoes": [
+        "DIR-T2-M11-OBJ-N3-005",
+        "DIR-T2-M11-VF-N3-006",
+        "DIR-T2-M11-OBJ-N3-007",
+        "DIR-T2-M11-OBJ-N4-008",
+        "DIR-T2-M11-DIS-N4-010"
+      ],
+      "vulnerabilidades": [
+        "trocar competência originária por recursal",
+        "atribuir ao STM julgamento de oficial subalterno em 1ª instância"
+      ]
+    }
+  ]
+}

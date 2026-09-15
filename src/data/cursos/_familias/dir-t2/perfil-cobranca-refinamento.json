@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "natureza": "Confronto entre o perfil inicial recebido na transferência (perfil-cobranca-dir-t2.json, 15/09/2026) e as provas efetivamente lidas. Não é previsão de pesos da T2.",
+  "confronto": [
+    { "dimensao_inicial": "literalidade_tecnica: alta", "decisao": "mantida (alta)", "ajuste": "A transferência dizia ‘inserida em problemas, não isolada’. As provas mostram as duas formas: itens curtos literais (P1 2023 q. 1.1, 1.7, 1.10; SOPA q. 1–3, 9) e literalidade dentro de casos (SOPA q. 17–20). O curso treina ambas." },
+    { "dimensao_inicial": "interpretacao: muito_alta", "decisao": "registrada como alta (limite do schema)", "ajuste": "Evidência forte nos casos (SOPA q. 17, 20; P1 2022 SP 4ª questão item 1), mas não é o formato dominante dos itens objetivos." },
+    { "dimensao_inicial": "integracao_de_institutos: muito_alta", "decisao": "registrada como alta", "ajuste": "P1 2024 q. 4 integra capacidade, imputabilidade e flagrante; correlações de jurisdição integram fato e órgão." },
+    { "dimensao_inicial": "aplicacao_inedita: muito_alta", "decisao": "registrada como alta", "ajuste": "Casos fictícios (BRAVO, ALFA, Sierra/MN Alfa) confirmam cenários novos." },
+    { "dimensao_inicial": "alternativas_proximas: alta", "decisao": "mapeada em ‘pegadinhas: alta’", "ajuste": "P1 2023 q. 1.11; SOPA q. 18." },
+    { "dimensao_inicial": "jurisprudencia_aplicada: media_alta", "decisao": "sem eixo próprio no schema; tratada como subdimensão de aplicação inédita", "ajuste": "Somente P1 2022 SP 4ª questão item 1 cobra tese de tribunal; incerteza declarada." },
+    { "dimensao_inicial": "memorizacao_de_prazos_composicao_competencia: alta", "decisao": "mantida (alta) como inferência de transposição", "ajuste": "Provas mostram memorização de prazos/quóruns em Constitucional; na T2 não há prova para confirmar." },
+    { "dimensao_inicial": "fundamentacao_discursiva: muito_alta", "decisao": "sem eixo próprio; incorporada à rubrica das discursivas", "ajuste": "Espelho de 2022 pontua por item (1,0 cada) com fundamento e tese." },
+    { "dimensao_inicial": "ruido_factual: alto", "decisao": "mantido como característica de enunciado", "ajuste": "SOPA q. 17 (disputa amorosa, curso de formação) e q. 20 (remédio para a filha) trazem fatos irrelevantes ou de teste." },
+    { "dimensao_inicial": "calculo: baixo", "decisao": "mantido (baixa)", "ajuste": "Nenhum cálculo nas provas lidas." }
+  ],
+  "formatos_observados": {
+    "P1 2022 SP": "14 objetivas (0,2) rotuladas FÁCIL/MÉDIA/DIFÍCIL por UE; correlação de órgão jurisdicional; respostas curtas pontuadas por item; discursivas de caso com tese do STF (1,0 cada)",
+    "P1 2023": "14 objetivas (0,3); quadro a completar; respostas curtas; caso contínuo (BRAVO) com subitens; correlação de jurisdição (0,1 cada)",
+    "P1 2024": "predominantemente discursiva por itens de 0,5 a 1,5; correlação de competências; caso ALFA (1,5)",
+    "SOPA T1 2024": "20 objetivas de 0,5, incluindo correlação e quatro casos penais militares"
+  },
+  "consequencias_para_o_curso": [
+    "Todo módulo substantivo mistura âncoras literais curtas com casos densos.",
+    "Discursivas usam rubrica por pontos: questão, norma, aplicação, exceção/limite e conclusão.",
+    "Correlações de órgão/competência são treinadas nos módulos 06, 10 e 11 sem copiar os fatos das provas.",
+    "Nomes, números e fatos das provas antigas não são reutilizados."
+  ]
+}

@@ -18,6 +18,7 @@ Hoje existem **9 cursos reais**, todos com o tema visual *naval-command*:
 - **FAS** (Fundamentos de Automação de Sistemas — P1): `ano 4 · semestre 1 · época P1 · seis turmas CA/FN`.
 - **OPN** (Operações Navais 1 — PP1): `ano 4 · semestre 1 · época P1 · turmas CA-HE/CA-HM/CA-HS`.
 - **REL** (Relações Internacionais — P1): `ano 4 · semestre 1 · época P1 · turma geral`.
+- **DIR-T2** (Direito — T2, família multimodal `dir-t2`): `ano 4 · semestre 2 · época T2 · turma geral`.
 
 `turma: "geral"` = matéria comum a todas as turmas do ano (mas, na navegação, aparece **só** em
 GERAL, não dentro das turmas especializadas). Outros cursos citados nesta documentação (ex.:
@@ -333,6 +334,12 @@ próprias sem alterar o GEP.
   variações em vez do simulado-relâmpago) e `midiasGerais` (áudio + vídeo reaproveitados na revisão
   final). Vídeo geral no YouTube (`EAZy7ZrJuDU`), URL centralizada em `midias.ts`; `PlayerVideo` ganhou
   link "Abrir no YouTube". Figuras técnicas **extraídas dos slides** (sem SVG), em `public/imagens/cursos/fas/`.
+
+**DIR-T2 — Direito / T2** (família `dir-t2`: `dir-t2--rapido`, `dir-t2--pra-safar`, `dir-t2--completo`; `ano 4 · sem 2 · T2 · turma geral`):
+- Recorte: Aula 3.1 inteira, Aula 4.1 inteira e Aula 4.2 **só até o slide 7**. O legado `dir` (P1) não foi alterado.
+- 12 módulos (`00`–`11`) + `99-revisao-final` em cada modalidade; 64 `concept_id` em `src/data/cursos/_familias/dir-t2/`.
+- Banco canônico gerado (`questoes.ts`) com IDs `DIR-T2-Mxx-TIPO-Nn-NNN` e três simulados próprios (`SG01`–`SG03`) exportados como `simuladosCanonicos`.
+- MDX é editado diretamente em `src/content/cursos/dir-t2--*`. Questões, matriz, `_dados.json`, `_config.json` e bundles são **gerados** por `python3 scripts/autoria/dir-t2/build.py --gerar` a partir de `scripts/autoria/dir-t2/{conceitos.py,questoes/}` — não edite `questoes.ts` à mão. Registro de lacunas e conflitos em `registro-lacunas-conflitos.json`. Detalhes: `docs/courses/DIR-T2.md`.
 
 Mídia atual ainda em `public/.../cursos/<slug>/` (a externalizar no futuro).
 
