@@ -1,0 +1,27 @@
+{
+  "ordem": 6,
+  "slug": "06-crime-militar",
+  "titulo": "Crime militar: arts. 9º e 10 do CPM",
+  "prioridade": "máxima",
+  "subtitulo": "Arts. 9º e 10, próprios e impróprios, transgressão",
+  "tempoEstimado": "45 min",
+  "objetivo": "Enquadrar fatos nos arts. 9º e 10 do CPM e classificar crimes militares.",
+  "palavrasChave": [
+    "art. 9º",
+    "art. 10",
+    "propriamente militar",
+    "transgressão",
+    "júri"
+  ],
+  "conceptIds": [
+    "DIRT2-CRIME-MILITAR-CONCEITO",
+    "DIRT2-PROPRIO-IMPROPRIO",
+    "DIRT2-TRANSGRESSAO",
+    "DIRT2-ART9-I",
+    "DIRT2-ART9-II",
+    "DIRT2-ART9-III",
+    "DIRT2-ART9-DOLOSO-VIDA",
+    "DIRT2-ART10-GUERRA"
+  ],
+  "modalidade": "completo"
+}

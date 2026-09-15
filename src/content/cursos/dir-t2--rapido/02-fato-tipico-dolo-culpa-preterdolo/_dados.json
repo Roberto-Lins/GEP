@@ -1,0 +1,24 @@
+{
+  "ordem": 2,
+  "slug": "02-fato-tipico-dolo-culpa-preterdolo",
+  "titulo": "Fato típico, dolo, culpa e preterdolo",
+  "prioridade": "máxima",
+  "subtitulo": "Estrutura do crime e elemento subjetivo",
+  "tempoEstimado": "35 min",
+  "objetivo": "Estratificar o crime e classificar dolo, culpa e preterdolo com nexo causal.",
+  "palavrasChave": [
+    "fato típico",
+    "dolo eventual",
+    "culpa",
+    "preterdolo",
+    "nexo causal"
+  ],
+  "conceptIds": [
+    "DIRT2-ELEMENTOS-CRIME",
+    "DIRT2-FATO-TIPICO",
+    "DIRT2-DOLO",
+    "DIRT2-CULPA",
+    "DIRT2-PRETERDOLO"
+  ],
+  "modalidade": "rapido"
+}

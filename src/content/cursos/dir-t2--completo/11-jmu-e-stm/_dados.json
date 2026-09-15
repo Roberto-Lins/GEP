@@ -1,0 +1,22 @@
+{
+  "ordem": 11,
+  "slug": "11-jmu-e-stm",
+  "titulo": "Justiça Militar da União e STM (Aula 4.2, slides 1–7)",
+  "prioridade": "muito alta",
+  "subtitulo": "Órgãos, composição e competência do STM (slides 1–7)",
+  "tempoEstimado": "20 min",
+  "objetivo": "Identificar órgãos da JMU, composição e competências do STM no recorte.",
+  "palavrasChave": [
+    "JMU",
+    "STM",
+    "composição",
+    "competência originária",
+    "competência recursal"
+  ],
+  "conceptIds": [
+    "DIRT2-JMU-ORGAOS",
+    "DIRT2-STM-COMPOSICAO",
+    "DIRT2-STM-COMPETENCIA"
+  ],
+  "modalidade": "completo"
+}

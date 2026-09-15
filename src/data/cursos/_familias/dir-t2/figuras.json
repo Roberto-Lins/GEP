@@ -1,0 +1,99 @@
+{
+  "schema_version": "2.0.0",
+  "familia_id": "dir-t2",
+  "inventario_visual": {
+    "aula_4_1": "42 slides renderizados e inspecionados; imagens: logotipos (slide 1), anexo de portaria (slide 6, decorativo), foto ilustrativa (slide 11, decorativa); diagrama pedagógico: slide 32 (fluxo IPM→Juiz→MPM).",
+    "aula_4_2_slides_1_7": "Slides 1–8 renderizados; slide 5 e 7: foto da sede do STM (decorativa); slide 6: infográfico de terceiro (‘Fonte: Redação. Infografia: Gazeta do Povo’) sobre a composição do STM.",
+    "aula_3_1": "[LACUNA] imagens não inspecionadas — o arquivo não pôde ser baixado; slides 9, 14, 24, 28, 29, 33 e 34 contêm apenas título no texto recuperado, indicando conteúdo visual (esquemas) desconhecido."
+  },
+  "candidatos_rejeitados": [
+    {
+      "origem": "9 Aula 4.1.pptx, slides 1, 6, 11",
+      "motivo": "decorativos (logotipo, capa de portaria, foto)."
+    },
+    {
+      "origem": "10 Aula 4.2.pptx, slide 6",
+      "motivo": "infográfico de terceiro (Gazeta do Povo); substituído por tabela textual conferida com a CF art. 123 para não redistribuir obra de terceiro e porque a tabela é mais legível."
+    },
+    {
+      "origem": "10 Aula 4.2.pptx, slides 5 e 7",
+      "motivo": "foto decorativa do edifício do STM."
+    },
+    {
+      "origem": "8 Aula 3.1.pptx — esquemas de excludentes, culpabilidade e potencial conhecimento",
+      "motivo": "não recuperados; nenhuma reconstrução foi feita sem ver a fonte. O diagrama V3 abaixo usa apenas o texto recuperado."
+    },
+    {
+      "origem": "Quadro de prazos (4.1, slide 28)",
+      "motivo": "slide só textual; tabela MDX é mais legível que imagem."
+    }
+  ],
+  "figuras": [
+    {
+      "id": "DIRT2-FIG-IPM-001",
+      "arquivo_fonte": "9 Aula 4.1.pptx",
+      "sha256_fonte": "ced69926296656fedf77e78e6faf4919e3441ba7ab4850b6d3ff75ffcf3b9cf5",
+      "slide": 32,
+      "localizacao": "Aula 4.1, slide físico 32",
+      "recorte_normalizado": "slide integral renderizado (LibreOffice → PDF → PNG 110 dpi → WebP)",
+      "nivel_fidelidade": "V1",
+      "tipo": "diagrama original do professor",
+      "arquivo_gerado": "/imagens/cursos/dir-t2/fontes-v1/aula41-slide32-fluxo-ipm.webp",
+      "sha256_gerado": "5f82f9cc7ac1834272bb11c25740720202306871d2c35cb28e2442a54a323765",
+      "largura": 1467,
+      "altura": 825,
+      "legenda": "Fluxo do IPM ao Juiz Federal da Justiça Militar e ao MPM",
+      "alt": "Slide com caixas pretas e setas vermelhas: IPM segue para o Juiz Federal da Justiça Militar, que encaminha ao MPM; abaixo, MPM que não oferece denúncia leva a arquivamento e MPM que oferece denúncia leva à ação penal.",
+      "leitura": "Leia em duas linhas: a de cima é o trânsito dos autos; a de baixo é a decisão do MPM. A seta ‘não oferece a denúncia → arquivamento’ é um atalho visual: pelo slide 30, o arquivamento é determinado pelo Juiz, a requerimento do MPM — nunca pela autoridade militar.",
+      "modulos": [
+        "10-prazos-relatorio-arquivamento-e-foro"
+      ],
+      "status": "usada"
+    },
+    {
+      "id": "DIRT2-FIG-CRIME-001",
+      "arquivo_fonte": "8 Aula 3.1.pptx (texto recuperado) e Codigo Penal Militar.pdf",
+      "sha256_fonte": "derivacao-deterministica-sem-recorte-unico",
+      "slide": null,
+      "localizacao": "Aula 3.1, slides 13, 15–23, 25–27, 30–31, 35–37 e 38–40; CPM arts. 29–49, p. 24–31",
+      "recorte_normalizado": "diagrama SVG desenhado à mão, sem IA, apenas com termos presentes nas fontes",
+      "nivel_fidelidade": "V3",
+      "tipo": "reconstrução didática",
+      "arquivo_gerado": "/imagens/cursos/dir-t2/diagramas/estrutura-analitica-do-crime.svg",
+      "sha256_gerado": "546957a2b3fa6611b28fe9c0efbb5454aa8b04ef98c458a80257b03d2c8a3925",
+      "largura": 960,
+      "altura": 560,
+      "legenda": "Estrutura analítica do crime no CPM",
+      "alt": "Três colunas ligadas por setas: fato típico (conduta, tipicidade, nexo, resultado, dolo, culpa e preterdolo), antijurídico (excludentes do art. 42, inclusive a do comandante) e culpável (imputabilidade, potencial conhecimento da ilicitude, exigibilidade de conduta diversa).",
+      "leitura": "Percorra da esquerda para a direita. Uma falha na primeira coluna elimina o crime; uma excludente na segunda também (‘não há crime’); a ausência de culpabilidade na terceira mantém fato típico e ilícito, mas afasta a responsabilização do agente.",
+      "modulos": [
+        "02-fato-tipico-dolo-culpa-preterdolo",
+        "03-ilicitude-culpabilidade-e-excludentes"
+      ],
+      "status": "usada"
+    },
+    {
+      "id": "DIRT2-FIG-IPM-002",
+      "arquivo_fonte": "9 Aula 4.1.pptx e Código de Processo Penal Militar.pdf",
+      "sha256_fonte": "derivacao-deterministica-sem-recorte-unico",
+      "slide": null,
+      "localizacao": "Aula 4.1, slides 14–32; CPPM arts. 9º–30, p. 24–34",
+      "recorte_normalizado": "diagrama SVG desenhado à mão, sem IA",
+      "nivel_fidelidade": "V3",
+      "tipo": "reconstrução didática",
+      "arquivo_gerado": "/imagens/cursos/dir-t2/diagramas/linha-do-ipm.svg",
+      "sha256_gerado": "188c474c750c28de16b071932a1233f67c1ea4349d1b403900ac5df80cc9d5b3",
+      "largura": 960,
+      "altura": 600,
+      "legenda": "Linha do IPM: atores, prazos e vedações",
+      "alt": "Fluxograma em seis etapas: conhecimento do fato e providências do art. 12; portaria; instrução pelo encarregado; prazos e relatório; remessa ao juiz; MPM, que requer arquivamento ou oferece denúncia.",
+      "leitura": "Siga as setas e pergunte, em cada caixa, quem é o ator. A vedação em vermelho (art. 24) e a bifurcação final do MPM concentram os distratores mais comuns.",
+      "modulos": [
+        "08-pjm-e-instauracao-do-ipm",
+        "09-oitivas-garantias-e-sigilo",
+        "10-prazos-relatorio-arquivamento-e-foro"
+      ],
+      "status": "usada"
+    }
+  ]
+}

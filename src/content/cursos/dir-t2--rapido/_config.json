@@ -1,0 +1,49 @@
+{
+  "slug": "dir-t2--rapido",
+  "titulo": "Direito — T2 — Rápido",
+  "subtitulo": "Penal e Processual Penal Militar em rota intensiva de revisão",
+  "descricao": "Revisão concentrada do núcleo de cada bloco da T2: regras, distinções, prazos, competências e casos-relâmpago.",
+  "categoria": "Carreira Naval",
+  "ano": "4",
+  "semestre": "2",
+  "epoca": "T2",
+  "turma": "geral",
+  "ordem": 3,
+  "temaVisual": "naval-command",
+  "corTema": "dourado",
+  "icone": "/imagens/cursos/dir-t2/icone.svg",
+  "capa": "/imagens/cursos/dir-t2/capa.webp",
+  "estudo": {
+    "contratoVersao": "1.0.0",
+    "familiaId": "dir-t2",
+    "familiaTitulo": "Direito — T2",
+    "id": "rapido",
+    "modalidadePadrao": "completo",
+    "modalidadesDisponiveis": [
+      "rapido",
+      "pra-safar",
+      "completo"
+    ],
+    "legadoSomenteCompleto": false,
+    "rotulo": "Rápido",
+    "descricao": "Revisão concentrada do núcleo de cada bloco da T2: regras, distinções, prazos, competências e casos-relâmpago.",
+    "finalidade": "Chegar à T2 operacional no núcleo de maior incidência, sem perder nenhum dos blocos do recorte e sem rebaixar a dificuldade das questões.",
+    "cobertura": "Núcleo examinável dos 12 módulos, com os conceitos de maior incidência; adjacências normativas e alguns detalhes secundários ficam para Pra Safar e Completo.",
+    "duracaoMinutos": 355,
+    "estadoAutoria": "publicado"
+  },
+  "features": {
+    "timeline": true,
+    "simulados": true,
+    "mapasMentais": false,
+    "podcasts": false,
+    "animacoesHero": false,
+    "animacoesTransicao": false,
+    "modoRevisaoVespera": true,
+    "graficoProgressoAvancado": false,
+    "writing": false,
+    "cadernoRevisao": false
+  },
+  "componentesExtras": [],
+  "downloads": []
+}

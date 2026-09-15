@@ -1,0 +1,23 @@
+{
+  "ordem": 4,
+  "slug": "04-iter-criminis-tentativa-e-desistencia",
+  "titulo": "Iter criminis, tentativa, desistência e crime impossível",
+  "prioridade": "muito alta",
+  "subtitulo": "Da cogitação à consumação — e quando não se pune",
+  "tempoEstimado": "30 min",
+  "objetivo": "Situar a conduta no iter criminis e distinguir tentativa, desistência, arrependimento e crime impossível.",
+  "palavrasChave": [
+    "iter criminis",
+    "tentativa",
+    "desistência voluntária",
+    "arrependimento eficaz",
+    "crime impossível"
+  ],
+  "conceptIds": [
+    "DIRT2-ITER",
+    "DIRT2-TENTATIVA",
+    "DIRT2-DESIST-ARREP",
+    "DIRT2-CRIME-IMPOSSIVEL"
+  ],
+  "modalidade": "rapido"
+}

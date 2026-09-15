@@ -1,6 +1,7 @@
 ---
 import figurasDet from '@data/cursos/det-t2/figuras.json';
 import manifestoNav4 from '@data/cursos/_familias/nav4-t2/figuras.json';
+import manifestoDirT2 from '@data/cursos/_familias/dir-t2/figuras.json';
 
 interface FiguraCatalogada {
   id: string;
@@ -16,7 +17,7 @@ interface FiguraCatalogada {
 }
 interface Props { figura: string }
 const { figura } = Astro.props;
-const figuras = [...figurasDet, ...manifestoNav4.figuras] as FiguraCatalogada[];
+const figuras = [...figurasDet, ...manifestoNav4.figuras, ...manifestoDirT2.figuras] as FiguraCatalogada[];
 const item = figuras.find((entry) => entry.id === figura);
 if (!item) throw new Error(`Figura não cadastrada: ${figura}`);
 const rotuloFidelidade = {

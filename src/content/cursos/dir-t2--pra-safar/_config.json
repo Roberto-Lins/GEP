@@ -1,0 +1,49 @@
+{
+  "slug": "dir-t2--pra-safar",
+  "titulo": "Direito — T2 — Pra Safar",
+  "subtitulo": "Todo o examinável da T2 com casos guiados e treino de decisão",
+  "descricao": "Estudo direcionado de todo o conteúdo examinável da T2, na proporção do perfil de cobrança, com mapa de incidência, erros fatais e casos guiados.",
+  "categoria": "Carreira Naval",
+  "ano": "4",
+  "semestre": "2",
+  "epoca": "T2",
+  "turma": "geral",
+  "ordem": 3,
+  "temaVisual": "naval-command",
+  "corTema": "dourado",
+  "icone": "/imagens/cursos/dir-t2/icone.svg",
+  "capa": "/imagens/cursos/dir-t2/capa.webp",
+  "estudo": {
+    "contratoVersao": "1.0.0",
+    "familiaId": "dir-t2",
+    "familiaTitulo": "Direito — T2",
+    "id": "pra-safar",
+    "modalidadePadrao": "completo",
+    "modalidadesDisponiveis": [
+      "rapido",
+      "pra-safar",
+      "completo"
+    ],
+    "legadoSomenteCompleto": false,
+    "rotulo": "Pra Safar",
+    "descricao": "Estudo direcionado de todo o conteúdo examinável da T2, na proporção do perfil de cobrança, com mapa de incidência, erros fatais e casos guiados.",
+    "finalidade": "Buscar alto desempenho cobrindo integralmente o que os slides e a delimitação do professor tornam examinável, sem expansões enciclopédicas.",
+    "cobertura": "Capítulo 3 inteiro, Aula 4.1 inteira e Aula 4.2 até o slide 7, incluindo variações, exceções legais e pegadinhas documentadas.",
+    "duracaoMinutos": 435,
+    "estadoAutoria": "publicado"
+  },
+  "features": {
+    "timeline": true,
+    "simulados": true,
+    "mapasMentais": false,
+    "podcasts": false,
+    "animacoesHero": false,
+    "animacoesTransicao": false,
+    "modoRevisaoVespera": true,
+    "graficoProgressoAvancado": false,
+    "writing": false,
+    "cadernoRevisao": false
+  },
+  "componentesExtras": [],
+  "downloads": []
+}

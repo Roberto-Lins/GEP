@@ -1,0 +1,16 @@
+{
+  "ordem": 99,
+  "slug": "99-revisao-final",
+  "titulo": "Revisão final",
+  "prioridade": "máxima",
+  "subtitulo": "Mapa da prova, fluxos, erros frequentes e véspera",
+  "tempoEstimado": "5 min",
+  "objetivo": "Recuperar de memória os fluxos e eliminar os erros críticos antes da prova.",
+  "palavrasChave": [
+    "revisão",
+    "fluxos",
+    "véspera"
+  ],
+  "conceptIds": [],
+  "modalidade": "pra-safar"
+}

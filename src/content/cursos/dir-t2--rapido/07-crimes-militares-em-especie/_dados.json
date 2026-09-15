@@ -1,0 +1,25 @@
+{
+  "ordem": 7,
+  "slug": "07-crimes-militares-em-especie",
+  "titulo": "Crimes militares em espécie dos slides",
+  "prioridade": "alta",
+  "subtitulo": "Arts. 160, 163, 172, 174, 203, 209 e 210",
+  "tempoEstimado": "35 min",
+  "objetivo": "Reconhecer elementares, penas e majorantes dos tipos ensinados.",
+  "palavrasChave": [
+    "desrespeito",
+    "insubordinação",
+    "uniforme",
+    "rigor excessivo",
+    "lesão corporal"
+  ],
+  "conceptIds": [
+    "DIRT2-CRIME-160",
+    "DIRT2-CRIME-163",
+    "DIRT2-CRIME-172",
+    "DIRT2-CRIME-174",
+    "DIRT2-CRIME-203",
+    "DIRT2-CRIME-209-210"
+  ],
+  "modalidade": "rapido"
+}

@@ -1,0 +1,365 @@
+{
+  "schema_version": "2.0.0",
+  "familia_id": "dir-t2",
+  "data_inventario": "2026-09-15",
+  "inventario_transferencia": {
+    "arquivos": 29,
+    "pastas": 4,
+    "documento": "MANIFESTO_FONTES_DIR.md (pacote PACOTE_TRANSFERENCIA_DIR_T2.zip)",
+    "nota": "URLs e identificadores privados do Drive omitidos da versão publicável; rastreabilidade por título, caminho, tamanho e hash."
+  },
+  "hierarquia_de_autoridade": [
+    "mensagem do professor (delimitação)",
+    "slides do professor",
+    "CPM, CPPM, CF e diplomas fornecidos",
+    "fontes oficiais de jurisprudência autorizadas",
+    "provas P1/SOPA (somente perfil)",
+    "curso DIR P1 do GEP (somente referência técnica)"
+  ],
+  "testemunhos": [
+    {
+      "id": "T-A31",
+      "descricao": "Aula 3.1 do CC (RM1-T) Heuseler",
+      "arquivos": [
+        "8 Aula 3.1.pptx"
+      ],
+      "nota": "Um único testemunho acadêmico."
+    },
+    {
+      "id": "T-A41",
+      "descricao": "Aula 4.1",
+      "arquivos": [
+        "9 Aula 4.1.pptx",
+        "9 Aula 4.1 (1)(1).pptx — contingência citada no manifesto, não recebida"
+      ],
+      "nota": "Cópias contam como UM testemunho."
+    },
+    {
+      "id": "T-A42",
+      "descricao": "Aula 4.2",
+      "arquivos": [
+        "10 Aula 4.2.pptx",
+        "10 Aula 4.2 (1).odp — contingência citada no manifesto, não recebida"
+      ],
+      "nota": "PPTX e ODP contam como UM testemunho."
+    }
+  ],
+  "delimitacao_professor": {
+    "arquivo": "77f3afac-95e3-49b2-a9c5-e16003617547.png",
+    "status": "nao_recebido",
+    "evidencia_usada": "Transcrição no MANIFESTO_FONTES_DIR.md §4 e AUDITORIA §‘Escopo material confirmado’; coerente com o deck 4.2 (slide 7 = competência do STM; slide 8 inicia matéria posterior ao recorte).",
+    "marcador": "[LACUNA] evidência primária da delimitação não inspecionada nesta sessão"
+  },
+  "jurisprudencia": [
+    {
+      "caso": "STM, HC 0000209-20.2016.7.00.0000",
+      "uso": "testemunha × indiciado; silêncio; advogado; prova ilícita",
+      "evidencia": "ementa reproduzida no slide 25 da Aula 4.1 (relator Min. Artur Vidigal de Oliveira, julgado em 08/11/2016)",
+      "status_fonte_oficial": "[NÃO CONFIRMADO NA FONTE PRIMÁRIA] — jurisprudencia.stm.jus.br e dspace.stm.jus.br recusaram acesso automatizado (robots.txt) em 15/09/2026"
+    },
+    {
+      "caso": "STF, Súmula Vinculante 14",
+      "uso": "sigilo do IPM × acesso do defensor",
+      "status_fonte_oficial": "[NÃO CONFIRMADO NA FONTE PRIMÁRIA] — portal.stf.jus.br recusou acesso automatizado; apenas o título oficial da notícia do STF (‘Plenário edita 14ª Súmula Vinculante e permite acesso de advogado a inquérito policial sigiloso’) foi visto em busca",
+      "regra_de_uso": "citar somente a ideia confirmável (acesso do advogado a inquérito sigiloso) e a delimitação registrada na transferência, com o marcador"
+    },
+    {
+      "caso": "STF, HC 109.544",
+      "uso": "civil na JMU apenas em crime militar",
+      "status_fonte_oficial": "[NÃO CONFIRMADO NA FONTE PRIMÁRIA] — PDF oficial bloqueado (robots.txt)",
+      "regra_de_uso": "não narrar fatos; mencionar apenas como indicação a conferir"
+    },
+    {
+      "caso": "STF, Inq. 4.923",
+      "uso": "JM julga crimes militares, não todo crime de militar",
+      "status_fonte_oficial": "[NÃO CONFIRMADO NA FONTE PRIMÁRIA] — PDF oficial bloqueado (robots.txt)",
+      "regra_de_uso": "não narrar fatos; mencionar apenas como indicação a conferir"
+    }
+  ],
+  "fontes": [
+    {
+      "titulo": "8 Aula 3.1.pptx",
+      "caminho_acervo": "DIR/DIR/8 Aula 3.1.pptx",
+      "formato": "PPTX",
+      "funcao": "fonte material — Capítulo 3 (Direito Penal Militar)",
+      "status_leitura": "lido_parcialmente",
+      "metodo_leitura": "Representação textual do conector Google Drive; download binário falhou 4 vezes (sessão do conector expira no arquivo de 7,27 MB). Segmentação em 75 slides físicos reconstruída pelos títulos e validada pela contagem total (75) e pelo alerta do slide 59.",
+      "escopo_autorizado": "todos os 75 slides físicos",
+      "testemunho": "T-A31",
+      "nota": "[LACUNA] Conteúdo apenas visual dos slides 9, 14, 24, 28, 29, 33 e 34 não recuperado; hash indisponível (arquivo não baixado). Tamanho no Drive: 7.271.605 bytes."
+    },
+    {
+      "titulo": "9 Aula 4.1.pptx",
+      "caminho_acervo": "DIR/DIR/9 Aula 4.1.pptx",
+      "formato": "PPTX",
+      "funcao": "fonte material — Aula 4.1 (DPPM, PJM, IPM, foro)",
+      "status_leitura": "lido_integralmente",
+      "metodo_leitura": "python-pptx por slide físico + renderização LibreOffice→PDF→PNG (42 páginas) inspecionada visualmente",
+      "tamanho_bytes": 1994382,
+      "sha256": "ced69926296656fedf77e78e6faf4919e3441ba7ab4850b6d3ff75ffcf3b9cf5",
+      "escopo_autorizado": "todos os 42 slides físicos",
+      "testemunho": "T-A41"
+    },
+    {
+      "titulo": "10 Aula 4.2.pptx",
+      "caminho_acervo": "DIR/DIR/10 Aula 4.2.pptx",
+      "formato": "PPTX",
+      "funcao": "fonte material — Aula 4.2 (JMU/STM)",
+      "status_leitura": "lido_integralmente_com_exclusao",
+      "metodo_leitura": "python-pptx (61 slides) + renderização dos slides 1–8 para conferir o corte",
+      "tamanho_bytes": 3865350,
+      "sha256": "28d65b10ebbb3c6e5541f9914d496b5c81c606268a2de6c2c667e6b98cd85181",
+      "escopo_autorizado": "somente slides físicos 1–7",
+      "testemunho": "T-A42",
+      "nota": "Slide 8 inicia matéria posterior ao recorte (primeiro slide excluído). Slides 9–61 extraídos só para confirmar a exclusão; conteúdo não utilizado."
+    },
+    {
+      "titulo": "Codigo Penal Militar.pdf",
+      "caminho_acervo": "DIR/DIR/Legislação/Codigo Penal Militar.pdf",
+      "formato": "PDF",
+      "funcao": "fonte normativa primária — CPM",
+      "status_leitura": "lido_nos_dispositivos_do_escopo",
+      "metodo_leitura": "pdfplumber por página (173 p.)",
+      "tamanho_bytes": 1351901,
+      "sha256": "8c9b355eaf0771076fc1f260b2928b625e589dd0e4aca6af0fe6339041a7750f",
+      "nota": "Edição STM, 2ª ed. atualizada, 2017 (inclui Lei 13.491/2017). Alterações legislativas posteriores não constam do corpus — [LACUNA DE ATUALIZAÇÃO] não suprida por conhecimento externo."
+    },
+    {
+      "titulo": "Código de Processo Penal Militar.pdf",
+      "caminho_acervo": "DIR/DIR/Legislação/Código de Processo Penal Militar.pdf",
+      "formato": "PDF",
+      "funcao": "fonte normativa primária — CPPM",
+      "status_leitura": "lido_nos_dispositivos_do_escopo",
+      "metodo_leitura": "pdfplumber por página (284 p.)",
+      "tamanho_bytes": 2027023,
+      "sha256": "1531e6ee3818925dd68e0ec0d99d3f39a546eb20a2af645903f35428563c5996",
+      "nota": "Edição STM sem data explícita na capa; composição do STM listada corresponde a 2017–2019 [PONTO DE INCERTEZA]. Usa a terminologia ‘auditor’ e ‘ministros’ das Forças; os slides usam ‘Juiz Federal da Justiça Militar’ e ‘Comandante da MB’."
+    },
+    {
+      "titulo": "Constituição Federal.pdf",
+      "caminho_acervo": "DIR/DIR/Legislação/Constituição Federal.pdf",
+      "formato": "PDF",
+      "funcao": "fonte normativa primária — CF/88",
+      "status_leitura": "lido_nos_dispositivos_do_escopo",
+      "metodo_leitura": "pdfplumber por página (286 p.)",
+      "tamanho_bytes": 2422069,
+      "sha256": "324b3e19c1ead8f284249331324a973a2ff4c0205509585bdcaa5269f9039298",
+      "nota": "Edição STF 2024, atualizada até a EC 132/2023."
+    },
+    {
+      "titulo": "Lei 6880.pdf",
+      "caminho_acervo": "DIR/DIR/Legislação/Lei 6880.pdf",
+      "formato": "PDF",
+      "funcao": "fonte normativa — Estatuto dos Militares (só onde o slide remete)",
+      "status_leitura": "lido_no_art_42",
+      "metodo_leitura": "pdfplumber (51 p.)",
+      "tamanho_bytes": 526546,
+      "sha256": "45b86b3abd2452aea80a27abfd514bb3726251c973bdba84e4aa2d779346a234",
+      "nota": "Confirma que o art. 42 citado no slide 59 da Aula 3.1 é da Lei 6.880/1980."
+    },
+    {
+      "titulo": "Lei 9784.pdf",
+      "caminho_acervo": "DIR/DIR/Legislação/Lei 9784.pdf",
+      "formato": "PDF",
+      "funcao": "fonte fornecida sem vínculo expresso com a T2",
+      "status_leitura": "baixado_nao_utilizado",
+      "metodo_leitura": "download verificado (14 p.)",
+      "tamanho_bytes": 100483,
+      "sha256": "d698c78220576ffa3981b89e001a28f25114f4a9e05fb241e04dcdaadfcd1b65",
+      "nota": "Nenhum slide do recorte remete à Lei 9.784/1999; não usada para não ampliar escopo."
+    },
+    {
+      "titulo": "DIR P1 2022 SOLUÇÃO PADRÃO.pdf",
+      "caminho_acervo": "DIR/P1/DIR P1 2022 SOLUÇÃO PADRÃO.pdf",
+      "formato": "PDF digitalizado",
+      "funcao": "perfil de cobrança e padrão de correção",
+      "status_leitura": "lido_por_ocr",
+      "metodo_leitura": "pdftoppm 200 dpi + tesseract (por) — 9 p.",
+      "tamanho_bytes": 1159283,
+      "sha256": "6c42fcfd60a0e1175f1f195b81dbe4666cae03d99924b26b0c0a65b7be14b9e8"
+    },
+    {
+      "titulo": "P1 DIR 2023.pdf",
+      "caminho_acervo": "DIR/P1/P1 DIR 2023.pdf",
+      "formato": "PDF digitalizado",
+      "funcao": "perfil de cobrança",
+      "status_leitura": "lido_por_ocr",
+      "metodo_leitura": "pdftoppm 200 dpi + tesseract (por) — 10 p.",
+      "tamanho_bytes": 3286965,
+      "sha256": "9b71ec333705e91e12fdb3900e48c54b8efa4dbe34a47bda3f32496d920eb40e"
+    },
+    {
+      "titulo": "DIR P1 2024.pdf",
+      "caminho_acervo": "DIR/P1/DIR P1 2024.pdf",
+      "formato": "PDF digitalizado",
+      "funcao": "perfil de cobrança",
+      "status_leitura": "lido_por_ocr",
+      "metodo_leitura": "pdftoppm 200 dpi + tesseract (por) — 7 p.; manuscritos ilegíveis descartados",
+      "tamanho_bytes": 916013,
+      "sha256": "ac78ce8c3059f1038365c5bb1d853f9f0709b10041ae7dfd4c6065377b98212b"
+    },
+    {
+      "titulo": "T1 DIREITO 2024 SOPA.pdf",
+      "caminho_acervo": "DIR/T1 DIREITO 2024 SOPA.pdf",
+      "formato": "PDF digitalizado",
+      "funcao": "perfil de cobrança — inclui Penal Militar (q. 16–20)",
+      "status_leitura": "lido_por_ocr",
+      "metodo_leitura": "pdftoppm 200 dpi + tesseract (por) — 8 p.",
+      "tamanho_bytes": 4639663,
+      "sha256": "12088148e5a3d97749938d7ee16807833ae94de20c79ebd0fd33d005e9f9025d"
+    },
+    {
+      "titulo": "DIR PP1 2021 solução padrão.pdf",
+      "caminho_acervo": "DIR/P1/DIR PP1 2021 solução padrão.pdf",
+      "formato": "PDF",
+      "funcao": "solução padrão histórica",
+      "status_leitura": "nao_lido",
+      "metodo_leitura": "—",
+      "nota": "Não integra o corpus de perfil definido no prompt (P1 2022–2024 e SOPA 2024)."
+    },
+    {
+      "titulo": "7 Aula 2.8 e 2.9.pdf",
+      "caminho_acervo": "DIR/P1/7 Aula 2.8 e 2.9.pdf",
+      "formato": "PDF",
+      "funcao": "matéria P1",
+      "status_leitura": "nao_lido_fora_do_escopo",
+      "metodo_leitura": "—",
+      "nota": "Conteúdo da P1; não é fonte acadêmica da T2."
+    },
+    {
+      "titulo": "6 Aula 2.5 2.6 e 2.7.pdf",
+      "caminho_acervo": "DIR/P1/6 Aula 2.5 2.6 e 2.7.pdf",
+      "formato": "PDF",
+      "funcao": "matéria P1",
+      "status_leitura": "nao_lido_fora_do_escopo",
+      "metodo_leitura": "—",
+      "nota": "idem"
+    },
+    {
+      "titulo": "7 Aula 2.8 e 2.9.pptx",
+      "caminho_acervo": "DIR/P1/7 Aula 2.8 e 2.9.pptx",
+      "formato": "PPTX",
+      "funcao": "matéria P1",
+      "status_leitura": "nao_lido_fora_do_escopo",
+      "metodo_leitura": "—",
+      "nota": "mesmo testemunho do PDF homônimo"
+    },
+    {
+      "titulo": "6 Aula 2.5 2.6 e 2.7.pptx",
+      "caminho_acervo": "DIR/P1/6 Aula 2.5 2.6 e 2.7.pptx",
+      "formato": "PPTX",
+      "funcao": "matéria P1",
+      "status_leitura": "nao_lido_fora_do_escopo",
+      "metodo_leitura": "—",
+      "nota": "mesmo testemunho do PDF homônimo"
+    },
+    {
+      "titulo": "5 Aula 2.4.pptx",
+      "caminho_acervo": "DIR/P1/5 Aula 2.4.pptx",
+      "formato": "PPTX",
+      "funcao": "matéria P1",
+      "status_leitura": "nao_lido_fora_do_escopo",
+      "metodo_leitura": "—",
+      "nota": "idem"
+    },
+    {
+      "titulo": "4 Aula 2.1 2.2 e 2.3.pptx",
+      "caminho_acervo": "DIR/P1/4 Aula 2.1 2.2 e 2.3.pptx",
+      "formato": "PPTX",
+      "funcao": "matéria P1",
+      "status_leitura": "nao_lido_fora_do_escopo",
+      "metodo_leitura": "—",
+      "nota": "idem"
+    },
+    {
+      "titulo": "3 Aula 1.4 e 1.5.pptx",
+      "caminho_acervo": "DIR/P1/3 Aula 1.4 e 1.5.pptx",
+      "formato": "PPTX",
+      "funcao": "matéria P1",
+      "status_leitura": "nao_lido_fora_do_escopo",
+      "metodo_leitura": "—",
+      "nota": "idem"
+    },
+    {
+      "titulo": "2 Aula 1.2 e 1.3.pptx",
+      "caminho_acervo": "DIR/P1/2 Aula 1.2 e 1.3.pptx",
+      "formato": "PPTX",
+      "funcao": "matéria P1",
+      "status_leitura": "nao_lido_fora_do_escopo",
+      "metodo_leitura": "—",
+      "nota": "idem"
+    },
+    {
+      "titulo": "1 Aula 1.pptx",
+      "caminho_acervo": "DIR/P1/1 Aula 1.pptx",
+      "formato": "PPTX",
+      "funcao": "matéria P1",
+      "status_leitura": "nao_lido_fora_do_escopo",
+      "metodo_leitura": "—",
+      "nota": "idem"
+    },
+    {
+      "titulo": "2 Aula 1.2 e 1.3.pptx",
+      "caminho_acervo": "DIR/DIR/2 Aula 1.2 e 1.3.pptx",
+      "formato": "PPTX",
+      "funcao": "cópia da matéria P1 (IDs de Drive distintos)",
+      "status_leitura": "nao_lido_fora_do_escopo",
+      "metodo_leitura": "—",
+      "nota": "Não conta como testemunho independente da versão em DIR/P1."
+    },
+    {
+      "titulo": "4 Aula 2.1 2.2 e 2.3.pptx",
+      "caminho_acervo": "DIR/DIR/4 Aula 2.1 2.2 e 2.3.pptx",
+      "formato": "PPTX",
+      "funcao": "cópia da matéria P1 (IDs de Drive distintos)",
+      "status_leitura": "nao_lido_fora_do_escopo",
+      "metodo_leitura": "—",
+      "nota": "Não conta como testemunho independente da versão em DIR/P1."
+    },
+    {
+      "titulo": "7 Aula 2.8 e 2.9.pptx",
+      "caminho_acervo": "DIR/DIR/7 Aula 2.8 e 2.9.pptx",
+      "formato": "PPTX",
+      "funcao": "cópia da matéria P1 (IDs de Drive distintos)",
+      "status_leitura": "nao_lido_fora_do_escopo",
+      "metodo_leitura": "—",
+      "nota": "Não conta como testemunho independente da versão em DIR/P1."
+    },
+    {
+      "titulo": "3 Aula 1.4 e 1.5.pptx",
+      "caminho_acervo": "DIR/DIR/3 Aula 1.4 e 1.5.pptx",
+      "formato": "PPTX",
+      "funcao": "cópia da matéria P1 (IDs de Drive distintos)",
+      "status_leitura": "nao_lido_fora_do_escopo",
+      "metodo_leitura": "—",
+      "nota": "Não conta como testemunho independente da versão em DIR/P1."
+    },
+    {
+      "titulo": "6 Aula 2.5 2.6 e 2.7.pptx",
+      "caminho_acervo": "DIR/DIR/6 Aula 2.5 2.6 e 2.7.pptx",
+      "formato": "PPTX",
+      "funcao": "cópia da matéria P1 (IDs de Drive distintos)",
+      "status_leitura": "nao_lido_fora_do_escopo",
+      "metodo_leitura": "—",
+      "nota": "Não conta como testemunho independente da versão em DIR/P1."
+    },
+    {
+      "titulo": "5 Aula 2.4.pptx",
+      "caminho_acervo": "DIR/DIR/5 Aula 2.4.pptx",
+      "formato": "PPTX",
+      "funcao": "cópia da matéria P1 (IDs de Drive distintos)",
+      "status_leitura": "nao_lido_fora_do_escopo",
+      "metodo_leitura": "—",
+      "nota": "Não conta como testemunho independente da versão em DIR/P1."
+    },
+    {
+      "titulo": "1 Aula 1.pptx",
+      "caminho_acervo": "DIR/DIR/1 Aula 1.pptx",
+      "formato": "PPTX",
+      "funcao": "cópia da matéria P1 (IDs de Drive distintos)",
+      "status_leitura": "nao_lido_fora_do_escopo",
+      "metodo_leitura": "—",
+      "nota": "Não conta como testemunho independente da versão em DIR/P1."
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "status": "confirmado",
+  "classificacao": {
+    "literalidade": "alta",
+    "interpretacao": "alta",
+    "calculo": "baixa",
+    "detalhismo": "alta",
+    "memorizacao": "alta",
+    "pegadinhas": "alta",
+    "integracao": "alta",
+    "aplicacaoInedita": "alta"
+  },
+  "evidencias": [
+    "Literalidade — P1 2023, q. 1.1, 1.6, 1.7 e 1.10 (p. 1–3) cobram enunciados curtos de texto literal; SOPA T1 2024, q. 1–3, 9 e 16 (p. 1–5) idem; P1 2022 SP, 1ª questão, item 3 (habeas data, p. 1). A literalidade aparece tanto isolada quanto embutida em casos.",
+    "Interpretação — SOPA T1 2024, q. 17 (p. 6): caso longo de envenenamento entre militares da ativa em bar, exigindo decidir se há crime militar; q. 20 (p. 7): civil e marinheiro em furto de armamento com alegação de estado de necessidade.",
+    "Cálculo — ausência de cálculo em todas as provas lidas; na T2 limita-se a contagem de prazos (CPPM art. 20) e frações de pena (CPM art. 30), classificada como baixa.",
+    "Detalhismo — P1 2023, q. 4.3 (p. 8) exige número mínimo de assinaturas e quórum; P1 2022 SP, 3ª questão, item 5 (p. 5–6) exige autoridades que promulgam; SOPA T1 2024, q. 19 (p. 7) exige associar característica fina a cada excludente.",
+    "Memorização — P1 2022 SP, 3ª questão, item 3 (p. 5): prazo de vigência de 45 dias; P1 2023, q. 4.2 (p. 7): quórum de lei complementar. Na T2 os alvos equivalentes são prazos do IPM, horários de oitiva e composição do STM (inferência de transposição).",
+    "Pegadinhas — P1 2023, q. 1.11 (p. 3) inclui ‘Ministério Público’ entre os Poderes; SOPA T1 2024, q. 18 (p. 6) oferece ‘crime impossível’ e ‘lesão leve’ contra ‘homicídio tentado’; q. 10 (p. 3) confunde emancipação com imputabilidade.",
+    "Integração — P1 2024, q. 4 (p. 4): menor de 16 anos emancipado, furto tentado e voz de prisão pelo oficial de serviço (capacidade civil + penal + flagrante); P1 2022 SP e P1 2023, correlação de órgão jurisdicional por fato (p. 4–5 e p. 9).",
+    "Aplicação inédita — P1 2022 SP, 4ª questão, item 1 (p. 6–7): ingresso em PNR na vila naval com aplicação de tese do STF (RE 603.616) e controle judicial posterior; P1 2023, q. 4.1 (p. 6): república fictícia BRAVO; crédito parcial por item em todas as discursivas."
+  ],
+  "fontes_localizadas": [
+    "DIR P1 2022 SOLUÇÃO PADRÃO.pdf — p. 1–7 (OCR 200 dpi)",
+    "P1 DIR 2023.pdf — p. 1–10 (OCR 200 dpi)",
+    "DIR P1 2024.pdf — p. 1–7 (OCR 200 dpi; respostas manuscritas ilegíveis ignoradas)",
+    "T1 DIREITO 2024 SOPA.pdf — p. 1–8 (OCR 200 dpi); q. 16–20 tratam de Direito Penal Militar",
+    "PERFIL INICIAL: perfil-cobranca-dir-t2.json da transferência, confrontado item a item em perfil-cobranca-refinamento.json"
+  ],
+  "incertezas": [
+    "[PONTO DE INCERTEZA] Não há prova T2 de Direito no corpus: o perfil é transposto de P1/SOPA; a distribuição de pontos e de formatos da T2 não é conhecida.",
+    "[PONTO DE INCERTEZA] A SOPA T1 2024 (p. 1–7) cobra Penal Militar em apenas 4 de 20 itens; a densidade de casos na T2 é inferida, não medida.",
+    "[PONTO DE INCERTEZA] Jurisprudência: o espelho de 2022 cobra tese do STF aplicada, mas nenhuma prova lida cobra jurisprudência do STM; o peso de julgados na T2 é incerto.",
+    "[PONTO DE INCERTEZA] O perfil inicial classificava interpretação, integração e aplicação inédita como ‘muito alta’; o schema do GEP só admite até ‘alta’ e as provas mostram também muitos itens curtos e literais — o grau ‘muito alta’ não foi mantido como fato.",
+    "O OCR de respostas manuscritas foi descartado; apenas enunciados impressos e o espelho digitado da solução padrão foram usados."
+  ]
+}

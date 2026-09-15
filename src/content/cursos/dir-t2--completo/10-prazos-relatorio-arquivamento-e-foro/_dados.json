@@ -1,0 +1,25 @@
+{
+  "ordem": 10,
+  "slug": "10-prazos-relatorio-arquivamento-e-foro",
+  "titulo": "Prazos, relatório, arquivamento, dispensa, sindicância e foro",
+  "prioridade": "máxima",
+  "subtitulo": "Do prazo ao arquivamento; dispensa, sindicância e foro",
+  "tempoEstimado": "40 min",
+  "objetivo": "Encerrar o IPM corretamente e definir instrumento e foro.",
+  "palavrasChave": [
+    "prazos",
+    "relatório",
+    "arquivamento",
+    "sindicância",
+    "foro militar"
+  ],
+  "conceptIds": [
+    "DIRT2-PRAZOS-IPM",
+    "DIRT2-RELATORIO-AUTOS",
+    "DIRT2-REMESSA-ARQUIVAMENTO",
+    "DIRT2-DISPENSA-IPM",
+    "DIRT2-SINDICANCIA",
+    "DIRT2-FORO-MILITAR"
+  ],
+  "modalidade": "completo"
+}

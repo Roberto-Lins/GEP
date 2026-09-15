@@ -1,0 +1,168 @@
+{
+  "schema_version": "2.0.0",
+  "familia_id": "dir-t2",
+  "revisao_base": "4a1891fe52a4f489e84742b023e14597a6394166",
+  "branch": "feat/dir-t2",
+  "estado": "integrado_localmente_aguardando_revisao_do_usuario",
+  "data_referencia": "2026-09-15",
+  "slug_decisao": "família ‘dir-t2’ com slugs concretos dir-t2--rapido, dir-t2--pra-safar e dir-t2--completo; não colide com o legado ‘dir’ (P1), que não foi alterado",
+  "ordem_de_autoria": "por módulo: Pra Safar → Completo → Rápido; banco canônico escrito antes das aulas",
+  "corpus": {
+    "arquivos_inventariados_transferencia": 29,
+    "lidos": [
+      "9 Aula 4.1.pptx (42 slides)",
+      "10 Aula 4.2.pptx (61 slides extraídos; 1–7 usados)",
+      "8 Aula 3.1.pptx (75 slides, texto do Drive)",
+      "CPM",
+      "CPPM",
+      "CF",
+      "Lei 6.880/1980 (art. 42)",
+      "P1 2022 SP, P1 2023, P1 2024, SOPA T1 2024 (OCR)"
+    ]
+  },
+  "modulos": [
+    "00-mapa-e-metodo",
+    "01-principios-e-lei-no-tempo-e-espaco",
+    "02-fato-tipico-dolo-culpa-preterdolo",
+    "03-ilicitude-culpabilidade-e-excludentes",
+    "04-iter-criminis-tentativa-e-desistencia",
+    "05-concurso-de-agentes",
+    "06-crime-militar",
+    "07-crimes-militares-em-especie",
+    "08-pjm-e-instauracao-do-ipm",
+    "09-oitivas-garantias-e-sigilo",
+    "10-prazos-relatorio-arquivamento-e-foro",
+    "11-jmu-e-stm",
+    "99-revisao-final"
+  ],
+  "conceitos": {
+    "total": 64,
+    "examinaveis": 59,
+    "presenca": {
+      "rapido": 59,
+      "pra-safar": 61,
+      "completo": 64
+    },
+    "sem_questao": []
+  },
+  "identificadores": {
+    "padrao": "DIR-T2-<M00–M11|SG01–SG03>-<OBJ|VF|COR|DIS>-<N1–N4>-<NNN>",
+    "questoes_canonicas": 154,
+    "questoes_simulados": {
+      "SG01": 12,
+      "SG02": 12,
+      "SG03": 10
+    },
+    "ids_duplicados": 0,
+    "ids_emitidos_nunca_reutilizar": true
+  },
+  "banco": {
+    "total_canonicas": 154,
+    "contextualizadas": 117,
+    "percentual_contextualizadas": 76.0,
+    "por_tipo": {
+      "OBJ": 86,
+      "DIS": 23,
+      "VF": 34,
+      "COR": 11
+    },
+    "por_nivel": {
+      "N2": 49,
+      "N1": 12,
+      "N3": 61,
+      "N4": 32
+    },
+    "por_modalidade": {
+      "rapido": 146,
+      "pra-safar": 151,
+      "completo": 154
+    },
+    "por_modulo": {
+      "00-mapa-e-metodo": 2,
+      "01-principios-e-lei-no-tempo-e-espaco": 15,
+      "02-fato-tipico-dolo-culpa-preterdolo": 14,
+      "03-ilicitude-culpabilidade-e-excludentes": 15,
+      "04-iter-criminis-tentativa-e-desistencia": 14,
+      "05-concurso-de-agentes": 14,
+      "06-crime-militar": 14,
+      "07-crimes-militares-em-especie": 14,
+      "08-pjm-e-instauracao-do-ipm": 14,
+      "09-oitivas-garantias-e-sigilo": 14,
+      "10-prazos-relatorio-arquivamento-e-foro": 14,
+      "11-jmu-e-stm": 10
+    },
+    "posicao_correta_multipla": {
+      "1": 27,
+      "2": 27,
+      "3": 27,
+      "0": 26
+    },
+    "simulados": {
+      "SG01": 12,
+      "SG02": 12,
+      "SG03": 10
+    }
+  },
+  "entrega": {
+    "rapido": {
+      "palavras_mdx": 3752,
+      "duracao_nucleo_minutos": 355,
+      "discursivas_adicionais_minutos": 179,
+      "simulados_minutos": 270,
+      "questoes_modulo": 146,
+      "questoes_simulados": {
+        "SG01": 12,
+        "SG02": 12,
+        "SG03": 9
+      }
+    },
+    "pra-safar": {
+      "palavras_mdx": 11774,
+      "duracao_nucleo_minutos": 435,
+      "discursivas_adicionais_minutos": 189,
+      "simulados_minutos": 270,
+      "questoes_modulo": 151,
+      "questoes_simulados": {
+        "SG01": 12,
+        "SG02": 12,
+        "SG03": 10
+      }
+    },
+    "completo": {
+      "palavras_mdx": 14796,
+      "duracao_nucleo_minutos": 475,
+      "discursivas_adicionais_minutos": 189,
+      "simulados_minutos": 270,
+      "questoes_modulo": 154,
+      "questoes_simulados": {
+        "SG01": 12,
+        "SG02": 12,
+        "SG03": 10
+      }
+    }
+  },
+  "figuras": {
+    "total": 3,
+    "V1": 1,
+    "V3": 2
+  },
+  "auditoria_modalidades": {
+    "estado": "aprovado_com_ressalvas",
+    "sobreposicao_6gramas_max": 0.131,
+    "ressalvas": [
+      "Sobreposição concentrada em transcrições literais de lei (M07, M11) — esperado",
+      "Casos das aulas reaproveitam cenários do banco canônico de propósito (ex.: M03 Completo, M07 Pra Safar)",
+      "Nenhum script prova independência pedagógica; revisão humana recomendada"
+    ]
+  },
+  "registro": "registro-lacunas-conflitos.json",
+  "pendencias": [
+    "Anexar 8 Aula 3.1.pptx para conferir imagens e numeração física",
+    "Anexar o print do professor",
+    "Conferir jurisprudência no inteiro teor oficial",
+    "Substituir capa/thumbnail provisórios pela arte do Codex",
+    "Revisão humana do usuário antes de merge/publicação"
+  ],
+  "build": "python3 scripts/autoria/dir-t2/build.py --gerar",
+  "validacao": "docs/dir-t2/VALIDACAO.md"
+}

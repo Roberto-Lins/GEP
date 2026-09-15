@@ -1,0 +1,19 @@
+{
+  "ordem": 0,
+  "slug": "00-mapa-e-metodo",
+  "titulo": "Mapa da T2 e método de caso",
+  "prioridade": "máxima",
+  "subtitulo": "Recorte, hierarquia das fontes e cadeia de resolução",
+  "tempoEstimado": "10 min",
+  "objetivo": "Delimitar o recorte da T2 e aplicar a cadeia fatos → questão → norma → aplicação → exceção → conclusão.",
+  "palavrasChave": [
+    "recorte",
+    "método de caso",
+    "fontes"
+  ],
+  "conceptIds": [
+    "DIRT2-ESCOPO",
+    "DIRT2-METODO"
+  ],
+  "modalidade": "completo"
+}

@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0.0",
+  "familia_id": "dir-t2",
+  "data": "2026-09-15",
+  "possiveis_erros_na_fonte": [
+    {
+      "local": "8 Aula 3.1, slide 59",
+      "ocorrencia": "cita ‘Lei nº 6.080/80’ para o art. 42 do Estatuto dos Militares",
+      "conferencia": "Lei 6880.pdf, p. 9, reproduz o mesmo texto no art. 42 da Lei nº 6.880/1980",
+      "tratamento": "curso usa Lei 6.880/1980 e marca [POSSÍVEL ERRO NA FONTE]"
+    },
+    {
+      "local": "9 Aula 4.1, slide 6",
+      "ocorrencia": "‘Art. 7º CPMM’",
+      "conferencia": "diploma é o CPPM; o art. 7º do CPPM (p. 21–22) enumera autoridades e não contém a frase definitória do slide",
+      "tratamento": "ler como CPPM; definição atribuída ao slide/portaria citada"
+    },
+    {
+      "local": "9 Aula 4.1, slide 27",
+      "ocorrencia": "atribui incomunicabilidade e detenção ao art. 18",
+      "conferencia": "CPPM art. 17 (incomunicabilidade) e art. 18 (detenção), p. 28–29",
+      "tratamento": "ensinar arts. 17 e 18 separadamente"
+    },
+    {
+      "local": "8 Aula 3.1, slide 45",
+      "ocorrencia": "arrependimento eficaz descrito como ‘já consumou o crime pretendido’",
+      "conferencia": "CPM art. 30, I: consumação exige todos os elementos; sem resultado não há consumação",
+      "tratamento": "ler ‘esgotou a execução’"
+    },
+    {
+      "local": "8 Aula 3.1, slide 63",
+      "ocorrencia": "§ 2º do art. 9º transcrito sem ‘por militares das Forças Armadas’",
+      "conferencia": "CPM p. 20 e Aula 4.1, slide 38 trazem a expressão",
+      "tratamento": "ensinar a redação legal"
+    },
+    {
+      "local": "8 Aula 3.1, slide 68",
+      "ocorrencia": "majorante do art. 160 omite ‘oficial de dia’",
+      "conferencia": "CPM art. 160, parágrafo único, p. 77",
+      "tratamento": "incluir ‘oficial de dia’"
+    }
+  ],
+  "omissoes_do_slide_supridas_pela_lei": [
+    "Aula 3.1, slide 44: exceção da excepcional gravidade na pena da tentativa (CPM art. 30, parágrafo único)",
+    "Aula 4.1, slide 17: início do IPM por decisão do STM (CPPM art. 10, d)",
+    "Aula 4.1, slide 28: termos iniciais dos prazos (CPPM art. 20)",
+    "Aula 4.1, slide 29: conclusão por infração disciplinar (CPPM art. 22)",
+    "Aula 4.1, slide 31: autor identificado nos crimes contra a honra e dispensa por documentos (CPPM art. 28, a–b)",
+    "Aula 4.2, slide 5: aprovação do Senado, limite de 70 anos, requisitos dos advogados e escolha paritária (CF art. 123)"
+  ],
+  "conflitos_entre_fontes": [
+    {
+      "conflito": "[CONFLITO ENTRE FONTES] Aula 4.2, slide 4 (dentro do recorte) nomeia órgãos colegiados de primeira instância cuja matéria foi excluída pela mensagem do professor",
+      "hierarquia": "mensagem do professor > slides",
+      "decisao": "o curso registra que a lista contém esses órgãos, sem nomeá-los nem desenvolvê-los; nenhuma questão os cobra"
+    },
+    {
+      "conflito": "CF art. 228 × CPM art. 50 (texto do corpus admite imputabilidade entre 16 e 18 anos com discernimento)",
+      "hierarquia": "CF > lei; slide 6 adota a CF",
+      "decisao": "ensinar a inimputabilidade do menor de 18; art. 50 citado como distrator com [APROFUNDAMENTO ANALÍTICO DE SUPORTE]"
+    },
+    {
+      "conflito": "Prompt de autoria (pra-safar = ‘mínimo seguro’) × contrato do repositório docs/MODALIDADES-DE-ESTUDO.md e validate-content (pra-safar = todo o examinável)",
+      "hierarquia": "o próprio prompt determina que o contrato do ZIP prevalece; decisão anterior do usuário registrada nas instruções do projeto (contrato prevalece)",
+      "decisao": "Pra Safar cobre todo o examinável com seleção de profundidade; Rápido é a rota de núcleo"
+    }
+  ],
+  "pontos_de_incerteza": [
+    "Não há prova T2 de Direito no corpus; perfil transposto de P1/SOPA",
+    "Detenção sem flagrante (CPPM art. 18) × ressalva do CF art. 5º, LXI, para crime propriamente militar",
+    "Alcance literal do art. 9º, II, ‘a’, diante de precedente do STF indicado e não confirmado",
+    "Contagem de prazos do IPM e mudança de situação do indiciado no curso do inquérito",
+    "Desistência de um concorrente em crime consumado pelos demais",
+    "Compatibilização entre penalidade disciplinar pela autoridade delegante (art. 22, § 1º) e remessa/vedação de arquivamento (arts. 23–24)",
+    "Edição do CPPM sem data explícita (composição do STM impressa sugere 2017–2019)",
+    "Critério de ‘mesma natureza’ entre crime e transgressão (EM art. 42, § 2º)"
+  ],
+  "lacunas": [
+    "[LACUNA] 8 Aula 3.1.pptx não baixado (conector do Drive expira no arquivo de 7,27 MB): texto obtido pela representação do Drive, numeração de slides reconstruída e validada (75 segmentos; slide 59 confere com o alerta do prompt); conteúdo visual dos slides 9, 14, 24, 28, 29, 33 e 34 não recuperado; hash do arquivo indisponível",
+    "[LACUNA] Imagem com a mensagem do professor (77f3afac-….png) não recebida; delimitação baseada na transcrição do manifesto e conferida com o deck 4.2",
+    "[LACUNA] Jurisprudência: páginas oficiais do STF e do STM recusaram acesso automatizado; STM HC 0000209-20.2016.7.00.0000 usado só pela ementa do slide 25; SV 14, HC 109.544 e Inq. 4.923 marcados [NÃO CONFIRMADO NA FONTE PRIMÁRIA]",
+    "[LACUNA] DGPM-315, NORDINAVRIO nº 02-1, norma da sindicância e Lei nº 8.457/1992 citadas nos slides e não fornecidas",
+    "[LACUNA DE ATUALIZAÇÃO] Edições do CPM (2017) e CPPM do corpus; alterações legislativas posteriores não incorporadas (proibição de atualização externa sem autorização)",
+    "[LACUNA] Cópias de contingência ‘9 Aula 4.1 (1)(1).pptx’ e ‘10 Aula 4.2 (1).odp’ citadas no manifesto não recebidas (não alteram o testemunho)",
+    "[PENDÊNCIA DE PRODUTO] capa.webp e thumbnail foram gerados deterministicamente (sem IA) como arte provisória; a convenção do repositório prevê arte raster produzida pelo Codex"
+  ],
+  "fora_do_escopo_rejeitado": [
+    "Aula 4.2, slides 8–61 (inclusive organização territorial da JMU e órgãos/processos posteriores ao STM)",
+    "Conteúdo material da P1 (Introdução ao Estudo do Direito e Direito Constitucional) e o curso legado DIR P1",
+    "Lei 9.784/1999 (fornecida, sem remissão no recorte)",
+    "Temas atuais não presentes nos slides (ex.: ANPP)",
+    "CPM art. 151 (omissão de lealdade militar), art. 152 (conspiração), arts. 175–176 e demais tipos não ensinados: apenas mencionados como limite, sem ensino nem cobrança",
+    "Infográfico de terceiro do slide 6 da Aula 4.2 (não reproduzido)"
+  ],
+  "fontes_nao_usadas": [
+    {
+      "fonte": "Lei 9784.pdf",
+      "justificativa": "sem vínculo expresso com o recorte"
+    },
+    {
+      "fonte": "DIR PP1 2021 solução padrão.pdf",
+      "justificativa": "fora do corpus de perfil definido (2022–2024 e SOPA 2024)"
+    },
+    {
+      "fonte": "Slides e PDFs da P1 (Aulas 1–2.9) e cópias em DIR/",
+      "justificativa": "matéria da P1; não é fonte acadêmica da T2"
+    }
+  ]
+}

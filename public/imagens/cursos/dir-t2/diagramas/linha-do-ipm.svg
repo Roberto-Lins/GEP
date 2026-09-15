@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" width="960" height="600" font-family="Inter, Arial, sans-serif">
+  <rect width="960" height="600" fill="#0b1220"/>
+  <defs><marker id="a" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#d6a84f"/></marker></defs>
+  <text x="480" y="38" fill="#f7f3ea" font-size="23" font-weight="700" text-anchor="middle">Do conhecimento do fato à decisão sobre a ação penal</text>
+  <text x="480" y="62" fill="#cbd5e1" font-size="14" text-anchor="middle">Quem faz o quê — e o que a autoridade militar nunca pode fazer</text>
+  <g font-size="14">
+    <rect x="30" y="90" width="200" height="150" rx="10" fill="#1e3a5f" stroke="#d6a84f"/>
+    <text x="130" y="116" fill="#d6a84f" font-weight="700" text-anchor="middle">1. Conhecimento</text>
+    <text x="42" y="142" fill="#f7f3ea">Oficial de comando,</text>
+    <text x="42" y="162" fill="#f7f3ea">de dia, de serviço ou</text>
+    <text x="42" y="182" fill="#f7f3ea">de quarto: providências</text>
+    <text x="42" y="202" fill="#f7f3ea">do art. 12, sem esperar</text>
+    <text x="42" y="222" fill="#cbd5e1">delegação (art. 10, § 2º)</text>
+    <rect x="260" y="90" width="200" height="150" rx="10" fill="#1e3a5f" stroke="#d6a84f"/>
+    <text x="360" y="116" fill="#d6a84f" font-weight="700" text-anchor="middle">2. Portaria</text>
+    <text x="272" y="142" fill="#f7f3ea">Autoridade de PJM ou</text>
+    <text x="272" y="162" fill="#f7f3ea">delegado; objeto preciso;</text>
+    <text x="272" y="182" fill="#f7f3ea">designa encarregado</text>
+    <text x="272" y="202" fill="#cbd5e1">48 h do conhecimento</text>
+    <text x="272" y="222" fill="#cbd5e1">(DGPM-315, slide 16)</text>
+    <rect x="490" y="90" width="200" height="150" rx="10" fill="#1e3a5f" stroke="#d6a84f"/>
+    <text x="590" y="116" fill="#d6a84f" font-weight="700" text-anchor="middle">3. Instrução</text>
+    <text x="502" y="142" fill="#f7f3ea">Encarregado: oitivas,</text>
+    <text x="502" y="162" fill="#f7f3ea">perícias, buscas (art. 13)</text>
+    <text x="502" y="182" fill="#f7f3ea">Oitiva 7h–18h; até 4 h;</text>
+    <text x="502" y="202" fill="#f7f3ea">qualidade do depoente</text>
+    <text x="502" y="222" fill="#cbd5e1">Sigilo: art. 16</text>
+    <rect x="720" y="90" width="210" height="150" rx="10" fill="#1e3a5f" stroke="#d6a84f"/>
+    <text x="825" y="116" fill="#d6a84f" font-weight="700" text-anchor="middle">4. Prazo e relatório</text>
+    <text x="732" y="142" fill="#f7f3ea">Preso: 20 dias da prisão</text>
+    <text x="732" y="162" fill="#f7f3ea">Solto: 40 dias da</text>
+    <text x="732" y="182" fill="#f7f3ea">instauração (+20, só solto)</text>
+    <text x="732" y="202" fill="#f7f3ea">Relatório: diligências,</text>
+    <text x="732" y="222" fill="#cbd5e1">pessoas, resultados</text>
+    <path d="M232 165 h24" stroke="#d6a84f" stroke-width="3" marker-end="url(#a)"/>
+    <path d="M462 165 h24" stroke="#d6a84f" stroke-width="3" marker-end="url(#a)"/>
+    <path d="M692 165 h24" stroke="#d6a84f" stroke-width="3" marker-end="url(#a)"/>
+    <path d="M825 242 v40" stroke="#d6a84f" stroke-width="3" marker-end="url(#a)"/>
+    <rect x="560" y="290" width="370" height="90" rx="10" fill="#1e3a5f" stroke="#d6a84f"/>
+    <text x="745" y="316" fill="#d6a84f" font-weight="700" text-anchor="middle">5. Remessa ao Juiz Federal da Justiça Militar</text>
+    <text x="575" y="342" fill="#f7f3ea">Com instrumentos e objetos da prova (art. 23)</text>
+    <text x="575" y="364" fill="#ef4444">Autoridade militar não arquiva (art. 24)</text>
+    <path d="M558 335 h-36" stroke="#d6a84f" stroke-width="3" marker-end="url(#a)"/>
+    <rect x="300" y="290" width="215" height="90" rx="10" fill="#1e3a5f" stroke="#d6a84f"/>
+    <text x="407" y="316" fill="#d6a84f" font-weight="700" text-anchor="middle">6. MPM</text>
+    <text x="312" y="342" fill="#f7f3ea">Titular da ação penal</text>
+    <text x="312" y="364" fill="#f7f3ea">militar (art. 29)</text>
+    <path d="M407 382 v34 h-180 v24" stroke="#d6a84f" stroke-width="3" fill="none" marker-end="url(#a)"/>
+    <path d="M407 382 v34 h180 v24" stroke="#d6a84f" stroke-width="3" fill="none" marker-end="url(#a)"/>
+    <rect x="80" y="445" width="300" height="100" rx="10" fill="#1e3a5f" stroke="#ef4444"/>
+    <text x="230" y="471" fill="#ef4444" font-weight="700" text-anchor="middle">Não oferece denúncia</text>
+    <text x="92" y="497" fill="#f7f3ea">Requer arquivamento; só o Juiz</text>
+    <text x="92" y="519" fill="#f7f3ea">o determina (slide 30). Novas provas</text>
+    <text x="92" y="539" fill="#cbd5e1">permitem novo IPM (art. 25)</text>
+    <rect x="440" y="445" width="300" height="100" rx="10" fill="#1e3a5f" stroke="#22c55e"/>
+    <text x="590" y="471" fill="#22c55e" font-weight="700" text-anchor="middle">Oferece denúncia</text>
+    <text x="452" y="497" fill="#f7f3ea">Prova do fato que, em tese,</text>
+    <text x="452" y="519" fill="#f7f3ea">é crime + indícios de autoria</text>
+    <text x="452" y="539" fill="#cbd5e1">(art. 30) → ação penal</text>
+  </g>
+  <text x="480" y="585" fill="#94a3b8" font-size="13" text-anchor="middle">Reconstrução V3 a partir dos slides 14–32 da Aula 4.1 e dos arts. 9º–30 do CPPM (edição STM). Não inclui organização judiciária.</text>
+</svg>

@@ -1,0 +1,24 @@
+{
+  "ordem": 5,
+  "slug": "05-concurso-de-agentes",
+  "titulo": "Concurso de agentes",
+  "prioridade": "muito alta",
+  "subtitulo": "Teoria monista, papéis, agravantes e cabeças",
+  "tempoEstimado": "45 min",
+  "objetivo": "Resolver casos com vários agentes, papéis, agravantes, atenuantes e cabeças.",
+  "palavrasChave": [
+    "teoria monista",
+    "partícipe",
+    "agravantes",
+    "cabeças",
+    "motim"
+  ],
+  "conceptIds": [
+    "DIRT2-CONCURSO-MONISTA",
+    "DIRT2-AUTORIA-PARTICIPACAO",
+    "DIRT2-COAUTORIA-LIMITES",
+    "DIRT2-AGRAVANTES-CABECAS",
+    "DIRT2-COMUNICABILIDADE"
+  ],
+  "modalidade": "completo"
+}
