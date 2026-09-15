@@ -21,6 +21,8 @@ type BlocoSimulado = {
   questoes: import('@tipos/question').Questao[];
   duracaoMinutos?: number;
   pontos?: number;
+  blueprint?: Array<{ bloco: string; pontos: number; objetivo: string }>;
+  rubrica?: string[];
 };
 
 const simuladosNomeados: BlocoSimulado[] = (dados.simuladosCompletos ?? []).map((simulado) => ({
@@ -68,7 +70,16 @@ const totais = Object.fromEntries(dados.timeline.map((t) => [t.slug, dados.check
             </div>
           )}
         </div>
+        {s.blueprint && (
+          <div class="mb-5 overflow-x-auto rounded-xl border border-white/10">
+            <table class="w-full min-w-[640px] text-left text-sm">
+              <thead class="bg-white/5 text-dourado"><tr><th class="p-3">Bloco</th><th class="p-3">Pontos de treino</th><th class="p-3">Objetivo</th></tr></thead>
+              <tbody>{s.blueprint.map((linha) => <tr class="border-t border-white/10"><td class="p-3 font-medium">{linha.bloco}</td><td class="p-3">{linha.pontos}</td><td class="p-3 text-nevoa/80">{linha.objetivo}</td></tr>)}</tbody>
+            </table>
+          </div>
+        )}
         <BancoQuestoes questoes={s.questoes} curso={curso} registrar={true} client:visible />
+        {s.rubrica && <ul class="mt-4 grid gap-2 text-sm text-nevoa/80 sm:grid-cols-2">{s.rubrica.map((item) => <li class="rounded-lg border border-white/10 bg-white/[.03] p-3">{item}</li>)}</ul>}
       </section>
     ))}
   </div>

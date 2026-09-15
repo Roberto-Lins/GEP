@@ -1,0 +1,70 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import PageContainer from '@components/layout/PageContainer.astro';
+import { listarCursos } from '@utils/courses';
+import { dadosDoCurso } from '@utils/content';
+
+export async function getStaticPaths() {
+  return listarCursos()
+    .filter((curso) => Boolean(dadosDoCurso(curso.slug)?.sopasOficiais?.length))
+    .map((curso) => ({ params: { curso: curso.slug } }));
+}
+
+const { curso } = Astro.params;
+const documentos = dadosDoCurso(curso!)?.sopasOficiais ?? [];
+const podeRevelar = (status: string) => status === 'auditado_publicavel' || status === 'auditado_com_conflito_documentado';
+const rotulo = (status: string) => ({
+  auditado_publicavel:'Gabarito auditado',
+  auditado_com_conflito_documentado:'Auditado com conflito',
+  bloqueado_por_anexo:'Bloqueado por anexo',
+  bloqueado_por_fonte_de_gabarito:'Gabarito bloqueado',
+  nao_aplicavel:'Sem gabarito',
+}[status] ?? status);
+---
+<BaseLayout titulo="SOPAs oficiais" curso={curso}>
+  <PageContainer kicker="Validação final" titulo="SOPAs oficiais — às cegas" subtitulo="Enunciados oficiais preservados e separados do banco preparatório. Abra somente quando estiver pronto para medir o que aprendeu." />
+
+  <aside class="mb-8 rounded-2xl border border-amber-400/30 bg-amber-400/10 p-5 text-amber-50">
+    <strong class="block text-lg">Antes de abrir</strong>
+    <p class="mt-2">Abra esta prova somente depois de concluir os módulos e exercícios derivados, se quiser utilizá-la como validação às cegas. Respostas manuscritas de aspirantes não foram usadas como gabarito.</p>
+  </aside>
+
+  <nav class="mb-8 flex flex-wrap gap-2">
+    {documentos.map((documento) => <a class="chip border border-white/10 bg-white/5 text-nevoa hover:border-dourado/40" href={`#${documento.id}`}>{documento.titulo}</a>)}
+  </nav>
+
+  <div class="space-y-12">
+    {documentos.map((documento) => (
+      <section id={documento.id} class="scroll-mt-24 rounded-2xl border border-white/10 bg-white/[.025] p-4 sm:p-6">
+        <div class="flex flex-col gap-4 border-b border-white/10 pb-5 sm:flex-row sm:items-start sm:justify-between">
+          <div><p class="text-sm uppercase tracking-widest text-dourado">{documento.ano} · {documento.paginas} páginas</p><h2 class="mt-1 text-2xl font-bold">{documento.titulo}</h2><p class="mt-2 max-w-3xl text-nevoa/75">{documento.descricao}</p></div>
+          <a class="btn-ghost shrink-0" href={documento.arquivo} target="_blank" rel="noopener">Abrir PDF original ↗</a>
+        </div>
+        <p class="mt-4 rounded-lg border border-dourado/20 bg-dourado/5 p-3 text-sm text-dourado-soft">{documento.aviso}</p>
+
+        <div class="mt-6 space-y-4">
+          {documento.itens.map((item) => (
+            <article class="rounded-xl border border-white/10 bg-naval/40 p-4 sm:p-5" id={item.sopa_id}>
+              <div class="flex flex-wrap items-center gap-2 text-xs">
+                <span class="chip border border-dourado/30 bg-dourado/10 text-dourado">{item.sopa_id}</span>
+                <span class="chip border border-white/10">p. física {item.pagina_fisica} · impressa {item.pagina_impressa}</span>
+                <span class="chip border border-white/10">Q{item.questao}{item.subitem !== '—' ? ` · ${item.subitem}` : ''}</span>
+                <span class="chip border border-white/10">{item.pontuacao_original} pt</span>
+                <span class:list={['chip border', podeRevelar(item.status_do_gabarito) ? 'border-emerald-400/30 bg-emerald-400/10 text-emerald-200' : 'border-rose-400/30 bg-rose-400/10 text-rose-200']}>{rotulo(item.status_do_gabarito)}</span>
+              </div>
+              <p class="mt-4 whitespace-pre-wrap text-base leading-7 text-marfim">{item.enunciado_integral}</p>
+              {item.alternativas && <ol class="mt-3 grid gap-2 pl-6 text-nevoa/90" type="A">{item.alternativas.map((alternativa) => <li class="pl-1">{alternativa}</li>)}</ol>}
+              {item.anexo_encontrado.startsWith('/') && <a class="mt-4 block focus-visible:outline focus-visible:outline-2 focus-visible:outline-dourado" href={item.anexo_encontrado} target="_blank" rel="noopener"><img src={item.anexo_encontrado} alt={`Página original da questão ${item.sopa_id}, sem indicação da resposta.`} class="max-h-[620px] w-full rounded-lg object-contain" loading="lazy" /><span class="mt-1 block text-right text-sm text-dourado">Ampliar anexo ↗</span></a>}
+              <dl class="mt-4 grid gap-2 text-sm sm:grid-cols-2"><div><dt class="text-nevoa/60">Classificação</dt><dd>{item.escopo_t2_2026}</dd></div><div><dt class="text-nevoa/60">Assinatura</dt><dd>{item.assinatura_de_raciocinio}</dd></div></dl>
+              {podeRevelar(item.status_do_gabarito) && item.gabarito_auditado ? (
+                <details class="mt-4 rounded-lg border border-emerald-400/20 bg-emerald-400/5 p-3"><summary class="cursor-pointer font-semibold text-emerald-200">Revelar gabarito auditado</summary><p class="mt-3 leading-7">{item.gabarito_auditado}</p>{item.comentario_gabarito && <p class="mt-2 text-sm text-nevoa/75">{item.comentario_gabarito}</p>}<small class="mt-3 block text-nevoa/60">Autoridade: {item.origem_do_gabarito}</small></details>
+              ) : (
+                <p class="mt-4 rounded-lg border border-rose-400/20 bg-rose-400/5 p-3 text-sm text-rose-100">[LACUNA DE COBERTURA — {item.status_do_gabarito === 'bloqueado_por_anexo' ? 'ANEXO/FOLHA ASSOCIADA NÃO LOCALIZADA' : 'FONTE DE GABARITO NÃO DISPONÍVEL NO CORPUS'}] O item permanece inventariado, mas não é apresentado como exercício solucionável.</p>
+              )}
+            </article>
+          ))}
+        </div>
+      </section>
+    ))}
+  </div>
+</BaseLayout>

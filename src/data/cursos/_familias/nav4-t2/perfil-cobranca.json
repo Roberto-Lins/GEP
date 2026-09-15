@@ -12,25 +12,28 @@
     "aplicacaoInedita": "media"
   },
   "evidencias": [
-    "Orientação T2/2026 enumera páginas e subitens.",
-    "SOPA histórica alterna perguntas curtas, V/F e problemas encadeados.",
+    "Orientação T2/2026 enumera páginas e subitens exatos.",
+    "Áudio encaminha o estudo às SOPAs, apostila e páginas dirigidas; sua orientação é coerente com as duas folhas manuscritas.",
+    "Foram inspecionadas visualmente 27 páginas e inventariados 85 itens: 23 da prova contínua de 2022 e 62 de uma coletânea de proveniência mista.",
+    "A prova contínua de 2022 alterna cinco respostas curtas, cinco V/F e cinco famílias de problemas aplicados.",
+    "As assinaturas prioritárias confirmadas são correção de estrela/planeta/Lua, Hleg simples ou precisa e latitude meridiana exata.",
     "AV T2 NAV-4 apresenta o modelo DHN-0607 preenchido linha a linha.",
-    "Mensagem de 15/09/2026: estudar UE 10.0 Radler, conceitos, até 13:00.",
-    "A aula seguinte é o exercício do camarote: trabalho Radler de 2,0 pontos, entregue no dia da T2.",
-    "Mensagens do professor delimitam o conteúdo até antes da PP2."
+    "Mensagem de 15/09/2026: estudar UE 10.0 Radler, conceitos, até 13:00; o exercício seguinte vale 2,0 como trabalho."
   ],
   "fontes_localizadas": [
-    "Orientação manuscrita T-2/26",
-    "Apostila digitalizada p. 139–180",
-    "Aulas 7.0, 7.1, 8.0, UE 10.0 Radler e 11.1–11.3",
-    "Sopa Nav T2 2022.pdf",
-    "AV T2 NAV-4.pdf",
-    "PE NAV-4-2026.doc e Sumário 2026"
+    "Orientações manuscritas T2/2026 e áudio de 15/09/2026",
+    "T2 NAV4 - 2022.pdf e coletânea histórica recebida como T2 NAV4 - 2024.pdf",
+    "Apostila digitalizada p. 139–180, com recorte dirigido em PG-143, 144, 147–154, 156–158, 160–161 e 175–180",
+    "Aulas 4.5, 7.0, 7.1, 8.0, 9.0 e 10.1–10.5",
+    "Tábuas para Navegação — DHN e Modelo Radler PDF",
+    "PE NAV-4-2026, PLADIS e Sumário 2026"
   ],
   "incertezas": [
-    "A SOPA histórica não garante a mesma distribuição de pontos em 2026.",
-    "Os valores anuais do ANB 2026 não estão no Drive e devem ser consultados na edição física oficial.",
-    "A orientação fotografa itens selecionados, mas não fornece uma rubrica detalhada da prova de 2026.",
-    "A mensagem separa o exercício Radler como trabalho; portanto, o curso não presume uma questão DHN-0607 completa dentro dos 90 minutos da prova escrita."
+    "O arquivo rotulado como 2024 reúne blocos com paginações 9/9, 10/10 e 13/13, duplicata e exercícios datados de 2020; não foi tratado como uma única prova de 2024.",
+    "A distribuição de pontos das SOPAs históricas não prevê a rubrica da T2/2026.",
+    "O ANB 2020 não está no corpus; dez itens oficiais do recorte atual que dependem dele permanecem sem resposta numérica publicada.",
+    "Uma alternativa da coletânea aparenta omitir o símbolo de minuto no efeito de 1 min de HMG; o conflito foi documentado.",
+    "Um slide intermediário de latitude mostra 01°34,5′S, mas a interpolação e o resultado final exigem 01°32,5′S; o curso usa a aritmética auditada.",
+    "A mensagem separa o exercício Radler como trabalho; não se presume uma questão DHN-0607 integral dentro dos 90 minutos da prova escrita."
   ]
 }

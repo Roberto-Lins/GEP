@@ -6,6 +6,7 @@ import type { TopicoTimeline, Prioridade } from '@tipos/lesson';
 import type { Questao, QuestaoMultipla, QuestaoVF, GrupoCorrelacione, QuestaoDiscursiva } from '@tipos/question';
 import type { Midia, Fonte } from '@tipos/media';
 import type { DadosMateriaSchema } from '../content/config';
+import type { SopaOficialDocumento } from '@tipos/sopa';
 
 /** Formato esperado de src/data/cursos/<slug>/index.ts */
 export interface CursoData {
@@ -36,7 +37,11 @@ export interface CursoData {
     duracaoMinutos: number;
     pontos: number;
     questoes: Questao[];
+    blueprint?: Array<{ bloco: string; pontos: number; objetivo: string }>;
+    rubrica?: string[];
   }>;
+  /** provas oficiais reservadas para validação final, fora do banco preparatório */
+  sopasOficiais?: SopaOficialDocumento[];
   checklists: Record<string, { id: string; texto: string }[]>;
   checklistDe: (slug: string) => { id: string; texto: string }[];
   fontes: Fonte[];

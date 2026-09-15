@@ -6,7 +6,30 @@ export type TipoQuestao = 'multipla' | 'vf' | 'correlacione' | 'discursiva';
 /** Nível de dificuldade — opcional (cursos legados como o GEP não usam). */
 export type Dificuldade = 'facil' | 'medio' | 'dificil';
 
+export type OrigemQuestao = 'sopa_oficial' | 'derivada_sopa' | 'autoral_suporte';
+export type StatusGabarito =
+  | 'auditado_publicavel'
+  | 'auditado_com_conflito_documentado'
+  | 'bloqueado_por_anexo'
+  | 'bloqueado_por_fonte_de_gabarito'
+  | 'nao_aplicavel';
+
 export interface MetadadosQuestao {
+  /** procedência editorial — opcional para preservar todos os cursos legados */
+  origem?: OrigemQuestao;
+  /** identificador estável da fonte ou assinatura que inspirou a questão */
+  fonteId?: string;
+  arquivo?: string;
+  ano?: number | 'incerto';
+  pagina?: string;
+  questaoOriginal?: string;
+  subitem?: string;
+  /** versão integral do comando, quando `enunciado` não comporta todo o contexto */
+  enunciadoCompleto?: string;
+  materiaisNecessarios?: string[];
+  anexos?: string[];
+  criteriosDeCreditoParcial?: string[];
+  statusGabarito?: StatusGabarito;
   /** habilidade observável exigida pela questão */
   competencia?: string;
   /** tempo de resolução esperado em minutos */

@@ -252,6 +252,42 @@
       "leitura": "Desenhe N–Z–S, coloque o Sol no lado do azimute observado e só então decida soma ou diferença; a forma assinada serve como conferência independente.",
       "modulos": ["05-latitude-meridiana", "06-treino-integrado"],
       "status": "usada"
+    },
+    {
+      "id": "NAV4-FIG-SOPA-001",
+      "arquivo_fonte": "T2 NAV4 — coletânea histórica mista",
+      "sha256_fonte": "0362d5be3f5e9c9aad8c5af13434916afedef96db3b45c11fadc2a7c1bcfe388",
+      "pagina_pdf": 13,
+      "localizacao": "página física 13 — questão 5.1",
+      "recorte_normalizado": "recorte fiel da figura, excluindo a resposta manuscrita lateral",
+      "nivel_fidelidade": "V1",
+      "tipo": "anexo oficial",
+      "arquivo_gerado": "/imagens/cursos/nav4-t2/sopas/sopa-mista-p13.webp",
+      "largura": 600,
+      "altura": 720,
+      "legenda": "Figura oficial do triângulo de posição",
+      "alt": "Figura numerada do triângulo de posição, recortada para excluir a resposta manuscrita.",
+      "leitura": "Abra a imagem ampliada apenas na etapa SOPA às cegas e identifique os quatro elementos numerados antes de revelar o gabarito.",
+      "modulos": ["03-tabua-radler", "99-revisao-final"],
+      "status": "usada-na-sopa"
+    },
+    {
+      "id": "NAV4-CAPA-001",
+      "arquivo_fonte": "Imagem editorial gerada a partir das orientações visuais do usuário",
+      "sha256_fonte": "7f7ec909428dbd9c6d12704854cc6916eea564ac8194baf44abae4f3466ddae6",
+      "pagina_pdf": null,
+      "localizacao": "capa compartilhada das três modalidades NAV-4/T2",
+      "recorte_normalizado": "1280 × 720, WebP, qualidade 62",
+      "nivel_fidelidade": "V3",
+      "tipo": "capa editorial",
+      "arquivo_gerado": "/imagens/cursos/nav4-t2/capa.webp",
+      "largura": 1280,
+      "altura": 720,
+      "legenda": "Navegação astronômica aplicada",
+      "alt": "Sextante sobre carta e almanaque náutico diante do oceano ao pôr do Sol, sob arcos de coordenadas celestes.",
+      "leitura": "Imagem de ambientação; não contém dados tabulares nem fórmulas usados em resolução.",
+      "modulos": ["00-mapa-da-t2"],
+      "status": "usada-como-capa"
     }
   ]
 }

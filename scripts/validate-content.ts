@@ -205,11 +205,18 @@ for (const [familiaId, membros] of familias) {
   }
 
   let questoesCanonicas: Array<{ id: string; conceptIds?: string[]; modalidades?: string[] }> = [];
+  let questoesParaSelecao: typeof questoesCanonicas = [];
   if (existsSync(questoesPath)) {
     const moduloCanonico = await import(
       `${pathToFileURL(join(process.cwd(), questoesPath)).href}?canonical=${Date.now()}`
-    ) as { questoesCanonicas?: typeof questoesCanonicas };
+    ) as {
+      questoesCanonicas?: typeof questoesCanonicas;
+      questoesPreparacao?: typeof questoesCanonicas;
+    };
     questoesCanonicas = moduloCanonico.questoesCanonicas ?? [];
+    // Algumas famílias preservam o banco canônico e somam questões derivadas
+    // de provas antigas em um banco preparatório separado.
+    questoesParaSelecao = moduloCanonico.questoesPreparacao ?? questoesCanonicas;
   }
   const questoesPorId = new Map<string, (typeof questoesCanonicas)[number]>();
   for (const questao of questoesCanonicas) {
@@ -251,7 +258,7 @@ for (const [familiaId, membros] of familias) {
       todasQuestoes?: Array<{ id: string; conceptIds?: string[]; modalidades?: string[] }>;
     };
     const questoesDaVariante = bundle.todasQuestoes ?? [];
-    const esperadas = questoesCanonicas
+    const esperadas = questoesParaSelecao
       .filter((questao) => questao.modalidades?.includes(modo)
         && questao.conceptIds?.every((id) => matriz.conceitos?.find((item) => item.concept_id === id)?.presenca?.[modo]))
       .map((questao) => questao.id)

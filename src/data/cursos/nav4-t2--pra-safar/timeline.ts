@@ -108,7 +108,7 @@ export const timeline: TopicoTimeline[] = [
     "titulo": "Treino integrado e protocolo de prova",
     "subtitulo": "Consultas ANB 2026, exercícios guiados e simulação de 90 minutos",
     "prioridade": "máxima",
-    "tempoEstimado": "60 min",
+    "tempoEstimado": "150 min",
     "statusInicial": "pendente",
     "objetivo": "Executar os três problemas prováveis em folha, com consultas de 2026, rastreio de sinais e verificação independente.",
     "palavrasChave": [

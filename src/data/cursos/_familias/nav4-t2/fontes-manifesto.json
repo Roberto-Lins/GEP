@@ -1,5 +1,46 @@
 {
   "schema_version": "2.0.0",
+  "fontes_drive_individuais_utilizadas": [
+    { "titulo": "Sumário 2026 NAV 4.doc", "url": "https://docs.google.com/document/d/18Glw_1NKK0sxSoXusgUeGpbmQyd4-yJL/edit?usp=drivesdk" },
+    { "titulo": "PE NAV-4-2026.doc", "url": "https://docs.google.com/document/d/1oqHtJH6cmb8rUF5Eke5dTMDIG8wfFJ_b/edit?usp=drivesdk" },
+    { "titulo": "PLADIS NAV-4.docx", "url": "https://docs.google.com/document/d/1WCWJqfAf3RPR2M96EDlQxd-wCc4KS6cy/edit?usp=drivesdk" },
+    { "titulo": "Tábuas para Navegação — DHN.pdf", "url": "https://drive.google.com/file/d/1UCDBO21fRyf6c4zgR38RMRAbvILX4k5I/view?usp=drivesdk" },
+    { "titulo": "Modelo Radler PDF.pdf", "url": "https://drive.google.com/file/d/1h-smy9hRv1C1owtNofrqHiA2pftvkuL1/view?usp=drivesdk" },
+    { "titulo": "AV T2 NAV-4.pdf", "url": "https://drive.google.com/file/d/1xy4gWZwrKQkTWxe2r5MMLlmlV48EAru_/view?usp=drivesdk" },
+    { "titulo": "Resumo T2 NAV4.pdf", "url": "https://drive.google.com/file/d/10bYfI3qxSOsFX0S6CnUHCjqf2B1hrZd6/view?usp=drivesdk" },
+    { "titulo": "Sopa Nav T2 2022.pdf", "url": "https://drive.google.com/file/d/1276MCCvPVqlEP00IpbUzoRdkuObI_k0M/view?usp=drivesdk" },
+    { "titulo": "4.5 Almanaque Náutico.pptx", "url": "https://docs.google.com/presentation/d/1bdNITHVYm0cIbYTfCfuXAzjoZ3vpFe4q/edit?usp=drivesdk" },
+    { "titulo": "7.0 Correções de Alturas.pptx", "url": "https://docs.google.com/presentation/d/1k9-A0VzQTG1ymcRR2uVi2viaoyH4DKIs/edit?usp=drivesdk" },
+    { "titulo": "7.1 Correções de Alturas — Gabarito Exercícios.pptx", "url": "https://docs.google.com/presentation/d/1risyAEZNDPdaX-XBCKsMIfHrCccjBYMU/edit?usp=drivesdk" },
+    { "titulo": "8.0 Linhas de Posição.pptx", "url": "https://docs.google.com/presentation/d/1frGbAlhikyGCnI1CgaeezrQgjm527NKN/edit?usp=drivesdk" },
+    { "titulo": "9.0 Tábua Radler — Parte 1.pptx", "url": "https://docs.google.com/presentation/d/13RqEW9hQ_Wy-2eANdtW5YidK3FTCEuPd/edit?usp=drivesdk" },
+    { "titulo": "9.0 Tábua Radler — Parte 2.pptx", "url": "https://docs.google.com/presentation/d/18tCC6OW5XvawV0g6mfTWcmFcdrstYJAs/edit?usp=drivesdk" },
+    { "titulo": "10.1 e 10.2 Passagem Meridiana.pptx", "url": "https://docs.google.com/presentation/d/10qdlCPgfsZL2bj8GAG20FdDBulMcKwzQ/edit?usp=drivesdk" },
+    { "titulo": "10.3 a 10.5 Passagem Meridiana.pptx", "url": "https://docs.google.com/presentation/d/1HqKhajgIEPSR9Cq4Nc-nhp_G9Jn3bpbc/edit?usp=drivesdk" },
+    { "titulo": "10.3 Cálculo da Latitude Meridiana.pptx", "url": "https://docs.google.com/presentation/d/1TCNTmfZE9ymiZBMvKPbgkeo6KKqJr2WK/edit?usp=drivesdk" },
+
+    { "titulo": "PG-143.JPG", "url": "https://drive.google.com/file/d/1iEW5-L1HKXJoP7UmvgUPwMRDtgnb2tdE/view?usp=drivesdk" },
+    { "titulo": "PG-144.JPG", "url": "https://drive.google.com/file/d/1rxYgfzSpPJlA3hJlivaHDNKcz4LJexSx/view?usp=drivesdk" },
+    { "titulo": "PG-147.JPG", "url": "https://drive.google.com/file/d/1OWHlLOLt6qr2n95jmCnavPiTL2A_B1Y7/view?usp=drivesdk" },
+    { "titulo": "PG-148.JPG", "url": "https://drive.google.com/file/d/1lUlK9bticEEAUqHC_7cnkiuUjRuQNmfM/view?usp=drivesdk" },
+    { "titulo": "PG-149.JPG", "url": "https://drive.google.com/file/d/13k-v8l0_a5UuuTIgbR0Uy3Pw63kL2Dga/view?usp=drivesdk" },
+    { "titulo": "PG-150.JPG", "url": "https://drive.google.com/file/d/1qkAA1YrwkQ2mxSUisUwL4k58Tcl18gbH/view?usp=drivesdk" },
+    { "titulo": "PG-151.JPG", "url": "https://drive.google.com/file/d/1E9Ws687TqCsO0SpevTuSvUGzAabEHfHP/view?usp=drivesdk" },
+    { "titulo": "PG-152.JPG", "url": "https://drive.google.com/file/d/1ZkWNkhanNKDb5HzTpY5qYTsVBxv27k1u/view?usp=drivesdk" },
+    { "titulo": "PG-153.JPG", "url": "https://drive.google.com/file/d/1ECXV0Fn46qyp0HGj_6ffJ8BN6hzURgVY/view?usp=drivesdk" },
+    { "titulo": "PG-154.JPG", "url": "https://drive.google.com/file/d/12IjYdmPiGWfJU0kvdvdcGeerkCK8VxDh/view?usp=drivesdk" },
+    { "titulo": "PG-156.JPG", "url": "https://drive.google.com/file/d/1tjbPcCAHrrpuKZqZgi2TRkoaRsn53JNV/view?usp=drivesdk" },
+    { "titulo": "PG-157.JPG", "url": "https://drive.google.com/file/d/1RS8_7BJajtHnzbLElFd3V4LCLM9uzYcq/view?usp=drivesdk" },
+    { "titulo": "PG-158.JPG", "url": "https://drive.google.com/file/d/1OTpS-8mM_E4d1RGDFoxgzQkGKi2IFCRM/view?usp=drivesdk" },
+    { "titulo": "PG-160.JPG", "url": "https://drive.google.com/file/d/1VqrH6L43eJUqRbSH3RYrk1rNCMq2UCCr/view?usp=drivesdk" },
+    { "titulo": "PG-161.JPG", "url": "https://drive.google.com/file/d/1Qhn6ylyTl7bWB3_Bp79u4TCWjfBZMaxU/view?usp=drivesdk" },
+    { "titulo": "PG-175.JPG", "url": "https://drive.google.com/file/d/1Oua6TJEEfsw3bcjPEHTsLOKL8ZVde_E0/view?usp=drivesdk" },
+    { "titulo": "PG-176.JPG", "url": "https://drive.google.com/file/d/1vCNUipoaby8FIRl8jWmrFF0xkLHtCNQ5/view?usp=drivesdk" },
+    { "titulo": "PG-177.JPG", "url": "https://drive.google.com/file/d/1BZNYW_-JTBHRwh9xt9Ac76idmjWvUSNG/view?usp=drivesdk" },
+    { "titulo": "PG-178.JPG", "url": "https://drive.google.com/file/d/1wJCM65uGgGYC0AdjMdNeRicApi07LVv5/view?usp=drivesdk" },
+    { "titulo": "PG-179.JPG", "url": "https://drive.google.com/file/d/1_oP_RkuDWLI-sFr4Bj3QGsTiynL31M5T/view?usp=drivesdk" },
+    { "titulo": "PG-180.JPG", "url": "https://drive.google.com/file/d/1Z90fw3hvGuK7fK5Ilw2rJ37EDI0nf8KG/view?usp=drivesdk" }
+  ],
   "inventario_total": 1118,
   "atualizacao_professor_2026_09_15": {
     "titulo": "UE 10.0 — Tábua Radler (Conceitos), Parte 1",
@@ -524,10 +565,11 @@
   "fonte_externa_autorizada": {
     "titulo": "Almanaque Náutico 2026 — CHM",
     "url": "https://www.marinha.mil.br/chm/dados-do-segnav-publicacoes/almanaque-nautico",
-    "nota": "Página oficial confirma a 82ª edição e informa aquisição pela EMGEPRON; nenhuma cópia digital pública foi usada."
+    "nota": "Registro legado do curso anterior; não foi consultado nem usado como fonte acadêmica nesta revisão dirigida."
   },
   "publicacao": {
     "acervo_origem": "Google Drive autorizado pelo usuário",
-    "identificadores_privados": "omitidos da versão pública; rastreabilidade mantida por título, caminho, tamanho e hashes dos anexos"
+    "links_individuais": "38 arquivos efetivamente usados foram registrados por exigência explícita do comando; a branch não deve ser publicada antes da revisão humana.",
+    "status": "branch local; sem merge, push ou deploy nesta etapa"
   }
 }

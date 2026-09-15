@@ -1,4 +1,5 @@
 import type { Questao } from '@tipos/question';
+import { questoesDerivadasSopa } from './questoes-derivadas';
 
 const questoesBase: Questao[] = [
   {
@@ -1487,6 +1488,26 @@ const metadadosPorTopico: Record<string, {
   },
 };
 
+const assinaturasSopaPorId = new Map<string, string>([
+  ['NAV4-Q008', 'ASS-ALT-CADEIA-CURTA'],
+  ['NAV4-Q009', 'ASS-LDP-DEFINICAO'], ['NAV4-Q010', 'ASS-LDP-RAIO-Z'],
+  ['NAV4-Q011', 'ASS-LDP-UM-MINUTO-UMA-MILHA'], ['NAV4-Q012', 'ASS-LDP-PERPENDICULAR-AZ'],
+  ['NAV4-Q013', 'ASS-LDP-INTERCEPTO'], ['NAV4-Q014', 'ASS-PM-T1-VF'], ['NAV4-Q015', 'ASS-LDP-LIMITE-TANGENTE'],
+  ['NAV4-Q028', 'ASS-PM-EQUACAO-TEMPO'], ['NAV4-Q029', 'ASS-PM-EQUACAO-TEMPO'],
+  ['NAV4-Q030', 'ASS-PM-LONGITUDE-TEMPO'], ['NAV4-Q031', 'ASS-PM-LONGITUDE-W'],
+  ['NAV4-Q032', 'ASS-PM-FUSO'], ['NAV4-Q033', 'ASS-PM-CONTROLE-DUPLO'], ['NAV4-Q034', 'ASS-PM-OPERACAO'],
+  ['NAV4-Q035', 'ASS-LAT-Z'], ['NAV4-Q036', 'ASS-LAT-MESMO-NOME'], ['NAV4-Q037', 'ASS-LAT-NOMES-CONTRARIOS'],
+  ['NAV4-Q038', 'ASS-LAT-FORMA-ASSINADA'], ['NAV4-Q039', 'ASS-LAT-AZ'], ['NAV4-Q040', 'ASS-LAT-MOVIMENTO'],
+  ['NAV4-Q041', 'ASS-LAT-PROCEDIMENTO-COMPLETO'], ['NAV4-Q043', 'ASS-RADLER-PAZ'],
+  ['NAV4-Q044', 'ASS-RADLER-AUXILIARES'], ['NAV4-Q045', 'ASS-RADLER-ENTRADA-GRAU-INTEIRO'],
+  ['NAV4-Q046', 'ASS-RADLER-ELEMENTOS-DETERMINATIVOS'], ['NAV4-Q047', 'ASS-ALT-ESCOLHA-A2-A3'],
+  ['NAV4-Q048', 'ASS-ALT-ANORMAL-A4'], ['NAV4-Q049', 'ASS-ALT-LIMBO'], ['NAV4-Q050', 'ASS-ALT-ERRO-LDP'],
+  ['NAV4-Q051', 'ASS-LDP-CONSTRUCAO'], ['NAV4-Q052', 'ASS-LDP-LIMITE-TANGENTE'], ['NAV4-Q053', 'ASS-LDP-CONSTRUCAO'],
+  ['NAV4-Q054', 'ASS-RADLER-AZ-QUADRANTE'], ['NAV4-Q055', 'ASS-PM-SIMPLES'], ['NAV4-Q056', 'ASS-PM-PRECISA'],
+  ['NAV4-Q057', 'ASS-PM-MUDANCA-DATA'], ['NAV4-Q058', 'ASS-PM-INTERPOLACAO'], ['NAV4-Q059', 'ASS-LAT-DEC'],
+  ['NAV4-Q060', 'ASS-LAT-PROBLEMA-COMPLETO'], ['NAV4-Q061', 'ASS-LAT-MOVIMENTO'], ['NAV4-Q062', 'ASS-LAT-ERRO-ALTURA'],
+]);
+
 export const questoesCanonicas: Questao[] = questoesBase.map((questao) => {
   const padrao = metadadosPorTopico[questao.topico];
   const tempoEstimadoMin = questao.tempoEstimadoMin
@@ -1499,19 +1520,22 @@ export const questoesCanonicas: Questao[] = questoesBase.map((questao) => {
       : questao.comentario;
   const explicacaoDistratores = questao.tipo === 'multipla'
     ? questao.alternativas.map((alternativa, indice) => indice === questao.correta
-      ? `Correta. ${questao.comentario}`
-      : `Distrator “${alternativa}”. Ele não satisfaz a competência avaliada e normalmente nasce de: ${questao.armadilha ?? padrao.erroProvavel}`)
+      ? 'Correta. ' + questao.comentario
+      : 'Distrator “' + alternativa + '”. Ele não satisfaz a competência avaliada e normalmente nasce de: ' + (questao.armadilha ?? padrao.erroProvavel))
     : undefined;
 
   return {
+    origem: assinaturasSopaPorId.has(questao.id) ? 'derivada_sopa' : 'autoral_suporte',
+    fonteId: assinaturasSopaPorId.get(questao.id) ?? 'CORPUS-NAV4-T2-APOIO',
+    statusGabarito: 'auditado_publicavel',
     competencia: padrao.competencia,
     tempoEstimadoMin,
     erroProvavel: questao.armadilha ?? padrao.erroProvavel,
     assinatura: [questao.tipo, questao.dificuldade ?? 'sem-nivel', 'inédita baseada no perfil histórico'],
     resolucaoPassoAPasso: [
-      `1. Delimite a tarefa: ${padrao.competencia}`,
-      `2. Execute: ${padrao.procedimento}`,
-      `3. Conclua e interprete: ${comentarioFinal}`,
+      '1. Delimite a tarefa: ' + padrao.competencia,
+      '2. Execute: ' + padrao.procedimento,
+      '3. Conclua e interprete: ' + comentarioFinal,
     ],
     explicacaoDistratores,
     verificacaoIndependente: padrao.verificacao,
@@ -1519,3 +1543,6 @@ export const questoesCanonicas: Questao[] = questoesBase.map((questao) => {
     ...questao,
   };
 });
+
+/** Banco preparatório: nunca contém os enunciados oficiais das SOPAs. */
+export const questoesPreparacao: Questao[] = [...questoesCanonicas, ...questoesDerivadasSopa];

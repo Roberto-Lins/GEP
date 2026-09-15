@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "ativos": [
+    {
+      "id": "NAV4-CAPA-001",
+      "tipo": "capa editorial gerada",
+      "arquivo": "/imagens/cursos/nav4-t2/capa.webp",
+      "formato": "WebP",
+      "dimensoes": "1280x720",
+      "bytes": 65772,
+      "sha256": "7f7ec909428dbd9c6d12704854cc6916eea564ac8194baf44abae4f3466ddae6",
+      "alt": "Sextante sobre carta e almanaque náutico diante do oceano ao pôr do Sol, sob arcos de coordenadas celestes."
+    },
+    {
+      "id": "NAV4-SOPA-PDF-2022",
+      "tipo": "prova oficial digitalizada",
+      "arquivo": "/arquivos/cursos/nav4-t2/sopas/t2-nav4-2022.pdf",
+      "paginas": 7,
+      "bytes": 837765,
+      "sha256": "3cf85d182a611f7fbe31051667bb9d2146f26e9b215a505d80ac55d3757c1593"
+    },
+    {
+      "id": "NAV4-SOPA-PDF-MISTO",
+      "tipo": "coletânea histórica de proveniência mista",
+      "arquivo": "/arquivos/cursos/nav4-t2/sopas/t2-nav4-coletanea-mista.pdf",
+      "paginas": 20,
+      "bytes": 1177719,
+      "sha256": "0362d5be3f5e9c9aad8c5af13434916afedef96db3b45c11fadc2a7c1bcfe388"
+    },
+    {
+      "id": "NAV4-SOPA-ANEXO-P13",
+      "tipo": "página original com triângulo de posição",
+      "arquivo": "/imagens/cursos/nav4-t2/sopas/sopa-mista-p13.webp",
+      "pagina_fisica": 13,
+      "dimensoes": "600x720",
+      "bytes": 5148,
+      "sha256": "8fa4c2ea8d0fb3d368543a111d8d4536c5fb73443f8946b22e9abb6a7ec95e83",
+      "alt": "Figura numerada do triângulo de posição, recortada para excluir a resposta manuscrita."
+    }
+  ]
+}

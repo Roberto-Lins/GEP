@@ -4,6 +4,7 @@ import { listingPathDoCurso } from '@utils/hierarchy';
 import MenuFerramentas from '@components/ferramentas/MenuFerramentas.astro';
 import { familiaDoCurso } from '@utils/courses';
 import { formatarDuracaoModalidade, modalidadeNormalizada } from '@utils/study-modes';
+import { dadosDoCurso } from '@utils/content';
 
 interface Props { curso?: CursoConfig }
 const { curso } = Astro.props;
@@ -14,6 +15,7 @@ const modalidades = familia && familia.modalidadesDisponiveis.length > 1
 
 // Dentro de um curso: caminho de "voltar uma instância" (a listagem onde o curso aparece).
 const voltarHref = curso ? listingPathDoCurso(curso) : null;
+const possuiSopas = curso ? Boolean(dadosDoCurso(curso.slug)?.sopasOficiais?.length) : false;
 
 const PLATAFORMA = 'Bússola dos Aspirantes';
 
@@ -26,6 +28,7 @@ const links = curso
       { href: `/${curso.slug}/questoes`, label: 'Questões' },
       curso.features.writing && { href: `/${curso.slug}/writing`, label: 'Writing' },
       curso.features.simulados && { href: `/${curso.slug}/simulados`, label: 'Simulados' },
+      possuiSopas && { href: `/${curso.slug}/sopas`, label: 'SOPAs' },
       { href: `/${curso.slug}/revisao-final`, label: 'Revisão final' },
       { href: `/${curso.slug}/fontes`, label: 'Fontes' },
     ].filter(Boolean as unknown as (x: unknown) => x is { href: string; label: string })

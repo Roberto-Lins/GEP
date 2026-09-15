@@ -1,15 +1,18 @@
 {
   "schema_version": "2.0.0",
   "familia_id": "nav4-t2",
-  "revisao_base": "d0ef3c1ea6563da945a57686efc2fa7fa33f563a",
+  "revisao_base": "4a1891fe52a4f489e84742b023e14597a6394166",
   "modo_prioritario": "rapido",
-  "estado": "aprovado_para_merge_e_publicacao",
+  "estado": "revisao_sopa_concluida_em_branch_aguardando_revisao",
   "data_referencia": "2026-09-15",
   "corpus": {
     "drive_itens_inventariados": 1118,
     "paginas_apostila_lidas": "139–180",
-    "slides_lidos": 237,
+    "slides_lidos": 343,
     "provas_e_resumos_ocr": true,
+    "paginas_sopas_inspecionadas_visualmentes": 27,
+    "itens_sopas_inventariados": 85,
+    "itens_sopas_no_recorte_2026": 23,
     "videoaulas_vinculadas": 6,
     "fonte_radler": "UE 10.0 Parte 1, 0:00–13:00",
     "anexos_fotograficos_recebidos": 10,
@@ -25,7 +28,10 @@
     "Não presumir uma questão Radler longa dentro dos 90 minutos da prova escrita.",
     "Excluir o DHN-0612 de desvio da agulha por não integrar o escopo confirmado.",
     "Não reconstruir o Starfinder sem fonte suficiente.",
-    "Omitir URLs e identificadores privados do Drive da versão publicável, preservando a rastreabilidade por título, caminho, tamanho e hash."
+    "Registrar no manifesto os links individuais dos 38 arquivos do Drive efetivamente usados nesta revisão.",
+    "Manter os 85 itens oficiais somente em SOPAs às cegas; o banco normal contém derivadas e suporte.",
+    "Preservar sem solução numérica os itens dependentes de ANB antigo ausente e oferecer equivalente auditável com dados explícitos.",
+    "Preservar os 68 IDs canônicos e acrescentar 13 IDs NAV4-DER sem reutilização de progresso."
   ],
   "modulos_concluidos": [
     "00-mapa-da-t2",
@@ -44,6 +50,8 @@
   },
   "identificadores": {
     "questoes_canonicas": "NAV4-Q001–NAV4-Q068",
+    "questoes_derivadas_novas": "NAV4-DER-ALT-001–004; NAV4-DER-PM-001–005; NAV4-DER-LAT-001–004",
+    "itens_oficiais": "NAV4-SOPA-* (85 IDs fora do banco preparatório)",
     "ids_duplicados": 0,
     "slugs_renomeados": 0,
     "chaves_de_progresso_alteradas": 0
@@ -54,43 +62,42 @@
   ],
   "entrega": {
     "palavras_mdx": {
-      "rapido": 4690,
-      "pra_safar": 6118,
-      "completo": 8357
+      "rapido": 4823,
+      "pra_safar": 6220,
+      "completo": 8490
     },
     "duracao_minutos": {
-      "rapido_nucleo": 300,
-      "rapido_treino_opcional": 50,
-      "pra_safar": 540,
-      "completo": 765
+      "rapido": 440,
+      "pra_safar": 630,
+      "completo": 855
     },
     "questoes_modalidade": {
-      "rapido": 54,
-      "pra_safar": 59,
-      "completo": 68
+      "rapido": 64,
+      "pra_safar": 72,
+      "completo": 81
     },
     "figuras": {
-      "total": 14,
-      "fontes_v1": 9,
-      "diagramas_v3": 5
+      "total": 16,
+      "fontes_v1": 10,
+      "diagramas_v3": 6
     }
   },
   "validacao": {
-    "status": "aprovada_com_auditoria_visual_do_usuario_pendente",
+    "status": "concluida_pronta_para_revisao_humana",
     "conteudo": "0 erros e 0 avisos",
-    "testes": "18 arquivos; 121 testes aprovados",
-    "build": "322 páginas geradas",
-    "sincronizacao_skills": "aprovada",
-    "auditoria_modalidades": "aprovada",
-    "auditoria_midia": "nenhuma mídia NAV-4 maior ou igual a 2 MB",
-    "matematica_nav4": "0 erros de delimitador e 0 renderizações KaTeX inválidas",
-    "html_nav4": "40 páginas; 62 imagens; 1158 renderizações KaTeX; 0 caminhos de imagem quebrados",
-    "inspecao_visual": "fontes raster conferidas; captura da prévia localhost bloqueada pelo navegador remoto, mantendo desktop/celular/teclado para a auditoria do usuário"
+    "testes": "teste dirigido NAV-4: 11/11; suíte completa: 128/128 em 18 arquivos",
+    "build": "325 páginas geradas, incluindo SOPAs e simulados nas três modalidades",
+    "sincronizacao_skills": "aprovada; decisões recíprocas completas (15 itens)",
+    "auditoria_modalidades": "aprovada; 64/72/81 questões em Rápido/Pra Safar/Completo",
+    "auditoria_midia": "nenhum novo ativo NAV-4 acima de 2 MB; capa WebP com 65.772 bytes",
+    "matematica_nav4": "0 delimitadores sem par em NAV-4; comando global retorna código 1 por 40 delimitadores preexistentes em DET-T2/FAS e reporta 4.692 avisos legados",
+    "html_nav4": "rotas SOPAs e simulados geradas nos três modos; semântica de teclado, textos alternativos, rolagem responsiva e navegação estática conferidas",
+    "inspecao_visual": "capa e anexo PAZ aprovados; navegador remoto não alcançou localhost, portanto a inspeção visual real desktop/mobile das páginas permanece para revisão humana"
   },
   "conflitos": [
     "O validador matemático global mantém 40 erros preexistentes em det-t2 e fas, fora do escopo NAV-4.",
     "O auditor estrutural legado não interpreta as timelines compartilhadas da família multimodal e emite falso positivo; o auditor específico de modalidades e o build confirmam os 24 vínculos.",
     "A política do navegador remoto bloqueia a abertura da prévia localhost; nenhuma aprovação visual em navegador foi declarada."
   ],
-  "proxima_etapa": "acompanhar o deploy e confirmar as rotas públicas após a publicação autorizada"
+  "proxima_etapa": "revisão humana da branch; não fazer merge, push ou deploy nesta execução"
 }
