@@ -1,0 +1,23 @@
+{
+  "ordem": 5,
+  "slug": "05-latitude-meridiana",
+  "titulo": "Latitude na passagem meridiana",
+  "prioridade": "máxima",
+  "subtitulo": "z, declinação e três casos",
+  "tempoEstimado": "45 min",
+  "objetivo": "Calcular a latitude e o azimute meridianos sem decorar casos às cegas.",
+  "palavrasChave": [
+    "latitude",
+    "declinação",
+    "z",
+    "Az"
+  ],
+  "conceptIds": [
+    "NAV4-LAT-Z",
+    "NAV4-LAT-DEC",
+    "NAV4-LAT-CASOS",
+    "NAV4-LAT-AZ",
+    "NAV4-LAT-MOVIMENTO"
+  ],
+  "modalidade": "rapido"
+}

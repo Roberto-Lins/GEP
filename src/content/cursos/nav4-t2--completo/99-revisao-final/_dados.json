@@ -1,0 +1,15 @@
+{
+  "ordem": 99,
+  "slug": "99-revisao-final",
+  "titulo": "Revisão final",
+  "prioridade": "máxima",
+  "subtitulo": "Mapa integrado e protocolo profissional",
+  "tempoEstimado": "30 min",
+  "objetivo": "Recuperar relações, procedimentos e critérios de validade.",
+  "palavrasChave": [
+    "integração",
+    "auditoria"
+  ],
+  "conceptIds": [],
+  "modalidade": "completo"
+}

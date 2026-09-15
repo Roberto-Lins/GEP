@@ -1,0 +1,25 @@
+{
+  "ordem": 1,
+  "slug": "01-correcoes-de-altura",
+  "titulo": "Correções de altura dos astros",
+  "prioridade": "máxima",
+  "subtitulo": "Cadeia completa, tabelas e particularidades por astro",
+  "tempoEstimado": "90 min",
+  "objetivo": "Resolver e justificar correções de estrela, planeta, Sol e Lua.",
+  "palavrasChave": [
+    "depressão",
+    "AR",
+    "SD",
+    "PA",
+    "Lua"
+  ],
+  "conceptIds": [
+    "NAV4-ALT-CADEIA",
+    "NAV4-ALT-DIP",
+    "NAV4-ALT-AR",
+    "NAV4-ALT-SD",
+    "NAV4-ALT-PA",
+    "NAV4-ALT-LUA"
+  ],
+  "modalidade": "pra-safar"
+}

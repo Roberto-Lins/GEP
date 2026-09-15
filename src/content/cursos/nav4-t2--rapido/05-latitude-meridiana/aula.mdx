@@ -1,0 +1,73 @@
+---
+titulo: "Latitude na passagem meridiana — aula intensiva"
+secao: "aula"
+secaoOrdem: 2
+---
+
+> **Entrada do problema:** HMG da observação, altura verdadeira do Sol e posição estimada. **Saída:** latitude meridiana exata e azimute do Sol.
+
+![Casos da latitude meridiana](/imagens/cursos/nav4-t2/figuras/casos-latitude.svg)
+
+*Figura didática V3 baseada na apostila p. 175–180 e na aula 10.3.*
+
+## Passo 1 — distância zenital
+
+$$
+z=90^\circ-a
+$$
+
+Faça a subtração sexagesimal com empréstimo explícito. Se $a=71^\circ08{,}3'$:
+
+$$
+z=89^\circ60{,}0'-71^\circ08{,}3'=18^\circ51{,}7'
+$$
+
+## Passo 2 — declinação do Sol
+
+No **ANB 2026**, na data e HMG do problema:
+
+1. copie $\delta$ da hora inteira;
+2. use o valor $d$ da página;
+3. obtenha a correção de minutos/segundos na página de incrementos;
+4. aplique o sinal de $d$;
+5. conserve o nome N/S.
+
+## Passo 3 — decidir o lado antes da fórmula
+
+Faça um desenho de uma linha N—Z—S e coloque o Sol conforme seu azimute na passagem:
+
+- Sol ao norte: $Az=000^\circ$;
+- Sol ao sul: $Az=180^\circ$.
+
+Com latitudes assinadas (N positiva, S negativa), há uma regra compacta:
+
+$$
+\varphi=\delta-z \quad \text{se o Sol culmina ao norte}
+$$
+$$
+\varphi=\delta+z \quad \text{se o Sol culmina ao sul}
+$$
+
+Se preferir os três casos por módulos:
+
+| Relação | Latitude |
+|---|---|
+| latitude e declinação de mesmo nome; latitude maior | $|\varphi|=|\delta|+z$ |
+| mesmo nome; declinação maior | $|\varphi|=|\delta|-z$ |
+| nomes contrários | $|\varphi|=z-|\delta|$ |
+
+O desenho decide o nome e evita aplicar uma fórmula memorizada fora do caso.
+
+## Exemplo procedural antigo
+
+Com $a=71^\circ08{,}3'$, resulta $z=18^\circ51{,}7'$. O ANB daquele exercício forneceu $\delta=01^\circ32{,}5'S$ após a interpolação. Como a posição estimada era aproximadamente $20^\circ S$, o Sol cruzou ao norte:
+
+$$
+|\varphi|=18^\circ51{,}7'+1^\circ32{,}5'=20^\circ24{,}2'S
+$$
+
+Logo $Az=000^\circ$.
+
+## Movimento do navio
+
+A altura máxima coincide com a altura meridiana **somente** para observador parado ou quando a componente N–S permanece dentro dos limites fornecidos na fonte. Em questão que forneça rumo/velocidade, não assuma silenciosamente que “máxima = meridiana”; declare a condição.

@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gep.local/schemas/GEP_COVERAGE_MATRIX.schema.json",
+  "title": "Matriz canônica de cobertura do GEP",
+  "type": "object",
+  "required": ["schema_version", "status", "familia_id", "conceitos"],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "status": { "enum": ["pendente", "confirmada"] },
+    "familia_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+    "conceitos": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["concept_id", "assunto", "dependencias", "fontes_localizadas", "evidencia_prioridade", "examinavel", "presenca", "profundidade", "justificativa", "exemplos", "figuras", "questoes", "vulnerabilidades"],
+        "properties": {
+          "concept_id": { "type": "string", "minLength": 1 },
+          "assunto": { "type": "string", "minLength": 1 },
+          "dependencias": { "type": "array", "items": { "type": "string" } },
+          "fontes_localizadas": { "type": "array", "items": { "type": "string" } },
+          "evidencia_prioridade": { "type": "array", "items": { "type": "string" } },
+          "examinavel": { "type": "boolean" },
+          "presenca": { "$ref": "#/$defs/presenca" },
+          "profundidade": { "$ref": "#/$defs/profundidadePorModalidade" },
+          "justificativa": { "$ref": "#/$defs/justificativaPorModalidade" },
+          "exemplos": { "type": "array", "items": { "type": "string" } },
+          "figuras": { "type": "array", "items": { "type": "string" } },
+          "questoes": { "type": "array", "items": { "type": "string" } },
+          "vulnerabilidades": { "type": "array", "items": { "type": "string" } }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "$defs": {
+    "presenca": {
+      "type": "object",
+      "required": ["rapido", "pra-safar", "completo"],
+      "properties": { "rapido": { "type": "boolean" }, "pra-safar": { "type": "boolean" }, "completo": { "const": true } },
+      "additionalProperties": false
+    },
+    "profundidadePorModalidade": {
+      "type": "object",
+      "required": ["rapido", "pra-safar", "completo"],
+      "properties": {
+        "rapido": { "type": ["string", "null"] }, "pra-safar": { "type": ["string", "null"] }, "completo": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "justificativaPorModalidade": {
+      "type": "object",
+      "required": ["rapido", "pra-safar", "completo"],
+      "properties": {
+        "rapido": { "type": "string", "minLength": 1 },
+        "pra-safar": { "type": "string", "minLength": 1 },
+        "completo": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

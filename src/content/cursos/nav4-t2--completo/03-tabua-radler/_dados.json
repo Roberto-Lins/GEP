@@ -1,0 +1,25 @@
+{
+  "ordem": 3,
+  "slug": "03-tabua-radler",
+  "titulo": "UE 10.0 — Tábua Radler: teoria e trabalho",
+  "prioridade": "máxima",
+  "subtitulo": "Recorte conceitual até 13:00 e apoio integral ao DHN-0607",
+  "tempoEstimado": "190 min",
+  "objetivo": "Relacionar a construção da Radler ao triângulo de posição e resolver o modelo.",
+  "palavrasChave": [
+    "Radler",
+    "fundamentos",
+    "DHN-0607"
+  ],
+  "conceptIds": [
+    "NAV4-RADLER-TEMPO",
+    "NAV4-RADLER-T1",
+    "NAV4-RADLER-ENTRADA1",
+    "NAV4-RADLER-C",
+    "NAV4-RADLER-ENTRADA2",
+    "NAV4-RADLER-AZ",
+    "NAV4-RADLER-PLOT",
+    "NAV4-RADLER-TEORIA"
+  ],
+  "modalidade": "completo"
+}

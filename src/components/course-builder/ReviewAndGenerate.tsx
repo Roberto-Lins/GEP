@@ -4,6 +4,7 @@ import { ANO_LABELS, SEMESTRE_LABELS, EPOCA_LABELS, TURMA_LABELS } from '@utils/
 import { formatBytes } from '@utils/course-kit/classifyFile';
 import type { WizardMetadata } from './shared';
 import ValidationAlert from './ValidationAlert';
+import { MODALIDADES_ESTUDO, MODALIDADE_RESUMOS } from '@tipos/study-mode';
 
 interface Props {
   metadata: WizardMetadata;
@@ -37,6 +38,13 @@ export default function ReviewAndGenerate(props: Props) {
             {SEMESTRE_LABELS[metadata.semestre]} · {EPOCA_LABELS[metadata.epoca]}
           </dd></div>
           <div><dt className="text-nevoa/50">Mídias</dt><dd className="text-marfim">{midias.length} URL(s) · {arquivos.length} arquivo(s)</dd></div>
+          <div className="sm:col-span-2"><dt className="text-nevoa/50">Modalidades de estudo</dt><dd className="mt-1 flex flex-wrap gap-2 text-marfim">
+            {MODALIDADES_ESTUDO.map((modo) => (
+              <span key={modo} className="chip border border-white/10 bg-white/5">
+                {MODALIDADE_RESUMOS[modo].rotulo}: {metadata.duracaoMinutos[modo] ?? 'a calcular'} min
+              </span>
+            ))}
+          </dd></div>
         </dl>
       </section>
 

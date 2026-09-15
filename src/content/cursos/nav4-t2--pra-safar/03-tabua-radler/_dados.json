@@ -1,0 +1,25 @@
+{
+  "ordem": 3,
+  "slug": "03-tabua-radler",
+  "titulo": "UE 10.0 — fundamentos da Tábua Radler",
+  "prioridade": "máxima",
+  "subtitulo": "Núcleo conceitual até 13:00 e apoio separado ao trabalho",
+  "tempoEstimado": "110 min",
+  "objetivo": "Explicar o triângulo PAZ, dominar as duas entradas e conferir a sequência do trabalho Radler.",
+  "palavrasChave": [
+    "Radler",
+    "AHL",
+    "t1",
+    "C",
+    "Aqd"
+  ],
+  "conceptIds": [
+    "NAV4-RADLER-T1",
+    "NAV4-RADLER-ENTRADA1",
+    "NAV4-RADLER-C",
+    "NAV4-RADLER-ENTRADA2",
+    "NAV4-RADLER-AZ",
+    "NAV4-RADLER-TEORIA"
+  ],
+  "modalidade": "pra-safar"
+}

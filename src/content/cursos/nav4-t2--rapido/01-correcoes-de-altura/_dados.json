@@ -1,0 +1,25 @@
+{
+  "ordem": 1,
+  "slug": "01-correcoes-de-altura",
+  "titulo": "Correções de altura dos astros",
+  "prioridade": "máxima",
+  "subtitulo": "Estrela, planeta, Sol e Lua: de ai até a",
+  "tempoEstimado": "55 min",
+  "objetivo": "Transformar altura instrumental em verdadeira com sinais e consultas corretos.",
+  "palavrasChave": [
+    "ai",
+    "ao",
+    "a_ap",
+    "refração",
+    "paralaxe"
+  ],
+  "conceptIds": [
+    "NAV4-ALT-CADEIA",
+    "NAV4-ALT-DIP",
+    "NAV4-ALT-AR",
+    "NAV4-ALT-SD",
+    "NAV4-ALT-PA",
+    "NAV4-ALT-LUA"
+  ],
+  "modalidade": "rapido"
+}

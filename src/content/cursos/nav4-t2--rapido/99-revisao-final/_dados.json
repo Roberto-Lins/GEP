@@ -1,0 +1,16 @@
+{
+  "ordem": 99,
+  "slug": "99-revisao-final",
+  "titulo": "Revisão final",
+  "prioridade": "máxima",
+  "subtitulo": "Cartão de sinais e diagnóstico",
+  "tempoEstimado": "25 min",
+  "objetivo": "Recuperar os procedimentos e eliminar erros críticos.",
+  "palavrasChave": [
+    "revisão",
+    "sinais",
+    "prontidão"
+  ],
+  "conceptIds": [],
+  "modalidade": "rapido"
+}

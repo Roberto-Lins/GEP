@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "status": "confirmado",
+  "classificacao": {
+    "literalidade": "alta",
+    "interpretacao": "media",
+    "calculo": "alta",
+    "detalhismo": "alta",
+    "memorizacao": "alta",
+    "pegadinhas": "alta",
+    "integracao": "alta",
+    "aplicacaoInedita": "media"
+  },
+  "evidencias": [
+    "Orientação T2/2026 enumera páginas e subitens.",
+    "SOPA histórica alterna perguntas curtas, V/F e problemas encadeados.",
+    "AV T2 NAV-4 apresenta o modelo DHN-0607 preenchido linha a linha.",
+    "Mensagem de 15/09/2026: estudar UE 10.0 Radler, conceitos, até 13:00.",
+    "A aula seguinte é o exercício do camarote: trabalho Radler de 2,0 pontos, entregue no dia da T2.",
+    "Mensagens do professor delimitam o conteúdo até antes da PP2."
+  ],
+  "fontes_localizadas": [
+    "Orientação manuscrita T-2/26",
+    "Apostila digitalizada p. 139–180",
+    "Aulas 7.0, 7.1, 8.0, UE 10.0 Radler e 11.1–11.3",
+    "Sopa Nav T2 2022.pdf",
+    "AV T2 NAV-4.pdf",
+    "PE NAV-4-2026.doc e Sumário 2026"
+  ],
+  "incertezas": [
+    "A SOPA histórica não garante a mesma distribuição de pontos em 2026.",
+    "Os valores anuais do ANB 2026 não estão no Drive e devem ser consultados na edição física oficial.",
+    "A orientação fotografa itens selecionados, mas não fornece uma rubrica detalhada da prova de 2026.",
+    "A mensagem separa o exercício Radler como trabalho; portanto, o curso não presume uma questão DHN-0607 completa dentro dos 90 minutos da prova escrita."
+  ]
+}

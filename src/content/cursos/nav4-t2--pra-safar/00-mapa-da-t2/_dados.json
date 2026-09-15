@@ -1,0 +1,19 @@
+{
+  "ordem": 0,
+  "slug": "00-mapa-da-t2",
+  "titulo": "Mapa da T2 e perfil de cobrança",
+  "prioridade": "máxima",
+  "subtitulo": "Fontes, escopo, riscos e plano de 8 h 55 min",
+  "tempoEstimado": "30 min",
+  "objetivo": "Relacionar o recorte anunciado às fontes e distribuir o esforço conforme a cobrança.",
+  "palavrasChave": [
+    "perfil",
+    "fontes",
+    "ANB 2026"
+  ],
+  "conceptIds": [
+    "NAV4-ESCOPO",
+    "NAV4-ANB2026"
+  ],
+  "modalidade": "pra-safar"
+}

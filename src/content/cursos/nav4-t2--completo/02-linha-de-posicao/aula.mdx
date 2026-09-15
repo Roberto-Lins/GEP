@@ -1,0 +1,79 @@
+---
+titulo: "Geometria completa da LDP — aula completa"
+secao: "aula"
+secaoOrdem: 2
+---
+
+## Lugar geométrico
+
+O GP é a projeção terrestre do astro: sua latitude é $\delta$, e sua longitude decorre de AHG/tG. Todos os observadores a distância zenital $z$ do GP medem a mesma altura:
+
+$$
+z=90^\circ-a
+$$
+
+Esses pontos formam a circunferência de igual altura. Uma observação gera uma linha, não um ponto.
+
+![Geometria da LDP](/imagens/cursos/nav4-t2/figuras/ldp-geometria.svg)
+
+## Tangente e orientação
+
+Próximo da posição assumida, a circunferência osculatriz é substituída pela reta tangente. O azimute aponta radialmente para o GP; a tangente é perpendicular. Como $1'$ terrestre = 1 MN, o intercepto em minutos é marcado em milhas.
+
+$$
+\Delta a=a-a_e
+$$
+
+Se positivo, a circunferência real está mais perto do GP: marque para o astro. Se negativo, marque no sentido oposto.
+
+## Solução do triângulo
+
+$$
+\sin a_e=\sin\varphi\sin\delta+\cos\varphi\cos\delta\cos AHL
+$$
+
+$$
+\cos Z=\frac{\sin\delta-\sin\varphi\sin a_e}{\cos\varphi\cos a_e}
+$$
+
+A trigonometria fornece a grandeza; nomes e diagrama determinam o quadrante de $Az$. Essas fórmulas conferem a Radler.
+
+## Limite da aproximação
+
+O erro arco–tangente cresce com a distância ao ponto de tangência. A fonte usa cerca de ±100 MN em altura de $35^\circ$ e aproximadamente ±30 MN perto de $80^\circ$. Altura alta significa $z$ pequeno e curvatura mais pronunciada.
+
+## Cadeia integral
+
+Observar → corrigir até $a$ → assumir posição → obter efemérides → resolver $a_e,Az$ → calcular $\Delta a$ → marcar o intercepto → traçar a perpendicular. Radler é o método tabular dos elementos centrais.
+
+## Construção em carta, passo a passo
+
+1. Marque a posição assumida, nunca a posição estimada sem o ajuste usado no cálculo.
+2. A partir dela, trace a direção do $Az$ verdadeiro para o astro.
+3. Calcule $\Delta a=a-a_e$ preservando o sinal.
+4. Se $\Delta a>0$, avance $|\Delta a|$ MN em direção ao astro; se $\Delta a<0$, caminhe no recíproco $Az+180^\circ$.
+5. Pelo ponto obtido, trace a perpendicular ao azimute. Essa é a LDP aproximada.
+6. Identifique hora, astro e $Az$ junto à reta para impedir troca de observações.
+
+### Exemplo numérico
+
+$$
+a=21^\circ35{,}8',\qquad a_e=21^\circ47{,}6'
+$$
+
+Logo, $\Delta a=-11{,}8'$. Marque 11,8 MN no sentido oposto ao astro e trace a perpendicular. Se a posição assumida estivesse exatamente sobre a circunferência observada, $a=a_e$ e a reta passaria por ela.
+
+## Banco de julgamentos conceituais
+
+| Enunciado | Julgamento e motivo |
+|---|---|
+| O GP é a projeção terrestre do astro. | verdadeiro |
+| O raio da circunferência de igual altura é $a$. | falso; é $z=90^\circ-a$ |
+| Uma observação fornece uma posição exata. | falso; fornece uma LDP |
+| A reta de altura é paralela ao azimute. | falso; é perpendicular |
+| Intercepto positivo é marcado para o astro. | verdadeiro |
+| Na passagem meridiana superior, o ângulo no polo vale $90^\circ$. | falso; vale $0^\circ$ |
+
+## Conferência geométrica
+
+Se $a$ aumenta, $z$ diminui e a circunferência aproxima-se do GP; daí o sentido “para o astro” do intercepto positivo. Essa dedução elimina a necessidade de decorar uma seta. Antes de aceitar qualquer desenho, verifique as três relações simultâneas: $Az$ aponta para o GP, o intercepto está sobre o eixo do $Az$ e a LDP é perpendicular a esse eixo.

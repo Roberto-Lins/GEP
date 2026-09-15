@@ -1,0 +1,1300 @@
+{
+  "schema_version": "1.0.0",
+  "status": "confirmada",
+  "familia_id": "nav4-t2",
+  "conceitos": [
+    {
+      "concept_id": "NAV4-ESCOPO",
+      "assunto": "Recorte oficial da T2",
+      "dependencias": [],
+      "fontes_localizadas": [
+        "Orientação T2/2026 e materiais do Drive"
+      ],
+      "evidencia_prioridade": [
+        "Orientação/problemas possíveis e histórico de avaliação"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "operacional",
+        "pra-safar": "examinável",
+        "completo": "integrado"
+      },
+      "justificativa": {
+        "rapido": "Incluído por compor o núcleo anunciado ou uma dependência crítica.",
+        "pra-safar": "Incluído por ser examinável ou necessário à resolução.",
+        "completo": "Incluído para domínio integrado sustentado pelas fontes."
+      },
+      "exemplos": [],
+      "figuras": [],
+      "questoes": [
+        "NAV4-Q042"
+      ],
+      "vulnerabilidades": [
+        "sinal, nome, tabela ou sequência incorreta"
+      ]
+    },
+    {
+      "concept_id": "NAV4-ANB2026",
+      "assunto": "Uso obrigatório do Almanaque Náutico 2026",
+      "dependencias": [],
+      "fontes_localizadas": [
+        "Orientação T2/2026 e materiais do Drive"
+      ],
+      "evidencia_prioridade": [
+        "Orientação/problemas possíveis e histórico de avaliação"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "operacional",
+        "pra-safar": "examinável",
+        "completo": "integrado"
+      },
+      "justificativa": {
+        "rapido": "Incluído por compor o núcleo anunciado ou uma dependência crítica.",
+        "pra-safar": "Incluído por ser examinável ou necessário à resolução.",
+        "completo": "Incluído para domínio integrado sustentado pelas fontes."
+      },
+      "exemplos": [],
+      "figuras": [],
+      "questoes": [
+        "NAV4-Q007",
+        "NAV4-Q041",
+        "NAV4-Q042"
+      ],
+      "vulnerabilidades": [
+        "sinal, nome, tabela ou sequência incorreta"
+      ]
+    },
+    {
+      "concept_id": "NAV4-ALT-CADEIA",
+      "assunto": "Cadeia ai→ao→aap→a",
+      "dependencias": [],
+      "fontes_localizadas": [
+        "Apostila p. 139–152; aula 7.0"
+      ],
+      "evidencia_prioridade": [
+        "Orientação/problemas possíveis e histórico de avaliação"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "operacional",
+        "pra-safar": "examinável",
+        "completo": "integrado"
+      },
+      "justificativa": {
+        "rapido": "Incluído por compor o núcleo anunciado ou uma dependência crítica.",
+        "pra-safar": "Incluído por ser examinável ou necessário à resolução.",
+        "completo": "Incluído para domínio integrado sustentado pelas fontes."
+      },
+      "exemplos": [],
+      "figuras": [
+        "NAV4-FIG-ALT-001"
+      ],
+      "questoes": [
+        "NAV4-Q001",
+        "NAV4-Q008",
+        "NAV4-Q025"
+      ],
+      "vulnerabilidades": [
+        "sinal, nome, tabela ou sequência incorreta"
+      ]
+    },
+    {
+      "concept_id": "NAV4-ALT-DIP",
+      "assunto": "Depressão aparente",
+      "dependencias": [
+        "NAV4-ALT-CADEIA"
+      ],
+      "fontes_localizadas": [
+        "Apostila p. 139–152; aula 7.0"
+      ],
+      "evidencia_prioridade": [
+        "Orientação/problemas possíveis e histórico de avaliação"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "operacional",
+        "pra-safar": "examinável",
+        "completo": "integrado"
+      },
+      "justificativa": {
+        "rapido": "Incluído por compor o núcleo anunciado ou uma dependência crítica.",
+        "pra-safar": "Incluído por ser examinável ou necessário à resolução.",
+        "completo": "Incluído para domínio integrado sustentado pelas fontes."
+      },
+      "exemplos": [],
+      "figuras": [
+        "NAV4-FIG-ALT-001"
+      ],
+      "questoes": [
+        "NAV4-Q002",
+        "NAV4-Q006",
+        "NAV4-Q008"
+      ],
+      "vulnerabilidades": [
+        "sinal, nome, tabela ou sequência incorreta"
+      ]
+    },
+    {
+      "concept_id": "NAV4-ALT-AR",
+      "assunto": "Refração astronômica",
+      "dependencias": [
+        "NAV4-ALT-CADEIA"
+      ],
+      "fontes_localizadas": [
+        "Apostila p. 139–152; aula 7.0"
+      ],
+      "evidencia_prioridade": [
+        "Orientação/problemas possíveis e histórico de avaliação"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "operacional",
+        "pra-safar": "examinável",
+        "completo": "integrado"
+      },
+      "justificativa": {
+        "rapido": "Incluído por compor o núcleo anunciado ou uma dependência crítica.",
+        "pra-safar": "Incluído por ser examinável ou necessário à resolução.",
+        "completo": "Incluído para domínio integrado sustentado pelas fontes."
+      },
+      "exemplos": [],
+      "figuras": [
+        "NAV4-FIG-ALT-001"
+      ],
+      "questoes": [
+        "NAV4-Q003",
+        "NAV4-Q006"
+      ],
+      "vulnerabilidades": [
+        "sinal, nome, tabela ou sequência incorreta"
+      ]
+    },
+    {
+      "concept_id": "NAV4-ALT-SD",
+      "assunto": "Semidiâmetro e limbos",
+      "dependencias": [
+        "NAV4-ALT-CADEIA"
+      ],
+      "fontes_localizadas": [
+        "Apostila p. 139–152; aula 7.0"
+      ],
+      "evidencia_prioridade": [
+        "Orientação/problemas possíveis e histórico de avaliação"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "operacional",
+        "pra-safar": "examinável",
+        "completo": "integrado"
+      },
+      "justificativa": {
+        "rapido": "Incluído por compor o núcleo anunciado ou uma dependência crítica.",
+        "pra-safar": "Incluído por ser examinável ou necessário à resolução.",
+        "completo": "Incluído para domínio integrado sustentado pelas fontes."
+      },
+      "exemplos": [],
+      "figuras": [
+        "NAV4-FIG-ALT-001"
+      ],
+      "questoes": [
+        "NAV4-Q004",
+        "NAV4-Q006"
+      ],
+      "vulnerabilidades": [
+        "sinal, nome, tabela ou sequência incorreta"
+      ]
+    },
+    {
+      "concept_id": "NAV4-ALT-PA",
+      "assunto": "Paralaxe",
+      "dependencias": [
+        "NAV4-ALT-CADEIA"
+      ],
+      "fontes_localizadas": [
+        "Apostila p. 139–152; aula 7.0"
+      ],
+      "evidencia_prioridade": [
+        "Orientação/problemas possíveis e histórico de avaliação"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "operacional",
+        "pra-safar": "examinável",
+        "completo": "integrado"
+      },
+      "justificativa": {
+        "rapido": "Incluído por compor o núcleo anunciado ou uma dependência crítica.",
+        "pra-safar": "Incluído por ser examinável ou necessário à resolução.",
+        "completo": "Incluído para domínio integrado sustentado pelas fontes."
+      },
+      "exemplos": [],
+      "figuras": [
+        "NAV4-FIG-ALT-001"
+      ],
+      "questoes": [
+        "NAV4-Q005",
+        "NAV4-Q006"
+      ],
+      "vulnerabilidades": [
+        "sinal, nome, tabela ou sequência incorreta"
+      ]
+    },
+    {
+      "concept_id": "NAV4-ALT-LUA",
+      "assunto": "Correções específicas da Lua",
+      "dependencias": [
+        "NAV4-ALT-AR",
+        "NAV4-ALT-SD",
+        "NAV4-ALT-PA"
+      ],
+      "fontes_localizadas": [
+        "Apostila p. 139–152; aula 7.0"
+      ],
+      "evidencia_prioridade": [
+        "Orientação/problemas possíveis e histórico de avaliação"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "operacional",
+        "pra-safar": "examinável",
+        "completo": "integrado"
+      },
+      "justificativa": {
+        "rapido": "Incluído por compor o núcleo anunciado ou uma dependência crítica.",
+        "pra-safar": "Incluído por ser examinável ou necessário à resolução.",
+        "completo": "Incluído para domínio integrado sustentado pelas fontes."
+      },
+      "exemplos": [],
+      "figuras": [
+        "NAV4-FIG-ALT-001"
+      ],
+      "questoes": [
+        "NAV4-Q007"
+      ],
+      "vulnerabilidades": [
+        "sinal, nome, tabela ou sequência incorreta"
+      ]
+    },
+    {
+      "concept_id": "NAV4-ALT-FISICA",
+      "assunto": "Fundamento físico das correções",
+      "dependencias": [
+        "NAV4-ALT-CADEIA"
+      ],
+      "fontes_localizadas": [
+        "Apostila p. 139–152; aula 7.0"
+      ],
+      "evidencia_prioridade": [
+        "Aprofundamento sustentado pela fonte"
+      ],
+      "examinavel": false,
+      "presenca": {
+        "rapido": false,
+        "pra-safar": false,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": null,
+        "pra-safar": null,
+        "completo": "integrado"
+      },
+      "justificativa": {
+        "rapido": "Excluído do modo rápido por ser expansão não examinável.",
+        "pra-safar": "Excluído por ser aprofundamento não examinável.",
+        "completo": "Incluído para domínio integrado sustentado pelas fontes."
+      },
+      "exemplos": [],
+      "figuras": [
+        "NAV4-FIG-ALT-001"
+      ],
+      "questoes": [],
+      "vulnerabilidades": [
+        "sinal, nome, tabela ou sequência incorreta"
+      ]
+    },
+    {
+      "concept_id": "NAV4-LDP-GP",
+      "assunto": "Posição geográfica do astro",
+      "dependencias": [],
+      "fontes_localizadas": [
+        "Apostila p. 153–159; aula 8.0"
+      ],
+      "evidencia_prioridade": [
+        "Orientação/problemas possíveis e histórico de avaliação"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "operacional",
+        "pra-safar": "examinável",
+        "completo": "integrado"
+      },
+      "justificativa": {
+        "rapido": "Incluído por compor o núcleo anunciado ou uma dependência crítica.",
+        "pra-safar": "Incluído por ser examinável ou necessário à resolução.",
+        "completo": "Incluído para domínio integrado sustentado pelas fontes."
+      },
+      "exemplos": [],
+      "figuras": [
+        "NAV4-FIG-LDP-001"
+      ],
+      "questoes": [
+        "NAV4-Q014"
+      ],
+      "vulnerabilidades": [
+        "sinal, nome, tabela ou sequência incorreta"
+      ]
+    },
+    {
+      "concept_id": "NAV4-LDP-CIRC",
+      "assunto": "Circunferência de igual altura e z",
+      "dependencias": [
+        "NAV4-LDP-GP"
+      ],
+      "fontes_localizadas": [
+        "Apostila p. 153–159; aula 8.0"
+      ],
+      "evidencia_prioridade": [
+        "Orientação/problemas possíveis e histórico de avaliação"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "operacional",
+        "pra-safar": "examinável",
+        "completo": "integrado"
+      },
+      "justificativa": {
+        "rapido": "Incluído por compor o núcleo anunciado ou uma dependência crítica.",
+        "pra-safar": "Incluído por ser examinável ou necessário à resolução.",
+        "completo": "Incluído para domínio integrado sustentado pelas fontes."
+      },
+      "exemplos": [],
+      "figuras": [
+        "NAV4-FIG-LDP-001"
+      ],
+      "questoes": [
+        "NAV4-Q009",
+        "NAV4-Q010"
+      ],
+      "vulnerabilidades": [
+        "sinal, nome, tabela ou sequência incorreta"
+      ]
+    },
+    {
+      "concept_id": "NAV4-LDP-RETA",
+      "assunto": "Reta tangente e orientação",
+      "dependencias": [
+        "NAV4-LDP-CIRC"
+      ],
+      "fontes_localizadas": [
+        "Apostila p. 153–159; aula 8.0"
+      ],
+      "evidencia_prioridade": [
+        "Orientação/problemas possíveis e histórico de avaliação"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "operacional",
+        "pra-safar": "examinável",
+        "completo": "integrado"
+      },
+      "justificativa": {
+        "rapido": "Incluído por compor o núcleo anunciado ou uma dependência crítica.",
+        "pra-safar": "Incluído por ser examinável ou necessário à resolução.",
+        "completo": "Incluído para domínio integrado sustentado pelas fontes."
+      },
+      "exemplos": [],
+      "figuras": [
+        "NAV4-FIG-LDP-001"
+      ],
+      "questoes": [
+        "NAV4-Q009",
+        "NAV4-Q012",
+        "NAV4-Q013"
+      ],
+      "vulnerabilidades": [
+        "sinal, nome, tabela ou sequência incorreta"
+      ]
+    },
+    {
+      "concept_id": "NAV4-LDP-INTERCEPTO",
+      "assunto": "Intercepto a−ae",
+      "dependencias": [
+        "NAV4-LDP-RETA"
+      ],
+      "fontes_localizadas": [
+        "Apostila p. 153–159; aula 8.0"
+      ],
+      "evidencia_prioridade": [
+        "Orientação/problemas possíveis e histórico de avaliação"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "operacional",
+        "pra-safar": "examinável",
+        "completo": "integrado"
+      },
+      "justificativa": {
+        "rapido": "Incluído por compor o núcleo anunciado ou uma dependência crítica.",
+        "pra-safar": "Incluído por ser examinável ou necessário à resolução.",
+        "completo": "Incluído para domínio integrado sustentado pelas fontes."
+      },
+      "exemplos": [],
+      "figuras": [
+        "NAV4-FIG-LDP-001"
+      ],
+      "questoes": [
+        "NAV4-Q011",
+        "NAV4-Q013"
+      ],
+      "vulnerabilidades": [
+        "sinal, nome, tabela ou sequência incorreta"
+      ]
+    },
+    {
+      "concept_id": "NAV4-LDP-MAT",
+      "assunto": "Solução matemática e limite da tangente",
+      "dependencias": [
+        "NAV4-LDP-CIRC"
+      ],
+      "fontes_localizadas": [
+        "Apostila p. 153–159; aula 8.0"
+      ],
+      "evidencia_prioridade": [
+        "Aprofundamento sustentado pela fonte"
+      ],
+      "examinavel": false,
+      "presenca": {
+        "rapido": false,
+        "pra-safar": false,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": null,
+        "pra-safar": null,
+        "completo": "integrado"
+      },
+      "justificativa": {
+        "rapido": "Excluído do modo rápido por ser expansão não examinável.",
+        "pra-safar": "Excluído por ser aprofundamento não examinável.",
+        "completo": "Incluído para domínio integrado sustentado pelas fontes."
+      },
+      "exemplos": [],
+      "figuras": [
+        "NAV4-FIG-LDP-001"
+      ],
+      "questoes": [
+        "NAV4-Q015"
+      ],
+      "vulnerabilidades": [
+        "sinal, nome, tabela ou sequência incorreta"
+      ]
+    },
+    {
+      "concept_id": "NAV4-RADLER-TEMPO",
+      "assunto": "Hcp, Hcr e HMG no trabalho Radler",
+      "dependencias": [],
+      "fontes_localizadas": [
+        "Apostila p. 164–174; aula/exercício posterior ao recorte de 13:00"
+      ],
+      "evidencia_prioridade": [
+        "Trabalho de 2,0 entregue no dia da T2"
+      ],
+      "examinavel": false,
+      "presenca": {
+        "rapido": false,
+        "pra-safar": false,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": null,
+        "pra-safar": null,
+        "completo": "apoio ao trabalho"
+      },
+      "justificativa": {
+        "rapido": "Excluído do núcleo da prova após a delimitação do vídeo até 13:00.",
+        "pra-safar": "Tratado somente como sequência de apoio, sem conceito próprio examinável.",
+        "completo": "Mantido para apoiar o exercício de 2,0 feito no camarote."
+      },
+      "exemplos": [],
+      "figuras": [
+        "NAV4-FIG-RAD-001"
+      ],
+      "questoes": [
+        "NAV4-Q016",
+        "NAV4-Q026"
+      ],
+      "vulnerabilidades": [
+        "sinal, nome, tabela ou sequência incorreta"
+      ]
+    },
+    {
+      "concept_id": "NAV4-RADLER-T1",
+      "assunto": "Ângulo no polo t1 e entrada em graus inteiros",
+      "dependencias": [],
+      "fontes_localizadas": [
+        "Apostila p. 160–163; UE 10.0, 0:00–13:00"
+      ],
+      "evidencia_prioridade": [
+        "Mensagem direta do professor com corte em 13:00"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "conceitual",
+        "pra-safar": "examinável",
+        "completo": "integrado"
+      },
+      "justificativa": {
+        "rapido": "Incluído por compor o núcleo anunciado ou uma dependência crítica.",
+        "pra-safar": "Incluído por ser examinável ou necessário à resolução.",
+        "completo": "Incluído para domínio integrado sustentado pelas fontes."
+      },
+      "exemplos": [],
+      "figuras": [
+        "NAV4-FIG-RAD-002"
+      ],
+      "questoes": [
+        "NAV4-Q017",
+        "NAV4-Q018",
+        "NAV4-Q045"
+      ],
+      "vulnerabilidades": [
+        "sinal, nome, tabela ou sequência incorreta"
+      ]
+    },
+    {
+      "concept_id": "NAV4-RADLER-ENTRADA1",
+      "assunto": "Primeira entrada δ,t1→a,b",
+      "dependencias": [
+        "NAV4-RADLER-T1"
+      ],
+      "fontes_localizadas": [
+        "Apostila p. 160–163; UE 10.0, 0:00–13:00"
+      ],
+      "evidencia_prioridade": [
+        "Mensagem direta do professor com corte em 13:00"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "conceitual",
+        "pra-safar": "examinável",
+        "completo": "integrado"
+      },
+      "justificativa": {
+        "rapido": "Incluído por compor o núcleo anunciado ou uma dependência crítica.",
+        "pra-safar": "Incluído por ser examinável ou necessário à resolução.",
+        "completo": "Incluído para domínio integrado sustentado pelas fontes."
+      },
+      "exemplos": [],
+      "figuras": [
+        "NAV4-FIG-RAD-002"
+      ],
+      "questoes": [
+        "NAV4-Q019",
+        "NAV4-Q026",
+        "NAV4-Q044"
+      ],
+      "vulnerabilidades": [
+        "sinal, nome, tabela ou sequência incorreta"
+      ]
+    },
+    {
+      "concept_id": "NAV4-RADLER-C",
+      "assunto": "Latitude auxiliar e C",
+      "dependencias": [
+        "NAV4-RADLER-ENTRADA1"
+      ],
+      "fontes_localizadas": [
+        "Apostila p. 160–163; UE 10.0, 0:00–13:00"
+      ],
+      "evidencia_prioridade": [
+        "Mensagem direta do professor com corte em 13:00"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "conceitual",
+        "pra-safar": "examinável",
+        "completo": "integrado"
+      },
+      "justificativa": {
+        "rapido": "Incluído por compor o núcleo anunciado ou uma dependência crítica.",
+        "pra-safar": "Incluído por ser examinável ou necessário à resolução.",
+        "completo": "Incluído para domínio integrado sustentado pelas fontes."
+      },
+      "exemplos": [],
+      "figuras": [
+        "NAV4-FIG-RAD-002"
+      ],
+      "questoes": [
+        "NAV4-Q020",
+        "NAV4-Q021",
+        "NAV4-Q044"
+      ],
+      "vulnerabilidades": [
+        "sinal, nome, tabela ou sequência incorreta"
+      ]
+    },
+    {
+      "concept_id": "NAV4-RADLER-ENTRADA2",
+      "assunto": "Segunda entrada a,C→ae,Aqd",
+      "dependencias": [
+        "NAV4-RADLER-C"
+      ],
+      "fontes_localizadas": [
+        "Apostila p. 160–163; UE 10.0, 0:00–13:00"
+      ],
+      "evidencia_prioridade": [
+        "Mensagem direta do professor com corte em 13:00"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "conceitual",
+        "pra-safar": "examinável",
+        "completo": "integrado"
+      },
+      "justificativa": {
+        "rapido": "Incluído por compor o núcleo anunciado ou uma dependência crítica.",
+        "pra-safar": "Incluído por ser examinável ou necessário à resolução.",
+        "completo": "Incluído para domínio integrado sustentado pelas fontes."
+      },
+      "exemplos": [],
+      "figuras": [
+        "NAV4-FIG-RAD-002"
+      ],
+      "questoes": [
+        "NAV4-Q022",
+        "NAV4-Q026"
+      ],
+      "vulnerabilidades": [
+        "sinal, nome, tabela ou sequência incorreta"
+      ]
+    },
+    {
+      "concept_id": "NAV4-RADLER-AZ",
+      "assunto": "Aqd e Az como saída; conversão detalhada no trabalho",
+      "dependencias": [
+        "NAV4-RADLER-ENTRADA2"
+      ],
+      "fontes_localizadas": [
+        "Apostila p. 160–163; UE 10.0, 0:00–13:00; regras completas no exercício posterior"
+      ],
+      "evidencia_prioridade": [
+        "Az como elemento determinativo no recorte confirmado"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "conceitual",
+        "pra-safar": "examinável",
+        "completo": "integrado"
+      },
+      "justificativa": {
+        "rapido": "Incluído por compor o núcleo anunciado ou uma dependência crítica.",
+        "pra-safar": "Incluído por ser examinável ou necessário à resolução.",
+        "completo": "Incluído para domínio integrado sustentado pelas fontes."
+      },
+      "exemplos": [],
+      "figuras": [
+        "NAV4-FIG-RAD-002"
+      ],
+      "questoes": [
+        "NAV4-Q023",
+        "NAV4-Q024",
+        "NAV4-Q046"
+      ],
+      "vulnerabilidades": [
+        "sinal, nome, tabela ou sequência incorreta"
+      ]
+    },
+    {
+      "concept_id": "NAV4-RADLER-PLOT",
+      "assunto": "Fechamento e plotagem do trabalho Radler",
+      "dependencias": [
+        "NAV4-RADLER-AZ",
+        "NAV4-LDP-INTERCEPTO"
+      ],
+      "fontes_localizadas": [
+        "Apostila p. 164–174; aula/exercício posterior ao recorte de 13:00"
+      ],
+      "evidencia_prioridade": [
+        "Trabalho de 2,0 entregue no dia da T2"
+      ],
+      "examinavel": false,
+      "presenca": {
+        "rapido": false,
+        "pra-safar": false,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": null,
+        "pra-safar": null,
+        "completo": "apoio ao trabalho"
+      },
+      "justificativa": {
+        "rapido": "Excluído do núcleo da prova após a delimitação do vídeo até 13:00.",
+        "pra-safar": "Tratado somente como sequência de apoio, sem conceito próprio examinável.",
+        "completo": "Mantido para apoiar o exercício de 2,0 feito no camarote."
+      },
+      "exemplos": [],
+      "figuras": [
+        "NAV4-FIG-RAD-001"
+      ],
+      "questoes": [
+        "NAV4-Q026"
+      ],
+      "vulnerabilidades": [
+        "sinal, nome, tabela ou sequência incorreta"
+      ]
+    },
+    {
+      "concept_id": "NAV4-RADLER-TEORIA",
+      "assunto": "Fundamento esférico da Radler",
+      "dependencias": [
+        "NAV4-LDP-RETA"
+      ],
+      "fontes_localizadas": [
+        "Apostila p. 160–163; UE 10.0, 0:00–13:00"
+      ],
+      "evidencia_prioridade": [
+        "Mensagem direta do professor: Radler, conceitos, até 13:00"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "conceitual",
+        "pra-safar": "examinável",
+        "completo": "integrado"
+      },
+      "justificativa": {
+        "rapido": "Incluído porque o professor delimitou explicitamente a aula conceitual.",
+        "pra-safar": "Incluído com figura, definições, relações e teste ativo.",
+        "completo": "Incluído com fundamento e ligação ao procedimento integral."
+      },
+      "exemplos": [],
+      "figuras": [
+        "NAV4-FIG-RAD-002"
+      ],
+      "questoes": [
+        "NAV4-Q025",
+        "NAV4-Q027",
+        "NAV4-Q043",
+        "NAV4-Q044",
+        "NAV4-Q046"
+      ],
+      "vulnerabilidades": [
+        "sinal, nome, tabela ou sequência incorreta"
+      ]
+    },
+    {
+      "concept_id": "NAV4-PM-CONCEITO",
+      "assunto": "Passagem meridiana superior",
+      "dependencias": [],
+      "fontes_localizadas": [
+        "Apostila p. 175–180; aulas 10.1–10.3"
+      ],
+      "evidencia_prioridade": [
+        "Orientação/problemas possíveis e histórico de avaliação"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "operacional",
+        "pra-safar": "examinável",
+        "completo": "integrado"
+      },
+      "justificativa": {
+        "rapido": "Incluído por compor o núcleo anunciado ou uma dependência crítica.",
+        "pra-safar": "Incluído por ser examinável ou necessário à resolução.",
+        "completo": "Incluído para domínio integrado sustentado pelas fontes."
+      },
+      "exemplos": [],
+      "figuras": [],
+      "questoes": [
+        "NAV4-Q014"
+      ],
+      "vulnerabilidades": [
+        "sinal, nome, tabela ou sequência incorreta"
+      ]
+    },
+    {
+      "concept_id": "NAV4-PM-SIMPLES",
+      "assunto": "Previsão por HML",
+      "dependencias": [
+        "NAV4-PM-CONCEITO"
+      ],
+      "fontes_localizadas": [
+        "Apostila p. 175–180; aulas 10.1–10.3"
+      ],
+      "evidencia_prioridade": [
+        "Orientação/problemas possíveis e histórico de avaliação"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "operacional",
+        "pra-safar": "examinável",
+        "completo": "integrado"
+      },
+      "justificativa": {
+        "rapido": "Incluído por compor o núcleo anunciado ou uma dependência crítica.",
+        "pra-safar": "Incluído por ser examinável ou necessário à resolução.",
+        "completo": "Incluído para domínio integrado sustentado pelas fontes."
+      },
+      "exemplos": [],
+      "figuras": [],
+      "questoes": [
+        "NAV4-Q030",
+        "NAV4-Q031",
+        "NAV4-Q033"
+      ],
+      "vulnerabilidades": [
+        "sinal, nome, tabela ou sequência incorreta"
+      ]
+    },
+    {
+      "concept_id": "NAV4-PM-PRECISO",
+      "assunto": "Previsão por equação do tempo",
+      "dependencias": [
+        "NAV4-PM-CONCEITO"
+      ],
+      "fontes_localizadas": [
+        "Apostila p. 175–180; aulas 10.1–10.3"
+      ],
+      "evidencia_prioridade": [
+        "Orientação/problemas possíveis e histórico de avaliação"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "operacional",
+        "pra-safar": "examinável",
+        "completo": "integrado"
+      },
+      "justificativa": {
+        "rapido": "Incluído por compor o núcleo anunciado ou uma dependência crítica.",
+        "pra-safar": "Incluído por ser examinável ou necessário à resolução.",
+        "completo": "Incluído para domínio integrado sustentado pelas fontes."
+      },
+      "exemplos": [],
+      "figuras": [],
+      "questoes": [
+        "NAV4-Q028",
+        "NAV4-Q029",
+        "NAV4-Q033"
+      ],
+      "vulnerabilidades": [
+        "sinal, nome, tabela ou sequência incorreta"
+      ]
+    },
+    {
+      "concept_id": "NAV4-PM-FUSO",
+      "assunto": "Conversão HMG↔Hleg",
+      "dependencias": [
+        "NAV4-PM-SIMPLES"
+      ],
+      "fontes_localizadas": [
+        "Apostila p. 175–180; aulas 10.1–10.3"
+      ],
+      "evidencia_prioridade": [
+        "Orientação/problemas possíveis e histórico de avaliação"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "operacional",
+        "pra-safar": "examinável",
+        "completo": "integrado"
+      },
+      "justificativa": {
+        "rapido": "Incluído por compor o núcleo anunciado ou uma dependência crítica.",
+        "pra-safar": "Incluído por ser examinável ou necessário à resolução.",
+        "completo": "Incluído para domínio integrado sustentado pelas fontes."
+      },
+      "exemplos": [],
+      "figuras": [],
+      "questoes": [
+        "NAV4-Q032"
+      ],
+      "vulnerabilidades": [
+        "sinal, nome, tabela ou sequência incorreta"
+      ]
+    },
+    {
+      "concept_id": "NAV4-PM-OPERACAO",
+      "assunto": "Série observacional da culminação",
+      "dependencias": [
+        "NAV4-PM-CONCEITO"
+      ],
+      "fontes_localizadas": [
+        "Apostila p. 175–180; aulas 10.1–10.3"
+      ],
+      "evidencia_prioridade": [
+        "Aprofundamento sustentado pela fonte"
+      ],
+      "examinavel": false,
+      "presenca": {
+        "rapido": false,
+        "pra-safar": false,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": null,
+        "pra-safar": null,
+        "completo": "integrado"
+      },
+      "justificativa": {
+        "rapido": "Excluído do modo rápido por ser expansão não examinável.",
+        "pra-safar": "Excluído por ser aprofundamento não examinável.",
+        "completo": "Incluído para domínio integrado sustentado pelas fontes."
+      },
+      "exemplos": [],
+      "figuras": [],
+      "questoes": [
+        "NAV4-Q034"
+      ],
+      "vulnerabilidades": [
+        "sinal, nome, tabela ou sequência incorreta"
+      ]
+    },
+    {
+      "concept_id": "NAV4-LAT-Z",
+      "assunto": "Distância zenital na meridiana",
+      "dependencias": [
+        "NAV4-ALT-CADEIA"
+      ],
+      "fontes_localizadas": [
+        "Apostila p. 175–180; aulas 10.1–10.3"
+      ],
+      "evidencia_prioridade": [
+        "Orientação/problemas possíveis e histórico de avaliação"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "operacional",
+        "pra-safar": "examinável",
+        "completo": "integrado"
+      },
+      "justificativa": {
+        "rapido": "Incluído por compor o núcleo anunciado ou uma dependência crítica.",
+        "pra-safar": "Incluído por ser examinável ou necessário à resolução.",
+        "completo": "Incluído para domínio integrado sustentado pelas fontes."
+      },
+      "exemplos": [],
+      "figuras": [
+        "NAV4-FIG-LAT-001"
+      ],
+      "questoes": [
+        "NAV4-Q035",
+        "NAV4-Q041"
+      ],
+      "vulnerabilidades": [
+        "sinal, nome, tabela ou sequência incorreta"
+      ]
+    },
+    {
+      "concept_id": "NAV4-LAT-DEC",
+      "assunto": "Declinação interpolada no instante",
+      "dependencias": [
+        "NAV4-ANB2026"
+      ],
+      "fontes_localizadas": [
+        "Apostila p. 175–180; aulas 10.1–10.3"
+      ],
+      "evidencia_prioridade": [
+        "Orientação/problemas possíveis e histórico de avaliação"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "operacional",
+        "pra-safar": "examinável",
+        "completo": "integrado"
+      },
+      "justificativa": {
+        "rapido": "Incluído por compor o núcleo anunciado ou uma dependência crítica.",
+        "pra-safar": "Incluído por ser examinável ou necessário à resolução.",
+        "completo": "Incluído para domínio integrado sustentado pelas fontes."
+      },
+      "exemplos": [],
+      "figuras": [
+        "NAV4-FIG-LAT-001"
+      ],
+      "questoes": [
+        "NAV4-Q041"
+      ],
+      "vulnerabilidades": [
+        "sinal, nome, tabela ou sequência incorreta"
+      ]
+    },
+    {
+      "concept_id": "NAV4-LAT-CASOS",
+      "assunto": "Três casos da latitude superior",
+      "dependencias": [
+        "NAV4-LAT-Z",
+        "NAV4-LAT-DEC"
+      ],
+      "fontes_localizadas": [
+        "Apostila p. 175–180; aulas 10.1–10.3"
+      ],
+      "evidencia_prioridade": [
+        "Orientação/problemas possíveis e histórico de avaliação"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "operacional",
+        "pra-safar": "examinável",
+        "completo": "integrado"
+      },
+      "justificativa": {
+        "rapido": "Incluído por compor o núcleo anunciado ou uma dependência crítica.",
+        "pra-safar": "Incluído por ser examinável ou necessário à resolução.",
+        "completo": "Incluído para domínio integrado sustentado pelas fontes."
+      },
+      "exemplos": [],
+      "figuras": [
+        "NAV4-FIG-LAT-001"
+      ],
+      "questoes": [
+        "NAV4-Q036",
+        "NAV4-Q037",
+        "NAV4-Q038",
+        "NAV4-Q041"
+      ],
+      "vulnerabilidades": [
+        "sinal, nome, tabela ou sequência incorreta"
+      ]
+    },
+    {
+      "concept_id": "NAV4-LAT-AZ",
+      "assunto": "Azimute 000°/180° na meridiana",
+      "dependencias": [
+        "NAV4-LAT-CASOS"
+      ],
+      "fontes_localizadas": [
+        "Apostila p. 175–180; aulas 10.1–10.3"
+      ],
+      "evidencia_prioridade": [
+        "Orientação/problemas possíveis e histórico de avaliação"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "operacional",
+        "pra-safar": "examinável",
+        "completo": "integrado"
+      },
+      "justificativa": {
+        "rapido": "Incluído por compor o núcleo anunciado ou uma dependência crítica.",
+        "pra-safar": "Incluído por ser examinável ou necessário à resolução.",
+        "completo": "Incluído para domínio integrado sustentado pelas fontes."
+      },
+      "exemplos": [],
+      "figuras": [
+        "NAV4-FIG-LAT-001"
+      ],
+      "questoes": [
+        "NAV4-Q038",
+        "NAV4-Q039",
+        "NAV4-Q041"
+      ],
+      "vulnerabilidades": [
+        "sinal, nome, tabela ou sequência incorreta"
+      ]
+    },
+    {
+      "concept_id": "NAV4-LAT-MOVIMENTO",
+      "assunto": "Efeito do movimento do navio",
+      "dependencias": [
+        "NAV4-PM-CONCEITO"
+      ],
+      "fontes_localizadas": [
+        "Apostila p. 175–180; aulas 10.1–10.3"
+      ],
+      "evidencia_prioridade": [
+        "Orientação/problemas possíveis e histórico de avaliação"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "operacional",
+        "pra-safar": "examinável",
+        "completo": "integrado"
+      },
+      "justificativa": {
+        "rapido": "Incluído por compor o núcleo anunciado ou uma dependência crítica.",
+        "pra-safar": "Incluído por ser examinável ou necessário à resolução.",
+        "completo": "Incluído para domínio integrado sustentado pelas fontes."
+      },
+      "exemplos": [],
+      "figuras": [
+        "NAV4-FIG-LAT-001"
+      ],
+      "questoes": [
+        "NAV4-Q034",
+        "NAV4-Q040"
+      ],
+      "vulnerabilidades": [
+        "sinal, nome, tabela ou sequência incorreta"
+      ]
+    },
+    {
+      "concept_id": "NAV4-TREINO",
+      "assunto": "Execução integrada e auditoria",
+      "dependencias": [],
+      "fontes_localizadas": [
+        "Orientação T2/2026 e materiais do Drive"
+      ],
+      "evidencia_prioridade": [
+        "Orientação/problemas possíveis e histórico de avaliação"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": true,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": "operacional",
+        "pra-safar": "examinável",
+        "completo": "integrado"
+      },
+      "justificativa": {
+        "rapido": "Incluído por compor o núcleo anunciado ou uma dependência crítica.",
+        "pra-safar": "Incluído por ser examinável ou necessário à resolução.",
+        "completo": "Incluído para domínio integrado sustentado pelas fontes."
+      },
+      "exemplos": [],
+      "figuras": [],
+      "questoes": [],
+      "vulnerabilidades": [
+        "sinal, nome, tabela ou sequência incorreta"
+      ]
+    }
+  ]
+}

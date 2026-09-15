@@ -1,0 +1,23 @@
+{
+  "ordem": 5,
+  "slug": "05-latitude-meridiana",
+  "titulo": "Cálculo da latitude meridiana",
+  "prioridade": "máxima",
+  "subtitulo": "Declinação, distância zenital, casos e azimute",
+  "tempoEstimado": "85 min",
+  "objetivo": "Resolver todos os casos superiores sustentados pelas fontes e justificar o azimute.",
+  "palavrasChave": [
+    "latitude",
+    "declinação",
+    "z",
+    "culminação"
+  ],
+  "conceptIds": [
+    "NAV4-LAT-Z",
+    "NAV4-LAT-DEC",
+    "NAV4-LAT-CASOS",
+    "NAV4-LAT-AZ",
+    "NAV4-LAT-MOVIMENTO"
+  ],
+  "modalidade": "pra-safar"
+}

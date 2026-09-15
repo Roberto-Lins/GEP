@@ -7,14 +7,14 @@ export type { Prioridade } from '@tipos/lesson';
 export const timeline: TopicoTimeline[] = [
   {
     ordem: 0,
-    slug: '00-visao-geral',
-    titulo: 'Visão geral',
-    subtitulo: 'A ideia central do curso',
+    slug: '00-escopo-pendente',
+    titulo: '[PENDENTE — definir a partir da matriz]',
+    subtitulo: 'Requer fontes autorizadas',
     prioridade: 'alta',
-    tempoEstimado: '15 min',
+    tempoEstimado: '[PENDENTE]',
     statusInicial: 'pendente',
-    objetivo: 'Entender a lógica geral do curso e o que será cobrado.',
-    palavrasChave: ['visão geral'],
+    objetivo: '[PENDENTE — REQUER FONTES E MATRIZ DE COBERTURA]',
+    palavrasChave: [],
   },
   {
     ordem: 99,

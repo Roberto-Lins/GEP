@@ -2,10 +2,16 @@
 
 > Copie este arquivo para `docs/courses/<SLUG>.md` ao criar um curso novo e preencha.
 
-# <Título do curso>
+# <Título da família de curso>
 
-Slug: `<slug>`. Tema visual: `<temaVisual>`. Config: `src/content/cursos/<slug>/_config.json`.
-Dados: `src/data/cursos/<slug>/`.
+Família: `<familia>`. Variantes: `<familia>--rapido`, `<familia>--pra-safar` e
+`<familia>--completo`. Dados canônicos: `src/data/cursos/_familias/<familia>/`.
+
+## Evidência anterior à autoria
+
+- Perfil de cobrança: `perfil-cobranca.json`, confirmado e localizado nas fontes.
+- Matriz canônica: `matriz-cobertura.json`, com `concept_id`, presença, profundidade e justificativa.
+- Banco compartilhado: `questoes.ts`, preservando o mesmo objeto e ID entre modalidades.
 
 ## Timeline
 
@@ -16,7 +22,8 @@ Dados: `src/data/cursos/<slug>/`.
 
 ## Banco de questões
 
-`src/data/cursos/<slug>/exercicios.ts`: N múltipla, N V/F, N correlacione. IDs estáveis.
+`src/data/cursos/_familias/<familia>/questoes.ts`: N múltipla, N V/F, N correlacione. IDs estáveis.
+Cada variante filtra por `concept_id` e escopo ensinado, nunca por redução de dificuldade.
 
 ## `features`
 
@@ -32,11 +39,14 @@ Dados: `src/data/cursos/<slug>/`.
 
 ## Checklist de criação
 
-- [ ] `npm run create-course <slug>`
-- [ ] `_config.json` preenchido
-- [ ] mini-matérias `00-…` … `99-revisao-final`
-- [ ] `.mdx` + `_dados.json` de cada matéria
-- [ ] imagens leves em `public/imagens/cursos/<slug>/`
+- [ ] `npm run create-course <familia> "Título"`
+- [ ] perfil de cobrança e inventário de fontes confirmados
+- [ ] matriz canônica confirmada antes da autoria
+- [ ] três `_config.json` publicados, com duração real e metadados familiares idênticos
+- [ ] sequências próprias para Rápido, Pra Safar e Completo
+- [ ] `.mdx` + `_dados.json` de cada matéria, ligados por `concept_id`
+- [ ] questões compartilhadas preservam identidade e dificuldade
+- [ ] imagens leves em `public/imagens/cursos/<familia>/`
 - [ ] mídia pesada externalizada
 - [ ] `npm run validate-content` passa
-- [ ] aparece no dashboard
+- [ ] família e seletor aparecem no dashboard; teclado, leitor de tela e celular conferidos

@@ -1,0 +1,22 @@
+{
+  "ordem": 2,
+  "slug": "02-linha-de-posicao",
+  "titulo": "Linha de posição astronômica",
+  "prioridade": "muito alta",
+  "subtitulo": "Da posição geográfica do astro à reta tangente",
+  "tempoEstimado": "70 min",
+  "objetivo": "Dominar definições, geometria, aproximação e construção da reta de altura.",
+  "palavrasChave": [
+    "GP",
+    "circunferência",
+    "LDP",
+    "intercepto"
+  ],
+  "conceptIds": [
+    "NAV4-LDP-GP",
+    "NAV4-LDP-CIRC",
+    "NAV4-LDP-RETA",
+    "NAV4-LDP-INTERCEPTO"
+  ],
+  "modalidade": "pra-safar"
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gep.local/schemas/GEP_CHARGE_PROFILE.schema.json",
+  "title": "Perfil de cobrança do GEP",
+  "type": "object",
+  "required": ["schema_version", "status", "classificacao", "evidencias", "fontes_localizadas", "incertezas"],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "status": { "enum": ["pendente", "confirmado"] },
+    "classificacao": {
+      "type": "object",
+      "required": ["literalidade", "interpretacao", "calculo", "detalhismo", "memorizacao", "pegadinhas", "integracao", "aplicacaoInedita"],
+      "properties": {
+        "literalidade": { "$ref": "#/$defs/nivel" },
+        "interpretacao": { "$ref": "#/$defs/nivel" },
+        "calculo": { "$ref": "#/$defs/nivel" },
+        "detalhismo": { "$ref": "#/$defs/nivel" },
+        "memorizacao": { "$ref": "#/$defs/nivel" },
+        "pegadinhas": { "$ref": "#/$defs/nivel" },
+        "integracao": { "$ref": "#/$defs/nivel" },
+        "aplicacaoInedita": { "$ref": "#/$defs/nivel" }
+      },
+      "additionalProperties": false
+    },
+    "evidencias": { "type": "array", "items": { "type": "string" } },
+    "fontes_localizadas": { "type": "array", "items": { "type": "string" } },
+    "incertezas": { "type": "array", "items": { "type": "string" } }
+  },
+  "$defs": {
+    "nivel": { "enum": ["baixa", "media", "alta", "incerta"] }
+  },
+  "additionalProperties": false
+}

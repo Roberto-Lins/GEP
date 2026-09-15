@@ -1,0 +1,140 @@
+---
+titulo: "UE 10.0 — Tábua Radler: teoria e trabalho"
+secao: "aula"
+secaoOrdem: 2
+---
+
+> **Delimitação confirmada em 15/09/2026:** a mensagem do professor manda estudar a aula **UE 10.0 — Radler (Parte 1) até 13:00**. A aula seguinte é o exercício do camarote, vale **2,0 pontos** e será entregue no dia da T2. O núcleo conceitual abaixo é a prioridade da prova; o procedimento integral permanece depois, como apoio separado ao trabalho.
+
+## Parte I — núcleo conceitual confirmado
+
+### Propósito e elementos determinativos
+
+A Tábua Radler — originalmente apresentada como “Tábuas Náuticas e Aeronáuticas Radler de Aquino” ou “Tábuas Universais” — simplifica a solução do triângulo de posição e condensa combinações de latitude, declinação e ângulo no polo.
+
+Seu produto são os elementos determinativos da reta de altura:
+
+$$
+\Delta a=a-a_e
+$$
+
+e o azimute verdadeiro $Az$.
+
+$a$ é a altura verdadeira observada; $a_e$ é a altura estimada/calculada para uma posição auxiliar. A Radler fornece $a_e$ e azimute, mas a altura observada vem da cadeia de correções.
+
+### Por que aparecem dois triângulos
+
+![Triângulo PAZ dividido pela perpendicular AM](/imagens/cursos/nav4-t2/figuras/fundamento-radler.svg)
+
+*Reconstrução didática V3 baseada na apostila p. 160–161 e na UE 10.0, 0:00–13:00. Preserva a topologia relevante; não está em escala.*
+
+Comece em $P$, siga até o astro $A$ e depois até o zênite $Z$: esse é o triângulo de posição $PAZ$. Ao traçar $AM\perp PZ$, ele é dividido nos triângulos retângulos $PAM$ e $ZAM$.
+
+1. Conhecendo $PA=90^\circ-\delta$ e $t_1$, resolve-se $PAM$ para obter os auxiliares $a=AM$ e $b$.
+2. $b$ é a distância angular do Equador ao pé $M$. Combinando $b$ com a latitude $\varphi$, obtém-se $C=MZ$.
+3. Com $a$ e $C$, resolve-se $ZAM$ para obter $ZA=90^\circ-a_e$ e o azimute quadrantal $Aqd$.
+4. O $Aqd$ é nomeado/convertido em $Az$, e $a_e$ é comparado com a altura verdadeira.
+
+As relações que justificam a segunda entrada são:
+
+$$
+\sin a_e=\cos a\cos C,qquad \cot Aqd=\cot a\sin C
+$$
+
+> **Duplo uso do símbolo $a$:** na construção, $a$ é o auxiliar $AM$; no intercepto, $a$ é a altura verdadeira observada. O modelo e o contexto distinguem os dois. Essa troca é uma pegadinha natural de prova.
+
+### A tabela em três operações
+
+$$
+(\delta,t_1)\longrightarrow(a,b)
+$$
+
+$$
+b\;\text{com}\;\varphi\longrightarrow C
+$$
+
+$$
+(a,C)\longrightarrow(a_e,Aqd)\longrightarrow Az
+$$
+
+No limite de 13:00, o professor ressalta que $t_1$ deve entrar em **graus inteiros**. $C$ é uma distância geométrica: será soma ou diferença conforme as posições de $M$, $Z$ e do Equador. No caso ilustrado na p. 161, mesmo nome, $t_1<90^\circ$ e $b>\varphi$:
+
+$$
+C=b-\varphi
+$$
+
+## Parte II — apoio separado ao trabalho de 2,0
+
+![Fluxo operacional da Tábua Radler](/imagens/cursos/nav4-t2/figuras/fluxo-radler.svg)
+
+### Preparar o instante e o astro
+
+$$
+H_{cr}=H_{cp}+E_a,qquad HMG=H_{cr}+comp
+$$
+
+Use o ANB 2026: Sol/planeta/Lua pela coluna do astro; estrela por AHG de Áries + ARV. Aplique incrementos $v$ e $d$ quando indicados.
+
+### Obter AHL e $t_1$
+
+Escolha $\lambda_{aux}$ próxima da estimada para tornar o AHL inteiro:
+
+$$
+AHL=t_G-\lambda_W,qquad AHL=t_G+\lambda_E
+$$
+
+Normalize entre $0^\circ$ e $360^\circ$. Se $AHL<180^\circ$, $t_1=AHL\ W$; se $AHL>180^\circ$, $t_1=360^\circ-AHL\ E$. Para entrar na tábua, use o suplemento quando $t_1>90^\circ$, conservando E/W.
+
+### Fazer as duas entradas
+
+1. Entre com $\delta,t_1$; leia/interpole $a,b$.
+2. Escolha $\varphi_{aux}$ próxima, tornando $C$ inteiro.
+3. Nomes contrários: $C=b+\varphi$. Mesmo nome e $t_1>90^\circ$: soma. Mesmo nome e $t_1<90^\circ$: diferença em módulo.
+4. Entre com $a,C$; leia $a_e,Aqd$.
+
+O primeiro nome de $Aqd$ usa polo abaixado para nomes contrários; polo elevado para mesmo nome com $t_1>90^\circ$; com mesmo nome e $t_1<90^\circ$, elevado se $b>\varphi$ e abaixado se $b<\varphi$. O segundo nome é E/W de $t_1$.
+
+$$
+NE\to\theta,quad SE\to180^\circ-\theta,quad SW\to180^\circ+\theta,quad NW\to360^\circ-\theta
+$$
+
+### Fechar a folha
+
+Corrija $a_i$ até a altura verdadeira $a$, calcule $\Delta a=a-a_e$ e plote a partir da posição auxiliar.
+
+$$
+H_{cp}\to H_{cr}\to HMG\to(t_G,\delta)\to(AHL,t_1)
+$$
+
+$$
+(\delta,t_1)\to(a,b)\to(C,\varphi_{aux})\to(a_e,Aqd)\to Az\to\Delta a
+$$
+
+### Exemplo histórico das aulas
+
+O exemplo de 16/06/2020 serve somente para aprender a sequência. Em questão ou trabalho de 2026, $t_G$, $\delta$, incrementos e correções devem sair do ANB 2026.
+
+| Linha do modelo | Valor histórico | Razão |
+|---|---|---|
+| posição estimada | $23^\circ12{,}0'S$, $042^\circ05{,}8'W$ | dado inicial |
+| HMG | $11h25m29s$ | cronômetro corrigido + complemento |
+| $t_G$ | $351^\circ10{,}1'$ | página diária + incremento |
+| $\lambda_{aux}$ | $042^\circ10{,}1'W$ | faz o AHL inteiro |
+| AHL e $t_1$ | $309^\circ$; $51^\circ E$ | $360^\circ-309^\circ$ |
+| primeira entrada | $a=45^\circ30{,}9'$; $b=34^\circ28{,}5'$ | entrada $(\delta,t_1)$ |
+| posição auxiliar | $23^\circ31{,}5'S$ | torna $C$ inteiro |
+| $C$ | $58^\circ$ | nomes contrários: $b+\varphi_{aux}$ |
+| segunda entrada | $a_e=21^\circ47{,}6'$; $Aqd=50^\circ12{,}8'NE$ | entrada $(a,C)$ |
+| azimute | $Az=050{,}2^\circ$ | quadrante NE |
+| altura observada | $a=21^\circ35{,}8'$ | cadeia de correções |
+| intercepto | $\Delta a=-11{,}8'$ | $a-a_e$ |
+
+### Auditoria do trabalho
+
+- [ ] HMG veio de $H_{cr}+comp$ e a data Greenwich foi conferida?
+- [ ] longitude W foi subtraída e E somada no AHL?
+- [ ] $t_1$ preserva o nome E/W depois do suplemento?
+- [ ] a primeira entrada usou $\delta$ e $t_1$, não latitude?
+- [ ] a regra de $C$ corresponde aos nomes e à faixa de $t_1$?
+- [ ] $Aqd$ recebeu dois nomes antes de virar $Az$ circular?
+- [ ] $\Delta a$ usa a altura verdadeira observada, não $a_i$ nem o $a$ auxiliar?

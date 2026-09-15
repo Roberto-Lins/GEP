@@ -4,6 +4,7 @@ import type { CourseKitData, CourseKitManifest } from '@tipos/course-kit';
 export function generateManifest(data: CourseKitData, arquivos: string[]): CourseKitManifest {
   return {
     versao: '1.0',
+    contratoModalidades: '1.0.0',
     slug: data.slug,
     nome: data.nome,
     geradoEm: data.geradoEm,

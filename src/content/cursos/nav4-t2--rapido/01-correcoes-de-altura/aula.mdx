@@ -1,0 +1,84 @@
+---
+titulo: "Correções de altura dos astros — aula intensiva"
+secao: "aula"
+secaoOrdem: 2
+---
+
+> **Objetivo operacional:** partir do que o sextante leu e chegar à altura verdadeira sem trocar a ordem ou o sinal.
+
+![Cadeia das alturas](/imagens/cursos/nav4-t2/figuras/cadeia-alturas.svg)
+
+*Figura didática V3, construída a partir da apostila p. 139–144 e da aula 7.0.*
+
+## A cadeia que deve aparecer na folha
+
+$$
+a_i + e_i = a_o
+$$
+
+$$
+a_o + dp_{ap} = a_{ap}
+$$
+
+$$
+a = a_{ap} + AR + SD + PA + c_{ad}
+$$
+
+Na prática, o ANB muitas vezes entrega uma correção principal $c$ já combinada. Nesse caso, **não decomponha nem aplique de novo** as parcelas que já estão dentro de $c$. Copie o cabeçalho da tabela consultada e registre exatamente o que ela fornece.
+
+| Símbolo | Significado | Sinal/regra crítica |
+|---|---|---|
+| $e_i$ | erro instrumental do sextante | use o sinal fornecido |
+| $dp_{ap}$ | depressão aparente do horizonte | sempre negativa |
+| $AR$ | refração astronômica | sempre negativa |
+| $SD$ | semidiâmetro | limbo inferior $+$; superior $-$ |
+| $PA$ | paralaxe | positiva; máxima no horizonte, nula no zênite |
+| $c_{ad}$ | correção adicional | use o sinal da tabela e o motivo indicado |
+
+Conferência mental da depressão, se o exercício permitir cálculo:
+
+$$
+dp_{ap}(')=-1{,}76\sqrt{e\text{ (m)}} \qquad
+dp_{ap}(')=-0{,}97\sqrt{e\text{ (pés)}}
+$$
+
+## Qual tabela procurar no ANB 2026
+
+- **Estrela:** altura aparente → refração. Não há SD nem paralaxe relevante no tratamento do curso.
+- **Sol:** tabela A2 para alturas maiores; A3 para baixas alturas; A4 complementa temperatura/pressão anormais. Observe o limbo.
+- **Vênus/Marte:** correção principal e, quando indicada, adicional do planeta/paralaxe.
+- **Lua:** tabelas específicas; a entrada envolve altura aparente, paralaxe horizontal $P_h$ e limbo. É o caso com maior risco de duplicação de SD.
+
+## Algoritmo de prova
+
+1. Escreva data, astro, limbo, $a_i$, $e_i$, elevação do olho, HMG e condições atmosféricas.
+2. Calcule $a_o=a_i+e_i$.
+3. Obtenha/aplique $dp_{ap}$ e calcule $a_{ap}$.
+4. Abra a tabela correta do ANB **2026** pelo tipo de astro e faixa de altura.
+5. Copie $c$ e todo adicional aplicável, com sinal e critério de entrada.
+6. Some algebricamente. Minutos que passam de $60'$ viram $1^\circ$.
+7. Faça o teste físico: depressão e refração reduziram a altura? O limbo escolhido foi tratado uma vez?
+
+## Exemplo procedural antigo — não é exercício 2026
+
+Canopus: $a_i=19^\circ55{,}5'$, $e_i=-2{,}5'$, olho $13{,}5$ m.
+
+$$
+a_o=19^\circ53{,}0',\quad dp_{ap}=-6{,}5',\quad a_{ap}=19^\circ46{,}5'
+$$
+
+A tabela antiga forneceu $c=-2{,}7'$. Logo,
+
+$$
+a=19^\circ43{,}8'
+$$
+
+O valor não deve ser transplantado para outro ano; a utilidade do exemplo é a **ordem da conta**.
+
+## Pegadinhas que valem questão
+
+- “A refração aumenta a altura verdadeira” é falso: a atmosfera eleva a imagem aparente; a correção é negativa.
+- $1'$ de erro de altura desloca a LDP em aproximadamente **1 milha náutica**.
+- Limbo superior do Sol/Lua não recebe o mesmo sinal do inferior.
+- Temperatura e pressão só entram quando a tabela/problema indicar a correção complementar.
+- Para a Lua, não aplique “$+SD$” automaticamente: confira como a tabela principal e a correção de limbo estão definidas.

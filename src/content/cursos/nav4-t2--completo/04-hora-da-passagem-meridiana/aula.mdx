@@ -1,0 +1,95 @@
+---
+titulo: "Previsão e observação da passagem meridiana — aula completa"
+secao: "aula"
+secaoOrdem: 2
+---
+
+## Tempo verdadeiro e médio
+
+$$
+ET=HV-HM
+$$
+
+Na passagem superior local, $HVL=12h$, então:
+
+$$
+HML=12h-ET
+$$
+
+O ANB também fornece HML diretamente em dias selecionados.
+
+## Método simples
+
+Interpole HML para a data. Converta longitude com $15^\circ=1h$, $15'=1m$, $15''=1s$.
+
+$$
+HMG=HML+\lambda_t(W),\qquad HMG=HML-\lambda_t(E)
+$$
+
+Na convenção do curso:
+
+$$
+Hleg=HMG-P
+$$
+
+com $P$ positivo a W. Normalize hora e data.
+
+## Método preciso
+
+Leia ET com sinal perto de HVL 12h, calcule HML e conserve segundos nas conversões. Os métodos descrevem o mesmo evento; diferença grande revela sinal de ET, longitude ou fuso.
+
+## Operação no mar
+
+Comece uma série antes da Hleg prevista, confira sextante e hora, registre alturas em intervalos curtos e observe o patamar. A previsão orienta a janela; não substitui a observação.
+
+Se longitude/fuso levar a outro dia em Greenwich, a página diária do ANB precisa acompanhar a HMG, não apenas a data legal local.
+
+## Diagnóstico por diferença
+
+Diferença próxima de uma hora costuma ser fuso; várias horas, longitude; cerca de duas vezes o módulo de ET, sinal da equação. Sempre derive $HML=12-ET$ da definição.
+
+## Exemplo histórico pelo método preciso
+
+Para 23/07/2016, o exemplo da aula usa $ET=-06m29s$. A data é antiga e só ilustra o método:
+
+$$
+HML=12h-(-06m29s)=12h06m29s
+$$
+
+Para $\lambda=043^\circ10'W$:
+
+$$
+43^\circ10'=2h52m40s
+$$
+
+$$
+HMG=12h06m29s+2h52m40s=14h59m09s
+$$
+
+Com $P=+3h$ na convenção do curso:
+
+$$
+Hleg=14h59m09s-3h=11h59m09s
+$$
+
+O método simples deve produzir valor próximo; uma diferença de segundos ou poucos minutos pode vir de interpolação, enquanto uma diferença grande exige revisar os sinais.
+
+## Roteiro para qualquer enunciado
+
+1. Identifique data local, longitude, fuso/convenção de $P$ e método pedido.
+2. Obtenha HML diretamente ou derive-a da ET da edição 2026.
+3. Converta longitude angular em intervalo de tempo, sem misturar graus com horas.
+4. Aplique longitude: W soma, E subtrai.
+5. Converta HMG em Hleg usando uma única convenção de fuso.
+6. Normalize 0–24 h e registre eventual mudança de data.
+7. Compare com o outro método ou faça uma estimativa de ordem de grandeza.
+
+## Erros que custam a questão
+
+- ler HMG na página e chamá-la de HML;
+- interpretar $43^\circ10'$ como 43 h 10 min;
+- somar longitude E ou subtrair longitude W;
+- perder o sinal da ET;
+- usar mecanicamente $HML=12+ET$ em vez de derivar da definição;
+- aplicar UTC−3 duas vezes;
+- manter a página diária local quando a HMG caiu em outro dia Greenwich.

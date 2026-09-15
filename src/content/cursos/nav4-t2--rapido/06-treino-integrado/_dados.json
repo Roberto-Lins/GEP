@@ -1,0 +1,18 @@
+{
+  "ordem": 6,
+  "slug": "06-treino-integrado",
+  "titulo": "Treino integrado e protocolo de prova",
+  "prioridade": "máxima",
+  "subtitulo": "Consultas 2026 e simulação de 90 minutos",
+  "tempoEstimado": "50 min",
+  "objetivo": "Executar em folha os problemas prováveis e corrigir pelo processo.",
+  "palavrasChave": [
+    "simulado",
+    "ANB 2026",
+    "90 min"
+  ],
+  "conceptIds": [
+    "NAV4-TREINO"
+  ],
+  "modalidade": "rapido"
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "familia_id": "nav4-t2",
+  "modo_prioritario": "rapido",
+  "estado": "validado_publicacao_autorizada",
+  "data_referencia": "2026-09-15",
+  "corpus": {
+    "drive_itens_inventariados": 1118,
+    "paginas_apostila_lidas": "139–180",
+    "slides_lidos": 237,
+    "provas_e_resumos_ocr": true,
+    "videoaulas_vinculadas": 6,
+    "nova_fonte_radler": "UE 10.0 Parte 1, 0:00–13:00"
+  },
+  "decisoes": [
+    "Não usar dados de almanaques antigos em exercícios datados de 2026.",
+    "Usar exemplos antigos somente como demonstração procedural identificada.",
+    "Manter os quatro blocos em todas as modalidades.",
+    "Não incluir conteúdo posterior à T2/PP2.",
+    "Tratar a teoria Radler até 13:00 como examinável em todos os modos.",
+    "Separar o DHN-0607 integral como apoio ao trabalho de 2,0 entregue no dia da T2.",
+    "Não presumir uma questão Radler longa dentro dos 90 minutos da prova escrita."
+  ],
+  "lacunas": [
+    "ANB 2026 oficial é comercial; dados anuais dependem da cópia física do aluno."
+  ],
+  "validacao": {
+    "conteudo": "0 erros e 0 avisos",
+    "testes": "117 aprovados",
+    "build": "322 páginas geradas",
+    "sincronizacao_skills": "aprovada",
+    "auditoria_modalidades": "aprovada",
+    "auditoria_midia": "nenhum arquivo pesado novo",
+    "figuras_tecnicas": "5 SVGs; a nova figura PAZ foi renderizada em 1280×760 e inspecionada",
+    "questoes_modalidade": "Rápido 37; Pra Safar 38; Completo 46"
+  },
+  "proxima_etapa": "merge na main autorizado pelo usuário nesta entrega"
+}

@@ -1,0 +1,22 @@
+{
+  "ordem": 5,
+  "slug": "05-latitude-meridiana",
+  "titulo": "Latitude meridiana completa",
+  "prioridade": "máxima",
+  "subtitulo": "Casos superiores, passagem inferior e efeito do movimento",
+  "tempoEstimado": "125 min",
+  "objetivo": "Derivar e resolver as relações de latitude e reconhecer exceções.",
+  "palavrasChave": [
+    "culminação",
+    "passagem inferior",
+    "movimento"
+  ],
+  "conceptIds": [
+    "NAV4-LAT-Z",
+    "NAV4-LAT-DEC",
+    "NAV4-LAT-CASOS",
+    "NAV4-LAT-AZ",
+    "NAV4-LAT-MOVIMENTO"
+  ],
+  "modalidade": "completo"
+}

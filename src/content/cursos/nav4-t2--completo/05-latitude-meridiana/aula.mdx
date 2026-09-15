@@ -1,0 +1,91 @@
+---
+titulo: "Latitude meridiana completa — aula completa"
+secao: "aula"
+secaoOrdem: 2
+---
+
+## Relação meridiana
+
+$$
+z=90^\circ-a
+$$
+
+Na passagem superior, $t_1=0$, e latitude, declinação e distância zenital ficam no mesmo meridiano.
+
+![Casos da latitude meridiana](/imagens/cursos/nav4-t2/figuras/casos-latitude.svg)
+
+## Declinação
+
+Use HMG da observação, valor horário do ANB 2026, $d$, incremento de minutos/segundos e nome N/S. Verifique a tendência durante a hora.
+
+## Três casos
+
+1. mesmo nome, latitude maior: $|\varphi|=|\delta|+z$;
+2. mesmo nome, declinação maior: $|\varphi|=|\delta|-z$;
+3. nomes contrários: $|\varphi|=z-|\delta|$.
+
+Com N positivo e S negativo:
+
+$$
+\varphi=\delta-z\quad(Az=000^\circ)
+$$
+$$
+\varphi=\delta+z\quad(Az=180^\circ)
+$$
+
+Use desenho e forma assinada como verificações independentes.
+
+## Passagem inferior
+
+A fonte registra, para condição especial de mesmo nome:
+
+$$
+\varphi_{md}=180^\circ-(\delta+z),\qquad \varphi\ge90^\circ-\delta
+$$
+
+O foco anunciado é a passagem superior, mas a exceção explica por que se deve identificar a culminação.
+
+## Movimento
+
+O máximo coincide com a altura meridiana para observador parado ou pequena componente N–S. A aula dá limites decrescentes: 27 nós a $10^\circ$, 24 a $20^\circ$, 21 a $30^\circ$, 19 a $40^\circ$, 18 a $45^\circ$, 17 a $50^\circ$, 16 a $55^\circ$, 14 a $60^\circ$, 13 a $65^\circ$ e 12 a $70^\circ$.
+
+Com rumo e velocidade, avalie $|V\cos R|$. Um erro $+\epsilon$ em altura vira $-\epsilon$ em $z$ e quase o mesmo módulo em latitude.
+
+## Algoritmo completo de resolução
+
+1. Confirme que a observação é da passagem superior e que $a$ já é altura verdadeira.
+2. Calcule $z=90^\circ-a$ emprestando $1^\circ=60'$ quando necessário.
+3. Use a HMG da observação para ler $\delta_h$ no ANB 2026.
+4. Interpole com $d$ e o incremento de minutos/segundos, mantendo a tendência e o nome N/S.
+5. Faça um desenho com equador, zênite e GP do Sol; escolha um dos três casos.
+6. Calcule a latitude e dê o nome do hemisfério.
+7. Confira com a forma assinada e verifique se o Sol estava ao norte ou ao sul.
+
+## Exemplo histórico resolvido
+
+Considere $a=71^\circ08{,}3'$. Então:
+
+$$
+z=90^\circ-71^\circ08{,}3'=18^\circ51{,}7'
+$$
+
+A interpolação antiga forneceu $\delta=01^\circ32{,}5'S$. Como a posição estimada está próxima de $20^\circ S$ e o Sol culmina ao norte, use N positivo e S negativo:
+
+$$
+\varphi=\delta-z=-1^\circ32{,}5'-18^\circ51{,}7'=-20^\circ24{,}2'
+$$
+
+Logo, $\varphi=20^\circ24{,}2'S$ e $Az=000^\circ$. O valor de declinação é histórico; a estrutura da solução é a parte reutilizável.
+
+## Como decidir sem decorar casos
+
+No desenho meridiano, verifique de que lado do zênite está o GP do Sol. Se o Sol está ao norte, deslocar-se do GP até o observador equivale a subtrair $z$ na convenção assinada; se está ao sul, equivale a somar. O resultado deve permanecer próximo da latitude estimada. Um salto para o outro hemisfério sem o Sol passar pelo zênite é sinal de caso ou nome errado.
+
+## Conferências finais
+
+- [ ] $0^\circ\le z\le90^\circ$?
+- [ ] $\delta$ veio da HMG e foi interpolada com o sentido de $d$?
+- [ ] os nomes N/S foram preservados antes de usar módulos?
+- [ ] $Az=000^\circ/180^\circ$ combina com o desenho?
+- [ ] a latitude final é coerente com a estimada?
+- [ ] rumo e velocidade exigem discutir a diferença entre altura máxima e meridiana?

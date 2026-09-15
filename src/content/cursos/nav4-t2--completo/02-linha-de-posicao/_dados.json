@@ -1,0 +1,22 @@
+{
+  "ordem": 2,
+  "slug": "02-linha-de-posicao",
+  "titulo": "Geometria completa da LDP",
+  "prioridade": "muito alta",
+  "subtitulo": "GP, lugar geométrico, solução matemática e limite da tangente",
+  "tempoEstimado": "95 min",
+  "objetivo": "Derivar e interpretar a reta de altura, inclusive suas limitações.",
+  "palavrasChave": [
+    "triângulo de posição",
+    "osculatriz",
+    "Mercator"
+  ],
+  "conceptIds": [
+    "NAV4-LDP-GP",
+    "NAV4-LDP-CIRC",
+    "NAV4-LDP-RETA",
+    "NAV4-LDP-INTERCEPTO",
+    "NAV4-LDP-MAT"
+  ],
+  "modalidade": "completo"
+}

@@ -1,0 +1,22 @@
+{
+  "ordem": 4,
+  "slug": "04-hora-da-passagem-meridiana",
+  "titulo": "Previsão e observação da passagem meridiana",
+  "prioridade": "máxima",
+  "subtitulo": "Tempo aparente, ET, fuso e preparação da série",
+  "tempoEstimado": "90 min",
+  "objetivo": "Prever a passagem e organizar sua observação no mar.",
+  "palavrasChave": [
+    "tempo aparente",
+    "HVL",
+    "observação"
+  ],
+  "conceptIds": [
+    "NAV4-PM-CONCEITO",
+    "NAV4-PM-SIMPLES",
+    "NAV4-PM-PRECISO",
+    "NAV4-PM-FUSO",
+    "NAV4-PM-OPERACAO"
+  ],
+  "modalidade": "completo"
+}

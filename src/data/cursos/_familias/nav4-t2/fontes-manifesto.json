@@ -1,0 +1,560 @@
+{
+  "schema_version": "1.0.0",
+  "drive_root": "https://drive.google.com/drive/folders/1esNUiecg6wDrcw5Q9NqW5OYW6JSb3P9I",
+  "inventario_total": 1118,
+  "atualizacao_professor_2026_09_15": {
+    "titulo": "UE 10.0 — Tábua Radler (Conceitos), Parte 1",
+    "url": "https://www.youtube.com/watch?v=zjoa5-05Y2Y",
+    "recorte": "0:00–13:00",
+    "decisao": "Núcleo conceitual da prova; a aula seguinte é apoio ao trabalho de 2,0 entregue no dia da T2."
+  },
+  "fontes_relevantes": [
+    {
+      "folder": false,
+      "id": "18Glw_1NKK0sxSoXusgUeGpbmQyd4-yJL",
+      "mime_type": "application/msword",
+      "path": "NAV-4 2026/Sumário 2026 NAV 4.doc",
+      "size": "43008",
+      "title": "Sumário 2026 NAV 4.doc",
+      "url": "https://docs.google.com/document/d/18Glw_1NKK0sxSoXusgUeGpbmQyd4-yJL/edit?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1oqHtJH6cmb8rUF5Eke5dTMDIG8wfFJ_b",
+      "mime_type": "application/msword",
+      "path": "NAV-4 2026/PE NAV-4-2026.doc",
+      "size": "133632",
+      "title": "PE NAV-4-2026.doc",
+      "url": "https://docs.google.com/document/d/1oqHtJH6cmb8rUF5Eke5dTMDIG8wfFJ_b/edit?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1UCDBO21fRyf6c4zgR38RMRAbvILX4k5I",
+      "mime_type": "application/pdf",
+      "path": "NAV-4 2026/Tábuas para Navegação- DHN.pdf",
+      "size": "159607475",
+      "title": "Tábuas para Navegação- DHN.pdf",
+      "url": "https://drive.google.com/file/d/1UCDBO21fRyf6c4zgR38RMRAbvILX4k5I/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1xy4gWZwrKQkTWxe2r5MMLlmlV48EAru_",
+      "mime_type": "application/pdf",
+      "path": "T2/AV T2 NAV-4.pdf",
+      "size": "171003",
+      "title": "AV T2 NAV-4.pdf",
+      "url": "https://drive.google.com/file/d/1xy4gWZwrKQkTWxe2r5MMLlmlV48EAru_/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "10bYfI3qxSOsFX0S6CnUHCjqf2B1hrZd6",
+      "mime_type": "application/pdf",
+      "path": "T2/Resumo T2 NAV4.pdf",
+      "size": "34333397",
+      "title": "Resumo T2 NAV4.pdf",
+      "url": "https://drive.google.com/file/d/10bYfI3qxSOsFX0S6CnUHCjqf2B1hrZd6/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1276MCCvPVqlEP00IpbUzoRdkuObI_k0M",
+      "mime_type": "application/pdf",
+      "path": "T2/Sopa Nav T2 2022.pdf",
+      "size": "837765",
+      "title": "Sopa Nav T2 2022.pdf",
+      "url": "https://drive.google.com/file/d/1276MCCvPVqlEP00IpbUzoRdkuObI_k0M/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1WCWJqfAf3RPR2M96EDlQxd-wCc4KS6cy",
+      "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "path": "NAV-4 2026/PLADIS - NAV 4/PLADIS  NAV-4.docx",
+      "size": "28004",
+      "title": "PLADIS  NAV-4.docx",
+      "url": "https://docs.google.com/document/d/1WCWJqfAf3RPR2M96EDlQxd-wCc4KS6cy/edit?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1h-smy9hRv1C1owtNofrqHiA2pftvkuL1",
+      "mime_type": "application/pdf",
+      "path": "NAV-4 2026/Modelos - Radler e Desvio da GIro/Modelo Radler PDF.pdf",
+      "size": "154468",
+      "title": "Modelo Radler PDF.pdf",
+      "url": "https://drive.google.com/file/d/1h-smy9hRv1C1owtNofrqHiA2pftvkuL1/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1k9-A0VzQTG1ymcRR2uVi2viaoyH4DKIs",
+      "mime_type": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "path": "NAV-4 2026/Aulas/7.0 Correções de Alturas.pptx",
+      "size": "30621932",
+      "title": "7.0 Correções de Alturas.pptx",
+      "url": "https://docs.google.com/presentation/d/1k9-A0VzQTG1ymcRR2uVi2viaoyH4DKIs/edit?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1risyAEZNDPdaX-XBCKsMIfHrCccjBYMU",
+      "mime_type": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "path": "NAV-4 2026/Aulas/7.1 Correções de Alturas - Gabarito Exercicios.pptx",
+      "size": "22942078",
+      "title": "7.1 Correções de Alturas - Gabarito Exercicios.pptx",
+      "url": "https://docs.google.com/presentation/d/1risyAEZNDPdaX-XBCKsMIfHrCccjBYMU/edit?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1frGbAlhikyGCnI1CgaeezrQgjm527NKN",
+      "mime_type": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "path": "NAV-4 2026/Aulas/8.0 Linhas de Posição.pptx",
+      "size": "1415875",
+      "title": "8.0 Linhas de Posição.pptx",
+      "url": "https://docs.google.com/presentation/d/1frGbAlhikyGCnI1CgaeezrQgjm527NKN/edit?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "13RqEW9hQ_Wy-2eANdtW5YidK3FTCEuPd",
+      "mime_type": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "path": "NAV-4 2026/Aulas/9.0 Elem Determ Retas de Altura - Tabua Radler - PARTE 1.pptx",
+      "size": "62527899",
+      "title": "9.0 Elem Determ Retas de Altura - Tabua Radler - PARTE 1.pptx",
+      "url": "https://docs.google.com/presentation/d/13RqEW9hQ_Wy-2eANdtW5YidK3FTCEuPd/edit?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "18tCC6OW5XvawV0g6mfTWcmFcdrstYJAs",
+      "mime_type": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "path": "NAV-4 2026/Aulas/9.0 Elem Determ Retas de Altura - Tabua Radler - PARTE 2.pptx",
+      "size": "70153679",
+      "title": "9.0 Elem Determ Retas de Altura - Tabua Radler - PARTE 2.pptx",
+      "url": "https://docs.google.com/presentation/d/18tCC6OW5XvawV0g6mfTWcmFcdrstYJAs/edit?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "10qdlCPgfsZL2bj8GAG20FdDBulMcKwzQ",
+      "mime_type": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "path": "NAV-4 2026/Aulas/10.1 e 10.2 Pass. Meridiana.pptx",
+      "size": "20682026",
+      "title": "10.1 e 10.2 Pass. Meridiana.pptx",
+      "url": "https://docs.google.com/presentation/d/10qdlCPgfsZL2bj8GAG20FdDBulMcKwzQ/edit?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1TCNTmfZE9ymiZBMvKPbgkeo6KKqJr2WK",
+      "mime_type": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "path": "NAV-4 2026/Aulas/10.3 Pass. Meridiana - Cálculo da Latitude Meridiana.pptx",
+      "size": "28675803",
+      "title": "10.3 Pass. Meridiana - Cálculo da Latitude Meridiana.pptx",
+      "url": "https://docs.google.com/presentation/d/1TCNTmfZE9ymiZBMvKPbgkeo6KKqJr2WK/edit?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1bdNITHVYm0cIbYTfCfuXAzjoZ3vpFe4q",
+      "mime_type": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "path": "NAV-4 2026/Aulas/4.5 Almanaque Náutico.pptx",
+      "size": "891874",
+      "title": "4.5 Almanaque Náutico.pptx",
+      "url": "https://docs.google.com/presentation/d/1bdNITHVYm0cIbYTfCfuXAzjoZ3vpFe4q/edit?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1Z90fw3hvGuK7fK5Ilw2rJ37EDI0nf8KG",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/15-UE.-11.0-Latitude Meridiana/PG-180.JPG",
+      "size": "1091926",
+      "title": "PG-180.JPG",
+      "url": "https://drive.google.com/file/d/1Z90fw3hvGuK7fK5Ilw2rJ37EDI0nf8KG/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1_oP_RkuDWLI-sFr4Bj3QGsTiynL31M5T",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/15-UE.-11.0-Latitude Meridiana/PG-179.JPG",
+      "size": "1218298",
+      "title": "PG-179.JPG",
+      "url": "https://drive.google.com/file/d/1_oP_RkuDWLI-sFr4Bj3QGsTiynL31M5T/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1wJCM65uGgGYC0AdjMdNeRicApi07LVv5",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/15-UE.-11.0-Latitude Meridiana/PG-178.JPG",
+      "size": "1186543",
+      "title": "PG-178.JPG",
+      "url": "https://drive.google.com/file/d/1wJCM65uGgGYC0AdjMdNeRicApi07LVv5/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1BZNYW_-JTBHRwh9xt9Ac76idmjWvUSNG",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/15-UE.-11.0-Latitude Meridiana/PG-177.JPG",
+      "size": "948613",
+      "title": "PG-177.JPG",
+      "url": "https://drive.google.com/file/d/1BZNYW_-JTBHRwh9xt9Ac76idmjWvUSNG/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1vCNUipoaby8FIRl8jWmrFF0xkLHtCNQ5",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/15-UE.-11.0-Latitude Meridiana/PG-176.JPG",
+      "size": "1244187",
+      "title": "PG-176.JPG",
+      "url": "https://drive.google.com/file/d/1vCNUipoaby8FIRl8jWmrFF0xkLHtCNQ5/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1Oua6TJEEfsw3bcjPEHTsLOKL8ZVde_E0",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/15-UE.-11.0-Latitude Meridiana/PG-175.JPG",
+      "size": "1135145",
+      "title": "PG-175.JPG",
+      "url": "https://drive.google.com/file/d/1Oua6TJEEfsw3bcjPEHTsLOKL8ZVde_E0/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "12IjYdmPiGWfJU0kvdvdcGeerkCK8VxDh",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/12-UE.-9.0 -Linha de posição astronômica/PG-154.JPG",
+      "size": "1120617",
+      "title": "PG-154.JPG",
+      "url": "https://drive.google.com/file/d/12IjYdmPiGWfJU0kvdvdcGeerkCK8VxDh/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1po5owA3tZdNnz_RFEr731kdZ5cqJzbb_",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/12-UE.-9.0 -Linha de posição astronômica/PG-159.JPG",
+      "size": "810235",
+      "title": "PG-159.JPG",
+      "url": "https://drive.google.com/file/d/1po5owA3tZdNnz_RFEr731kdZ5cqJzbb_/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1OTpS-8mM_E4d1RGDFoxgzQkGKi2IFCRM",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/12-UE.-9.0 -Linha de posição astronômica/PG-158.JPG",
+      "size": "1176352",
+      "title": "PG-158.JPG",
+      "url": "https://drive.google.com/file/d/1OTpS-8mM_E4d1RGDFoxgzQkGKi2IFCRM/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1RS8_7BJajtHnzbLElFd3V4LCLM9uzYcq",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/12-UE.-9.0 -Linha de posição astronômica/PG-157.JPG",
+      "size": "1238215",
+      "title": "PG-157.JPG",
+      "url": "https://drive.google.com/file/d/1RS8_7BJajtHnzbLElFd3V4LCLM9uzYcq/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1tjbPcCAHrrpuKZqZgi2TRkoaRsn53JNV",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/12-UE.-9.0 -Linha de posição astronômica/PG-156.JPG",
+      "size": "1944144",
+      "title": "PG-156.JPG",
+      "url": "https://drive.google.com/file/d/1tjbPcCAHrrpuKZqZgi2TRkoaRsn53JNV/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1_2WBtfZPqs5pwHeR14WOUbNJx1_nU0Ng",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/12-UE.-9.0 -Linha de posição astronômica/PG-155.JPG",
+      "size": "1410818",
+      "title": "PG-155.JPG",
+      "url": "https://drive.google.com/file/d/1_2WBtfZPqs5pwHeR14WOUbNJx1_nU0Ng/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1ECXV0Fn46qyp0HGj_6ffJ8BN6hzURgVY",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/12-UE.-9.0 -Linha de posição astronômica/PG-153.JPG",
+      "size": "1023897",
+      "title": "PG-153.JPG",
+      "url": "https://drive.google.com/file/d/1ECXV0Fn46qyp0HGj_6ffJ8BN6hzURgVY/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1W7DfNkC-hCLDbF5EwPoPOn96fFZKeDAU",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/13-UE.-10.0- Elementos Determinativos da Reta de Altura/PG-174.JPG",
+      "size": "1588787",
+      "title": "PG-174.JPG",
+      "url": "https://drive.google.com/file/d/1W7DfNkC-hCLDbF5EwPoPOn96fFZKeDAU/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1v597kj4aEbUzapVx24t1cm3CFLGrdp81",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/13-UE.-10.0- Elementos Determinativos da Reta de Altura/PG-173.JPG",
+      "size": "1611628",
+      "title": "PG-173.JPG",
+      "url": "https://drive.google.com/file/d/1v597kj4aEbUzapVx24t1cm3CFLGrdp81/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1k_au0fHAHuor25JkZQYMQ3_P4Xxnlm3D",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/13-UE.-10.0- Elementos Determinativos da Reta de Altura/PG-172.JPG",
+      "size": "1197322",
+      "title": "PG-172.JPG",
+      "url": "https://drive.google.com/file/d/1k_au0fHAHuor25JkZQYMQ3_P4Xxnlm3D/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1xBfLrQ2wkgFgBtaujqgrcIUnM8us6lSv",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/13-UE.-10.0- Elementos Determinativos da Reta de Altura/PG-171.JPG",
+      "size": "1210518",
+      "title": "PG-171.JPG",
+      "url": "https://drive.google.com/file/d/1xBfLrQ2wkgFgBtaujqgrcIUnM8us6lSv/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1QDVuZTSjMQszhvXKBxPR1CKD8KVVYBQZ",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/13-UE.-10.0- Elementos Determinativos da Reta de Altura/PG-170.JPG",
+      "size": "1053171",
+      "title": "PG-170.JPG",
+      "url": "https://drive.google.com/file/d/1QDVuZTSjMQszhvXKBxPR1CKD8KVVYBQZ/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1WY7QRhkFbwrPeyWWOmMUEFnP4pWfwZYP",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/13-UE.-10.0- Elementos Determinativos da Reta de Altura/PG-169.JPG",
+      "size": "1884154",
+      "title": "PG-169.JPG",
+      "url": "https://drive.google.com/file/d/1WY7QRhkFbwrPeyWWOmMUEFnP4pWfwZYP/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1XI2kM3qzOy1H59ncf0WpbjbzO0rFgHuI",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/13-UE.-10.0- Elementos Determinativos da Reta de Altura/PG-168.JPG",
+      "size": "999696",
+      "title": "PG-168.JPG",
+      "url": "https://drive.google.com/file/d/1XI2kM3qzOy1H59ncf0WpbjbzO0rFgHuI/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1i2vrlv8mQOtdet1csAsJTMlo8AUWMaff",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/13-UE.-10.0- Elementos Determinativos da Reta de Altura/PG-167.JPG",
+      "size": "1215160",
+      "title": "PG-167.JPG",
+      "url": "https://drive.google.com/file/d/1i2vrlv8mQOtdet1csAsJTMlo8AUWMaff/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "10vsG_wdGuRtTIcB8-qSQ8LUgQW9nyRrQ",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/13-UE.-10.0- Elementos Determinativos da Reta de Altura/PG-166.JPG",
+      "size": "1210209",
+      "title": "PG-166.JPG",
+      "url": "https://drive.google.com/file/d/10vsG_wdGuRtTIcB8-qSQ8LUgQW9nyRrQ/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1yLfmfQv-fiuF0MsRvKNOYSCGsOb3xVLf",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/13-UE.-10.0- Elementos Determinativos da Reta de Altura/PG-165.JPG",
+      "size": "969130",
+      "title": "PG-165.JPG",
+      "url": "https://drive.google.com/file/d/1yLfmfQv-fiuF0MsRvKNOYSCGsOb3xVLf/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1ojjZmO7ozJWmSArOnBz0mvLZw0AyqN78",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/13-UE.-10.0- Elementos Determinativos da Reta de Altura/PG-164.JPG",
+      "size": "1278178",
+      "title": "PG-164.JPG",
+      "url": "https://drive.google.com/file/d/1ojjZmO7ozJWmSArOnBz0mvLZw0AyqN78/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1Se3zH71FchuFlrqTHztw6ZHX5f4_8kJc",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/13-UE.-10.0- Elementos Determinativos da Reta de Altura/PG-163.JPG",
+      "size": "1227800",
+      "title": "PG-163.JPG",
+      "url": "https://drive.google.com/file/d/1Se3zH71FchuFlrqTHztw6ZHX5f4_8kJc/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1pWJVSgvgd12mvZSNQLUStWuB8arVHR9d",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/13-UE.-10.0- Elementos Determinativos da Reta de Altura/PG-162.JPG",
+      "size": "987720",
+      "title": "PG-162.JPG",
+      "url": "https://drive.google.com/file/d/1pWJVSgvgd12mvZSNQLUStWuB8arVHR9d/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1Qhn6ylyTl7bWB3_Bp79u4TCWjfBZMaxU",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/13-UE.-10.0- Elementos Determinativos da Reta de Altura/PG-161.JPG",
+      "size": "913074",
+      "title": "PG-161.JPG",
+      "url": "https://drive.google.com/file/d/1Qhn6ylyTl7bWB3_Bp79u4TCWjfBZMaxU/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1VqrH6L43eJUqRbSH3RYrk1rNCMq2UCCr",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/13-UE.-10.0- Elementos Determinativos da Reta de Altura/PG-160.JPG",
+      "size": "908491",
+      "title": "PG-160.JPG",
+      "url": "https://drive.google.com/file/d/1VqrH6L43eJUqRbSH3RYrk1rNCMq2UCCr/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1ZkWNkhanNKDb5HzTpY5qYTsVBxv27k1u",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/11-UE.-8.0 Correção de alturas estrelas/PG-152.JPG",
+      "size": "1933956",
+      "title": "PG-152.JPG",
+      "url": "https://drive.google.com/file/d/1ZkWNkhanNKDb5HzTpY5qYTsVBxv27k1u/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1E9Ws687TqCsO0SpevTuSvUGzAabEHfHP",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/11-UE.-8.0 Correção de alturas estrelas/PG-151.JPG",
+      "size": "1749346",
+      "title": "PG-151.JPG",
+      "url": "https://drive.google.com/file/d/1E9Ws687TqCsO0SpevTuSvUGzAabEHfHP/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1qkAA1YrwkQ2mxSUisUwL4k58Tcl18gbH",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/11-UE.-8.0 Correção de alturas estrelas/PG-150.JPG",
+      "size": "1852134",
+      "title": "PG-150.JPG",
+      "url": "https://drive.google.com/file/d/1qkAA1YrwkQ2mxSUisUwL4k58Tcl18gbH/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "13k-v8l0_a5UuuTIgbR0Uy3Pw63kL2Dga",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/11-UE.-8.0 Correção de alturas estrelas/PG-149.JPG",
+      "size": "1404508",
+      "title": "PG-149.JPG",
+      "url": "https://drive.google.com/file/d/13k-v8l0_a5UuuTIgbR0Uy3Pw63kL2Dga/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1lUlK9bticEEAUqHC_7cnkiuUjRuQNmfM",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/11-UE.-8.0 Correção de alturas estrelas/PG-148.JPG",
+      "size": "1516117",
+      "title": "PG-148.JPG",
+      "url": "https://drive.google.com/file/d/1lUlK9bticEEAUqHC_7cnkiuUjRuQNmfM/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1OWHlLOLt6qr2n95jmCnavPiTL2A_B1Y7",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/11-UE.-8.0 Correção de alturas estrelas/PG-147.JPG",
+      "size": "1612262",
+      "title": "PG-147.JPG",
+      "url": "https://drive.google.com/file/d/1OWHlLOLt6qr2n95jmCnavPiTL2A_B1Y7/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1O9SCUMWTf8-L8ruNL-NvUC4Lbi8RpTxl",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/11-UE.-8.0 Correção de alturas estrelas/PG-146.JPG",
+      "size": "1380153",
+      "title": "PG-146.JPG",
+      "url": "https://drive.google.com/file/d/1O9SCUMWTf8-L8ruNL-NvUC4Lbi8RpTxl/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "15gT9KHfAG2mfRpa8z1hMtdbiTRYnvaoW",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/11-UE.-8.0 Correção de alturas estrelas/PG-145.JPG",
+      "size": "1283378",
+      "title": "PG-145.JPG",
+      "url": "https://drive.google.com/file/d/15gT9KHfAG2mfRpa8z1hMtdbiTRYnvaoW/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1rxYgfzSpPJlA3hJlivaHDNKcz4LJexSx",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/11-UE.-8.0 Correção de alturas estrelas/PG-144.JPG",
+      "size": "1161159",
+      "title": "PG-144.JPG",
+      "url": "https://drive.google.com/file/d/1rxYgfzSpPJlA3hJlivaHDNKcz4LJexSx/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1iEW5-L1HKXJoP7UmvgUPwMRDtgnb2tdE",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/11-UE.-8.0 Correção de alturas estrelas/PG-143.JPG",
+      "size": "1174804",
+      "title": "PG-143.JPG",
+      "url": "https://drive.google.com/file/d/1iEW5-L1HKXJoP7UmvgUPwMRDtgnb2tdE/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1zgoTZzpwSPqAyAAMnKXjkyZC_EXKEhba",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/11-UE.-8.0 Correção de alturas estrelas/PG-142.JPG",
+      "size": "1112927",
+      "title": "PG-142.JPG",
+      "url": "https://drive.google.com/file/d/1zgoTZzpwSPqAyAAMnKXjkyZC_EXKEhba/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1RmVcclnmugo-modoRrM5DaJrAKpCsdXh",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/11-UE.-8.0 Correção de alturas estrelas/PG-141.JPG",
+      "size": "1175381",
+      "title": "PG-141.JPG",
+      "url": "https://drive.google.com/file/d/1RmVcclnmugo-modoRrM5DaJrAKpCsdXh/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1ci-65qWfb93F0VJyeqQKGHFb3gYZg7bO",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/11-UE.-8.0 Correção de alturas estrelas/PG-140.JPG",
+      "size": "1238132",
+      "title": "PG-140.JPG",
+      "url": "https://drive.google.com/file/d/1ci-65qWfb93F0VJyeqQKGHFb3gYZg7bO/view?usp=drivesdk"
+    },
+    {
+      "folder": false,
+      "id": "1hq1wC12TT4XWv_0eLU-a-LvPDVuaFbIM",
+      "mime_type": "image/jpeg",
+      "path": "NAV-4 2026/Apostila Digitalizada/11-UE.-8.0 Correção de alturas estrelas/PG-139.JPG",
+      "size": "1128077",
+      "title": "PG-139.JPG",
+      "url": "https://drive.google.com/file/d/1hq1wC12TT4XWv_0eLU-a-LvPDVuaFbIM/view?usp=drivesdk"
+    }
+  ],
+  "anexos_usuario": [
+    {
+      "papel": "orientação T2/2026"
+    },
+    {
+      "papel": "problemas possíveis"
+    },
+    {
+      "papel": "limite até PP2"
+    },
+    {
+      "papel": "links aulas 11.1–11.3"
+    },
+    {
+      "papel": "links aulas 7.0–9.0"
+    },
+    {
+      "papel": "recorte UE 10.0 Radler até 13:00 e separação do trabalho de 2,0"
+    }
+  ],
+  "fonte_externa_autorizada": {
+    "titulo": "Almanaque Náutico 2026 — CHM",
+    "url": "https://www.marinha.mil.br/chm/dados-do-segnav-publicacoes/almanaque-nautico",
+    "nota": "Página oficial confirma a 82ª edição e informa aquisição pela EMGEPRON; nenhuma cópia digital pública foi usada."
+  }
+}

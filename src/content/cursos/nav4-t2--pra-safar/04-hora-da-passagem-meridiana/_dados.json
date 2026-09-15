@@ -1,0 +1,22 @@
+{
+  "ordem": 4,
+  "slug": "04-hora-da-passagem-meridiana",
+  "titulo": "Previsão da passagem meridiana",
+  "prioridade": "máxima",
+  "subtitulo": "Método simples e preciso, com controle de longitude e fuso",
+  "tempoEstimado": "65 min",
+  "objetivo": "Calcular Hleg da PM por HML tabulada e por equação do tempo.",
+  "palavrasChave": [
+    "HML",
+    "ET",
+    "HMG",
+    "Hleg"
+  ],
+  "conceptIds": [
+    "NAV4-PM-CONCEITO",
+    "NAV4-PM-SIMPLES",
+    "NAV4-PM-PRECISO",
+    "NAV4-PM-FUSO"
+  ],
+  "modalidade": "pra-safar"
+}

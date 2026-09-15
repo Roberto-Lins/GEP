@@ -1,0 +1,25 @@
+{
+  "ordem": 1,
+  "slug": "01-correcoes-de-altura",
+  "titulo": "Sistema completo das alturas",
+  "prioridade": "máxima",
+  "subtitulo": "Geometria, fenômenos físicos, tabelas e quatro classes de astro",
+  "tempoEstimado": "125 min",
+  "objetivo": "Explicar e executar a redução da altura observada à verdadeira.",
+  "palavrasChave": [
+    "altura",
+    "refração",
+    "paralaxe",
+    "limbo"
+  ],
+  "conceptIds": [
+    "NAV4-ALT-CADEIA",
+    "NAV4-ALT-DIP",
+    "NAV4-ALT-AR",
+    "NAV4-ALT-SD",
+    "NAV4-ALT-PA",
+    "NAV4-ALT-LUA",
+    "NAV4-ALT-FISICA"
+  ],
+  "modalidade": "completo"
+}

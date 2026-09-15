@@ -1,0 +1,18 @@
+{
+  "ordem": 6,
+  "slug": "06-treino-integrado",
+  "titulo": "Treino integrado e simulado",
+  "prioridade": "máxima",
+  "subtitulo": "Banco dirigido, consulta ao ANB 2026 e prova de 90 minutos",
+  "tempoEstimado": "60 min",
+  "objetivo": "Integrar teoria, tabelas, contas e apresentação do raciocínio.",
+  "palavrasChave": [
+    "treino",
+    "simulado",
+    "2026"
+  ],
+  "conceptIds": [
+    "NAV4-TREINO"
+  ],
+  "modalidade": "pra-safar"
+}

@@ -55,6 +55,9 @@ Este pacote foi gerado pela **Bússola dos Aspirantes** e contém tudo para inst
 
 ## Conteúdo
 - \`course-kit.json\` — dados estruturados (fonte da verdade).
+- \`matriz-cobertura.json\` — matriz canônica pendente de confirmação no corpus.
+- \`perfil-cobranca.json\` — oito dimensões, evidências, localizações e incertezas.
+- \`fontes/manifesto.json\` — inventário dos anexos e links autorizados.
 - \`manifest.json\` — resumo.
 - \`PROMPT_CLAUDE.md\` — instruções de instalação.
 - \`linha-do-tempo/\`, \`exercicios/\`, \`audios/\`, \`videos/\`, \`slides/\`, \`fontes/\`, \`resumos/\`.
@@ -80,6 +83,8 @@ export async function buildZip(input: KitInput, arquivos: ArquivoLeve[]): Promis
   // Linha do tempo
   add('linha-do-tempo/topicos.json', JSON.stringify(data.topicos, null, 2));
   add('linha-do-tempo/topicos.md', topicosMarkdown(data));
+  add('matriz-cobertura.json', JSON.stringify(data.matrizCobertura, null, 2));
+  add('perfil-cobranca.json', JSON.stringify(data.perfilCobranca, null, 2));
 
   // Exercícios — todas as 12 seções padrão, mesmo vazias.
   for (const d of DIFICULDADES) {
@@ -99,6 +104,10 @@ export async function buildZip(input: KitInput, arquivos: ArquivoLeve[]): Promis
     zip.file(arq.caminho, arq.base64, { base64: true });
     caminhos.push(arq.caminho);
   }
+  add('fontes/manifesto.json', JSON.stringify({
+    arquivos: arquivos.map(({ caminho, nome, tamanho }) => ({ caminho, nome, tamanho })),
+    links: data.midias.filter((m) => m.src.startsWith('http')).map((m) => ({ titulo: m.titulo, url: m.src })),
+  }, null, 2));
 
   // Raiz
   const manifest = generateManifest(data, caminhos);

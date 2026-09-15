@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+  <title id="title">Fundamento geométrico da Tábua Radler</title>
+  <desc id="desc">Reconstrução didática do triângulo de posição PAZ dividido pela perpendicular AM nos triângulos PAM e ZAM. Mostra os auxiliares a, b e C e as duas entradas da tábua.</desc>
+  <rect width="1280" height="760" rx="32" fill="#071b33"/>
+  <g font-family="Arial, sans-serif">
+    <text x="640" y="52" fill="#ffffff" font-size="30" font-weight="700" text-anchor="middle">Triângulo PAZ e auxiliares da Tábua Radler</text>
+
+    <g transform="translate(40 82)">
+      <circle cx="355" cy="315" r="270" fill="#0b2947" stroke="#d6b45b" stroke-width="4"/>
+      <ellipse cx="355" cy="390" rx="258" ry="70" fill="none" stroke="#7f98aa" stroke-width="3" stroke-dasharray="11 9"/>
+      <path d="M355 45 C425 175 410 445 355 585" fill="none" stroke="#7f98aa" stroke-width="3"/>
+
+      <path d="M355 62 Q228 120 190 220" fill="none" stroke="#58c7d9" stroke-width="5"/>
+      <path d="M355 62 Q345 165 350 250" fill="none" stroke="#58c7d9" stroke-width="5"/>
+      <path d="M190 220 L350 250" fill="none" stroke="#f5a65b" stroke-width="5"/>
+      <path d="M190 220 L355 330" fill="none" stroke="#e7eef5" stroke-width="5"/>
+      <path d="M350 250 L355 330" fill="none" stroke="#f5a65b" stroke-width="6"/>
+
+      <path d="M341 248 L342 264 L358 265" fill="none" stroke="#ffffff" stroke-width="3"/>
+      <path d="M355 330 L355 390" fill="none" stroke="#d6b45b" stroke-width="6"/>
+      <path d="M350 250 L355 390" fill="none" stroke="#d6b45b" stroke-width="3" stroke-dasharray="8 7"/>
+
+      <g fill="#ffffff" font-size="25" font-weight="700" text-anchor="middle">
+        <circle cx="355" cy="62" r="8" fill="#ffffff"/><text x="376" y="68">P</text>
+        <circle cx="190" cy="220" r="8" fill="#ffffff"/><text x="167" y="216">A</text>
+        <circle cx="350" cy="250" r="8" fill="#ffffff"/><text x="375" y="246">M</text>
+        <circle cx="355" cy="330" r="8" fill="#ffffff"/><text x="381" y="338">Z</text>
+      </g>
+
+      <g font-size="23" font-weight="700">
+        <text x="255" y="221" fill="#f5a65b">a = AM</text>
+        <text x="414" y="298" fill="#f5a65b">C = MZ</text>
+        <text x="376" y="370" fill="#d6b45b">φ</text>
+        <text x="378" y="424" fill="#d6b45b">b = M–Equador</text>
+        <text x="215" y="112" fill="#58c7d9">PA = 90° − δ</text>
+        <text x="338" y="154" fill="#58c7d9">t₁</text>
+        <text x="223" y="299" fill="#e7eef5">ZA = 90° − aₑ</text>
+        <text x="270" y="347" fill="#e7eef5">Aqd</text>
+        <text x="505" y="398" fill="#a9bdca">Equador</text>
+      </g>
+
+      <rect x="30" y="620" width="650" height="58" rx="14" fill="#102e4b" stroke="#d6b45b" stroke-width="2"/>
+      <text x="355" y="657" fill="#ffffff" font-size="18" text-anchor="middle">Caso desenhado: mesmo nome, t₁ &lt; 90° e b &gt; φ ⇒ C = b − φ</text>
+    </g>
+
+    <g transform="translate(720 90)">
+      <rect x="0" y="0" width="510" height="620" rx="24" fill="#102e4b" stroke="#d6b45b" stroke-width="3"/>
+      <text x="255" y="55" fill="#ffffff" font-size="27" font-weight="700" text-anchor="middle">Como ler a construção</text>
+
+      <g fill="#ffffff" font-size="19">
+        <circle cx="42" cy="116" r="18" fill="#58c7d9"/><text x="42" y="124" text-anchor="middle" font-weight="700">1</text>
+        <text x="78" y="111" font-weight="700">Parta do triângulo PAZ.</text>
+        <text x="78" y="141" fill="#bcd0dd">Polo, astro e zênite do observador.</text>
+
+        <circle cx="42" cy="202" r="18" fill="#58c7d9"/><text x="42" y="210" text-anchor="middle" font-weight="700">2</text>
+        <text x="78" y="197" font-weight="700">Trace AM ⟂ PZ.</text>
+        <text x="78" y="227" fill="#bcd0dd">PAZ vira os triângulos PAM e ZAM.</text>
+
+        <circle cx="42" cy="288" r="18" fill="#58c7d9"/><text x="42" y="296" text-anchor="middle" font-weight="700">3</text>
+        <text x="78" y="283" font-weight="700">1ª entrada: (δ, t₁) → (a, b).</text>
+        <text x="78" y="313" fill="#bcd0dd">a e b são auxiliares;</text>
+        <text x="78" y="339" fill="#bcd0dd">não são alturas observadas.</text>
+
+        <circle cx="42" cy="392" r="18" fill="#58c7d9"/><text x="42" y="400" text-anchor="middle" font-weight="700">4</text>
+        <text x="78" y="387" font-weight="700">Combine b com φ para obter C.</text>
+        <text x="78" y="417" fill="#bcd0dd">A geometria decide soma ou diferença.</text>
+
+        <circle cx="42" cy="478" r="18" fill="#58c7d9"/><text x="42" y="486" text-anchor="middle" font-weight="700">5</text>
+        <text x="78" y="473" font-weight="700">2ª entrada: (a, C) → (aₑ, Aqd).</text>
+        <text x="78" y="503" fill="#bcd0dd">Depois: Az verdadeiro e Δa = a − aₑ.</text>
+      </g>
+
+      <rect x="28" y="530" width="454" height="72" rx="14" fill="#071b33"/>
+      <text x="255" y="559" fill="#f5a65b" font-size="21" font-weight="700" text-anchor="middle">Relações da 2ª entrada</text>
+      <text x="255" y="587" fill="#ffffff" font-size="18" text-anchor="middle">sen aₑ = cos a · cos C  |  cot Aqd = cot a · sen C</text>
+    </g>
+  </g>
+</svg>

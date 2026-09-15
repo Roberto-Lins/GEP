@@ -1,0 +1,19 @@
+{
+  "ordem": 0,
+  "slug": "00-mapa-da-t2",
+  "titulo": "Mapa da T2 e rota de ataque",
+  "prioridade": "máxima",
+  "subtitulo": "Escopo oficial, padrão de cobrança e uso correto do ANB 2026",
+  "tempoEstimado": "20 min",
+  "objetivo": "Organizar a preparação pelos quatro blocos confirmados e aplicar a regra de validade anual do ANB.",
+  "palavrasChave": [
+    "T2",
+    "ANB 2026",
+    "prioridade"
+  ],
+  "conceptIds": [
+    "NAV4-ESCOPO",
+    "NAV4-ANB2026"
+  ],
+  "modalidade": "rapido"
+}

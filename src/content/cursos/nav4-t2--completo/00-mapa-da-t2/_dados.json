@@ -1,0 +1,19 @@
+{
+  "ordem": 0,
+  "slug": "00-mapa-da-t2",
+  "titulo": "Arquitetura da T2 e método de estudo",
+  "prioridade": "máxima",
+  "subtitulo": "Corpus, hierarquia de evidências e plano completo",
+  "tempoEstimado": "35 min",
+  "objetivo": "Compreender o escopo e estudar com rastreabilidade.",
+  "palavrasChave": [
+    "corpus",
+    "perfil",
+    "rastreabilidade"
+  ],
+  "conceptIds": [
+    "NAV4-ESCOPO",
+    "NAV4-ANB2026"
+  ],
+  "modalidade": "completo"
+}

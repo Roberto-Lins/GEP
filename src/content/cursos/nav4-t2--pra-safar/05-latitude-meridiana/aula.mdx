@@ -1,0 +1,87 @@
+---
+titulo: "Cálculo da latitude meridiana — aula dirigida"
+secao: "aula"
+secaoOrdem: 2
+---
+
+## 1. Por que a latitude fica isolada
+
+Na passagem meridiana, astro, zênite e polo estão no mesmo círculo máximo. O triângulo de posição degenera em uma soma/diferença de arcos: latitude, declinação e distância zenital.
+
+$$
+z=90^\circ-a
+$$
+
+![Casos da latitude meridiana](/imagens/cursos/nav4-t2/figuras/casos-latitude.svg)
+
+## 2. Obter a declinação correta
+
+Use data e HMG no ANB 2026. A declinação tabulada para a hora inteira é corrigida pelo incremento baseado em $d$. Preserve N/S e verifique se a declinação deve aumentar ou diminuir ao longo daquela hora.
+
+Registre:
+
+$$
+\delta_{HMG}=\delta_h+\Delta\delta(d,m,s)
+$$
+
+## 3. Três casos superiores
+
+### Caso 1 — mesmo nome, latitude maior que a declinação
+
+O Sol culmina do lado do equador; em módulo:
+
+$$
+|\varphi|=z+|\delta|
+$$
+
+### Caso 2 — mesmo nome, declinação maior
+
+O Sol está além do zênite do observador:
+
+$$
+|\varphi|=|\delta|-z
+$$
+
+### Caso 3 — nomes contrários
+
+O equador fica entre observador e GP:
+
+$$
+|\varphi|=z-|\delta|
+$$
+
+A fonte também mostra um quarto caso de passagem inferior, $\varphi=180^\circ-(\delta+z)$, sob condição especial. A orientação da T2 destaca a **passagem superior**; trate o caso inferior como reconhecimento, não como rota principal.
+
+## 4. Método assinado para conferir
+
+Adote N positivo e S negativo.
+
+- Sol ao norte ($Az=000^\circ$): $\varphi=\delta-z$;
+- Sol ao sul ($Az=180^\circ$): $\varphi=\delta+z$.
+
+O método não substitui o desenho; ele verifica a conta.
+
+## 5. Exemplo histórico
+
+$a=71^\circ08{,}3'\Rightarrow z=18^\circ51{,}7'$.
+
+Após a interpolação antiga, $\delta=01^\circ32{,}5'S$. A posição estimada é próxima de $20^\circ S$; o Sol culmina ao norte. Em valores assinados:
+
+$$
+\varphi=-1^\circ32{,}5'-18^\circ51{,}7'=-20^\circ24{,}2'
+$$
+
+Latitude $20^\circ24{,}2'S$, $Az=000^\circ$.
+
+## 6. Altura máxima e navio em movimento
+
+A altura máxima não coincide necessariamente com a passagem do meridiano se o navio tem componente meridional relevante. A aula fornece limites de velocidade em latitude: 27 nós a $10^\circ$, reduzindo progressivamente até 12 nós a $70^\circ$. Se o problema der rumo e velocidade, avalie a componente N–S ou declare a condição de observador parado.
+
+## 7. Conferências finais
+
+- $0^\circ\le z\le90^\circ$;
+- latitude final deve ser coerente com $\varphi_e$;
+- o Sol deve estar no lado indicado pelo Az;
+- declinação veio do instante, não apenas da data;
+- graus/minutos foram normalizados;
+- se a latitude “saltou” de hemisfério sem o Sol cruzar o zênite, revise o caso.

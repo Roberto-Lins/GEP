@@ -1,0 +1,22 @@
+{
+  "ordem": 2,
+  "slug": "02-linha-de-posicao",
+  "titulo": "Linha de posição astronômica",
+  "prioridade": "muito alta",
+  "subtitulo": "Circunferência, tangente, Az e intercepto",
+  "tempoEstimado": "45 min",
+  "objetivo": "Explicar e construir a reta de altura a partir de a, ae e Az.",
+  "palavrasChave": [
+    "LDP",
+    "z",
+    "Az",
+    "intercepto"
+  ],
+  "conceptIds": [
+    "NAV4-LDP-GP",
+    "NAV4-LDP-CIRC",
+    "NAV4-LDP-RETA",
+    "NAV4-LDP-INTERCEPTO"
+  ],
+  "modalidade": "rapido"
+}

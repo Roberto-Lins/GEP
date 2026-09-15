@@ -1,0 +1,64 @@
+---
+titulo: "Hora da passagem meridiana — aula intensiva"
+secao: "aula"
+secaoOrdem: 2
+---
+
+> **O que está sendo previsto:** a hora legal aproximada em que o centro do Sol cruzará o meridiano superior do observador.
+
+## Por que é uma circunstância favorável
+
+Na passagem superior, o Sol está sobre o meridiano local, atinge a altura máxima para um observador parado e tem azimute $000^\circ$ ou $180^\circ$. O triângulo de posição se reduz a uma relação meridiana entre latitude, declinação e distância zenital.
+
+## Método simples — HML tabulada
+
+1. Abra a página diária correta do **ANB 2026**.
+2. Leia a HML da passagem meridiana do Sol; interpole entre os três dias impressos se necessário.
+3. Converta a longitude angular em tempo.
+4. Leve HML a HMG:
+   - longitude W: **some** o tempo de longitude;
+   - longitude E: **subtraia**.
+5. Leve HMG a Hleg pela convenção do curso:
+
+$$
+Hleg=HMG-P
+$$
+
+em que $P$ é positivo a W. Assim, no fuso de $+3h$, subtraem-se 3 h.
+
+## Método preciso — equação do tempo
+
+$$
+ET=HV-HM
+$$
+
+Para meio-dia verdadeiro local, $HVL=12h$:
+
+$$
+ET=HVL-HML \Rightarrow HML=12h-ET
+$$
+
+Depois, faça exatamente as mesmas conversões longitude → HMG → Hleg.
+
+Exemplo antigo: se $ET=-06m29s$, então
+
+$$
+HML=12h-(-06m29s)=12h06m29s
+$$
+
+A longitude $043^\circ10'W$ equivale a $2h52m40s$. Logo $HMG=14h59m09s$; com $P=+3h$, $Hleg=11h59m09s$.
+
+## Conversão que precisa sair automática
+
+$$
+15^\circ=1h,\qquad 15'=1m,\qquad 15''=1s
+$$
+
+Não confunda minutos de arco com minutos de tempo antes de aplicar a proporção.
+
+## Conferências
+
+- em longitude W, o meio-dia de Greenwich ocorre antes do meio-dia local: HMG da passagem fica maior que HML;
+- o método preciso deve ficar muito próximo do simples;
+- normalize horários que ultrapassem 24 h ou fiquem negativos;
+- HML/ET são dados anuais: use 2026.

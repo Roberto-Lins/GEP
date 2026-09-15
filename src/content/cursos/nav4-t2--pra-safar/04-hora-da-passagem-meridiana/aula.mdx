@@ -1,0 +1,89 @@
+---
+titulo: "Previsão da passagem meridiana — aula dirigida"
+secao: "aula"
+secaoOrdem: 2
+---
+
+## 1. Fenômeno
+
+Na passagem meridiana superior, o centro do Sol cruza o meridiano do observador. Para observador parado, ocorre a altura diária máxima; o ângulo no polo é zero e o azimute é $000^\circ$ ou $180^\circ$.
+
+A previsão permite iniciar uma série de alturas antes do máximo e identificar a culminação.
+
+## 2. Método simples
+
+O ANB fornece HML da passagem do Sol em dias selecionados. Interpole a data, se necessário.
+
+Converta longitude em tempo:
+
+$$
+\lambda_t=\frac{\lambda}{15^\circ/h}
+$$
+
+Atalhos: $15^\circ=1h$, $15'=1m$, $15''=1s$.
+
+$$
+HMG=
+\begin{cases}
+HML+\lambda_t,&W\\
+HML-\lambda_t,&E
+\end{cases}
+$$
+
+Na convenção do material:
+
+$$
+Hleg=HMG-P
+$$
+
+com $P$ positivo a W. Faça a passagem de data se o resultado sair de 0–24 h.
+
+## 3. Método preciso
+
+Equação do tempo:
+
+$$
+ET=HV-HM
+$$
+
+No meridiano local, na passagem superior:
+
+$$
+ET=12h-HML\Rightarrow HML=12h-ET
+$$
+
+Use o valor de ET próximo de HVL 12 h na página de 2026, com sinal. Depois aplique longitude e fuso como no método simples.
+
+### Exemplo histórico completo
+
+Para 23/07/2016, o exemplo usa $ET=-06m29s$:
+
+$$
+HML=12h06m29s
+$$
+
+Longitude $043^\circ10'W$:
+
+$$
+43^\circ/15=2h52m,\quad 10'=40s\Rightarrow\lambda_t=2h52m40s
+$$
+
+$$
+HMG=14h59m09s
+$$
+$$
+Hleg=14h59m09s-3h=11h59m09s
+$$
+
+## 4. Por que os métodos devem concordar
+
+A HML tabulada é uma apresentação direta do mesmo fenômeno representado pela equação do tempo. O método simples arredonda e pode interpolar de forma mais grosseira; o preciso conserva segundos. Diferença de muitos minutos indica erro de sinal ou página.
+
+## 5. Erros de prova
+
+- usar HMG da página como se fosse HML;
+- transformar $43^\circ10'$ em “43 h 10 min”;
+- somar longitude E;
+- usar $ET$ sem seu sinal;
+- fazer $HML=12h+ET$ mecanicamente; derive de $ET=12-HML$;
+- aplicar “UTC−3” duas vezes. Escolha uma convenção e escreva-a.

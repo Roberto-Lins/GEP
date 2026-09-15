@@ -1,0 +1,49 @@
+{
+  "slug": "nav4-t2--pra-safar",
+  "titulo": "NAV-4 — T2 — Pra Safar",
+  "subtitulo": "Navegação astronômica aplicada à T2 de 2026",
+  "descricao": "Estudo direcionado de todo o escopo examinável da T2, com teoria, consultas e treino proporcional à cobrança.",
+  "categoria": "Carreira Naval",
+  "ano": "4",
+  "semestre": "2",
+  "epoca": "T2",
+  "turma": "geral",
+  "ordem": 2,
+  "temaVisual": "naval-command",
+  "corTema": "dourado",
+  "icone": "/imagens/cursos/nav4-t2/icone.svg",
+  "capa": "/imagens/cursos/nav4-t2/capa.svg",
+  "estudo": {
+    "contratoVersao": "1.0.0",
+    "familiaId": "nav4-t2",
+    "familiaTitulo": "NAV-4 — T2",
+    "id": "pra-safar",
+    "modalidadePadrao": "completo",
+    "modalidadesDisponiveis": [
+      "rapido",
+      "pra-safar",
+      "completo"
+    ],
+    "legadoSomenteCompleto": false,
+    "rotulo": "Pra Safar",
+    "descricao": "Estudo direcionado de todo o escopo examinável da T2, com teoria, consultas e treino proporcional à cobrança.",
+    "finalidade": "Buscar alto desempenho cobrindo integralmente o que as fontes e orientações confirmam como examinável.",
+    "cobertura": "Correções, LDP, Radler, hora legal e latitude meridiana, incluindo variações e pegadinhas documentadas.",
+    "duracaoMinutos": 510,
+    "estadoAutoria": "publicado"
+  },
+  "features": {
+    "timeline": true,
+    "simulados": true,
+    "mapasMentais": false,
+    "podcasts": false,
+    "animacoesHero": false,
+    "animacoesTransicao": false,
+    "modoRevisaoVespera": true,
+    "graficoProgressoAvancado": false,
+    "writing": false,
+    "cadernoRevisao": false
+  },
+  "componentesExtras": [],
+  "downloads": []
+}

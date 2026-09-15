@@ -1,0 +1,77 @@
+---
+titulo: "UE 10.0 — conceitos da Tábua Radler"
+secao: "aula"
+secaoOrdem: 2
+---
+
+> **Recorte confirmado em 15/09/2026:** para a parte conceitual da T2, assista à aula **UE 10.0 — Radler (Parte 1) somente até 13:00**. A aula seguinte é o exercício do camarote, que vale **2,0 pontos** e será entregue no dia da T2; ele é um trabalho separado, não uma nova faixa de teoria para a prova escrita.
+
+## Para que serve a Radler
+
+A Tábua Radler simplifica a solução do triângulo de posição e reúne, em um único volume, combinações de latitude, declinação e ângulo no polo. Seu propósito é fornecer os dois **elementos determinativos da reta de altura**:
+
+$$
+\Delta a=a-a_e
+$$
+
+e o azimute verdadeiro $Az$.
+
+Aqui, $a$ é a **altura verdadeira observada**, já obtida pela cadeia de correções, e $a_e$ é a **altura estimada/calculada** para a posição auxiliar. Sinal positivo em $\Delta a$ significa “em direção ao astro”; sinal negativo, “afastando-se do astro”.
+
+## A figura que o professor mandou entender
+
+![Triângulo PAZ dividido pela perpendicular AM](/imagens/cursos/nav4-t2/figuras/fundamento-radler.svg)
+
+*Reconstrução didática V3 baseada na apostila p. 160–161 e na UE 10.0, 0:00–13:00. O desenho destaca relações; não está em escala.*
+
+Leia nesta ordem:
+
+1. $PAZ$ é o triângulo de posição: $P$ é o polo elevado, $A$ é o astro e $Z$ é o zênite do observador.
+2. Traça-se $AM$ perpendicular ao meridiano $PZ$. Isso divide $PAZ$ em dois triângulos retângulos: $PAM$ e $ZAM$.
+3. No primeiro triângulo, conhecendo $PA=90^\circ-\delta$ e $t_1$, a primeira parte da tábua fornece os auxiliares $a$ e $b$.
+4. O auxiliar $b$ é a distância angular entre o Equador e o pé $M$. Combinando $b$ com a latitude $\varphi$, obtém-se $C=MZ$.
+5. No segundo triângulo, $a$ e $C$ fornecem $ZA=90^\circ-a_e$ e o azimute quadrantal $Aqd$; daí saem $a_e$ e o azimute verdadeiro.
+
+> **Pegadinha de símbolo:** o $a$ auxiliar da primeira entrada é o segmento $AM$. Ele não é a altura verdadeira observada $a$ usada em $\Delta a=a-a_e$. Preserve os índices e o contexto.
+
+## As duas entradas que você precisa memorizar
+
+$$
+(\delta,t_1)\longrightarrow(a,b)
+$$
+
+$$
+b\;\text{com}\;\varphi\longrightarrow C
+$$
+
+$$
+(a,C)\longrightarrow(a_e,Aqd)\longrightarrow Az
+$$
+
+No ponto em que o vídeo termina, o professor ressalta que $t_1$ deve entrar em **graus inteiros**, sem minutos. A geometria decide se $C$ será soma ou diferença; no caso desenhado na p. 161 — mesmo nome, $t_1<90^\circ$ e $b>\varphi$ — vale:
+
+$$
+C=b-\varphi
+$$
+
+As relações teóricas que explicam a segunda entrada são:
+
+$$
+\sin a_e=\cos a\cos C
+$$
+
+$$
+\cot Aqd=\cot a\sin C
+$$
+
+## Fechamento conceitual em uma frase
+
+**A Radler troca um triângulo esférico difícil por dois triângulos retângulos auxiliares:** primeiro calcula $a,b$; depois forma $C$; por fim obtém $a_e,Aqd$, converte para $Az$ e combina $a_e$ com a altura verdadeira em $\Delta a$.
+
+## Apoio ao trabalho de 2,0
+
+O preenchimento integral do DHN-0607 continua disponível no modo **Completo**. Para conferir apenas a sequência do trabalho:
+
+![Fluxo operacional da Tábua Radler](/imagens/cursos/nav4-t2/figuras/fluxo-radler.svg)
+
+Esse fluxo é apoio à entrega; não o confunda com o recorte conceitual de 13 minutos confirmado para estudo da prova.

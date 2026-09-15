@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0.0",
+  "figuras": [
+    {
+      "id": "NAV4-FIG-ALT-001",
+      "arquivo": "/imagens/cursos/nav4-t2/figuras/cadeia-alturas.svg",
+      "nivel_fidelidade": "V3",
+      "arquivo_fonte": "Apostila digitalizada",
+      "localizacao": "p. 139–144",
+      "finalidade": "Mostrar mudança de referência entre alturas."
+    },
+    {
+      "id": "NAV4-FIG-LDP-001",
+      "arquivo": "/imagens/cursos/nav4-t2/figuras/ldp-geometria.svg",
+      "nivel_fidelidade": "V3",
+      "arquivo_fonte": "Apostila digitalizada",
+      "localizacao": "p. 153–158",
+      "finalidade": "Relacionar GP, circunferência, Az e tangente."
+    },
+    {
+      "id": "NAV4-FIG-RAD-001",
+      "arquivo": "/imagens/cursos/nav4-t2/figuras/fluxo-radler.svg",
+      "nivel_fidelidade": "V3",
+      "arquivo_fonte": "Apostila e aulas Radler",
+      "localizacao": "p. 160–174",
+      "finalidade": "Explicitar as duas entradas e controles."
+    },
+    {
+      "id": "NAV4-FIG-RAD-002",
+      "arquivo": "/imagens/cursos/nav4-t2/figuras/fundamento-radler.svg",
+      "nivel_fidelidade": "V3",
+      "arquivo_fonte": "Apostila digitalizada e vídeo UE 10.0",
+      "localizacao": "p. 160–161; vídeo 0:00–13:00",
+      "finalidade": "Explicar o triângulo PAZ, a perpendicular AM e o papel dos auxiliares a, b e C."
+    },
+    {
+      "id": "NAV4-FIG-LAT-001",
+      "arquivo": "/imagens/cursos/nav4-t2/figuras/casos-latitude.svg",
+      "nivel_fidelidade": "V3",
+      "arquivo_fonte": "Apostila e aula 10.3",
+      "localizacao": "p. 175–180",
+      "finalidade": "Comparar os três casos da passagem superior."
+    }
+  ]
+}

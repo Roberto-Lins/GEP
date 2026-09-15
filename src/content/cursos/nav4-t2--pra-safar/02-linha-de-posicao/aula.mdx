@@ -1,0 +1,89 @@
+---
+titulo: "Linha de posição astronômica — aula dirigida"
+secao: "aula"
+secaoOrdem: 2
+---
+
+## 1. Posição geográfica e paralelismo dos raios
+
+Como os astros estão a distância enorme, os raios recebidos em diferentes pontos da Terra são tratados como paralelos. A direção do astro intercepta a superfície no **GP**, ponto subastral. Sua latitude é a declinação $\delta$; sua longitude é relacionada ao AHG/tG no instante.
+
+## 2. Circunferência de igual altura
+
+Todos os observadores que medem a mesma altura verdadeira $a$, no mesmo instante, ficam a igual distância angular do GP.
+
+$$
+z=90^\circ-a
+$$
+
+Logo, $z$ é o raio angular. Na Terra, $1'$ corresponde a 1 MN.
+
+![Geometria da LDP](/imagens/cursos/nav4-t2/figuras/ldp-geometria.svg)
+
+## 3. Da circunferência à reta
+
+Uma carta de Mercator não é o lugar conveniente para traçar uma circunferência enorme. Nas proximidades da posição assumida, substituímos a circunferência osculatriz por sua tangente: a **reta de altura**.
+
+A precisão depende da curvatura. Em alturas muito grandes, $z$ é pequeno e a circunferência curva rapidamente; a apostila reduz a extensão aceitável da tangente perto de $80^\circ$.
+
+## 4. Elementos determinativos
+
+O triângulo de posição contém:
+
+$$
+c=90^\circ-\varphi,\qquad p=90^\circ-\delta,\qquad t_1=AHL\text{ ou }360^\circ-AHL
+$$
+
+Sua solução fornece:
+
+- altura calculada $a_e$ (ou $z=90^\circ-a_e$);
+- ângulo no zênite, convertido em $Az$.
+
+A solução matemática apresentada nas fontes pode ser conferida por:
+
+$$
+\sin a_e=\sin\varphi\sin\delta+\cos\varphi\cos\delta\cos AHL
+$$
+
+$$
+Z=\arccos\left(\frac{\sin\delta-\sin\varphi\sin a_e}{\cos a_e\cos\varphi}\right)
+$$
+
+A Radler é outro meio de resolver esses mesmos elementos.
+
+## 5. Método de intercepto
+
+A observação corrigida dá $a$. A posição assumida e o almanaque dão $a_e$ e $Az$.
+
+$$
+\Delta a=a-a_e
+$$
+
+- positivo: altura observada maior, posição mais perto do GP → marque no sentido de $Az$;
+- negativo: altura observada menor → marque no sentido $Az+180^\circ$.
+
+No ponto final, trace a reta perpendicular a $Az$.
+
+### Exemplo
+
+$$
+a=21^\circ35{,}8',\quad a_e=21^\circ47{,}6'
+$$
+$$
+\Delta a=-11{,}8'
+$$
+
+Marque 11,8 MN no sentido oposto ao azimute e trace a perpendicular.
+
+## 6. Distinções que aparecem em V/F
+
+| Afirmação | Avaliação |
+|---|---|
+| GP é a projeção do astro na superfície | verdadeira |
+| o raio da circunferência é a altura | falsa; é $z$ |
+| a reta é paralela ao azimute | falsa; é perpendicular |
+| $a=a_e$ faz a LDP passar pela posição assumida | verdadeira |
+| observar um astro fornece imediatamente uma posição exata | falsa; fornece uma LDP |
+| na passagem meridiana o ângulo no polo é $90^\circ$ | falsa; no meridiano, é $0^\circ$ na passagem superior |
+
+Faça sempre um esboço. A geometria resolve mais pegadinhas que a memória verbal.

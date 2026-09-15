@@ -1,0 +1,18 @@
+{
+  "ordem": 6,
+  "slug": "06-treino-integrado",
+  "titulo": "Oficina profissional e simulado",
+  "prioridade": "máxima",
+  "subtitulo": "Validação cruzada, ANB 2026 e apresentação no modelo",
+  "tempoEstimado": "75 min",
+  "objetivo": "Executar a cadeia observação–posição com verificação independente.",
+  "palavrasChave": [
+    "oficina",
+    "validação",
+    "simulado"
+  ],
+  "conceptIds": [
+    "NAV4-TREINO"
+  ],
+  "modalidade": "completo"
+}

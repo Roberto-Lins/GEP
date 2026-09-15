@@ -1,0 +1,60 @@
+{
+  "protocol": "gep-skill-sync",
+  "schema_version": "1.0.0",
+  "schema_migration": {
+    "previous_version": null,
+    "instructions": "Resposta no schema 1.0.0. Se o schema recebido mudar, documentar e validar a migração antes de decidir itens."
+  },
+  "message_id": "claude:docente-avaliador:resposta:substituir-id",
+  "in_reply_to": "chatgpt:docente-en:modalidades:20260914:v1",
+  "created_at": "2026-09-14T00:00:00Z",
+  "source": {
+    "agent": "claude",
+    "skill": "Docente e Avaliador Chefe — Escola Naval",
+    "skill_version": "SUBSTITUIR-PELA-VERSAO-INSTALADA"
+  },
+  "target": {
+    "agent": "chatgpt",
+    "skill": "docente-en",
+    "skill_version": "2.0.0"
+  },
+  "change": {
+    "type": "review",
+    "summary": "Resposta item a item ao pacote de modalidades; substituir os campos de modelo por resultados reais.",
+    "breaking": false,
+    "contract_version": "1.0.0"
+  },
+  "rules": [],
+  "artifacts": [],
+  "compatibility": {
+    "legacy_courses": "preserved",
+    "minimum_supported_version": "1.0.0",
+    "notes": []
+  },
+  "required_actions": [],
+  "acceptance_criteria": [
+    "Existe uma decisão para cada regra e artefato do pacote recebido.",
+    "Toda decisão diferente de accepted contém justificativa, evidência e ação proposta.",
+    "A resposta passa no GEP_SKILL_SYNC.schema.json."
+  ],
+  "evidence": [],
+  "open_issues": [],
+  "response_required": false,
+  "decisions": [
+    { "subject_kind": "rule", "subject_id": "GEP-MOD-001", "status": "needs_evidence", "rationale": "SUBSTITUIR pela decisão real.", "evidence": ["SUBSTITUIR pela evidência real."], "proposed_action": "SUBSTITUIR pela ação real." },
+    { "subject_kind": "rule", "subject_id": "GEP-SRC-001", "status": "needs_evidence", "rationale": "SUBSTITUIR pela decisão real.", "evidence": ["SUBSTITUIR pela evidência real."], "proposed_action": "SUBSTITUIR pela ação real." },
+    { "subject_kind": "rule", "subject_id": "GEP-PERFIL-001", "status": "needs_evidence", "rationale": "SUBSTITUIR pela decisão real.", "evidence": ["SUBSTITUIR pela evidência real."], "proposed_action": "SUBSTITUIR pela ação real." },
+    { "subject_kind": "rule", "subject_id": "GEP-MATRIZ-001", "status": "needs_evidence", "rationale": "SUBSTITUIR pela decisão real.", "evidence": ["SUBSTITUIR pela evidência real."], "proposed_action": "SUBSTITUIR pela ação real." },
+    { "subject_kind": "rule", "subject_id": "GEP-QUEST-001", "status": "needs_evidence", "rationale": "SUBSTITUIR pela decisão real.", "evidence": ["SUBSTITUIR pela evidência real."], "proposed_action": "SUBSTITUIR pela ação real." },
+    { "subject_kind": "rule", "subject_id": "GEP-LEGADO-001", "status": "needs_evidence", "rationale": "SUBSTITUIR pela decisão real.", "evidence": ["SUBSTITUIR pela evidência real."], "proposed_action": "SUBSTITUIR pela ação real." },
+    { "subject_kind": "rule", "subject_id": "GEP-COMP-001", "status": "needs_evidence", "rationale": "SUBSTITUIR pela decisão real.", "evidence": ["SUBSTITUIR pela evidência real."], "proposed_action": "SUBSTITUIR pela ação real." },
+    { "subject_kind": "rule", "subject_id": "GEP-SYNC-001", "status": "needs_evidence", "rationale": "SUBSTITUIR pela decisão real.", "evidence": ["SUBSTITUIR pela evidência real."], "proposed_action": "SUBSTITUIR pela ação real." },
+    { "subject_kind": "artifact", "subject_id": "ART-SCHEMA-SYNC", "status": "needs_evidence", "rationale": "SUBSTITUIR pela decisão real.", "evidence": ["SUBSTITUIR pela evidência real."], "proposed_action": "SUBSTITUIR pela ação real." },
+    { "subject_kind": "artifact", "subject_id": "ART-SYNC-OUT", "status": "needs_evidence", "rationale": "SUBSTITUIR pela decisão real.", "evidence": ["SUBSTITUIR pela evidência real."], "proposed_action": "SUBSTITUIR pela ação real." },
+    { "subject_kind": "artifact", "subject_id": "ART-SYNC-RETURN", "status": "needs_evidence", "rationale": "SUBSTITUIR pela decisão real.", "evidence": ["SUBSTITUIR pela evidência real."], "proposed_action": "SUBSTITUIR pela ação real." },
+    { "subject_kind": "artifact", "subject_id": "ART-CONTRACT", "status": "needs_evidence", "rationale": "SUBSTITUIR pela decisão real.", "evidence": ["SUBSTITUIR pela evidência real."], "proposed_action": "SUBSTITUIR pela ação real." },
+    { "subject_kind": "artifact", "subject_id": "ART-PROMPT-CLAUDE", "status": "needs_evidence", "rationale": "SUBSTITUIR pela decisão real.", "evidence": ["SUBSTITUIR pela evidência real."], "proposed_action": "SUBSTITUIR pela ação real." },
+    { "subject_kind": "artifact", "subject_id": "ART-SKILL-DOCENTE", "status": "needs_evidence", "rationale": "SUBSTITUIR pela decisão real.", "evidence": ["SUBSTITUIR pela evidência real."], "proposed_action": "SUBSTITUIR pela ação real." },
+    { "subject_kind": "artifact", "subject_id": "ART-SKILL-OPERATE", "status": "needs_evidence", "rationale": "SUBSTITUIR pela decisão real.", "evidence": ["SUBSTITUIR pela evidência real."], "proposed_action": "SUBSTITUIR pela ação real." }
+  ]
+}

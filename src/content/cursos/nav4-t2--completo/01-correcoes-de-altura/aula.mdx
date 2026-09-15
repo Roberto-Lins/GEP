@@ -1,0 +1,100 @@
+---
+titulo: "Sistema completo das alturas — aula completa"
+secao: "aula"
+secaoOrdem: 2
+---
+
+## Referências geométricas
+
+A leitura nasce no horizonte visual e termina no horizonte verdadeiro e no centro do astro.
+
+$$
+a_o=a_i+e_i,\qquad a_{ap}=a_o+dp_{ap},\qquad a=a_{ap}+\sum c
+$$
+
+![Cadeia das alturas](/imagens/cursos/nav4-t2/figuras/cadeia-alturas.svg)
+
+O erro instrumental muda a leitura do aparelho. A depressão muda a referência do horizonte. Refração e paralaxe mudam a direção aparente/observada. Semidiâmetro leva o limbo ao centro.
+
+## Fenômenos e sinais
+
+$$
+dp_{ap}=-1{,}76'\sqrt{e(m)}=-0{,}97'\sqrt{e(pés)}
+$$
+
+A depressão cresce com a raiz da elevação. A refração é negativa porque a atmosfera eleva a imagem; cresce em módulo perto do horizonte. O semidiâmetro é positivo para limbo inferior e negativo para superior. A paralaxe é positiva, máxima no horizonte e nula no zênite.
+
+| Dependência | Fenômeno |
+|---|---|
+| elevação do olho | depressão |
+| altura aparente e atmosfera | refração |
+| limbo/data | semidiâmetro |
+| distância do astro e altura | paralaxe |
+
+## Consulta sistemática
+
+Antes do ANB, escreva: astro, data, HMG, $a_{ap}$, limbo, elevação, T, P e $P_h$. Use apenas os campos aplicáveis.
+
+- estrela: refração;
+- Sol: A2/A3 conforme altura, A4 se T/P pedirem, limbo;
+- planeta: correção principal e adicional específico;
+- Lua: página diária para $P_h$, tabelas próprias, limbo e correção adicional.
+
+A tabela pode fornecer uma correção $c$ já combinada. O cabeçalho decide o que está incluído; não reaplique parcelas.
+
+## Lua e baixa altura
+
+Na Lua, execute HMG → $P_h$ → $a_o$ → $a_{ap}$ → correção principal → adicional/limbo. É o caso mais sensível à duplicação de SD. Em baixa altura, a refração e sua dependência atmosférica crescem; registre a tabela e as condições.
+
+## Auditoria
+
+Estime antes: depressão de poucos minutos, refração negativa, SD coerente com o limbo. Refaça o fechamento em minutos de arco. Um erro de $1'$ produz aproximadamente 1 MN de erro na LDP e cerca de $1'$ na latitude meridiana.
+
+## Roteiros completos por astro
+
+| Astro | Roteiro de consulta e cálculo |
+|---|---|
+| estrela | $a_i+e_i\to a_o$; depressão $\to a_{ap}$; entrar na correção de estrela pela altura aparente; aplicar uma única vez a refração tabulada |
+| Sol | calcular $a_{ap}$; registrar data, limbo e faixa de altura; usar a tabela principal e, se exigido, o complemento T/P; confirmar se SD e paralaxe já estão incluídos |
+| planeta | calcular $a_{ap}$; selecionar o planeta correto; aplicar correção principal e adicional planetário indicado, sem transportar valores de outro astro |
+| Lua | obter HMG; ler $P_h$ na página diária de 2026; calcular $a_{ap}$; usar a tabela lunar e seu adicional; tratar o limbo exatamente como o cabeçalho manda |
+
+Em todos os casos, escreva antes da consulta: astro, data, HMG, altura de entrada, elevação do olho, limbo e condições atmosféricas dadas. A coluna encontrada precisa ser rastreável por outra pessoa.
+
+## Exemplos históricos guiados
+
+Os valores abaixo vêm das aulas antigas e demonstram o algoritmo; não substituem nenhuma página de 2026.
+
+### Estrela
+
+Para Canopus, com $a_i=19^\circ55{,}5'$, $e_i=-2{,}5'$ e olho a 13,5 m:
+
+$$
+a_o=19^\circ53{,}0',\quad dp=-6{,}5',\quad a_{ap}=19^\circ46{,}5'
+$$
+
+Com a correção histórica $c=-2{,}7'$, chega-se a $a=19^\circ43{,}8'$.
+
+### Planeta e Sol
+
+No exemplo de Vênus, $a_{ap}=18^\circ10{,}2'$, $c=-2{,}9'$ e adicional $+0{,}1'$, logo $a=18^\circ07{,}4'$. No exemplo de Sol com limbo superior, $a_{ap}=27^\circ03{,}7'$ e $c=-17{,}9'$, portanto $a=26^\circ45{,}8'$. O resultado negativo da correção é fisicamente compatível com refração e limbo superior.
+
+### Lua
+
+No exemplo de limbo superior, $a_{ap}=33^\circ23{,}5'$, correção principal $+57{,}4'$, adicional $+2{,}7'$ e tratamento do limbo $-30{,}0'$:
+
+$$
+a=33^\circ53{,}6'
+$$
+
+Não transforme o $-30'$ em regra fixa. A lição é reconhecer quais parcelas aquela tabela separava e conferir o cabeçalho da edição 2026.
+
+## Checklist de entrega
+
+- [ ] $e_i$ foi somado algebricamente?
+- [ ] a unidade da elevação combina com a fórmula de depressão?
+- [ ] a entrada tabular foi feita com $a_{ap}$?
+- [ ] astro, data, limbo e faixa estão corretos?
+- [ ] T/P só foram usados quando pedidos?
+- [ ] SD, paralaxe ou refração não foram contados duas vezes?
+- [ ] graus e minutos foram normalizados e o resultado foi circundado?

@@ -1,0 +1,15 @@
+{
+  "ordem": 99,
+  "slug": "99-revisao-final",
+  "titulo": "Revisão final",
+  "prioridade": "máxima",
+  "subtitulo": "Fórmulas, sinais e diagnóstico",
+  "tempoEstimado": "30 min",
+  "objetivo": "Recuperar o curso inteiro e fechar lacunas.",
+  "palavrasChave": [
+    "revisão",
+    "diagnóstico"
+  ],
+  "conceptIds": [],
+  "modalidade": "pra-safar"
+}

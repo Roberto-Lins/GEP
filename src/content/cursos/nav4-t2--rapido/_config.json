@@ -1,0 +1,49 @@
+{
+  "slug": "nav4-t2--rapido",
+  "titulo": "NAV-4 — T2 — Rápido",
+  "subtitulo": "Correções, LDP, Radler e latitude meridiana em rota intensiva",
+  "descricao": "Rota de emergência para dominar o núcleo integral anunciado pelo professor em menos de cinco horas.",
+  "categoria": "Carreira Naval",
+  "ano": "4",
+  "semestre": "2",
+  "epoca": "T2",
+  "turma": "geral",
+  "ordem": 2,
+  "temaVisual": "naval-command",
+  "corTema": "dourado",
+  "icone": "/imagens/cursos/nav4-t2/icone.svg",
+  "capa": "/imagens/cursos/nav4-t2/capa.svg",
+  "estudo": {
+    "contratoVersao": "1.0.0",
+    "familiaId": "nav4-t2",
+    "familiaTitulo": "NAV-4 — T2",
+    "id": "rapido",
+    "modalidadePadrao": "completo",
+    "modalidadesDisponiveis": [
+      "rapido",
+      "pra-safar",
+      "completo"
+    ],
+    "legadoSomenteCompleto": false,
+    "rotulo": "Rápido",
+    "descricao": "Rota de emergência para dominar o núcleo integral anunciado pelo professor em menos de cinco horas.",
+    "finalidade": "Chegar operacional à T2 em menos de 24 horas, sem excluir nenhum dos quatro blocos anunciados.",
+    "cobertura": "Todo o escopo anunciado, em sequência de execução, com teoria mínima suficiente, sinais, conferências e treino de maior retorno.",
+    "duracaoMinutos": 285,
+    "estadoAutoria": "publicado"
+  },
+  "features": {
+    "timeline": true,
+    "simulados": true,
+    "mapasMentais": false,
+    "podcasts": false,
+    "animacoesHero": false,
+    "animacoesTransicao": false,
+    "modoRevisaoVespera": true,
+    "graficoProgressoAvancado": false,
+    "writing": false,
+    "cadernoRevisao": false
+  },
+  "componentesExtras": [],
+  "downloads": []
+}

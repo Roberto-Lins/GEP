@@ -1,0 +1,59 @@
+---
+titulo: "Linha de posição astronômica — aula intensiva"
+secao: "aula"
+secaoOrdem: 2
+---
+
+> **Ideia central:** uma altura verdadeira não dá um ponto único. Ela dá uma circunferência de posições possíveis; perto da posição assumida, usamos uma reta tangente.
+
+![Geometria da LDP](/imagens/cursos/nav4-t2/figuras/ldp-geometria.svg)
+
+*Figura didática V3 baseada na apostila p. 153–158 e na aula 8.0.*
+
+## Conceitos que o professor cobra pelo nome
+
+- **Posição Geográfica do astro (GP):** projeção do astro na superfície terrestre. Latitude do GP = declinação; longitude do GP decorre do AHG/tG.
+- **Circunferência de igual altura:** lugar geométrico dos observadores que veem o astro com a mesma altura verdadeira no mesmo instante.
+- **Distância zenital:** $z=90^\circ-a$. É o raio angular dessa circunferência.
+- **Reta de altura:** tangente que substitui localmente a circunferência osculatriz.
+- **Elementos determinativos:** azimute verdadeiro $Az$ e diferença/intercepto $\Delta a=a-a_e$.
+
+Como $1'$ de arco terrestre corresponde a 1 MN, **$1'$ de distância zenital ou intercepto = 1 MN**.
+
+## Por que a reta é perpendicular ao azimute
+
+O azimute aponta da posição assumida para o GP, isto é, na direção de maior crescimento da altura. A circunferência de igual altura cruza essa direção a $90^\circ$; sua tangente também. Portanto:
+
+1. trace $Az$ a partir da posição assumida;
+2. marque o intercepto sobre essa linha;
+3. pelo ponto marcado, trace a LDP perpendicular ao azimute.
+
+## O intercepto
+
+$$
+\Delta a=a-a_e
+$$
+
+- $\Delta a>0$: o astro foi observado **mais alto** que o calculado; avance em direção ao astro/GP (“toward”).
+- $\Delta a<0$: o astro foi observado **mais baixo**; marque no sentido oposto (“away”).
+- O módulo em minutos é a distância em MN.
+
+Exemplo: $a=32^\circ29{,}9'$ e $a_e=32^\circ09{,}2'$.
+
+$$
+\Delta a=+20{,}7'=20{,}7\text{ MN em direção ao }Az
+$$
+
+## Limite da aproximação
+
+A reta é uma aproximação local. A apostila alerta que, para alturas muito grandes, a curvatura da circunferência aparece mais depressa; perto de $80^\circ$, a faixa útil é muito menor que em alturas moderadas. É uma das razões pelas quais a passagem meridiana é tratada por geometria própria.
+
+## Resposta curta perfeita
+
+Se perguntarem “defina LDP astronômica”:
+
+> É o lugar geométrico das posições possíveis do observador que, no mesmo instante, mediriam a mesma altura verdadeira de um astro; localmente, representa-se pela tangente à circunferência de igual altura.
+
+Se perguntarem “elementos determinativos”:
+
+> Azimute verdadeiro do astro e intercepto $\Delta a=a-a_e$, com módulo em milhas e sentido conforme o sinal.

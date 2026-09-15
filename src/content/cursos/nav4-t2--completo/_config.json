@@ -1,0 +1,49 @@
+{
+  "slug": "nav4-t2--completo",
+  "titulo": "NAV-4 — T2 — Completo",
+  "subtitulo": "Navegação astronômica aplicada à T2 de 2026",
+  "descricao": "Formação integrada de NAV-4/T2, com mecanismos, geometria, exceções e prática profissional sustentada pelas fontes.",
+  "categoria": "Carreira Naval",
+  "ano": "4",
+  "semestre": "2",
+  "epoca": "T2",
+  "turma": "geral",
+  "ordem": 2,
+  "temaVisual": "naval-command",
+  "corTema": "dourado",
+  "icone": "/imagens/cursos/nav4-t2/icone.svg",
+  "capa": "/imagens/cursos/nav4-t2/capa.svg",
+  "estudo": {
+    "contratoVersao": "1.0.0",
+    "familiaId": "nav4-t2",
+    "familiaTitulo": "NAV-4 — T2",
+    "id": "completo",
+    "modalidadePadrao": "completo",
+    "modalidadesDisponiveis": [
+      "rapido",
+      "pra-safar",
+      "completo"
+    ],
+    "legadoSomenteCompleto": false,
+    "rotulo": "Completo",
+    "descricao": "Formação integrada de NAV-4/T2, com mecanismos, geometria, exceções e prática profissional sustentada pelas fontes.",
+    "finalidade": "Construir domínio duradouro e verificável, indo além do procedimento sem expandir para conteúdos posteriores à T2.",
+    "cobertura": "Todo o escopo examinável, mais fundamentos geométricos, deduções, limitações operacionais e integração dos métodos.",
+    "duracaoMinutos": 760,
+    "estadoAutoria": "publicado"
+  },
+  "features": {
+    "timeline": true,
+    "simulados": true,
+    "mapasMentais": false,
+    "podcasts": false,
+    "animacoesHero": false,
+    "animacoesTransicao": false,
+    "modoRevisaoVespera": true,
+    "graficoProgressoAvancado": false,
+    "writing": false,
+    "cadernoRevisao": false
+  },
+  "componentesExtras": [],
+  "downloads": []
+}

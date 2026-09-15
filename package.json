@@ -11,13 +11,15 @@
     "astro": "astro",
     "test": "vitest run",
     "test:watch": "vitest",
-    "create-course": "tsx scripts/create-course.ts",
-    "validate-content": "tsx scripts/validate-content.ts",
+    "create-course": "node --import tsx scripts/create-course.ts",
+    "validate-content": "node --import tsx scripts/validate-content.ts",
+    "validate-sync": "node scripts/validate-skill-sync.mjs",
     "validate-math": "node scripts/validate-math.mjs",
     "validate-math:strict": "node scripts/validate-math.mjs --strict",
-    "audit-media": "tsx scripts/audit-media.ts",
-    "migrate-gep": "tsx scripts/migrate-gep.ts",
-    "gerar-pix": "tsx scripts/gerar-pix.ts"
+    "audit-media": "node --import tsx scripts/audit-media.ts",
+    "audit-modalidades": "node --import tsx scripts/audit-study-modes.ts",
+    "migrate-gep": "node --import tsx scripts/migrate-gep.ts",
+    "gerar-pix": "node --import tsx scripts/gerar-pix.ts"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
@@ -52,6 +54,7 @@
     "@types/qrcode": "^1.5.6",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
+    "ajv": "^8.20.0",
     "qrcode": "^1.5.4",
     "tsx": "^4.22.4",
     "vitest": "^4.1.9"

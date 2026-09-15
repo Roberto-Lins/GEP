@@ -1,0 +1,123 @@
+---
+titulo: "Correções de altura dos astros — aula dirigida"
+secao: "aula"
+secaoOrdem: 2
+---
+
+## 1. As quatro alturas
+
+- $a_i$: leitura do sextante em relação ao horizonte visual.
+- $a_o$: altura observada após o erro instrumental.
+- $a_{ap}$: altura aparente após a depressão do horizonte.
+- $a$: altura verdadeira, referida ao horizonte verdadeiro e ao centro do astro conforme o tratamento tabular.
+
+$$
+a_o=a_i+e_i,\qquad a_{ap}=a_o+dp_{ap}
+$$
+
+![Cadeia das alturas](/imagens/cursos/nav4-t2/figuras/cadeia-alturas.svg)
+
+## 2. O que cada fenômeno corrige
+
+### Erro instrumental
+
+É o erro do instrumento, fornecido ou determinado por observação. O sinal acompanha o valor de $e_i$; não “corrija o sinal da correção”.
+
+### Depressão aparente
+
+O olho elevado vê o horizonte abaixo do plano horizontal verdadeiro. Para levar a leitura ao horizonte aparente, a correção é negativa.
+
+$$
+dp_{ap}(')=-1{,}76\sqrt{e(m)}
+$$
+
+A forma em pés é $-0{,}97\sqrt{e(pés)}$. Use a unidade do problema.
+
+### Refração astronômica
+
+A atmosfera faz o astro parecer mais alto; a correção para chegar à direção verdadeira é negativa. Ela cresce em módulo quando a altura diminui. As fontes recomendam observar acima de $15^\circ$, embora o ANB traga tabelas para alturas mais baixas.
+
+- A2: correções usuais para alturas mais elevadas;
+- A3: baixa altura;
+- A4: complemento por pressão/temperatura anormais.
+
+A identificação exata das páginas deve ser feita na edição 2026.
+
+### Semidiâmetro
+
+O sextante observa um limbo do Sol/Lua, mas a navegação usa o centro.
+
+- limbo inferior: o centro está acima do limbo → $+SD$;
+- limbo superior: o centro está abaixo → $-SD$.
+
+### Paralaxe
+
+A observação topocêntrica difere da direção vista do centro da Terra. A correção é positiva, máxima no horizonte e zero no zênite. É relevante para Lua e, na sistemática do curso, Sol/planetas quando a tabela indicar.
+
+## 3. Fluxos por astro
+
+| Astro | Entradas indispensáveis | Componentes típicos |
+|---|---|---|
+| Estrela | $a_{ap}$ | refração |
+| Sol | data, $a_{ap}$, limbo, T/P se exigidos | refração + SD + pequena paralaxe/complemento conforme tabela |
+| Vênus/Marte | data, $a_{ap}$, astro | refração + correção planetária/adicional |
+| Lua | data, HMG, $a_{ap}$, $P_h$, limbo | correção principal + adicional + tratamento de limbo conforme tabela |
+
+A forma operacional do ANB pode agrupar parcelas em $c$. Leia o título/rodapé da tabela: a equação segura é “altura de entrada + **o que a tabela diz que sua coluna representa**”.
+
+## 4. Quatro exemplos históricos guiados
+
+Estes números vêm das aulas antigas e ensinam só o procedimento.
+
+### Estrela
+
+Canopus: $a_i=19^\circ55{,}5'$, $e_i=-2{,}5'$, olho 13,5 m.
+
+$$
+a_o=19^\circ53{,}0';\quad dp=-6{,}5';\quad a_{ap}=19^\circ46{,}5'
+$$
+$$
+c=-2{,}7'\Rightarrow a=19^\circ43{,}8'
+$$
+
+### Planeta
+
+Vênus: depois de $a_o$ e depressão, $a_{ap}=18^\circ10{,}2'$. A tabela usada no exemplo forneceu $c=-2{,}9'$ e adicional $+0{,}1'$:
+
+$$
+a=18^\circ07{,}4'
+$$
+
+### Sol, limbo superior
+
+$a_{ap}=27^\circ03{,}7'$ e correção combinada antiga $c=-17{,}9'$:
+
+$$
+a=26^\circ45{,}8'
+$$
+
+O sinal negativo é compatível com limbo superior e refração.
+
+### Lua, limbo superior
+
+Após $a_{ap}=33^\circ23{,}5'$, o exemplo aplicou $c=+57{,}4'$, $c_{ad}=+2{,}7'$ e o tratamento do limbo superior $-30{,}0'$:
+
+$$
+a=33^\circ53{,}6'
+$$
+
+Não generalize “$-30'$” sem conferir a tabela 2026; o exemplo revela a organização daquele material.
+
+## 5. Diagnóstico de resultado
+
+Pergunte, na ordem:
+
+1. $e_i$ foi somado algebricamente?
+2. depressão foi negativa?
+3. a altura usada para entrar na tabela é $a_{ap}$?
+4. astro, limbo, data e faixa estão certos?
+5. T/P realmente exigem A4?
+6. alguma parcela já estava embutida em $c$?
+7. o resultado foi normalizado?
+
+Um erro de $1'$ na altura vira aproximadamente 1 MN de erro na reta. Por isso, sinais pequenos não são “detalhes”.
