@@ -4,88 +4,287 @@ secao: "aula"
 secaoOrdem: 2
 ---
 
-## Relação meridiana
+> **Produto profissional:** derivar e aplicar os casos da passagem superior, interpolar declinação no instante, conferir por forma assinada e avaliar os efeitos do movimento.
+
+## 1. Colapso do triângulo de posição
+
+Na passagem superior:
+
+$$
+t_1=0^\circ.
+$$
+
+Polo, zênite e Sol ficam no mesmo meridiano. A distância zenital:
 
 $$
 z=90^\circ-a
 $$
 
-Na passagem superior, $t_1=0$, e latitude, declinação e distância zenital ficam no mesmo meridiano.
+passa a ligar diretamente latitude $\varphi$ e declinação $\delta$.
 
-![Casos da latitude meridiana](/imagens/cursos/nav4-t2/figuras/casos-latitude.svg)
+## 2. A altura de entrada
 
-## Declinação
-
-Use HMG da observação, valor horário do ANB 2026, $d$, incremento de minutos/segundos e nome N/S. Verifique a tendência durante a hora.
-
-## Três casos
-
-1. mesmo nome, latitude maior: $|\varphi|=|\delta|+z$;
-2. mesmo nome, declinação maior: $|\varphi|=|\delta|-z$;
-3. nomes contrários: $|\varphi|=z-|\delta|$.
-
-Com N positivo e S negativo:
+$a$ deve ser a altura verdadeira:
 
 $$
-\varphi=\delta-z\quad(Az=000^\circ)
-$$
-$$
-\varphi=\delta+z\quad(Az=180^\circ)
+a_i\to a_o\to a_{ap}\to a.
 $$
 
-Use desenho e forma assinada como verificações independentes.
+Usar $a_i$ cria um erro em $z$ e, quase integralmente, em $\varphi$. Registre as correções antes de iniciar a latitude.
 
-## Passagem inferior
+## 3. Subtração sexagesimal
 
-A fonte registra, para condição especial de mesmo nome:
-
-$$
-\varphi_{md}=180^\circ-(\delta+z),\qquad \varphi\ge90^\circ-\delta
-$$
-
-O foco anunciado é a passagem superior, mas a exceção explica por que se deve identificar a culminação.
-
-## Movimento
-
-O máximo coincide com a altura meridiana para observador parado ou pequena componente N–S. A aula dá limites decrescentes: 27 nós a $10^\circ$, 24 a $20^\circ$, 21 a $30^\circ$, 19 a $40^\circ$, 18 a $45^\circ$, 17 a $50^\circ$, 16 a $55^\circ$, 14 a $60^\circ$, 13 a $65^\circ$ e 12 a $70^\circ$.
-
-Com rumo e velocidade, avalie $|V\cos R|$. Um erro $+\epsilon$ em altura vira $-\epsilon$ em $z$ e quase o mesmo módulo em latitude.
-
-## Algoritmo completo de resolução
-
-1. Confirme que a observação é da passagem superior e que $a$ já é altura verdadeira.
-2. Calcule $z=90^\circ-a$ emprestando $1^\circ=60'$ quando necessário.
-3. Use a HMG da observação para ler $\delta_h$ no ANB 2026.
-4. Interpole com $d$ e o incremento de minutos/segundos, mantendo a tendência e o nome N/S.
-5. Faça um desenho com equador, zênite e GP do Sol; escolha um dos três casos.
-6. Calcule a latitude e dê o nome do hemisfério.
-7. Confira com a forma assinada e verifique se o Sol estava ao norte ou ao sul.
-
-## Exemplo histórico resolvido
-
-Considere $a=71^\circ08{,}3'$. Então:
+Com $a=71^\circ08{,}3'$:
 
 $$
-z=90^\circ-71^\circ08{,}3'=18^\circ51{,}7'
+90^\circ00{,}0'=89^\circ60{,}0',
 $$
 
-A interpolação antiga forneceu $\delta=01^\circ32{,}5'S$. Como a posição estimada está próxima de $20^\circ S$ e o Sol culmina ao norte, use N positivo e S negativo:
+$$
+z=89^\circ60{,}0'-71^\circ08{,}3'
+=18^\circ51{,}7'.
+$$
+
+Controle independente:
 
 $$
-\varphi=\delta-z=-1^\circ32{,}5'-18^\circ51{,}7'=-20^\circ24{,}2'
+a+z=90^\circ00{,}0'.
 $$
 
-Logo, $\varphi=20^\circ24{,}2'S$ e $Az=000^\circ$. O valor de declinação é histórico; a estrutura da solução é a parte reutilizável.
+## 4. Declinação no HMG
 
-## Como decidir sem decorar casos
+<FiguraFonte figura="NAV4-FIG-ANB-002" />
 
-No desenho meridiano, verifique de que lado do zênite está o GP do Sol. Se o Sol está ao norte, deslocar-se do GP até o observador equivale a subtrair $z$ na convenção assinada; se está ao sul, equivale a somar. O resultado deve permanecer próximo da latitude estimada. Um salto para o outro hemisfério sem o Sol passar pelo zênite é sinal de caso ou nome errado.
+Na página diária do Sol:
 
-## Conferências finais
+1. selecione data Greenwich;
+2. selecione hora inteira imediatamente anterior ao HMG;
+3. copie $\delta_h$ e seu nome;
+4. leia $d$;
+5. obtenha o incremento para minutos/segundos;
+6. aplique a tendência e normalize.
 
-- [ ] $0^\circ\le z\le90^\circ$?
-- [ ] $\delta$ veio da HMG e foi interpolada com o sentido de $d$?
-- [ ] os nomes N/S foram preservados antes de usar módulos?
-- [ ] $Az=000^\circ/180^\circ$ combina com o desenho?
-- [ ] a latitude final é coerente com a estimada?
-- [ ] rumo e velocidade exigem discutir a diferença entre altura máxima e meridiana?
+$$
+\delta_{HMG}=\delta_h+\Delta\delta(d,m,s).
+$$
+
+O controle é temporal: $\delta_{HMG}$ deve ficar entre os valores horários vizinhos e variar no sentido de $d$.
+
+## 5. Geometria antes da aritmética
+
+<FiguraFonte figura="NAV4-FIG-LAT-001" />
+
+Desenhe uma linha N—Z—S. Coloque o GP do Sol conforme $\delta$ e o Sol observado conforme o lado da culminação. Só então relacione os arcos.
+
+### Caso 1 — mesmo nome, latitude maior
+
+Observador e GP estão no mesmo hemisfério, observador mais afastado do Equador:
+
+$$
+|\varphi|=z+|\delta|.
+$$
+
+### Caso 2 — mesmo nome, declinação maior
+
+O GP está mais afastado do Equador e o Sol culmina além do zênite:
+
+$$
+|\varphi|=|\delta|-z.
+$$
+
+### Caso 3 — nomes contrários
+
+O Equador está entre observador e GP:
+
+$$
+|\varphi|=z-|\delta|.
+$$
+
+O sinal/nome final vem do desenho e da posição estimada, não apenas do módulo.
+
+## 6. Derivação da forma assinada
+
+Adote:
+
+$$
+N>0,\qquad S<0.
+$$
+
+Se o Sol culmina ao norte, o deslocamento do GP ao observador é para o sul:
+
+$$
+Az=000^\circ
+\Rightarrow
+\varphi=\delta-z.
+$$
+
+Se culmina ao sul:
+
+$$
+Az=180^\circ
+\Rightarrow
+\varphi=\delta+z.
+$$
+
+A forma assinada reúne os três casos superiores. O desenho continua indispensável para decidir o lado do Sol.
+
+## 7. Exemplo histórico com duas soluções
+
+**Dados:** $a=71^\circ08{,}3'$; $\delta=01^\circ32{,}5'S$ interpolada no exemplo antigo; posição estimada próxima de $20^\circ S$; Sol ao norte.
+
+### Distância zenital
+
+$$
+z=18^\circ51{,}7'.
+$$
+
+### Solução por arcos
+
+Mesmo nome, latitude maior:
+
+$$
+|\varphi|=z+|\delta|
+=18^\circ51{,}7'+01^\circ32{,}5'
+=20^\circ24{,}2'.
+$$
+
+O desenho dá S.
+
+### Conferência assinada
+
+$$
+\delta=-01^\circ32{,}5',
+$$
+
+$$
+\varphi=\delta-z
+=-01^\circ32{,}5'-18^\circ51{,}7'
+=-20^\circ24{,}2'.
+$$
+
+Logo:
+
+$$
+\varphi=20^\circ24{,}2'S,\qquad Az=000^\circ.
+$$
+
+### Interpretação
+
+O resultado permanece próximo da posição estimada. O Sol tem declinação S pequena, mas está ao norte de um observador em latitude S maior.
+
+## 8. Exemplo de nomes contrários
+
+Suponha $z=18^\circ20'$ e $\delta=05^\circ40'N$, com o observador estimado no hemisfério sul e Sol ao norte.
+
+Em módulos:
+
+$$
+|\varphi|=18^\circ20'-05^\circ40'
+=12^\circ40'.
+$$
+
+O desenho dá S. Assinando:
+
+$$
+\varphi=\delta-z
+=+05^\circ40'-18^\circ20'
+=-12^\circ40'.
+$$
+
+As duas rotas concordam.
+
+## 9. Exemplo de declinação maior
+
+Suponha $z=04^\circ10'$ e $\delta=18^\circ30'N$, com o Sol ao norte e observador no mesmo hemisfério:
+
+$$
+|\varphi|=18^\circ30'-04^\circ10'
+=14^\circ20'N.
+$$
+
+Pela forma assinada:
+
+$$
+\varphi=+18^\circ30'-04^\circ10'
+=+14^\circ20'.
+$$
+
+## 10. Passagem inferior
+
+A fonte apresenta a condição especial:
+
+$$
+\varphi_{md}=180^\circ-(\delta+z),
+$$
+
+com condição geométrica indicada para a culminação inferior. Ela não pertence à rota principal anunciada da passagem superior, mas demonstra por que o tipo de culminação deve ser identificado antes da fórmula.
+
+## 11. Movimento do navio
+
+Se o navio se desloca em direção ao GP durante a série, a altura pode continuar crescendo depois do instante meridiano; se se afasta, pode começar a cair antes. Para rumo verdadeiro $R$ medido a partir do norte:
+
+$$
+V_{NS}=|V\cos R|.
+$$
+
+A aula oferece limites aproximados:
+
+| Latitude | Limite | Latitude | Limite |
+|---:|---:|---:|---:|
+| $10^\circ$ | 27 kn | $45^\circ$ | 18 kn |
+| $20^\circ$ | 24 kn | $50^\circ$ | 17 kn |
+| $30^\circ$ | 21 kn | $55^\circ$ | 16 kn |
+| $40^\circ$ | 19 kn | $60^\circ$ | 14 kn |
+| $65^\circ$ | 13 kn | $70^\circ$ | 12 kn |
+
+Compare a componente N–S, não necessariamente a velocidade total.
+
+## 12. Sensibilidade
+
+Como:
+
+$$
+z=90^\circ-a,
+$$
+
+um erro $+\varepsilon$ em $a$ produz:
+
+$$
+\Delta z=-\varepsilon.
+$$
+
+Na relação meridiana, a latitude herda aproximadamente o mesmo módulo. Um erro de $1'$ em altura pode representar cerca de $1'$ em latitude.
+
+## 13. Diagnóstico de respostas
+
+| Sintoma | Causa provável |
+|---|---|
+| $a+z\ne90^\circ$ | empréstimo/aritmética |
+| $\delta$ fora dos valores horários vizinhos | sinal de $d$ ou data |
+| salto de hemisfério incoerente | caso/nome |
+| módulo correto, Az errado | lado do Sol |
+| máxima observada deslocada | movimento N–S |
+
+## 14. Algoritmo completo
+
+1. confirme passagem superior e instante adotado;
+2. confirme que $a$ é verdadeira;
+3. calcule $z$;
+4. consulte/interpole $\delta$ no HMG;
+5. desenhe N—Z—S;
+6. decida lado e $Az$;
+7. aplique relação de módulos;
+8. nomeie a latitude;
+9. confira pela forma assinada;
+10. compare com posição estimada e movimento.
+
+## 15. Recuperação ativa
+
+Resolva:
+
+- os três casos superiores;
+- um caso com passagem inferior apenas para reconhecimento;
+- dois rumos com mesma velocidade, um E–W e outro N–S;
+- um erro de $d$ invertido.
+
+**Critério de saída:** chegar ao mesmo $\varphi$ por desenho e forma assinada, rastrear $\delta$ no ANB 2026 e justificar se a altura máxima pode ser usada como meridiana.

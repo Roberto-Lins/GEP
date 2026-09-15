@@ -1,93 +1,203 @@
 ---
-titulo: "UE 10.0 — fundamentos e uso da Tábua Radler"
+titulo: "UE 10.0 — fundamentos e leitura da Tábua Radler"
 secao: "aula"
 secaoOrdem: 2
 ---
 
-> **Atualização do professor (15/09/2026):** a aula conceitual de Radler entra até **13:00**. A aula seguinte corresponde ao exercício que está sendo feito no camarote, vale **2,0 pontos** e será entregue no dia da T2. Por isso, esta aula separa com clareza o núcleo conceitual da prova e o apoio operacional ao trabalho.
+> **Delimitação:** teoria até 13:00 entra na T2; o exercício integral subsequente é trabalho de 2,0. Este módulo fecha todo o núcleo examinável e ensina os controles necessários para acompanhar a folha do trabalho.
 
-## 1. Necessidade e produto
+## 1. Entradas e produto
 
-A Tábua Radler simplifica a solução do triângulo de posição e condensa combinações de latitude, declinação e ângulo no polo. Ela serve para calcular os elementos determinativos da reta de altura:
-
-$$
-\Delta a=a-a_e
-$$
-
-e o azimute verdadeiro $Az$.
-
-$a$ é a altura verdadeira observada; $a_e$ é a altura estimada/calculada para a posição auxiliar. A Radler calcula $a_e$ e o azimute; ela não substitui a cadeia que corrige $a_i$ até $a$.
-
-## 2. A construção $PAZ$
-
-![Triângulo PAZ dividido pela perpendicular AM](/imagens/cursos/nav4-t2/figuras/fundamento-radler.svg)
-
-*Reconstrução didática V3 baseada na apostila p. 160–161 e na UE 10.0, 0:00–13:00. O desenho é relacional, sem escala.*
-
-- $P$: polo elevado; $A$: astro; $Z$: zênite do observador.
-- $PA=90^\circ-\delta$ e o ângulo em $P$ é $t_1$.
-- A perpendicular $AM\perp PZ$ quebra o triângulo $PAZ$ em $PAM$ e $ZAM$.
-- Do triângulo $PAM$ saem os auxiliares $a=AM$ e $b$, distância angular do Equador a $M$.
-- A combinação de $b$ com a latitude $\varphi$ produz $C=MZ$.
-- Do triângulo $ZAM$ saem $ZA=90^\circ-a_e$ e $Aqd$.
-
-Assim, a lógica da tábua é:
+A posição assumida e o almanaque fornecem $\varphi_{aux}$, $\delta$ e $t_1$. A Radler devolve:
 
 $$
-(\delta,t_1)\rightarrow(a,b),\qquad b\;\text{com}\;\varphi\rightarrow C,
-\qquad(a,C)\rightarrow(a_e,Aqd)
+a_e\quad\text{e}\quad Aqd.
 $$
 
-No fim, nomeia-se/converte-se $Aqd$ em $Az$ e calcula-se $\Delta a$.
-
-> **Erro provável:** existem dois usos de $a$ nas fontes. O auxiliar $a=AM$ pertence à construção; a altura verdadeira observada $a$ pertence à expressão $\Delta a=a-a_e$. Não misture as linhas.
-
-## 3. O que a segunda entrada representa
-
-As relações apresentadas nos fundamentos são:
+Depois:
 
 $$
-\sin a_e=\cos a\cos C
+Aqd\to Az,\qquad \Delta a=a-a_e.
+$$
+
+A altura verdadeira $a$ vem da observação corrigida; $a_e$ vem da solução do triângulo. Esse contraste é central.
+
+## 2. Fundamento geométrico
+
+<FiguraFonte figura="NAV4-FIG-RAD-002" />
+
+No triângulo $PAZ$:
+
+- $P$: polo elevado;
+- $A$: posição do astro na esfera;
+- $Z$: zênite;
+- $PA=90^\circ-\delta$;
+- o ângulo em $P$ é $t_1$;
+- $ZA=90^\circ-a_e$.
+
+A perpendicular $AM$ ao meridiano $PZ$ cria dois triângulos retângulos:
+
+1. $PAM$, resolvido com $\delta,t_1$, fornece $a=AM$ e $b$;
+2. $ZAM$, resolvido com $a,C$, fornece $a_e,Aqd$.
+
+$b$ mede a posição de $M$ em relação ao Equador; $C=MZ$ resulta de $b$ e da latitude auxiliar.
+
+## 3. O algoritmo em três linhas
+
+<FiguraFonte figura="NAV4-FIG-RAD-001" />
+
+$$
+(\delta,t_1)\rightarrow(a,b),
 $$
 
 $$
-\cot Aqd=\cot a\sin C
+b \text{com} \varphi_{aux}\rightarrow C,
 $$
 
-Elas não são uma fórmula nova para decorar isoladamente: explicam por que a segunda entrada usa os auxiliares $a,C$ e devolve altura calculada e azimute quadrantal.
+$$
+(a,C)\rightarrow(a_e,Aqd)\rightarrow Az.
+$$
 
-## 4. Como nasce $C$
+As relações da segunda entrada são:
 
-$C$ é a distância angular $MZ$. A posição de $M$, do Equador e de $Z$ decide soma ou diferença:
+$$
+\sin a_e=\cos a\cos C,
+$$
 
-| Geometria | Relação |
+$$
+\cot Aqd=\cot a\sin C.
+$$
+
+Elas explicam a tabela; não substituem suas regras de nome e quadrante.
+
+## 4. O triplo cuidado com $a$
+
+As fontes usam:
+
+- $a=AM$: auxiliar da primeira entrada;
+- $a_e$: altura calculada;
+- $a$: altura verdadeira observada na diferença $a-a_e$.
+
+Na folha, escreva “$a_{aux}$” no rascunho quando necessário. Nunca use $a_i$ nem $a_{aux}$ no intercepto.
+
+## 5. Do AHG ao ângulo no polo
+
+Escolha $\lambda_{aux}$ próxima à estimada para que o AHL resulte em grau inteiro.
+
+$$
+AHL=t_G-\lambda_{aux,W},
+$$
+
+$$
+AHL=t_G+\lambda_{aux,E}.
+$$
+
+Normalize $AHL$ entre $0^\circ$ e $360^\circ$:
+
+- $0^\circ<AHL<180^\circ$: $t_1=AHL$, nome W;
+- $180^\circ<AHL<360^\circ$: $t_1=360^\circ-AHL$, nome E.
+
+Se $t_1>90^\circ$, as instruções determinam entrada pelo suplemento, preservando a denominação E/W. No ponto de corte do vídeo, o professor ressalta a entrada em **graus inteiros**.
+
+## 6. Formação de $C$
+
+<FiguraFonte figura="NAV4-FIG-RAD-003" />
+
+| Nomes/geometria | Operação |
 |---|---|
-| latitude e declinação de nomes contrários | $C=b+\varphi$ |
-| mesmo nome e $t_1>90^\circ$ | $C=b+\varphi$ |
-| mesmo nome e $t_1<90^\circ$ | $C=\lvert b-\varphi\rvert$ |
+| $\varphi$ e $\delta$ contrários | $C=b+\varphi_{aux}$ |
+| mesmo nome, $t_1>90^\circ$ | $C=b+\varphi_{aux}$ |
+| mesmo nome, $t_1<90^\circ$ | $C=|b-\varphi_{aux}|$ |
 
-Na figura da p. 161, $t_1<90^\circ$, latitude e declinação têm o mesmo nome e $b>\varphi$; portanto, $C=b-\varphi$.
-
-## 5. Ponto de corte do vídeo
-
-Até 13:00, o professor chega à organização conceitual da tabela 4 e ressalta que $t_1$ entra em **graus inteiros**. A escolha operacional de longitude/latitude auxiliares, as interpolações, a cadeia de horas e o preenchimento integral pertencem ao exercício seguinte.
-
-## 6. Apoio operacional ao trabalho de 2,0
-
-Use esta sequência como conferência da folha DHN-0607:
-
-![Fluxo operacional da Tábua Radler](/imagens/cursos/nav4-t2/figuras/fluxo-radler.svg)
+Escolhe-se $\varphi_{aux}$ próxima da estimada para tornar $C$ inteiro. Se o resultado exceder $90^\circ$, use:
 
 $$
-H_{cp}\to H_{cr}\to HMG\to(t_G,\delta)\to(AHL,t_1)
+C_{entrada}=180^\circ-C.
+$$
+
+A figura de p. 161 mostra mesmo nome, $t_1<90^\circ$ e $b>\varphi$, logo $C=b-\varphi$.
+
+## 7. Nomeação de $Aqd$
+
+O segundo nome, E/W, vem de $t_1$. O primeiro nome depende do polo elevado/abaixado:
+
+- nomes contrários: polo abaixado;
+- mesmo nome e $t_1>90^\circ$: polo elevado;
+- mesmo nome e $t_1<90^\circ$: elevado se $b>\varphi$, abaixado se $b<\varphi$.
+
+A conversão circular é:
+
+$$
+NE\to\theta,\qquad
+SE\to180^\circ-\theta,
 $$
 
 $$
-(\delta,t_1)\to(a,b)\to(C,\varphi_{aux})\to(a_e,Aqd)\to Az\to\Delta a
+SW\to180^\circ+\theta,\qquad
+NW\to360^\circ-\theta.
 $$
 
-No trabalho, use dados anuais somente do **ANB 2026**. Circule as escolhas de $\lambda_{aux}$, $\varphi_{aux}$ e do primeiro nome de $Aqd$; se alterar uma posição auxiliar, refaça as etapas dependentes.
+## 8. O modelo em oito blocos
 
-## 7. Teste ativo
+<FiguraFonte figura="NAV4-FIG-RAD-004" />
 
-Sem olhar, responda: por que se traça $AM$? O que representam $a$, $b$ e $C$? Quais são as duas entradas? Quais dois elementos fecham a reta? Se uma resposta não vier em uma frase, releia a figura antes de treinar a folha.
+| Bloco | Entrada | Saída |
+|---:|---|---|
+| 1 | observação e cronômetro | $H_{cr},HMG$ |
+| 2 | ANB e $\lambda_{aux}$ | $t_G,AHL,t_1$ |
+| 3 | $\delta,t_1$ | $a,b$ |
+| 4 | $b,\varphi_{aux}$ | $C$ |
+| 5 | $a,C$ | $a_e,Aqd$ |
+| 6 | $Aqd$ nomeado | $Az$ |
+| 7 | $a_i,e_i,E,c$ | $a$ |
+| 8 | $a,a_e,Az,\varphi_{aux},\lambda_{aux}$ | elementos para plotagem |
+
+Para depurar, volte ao primeiro bloco cuja saída está incoerente.
+
+## 9. Tempo e efemérides do trabalho
+
+$$
+H_{cr}=H_{cp}+E_a,
+$$
+
+$$
+HMG=H_{cr}+comp.
+$$
+
+Na página diária do ANB 2026:
+
+<FiguraFonte figura="NAV4-FIG-ANB-001" />
+
+- planetas usam sua coluna horária;
+- estrelas usam ARV/declinação do catálogo e a referência sideral;
+- Sol e Lua aparecem na página adjacente;
+- incrementos $v,d$ são aplicados quando indicados.
+
+## 10. Exemplo histórico como mapa de campos
+
+<FiguraFonte figura="NAV4-FIG-RAD-005" />
+
+A folha de 16/06/2020 fornece posição estimada, Hcp, estado absoluto, complemento, $E$, $e_i$, $a_i$, T/P e limbo. Ela não fornece valores 2026. Sua função é perguntar, para cada dado: “em qual bloco do DHN-0607 ele entra?”
+
+## 11. Controle do encadeamento
+
+Depois de cada bloco:
+
+- tempo: HMG compatível com Hcp/estado/complemento?
+- AHL: longitude W subtraída e E somada?
+- $t_1$: módulo $le180^\circ$, nome preservado?
+- primeira entrada: $\delta,t_1$, nunca latitude?
+- $C$: soma/diferença justificada pelo desenho?
+- segunda entrada: $a_{aux},C$, não altura observada?
+- Az: quadrante convertido corretamente?
+- intercepto: $a-a_e$, com minutos em MN?
+
+## 12. Recuperação ativa
+
+Explique a um colega, sem olhar, a viagem:
+
+$$
+\text{posição/astro/tempo}\to t_1,\delta\to a,b\to C\to a_e,Aqd\to Az,\Delta a.
+$$
+
+**Critério de saída:** explicar o desenho, formar $C$ em três cenários, converter quatro quadrantes e identificar os oito blocos. O cálculo integral será treinado no modo Completo/oficina do trabalho.

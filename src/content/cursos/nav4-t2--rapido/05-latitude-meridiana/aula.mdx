@@ -4,70 +4,118 @@ secao: "aula"
 secaoOrdem: 2
 ---
 
-> **Entrada do problema:** HMG da observação, altura verdadeira do Sol e posição estimada. **Saída:** latitude meridiana exata e azimute do Sol.
+> **Objetivo em 45 min:** receber HMG, altura verdadeira e posição estimada; entregar latitude, nome e azimute com desenho e conferência assinada.
 
-![Casos da latitude meridiana](/imagens/cursos/nav4-t2/figuras/casos-latitude.svg)
+## 1. Distância zenital
 
-*Figura didática V3 baseada na apostila p. 175–180 e na aula 10.3.*
-
-## Passo 1 — distância zenital
+Na passagem superior, Sol, zênite e polo estão no meridiano. Comece por:
 
 $$
-z=90^\circ-a
+z=90^\circ-a.
 $$
 
-Faça a subtração sexagesimal com empréstimo explícito. Se $a=71^\circ08{,}3'$:
+Se $a=71^\circ08{,}3'$:
 
 $$
-z=89^\circ60{,}0'-71^\circ08{,}3'=18^\circ51{,}7'
+z=89^\circ60{,}0'-71^\circ08{,}3'
+=18^\circ51{,}7'.
 $$
 
-## Passo 2 — declinação do Sol
+Faça o empréstimo explicitamente; não subtraia $08{,}3'$ de $00'$.
 
-No **ANB 2026**, na data e HMG do problema:
+## 2. Declinação no instante
 
-1. copie $\delta$ da hora inteira;
-2. use o valor $d$ da página;
-3. obtenha a correção de minutos/segundos na página de incrementos;
-4. aplique o sinal de $d$;
-5. conserve o nome N/S.
+<FiguraFonte figura="NAV4-FIG-ANB-002" />
 
-## Passo 3 — decidir o lado antes da fórmula
+No ANB 2026:
 
-Faça um desenho de uma linha N—Z—S e coloque o Sol conforme seu azimute na passagem:
-
-- Sol ao norte: $Az=000^\circ$;
-- Sol ao sul: $Az=180^\circ$.
-
-Com latitudes assinadas (N positiva, S negativa), há uma regra compacta:
+1. confirme data e HMG;
+2. leia $\delta_h$ do Sol na hora inteira;
+3. leia $d$;
+4. obtenha o incremento dos minutos/segundos;
+5. aplique a tendência;
+6. preserve N/S.
 
 $$
-\varphi=\delta-z \quad \text{se o Sol culmina ao norte}
-$$
-$$
-\varphi=\delta+z \quad \text{se o Sol culmina ao sul}
+\delta_{HMG}=\delta_h+\Delta\delta(d,m,s).
 $$
 
-Se preferir os três casos por módulos:
+Não use a declinação apenas do dia: ela deve corresponder ao instante.
 
-| Relação | Latitude |
+## 3. Desenho antes da fórmula
+
+<FiguraFonte figura="NAV4-FIG-LAT-001" />
+
+Trace N—Z—S e coloque o Sol:
+
+- ao norte: $Az=000^\circ$;
+- ao sul: $Az=180^\circ$.
+
+O desenho mostra se latitude, declinação e $z$ se somam ou subtraem. Só depois calcule.
+
+## 4. Forma assinada para conferir
+
+Adote N positivo e S negativo:
+
+$$
+\varphi=\delta-z\qquad(Az=000^\circ),
+$$
+
+$$
+\varphi=\delta+z\qquad(Az=180^\circ).
+$$
+
+Por módulos:
+
+| Geometria | Relação |
 |---|---|
-| latitude e declinação de mesmo nome; latitude maior | $|\varphi|=|\delta|+z$ |
-| mesmo nome; declinação maior | $|\varphi|=|\delta|-z$ |
+| mesmo nome, $|\varphi|>|\delta|$ | $|\varphi|=z+|\delta|$ |
+| mesmo nome, $|\delta|>|\varphi|$ | $|\varphi|=|\delta|-z$ |
 | nomes contrários | $|\varphi|=z-|\delta|$ |
 
-O desenho decide o nome e evita aplicar uma fórmula memorizada fora do caso.
+O desenho decide nome e Az; a forma assinada verifica.
 
-## Exemplo procedural antigo
+## 5. Exemplo histórico completo
 
-Com $a=71^\circ08{,}3'$, resulta $z=18^\circ51{,}7'$. O ANB daquele exercício forneceu $\delta=01^\circ32{,}5'S$ após a interpolação. Como a posição estimada era aproximadamente $20^\circ S$, o Sol cruzou ao norte:
+**Dados:** $a=71^\circ08{,}3'$; declinação antiga interpolada $\delta=01^\circ32{,}5'S$; posição estimada próxima de $20^\circ S$; Sol ao norte.
+**Incógnita:** $\varphi$.
 
 $$
-|\varphi|=18^\circ51{,}7'+1^\circ32{,}5'=20^\circ24{,}2'S
+z=18^\circ51{,}7'.
 $$
 
-Logo $Az=000^\circ$.
+Com N positivo e S negativo:
 
-## Movimento do navio
+$$
+\delta=-01^\circ32{,}5',
+$$
 
-A altura máxima coincide com a altura meridiana **somente** para observador parado ou quando a componente N–S permanece dentro dos limites fornecidos na fonte. Em questão que forneça rumo/velocidade, não assuma silenciosamente que “máxima = meridiana”; declare a condição.
+$$
+\varphi=\delta-z
+=-01^\circ32{,}5'-18^\circ51{,}7'
+=-20^\circ24{,}2'.
+$$
+
+Logo:
+
+$$
+\varphi=20^\circ24{,}2'S,\qquad Az=000^\circ.
+$$
+
+**Controle:** a resposta permanece próxima da estimada e, no hemisfério sul, o Sol com pequena declinação S culmina ao norte do observador.
+
+## 6. Altura máxima não é sempre meridiana
+
+Para observador parado, coincidem. Com movimento N–S significativo, o navio pode caminhar para/contra o GP durante a série e deslocar o máximo. Se rumo/velocidade aparecerem, declare a condição; não transforme “máxima = meridiana” em verdade universal.
+
+## 7. Recuperação ativa
+
+Sem olhar:
+
+1. calcule $z$ do exemplo;
+2. escreva as duas fórmulas assinadas;
+3. explique como o desenho fixa Az;
+4. liste a consulta de $\delta$;
+5. diga quando movimento importa.
+
+**Critério de saída:** resolver o exemplo em menos de 7 min, acertar 7 questões e obter o mesmo resultado pelo desenho e pela forma assinada.

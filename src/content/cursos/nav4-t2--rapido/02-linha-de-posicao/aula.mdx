@@ -4,56 +4,108 @@ secao: "aula"
 secaoOrdem: 2
 ---
 
-> **Ideia central:** uma altura verdadeira não dá um ponto único. Ela dá uma circunferência de posições possíveis; perto da posição assumida, usamos uma reta tangente.
+> **Objetivo em 45 min:** sair de uma altura verdadeira $a$ e construir uma LDP com azimute, intercepto, sentido e controle geométrico.
 
-![Geometria da LDP](/imagens/cursos/nav4-t2/figuras/ldp-geometria.svg)
+## 1. Uma observação não dá um ponto
 
-*Figura didática V3 baseada na apostila p. 153–158 e na aula 8.0.*
+O **GP** é o ponto da Terra na vertical do astro. Sua latitude é a declinação $\delta$; sua longitude é determinada pelo AHG/$t_G$ no instante.
 
-## Conceitos que o professor cobra pelo nome
-
-- **Posição Geográfica do astro (GP):** projeção do astro na superfície terrestre. Latitude do GP = declinação; longitude do GP decorre do AHG/tG.
-- **Circunferência de igual altura:** lugar geométrico dos observadores que veem o astro com a mesma altura verdadeira no mesmo instante.
-- **Distância zenital:** $z=90^\circ-a$. É o raio angular dessa circunferência.
-- **Reta de altura:** tangente que substitui localmente a circunferência osculatriz.
-- **Elementos determinativos:** azimute verdadeiro $Az$ e diferença/intercepto $\Delta a=a-a_e$.
-
-Como $1'$ de arco terrestre corresponde a 1 MN, **$1'$ de distância zenital ou intercepto = 1 MN**.
-
-## Por que a reta é perpendicular ao azimute
-
-O azimute aponta da posição assumida para o GP, isto é, na direção de maior crescimento da altura. A circunferência de igual altura cruza essa direção a $90^\circ$; sua tangente também. Portanto:
-
-1. trace $Az$ a partir da posição assumida;
-2. marque o intercepto sobre essa linha;
-3. pelo ponto marcado, trace a LDP perpendicular ao azimute.
-
-## O intercepto
+Todos os observadores que medem a mesma altura verdadeira $a$, no mesmo instante, estão à mesma distância angular do GP:
 
 $$
-\Delta a=a-a_e
+z=90^\circ-a.
 $$
 
-- $\Delta a>0$: o astro foi observado **mais alto** que o calculado; avance em direção ao astro/GP (“toward”).
-- $\Delta a<0$: o astro foi observado **mais baixo**; marque no sentido oposto (“away”).
-- O módulo em minutos é a distância em MN.
+Essas posições formam a **circunferência de igual altura**. Logo, uma altura isolada produz uma linha de posições possíveis, não uma posição exata.
 
-Exemplo: $a=32^\circ29{,}9'$ e $a_e=32^\circ09{,}2'$.
+Exemplo: se $a=50^\circ$,
 
 $$
-\Delta a=+20{,}7'=20{,}7\text{ MN em direção ao }Az
+z=40^\circ=2400'=2400\text{ MN}.
 $$
 
-## Limite da aproximação
+## 2. Da circunferência à reta
 
-A reta é uma aproximação local. A apostila alerta que, para alturas muito grandes, a curvatura da circunferência aparece mais depressa; perto de $80^\circ$, a faixa útil é muito menor que em alturas moderadas. É uma das razões pelas quais a passagem meridiana é tratada por geometria própria.
+<FiguraFonte figura="NAV4-FIG-LDP-001" />
 
-## Resposta curta perfeita
+Perto da posição assumida, substituímos a circunferência por sua tangente, a **reta de altura**. O azimute aponta radialmente para o GP; a tangente é perpendicular ao raio. Portanto, a LDP é perpendicular ao $Az$.
 
-Se perguntarem “defina LDP astronômica”:
+Resposta curta de prova:
 
-> É o lugar geométrico das posições possíveis do observador que, no mesmo instante, mediriam a mesma altura verdadeira de um astro; localmente, representa-se pela tangente à circunferência de igual altura.
+> LDP astronômica é o lugar geométrico das posições que, no mesmo instante, mediriam a mesma altura verdadeira de um astro; localmente, é representada pela tangente à circunferência de igual altura.
 
-Se perguntarem “elementos determinativos”:
+## 3. Dois elementos determinativos
 
-> Azimute verdadeiro do astro e intercepto $\Delta a=a-a_e$, com módulo em milhas e sentido conforme o sinal.
+- $Az$: orienta a normal da reta e aponta para o astro/GP;
+- $\Delta a=a-a_e$: posiciona a reta em relação à posição assumida.
+
+$$
+\Delta a=a-a_e.
+$$
+
+Como $1'$ de arco terrestre corresponde a aproximadamente 1 MN, o módulo do intercepto em minutos é marcado em milhas.
+
+| Resultado | Significado | Construção |
+|---|---|---|
+| $\Delta a>0$ | astro observado mais alto; observador mais perto do GP | marcar **em direção** ao $Az$ |
+| $\Delta a<0$ | astro observado mais baixo; observador mais longe do GP | marcar **afastando**, em $Az+180^\circ$ |
+| $\Delta a=0$ | posição assumida já está sobre a LDP | reta passa pela posição assumida |
+
+Frase de memória com explicação: **maior altura, menor $z$, mais perto do astro**.
+
+## 4. Construção de prova
+
+1. marque a posição assumida usada para calcular $a_e$;
+2. trace o $Az$ verdadeiro;
+3. calcule $\Delta a$ em minutos;
+4. marque $|\Delta a|$ MN no sentido correto;
+5. pelo ponto, trace a perpendicular ao $Az$;
+6. identifique astro e hora junto à reta.
+
+### Exemplo
+
+**Dados:** $a=32^\circ29{,}9'$, $a_e=32^\circ09{,}2'$, $Az=064^\circ$.
+
+$$
+\Delta a=32^\circ29{,}9'-32^\circ09{,}2'=+20{,}7'.
+$$
+
+**Resultado:** marque 20,7 MN em $064^\circ$ e, pelo ponto, trace a perpendicular.
+**Controle:** como $a>a_e$, o ponto precisa aproximar-se do GP.
+
+Segundo caso:
+
+$$
+a=21^\circ35{,}8',\quad a_e=21^\circ47{,}6'
+\Rightarrow\Delta a=-11{,}8'.
+$$
+
+Marque 11,8 MN no recíproco do azimute.
+
+## 5. A aproximação tem limite
+
+A apostila fornece ordens de grandeza:
+
+- perto de $a=35^\circ$: cerca de 100 MN para cada lado da tangência;
+- perto de $a=80^\circ$: cerca de 30 MN para cada lado.
+
+Altura grande significa $z$ pequeno e circunferência mais curva. A reta continua válida localmente, mas por extensão menor.
+
+## 6. V/F que você deve desmontar
+
+- “O raio é $a$.” Falso: é $z=90^\circ-a$.
+- “O GP é a projeção do observador.” Falso: é a projeção do astro.
+- “A LDP é paralela ao $Az$.” Falso: é perpendicular.
+- “Uma altura fornece posição exata.” Falso: fornece uma LDP.
+- “Se $a=a_e$, não existe LDP.” Falso: ela passa pela posição assumida.
+
+## 7. Recuperação ativa
+
+Desenhe de memória GP, circunferência, posição assumida, $Az$, intercepto e tangente. Depois explique:
+
+1. por que $z$ é raio;
+2. por que a reta é perpendicular;
+3. por que $\Delta a>0$ vai para o astro;
+4. por que a aproximação piora em grande altura.
+
+**Critério de saída:** construir os dois exemplos sem consultar e acertar pelo menos 6 questões do módulo.

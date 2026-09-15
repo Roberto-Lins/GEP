@@ -1,140 +1,344 @@
 ---
-titulo: "UE 10.0 — Tábua Radler: teoria e trabalho"
+titulo: "UE 10.0 — Tábua Radler: teoria e oficina do trabalho"
 secao: "aula"
 secaoOrdem: 2
 ---
 
-> **Delimitação confirmada em 15/09/2026:** a mensagem do professor manda estudar a aula **UE 10.0 — Radler (Parte 1) até 13:00**. A aula seguinte é o exercício do camarote, vale **2,0 pontos** e será entregue no dia da T2. O núcleo conceitual abaixo é a prioridade da prova; o procedimento integral permanece depois, como apoio separado ao trabalho.
+> **Delimitação:** teoria até 13:00 é núcleo da T2. O exercício integral seguinte é o trabalho de 2,0. A Parte I prepara a prova; a Parte II transforma o mesmo fundamento em preenchimento auditável do DHN-0607.
 
-## Parte I — núcleo conceitual confirmado
+## Parte I — teoria confirmada para a T2
 
-### Propósito e elementos determinativos
+### 1. Finalidade
 
-A Tábua Radler — originalmente apresentada como “Tábuas Náuticas e Aeronáuticas Radler de Aquino” ou “Tábuas Universais” — simplifica a solução do triângulo de posição e condensa combinações de latitude, declinação e ângulo no polo.
-
-Seu produto são os elementos determinativos da reta de altura:
+A Radler de Aquino resolve tabularmente o triângulo de posição. A partir de posição auxiliar e efemérides, ela fornece:
 
 $$
-\Delta a=a-a_e
+a_e\quad\text{e}\quad Aqd.
 $$
 
-e o azimute verdadeiro $Az$.
-
-$a$ é a altura verdadeira observada; $a_e$ é a altura estimada/calculada para uma posição auxiliar. A Radler fornece $a_e$ e azimute, mas a altura observada vem da cadeia de correções.
-
-### Por que aparecem dois triângulos
-
-![Triângulo PAZ dividido pela perpendicular AM](/imagens/cursos/nav4-t2/figuras/fundamento-radler.svg)
-
-*Reconstrução didática V3 baseada na apostila p. 160–161 e na UE 10.0, 0:00–13:00. Preserva a topologia relevante; não está em escala.*
-
-Comece em $P$, siga até o astro $A$ e depois até o zênite $Z$: esse é o triângulo de posição $PAZ$. Ao traçar $AM\perp PZ$, ele é dividido nos triângulos retângulos $PAM$ e $ZAM$.
-
-1. Conhecendo $PA=90^\circ-\delta$ e $t_1$, resolve-se $PAM$ para obter os auxiliares $a=AM$ e $b$.
-2. $b$ é a distância angular do Equador ao pé $M$. Combinando $b$ com a latitude $\varphi$, obtém-se $C=MZ$.
-3. Com $a$ e $C$, resolve-se $ZAM$ para obter $ZA=90^\circ-a_e$ e o azimute quadrantal $Aqd$.
-4. O $Aqd$ é nomeado/convertido em $Az$, e $a_e$ é comparado com a altura verdadeira.
-
-As relações que justificam a segunda entrada são:
+O azimute quadrantal é convertido em $Az$, e a altura calculada é comparada à altura verdadeira observada:
 
 $$
-\sin a_e=\cos a\cos C,qquad \cot Aqd=\cot a\sin C
+\Delta a=a-a_e.
 $$
 
-> **Duplo uso do símbolo $a$:** na construção, $a$ é o auxiliar $AM$; no intercepto, $a$ é a altura verdadeira observada. O modelo e o contexto distinguem os dois. Essa troca é uma pegadinha natural de prova.
+Assim, $Az$ e $\Delta a$ são os elementos determinativos da reta.
 
-### A tabela em três operações
+### 2. Decomposição do triângulo $PAZ$
+
+<FiguraFonte figura="NAV4-FIG-RAD-002" />
+
+No triângulo esférico:
+
+- $P$: polo elevado;
+- $A$: astro;
+- $Z$: zênite;
+- $PA=90^\circ-\delta$;
+- $PZ=90^\circ-\varphi$;
+- o ângulo em $P$ é $t_1$;
+- $ZA=90^\circ-a_e$.
+
+Traça-se $AM\perp PZ$, obtendo os triângulos retângulos $PAM$ e $ZAM$. Essa decomposição permite duas soluções sucessivas:
 
 $$
-(\delta,t_1)\longrightarrow(a,b)
+\delta,t_1\to a,b,
 $$
 
 $$
-b\;\text{com}\;\varphi\longrightarrow C
+a,C\to a_e,Aqd.
+$$
+
+O auxiliar $a$ representa $AM$. O auxiliar $b$ posiciona $M$ em relação ao Equador. A distância $C=MZ$ combina $b$ com $\varphi_{aux}$.
+
+### 3. Por que a segunda entrada funciona
+
+No triângulo retângulo $ZAM$, as relações apresentadas pela fonte são:
+
+$$
+\sin a_e=\cos a\cos C,
 $$
 
 $$
-(a,C)\longrightarrow(a_e,Aqd)\longrightarrow Az
+\cot Aqd=\cot a\sin C.
 $$
 
-No limite de 13:00, o professor ressalta que $t_1$ deve entrar em **graus inteiros**. $C$ é uma distância geométrica: será soma ou diferença conforme as posições de $M$, $Z$ e do Equador. No caso ilustrado na p. 161, mesmo nome, $t_1<90^\circ$ e $b>\varphi$:
+Elas explicam por que $a,C$ determinam simultaneamente altura calculada e azimute quadrantal. A tabela substitui as operações trigonométricas; os nomes/quadrantes continuam dependendo da geometria.
 
-$$
-C=b-\varphi
-$$
+### 4. Três “alturas” que não podem ser confundidas
 
-## Parte II — apoio separado ao trabalho de 2,0
-
-![Fluxo operacional da Tábua Radler](/imagens/cursos/nav4-t2/figuras/fluxo-radler.svg)
-
-### Preparar o instante e o astro
-
-$$
-H_{cr}=H_{cp}+E_a,qquad HMG=H_{cr}+comp
-$$
-
-Use o ANB 2026: Sol/planeta/Lua pela coluna do astro; estrela por AHG de Áries + ARV. Aplique incrementos $v$ e $d$ quando indicados.
-
-### Obter AHL e $t_1$
-
-Escolha $\lambda_{aux}$ próxima da estimada para tornar o AHL inteiro:
-
-$$
-AHL=t_G-\lambda_W,qquad AHL=t_G+\lambda_E
-$$
-
-Normalize entre $0^\circ$ e $360^\circ$. Se $AHL<180^\circ$, $t_1=AHL\ W$; se $AHL>180^\circ$, $t_1=360^\circ-AHL\ E$. Para entrar na tábua, use o suplemento quando $t_1>90^\circ$, conservando E/W.
-
-### Fazer as duas entradas
-
-1. Entre com $\delta,t_1$; leia/interpole $a,b$.
-2. Escolha $\varphi_{aux}$ próxima, tornando $C$ inteiro.
-3. Nomes contrários: $C=b+\varphi$. Mesmo nome e $t_1>90^\circ$: soma. Mesmo nome e $t_1<90^\circ$: diferença em módulo.
-4. Entre com $a,C$; leia $a_e,Aqd$.
-
-O primeiro nome de $Aqd$ usa polo abaixado para nomes contrários; polo elevado para mesmo nome com $t_1>90^\circ$; com mesmo nome e $t_1<90^\circ$, elevado se $b>\varphi$ e abaixado se $b<\varphi$. O segundo nome é E/W de $t_1$.
-
-$$
-NE\to\theta,quad SE\to180^\circ-\theta,quad SW\to180^\circ+\theta,quad NW\to360^\circ-\theta
-$$
-
-### Fechar a folha
-
-Corrija $a_i$ até a altura verdadeira $a$, calcule $\Delta a=a-a_e$ e plote a partir da posição auxiliar.
-
-$$
-H_{cp}\to H_{cr}\to HMG\to(t_G,\delta)\to(AHL,t_1)
-$$
-
-$$
-(\delta,t_1)\to(a,b)\to(C,\varphi_{aux})\to(a_e,Aqd)\to Az\to\Delta a
-$$
-
-### Exemplo histórico das aulas
-
-O exemplo de 16/06/2020 serve somente para aprender a sequência. Em questão ou trabalho de 2026, $t_G$, $\delta$, incrementos e correções devem sair do ANB 2026.
-
-| Linha do modelo | Valor histórico | Razão |
+| Símbolo/contexto | Significado | Origem |
 |---|---|---|
-| posição estimada | $23^\circ12{,}0'S$, $042^\circ05{,}8'W$ | dado inicial |
-| HMG | $11h25m29s$ | cronômetro corrigido + complemento |
+| $a_{aux}=AM$ | auxiliar chamado $a$ pela Radler | primeira entrada |
+| $a_e$ | altura calculada | segunda entrada |
+| $a$ | altura verdadeira observada | correções do sextante |
+
+Somente $a-a_e$ produz o intercepto.
+
+### 5. Formação de $C$
+
+<FiguraFonte figura="NAV4-FIG-RAD-001" />
+
+As instruções fornecem:
+
+| Condição | Regra |
+|---|---|
+| $\varphi$ e $\delta$ contrários | somar $b+\varphi_{aux}$ |
+| mesmo nome e $t_1>90^\circ$ | somar |
+| mesmo nome e $t_1<90^\circ$ | subtrair em módulo |
+
+Se $C>90^\circ$:
+
+$$
+C_{entrada}=180^\circ-C.
+$$
+
+A escolha de $\varphi_{aux}$ próxima da estimada busca $C$ inteiro. Na figura da p. 161, mesmo nome, $t_1<90^\circ$ e $b>\varphi$:
+
+$$
+C=b-\varphi.
+$$
+
+### 6. Ponto de corte
+
+Até 13:00, o professor apresenta a organização conceitual e destaca $t_1$ em graus inteiros. A cadeia de tempo, escolha de posições auxiliares, interpolação e folha integral aparecem no exercício seguinte. Logo, para a T2, você deve explicar o “porquê” das duas entradas, não apenas recitar uma lista de células.
+
+## Parte II — oficina auditável do trabalho de 2,0
+
+### 7. Leia a instrução original
+
+<FiguraFonte figura="NAV4-FIG-RAD-003" />
+
+Os itens 1–5 formam um algoritmo:
+
+1. escolha $\lambda_{aux}$ para AHL inteiro;
+2. reduza a $t_1$, use suplemento se necessário e faça a primeira entrada;
+3. escolha $\varphi_{aux}$, forme $C$ e suplemente se necessário;
+4. faça a segunda entrada;
+5. nomeie $Aqd$ por polo elevado/abaixado e E/W.
+
+Não pule regras escritas ao pé da tabela: elas fazem parte do método.
+
+### 8. Anatomia do DHN-0607
+
+<FiguraFonte figura="NAV4-FIG-RAD-004" />
+
+| Bloco | Conteúdo | Dependência |
+|---:|---|---|
+| 1 | astro, $a_i,e_i,E,H_{cp},E_a,comp$ | dados |
+| 2 | $HMG,t_G,\lambda_{aux},AHL,t_1$ | bloco 1 + ANB |
+| 3 | $\delta,t_1\to a,b$ | bloco 2 |
+| 4 | $b,\varphi_{aux}\to C$ | bloco 3 |
+| 5 | $a_{aux},C\to a_e,Aqd$ | bloco 4 |
+| 6 | $Aqd\to Az$ | bloco 5 |
+| 7 | $a_i\to a$ | bloco 1 + tábuas de correção |
+| 8 | $a-a_e,Az,\varphi_{aux},\lambda_{aux}$ | blocos 5–7 |
+
+O bloco 7 é parcialmente independente dos blocos 2–6: um erro na Radler não obriga refazer a correção da observação.
+
+### 9. Tempo de observação
+
+$$
+H_{cr}=H_{cp}+E_a,
+$$
+
+$$
+HMG=H_{cr}+comp.
+$$
+
+Normalize segundos e minutos, e confira mudança de data. Estado absoluto e complemento precisam conservar os sinais definidos no enunciado/modelo.
+
+### 10. Efemérides 2026
+
+<FiguraFonte figura="NAV4-FIG-ANB-001" />
+
+Para Sol, Lua e planetas, use a página diária do astro e aplique incrementos indicados. Para estrelas, combine a referência sideral com ARV e use a declinação catalogada conforme o ANB. Registre data, TU/HMG, página, coluna e incremento.
+
+Uma consulta do trabalho deve ficar rastreável:
+
+> ANB 2026, p. ___, data ___, HMG ___, astro ___, valor base ___, incremento ___, resultado ___.
+
+### 11. Longitude auxiliar e AHL
+
+Para longitude W:
+
+$$
+AHL=t_G-\lambda_{aux,W}.
+$$
+
+Para longitude E:
+
+$$
+AHL=t_G+\lambda_{aux,E}.
+$$
+
+Escolha $\lambda_{aux}$ próxima da estimada para que AHL resulte em grau inteiro. Normalize:
+
+$$
+AHL_{norm}=AHL\pmod{360^\circ}.
+$$
+
+Se $0^\circ<AHL<180^\circ$:
+
+$$
+t_1=AHL W.
+$$
+
+Se $180^\circ<AHL<360^\circ$:
+
+$$
+t_1=360^\circ-AHL E.
+$$
+
+Se $t_1>90^\circ$, entre com seu suplemento na tábua, preservando E/W.
+
+### 12. Primeira entrada
+
+Argumentos: $\delta$ e $t_1$. Saídas: $a_{aux}$ e $b$. Para estrela, use a seção auxiliar indicada nas instruções; para $t_1>90^\circ$, use o suplemento correspondente.
+
+Registre qualquer interpolação. A latitude não é argumento desta entrada.
+
+### 13. Latitude auxiliar e $C$
+
+Escolha $\varphi_{aux}$ próxima à estimada para tornar $C$ inteiro. A regra de soma/diferença deve ser escrita ao lado do cálculo, não aplicada silenciosamente.
+
+Exemplo de estrutura:
+
+$$
+\varphi_{aux}\text{ e }\delta\text{ contrários}
+\Rightarrow
+C=b+\varphi_{aux}.
+$$
+
+Se a escolha auxiliar mudar, $C$, a segunda entrada, o Az e os elementos finais devem ser refeitos.
+
+### 14. Segunda entrada e azimute
+
+Argumentos: $a_{aux},C$. Saídas: $a_e,Aqd$.
+
+O segundo nome de $Aqd$ é E/W de $t_1$. O primeiro nome:
+
+- nomes contrários: polo abaixado;
+- mesmo nome e $t_1>90^\circ$: polo elevado;
+- mesmo nome e $t_1<90^\circ$: polo elevado se $b>\varphi$, abaixado se $b<\varphi$.
+
+Converta o quadrantal:
+
+$$
+\begin{aligned}
+NE&\to\theta,\
+SE&\to180^\circ-\theta,\
+SW&\to180^\circ+\theta,\
+NW&\to360^\circ-\theta.
+\end{aligned}
+$$
+
+### 15. Corrigir a altura observada
+
+Em paralelo:
+
+$$
+a_o=a_i+e_i,
+$$
+
+$$
+a_{ap}=a_o+dp_{ap},
+$$
+
+$$
+a=a_{ap}+c+c_{ad}.
+$$
+
+Use A2/A3/A4 ou tábua lunar conforme astro/altura/condições. Não use o $a_{aux}$ nesta cadeia.
+
+### 16. Fechamento
+
+$$
+\Delta a=a-a_e.
+$$
+
+Converta $|\Delta a|'$ em MN. Positivo: para o astro. Negativo: afastando. A posição auxiliar usada na Radler é o ponto de partida da plotagem.
+
+## Parte III — exemplo histórico guiado
+
+### 17. Dados recebidos
+
+<FiguraFonte figura="NAV4-FIG-RAD-005" />
+
+A folha de 16/06/2020 mostra:
+
+- posição estimada $23^\circ12{,}0'S, 042^\circ05{,}8'W$;
+- observação do Sol, limbo inferior;
+- Hcp, estado absoluto e complemento;
+- $E=12{,}8m$, $e_i=+1{,}3'$, $a_i=21^\circ27{,}1'$;
+- $T=27^\circ C$, $P=1020mb$.
+
+Ela serve para localizar campos. Os dados anuais de 2020 não devem ser transportados.
+
+### 18. Encadeamento histórico da aula
+
+O exemplo desenvolvido nas fontes resultou na seguinte estrutura:
+
+| Etapa | Valor histórico | Controle |
+|---|---|---|
+| HMG | $11^h25^m29^s$ | Hcp corrigida + complemento |
 | $t_G$ | $351^\circ10{,}1'$ | página diária + incremento |
-| $\lambda_{aux}$ | $042^\circ10{,}1'W$ | faz o AHL inteiro |
-| AHL e $t_1$ | $309^\circ$; $51^\circ E$ | $360^\circ-309^\circ$ |
-| primeira entrada | $a=45^\circ30{,}9'$; $b=34^\circ28{,}5'$ | entrada $(\delta,t_1)$ |
-| posição auxiliar | $23^\circ31{,}5'S$ | torna $C$ inteiro |
-| $C$ | $58^\circ$ | nomes contrários: $b+\varphi_{aux}$ |
-| segunda entrada | $a_e=21^\circ47{,}6'$; $Aqd=50^\circ12{,}8'NE$ | entrada $(a,C)$ |
-| azimute | $Az=050{,}2^\circ$ | quadrante NE |
-| altura observada | $a=21^\circ35{,}8'$ | cadeia de correções |
-| intercepto | $\Delta a=-11{,}8'$ | $a-a_e$ |
+| $\lambda_{aux}$ | $042^\circ10{,}1'W$ | torna AHL inteiro |
+| AHL | $309^\circ$ | W subtraída |
+| $t_1$ | $51^\circ E$ | $360^\circ-309^\circ$ |
+| primeira entrada | $a_{aux}=45^\circ30{,}9'$, $b=34^\circ28{,}5'$ | $\delta,t_1$ |
+| $\varphi_{aux}$ | $23^\circ31{,}5'S$ | torna $C$ inteiro |
+| $C$ | $58^\circ$ | nomes contrários: soma |
+| segunda entrada | $a_e=21^\circ47{,}6'$, $Aqd=50^\circ12{,}8'NE$ | $a_{aux},C$ |
+| $Az$ | $050{,}2^\circ$ | NE conserva módulo |
+| $a$ observada | $21^\circ35{,}8'$ | cadeia de correções |
+| $\Delta a$ | $-11{,}8'$ | afastando |
 
-### Auditoria do trabalho
+O objetivo não é memorizar os valores: é conseguir dizer qual fonte/operação produz cada linha.
 
-- [ ] HMG veio de $H_{cr}+comp$ e a data Greenwich foi conferida?
-- [ ] longitude W foi subtraída e E somada no AHL?
-- [ ] $t_1$ preserva o nome E/W depois do suplemento?
-- [ ] a primeira entrada usou $\delta$ e $t_1$, não latitude?
-- [ ] a regra de $C$ corresponde aos nomes e à faixa de $t_1$?
-- [ ] $Aqd$ recebeu dois nomes antes de virar $Az$ circular?
-- [ ] $\Delta a$ usa a altura verdadeira observada, não $a_i$ nem o $a$ auxiliar?
+### 19. Controle trigonométrico independente
+
+Com $\varphi_{aux},\delta,AHL$, calcule:
+
+$$
+\sin a_e=
+\sin\varphi_{aux}\sin\delta+
+\cos\varphi_{aux}\cos\delta\cos AHL.
+$$
+
+O valor deve ficar próximo da saída tabular, dentro do arredondamento/interpolação. Para o Az, use a relação do triângulo e confirme quadrante pelo desenho; um módulo correto no quadrante errado é falha.
+
+### 20. Matriz de diagnóstico
+
+| Sintoma | Primeiro bloco a revisar |
+|---|---|
+| AHL não inteiro | escolha de $\lambda_{aux}$/bloco 2 |
+| $t_1$ maior que 180° | redução/normalização do bloco 2 |
+| $C$ fracionário inesperado | $\varphi_{aux}$/regra do bloco 4 |
+| $a_e$ muito diferente da altura observada | entradas 3–5 ou observação 7 |
+| Az no hemisfério oposto | nomeação/conversão do bloco 6 |
+| intercepto enorme | altura observada/calculada ou unidades |
+
+## Parte IV — recuperação e entrega
+
+### 21. Checklist do DHN-0607
+
+- [ ] HMG e data Greenwich conferidas?
+- [ ] efemérides vieram do ANB 2026 e têm registro?
+- [ ] longitude W subtraída, E somada?
+- [ ] $t_1$ e $C$ suplementados quando necessário?
+- [ ] primeira entrada usou $\delta,t_1$?
+- [ ] regra de $C$ foi justificada?
+- [ ] segunda entrada usou $a_{aux},C$?
+- [ ] $Aqd$ recebeu dois nomes antes de virar $Az$?
+- [ ] $a$ observada veio da cadeia correta?
+- [ ] $\Delta a=a-a_e$ e sentido da plotagem conferidos?
+
+### 22. Critério de saída
+
+Conclua quando puder:
+
+1. explicar $PAZ$, $AM$, $a,b,C$ e as duas entradas em 2 min;
+2. reproduzir as regras de $C$, $t_1$ e quadrantes;
+3. mapear qualquer linha do DHN-0607 a um dos oito blocos;
+4. refazer o exemplo histórico como procedimento, substituindo cada dado anual por “consultar ANB 2026”;
+5. conferir $a_e$ por relação independente.

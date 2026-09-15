@@ -4,92 +4,276 @@ secao: "aula"
 secaoOrdem: 2
 ---
 
-## Tempo verdadeiro e médio
+> **Produto profissional:** prever a culminação do Sol por duas rotas, tratar interpolação, fuso e data, organizar uma série observacional e diagnosticar divergências.
+
+## 1. Geometria do fenômeno
+
+Na passagem meridiana superior, o Sol cruza o semimeridiano superior do observador:
 
 $$
-ET=HV-HM
+t_1=0^\circ.
 $$
 
-Na passagem superior local, $HVL=12h$, então:
+Ele está ao norte ou ao sul:
 
 $$
-HML=12h-ET
+Az\in\{000^\circ,180^\circ\}.
 $$
 
-O ANB também fornece HML diretamente em dias selecionados.
+Para observador parado, a altura instantânea é máxima. O triângulo de posição se degenera numa relação meridiana; essa simplificação sustentará a latitude.
 
-## Método simples
+## 2. Por que prever
 
-Interpole HML para a data. Converta longitude com $15^\circ=1h$, $15'=1m$, $15''=1s$.
+A culminação não é identificada por um único horário de relógio. A previsão permite:
+
+1. preparar sextante e cronômetro;
+2. iniciar a série antes da passagem;
+3. observar o crescimento, o patamar e a queda;
+4. selecionar/interpolar a altura meridiana;
+5. associar o instante à declinação correta.
+
+## 3. HML, HMG e Hleg
+
+| Escala | Referência | Uso |
+|---|---|---|
+| HML | meridiano local médio | hora tabulada/derivada da passagem |
+| HMG/TU | Greenwich | entrada em página diária |
+| Hleg | fuso legal/bordo | execução prática |
+
+Fluxo:
 
 $$
-HMG=HML+\lambda_t(W),\qquad HMG=HML-\lambda_t(E)
+HML\xrightarrow{\lambda_t}HMG\xrightarrow{P}Hleg.
+$$
+
+## 4. Leitura do ANB 2026
+
+<FiguraFonte figura="NAV4-FIG-ANB-002" />
+
+Na página 149:
+
+- Sol e Lua aparecem por data e TU à esquerda;
+- fenômenos são tabulados por latitude à direita;
+- ET e passagens aparecem no quadro inferior.
+
+Anote a escala de tempo impressa. A posição visual de um número não substitui seu cabeçalho.
+
+## 5. Conversão angular para tempo
+
+Como a Terra gira $360^\circ$ em $24^h$:
+
+$$
+15^\circ=1^h.
+$$
+
+Daí:
+
+$$
+15'=1^m,\qquad15''=1^s.
+$$
+
+Uma forma geral:
+
+$$
+\lambda_t=\frac{\lambda}{15^\circ/h}.
+$$
+
+Para $\lambda=043^\circ10'$:
+
+$$
+43^\circ=2^h52^m,\qquad10'=40^s,
+$$
+
+$$
+\lambda_t=2^h52^m40^s.
+$$
+
+## 6. Método simples
+
+1. selecione a data no ANB 2026;
+2. leia/interpole HML da passagem;
+3. converta longitude;
+4. aplique o sinal;
+5. converta para Hleg;
+6. normalize data.
+
+$$
+HMG=
+\begin{cases}
+HML+\lambda_t,&W,\\
+HML-\lambda_t,&E.
+\end{cases}
 $$
 
 Na convenção do curso:
 
 $$
-Hleg=HMG-P
+Hleg=HMG-P,
 $$
 
-com $P$ positivo a W. Normalize hora e data.
+com $P$ positivo a W.
 
-## Método preciso
+## 7. Método preciso pela equação do tempo
 
-Leia ET com sinal perto de HVL 12h, calcule HML e conserve segundos nas conversões. Os métodos descrevem o mesmo evento; diferença grande revela sinal de ET, longitude ou fuso.
-
-## Operação no mar
-
-Comece uma série antes da Hleg prevista, confira sextante e hora, registre alturas em intervalos curtos e observe o patamar. A previsão orienta a janela; não substitui a observação.
-
-Se longitude/fuso levar a outro dia em Greenwich, a página diária do ANB precisa acompanhar a HMG, não apenas a data legal local.
-
-## Diagnóstico por diferença
-
-Diferença próxima de uma hora costuma ser fuso; várias horas, longitude; cerca de duas vezes o módulo de ET, sinal da equação. Sempre derive $HML=12-ET$ da definição.
-
-## Exemplo histórico pelo método preciso
-
-Para 23/07/2016, o exemplo da aula usa $ET=-06m29s$. A data é antiga e só ilustra o método:
+A diferença entre tempo verdadeiro e médio é:
 
 $$
-HML=12h-(-06m29s)=12h06m29s
+ET=HV-HM.
 $$
 
-Para $\lambda=043^\circ10'W$:
+Na passagem meridiana local:
 
 $$
-43^\circ10'=2h52m40s
+HVL=12^h.
 $$
 
-$$
-HMG=12h06m29s+2h52m40s=14h59m09s
-$$
-
-Com $P=+3h$ na convenção do curso:
+Portanto:
 
 $$
-Hleg=14h59m09s-3h=11h59m09s
+ET=12^h-HML
 $$
 
-O método simples deve produzir valor próximo; uma diferença de segundos ou poucos minutos pode vir de interpolação, enquanto uma diferença grande exige revisar os sinais.
+e:
 
-## Roteiro para qualquer enunciado
+$$
+HML=12^h-ET.
+$$
 
-1. Identifique data local, longitude, fuso/convenção de $P$ e método pedido.
-2. Obtenha HML diretamente ou derive-a da ET da edição 2026.
-3. Converta longitude angular em intervalo de tempo, sem misturar graus com horas.
-4. Aplique longitude: W soma, E subtrai.
-5. Converta HMG em Hleg usando uma única convenção de fuso.
-6. Normalize 0–24 h e registre eventual mudança de data.
-7. Compare com o outro método ou faça uma estimativa de ordem de grandeza.
+Se $ET<0$, então $HML>12^h$. Se $ET>0$, então $HML<12^h$. Essa dedução é o controle do sinal.
 
-## Erros que custam a questão
+## 8. Exemplo histórico passo a passo
 
-- ler HMG na página e chamá-la de HML;
-- interpretar $43^\circ10'$ como 43 h 10 min;
-- somar longitude E ou subtrair longitude W;
-- perder o sinal da ET;
-- usar mecanicamente $HML=12+ET$ em vez de derivar da definição;
-- aplicar UTC−3 duas vezes;
-- manter a página diária local quando a HMG caiu em outro dia Greenwich.
+**Dados:** 23/07/2016; $ET=-06^m29^s$; $\lambda=043^\circ10'W$; $P=+3^h$.
+**Incógnita:** Hleg da passagem.
+**Fonte:** aula histórica; os valores não servem para 2026.
+
+### HML
+
+$$
+HML=12^h-(-06^m29^s)=12^h06^m29^s.
+$$
+
+### Longitude
+
+$$
+\lambda_t=2^h52^m40^s.
+$$
+
+### HMG
+
+Como a longitude é W:
+
+$$
+HMG=12^h06^m29^s+2^h52^m40^s
+=14^h59^m09^s.
+$$
+
+### Hleg
+
+$$
+Hleg=14^h59^m09^s-3^h
+=11^h59^m09^s.
+$$
+
+### Interpretação
+
+Em longitude W, Greenwich já passou mais tempo desde seu meio-dia quando o Sol culmina localmente: $HMG>HML$. A Hleg próxima de $12^h$ é coerente com a zona.
+
+### Controle independente
+
+Leia/interpole a HML direta e refaça somente longitude/fuso. Os resultados devem ser próximos.
+
+## 9. Interpolação em latitude
+
+<FiguraFonte figura="NAV4-FIG-PM-001" />
+
+A Tábua I foi construída porque a variação do fenômeno com a latitude não é linear. O procedimento impresso:
+
+1. encontre a diferença de horas entre latitudes tabulares consecutivas;
+2. calcule o excesso da latitude dada sobre a inferior;
+3. entre com intervalo/diferença na linha superior;
+4. leia a correção na coluna do excesso;
+5. aplique ao valor da latitude inferior com o sinal indicado pela tendência.
+
+## 10. Interpolação em longitude
+
+A Tábua II usa:
+
+- longitude E/W;
+- diferença entre o instante da data dada e o da data precedente (E) ou seguinte (W).
+
+Em geral, a correção é aditiva para W e subtrativa para E, respeitando a exceção indicada quando o fenômeno no dia comparado ocorre mais cedo. Leia o par de datas antes de decidir o sinal.
+
+## 11. Normalização e mudança de data
+
+Se:
+
+$$
+HMG=25^h10^m,
+$$
+
+normalize:
+
+$$
+HMG=01^h10^m\text{ do dia seguinte}.
+$$
+
+Se:
+
+$$
+HMG=-00^h35^m,
+$$
+
+então:
+
+$$
+HMG=23^h25^m\text{ do dia anterior}.
+$$
+
+Efemérides posteriores acompanham a data Greenwich, não a data legal original.
+
+## 12. Operação no mar
+
+1. estime Hleg;
+2. confira sextante, erro instrumental e hora;
+3. comece observações antes da janela;
+4. registre Hleg/HMG e altura a intervalos curtos;
+5. não encerre na primeira leitura que diminui sem conferir a série;
+6. corrija a altura selecionada;
+7. interpole declinação para o instante adotado.
+
+O movimento N–S pode deslocar a altura máxima observada em relação ao instante meridiano; isso será tratado no módulo de latitude.
+
+## 13. Diagnóstico por padrão de erro
+
+| Divergência | Hipótese principal | Teste |
+|---|---|---|
+| aproximadamente $2|ET|$ | ET aplicada com sinal inverso | derive $HML=12^h-ET$ |
+| 1 h exata | fuso | recompute apenas HMG→Hleg |
+| próxima de $\lambda_t$ ou $2\lambda_t$ | longitude omitida/invertida | compare W/E |
+| 24 h | mudança de data | normalize |
+| segundos/minutos pequenos | interpolação/arredondamento | revisar entradas |
+
+## 14. Roteiro universal
+
+1. liste data local, posição estimada, longitude e fuso;
+2. declare simples ou preciso;
+3. registre a fonte 2026;
+4. obtenha HML;
+5. converta $\lambda$ para tempo;
+6. aplique W soma/E subtrai;
+7. aplique fuso uma única vez;
+8. normalize hora/data;
+9. compare com a segunda rota;
+10. planeje a janela de observação.
+
+## 15. Recuperação ativa
+
+Resolva sem roteiro:
+
+- ET positiva, longitude E, fuso E;
+- ET negativa, longitude W, fuso W;
+- caso que cruza a data;
+- leitura com interpolação de latitude/longitude.
+
+**Critério de saída:** duas rotas concordantes, registro de consulta completo, sinais justificados e diagnóstico correto de quatro divergências simuladas.

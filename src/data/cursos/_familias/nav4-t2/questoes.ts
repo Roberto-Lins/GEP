@@ -1,6 +1,6 @@
 import type { Questao } from '@tipos/question';
 
-export const questoesCanonicas: Questao[] = [
+const questoesBase: Questao[] = [
   {
     "id": "NAV4-Q001",
     "tipo": "multipla",
@@ -1003,5 +1003,519 @@ export const questoesCanonicas: Questao[] = [
       "pra-safar",
       "completo"
     ]
+  },
+  {
+    "id": "NAV4-Q047",
+    "tipo": "multipla",
+    "topico": "01-correcoes-de-altura",
+    "dificuldade": "medio",
+    "competencia": "Selecionar a tábua de correção pela faixa de altura aparente.",
+    "tempoEstimadoMin": 2,
+    "erroProvavel": "Entrar na A2 por hábito embora a altura esteja abaixo de 10°.",
+    "assinatura": ["seleção de fonte", "distratores por faixa", "aplicação direta"],
+    "enunciado": "Depois de erro instrumental e depressão, obteve-se aap=08°42,6′ para uma observação do Sol. Qual é a primeira escolha correta?",
+    "alternativas": [
+      "Entrar na A3, no grupo do Sol e limbo observados",
+      "Entrar na A2 porque a altura instrumental era maior que 10°",
+      "Usar somente a A4",
+      "Usar a tabela de estrelas, pois o Sol é pontual no cálculo"
+    ],
+    "correta": 0,
+    "comentario": "A faixa é decidida por aap. A3 cobre 0°–10°; A4 só complementa condições anormais.",
+    "fonte": "Tábua A3 fotografada; apostila p. 147–152.",
+    "armadilha": "Trocar a grandeza de entrada aap por ai.",
+    "conceptIds": ["NAV4-ALT-CADEIA", "NAV4-ALT-AR"],
+    "modalidades": ["rapido", "pra-safar", "completo"]
+  },
+  {
+    "id": "NAV4-Q048",
+    "tipo": "correlacione",
+    "topico": "01-correcoes-de-altura",
+    "dificuldade": "medio",
+    "competencia": "Distinguir funções das Tábuas A2, A3 e A4.",
+    "tempoEstimadoMin": 3,
+    "erroProvavel": "Tratar a A4 como substituta da correção normal.",
+    "assinatura": ["associação", "leitura de tábua", "condições de aplicação"],
+    "titulo": "Associe cada situação à fonte inicial apropriada",
+    "chaves": [
+      {"chave": "A", "texto": "A2"},
+      {"chave": "B", "texto": "A3"},
+      {"chave": "C", "texto": "A4 como complemento"}
+    ],
+    "itens": [
+      {"texto": "aap=31° em condições usuais", "chave": "A"},
+      {"texto": "aap=06° em condições usuais", "chave": "B"},
+      {"texto": "T/P anormais após a correção normal", "chave": "C"}
+    ],
+    "comentario": "A2 cobre 10°–90°, A3 cobre 0°–10° e A4 acrescenta a parcela de condições anormais.",
+    "fonte": "Tábuas A2, A3 e A4 fotografadas.",
+    "conceptIds": ["NAV4-ALT-AR", "NAV4-ALT-FISICA"],
+    "modalidades": ["rapido", "pra-safar", "completo"]
+  },
+  {
+    "id": "NAV4-Q049",
+    "tipo": "discursiva",
+    "topico": "01-correcoes-de-altura",
+    "dificuldade": "dificil",
+    "competencia": "Auditar uma cadeia lunar e impedir dupla aplicação de semidiâmetro.",
+    "tempoEstimadoMin": 5,
+    "erroProvavel": "Aplicar uma regra antiga de limbo sem ler o cabeçalho 2026.",
+    "assinatura": ["caso lunar", "justificativa", "controle de duplicidade"],
+    "contexto": "Um aluno leu no ANB uma correção principal da Lua e pretende somar +SD separadamente por ter observado o limbo inferior.",
+    "enunciado": "Que verificações ele deve fazer antes de somar o semidiâmetro?",
+    "gabaritoComentado": "Deve identificar a edição 2026, a tabela e suas entradas, ler o cabeçalho e as notas para saber se a correção principal já leva o limbo ao centro, verificar se há correção adicional e registrar o papel de cada parcela. Só aplica SD separadamente quando a própria sistemática da tabela manda.",
+    "criterios": ["edição e tabela", "cabeçalho/notas", "parcelas incluídas", "decisão justificada"],
+    "fonte": "Apostila p. 149–152; notas das tábuas lunares.",
+    "armadilha": "Generalizar a organização de um exemplo histórico.",
+    "conceptIds": ["NAV4-ALT-LUA", "NAV4-ALT-SD", "NAV4-ANB2026"],
+    "modalidades": ["rapido", "pra-safar", "completo"]
+  },
+  {
+    "id": "NAV4-Q050",
+    "tipo": "multipla",
+    "topico": "01-correcoes-de-altura",
+    "dificuldade": "medio",
+    "competencia": "Interpretar o impacto operacional de um erro de sinal.",
+    "tempoEstimadoMin": 2,
+    "erroProvavel": "Comparar somente o módulo da correção e ignorar a inversão.",
+    "assinatura": ["sensibilidade", "minuto de arco", "consequência na LDP"],
+    "enunciado": "Uma correção de −5′ foi aplicada como +5′. Aproximadamente quanto esse erro pode separar a LDP correta da calculada?",
+    "alternativas": ["10 MN", "5 MN", "1 MN", "0,1 MN"],
+    "correta": 0,
+    "comentario": "A diferença entre −5′ e +5′ é 10′; cada minuto de altura equivale aproximadamente a 1 MN na LDP.",
+    "fonte": "Apostila p. 153–159; relação 1′≈1 MN.",
+    "conceptIds": ["NAV4-ALT-FISICA", "NAV4-LDP-INTERCEPTO"],
+    "modalidades": ["pra-safar", "completo"]
+  },
+  {
+    "id": "NAV4-Q051",
+    "tipo": "correlacione",
+    "topico": "02-linha-de-posicao",
+    "dificuldade": "facil",
+    "competencia": "Distinguir os objetos geométricos usados na LDP.",
+    "tempoEstimadoMin": 3,
+    "erroProvavel": "Trocar a projeção do astro pela posição do observador.",
+    "assinatura": ["nomenclatura", "geometria", "associação"],
+    "titulo": "Associe o elemento à definição",
+    "chaves": [
+      {"chave": "A", "texto": "GP"},
+      {"chave": "B", "texto": "circunferência de igual altura"},
+      {"chave": "C", "texto": "reta de altura"}
+    ],
+    "itens": [
+      {"texto": "projeção terrestre do astro", "chave": "A"},
+      {"texto": "lugar exato dos observadores com a mesma altura", "chave": "B"},
+      {"texto": "tangente local usada na carta", "chave": "C"}
+    ],
+    "comentario": "A circunferência é o lugar geométrico; a reta é sua aproximação local.",
+    "fonte": "Apostila p. 153–158; aula 8.0.",
+    "conceptIds": ["NAV4-LDP-GP", "NAV4-LDP-CIRC", "NAV4-LDP-RETA"],
+    "modalidades": ["rapido", "pra-safar", "completo"]
+  },
+  {
+    "id": "NAV4-Q052",
+    "tipo": "multipla",
+    "topico": "02-linha-de-posicao",
+    "dificuldade": "medio",
+    "competencia": "Relacionar altura, distância zenital e curvatura da LDP.",
+    "tempoEstimadoMin": 2,
+    "erroProvavel": "Supor que altura maior permite uma tangente mais longa.",
+    "assinatura": ["causa e consequência", "limite de aproximação", "comparação"],
+    "enunciado": "Por que a extensão útil da reta tende a ser menor perto de 80° de altura do que perto de 35°?",
+    "alternativas": [
+      "Porque z e o raio da circunferência são menores, tornando a curvatura mais perceptível",
+      "Porque o azimute deixa de ser perpendicular à reta",
+      "Porque 1′ deixa de corresponder a 1 MN",
+      "Porque a declinação do astro passa a ser zero"
+    ],
+    "correta": 0,
+    "comentario": "a alta implica z pequeno e circunferência de menor raio; a tangente é aproximação local.",
+    "fonte": "Apostila p. 153–159.",
+    "conceptIds": ["NAV4-LDP-CIRC", "NAV4-LDP-RETA"],
+    "modalidades": ["rapido", "pra-safar", "completo"]
+  },
+  {
+    "id": "NAV4-Q053",
+    "tipo": "discursiva",
+    "topico": "02-linha-de-posicao",
+    "dificuldade": "medio",
+    "competencia": "Construir uma LDP a partir de a, ae e Az.",
+    "tempoEstimadoMin": 5,
+    "erroProvavel": "Marcar intercepto negativo no sentido do astro.",
+    "assinatura": ["cálculo curto", "interpretação de sinal", "plotagem"],
+    "contexto": "Foram obtidos a=21°35,8′, ae=21°47,6′ e Az=218°.",
+    "enunciado": "Calcule o intercepto e descreva integralmente a construção da LDP.",
+    "gabaritoComentado": "Δa=a−ae=−11,8′. Marque 11,8 MN no sentido oposto ao astro, isto é, no recíproco 038°, e pelo ponto trace a perpendicular ao eixo 038°/218°. Rotule a reta com astro, hora e Az.",
+    "criterios": ["Δa=−11,8′", "11,8 MN", "sentido 038°", "perpendicular e rótulo"],
+    "fonte": "Apostila p. 153–159; aula 8.0.",
+    "armadilha": "Usar o módulo correto no lado errado.",
+    "conceptIds": ["NAV4-LDP-INTERCEPTO", "NAV4-LDP-RETA"],
+    "modalidades": ["rapido", "pra-safar", "completo"]
+  },
+  {
+    "id": "NAV4-Q054",
+    "tipo": "vf",
+    "topico": "02-linha-de-posicao",
+    "dificuldade": "dificil",
+    "competencia": "Interpretar a solução analítica do triângulo de posição.",
+    "tempoEstimadoMin": 3,
+    "erroProvavel": "Aceitar o módulo trigonométrico como azimute completo.",
+    "assinatura": ["fórmula", "quadrante", "julgamento"],
+    "afirmacao": "Depois de calcular arccos para o ângulo no zênite, o módulo obtido basta para fixar o azimute verdadeiro sem examinar nomes ou quadrante.",
+    "correta": false,
+    "comentario": "A função inversa fornece um módulo; o diagrama e as regras de quadrante completam o Az verdadeiro.",
+    "fonte": "Apostila p. 159; solução do triângulo de posição.",
+    "conceptIds": ["NAV4-LDP-MAT"],
+    "modalidades": ["completo"]
+  },
+  {
+    "id": "NAV4-Q055",
+    "tipo": "multipla",
+    "topico": "04-hora-da-passagem-meridiana",
+    "dificuldade": "facil",
+    "competencia": "Distinguir HML, HMG e Hleg.",
+    "tempoEstimadoMin": 2,
+    "erroProvavel": "Usar o valor local tabulado como se fosse TU.",
+    "assinatura": ["nomenclatura temporal", "sequência", "aplicação"],
+    "enunciado": "Qual sequência converte a hora média local da passagem na hora do relógio de bordo?",
+    "alternativas": ["HML → HMG pela longitude; HMG → Hleg pelo fuso", "HML → Hleg pela declinação; Hleg → HMG pela latitude", "HMG → HML pelo azimute; HML → Hleg pela altura", "Hleg → HMG pela equação do tempo; HMG → HML pela longitude"],
+    "correta": 0,
+    "comentario": "Longitude relaciona meridiano local e Greenwich; o fuso relaciona Greenwich e hora legal.",
+    "fonte": "Apostila p. 175–180; aulas 10.1–10.2.",
+    "conceptIds": ["NAV4-PM-SIMPLES", "NAV4-PM-FUSO"],
+    "modalidades": ["rapido", "pra-safar", "completo"]
+  },
+  {
+    "id": "NAV4-Q056",
+    "tipo": "multipla",
+    "topico": "04-hora-da-passagem-meridiana",
+    "dificuldade": "medio",
+    "competencia": "Aplicar o sinal da equação do tempo pela definição.",
+    "tempoEstimadoMin": 3,
+    "erroProvavel": "Somar ET mecanicamente a 12 h.",
+    "assinatura": ["equação do tempo", "sinal", "cálculo curto"],
+    "enunciado": "Se ET=+04m20s, qual é a HML da passagem superior?",
+    "alternativas": ["11h55m40s", "12h04m20s", "11h04m20s", "12h55m40s"],
+    "correta": 0,
+    "comentario": "ET=12h−HML; portanto HML=12h−04m20s=11h55m40s.",
+    "fonte": "Aulas 10.1–10.2; definição ET=HV−HM.",
+    "armadilha": "Ignorar o sinal da ET.",
+    "conceptIds": ["NAV4-PM-PRECISO"],
+    "modalidades": ["rapido", "pra-safar", "completo"]
+  },
+  {
+    "id": "NAV4-Q057",
+    "tipo": "discursiva",
+    "topico": "04-hora-da-passagem-meridiana",
+    "dificuldade": "medio",
+    "competencia": "Normalizar hora e data após longitude/fuso.",
+    "tempoEstimadoMin": 4,
+    "erroProvavel": "Conservar 25 h ou não trocar a página do ANB.",
+    "assinatura": ["mudança de data", "hora", "consulta"],
+    "contexto": "Após aplicar a longitude, um aluno obteve HMG=25h10m.",
+    "enunciado": "Normalize o resultado e explique a consequência para uma consulta diária posterior.",
+    "gabaritoComentado": "HMG=01h10m do dia seguinte. Qualquer efeméride diária posterior deve usar a data Greenwich seguinte, não permanecer automaticamente na data legal/local do enunciado.",
+    "criterios": ["01h10m", "dia seguinte", "data Greenwich", "página diária correspondente"],
+    "fonte": "Apostila p. 175–180; aulas 10.1–10.2.",
+    "conceptIds": ["NAV4-PM-FUSO", "NAV4-ANB2026"],
+    "modalidades": ["rapido", "pra-safar", "completo"]
+  },
+  {
+    "id": "NAV4-Q058",
+    "tipo": "vf",
+    "topico": "04-hora-da-passagem-meridiana",
+    "dificuldade": "dificil",
+    "competencia": "Interpretar a tábua de interpolação de fenômenos.",
+    "tempoEstimadoMin": 3,
+    "erroProvavel": "Aplicar correção linear e sinal fixo sem ler as datas.",
+    "assinatura": ["leitura de tábua", "interpolação", "pegadinha de sinal"],
+    "afirmacao": "Na Tábua II, basta usar o módulo da longitude e somar sempre a correção, pois o sinal não depende de E/W nem dos dias comparados.",
+    "correta": false,
+    "comentario": "A instrução usa dia precedente para E e seguinte para W, com regra geral de sinal e exceção conforme a tendência temporal.",
+    "fonte": "Tábua de interpolação fotografada, p. XXXII.",
+    "conceptIds": ["NAV4-PM-INTERPOLACAO"],
+    "modalidades": ["pra-safar", "completo"]
+  },
+  {
+    "id": "NAV4-Q059",
+    "tipo": "multipla",
+    "topico": "05-latitude-meridiana",
+    "dificuldade": "medio",
+    "competencia": "Validar a interpolação da declinação no instante.",
+    "tempoEstimadoMin": 3,
+    "erroProvavel": "Aplicar d no sentido oposto.",
+    "assinatura": ["ANB", "interpolação", "controle de tendência"],
+    "enunciado": "Qual é a melhor conferência imediata para uma declinação interpolada dentro de uma hora?",
+    "alternativas": [
+      "Ela deve ficar entre os valores horários vizinhos e variar no sentido de d",
+      "Ela deve ter sempre o mesmo módulo da latitude estimada",
+      "Ela deve ser somada a z independentemente do hemisfério",
+      "Ela deve tornar o azimute igual a 090°"
+    ],
+    "correta": 0,
+    "comentario": "A interpolação temporal deve respeitar os extremos e a tendência mostrada pela variação d.",
+    "fonte": "ANB 2026, página diária; aula 10.3.",
+    "conceptIds": ["NAV4-LAT-DEC", "NAV4-ANB2026"],
+    "modalidades": ["rapido", "pra-safar", "completo"]
+  },
+  {
+    "id": "NAV4-Q060",
+    "tipo": "discursiva",
+    "topico": "05-latitude-meridiana",
+    "dificuldade": "dificil",
+    "competencia": "Resolver um caso de nomes contrários por duas representações.",
+    "tempoEstimadoMin": 5,
+    "erroProvavel": "Somar os módulos ou nomear o hemisfério pelo astro.",
+    "assinatura": ["caso geométrico", "forma assinada", "controle independente"],
+    "contexto": "Na passagem superior, z=18°20′, δ=05°40′N, posição estimada no hemisfério sul e Sol ao norte.",
+    "enunciado": "Determine a latitude e confira pela forma assinada.",
+    "gabaritoComentado": "Nomes contrários: |φ|=z−|δ|=18°20′−05°40′=12°40′. O desenho dá S. Com N positivo: φ=δ−z=+05°40′−18°20′=−12°40′, confirmando 12°40′S e Az=000°.",
+    "criterios": ["caso de nomes contrários", "12°40′", "nome S", "forma assinada e Az 000°"],
+    "fonte": "Apostila p. 175–180; aula 10.3.",
+    "conceptIds": ["NAV4-LAT-CASOS", "NAV4-LAT-AZ"],
+    "modalidades": ["pra-safar", "completo"]
+  },
+  {
+    "id": "NAV4-Q061",
+    "tipo": "multipla",
+    "topico": "05-latitude-meridiana",
+    "dificuldade": "medio",
+    "competencia": "Avaliar a componente meridional do movimento.",
+    "tempoEstimadoMin": 3,
+    "erroProvavel": "Comparar a velocidade total ao limite sem decompor o rumo.",
+    "assinatura": ["movimento", "componente N–S", "interpretação"],
+    "enunciado": "Dois navios navegam a 18 nós: um em rumo 090° e outro em rumo 000°. Qual tende a deslocar mais a altura máxima em relação à passagem meridiana?",
+    "alternativas": [
+      "O de rumo 000°, pois sua componente N–S é 18 nós",
+      "O de rumo 090°, pois sua componente N–S é 18 nós",
+      "Ambos igualmente, pois só importa a velocidade total",
+      "Nenhum, pois movimento nunca afeta a culminação"
+    ],
+    "correta": 0,
+    "comentario": "VNS=|V cos R|; em 000° vale V e em 090° vale aproximadamente zero.",
+    "fonte": "Aula 10.3; tabela de limites por latitude.",
+    "conceptIds": ["NAV4-LAT-MOVIMENTO"],
+    "modalidades": ["pra-safar", "completo"]
+  },
+  {
+    "id": "NAV4-Q062",
+    "tipo": "vf",
+    "topico": "05-latitude-meridiana",
+    "dificuldade": "medio",
+    "competencia": "Relacionar erro de altura a erro de distância zenital.",
+    "tempoEstimadoMin": 2,
+    "erroProvavel": "Preservar o sinal do erro ao passar de a para z.",
+    "assinatura": ["sensibilidade", "sinal", "julgamento"],
+    "afirmacao": "Como z=90°−a, um erro de +1′ na altura produz erro de −1′ em z.",
+    "correta": true,
+    "comentario": "A relação é complementar; aumentar a reduz z pelo mesmo módulo.",
+    "fonte": "Apostila p. 175–180; relação meridiana.",
+    "conceptIds": ["NAV4-LAT-Z"],
+    "modalidades": ["rapido", "pra-safar", "completo"]
+  },
+  {
+    "id": "NAV4-Q063",
+    "tipo": "multipla",
+    "topico": "06-treino-integrado",
+    "dificuldade": "medio",
+    "competencia": "Identificar o primeiro elo errado em uma solução integrada.",
+    "tempoEstimadoMin": 3,
+    "erroProvavel": "Refazer tudo sem localizar a origem.",
+    "assinatura": ["diagnóstico", "cadeia", "eficiência"],
+    "enunciado": "A altura verdadeira está coerente, mas o AHL não ficou inteiro após a escolha auxiliar. Qual bloco deve ser revisto primeiro?",
+    "alternativas": ["Escolha de λaux e cálculo de AHL", "Correção de refração", "Cálculo da distância zenital", "Conversão HMG para Hleg"],
+    "correta": 0,
+    "comentario": "O sintoma nasce no bloco de longitude auxiliar/AHL; refazer a cadeia de alturas não o corrige.",
+    "fonte": "Modelo DHN-0607 anotado; instruções Radler.",
+    "conceptIds": ["NAV4-TREINO"],
+    "modalidades": ["rapido", "pra-safar", "completo"]
+  },
+  {
+    "id": "NAV4-Q064",
+    "tipo": "vf",
+    "topico": "06-treino-integrado",
+    "dificuldade": "facil",
+    "competencia": "Aplicar a política de dados anuais.",
+    "tempoEstimadoMin": 2,
+    "erroProvavel": "Usar um resultado histórico por coincidência de astro.",
+    "assinatura": ["ano", "fonte", "julgamento"],
+    "afirmacao": "Um exemplo de 2020 pode ensinar o preenchimento do DHN-0607, mas AHG, declinação e correções de um trabalho de 2026 devem ser consultados novamente.",
+    "correta": true,
+    "comentario": "Método é reutilizável; efemérides e valores tabulares dependem da edição/data.",
+    "fonte": "Orientação do usuário; ANB 2026; exercício histórico fotografado.",
+    "conceptIds": ["NAV4-TREINO"],
+    "modalidades": ["rapido", "pra-safar", "completo"]
+  },
+  {
+    "id": "NAV4-Q065",
+    "tipo": "correlacione",
+    "topico": "06-treino-integrado",
+    "dificuldade": "medio",
+    "competencia": "Classificar falhas para escolher uma repetição útil.",
+    "tempoEstimadoMin": 3,
+    "erroProvavel": "Tratar qualquer falha como falta de teoria.",
+    "assinatura": ["caderno de erros", "associação", "metacognição"],
+    "titulo": "Associe o sintoma ao tipo de erro",
+    "chaves": [
+      {"chave": "A", "texto": "fonte"},
+      {"chave": "B", "texto": "sinal/nome"},
+      {"chave": "C", "texto": "aritmética"},
+      {"chave": "D", "texto": "apresentação"}
+    ],
+    "itens": [
+      {"texto": "usou A2 com aap abaixo de 10°", "chave": "A"},
+      {"texto": "marcou intercepto negativo para o astro", "chave": "B"},
+      {"texto": "não normalizou 60′", "chave": "C"},
+      {"texto": "entregou latitude sem N/S", "chave": "D"}
+    ],
+    "comentario": "A categoria determina o treino de reparo: consulta, direção, cálculo ou registro.",
+    "fonte": "Rubrica integrada do curso.",
+    "conceptIds": ["NAV4-TREINO"],
+    "modalidades": ["rapido", "pra-safar", "completo"]
+  },
+  {
+    "id": "NAV4-Q066",
+    "tipo": "discursiva",
+    "topico": "06-treino-integrado",
+    "dificuldade": "dificil",
+    "competencia": "Montar um gabarito de processo para consulta 2026.",
+    "tempoEstimadoMin": 5,
+    "erroProvavel": "Registrar apenas o valor final do almanaque.",
+    "assinatura": ["rastreabilidade", "ANB 2026", "resposta curta"],
+    "enunciado": "Quais campos mínimos devem acompanhar um valor anual retirado do ANB 2026?",
+    "gabaritoComentado": "Edição/ano, página, data Greenwich, astro ou fenômeno, escala de tempo, linha/coluna ou argumentos, valor base, incremento/interpolação com sinal, unidade/nome e resultado.",
+    "criterios": ["ano/página/data", "astro/fenômeno e escala", "entradas", "interpolação e unidade"],
+    "fonte": "Páginas 148–149 fotografadas; protocolo de consulta do curso.",
+    "conceptIds": ["NAV4-TREINO"],
+    "modalidades": ["rapido", "pra-safar", "completo"]
+  },
+  {
+    "id": "NAV4-Q067",
+    "tipo": "multipla",
+    "topico": "06-treino-integrado",
+    "dificuldade": "medio",
+    "competencia": "Escolher uma conferência independente.",
+    "tempoEstimadoMin": 3,
+    "erroProvavel": "Repetir a mesma operação e chamar de conferência.",
+    "assinatura": ["controle", "integração", "comparação"],
+    "enunciado": "Qual par representa controles realmente independentes?",
+    "alternativas": [
+      "Hleg por HML tabulada versus por ET; latitude por desenho versus forma assinada",
+      "Refazer a mesma soma duas vezes; copiar o mesmo valor em duas linhas",
+      "Usar duas calculadoras com a mesma entrada errada; arredondar de dois modos",
+      "Consultar o mesmo exemplo antigo em duas cópias do PDF"
+    ],
+    "correta": 0,
+    "comentario": "As rotas usam representações diferentes e tendem a revelar erros de sinal/caso.",
+    "fonte": "Aulas 10.1–10.3; protocolo de auditoria.",
+    "conceptIds": ["NAV4-TREINO"],
+    "modalidades": ["rapido", "pra-safar", "completo"]
+  },
+  {
+    "id": "NAV4-Q068",
+    "tipo": "vf",
+    "topico": "06-treino-integrado",
+    "dificuldade": "medio",
+    "competencia": "Separar planejamento de treino e previsão de prova.",
+    "tempoEstimadoMin": 2,
+    "erroProvavel": "Interpretar a distribuição do simulado como pesos oficiais.",
+    "assinatura": ["escopo", "tempo", "julgamento"],
+    "afirmacao": "A divisão de 90 minutos proposta pelo curso organiza a prática, mas não prova a distribuição de pontos da T2.",
+    "correta": true,
+    "comentario": "A fonte confirma duração e conteúdos, não os pesos detalhados de cada bloco.",
+    "fonte": "Orientações do professor e plano de treino do curso.",
+    "conceptIds": ["NAV4-TREINO"],
+    "modalidades": ["rapido", "pra-safar", "completo"]
   }
 ];
+
+const metadadosPorTopico: Record<string, {
+  competencia: string;
+  erroProvavel: string;
+  fonte: string;
+  procedimento: string;
+  verificacao: string;
+}> = {
+  '00-mapa-da-t2': {
+    competencia: 'Delimitar o escopo da T2 e selecionar a fonte operacional correta.',
+    erroProvavel: 'Misturar conteúdo posterior à PP2 ou reutilizar dado anual antigo.',
+    fonte: 'Orientações do professor; sumário NAV-4 2026; protocolo de uso do ANB 2026.',
+    procedimento: 'Classifique o dado como invariável, dependente do ano ou fora do recorte antes de escolher a fonte.',
+    verificacao: 'Confirme ano, data, astro, página e limite T2/PP2 contra a orientação do professor.',
+  },
+  '01-correcoes-de-altura': {
+    competencia: 'Transformar a altura instrumental em altura verdadeira com sinais e tábuas corretos.',
+    erroProvavel: 'Misturar alturas, inverter sinais físicos ou duplicar parcela já incorporada na tábua.',
+    fonte: 'Apostila p. 139–152; aulas 7.0–7.1; Tábuas A2, A3 e A4.',
+    procedimento: 'Escreva a cadeia ai → ao → aap → a, identifique o que cada tábua já inclui e só então opere os sinais.',
+    verificacao: 'Recalcule a correção total em uma única soma algébrica e confira o sentido físico de depressão, refração, semidiâmetro e paralaxe.',
+  },
+  '02-linha-de-posicao': {
+    competencia: 'Interpretar e construir a LDP a partir do azimute e do intercepto.',
+    erroProvavel: 'Confundir circunferência com tangente ou inverter o sentido do intercepto.',
+    fonte: 'Apostila p. 153–159; aula 8.0.',
+    procedimento: 'Relacione a altura a z, compare a com ae, converta o intercepto em MN e construa a perpendicular ao azimute.',
+    verificacao: 'Use a relação maior altura → menor z → menor distância ao GP para confirmar o sentido da plotagem.',
+  },
+  '03-tabua-radler': {
+    competencia: 'Explicar a geometria da Radler e executar sua cadeia tabular de forma auditável.',
+    erroProvavel: 'Trocar argumentos/saídas, perder nomes ou propagar uma escolha auxiliar inadequada.',
+    fonte: 'Apostila p. 160–174; aulas 9.0 e UE 10.0 até 13:00; instruções e DHN-0607.',
+    procedimento: 'Separe primeira entrada, formação de C, segunda entrada, nomeação do azimute e comparação a−ae.',
+    verificacao: 'Localize o primeiro bloco incompatível no DHN-0607 e, quando houver dados, confronte ae com a relação trigonométrica do triângulo de posição.',
+  },
+  '04-hora-da-passagem-meridiana': {
+    competencia: 'Prever e converter a hora da passagem meridiana com longitude, fuso e data corretos.',
+    erroProvavel: 'Confundir HML, HMG e Hleg ou aplicar longitude/fuso com sinal incorreto.',
+    fonte: 'Apostila p. 175–180; aulas 10.1–10.2; ANB 2026 e tábuas de interpolação.',
+    procedimento: 'Obtenha a HML, converta longitude angular em tempo, passe a HMG, aplique o fuso e normalize hora/data.',
+    verificacao: 'Compare, quando disponíveis, HML tabulada e HML=12h−ET; confira ainda se a longitude W torna Greenwich posterior ao instante local.',
+  },
+  '05-latitude-meridiana': {
+    competencia: 'Determinar a latitude na culminação por geometria e conferência assinada.',
+    erroProvavel: 'Usar altura não corrigida, declinação fora do instante ou caso geométrico errado.',
+    fonte: 'Apostila p. 175–180; aula 10.3; ANB 2026.',
+    procedimento: 'Corrija a altura, calcule z, interpole δ no HMG, desenhe N–Z–S e aplique o caso meridiano.',
+    verificacao: 'Resolva novamente pela forma assinada, usando N positivo e S negativo, e compare hemisfério e azimute com o desenho.',
+  },
+  '06-treino-integrado': {
+    competencia: 'Integrar consulta, cálculo, apresentação e conferência sob restrição de tempo.',
+    erroProvavel: 'Refazer cadeias inteiras sem localizar o primeiro elo incorreto.',
+    fonte: 'Corpus NAV-4/T2 2026 e rubrica integrada do curso.',
+    procedimento: 'Registre dados, fonte, cálculo, unidade/nome e controle em colunas separadas; diagnostique o primeiro elo incoerente.',
+    verificacao: 'Use uma rota diferente da solução principal — tendência, ordem de grandeza, desenho, fórmula assinada ou fonte paralela — e registre a divergência.',
+  },
+};
+
+export const questoesCanonicas: Questao[] = questoesBase.map((questao) => {
+  const padrao = metadadosPorTopico[questao.topico];
+  const tempoEstimadoMin = questao.tempoEstimadoMin
+    ?? (questao.tipo === 'discursiva' ? 5 : questao.dificuldade === 'dificil' ? 4 : 2);
+
+  const comentarioFinal = questao.tipo === 'discursiva'
+    ? questao.gabaritoComentado
+    : questao.tipo === 'correlacione'
+      ? questao.comentario ?? questao.itens.map((item) => `${item.texto}: ${item.chave}`).join('; ')
+      : questao.comentario;
+  const explicacaoDistratores = questao.tipo === 'multipla'
+    ? questao.alternativas.map((alternativa, indice) => indice === questao.correta
+      ? `Correta. ${questao.comentario}`
+      : `Distrator “${alternativa}”. Ele não satisfaz a competência avaliada e normalmente nasce de: ${questao.armadilha ?? padrao.erroProvavel}`)
+    : undefined;
+
+  return {
+    competencia: padrao.competencia,
+    tempoEstimadoMin,
+    erroProvavel: questao.armadilha ?? padrao.erroProvavel,
+    assinatura: [questao.tipo, questao.dificuldade ?? 'sem-nivel', 'inédita baseada no perfil histórico'],
+    resolucaoPassoAPasso: [
+      `1. Delimite a tarefa: ${padrao.competencia}`,
+      `2. Execute: ${padrao.procedimento}`,
+      `3. Conclua e interprete: ${comentarioFinal}`,
+    ],
+    explicacaoDistratores,
+    verificacaoIndependente: padrao.verificacao,
+    fonte: padrao.fonte,
+    ...questao,
+  };
+});

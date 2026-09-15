@@ -4,61 +4,133 @@ secao: "aula"
 secaoOrdem: 2
 ---
 
-> **O que está sendo previsto:** a hora legal aproximada em que o centro do Sol cruzará o meridiano superior do observador.
+> **Objetivo em 40 min:** prever a Hleg da passagem superior do Sol por dois métodos, com longitude, equação do tempo, fuso e mudança de data sob controle.
 
-## Por que é uma circunstância favorável
+## 1. O fenômeno
 
-Na passagem superior, o Sol está sobre o meridiano local, atinge a altura máxima para um observador parado e tem azimute $000^\circ$ ou $180^\circ$. O triângulo de posição se reduz a uma relação meridiana entre latitude, declinação e distância zenital.
+Na passagem meridiana superior, o centro do Sol cruza o meridiano do observador. Para observador parado, a altura atinge o máximo diário; o ângulo no polo é $0^\circ$ e o azimute é $000^\circ$ ou $180^\circ$.
 
-## Método simples — HML tabulada
+A previsão abre a janela para iniciar a série de alturas. Ela não substitui observar a culminação.
 
-1. Abra a página diária correta do **ANB 2026**.
-2. Leia a HML da passagem meridiana do Sol; interpole entre os três dias impressos se necessário.
-3. Converta a longitude angular em tempo.
-4. Leve HML a HMG:
-   - longitude W: **some** o tempo de longitude;
-   - longitude E: **subtraia**.
-5. Leve HMG a Hleg pela convenção do curso:
+## 2. Onde está no ANB 2026
 
-$$
-Hleg=HMG-P
-$$
+<FiguraFonte figura="NAV4-FIG-ANB-002" />
 
-em que $P$ é positivo a W. Assim, no fuso de $+3h$, subtraem-se 3 h.
+Na página 149, o quadro inferior mostra ET e passagens; os quadros à direita reúnem fenômenos por latitude. Registre data, quadro, unidade e se o valor é HML, HMG/TU ou hora de fenômeno.
 
-## Método preciso — equação do tempo
+## 3. Método simples por HML
 
-$$
-ET=HV-HM
-$$
+1. leia/interpole a HML da passagem do Sol;
+2. converta longitude angular em tempo;
+3. transforme HML em HMG;
+4. transforme HMG em Hleg;
+5. normalize hora e data.
 
-Para meio-dia verdadeiro local, $HVL=12h$:
+Conversão:
 
 $$
-ET=HVL-HML \Rightarrow HML=12h-ET
+15^\circ=1^h,\qquad 15'=1^m,\qquad 15''=1^s.
 $$
 
-Depois, faça exatamente as mesmas conversões longitude → HMG → Hleg.
-
-Exemplo antigo: se $ET=-06m29s$, então
+Para longitude W:
 
 $$
-HML=12h-(-06m29s)=12h06m29s
+HMG=HML+\lambda_t.
 $$
 
-A longitude $043^\circ10'W$ equivale a $2h52m40s$. Logo $HMG=14h59m09s$; com $P=+3h$, $Hleg=11h59m09s$.
-
-## Conversão que precisa sair automática
+Para longitude E:
 
 $$
-15^\circ=1h,\qquad 15'=1m,\qquad 15''=1s
+HMG=HML-\lambda_t.
 $$
 
-Não confunda minutos de arco com minutos de tempo antes de aplicar a proporção.
+Na convenção do curso, com $P$ positivo a W:
 
-## Conferências
+$$
+Hleg=HMG-P.
+$$
 
-- em longitude W, o meio-dia de Greenwich ocorre antes do meio-dia local: HMG da passagem fica maior que HML;
-- o método preciso deve ficar muito próximo do simples;
-- normalize horários que ultrapassem 24 h ou fiquem negativos;
-- HML/ET são dados anuais: use 2026.
+## 4. Método preciso por ET
+
+Por definição:
+
+$$
+ET=HV-HM.
+$$
+
+Na passagem superior, a hora verdadeira local é $HVL=12^h$:
+
+$$
+ET=12^h-HML
+\Rightarrow
+HML=12^h-ET.
+$$
+
+Leia ET com o sinal no ANB 2026 e depois repita longitude e fuso.
+
+## 5. Exemplo histórico completo
+
+**Dados didáticos antigos:** $ET=-06^m29^s$, $\lambda=043^\circ10'W$, $P=+3^h$.
+**Incógnita:** Hleg prevista.
+
+$$
+HML=12^h-(-06^m29^s)=12^h06^m29^s.
+$$
+
+Longitude:
+
+$$
+43^\circ=2^h52^m,\qquad
+10'=40^s,
+$$
+
+$$
+\lambda_t=2^h52^m40^s.
+$$
+
+Como é W:
+
+$$
+HMG=12^h06^m29^s+2^h52^m40^s
+=14^h59^m09^s.
+$$
+
+Com $P=+3^h$:
+
+$$
+Hleg=14^h59^m09^s-3^h
+=11^h59^m09^s.
+$$
+
+**Controle:** em longitude W, a passagem local ocorre depois em Greenwich, logo $HMG>HML$. O método simples deve ficar próximo.
+
+## 6. A tábua de interpolação
+
+<FiguraFonte figura="NAV4-FIG-PM-001" />
+
+A foto mostra duas funções:
+
+- Tábua I: correção de fenômenos por latitude;
+- Tábua II: correção por longitude entre datas.
+
+Leia as instruções impressas abaixo: o sinal depende de longitude E/W e do uso do dia precedente/seguinte. Para passagem meridiana, use somente a interpolação solicitada pelo ANB/procedimento; não aplique automaticamente as duas.
+
+## 7. Diagnóstico rápido
+
+| Diferença suspeita | Primeiro erro a procurar |
+|---|---|
+| cerca de 1 h | fuso |
+| várias horas | longitude em graus tratada como horas |
+| cerca de $2|ET|$ | sinal de ET |
+| data adjacente | falta de normalização 0–24 h |
+
+## 8. Recuperação
+
+Escreva sem consultar:
+
+1. $HML=12^h-ET$;
+2. W soma longitude, E subtrai;
+3. $Hleg=HMG-P$ na convenção do curso;
+4. a conferência física para longitude W.
+
+**Critério de saída:** repetir o exemplo em menos de 7 min e explicar onde ler HML/ET na página fotografada sem usar seus números como gabarito de outra data.

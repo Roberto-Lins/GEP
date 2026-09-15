@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { GrupoCorrelacione } from '@tipos/question';
 import Markdown from './Markdown';
+import DetalhamentoResposta from './DetalhamentoResposta';
 
 interface Props {
   questao: GrupoCorrelacione;
@@ -97,10 +98,7 @@ export default function QuestaoCorrelacione({ questao, indice, onResponder }: Pr
               <Markdown className="text-sm text-nevoa/85">{questao.comentario}</Markdown>
             </div>
           )}
-          {questao.armadilha && (
-            <p className="text-xs text-alerta/80"><strong>Armadilha:</strong> {questao.armadilha}</p>
-          )}
-          {questao.fonte && <p className="text-xs text-nevoa/50">Fonte: {questao.fonte}</p>}
+          <DetalhamentoResposta {...questao} />
         </div>
       )}
     </div>

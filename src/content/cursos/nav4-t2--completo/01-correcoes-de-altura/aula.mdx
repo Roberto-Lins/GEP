@@ -4,97 +4,293 @@ secao: "aula"
 secaoOrdem: 2
 ---
 
-## Referências geométricas
+> **Produto profissional:** transformar uma observação bruta em altura verdadeira, explicar a origem física de cada correção, navegar pelas tábuas A2/A3/A4 e auditar quatro classes de astro.
 
-A leitura nasce no horizonte visual e termina no horizonte verdadeiro e no centro do astro.
+## 1. A medida não nasce “verdadeira”
 
-$$
-a_o=a_i+e_i,\qquad a_{ap}=a_o+dp_{ap},\qquad a=a_{ap}+\sum c
-$$
+O sextante mede um ângulo entre a imagem do astro e o horizonte visível. O cálculo esférico usa a direção do centro do astro referida ao horizonte verdadeiro. As correções não são uma lista arbitrária: cada uma troca uma referência.
 
-![Cadeia das alturas](/imagens/cursos/nav4-t2/figuras/cadeia-alturas.svg)
-
-O erro instrumental muda a leitura do aparelho. A depressão muda a referência do horizonte. Refração e paralaxe mudam a direção aparente/observada. Semidiâmetro leva o limbo ao centro.
-
-## Fenômenos e sinais
+<FiguraFonte figura="NAV4-FIG-ALT-001" />
 
 $$
-dp_{ap}=-1{,}76'\sqrt{e(m)}=-0{,}97'\sqrt{e(pés)}
+a_o=a_i+e_i
 $$
 
-A depressão cresce com a raiz da elevação. A refração é negativa porque a atmosfera eleva a imagem; cresce em módulo perto do horizonte. O semidiâmetro é positivo para limbo inferior e negativo para superior. A paralaxe é positiva, máxima no horizonte e nula no zênite.
+$$
+a_{ap}=a_o+dp_{ap}
+$$
 
-| Dependência | Fenômeno |
-|---|---|
-| elevação do olho | depressão |
-| altura aparente e atmosfera | refração |
-| limbo/data | semidiâmetro |
-| distância do astro e altura | paralaxe |
+$$
+a=a_{ap}+\sum c.
+$$
 
-## Consulta sistemática
+| Passagem | O que muda | O que não deve aparecer |
+|---|---|---|
+| $a_i\to a_o$ | leitura do instrumento | depressão, refração, SD |
+| $a_o\to a_{ap}$ | horizonte visual/aparente | correção celeste |
+| $a_{ap}\to a$ | atmosfera, centro do astro e ponto de observação | altura calculada $a_e$ |
 
-Antes do ANB, escreva: astro, data, HMG, $a_{ap}$, limbo, elevação, T, P e $P_h$. Use apenas os campos aplicáveis.
+$a_e$ é produzida por posição assumida e efemérides; ela só entra depois, na comparação $\Delta a=a-a_e$.
 
-- estrela: refração;
-- Sol: A2/A3 conforme altura, A4 se T/P pedirem, limbo;
-- planeta: correção principal e adicional específico;
-- Lua: página diária para $P_h$, tabelas próprias, limbo e correção adicional.
+## 2. Erro instrumental
 
-A tabela pode fornecer uma correção $c$ já combinada. O cabeçalho decide o que está incluído; não reaplique parcelas.
+O valor $e_i$ fornecido é uma correção algébrica:
 
-## Lua e baixa altura
+$$
+a_o=a_i+e_i.
+$$
 
-Na Lua, execute HMG → $P_h$ → $a_o$ → $a_{ap}$ → correção principal → adicional/limbo. É o caso mais sensível à duplicação de SD. Em baixa altura, a refração e sua dependência atmosférica crescem; registre a tabela e as condições.
+Se $e_i=-1{,}3'$, a leitura diminui. Se $e_i=+1{,}3'$, aumenta. A tentativa de “inverter o erro para corrigir” falha quando o enunciado já fornece a correção com sinal.
 
-## Auditoria
+## 3. Depressão do horizonte
 
-Estime antes: depressão de poucos minutos, refração negativa, SD coerente com o limbo. Refaça o fechamento em minutos de arco. Um erro de $1'$ produz aproximadamente 1 MN de erro na LDP e cerca de $1'$ na latitude meridiana.
+Com o olho acima do nível do mar, a visual do horizonte fica abaixo do plano horizontal verdadeiro. A correção é negativa.
 
-## Roteiros completos por astro
+$$
+dp_{ap}(')=-1{,}76\sqrt{E(m)}
+$$
 
-| Astro | Roteiro de consulta e cálculo |
-|---|---|
-| estrela | $a_i+e_i\to a_o$; depressão $\to a_{ap}$; entrar na correção de estrela pela altura aparente; aplicar uma única vez a refração tabulada |
-| Sol | calcular $a_{ap}$; registrar data, limbo e faixa de altura; usar a tabela principal e, se exigido, o complemento T/P; confirmar se SD e paralaxe já estão incluídos |
-| planeta | calcular $a_{ap}$; selecionar o planeta correto; aplicar correção principal e adicional planetário indicado, sem transportar valores de outro astro |
-| Lua | obter HMG; ler $P_h$ na página diária de 2026; calcular $a_{ap}$; usar a tabela lunar e seu adicional; tratar o limbo exatamente como o cabeçalho manda |
+$$
+dp_{ap}(')=-0{,}97\sqrt{E(pés)}.
+$$
 
-Em todos os casos, escreva antes da consulta: astro, data, HMG, altura de entrada, elevação do olho, limbo e condições atmosféricas dadas. A coluna encontrada precisa ser rastreável por outra pessoa.
+Dimensionalmente, a constante já incorpora as unidades. Misturar metros com a constante em pés produz um resultado plausível e errado. A dependência em $\sqrt E$ explica por que quadruplicar a elevação apenas dobra o módulo.
 
-## Exemplos históricos guiados
+## 4. Refração astronômica
 
-Os valores abaixo vêm das aulas antigas e demonstram o algoritmo; não substituem nenhuma página de 2026.
+A densidade do ar diminui com a altitude; o raio luminoso se curva e a imagem é vista acima da direção geométrica. Para passar da altura aparente à verdadeira, subtrai-se a refração: $AR<0$.
 
-### Estrela
+O efeito cresce perto do horizonte porque o raio percorre camada atmosférica maior. A apostila recomenda observações acima de cerca de $15^\circ$; A3 ainda permite corrigir baixas alturas, mas não elimina sua sensibilidade a condições anormais.
 
-Para Canopus, com $a_i=19^\circ55{,}5'$, $e_i=-2{,}5'$ e olho a 13,5 m:
+## 5. Semidiâmetro
 
+O Sol e a Lua têm disco aparente. Se o limbo inferior toca o horizonte, o centro está acima dele:
+
+$$
+SD_{LI}>0.
+$$
+
+Se o limbo superior é observado, o centro está abaixo:
+
+$$
+SD_{LS}<0.
+$$
+
+Planetas e estrelas são tratados conforme a sistemática tabular, sem acrescentar por conta própria o $SD$ usado para discos solar/lunar.
+
+## 6. Paralaxe
+
+As efemérides se referem ao centro da Terra; o observador está na superfície. A paralaxe em altura é positiva, máxima no horizonte e nula no zênite. Para a Lua, a proximidade torna $P_h$ decisiva; para os demais astros, siga as correções agrupadas do almanaque.
+
+Uma boa explicação de prova contém causa, direção e extremo:
+
+> a paralaxe corrige a diferença topocêntrica/geocêntrica, aumenta a altura e decresce do horizonte ao zênite.
+
+## 7. Navegação na A2
+
+<FiguraFonte figura="NAV4-FIG-ALT-002" />
+
+A2 declara no rodapé que sua entrada $a_{ap}$ é a altura do sextante já corrigida de erro instrumental e depressão. Para usá-la:
+
+1. confirme $10^\circ\le a_{ap}\le90^\circ$;
+2. escolha Sol ou estrelas/planetas;
+3. no Sol, confirme semestre e limbo;
+4. alinhe linha de altura e coluna;
+5. leia sinal e décimo de minuto;
+6. verifique notas de correção adicional.
+
+A fotografia inclui também depressão por elevação do olho, útil como conferência da fórmula.
+
+## 8. Navegação na A3
+
+<FiguraFonte figura="NAV4-FIG-ALT-003" />
+
+A3 cobre $0^\circ$–$10^\circ$. A sequência permanece a mesma, mas três riscos aumentam:
+
+- escolher a linha vizinha pela densidade da tabela;
+- ignorar a variação rápida da refração;
+- deixar de verificar temperatura/pressão.
+
+Leia sempre linha e coluna de volta antes de copiar o valor.
+
+## 9. Condições anormais na A4
+
+<FiguraFonte figura="NAV4-FIG-ALT-004" />
+
+A4 usa um procedimento em duas entradas:
+
+1. cruze $T$ e $P$ no ábaco;
+2. identifique a faixa alfabética;
+3. use $a_{ap}$ na tabela inferior;
+4. leia a correção na coluna da letra.
+
+Essa correção **complementa** a correção normal de temperatura/pressão já incorporada em A2/A3. Sua ordem lógica é:
+
+$$
+a=a_{ap}+c_{\text{normal}}+c_{T,P}.
+$$
+
+Não há motivo para aplicar A4 se o problema não der condições anormais ou se a instrução da tábua disser que não é necessária.
+
+## 10. O cabeçalho governa a decomposição
+
+O fenômeno físico pode ser escrito como
+
+$$
+a=a_{ap}+AR+SD+PA+c_{ad},
+$$
+
+mas a coluna operacional pode reunir parcelas numa correção principal $c$. Portanto:
+
+$$
+a=a_{ap}+c+c_{ad}
+$$
+
+é mais seguro **depois de ler o cabeçalho**. O aluno deve ser capaz de dizer “$c$ representa...” antes de somá-lo.
+
+## 11. Roteiro de estrela
+
+**Entradas:** $a_i,e_i,E$; data/HMG somente se o problema exigir referência adicional.
+
+1. obtenha $a_o$;
+2. aplique depressão e obtenha $a_{ap}$;
+3. escolha A2 ou A3;
+4. leia correção de estrela;
+5. aplique A4 se indicada;
+6. confira que não há limbo.
+
+## 12. Roteiro de planeta
+
+**Entradas:** data, HMG, planeta, $a_{ap}$.
+
+1. identifique Vênus ou Marte, sem intercâmbio;
+2. leia a correção principal;
+3. consulte o quadro de correção adicional para o período;
+4. some apenas a parcela indicada;
+5. documente data/intervalo.
+
+## 13. Roteiro de Sol
+
+**Entradas:** data/semestre, limbo, $a_{ap}$, T/P.
+
+1. escolha A2/A3 pela altura;
+2. escolha o grupo temporal impresso;
+3. selecione limbo inferior/superior;
+4. aplique complemento A4 se necessário;
+5. compare o sinal total com refração e $SD$.
+
+Limbo inferior tende a receber forte parcela positiva de $SD$; limbo superior, negativa. O valor exato vem da tábua.
+
+## 14. Roteiro de Lua
+
+**Entradas adicionais:** HMG e paralaxe horizontal $P_h$ lida na página diária.
+
+1. converta a hora para HMG/TU e confira a data;
+2. leia $P_h$ no ANB 2026;
+3. calcule $a_o$ e $a_{ap}$;
+4. entre na tábua lunar com suas entradas;
+5. aplique correção principal e adicional;
+6. trate o limbo exatamente como a nota manda;
+7. confira se $SD$ já foi incorporado.
+
+O erro típico é usar uma receita antiga “principal + adicional ± 30'” sem verificar a edição.
+
+## 15. Exemplo resolvido do início ao fim
+
+**Dados:** $a_i=30^\circ12{,}4'$, $e_i=-1{,}4'$, $E=9m$, $c=-1{,}8'$ fornecida para o caso didático.
+**Incógnita:** $a$.
+**Fonte/condição:** fórmula em metros e correção já combinada.
+
+$$
+a_o=30^\circ12{,}4'-1{,}4'=30^\circ11{,}0'
+$$
+
+$$
+dp_{ap}=-1{,}76\sqrt9=-5{,}28'\approx-5{,}3'
+$$
+
+$$
+a_{ap}=30^\circ11{,}0'-5{,}3'=30^\circ05{,}7'
+$$
+
+$$
+a=30^\circ05{,}7'-1{,}8'=30^\circ03{,}9'.
+$$
+
+**Interpretação:** todas as parcelas dadas eram negativas, então $a<a_i$.
+**Controle independente:**
+
+$$
+\Sigma c=-1{,}4'-5{,}3'-1{,}8'=-8{,}5',
+$$
+
+$$
+a_i+\Sigma c=30^\circ12{,}4'-8{,}5'=30^\circ03{,}9'.
+$$
+
+## 16. Quatro exemplos históricos comparados
+
+Os números vêm de aulas antigas e nunca substituem o ANB 2026.
+
+### Estrela — Canopus
+
+$$
+a_i=19^\circ55{,}5',\quad e_i=-2{,}5'
+$$
 $$
 a_o=19^\circ53{,}0',\quad dp=-6{,}5',\quad a_{ap}=19^\circ46{,}5'
 $$
-
-Com a correção histórica $c=-2{,}7'$, chega-se a $a=19^\circ43{,}8'$.
-
-### Planeta e Sol
-
-No exemplo de Vênus, $a_{ap}=18^\circ10{,}2'$, $c=-2{,}9'$ e adicional $+0{,}1'$, logo $a=18^\circ07{,}4'$. No exemplo de Sol com limbo superior, $a_{ap}=27^\circ03{,}7'$ e $c=-17{,}9'$, portanto $a=26^\circ45{,}8'$. O resultado negativo da correção é fisicamente compatível com refração e limbo superior.
-
-### Lua
-
-No exemplo de limbo superior, $a_{ap}=33^\circ23{,}5'$, correção principal $+57{,}4'$, adicional $+2{,}7'$ e tratamento do limbo $-30{,}0'$:
-
 $$
-a=33^\circ53{,}6'
+c=-2{,}7'\Rightarrow a=19^\circ43{,}8'.
 $$
 
-Não transforme o $-30'$ em regra fixa. A lição é reconhecer quais parcelas aquela tabela separava e conferir o cabeçalho da edição 2026.
+### Vênus
 
-## Checklist de entrega
+$$
+a_{ap}=18^\circ10{,}2',\quad c=-2{,}9',\quad c_{ad}=+0{,}1'
+$$
+$$
+a=18^\circ07{,}4'.
+$$
 
-- [ ] $e_i$ foi somado algebricamente?
-- [ ] a unidade da elevação combina com a fórmula de depressão?
-- [ ] a entrada tabular foi feita com $a_{ap}$?
-- [ ] astro, data, limbo e faixa estão corretos?
-- [ ] T/P só foram usados quando pedidos?
-- [ ] SD, paralaxe ou refração não foram contados duas vezes?
-- [ ] graus e minutos foram normalizados e o resultado foi circundado?
+### Sol, limbo superior
+
+$$
+a_{ap}=27^\circ03{,}7',\quad c=-17{,}9'
+\Rightarrow a=26^\circ45{,}8'.
+$$
+
+### Lua, limbo superior
+
+$$
+a_{ap}=33^\circ23{,}5',\quad c=+57{,}4',\quad
+c_{ad}=+2{,}7',\quad c_{LS}=-30{,}0'
+$$
+$$
+a=33^\circ53{,}6'.
+$$
+
+Esses exemplos revelam quatro organizações tabulares; não uma fórmula única.
+
+## 17. Análise de sensibilidade
+
+Na navegação astronômica,
+
+$$
+1'\text{ de arco}\approx1\text{ MN}.
+$$
+
+Assim, um sinal trocado de uma correção de (5') pode separar duas LDPs por cerca de 10 MN: em vez de subtrair 5, soma-se 5. O controle de sinal tem efeito operacional, não apenas formal.
+
+## 18. Auditoria e recuperação ativa
+
+Antes de encerrar, responda:
+
+- Que referência muda em cada seta da cadeia?
+- Por que depressão e refração são negativas por causas distintas?
+- Quando A4 complementa A2/A3?
+- Quais campos tornam a Lua diferente?
+- Como detectar duplicação de SD?
+
+Depois, resolva uma conta em duas colunas: à esquerda, valor; à direita, fonte/razão.
+**Critério de saída:** ao menos 80% no banco, quatro roteiros recuperados sem consulta e um exemplo completo com controle independente.

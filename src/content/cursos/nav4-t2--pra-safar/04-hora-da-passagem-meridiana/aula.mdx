@@ -4,86 +4,173 @@ secao: "aula"
 secaoOrdem: 2
 ---
 
-## 1. Fenômeno
+> **Produto:** obter Hleg por HML tabulada e por equação do tempo, registrar as consultas e detectar erros de sinal por comparação.
 
-Na passagem meridiana superior, o centro do Sol cruza o meridiano do observador. Para observador parado, ocorre a altura diária máxima; o ângulo no polo é zero e o azimute é $000^\circ$ ou $180^\circ$.
+## 1. Por que a passagem é favorável
 
-A previsão permite iniciar uma série de alturas antes do máximo e identificar a culminação.
+Na passagem meridiana superior:
 
-## 2. Método simples
+- o centro do Sol cruza o meridiano local;
+- $t_1=0^\circ$;
+- o Sol está ao norte ou ao sul, $Az=000^\circ$ ou $180^\circ$;
+- para observador parado, a altura é máxima;
+- o triângulo reduz-se a uma relação meridiana entre latitude, declinação e distância zenital.
 
-O ANB fornece HML da passagem do Sol em dias selecionados. Interpole a data, se necessário.
+Prevemos a hora para iniciar observações antes do máximo e acompanhar a série.
 
-Converta longitude em tempo:
+## 2. Três escalas de tempo
+
+- **HML:** hora média local, referida ao meridiano do observador;
+- **HMG/TU:** hora média de Greenwich usada nas páginas diárias;
+- **Hleg:** hora dos relógios de bordo/zona, conforme o fuso.
+
+O cálculo é:
 
 $$
-\lambda_t=\frac{\lambda}{15^\circ/h}
+HML\xrightarrow{\lambda_t}HMG\xrightarrow{P}Hleg.
 $$
 
-Atalhos: $15^\circ=1h$, $15'=1m$, $15''=1s$.
+## 3. Localização no ANB
+
+<FiguraFonte figura="NAV4-FIG-ANB-002" />
+
+Na página diária, identifique data, quadro e rótulo. O quadro inferior apresenta ET e passagens. Os quadros laterais de fenômenos podem usar latitude tabular. Não copie antes de responder: “qual escala de tempo este número representa?”
+
+## 4. Método simples
+
+Leia a HML da passagem para a data e interpole quando a página/procedimento exigir. Converta longitude:
+
+$$
+\lambda_t=\frac{\lambda}{15^\circ/h}.
+$$
+
+Atalhos:
+
+$$
+15^\circ=1^h,\qquad15'=1^m,\qquad15''=1^s.
+$$
+
+Então:
 
 $$
 HMG=
 \begin{cases}
-HML+\lambda_t,&W\\
-HML-\lambda_t,&E
+HML+\lambda_t,&\lambda W,\\
+HML-\lambda_t,&\lambda E.
 \end{cases}
 $$
 
-Na convenção do material:
+Na convenção adotada nas aulas:
 
 $$
-Hleg=HMG-P
+Hleg=HMG-P,
 $$
 
-com $P$ positivo a W. Faça a passagem de data se o resultado sair de 0–24 h.
+com $P$ positivo a W. Se o resultado ultrapassar $24^h$ ou for negativo, ajuste a hora e a data.
 
-## 3. Método preciso
+## 5. Método preciso
 
-Equação do tempo:
-
-$$
-ET=HV-HM
-$$
-
-No meridiano local, na passagem superior:
+A equação do tempo é:
 
 $$
-ET=12h-HML\Rightarrow HML=12h-ET
+ET=HV-HM.
 $$
 
-Use o valor de ET próximo de HVL 12 h na página de 2026, com sinal. Depois aplique longitude e fuso como no método simples.
-
-### Exemplo histórico completo
-
-Para 23/07/2016, o exemplo usa $ET=-06m29s$:
+Na passagem superior local, $HVL=12^h$. Logo:
 
 $$
-HML=12h06m29s
+ET=12^h-HML
 $$
 
-Longitude $043^\circ10'W$:
+e:
 
 $$
-43^\circ/15=2h52m,\quad 10'=40s\Rightarrow\lambda_t=2h52m40s
+HML=12^h-ET.
+$$
+
+O sinal não é uma convenção memorizada à parte: ele nasce dessa definição. ET negativa torna HML maior que $12^h$.
+
+## 6. Exemplo histórico auditado
+
+**Dados antigos:** $ET=-06^m29^s$, $\lambda=043^\circ10'W$, $P=+3^h$.
+**Fonte:** aula de 2016, somente para método.
+
+$$
+HML=12^h-(-06^m29^s)=12^h06^m29^s.
+$$
+
+Conversão da longitude:
+
+$$
+43^\circ=2^h52^m,\qquad 10'=40^s,
 $$
 
 $$
-HMG=14h59m09s
-$$
-$$
-Hleg=14h59m09s-3h=11h59m09s
+\lambda_t=2^h52^m40^s.
 $$
 
-## 4. Por que os métodos devem concordar
+Longitude W soma:
 
-A HML tabulada é uma apresentação direta do mesmo fenômeno representado pela equação do tempo. O método simples arredonda e pode interpolar de forma mais grosseira; o preciso conserva segundos. Diferença de muitos minutos indica erro de sinal ou página.
+$$
+HMG=12^h06^m29^s+2^h52^m40^s
+=14^h59^m09^s.
+$$
 
-## 5. Erros de prova
+Fuso:
 
-- usar HMG da página como se fosse HML;
-- transformar $43^\circ10'$ em “43 h 10 min”;
-- somar longitude E;
-- usar $ET$ sem seu sinal;
-- fazer $HML=12h+ET$ mecanicamente; derive de $ET=12-HML$;
-- aplicar “UTC−3” duas vezes. Escolha uma convenção e escreva-a.
+$$
+Hleg=14^h59^m09^s-3^h
+=11^h59^m09^s.
+$$
+
+**Interpretação:** a Hleg fica próxima do meio-dia da zona; a HMG é maior que a HML em longitude W.
+**Controle independente:** resolver também pela HML tabulada e comparar.
+
+## 7. Como interpolar fenômenos
+
+<FiguraFonte figura="NAV4-FIG-PM-001" />
+
+A Tábua I corrige a interpolação em latitude: entra-se com o intervalo tabular, a diferença de horas entre latitudes consecutivas e o excesso sobre a latitude inferior. A Tábua II trata longitude e a diferença entre datas.
+
+Segundo a instrução impressa, a correção de longitude é em geral aditiva para W e subtrativa para E, observando a escolha do dia seguinte/anterior. O sinal final deve acompanhar a tendência da tabela; não aplique a regra sem identificar os dias comparados.
+
+## 8. Mudança de data
+
+Exemplo estrutural: se a soma de HML e longitude W produzir $25^h10^m$:
+
+$$
+25^h10^m=01^h10^m\ \text{do dia seguinte}.
+$$
+
+A página de efemérides/ET usada em etapas posteriores deve acompanhar a data Greenwich correta.
+
+## 9. Método simples versus preciso
+
+Ambos representam o mesmo evento. A HML tabulada pode vir arredondada/interpolada; ET conserva segundos. Uma diferença pequena é plausível. Diferença grande exige auditoria:
+
+- aproximadamente $2|ET|$: sinal de ET;
+- uma hora inteira: fuso;
+- várias horas: longitude;
+- 24 h: data não normalizada.
+
+## 10. Protocolo de resposta
+
+1. escreva data local, longitude e fuso;
+2. declare o método;
+3. registre página/quadro/entrada do ANB 2026;
+4. obtenha HML;
+5. converta $\lambda$ para $\lambda_t$;
+6. aplique W soma/E subtrai;
+7. aplique uma única convenção de fuso;
+8. normalize hora/data;
+9. compare com o outro método.
+
+## 11. Recuperação ativa
+
+Resolva três variações:
+
+- ET positiva com longitude W;
+- ET negativa com longitude E;
+- resultado que cruza $0^h$.
+
+**Critério de saída:** obter Hleg pelos dois métodos, justificar cada sinal e localizar a origem provável de uma divergência sem refazer tudo às cegas.

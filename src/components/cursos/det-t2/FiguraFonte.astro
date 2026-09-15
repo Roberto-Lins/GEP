@@ -1,9 +1,30 @@
 ---
-import figuras from '@data/cursos/det-t2/figuras.json';
+import figurasDet from '@data/cursos/det-t2/figuras.json';
+import manifestoNav4 from '@data/cursos/_familias/nav4-t2/figuras.json';
+
+interface FiguraCatalogada {
+  id: string;
+  arquivo_fonte: string;
+  localizacao: string;
+  nivel_fidelidade: 'V1' | 'V2' | 'V3' | 'V4';
+  arquivo_gerado: string;
+  largura: number;
+  altura: number;
+  legenda: string;
+  alt: string;
+  leitura: string;
+}
 interface Props { figura: string }
 const { figura } = Astro.props;
+const figuras = [...figurasDet, ...manifestoNav4.figuras] as FiguraCatalogada[];
 const item = figuras.find((entry) => entry.id === figura);
 if (!item) throw new Error(`Figura não cadastrada: ${figura}`);
+const rotuloFidelidade = {
+  V1: 'Figura original',
+  V2: 'Figura adaptada fielmente à fonte · V2',
+  V3: 'Gráfico didático reconstruído a partir da fonte · V3',
+  V4: 'Ilustração conceitual · V4',
+}[item.nivel_fidelidade];
 ---
 <figure class="figura-fonte not-prose" id={`fig-${figura}`}>
   <a class="imagem" href={item.arquivo_gerado} target="_blank" rel="noopener" aria-label={`Ampliar: ${item.legenda} (abre a imagem em outra aba)`}>
@@ -13,7 +34,7 @@ if (!item) throw new Error(`Figura não cadastrada: ${figura}`);
   <figcaption>
     <strong>{item.legenda}</strong>
     <p><b>Como ler:</b> {item.leitura}</p>
-    <small>{item.nivel_fidelidade === 'V1' ? 'Figura original' : 'Gráfico didático calculado a partir da fonte · V3'} · {item.arquivo_fonte} · {item.localizacao}</small>
+    <small>{rotuloFidelidade} · {item.arquivo_fonte} · {item.localizacao}</small>
   </figcaption>
 </figure>
 <style>

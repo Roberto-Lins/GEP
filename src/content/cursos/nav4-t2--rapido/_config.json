@@ -2,7 +2,7 @@
   "slug": "nav4-t2--rapido",
   "titulo": "NAV-4 — T2 — Rápido",
   "subtitulo": "Correções, LDP, Radler e latitude meridiana em rota intensiva",
-  "descricao": "Rota de emergência para dominar o núcleo integral anunciado pelo professor em menos de cinco horas.",
+  "descricao": "Rota intensiva de cinco horas para dominar o núcleo integral anunciado pelo professor.",
   "categoria": "Carreira Naval",
   "ano": "4",
   "semestre": "2",
@@ -26,10 +26,10 @@
     ],
     "legadoSomenteCompleto": false,
     "rotulo": "Rápido",
-    "descricao": "Rota de emergência para dominar o núcleo integral anunciado pelo professor em menos de cinco horas.",
+    "descricao": "Rota intensiva de cinco horas para dominar o núcleo integral anunciado pelo professor.",
     "finalidade": "Chegar operacional à T2 em menos de 24 horas, sem excluir nenhum dos quatro blocos anunciados.",
     "cobertura": "Todo o escopo anunciado, em sequência de execução, com teoria mínima suficiente, sinais, conferências e treino de maior retorno.",
-    "duracaoMinutos": 285,
+    "duracaoMinutos": 300,
     "estadoAutoria": "publicado"
   },
   "features": {

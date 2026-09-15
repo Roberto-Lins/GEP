@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import type { QuestaoDiscursiva } from '@tipos/question';
 import Markdown from './Markdown';
+import DetalhamentoResposta from './DetalhamentoResposta';
 
 interface Props {
   questao: QuestaoDiscursiva;
@@ -118,10 +119,7 @@ export default function QuestaoDiscursiva({ questao, indice, onResponder }: Prop
             </div>
           )}
 
-          {questao.armadilha && (
-            <p className="text-xs text-alerta/80"><strong>Armadilha:</strong> {questao.armadilha}</p>
-          )}
-          {questao.fonte && <p className="text-xs text-nevoa/50">Fonte: {questao.fonte}</p>}
+          <DetalhamentoResposta {...questao} />
 
           <div>
             <p className="mb-2 text-sm text-nevoa/70">Compare sua resposta com o gabarito e avalie-se:</p>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { QuestaoMultipla } from '@tipos/question';
 import Markdown from './Markdown';
+import DetalhamentoResposta from './DetalhamentoResposta';
 
 const LETRAS = ['A', 'B', 'C', 'D', 'E'];
 
@@ -75,9 +76,7 @@ export default function QuestaoMultiplaEscolha({ questao, indice, onResponder }:
           {questao.conceito && (
             <p className="mt-2 text-xs uppercase tracking-wider text-dourado/70">Conceito: {questao.conceito}</p>
           )}
-          {questao.armadilha && (
-            <p className="mt-2 text-xs text-alerta/80"><strong>Armadilha:</strong> {questao.armadilha}</p>
-          )}
+          <DetalhamentoResposta {...questao} />
         </div>
       )}
     </div>

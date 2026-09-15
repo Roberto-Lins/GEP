@@ -1,79 +1,221 @@
 ---
-titulo: "Geometria completa da LDP — aula completa"
+titulo: "Geometria completa da linha de posição — aula completa"
 secao: "aula"
 secaoOrdem: 2
 ---
 
-## Lugar geométrico
+> **Produto profissional:** conectar esfera celeste, GP, circunferência de igual altura, solução do triângulo, método do intercepto e aproximação em carta.
 
-O GP é a projeção terrestre do astro: sua latitude é $\delta$, e sua longitude decorre de AHG/tG. Todos os observadores a distância zenital $z$ do GP medem a mesma altura:
+## 1. O ponto subastral
 
-$$
-z=90^\circ-a
-$$
-
-Esses pontos formam a circunferência de igual altura. Uma observação gera uma linha, não um ponto.
-
-![Geometria da LDP](/imagens/cursos/nav4-t2/figuras/ldp-geometria.svg)
-
-## Tangente e orientação
-
-Próximo da posição assumida, a circunferência osculatriz é substituída pela reta tangente. O azimute aponta radialmente para o GP; a tangente é perpendicular. Como $1'$ terrestre = 1 MN, o intercepto em minutos é marcado em milhas.
+Os raios vindos de um astro são tratados como paralelos na escala da Terra. A vertical do astro intercepta a superfície na **posição geográfica do astro**, GP.
 
 $$
-\Delta a=a-a_e
+\varphi_{GP}=\delta.
 $$
 
-Se positivo, a circunferência real está mais perto do GP: marque para o astro. Se negativo, marque no sentido oposto.
+A longitude do GP decorre do AHG/$t_G$ no instante. Isso separa dois papéis:
 
-## Solução do triângulo
+- o almanaque situa o astro sobre a Terra;
+- a altura observada restringe onde está o observador.
 
-$$
-\sin a_e=\sin\varphi\sin\delta+\cos\varphi\cos\delta\cos AHL
-$$
+## 2. A altura define uma distância
 
-$$
-\cos Z=\frac{\sin\delta-\sin\varphi\sin a_e}{\cos\varphi\cos a_e}
-$$
-
-A trigonometria fornece a grandeza; nomes e diagrama determinam o quadrante de $Az$. Essas fórmulas conferem a Radler.
-
-## Limite da aproximação
-
-O erro arco–tangente cresce com a distância ao ponto de tangência. A fonte usa cerca de ±100 MN em altura de $35^\circ$ e aproximadamente ±30 MN perto de $80^\circ$. Altura alta significa $z$ pequeno e curvatura mais pronunciada.
-
-## Cadeia integral
-
-Observar → corrigir até $a$ → assumir posição → obter efemérides → resolver $a_e,Az$ → calcular $\Delta a$ → marcar o intercepto → traçar a perpendicular. Radler é o método tabular dos elementos centrais.
-
-## Construção em carta, passo a passo
-
-1. Marque a posição assumida, nunca a posição estimada sem o ajuste usado no cálculo.
-2. A partir dela, trace a direção do $Az$ verdadeiro para o astro.
-3. Calcule $\Delta a=a-a_e$ preservando o sinal.
-4. Se $\Delta a>0$, avance $|\Delta a|$ MN em direção ao astro; se $\Delta a<0$, caminhe no recíproco $Az+180^\circ$.
-5. Pelo ponto obtido, trace a perpendicular ao azimute. Essa é a LDP aproximada.
-6. Identifique hora, astro e $Az$ junto à reta para impedir troca de observações.
-
-### Exemplo numérico
+O ângulo entre o astro e o horizonte é complementar ao ângulo entre o astro e o zênite:
 
 $$
-a=21^\circ35{,}8',\qquad a_e=21^\circ47{,}6'
+z=90^\circ-a.
 $$
 
-Logo, $\Delta a=-11{,}8'$. Marque 11,8 MN no sentido oposto ao astro e trace a perpendicular. Se a posição assumida estivesse exatamente sobre a circunferência observada, $a=a_e$ e a reta passaria por ela.
+Como a vertical do astro passa pelo GP, $z$ também mede a distância angular do observador ao GP. Todos os pontos com o mesmo $z$ formam uma circunferência esférica.
 
-## Banco de julgamentos conceituais
+Exemplo:
 
-| Enunciado | Julgamento e motivo |
+$$
+a=50^\circ
+\Rightarrow z=40^\circ
+=2400'
+\Rightarrow 2400\text{ MN}.
+$$
+
+Uma observação isolada não escolhe um ponto dessa circunferência.
+
+<FiguraFonte figura="NAV4-FIG-LDP-001" />
+
+## 3. Lugar geométrico e representação
+
+É útil distinguir:
+
+- **circunferência de igual altura:** lugar geométrico exato na esfera;
+- **circunferência osculatriz:** representação local da curvatura;
+- **reta de altura:** tangente usada na vizinhança da posição assumida.
+
+O $Az$ é radial: aponta para o GP e para o crescimento da altura. A tangente é perpendicular ao raio. Esta é a razão geométrica — não uma convenção de plotagem — para a LDP ser perpendicular ao $Az$.
+
+## 4. Triângulo de posição
+
+O triângulo esférico $PZS$ ou $PZA$ liga polo, zênite e astro. Seus elementos de entrada podem ser escritos como:
+
+$$
+c=90^\circ-\varphi,\qquad
+p=90^\circ-\delta,\qquad
+t_1=AHL \text{reduzido a }0^\circ\text{–}180^\circ.
+$$
+
+Sua solução fornece $a_e$ e o ângulo no zênite. Pela forma analítica:
+
+$$
+\sin a_e=
+\sin\varphi\sin\delta+
+\cos\varphi\cos\delta\cos AHL.
+$$
+
+E:
+
+$$
+\cos Z=
+\frac{\sin\delta-\sin\varphi\sin a_e}
+{\cos\varphi\cos a_e}.
+$$
+
+O arco-cosseno retorna módulo entre $0^\circ$ e $180^\circ$. O nome do polo, o sinal do AHL e o diagrama determinam o quadrante do $Az$. A Tábua Radler é um método tabular para resolver essa mesma geometria.
+
+## 5. Dois universos que se encontram
+
+**Observação:**
+
+$$
+a_i\to a_o\to a_{ap}\to a.
+$$
+
+**Predição na posição assumida:**
+
+$$
+\varphi_{ass},\lambda_{ass},\text{efemérides}
+\to a_e,Az.
+$$
+
+Eles se encontram em:
+
+$$
+\Delta a=a-a_e.
+$$
+
+Por isso, não se deve chamar $a_e$ de “altura corrigida” nem usar $a$ como entrada da Radler. Um é observado/corrigido; o outro é calculado.
+
+## 6. Derivação do sentido do intercepto
+
+Se $a>a_e$, então:
+
+$$
+90^\circ-a<90^\circ-a_e
+\Rightarrow z<z_e.
+$$
+
+O observador real está mais perto do GP do que a posição assumida: marque para o astro. Se $a<a_e$, está mais longe: marque no recíproco do $Az$.
+
+| Sinal | Relação | Sentido |
+|---|---|---|
+| (+) | $a>a_e$ e $z<z_e$ | $Az$, “toward” |
+| (-) | $a<a_e$ e $z>z_e$ | $Az+180^\circ$, “away” |
+| (0) | $a=a_e$ | pela posição assumida |
+
+## 7. Construção em carta
+
+1. marque a posição assumida exatamente como usada no cálculo;
+2. trace $Az$ verdadeiro;
+3. calcule $\Delta a$ alinhando graus e minutos;
+4. transforme $|\Delta a|'$ em $|\Delta a|$ MN;
+5. marque o ponto na direção determinada pelo sinal;
+6. trace a perpendicular;
+7. rotule astro, HMG e $Az$.
+
+O rótulo permite distinguir retas próximas e reconstruir o cálculo durante a conferência.
+
+## 8. Exemplo positivo completo
+
+**Dados:** $a=32^\circ29{,}9'$, $a_e=32^\circ09{,}2'$, $Az=064^\circ$.
+**Incógnita:** posição da LDP em relação à assumida.
+
+$$
+\Delta a
+=32^\circ29{,}9'-32^\circ09{,}2'
+=+20{,}7'.
+$$
+
+$$
+|\Delta a|=20{,}7\text{ MN}.
+$$
+
+Marque 20,7 MN em $064^\circ$ e trace a perpendicular.
+**Controle:** $a>a_e$ implica menor distância zenital, logo o ponto precisa ir para o GP.
+
+## 9. Exemplo negativo completo
+
+**Dados:** $a=21^\circ35{,}8'$, $a_e=21^\circ47{,}6'$, $Az=218^\circ$.
+
+$$
+\Delta a=-11{,}8'.
+$$
+
+O recíproco é:
+
+$$
+218^\circ-180^\circ=038^\circ.
+$$
+
+Marque 11,8 MN em $038^\circ$ e trace a perpendicular ao eixo $038^\circ/218^\circ$.
+**Controle:** $a<a_e$ exige afastamento do astro, que está em $218^\circ$.
+
+## 10. Caso nulo e interpretação
+
+$$
+a=a_e\Rightarrow\Delta a=0.
+$$
+
+Isso não prova que a posição assumida seja a posição exata: prova apenas que ela pertence à LDP daquela observação. Outra LDP independente é necessária para uma posição.
+
+## 11. Erro da aproximação reta
+
+O erro arco–tangente cresce ao afastar-se do ponto de tangência. A fonte oferece valores de referência:
+
+- por volta de $a=35^\circ$: até cerca de 100 MN de cada lado;
+- por volta de $a=80^\circ$: cerca de 30 MN de cada lado.
+
+Altura alta $\Rightarrow$ $z$ pequeno $\Rightarrow$ raio menor $\Rightarrow$ curvatura mais perceptível. Esses números são limites didáticos da fonte, não uma garantia universal independente de escala e precisão.
+
+## 12. Propagação de erros
+
+| Origem | Grandeza afetada | Sintoma na carta |
+|---|---|---|
+| correção de altura | $a$ | deslocamento paralelo da LDP |
+| efeméride/posição assumida | $a_e,Az$ | deslocamento e possível rotação |
+| subtração | $\Delta a$ | distância errada |
+| sinal do intercepto | sentido | reta no lado oposto |
+| quadrante do Az | orientação | reta girada/refletida |
+
+Um erro de $1'$ em altura desloca a reta aproximadamente 1 MN. Trocar (-5') por (+5') produz diferença de 10 MN.
+
+## 13. Julgamentos de prova
+
+| Afirmação | Julgamento e razão |
 |---|---|
-| O GP é a projeção terrestre do astro. | verdadeiro |
-| O raio da circunferência de igual altura é $a$. | falso; é $z=90^\circ-a$ |
-| Uma observação fornece uma posição exata. | falso; fornece uma LDP |
-| A reta de altura é paralela ao azimute. | falso; é perpendicular |
-| Intercepto positivo é marcado para o astro. | verdadeiro |
-| Na passagem meridiana superior, o ângulo no polo vale $90^\circ$. | falso; vale $0^\circ$ |
+| GP é a projeção do astro | verdadeira |
+| latitude do GP é a latitude estimada | falsa; é $\delta$ |
+| raio da circunferência é $a$ | falsa; é $z$ |
+| tangente e Az são paralelos | falsa; são perpendiculares |
+| uma LDP fornece posição exata | falsa |
+| $a=a_e$ elimina a LDP | falsa; ela passa pela assumida |
+| maior $a$ significa maior distância ao GP | falsa; significa menor $z$ |
 
-## Conferência geométrica
+## 14. Recuperação ativa
 
-Se $a$ aumenta, $z$ diminui e a circunferência aproxima-se do GP; daí o sentido “para o astro” do intercepto positivo. Essa dedução elimina a necessidade de decorar uma seta. Antes de aceitar qualquer desenho, verifique as três relações simultâneas: $Az$ aponta para o GP, o intercepto está sobre o eixo do $Az$ e a LDP é perpendicular a esse eixo.
+Produza, sem consulta:
+
+1. uma definição em três linhas;
+2. o desenho completo com sete rótulos;
+3. a derivação do sentido positivo;
+4. um exemplo positivo, um negativo e um nulo;
+5. a explicação do limite de 35° versus 80°.
+
+**Critério de saída:** 80% no banco, desenho correto e capacidade de localizar um erro em cada uma das quatro etapas: observação, cálculo, intercepto e plotagem.

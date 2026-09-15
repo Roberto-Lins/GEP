@@ -4,96 +4,254 @@ secao: "aula"
 secaoOrdem: 2
 ---
 
-## Oficina profissional
+> **Objetivo:** integrar observação, ANB, Radler, relógios, geometria e auditoria. Cada estação tem produto, tempo e controle independente.
 
-1. Faça uma correção completa de Sol/Lua com ANB 2026.
-2. Refaça o fechamento em minutos de arco.
-3. Explique a figura $PAZ$ e as duas entradas da Radler.
-4. Em um bloco separado, confira o trabalho DHN-0607.
-5. Confira $a_e$ trigonométricamente.
-6. Faça Hleg simples e precisa na mesma data.
-7. Calcule latitude pela tabela de casos e por latitudes assinadas.
-8. Se houver rumo/velocidade, teste a componente meridional.
+## Estação 1 — mapa de fontes (10 min)
 
-## Treino de prova em 90 min
+Sem resolver:
 
-| Bloco | Produto |
-|---|---|
-| definições e V/F | respostas curtas com correção dos falsos |
-| altura | cadeia completa e ANB 2026 |
-| PM/latitude | horário e latitude |
-| Radler conceitual | figura $PAZ$, auxiliares, entradas e elementos determinativos |
+1. marque, nas fotos do ANB, onde estão Sol/Lua, planetas/estrelas e ET/passagem;
+2. marque A2, A3 e A4;
+3. marque primeira e segunda entrada nas instruções Radler;
+4. localize oito blocos no DHN-0607.
 
-A tabela organiza o treino; não presume a distribuição de pontos da prova real. O modelo Radler completo é o **trabalho separado de 2,0**.
+<FiguraFonte figura="NAV4-FIG-ANB-001" />
 
-## Rubrica
+<FiguraFonte figura="NAV4-FIG-ANB-002" />
 
-Para cada resultado: fonte/entrada, regra, sinal/nome, aritmética/unidade e conferência. Registre a causa do erro. Um erro de conta pede repetição; um erro de tabela pede treino de consulta; um erro de caso pede desenho.
+Produto: tabela “dado → página → entrada → saída”.
 
-## Problemas de integração
+## Estação 2 — sistema de alturas (15 min)
 
-- Explique sinais opostos de refração e paralaxe.
-- Derive o sentido do intercepto por $z=90^\circ-a$.
-- Demonstre $AHL=309^\circ\Rightarrow t_1=51^\circ E$.
-- Converta os quatro Aqd e faça a operação inversa.
-- Demonstre $HML=12h-ET$.
-- Resolva Sol ao norte e ao sul com latitudes assinadas.
-- Calcule como $2{,}5'$ de erro de altura aparece na LDP e na latitude.
-
-Use a área de questões para feedback; use a publicação física para números anuais.
-
-## Miniestações com gabarito numérico
-
-Estes itens já fornecem os dados tabulares e podem ser resolvidos sem copiar efemérides antigas.
-
-### 1. Cadeia de altura
-
-Dados: $a_i=30^\circ12{,}4'$, $e_i=-1{,}4'$, olho 9 m e $c=-1{,}8'$.
+Dados didáticos:
 
 $$
-a_o=30^\circ11{,}0'
+a_i=30^\circ12{,}4',\quad
+e_i=-1{,}4',\quad
+E=9\,m,\quad
+c=-1{,}8'.
+$$
+
+Resolva:
+
+$$
+a_o=a_i+e_i,
 $$
 
 $$
-dp=-1{,}76'\sqrt9=-5{,}28'\approx-5{,}3'
+dp=-1{,}76\sqrt E,
 $$
 
 $$
-a_{ap}=30^\circ05{,}7',\qquad a=30^\circ03{,}9'
+a_{ap}=a_o+dp,
+\qquad
+a=a_{ap}+c.
 $$
 
-### 2. Intercepto
-
-Com $a=38^\circ44{,}2'$, $a_e=38^\circ51{,}9'$ e $Az=224^\circ$, resulta $\Delta a=-7{,}7'$. Marque 7,7 MN no recíproco, $044^\circ$, e trace a LDP perpendicular.
-
-### 3. Ângulo no polo e quadrante
-
-$AHL=304^\circ$ fornece $t_1=360^\circ-304^\circ=56^\circ E$. Para $Aqd=S38^\circ E$, $Az=180^\circ-38^\circ=142^\circ$.
-
-### 4. Hora legal
-
-Com $ET=-04m18s$, $\lambda=030^\circ15'W$ e $P=+2h$:
+Gabarito:
 
 $$
-HML=12h04m18s,\quad \lambda_t=2h01m
+a_o=30^\circ11{,}0',
+\quad
+dp=-5{,}3',
 $$
 
 $$
-HMG=14h05m18s,\qquad Hleg=12h05m18s
+a_{ap}=30^\circ05{,}7',
+\quad
+a=30^\circ03{,}9'.
 $$
 
-## Estação obrigatória com ANB 2026
+Controle:
 
-Para 15/09/2026 e $\lambda=043^\circ10'W$, $P=+3h$:
+$$
+\Sigma c=-8{,}5'.
+$$
 
-1. faça uma correção do Sol registrando limbo e página;
-2. preveja a PM pelos métodos simples e preciso;
-3. compare a diferença entre os métodos;
-4. interpole a declinação na HMG prevista;
-5. use uma altura verdadeira simulada para obter latitude e $Az$.
+Variação: diga qual página usaria se $a_{ap}=08^\circ$ e como T/P anormais alterariam o fluxo.
 
-O gabarito é de processo: cada valor anual deve ficar acompanhado de página, coluna, entrada e interpolação da sua edição 2026.
+## Estação 3 — LDP (12 min)
 
-## Critério de prontidão
+Dados:
 
-Sem consultar o curso, você deve conseguir escrever os quatro fluxos centrais, dizer onde buscar cada dado no ANB, explicar a perpendicularidade da LDP, narrar a figura $PAZ$ e as duas entradas, decidir latitude por desenho e detectar um sinal fisicamente impossível. Separadamente, confira a entrega DHN-0607. Se uma dessas ações falhar, volte ao módulo correspondente e repita apenas o elo defeituoso.
+$$
+a=38^\circ44{,}2',
+\quad
+a_e=38^\circ51{,}9',
+\quad
+Az=224^\circ.
+$$
+
+$$
+\Delta a=-7{,}7'.
+$$
+
+Produto: desenho com posição assumida, eixo $044^\circ/224^\circ$, ponto 7,7 MN em $044^\circ$ e LDP perpendicular.
+
+Controle: $a<a_e\Rightarrow z>z_e$; o observador deve ficar mais longe do GP.
+
+## Estação 4 — Radler teórica (15 min)
+
+<FiguraFonte figura="NAV4-FIG-RAD-002" />
+
+Explique sem roteiro:
+
+$$
+PAZ\xrightarrow{AM\perp PZ}
+\{PAM,ZAM\}.
+$$
+
+Depois escreva:
+
+$$
+(\delta,t_1)\to(a,b),
+$$
+
+$$
+b+\varphi_{aux}\to C
+\quad\text{ou}\quad
+|b-\varphi_{aux}|\to C,
+$$
+
+$$
+(a,C)\to(a_e,Aqd)\to Az.
+$$
+
+Produto: explicação oral de 2 min e três casos de $C$.
+
+## Estação 5 — oficina DHN-0607 (45 min)
+
+Este é apoio ao trabalho de 2,0, separado da simulação escrita.
+
+<FiguraFonte figura="NAV4-FIG-RAD-004" />
+
+Use uma observação fornecida pelo professor e preencha:
+
+1. dados/tempo;
+2. HMG e efemérides 2026;
+3. AHL/$t_1$;
+4. primeira entrada;
+5. $C$;
+6. segunda entrada/Az;
+7. altura observada;
+8. intercepto/plotagem.
+
+Em cada bloco, circule a saída. Se ela falhar, refaça apenas os blocos dependentes.
+
+Controle trigonométrico:
+
+$$
+\sin a_e=
+\sin\varphi_{aux}\sin\delta+
+\cos\varphi_{aux}\cos\delta\cos AHL.
+$$
+
+## Estação 6 — Hleg dupla (15 min)
+
+Dados didáticos:
+
+$$
+ET=-04^m18^s,\quad
+\lambda=030^\circ15'W,\quad
+P=+2^h.
+$$
+
+Gabarito:
+
+$$
+HML=12^h04^m18^s,
+\quad
+\lambda_t=2^h01^m,
+$$
+
+$$
+HMG=14^h05^m18^s,
+\quad
+Hleg=12^h05^m18^s.
+$$
+
+Variação: troque W por E e explique o novo sinal antes de calcular.
+
+## Estação 7 — latitude dupla (15 min)
+
+Dados:
+
+$$
+a=71^\circ08{,}3',
+\quad
+\delta=01^\circ32{,}5'S,
+$$
+
+posição estimada perto de $20^\circ S$ e Sol ao norte.
+
+$$
+z=18^\circ51{,}7',
+\quad
+\varphi=20^\circ24{,}2'S,
+\quad
+Az=000^\circ.
+$$
+
+Resolva por módulos e por:
+
+$$
+\varphi=\delta-z.
+$$
+
+Variação: use $z=18^\circ20'$, $\delta=05^\circ40'N$ e posição estimada S.
+
+## Estação 8 — exercício real com ANB 2026 (30 min)
+
+Escolha uma data de setembro de 2026 e registre:
+
+| Etapa | Fonte/entrada | Saída |
+|---|---|---|
+| correção do Sol | limbo, $a_{ap}$, A2/A3/A4 | $a$ |
+| HML simples | quadro da passagem | HML |
+| HML precisa | ET em torno de $12^h$ | HML |
+| longitude/fuso | $\lambda,P$ | Hleg |
+| declinação | HMG, $\delta_h,d$ | $\delta_{HMG}$ |
+| latitude | $a,z,\delta,Az$ | $\varphi$ |
+
+O gabarito é processual. Nenhum número anual é fornecido pelo site.
+
+## Estação 9 — simulação escrita de 90 min
+
+| Tempo | Ação | Entrega |
+|---:|---|---|
+| 0–5 | varrer e classificar | mapa de dados/fontes |
+| 5–20 | definições/VF | respostas corrigindo as falsas |
+| 20–40 | correção | cadeia + consulta |
+| 40–52 | Radler | figura e duas entradas |
+| 52–68 | Hleg | dois métodos |
+| 68–80 | latitude | desenho + conta |
+| 80–90 | auditoria | sinais, nomes, data, unidades |
+
+Não infira pesos reais desta tabela.
+
+## Estação 10 — auditoria cruzada
+
+Troque a resolução com um colega e revise sem recalcular:
+
+- cada dado tem fonte?
+- cada fórmula tem condição?
+- todo sinal tem justificativa?
+- todo resultado tem unidade/nome?
+- há um controle independente?
+- algum valor antigo foi transplantado?
+
+## Rubrica de 0 a 5 por problema
+
+| Ponto | Evidência |
+|---:|---|
+| 1 | dados/incógnita completos |
+| 1 | fonte e condição corretas |
+| 1 | desenvolvimento matemático |
+| 1 | unidade, nome e interpretação |
+| 1 | controle independente |
+
+## Caderno de erros
+
+Classifique: conceito, fonte, sinal/nome, interpolação, aritmética ou apresentação. Registre o **primeiro elo** errado e uma ação de reparo.
+
+**Critério de prontidão:** 80% no banco; simulação em 90 min; estação ANB rastreada; DHN-0607 conferido separadamente; nenhuma conta aceita sem controle.

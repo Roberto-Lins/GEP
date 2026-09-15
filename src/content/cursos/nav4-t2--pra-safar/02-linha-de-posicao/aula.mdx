@@ -4,86 +4,157 @@ secao: "aula"
 secaoOrdem: 2
 ---
 
-## 1. Posição geográfica e paralelismo dos raios
+> **Produto:** explicar o lugar geométrico, obter os elementos determinativos e construir uma reta de altura sem decorar o sentido do intercepto.
 
-Como os astros estão a distância enorme, os raios recebidos em diferentes pontos da Terra são tratados como paralelos. A direção do astro intercepta a superfície no **GP**, ponto subastral. Sua latitude é a declinação $\delta$; sua longitude é relacionada ao AHG/tG no instante.
+## 1. Do astro à superfície
+
+Os raios de um astro são considerados paralelos na escala terrestre. O ponto em que a vertical do astro encontra a Terra é sua **posição geográfica**, ou GP.
+
+$$
+\varphi_{GP}=\delta.
+$$
+
+A longitude do GP é relacionada ao AHG/$t_G$. Assim, efemérides situam o GP; a observação situa o navio em relação a ele.
 
 ## 2. Circunferência de igual altura
 
-Todos os observadores que medem a mesma altura verdadeira $a$, no mesmo instante, ficam a igual distância angular do GP.
+Para um mesmo instante, todos os observadores que medem a mesma altura verdadeira $a$ ficam à distância zenital:
 
 $$
-z=90^\circ-a
+z=90^\circ-a.
 $$
 
-Logo, $z$ é o raio angular. Na Terra, $1'$ corresponde a 1 MN.
-
-![Geometria da LDP](/imagens/cursos/nav4-t2/figuras/ldp-geometria.svg)
-
-## 3. Da circunferência à reta
-
-Uma carta de Mercator não é o lugar conveniente para traçar uma circunferência enorme. Nas proximidades da posição assumida, substituímos a circunferência osculatriz por sua tangente: a **reta de altura**.
-
-A precisão depende da curvatura. Em alturas muito grandes, $z$ é pequeno e a circunferência curva rapidamente; a apostila reduz a extensão aceitável da tangente perto de $80^\circ$.
-
-## 4. Elementos determinativos
-
-O triângulo de posição contém:
+A distância $z$ é o raio angular da circunferência centrada no GP. Na superfície:
 
 $$
-c=90^\circ-\varphi,\qquad p=90^\circ-\delta,\qquad t_1=AHL\text{ ou }360^\circ-AHL
+1'=1\text{ MN}.
 $$
 
-Sua solução fornece:
+Se $a=50^\circ$, então $z=40^\circ=2400'$, ou 2400 MN de raio. Essa ordem de grandeza explica por que não se traça a circunferência inteira na carta de trabalho.
 
-- altura calculada $a_e$ (ou $z=90^\circ-a_e$);
-- ângulo no zênite, convertido em $Az$.
+<FiguraFonte figura="NAV4-FIG-LDP-001" />
 
-A solução matemática apresentada nas fontes pode ser conferida por:
+## 3. Circunferência, osculatriz e reta
 
-$$
-\sin a_e=\sin\varphi\sin\delta+\cos\varphi\cos\delta\cos AHL
-$$
+A circunferência de igual altura é o lugar geométrico ideal sobre a esfera. Sua representação na carta envolve curvatura. Nas proximidades da posição assumida, usa-se a circunferência osculatriz e substitui-se seu pequeno arco pela tangente: a reta de altura.
 
-$$
-Z=\arccos\left(\frac{\sin\delta-\sin\varphi\sin a_e}{\cos a_e\cos\varphi}\right)
-$$
+Três relações têm de aparecer juntas:
 
-A Radler é outro meio de resolver esses mesmos elementos.
+1. o $Az$ aponta para o GP;
+2. o intercepto é marcado sobre esse eixo;
+3. a LDP é perpendicular ao eixo no ponto marcado.
 
-## 5. Método de intercepto
+## 4. O triângulo de posição fornece $a_e$ e $Az$
 
-A observação corrigida dá $a$. A posição assumida e o almanaque dão $a_e$ e $Az$.
+Na posição assumida, as entradas geométricas são latitude $\varphi$, declinação $\delta$ e ângulo horário local/AHL. A relação fundamental é:
 
 $$
-\Delta a=a-a_e
+\sin a_e=
+\sin\varphi\sin\delta+
+\cos\varphi\cos\delta\cos AHL.
 $$
 
-- positivo: altura observada maior, posição mais perto do GP → marque no sentido de $Az$;
-- negativo: altura observada menor → marque no sentido $Az+180^\circ$.
-
-No ponto final, trace a reta perpendicular a $Az$.
-
-### Exemplo
+Uma forma de obter o ângulo no zênite é:
 
 $$
-a=21^\circ35{,}8',\quad a_e=21^\circ47{,}6'
-$$
-$$
-\Delta a=-11{,}8'
+\cos Z=
+\frac{\sin\delta-\sin\varphi\sin a_e}
+{\cos\varphi\cos a_e}.
 $$
 
-Marque 11,8 MN no sentido oposto ao azimute e trace a perpendicular.
+A calculadora fornece um valor angular; o desenho e as regras de quadrante fornecem o $Az$ verdadeiro. A Tábua Radler resolve os mesmos elementos por método tabular.
 
-## 6. Distinções que aparecem em V/F
+## 5. Observado contra calculado
 
-| Afirmação | Avaliação |
+$$
+\Delta a=a-a_e.
+$$
+
+- $a$: altura verdadeira da observação, após correções;
+- $a_e$: altura calculada para a posição assumida;
+- $\Delta a$: distância do ponto de tangência em relação à posição assumida.
+
+Se $a>a_e$, o astro foi visto mais alto. Logo:
+
+$$
+z_{\text{observado}}<z_{\text{calculado}},
+$$
+
+e o observador está mais perto do GP: marque **em direção** ao astro. Se $a<a_e$, faça o oposto.
+
+## 6. Construção em carta
+
+1. marque a **posição assumida** usada no cálculo;
+2. trace $Az$ verdadeiro a partir dela;
+3. calcule $\Delta a$ em minutos;
+4. converta o módulo diretamente em MN;
+5. marque para o astro se positivo ou no recíproco se negativo;
+6. pelo ponto de intercepto, trace a perpendicular;
+7. escreva astro, HMG e $Az$ junto à reta.
+
+### Exemplo positivo
+
+$$
+a=32^\circ29{,}9',\quad
+a_e=32^\circ09{,}2'
+$$
+
+$$
+\Delta a=+20{,}7'=20{,}7\text{ MN}.
+$$
+
+O ponto é marcado no sentido do $Az$.
+
+### Exemplo negativo
+
+$$
+a=21^\circ35{,}8',\quad
+a_e=21^\circ47{,}6'
+$$
+
+$$
+\Delta a=-11{,}8'.
+$$
+
+O ponto é marcado 11,8 MN no recíproco do $Az$.
+
+### Caso nulo
+
+Se $a=a_e$, $\Delta a=0$: a posição assumida está sobre a LDP, que é traçada perpendicularmente ao $Az$ por esse ponto.
+
+## 7. Validade local
+
+A fonte apresenta limites aproximados para o trecho retilíneo:
+
+| Altura | Extensão de referência para cada lado |
+|---:|---:|
+| cerca de $35^\circ$ | até aproximadamente 100 MN |
+| cerca de $80^\circ$ | até aproximadamente 30 MN |
+
+Quanto maior a altura, menor $z$, menor o raio e maior a curvatura. Não transforme esses valores em lei universal; eles explicitam que a reta é uma aproximação local.
+
+## 8. Distinções examináveis
+
+| Enunciado | Julgamento |
 |---|---|
-| GP é a projeção do astro na superfície | verdadeira |
-| o raio da circunferência é a altura | falsa; é $z$ |
-| a reta é paralela ao azimute | falsa; é perpendicular |
-| $a=a_e$ faz a LDP passar pela posição assumida | verdadeira |
-| observar um astro fornece imediatamente uma posição exata | falsa; fornece uma LDP |
-| na passagem meridiana o ângulo no polo é $90^\circ$ | falsa; no meridiano, é $0^\circ$ na passagem superior |
+| GP é a projeção terrestre do astro | verdadeiro |
+| a latitude do GP é a declinação | verdadeiro |
+| o raio da circunferência é $a$ | falso; é $z$ |
+| a reta substitui localmente a circunferência | verdadeiro |
+| a reta é paralela ao $Az$ | falso |
+| uma LDP determina sozinha a posição | falso |
+| no meridiano superior o ângulo no polo é $90^\circ$ | falso; é $0^\circ$ |
 
-Faça sempre um esboço. A geometria resolve mais pegadinhas que a memória verbal.
+## 9. Erros encadeados
+
+Um erro anterior em $a$ reaparece em $\Delta a$. Um erro em efeméride ou posição assumida altera $a_e$ e $Az$. Um erro de sentido mantém o módulo certo e coloca a reta do lado errado. Identifique a origem:
+
+- cadeia observacional $\to a$;
+- solução do triângulo/Radler $\to a_e,Az$;
+- subtração/plotagem $\to\Delta a$ e LDP.
+
+## 10. Recuperação ativa
+
+Sem olhar, desenhe e rotule: GP, circunferência, $z$, posição assumida, $Az$, intercepto e tangente. Depois resolva um caso positivo, um negativo e um nulo.
+
+**Critério de saída:** definir LDP em três linhas, justificar o sentido pelo comportamento de $z$, citar os limites aproximados da fonte e acertar 80% das questões.

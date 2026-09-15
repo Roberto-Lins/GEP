@@ -6,7 +6,24 @@ export type TipoQuestao = 'multipla' | 'vf' | 'correlacione' | 'discursiva';
 /** Nível de dificuldade — opcional (cursos legados como o GEP não usam). */
 export type Dificuldade = 'facil' | 'medio' | 'dificil';
 
-export interface QuestaoMultipla {
+export interface MetadadosQuestao {
+  /** habilidade observável exigida pela questão */
+  competencia?: string;
+  /** tempo de resolução esperado em minutos */
+  tempoEstimadoMin?: number;
+  /** falha que a questão foi desenhada para diagnosticar */
+  erroProvavel?: string;
+  /** características estruturais da questão, sem copiar avaliação anterior */
+  assinatura?: string[];
+  /** caminho de raciocínio exibido após a resposta */
+  resolucaoPassoAPasso?: string[];
+  /** explicação alinhada às alternativas; aplicável sobretudo à múltipla escolha */
+  explicacaoDistratores?: string[];
+  /** controle por outra relação, representação ou estimativa */
+  verificacaoIndependente?: string;
+}
+
+export interface QuestaoMultipla extends MetadadosQuestao {
   id: string;
   tipo: 'multipla';
   topico: string;
@@ -26,7 +43,7 @@ export interface QuestaoMultipla {
   modalidades?: ModalidadeEstudoId[];
 }
 
-export interface QuestaoVF {
+export interface QuestaoVF extends MetadadosQuestao {
   id: string;
   tipo: 'vf';
   topico: string;
@@ -42,7 +59,7 @@ export interface QuestaoVF {
   modalidades?: ModalidadeEstudoId[];
 }
 
-export interface GrupoCorrelacione {
+export interface GrupoCorrelacione extends MetadadosQuestao {
   id: string;
   tipo: 'correlacione';
   topico: string;
@@ -63,7 +80,7 @@ export interface GrupoCorrelacione {
  * Questão discursiva — o aspirante escreve a resposta, revela o gabarito
  * comentado e se autoavalia (sem correção automática, sem IA, sem backend).
  */
-export interface QuestaoDiscursiva {
+export interface QuestaoDiscursiva extends MetadadosQuestao {
   id: string;
   tipo: 'discursiva';
   topico: string;

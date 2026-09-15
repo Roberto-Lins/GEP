@@ -69,7 +69,10 @@
       "questoes": [
         "NAV4-Q007",
         "NAV4-Q041",
-        "NAV4-Q042"
+        "NAV4-Q042",
+        "NAV4-Q049",
+        "NAV4-Q057",
+        "NAV4-Q059"
       ],
       "vulnerabilidades": [
         "sinal, nome, tabela ou sequência incorreta"
@@ -108,7 +111,8 @@
       "questoes": [
         "NAV4-Q001",
         "NAV4-Q008",
-        "NAV4-Q025"
+        "NAV4-Q025",
+        "NAV4-Q047"
       ],
       "vulnerabilidades": [
         "sinal, nome, tabela ou sequência incorreta"
@@ -189,7 +193,9 @@
       ],
       "questoes": [
         "NAV4-Q003",
-        "NAV4-Q006"
+        "NAV4-Q006",
+        "NAV4-Q047",
+        "NAV4-Q048"
       ],
       "vulnerabilidades": [
         "sinal, nome, tabela ou sequência incorreta"
@@ -229,7 +235,8 @@
       ],
       "questoes": [
         "NAV4-Q004",
-        "NAV4-Q006"
+        "NAV4-Q006",
+        "NAV4-Q049"
       ],
       "vulnerabilidades": [
         "sinal, nome, tabela ou sequência incorreta"
@@ -310,7 +317,8 @@
         "NAV4-FIG-ALT-001"
       ],
       "questoes": [
-        "NAV4-Q007"
+        "NAV4-Q007",
+        "NAV4-Q049"
       ],
       "vulnerabilidades": [
         "sinal, nome, tabela ou sequência incorreta"
@@ -330,25 +338,28 @@
       ],
       "examinavel": false,
       "presenca": {
-        "rapido": false,
-        "pra-safar": false,
+        "rapido": true,
+        "pra-safar": true,
         "completo": true
       },
       "profundidade": {
-        "rapido": null,
-        "pra-safar": null,
+        "rapido": "operacional",
+        "pra-safar": "examinável",
         "completo": "integrado"
       },
       "justificativa": {
-        "rapido": "Excluído do modo rápido por ser expansão não examinável.",
-        "pra-safar": "Excluído por ser aprofundamento não examinável.",
+        "rapido": "Incluído no nível necessário para prever sinais e eliminar pegadinhas.",
+        "pra-safar": "Incluído porque causa, direção e extremos sustentam as decisões examináveis.",
         "completo": "Incluído para domínio integrado sustentado pelas fontes."
       },
       "exemplos": [],
       "figuras": [
         "NAV4-FIG-ALT-001"
       ],
-      "questoes": [],
+      "questoes": [
+        "NAV4-Q048",
+        "NAV4-Q050"
+      ],
       "vulnerabilidades": [
         "sinal, nome, tabela ou sequência incorreta"
       ]
@@ -384,7 +395,8 @@
         "NAV4-FIG-LDP-001"
       ],
       "questoes": [
-        "NAV4-Q014"
+        "NAV4-Q014",
+        "NAV4-Q051"
       ],
       "vulnerabilidades": [
         "sinal, nome, tabela ou sequência incorreta"
@@ -424,7 +436,9 @@
       ],
       "questoes": [
         "NAV4-Q009",
-        "NAV4-Q010"
+        "NAV4-Q010",
+        "NAV4-Q051",
+        "NAV4-Q052"
       ],
       "vulnerabilidades": [
         "sinal, nome, tabela ou sequência incorreta"
@@ -465,7 +479,10 @@
       "questoes": [
         "NAV4-Q009",
         "NAV4-Q012",
-        "NAV4-Q013"
+        "NAV4-Q013",
+        "NAV4-Q051",
+        "NAV4-Q052",
+        "NAV4-Q053"
       ],
       "vulnerabilidades": [
         "sinal, nome, tabela ou sequência incorreta"
@@ -505,7 +522,9 @@
       ],
       "questoes": [
         "NAV4-Q011",
-        "NAV4-Q013"
+        "NAV4-Q013",
+        "NAV4-Q050",
+        "NAV4-Q053"
       ],
       "vulnerabilidades": [
         "sinal, nome, tabela ou sequência incorreta"
@@ -526,17 +545,17 @@
       "examinavel": false,
       "presenca": {
         "rapido": false,
-        "pra-safar": false,
+        "pra-safar": true,
         "completo": true
       },
       "profundidade": {
         "rapido": null,
-        "pra-safar": null,
+        "pra-safar": "examinável",
         "completo": "integrado"
       },
       "justificativa": {
         "rapido": "Excluído do modo rápido por ser expansão não examinável.",
-        "pra-safar": "Excluído por ser aprofundamento não examinável.",
+        "pra-safar": "Incluído como ponte entre o triângulo de posição e a solução tabular.",
         "completo": "Incluído para domínio integrado sustentado pelas fontes."
       },
       "exemplos": [],
@@ -544,7 +563,8 @@
         "NAV4-FIG-LDP-001"
       ],
       "questoes": [
-        "NAV4-Q015"
+        "NAV4-Q015",
+        "NAV4-Q054"
       ],
       "vulnerabilidades": [
         "sinal, nome, tabela ou sequência incorreta"
@@ -941,7 +961,8 @@
       "questoes": [
         "NAV4-Q030",
         "NAV4-Q031",
-        "NAV4-Q033"
+        "NAV4-Q033",
+        "NAV4-Q055"
       ],
       "vulnerabilidades": [
         "sinal, nome, tabela ou sequência incorreta"
@@ -980,7 +1001,8 @@
       "questoes": [
         "NAV4-Q028",
         "NAV4-Q029",
-        "NAV4-Q033"
+        "NAV4-Q033",
+        "NAV4-Q056"
       ],
       "vulnerabilidades": [
         "sinal, nome, tabela ou sequência incorreta"
@@ -1017,10 +1039,52 @@
       "exemplos": [],
       "figuras": [],
       "questoes": [
-        "NAV4-Q032"
+        "NAV4-Q032",
+        "NAV4-Q055",
+        "NAV4-Q057"
       ],
       "vulnerabilidades": [
         "sinal, nome, tabela ou sequência incorreta"
+      ]
+    },
+    {
+      "concept_id": "NAV4-PM-INTERPOLACAO",
+      "assunto": "Interpolação de fenômenos em latitude e longitude",
+      "dependencias": [
+        "NAV4-PM-SIMPLES"
+      ],
+      "fontes_localizadas": [
+        "Tábua I e Tábua II fotografadas, p. XXXII; apostila p. 175–180"
+      ],
+      "evidencia_prioridade": [
+        "Fonte de consulta anexada pelo usuário e procedimento das aulas"
+      ],
+      "examinavel": true,
+      "presenca": {
+        "rapido": false,
+        "pra-safar": true,
+        "completo": true
+      },
+      "profundidade": {
+        "rapido": null,
+        "pra-safar": "examinável",
+        "completo": "integrado"
+      },
+      "justificativa": {
+        "rapido": "A imagem é apresentada para reconhecimento, mas a execução detalhada fica fora da rota nuclear de 5 h.",
+        "pra-safar": "Incluído para aplicar corretamente a tábua recebida e seus sinais.",
+        "completo": "Incluído com leitura das duas entradas, tendência e mudança de data."
+      },
+      "exemplos": [],
+      "figuras": [
+        "NAV4-FIG-PM-001"
+      ],
+      "questoes": [
+        "NAV4-Q058"
+      ],
+      "vulnerabilidades": [
+        "interpolar linearmente sem usar a tábua",
+        "aplicar sinal sem comparar E/W e datas"
       ]
     },
     {
@@ -1094,7 +1158,8 @@
       ],
       "questoes": [
         "NAV4-Q035",
-        "NAV4-Q041"
+        "NAV4-Q041",
+        "NAV4-Q062"
       ],
       "vulnerabilidades": [
         "sinal, nome, tabela ou sequência incorreta"
@@ -1133,7 +1198,8 @@
         "NAV4-FIG-LAT-001"
       ],
       "questoes": [
-        "NAV4-Q041"
+        "NAV4-Q041",
+        "NAV4-Q059"
       ],
       "vulnerabilidades": [
         "sinal, nome, tabela ou sequência incorreta"
@@ -1176,7 +1242,8 @@
         "NAV4-Q036",
         "NAV4-Q037",
         "NAV4-Q038",
-        "NAV4-Q041"
+        "NAV4-Q041",
+        "NAV4-Q060"
       ],
       "vulnerabilidades": [
         "sinal, nome, tabela ou sequência incorreta"
@@ -1217,7 +1284,8 @@
       "questoes": [
         "NAV4-Q038",
         "NAV4-Q039",
-        "NAV4-Q041"
+        "NAV4-Q041",
+        "NAV4-Q060"
       ],
       "vulnerabilidades": [
         "sinal, nome, tabela ou sequência incorreta"
@@ -1257,7 +1325,8 @@
       ],
       "questoes": [
         "NAV4-Q034",
-        "NAV4-Q040"
+        "NAV4-Q040",
+        "NAV4-Q061"
       ],
       "vulnerabilidades": [
         "sinal, nome, tabela ou sequência incorreta"
@@ -1291,7 +1360,14 @@
       },
       "exemplos": [],
       "figuras": [],
-      "questoes": [],
+      "questoes": [
+        "NAV4-Q063",
+        "NAV4-Q064",
+        "NAV4-Q065",
+        "NAV4-Q066",
+        "NAV4-Q067",
+        "NAV4-Q068"
+      ],
       "vulnerabilidades": [
         "sinal, nome, tabela ou sequência incorreta"
       ]

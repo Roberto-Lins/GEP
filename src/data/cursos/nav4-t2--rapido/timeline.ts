@@ -24,7 +24,7 @@ export const timeline: TopicoTimeline[] = [
     "titulo": "Correções de altura dos astros",
     "subtitulo": "Estrela, planeta, Sol e Lua: de ai até a",
     "prioridade": "máxima",
-    "tempoEstimado": "55 min",
+    "tempoEstimado": "60 min",
     "statusInicial": "pendente",
     "objetivo": "Transformar altura instrumental em verdadeira, localizar cada correção no ANB e controlar rigorosamente sinais e limbos.",
     "palavrasChave": [
@@ -58,7 +58,7 @@ export const timeline: TopicoTimeline[] = [
     "titulo": "UE 10.0 — conceitos da Tábua Radler",
     "subtitulo": "Triângulo PAZ, auxiliares e duas entradas até 13:00",
     "prioridade": "máxima",
-    "tempoEstimado": "55 min",
+    "tempoEstimado": "60 min",
     "statusInicial": "pendente",
     "objetivo": "Explicar a construção da Radler e reconhecer como ela produz ae, Aqd, Az e a−ae.",
     "palavrasChave": [
@@ -124,7 +124,7 @@ export const timeline: TopicoTimeline[] = [
     "titulo": "Revisão final",
     "subtitulo": "Cartão de sinais, fluxos e diagnóstico de prontidão",
     "prioridade": "máxima",
-    "tempoEstimado": "25 min",
+    "tempoEstimado": "30 min",
     "statusInicial": "pendente",
     "objetivo": "Recuperar de memória os procedimentos, eliminar erros críticos e entrar na prova com ordem de execução definida.",
     "palavrasChave": [
