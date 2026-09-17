@@ -14,6 +14,8 @@ interface Props {
   registrar?: boolean;
   /** mostra abas de filtro por tipo */
   filtros?: boolean;
+  /** permite revelar o gabarito sem registrar uma tentativa */
+  permitirVerResposta?: boolean;
   titulo?: string;
 }
 
@@ -35,7 +37,7 @@ const ROTULO_DIF: Record<FiltroDif, string> = {
   dificil: 'Difícil',
 };
 
-export default function BancoQuestoes({ questoes, curso = 'gep', registrar = true, filtros = false, titulo }: Props) {
+export default function BancoQuestoes({ questoes, curso = 'gep', registrar = true, filtros = false, permitirVerResposta = false, titulo }: Props) {
   const [filtro, setFiltro] = useState<Filtro>('todos');
   const [dif, setDif] = useState<FiltroDif>('todas');
   const [resultados, setResultados] = useState<Record<string, boolean>>({});
@@ -129,12 +131,12 @@ export default function BancoQuestoes({ questoes, curso = 'gep', registrar = tru
       <div className="space-y-4">
         {visiveis.map((q, i) => {
           if (q.tipo === 'multipla')
-            return <QuestaoMultiplaEscolha key={q.id} questao={q} indice={i + 1} onResponder={(a) => aoResponder(q, a)} />;
+            return <QuestaoMultiplaEscolha key={q.id} questao={q} indice={i + 1} permitirVerResposta={permitirVerResposta} onResponder={(a) => aoResponder(q, a)} />;
           if (q.tipo === 'vf')
-            return <QuestaoVF key={q.id} questao={q} indice={i + 1} onResponder={(a) => aoResponder(q, a)} />;
+            return <QuestaoVF key={q.id} questao={q} indice={i + 1} permitirVerResposta={permitirVerResposta} onResponder={(a) => aoResponder(q, a)} />;
           if (q.tipo === 'discursiva')
-            return <QuestaoDiscursiva key={q.id} questao={q} indice={i + 1} onResponder={(a) => aoResponder(q, a)} />;
-          return <QuestaoCorrelacione key={q.id} questao={q} indice={i + 1} onResponder={(a) => aoResponder(q, a)} />;
+            return <QuestaoDiscursiva key={q.id} questao={q} indice={i + 1} permitirVerResposta={permitirVerResposta} onResponder={(a) => aoResponder(q, a)} />;
+          return <QuestaoCorrelacione key={q.id} questao={q} indice={i + 1} permitirVerResposta={permitirVerResposta} onResponder={(a) => aoResponder(q, a)} />;
         })}
       </div>
 

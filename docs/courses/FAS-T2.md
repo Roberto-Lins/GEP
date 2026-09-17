@@ -20,6 +20,10 @@ Curso do **4º ano, 2º semestre, T2**, compartilhado pelas seis turmas CA/FN e 
 
 Os simulados A, B e C têm 13 questões agrupadas, 80 itens e 10,0 pontos cada. A interface mostra as duas contagens para não confundir grupo de questão com subitem avaliativo.
 
+## Aprendizagem pelo gabarito
+
+`features.verRespostaAntes` habilita a ação **Ver a resposta** em questões objetivas, V/F, correlações e discursivas dos módulos, banco geral, revisão final e simulados. A revelação antecipada é apenas didática: não registra tentativa, acerto, erro ou progresso, e o fluxo normal de resposta permanece inalterado.
+
 ## Rastreabilidade
 
 Os artefatos de autoria preservados em `src/data/cursos/fas-t2/` incluem inventário de fontes, escopo, matriz de cobertura, banco canônico, metadados de módulo e estado do curso. O conteúdo foi publicado no estado autorizado pelo usuário, incluindo as pendências acadêmicas já declaradas no arquivo `estado-do-curso.json`.

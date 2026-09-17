@@ -8,9 +8,10 @@ interface Props {
   questoes: Questao[];
   topicos: TopicoOpt[];
   curso?: string;
+  permitirVerResposta?: boolean;
 }
 
-export default function CentralQuestoes({ questoes, topicos, curso = 'gep' }: Props) {
+export default function CentralQuestoes({ questoes, topicos, curso = 'gep', permitirVerResposta = false }: Props) {
   const [selecionados, setSelecionados] = useState<string[]>([]);
 
   function toggle(slug: string) {
@@ -53,7 +54,7 @@ export default function CentralQuestoes({ questoes, topicos, curso = 'gep' }: Pr
       </div>
 
       <p className="mb-4 text-sm text-nevoa/60">{filtradas.length} questões selecionadas.</p>
-      <BancoQuestoes questoes={filtradas} curso={curso} filtros={true} registrar={true} key={selecionados.join(',')} />
+      <BancoQuestoes questoes={filtradas} curso={curso} filtros={true} registrar={true} permitirVerResposta={permitirVerResposta} key={selecionados.join(',')} />
     </div>
   );
 }

@@ -2,22 +2,31 @@ import { useState } from 'react';
 import type { QuestaoVF as TQuestaoVF } from '@tipos/question';
 import Markdown from './Markdown';
 import DetalhamentoResposta from './DetalhamentoResposta';
+import BotaoVerResposta from './BotaoVerResposta';
 
 interface Props {
   questao: TQuestaoVF;
   indice?: number;
   onResponder?: (acertou: boolean) => void;
+  permitirVerResposta?: boolean;
 }
 
-export default function QuestaoVF({ questao, indice, onResponder }: Props) {
+export default function QuestaoVF({ questao, indice, onResponder, permitirVerResposta = false }: Props) {
   const [escolha, setEscolha] = useState<boolean | null>(null);
   const [revelado, setRevelado] = useState(false);
+  const [reveladoParaEstudo, setReveladoParaEstudo] = useState(false);
 
   function responder(valor: boolean) {
     if (revelado) return;
     setEscolha(valor);
     setRevelado(true);
     onResponder?.(valor === questao.correta);
+  }
+
+  function verResposta() {
+    if (revelado) return;
+    setReveladoParaEstudo(true);
+    setRevelado(true);
   }
 
   const acertou = escolha === questao.correta;
@@ -33,6 +42,12 @@ export default function QuestaoVF({ questao, indice, onResponder }: Props) {
         <a href={questao.imagem} target="_blank" rel="noopener noreferrer" className="mb-4 block w-full max-w-2xl" title="Abrir o circuito em tela cheia">
           <img src={questao.imagem} alt="Circuito do enunciado" loading="lazy" className="block w-full rounded-lg ring-1 ring-white/10 transition hover:ring-dourado/40" />
         </a>
+      )}
+
+      {permitirVerResposta && !revelado && (
+        <div className="mb-3 flex justify-end">
+          <BotaoVerResposta onClick={verResposta} indice={indice} />
+        </div>
       )}
 
       <div className="flex gap-3">
@@ -61,9 +76,16 @@ export default function QuestaoVF({ questao, indice, onResponder }: Props) {
 
       {revelado && (
         <div className="mt-4 rounded-xl border border-white/10 bg-naval-800/60 p-4">
-          <p className={`mb-1 text-sm font-semibold ${acertou ? 'text-progresso' : 'text-alerta'}`}>
-            {acertou ? '✓ Você acertou' : `✗ O correto é: ${questao.correta ? 'Verdadeiro' : 'Falso'}`}
-          </p>
+          {reveladoParaEstudo ? (
+            <>
+              <p className="mb-1 text-sm font-semibold text-dourado-soft">Resposta correta: {questao.correta ? 'Verdadeiro' : 'Falso'}</p>
+              <p className="mb-2 text-xs text-nevoa/60">Gabarito revelado para estudo — não contabilizado no placar nem no progresso.</p>
+            </>
+          ) : (
+            <p className={`mb-1 text-sm font-semibold ${acertou ? 'text-progresso' : 'text-alerta'}`}>
+              {acertou ? '✓ Você acertou' : `✗ O correto é: ${questao.correta ? 'Verdadeiro' : 'Falso'}`}
+            </p>
+          )}
           <Markdown className="text-sm text-nevoa/85">{questao.comentario}</Markdown>
           <DetalhamentoResposta {...questao} />
         </div>

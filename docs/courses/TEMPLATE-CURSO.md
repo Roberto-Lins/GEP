@@ -30,7 +30,8 @@ Cada variante filtra por `concept_id` e escopo ensinado, nunca por redução de 
 ```jsonc
 { "timeline": true, "simulados": true, "mapasMentais": false, "podcasts": false,
   "animacoesHero": false, "animacoesTransicao": false,
-  "modoRevisaoVespera": false, "graficoProgressoAvancado": false }
+  "modoRevisaoVespera": false, "graficoProgressoAvancado": false,
+  "verRespostaAntes": false }
 ```
 
 ## Mídia

@@ -2,12 +2,14 @@ import { useEffect, useState } from 'react';
 import type { QuestaoDiscursiva } from '@tipos/question';
 import Markdown from './Markdown';
 import DetalhamentoResposta from './DetalhamentoResposta';
+import BotaoVerResposta from './BotaoVerResposta';
 
 interface Props {
   questao: QuestaoDiscursiva;
   indice?: number;
   /** chamado na autoavaliação: true = acertei, false = errei (revisar não registra) */
   onResponder?: (acertou: boolean) => void;
+  permitirVerResposta?: boolean;
 }
 
 type Auto = 'acertei' | 'errei' | 'revisar' | null;
@@ -16,7 +18,7 @@ type Auto = 'acertei' | 'errei' | 'revisar' | null;
 // sem tocar no schema principal de progresso (bussola:v1).
 const chaveRascunho = (id: string) => `bussola:discursiva:${id}`;
 
-export default function QuestaoDiscursiva({ questao, indice, onResponder }: Props) {
+export default function QuestaoDiscursiva({ questao, indice, onResponder, permitirVerResposta = false }: Props) {
   const [resposta, setResposta] = useState('');
   const [revelado, setRevelado] = useState(false);
   const [auto, setAuto] = useState<Auto>(null);
@@ -91,17 +93,26 @@ export default function QuestaoDiscursiva({ questao, indice, onResponder }: Prop
       />
 
       {!revelado ? (
-        <button
-          type="button"
-          onClick={() => setRevelado(true)}
-          className="btn-primary mt-3"
-        >
-          Ver gabarito comentado
-        </button>
+        permitirVerResposta ? (
+          <div className="mt-3 flex justify-end">
+            <BotaoVerResposta onClick={() => setRevelado(true)} indice={indice} />
+          </div>
+        ) : (
+          <button
+            type="button"
+            onClick={() => setRevelado(true)}
+            className="btn-primary mt-3"
+          >
+            Ver gabarito comentado
+          </button>
+        )
       ) : (
         <div className="mt-4 space-y-4">
           <div className="rounded-xl border border-white/10 bg-naval-800/60 p-4">
             <p className="mb-1 text-xs uppercase tracking-wider text-dourado/70">Gabarito comentado</p>
+            {permitirVerResposta && (
+              <p className="mb-2 text-xs text-nevoa/60">Revelar o gabarito não altera o placar nem o progresso. A autoavaliação abaixo continua opcional.</p>
+            )}
             <Markdown className="text-sm text-nevoa/90">{questao.gabaritoComentado}</Markdown>
             {questao.comentario && <Markdown className="mt-3 text-sm text-nevoa/75">{questao.comentario}</Markdown>}
           </div>

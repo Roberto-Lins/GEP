@@ -2,17 +2,20 @@ import { useState } from 'react';
 import type { GrupoCorrelacione } from '@tipos/question';
 import Markdown from './Markdown';
 import DetalhamentoResposta from './DetalhamentoResposta';
+import BotaoVerResposta from './BotaoVerResposta';
 
 interface Props {
   questao: GrupoCorrelacione;
   indice?: number;
   onResponder?: (acertou: boolean) => void;
+  permitirVerResposta?: boolean;
 }
 
 // Correlacione: para cada item da esquerda o aluno escolhe uma das chaves.
-export default function QuestaoCorrelacione({ questao, indice, onResponder }: Props) {
+export default function QuestaoCorrelacione({ questao, indice, onResponder, permitirVerResposta = false }: Props) {
   const [respostas, setRespostas] = useState<Record<number, string>>({});
   const [revelado, setRevelado] = useState(false);
+  const [reveladoParaEstudo, setReveladoParaEstudo] = useState(false);
 
   const completo = questao.itens.every((_, i) => respostas[i]);
 
@@ -21,6 +24,12 @@ export default function QuestaoCorrelacione({ questao, indice, onResponder }: Pr
     setRevelado(true);
     const acertouTudo = questao.itens.every((it, i) => respostas[i] === it.chave);
     onResponder?.(acertouTudo);
+  }
+
+  function verResposta() {
+    if (revelado) return;
+    setReveladoParaEstudo(true);
+    setRevelado(true);
   }
 
   return (
@@ -44,6 +53,12 @@ export default function QuestaoCorrelacione({ questao, indice, onResponder }: Pr
         ))}
       </div>
 
+      {permitirVerResposta && !revelado && (
+        <div className="mb-3 flex justify-end">
+          <BotaoVerResposta onClick={verResposta} indice={indice} />
+        </div>
+      )}
+
       <ul className="space-y-2">
         {questao.itens.map((item, i) => {
           const escolha = respostas[i];
@@ -52,13 +67,20 @@ export default function QuestaoCorrelacione({ questao, indice, onResponder }: Pr
             <li
               key={i}
               className={`flex flex-wrap items-center justify-between gap-2 rounded-xl border px-3 py-2 ${
-                revelado ? (certo ? 'border-progresso/50 bg-progresso/5' : 'border-alerta/50 bg-alerta/5') : 'border-white/10'
+                revelado
+                  ? reveladoParaEstudo
+                    ? 'border-progresso/30 bg-progresso/5'
+                    : certo
+                      ? 'border-progresso/50 bg-progresso/5'
+                      : 'border-alerta/50 bg-alerta/5'
+                  : 'border-white/10'
               }`}
             >
               <span className="flex-1 text-sm text-nevoa">{item.texto}</span>
               <div className="flex max-w-full flex-wrap items-center gap-1.5">
                 {questao.chaves.map((c) => {
                   const sel = escolha === c.chave;
+                  const ehCorreta = item.chave === c.chave;
                   return (
                     <button
                       key={c.chave}
@@ -66,7 +88,13 @@ export default function QuestaoCorrelacione({ questao, indice, onResponder }: Pr
                       disabled={revelado}
                       onClick={() => setRespostas((p) => ({ ...p, [i]: c.chave }))}
                       className={`h-7 w-9 rounded-md border font-mono text-xs transition ${
-                        sel ? 'border-dourado bg-dourado/20 text-dourado' : 'border-white/15 text-nevoa/60 hover:border-dourado/40'
+                        reveladoParaEstudo && ehCorreta
+                          ? 'border-progresso bg-progresso/15 text-progresso'
+                          : reveladoParaEstudo
+                            ? 'border-white/5 text-nevoa/30'
+                            : sel
+                              ? 'border-dourado bg-dourado/20 text-dourado'
+                              : 'border-white/15 text-nevoa/60 hover:border-dourado/40'
                       }`}
                     >
                       {c.chave}
@@ -74,8 +102,8 @@ export default function QuestaoCorrelacione({ questao, indice, onResponder }: Pr
                   );
                 })}
               </div>
-              {revelado && !certo && (
-                <span className="w-full text-right text-xs text-progresso">Correto: {item.chave}</span>
+              {revelado && (reveladoParaEstudo || !certo) && (
+                <span className="w-full text-right text-xs text-progresso">{reveladoParaEstudo ? 'Resposta' : 'Correto'}: {item.chave}</span>
               )}
             </li>
           );
@@ -95,9 +123,16 @@ export default function QuestaoCorrelacione({ questao, indice, onResponder }: Pr
         </button>
       ) : (
         <div className="mt-4 space-y-3">
-          <p className={`text-sm font-semibold ${questao.itens.every((it, i) => respostas[i] === it.chave) ? 'text-progresso' : 'text-alerta'}`}>
-            {questao.itens.every((it, i) => respostas[i] === it.chave) ? '✓ Correlações corretas!' : '✗ Confira as correções acima.'}
-          </p>
+          {reveladoParaEstudo ? (
+            <div>
+              <p className="text-sm font-semibold text-dourado-soft">Respostas reveladas para estudo.</p>
+              <p className="mt-1 text-xs text-nevoa/60">Esta visualização não foi contabilizada no placar nem no progresso.</p>
+            </div>
+          ) : (
+            <p className={`text-sm font-semibold ${questao.itens.every((it, i) => respostas[i] === it.chave) ? 'text-progresso' : 'text-alerta'}`}>
+              {questao.itens.every((it, i) => respostas[i] === it.chave) ? '✓ Correlações corretas!' : '✗ Confira as correções acima.'}
+            </p>
+          )}
           {questao.comentario && (
             <div className="rounded-xl border border-white/10 bg-naval-800/60 p-4">
               <p className="mb-1 text-xs uppercase tracking-wider text-dourado/70">Comentário</p>

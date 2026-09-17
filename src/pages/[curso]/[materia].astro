@@ -150,7 +150,7 @@ const sumario = [
     <section id="exercicios" class="scroll-mt-24 mt-12">
       <h2 class="mb-1 flex items-center gap-2 text-2xl font-bold"><span class="text-dourado">▸</span> Exercícios</h2>
       <p class="mb-5 text-sm text-nevoa/60">Responda e veja o gabarito comentado na hora. Seus acertos contam no seu progresso.</p>
-      <BancoQuestoes questoes={questoes} curso={curso} filtros={true} client:visible />
+      <BancoQuestoes questoes={questoes} curso={curso} filtros={true} permitirVerResposta={config.features.verRespostaAntes} client:visible />
     </section>
   )}
 

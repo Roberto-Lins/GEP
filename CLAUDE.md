@@ -165,7 +165,8 @@ A plataforma descobre os cursos lendo todos os `_config.json` (via `listarCursos
   "animacoesTransicao": false,  // transições entre mini-matérias
   "modoRevisaoVespera": true,
   "graficoProgressoAvancado": false,
-  "writing": false              // aba Writing + ferramenta de escrita (ING-4). Default false.
+  "writing": false,             // aba Writing + ferramenta de escrita (ING-4). Default false.
+  "verRespostaAntes": false     // revela o gabarito sem registrar tentativa. Default false.
 }
 ```
 
@@ -336,6 +337,8 @@ próprias sem alterar o GEP.
   variações em vez do simulado-relâmpago) e `midiasGerais` (áudio + vídeo reaproveitados na revisão
   final). Vídeo geral no YouTube (`EAZy7ZrJuDU`), URL centralizada em `midias.ts`; `PlayerVideo` ganhou
   link "Abrir no YouTube". Figuras técnicas **extraídas dos slides** (sem SVG), em `public/imagens/cursos/fas/`.
+- `features.verRespostaAntes` permite estudar pelo gabarito em todos os tipos de questão sem lançar
+  tentativa, acerto, erro ou progresso; o fluxo normal de resposta permanece disponível.
 
 **FAS-T2 — Fundamentos de Automação / T2** (`ano 4 · sem 2 · T2 · turmas CA-HM/HE/HS + FN-HM/HE/HS`):
 - Curso único no slug `fas-t2`, conforme o pacote de autoria fornecido; o legado `fas` (P1) permanece
@@ -344,6 +347,8 @@ próprias sem alterar o GEP.
   estudo e 39 grupos nos simulados.
 - Três simulados próprios, com 13 grupos, 80 itens e 10,0 pontos cada; `features.simulados` está
   ativada e a página informa simultaneamente a quantidade de itens e de questões agrupadas.
+- `features.verRespostaAntes` está ativada em módulos, banco, revisão e simulados; revelar uma
+  resposta para estudo não altera placar nem progresso.
 - Rastreabilidade e limitações declaradas ficam em `src/data/cursos/fas-t2/`; detalhes em
   `docs/courses/FAS-T2.md`.
 

@@ -41,6 +41,8 @@ export interface CursoFeatures {
   writing?: boolean;
   /** PDF impresso de revisão; só aparece quando ativado explicitamente no curso. */
   cadernoRevisao?: boolean;
+  /** permite revelar o gabarito antes de responder, sem registrar tentativa */
+  verRespostaAntes?: boolean;
 }
 
 export interface CursoDownload {

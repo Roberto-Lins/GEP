@@ -23,7 +23,8 @@
     "modoRevisaoVespera": true,
     "graficoProgressoAvancado": false,
     "writing": false,
-    "cadernoRevisao": false
+    "cadernoRevisao": false,
+    "verRespostaAntes": true
   },
   "componentesExtras": []
 }
