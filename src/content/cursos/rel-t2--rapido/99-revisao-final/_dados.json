@@ -1,0 +1,27 @@
+{
+  "ordem": 99,
+  "slug": "99-revisao-final",
+  "titulo": "Revisão final",
+  "prioridade": "máxima",
+  "subtitulo": "Matriz comparativa Brasil–EUA–China–Rússia, erros frequentes e véspera",
+  "tempoEstimado": "8 min",
+  "objetivo": "Comparar os quatro atores em objetivos, geografia, vulnerabilidades, mar, alianças, instituições e lógica teórica, declarando os limites da comparação, e executar o protocolo de véspera.",
+  "palavrasChave": [
+    "matriz comparativa",
+    "limites da comparação",
+    "erros frequentes",
+    "véspera",
+    "protocolo de prova"
+  ],
+  "conceptIds": [
+    "REL-T2-M99-C001",
+    "REL-T2-M99-C002",
+    "REL-T2-M99-C003",
+    "REL-T2-M99-C004",
+    "REL-T2-M99-C005",
+    "REL-T2-M99-C006",
+    "REL-T2-M99-C007",
+    "REL-T2-M99-C008"
+  ],
+  "modalidade": "rapido"
+}

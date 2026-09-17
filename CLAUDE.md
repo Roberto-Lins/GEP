@@ -8,7 +8,7 @@ Plataforma **multi-curso** 100% estática, estilo "campus de estudos". O aluno e
 dentro dele, segue uma **trilha sequencial** (timeline) de mini-matérias que dá sensação de
 progressão contínua.
 
-Hoje existem **12 cursos/famílias reais** (16 slugs concretos), todos com o tema visual *naval-command*:
+Hoje existem **13 cursos/famílias reais** (19 slugs concretos), todos com o tema visual *naval-command*:
 - **GEP** (Gestão Pública — P1): `ano 4 · semestre 1 · época P1 · turma geral`.
 - **HNV** (História Naval): `ano 4 · semestre 1 · época P1 · turma geral`.
 - **DET** (Detecção — PP1): `ano 4 · semestre 1 · época P1 · turma CA-HE`.
@@ -21,6 +21,7 @@ Hoje existem **12 cursos/famílias reais** (16 slugs concretos), todos com o tem
 - **REL** (Relações Internacionais — P1): `ano 4 · semestre 1 · época P1 · turma geral`.
 - **NAV4-T2** (Navegação 4 — T2, família multimodal `nav4-t2`): `ano 4 · semestre 2 · época T2 · turma geral`.
 - **DIR-T2** (Direito — T2, família multimodal `dir-t2`): `ano 4 · semestre 2 · época T2 · turma geral`.
+- **REL-T2** (Relações Internacionais — T2, família multimodal `rel-t2`): `ano 4 · semestre 2 · época T2 · turma geral`.
 
 `turma: "geral"` = matéria comum a todas as turmas do ano (mas, na navegação, aparece **só** em
 GERAL, não dentro das turmas especializadas). Outros cursos citados nesta documentação (ex.:
@@ -96,7 +97,7 @@ public/imagens/plataforma/anos/<ano>.webp    # mascote do card de ano no dashboa
 public/{mapas-mentais,arquivos}/cursos/<slug>/...
 templates/curso/                       # esqueleto copiado ao criar um curso
 scripts/{create-course,validate-content,audit-media,migrate-gep}.ts
-docs/{PLATFORM,MEDIA-PROTOCOL,PROGRESS-BACKUP}.md  +  docs/courses/{GEP,TEMPLATE-CURSO}.md
+docs/{PLATFORM,MEDIA-PROTOCOL,PROGRESS-BACKUP}.md  +  docs/courses/{GEP,REL-T2,TEMPLATE-CURSO}.md
 backups/{gep-original,progresso-exportado,fontes-originais,versoes-antigas}/
 ```
 
@@ -357,6 +358,14 @@ próprias sem alterar o GEP.
 - 12 módulos (`00`–`11`) + `99-revisao-final` em cada modalidade; 64 `concept_id` em `src/data/cursos/_familias/dir-t2/`.
 - Banco canônico gerado (`questoes.ts`) com IDs `DIR-T2-Mxx-TIPO-Nn-NNN` e três simulados próprios (`SG01`–`SG03`) exportados como `simuladosCanonicos`.
 - MDX é editado diretamente em `src/content/cursos/dir-t2--*`. Questões, matriz, `_dados.json`, `_config.json` e bundles são **gerados** por `python3 scripts/autoria/dir-t2/build.py --gerar` a partir de `scripts/autoria/dir-t2/{conceitos.py,questoes/}` — não edite `questoes.ts` à mão. Registro de lacunas e conflitos em `registro-lacunas-conflitos.json`. Detalhes: `docs/courses/DIR-T2.md`.
+
+**REL-T2 — Relações Internacionais / T2** (família `rel-t2`: `rel-t2--rapido`, `rel-t2--pra-safar`, `rel-t2--completo`; `ano 4 · sem 2 · T2 · turma geral`):
+- Recorte: **aulas internas 13 a 18**, com término em **Rússia**. A **Europa está integralmente fora** do escopo. O legado `rel` (P1) não foi alterado.
+- 7 módulos (`00`–`06`) + `99-revisao-final` em cada modalidade; **126 `concept_id`** em `src/data/cursos/_familias/rel-t2/`.
+- Nome de arquivo deslocado do título interno do deck: `AULA 12.pdf` contém as aulas 13 **e** 14; `AULA 17.pdf` é a aula 18. O curso segue sempre o **título interno**.
+- Banco canônico gerado (`questoes.ts`) com IDs `REL-T2-Mxx-TIPO-Nn-NNN` e **um simulado próprio** (`SG01`, 12 objetivas + 6 discursivas, 180 min, 10,0 pontos) exportado como `simuladosCanonicos` — o mesmo instrumento nas três modalidades.
+- MDX é editado diretamente em `src/content/cursos/rel-t2--*`. Questões, matriz, `_dados.json`, `_config.json` e bundles são **gerados** por `python3 scripts/autoria/rel-t2/build.py --gerar` — não edite `questoes.ts` à mão.
+- Incerteza declarada: **não existe prova escrita de T2 no corpus**; o único documento de T2 é um **trabalho em grupo** (2025). O curso prepara para os dois formatos. Detalhes: `docs/courses/REL-T2.md`.
 
 Mídia atual ainda em `public/.../cursos/<slug>/` (a externalizar no futuro).
 

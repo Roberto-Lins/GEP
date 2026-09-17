@@ -1,0 +1,38 @@
+{
+  "ordem": 0,
+  "slug": "00-metodo-e-matriz-de-cenarios",
+  "titulo": "Método: matriz de cenários, lentes teóricas e discursiva",
+  "prioridade": "máxima",
+  "subtitulo": "Escopo, hierarquia das fontes, dez passos de análise e seis movimentos de resposta",
+  "tempoEstimado": "20 min",
+  "objetivo": "Delimitar o escopo da T2 e aplicar a matriz de dez passos, as três lentes teóricas e os seis movimentos da resposta discursiva a um cenário inédito.",
+  "palavrasChave": [
+    "escopo",
+    "matriz de cenários",
+    "imperativo estratégico",
+    "realismo",
+    "liberalismo",
+    "construtivismo",
+    "caso ambíguo",
+    "discursiva"
+  ],
+  "conceptIds": [
+    "REL-T2-M00-C001",
+    "REL-T2-M00-C002",
+    "REL-T2-M00-C003",
+    "REL-T2-M00-C004",
+    "REL-T2-M00-C005",
+    "REL-T2-M00-C006",
+    "REL-T2-M00-C007",
+    "REL-T2-M00-C008",
+    "REL-T2-M00-C009",
+    "REL-T2-M00-C010",
+    "REL-T2-M00-C011",
+    "REL-T2-M00-C012",
+    "REL-T2-M00-C013",
+    "REL-T2-M00-C014",
+    "REL-T2-M00-C015",
+    "REL-T2-M00-C016"
+  ],
+  "modalidade": "pra-safar"
+}

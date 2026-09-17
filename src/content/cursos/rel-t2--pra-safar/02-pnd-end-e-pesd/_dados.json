@@ -1,0 +1,37 @@
+{
+  "ordem": 2,
+  "slug": "02-pnd-end-e-pesd",
+  "titulo": "PND, END e PESD",
+  "prioridade": "máxima",
+  "subtitulo": "Grande Estratégia, objetivos, capacidades, Poder Naval e AJB",
+  "tempoEstimado": "30 min",
+  "objetivo": "Percorrer a cadeia objetivo → estratégia → capacidade → ação nos dois sentidos, usando os objetivos da PND, as capacidades da END, as tarefas básicas do Poder Naval e a definição de AJB.",
+  "palavrasChave": [
+    "Grande Estratégia",
+    "PND",
+    "END",
+    "PESD",
+    "capacidades nacionais de defesa",
+    "tarefas básicas do Poder Naval",
+    "AJB",
+    "setores estratégicos",
+    "ZOPACAS"
+  ],
+  "conceptIds": [
+    "REL-T2-M02-C001",
+    "REL-T2-M02-C002",
+    "REL-T2-M02-C003",
+    "REL-T2-M02-C004",
+    "REL-T2-M02-C005",
+    "REL-T2-M02-C006",
+    "REL-T2-M02-C007",
+    "REL-T2-M02-C008",
+    "REL-T2-M02-C009",
+    "REL-T2-M02-C010",
+    "REL-T2-M02-C011",
+    "REL-T2-M02-C012",
+    "REL-T2-M02-C013",
+    "REL-T2-M02-C014"
+  ],
+  "modalidade": "pra-safar"
+}

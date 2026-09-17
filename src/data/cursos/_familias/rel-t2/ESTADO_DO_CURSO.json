@@ -1,0 +1,213 @@
+{
+  "schema_version": "1.0.0",
+  "familia_id": "rel-t2",
+  "materia": "Relações Internacionais — T2",
+  "escopo": "aulas internas 13 a 18, com término em Rússia; Europa excluída",
+  "arquitetura": "familia_multimodal_contrato_1.0.0",
+  "gerado_por": "scripts/autoria/rel-t2/build.py",
+  "modulos": [
+    {
+      "slug": "00-metodo-e-matriz-de-cenarios",
+      "ordem": 0,
+      "aula_interna": "13 a 18 (transversal)",
+      "tempos": {
+        "rapido": 8,
+        "pra-safar": 20,
+        "completo": 32
+      }
+    },
+    {
+      "slug": "01-politica-externa-brasileira",
+      "ordem": 1,
+      "aula_interna": "13",
+      "tempos": {
+        "rapido": 12,
+        "pra-safar": 45,
+        "completo": 70
+      }
+    },
+    {
+      "slug": "02-pnd-end-e-pesd",
+      "ordem": 2,
+      "aula_interna": "14",
+      "tempos": {
+        "rapido": 10,
+        "pra-safar": 30,
+        "completo": 48
+      }
+    },
+    {
+      "slug": "03-politica-maritima-naval-e-economia-azul",
+      "ordem": 3,
+      "aula_interna": "15",
+      "tempos": {
+        "rapido": 12,
+        "pra-safar": 40,
+        "completo": 58
+      }
+    },
+    {
+      "slug": "04-estados-unidos",
+      "ordem": 4,
+      "aula_interna": "16",
+      "tempos": {
+        "rapido": 20,
+        "pra-safar": 55,
+        "completo": 88
+      }
+    },
+    {
+      "slug": "05-china",
+      "ordem": 5,
+      "aula_interna": "17",
+      "tempos": {
+        "rapido": 16,
+        "pra-safar": 55,
+        "completo": 88
+      }
+    },
+    {
+      "slug": "06-russia",
+      "ordem": 6,
+      "aula_interna": "18",
+      "tempos": {
+        "rapido": 14,
+        "pra-safar": 45,
+        "completo": 72
+      }
+    },
+    {
+      "slug": "99-revisao-final",
+      "ordem": 99,
+      "aula_interna": "13 a 18 (síntese)",
+      "tempos": {
+        "rapido": 8,
+        "pra-safar": 25,
+        "completo": 42
+      }
+    }
+  ],
+  "conceitos": {
+    "total": 126,
+    "examinaveis": 125,
+    "por_modalidade": {
+      "rapido": 111,
+      "pra-safar": 126,
+      "completo": 126
+    }
+  },
+  "questoes": {
+    "modulos": 63,
+    "simulado": 18,
+    "por_nivel": {
+      "N1": 8,
+      "N2": 16,
+      "N3": 36,
+      "N4": 21
+    },
+    "por_modulo": {
+      "00-metodo-e-matriz-de-cenarios": 8,
+      "01-politica-externa-brasileira": 8,
+      "02-pnd-end-e-pesd": 7,
+      "03-politica-maritima-naval-e-economia-azul": 8,
+      "04-estados-unidos": 8,
+      "05-china": 8,
+      "06-russia": 8,
+      "99-revisao-final": 8
+    },
+    "por_modalidade": {
+      "rapido": 53,
+      "pra-safar": 63,
+      "completo": 63
+    }
+  },
+  "duracao_minutos": {
+    "rapido": 100,
+    "pra-safar": 315,
+    "completo": 498
+  },
+  "ids_emitidos": [
+    "REL-T2-M00-COR-N3-004",
+    "REL-T2-M00-DIS-N4-005",
+    "REL-T2-M00-OBJ-N2-002",
+    "REL-T2-M00-OBJ-N2-007",
+    "REL-T2-M00-OBJ-N3-003",
+    "REL-T2-M00-OBJ-N3-006",
+    "REL-T2-M00-OBJ-N4-008",
+    "REL-T2-M00-VF-N1-001",
+    "REL-T2-M01-DIS-N3-003",
+    "REL-T2-M01-DIS-N4-007",
+    "REL-T2-M01-OBJ-N2-002",
+    "REL-T2-M01-OBJ-N2-008",
+    "REL-T2-M01-OBJ-N3-004",
+    "REL-T2-M01-OBJ-N3-005",
+    "REL-T2-M01-OBJ-N4-006",
+    "REL-T2-M01-VF-N1-001",
+    "REL-T2-M02-COR-N3-003",
+    "REL-T2-M02-DIS-N3-005",
+    "REL-T2-M02-DIS-N4-007",
+    "REL-T2-M02-OBJ-N2-002",
+    "REL-T2-M02-OBJ-N3-004",
+    "REL-T2-M02-OBJ-N3-006",
+    "REL-T2-M02-VF-N1-001",
+    "REL-T2-M03-COR-N2-003",
+    "REL-T2-M03-DIS-N3-005",
+    "REL-T2-M03-DIS-N4-007",
+    "REL-T2-M03-OBJ-N2-002",
+    "REL-T2-M03-OBJ-N3-004",
+    "REL-T2-M03-OBJ-N3-006",
+    "REL-T2-M03-OBJ-N4-008",
+    "REL-T2-M03-VF-N1-001",
+    "REL-T2-M04-COR-N3-005",
+    "REL-T2-M04-DIS-N4-006",
+    "REL-T2-M04-OBJ-N2-002",
+    "REL-T2-M04-OBJ-N3-003",
+    "REL-T2-M04-OBJ-N3-004",
+    "REL-T2-M04-OBJ-N3-008",
+    "REL-T2-M04-OBJ-N4-007",
+    "REL-T2-M04-VF-N1-001",
+    "REL-T2-M05-DIS-N4-005",
+    "REL-T2-M05-OBJ-N2-003",
+    "REL-T2-M05-OBJ-N3-002",
+    "REL-T2-M05-OBJ-N3-004",
+    "REL-T2-M05-OBJ-N3-006",
+    "REL-T2-M05-OBJ-N3-007",
+    "REL-T2-M05-OBJ-N4-008",
+    "REL-T2-M05-VF-N1-001",
+    "REL-T2-M06-COR-N3-004",
+    "REL-T2-M06-DIS-N4-006",
+    "REL-T2-M06-OBJ-N2-002",
+    "REL-T2-M06-OBJ-N3-003",
+    "REL-T2-M06-OBJ-N3-005",
+    "REL-T2-M06-OBJ-N3-007",
+    "REL-T2-M06-OBJ-N4-008",
+    "REL-T2-M06-VF-N1-001",
+    "REL-T2-M99-COR-N2-006",
+    "REL-T2-M99-COR-N2-007",
+    "REL-T2-M99-COR-N3-001",
+    "REL-T2-M99-DIS-N3-005",
+    "REL-T2-M99-DIS-N4-003",
+    "REL-T2-M99-OBJ-N2-004",
+    "REL-T2-M99-OBJ-N2-008",
+    "REL-T2-M99-OBJ-N4-002",
+    "REL-T2-SG01-DIS-N3-013",
+    "REL-T2-SG01-DIS-N3-015",
+    "REL-T2-SG01-DIS-N3-017",
+    "REL-T2-SG01-DIS-N4-014",
+    "REL-T2-SG01-DIS-N4-016",
+    "REL-T2-SG01-DIS-N4-018",
+    "REL-T2-SG01-OBJ-N2-001",
+    "REL-T2-SG01-OBJ-N2-011",
+    "REL-T2-SG01-OBJ-N3-003",
+    "REL-T2-SG01-OBJ-N3-004",
+    "REL-T2-SG01-OBJ-N3-006",
+    "REL-T2-SG01-OBJ-N3-007",
+    "REL-T2-SG01-OBJ-N3-009",
+    "REL-T2-SG01-OBJ-N3-010",
+    "REL-T2-SG01-OBJ-N4-005",
+    "REL-T2-SG01-OBJ-N4-008",
+    "REL-T2-SG01-OBJ-N4-012",
+    "REL-T2-SG01-VF-N1-002"
+  ],
+  "lacunas_e_incertezas": "ver registro-lacunas-conflitos.json e fontes-manifesto.json"
+}
