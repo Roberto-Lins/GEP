@@ -35,6 +35,8 @@ export const featuresSchema = z.object({
   writing: z.boolean().default(false),
   // Download impresso de revisão. Capability global, ativação explícita por curso.
   cadernoRevisao: z.boolean().default(false),
+  // Modo de aprendizagem pelo gabarito. A revelação não conta como tentativa.
+  verRespostaAntes: z.boolean().default(false),
 });
 
 export const downloadSchema = z.object({

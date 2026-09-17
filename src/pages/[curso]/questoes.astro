@@ -4,7 +4,7 @@ import PageContainer from '@components/layout/PageContainer.astro';
 import CentralQuestoes from '@components/questoes/CentralQuestoes.tsx';
 import BlocoEmBreve from '@components/estudo/BlocoEmBreve.astro';
 import ProgressoScript from '@components/estudo/ProgressoScript.astro';
-import { listarCursos } from '@utils/courses';
+import { listarCursos, cursoPorSlug } from '@utils/courses';
 import { dadosDoCurso } from '@utils/content';
 import { numeroTopico } from '@utils/slug';
 
@@ -13,6 +13,7 @@ export async function getStaticPaths() {
 }
 
 const { curso } = Astro.params;
+const config = cursoPorSlug(curso!)!;
 const dados = dadosDoCurso(curso!)!;
 const opcoes = [...dados.topicosEstudo]
   .sort((a, b) => a.ordem - b.ordem)
@@ -34,7 +35,7 @@ const totais = Object.fromEntries(dados.timeline.map((t) => [t.slug, dados.check
     subtitulo={`${totalQ} questões comentadas — ${partes.join(', ')}. Filtre por matéria e responda com gabarito imediato.`}
   />
   {totalQ > 0 ? (
-    <CentralQuestoes questoes={dados.todasQuestoes} topicos={opcoes} curso={curso} client:load />
+    <CentralQuestoes questoes={dados.todasQuestoes} topicos={opcoes} curso={curso} permitirVerResposta={config.features.verRespostaAntes} client:load />
   ) : (
     <BlocoEmBreve tipo="questoes" titulo="Banco de questões em construção">
       O banco de questões deste curso será adicionado posteriormente. Por se tratar de uma

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import type { QuestaoMultipla } from '@tipos/question';
 import Markdown from './Markdown';
 import DetalhamentoResposta from './DetalhamentoResposta';
+import BotaoVerResposta from './BotaoVerResposta';
 
 const LETRAS = ['A', 'B', 'C', 'D', 'E'];
 
@@ -9,17 +10,25 @@ interface Props {
   questao: QuestaoMultipla;
   indice?: number;
   onResponder?: (acertou: boolean) => void;
+  permitirVerResposta?: boolean;
 }
 
-export default function QuestaoMultiplaEscolha({ questao, indice, onResponder }: Props) {
+export default function QuestaoMultiplaEscolha({ questao, indice, onResponder, permitirVerResposta = false }: Props) {
   const [escolha, setEscolha] = useState<number | null>(null);
   const [revelado, setRevelado] = useState(false);
+  const [reveladoParaEstudo, setReveladoParaEstudo] = useState(false);
 
   function responder(i: number) {
     if (revelado) return;
     setEscolha(i);
     setRevelado(true);
     onResponder?.(i === questao.correta);
+  }
+
+  function verResposta() {
+    if (revelado) return;
+    setReveladoParaEstudo(true);
+    setRevelado(true);
   }
 
   return (
@@ -33,6 +42,12 @@ export default function QuestaoMultiplaEscolha({ questao, indice, onResponder }:
         <a href={questao.imagem} target="_blank" rel="noopener noreferrer" className="mb-4 block w-full max-w-2xl" title="Abrir o circuito em tela cheia">
           <img src={questao.imagem} alt="Circuito do enunciado" loading="lazy" className="block w-full rounded-lg ring-1 ring-white/10 transition hover:ring-dourado/40" />
         </a>
+      )}
+
+      {permitirVerResposta && !revelado && (
+        <div className="mb-3 flex justify-end">
+          <BotaoVerResposta onClick={verResposta} indice={indice} />
+        </div>
       )}
 
       <ul className="space-y-2">
@@ -69,9 +84,16 @@ export default function QuestaoMultiplaEscolha({ questao, indice, onResponder }:
 
       {revelado && (
         <div className="mt-4 rounded-xl border border-white/10 bg-naval-800/60 p-4">
-          <p className={`mb-1 text-sm font-semibold ${escolha === questao.correta ? 'text-progresso' : 'text-alerta'}`}>
-            {escolha === questao.correta ? '✓ Você acertou' : `✗ Resposta correta: ${LETRAS[questao.correta]}`}
-          </p>
+          {reveladoParaEstudo ? (
+            <>
+              <p className="mb-1 text-sm font-semibold text-dourado-soft">Resposta correta: {LETRAS[questao.correta]}</p>
+              <p className="mb-2 text-xs text-nevoa/60">Gabarito revelado para estudo — não contabilizado no placar nem no progresso.</p>
+            </>
+          ) : (
+            <p className={`mb-1 text-sm font-semibold ${escolha === questao.correta ? 'text-progresso' : 'text-alerta'}`}>
+              {escolha === questao.correta ? '✓ Você acertou' : `✗ Resposta correta: ${LETRAS[questao.correta]}`}
+            </p>
+          )}
           <Markdown className="text-sm text-nevoa/85">{questao.comentario}</Markdown>
           {questao.conceito && (
             <p className="mt-2 text-xs uppercase tracking-wider text-dourado/70">Conceito: {questao.conceito}</p>

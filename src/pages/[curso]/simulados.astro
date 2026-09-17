@@ -3,7 +3,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import PageContainer from '@components/layout/PageContainer.astro';
 import BancoQuestoes from '@components/questoes/BancoQuestoes.tsx';
 import ProgressoScript from '@components/estudo/ProgressoScript.astro';
-import { listarCursos } from '@utils/courses';
+import { listarCursos, cursoPorSlug } from '@utils/courses';
 import { dadosDoCurso } from '@utils/content';
 
 export async function getStaticPaths() {
@@ -13,6 +13,7 @@ export async function getStaticPaths() {
 }
 
 const { curso } = Astro.params;
+const config = cursoPorSlug(curso!)!;
 const dados = dadosDoCurso(curso!)!;
 type BlocoSimulado = {
   id: string;
@@ -81,7 +82,7 @@ const totais = Object.fromEntries(dados.timeline.map((t) => [t.slug, dados.check
             </table>
           </div>
         )}
-        <BancoQuestoes questoes={s.questoes} curso={curso} registrar={true} client:visible />
+        <BancoQuestoes questoes={s.questoes} curso={curso} registrar={true} permitirVerResposta={config.features.verRespostaAntes} client:visible />
         {s.rubrica && <ul class="mt-4 grid gap-2 text-sm text-nevoa/80 sm:grid-cols-2">{s.rubrica.map((item) => <li class="rounded-lg border border-white/10 bg-white/[.03] p-3">{item}</li>)}</ul>}
       </section>
     ))}

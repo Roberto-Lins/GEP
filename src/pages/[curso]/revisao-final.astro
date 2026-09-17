@@ -91,7 +91,7 @@ const navItens = [
       <p class="text-nevoa/70">{simulado.length > 0 ? descSimulado : 'Simulado em construção.'}</p>
     </div>
     {simulado.length > 0 ? (
-      <BancoQuestoes questoes={simulado} curso={curso} registrar={true} filtros={true} client:visible />
+      <BancoQuestoes questoes={simulado} curso={curso} registrar={true} filtros={true} permitirVerResposta={config.features.verRespostaAntes} client:visible />
     ) : (
       <BlocoEmBreve tipo="questoes" titulo="Simulado em construção">
         O simulado deste curso será adicionado quando o banco de questões estiver pronto. Use, por

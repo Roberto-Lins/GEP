@@ -21,7 +21,8 @@
     "animacoesHero": true,
     "animacoesTransicao": false,
     "modoRevisaoVespera": true,
-    "graficoProgressoAvancado": false
+    "graficoProgressoAvancado": false,
+    "verRespostaAntes": true
   },
   "componentesExtras": []
 }
