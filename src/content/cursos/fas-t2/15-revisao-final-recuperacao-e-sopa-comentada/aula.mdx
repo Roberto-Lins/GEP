@@ -1,0 +1,682 @@
+---
+titulo: "Revisão final, recuperação e SOPA comentada — aula"
+secao: "aula"
+secaoOrdem: 1
+---
+
+# MÓDULO M15 — Revisão final, recuperação e SOPA comentada
+
+> Fontes: ‹E1 s12–s54› · ‹E4› · ‹E6 p8–p41› · ‹E7 p5, p16–p17, p31› · ‹P1 s5–s62› · ‹H1 s8–s60› · ‹SOPA 2025 (prova anterior)› · Tempo de leitura: ~22 min
+
+Sem conteúdo novo: os **38 erros frequentes (V001–V038)** dos módulos M01–M14, cada um com a forma correta do slide e o jeito de a banca cobrar. A prova anterior conferida está em **SOPA_COMENTADA.md**.
+
+**Você vai precisar saber:**
+- Nomear selo e intertravamento pelos terminais e explicar a atuação do relé térmico.
+- Identificar **pelo circuito** linha, estrela e triângulo nas figuras K1/K2/K3 e KM1/KM2/KM3 e dizer quais contatoras estão energizadas antes e depois de t1.
+- Justificar o controle de nível (sensor inferior abrindo; superior fechando) e achar a palavra-chave trocada nos V/F de pneumática.
+- Separar as quatro bombas, circuito aberto × fechado, e narrar o Circuito 3 sem inverter câmaras nem solenoides.
+
+## Bloco B1 — Comando, proteção e contatores (V003–V006, V032, V033, V034, V038)
+
+‹fonte: E1 s12, s14, s18–s22, s33, s39, s44–s45, s50; E4; E7 p5›
+
+| Erro frequente | Forma correta (slide) | Como a banca cobra |
+|---|---|---|
+| Chamar o 13-14 em paralelo com a botoeira de intertravamento (V003) | ‹C052› **Selo**: auxiliar NA do próprio contator, sempre em paralelo com o contato de fechamento da botoeira; mantém a bobina energizada após soltar a botoeira. ‹C053› **Intertravamento**: NF de um contator antes da alimentação da bobina do outro, para evitar curto ‹E1 s44–s45› | "Qual o nome da ligação...?" e "indique pelos números dos terminais" |
+| Dizer que o selo é o 21-22 ou que NF termina em 3-4 (V004) | ‹C051› Auxiliares **NA: finais 3 e 4** (13-14); **NF: finais 1 e 2** (21-22 ou 11-12) ‹E1 s39; E7 p9› | Pedir os terminais do selo ou do intertravamento |
+| "O bimetal corta o motor" (V005) | ‹C033›/‹C060› F2 abre o **NF 95-96 no comando** → bobina K1 desenergiza → K1 abre os principais ‹E1 s50› | V/F ou discursiva de atuação |
+| Relé térmico contra curto; fusível que religa (V006) | ‹C030› fusível: curto ou sobrecarga de longa duração, **substituído**; ‹C031›/‹C032› disjuntor: curto (sobrecarga, se térmico), **religa**; ‹C033› relé térmico: bimetal ‹E1 s19–s22› | Associação dispositivo × função |
+| Contator com travamento ou duas posições de repouso (V032) | ‹C045› comando a distância, **uma única posição de repouso, sem travamento** ‹E1 s33› | V/F |
+| Motor no comando, botoeira na potência (V033) | ‹C016› comando = interface com o operador (i ≤ 10 A e/ou Vac ≤ 220 V); ‹C017› potência = cargas (motores, resistências) ‹E1 s14; E4› | V/F e identificação em figura |
+| SCR no VFD, frequência no soft starter (V034) | ‹C012› soft starter: tensão de partida gradual com **SCRs**; ‹C013› VFD: **frequência e tensão (PWM)** ‹E1 s12› | Associação acionamento × princípio |
+| Botão de emergência que volta sozinho (V038) | ‹C062› "uma vez acionada, **não retorna** à posição normal" ‹E7 p5› | "Qual a novidade do circuito?" |
+
+![Contato de selo](/imagens/cursos/fas-t2/conteudo/E1-44-selo.webp)
+*Figura — selo em paralelo com a botoeira ‹fonte: E1 s44›*
+
+### Exemplos práticos e confusões prováveis
+- ⚠️ ‹C052›/‹C053› Paralelo + NA + próprio contator = **selo**. Série + NF + outro contator = **intertravamento**.
+- ⚠️ ‹C051› Reversão: **21-22 de K1** no ramo de **K2** (intertravamento); **13-14 de K1** em paralelo com **S1** (selo).
+- ⚠️ ‹C060› A sequência do relé térmico tem três passos: 95-96 abre (comando) → bobina desenergiza → principais abrem (potência).
+
+### Questões — bloco B1
+
+**Questão 1** · 0,8 pt
+
+Recuperação — comandos elétricos. Cada afirmação abaixo testa um erro frequente. Marque V ou F.
+
+( ) 1. O contato de selo é um contato auxiliar NA do próprio contator, ligado sempre em paralelo com o contato de fechamento da botoeira de partida.  
+( ) 2. Na partida com reversão, o contato 21-22 de K1, colocado antes da bobina de K2, realiza a selagem de K2.  
+( ) 3. Contatos auxiliares com números finais 1 e 2 (como 11-12 ou 21-22) são NF; com finais 3 e 4 (como 13-14), são NA.  
+( ) 4. Em sobrecarga prolongada, o bimetal do relé térmico F2 abre diretamente os contatos principais de K1, sem atuar no circuito de comando.  
+( ) 5. O contator é um elemento eletromecânico de comando a distância, com duas posições de repouso e com travamento.  
+( ) 6. Os motores e as resistências de aquecimento ficam no circuito de potência; a botoeira, que faz a interface com o operador, fica no circuito de comando.  
+( ) 7. A chave de parada em emergência, depois de acionada, retorna sozinha à posição normal, como a botoeira desliga.  
+( ) 8. O relé térmico possui os contatos auxiliares 95-96 (NF) e 97-98 (NA).  
+
+**Questão 2** · 0,3 pt
+
+Na partida direta da Aula 3.2 (E1 s48), o motor M1 passa a operar com corrente acima da nominal por tempo prolongado. Com relação à atuação da proteção, marque (X) a única correta.
+
+(A) Atua o disjuntor Q2 do comando, que depois precisa ser substituído, como um fusível, antes de nova operação.  
+(B) O aquecimento do bimetal de F2 abre o contato NF 95-96 no circuito de comando; a bobina de K1 é desenergizada e os contatos principais de K1 se abrem, desligando o motor.  
+(C) O bimetal de F2 abre diretamente os contatos principais no circuito de potência, enquanto a bobina de K1 continua energizada pelo selo 13-14.  
+(D) O relé térmico F2 não atua, pois se destina à proteção contra correntes de curto-circuito; quem desliga o motor é o fusível F1.  
+(E) F2 fecha o contato 95-96, o que energiza a bobina de K1 e provoca a abertura dos contatos principais.  
+
+**Questão 3** · 0,8 pt
+
+![Figura da questão 3](/imagens/cursos/fas-t2/conteudo/Q-E1-52-reversao.webp)
+
+Considere a Figura (partida com reversão de um motor M1). Um aluno escreveu: "o 13-14 de K1 faz o intertravamento e o 21-22 de K2 faz o selo". Responda aos itens para corrigir essa afirmação.
+
+- No ramo da bobina K1, qual contato está em paralelo com S1? Dê os números dos terminais, o tipo (NA ou NF) e o nome da ligação. (0,2)
+- Nesse mesmo ramo, qual contato de K2 está em série antes da bobina K1? Dê os números dos terminais, o tipo e o nome da ligação. (0,2)
+- Pela regra de numeração dos contatos auxiliares, por que um contato 13-14 não serve para fazer o intertravamento deste circuito? (0,2)
+- Ao pressionar S1, o que acontece com os contatos 21-22 e 13-14 do próprio K1? (0,2)
+
+**Questão 4** · 0,7 pt
+
+Recuperação — cadeia rede → motor. Associe cada descrição ou dispositivo (coluna B) à função que desempenha entre a rede elétrica e o motor (coluna A). Os números podem se repetir.
+
+**Coluna A**
+
+- (1) Seccionamento
+- (2) Proteção contra correntes de curto-circuito
+- (3) Proteção contra correntes de sobrecarga
+- (4) Dispositivo de manobra
+
+**Coluna B**
+
+- ( ) Protege as bobinas do enrolamento do motor
+- ( ) Só pode ser operado sem carga; usado durante a manutenção
+- ( ) Contator K1 da partida direta
+- ( ) Destina-se à proteção dos condutores do circuito terminal
+- ( ) Relé cujo elemento básico é o bimetal
+- ( ) Liga e desliga o motor sem que haja contato do operador no circuito de potência
+- ( ) Disjuntor com elemento magnético
+
+**Questão 5** · 0,3 pt
+
+Erro frequente: trocar o princípio de controle do soft starter com o do inversor de frequência. Com relação aos tipos de acionamento da tabela da Aula 3.2, marque (X) a única correta.
+
+(A) O VFD varia a frequência e a tensão de entrada (PWM), enquanto o soft starter faz o controle gradual da tensão de partida com tiristores (SCRs).  
+(B) A chave estrela-triângulo diminui a corrente de partida variando a frequência aplicada ao motor.  
+(C) O soft starter varia a frequência e a tensão de entrada (PWM), enquanto o VFD faz o controle gradual da tensão de partida com tiristores (SCRs).  
+(D) O driver com H-Bridge faz o controle gradual da tensão de partida de motores CA trifásicos.  
+(E) A partida direta emprega tiristores (SCRs) para ligar o motor diretamente à rede.  
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q1 — V-F-V-F-F-V-F-V**
+  - 2. F — Correção: o 21-22 de K1 no ramo de K2 é o INTERTRAVAMENTO; a selagem de K2 é feita pelo 13-14 de K2 (E1 s53-s54).
+  - 4. F — Correção: F2 abre o seu contato NF 95-96 NO COMANDO; a bobina de K1 é desenergizada e só então os contatos principais de K1 se abrem (E1 s50).
+  - 5. F — Correção: uma ÚNICA posição de repouso e SEM travamento (E1 s33).
+  - 7. F — Correção: 'uma vez acionada, não retorna à posição normal' — é a novidade do circuito (E7 p5).
+- **Q2 — B.** E1 s49-s50: F2 atua abrindo o NF 95-96 no comando; K1 desenergiza e abre os principais.
+- **Q3**
+  - • K1 13-14: contato auxiliar NA do próprio K1 — selo (selagem).
+  - • K2 21-22: contato auxiliar NF de K2 — intertravamento (impede energizar K1 com K2 em funcionamento).
+  - • Finais 3 e 4 identificam contato NA; o intertravamento usa o contato NF (finais 1 e 2) de um contator antes da alimentação da bobina do outro.
+  - • O 21-22 de K1 se abre (intertravamento: impede K2) e o 13-14 de K1 se fecha (selagem de K1).
+- **Q4 — 3-1-4-2-3-4-2** E1 s18 (funções), s20 e s43 (disjuntor com elemento magnético = curto), s22 (relé térmico = bimetal); E2/E4 (K1 = manobra). Erro V006: relé térmico não protege contra curto.
+- **Q5 — A.** E1 s12: soft starter = SCRs; VFD = frequência e tensão (PWM); Y-Δ = redução de tensão na partida; H-Bridge = polaridade (CC).
+
+</details>
+
+
+## Bloco B2 — Reversão, temporizadores e estrela-triângulo (bobina estrela × triângulo!)
+
+‹fonte: E1 s51–s54; E6 p8–p15, p17, p20, p23, p28–p34; E7 p16–p17›
+
+| Erro frequente | Forma correta (slide) | Como a banca cobra |
+|---|---|---|
+| "Basta pressionar S2 com o motor girando" (V007) | ‹C070› Pressiona-se **S0** (motor para) e **depois S2** ‹E1 s54› | "O que deve ser feito para reverter?" |
+| "Intertravamento é para o motor não queimar" (V008) | ‹C071› K1 e K2 juntos provocariam **curto-circuito** ‹E1 s53› | Discursiva/V/F de finalidade |
+| Trocar on delay e off delay (V009) | ‹C078› **Energização**: atua um tempo após energizar e retorna imediatamente ao desenergizar. ‹C079› **Desenergização**: atua imediatamente e só retorna um tempo após desativar ‹E6 p8, p10› | "Em que consiste...?" |
+| "Sem carga" como impedimento; "5 CV" como condição (V012) | ‹C083› Condições: corrente da rede elevada, potência pequena, **partida sem carga**. ‹C084› Impedem: potência acima do máximo da concessionária (**normalmente 5 CV**) e carga de **acionamento lento e progressivo** ‹E6 p14–p15› | "O que pode impedir a partida direta?" |
+| "Comutar cedo não tem efeito" (V010) | ‹C093›/‹C106› Comutar com **pelo menos 90%** da rotação nominal; antes disso o pico é **quase o da partida direta** ‹E6 p17, p23› | "Qual o cuidado com o tempo do relé?" |
+| 3 ou 12 terminais (V011) | ‹C094› **Pelo menos 6 terminais acessíveis**; ‹C095› tensão da rede = tensão da ligação triângulo ‹E6 p23› | "Como tem que ser o motor?" |
+| 1/√3 para a corrente de linha (V036) | ‹C090› IL(Y) = **1/3** de IL(Δ) ‹E6 p20› | Pergunta direta |
+| K2/KM2 sempre estrela ou sempre triângulo (V001) | ‹C099› figura K: **K2 triângulo, K3 estrela**; ‹C100› figura KM: **KM2 estrela, KM3 triângulo** ‹E6 p34; E7 p16› | Figura mascarada + "quais contatoras estão energizadas?" |
+| "K1 desliga na comutação" (V002) | ‹C104› Até t1: **K1 + K3** (e T1); depois de t1: **K1 + K2** ‹E6 p31–p32› | Contatoras antes/depois de t1 |
+
+**Quadro de nomenclatura das duas figuras** (alerta do professor para 2026: "cuidado com a posição da bobina triângulo e bobina estrela")
+
+| Função | Figura K1/K2/K3 (E6 p30–p34; SOPA 2025) | Figura KM1/KM2/KM3 (E6 p28; E7 p15–p17) |
+|---|---|---|
+| Linha | K1 | KM1 |
+| **Estrela** | **K3** | **KM2** |
+| **Triângulo** | **K2** | **KM3** |
+| Temporizador | T1 | KT1 |
+| Partida / parada | B1 / B0 | SB2 / SB1 |
+| Ao dar partida | K1 + T1 + K3 | KM1 + KT1 + KM2 |
+| Após t1 | K1 + K2 | KM1 + KM3 |
+
+> **Regra: leia a ligação dos terminais, não o número do contator.** Na potência, o contator que une U2, V2, W2 (ou 4, 5, 6) no mesmo ponto é o **estrela** ‹C097›; o que liga esses terminais às fases é o **triângulo** ‹C098›. No comando, a bobina que passa pelo **NF do temporizador** é a da estrela; a que passa pelo **NA do temporizador**, com selo próprio em paralelo, é a do triângulo. [INFERÊNCIA PEDAGÓGICA — roteiro de leitura apoiado em E6 p24–p33 e E7 p16–p17, já ensinado no M07]
+
+![Figura K1/K2/K3](/imagens/cursos/fas-t2/conteudo/E6-30-yd-K.webp)
+*Figura — K1 linha, K2 triângulo, K3 estrela ‹fonte: E6 p30›*
+
+![Figura KM — comando](/imagens/cursos/fas-t2/conteudo/E7-16-yd-comando-KM.webp)
+*Figura — KM1 linha, KM2 estrela, KM3 triângulo ‹fonte: E7 p16›*
+
+### Exemplos práticos e confusões prováveis
+- ⚠️ ‹C099›/‹C100› A SOPA 2025 usou a figura K (B1 → **K1 e K3**; após T1 → **K1 e K2**); na figura KM seria KM1 e KM2 / KM1 e KM3.
+- ⚠️ ‹C104› A **linha não sai** na comutação; só estrela e triângulo se alternam.
+- ⚠️ ‹C105› "Como o comando impede curto entre fases?" → **intertravamento** entre os contatores estrela e triângulo.
+- ⚠️ ‹C078›/‹C079› Pergunte-se: o atraso está na **ida** (energização) ou na **volta** (desenergização)?
+- ⚠️ ‹C083›/‹C084› "Sem carga" = condição; "lento e progressivo" = impedimento.
+
+### Questões — bloco B2
+
+**Questão 6** · 0,8 pt · *adaptada de SOPA 2025 Q1.3b-c (variação: perguntas sobre por que S2 não atua e sobre o erro de finalidade)*
+
+![Figura da questão 6](/imagens/cursos/fas-t2/conteudo/Q-E1-52-reversao.webp)
+
+Considere a Figura. O motor M1 gira na sequência de fases R,S,T, com K1 energizado e selado. Responda objetivamente, corrigindo os erros frequentes citados.
+
+- Erro frequente: "para reverter, basta pressionar S2 com o motor girando". Pelo circuito de comando, por que S2 sozinho não energiza K2 nessa condição? (0,2)
+- Depois que o operador pressiona S0, o que muda no contato 21-22 de K1 e o que ocorre ao pressionar S2 em seguida? (0,2)
+- Erro frequente: "o intertravamento serve para o motor não queimar". Qual é a finalidade indicada no slide? (0,2)
+- No circuito de potência, o que K2 faz de diferente de K1 para inverter o sentido de rotação? (0,2)
+
+**Questão 7** · 0,8 pt
+
+Recuperação — reversão, relés de tempo, partida direta e chave estrela-triângulo. Marque V ou F.
+
+( ) 1. Na partida com reversão, o intertravamento impede o funcionamento simultâneo de K1 e K2, que provocaria um curto-circuito.  
+( ) 2. Com o motor girando por K1, pressionar S2 inverte de imediato o sentido de rotação.  
+( ) 3. O relé com retardo na energização atua em seus contatos imediatamente ao ser energizado e só os retorna ao repouso um tempo após a desenergização.  
+( ) 4. No relé com retardo na desenergização, o atraso ocorre no retorno dos contatos ao repouso, depois da desativação.  
+( ) 5. Fazer a partida do motor sem carga é um dos fatores que impedem o uso da partida direta.  
+( ) 6. A carga a ser movimentada que necessita de acionamento lento e progressivo é um fator que impede o uso da partida direta.  
+( ) 7. Na chave estrela-triângulo, quanto mais cedo o relé temporizado comutar para triângulo, menor será o pico de corrente.  
+( ) 8. Para empregar a chave estrela-triângulo, o motor deve ter pelo menos seis terminais acessíveis.  
+
+**Questão 8** · 1,5 pt · *adaptada de SOPA 2025 Q2.1 (variação: tipo inverso de relé, condição × impedimento, exigências do motor e relação de corrente)*
+
+Responda objetivamente às perguntas diretas abaixo (0,3 cada, padrão "tudo está no slide").
+
+- Em que consiste o relé de tempo com retardo na desenergização? (0,3)
+- Entre "a partida do motor é feita sem carga" e "a carga necessita de acionamento lento e progressivo", qual é condição necessária para a partida direta e qual a impede? (0,3)
+- Como têm de ser o motor e a rede para que se possa empregar a chave estrela-triângulo? (0,3)
+- O que ocorre se a comutação para triângulo acontecer antes de o motor atingir 90% da rotação nominal? (0,3)
+- Qual é a relação entre a corrente de linha na ligação estrela e a corrente de linha na ligação triângulo? (0,3)
+
+**Questão 9** · 1 pt
+
+![Figura da questão 9](/imagens/cursos/fas-t2/conteudo/Q-E7-16-yd-comando.webp)
+
+Considere a Figura (circuito de comando 60 Hz, 24 V; a legenda foi removida). Erro frequente: "o contator de número 2 é sempre o triângulo, como na figura da SOPA 2025". Responda lendo as ligações do circuito, e não o número do contator.
+
+- Qual bobina é alimentada através do contato NF do temporizador KT1 e do contato NF de KM3? Qual é a sua função? (0,2)
+- Qual bobina é alimentada através do contato NA de KT1, em paralelo com um contato NA próprio, e do contato NF de KM2? Qual é a sua função? (0,2)
+- Ao pressionar SB2, quais contatores são energizados e em que ligação o motor parte? (0,2)
+- Decorrido o tempo t1 de KT1, quais contatores ficam energizados? (0,2)
+- Na figura K1/K2/K3 da Aula 3.3 (E6 p30), quais são os contatores estrela e triângulo? (0,2)
+
+**Questão 10** · 0,3 pt
+
+![Figura da questão 10](/imagens/cursos/fas-t2/conteudo/Q-E6-30-yd-K.webp)
+
+Considere a Figura (legendas das contatoras ocultadas). O operador pressiona e solta B1 e o motor completa a partida. Quanto às contatoras energizadas antes e depois da atuação do temporizador T1, marque (X) a única correta.
+
+(A) Antes de t1: K1 e K2 (motor em estrela); a partir de t1: K1 e K3 (motor em triângulo).  
+(B) Antes de t1: K1 e K3 (motor em estrela); a partir de t1: somente K2, pois K1 desliga na comutação.  
+(C) Antes de t1: K1, K2 e K3 energizadas; a partir de t1: K1 e K2.  
+(D) Antes de t1: K1 e K3 (motor em estrela); a partir de t1: K1 e K2 (motor em triângulo).  
+(E) Antes de t1: somente K3 e T1; K1 só é energizada junto com K2, depois de t1.  
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q6**
+  - • Porque o contato auxiliar 21-22 de K1, em série antes da bobina de K2, está aberto enquanto K1 está energizado (intertravamento).
+  - • K1 desenergiza e o 21-22 de K1 volta a fechar, liberando o ramo de K2; ao pressionar S2, K2 energiza, o 21-22 de K2 abre (intertravamento) e o 13-14 de K2 fecha (selagem).
+  - • Impedir o funcionamento simultâneo de K1 e K2, que provocaria curto-circuito (K2 alimenta o motor com duas fases trocadas).
+  - • K2 alimenta o motor com duas fases trocadas (sequência de fases invertida); o relé térmico F2 é comum aos dois contatores.
+- **Q7 — V-F-F-V-F-V-F-V**
+  - 2. F — Correção: primeiro pressiona-se S0 (o motor para) e depois S2 (E1 s54).
+  - 3. F — Correção: essa é a descrição do retardo na DESenergização. O de retardo na energização atua um tempo após a energização e retorna imediatamente após a desenergização (E6 p8, p10).
+  - 5. F — Correção: partida sem carga é CONDIÇÃO NECESSÁRIA (reduz a duração da corrente de partida) (E6 p14).
+  - 7. F — Correção: se o motor não atingir pelo menos 90% da rotação nominal, o pico de corrente na comutação é quase o mesmo da partida direta (E6 p23).
+- **Q8**
+  - • Atua em seus contatos imediatamente na ativação (energização), porém os contatos só retornam ao repouso um tempo após a desativação (desenergização).
+  - • Partida sem carga = condição necessária (reduz a duração da corrente de partida); carga que necessita de acionamento lento e progressivo = fator que impede.
+  - • O motor deve ter pelo menos seis terminais acessíveis, e a tensão da rede deve coincidir com a tensão da ligação triângulo do motor.
+  - • Na comutação, o pico de corrente é quase o mesmo da partida direta.
+  - • A corrente de linha em estrela é 1/3 (um terço) da corrente de linha em triângulo — não 1/√3.
+- **Q9**
+  - • KM2 — contator ESTRELA.
+  - • KM3 — contator TRIÂNGULO (o NA próprio é o selo KM3 NA do contato KT1 NA).
+  - • KM1 (linha) e KM2 (estrela), além do temporizador KT1; o motor parte em estrela.
+  - • KM1 e KM3 (triângulo); o contator de linha KM1 não desliga na comutação.
+  - • K3 = estrela e K2 = triângulo (numeração invertida em relação à figura KM1/KM2/KM3).
+- **Q10 — D.** E6 p31-p33: até t1, K1, T1 e K3 ON; a partir de t1, K1 e K2 ON, K3 OFF. Na figura K, K3 une 4-5-6 (estrela) e K2 liga 4-5-6 às fases (triângulo).
+
+</details>
+
+
+## Bloco B3 — Controle de nível e partida sequencial (V013, V014, V035)
+
+‹fonte: E6 p36–p37, p40–p41; E7 p31›
+
+| Erro frequente | Forma correta (slide) | Como a banca cobra |
+|---|---|---|
+| "O sensor inferior abrindo desliga a bomba" (V013) | ‹C110› A bobina continua alimentada pelo **13-14 (selagem)**, em paralelo com o sensor **inferior** ‹E6 p36–p37› | V/F do enchimento a partir do vazio |
+| "O sensor superior fechando liga a bomba" (V014) | ‹C112› **Nada acontece**: sensor inferior e 13-14 estão abertos ‹E6 p37› | V/F do esvaziamento a partir do cheio |
+| "C2-NA sela B1" ou "os motores partem juntos" (V035) | ‹C115› C1-NA sela B1; **C2-NA sela D1-NA**; C3-NA sela D2-NA; C4-NA sela D3-NA. ‹C116› Intervalo = **tempo de atraso dos relés temporizados** ‹E6 p41; E7 p31› | Discursiva de funcionamento |
+
+| Situação (E6 p37) | Sensor superior | Sensor inferior | 13-14 | Bomba |
+|---|---|---|---|---|
+| Vazio | fechado | fechado | fecha | liga |
+| Enchendo, acima do inferior | fechado | **aberto** | **fechado (sela)** | continua |
+| Cheio (‹C111› superior abriu) | aberto | aberto | abre | para |
+| Esvaziando, abaixo do superior | **fechado** | aberto | **aberto** | continua parada |
+
+![Controle de nível on-off](/imagens/cursos/fas-t2/conteudo/E6-36-nivel.webp)
+*Figura — sensores em série com a bobina; 13-14 em paralelo com o sensor inferior ‹fonte: E6 p36›*
+
+### Exemplos práticos e confusões prováveis
+- ⚠️ ‹C108›/‹C110› Selo 13-14 em paralelo com o sensor **inferior**; ‹C112› superior fechando no esvaziamento **não** liga a bomba (F clássico da SOPA).
+- ⚠️ ‹C115› Cada contatora sela o contato NA do temporizador **anterior** (C2 → D1, C3 → D2, C4 → D3).
+
+### Questões — bloco B3
+
+**Questão 11** · 0,6 pt
+
+![Figura da questão 11](/imagens/cursos/fas-t2/conteudo/Q-E6-36-nivel.webp)
+
+Considere a Figura (controle de nível on-off). Associe cada situação do reservatório (coluna B) ao estado da bobina A1/A2 da contatora (coluna A). Os números podem se repetir.
+
+**Coluna A**
+
+- (1) Bobina alimentada — bomba em funcionamento
+- (2) Bobina sem alimentação — bomba parada
+
+**Coluna B**
+
+- ( ) Reservatório cheio: contatos dos dois sensores abertos
+- ( ) Nível subindo, já acima do sensor inferior (contato inferior aberto), com o contato superior ainda fechado
+- ( ) Nível descendo a partir do cheio: contato superior já fechado e contato inferior ainda aberto
+- ( ) Instante em que, no esvaziamento, o contato do sensor inferior também se fecha
+- ( ) Instante em que, no enchimento, o contato do sensor superior se abre
+- ( ) Reservatório vazio: contatos dos dois sensores fechados
+
+**Questão 12** · 0,6 pt · *adaptada de SOPA 2025 Q1.2 (variação: justificativa discursiva dos itens falsos)*
+
+![Figura da questão 12](/imagens/cursos/fas-t2/conteudo/Q-E6-36-nivel.webp)
+
+Considere a Figura (controle de nível on-off). Responda objetivamente, justificando pelo circuito.
+
+- Durante o enchimento, o contato do sensor de nível inferior se abre. Por que a bomba não para nesse instante? (0,2)
+- A partir do reservatório cheio, o nível começa a baixar e o contato do sensor superior se fecha. Por que a bomba não liga? (0,2)
+- Qual evento desliga a bomba e por quê? (0,2)
+
+**Questão 13** · 0,3 pt
+
+Com relação ao funcionamento da partida sequencial de quatro motores de indução (Aula 3.3), marque (X) a única correta.
+
+(A) O contato auxiliar C2-NA proporciona a selagem de B1, enquanto C1-NA sela o contato D1-NA.  
+(B) O motor M2 parte no mesmo instante em que a bobina de D1 é energizada; só a partida de M4 tem atraso.  
+(C) O contato auxiliar C2-NA proporciona a selagem de D1-NA, e a bobina do relé temporizado D2 também é energizada.  
+(D) Ao pressionar B1, as contatoras C1 a C4 são energizadas juntas e os quatro motores partem ao mesmo tempo.  
+(E) O intervalo entre as partidas de M1 e de M2 é igual ao tempo de atuação do relé térmico RL1.  
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q11 — 2-1-2-1-2-1** E6 p37: o sensor inferior abrindo NÃO desliga (13-14 sela, V013); o sensor superior fechando no esvaziamento NÃO liga (inferior e 13-14 abertos, V014); só a abertura do superior desliga.
+- **Q12**
+  - • Porque o contato auxiliar 13-14 da contatora, fechado e em paralelo com o sensor inferior, mantém a bobina alimentada (selagem).
+  - • Porque o contato do sensor inferior está aberto e o contato auxiliar 13-14 também está aberto: nada acontece.
+  - • A abertura do contato do sensor de nível superior (reservatório cheio): a bobina da contatora é desalimentada e a bomba para.
+- **Q13 — C.** E6 p41: C1-NA sela B1; C2-NA sela D1-NA e D2 é energizado; E7 p31: intervalo = tempo de atraso dos relés temporizados.
+
+</details>
+
+
+## Bloco B4 — Pneumática (V015–V023, V030)
+
+‹fonte: P1 s5–s6, s10, s17–s22, s25, s29–s31, s45–s46, s52–s62›
+
+| Erro frequente | Forma correta (slide) | Como a banca cobra |
+|---|---|---|
+| "O secador adiciona óleo"; "o filtro de linha seca" (V015) | ‹C128› lubrificador acrescenta óleo; ‹C140› secador condensa o vapor d'água; ‹C141› filtro de linha elimina partículas sólidas, água e óleo ‹P1 s10, s20› | V/F de função |
+| VCD na produção (V016) | ‹C145› VCD pertence ao **consumo** (com ‹C144› FRL) ‹P1 s21–s22› | V/F de sistema |
+| Pressão ↔ exaustão no símbolo (V017) | ‹C170› pressão = **círculo com ponto**; ‹C171› exaustão = **triângulo** ‹P1 s45–s46› | V/F de simbologia |
+| 5/2 "só para simples efeito" (V018) | ‹C176› 3/2 → simples efeito; ‹C177› 5/2 → duplo efeito ‹P1 s52, s54› | V/F de aplicação |
+| Energia cinética no deslocamento positivo (V019) | ‹C151› positivo = **redução de volume**; ‹C153› dinâmico = **energia cinética → pressão** ‹P1 s25› | V/F de princípio |
+| Funções vizinhas (V020) | ‹C134› pressostato liga/desliga o motor do compressor; ‹C135› retenção impede o retorno ao compressor; ‹C137› manômetro indica a pressão; ‹C139› válvula de segurança libera para exaustão; ‹C129› regulador mantém a pressão constante ‹P1 s11, s17–s19› | Objetiva com distratores vizinhos |
+| Pneumática com alta potência ou alta eficiência (V021) | ‹C121› vantagens: simplicidade, menor peso, suavidade, sem golpe de aríete, menor manutenção, sem risco de incêndio; ‹C122› **menor eficiência** é desvantagem; ‹C119› potências elevadas = **hidráulicos** ‹P1 s5–s6› | Objetiva de vantagens |
+| Avanço/recuo pela posição da VCD (V022) | ‹C181› avanço: esfera bloqueia o fluxo **para o atuador**; ‹C182› recuo: esfera bloqueia a **exaustão** → contrapressão à mola ‹P1 s59–s61› | Figura: "avanço ou recuo?" |
+| Classificação incompleta (V023) | ‹C158› "atuador **linear** de **simples efeito**, com **retorno por mola**" ‹P1 s29–s31› | "Classificação completa" |
+| Fixa com ajuste; unidirecional nos dois sentidos (V030) | ‹C178› fixa: **não admite ajuste**; ‹C179› variável: ajuste de velocidade; ‹C180› unidirecional: m→n livre pela retenção, n→m pela via p ‹P1 s55–s58› | V/F e associação (orientação 2026) |
+
+![Controle de velocidade no avanço e no recuo](/imagens/cursos/fas-t2/conteudo/P1-59-controle-velocidade.webp)
+*Figura — (a) avanço; (b) recuo ‹fonte: P1 s59›*
+
+### Exemplos práticos e confusões prováveis
+- ⚠️ ‹C140›/‹C128› Óleo **entra** no lubrificador; umidade **sai** no secador. ‹C134›/‹C137› Pressostato **age**; manômetro **indica**.
+- ⚠️ ‹C182› Na figura, olhe **para onde a retenção deixa passar livre**, não para o desenho da VCD. Quem controla a velocidade é a válvula de controle de fluxo, não a VCD.
+- ‹C158› Classificação completa = linear + simples efeito + retorno por mola.
+
+### Questões — bloco B4
+
+**Questão 14** · 1 pt
+
+Recuperação — pneumática. Cada afirmação mantém ou troca uma palavra-chave do slide. Marque V ou F.
+
+( ) 1. O lubrificador acrescenta um pouco de óleo ao ar para reduzir o desgaste dos componentes.  
+( ) 2. O secador de ar por refrigeração provoca a condensação do vapor d'água, permitindo a remoção da umidade da rede pneumática.  
+( ) 3. O filtro de linha acrescenta óleo ao ar comprimido e o seca por refrigeração.  
+( ) 4. O manômetro liga e desliga o motor elétrico do compressor em função da pressão medida no reservatório.  
+( ) 5. A unidade de preparação de ar (FRL) e a válvula de controle direcional pertencem ao sistema de consumo de ar comprimido.  
+( ) 6. Nas VCD pneumáticas, o conduto de ar comprimido é representado por um triângulo.  
+( ) 7. A VCD de 2 posições e 3 vias é aplicada, normalmente, no comando de atuadores de simples efeito, e a VCD 5/2, no de atuadores de duplo efeito.  
+( ) 8. Nos compressores de deslocamento positivo, o ar é admitido em câmara isolada do meio exterior e seu volume é gradualmente diminuído.  
+( ) 9. Maior eficiência e capacidade de operar com potências elevadas estão entre as vantagens dos sistemas pneumáticos.  
+( ) 10. A válvula de controle de fluxo fixa bidirecional permite ajustar a velocidade do atuador.  
+
+**Questão 15** · 0,8 pt
+
+Recuperação — funções de componentes vizinhos do ar comprimido. Associe cada função (coluna B) ao componente correspondente (coluna A). Um número pode ser usado mais de uma vez.
+
+**Coluna A**
+
+- (1) Pressostato
+- (2) Manômetro
+- (3) Válvula de segurança
+- (4) Válvula de retenção
+- (5) Secador de ar por refrigeração
+- (6) Filtro de linha
+- (7) Regulador de pressão
+
+**Coluna B**
+
+- ( ) Impede que o ar armazenado no reservatório retorne ao compressor após o desligamento
+- ( ) Liga e desliga o motor elétrico do compressor conforme a pressão medida no reservatório
+- ( ) Ajuda a eliminar partículas sólidas, água e óleo da rede de ar comprimido
+- ( ) Indica a pressão do ar no interior do reservatório, permitindo o monitoramento em tempo real
+- ( ) Mantém constante a pressão do ar fornecido, independentemente das variações na linha ou da demanda dos atuadores
+- ( ) Libera para exaustão o ar do reservatório quando a pressão supera o limite máximo admissível
+- ( ) Provoca a condensação do vapor d'água, protegendo a rede contra corrosão e falhas
+- ( ) Permite o fluxo de ar comprimido em apenas uma direção
+
+**Questão 16** · 0,3 pt · *adaptada de SOPA 2025 Q3.2 (inversão estrutural: vantagens dos hidráulicos)*
+
+Com referência às vantagens dos sistemas HIDRÁULICOS em relação aos pneumáticos, marque (X) a única correta.
+
+(A) Menor peso, simplicidade de concepção e maior suavidade operacional.  
+(B) Rigidez das tubulações e insensibilidade às variações de temperatura.  
+(C) Fluido compressível, que dispensa lubrificação e proporciona resposta mais rápida.  
+(D) Ausência de golpe de aríete e inexistência de riscos de incêndio.  
+(E) Operam com potências elevadas em grandes distâncias e oferecem boa precisão mesmo em aplicações de alta potência.  
+
+**Questão 17** · 1 pt
+
+Responda objetivamente. Cada item corresponde a um erro frequente de pneumática.
+
+- A válvula de controle direcional pertence ao sistema de produção ou ao sistema de consumo de ar comprimido? (0,2)
+- Nas VCD pneumáticas, como são representados o conduto de pressão e a via de exaustão para a atmosfera? (0,2)
+- Qual VCD é aplicada, normalmente, no comando de atuador de simples efeito e qual no de duplo efeito? (0,2)
+- Em qual grupo de compressores a elevação de pressão ocorre por conversão de energia cinética em energia de pressão, e em qual ocorre por redução de volume? (0,2)
+- Qual válvula de controle de fluxo não admite ajuste, e qual restringe o fluxo em apenas um sentido? (0,2)
+
+**Questão 18** · 0,8 pt · *adaptada de SOPA 2025 Q3.4 (variação: figura de controle no avanço e critério de leitura)*
+
+![Figura da questão 18](/imagens/cursos/fas-t2/conteudo/Q-P1-59a-avanco-ou-recuo.webp)
+
+Considere o circuito pneumático da Figura. Responda aos itens.
+
+- Dê a classificação completa do atuador. (0,2)
+- O atuador possui controle de velocidade no avanço ou no recuo? (0,2)
+- Para responder ao item anterior, deve-se ler a posição em que a VCD está desenhada ou a orientação da válvula de retenção? Justifique com o que a esfera faz. (0,2)
+- Qual é a nomenclatura da válvula que realiza o controle de velocidade? (0,2)
+
+**Questão 19** · 0,3 pt · *adaptada de SOPA 2025 Q3.4c (variação: formato objetiva com distratores de leitura)*
+
+![Figura da questão 19](/imagens/cursos/fas-t2/conteudo/Q-P1-59b-avanco-ou-recuo.webp)
+
+Considere o circuito pneumático da Figura. Erro frequente: decidir entre avanço e recuo pela posição em que a VCD está desenhada. Quanto ao controle de velocidade do atuador, marque (X) a única correta.
+
+(A) Controle no avanço: a esfera bloqueia o fluxo diretamente para o atuador e o desvia para a restrição regulável.  
+(B) Controle igual no avanço e no recuo, pois a válvula de controle de fluxo restringe os dois sentidos.  
+(C) Controle no recuo, realizado pela própria VCD 3/2, que estrangula a exaustão por meio da alavanca.  
+(D) Controle no recuo: a esfera bloqueia a exaustão do ar e a redireciona pela restrição regulável, gerando contrapressão à pressão da mola.  
+(E) Controle no avanço: como a VCD está desenhada em repouso, o ar comprimido passa pela restrição antes de chegar ao atuador.  
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q14 — V-V-F-F-V-F-V-V-F-F**
+  - 3. F — Correção: o filtro de linha ajuda a eliminar partículas sólidas, água e óleo; quem acrescenta óleo é o lubrificador e quem remove a umidade por condensação é o secador (P1 s10, s20).
+  - 4. F — Correção: essa é a função do PRESSOSTATO; o manômetro indica a pressão no interior do reservatório (P1 s17-s18).
+  - 6. F — Correção: pressão = pequeno círculo com ponto no centro; triângulo = via de exaustão para a atmosfera (P1 s45-s46).
+  - 9. F — Correção: menor eficiência é desvantagem dos pneumáticos; operar com potências elevadas é vantagem dos hidráulicos (P1 s5-s6).
+  - 10. F — Correção: não admite ajuste — restrição permanente de diâmetro fixo; o ajuste de velocidade é da variável (P1 s55-s56).
+- **Q15 — 4-1-6-2-7-3-5-4** P1 s11 (regulador), s17-s20 (pressostato, retenção, manômetro, válvula de segurança, secador, filtro de linha). Os distratores da SOPA Q3.3 são exatamente essas funções vizinhas.
+- **Q16 — E.** P1 s5: vantagens dos hidráulicos = potências elevadas em grandes distâncias; rápidos, robustos, boa precisão em alta potência.
+- **Q17**
+  - • Ao sistema de CONSUMO.
+  - • Conduto de pressão: pequeno círculo com ponto no centro; exaustão para a atmosfera: triângulo.
+  - • VCD 3/2 (2 posições e 3 vias) → simples efeito; VCD 5/2 → duplo efeito.
+  - • Dinâmicos: conversão de energia cinética em energia de pressão; deslocamento positivo: redução de volume.
+  - • Fixa bidirecional: não admite ajuste (restrição permanente, igual nos dois sentidos). Variável unidirecional: de m para n o ar passa livre pela retenção; de n para m a retenção fecha e o ar é obrigado a passar pela via p (restrição).
+- **Q18**
+  - • Atuador linear de simples efeito, com retorno por mola.
+  - • No avanço.
+  - • A orientação da retenção: a esfera bloqueia o fluxo que segue diretamente para o atuador, e o ar é desviado para a restrição regulável.
+  - • Válvula de controle de fluxo variável unidirecional.
+- **Q19 — D.** P1 s59(b) e s61: a esfera bloqueia a exaustão → restrição → contrapressão à mola → velocidade de retorno reduzida.
+
+</details>
+
+
+## Bloco B5 — Hidráulica (V024–V029, V031, V037)
+
+‹fonte: H1 s8, s13, s16, s26–s27, s30, s34–s35, s39, s42, s46–s47, s60›
+
+| Bomba | Pressão | Marca registrada |
+|---|---|---|
+| ‹C190› Engrenagens | até **600 psi** (≈41 atm) | robusta, baixo custo, tolera fluido contaminado; eficiência reduzida |
+| ‹C192› Palhetas | até **200 psi** | muito eficiente e compacta; **capacidade ajustável pela excentricidade** |
+| ‹C194› Parafusos | até **3000 psi** | **submarinos**; pouco eficiente, custo elevado; baixo ruído, sem pulsações |
+| ‹C197› Pistões | **6000 psi ou mais** | extremamente eficiente; **> 10 HP em navios de superfície**; custo, peso e tamanho |
+
+*Tabela — características das bombas ‹fonte: H1 s8, s13, s16, s26›*
+
+| Erro frequente | Forma correta (slide) | Como a banca cobra |
+|---|---|---|
+| Submarino para a de pistões; trocar psi (V024) e excentricidade fora da palhetas (V025) | tabela acima ‹H1 s8, s13, s16, s26› | Correlação com distrator "Frankenstein" |
+| Características do fechado no aberto (V026) | ‹C217› **aberto**: bomba succiona do reservatório → atuadores → óleo retorna ao reservatório; ‹C218› **fechado**: bomba de pistão → motor de pistões → direto à bomba, sem reservatório ‹H1 s42, s60› | Objetiva sobre o aberto |
+| Inverter câmaras ou solenoides no Circuito 3 (V027) | ‹C222› Inicial: AP na **dianteira**, BP na traseira. Partida → **SOL1** → AP na **traseira** → avanço → m1 → **SOL2** → AP na dianteira → recuo ‹H1 s46› | Narrativa passo a passo |
+| Trocar as chaves dos Circuitos 3 e 4 (V028) | ‹C221› Circuito 3: partida **sem retenção**; ‹C223› Circuito 4: parada-marcha **com retenção** ‹H1 s46–s47› | Pergunta direta |
+| Nomear o símbolo errado (V029) | ‹C214› limitadora: evita que a pressão exceda o limite pré-estabelecido e, ao abrir, **retorna o óleo ao reservatório** (o texto do slide escreve "laboratório" — [POSSÍVEL ERRO NA FONTE], D-04) ‹H1 s39› | Nomenclatura de numerados |
+| Bomba ↔ motor no símbolo (V031) | ‹C199› bomba: triângulo **para fora**; ‹C201› motor: triângulo **para dentro** ‹H1 s27, s30› | Identificação de símbolo |
+| "A retenção regula a vazão" (V037) | ‹C207› retenção **bloqueia** um sentido e libera o outro; ‹C209› unidirecional **regula** a vazão pela restrição ‹H1 s34–s35› | V/F de válvulas |
+
+![Circuito 3 — comando repetitivo dos pistões](/imagens/cursos/fas-t2/conteudo/H1-46-circuito-3.webp)
+*Figura — Partida → SOL1; m1 → SOL2; 24 VCC ‹fonte: H1 s46›*
+
+### Exemplos práticos e confusões prováveis
+- ⚠️ ‹C194›/‹C197› **Submarino = parafusos**; **superfície > 10 HP = pistões**; ‹C192› excentricidade = **palhetas**.
+- ⚠️ ‹C217›/‹C218› "Sem reservatório" e "bomba de pistão → motor de pistões" são do **fechado**.
+- ⚠️ ‹C222› Avanço = SOL1 + alta pressão na **traseira**; recuo = SOL2 + alta pressão na **dianteira**. A resposta registrada na SOPA escreveu "dianteira" duas vezes por erro de digitação (D-05).
+- ⚠️ ‹C221›/‹C223› Circuito 3 = sem retenção (m1); 4 = com retenção (m1 e m2). ‹C214› Limitadora não ajusta velocidade.
+
+### Questões — bloco B5
+
+**Questão 20** · 0,3 pt
+
+Erro frequente: descrever uma bomba com características de outra (distrator "Frankenstein"). Marque (X) a única associação bomba × características fiel aos slides.
+
+(A) Bomba de parafusos — pouco eficiente e de custo elevado; alta pressão até 3000 psi; típica da transmissão de potência de submarinos.  
+(B) Bomba de palhetas — robusta, de baixo custo e tolerante a fluido contaminado, em circuitos de baixa pressão até 600 psi.  
+(C) Bomba de engrenagens — capacidade ajustável pela excentricidade entre o eixo do rotor e a carcaça, em serviços até 200 psi.  
+(D) Bomba de pistões — típica da transmissão de potência de submarinos, até 3000 psi, com pressão de saída praticamente livre de pulsações.  
+(E) Bomba de pistões — eficiência bastante reduzida, compensada pelo baixo custo e pelo pequeno tamanho.  
+
+**Questão 21** · 0,7 pt
+
+Recuperação — bombas, símbolos, válvulas e circuitos hidráulicos. Marque V ou F.
+
+( ) 1. A pressão máxima de operação da bomba de pistões pode chegar a 6000 psi ou mais, e ela é usada quase exclusivamente em transmissões de potências superiores a 10 HP em aplicação naval de superfície.  
+( ) 2. A bomba de palhetas é empregada em circuitos de até 600 psi; acima disso, as perdas internas crescem rapidamente.  
+( ) 3. A bomba de parafusos opera com reduzido nível de ruído e pressão de saída praticamente livre de pulsações.  
+( ) 4. No símbolo da bomba hidráulica o triângulo aponta para fora do círculo; no do motor hidráulico, aponta para dentro.  
+( ) 5. A válvula de retenção hidráulica regula a vazão e, portanto, permite o ajuste de velocidade do atuador.  
+( ) 6. Na válvula de controle de fluxo variável unidirecional, o fluido passa livre em um sentido e, no inverso, é forçado a passar pela restrição.  
+( ) 7. No circuito hidráulico aberto, o fluido vai da bomba de pistão para o motor de pistões e retorna diretamente à bomba, sem entrar em reservatório.  
+
+**Questão 22** · 0,6 pt
+
+Recuperação — circuito aberto × circuito fechado. Associe cada característica (coluna B) ao circuito hidráulico a que o slide a atribui (coluna A).
+
+**Coluna A**
+
+- (1) Circuito hidráulico aberto
+- (2) Circuito hidráulico fechado
+
+**Coluna B**
+
+- ( ) A bomba succiona o óleo do reservatório
+- ( ) A vazão e a direção do fluido controlam o motor
+- ( ) O óleo recalcado passa pelos atuadores e em seguida retorna ao reservatório
+- ( ) O fluido flui de uma bomba de pistão diretamente para um motor de pistões
+- ( ) O sistema pode operar em qualquer direção com a mesma dinâmica
+- ( ) A bomba descarrega o óleo através das tubulações para os atuadores hidráulicos
+
+**Questão 23** · 0,8 pt · *adaptada de SOPA 2025 Q4.3b (variação: correção de narrativa com erros inseridos)*
+
+![Figura da questão 23](/imagens/cursos/fas-t2/conteudo/Q-H1-46-circuito-3.webp)
+
+Considere a Figura (situação inicial; chave Partida e m1 do tipo NA). Um aluno descreveu o funcionamento em quatro trechos, e cada trecho contém UM erro frequente. Reescreva cada trecho de forma correta.
+
+- Trecho 1: "Na situação inicial, a VCD mantém o óleo em alta pressão na câmara traseira do atuador e a haste está recuada." (0,2)
+- Trecho 2: "Ao acionar a chave de partida, o SOL2 é energizado e a VCD comunica a alta pressão com a câmara traseira, causando o avanço da haste." (0,2)
+- Trecho 3: "No limite do avanço, a haste aciona m1, que energiza novamente o SOL1 e mantém a haste avançada." (0,2)
+- Trecho 4: "A chave de partida deste circuito é de impulso com retenção, como a chave parada-marcha do Circuito 4." (0,2)
+
+**Questão 24** · 0,3 pt
+
+![Figura da questão 24](/imagens/cursos/fas-t2/conteudo/Q-H1-46-circuito-3.webp)
+
+Considere a Figura. Com a haste recuada, na situação inicial, o operador aciona a chave de partida. Marque (X) a única correta.
+
+(A) Como a chave de partida é de impulso com retenção, o SOL1 permanece energizado e a haste fica avançada até nova atuação do operador.  
+(B) O SOL1 é energizado e a VCD passa a comunicar a alta pressão com a câmara traseira e a baixa pressão com a dianteira: a haste avança até acionar m1.  
+(C) O SOL1 é energizado e a VCD comunica a alta pressão com a câmara dianteira, o que faz a haste avançar.  
+(D) O fim de curso m1 é acionado primeiro e energiza o SOL1, que desloca a VCD e provoca o avanço.  
+(E) O SOL2 é energizado e a VCD passa a comunicar a alta pressão com a câmara traseira: a haste avança até acionar m1.  
+
+**Questão 25** · 0,8 pt
+
+Recuperação — símbolos hidráulicos vizinhos. Associe cada símbolo, descrito em palavras conforme os slides (coluna B), ao componente correspondente (coluna A). Um número pode ser usado mais de uma vez.
+
+**Coluna A**
+
+- (1) Bomba hidráulica
+- (2) Motor hidráulico
+- (3) Válvula de retenção
+- (4) Válvula de controle de fluxo variável unidirecional
+- (5) Válvula de alívio ou limitadora de pressão
+- (6) Filtro hidráulico
+- (7) Reservatório
+
+**Coluna B**
+
+- ( ) Círculo com dois triângulos cheios apontando para dentro
+- ( ) Pequeno círculo apoiado numa sede em V, com ou sem mola
+- ( ) Losango com linha tracejada
+- ( ) Estrangulamento com seta inclinada, em paralelo com uma retenção, dentro do mesmo corpo
+- ( ) Círculo com triângulo cheio apontando para fora, atravessado por seta inclinada
+- ( ) Quadrado com seta, mola ajustável e pilotagem tracejada, cuja saída devolve o óleo ao reservatório
+- ( ) Retângulo aberto na parte superior
+- ( ) Círculo com um triângulo cheio apontando para fora, sem seta
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q20 — A.** H1 s8 (engrenagens: 600 psi), s13 (palhetas: 200 psi, excentricidade), s16 (parafusos: 3000 psi, submarinos), s26 (pistões: 6000 psi, >10 HP em superfície).
+- **Q21 — V-F-V-V-F-V-F**
+  - 2. F — Correção: 600 psi e perdas internas são da bomba de ENGRENAGENS; a de palhetas atende demanda até 200 psi, e acima disso crescem desgaste e vibrações (H1 s8, s13).
+  - 5. F — Correção: a retenção bloqueia um sentido de escoamento e permite fluxo livre no contrário; quem permite o ajuste de velocidade é a válvula de controle de fluxo variável (H1 s34-s35).
+  - 7. F — Correção: essa é a descrição do circuito FECHADO (H1 s60); no aberto, o óleo já empregado nos atuadores retorna ao reservatório (H1 s42).
+- **Q22 — 1-2-1-2-2-1** H1 s42 (aberto) × H1 s60 (fechado). Os distratores da SOPA Q4.2 eram características do fechado.
+- **Q23**
+  - • Na situação inicial, a alta pressão está na câmara DIANTEIRA e a baixa pressão na câmara traseira; a haste está recuada.
+  - • Ao acionar a partida, é o SOL1 que é energizado; a VCD comunica a alta pressão com a câmara traseira e a baixa pressão com a dianteira, e a haste avança.
+  - • Ao fechar m1, o SOL2 é energizado e a VCD retorna à posição inicial: alta pressão na câmara dianteira e baixa na traseira, e a haste recua e estaciona na posição inicial.
+  - • A chave de partida do Circuito 3 é de impulso SEM retenção; a chave parada-marcha, de impulso COM retenção, é a do Circuito 4.
+- **Q24 — B.** H1 s46: Partida (sem retenção) → SOL1 → AP na traseira → avanço → m1 → SOL2 → recuo.
+- **Q25 — 2-3-6-4-1-5-7-1** H1 s27 (bombas: triângulo para fora; seta = variável), s30 (motores: triângulo para dentro), s34 (retenção sem/com mola), s35 (unidirecional), s38 (filtro, reservatório), s39 (limitadora). [INFERÊNCIA PEDAGÓGICA] a descrição em palavras dos símbolos é leitura das figuras dos slides.
+
+</details>
+
+
+## Revisão cumulativa
+
+### Questões — revisão cumulativa
+
+**Questão 26** · 0,6 pt
+
+Revisão cumulativa (elétrica, pneumática e hidráulica). Marque V ou F.
+
+( ) 1. As chaves B0 e B1 da chave estrela-triângulo da figura K1/K2/K3 e a chave de partida do Circuito 3 hidráulico são de impulso sem retenção.  
+( ) 2. A chave parada-marcha do Circuito 4 hidráulico e o botão de emergência da partida direta voltam sozinhos à posição normal depois de acionados.  
+( ) 3. A válvula de retenção do sistema de produção de ar e a válvula de retenção hidráulica permitem o fluxo em um só sentido.  
+( ) 4. O pressostato do sistema de produção de ar e o relé térmico da partida direta atuam, ambos, em função da pressão medida no reservatório.  
+( ) 5. No controle de nível on-off, o contato 13-14 mantém a bomba ligada durante o enchimento; no Circuito 3 hidráulico, o fim de curso m1 alimenta o SOL2.  
+( ) 6. Tanto na pneumática quanto na hidráulica, a válvula de alívio ou limitadora de pressão tem a função de ajustar a velocidade do atuador.  
+
+**Questão 27** · 0,8 pt
+
+Revisão cumulativa — complete as lacunas com os termos dos slides.
+
+- O contato de selo é um contato auxiliar ______ do próprio contator, ligado sempre em ______ com o contato de fechamento da botoeira. (0,2)
+- No controle de nível on-off, o contato auxiliar 13-14 da contatora fica em paralelo com o sensor de nível ______. (0,1)
+- No Circuito 3 dos slides (comando repetitivo dos pistões), a chave de partida e o fim de curso m1 são contatos do tipo ______. (0,1)
+- Na válvula pneumática de controle de fluxo variável unidirecional, no sentido de m para n o ar flui livremente através da ______, e no sentido de n para m é obrigado a passar pela via ______. (0,2)
+- No controle de velocidade no recuo de um atuador de simples efeito, a esfera bloqueia a ______ do ar, gerando uma ______ à pressão da mola. (0,2)
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q26 — V-F-V-F-V-F**
+  - 2. F — Correção: a parada-marcha é de impulso COM retenção (H1 s47) e a chave de emergência, uma vez acionada, não retorna à posição normal (E7 p5).
+  - 4. F — Correção: só o pressostato atua pela pressão do reservatório (liga/desliga o motor do compressor, P1 s17); o relé térmico atua pelo efeito térmico da corrente, com bimetal (E1 s22).
+  - 6. F — Correção: ela limita a pressão máxima / evita que a pressão exceda um limite pré-estabelecido (P1 s62; H1 s39); o ajuste de velocidade é da válvula de controle de fluxo variável (P1 s56; H1 s35).
+- **Q27**
+  - • NA; paralelo.
+  - • inferior.
+  - • NA (normalmente abertos).
+  - • válvula de retenção (que se abre); p.
+  - • exaustão; contrapressão.
+
+</details>
+
+
+## Checklist final (véspera da prova)
+- [ ] Selo = **13-14 NA em paralelo** com a botoeira; intertravamento = **NF (21-22/11-12) do outro contator** antes da bobina.
+- [ ] Relé térmico: **95-96 abre no comando → bobina desenergiza → principais abrem**; fusível substituído × disjuntor religa.
+- [ ] Contator: **uma única posição de repouso, sem travamento**; emergência **não retorna** sozinha.
+- [ ] Reversão: **S0 e depois S2**; intertravamento evita **curto-circuito**.
+- [ ] On delay = atraso na **energização**; off delay = atraso na **desenergização**; sem carga = condição × 5 CV / lento e progressivo = impedimento.
+- [ ] Y-Δ: reduzir a corrente de partida; **90%** da rotação; **6 terminais**; rede = tensão de triângulo; **IL(Y) = IL(Δ)/3**.
+- [ ] **Figura K: K2 triângulo, K3 estrela. Figura KM: KM2 estrela, KM3 triângulo.** Leio a ligação; a linha não desliga após t1.
+- [ ] Nível: 13-14 em paralelo com o sensor **inferior**; a bomba só para quando o **superior abre**. Sequencial: C2-NA sela D1-NA.
+- [ ] Pneumática: lubrificador × secador × filtro de linha; pressostato × manômetro × válvula de segurança × retenção × regulador; VCD no **consumo**.
+- [ ] Pressão = círculo com ponto; exaustão = triângulo; 3/2 → simples, 5/2 → duplo; positivo = redução de volume, dinâmico = energia cinética.
+- [ ] Fixa (sem ajuste) × variável × unidirecional; avanço/recuo pela **retenção**; "atuador linear de simples efeito, com retorno por mola".
+- [ ] Bombas **600 / 200 / 3000 / 6000 psi**; aberto (reservatório) × fechado (bomba de pistão → motor de pistões).
+- [ ] Circuito 3: Partida (sem retenção) → SOL1 → AP traseira → avanço → m1 → SOL2 → recuo.
+- [ ] Revisei a **SOPA comentada** e suas divergências.

@@ -1,0 +1,278 @@
+[
+  {
+    "id": "M00",
+    "ordem": 0,
+    "slug": "00-mapa-da-prova-e-metodo-de-estudo",
+    "titulo": "Mapa da prova e método de estudo",
+    "subtitulo": "Estrutura da T2, pesos, alertas do professor e rota de estudo",
+    "prioridade": "máxima",
+    "tempoEstimado": "10 min",
+    "objetivo": "Entender a estrutura prevista para a T2, os pesos de elétrica e fluidos e a sequência de estudo do curso.",
+    "palavrasChave": [
+      "estrutura da prova",
+      "T2 2026",
+      "SOPA 2025",
+      "método de estudo"
+    ]
+  },
+  {
+    "id": "M01",
+    "ordem": 1,
+    "slug": "01-motores-eletricos-e-tipos-de-acionamento",
+    "titulo": "Motores elétricos e tipos de acionamento",
+    "subtitulo": "Atuadores, classificação, motores CC/CA e formas de partida",
+    "prioridade": "alta",
+    "tempoEstimado": "35 min",
+    "objetivo": "Distinguir motores CC e CA, explicar sua função como atuadores e associar cada tipo de acionamento ao seu princípio.",
+    "palavrasChave": [
+      "motor CC",
+      "motor CA trifásico",
+      "atuador",
+      "soft starter",
+      "VFD"
+    ]
+  },
+  {
+    "id": "M02",
+    "ordem": 2,
+    "slug": "02-elementos-de-comandos-eletricos",
+    "titulo": "Elementos de comandos elétricos",
+    "subtitulo": "Comando, potência, seccionamento, proteção e manobra",
+    "prioridade": "muito alta",
+    "tempoEstimado": "50 min",
+    "objetivo": "Identificar os elementos de painéis elétricos e relacionar cada dispositivo às funções de seccionamento, proteção e manobra.",
+    "palavrasChave": [
+      "circuito de comando",
+      "circuito de potência",
+      "fusível",
+      "disjuntor",
+      "relé térmico"
+    ]
+  },
+  {
+    "id": "M03",
+    "ordem": 3,
+    "slug": "03-rele-contator-selo-e-intertravamento",
+    "titulo": "Relé, contator, selo e intertravamento",
+    "subtitulo": "Bobinas, contatos auxiliares, numeração e lógica de comando",
+    "prioridade": "máxima",
+    "tempoEstimado": "50 min",
+    "objetivo": "Explicar relés e contatores, ler seus terminais e distinguir sem ambiguidade selo de intertravamento.",
+    "palavrasChave": [
+      "relé",
+      "contator",
+      "13-14",
+      "21-22",
+      "selo",
+      "intertravamento"
+    ]
+  },
+  {
+    "id": "M04",
+    "ordem": 4,
+    "slug": "04-partida-direta-e-variacoes",
+    "titulo": "Partida direta e variações",
+    "subtitulo": "Circuitos de potência e comando, proteções e sinalização",
+    "prioridade": "máxima",
+    "tempoEstimado": "45 min",
+    "objetivo": "Ler circuitos de partida direta, narrar sua operação e identificar proteções, selo, emergência e sinalização.",
+    "palavrasChave": [
+      "partida direta",
+      "K1",
+      "F2",
+      "95-96",
+      "emergência",
+      "sinalização"
+    ]
+  },
+  {
+    "id": "M05",
+    "ordem": 5,
+    "slug": "05-partida-com-reversao",
+    "titulo": "Partida com reversão",
+    "subtitulo": "Inversão de fases, selagem e intertravamento entre contatores",
+    "prioridade": "máxima",
+    "tempoEstimado": "45 min",
+    "objetivo": "Explicar a reversão de motores trifásicos e acompanhar os circuitos de potência e comando sem confundir selo e intertravamento.",
+    "palavrasChave": [
+      "reversão",
+      "inversão de fases",
+      "K1",
+      "K2",
+      "intertravamento"
+    ]
+  },
+  {
+    "id": "M06",
+    "ordem": 6,
+    "slug": "06-reles-temporizadores-e-partida-de-motores-de-inducao",
+    "titulo": "Relés temporizadores e partida de motores de indução",
+    "subtitulo": "On delay, off delay, conjugado e critérios de partida",
+    "prioridade": "muito alta",
+    "tempoEstimado": "45 min",
+    "objetivo": "Diferenciar temporizadores e analisar corrente, conjugado e condições para os métodos de partida de motores de indução.",
+    "palavrasChave": [
+      "on delay",
+      "off delay",
+      "corrente de partida",
+      "conjugado",
+      "motor de indução"
+    ]
+  },
+  {
+    "id": "M07",
+    "ordem": 7,
+    "slug": "07-chave-estrela-triangulo",
+    "titulo": "Chave estrela-triângulo",
+    "subtitulo": "Ligações, relações elétricas, sequência e nomenclaturas K/KM",
+    "prioridade": "máxima",
+    "tempoEstimado": "55 min",
+    "objetivo": "Ler as ligações estrela e triângulo, calcular suas relações e identificar corretamente as contatoras em ambas as nomenclaturas das fontes.",
+    "palavrasChave": [
+      "estrela-triângulo",
+      "K1 K2 K3",
+      "KM1 KM2 KM3",
+      "temporizador",
+      "intertravamento"
+    ]
+  },
+  {
+    "id": "M08",
+    "ordem": 8,
+    "slug": "08-controle-de-nivel-e-partida-sequencial",
+    "titulo": "Aplicações: controle de nível e partida sequencial",
+    "subtitulo": "Sensores de nível, selagem e temporização de vários motores",
+    "prioridade": "máxima",
+    "tempoEstimado": "40 min",
+    "objetivo": "Narrar o controle de nível on-off e a partida sequencial, acompanhando sensores, contatores, selagem e temporizadores.",
+    "palavrasChave": [
+      "controle de nível",
+      "13-14",
+      "sensor superior",
+      "sensor inferior",
+      "partida sequencial"
+    ]
+  },
+  {
+    "id": "M09",
+    "ordem": 9,
+    "slug": "09-fluidomecanica-e-sistema-pneumatico",
+    "titulo": "Fluidomecânica e sistema pneumático",
+    "subtitulo": "Produção, preparação, distribuição e consumo do ar comprimido",
+    "prioridade": "máxima",
+    "tempoEstimado": "55 min",
+    "objetivo": "Comparar hidráulica e pneumática e reconhecer os componentes dos sistemas de produção e consumo de ar comprimido.",
+    "palavrasChave": [
+      "fluidomecânica",
+      "compressor",
+      "pressostato",
+      "FRL",
+      "produção",
+      "consumo"
+    ]
+  },
+  {
+    "id": "M10",
+    "ordem": 10,
+    "slug": "10-compressores-e-atuadores-pneumaticos",
+    "titulo": "Compressores e atuadores pneumáticos",
+    "subtitulo": "Princípios de compressão e atuadores lineares e rotativos",
+    "prioridade": "muito alta",
+    "tempoEstimado": "40 min",
+    "objetivo": "Classificar compressores e diferenciar atuadores pneumáticos lineares, rotativos, de simples efeito e de duplo efeito.",
+    "palavrasChave": [
+      "compressor",
+      "deslocamento positivo",
+      "dinâmico",
+      "simples efeito",
+      "duplo efeito"
+    ]
+  },
+  {
+    "id": "M11",
+    "ordem": 11,
+    "slug": "11-valvulas-pneumaticas-vcd-fluxo-e-alivio",
+    "titulo": "Válvulas pneumáticas: VCD, fluxo e alívio",
+    "subtitulo": "Simbologia, vias, posições, controle de velocidade e pressão",
+    "prioridade": "máxima",
+    "tempoEstimado": "55 min",
+    "objetivo": "Interpretar a simbologia das VCD e explicar válvulas de controle de fluxo, retenção e alívio em circuitos pneumáticos.",
+    "palavrasChave": [
+      "VCD",
+      "vias",
+      "posições",
+      "controle de fluxo",
+      "retenção",
+      "alívio"
+    ]
+  },
+  {
+    "id": "M12",
+    "ordem": 12,
+    "slug": "12-bombas-hidraulicas",
+    "titulo": "Bombas hidráulicas",
+    "subtitulo": "Engrenagens, palhetas, parafusos e pistões axiais",
+    "prioridade": "máxima",
+    "tempoEstimado": "50 min",
+    "objetivo": "Identificar e comparar os tipos de bombas hidráulicas, seus princípios, características e símbolos.",
+    "palavrasChave": [
+      "bomba de engrenagens",
+      "palhetas",
+      "parafusos",
+      "pistões axiais",
+      "deslocamento"
+    ]
+  },
+  {
+    "id": "M13",
+    "ordem": 13,
+    "slug": "13-motores-atuadores-valvulas-e-acessorios-hidraulicos",
+    "titulo": "Motores, atuadores, válvulas e acessórios hidráulicos",
+    "subtitulo": "Conversão de energia, comando do fluido e componentes auxiliares",
+    "prioridade": "muito alta",
+    "tempoEstimado": "45 min",
+    "objetivo": "Reconhecer motores, cilindros, válvulas e acessórios hidráulicos e explicar a função de cada componente no circuito.",
+    "palavrasChave": [
+      "motor hidráulico",
+      "cilindro",
+      "VCD",
+      "válvula de alívio",
+      "acumulador"
+    ]
+  },
+  {
+    "id": "M14",
+    "ordem": 14,
+    "slug": "14-circuitos-hidraulicos-e-eletro-hidraulicos",
+    "titulo": "Circuitos hidráulicos e eletro-hidráulicos",
+    "subtitulo": "Circuito aberto/fechado, sequência de operação e aplicações navais",
+    "prioridade": "máxima",
+    "tempoEstimado": "50 min",
+    "objetivo": "Ler e narrar circuitos hidráulicos e eletro-hidráulicos, identificando fluxo, pressão, acionamentos e movimentos dos atuadores.",
+    "palavrasChave": [
+      "circuito aberto",
+      "circuito fechado",
+      "solenoide",
+      "avanço",
+      "recuo",
+      "servomecanismo"
+    ]
+  },
+  {
+    "id": "M15",
+    "ordem": 15,
+    "slug": "15-revisao-final-recuperacao-e-sopa-comentada",
+    "titulo": "Revisão final, recuperação e SOPA comentada",
+    "subtitulo": "Erros frequentes, circuitos críticos e prova anterior comentada",
+    "prioridade": "máxima",
+    "tempoEstimado": "65 min",
+    "objetivo": "Recuperar os erros frequentes, integrar elétrica e fluidos e revisar a SOPA 2025 antes dos três simulados completos.",
+    "palavrasChave": [
+      "revisão final",
+      "erros frequentes",
+      "SOPA 2025",
+      "circuitos",
+      "simulados"
+    ]
+  }
+]

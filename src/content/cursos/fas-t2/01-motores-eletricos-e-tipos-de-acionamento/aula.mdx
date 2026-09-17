@@ -1,0 +1,421 @@
+---
+titulo: "Motores elétricos e tipos de acionamento — aula"
+secao: "aula"
+secaoOrdem: 1
+---
+
+# MÓDULO M01 — Motores elétricos e tipos de acionamento
+
+> Fontes: ‹E1 s5–s12› · Tempo de leitura: ~11 min
+
+**Você vai precisar saber:**
+- Explicar por que os motores dos tanques de lastro de controle precisam de acionamento seguro, rápido e confiável — e com o quê isso é obtido.
+- Definir motor elétrico (função de atuador, conversão de energia, origem do movimento rotativo).
+- Identificar na figura a classificação completa dos motores elétricos (11 caixas).
+- Comparar motor CC e motor CA trifásico: alimentação, controle de velocidade, aplicações e manutenção.
+- Associar cada tipo de acionamento (4 do motor CA trifásico e 2 do motor CC) ao seu princípio de controle.
+
+## Bloco B1 — Por que acionar motores: lastro do submarino e atuadores
+
+‹fonte: E1 s5–s8›
+
+**‹C001› Tanques de lastro** — O sistema de lastro é fundamental para a **manobrabilidade vertical** de um submarino. Tanques de lastro são compartimentos que podem ser preenchidos com **água do mar** ou com **ar comprimido**. Dividem-se geralmente em:
+- **lastros principais** (imersão/emergência);
+- **lastros de controle** (para ajustes finos de profundidade).
+
+**‹C002› Tanques de lastro de controle** ‹fonte: E1 s6–s7›
+1. Entrada e saída de água são **ativamente controladas**, utilizando **compressores e/ou bombas**.
+2. **Motores elétricos** movimentam os compressores e/ou bombas.
+3. Esses motores precisam ser acionados com **segurança, rapidez e confiabilidade**.
+4. Como? Através de **relés, contatores e sistemas de controle associados**.
+
+**‹C003› Exemplos de atuadores em sistemas de controle** ‹fonte: E1 s8›
+
+| Exemplo | Objetivo | Motor |
+|---|---|---|
+| 1) Controle de nível em tanques de água ou combustível | Acionar bomba para enchimento ou esvaziamento automático | CA trifásico (bomba centrífuga) |
+| 2) Controle de posição de radar ou antenas direcionais | Posicionar antena/radar conforme orientação necessária | CC com encoder (servo) |
+
+**‹C004› Interesse principal da automação** — O principal interesse da automação está no **acionamento** e no **controle funcional** dos motores, garantindo **desempenho, segurança e integração ao sistema**. ‹fonte: E1 s8›
+
+### Exemplos práticos e confusões prováveis
+- ‹C001› Lastro **principal** = imersão/emergência; lastro **de controle** = ajuste fino de profundidade. Não inverta.
+- ‹C002› Cadeia do slide: água ← compressores e/ou bombas ← motores elétricos ← relés, contatores e sistemas de controle associados.
+- ⚠️ ‹C003› Bomba do tanque → motor **CA trifásico** (bomba centrífuga); radar/antena → motor **CC com encoder** (servo). Trocar os dois é o distrator típico.
+- ⚠️ ‹C004› As três garantias são **desempenho, segurança e integração ao sistema**; "robustos, simples e econômicos" é característica do motor CA trifásico (B3), não do interesse da automação.
+
+### Questões — bloco B1
+
+**Questão 1** · 0,7 pt
+
+Com relação ao sistema de lastro de um submarino e ao acionamento dos seus tanques, marque V ou F.
+
+( ) 1. O sistema de lastro é fundamental para a manobrabilidade vertical de um submarino.  
+( ) 2. Os tanques de lastro são compartimentos que podem ser preenchidos com água do mar ou com ar comprimido.  
+( ) 3. Os lastros de controle destinam-se à imersão e à emergência, enquanto os lastros principais fazem os ajustes finos de profundidade.  
+( ) 4. Nos tanques de lastro de controle, a entrada e a saída de água são ativamente controladas utilizando compressores e/ou bombas.  
+( ) 5. Os compressores e/ou bombas dos tanques de lastro de controle são movimentados por motores elétricos, cujo acionamento seguro, rápido e confiável é obtido através de sensores de nível e encoders.  
+( ) 6. O principal interesse da automação está no acionamento e no controle funcional dos motores, garantindo desempenho, segurança e integração ao sistema.  
+( ) 7. O principal interesse da automação nos motores é torná-los mais robustos, simples e econômicos.  
+
+**Questão 2** · 0,2 pt
+
+Com referência aos exemplos de atuadores em sistemas de controle apresentados em aula, marque (X) a única correta.
+
+(A) Nos dois exemplos, o motor empregado é CC com encoder, pois ambos exigem controle preciso de posição.  
+(B) No controle de posição de radar ou antenas direcionais, o objetivo é acionar bomba centrífuga para posicionar a antena conforme a orientação necessária.  
+(C) No controle de posição de radar ou antenas direcionais, emprega-se motor CA trifásico, por ser mais robusto, simples e econômico.  
+(D) No controle de nível em tanques de água ou combustível, o objetivo é acionar bomba para enchimento ou esvaziamento automático, com motor CA trifásico (bomba centrífuga).  
+(E) No controle de nível em tanques de água ou combustível, emprega-se motor CC com encoder (servo) para acionar a bomba de enchimento.  
+
+**Questão 3** · 0,5 pt
+
+Complete as lacunas com os termos empregados em aula.
+
+- Nos tanques de lastro de controle, os motores elétricos movimentam os ______ e/ou ______. (0,1)
+- Esses motores precisam ser acionados com segurança, ______ e ______. (0,1)
+- Esse acionamento é obtido através de ______, ______ e sistemas de controle associados. (0,1)
+- O principal interesse da automação está no ______ e no ______ dos motores. (0,1)
+- Esse interesse visa garantir desempenho, ______ e ______ ao sistema. (0,1)
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q1 — V-V-F-V-F-V-F**
+  - 3. F — Correção: lastros principais = imersão/emergência; lastros de controle = ajustes finos de profundidade (E1 s5).
+  - 5. F — Correção: o acionamento é obtido através de relés, contatores e sistemas de controle associados (E1 s7).
+  - 7. F — Correção: o interesse é o acionamento e o controle funcional (desempenho, segurança e integração ao sistema) — E1 s8; 'robustos, simples e econômicos' descreve o motor CA trifásico (E1 s11).
+- **Q2 — D.** E1 s8: (1) controle de nível — acionar bomba para enchimento/esvaziamento automático — motor CA trifásico (bomba centrífuga); (2) controle de posição de radar/antenas — posicionar antena/radar — motor CC com encoder (servo).
+- **Q3**
+  - • compressores; bombas
+  - • rapidez; confiabilidade
+  - • relés; contatores
+  - • acionamento; controle funcional
+  - • segurança; integração
+
+</details>
+
+
+## Bloco B2 — Motor elétrico: definição e classificação
+
+‹fonte: E1 s9–s10›
+
+**‹C005› Motor elétrico** ‹fonte: E1 s9›
+- São dispositivos **eletromecânicos** fundamentais nos sistemas de automação, pois desempenham a **função de atuadores**.
+- Convertem **energia elétrica em energia mecânica** para realizar movimento.
+- O **movimento rotativo** é o efeito prático do **torque**, gerado pela força resultante da **interação magnética entre o estator e o rotor** do motor.
+
+**‹C006› Classificação dos motores elétricos** ‹fonte: E1 s10› — Motores elétricos:
+- **Corrente alternada (CA)** — (AC) Alternating Current
+  - **Indução (assíncrono)** → **monofásico**; **trifásico**
+  - **Síncronos**
+- **Corrente contínua (CC)** — (DC) Direct Current
+  - **Excitado separadamente**
+  - **Auto excitado** → **excitação em série**; **excitação composta**; **excitação em paralelo**
+
+![Classificação dos motores elétricos](/imagens/cursos/fas-t2/conteudo/E1-10-classificacao-motores.webp)
+*Figura — Classificação dos motores elétricos ‹fonte: E1 s10›*
+
+### Exemplos práticos e confusões prováveis
+- ‹C005› Encadeamento das frases do slide: interação magnética estator–rotor → força resultante → torque → movimento rotativo. [INFERÊNCIA PEDAGÓGICA: ordenação das três frases do slide]
+- ⚠️ ‹C005› O motor é **atuador** e converte elétrica em **mecânica** — não o contrário.
+- ⚠️ ‹C006› "Assíncrono" é o outro nome de **indução** (ramo CA), não de síncrono. Monofásico e trifásico ficam **sob indução**, não sob síncronos.
+- ⚠️ ‹C006› Série, composta e paralelo são subdivisões do CC **auto excitado**; "excitado separadamente" não tem subdivisão na figura.
+- ‹C006› Na prova a figura pode vir com as caixas numeradas em branco: à esquerda CA → indução (assíncrono) / síncronos → monofásico / trifásico; à direita CC → excitado separadamente / auto excitado → série / composta / paralelo.
+
+### Questões — bloco B2
+
+**Questão 4** · 1,1 pt
+
+![Figura da questão 4](/imagens/cursos/fas-t2/conteudo/Q-E1-10-classificacao.webp)
+
+A Figura apresenta a classificação dos motores elétricos com as caixas numeradas em branco. Dê a nomenclatura de cada caixa (0,1 cada).
+
+- Caixa 1 (0,1)
+- Caixa 2 (0,1)
+- Caixa 3 (0,1)
+- Caixa 4 (0,1)
+- Caixa 5 (0,1)
+- Caixa 6 (0,1)
+- Caixa 7 (0,1)
+- Caixa 8 (0,1)
+- Caixa 9 (0,1)
+- Caixa 10 (0,1)
+- Caixa 11 (0,1)
+
+**Questão 5** · 0,6 pt
+
+Com relação aos motores elétricos e à sua classificação, marque V ou F.
+
+( ) 1. Os motores elétricos são dispositivos eletromecânicos que, nos sistemas de automação, desempenham a função de atuadores.  
+( ) 2. Os motores elétricos convertem energia mecânica em energia elétrica para realizar movimento.  
+( ) 3. O movimento rotativo é o efeito prático do torque, gerado pela força resultante da interação magnética entre o estator e o rotor.  
+( ) 4. O motor de indução, também chamado de síncrono, pertence ao grupo dos motores de corrente alternada.  
+( ) 5. Na classificação apresentada, monofásico e trifásico são subdivisões do motor de indução.  
+( ) 6. O motor CC excitado separadamente subdivide-se em excitação em série, composta e em paralelo.  
+
+**Questão 6** · 0,5 pt
+
+Responda objetivamente sobre os motores elétricos em sistemas de automação.
+
+- a) Por que os motores elétricos são considerados fundamentais nos sistemas de automação e que conversão de energia realizam? (0,2)
+- b) Explique como é obtido o movimento rotativo do motor, citando as duas partes do motor envolvidas. (0,3)
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q4**
+  - • Corrente alternada (CA)
+  - • Corrente contínua (CC)
+  - • Indução (assíncrono)
+  - • Síncronos
+  - • Excitado separadamente
+  - • Auto excitado
+  - • Monofásico
+  - • Trifásico
+  - • Excitação em série
+  - • Excitação composta
+  - • Excitação em paralelo
+- **Q5 — V-F-V-F-V-F**
+  - 2. F — Correção: convertem energia elétrica em energia mecânica (E1 s9).
+  - 4. F — Correção: o motor de indução é o assíncrono; os síncronos formam outra caixa do ramo CA (E1 s10).
+  - 6. F — Correção: série, composta e paralelo são subdivisões do motor CC auto excitado (E1 s10).
+- **Q6**
+  - a) Porque desempenham a função de atuadores; convertem energia elétrica em energia mecânica para realizar movimento.
+  - b) O movimento rotativo é o efeito prático do torque, gerado pela força resultante da interação magnética entre o estator e o rotor.
+
+</details>
+
+
+## Bloco B3 — Motor CC x motor CA trifásico
+
+‹fonte: E1 s11› — "Tipos mais utilizados em automação"
+
+| Critério | MOTOR CC | MOTOR CA TRIFÁSICO |
+|---|---|---|
+| ‹C007› Alimentação | 12 V, 24 V, 48 V | 220 V, 380 V, 440 V |
+| ‹C008› Controle de velocidade | Simples (tensão ou PWM) | Exige inversor de frequência (VFD) |
+| ‹C009› Aplicações | Controle preciso de posição e sistemas de emergência | Ventiladores, bombas, compressores |
+| ‹C009› Manutenção / construção | Requer manutenção em escovas (exceto brushless) | Mais robustos, simples e econômicos |
+
+![Motor CC x motor CA trifásico](/imagens/cursos/fas-t2/conteudo/E1-11-cc-x-ca.webp)
+*Figura — Tipos mais utilizados em automação ‹fonte: E1 s11›*
+
+### Exemplos práticos e confusões prováveis
+- ‹C007› Tensões 12/24/48 V → motor CC; 220/380/440 V → motor CA trifásico.
+- ‹C008› Variar a velocidade de um motor CA trifásico (ex.: bomba) → **VFD**; variar a velocidade de um motor CC → basta **tensão ou PWM**.
+- ‹C009› Ligação com o B1: radar/antena (posição precisa) → CC; bomba centrífuga de tanque → CA trifásico (bombas e compressores).
+- ⚠️ ‹C009› "Exceto brushless" é exceção à manutenção em **escovas** do motor **CC** — não se aplica ao CA.
+- ⚠️ ‹C008› "Simples" qualifica o controle de velocidade do **CC**; "simples" no CA trifásico qualifica o motor (robusto, simples, econômico), cujo controle de velocidade **exige** VFD.
+
+### Questões — bloco B3
+
+**Questão 7** · 0,9 pt
+
+Associe cada característica ao tipo de motor mais utilizado em automação a que ela se refere.
+
+**Coluna A**
+
+- (1) Motor CC
+- (2) Motor CA trifásico
+
+**Coluna B**
+
+- ( ) Alimentação de 12 V, 24 V ou 48 V
+- ( ) Controle de velocidade que exige inversor de frequência (VFD)
+- ( ) Usado em sistemas de emergência
+- ( ) Alimentação de 220 V, 380 V ou 440 V
+- ( ) Requer manutenção em escovas (exceto brushless)
+- ( ) Usado em ventiladores, bombas e compressores
+- ( ) Controle de velocidade simples, por tensão ou PWM
+- ( ) Mais robusto, simples e econômico
+- ( ) Usado em controle preciso de posição
+
+**Questão 8** · 0,2 pt
+
+Com relação à comparação entre o motor CC e o motor CA trifásico, marque (X) a única INCORRETA.
+
+(A) O motor CC requer manutenção em escovas, exceto no caso do brushless.  
+(B) O controle de velocidade do motor CA trifásico exige inversor de frequência (VFD).  
+(C) O motor CA trifásico é usado em ventiladores, bombas e compressores e é mais robusto, simples e econômico.  
+(D) O motor CC é usado em controle preciso de posição e em sistemas de emergência.  
+(E) O motor CA trifásico tem controle de velocidade simples, por tensão ou PWM, e por isso é usado em controle preciso de posição.  
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q7 — 1-2-1-2-1-2-1-2-1** Tabela CC × CA trifásico de E1 s11.
+- **Q8 — E.** A INCORRETA atribui ao CA trifásico o controle de velocidade simples (tensão ou PWM) e a aplicação em controle preciso de posição, que são do motor CC; o CA trifásico exige VFD (E1 s11).
+
+</details>
+
+
+## Bloco B4 — Tipos de acionamento na automação
+
+‹fonte: E1 s12›
+
+| Tipo de motor | Tipo de acionamento | Princípio de controle |
+|---|---|---|
+| Motor CA trifásico | ‹C010› **Partida direta** | Ligação direta à rede |
+| | ‹C011› **Estrela-triângulo** | Redução de tensão na partida (estrela), comutação para triângulo |
+| | ‹C012› **Soft starter (partida suave)** | Controle gradual da tensão de partida com tiristores (SCRs) |
+| | ‹C013› **Inversor de frequência (VFD)** | Variação da frequência e da tensão de entrada (PWM) |
+| Motor CC | ‹C014› **Driver PWM** | Modulação por largura de pulso (PWM) |
+| | ‹C014› **Driver com H-Bridge** | Controle de chaveamento de polaridade (sentido de giro) |
+
+![Tipos de acionamento](/imagens/cursos/fas-t2/conteudo/E1-12-tipos-acionamento.webp)
+*Figura — Tipo de motor × tipo de acionamento × princípio de controle ‹fonte: E1 s12›*
+
+No slide, partida direta e estrela-triângulo estão em destaque (negrito): são os acionamentos cujos circuitos o curso detalha adiante (partida direta no M04; estrela-triângulo no M07).
+
+### Exemplos práticos e confusões prováveis
+- ‹C010› Partida direta: o motor CA trifásico é ligado **diretamente à rede**, sem redução de tensão.
+- ‹C011› Estrela-triângulo: **parte em estrela** (tensão reduzida) e **comuta para triângulo**. A ordem inversa é erro.
+- ⚠️ ‹C012›/‹C013› Tiristores (SCRs) → **soft starter**; variação da **frequência** e da tensão (PWM) → **VFD**. Trocar é o erro clássico (V034).
+- ⚠️ ‹C011›/‹C012› Os dois atuam na tensão de partida, mas a estrela-triângulo reduz pela ligação em estrela e depois comuta; o soft starter faz controle **gradual** com SCRs.
+- ‹C013› Liga com o B3: o VFD é justamente o que o motor CA trifásico exige para controle de velocidade.
+- ⚠️ ‹C014› Driver PWM = modulação por largura de pulso; driver com H-Bridge = chaveamento de **polaridade** → **sentido de giro**. Ambos são do motor **CC**, não do CA trifásico.
+
+### Questões — bloco B4
+
+**Questão 9** · 0,5 pt
+
+Associe cada tipo de acionamento ao seu princípio de controle.
+
+**Coluna A**
+
+- (1) Partida direta
+- (2) Estrela-triângulo
+- (3) Soft starter (partida suave)
+- (4) Inversor de frequência (VFD)
+- (5) Driver PWM
+- (6) Driver com H-Bridge
+
+**Coluna B**
+
+- ( ) Controle gradual da tensão de partida com tiristores (SCRs)
+- ( ) Controle de chaveamento de polaridade (sentido de giro)
+- ( ) Variação da frequência e da tensão de entrada (PWM)
+- ( ) Redução de tensão na partida (estrela), comutação para triângulo
+- ( ) Ligação direta à rede
+
+**Questão 10** · 0,6 pt
+
+Associe cada tipo de acionamento ao tipo de motor em que é empregado, conforme a tabela de acionamentos na automação.
+
+**Coluna A**
+
+- (1) Motor CA trifásico
+- (2) Motor CC
+
+**Coluna B**
+
+- ( ) Driver com H-Bridge
+- ( ) Soft starter
+- ( ) Partida direta
+- ( ) Driver PWM
+- ( ) Inversor de frequência (VFD)
+- ( ) Estrela-triângulo
+
+**Questão 11** · 0,2 pt
+
+Com relação ao soft starter (partida suave) de um motor CA trifásico, marque (X) a única correta.
+
+(A) Realiza o controle gradual da tensão de partida com tiristores (SCRs).  
+(B) Liga o motor diretamente à rede, variando gradualmente a frequência com tiristores (SCRs).  
+(C) Reduz a tensão na partida ligando o motor em estrela e depois comuta para triângulo.  
+(D) Controla o chaveamento de polaridade para definir o sentido de giro.  
+(E) Realiza a variação da frequência e da tensão de entrada por PWM.  
+
+**Questão 12** · 0,5 pt
+
+Com relação aos tipos de acionamento na automação, marque V ou F.
+
+( ) 1. Na partida direta, o motor CA trifásico é acionado por ligação direta à rede.  
+( ) 2. Na estrela-triângulo, o motor parte em triângulo, com tensão reduzida, e depois é comutado para estrela.  
+( ) 3. O inversor de frequência (VFD) controla gradualmente a tensão de partida por meio de tiristores (SCRs).  
+( ) 4. O driver com H-Bridge, empregado em motor CC, controla o chaveamento de polaridade, o que define o sentido de giro.  
+( ) 5. O driver PWM é um acionamento de motor CA trifásico baseado na modulação por largura de pulso.  
+
+**Questão 13** · 0,7 pt
+
+Compare os princípios de acionamento dos motores CA trifásicos e CC apresentados nos slides.
+
+- a) Qual é o princípio de controle da chave estrela-triângulo? (0,2)
+- b) Soft starter e inversor de frequência (VFD) são acionamentos de motor CA trifásico. Qual é a diferença entre os seus princípios de controle? (0,3)
+- c) Qual acionamento de motor CC permite definir o sentido de giro, e por meio de quê? (0,2)
+
+**Questão 14** · 1,3 pt
+
+Um navio possui dois sistemas automatizados, conforme os exemplos vistos em aula: (I) controle de nível de um tanque de combustível, que aciona uma bomba centrífuga para enchimento ou esvaziamento automático; (II) controle de posição de uma antena direcional. Responda objetivamente.
+
+- a) Que tipo de motor é empregado no sistema (I) e em qual faixa de tensões de alimentação ele trabalha? (0,2)
+- b) Se for necessário variar a velocidade da bomba do sistema (I), que dispositivo o motor exige e qual é o seu princípio de controle? (0,3)
+- c) Que tipo de motor é empregado no sistema (II) e que cuidado de manutenção ele requer? (0,2)
+- d) No sistema (II), que acionamento permite inverter o sentido de giro da antena, e qual acionamento do mesmo motor controla a velocidade por largura de pulso? (0,3)
+- e) Um operador propõe acionar a bomba do sistema (I) apenas por ligação direta à rede. Como se chama esse tipo de acionamento? (0,1)
+- f) Nos tanques de lastro de controle de um submarino, bombas e compressores também são movidos por motores elétricos. Através de que elementos se obtém o acionamento seguro, rápido e confiável desses motores? (0,2)
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q9 — 3-6-4-2-1 (o item 5, driver PWM, fica sem par)** Tabela de acionamentos de E1 s12. O driver PWM (modulação por largura de pulso) não tem par, para impedir a eliminação por exclusão.
+- **Q10 — 2-1-1-2-1-1** E1 s12: motor CA trifásico — partida direta, estrela-triângulo, soft starter, VFD; motor CC — driver PWM e driver com H-Bridge.
+- **Q11 — A.** E1 s12: soft starter = controle gradual da tensão de partida com tiristores (SCRs).
+- **Q12 — V-F-F-V-F**
+  - 2. F — Correção: redução de tensão na partida em estrela, com comutação para triângulo (E1 s12).
+  - 3. F — Correção: o VFD varia a frequência e a tensão de entrada (PWM); SCRs são do soft starter (E1 s12).
+  - 5. F — Correção: o driver PWM é acionamento de motor CC (E1 s12).
+- **Q13**
+  - a) Redução de tensão na partida (ligação em estrela) e comutação para triângulo.
+  - b) Soft starter: controle gradual da tensão de partida com tiristores (SCRs). VFD: variação da frequência e da tensão de entrada (PWM).
+  - c) Driver com H-Bridge, por meio do controle de chaveamento de polaridade.
+- **Q14**
+  - a) Motor CA trifásico; alimentação de 220 V, 380 V ou 440 V.
+  - b) Inversor de frequência (VFD): variação da frequência e da tensão de entrada (PWM).
+  - c) Motor CC com encoder (servo); requer manutenção em escovas, exceto se for brushless.
+  - d) Driver com H-Bridge (chaveamento de polaridade) para o sentido de giro; driver PWM (modulação por largura de pulso).
+  - e) Partida direta.
+  - f) Através de relés, contatores e sistemas de controle associados.
+
+</details>
+
+
+## Revisão cumulativa
+
+### Questões — revisão cumulativa
+
+**Questão 15** · 0,6 pt
+
+Revisão do módulo. Marque V ou F.
+
+( ) 1. Os lastros principais do submarino são usados na imersão e na emergência.  
+( ) 2. O torque que produz o movimento rotativo resulta da interação magnética entre o estator e o rotor.  
+( ) 3. Os motores síncronos subdividem-se em monofásicos e trifásicos.  
+( ) 4. A exceção 'brushless' refere-se à manutenção em escovas do motor CA trifásico.  
+( ) 5. Tiristores (SCRs) são o elemento do soft starter para o controle gradual da tensão de partida.  
+( ) 6. O controle de chaveamento de polaridade é o princípio do driver PWM.  
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q15 — V-V-F-F-V-F**
+  - 3. F — Correção: monofásico e trifásico ficam sob indução (assíncrono) (E1 s10).
+  - 4. F — Correção: refere-se ao motor CC (E1 s11).
+  - 6. F — Correção: é o princípio do driver com H-Bridge; o driver PWM usa modulação por largura de pulso (E1 s12).
+
+</details>
+
+
+## Checklist de domínio
+- [ ] Sei dizer os dois tipos de lastro e a função de cada um, e com o que se acionam os motores dos lastros de controle.
+- [ ] Sei os dois exemplos de atuadores do slide (objetivo e motor de cada um).
+- [ ] Defino motor elétrico em três frases: atuador; elétrica → mecânica; torque da interação estator–rotor.
+- [ ] Preencho as 11 caixas da classificação sem olhar.
+- [ ] Recito as 4 linhas CC × CA trifásico (alimentação, velocidade, uso, manutenção).
+- [ ] Associo os 6 acionamentos a seus princípios e ao tipo de motor, sem trocar SCR com VFD.

@@ -1,0 +1,609 @@
+---
+titulo: "Chave estrela-triângulo — aula"
+secao: "aula"
+secaoOrdem: 1
+---
+
+# MÓDULO M07 — Chave estrela-triângulo
+
+> Fontes: ‹E6 p17, p19–p34› · ‹E7 p14–p17› · Tempo de leitura: ~22 min (inclui leitura das figuras)
+
+**Você vai precisar saber:**
+- Enunciar o objetivo e o princípio da chave estrela-triângulo e as relações de tensão (127/220 V) e de corrente de linha (1/3).
+- Listar as 3 vantagens e as 3 desvantagens, explicando o cuidado com o tempo do relé temporizado (≥ 90% da rotação nominal) e os 6 terminais.
+- Identificar **pelo circuito** qual contator é de linha, estrela e triângulo nas duas figuras do professor (K1/K2/K3 e KM1/KM2/KM3).
+- Descrever o passo a passo: contatoras energizadas na partida e após t1, selos, intertravamento e parada.
+
+## Bloco B1 — Objetivo, princípio, tensões e correntes
+
+‹fonte: E6 p17, p19–p21›
+
+**‹C087› Objetivo da chave estrela-triângulo** — reduzir a corrente de partida em motores trifásicos, permitindo um acionamento mais suave e protegendo o motor e os equipamentos elétricos conectados.
+
+**‹C088› Princípio** — o motor é iniciado em **estrela**, configuração em que a tensão aplicada a cada enrolamento é reduzida; quando atinge velocidade **próxima da nominal**, a chave **comuta para triângulo**, aplicando a tensão nominal ao motor.
+
+**‹C089› Tensão em cada enrolamento** ‹fonte: E6 p19–p20›
+
+| Ligação | Etapa (E6 p20) | Tensão por enrolamento (E6 p19) | Com rede de 220 V (E6 p20) |
+|---|---|---|---|
+| Estrela (Y) | PARTIDA | U/√3 | 127 V |
+| Triângulo (Δ) | MARCHA | U | 220 V |
+
+**‹C090› Corrente de linha** ‹fonte: E6 p20› — IL(Y) = IF(Y) = VL/(√3·ZF) e IL(Δ) = √3·IF(Δ) = √3·VL/ZF; portanto **IL(Y)/IL(Δ) = 1/3**: a corrente de linha em estrela é **um terço** da corrente de linha em triângulo.
+
+![Tensão por enrolamento em estrela e em triângulo](/imagens/cursos/fas-t2/conteudo/E6-19-tensoes-y-d.webp)
+*Figura — U/√3 por enrolamento em estrela; U em triângulo ("after start time") ‹fonte: E6 p19›*
+
+![Partida em estrela e marcha em triângulo](/imagens/cursos/fas-t2/conteudo/E6-20-correntes-y-d.webp)
+*Figura — partida (127 V no enrolamento) e marcha (220 V); relação 1/3 destacada ‹fonte: E6 p20›*
+
+**‹C091› Curvas de corrente na partida** ‹fonte: E6 p21› — gráfico Ip/In: tracejada = **partida direta, corrente sem redução**; cheia = **corrente com redução**; no instante **tc** da **partida indireta "ocorre a troca das tensões"**. Ao lado, Cp/Cn × n/ns compara o conjugado das duas partidas com o conjugado resistente CR.
+
+![Curvas de corrente e de conjugado](/imagens/cursos/fas-t2/conteudo/E6-21-curvas.webp)
+*Figura — corrente sem redução (direta) × com redução (Y-Δ) e troca das tensões em tc ‹fonte: E6 p21›*
+
+### Exemplos práticos e confusões prováveis
+- ‹C087› "Qual o objetivo?" → **reduzir a corrente de partida**. Não é variar velocidade (VFD) nem inverter sentido (reversão).
+- ‹C088›/‹C089› Ordem sempre estrela (partida, 127 V por enrolamento em rede de 220 V) → triângulo (marcha, 220 V).
+- ⚠️ ‹C090› √3 aparece nas duas fórmulas, mas a razão das correntes de linha é **1/3** — responder 1/√3 é erro.
+
+### Questões — bloco B1
+
+**Questão 1** · 0,2 pt · *adaptada de SOPA 2025 Q2.1b*
+
+A chave estrela-triângulo é um dos tipos de partida de motor de indução. Assinale (X) a única alternativa que apresenta o objetivo dessa chave, conforme o slide.
+
+(A) Controlar gradualmente a tensão de partida por meio de tiristores (SCRs).  
+(B) Reduzir a corrente de partida do motor trifásico, tornando o acionamento mais suave e protegendo o motor e os equipamentos elétricos conectados.  
+(C) Aplicar a tensão nominal a cada enrolamento já na partida, para que o motor acelere mais rápido.  
+(D) Variar a frequência e a tensão aplicadas ao motor para controlar continuamente a sua velocidade.  
+(E) Inverter o sentido de rotação do motor trocando duas fases por meio de contatores adicionais.  
+
+**Questão 2** · 0,8 pt
+
+Com relação ao princípio da chave estrela-triângulo e às relações de tensão e corrente apresentadas nos slides, marque V ou F.
+
+( ) 1. Na partida, os enrolamentos são ligados em estrela; quando o motor atinge velocidade próxima da nominal, a chave comuta para triângulo.  
+( ) 2. Na ligação estrela, cada enrolamento recebe a tensão de linha U.  
+( ) 3. Com rede de 220 V, a tensão em cada enrolamento é de 127 V na partida e de 220 V na marcha.  
+( ) 4. A corrente de linha na ligação estrela é igual a 1/√3 da corrente de linha na ligação triângulo.  
+( ) 5. Na ligação estrela, a corrente de linha é igual à corrente de fase.  
+( ) 6. A comutação para triângulo aplica a tensão nominal ao motor.  
+( ) 7. No gráfico Ip/In, a curva tracejada da partida direta representa a corrente com redução.  
+( ) 8. Na partida indireta, a troca das tensões ocorre no instante de comutação tc.  
+
+**Questão 3** · 0,9 pt
+
+Responda objetivamente, com base nas figuras de tensões, correntes e curvas da chave estrela-triângulo (E6 p19-p21).
+
+- a) Em função da tensão de linha U, qual a tensão aplicada a cada enrolamento na ligação estrela e na ligação triângulo? (0,2)
+- b) A partir das expressões IL(Y) = VL/(√3·ZF) e IL(Δ) = √3·VL/ZF, qual a relação entre as correntes de linha nas duas ligações? (0,2)
+- c) Relacione os itens a) e b) ao objetivo da chave: por que o motor parte em estrela e só depois passa a triângulo? (0,3)
+- d) No gráfico Ip/In, o que ocorre no instante tc da partida indireta? (0,2)
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q1 — B.** E6 p17: o objetivo da chave estrela-triângulo é reduzir a corrente de partida em motores trifásicos, permitindo acionamento mais suave e protegendo o motor e os equipamentos elétricos conectados.
+- **Q2 — V-F-V-F-V-V-F-V**
+  - 2. F — Correção: em estrela cada enrolamento recebe U/√3; em triângulo recebe U (E6 p19).
+  - 4. F — Correção: IL(Y)/IL(Δ) = 1/3 (E6 p20).
+  - 7. F — Correção: a partida direta é a corrente sem redução; a corrente com redução é a da partida estrela-triângulo (E6 p21).
+- **Q3**
+  - a) Estrela: U/√3; triângulo: U (E6 p19).
+  - b) IL(Y)/IL(Δ) = 1/3: a corrente de linha em estrela é um terço da corrente de linha em triângulo (E6 p20).
+  - c) Em estrela a tensão por enrolamento é reduzida e a corrente de linha é 1/3 da de triângulo; assim se reduz a corrente de partida (acionamento mais suave, protegendo motor e equipamentos). Com velocidade próxima da nominal comuta-se para triângulo, que aplica a tensão nominal (E6 p17, p19, p20).
+  - d) Ocorre a troca das tensões (comutação de estrela para triângulo), visível como o salto da corrente com redução nesse instante (E6 p21).
+
+</details>
+
+
+## Bloco B2 — Vantagens, desvantagens e ajuste do relé temporizado
+
+‹fonte: E6 p22–p23; E6 p17›
+
+**‹C092› Vantagens das chaves estrela-triângulo** (E6 p22):
+1. Baixo custo (em relação à chave compensadora);
+2. Pequeno espaço ocupado pelos componentes; e
+3. Sem limite máximo de manobras.
+
+**Desvantagens das chaves estrela-triângulo** (E6 p23):
+1. **‹C093›** Se o motor não atingir **pelo menos 90%** de sua rotação nominal, na comutação para a ligação triângulo **o pico de corrente é quase o mesmo da partida direta**.
+2. **‹C094›** O motor deve ter **pelo menos seis terminais acessíveis** para ligações.
+3. **‹C095›** O valor de tensão da **rede** deve coincidir com o valor de tensão da **ligação triângulo** do motor.
+
+**‹C106› Ajuste do tempo do relé temporizado** — o tempo deve ser ajustado para que a comutação ocorra com o motor em velocidade próxima da nominal (E6 p17), ou seja, com **pelo menos 90% da rotação nominal** (E6 p23). Senão, o pico na comutação fica quase igual ao da partida direta. [INFERÊNCIA PEDAGÓGICA: juntar E6 p17 e p23 é organização do curso; a SOPA 2025 cobrou este cuidado.]
+
+### Exemplos práticos e confusões prováveis
+- ⚠️ ‹C092›/‹C093› Painel pequeno e muitas partidas favorecem a Y-Δ (pequeno espaço, sem limite máximo de manobras = **vantagens**); os 90% são **desvantagem**.
+- ⚠️ ‹C093›/‹C106› "Quanto mais cedo comutar, melhor" é falso: comutando antes de 90% da rotação nominal, o pico na comutação é quase o mesmo da partida direta.
+- ⚠️ ‹C094› São **6** terminais (U1, V1, W1, U2, V2, W2 — ou 1 a 6), não 3 nem 12.
+- ‹C095› Rede de 220 V → ligação triângulo do motor de 220 V.
+
+### Questões — bloco B2
+
+**Questão 4** · 0,8 pt
+
+Associe cada característica à sua classificação, conforme os slides de acionamento e de partida de motores.
+
+**Coluna A**
+
+- (1) Vantagem da chave estrela-triângulo
+- (2) Desvantagem da chave estrela-triângulo
+- (3) Princípio de outro tipo de acionamento, e não da estrela-triângulo
+
+**Coluna B**
+
+- ( ) Baixo custo em relação à chave compensadora.
+- ( ) O motor deve ter pelo menos seis terminais acessíveis para ligações.
+- ( ) Sem limite máximo de manobras.
+- ( ) Controle gradual da tensão de partida com tiristores (SCRs).
+- ( ) A tensão da rede deve coincidir com a tensão da ligação triângulo do motor.
+- ( ) Pequeno espaço ocupado pelos componentes.
+- ( ) Se o motor não atingir pelo menos 90% da rotação nominal, o pico de corrente na comutação é quase o da partida direta.
+- ( ) Variação da frequência e da tensão de entrada por PWM.
+
+**Questão 5** · 1 pt · *adaptada de SOPA 2025 Q2.1d-e*
+
+Responda objetivamente às situações sobre a escolha e o ajuste de uma chave estrela-triângulo.
+
+- a) Na placa de bornes de um motor de indução trifásico há acesso apenas aos terminais U1, V1 e W1. Esse motor pode ser acionado por chave estrela-triângulo? Justifique. (0,2)
+- b) O motor será alimentado por uma rede cuja tensão é diferente da tensão da ligação triângulo indicada para o motor. Que desvantagem da chave estrela-triângulo impede essa aplicação? (0,2)
+- c) Um técnico ajustou o relé temporizado para comutar logo após o acionamento, com o motor ainda longe da velocidade nominal. O que ocorre na comutação para triângulo e qual deveria ser o critério de ajuste? (0,3)
+- d) O painel dispõe de pouco espaço, o motor será ligado e desligado muitas vezes e a alternativa em estudo era a chave compensadora. Cite as vantagens da estrela-triângulo que favorecem sua escolha. (0,3)
+
+**Questão 6** · 0,3 pt · *adaptada de SOPA 2025 Q2.1d*
+
+Com relação ao ajuste do tempo do relé temporizado de uma chave estrela-triângulo, marque (X) a única correta.
+
+(A) O tempo deve provocar a comutação de triângulo para estrela quando o motor atingir a velocidade nominal.  
+(B) O tempo deve provocar a comutação quando o motor atingir 50% da rotação nominal, instante em que a corrente de linha em estrela é 1/3 da corrente em triângulo.  
+(C) O tempo deve ser o menor possível, pois quanto mais cedo ocorrer a comutação para triângulo, menor será o pico de corrente.  
+(D) O tempo deve permitir que o motor atinja pelo menos 90% da rotação nominal antes da comutação; do contrário, o pico de corrente ao passar para triângulo fica quase igual ao da partida direta.  
+(E) O tempo pode assumir qualquer valor da faixa de 0,3 s a 30 min, pois não influencia a corrente na comutação.  
+
+**Questão 7** · 1,2 pt · *adaptada de SOPA 2025 Q2.1b-c*
+
+Situação: a bomba de um sistema de bordo é acionada por um motor de indução trifásico alimentado por rede de 220 V. A potência do motor é superior ao máximo permitido para a partida direta e a equipe de manutenção decidiu empregar uma chave estrela-triângulo. Responda:
+
+- a) O enunciado cita um dos fatores que impedem a partida direta. Qual é o outro fator listado no slide? (0,2)
+- b) Qual é o objetivo de empregar a chave estrela-triângulo nesse motor? (0,2)
+- c) Em que ligação o motor parte, em que ligação trabalha e quando ocorre a comutação? (0,2)
+- d) Qual a tensão em cada enrolamento na partida e na marcha? (0,2)
+- e) Para essa rede, qual deve ser o valor de tensão da ligação triângulo do motor? Justifique pela desvantagem correspondente. (0,2)
+- f) A corrente de linha na partida em estrela corresponde a que fração da corrente de linha que o motor absorveria ligado em triângulo? (0,2)
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q4 — 1-2-1-3-2-1-2-3** Vantagens: E6 p22; desvantagens: E6 p23; SCRs = soft starter e PWM/frequência = VFD (E1 s12).
+- **Q5**
+  - a) Não. O motor deve ter pelo menos seis terminais acessíveis (U1, V1, W1, U2, V2, W2) para as ligações estrela e triângulo (E6 p23-p24).
+  - b) O valor de tensão da rede deve coincidir com o valor de tensão da ligação triângulo do motor (E6 p23).
+  - c) O pico de corrente na comutação para triângulo é quase o mesmo da partida direta, porque o motor não atingiu 90% da rotação nominal. O tempo deve permitir que o motor atinja pelo menos 90% da rotação nominal (velocidade próxima da nominal) antes da comutação (E6 p17, p23).
+  - d) Pequeno espaço ocupado pelos componentes; sem limite máximo de manobras; baixo custo em relação à chave compensadora (E6 p22).
+- **Q6 — D.** E6 p17 (comutar perto da velocidade nominal) e E6 p23 (abaixo de 90% da rotação nominal o pico na comutação ≈ partida direta).
+- **Q7**
+  - a) A carga a ser movimentada necessitar de acionamento lento e progressivo (E6 p15).
+  - b) Reduzir a corrente de partida, permitindo acionamento mais suave e protegendo o motor e os equipamentos elétricos conectados (E6 p17).
+  - c) Parte em estrela e trabalha em triângulo; a comutação ocorre quando o motor atinge velocidade próxima da nominal (E6 p17).
+  - d) 127 V na partida (estrela) e 220 V na marcha (triângulo) (E6 p20).
+  - e) 220 V, pois a tensão da rede deve coincidir com a tensão da ligação triângulo do motor (E6 p23).
+  - f) Um terço: IL(Y)/IL(Δ) = 1/3 (E6 p20).
+
+</details>
+
+
+## Bloco B3 — Enrolamentos e ligações estrela e triângulo
+
+‹fonte: E6 p24–p28; E6 p30›
+
+**‹C096› Enrolamentos e terminais do motor** — três enrolamentos: **Z1 (U1–U2)**, **Z2 (V1–V2)** e **Z3 (W1–W2)** (E6 p24). Na figura K1/K2/K3 (E6 p30) os terminais do motor aparecem numerados **1, 2, 3** (ligados a K1) e **4, 5, 6** (ligados a K2 e K3). [INFERÊNCIA PEDAGÓGICA: pela ligação do circuito, os pares equivalem a 1–4, 2–5 e 3–6; o slide não escreve os pares.]
+
+**‹C097› Ligação estrela** — "Em estrela **U2, V2 e W2 estão conectados no mesmo ponto**." (E6 p24; E6 p25; E6 p28)
+
+**‹C098› Ligação triângulo (delta)** — "Em DELTA temos os pontos conectados de acordo com o seguinte: **V1U2; W1V2; e U1W2**." (E6 p26)
+
+| | Estrela (Y) | Triângulo / delta (Δ) |
+|---|---|---|
+| Pontos ligados | U2, V2 e W2 no mesmo ponto | V1–U2; W1–V2; U1–W2 |
+| No circuito de potência | contator que **une entre si** os terminais U2, V2, W2 (ou 4, 5, 6) | contator que liga cada terminal U2, V2, W2 (ou 4, 5, 6) **a uma fase** |
+| Etapa | partida | marcha |
+
+![Enrolamentos em estrela](/imagens/cursos/fas-t2/conteudo/E6-24-estrela.webp)
+*Figura — Z1, Z2, Z3 com U2, V2 e W2 no mesmo ponto ‹fonte: E6 p24›*
+
+![Enrolamentos em triângulo](/imagens/cursos/fas-t2/conteudo/E6-26-triangulo.webp)
+*Figura — delta: V1U2, W1V2, U1W2 ‹fonte: E6 p26›*
+
+Na potência 440 VCA/60 Hz (E6 p28): **KM1** (linha) alimenta U1, V1, W1 via relé térmico FR; **KM3** (triângulo) fecha U1–W2, V1–U2, W1–V2; **KM2** (estrela) une U2, V2 e W2.
+
+![Potência Y-Δ com KM1, KM2 e KM3](/imagens/cursos/fas-t2/conteudo/E6-28-yd-potencia-KM.webp)
+*Figura — KM1 linha, KM3 triângulo, KM2 estrela ‹fonte: E6 p28›*
+
+### Exemplos práticos e confusões prováveis
+- ‹C097› Regra de leitura: o contator cujos três contatos têm um lado **ligado entre si** (ponte) é o da estrela. [INFERÊNCIA PEDAGÓGICA, apoiada em E6 p24 e p28]
+- ⚠️ ‹C097›/‹C098› Não inverter: "U2, V2, W2 no mesmo ponto" é estrela; "V1U2, W1V2, U1W2" é delta.
+
+### Questões — bloco B3
+
+**Questão 8** · 0,7 pt
+
+Complete as lacunas sobre os enrolamentos e terminais do motor usados na chave estrela-triângulo.
+
+- O enrolamento Z1 fica entre os terminais U1 e ____. (0,1)
+- O enrolamento Z3 fica entre os terminais ____ e W2. (0,1)
+- Em estrela, os terminais ____ estão conectados no mesmo ponto. (0,1)
+- Em delta, o terminal V1 é conectado ao terminal ____. (0,1)
+- Em delta, o terminal W1 é conectado ao terminal ____. (0,1)
+- Em delta, o terminal U1 é conectado ao terminal ____. (0,1)
+- Para realizar as duas ligações, o motor deve ter pelo menos ____ terminais acessíveis. (0,1)
+
+**Questão 9** · 0,2 pt
+
+Com relação às ligações dos enrolamentos do motor apresentadas nos slides, marque (X) a única correta.
+
+(A) Em delta, U2, V2 e W2 estão conectados no mesmo ponto; em estrela, os pontos conectados são V1U2, W1V2 e U1W2.  
+(B) Em delta, U2, V2 e W2 ficam no mesmo ponto e cada enrolamento recebe U/√3.  
+(C) Em estrela, os pontos conectados são V1U2, W1V2 e U1W2, e cada enrolamento recebe a tensão de linha U.  
+(D) Em estrela, U1, V1 e W1 estão conectados no mesmo ponto; em delta, cada terminal de índice 1 é ligado ao terminal de índice 2 da mesma letra.  
+(E) Em estrela, U2, V2 e W2 estão conectados no mesmo ponto; em delta, os pontos conectados são V1U2, W1V2 e U1W2.  
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q8**
+  - • U2
+  - • W1
+  - • U2, V2 e W2
+  - • U2
+  - • V2
+  - • W2
+  - • seis
+- **Q9 — E.** E6 p24: em estrela U2, V2 e W2 no mesmo ponto; E6 p26: em delta V1U2, W1V2 e U1W2.
+
+</details>
+
+
+## Bloco B4 — As duas nomenclaturas: cuidado com a posição da bobina estrela e da bobina triângulo
+
+‹fonte: E6 p28; E6 p30; E6 p34; E7 p15–p16›
+
+> Alerta do professor para 2026: "cuidado com a posição da bobina triângulo e bobina estrela". O número do contator **muda de uma figura para a outra**. Identifique pelo circuito, não pelo número.
+
+**‹C099› Figura K1/K2/K3** (E6 p30–p34; é a figura usada na SOPA 2025) — legenda de E6 p34: **B1** botão de partida; **B0** botão de parada; **K1** contator de linha; **K2 contator triângulo**; **K3 contator estrela**; **T1** temporizador; "contato acima de B1 é o contato auxiliar do relé térmico". "A chave de parada B0 e de partida B1 são ambas de impulso sem retenção" (E6 p30).
+
+**‹C100› Figura KM1/KM2/KM3** (E6 p25–p28; E7 p15–p17) — legenda de E7 p16: **SB1** botão de parada; **SB2** botão de partida; **FR** contato auxiliar de relé térmico; **KM1** contator de linha; **KM2 contator de estrela**; **KM3 contator de triângulo**; **KT1** temporizador. "SB1 e SB2 são chaves de impulso sem retenção." Potência 440 VCA/60 Hz (E6 p28) ou 60 Hz, 400 V (E7 p15); comando 60 Hz, 24 V (E7 p16).
+
+| Função | Figura K (E6 p30–p34) | Figura KM (E6 p28; E7 p15–p17) |
+|---|---|---|
+| Contator de linha | K1 | KM1 |
+| Contator **estrela** | **K3** | **KM2** |
+| Contator **triângulo** | **K2** | **KM3** |
+| Temporizador (bobina com X) | T1 | KT1 |
+| Botão de partida (NA) | B1 | SB2 |
+| Botão de parada (NF) | B0 | SB1 |
+| Contato auxiliar do relé térmico | contato NF acima de B0 e B1 | FR |
+| Terminais do motor | 1, 2, 3 / 4, 5, 6 | U1, V1, W1 / U2, V2, W2 |
+| Ramo da bobina **estrela** no comando | K1 NA → T1 NF → K2 NF → K3 | KT1 NF → KM3 NF → KM2 |
+| Ramo da bobina **triângulo** no comando | (K1 NA → T1 NA) // K2 NA → K3 NF → K2 | (KT1 NA // KM3 NA) → KM2 NF → KM3 |
+
+![Figura K1/K2/K3 — potência e comando](/imagens/cursos/fas-t2/conteudo/E6-30-yd-K.webp)
+*Figura — K1 linha, K2 triângulo, K3 estrela, T1 temporizador ‹fonte: E6 p30›*
+
+![Figura KM — comando e legenda](/imagens/cursos/fas-t2/conteudo/E7-16-yd-comando-KM.webp)
+*Figura — SB1, SB2, FR, KM1, KT1, KM2 estrela, KM3 triângulo ‹fonte: E7 p16›*
+
+**Como identificar sem decorar** [INFERÊNCIA PEDAGÓGICA — roteiro de leitura das figuras dos slides]:
+1. **Potência:** o contator que une U2, V2, W2 (ou 4, 5, 6) no mesmo ponto é o **estrela**; o que liga esses mesmos terminais às fases é o **triângulo**; o que alimenta U1, V1, W1 (ou 1, 2, 3) é o de **linha**.
+2. **Comando:** a bobina alimentada através do **contato NF do temporizador** é a da **estrela** (funciona até t1); a bobina com o **contato NA do temporizador** e selo próprio em paralelo é a do **triângulo**.
+3. **Linha:** a bobina cujo contato NA sela o botão de partida.
+
+### Exemplos práticos e confusões prováveis
+- ⚠️ ‹C099› Na figura da SOPA 2025, **K2 = triângulo** e **K3 = estrela**: pressionando B1 energizam-se K1 e K3.
+- ⚠️ ‹C100› Na figura KM, **KM2 = estrela** e **KM3 = triângulo**: pressionando SB2 energizam-se KM1 e KM2.
+- ‹C099› O texto de E6 p33, que descreve a figura K, escreve "relé temporizado KT1": na figura o temporizador se chama **T1**.
+
+### Questões — bloco B4
+
+**Questão 10** · 0,7 pt
+
+![Figura da questão 10](/imagens/cursos/fas-t2/conteudo/Q-E6-28-yd-KM.webp)
+
+Considere a Figura (circuito de potência 440 VCA/60 Hz de uma chave estrela-triângulo; as legendas das contatoras foram ocultadas, restando apenas KM1, KM2 e KM3). Marque V ou F.
+
+( ) 1. KM1 é o contator de linha: alimenta os terminais U1, V1 e W1 do motor através do relé térmico FR.  
+( ) 2. KM2 é o contator triângulo, pois é o último contator à direita no desenho.  
+( ) 3. Os três contatos de KM2 têm um dos lados ligados entre si, de modo que, fechados, conectam U2, V2 e W2 no mesmo ponto.  
+( ) 4. Fechado junto com KM1, o contator KM3 conecta U1 com W2, V1 com U2 e W1 com V2, formando a ligação delta.  
+( ) 5. Na partida do motor, os contatores fechados são KM1 e KM3.  
+( ) 6. FR é o relé térmico, que protege o motor contra sobrecarga.  
+( ) 7. Cada enrolamento do motor fica entre o terminal de índice 1 e o de índice 2 da mesma letra, como V1 e V2.  
+
+**Questão 11** · 1 pt · *adaptada de SOPA 2025 Q2.2b*
+
+Associe cada identificação à sua função. Atenção: a figura de origem está entre colchetes (Figura K = E6 p30-p34; Figura KM = E6 p28 e E7 p16).
+
+**Coluna A**
+
+- (1) Contator de linha
+- (2) Contator estrela
+- (3) Contator triângulo
+- (4) Temporizador
+- (5) Botão de partida
+- (6) Botão de parada
+
+**Coluna B**
+
+- ( ) K2 [Figura K]
+- ( ) KM2 [Figura KM]
+- ( ) SB1 [Figura KM]
+- ( ) K3 [Figura K]
+- ( ) KT1 [Figura KM]
+- ( ) KM3 [Figura KM]
+- ( ) B1 [Figura K]
+- ( ) KM1 [Figura KM]
+- ( ) SB2 [Figura KM]
+- ( ) B0 [Figura K]
+
+**Questão 12** · 0,8 pt
+
+![Figura da questão 12](/imagens/cursos/fas-t2/conteudo/Q-E7-16-yd-comando.webp)
+
+Considere a Figura (circuito de comando 60 Hz, 24 V de uma chave estrela-triângulo; a legenda foi removida). Identifique cada elemento pela sua posição e ligação no circuito.
+
+- SB1 (0,1)
+- SB2 (0,1)
+- FR (0,1)
+- Contato de KM1 em paralelo com SB2 (0,1)
+- Bobina KM1 (0,1)
+- Bobina KT1 (símbolo com X) (0,1)
+- Bobina KM2, alimentada através do contato KT1 NF e do contato KM3 NF (0,1)
+- Bobina KM3, alimentada através de KT1 NA em paralelo com KM3 NA e do contato KM2 NF (0,1)
+
+**Questão 13** · 0,3 pt
+
+![Figura da questão 13](/imagens/cursos/fas-t2/conteudo/Q-E6-30-yd-K.webp)
+
+Considere a Figura (circuitos de potência e de comando de partida de motor de indução trifásico; as legendas das contatoras foram ocultadas). Analisando o circuito de potência, marque (X) a única correta.
+
+(A) K3 é o contator estrela, pois seus contatos, quando fechados, unem os terminais 4, 5 e 6 do motor no mesmo ponto; K2 é o contator triângulo.  
+(B) K1 é o contator estrela, pois é o primeiro a ser energizado ao pressionar B1.  
+(C) K3 é o contator triângulo, pois liga os terminais 4, 5 e 6 às fases R, S e T.  
+(D) K2 é o contator de linha, pois é o único cujos contatos se ligam diretamente às fases R, S e T.  
+(E) K2 é o contator estrela, pois o contator de número 2 é sempre o de estrela, como na figura KM1/KM2/KM3.  
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q10 — V-F-V-V-F-V-V**
+  - 2. F — Correção: KM2 une U2, V2 e W2 no mesmo ponto — é o contator ESTRELA; KM3 é o triângulo (E6 p25, p28).
+  - 5. F — Correção: o motor parte em estrela, com KM1 (linha) e KM2 (estrela); KM3 fecha na marcha em triângulo (E6 p17, p28).
+- **Q11 — 3-2-6-2-4-3-5-1-5-6** Legenda da figura K (E6 p34: K2 triângulo, K3 estrela, B1 partida, B0 parada) x legenda da figura KM (E7 p16: KM2 estrela, KM3 triângulo, SB1 parada, SB2 partida, KT1 temporizador).
+- **Q12**
+  - • Botão de parada: contato NF, chave de impulso sem retenção, em série antes de todos os ramos (E7 p16).
+  - • Botão de partida: contato NA, chave de impulso sem retenção (E7 p16).
+  - • Contato auxiliar do relé térmico (NF), em série no início do comando (E7 p16).
+  - • Contato auxiliar NA de KM1 que faz a selagem de SB2 (E7 p17).
+  - • Contator de linha (E7 p16).
+  - • Temporizador com retardo na energização (E7 p16; E6 p8).
+  - • Contator de ESTRELA: energizado na partida, até o temporizador atuar (E7 p16-p17).
+  - • Contator de TRIÂNGULO: energizado após o tempo de KT1 (E7 p16-p17).
+- **Q13 — A.** E6 p30/p34: K3 curto-circuita 4, 5 e 6 (estrela); K2 liga 4, 5 e 6 às fases (triângulo); K1 alimenta 1, 2 e 3 (linha).
+
+</details>
+
+
+## Bloco B5 — Passo a passo: partida, comutação, parada e intertravamento
+
+‹fonte: E6 p31–p33; E7 p17›
+
+**‹C101› Partida em estrela** (figura K, E6 p33):
+1. Aciona-se **B1 (NA)**: energiza a bobina **K1**, que fecha os contatos NA principais — o motor passa a receber alimentação de linha.
+2. O contato auxiliar **K1 NA** fecha, proporcionando a **selagem de B1**.
+3. A bobina do relé temporizado **T1** é energizada (inicia a contagem de t1).
+4. A bobina de **K3 (estrela)** é energizada, seus contatos principais NA fecham e o **motor parte em estrela**.
+5. O contato **K3 NF** abre, impedindo a energização da bobina K2 (triângulo): INTERLOCK.
+
+**‹C102› Comutação para triângulo:**
+6. Decorrido o tempo t1, o contato **T1 NF abre** e o contato **T1 NA fecha**.
+7. **K3 é desenergizada**; **K2 é energizada**, fecha seus contatos principais e o **motor passa a funcionar em triângulo**.
+8. O contato **K2 NA** fecha: **selagem adicional do contato T1 NA**.
+9. O contato **K2 NF** abre, impedindo a energização de K3 (estrela): INTERLOCK.
+
+**‹C103› Parada:** ao acionar **B0 (NF)**, as bobinas de **K1 e K2 ou K1 e K3** são desenergizadas, os contatos principais NA abrem e o motor **para em qualquer etapa** do processo de partida ou interrompe seu funcionamento.
+
+**‹C104› Estados dos contatores** (figura K, anotações ON/OFF de E6 p31–p32):
+
+| Bobina / contato | Desde a partida até t1 (estrela) | A partir de t1 até a parada (triângulo) |
+|---|---|---|
+| K1 (linha) | ON | ON |
+| T1 | ON (inicia contagem) | OFF (o K2 NF em série com T1 abre) |
+| K3 (estrela) | ON | OFF |
+| K2 (triângulo) | OFF | ON |
+| T1 NF | fica fechado até t1 | abre após t1 |
+| T1 NA | aberto | fecha em t1, depois abre |
+| K2 NA (selo) | aberto | fechado — mantém K2 |
+
+![Estados desde a partida até t1](/imagens/cursos/fas-t2/conteudo/E6-31-yd-ate-t1.webp)
+*Figura — K1, T1 e K3 ON; K2 OFF ‹fonte: E6 p31›*
+
+![Estados a partir de t1](/imagens/cursos/fas-t2/conteudo/E6-32-yd-apos-t1.webp)
+*Figura — K1 e K2 ON; T1 e K3 OFF; K2 NA selo ‹fonte: E6 p32›*
+
+**‹C105› Intertravamento estrela–triângulo** — K3 NF no ramo de K2 e K2 NF no ramo de K3 (na figura KM: KM2 NF no ramo de KM3 e KM3 NF no ramo de KM2). Os contatores estrela e triângulo nunca ficam energizados juntos: o intertravamento impede o **curto-circuito entre fases**.
+
+**Mesma sequência na figura KM** (E7 p17), com os nomes trocados:
+
+| | Figura K | Figura KM |
+|---|---|---|
+| Ao pressionar o botão de partida | K1, T1, K3 → estrela | KM1, KT1, KM2 → estrela |
+| Após t1 | K1 e K2 → triângulo | KM1 e KM3 → triângulo |
+| Selo do botão de partida | K1 NA sela B1 | KM1 NA sela SB2 |
+| Selo do triângulo | K2 NA sela T1 NA | KM3 NA sela KT1 NA |
+| Intertravamento | K3 NF ↔ K2 NF | KM2 NF ↔ KM3 NF |
+| Parada | B0: K1+K3 ou K1+K2 | SB1: KM1+KM2 ou KM1+KM3 |
+
+⚠️ [INFERÊNCIA PEDAGÓGICA] Na figura KM a bobina KT1 não tem NF em série e E7 não descreve KT1 após t1: "T1 OFF após t1" vale só para a figura K (E6 p32).
+
+### Exemplos práticos e confusões prováveis
+- ⚠️ ‹C104› O contator de **linha não desliga** na comutação: antes de t1 ficam K1 + K3; depois, K1 + K2.
+- ⚠️ ‹C101›/‹C102› Selo de B1 = K1 NA; selo do triângulo = **K2 NA** (sela T1 NA).
+- ‹C103› B0 na partida desliga K1 e K3; em marcha, K1 e K2: o motor para em qualquer etapa.
+- ⚠️ ‹C105› "Como o comando impede curto entre fases?" → pelo **intertravamento (INTERLOCK)** entre os contatores estrela e triângulo (contatos NF cruzados). Selo não é intertravamento.
+- ‹C106› t1 é o tempo em estrela: deve bastar para chegar a 90% da rotação nominal.
+
+### Questões — bloco B5
+
+**Questão 14** · 0,4 pt
+
+Ordene os eventos da partida estrela-triângulo descrita para a figura K1/K2/K3 (E6 p33), do primeiro ao último.
+
+- (A) O contato K2 NF abre, impedindo a energização da bobina K3. (B) Aciona-se B1 e a bobina K1 é energizada; o motor passa a receber alimentação de linha. (C) O contato T1 NF abre e o contato T1 NA fecha. (D) A bobina K3 é energizada e o motor parte em estrela. (E) Decorre o tempo t1 ajustado no relé temporizado. (F) A bobina K2 é energizada, K3 é desenergizada e o motor passa a funcionar em triângulo. (G) O contato auxiliar K1 fecha, selando B1, e a bobina T1 é energizada. (H) O contato K3 NF abre, impedindo a energização da bobina K2. (0,4)
+
+**Questão 15** · 0,8 pt · *adaptada de SOPA 2025 Q2.2c-e*
+
+![Figura da questão 15](/imagens/cursos/fas-t2/conteudo/Q-E6-30-yd-K.webp)
+
+Considere a Figura. O operador pressiona e solta B1, o motor completa a partida e passa a funcionar normalmente. Com relação ao funcionamento do circuito, marque V ou F.
+
+( ) 1. Desde a partida até o instante t1, permanecem energizadas as bobinas K1, T1 e K3.  
+( ) 2. Quando o temporizador atua, a bobina K1 é desenergizada, pois só dois contatores podem permanecer ligados.  
+( ) 3. A partir de t1, a bobina T1 fica desenergizada porque o contato K2 NF, em série com ela, se abre.  
+( ) 4. Após t1, K2 se mantém energizada pelo contato K2 NA, que realiza uma selagem adicional do contato T1 NA.  
+( ) 5. Até o instante t1, o contato T1 NF permanece aberto, o que mantém K3 desenergizada.  
+( ) 6. Enquanto K3 está energizada, o contato K3 NF no ramo de K2 permanece aberto, impedindo a energização de K2.  
+( ) 7. Se B0 for pressionado durante a partida em estrela, apenas K3 é desenergizada e o motor continua alimentado por K1.  
+( ) 8. O contato NF localizado acima de B0 é o contato auxiliar do relé térmico.  
+
+**Questão 16** · 0,8 pt
+
+Complete as lacunas sobre o funcionamento da chave estrela-triângulo da figura KM1/KM2/KM3 (E7 p16-p17).
+
+- Aciona-se SB2, que energiza a bobina ____, cujo contato auxiliar proporciona a selagem de SB2. (0,1)
+- A bobina do relé temporizado ____ é energizada. (0,1)
+- A bobina da contatora ____ é energizada e o motor parte em estrela. (0,1)
+- Decorrido o tempo t1, o contato KT1 ____ se abre e o contato KT1 NA se fecha. (0,1)
+- A bobina ____ é energizada e o motor passa a funcionar em triângulo. (0,1)
+- O fechamento do contato KM3 NA proporciona a selagem adicional do contato ____. (0,1)
+- O contato KM3 NF se abre, impedindo a energização da bobina KM2; esse mecanismo chama-se ____. (0,1)
+- Ao se acionar SB1 NF, as bobinas de KM1 e KM2 ou de KM1 e ____ são desenergizadas e o motor para. (0,1)
+
+**Questão 17** · 0,3 pt
+
+![Figura da questão 17](/imagens/cursos/fas-t2/conteudo/Q-E6-28-yd-KM.webp)
+
+Considere a Figura (circuito de potência 440 VCA/60 Hz; legendas das contatoras ocultadas). Com o motor já funcionando em triângulo, após a atuação do temporizador, marque (X) a única correta sobre os contatores fechados.
+
+(A) Somente KM3 fechado.  
+(B) KM1 e KM2 fechados; KM3 aberto.  
+(C) KM1 e KM3 fechados; KM2 aberto.  
+(D) KM1, KM2 e KM3 fechados.  
+(E) KM2 e KM3 fechados; KM1 aberto.  
+
+**Questão 18** · 1,4 pt · *adaptada de SOPA 2025 Q2.2c-g*
+
+![Figura da questão 18](/imagens/cursos/fas-t2/conteudo/Q-E7-16-yd-comando.webp)
+
+Situação: o motor de uma bomba de bordo é acionado por chave estrela-triângulo cujo circuito de comando (60 Hz, 24 V) está na Figura, sem legenda. O operador pressiona SB2 e solta o botão. Responda:
+
+- a) Logo após o acionamento de SB2, quais bobinas ficam energizadas? (0,2)
+- b) Nessa etapa, como estão ligados os enrolamentos do motor? Justifique pelo contator energizado. (0,2)
+- c) Por que KM1 continua energizado depois que o operador solta SB2? (0,2)
+- d) Decorrido o tempo de KT1, quais contatores passam a alimentar o motor e em que ligação? (0,2)
+- e) Que contatos impedem que KM2 e KM3 fiquem energizados ao mesmo tempo e o que esse arranjo evita? (0,3)
+- f) Que cuidado deve ser tomado ao ajustar o tempo de KT1? Justifique. (0,3)
+
+**Questão 19** · 1,5 pt · *adaptada de SOPA 2025 Q2.2*
+
+![Figura da questão 19](/imagens/cursos/fas-t2/conteudo/Q-E6-30-yd-K.webp)
+
+Situação: um aluno monta em laboratório o circuito da Figura (legendas das contatoras ocultadas) e acompanha a partida do motor. Responda:
+
+- a) Quantos terminais do motor aparecem na figura e por que esse número é exigido para usar a chave estrela-triângulo? (0,2)
+- b) Qual contator une os terminais 4, 5 e 6 no mesmo ponto e que nome recebe a ligação obtida? (0,2)
+- c) A bobina T1 é desenhada com um X. Que tipo de relé temporizado é esse e como atuam seus contatos? (0,2)
+- d) Quais contatos estão em série com a bobina K3 e qual deles abre no instante t1? (0,2)
+- e) Na marcha em triângulo, a bobina T1 está energizada? Explique por que isso não desliga K2. (0,3)
+- f) Com o motor em triângulo, o relé térmico atua por sobrecarga. O que acontece no comando e no motor? (0,2)
+- g) Qual contato precisa estar fechado para que K2 seja energizada em t1 e que mecanismo ele representa? (0,2)
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q14**
+  - • B – G – D – H – E – C – F – A
+- **Q15 — V-F-V-V-F-V-F-V**
+  - 2. F — Correção: K1 (linha) continua energizada; a partir de t1 ficam energizadas K1 e K2 (E6 p32).
+  - 5. F — Correção: T1 NF fica fechado até t1, alimentando K3 (estrela) (E6 p31).
+  - 7. F — Correção: B0 desenergiza K1 e K3 (ou K1 e K2); o motor para em qualquer etapa (E6 p33).
+- **Q16**
+  - • KM1 (contator de linha)
+  - • KT1
+  - • KM2
+  - • NF
+  - • KM3
+  - • KT1 NA
+  - • INTERLOCK (intertravamento)
+  - • KM3
+- **Q17 — C.** Em triângulo ficam KM1 (linha) e KM3 (triângulo); KM2 (estrela, que une U2, V2, W2) está desenergizado e intertravado (E6 p28; E7 p17).
+- **Q18**
+  - a) KM1 (linha), KT1 (temporizador) e KM2 (estrela) (E7 p17).
+  - b) Em estrela, porque KM2 é o contator de estrela (E7 p16-p17).
+  - c) Porque o contato auxiliar NA de KM1, em paralelo com SB2, faz a selagem (E7 p17).
+  - d) KM1 e KM3; ligação triângulo (E7 p17).
+  - e) KM3 NF no ramo de KM2 e KM2 NF no ramo de KM3 (INTERLOCK/intertravamento); evita o curto-circuito entre fases (E7 p17; E6 p33).
+  - f) Ajustar para que a comutação ocorra com o motor em pelo menos 90% da rotação nominal; senão o pico de corrente na comutação para triângulo é quase o mesmo da partida direta (E6 p17, p23).
+- **Q19**
+  - a) Seis (1 a 6); o motor deve ter pelo menos seis terminais acessíveis para as ligações estrela e triângulo (E6 p23, p30).
+  - b) K3; ligação estrela (E6 p30, p34).
+  - c) Retardo na energização (on delay): atua em seus contatos um tempo após a energização e os retorna ao repouso imediatamente após a desenergização (E6 p8).
+  - d) K1 NA, T1 NF e K2 NF; o contato T1 NF abre em t1 (E6 p30-p32).
+  - e) Não: o contato K2 NF em série com T1 abre e T1 é desenergizada; o T1 NA volta a abrir, mas K2 se mantém pelo seu selo K2 NA (E6 p32).
+  - f) Abre o contato auxiliar NF do relé térmico (acima de B0); as bobinas K1 e K2 são desenergizadas, os contatos principais abrem e o motor para (E6 p34; E1 s50).
+  - g) O contato K3 NF, que só fecha com K3 desenergizada: intertravamento entre estrela e triângulo, que impede o curto-circuito entre fases (E6 p33).
+
+</details>
+
+
+## Revisão cumulativa
+
+### Questões — revisão cumulativa
+
+**Questão 20** · 0,7 pt
+
+Revisão cumulativa. Com relação aos elementos de comando e aos tipos de partida estudados até aqui, marque V ou F.
+
+( ) 1. O temporizador T1 da chave estrela-triângulo, desenhado como bobina com X, é do tipo retardo na desenergização.  
+( ) 2. O contato K1 NA em paralelo com B1 é um contato de selo: mantém a bobina energizada depois que o operador retira o dedo do botão.  
+( ) 3. Assim como na reversão, o intertravamento entre estrela e triângulo coloca o contato NF de um contator antes da bobina do outro.  
+( ) 4. Os principais tipos de partida de motor de indução são: direta, estrela-triângulo, chave compensadora, chaves estáticas e reator.  
+( ) 5. A necessidade de acionamento lento e progressivo da carga é uma das condições que favorecem a partida direta.  
+( ) 6. O contato auxiliar do relé térmico em série no comando da estrela-triângulo atende à proteção contra curto-circuito.  
+( ) 7. No quadro de acionamentos de motores CA trifásicos, a estrela-triângulo é descrita como redução de tensão na partida (estrela) e comutação para triângulo.  
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q20 — F-V-V-V-F-F-V**
+  - 1. F — Correção: bobina com X (quadrado cruzado) = retardo na energização (on delay); retardo na desenergização é o retângulo preenchido (E6 p8, p10).
+  - 5. F — Correção: é um dos fatores que impedem a partida direta (E6 p15).
+  - 6. F — Correção: o relé térmico protege contra sobrecarga; a proteção contra curto-circuito é dos fusíveis (E1 s19, s22).
+
+</details>
+
+
+## Checklist de domínio
+- [ ] Escrevo o objetivo da Y-Δ com as palavras do slide (corrente de partida, acionamento suave, proteção).
+- [ ] Sei 127 V/220 V, U/√3 e U, e IL(Y) = IL(Δ)/3.
+- [ ] Listo 3 vantagens e 3 desvantagens e justifico o ajuste do relé (≥ 90% da rotação nominal).
+- [ ] Sei as ligações estrela (U2, V2, W2 no mesmo ponto) e delta (V1U2, W1V2, U1W2).
+- [ ] Identifico linha, estrela e triângulo **pelo circuito** nas figuras K e KM.
+- [ ] Digo quais contatoras estão energizadas antes e depois de t1 nas duas figuras.
+- [ ] Explico selo de B1/SB2, selo do triângulo, intertravamento e parada em qualquer etapa.

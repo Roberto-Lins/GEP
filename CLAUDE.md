@@ -8,7 +8,7 @@ Plataforma **multi-curso** 100% estática, estilo "campus de estudos". O aluno e
 dentro dele, segue uma **trilha sequencial** (timeline) de mini-matérias que dá sensação de
 progressão contínua.
 
-Hoje existem **9 cursos reais**, todos com o tema visual *naval-command*:
+Hoje existem **12 cursos/famílias reais** (16 slugs concretos), todos com o tema visual *naval-command*:
 - **GEP** (Gestão Pública — P1): `ano 4 · semestre 1 · época P1 · turma geral`.
 - **HNV** (História Naval): `ano 4 · semestre 1 · época P1 · turma geral`.
 - **DET** (Detecção — PP1): `ano 4 · semestre 1 · época P1 · turma CA-HE`.
@@ -16,8 +16,10 @@ Hoje existem **9 cursos reais**, todos com o tema visual *naval-command*:
 - **ING-4** (Inglês — PP1): `ano 4 · semestre 1 · época P1 · turma geral`.
 - **DIR** (Direito — P1): `ano 4 · semestre 1 · época P1 · turma geral`.
 - **FAS** (Fundamentos de Automação de Sistemas — P1): `ano 4 · semestre 1 · época P1 · seis turmas CA/FN`.
+- **FAS-T2** (Fundamentos de Automação — T2, curso único): `ano 4 · semestre 2 · época T2 · seis turmas CA/FN`.
 - **OPN** (Operações Navais 1 — PP1): `ano 4 · semestre 1 · época P1 · turmas CA-HE/CA-HM/CA-HS`.
 - **REL** (Relações Internacionais — P1): `ano 4 · semestre 1 · época P1 · turma geral`.
+- **NAV4-T2** (Navegação 4 — T2, família multimodal `nav4-t2`): `ano 4 · semestre 2 · época T2 · turma geral`.
 - **DIR-T2** (Direito — T2, família multimodal `dir-t2`): `ano 4 · semestre 2 · época T2 · turma geral`.
 
 `turma: "geral"` = matéria comum a todas as turmas do ano (mas, na navegação, aparece **só** em
@@ -334,6 +336,16 @@ próprias sem alterar o GEP.
   variações em vez do simulado-relâmpago) e `midiasGerais` (áudio + vídeo reaproveitados na revisão
   final). Vídeo geral no YouTube (`EAZy7ZrJuDU`), URL centralizada em `midias.ts`; `PlayerVideo` ganhou
   link "Abrir no YouTube". Figuras técnicas **extraídas dos slides** (sem SVG), em `public/imagens/cursos/fas/`.
+
+**FAS-T2 — Fundamentos de Automação / T2** (`ano 4 · sem 2 · T2 · turmas CA-HM/HE/HS + FN-HM/HE/HS`):
+- Curso único no slug `fas-t2`, conforme o pacote de autoria fornecido; o legado `fas` (P1) permanece
+  inalterado e com progresso independente.
+- 16 módulos, 227 conceitos, 331 grupos canônicos e 128 figuras WebP. O banco expõe 292 grupos no
+  estudo e 39 grupos nos simulados.
+- Três simulados próprios, com 13 grupos, 80 itens e 10,0 pontos cada; `features.simulados` está
+  ativada e a página informa simultaneamente a quantidade de itens e de questões agrupadas.
+- Rastreabilidade e limitações declaradas ficam em `src/data/cursos/fas-t2/`; detalhes em
+  `docs/courses/FAS-T2.md`.
 
 **DIR-T2 — Direito / T2** (família `dir-t2`: `dir-t2--rapido`, `dir-t2--pra-safar`, `dir-t2--completo`; `ano 4 · sem 2 · T2 · turma geral`):
 - Recorte: Aula 3.1 inteira, Aula 4.1 inteira e Aula 4.2 **só até o slide 7**. O legado `dir` (P1) não foi alterado.

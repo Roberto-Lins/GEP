@@ -1,0 +1,4785 @@
+{
+  "materia": "FAS",
+  "nome_completo": "Fundamentos de Automação (FAS) — T2",
+  "gerado_em": "2026-09-16",
+  "ementa": "SUE 3.2 acionamento e controle de motores; SUE 3.3 aplicações de circuitos; SUE 4.1 componentes pneumáticos; SUE 4.2 componentes hidráulicos",
+  "notas_de_organizacao": "Curso único (skill 3.0.0/GEP 2.0.0). ~25% teoria / ~75% questões, revisões e simulados.",
+  "glossario": [],
+  "modulos": [
+    {
+      "id": "M00",
+      "titulo": "Mapa da prova e método de estudo",
+      "ordem": 0,
+      "conceitos": [],
+      "arquivo": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M00.md",
+      "palavras_teoria": 651,
+      "min_teoria": 5.4,
+      "min_questoes": 0.0
+    },
+    {
+      "id": "M01",
+      "titulo": "Motores elétricos e tipos de acionamento",
+      "ordem": 1,
+      "conceitos": [
+        "C001",
+        "C002",
+        "C003",
+        "C004",
+        "C005",
+        "C006",
+        "C007",
+        "C008",
+        "C009",
+        "C010",
+        "C011",
+        "C012",
+        "C013",
+        "C014"
+      ],
+      "arquivo": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M01.md",
+      "palavras_teoria": 1347,
+      "min_teoria": 12.7,
+      "min_questoes": 28.1
+    },
+    {
+      "id": "M02",
+      "titulo": "Elementos de comandos elétricos",
+      "ordem": 2,
+      "conceitos": [
+        "C015",
+        "C016",
+        "C017",
+        "C018",
+        "C019",
+        "C020",
+        "C021",
+        "C022",
+        "C023",
+        "C024",
+        "C025",
+        "C026",
+        "C027",
+        "C028",
+        "C029",
+        "C030",
+        "C031",
+        "C032",
+        "C033",
+        "C034",
+        "C035",
+        "C036",
+        "C037"
+      ],
+      "arquivo": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M02.md",
+      "palavras_teoria": 2148,
+      "min_teoria": 21.9,
+      "min_questoes": 49.8
+    },
+    {
+      "id": "M03",
+      "titulo": "Relé, contator, selo e intertravamento",
+      "ordem": 3,
+      "conceitos": [
+        "C038",
+        "C039",
+        "C040",
+        "C041",
+        "C042",
+        "C043",
+        "C044",
+        "C045",
+        "C046",
+        "C047",
+        "C048",
+        "C049",
+        "C050",
+        "C051",
+        "C052",
+        "C053",
+        "C054"
+      ],
+      "arquivo": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M03.md",
+      "palavras_teoria": 2088,
+      "min_teoria": 21.4,
+      "min_questoes": 45.0
+    },
+    {
+      "id": "M04",
+      "titulo": "Partida direta e variações",
+      "ordem": 4,
+      "conceitos": [
+        "C055",
+        "C056",
+        "C057",
+        "C058",
+        "C059",
+        "C060",
+        "C061",
+        "C062",
+        "C063",
+        "C064",
+        "C065"
+      ],
+      "arquivo": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M04.md",
+      "palavras_teoria": 2030,
+      "min_teoria": 19.9,
+      "min_questoes": 44.1
+    },
+    {
+      "id": "M05",
+      "titulo": "Partida com reversão",
+      "ordem": 5,
+      "conceitos": [
+        "C066",
+        "C067",
+        "C068",
+        "C069",
+        "C070",
+        "C071",
+        "C072",
+        "C073",
+        "C074"
+      ],
+      "arquivo": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M05.md",
+      "palavras_teoria": 1550,
+      "min_teoria": 14.9,
+      "min_questoes": 49.8
+    },
+    {
+      "id": "M06",
+      "titulo": "Relés temporizadores e partida de motores de indução",
+      "ordem": 6,
+      "conceitos": [
+        "C075",
+        "C076",
+        "C077",
+        "C078",
+        "C079",
+        "C080",
+        "C081",
+        "C082",
+        "C083",
+        "C084",
+        "C085",
+        "C086"
+      ],
+      "arquivo": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M06.md",
+      "palavras_teoria": 1604,
+      "min_teoria": 15.9,
+      "min_questoes": 45.5
+    },
+    {
+      "id": "M07",
+      "titulo": "Chave estrela-triângulo",
+      "ordem": 7,
+      "conceitos": [
+        "C087",
+        "C088",
+        "C089",
+        "C090",
+        "C091",
+        "C092",
+        "C093",
+        "C094",
+        "C095",
+        "C096",
+        "C097",
+        "C098",
+        "C099",
+        "C100",
+        "C101",
+        "C102",
+        "C103",
+        "C104",
+        "C105",
+        "C106"
+      ],
+      "arquivo": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M07.md",
+      "palavras_teoria": 2445,
+      "min_teoria": 25.4,
+      "min_questoes": 63.5
+    },
+    {
+      "id": "M08",
+      "titulo": "Aplicações: controle de nível e partida sequencial",
+      "ordem": 8,
+      "conceitos": [
+        "C107",
+        "C108",
+        "C109",
+        "C110",
+        "C111",
+        "C112",
+        "C113",
+        "C114",
+        "C115",
+        "C116"
+      ],
+      "arquivo": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M08.md",
+      "palavras_teoria": 1305,
+      "min_teoria": 12.4,
+      "min_questoes": 40.2
+    },
+    {
+      "id": "M09",
+      "titulo": "Fluidomecânica e sistema pneumático (produção e consumo)",
+      "ordem": 9,
+      "conceitos": [
+        "C117",
+        "C118",
+        "C119",
+        "C120",
+        "C121",
+        "C122",
+        "C123",
+        "C124",
+        "C125",
+        "C126",
+        "C127",
+        "C128",
+        "C129",
+        "C130",
+        "C131",
+        "C132",
+        "C133",
+        "C134",
+        "C135",
+        "C136",
+        "C137",
+        "C138",
+        "C139",
+        "C140",
+        "C141",
+        "C142",
+        "C143",
+        "C144",
+        "C145",
+        "C146",
+        "C147",
+        "C148"
+      ],
+      "arquivo": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M09.md",
+      "palavras_teoria": 2501,
+      "min_teoria": 22.3,
+      "min_questoes": 67.4
+    },
+    {
+      "id": "M10",
+      "titulo": "Compressores e atuadores pneumáticos",
+      "ordem": 10,
+      "conceitos": [
+        "C149",
+        "C150",
+        "C151",
+        "C152",
+        "C153",
+        "C154",
+        "C155",
+        "C156",
+        "C157",
+        "C158",
+        "C159",
+        "C160",
+        "C161",
+        "C162",
+        "C163",
+        "C164"
+      ],
+      "arquivo": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M10.md",
+      "palavras_teoria": 1617,
+      "min_teoria": 17.5,
+      "min_questoes": 47.8
+    },
+    {
+      "id": "M11",
+      "titulo": "Válvulas pneumáticas: VCD, controle de fluxo e alívio",
+      "ordem": 11,
+      "conceitos": [
+        "C165",
+        "C166",
+        "C167",
+        "C168",
+        "C169",
+        "C170",
+        "C171",
+        "C172",
+        "C173",
+        "C174",
+        "C175",
+        "C176",
+        "C177",
+        "C178",
+        "C179",
+        "C180",
+        "C181",
+        "C182",
+        "C183",
+        "C184"
+      ],
+      "arquivo": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M11.md",
+      "palavras_teoria": 2312,
+      "min_teoria": 25.8,
+      "min_questoes": 67.9
+    },
+    {
+      "id": "M12",
+      "titulo": "Bombas hidráulicas",
+      "ordem": 12,
+      "conceitos": [
+        "C185",
+        "C186",
+        "C187",
+        "C188",
+        "C189",
+        "C190",
+        "C191",
+        "C192",
+        "C193",
+        "C194",
+        "C195",
+        "C196",
+        "C197",
+        "C198",
+        "C199"
+      ],
+      "arquivo": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M12.md",
+      "palavras_teoria": 1894,
+      "min_teoria": 19.8,
+      "min_questoes": 64.9
+    },
+    {
+      "id": "M13",
+      "titulo": "Motores, atuadores, válvulas e acessórios hidráulicos",
+      "ordem": 13,
+      "conceitos": [
+        "C200",
+        "C201",
+        "C202",
+        "C203",
+        "C204",
+        "C205",
+        "C206",
+        "C207",
+        "C208",
+        "C209",
+        "C210",
+        "C211",
+        "C212",
+        "C213",
+        "C214",
+        "C215",
+        "C216"
+      ],
+      "arquivo": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M13.md",
+      "palavras_teoria": 1722,
+      "min_teoria": 20.4,
+      "min_questoes": 54.8
+    },
+    {
+      "id": "M14",
+      "titulo": "Circuitos hidráulicos e eletro-hidráulicos",
+      "ordem": 14,
+      "conceitos": [
+        "C217",
+        "C218",
+        "C219",
+        "C220",
+        "C221",
+        "C222",
+        "C223",
+        "C224",
+        "C225",
+        "C226",
+        "C227"
+      ],
+      "arquivo": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M14.md",
+      "palavras_teoria": 1978,
+      "min_teoria": 20.5,
+      "min_questoes": 55.2
+    },
+    {
+      "id": "M15",
+      "titulo": "Revisão final, recuperação de erros frequentes e SOPA comentada",
+      "ordem": 15,
+      "conceitos": [],
+      "arquivo": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M15.md",
+      "palavras_teoria": 2768,
+      "min_teoria": 26.1,
+      "min_questoes": 62.2
+    }
+  ],
+  "conceitos": [
+    {
+      "id": "C001",
+      "modulo": "M01",
+      "nome": "Tanques de lastro do submarino",
+      "definicao": "Compartimentos preenchidos com água do mar ou ar comprimido; lastros principais (imersão/emergência) e lastros de controle (ajustes finos de profundidade).",
+      "origem": [
+        "E1 s5"
+      ],
+      "criticidade": "baixa",
+      "tipo": "factual",
+      "depende_de": [],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M01.md — Bloco B1 — Por que acionar motores: lastro do submarino e atuadores"
+    },
+    {
+      "id": "C002",
+      "modulo": "M01",
+      "nome": "Acionamento dos tanques de lastro de controle",
+      "definicao": "Entrada e saída de água controladas por compressores e/ou bombas movidos por motores elétricos, que precisam de acionamento seguro, rápido e confiável — obtido com relés, contatores e sistemas de controle associados.",
+      "origem": [
+        "E1 s6",
+        "E1 s7"
+      ],
+      "criticidade": "media",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C001"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M01.md — Bloco B1 — Por que acionar motores: lastro do submarino e atuadores"
+    },
+    {
+      "id": "C003",
+      "modulo": "M01",
+      "nome": "Exemplos de atuadores em sistemas de controle",
+      "definicao": "Controle de nível em tanques (bomba de enchimento/esvaziamento; motor CA trifásico, bomba centrífuga) e controle de posição de radar/antena (motor CC com encoder, servo).",
+      "origem": [
+        "E1 s8"
+      ],
+      "criticidade": "media",
+      "tipo": "factual",
+      "depende_de": [],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M01.md — Bloco B1 — Por que acionar motores: lastro do submarino e atuadores"
+    },
+    {
+      "id": "C004",
+      "modulo": "M01",
+      "nome": "Interesse principal da automação nos motores",
+      "definicao": "Acionamento e controle funcional dos motores, garantindo desempenho, segurança e integração ao sistema.",
+      "origem": [
+        "E1 s8"
+      ],
+      "criticidade": "baixa",
+      "tipo": "conceitual",
+      "depende_de": [],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M01.md — Bloco B1 — Por que acionar motores: lastro do submarino e atuadores"
+    },
+    {
+      "id": "C005",
+      "modulo": "M01",
+      "nome": "Motor elétrico — definição e função",
+      "definicao": "Dispositivo eletromecânico com função de atuador; converte energia elétrica em mecânica; o movimento rotativo é o efeito prático do torque gerado pela interação magnética entre estator e rotor.",
+      "origem": [
+        "E1 s9"
+      ],
+      "criticidade": "alta",
+      "tipo": "conceitual",
+      "depende_de": [],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M01.md — Bloco B2 — Motor elétrico: definição e classificação"
+    },
+    {
+      "id": "C006",
+      "modulo": "M01",
+      "nome": "Classificação dos motores elétricos",
+      "definicao": "CA: indução/assíncrono (monofásico, trifásico) e síncrono. CC: excitado separadamente e autoexcitado (série, composta, paralelo).",
+      "origem": [
+        "E1 s10"
+      ],
+      "criticidade": "alta",
+      "tipo": "factual",
+      "depende_de": [
+        "C005"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M01.md — Bloco B2 — Motor elétrico: definição e classificação"
+    },
+    {
+      "id": "C007",
+      "modulo": "M01",
+      "nome": "Tensões de alimentação CC x CA trifásico",
+      "definicao": "Motor CC: 12 V, 24 V, 48 V. Motor CA trifásico: 220 V, 380 V, 440 V.",
+      "origem": [
+        "E1 s11"
+      ],
+      "criticidade": "media",
+      "tipo": "factual",
+      "depende_de": [
+        "C006"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M01.md — Bloco B3 — Motor CC x motor CA trifásico"
+    },
+    {
+      "id": "C008",
+      "modulo": "M01",
+      "nome": "Controle de velocidade CC x CA",
+      "definicao": "CC: controle simples (tensão ou PWM). CA trifásico: exige inversor de frequência (VFD).",
+      "origem": [
+        "E1 s11"
+      ],
+      "criticidade": "alta",
+      "tipo": "factual",
+      "depende_de": [
+        "C006"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M01.md — Bloco B3 — Motor CC x motor CA trifásico"
+    },
+    {
+      "id": "C009",
+      "modulo": "M01",
+      "nome": "Aplicações e manutenção CC x CA",
+      "definicao": "CC: controle preciso de posição e sistemas de emergência; requer manutenção em escovas (exceto brushless). CA: ventiladores, bombas, compressores; mais robustos, simples e econômicos.",
+      "origem": [
+        "E1 s11"
+      ],
+      "criticidade": "alta",
+      "tipo": "factual",
+      "depende_de": [
+        "C006"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M01.md — Bloco B3 — Motor CC x motor CA trifásico"
+    },
+    {
+      "id": "C010",
+      "modulo": "M01",
+      "nome": "Partida direta (princípio)",
+      "definicao": "Acionamento de motor CA trifásico por ligação direta à rede.",
+      "origem": [
+        "E1 s12"
+      ],
+      "criticidade": "alta",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C006"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M01.md — Bloco B4 — Tipos de acionamento na automação"
+    },
+    {
+      "id": "C011",
+      "modulo": "M01",
+      "nome": "Estrela-triângulo (princípio)",
+      "definicao": "Redução de tensão na partida (estrela) e comutação para triângulo.",
+      "origem": [
+        "E1 s12"
+      ],
+      "criticidade": "alta",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C006"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M01.md — Bloco B4 — Tipos de acionamento na automação"
+    },
+    {
+      "id": "C012",
+      "modulo": "M01",
+      "nome": "Soft starter (partida suave)",
+      "definicao": "Controle gradual da tensão de partida com tiristores (SCRs).",
+      "origem": [
+        "E1 s12"
+      ],
+      "criticidade": "alta",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C006"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M01.md — Bloco B4 — Tipos de acionamento na automação"
+    },
+    {
+      "id": "C013",
+      "modulo": "M01",
+      "nome": "Inversor de frequência (VFD)",
+      "definicao": "Variação da frequência e da tensão de entrada (PWM).",
+      "origem": [
+        "E1 s12"
+      ],
+      "criticidade": "alta",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C008"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M01.md — Bloco B4 — Tipos de acionamento na automação"
+    },
+    {
+      "id": "C014",
+      "modulo": "M01",
+      "nome": "Acionamentos de motor CC",
+      "definicao": "Driver PWM (modulação por largura de pulso) e driver com H-Bridge (chaveamento de polaridade — sentido de giro).",
+      "origem": [
+        "E1 s12"
+      ],
+      "criticidade": "alta",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C008"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M01.md — Bloco B4 — Tipos de acionamento na automação"
+    },
+    {
+      "id": "C015",
+      "modulo": "M02",
+      "nome": "Objetivos dos elementos de um painel elétrico",
+      "definicao": "a) proteger o operador; b) propiciar uma lógica de comando.",
+      "origem": [
+        "E1 s13"
+      ],
+      "criticidade": "alta",
+      "tipo": "factual",
+      "depende_de": [],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M02.md — Bloco B1 — Painel elétrico: objetivos e os dois circuitos"
+    },
+    {
+      "id": "C016",
+      "modulo": "M02",
+      "nome": "Circuito de comando",
+      "definicao": "Circuito de interface com o operador da máquina; baixas correntes (i ≤ 10 A) e/ou baixas tensões (Vac ≤ 220 V).",
+      "origem": [
+        "E1 s14",
+        "E4"
+      ],
+      "criticidade": "critica",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C015"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M02.md — Bloco B1 — Painel elétrico: objetivos e os dois circuitos"
+    },
+    {
+      "id": "C017",
+      "modulo": "M02",
+      "nome": "Circuito de potência",
+      "definicao": "Circuito onde se encontram as cargas a serem acionadas (motores, resistências de aquecimento); correntes de 10 A ou mais e tensões de até 760 V.",
+      "origem": [
+        "E1 s14",
+        "E4"
+      ],
+      "criticidade": "critica",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C015"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M02.md — Bloco B1 — Painel elétrico: objetivos e os dois circuitos"
+    },
+    {
+      "id": "C018",
+      "modulo": "M02",
+      "nome": "Prioridades na divisão comando/potência",
+      "definicao": "Em primeiro lugar a segurança do operador e em segundo lugar a automação; a partida direta é o método mais simples, sem dispositivos especiais.",
+      "origem": [
+        "E4"
+      ],
+      "criticidade": "media",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C016",
+        "C017"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M02.md — Bloco B1 — Painel elétrico: objetivos e os dois circuitos"
+    },
+    {
+      "id": "C019",
+      "modulo": "M02",
+      "nome": "Contato normalmente aberto (NA)",
+      "definicao": "Não há passagem de corrente elétrica em repouso.",
+      "origem": [
+        "E1 s15"
+      ],
+      "criticidade": "critica",
+      "tipo": "conceitual",
+      "depende_de": [],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M02.md — Bloco B2 — Contatos NA e NF e suas associações"
+    },
+    {
+      "id": "C020",
+      "modulo": "M02",
+      "nome": "Contato normalmente fechado (NF)",
+      "definicao": "Há passagem de corrente elétrica em repouso.",
+      "origem": [
+        "E1 s15"
+      ],
+      "criticidade": "critica",
+      "tipo": "conceitual",
+      "depende_de": [],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M02.md — Bloco B2 — Contatos NA e NF e suas associações"
+    },
+    {
+      "id": "C021",
+      "modulo": "M02",
+      "nome": "Contatos NA em série",
+      "definicao": "A carga só é ligada com os dois contatos acionados.",
+      "origem": [
+        "E1 s16"
+      ],
+      "criticidade": "media",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C019"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M02.md — Bloco B2 — Contatos NA e NF e suas associações"
+    },
+    {
+      "id": "C022",
+      "modulo": "M02",
+      "nome": "Contatos NA em paralelo",
+      "definicao": "A carga é ligada se qualquer um dos contatos for acionado.",
+      "origem": [
+        "E1 s16"
+      ],
+      "criticidade": "media",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C019"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M02.md — Bloco B2 — Contatos NA e NF e suas associações"
+    },
+    {
+      "id": "C023",
+      "modulo": "M02",
+      "nome": "Contatos NF em série",
+      "definicao": "A carga fica ligada somente com os dois contatos em repouso; basta acionar um para desligar.",
+      "origem": [
+        "E1 s17"
+      ],
+      "criticidade": "media",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C020"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M02.md — Bloco B2 — Contatos NA e NF e suas associações"
+    },
+    {
+      "id": "C024",
+      "modulo": "M02",
+      "nome": "Contatos NF em paralelo",
+      "definicao": "A carga só é desligada com os dois contatos acionados.",
+      "origem": [
+        "E1 s17"
+      ],
+      "criticidade": "media",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C020"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M02.md — Bloco B2 — Contatos NA e NF e suas associações"
+    },
+    {
+      "id": "C025",
+      "modulo": "M02",
+      "nome": "Sequência de dispositivos rede→motor",
+      "definicao": "Rede elétrica → seccionamento → proteção contra curto-circuito → proteção contra sobrecarga → dispositivo de manobra → motor.",
+      "origem": [
+        "E1 s18"
+      ],
+      "criticidade": "alta",
+      "tipo": "procedimental",
+      "depende_de": [],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M02.md — Bloco B3 — Dispositivos entre a rede elétrica e o motor"
+    },
+    {
+      "id": "C026",
+      "modulo": "M02",
+      "nome": "Seccionamento",
+      "definicao": "Só pode ser operado sem carga; usado durante a manutenção.",
+      "origem": [
+        "E1 s18"
+      ],
+      "criticidade": "alta",
+      "tipo": "factual",
+      "depende_de": [
+        "C025"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M02.md — Bloco B3 — Dispositivos entre a rede elétrica e o motor"
+    },
+    {
+      "id": "C027",
+      "modulo": "M02",
+      "nome": "Proteção contra correntes de curto-circuito",
+      "definicao": "Destina-se à proteção dos condutores do circuito terminal.",
+      "origem": [
+        "E1 s18"
+      ],
+      "criticidade": "alta",
+      "tipo": "factual",
+      "depende_de": [
+        "C025"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M02.md — Bloco B3 — Dispositivos entre a rede elétrica e o motor"
+    },
+    {
+      "id": "C028",
+      "modulo": "M02",
+      "nome": "Proteção contra correntes de sobrecarga",
+      "definicao": "Protege as bobinas do enrolamento do motor.",
+      "origem": [
+        "E1 s18"
+      ],
+      "criticidade": "alta",
+      "tipo": "factual",
+      "depende_de": [
+        "C025"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M02.md — Bloco B3 — Dispositivos entre a rede elétrica e o motor"
+    },
+    {
+      "id": "C029",
+      "modulo": "M02",
+      "nome": "Dispositivo de manobra",
+      "definicao": "Liga e desliga o motor de forma segura, sem que haja contato do operador no circuito de potência.",
+      "origem": [
+        "E1 s18"
+      ],
+      "criticidade": "alta",
+      "tipo": "factual",
+      "depende_de": [
+        "C025"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M02.md — Bloco B3 — Dispositivos entre a rede elétrica e o motor"
+    },
+    {
+      "id": "C030",
+      "modulo": "M02",
+      "nome": "Fusíveis",
+      "definicao": "Proteção contra correntes de curto-circuito ou sobrecargas de longa duração; devem ser substituídos após atuar.",
+      "origem": [
+        "E1 s19",
+        "E1 s21"
+      ],
+      "criticidade": "critica",
+      "tipo": "factual",
+      "depende_de": [
+        "C027"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M02.md — Bloco B4 — Fusíveis, disjuntores e relé térmico"
+    },
+    {
+      "id": "C031",
+      "modulo": "M02",
+      "nome": "Disjuntores",
+      "definicao": "Proteção contra correntes de curto-circuito; quando há o elemento térmico, também protegem contra sobrecarga (símbolos: disjuntor com elementos térmicos e magnéticos x disjuntor com elemento magnético).",
+      "origem": [
+        "E1 s20",
+        "E1 s43"
+      ],
+      "criticidade": "critica",
+      "tipo": "factual",
+      "depende_de": [
+        "C027",
+        "C028"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M02.md — Bloco B4 — Fusíveis, disjuntores e relé térmico"
+    },
+    {
+      "id": "C032",
+      "modulo": "M02",
+      "nome": "Vantagem do disjuntor sobre o fusível",
+      "definicao": "O disjuntor permite a religação do sistema após a elevação da corrente; o fusível deve ser substituído antes de nova operação.",
+      "origem": [
+        "E1 s21"
+      ],
+      "criticidade": "alta",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C030",
+        "C031"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M02.md — Bloco B4 — Fusíveis, disjuntores e relé térmico"
+    },
+    {
+      "id": "C033",
+      "modulo": "M02",
+      "nome": "Relé térmico (de sobrecarga)",
+      "definicao": "Protege atuando pelo efeito térmico provocado pela corrente; elemento básico: bimetal; possui contatos auxiliares 95-96 (NF) e 97-98 (NA).",
+      "origem": [
+        "E1 s22"
+      ],
+      "criticidade": "critica",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C028"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M02.md — Bloco B4 — Fusíveis, disjuntores e relé térmico"
+    },
+    {
+      "id": "C034",
+      "modulo": "M02",
+      "nome": "Botoeira (botão de comando)",
+      "definicao": "Acionamento com mola de retorno, contato NF (desliga) e contato NA (liga); existe sem retenção (pulso) e com retenção.",
+      "origem": [
+        "E1 s23"
+      ],
+      "criticidade": "critica",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C019",
+        "C020"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M02.md — Bloco B5 — Botoeira e chave fim de curso"
+    },
+    {
+      "id": "C035",
+      "modulo": "M02",
+      "nome": "Chave fim de curso",
+      "definicao": "Dispositivo de manobra auxiliar de posição (fim de curso), identificado pela letra S (fotos no slide s24).",
+      "origem": [
+        "E1 s24",
+        "E1 s46"
+      ],
+      "criticidade": "media",
+      "tipo": "factual",
+      "depende_de": [],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M02.md — Bloco B5 — Botoeira e chave fim de curso"
+    },
+    {
+      "id": "C036",
+      "modulo": "M02",
+      "nome": "Simbologia de comandos elétricos",
+      "definicao": "Símbolos de botoeira NA/NF (com retorno por mola), contatos tripolares NA, fusível, bobina (acionamento eletromagnético), contato NA/NF, relé térmico, disjuntor termomagnético e magnético, acionamento temporizado na ligação, lâmpada, transformador trifásico, motor trifásico.",
+      "origem": [
+        "E1 s43"
+      ],
+      "criticidade": "alta",
+      "tipo": "interpretativo",
+      "depende_de": [],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M02.md — Bloco B6 — Simbologia e letras de identificação"
+    },
+    {
+      "id": "C037",
+      "modulo": "M02",
+      "nome": "Letras de identificação dos componentes",
+      "definicao": "F proteção (fusíveis, relés de proteção); H sinalização; K contatores; M motores; Q manobra de potência (disjuntores, seccionadores, interruptores); S manobra/seletores auxiliares (botões, fim de curso, seletores); T transformadores.",
+      "origem": [
+        "E1 s46"
+      ],
+      "criticidade": "critica",
+      "tipo": "factual",
+      "depende_de": [],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M02.md — Bloco B6 — Simbologia e letras de identificação"
+    },
+    {
+      "id": "C038",
+      "modulo": "M03",
+      "nome": "Partes do relé eletromecânico",
+      "definicao": "Bobina, armadura (móvel), mola, contatos NA/NF, terminais da bobina e terminais dos contatos.",
+      "origem": [
+        "E1 s25",
+        "E1 s26"
+      ],
+      "criticidade": "media",
+      "tipo": "factual",
+      "depende_de": [],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M03.md — Bloco B1 — Relé eletromecânico"
+    },
+    {
+      "id": "C039",
+      "modulo": "M03",
+      "nome": "Terminais do relé",
+      "definicao": "(1) e (2) bobina de excitação; (3) entrada (comum); (4) contato NF; (5) contato NA.",
+      "origem": [
+        "E1 s26"
+      ],
+      "criticidade": "alta",
+      "tipo": "factual",
+      "depende_de": [
+        "C038"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M03.md — Bloco B1 — Relé eletromecânico"
+    },
+    {
+      "id": "C040",
+      "modulo": "M03",
+      "nome": "Relé energizado",
+      "definicao": "Corrente na bobina → campo magnético → armadura móvel atraída → altera a posição dos contatos (abre, fecha ou comuta).",
+      "origem": [
+        "E1 s27"
+      ],
+      "criticidade": "critica",
+      "tipo": "procedimental",
+      "depende_de": [
+        "C038"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M03.md — Bloco B1 — Relé eletromecânico"
+    },
+    {
+      "id": "C041",
+      "modulo": "M03",
+      "nome": "Relé desenergizado",
+      "definicao": "Corrente interrompida → campo magnético se dispersa → contatos retornam à posição inicial pela ação da mola.",
+      "origem": [
+        "E1 s28"
+      ],
+      "criticidade": "critica",
+      "tipo": "procedimental",
+      "depende_de": [
+        "C040"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M03.md — Bloco B1 — Relé eletromecânico"
+    },
+    {
+      "id": "C042",
+      "modulo": "M03",
+      "nome": "Isolamento comando x potência no relé",
+      "definicao": "Não há contato físico entre os terminais de comando (bobina) e os de potência (contatos): um circuito de baixa potência comanda um de alta potência com isolamento elétrico e segurança.",
+      "origem": [
+        "E1 s27",
+        "E1 s29"
+      ],
+      "criticidade": "critica",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C040"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M03.md — Bloco B1 — Relé eletromecânico"
+    },
+    {
+      "id": "C043",
+      "modulo": "M03",
+      "nome": "Acionamento de relé por transistor",
+      "definicao": "Controlador 0: IB=0, transistor cortado, bobina desalimentada, relé desatracado, contato NA aberto, carga desligada. Controlador 1: IB>IBSAT, transistor saturado, bobina alimentada, relé atracado, NA fechado, carga alimentada.",
+      "origem": [
+        "E1 s29",
+        "E1 s30",
+        "E1 s31"
+      ],
+      "criticidade": "media",
+      "tipo": "procedimental",
+      "depende_de": [
+        "C040",
+        "C042"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M03.md — Bloco B1 — Relé eletromecânico"
+    },
+    {
+      "id": "C044",
+      "modulo": "M03",
+      "nome": "Diodo damper",
+      "definicao": "Proteção contra pico reverso: diodo ligado em paralelo com a bobina do relé.",
+      "origem": [
+        "E1 s32"
+      ],
+      "criticidade": "alta",
+      "tipo": "factual",
+      "depende_de": [
+        "C043"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M03.md — Bloco B1 — Relé eletromecânico"
+    },
+    {
+      "id": "C045",
+      "modulo": "M03",
+      "nome": "Contator — definição",
+      "definicao": "Derivado do conceito de relé: elemento eletromecânico de comando a distância, com uma única posição de repouso e sem travamento.",
+      "origem": [
+        "E1 s33"
+      ],
+      "criticidade": "critica",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C040"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M03.md — Bloco B2 — Contator"
+    },
+    {
+      "id": "C046",
+      "modulo": "M03",
+      "nome": "Contator energizado",
+      "definicao": "A bobina alimentada cria campo magnético no núcleo fixo, que atrai o núcleo móvel e fecha o circuito.",
+      "origem": [
+        "E1 s34"
+      ],
+      "criticidade": "alta",
+      "tipo": "procedimental",
+      "depende_de": [
+        "C045"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M03.md — Bloco B2 — Contator"
+    },
+    {
+      "id": "C047",
+      "modulo": "M03",
+      "nome": "Contator desenergizado",
+      "definicao": "Cessando a alimentação da bobina, o campo é interrompido e o núcleo retorna por molas.",
+      "origem": [
+        "E1 s35"
+      ],
+      "criticidade": "alta",
+      "tipo": "procedimental",
+      "depende_de": [
+        "C046"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M03.md — Bloco B2 — Contator"
+    },
+    {
+      "id": "C048",
+      "modulo": "M03",
+      "nome": "Redução da centelha no contator",
+      "definicao": "Afastamento rápido entre os contatos, abafadores e resfriamento.",
+      "origem": [
+        "E1 s36"
+      ],
+      "criticidade": "media",
+      "tipo": "factual",
+      "depende_de": [
+        "C045"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M03.md — Bloco B2 — Contator"
+    },
+    {
+      "id": "C049",
+      "modulo": "M03",
+      "nome": "Bobina do contator A1/A2",
+      "definicao": "Terminais da bobina sempre A1/A2; símbolo com atuação eletromecânica tracejada ligando a bobina aos contatos.",
+      "origem": [
+        "E1 s37"
+      ],
+      "criticidade": "alta",
+      "tipo": "factual",
+      "depende_de": [
+        "C045"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M03.md — Bloco B2 — Contator"
+    },
+    {
+      "id": "C050",
+      "modulo": "M03",
+      "nome": "Contatos principais (de força)",
+      "definicao": "Estabelecem e interrompem as correntes de alimentação das cargas (motores); numeração 1-2, 3-4, 5-6.",
+      "origem": [
+        "E1 s37",
+        "E1 s38"
+      ],
+      "criticidade": "alta",
+      "tipo": "factual",
+      "depende_de": [
+        "C045"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M03.md — Bloco B2 — Contator"
+    },
+    {
+      "id": "C051",
+      "modulo": "M03",
+      "nome": "Contatos auxiliares e sua numeração",
+      "definicao": "Acionam/bloqueiam circuitos auxiliares de comando, sinalização e intertravamento; NA terminam em 3 e 4 (13-14), NF terminam em 1 e 2 (21-22 ou 11-12).",
+      "origem": [
+        "E1 s39",
+        "E7 p9"
+      ],
+      "criticidade": "critica",
+      "tipo": "factual",
+      "depende_de": [
+        "C045"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M03.md — Bloco B2 — Contator"
+    },
+    {
+      "id": "C052",
+      "modulo": "M03",
+      "nome": "Contato de selo (selagem)",
+      "definicao": "Contato auxiliar NA do próprio contator, sempre em paralelo com o contato de fechamento da botoeira; mantém a bobina energizada depois que o operador retira o dedo.",
+      "origem": [
+        "E1 s44"
+      ],
+      "criticidade": "critica",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C051",
+        "C034"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M03.md — Bloco B3 — Selo e intertravamento"
+    },
+    {
+      "id": "C053",
+      "modulo": "M03",
+      "nome": "Intertravamento (interlock)",
+      "definicao": "Com 2 ou mais contatores cujo funcionamento simultâneo causaria curto, coloca-se o contato NF de um contator antes da alimentação da bobina do outro.",
+      "origem": [
+        "E1 s45"
+      ],
+      "criticidade": "critica",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C051"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M03.md — Bloco B3 — Selo e intertravamento"
+    },
+    {
+      "id": "C054",
+      "modulo": "M03",
+      "nome": "Intertravamento por botoeira",
+      "definicao": "A botoeira de um sentido possui também contato NF em série no circuito da bobina do outro contator; esse NF abre no momento do acionamento.",
+      "origem": [
+        "E7 p11",
+        "E7 p13"
+      ],
+      "criticidade": "alta",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C053",
+        "C034"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M03.md — Bloco B3 — Selo e intertravamento"
+    },
+    {
+      "id": "C055",
+      "modulo": "M04",
+      "nome": "Partida direta — circuito de potência",
+      "definicao": "R, S, T → fusíveis F1 → disjuntor tripolar Q1 → contatos principais de K1 → relé térmico F2 → bornes X1 → motor M1 (U1, V1, W1).",
+      "origem": [
+        "E1 s47",
+        "E1 s48",
+        "E2"
+      ],
+      "criticidade": "critica",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C017",
+        "C050",
+        "C033"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M04.md — Bloco B1 — Circuitos de potência e de comando"
+    },
+    {
+      "id": "C056",
+      "modulo": "M04",
+      "nome": "Partida direta — circuito de comando",
+      "definicao": "S, T → F3 → disjuntor bipolar Q2 → F2 (95-96) → S0 (1-2, NF) → S1 (3-4, NA) em paralelo com K1 (13-14) → bobina K1 (A1-A2).",
+      "origem": [
+        "E1 s48"
+      ],
+      "criticidade": "critica",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C016",
+        "C052"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M04.md — Bloco B1 — Circuitos de potência e de comando"
+    },
+    {
+      "id": "C057",
+      "modulo": "M04",
+      "nome": "Funções dos componentes da partida direta",
+      "definicao": "S0: botoeira de parada (NF); S1: botoeira de partida (NA); Q1: disjuntor do circuito de potência; Q2: disjuntor do comando; F1/F3: fusíveis; F2: relé térmico (sobrecarga); K1: contator (manobra); M1: motor.",
+      "origem": [
+        "E2",
+        "E4"
+      ],
+      "criticidade": "critica",
+      "tipo": "factual",
+      "depende_de": [
+        "C055",
+        "C056",
+        "C037"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M04.md — Bloco B1 — Circuitos de potência e de comando"
+    },
+    {
+      "id": "C058",
+      "modulo": "M04",
+      "nome": "Partida direta — ligar",
+      "definicao": "Pressiona-se S1: a corrente passa por S0 (fechado) e S1, energiza K1, que fecha os contatos principais (motor liga) e o auxiliar NA 13-14 (selo); ao soltar S1 o motor continua.",
+      "origem": [
+        "E1 s49"
+      ],
+      "criticidade": "critica",
+      "tipo": "procedimental",
+      "depende_de": [
+        "C056"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M04.md — Bloco B2 — Funcionamento passo a passo"
+    },
+    {
+      "id": "C059",
+      "modulo": "M04",
+      "nome": "Partida direta — desligar",
+      "definicao": "Pressiona-se S0: abre o circuito de comando, desenergiza a bobina, o contator desliga e o motor para.",
+      "origem": [
+        "E1 s49"
+      ],
+      "criticidade": "critica",
+      "tipo": "procedimental",
+      "depende_de": [
+        "C058"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M04.md — Bloco B2 — Funcionamento passo a passo"
+    },
+    {
+      "id": "C060",
+      "modulo": "M04",
+      "nome": "Atuação do relé térmico no circuito",
+      "definicao": "Corrente acima da nominal por tempo prolongado aquece o bimetal de F2, que abre seu NF 95-96 no comando; K1 desenergiza, abre os principais e o motor desliga.",
+      "origem": [
+        "E1 s49",
+        "E1 s50",
+        "E7 p4"
+      ],
+      "criticidade": "critica",
+      "tipo": "procedimental",
+      "depende_de": [
+        "C033",
+        "C058"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M04.md — Bloco B2 — Funcionamento passo a passo"
+    },
+    {
+      "id": "C061",
+      "modulo": "M04",
+      "nome": "Chaveamento de cargas de alta potência",
+      "definicao": "Circuito de comando (F1, RL 95-96, B0, B1 // C1 NA, bobina C1) e de força (fusíveis F2-F4, contator C1, relé térmico RL, motor); fusíveis protegem contra curto, relé térmico contra sobrecarga; B0 e B1 de impulso sem retenção.",
+      "origem": [
+        "E7 p3",
+        "E7 p4"
+      ],
+      "criticidade": "media",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C058"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M04.md — Bloco B3 — Variações da partida direta (exercícios do E7)"
+    },
+    {
+      "id": "C062",
+      "modulo": "M04",
+      "nome": "Botão de emergência",
+      "definicao": "Chave de parada em emergência (NF, em série no comando) que, uma vez acionada, não retorna à posição normal.",
+      "origem": [
+        "E7 p5",
+        "E7 p6"
+      ],
+      "criticidade": "alta",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C034",
+        "C059"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M04.md — Bloco B3 — Variações da partida direta (exercícios do E7)"
+    },
+    {
+      "id": "C063",
+      "modulo": "M04",
+      "nome": "Partida direta com lâmpada de sinalização",
+      "definicao": "Lâmpada H1 ligada junto à bobina de K1, que se acende quando o motor parte.",
+      "origem": [
+        "E7 p21",
+        "E7 p22"
+      ],
+      "criticidade": "media",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C058",
+        "C037"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M04.md — Bloco B3 — Variações da partida direta (exercícios do E7)"
+    },
+    {
+      "id": "C064",
+      "modulo": "M04",
+      "nome": "Partida direta de dois motores",
+      "definicao": "Dois contatores (K1→M1, K2→M2) com selo e intertravamento: só é possível partir e manter um motor de cada vez; lâmpadas indicam o funcionamento de cada um; B0, B1, B2 de impulso sem retenção.",
+      "origem": [
+        "E7 p23",
+        "E7 p24",
+        "E7 p25",
+        "E7 p26"
+      ],
+      "criticidade": "alta",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C053",
+        "C058"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M04.md — Bloco B3 — Variações da partida direta (exercícios do E7)"
+    },
+    {
+      "id": "C065",
+      "modulo": "M04",
+      "nome": "Estudo dirigido de partida direta",
+      "definicao": "Objetivo: montar a partida direta no laboratório e conhecer o conceito de selo; material: Q1 tripolar, Q2 bipolar, F2, K1, S0 NF, S1 NA, M1.",
+      "origem": [
+        "E2"
+      ],
+      "criticidade": "baixa",
+      "tipo": "factual",
+      "depende_de": [
+        "C057"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M04.md — Bloco B1 — Circuitos de potência e de comando"
+    },
+    {
+      "id": "C066",
+      "modulo": "M05",
+      "nome": "Princípio da reversão de motor trifásico",
+      "definicao": "Inverte-se o sentido de rotação trocando duas fases por meio de contatores adicionais.",
+      "origem": [
+        "E5"
+      ],
+      "criticidade": "critica",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C055"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M05.md — Bloco B1 — Princípio e circuito de potência"
+    },
+    {
+      "id": "C067",
+      "modulo": "M05",
+      "nome": "Reversão — circuito de potência",
+      "definicao": "K1 alimenta o motor numa sequência de fases; K2 alimenta com duas fases trocadas; relé térmico F2 comum aos dois.",
+      "origem": [
+        "E1 s51",
+        "E1 s52"
+      ],
+      "criticidade": "critica",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C066"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M05.md — Bloco B1 — Princípio e circuito de potência"
+    },
+    {
+      "id": "C068",
+      "modulo": "M05",
+      "nome": "Reversão — circuito de comando",
+      "definicao": "Duas partidas diretas simples intertravadas: F2 95-96 → S0 → [S1 // K1 13-14 → K2 21-22 → K1] e [S2 // K2 13-14 → K1 21-22 → K2].",
+      "origem": [
+        "E1 s52",
+        "E1 s53"
+      ],
+      "criticidade": "critica",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C056",
+        "C053"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M05.md — Bloco B2 — Circuito de comando e funcionamento passo a passo"
+    },
+    {
+      "id": "C069",
+      "modulo": "M05",
+      "nome": "Reversão — pressionar S1",
+      "definicao": "K1 energiza e alimenta o motor; o auxiliar 21-22 de K1 abre (intertravamento: impede K2) e o 13-14 de K1 fecha (selagem).",
+      "origem": [
+        "E1 s53"
+      ],
+      "criticidade": "critica",
+      "tipo": "procedimental",
+      "depende_de": [
+        "C068"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M05.md — Bloco B2 — Circuito de comando e funcionamento passo a passo"
+    },
+    {
+      "id": "C070",
+      "modulo": "M05",
+      "nome": "Reversão — trocar o sentido",
+      "definicao": "Pressiona-se S0 (motor para) e depois S2: K2 energiza, 21-22 de K2 abre (intertravamento) e 13-14 de K2 fecha (selagem).",
+      "origem": [
+        "E1 s54"
+      ],
+      "criticidade": "critica",
+      "tipo": "procedimental",
+      "depende_de": [
+        "C069"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M05.md — Bloco B2 — Circuito de comando e funcionamento passo a passo"
+    },
+    {
+      "id": "C071",
+      "modulo": "M05",
+      "nome": "Curto na reversão sem intertravamento",
+      "definicao": "K1 e K2 energizados ao mesmo tempo ligariam duas fases trocadas entre si, provocando curto-circuito; por isso o intertravamento.",
+      "origem": [
+        "E1 s53"
+      ],
+      "criticidade": "critica",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C067",
+        "C053"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M05.md — Bloco B2 — Circuito de comando e funcionamento passo a passo"
+    },
+    {
+      "id": "C072",
+      "modulo": "M05",
+      "nome": "Estudo dirigido de reversão e sinalização",
+      "definicao": "Objetivo: acionar de forma automática motor com reversão, ver similaridades com a partida direta e o conceito de intertravamento; exercício: lâmpada verde (horário), amarela (anti-horário), vermelha (atuação do relé de sobrecarga).",
+      "origem": [
+        "E3"
+      ],
+      "criticidade": "media",
+      "tipo": "factual",
+      "depende_de": [
+        "C068"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M05.md — Bloco B3 — Chave reversora com duplo intertravamento e estudo dirigido"
+    },
+    {
+      "id": "C073",
+      "modulo": "M05",
+      "nome": "Chave reversora com duplo intertravamento",
+      "definicao": "Comando com disjuntor de comando, RT 95-96, S0 desliga, S1 e S2 com NF cruzados (intertravamento por botoeira) e auxiliares NF 11-12 cruzados (intertravamento por contator); S0, S1, S2 de impulso sem retenção.",
+      "origem": [
+        "E7 p8",
+        "E7 p9",
+        "E7 p11",
+        "E7 p13"
+      ],
+      "criticidade": "alta",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C054",
+        "C068"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M05.md — Bloco B3 — Chave reversora com duplo intertravamento e estudo dirigido"
+    },
+    {
+      "id": "C074",
+      "modulo": "M05",
+      "nome": "Componentes da partida com reversão",
+      "definicao": "Q1 tripolar, Q2 bipolar, F1/F3 fusíveis, F2 relé térmico, K1 e K2 contatores, S0 NF, S1 e S2 NA, M1.",
+      "origem": [
+        "E3",
+        "E5"
+      ],
+      "criticidade": "alta",
+      "tipo": "factual",
+      "depende_de": [
+        "C057"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M05.md — Bloco B1 — Princípio e circuito de potência"
+    },
+    {
+      "id": "C075",
+      "modulo": "M06",
+      "nome": "Relé temporizador — definição e usos",
+      "definicao": "Dispositivo eletrônico que, em função de tempos ajustados, comuta um sinal de saída; usado em partidas de motores, quadros de comando, fornos industriais.",
+      "origem": [
+        "E6 p6"
+      ],
+      "criticidade": "alta",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C040"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M06.md — Bloco B1 — Relés temporizadores"
+    },
+    {
+      "id": "C076",
+      "modulo": "M06",
+      "nome": "Relé temporizador — precisão e faixa",
+      "definicao": "Eletrônica digital com elevada precisão, repetitividade e imunidade a ruídos; ajustável de 0,3 s a 30 min.",
+      "origem": [
+        "E6 p6",
+        "E6 p7"
+      ],
+      "criticidade": "media",
+      "tipo": "factual",
+      "depende_de": [
+        "C075"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M06.md — Bloco B1 — Relés temporizadores"
+    },
+    {
+      "id": "C077",
+      "modulo": "M06",
+      "nome": "Tipos de relé temporizador",
+      "definicao": "Retardo na energização (on delay) e retardo na desenergização (off delay).",
+      "origem": [
+        "E6 p7"
+      ],
+      "criticidade": "critica",
+      "tipo": "factual",
+      "depende_de": [
+        "C075"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M06.md — Bloco B1 — Relés temporizadores"
+    },
+    {
+      "id": "C078",
+      "modulo": "M06",
+      "nome": "Retardo na energização (on delay)",
+      "definicao": "Atua em seus contatos um tempo após a energização do relé e os retorna ao repouso imediatamente após a desenergização.",
+      "origem": [
+        "E6 p8",
+        "E6 p9"
+      ],
+      "criticidade": "critica",
+      "tipo": "procedimental",
+      "depende_de": [
+        "C077"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M06.md — Bloco B1 — Relés temporizadores"
+    },
+    {
+      "id": "C079",
+      "modulo": "M06",
+      "nome": "Retardo na desenergização (off delay)",
+      "definicao": "Atua em seus contatos imediatamente na energização, mas só os retorna ao repouso um tempo após a desenergização.",
+      "origem": [
+        "E6 p10",
+        "E6 p11"
+      ],
+      "criticidade": "critica",
+      "tipo": "procedimental",
+      "depende_de": [
+        "C077"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M06.md — Bloco B1 — Relés temporizadores"
+    },
+    {
+      "id": "C080",
+      "modulo": "M06",
+      "nome": "Símbolos das bobinas temporizadas",
+      "definicao": "Bobina com retardo na energização: retângulo com quadrado lateral marcado com X; com retardo na desenergização: retângulo com quadrado lateral preenchido.",
+      "origem": [
+        "E6 p8",
+        "E6 p10"
+      ],
+      "criticidade": "media",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C078",
+        "C079"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M06.md — Bloco B1 — Relés temporizadores"
+    },
+    {
+      "id": "C081",
+      "modulo": "M06",
+      "nome": "Benefícios de um sistema eficiente de partida",
+      "definicao": "Aumento da vida útil do motor, redução dos custos operacionais e alívio à equipe de manutenção.",
+      "origem": [
+        "E6 p12"
+      ],
+      "criticidade": "media",
+      "tipo": "factual",
+      "depende_de": [],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M06.md — Bloco B2 — Partida de motores de indução"
+    },
+    {
+      "id": "C082",
+      "modulo": "M06",
+      "nome": "Tipos de partida de motor de indução",
+      "definicao": "Direta, chave estrela-triângulo, chave compensadora, chaves estáticas e reator.",
+      "origem": [
+        "E6 p13"
+      ],
+      "criticidade": "alta",
+      "tipo": "factual",
+      "depende_de": [
+        "C010"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M06.md — Bloco B2 — Partida de motores de indução"
+    },
+    {
+      "id": "C083",
+      "modulo": "M06",
+      "nome": "Condições para a partida direta",
+      "definicao": "Corrente nominal da rede tão elevada que a de partida não é relevante; corrente de partida baixa por potência pequena; partida sem carga (reduz a duração da corrente de partida).",
+      "origem": [
+        "E6 p14"
+      ],
+      "criticidade": "alta",
+      "tipo": "factual",
+      "depende_de": [
+        "C082"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M06.md — Bloco B2 — Partida de motores de indução"
+    },
+    {
+      "id": "C084",
+      "modulo": "M06",
+      "nome": "Fatores que impedem a partida direta",
+      "definicao": "Potência do motor superior ao máximo permitido pela concessionária (normalmente 5 CV em baixa tensão) e carga que necessita de acionamento lento e progressivo.",
+      "origem": [
+        "E6 p15"
+      ],
+      "criticidade": "critica",
+      "tipo": "factual",
+      "depende_de": [
+        "C082"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M06.md — Bloco B2 — Partida de motores de indução"
+    },
+    {
+      "id": "C085",
+      "modulo": "M06",
+      "nome": "Curva conjugado-velocidade na partida",
+      "definicao": "Durante a partida o motor precisa, em cada instante, de conjugado superior ao conjugado resistente da carga.",
+      "origem": [
+        "E6 p16"
+      ],
+      "criticidade": "media",
+      "tipo": "conceitual",
+      "depende_de": [],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M06.md — Bloco B2 — Partida de motores de indução"
+    },
+    {
+      "id": "C086",
+      "modulo": "M06",
+      "nome": "Conjugado acelerante e ponto de operação",
+      "definicao": "Conjugado acelerante é a diferença entre o conjugado do motor e o conjugado resistente; o ponto de operação é onde as curvas se cruzam.",
+      "origem": [
+        "E6 p18",
+        "E6 p42"
+      ],
+      "criticidade": "media",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C085"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M06.md — Bloco B2 — Partida de motores de indução"
+    },
+    {
+      "id": "C087",
+      "modulo": "M07",
+      "nome": "Objetivo da chave estrela-triângulo",
+      "definicao": "Reduzir a corrente de partida em motores trifásicos, permitindo acionamento mais suave e protegendo o motor e os equipamentos elétricos conectados.",
+      "origem": [
+        "E6 p17"
+      ],
+      "criticidade": "critica",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C011",
+        "C084"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M07.md — Bloco B1 — Objetivo, princípio, tensões e correntes"
+    },
+    {
+      "id": "C088",
+      "modulo": "M07",
+      "nome": "Princípio da estrela-triângulo",
+      "definicao": "O motor parte em estrela (tensão por enrolamento reduzida) e, próximo da velocidade nominal, a chave comuta para triângulo (tensão nominal).",
+      "origem": [
+        "E6 p17"
+      ],
+      "criticidade": "critica",
+      "tipo": "procedimental",
+      "depende_de": [
+        "C087"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M07.md — Bloco B1 — Objetivo, princípio, tensões e correntes"
+    },
+    {
+      "id": "C089",
+      "modulo": "M07",
+      "nome": "Tensão nos enrolamentos Y x Δ",
+      "definicao": "Em estrela cada enrolamento recebe U/√3 (rede de 220 V → 127 V); em triângulo recebe U (220 V).",
+      "origem": [
+        "E6 p19",
+        "E6 p20"
+      ],
+      "criticidade": "alta",
+      "tipo": "factual",
+      "depende_de": [
+        "C088"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M07.md — Bloco B1 — Objetivo, princípio, tensões e correntes"
+    },
+    {
+      "id": "C090",
+      "modulo": "M07",
+      "nome": "Corrente de linha Y x Δ",
+      "definicao": "A corrente de linha em estrela é 1/3 da corrente de linha em triângulo.",
+      "origem": [
+        "E6 p20"
+      ],
+      "criticidade": "alta",
+      "tipo": "factual",
+      "depende_de": [
+        "C089"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M07.md — Bloco B1 — Objetivo, princípio, tensões e correntes"
+    },
+    {
+      "id": "C091",
+      "modulo": "M07",
+      "nome": "Curvas de corrente na partida Y-Δ",
+      "definicao": "Gráfico Ip/In: a partida direta não reduz a corrente; na partida indireta ocorre a troca das tensões no tempo de comutação.",
+      "origem": [
+        "E6 p21"
+      ],
+      "criticidade": "baixa",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C090"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M07.md — Bloco B1 — Objetivo, princípio, tensões e correntes"
+    },
+    {
+      "id": "C092",
+      "modulo": "M07",
+      "nome": "Vantagens da chave estrela-triângulo",
+      "definicao": "Baixo custo (em relação à chave compensadora), pequeno espaço ocupado e sem limite máximo de manobras.",
+      "origem": [
+        "E6 p22"
+      ],
+      "criticidade": "alta",
+      "tipo": "factual",
+      "depende_de": [
+        "C087"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M07.md — Bloco B2 — Vantagens, desvantagens e ajuste do relé temporizado"
+    },
+    {
+      "id": "C093",
+      "modulo": "M07",
+      "nome": "Desvantagem: comutação antes de 90% da rotação",
+      "definicao": "Se o motor não atingir pelo menos 90% da rotação nominal, na comutação para triângulo o pico de corrente é quase o mesmo da partida direta.",
+      "origem": [
+        "E6 p23"
+      ],
+      "criticidade": "critica",
+      "tipo": "factual",
+      "depende_de": [
+        "C088"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M07.md — Bloco B2 — Vantagens, desvantagens e ajuste do relé temporizado"
+    },
+    {
+      "id": "C094",
+      "modulo": "M07",
+      "nome": "Desvantagem: seis terminais acessíveis",
+      "definicao": "O motor deve ter pelo menos seis terminais acessíveis para as ligações.",
+      "origem": [
+        "E6 p23"
+      ],
+      "criticidade": "critica",
+      "tipo": "factual",
+      "depende_de": [
+        "C088"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M07.md — Bloco B2 — Vantagens, desvantagens e ajuste do relé temporizado"
+    },
+    {
+      "id": "C095",
+      "modulo": "M07",
+      "nome": "Desvantagem: tensão da rede = tensão em triângulo",
+      "definicao": "O valor de tensão da rede deve coincidir com o valor de tensão da ligação triângulo do motor.",
+      "origem": [
+        "E6 p23"
+      ],
+      "criticidade": "alta",
+      "tipo": "factual",
+      "depende_de": [
+        "C089"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M07.md — Bloco B2 — Vantagens, desvantagens e ajuste do relé temporizado"
+    },
+    {
+      "id": "C096",
+      "modulo": "M07",
+      "nome": "Enrolamentos e terminais do motor",
+      "definicao": "Três enrolamentos: Z1 (U1-U2), Z2 (V1-V2), Z3 (W1-W2); na figura K1/K2/K3 os terminais do motor são numerados 1 a 6.",
+      "origem": [
+        "E6 p24",
+        "E6 p30"
+      ],
+      "criticidade": "media",
+      "tipo": "factual",
+      "depende_de": [
+        "C094"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M07.md — Bloco B3 — Enrolamentos e ligações estrela e triângulo"
+    },
+    {
+      "id": "C097",
+      "modulo": "M07",
+      "nome": "Ligação estrela",
+      "definicao": "U2, V2 e W2 conectados no mesmo ponto.",
+      "origem": [
+        "E6 p24",
+        "E6 p25"
+      ],
+      "criticidade": "critica",
+      "tipo": "factual",
+      "depende_de": [
+        "C096"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M07.md — Bloco B3 — Enrolamentos e ligações estrela e triângulo"
+    },
+    {
+      "id": "C098",
+      "modulo": "M07",
+      "nome": "Ligação triângulo (delta)",
+      "definicao": "Pontos conectados: V1-U2; W1-V2; U1-W2.",
+      "origem": [
+        "E6 p26"
+      ],
+      "criticidade": "alta",
+      "tipo": "factual",
+      "depende_de": [
+        "C096"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M07.md — Bloco B3 — Enrolamentos e ligações estrela e triângulo"
+    },
+    {
+      "id": "C099",
+      "modulo": "M07",
+      "nome": "Nomenclatura Y-Δ da figura K1/K2/K3 (E6 p30-34)",
+      "definicao": "K1 contator de linha; K2 contator TRIÂNGULO; K3 contator ESTRELA; T1 temporizador; B1 partida; B0 parada; contato NF no topo = auxiliar do relé térmico.",
+      "origem": [
+        "E6 p30",
+        "E6 p34"
+      ],
+      "criticidade": "critica",
+      "tipo": "factual",
+      "depende_de": [
+        "C088"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M07.md — Bloco B4 — As duas nomenclaturas: cuidado com a posição da bobina estrela e da bobina triângulo"
+    },
+    {
+      "id": "C100",
+      "modulo": "M07",
+      "nome": "Nomenclatura Y-Δ da figura KM1/KM2/KM3 (E6 p28, E7 p16)",
+      "definicao": "KM1 contator de linha; KM2 contator ESTRELA; KM3 contator TRIÂNGULO; KT1 temporizador; SB1 parada; SB2 partida; FR contato auxiliar do relé térmico. Atenção: a numeração estrela/triângulo é invertida em relação à figura K1/K2/K3.",
+      "origem": [
+        "E6 p28",
+        "E7 p15",
+        "E7 p16"
+      ],
+      "criticidade": "critica",
+      "tipo": "factual",
+      "depende_de": [
+        "C099"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M07.md — Bloco B4 — As duas nomenclaturas: cuidado com a posição da bobina estrela e da bobina triângulo"
+    },
+    {
+      "id": "C101",
+      "modulo": "M07",
+      "nome": "Y-Δ — partida em estrela",
+      "definicao": "B1 energiza K1 (linha), que sela; T1 é energizado; K3 (estrela) energiza e o motor parte em estrela; K3 NF abre, impedindo K2 (intertravamento).",
+      "origem": [
+        "E6 p33"
+      ],
+      "criticidade": "critica",
+      "tipo": "procedimental",
+      "depende_de": [
+        "C099",
+        "C078",
+        "C052"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M07.md — Bloco B5 — Passo a passo: partida, comutação, parada e intertravamento"
+    },
+    {
+      "id": "C102",
+      "modulo": "M07",
+      "nome": "Y-Δ — comutação para triângulo",
+      "definicao": "Decorrido t1, T1 NF abre e T1 NA fecha: K3 desenergiza, K2 energiza e o motor passa a triângulo; K2 NA sela o ramo de T1 NA e K2 NF abre, impedindo K3.",
+      "origem": [
+        "E6 p33"
+      ],
+      "criticidade": "critica",
+      "tipo": "procedimental",
+      "depende_de": [
+        "C101"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M07.md — Bloco B5 — Passo a passo: partida, comutação, parada e intertravamento"
+    },
+    {
+      "id": "C103",
+      "modulo": "M07",
+      "nome": "Y-Δ — parada",
+      "definicao": "B0 desenergiza K1 e K2 (ou K1 e K3): o motor para em qualquer etapa da partida ou do funcionamento.",
+      "origem": [
+        "E6 p33"
+      ],
+      "criticidade": "alta",
+      "tipo": "procedimental",
+      "depende_de": [
+        "C101"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M07.md — Bloco B5 — Passo a passo: partida, comutação, parada e intertravamento"
+    },
+    {
+      "id": "C104",
+      "modulo": "M07",
+      "nome": "Y-Δ — estados dos contatores",
+      "definicao": "Da partida até t1: K1, T1 e K3 ligados e K2 desligado; T1 NF fica fechado até t1. A partir de t1: K1 e K2 ligados, K3 desligado e T1 desligado (o NF de K2 no ramo de T1 abre); T1 NA fecha em t1 e depois abre, e K2 se mantém pelo seu selo K2 NA.",
+      "origem": [
+        "E6 p31",
+        "E6 p32"
+      ],
+      "criticidade": "critica",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C101",
+        "C102"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M07.md — Bloco B5 — Passo a passo: partida, comutação, parada e intertravamento"
+    },
+    {
+      "id": "C105",
+      "modulo": "M07",
+      "nome": "Y-Δ — intertravamento K2-K3",
+      "definicao": "O intertravamento entre os contatores estrela e triângulo impede o curto-circuito entre fases.",
+      "origem": [
+        "E6 p33"
+      ],
+      "criticidade": "critica",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C053",
+        "C104"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M07.md — Bloco B5 — Passo a passo: partida, comutação, parada e intertravamento"
+    },
+    {
+      "id": "C106",
+      "modulo": "M07",
+      "nome": "Ajuste do tempo do relé na Y-Δ",
+      "definicao": "Ajustar o temporizador para que a comutação ocorra com o motor próximo da velocidade nominal (pelo menos 90% da rotação); senão o pico na comutação se aproxima do da partida direta.",
+      "origem": [
+        "E6 p17",
+        "E6 p23"
+      ],
+      "criticidade": "alta",
+      "tipo": "procedimental",
+      "depende_de": [
+        "C093",
+        "C078"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M07.md — Bloco B2 — Vantagens, desvantagens e ajuste do relé temporizado"
+    },
+    {
+      "id": "C107",
+      "modulo": "M08",
+      "nome": "Controle de nível on-off",
+      "definicao": "Ação de controle liga-desliga de uma bomba a partir de dois sensores de nível.",
+      "origem": [
+        "E6 p35",
+        "E6 p36"
+      ],
+      "criticidade": "critica",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C052"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M08.md — Bloco B1 — Controle de nível on-off: componentes"
+    },
+    {
+      "id": "C108",
+      "modulo": "M08",
+      "nome": "Componentes do controle de nível",
+      "definicao": "Sensor de nível superior e sensor de nível inferior (contatos em série com a bobina), contatora (A1/A2), contato auxiliar 13-14 em paralelo com o sensor inferior (selo), contatos principais L1-L3/T1-T3 e bomba.",
+      "origem": [
+        "E6 p36"
+      ],
+      "criticidade": "critica",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C107",
+        "C051"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M08.md — Bloco B1 — Controle de nível on-off: componentes"
+    },
+    {
+      "id": "C109",
+      "modulo": "M08",
+      "nome": "Nível — início do enchimento",
+      "definicao": "Com o tanque esvaziando, fecha o sensor superior e depois o inferior; a bobina energiza, fecham os principais e o 13-14, e a bomba enche o reservatório.",
+      "origem": [
+        "E6 p37"
+      ],
+      "criticidade": "critica",
+      "tipo": "procedimental",
+      "depende_de": [
+        "C108"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M08.md — Bloco B2 — Controle de nível: funcionamento"
+    },
+    {
+      "id": "C110",
+      "modulo": "M08",
+      "nome": "Nível — selagem durante o enchimento",
+      "definicao": "O nível sobe e o sensor inferior abre, mas a bobina continua alimentada pelo contato auxiliar 13-14 (selo).",
+      "origem": [
+        "E6 p37"
+      ],
+      "criticidade": "critica",
+      "tipo": "procedimental",
+      "depende_de": [
+        "C109"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M08.md — Bloco B2 — Controle de nível: funcionamento"
+    },
+    {
+      "id": "C111",
+      "modulo": "M08",
+      "nome": "Nível — desligamento no tanque cheio",
+      "definicao": "Quando o sensor superior abre, a bobina é desalimentada e a bomba para (com tanque cheio os dois sensores estão abertos).",
+      "origem": [
+        "E6 p37"
+      ],
+      "criticidade": "critica",
+      "tipo": "procedimental",
+      "depende_de": [
+        "C110"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M08.md — Bloco B2 — Controle de nível: funcionamento"
+    },
+    {
+      "id": "C112",
+      "modulo": "M08",
+      "nome": "Nível — início do esvaziamento",
+      "definicao": "Ao esvaziar, o sensor superior fecha, mas nada acontece: o sensor inferior e o 13-14 estão abertos.",
+      "origem": [
+        "E6 p37"
+      ],
+      "criticidade": "critica",
+      "tipo": "procedimental",
+      "depende_de": [
+        "C111"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M08.md — Bloco B2 — Controle de nível: funcionamento"
+    },
+    {
+      "id": "C113",
+      "modulo": "M08",
+      "nome": "Partida sequencial — potência",
+      "definicao": "Quatro motores M1-M4, cada um com fusíveis, contatora (C1-C4) e relé térmico (RL1-RL4).",
+      "origem": [
+        "E6 p38",
+        "E6 p39"
+      ],
+      "criticidade": "alta",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C055"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M08.md — Bloco B3 — Partida sequencial de quatro motores: potência e comando"
+    },
+    {
+      "id": "C114",
+      "modulo": "M08",
+      "nome": "Partida sequencial — comando",
+      "definicao": "F1 → B0 → B1 // C1-NA; ramos com RL1…RL4 (NF); D1-NA // C2-NA, D2-NA // C3-NA, D3-NA // C4-NA; bobinas C1, D1, C2, D2, C3, D3, C4.",
+      "origem": [
+        "E6 p40"
+      ],
+      "criticidade": "alta",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C078",
+        "C052"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M08.md — Bloco B3 — Partida sequencial de quatro motores: potência e comando"
+    },
+    {
+      "id": "C115",
+      "modulo": "M08",
+      "nome": "Partida sequencial — funcionamento",
+      "definicao": "B1 → C1 (M1 parte), C1-NA sela B1 e D1 energiza; após o atraso D1-NA fecha → C2 (M2), C2-NA sela D1-NA e D2 energiza; e assim até C4 (M4), com C4-NA selando D3-NA.",
+      "origem": [
+        "E6 p41",
+        "E7 p30"
+      ],
+      "criticidade": "critica",
+      "tipo": "procedimental",
+      "depende_de": [
+        "C114"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M08.md — Bloco B4 — Partida sequencial: funcionamento e intervalo"
+    },
+    {
+      "id": "C116",
+      "modulo": "M08",
+      "nome": "Partida sequencial — intervalo",
+      "definicao": "Os motores partem com um intervalo de tempo entre eles igual ao tempo de atraso dos relés temporizados.",
+      "origem": [
+        "E7 p31"
+      ],
+      "criticidade": "alta",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C115"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M08.md — Bloco B4 — Partida sequencial: funcionamento e intervalo"
+    },
+    {
+      "id": "C117",
+      "modulo": "M09",
+      "nome": "Sistemas fluidomecânicos",
+      "definicao": "Utilizam um fluido — líquido ou gás — para transmitir, controlar ou transformar energia mecânica.",
+      "origem": [
+        "P1 s4"
+      ],
+      "criticidade": "alta",
+      "tipo": "conceitual",
+      "depende_de": [],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M09.md — Bloco B1 — Sistemas fluidomecânicos: hidráulico × pneumático"
+    },
+    {
+      "id": "C118",
+      "modulo": "M09",
+      "nome": "Hidráulico x pneumático (fluido)",
+      "definicao": "Hidráulicos: fluidos incompressíveis (geralmente óleo). Pneumáticos: fluidos compressíveis (geralmente ar).",
+      "origem": [
+        "P1 s4"
+      ],
+      "criticidade": "critica",
+      "tipo": "factual",
+      "depende_de": [
+        "C117"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M09.md — Bloco B1 — Sistemas fluidomecânicos: hidráulico × pneumático"
+    },
+    {
+      "id": "C119",
+      "modulo": "M09",
+      "nome": "Vantagens dos sistemas hidráulicos",
+      "definicao": "Operam com potências elevadas em grandes distâncias (tubulações ocupam pouco mais espaço que condutores elétricos); rápidos, robustos e com boa precisão mesmo em alta potência.",
+      "origem": [
+        "P1 s5"
+      ],
+      "criticidade": "critica",
+      "tipo": "factual",
+      "depende_de": [
+        "C118"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M09.md — Bloco B1 — Sistemas fluidomecânicos: hidráulico × pneumático"
+    },
+    {
+      "id": "C120",
+      "modulo": "M09",
+      "nome": "Desvantagens dos sistemas hidráulicos",
+      "definicao": "Rigidez das tubulações, sensibilidade à temperatura, riscos de vazamento, possibilidade de incêndio por vaporização e golpe de aríete.",
+      "origem": [
+        "P1 s5"
+      ],
+      "criticidade": "critica",
+      "tipo": "factual",
+      "depende_de": [
+        "C118"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M09.md — Bloco B1 — Sistemas fluidomecânicos: hidráulico × pneumático"
+    },
+    {
+      "id": "C121",
+      "modulo": "M09",
+      "nome": "Vantagens dos sistemas pneumáticos",
+      "definicao": "Simplicidade de concepção, menor peso, maior suavidade operacional, ausência de golpe de aríete, menor manutenção, sem riscos de incêndio nem influência de variações térmicas.",
+      "origem": [
+        "P1 s6"
+      ],
+      "criticidade": "critica",
+      "tipo": "factual",
+      "depende_de": [
+        "C118"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M09.md — Bloco B1 — Sistemas fluidomecânicos: hidráulico × pneumático"
+    },
+    {
+      "id": "C122",
+      "modulo": "M09",
+      "nome": "Desvantagens dos sistemas pneumáticos",
+      "definicao": "Compressibilidade do fluido, necessidade de lubrificação, menor eficiência, risco de explosão em reservatórios, resposta mais lenta — por isso menos usados em navios que os hidráulicos.",
+      "origem": [
+        "P1 s6"
+      ],
+      "criticidade": "critica",
+      "tipo": "factual",
+      "depende_de": [
+        "C118"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M09.md — Bloco B1 — Sistemas fluidomecânicos: hidráulico × pneumático"
+    },
+    {
+      "id": "C123",
+      "modulo": "M09",
+      "nome": "Aplicações navais da hidráulica",
+      "definicao": "Governo do navio (máquina do leme), posicionamento de canhões, equipamentos de elevação.",
+      "origem": [
+        "P1 s7"
+      ],
+      "criticidade": "alta",
+      "tipo": "factual",
+      "depende_de": [
+        "C119"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M09.md — Bloco B1 — Sistemas fluidomecânicos: hidráulico × pneumático"
+    },
+    {
+      "id": "C124",
+      "modulo": "M09",
+      "nome": "Aplicações navais da pneumática",
+      "definicao": "Mecanismos de abertura de válvulas, acionamento de alarmes sonoros, sistema de lastro de submarinos.",
+      "origem": [
+        "P1 s7"
+      ],
+      "criticidade": "alta",
+      "tipo": "factual",
+      "depende_de": [
+        "C121"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M09.md — Bloco B1 — Sistemas fluidomecânicos: hidráulico × pneumático"
+    },
+    {
+      "id": "C125",
+      "modulo": "M09",
+      "nome": "Diagrama de blocos do sistema pneumático",
+      "definicao": "Meio motor → compressor → controle de pressão → filtro → regulador → lubrificador → controle direcional → controle funcional → cilindro (pistão e haste) → carga.",
+      "origem": [
+        "P1 s8",
+        "P1 s13"
+      ],
+      "criticidade": "alta",
+      "tipo": "procedimental",
+      "depende_de": [
+        "C117"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M09.md — Bloco B2 — Diagrama de blocos do sistema pneumático"
+    },
+    {
+      "id": "C126",
+      "modulo": "M09",
+      "nome": "Entrada do ar e acionamento do compressor",
+      "definicao": "O ar da atmosfera flui para a entrada do compressor, que aumenta sua pressão; o compressor pode ser movido por motor elétrico ou de combustão interna.",
+      "origem": [
+        "P1 s8"
+      ],
+      "criticidade": "media",
+      "tipo": "factual",
+      "depende_de": [
+        "C125"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M09.md — Bloco B2 — Diagrama de blocos do sistema pneumático"
+    },
+    {
+      "id": "C127",
+      "modulo": "M09",
+      "nome": "Válvula de alívio na descarga do compressor",
+      "definicao": "Evita pressões perigosamente altas (bloco 'controle de pressão').",
+      "origem": [
+        "P1 s9"
+      ],
+      "criticidade": "alta",
+      "tipo": "factual",
+      "depende_de": [
+        "C125"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M09.md — Bloco B2 — Diagrama de blocos do sistema pneumático"
+    },
+    {
+      "id": "C128",
+      "modulo": "M09",
+      "nome": "Filtro e lubrificador (bloco)",
+      "definicao": "O filtro remove a sujidade; o lubrificante acrescenta um pouco de óleo ao ar para reduzir o desgaste dos componentes.",
+      "origem": [
+        "P1 s10"
+      ],
+      "criticidade": "alta",
+      "tipo": "factual",
+      "depende_de": [
+        "C125"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M09.md — Bloco B2 — Diagrama de blocos do sistema pneumático"
+    },
+    {
+      "id": "C129",
+      "modulo": "M09",
+      "nome": "Regulador de pressão (bloco)",
+      "definicao": "Mantém constante a pressão do ar fornecido ao sistema, independentemente das variações na linha de suprimento ou da demanda dos atuadores.",
+      "origem": [
+        "P1 s11"
+      ],
+      "criticidade": "alta",
+      "tipo": "factual",
+      "depende_de": [
+        "C125"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M09.md — Bloco B2 — Diagrama de blocos do sistema pneumático"
+    },
+    {
+      "id": "C130",
+      "modulo": "M09",
+      "nome": "Controle direcional e ação no pistão (blocos)",
+      "definicao": "O ar passa por uma válvula de controle direcional, que pode mudar o fluxo; o ar comprimido age no pistão, desenvolvendo força na haste para mover a carga.",
+      "origem": [
+        "P1 s12",
+        "P1 s13"
+      ],
+      "criticidade": "media",
+      "tipo": "procedimental",
+      "depende_de": [
+        "C125"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M09.md — Bloco B2 — Diagrama de blocos do sistema pneumático"
+    },
+    {
+      "id": "C131",
+      "modulo": "M09",
+      "nome": "Armazenamento e ausência de linha de retorno",
+      "definicao": "O ar comprimido pode ser armazenado em tanque para usos eventuais e não são necessárias linhas de retorno; o sistema divide-se em produção e consumo.",
+      "origem": [
+        "P1 s14"
+      ],
+      "criticidade": "alta",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C125"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M09.md — Bloco B2 — Diagrama de blocos do sistema pneumático"
+    },
+    {
+      "id": "C132",
+      "modulo": "M09",
+      "nome": "Produção — compressor",
+      "definicao": "Aspira o ar atmosférico e o comprime até a pressão de trabalho; converte energia mecânica em energia pneumática.",
+      "origem": [
+        "P1 s16"
+      ],
+      "criticidade": "alta",
+      "tipo": "factual",
+      "depende_de": [
+        "C131"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M09.md — Bloco B3 — Produção de ar comprimido (itens 1 a 6): geração e armazenamento"
+    },
+    {
+      "id": "C133",
+      "modulo": "M09",
+      "nome": "Produção — motor elétrico",
+      "definicao": "Fornece a energia mecânica para o compressor; transforma energia elétrica em mecânica.",
+      "origem": [
+        "P1 s16"
+      ],
+      "criticidade": "media",
+      "tipo": "factual",
+      "depende_de": [
+        "C132"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M09.md — Bloco B3 — Produção de ar comprimido (itens 1 a 6): geração e armazenamento"
+    },
+    {
+      "id": "C134",
+      "modulo": "M09",
+      "nome": "Produção — pressostato",
+      "definicao": "Liga e desliga o motor elétrico do compressor em função da pressão medida no reservatório.",
+      "origem": [
+        "P1 s17"
+      ],
+      "criticidade": "critica",
+      "tipo": "factual",
+      "depende_de": [
+        "C132"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M09.md — Bloco B3 — Produção de ar comprimido (itens 1 a 6): geração e armazenamento"
+    },
+    {
+      "id": "C135",
+      "modulo": "M09",
+      "nome": "Produção — válvula de retenção",
+      "definicao": "Permite o fluxo em uma só direção, impedindo que o ar do reservatório retorne ao compressor após o desligamento.",
+      "origem": [
+        "P1 s17"
+      ],
+      "criticidade": "critica",
+      "tipo": "factual",
+      "depende_de": [
+        "C132"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M09.md — Bloco B3 — Produção de ar comprimido (itens 1 a 6): geração e armazenamento"
+    },
+    {
+      "id": "C136",
+      "modulo": "M09",
+      "nome": "Produção — reservatório",
+      "definicao": "Armazena o ar comprimido e garante o suprimento contínuo de ar ao sistema.",
+      "origem": [
+        "P1 s18"
+      ],
+      "criticidade": "alta",
+      "tipo": "factual",
+      "depende_de": [
+        "C131"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M09.md — Bloco B3 — Produção de ar comprimido (itens 1 a 6): geração e armazenamento"
+    },
+    {
+      "id": "C137",
+      "modulo": "M09",
+      "nome": "Produção — manômetro",
+      "definicao": "Indica a pressão do ar no interior do reservatório, permitindo monitoramento em tempo real.",
+      "origem": [
+        "P1 s18"
+      ],
+      "criticidade": "alta",
+      "tipo": "factual",
+      "depende_de": [
+        "C136"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M09.md — Bloco B3 — Produção de ar comprimido (itens 1 a 6): geração e armazenamento"
+    },
+    {
+      "id": "C138",
+      "modulo": "M09",
+      "nome": "Produção — dreno automático",
+      "definicao": "Elimina automaticamente o condensado acumulado no reservatório.",
+      "origem": [
+        "P1 s19"
+      ],
+      "criticidade": "alta",
+      "tipo": "factual",
+      "depende_de": [
+        "C136"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M09.md — Bloco B4 — Produção de ar comprimido (itens 7 a 10): proteção e tratamento do ar"
+    },
+    {
+      "id": "C139",
+      "modulo": "M09",
+      "nome": "Produção — válvula de segurança",
+      "definicao": "Se a pressão do reservatório superar o limite máximo admissível, libera o ar para exaustão.",
+      "origem": [
+        "P1 s19"
+      ],
+      "criticidade": "critica",
+      "tipo": "factual",
+      "depende_de": [
+        "C136"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M09.md — Bloco B4 — Produção de ar comprimido (itens 7 a 10): proteção e tratamento do ar"
+    },
+    {
+      "id": "C140",
+      "modulo": "M09",
+      "nome": "Produção — secador de ar por refrigeração",
+      "definicao": "Provoca a condensação do vapor d'água, removendo a umidade e protegendo a rede pneumática contra corrosão e falhas.",
+      "origem": [
+        "P1 s20"
+      ],
+      "criticidade": "critica",
+      "tipo": "factual",
+      "depende_de": [
+        "C131"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M09.md — Bloco B4 — Produção de ar comprimido (itens 7 a 10): proteção e tratamento do ar"
+    },
+    {
+      "id": "C141",
+      "modulo": "M09",
+      "nome": "Produção — filtro de linha",
+      "definicao": "Elimina partículas sólidas, água e óleo da rede de ar comprimido (item 10 da figura de produção).",
+      "origem": [
+        "P1 s15",
+        "P1 s20"
+      ],
+      "criticidade": "critica",
+      "tipo": "factual",
+      "depende_de": [
+        "C131"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M09.md — Bloco B4 — Produção de ar comprimido (itens 7 a 10): proteção e tratamento do ar"
+    },
+    {
+      "id": "C142",
+      "modulo": "M09",
+      "nome": "Consumo — ponto de rede",
+      "definicao": "Saída de ar da linha principal de distribuição; pode conter impurezas, umidade ou traços de óleo, exigindo tratamento posterior.",
+      "origem": [
+        "P1 s21"
+      ],
+      "criticidade": "media",
+      "tipo": "factual",
+      "depende_de": [
+        "C131"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M09.md — Bloco B5 — Consumo de ar comprimido (itens 1 a 6)"
+    },
+    {
+      "id": "C143",
+      "modulo": "M09",
+      "nome": "Consumo — dreno automático",
+      "definicao": "Remove automaticamente o condensado acumulado, prevenindo falhas e corrosão.",
+      "origem": [
+        "P1 s21"
+      ],
+      "criticidade": "media",
+      "tipo": "factual",
+      "depende_de": [
+        "C142"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M09.md — Bloco B5 — Consumo de ar comprimido (itens 1 a 6)"
+    },
+    {
+      "id": "C144",
+      "modulo": "M09",
+      "nome": "Consumo — unidade de preparação de ar (FRL)",
+      "definicao": "Conjunto filtro, regulador de pressão e lubrificador: ar limpo, pressão adequada e lubrificação para os atuadores.",
+      "origem": [
+        "P1 s21"
+      ],
+      "criticidade": "critica",
+      "tipo": "factual",
+      "depende_de": [
+        "C128",
+        "C129"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M09.md — Bloco B5 — Consumo de ar comprimido (itens 1 a 6)"
+    },
+    {
+      "id": "C145",
+      "modulo": "M09",
+      "nome": "Consumo — válvula de controle direcional",
+      "definicao": "Comanda a direção do fluxo de ar comprimido, controlando o movimento dos atuadores; pertence ao sistema de CONSUMO.",
+      "origem": [
+        "P1 s22"
+      ],
+      "criticidade": "critica",
+      "tipo": "factual",
+      "depende_de": [
+        "C131"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M09.md — Bloco B5 — Consumo de ar comprimido (itens 1 a 6)"
+    },
+    {
+      "id": "C146",
+      "modulo": "M09",
+      "nome": "Consumo — atuador",
+      "definicao": "Converte a energia do ar comprimido em movimento mecânico: linear (cilindros), rotativo ou angular.",
+      "origem": [
+        "P1 s22"
+      ],
+      "criticidade": "alta",
+      "tipo": "factual",
+      "depende_de": [
+        "C145"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M09.md — Bloco B5 — Consumo de ar comprimido (itens 1 a 6)"
+    },
+    {
+      "id": "C147",
+      "modulo": "M09",
+      "nome": "Consumo — controladores de velocidade / reguladores de fluxo",
+      "definicao": "Ajustam a vazão de ar que entra ou sai dos atuadores.",
+      "origem": [
+        "P1 s22"
+      ],
+      "criticidade": "alta",
+      "tipo": "factual",
+      "depende_de": [
+        "C146"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M09.md — Bloco B5 — Consumo de ar comprimido (itens 1 a 6)"
+    },
+    {
+      "id": "C148",
+      "modulo": "M09",
+      "nome": "Reservatório ou acumulador",
+      "definicao": "Recebe o fluido sob pressão em um dado volume e devolve esse mesmo volume ao sistema quando necessário.",
+      "origem": [
+        "P1 s27"
+      ],
+      "criticidade": "media",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C136"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M09.md — Bloco B3 — Produção de ar comprimido (itens 1 a 6): geração e armazenamento"
+    },
+    {
+      "id": "C149",
+      "modulo": "M10",
+      "nome": "Compressores de ar — definição",
+      "definicao": "Máquinas que elevam a pressão de um volume de ar admitido em condições atmosféricas até a pressão exigida; transformam trabalho mecânico em energia de pressão.",
+      "origem": [
+        "P1 s23"
+      ],
+      "criticidade": "alta",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C132"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M10.md — Bloco B1 — Compressores: definição, classificação, princípios e características"
+    },
+    {
+      "id": "C150",
+      "modulo": "M10",
+      "nome": "Classificação dos compressores",
+      "definicao": "Deslocamento positivo: alternativo de êmbolo (pistão); rotativo de parafusos, palhetas ou roots; diafragma. Dinâmico: centrífugo (fluxo radial) e axial (fluxo axial).",
+      "origem": [
+        "P1 s24"
+      ],
+      "criticidade": "critica",
+      "tipo": "factual",
+      "depende_de": [
+        "C149"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M10.md — Bloco B1 — Compressores: definição, classificação, princípios e características"
+    },
+    {
+      "id": "C151",
+      "modulo": "M10",
+      "nome": "Deslocamento positivo — princípio",
+      "definicao": "Baseia-se na redução de volume: o ar é admitido em câmara isolada do meio exterior e seu volume é gradualmente diminuído, processando-se a compressão.",
+      "origem": [
+        "P1 s25"
+      ],
+      "criticidade": "critica",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C150"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M10.md — Bloco B1 — Compressores: definição, classificação, princípios e características"
+    },
+    {
+      "id": "C152",
+      "modulo": "M10",
+      "nome": "Deslocamento positivo — características",
+      "definicao": "Fluxo de aspiração contínuo e capacidade constante; não pode ter descarga estrangulada; comprime volume fixo por ciclo; fluxo constante independente da pressão; alta pressão consistente; opera bem em velocidades menores; indicado quando se precisa de pressão estável.",
+      "origem": [
+        "P1 s25",
+        "P1 s26"
+      ],
+      "criticidade": "critica",
+      "tipo": "factual",
+      "depende_de": [
+        "C151"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M10.md — Bloco B1 — Compressores: definição, classificação, princípios e características"
+    },
+    {
+      "id": "C153",
+      "modulo": "M10",
+      "nome": "Dinâmico — princípio",
+      "definicao": "A elevação de pressão é obtida por conversão de energia cinética em energia de pressão durante a passagem do ar pelo compressor.",
+      "origem": [
+        "P1 s25"
+      ],
+      "criticidade": "critica",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C150"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M10.md — Bloco B1 — Compressores: definição, classificação, princípios e características"
+    },
+    {
+      "id": "C154",
+      "modulo": "M10",
+      "nome": "Dinâmico — características",
+      "definicao": "Pode funcionar com descarga estrangulada ou fechada; alta capacidade de aspiração adaptável à demanda; lâminas rotativas aumentam a velocidade do ar; alto volume e fluxo variável; eficiente em altas velocidades; fluxo se ajusta à pressão e à velocidade; vazão de saída varia com a velocidade: maior pressão possível.",
+      "origem": [
+        "P1 s25",
+        "P1 s26"
+      ],
+      "criticidade": "critica",
+      "tipo": "factual",
+      "depende_de": [
+        "C153"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M10.md — Bloco B1 — Compressores: definição, classificação, princípios e características"
+    },
+    {
+      "id": "C155",
+      "modulo": "M10",
+      "nome": "Partes do compressor centrífugo",
+      "definicao": "Entrada do ar pelo centro do rotor (ventoinha giratória), difusor (lâminas fixas) e saída do ar pressurizado.",
+      "origem": [
+        "P1 s25"
+      ],
+      "criticidade": "media",
+      "tipo": "factual",
+      "depende_de": [
+        "C153"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M10.md — Bloco B1 — Compressores: definição, classificação, princípios e características"
+    },
+    {
+      "id": "C156",
+      "modulo": "M10",
+      "nome": "Atuadores pneumáticos — definição",
+      "definicao": "Proporcionam força e movimento a sistemas automatizados; o cilindro pneumático é simples, de baixo custo e fácil de instalar.",
+      "origem": [
+        "P1 s28"
+      ],
+      "criticidade": "media",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C146"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M10.md — Bloco B2 — Atuadores pneumáticos lineares"
+    },
+    {
+      "id": "C157",
+      "modulo": "M10",
+      "nome": "Atuador linear x rotativo (aplicação)",
+      "definicao": "Linear: automação industrial em geral. Rotativo: atuação de válvulas de processo.",
+      "origem": [
+        "P1 s28"
+      ],
+      "criticidade": "media",
+      "tipo": "factual",
+      "depende_de": [
+        "C156"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M10.md — Bloco B2 — Atuadores pneumáticos lineares"
+    },
+    {
+      "id": "C158",
+      "modulo": "M10",
+      "nome": "Atuador linear de simples efeito",
+      "definicao": "Retração ou expansão feita por mola interna; só realiza trabalho em uma direção (compressão contra a mola).",
+      "origem": [
+        "P1 s29",
+        "P1 s30"
+      ],
+      "criticidade": "critica",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C156"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M10.md — Bloco B2 — Atuadores pneumáticos lineares"
+    },
+    {
+      "id": "C159",
+      "modulo": "M10",
+      "nome": "Simbologia do simples efeito",
+      "definicao": "Pode ser normalmente contraído ou normalmente distendido (posição da mola).",
+      "origem": [
+        "P1 s31"
+      ],
+      "criticidade": "alta",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C158"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M10.md — Bloco B2 — Atuadores pneumáticos lineares"
+    },
+    {
+      "id": "C160",
+      "modulo": "M10",
+      "nome": "Atuador linear de duplo efeito",
+      "definicao": "Conexões de alimentação e exaustão nas duas extremidades; trabalho nos dois sentidos; requer controle por VCD.",
+      "origem": [
+        "P1 s32",
+        "P1 s33"
+      ],
+      "criticidade": "critica",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C156"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M10.md — Bloco B2 — Atuadores pneumáticos lineares"
+    },
+    {
+      "id": "C161",
+      "modulo": "M10",
+      "nome": "Atuador pneumático rotativo",
+      "definicao": "Automatiza o acionamento de válvula de processo; com pressão gira 90°, abrindo e fechando; tipos pinhão e cremalheira ou Scotch Yoke.",
+      "origem": [
+        "P1 s34"
+      ],
+      "criticidade": "alta",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C157"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M10.md — Bloco B3 — Atuadores pneumáticos rotativos"
+    },
+    {
+      "id": "C162",
+      "modulo": "M10",
+      "nome": "Rotativo pinhão-cremalheira de simples efeito",
+      "definicao": "Retorno por molas; uma só conexão; trabalho em uma direção (compressão contra a mola).",
+      "origem": [
+        "P1 s35",
+        "P1 s36"
+      ],
+      "criticidade": "alta",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C161"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M10.md — Bloco B3 — Atuadores pneumáticos rotativos"
+    },
+    {
+      "id": "C163",
+      "modulo": "M10",
+      "nome": "Rotativo pinhão-cremalheira de duplo efeito",
+      "definicao": "Conexões de alimentação e exaustão; trabalho nos dois sentidos; requer VCD.",
+      "origem": [
+        "P1 s37",
+        "P1 s38"
+      ],
+      "criticidade": "alta",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C161"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M10.md — Bloco B3 — Atuadores pneumáticos rotativos"
+    },
+    {
+      "id": "C164",
+      "modulo": "M10",
+      "nome": "Válvula de esfera automatizada",
+      "definicao": "Conjunto indicador de posição, atuador pneumático, válvula Namur solenoide e válvula de esfera.",
+      "origem": [
+        "P1 s34"
+      ],
+      "criticidade": "baixa",
+      "tipo": "factual",
+      "depende_de": [
+        "C161"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M10.md — Bloco B3 — Atuadores pneumáticos rotativos"
+    },
+    {
+      "id": "C165",
+      "modulo": "M11",
+      "nome": "Válvula de controle direcional (VCD)",
+      "definicao": "Direciona o movimento do fluido possibilitando o trabalho mecânico; representada por simbologia interna específica.",
+      "origem": [
+        "P1 s39"
+      ],
+      "criticidade": "alta",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C145"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M11.md — Bloco B1 — VCD: função, posições, vias e designação"
+    },
+    {
+      "id": "C166",
+      "modulo": "M11",
+      "nome": "Símbolo VCD — posições",
+      "definicao": "O número de quadrados justapostos representa o número de posições.",
+      "origem": [
+        "P1 s40"
+      ],
+      "criticidade": "critica",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C165"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M11.md — Bloco B1 — VCD: função, posições, vias e designação"
+    },
+    {
+      "id": "C167",
+      "modulo": "M11",
+      "nome": "Símbolo VCD — vias",
+      "definicao": "Os orifícios (vias) são pequenos traços por fora do quadrado que representa a posição normal.",
+      "origem": [
+        "P1 s41"
+      ],
+      "criticidade": "critica",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C165"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M11.md — Bloco B1 — VCD: função, posições, vias e designação"
+    },
+    {
+      "id": "C168",
+      "modulo": "M11",
+      "nome": "Símbolo VCD — setas",
+      "definicao": "Setas ligando os orifícios representam o caminho que o fluido percorre dentro da válvula.",
+      "origem": [
+        "P1 s43"
+      ],
+      "criticidade": "alta",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C167"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M11.md — Bloco B2 — Setas, bloqueio, pressão e exaustão"
+    },
+    {
+      "id": "C169",
+      "modulo": "M11",
+      "nome": "Símbolo VCD — bloqueio",
+      "definicao": "Fechamento representado por traço curto transversal formando um T no interior do quadrado.",
+      "origem": [
+        "P1 s44"
+      ],
+      "criticidade": "critica",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C167"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M11.md — Bloco B2 — Setas, bloqueio, pressão e exaustão"
+    },
+    {
+      "id": "C170",
+      "modulo": "M11",
+      "nome": "Símbolo VCD — conduto de pressão",
+      "definicao": "Nas VCD pneumáticas o conduto de ar comprimido é um pequeno círculo com ponto no centro.",
+      "origem": [
+        "P1 s45"
+      ],
+      "criticidade": "critica",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C167"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M11.md — Bloco B2 — Setas, bloqueio, pressão e exaustão"
+    },
+    {
+      "id": "C171",
+      "modulo": "M11",
+      "nome": "Símbolo VCD — exaustão",
+      "definicao": "Nas VCD pneumáticas a via de exaustão para a atmosfera é um triângulo.",
+      "origem": [
+        "P1 s46"
+      ],
+      "criticidade": "critica",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C167"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M11.md — Bloco B2 — Setas, bloqueio, pressão e exaustão"
+    },
+    {
+      "id": "C172",
+      "modulo": "M11",
+      "nome": "Símbolo VCD — outras posições",
+      "definicao": "As outras posições são obtidas deslocando-se os quadrados de modo que os orifícios se encaixem nos outros quadrados.",
+      "origem": [
+        "P1 s47"
+      ],
+      "criticidade": "media",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C166"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M11.md — Bloco B1 — VCD: função, posições, vias e designação"
+    },
+    {
+      "id": "C173",
+      "modulo": "M11",
+      "nome": "Designação vias/posições",
+      "definicao": "A VCD é designada pelo número de vias e de posições (ex.: 3 vias e 3 posições); nas figuras as vias aparecem como P (pressão), A, B e R (exaustão).",
+      "origem": [
+        "P1 s42",
+        "P1 s53"
+      ],
+      "criticidade": "alta",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C166",
+        "C167"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M11.md — Bloco B1 — VCD: função, posições, vias e designação"
+    },
+    {
+      "id": "C174",
+      "modulo": "M11",
+      "nome": "VCD 2/2",
+      "definicao": "Pode ser acionada de forma mecânica, elétrica ou pneumática; em todas, retorno por mola; existem tipos NF e NA.",
+      "origem": [
+        "P1 s48",
+        "P1 s49",
+        "P1 s50"
+      ],
+      "criticidade": "critica",
+      "tipo": "factual",
+      "depende_de": [
+        "C173"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M11.md — Bloco B3 — Tipos de VCD: 2/2, 3/3, 3/2, 5/3 e 5/2"
+    },
+    {
+      "id": "C175",
+      "modulo": "M11",
+      "nome": "VCD 3/3",
+      "definicao": "Válvula de 3 vias e 3 posições.",
+      "origem": [
+        "P1 s51"
+      ],
+      "criticidade": "media",
+      "tipo": "factual",
+      "depende_de": [
+        "C173"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M11.md — Bloco B3 — Tipos de VCD: 2/2, 3/3, 3/2, 5/3 e 5/2"
+    },
+    {
+      "id": "C176",
+      "modulo": "M11",
+      "nome": "VCD 3/2",
+      "definicao": "Aplicada normalmente no comando de atuadores pneumáticos de simples efeito.",
+      "origem": [
+        "P1 s52"
+      ],
+      "criticidade": "critica",
+      "tipo": "factual",
+      "depende_de": [
+        "C173",
+        "C158"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M11.md — Bloco B3 — Tipos de VCD: 2/2, 3/3, 3/2, 5/3 e 5/2"
+    },
+    {
+      "id": "C177",
+      "modulo": "M11",
+      "nome": "VCD 5/3 e 5/2",
+      "definicao": "Válvulas de 5 vias (A, B, P, R, R) em 3 posições (4/5/3) e 2 posições (4/5/2); a VCD 5/2 é aplicada, normalmente, no comando de atuadores pneumáticos de duplo efeito (s54).",
+      "origem": [
+        "P1 s53",
+        "P1 s54"
+      ],
+      "criticidade": "critica",
+      "tipo": "factual",
+      "depende_de": [
+        "C173",
+        "C160"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M11.md — Bloco B3 — Tipos de VCD: 2/2, 3/3, 3/2, 5/3 e 5/2"
+    },
+    {
+      "id": "C178",
+      "modulo": "M11",
+      "nome": "Controle de fluxo fixa bidirecional",
+      "definicao": "Não admite ajuste; restrição permanente de diâmetro fixo; fluxo controlado igualmente nas duas direções.",
+      "origem": [
+        "P1 s55"
+      ],
+      "criticidade": "critica",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C147"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M11.md — Bloco B4 — Válvulas de controle de fluxo"
+    },
+    {
+      "id": "C179",
+      "modulo": "M11",
+      "nome": "Controle de fluxo variável bidirecional",
+      "definicao": "Varia a intensidade do fluxo por ajuste; permite passagem de maior ou menor quantidade de fluido e, portanto, ajuste de velocidade do atuador.",
+      "origem": [
+        "P1 s56"
+      ],
+      "criticidade": "critica",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C178"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M11.md — Bloco B4 — Válvulas de controle de fluxo"
+    },
+    {
+      "id": "C180",
+      "modulo": "M11",
+      "nome": "Controle de fluxo variável unidirecional",
+      "definicao": "Dispositivo de controle de fluxo + válvula de retenção no mesmo corpo: de m para n o ar passa livre pela retenção; de n para m a retenção fecha e o ar é obrigado a passar pela via p (restrição).",
+      "origem": [
+        "P1 s57",
+        "P1 s58"
+      ],
+      "criticidade": "critica",
+      "tipo": "procedimental",
+      "depende_de": [
+        "C179",
+        "C135"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M11.md — Bloco B4 — Válvulas de controle de fluxo"
+    },
+    {
+      "id": "C181",
+      "modulo": "M11",
+      "nome": "Controle de velocidade no avanço",
+      "definicao": "Em atuador de simples efeito, a esfera bloqueia o fluxo direto para o atuador e o desvia pela restrição regulável.",
+      "origem": [
+        "P1 s59",
+        "P1 s60"
+      ],
+      "criticidade": "critica",
+      "tipo": "procedimental",
+      "depende_de": [
+        "C180",
+        "C176"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M11.md — Bloco B5 — Controle de velocidade do atuador de simples efeito e válvula de alívio"
+    },
+    {
+      "id": "C182",
+      "modulo": "M11",
+      "nome": "Controle de velocidade no recuo",
+      "definicao": "A esfera bloqueia a exaustão e a redireciona pela restrição regulável, gerando contrapressão à mola e reduzindo a velocidade de retorno.",
+      "origem": [
+        "P1 s59",
+        "P1 s61"
+      ],
+      "criticidade": "critica",
+      "tipo": "procedimental",
+      "depende_de": [
+        "C180",
+        "C176"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M11.md — Bloco B5 — Controle de velocidade do atuador de simples efeito e válvula de alívio"
+    },
+    {
+      "id": "C183",
+      "modulo": "M11",
+      "nome": "Válvula de alívio ou limitadora de pressão (pneumática)",
+      "definicao": "Limita a pressão máxima de um reservatório, linha de ar comprimido ou compressor.",
+      "origem": [
+        "P1 s62"
+      ],
+      "criticidade": "alta",
+      "tipo": "factual",
+      "depende_de": [
+        "C127"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M11.md — Bloco B5 — Controle de velocidade do atuador de simples efeito e válvula de alívio"
+    },
+    {
+      "id": "C184",
+      "modulo": "M11",
+      "nome": "Símbolos das válvulas de controle de fluxo",
+      "definicao": "Fixa: estrangulamento (duas curvas); variável: estrangulamento com seta inclinada; unidirecional: estrangulamento variável em paralelo com retenção.",
+      "origem": [
+        "P1 s55",
+        "P1 s56",
+        "P1 s57"
+      ],
+      "criticidade": "alta",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C178",
+        "C179",
+        "C180"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M11.md — Bloco B4 — Válvulas de controle de fluxo"
+    },
+    {
+      "id": "C185",
+      "modulo": "M12",
+      "nome": "Bomba hidráulica — definição",
+      "definicao": "Coração do sistema hidráulico: converte energia mecânica em energia hidráulica; a energia mecânica vem de um acionamento primário, como motor elétrico.",
+      "origem": [
+        "H1 s4"
+      ],
+      "criticidade": "critica",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C118"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M12.md — Bloco B1 — Bomba hidráulica, classificação e símbolos"
+    },
+    {
+      "id": "C186",
+      "modulo": "M12",
+      "nome": "Bombas de deslocamento variável (não-positivo)",
+      "definicao": "Fornecem determinada pressão de saída para uma faixa de vazão; também chamadas de distribuição variável ou vazão variável.",
+      "origem": [
+        "H1 s5"
+      ],
+      "criticidade": "alta",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C185"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M12.md — Bloco B1 — Bomba hidráulica, classificação e símbolos"
+    },
+    {
+      "id": "C187",
+      "modulo": "M12",
+      "nome": "Bombas de deslocamento fixo (positivo)",
+      "definicao": "Fornecem vazão constante numa faixa de pressão usualmente larga; também chamadas de distribuição constante ou vazão fixa.",
+      "origem": [
+        "H1 s5"
+      ],
+      "criticidade": "alta",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C185"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M12.md — Bloco B1 — Bomba hidráulica, classificação e símbolos"
+    },
+    {
+      "id": "C188",
+      "modulo": "M12",
+      "nome": "Tipos de bomba estudados",
+      "definicao": "Engrenagens, palhetas, parafusos e pistões — todas de deslocamento positivo.",
+      "origem": [
+        "H1 s4",
+        "H1 s5"
+      ],
+      "criticidade": "alta",
+      "tipo": "factual",
+      "depende_de": [
+        "C187"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M12.md — Bloco B1 — Bomba hidráulica, classificação e símbolos"
+    },
+    {
+      "id": "C189",
+      "modulo": "M12",
+      "nome": "Bomba de engrenagens — funcionamento",
+      "definicao": "A rotação forçada das engrenagens (motriz e louca) arrasta continuamente porções de fluido retidas nas cavidades entre dentes e carcaça; o contato engrenagem-carcaça deve ser preciso para fuga mínima.",
+      "origem": [
+        "H1 s7"
+      ],
+      "criticidade": "critica",
+      "tipo": "procedimental",
+      "depende_de": [
+        "C188"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M12.md — Bloco B2 — Bombas de engrenagens e de palhetas"
+    },
+    {
+      "id": "C190",
+      "modulo": "M12",
+      "nome": "Bomba de engrenagens — características",
+      "definicao": "Robusta e de baixo custo; opera com fluido contaminado com mínimo de danos; eficiência bastante reduzida; não é bomba principal; circuitos de baixa pressão, até 600 psi (≈41 atm); perdas internas crescem rápido acima disso.",
+      "origem": [
+        "H1 s8"
+      ],
+      "criticidade": "critica",
+      "tipo": "factual",
+      "depende_de": [
+        "C189"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M12.md — Bloco B2 — Bombas de engrenagens e de palhetas"
+    },
+    {
+      "id": "C191",
+      "modulo": "M12",
+      "nome": "Bomba de palhetas — funcionamento",
+      "definicao": "Pás retangulares (palhetas) nas fendas do rotor deslizam radialmente; com o rotor girando, as extremidades escorregam na carcaça (interior circular ou elíptico); molas nas fendas reforçam o contato. Na figura: eixo, rotor, palhetas, carcaça e câmaras de bombeamento — do lado da entrada (sucção) o volume é crescente e do lado da saída (pressão) o volume é decrescente.",
+      "origem": [
+        "H1 s10",
+        "H1 s11",
+        "H1 s12",
+        "H1 s13"
+      ],
+      "criticidade": "critica",
+      "tipo": "procedimental",
+      "depende_de": [
+        "C188"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M12.md — Bloco B2 — Bombas de engrenagens e de palhetas"
+    },
+    {
+      "id": "C192",
+      "modulo": "M12",
+      "nome": "Bomba de palhetas — características",
+      "definicao": "Muito eficiente e compacta; capacidade depende da excentricidade entre eixo do rotor e carcaça — variando-a, capacidade ajustável; serviços até 200 psi; desgaste e vibração crescem rápido acima.",
+      "origem": [
+        "H1 s13"
+      ],
+      "criticidade": "critica",
+      "tipo": "factual",
+      "depende_de": [
+        "C191"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M12.md — Bloco B2 — Bombas de engrenagens e de palhetas"
+    },
+    {
+      "id": "C193",
+      "modulo": "M12",
+      "nome": "Bomba de parafusos — funcionamento",
+      "definicao": "Rotor principal em rosca engrenado com dois rotores auxiliares (selantes) numa carcaça fechada; o principal carrega a carga; compartimentos helicoidais levam o fluido axialmente; descarga em fluxo constante e estacionário.",
+      "origem": [
+        "H1 s15",
+        "H1 s16"
+      ],
+      "criticidade": "critica",
+      "tipo": "procedimental",
+      "depende_de": [
+        "C188"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M12.md — Bloco B3 — Bombas de parafusos e de pistões axiais"
+    },
+    {
+      "id": "C194",
+      "modulo": "M12",
+      "nome": "Bomba de parafusos — características",
+      "definicao": "Típica da transmissão de potência de submarinos; pouco eficiente e de custo elevado; alta pressão até 3000 psi; baixo ruído; pressão de saída praticamente livre de pulsações.",
+      "origem": [
+        "H1 s16"
+      ],
+      "criticidade": "critica",
+      "tipo": "factual",
+      "depende_de": [
+        "C193"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M12.md — Bloco B3 — Bombas de parafusos e de pistões axiais"
+    },
+    {
+      "id": "C195",
+      "modulo": "M12",
+      "nome": "Bomba de pistões axiais — funcionamento",
+      "definicao": "Pistões no rotor giram e deslizam axialmente guiados por prato fixo (não gira com o rotor), pela variação da distância rotor-prato; a válvula estacionária liga os pistões à baixa pressão na meia volta de admissão e à alta pressão na meia volta de expulsão.",
+      "origem": [
+        "H1 s18",
+        "H1 s21",
+        "H1 s22",
+        "H1 s25"
+      ],
+      "criticidade": "critica",
+      "tipo": "procedimental",
+      "depende_de": [
+        "C188"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M12.md — Bloco B3 — Bombas de parafusos e de pistões axiais"
+    },
+    {
+      "id": "C196",
+      "modulo": "M12",
+      "nome": "Pistões axiais — capacidade fixa x variável",
+      "definicao": "Capacidade fixa: ângulo de 25°. Capacidade variável: ângulo de 0 a 25°.",
+      "origem": [
+        "H1 s18",
+        "H1 s24"
+      ],
+      "criticidade": "alta",
+      "tipo": "factual",
+      "depende_de": [
+        "C195"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M12.md — Bloco B3 — Bombas de parafusos e de pistões axiais"
+    },
+    {
+      "id": "C197",
+      "modulo": "M12",
+      "nome": "Bomba de pistões — características",
+      "definicao": "Extremamente eficiente e relativamente robusta; até 6000 psi ou mais; fluxo variável bidirecional → quase exclusiva em transmissão de potência acima de 10 HP em navios de superfície; desvantagens: custo, peso e tamanho.",
+      "origem": [
+        "H1 s26"
+      ],
+      "criticidade": "critica",
+      "tipo": "factual",
+      "depende_de": [
+        "C195"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M12.md — Bloco B3 — Bombas de parafusos e de pistões axiais"
+    },
+    {
+      "id": "C198",
+      "modulo": "M12",
+      "nome": "Mecanismo de bombeamento do pistão axial",
+      "definicao": "Sapata do pistão, sapata, placa de deslizamento, pistão e placa de orifício.",
+      "origem": [
+        "H1 s23"
+      ],
+      "criticidade": "baixa",
+      "tipo": "factual",
+      "depende_de": [
+        "C195"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M12.md — Bloco B3 — Bombas de parafusos e de pistões axiais"
+    },
+    {
+      "id": "C199",
+      "modulo": "M12",
+      "nome": "Símbolos de bombas hidráulicas",
+      "definicao": "Círculo com triângulo(s) apontando para fora: um triângulo = unidirecional, dois = bidirecional; seta inclinada = deslocamento variável.",
+      "origem": [
+        "H1 s27"
+      ],
+      "criticidade": "critica",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C186",
+        "C187"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M12.md — Bloco B1 — Bomba hidráulica, classificação e símbolos"
+    },
+    {
+      "id": "C200",
+      "modulo": "M13",
+      "nome": "Motor hidráulico",
+      "definicao": "Converte energia de pressão fluida em energia mecânica (inverso da bomba); é atuador rotativo com as mesmas características de projeto das bombas; tipos: engrenagens, palhetas e pistões.",
+      "origem": [
+        "H1 s28",
+        "H1 s29"
+      ],
+      "criticidade": "critica",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C185"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M13.md — Bloco B1 — Motores e cilindros hidráulicos"
+    },
+    {
+      "id": "C201",
+      "modulo": "M13",
+      "nome": "Símbolos de motores hidráulicos",
+      "definicao": "Círculo com triângulo(s) apontando para dentro; fixo/variável (seta inclinada) e unidirecional/bidirecional.",
+      "origem": [
+        "H1 s30"
+      ],
+      "criticidade": "alta",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C199",
+        "C200"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M13.md — Bloco B1 — Motores e cilindros hidráulicos"
+    },
+    {
+      "id": "C202",
+      "modulo": "M13",
+      "nome": "Cilindros hidráulicos — definição",
+      "definicao": "Pistões que produzem deslocamentos lineares e angulares de alta precisão quanto a velocidade e posição.",
+      "origem": [
+        "H1 s32"
+      ],
+      "criticidade": "alta",
+      "tipo": "conceitual",
+      "depende_de": [],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M13.md — Bloco B1 — Motores e cilindros hidráulicos"
+    },
+    {
+      "id": "C203",
+      "modulo": "M13",
+      "nome": "Cilindro de duplo efeito (dupla ação)",
+      "definicao": "O fluido sob pressão pode ser aplicado em qualquer lado do pistão, movimentando-o no sentido desejado.",
+      "origem": [
+        "H1 s31",
+        "H1 s32"
+      ],
+      "criticidade": "critica",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C202"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M13.md — Bloco B1 — Motores e cilindros hidráulicos"
+    },
+    {
+      "id": "C204",
+      "modulo": "M13",
+      "nome": "Cilindro de simples ação",
+      "definicao": "O fluido só é aplicado em um lado do pistão; uma mola retorna o cilindro quando cessa a pressão.",
+      "origem": [
+        "H1 s32"
+      ],
+      "criticidade": "critica",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C202"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M13.md — Bloco B1 — Motores e cilindros hidráulicos"
+    },
+    {
+      "id": "C205",
+      "modulo": "M13",
+      "nome": "Atuador hidráulico x pneumático",
+      "definicao": "Similares, mas os hidráulicos são mais robustos e ideais para elevadas forças e potências.",
+      "origem": [
+        "H1 s32"
+      ],
+      "criticidade": "alta",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C203",
+        "C160"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M13.md — Bloco B1 — Motores e cilindros hidráulicos"
+    },
+    {
+      "id": "C206",
+      "modulo": "M13",
+      "nome": "Símbolos de cilindros hidráulicos",
+      "definicao": "Simples ação com retorno por mola; dupla ação; dupla ação com haste dupla.",
+      "origem": [
+        "H1 s33"
+      ],
+      "criticidade": "alta",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C203",
+        "C204"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M13.md — Bloco B1 — Motores e cilindros hidráulicos"
+    },
+    {
+      "id": "C207",
+      "modulo": "M13",
+      "nome": "Válvula de retenção hidráulica",
+      "definicao": "Válvula de bloqueio: bloqueia um sentido de escoamento e permite fluxo livre no contrário; existe sem mola e com mola.",
+      "origem": [
+        "H1 s34"
+      ],
+      "criticidade": "critica",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C135"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M13.md — Bloco B2 — Válvulas: retenção, controle de fluxo, VCD e acionamentos"
+    },
+    {
+      "id": "C208",
+      "modulo": "M13",
+      "nome": "Controle de fluxo variável bidirecional (hidráulica)",
+      "definicao": "Permite a passagem de maior ou menor quantidade de fluido e, portanto, o ajuste de velocidade do atuador.",
+      "origem": [
+        "H1 s35"
+      ],
+      "criticidade": "alta",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C179"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M13.md — Bloco B2 — Válvulas: retenção, controle de fluxo, VCD e acionamentos"
+    },
+    {
+      "id": "C209",
+      "modulo": "M13",
+      "nome": "Controle de fluxo variável unidirecional (hidráulica)",
+      "definicao": "Passagem livre num sentido; no inverso bloqueia e força o fluido pela restrição, regulando a vazão.",
+      "origem": [
+        "H1 s35"
+      ],
+      "criticidade": "critica",
+      "tipo": "procedimental",
+      "depende_de": [
+        "C180",
+        "C207"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M13.md — Bloco B2 — Válvulas: retenção, controle de fluxo, VCD e acionamentos"
+    },
+    {
+      "id": "C210",
+      "modulo": "M13",
+      "nome": "VCD hidráulicas",
+      "definicao": "2 vias-2 posições; 3 vias-2 posições; 4 vias-2 posições; 4 vias-3 posições.",
+      "origem": [
+        "H1 s36"
+      ],
+      "criticidade": "critica",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C173"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M13.md — Bloco B2 — Válvulas: retenção, controle de fluxo, VCD e acionamentos"
+    },
+    {
+      "id": "C211",
+      "modulo": "M13",
+      "nome": "Tipos de acionamento de VCD",
+      "definicao": "Muscular (geral, por botão, por alavanca, por pedal), mecânico, por piloto hidráulico, por piloto pneumático e por solenoide.",
+      "origem": [
+        "H1 s37"
+      ],
+      "criticidade": "critica",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C210"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M13.md — Bloco B2 — Válvulas: retenção, controle de fluxo, VCD e acionamentos"
+    },
+    {
+      "id": "C212",
+      "modulo": "M13",
+      "nome": "Filtro hidráulico",
+      "definicao": "Reduz o nível de impurezas sólidas a um valor aceitável, protegendo os outros componentes de desgaste elevado; símbolo: losango com linha tracejada.",
+      "origem": [
+        "H1 s38"
+      ],
+      "criticidade": "alta",
+      "tipo": "factual",
+      "depende_de": [],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M13.md — Bloco B3 — Acessórios: filtro, reservatório, limitadora, acumulador e trocador de calor"
+    },
+    {
+      "id": "C213",
+      "modulo": "M13",
+      "nome": "Símbolo do reservatório",
+      "definicao": "Retângulo aberto na parte superior, ao qual se ligam as linhas do circuito (s38; na figura do s39 chegam a sucção e o retorno).",
+      "origem": [
+        "H1 s38"
+      ],
+      "criticidade": "media",
+      "tipo": "interpretativo",
+      "depende_de": [],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M13.md — Bloco B3 — Acessórios: filtro, reservatório, limitadora, acumulador e trocador de calor"
+    },
+    {
+      "id": "C214",
+      "modulo": "M13",
+      "nome": "Válvula de alívio ou limitadora de pressão (hidráulica)",
+      "definicao": "Atua pela segurança, evitando que a pressão exceda um limite pré-estabelecido; ao exceder, a válvula abre e retorna o óleo ao reservatório.",
+      "origem": [
+        "H1 s39"
+      ],
+      "criticidade": "critica",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C183"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M13.md — Bloco B3 — Acessórios: filtro, reservatório, limitadora, acumulador e trocador de calor"
+    },
+    {
+      "id": "C215",
+      "modulo": "M13",
+      "nome": "Acumulador hidráulico",
+      "definicao": "Armazena energia na forma de fluido pressurizado; compensa variações de pressão, absorve choques e fornece energia suplementar.",
+      "origem": [
+        "H1 s40"
+      ],
+      "criticidade": "critica",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C148"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M13.md — Bloco B3 — Acessórios: filtro, reservatório, limitadora, acumulador e trocador de calor"
+    },
+    {
+      "id": "C216",
+      "modulo": "M13",
+      "nome": "Trocador de calor",
+      "definicao": "Resfria o fluido hidráulico quando sua temperatura no reservatório passa da temperatura de trabalho; opera a base de ar ou água (resfriador ar-óleo e água-óleo).",
+      "origem": [
+        "H1 s41"
+      ],
+      "criticidade": "alta",
+      "tipo": "conceitual",
+      "depende_de": [],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M13.md — Bloco B3 — Acessórios: filtro, reservatório, limitadora, acumulador e trocador de calor"
+    },
+    {
+      "id": "C217",
+      "modulo": "M14",
+      "nome": "Circuito hidráulico aberto",
+      "definicao": "A bomba succiona o óleo do reservatório e o recalca pelas tubulações até os atuadores; o óleo já empregado retorna ao reservatório.",
+      "origem": [
+        "H1 s42"
+      ],
+      "criticidade": "critica",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C185",
+        "C213"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M14.md — Bloco B1 — Circuito aberto × circuito fechado"
+    },
+    {
+      "id": "C218",
+      "modulo": "M14",
+      "nome": "Circuito hidráulico fechado",
+      "definicao": "O fluido vai da bomba de pistão ao motor de pistões e retorna direto à bomba, sem reservatório; vazão e direção do fluido controlam o motor, que opera em qualquer direção com a mesma dinâmica.",
+      "origem": [
+        "H1 s60"
+      ],
+      "criticidade": "critica",
+      "tipo": "conceitual",
+      "depende_de": [
+        "C197",
+        "C200"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M14.md — Bloco B1 — Circuito aberto × circuito fechado"
+    },
+    {
+      "id": "C219",
+      "modulo": "M14",
+      "nome": "Circuito 1 — atuação x unidade de potência",
+      "definicao": "Circuito de atuação: motor hidráulico, cilindro, válvula redutora de vazão, válvula de retenção, válvula direcional. Unidade de potência: válvula limitadora de pressão, bomba, filtro, reservatório.",
+      "origem": [
+        "H1 s43"
+      ],
+      "criticidade": "critica",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C209",
+        "C210",
+        "C214"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M14.md — Bloco B2 — Circuitos 1 e 2"
+    },
+    {
+      "id": "C220",
+      "modulo": "M14",
+      "nome": "Circuito 2 — estender e retrair o cilindro",
+      "definicao": "Bomba de engrenagens, válvula de alívio, válvula direcional (P, T, A, B) e cilindro; a posição da válvula define qual câmara recebe óleo de alta pressão (cilindro estendendo ou retraindo).",
+      "origem": [
+        "H1 s44",
+        "H1 s45"
+      ],
+      "criticidade": "alta",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C219"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M14.md — Bloco B2 — Circuitos 1 e 2"
+    },
+    {
+      "id": "C221",
+      "modulo": "M14",
+      "nome": "Circuito 3 — comando repetitivo dos pistões",
+      "definicao": "Cilindro de duplo efeito, VCD 4/2 com SOL1 e SOL2, limitadora de pressão, bomba, filtro; circuito elétrico 24 VCC com chave de partida de impulso SEM retenção (→ SOL1) e fim de curso m1 (→ SOL2).",
+      "origem": [
+        "H1 s46"
+      ],
+      "criticidade": "critica",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C210",
+        "C211",
+        "C035"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M14.md — Bloco B4 — Circuitos 3 e 4: comando eletro-hidráulico"
+    },
+    {
+      "id": "C222",
+      "modulo": "M14",
+      "nome": "Circuito 3 — narrativa de funcionamento",
+      "definicao": "Inicial: alta pressão na câmara dianteira, baixa na traseira (haste recuada). Partida → SOL1 → VCD comunica AP à câmara traseira e BP à dianteira → avanço; a haste aciona m1 → SOL2 → VCD volta → AP na câmara dianteira → haste recua e estaciona.",
+      "origem": [
+        "H1 s46"
+      ],
+      "criticidade": "critica",
+      "tipo": "procedimental",
+      "depende_de": [
+        "C221"
+      ],
+      "sopa": true,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M14.md — Bloco B4 — Circuitos 3 e 4: comando eletro-hidráulico"
+    },
+    {
+      "id": "C223",
+      "modulo": "M14",
+      "nome": "Circuito 4 — comando automático dos pistões",
+      "definicao": "Comando automático dos pistões: mesma base hidráulica do circuito 3, com dois fins de curso (m1 e m2) e chave parada-marcha de impulso COM retenção.",
+      "origem": [
+        "H1 s47"
+      ],
+      "criticidade": "critica",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C221"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M14.md — Bloco B4 — Circuitos 3 e 4: comando eletro-hidráulico"
+    },
+    {
+      "id": "C224",
+      "modulo": "M14",
+      "nome": "Circuito 5",
+      "definicao": "Cilindro de duplo efeito, VCD 4/2 com acionamento por solenoide e retorno por mola, manômetro, válvula limitadora de pressão, bomba acoplada a motor, filtro e reservatório.",
+      "origem": [
+        "H1 s48"
+      ],
+      "criticidade": "alta",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C210",
+        "C214"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M14.md — Bloco B3 — Circuitos 5, 6 e 7"
+    },
+    {
+      "id": "C225",
+      "modulo": "M14",
+      "nome": "Circuito 6",
+      "definicao": "Cilindro de duplo efeito, VCD 4/2, válvula de controle de fluxo variável unidirecional numa das linhas, manômetro, válvula limitadora de pressão, bomba acionada por motor, filtro e reservatório.",
+      "origem": [
+        "H1 s49"
+      ],
+      "criticidade": "alta",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C209",
+        "C210"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M14.md — Bloco B3 — Circuitos 5, 6 e 7"
+    },
+    {
+      "id": "C226",
+      "modulo": "M14",
+      "nome": "Circuito 7 — nomenclatura",
+      "definicao": "1 reservatório; 2 filtro; 3 bomba hidráulica de débito constante (rotação n constante); 4 válvula de retenção; 5 manômetro; 6 válvula limitadora de pressão; 7 válvula de controle direcional; 8 cilindro hidráulico (pistão axial); 9 trocador de calor.",
+      "origem": [
+        "H1 s50",
+        "H1 s59"
+      ],
+      "criticidade": "critica",
+      "tipo": "interpretativo",
+      "depende_de": [
+        "C207",
+        "C214",
+        "C216"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M14.md — Bloco B3 — Circuitos 5, 6 e 7"
+    },
+    {
+      "id": "C227",
+      "modulo": "M14",
+      "nome": "Aplicação: servomecanismo dos canhões 40 mm",
+      "definicao": "Servomecanismo de conteira e de elevação dos canhões de 40 mm MK3 das FCN e da Corveta Barroso.",
+      "origem": [
+        "H1 s61"
+      ],
+      "criticidade": "baixa",
+      "tipo": "factual",
+      "depende_de": [
+        "C218"
+      ],
+      "sopa": false,
+      "localizacao_teoria": "01_CONTEUDO/CONTEUDO_TEORICO_MODULO_M14.md — Bloco B1 — Circuito aberto × circuito fechado"
+    }
+  ],
+  "matriz_competencias": {},
+  "vulnerabilidades": [
+    {
+      "id": "V001",
+      "conceito": "C099",
+      "nivel": "critica",
+      "descricao": "Trocar contator estrela e triângulo entre as duas nomenclaturas de figura",
+      "erro_tipico": "Assume K2/KM2 sempre estrela (ou sempre triângulo) sem ler a figura",
+      "como_a_banca_explora": "Figura com K1/K2/K3 (K2 triângulo) ou KM1/KM2/KM3 (KM2 estrela) e pergunta quais contatoras estão energizadas",
+      "origem": "Orientação 2026; E6 p30-34 x E7 p16-17; SOPA Q2.2"
+    },
+    {
+      "id": "V002",
+      "conceito": "C104",
+      "nivel": "critica",
+      "descricao": "Dizer que K1 (linha) desliga na comutação",
+      "erro_tipico": "Acha que só dois contatores funcionam por vez e esquece o de linha",
+      "como_a_banca_explora": "Pergunta quais contatoras estão energizadas antes e depois de t1",
+      "origem": "E6 p31-32; SOPA Q2.2c/e"
+    },
+    {
+      "id": "V003",
+      "conceito": "C052",
+      "nivel": "critica",
+      "descricao": "Confundir selo com intertravamento",
+      "erro_tipico": "Chama o 13-14 em paralelo de intertravamento ou o NF cruzado de selo",
+      "como_a_banca_explora": "Pergunta o nome da ligação e os terminais",
+      "origem": "E1 s44-45; SOPA Q1.3c/d"
+    },
+    {
+      "id": "V004",
+      "conceito": "C051",
+      "nivel": "critica",
+      "descricao": "Numeração dos contatos auxiliares",
+      "erro_tipico": "Diz que o selo é feito pelo 21-22 ou que NF termina em 3-4",
+      "como_a_banca_explora": "Pede os números dos terminais do selo ou do intertravamento",
+      "origem": "E1 s39; SOPA Q1.3d"
+    },
+    {
+      "id": "V005",
+      "conceito": "C033",
+      "nivel": "critica",
+      "descricao": "Relé térmico abre os contatos de potência diretamente",
+      "erro_tipico": "Descreve o bimetal cortando o motor, sem passar pelo NF 95-96 no comando",
+      "como_a_banca_explora": "V/F ou discursiva sobre a atuação do relé térmico",
+      "origem": "E1 s50"
+    },
+    {
+      "id": "V006",
+      "conceito": "C030",
+      "nivel": "alta",
+      "descricao": "Fusível x disjuntor x relé térmico (proteção)",
+      "erro_tipico": "Atribui ao relé térmico proteção contra curto ou ao fusível a religação",
+      "como_a_banca_explora": "Associação de colunas dispositivo × função",
+      "origem": "E1 s18-22"
+    },
+    {
+      "id": "V007",
+      "conceito": "C070",
+      "nivel": "critica",
+      "descricao": "Reversão direta sem desligar",
+      "erro_tipico": "Responde que basta pressionar S2 com o motor girando",
+      "como_a_banca_explora": "Pergunta o que fazer para reverter o sentido",
+      "origem": "E1 s54; SOPA Q1.3b"
+    },
+    {
+      "id": "V008",
+      "conceito": "C071",
+      "nivel": "critica",
+      "descricao": "Motivo do intertravamento na reversão",
+      "erro_tipico": "Diz que é para o motor não queimar ou para economizar energia, sem citar o curto entre fases",
+      "como_a_banca_explora": "Discursiva ou V/F sobre a finalidade do intertravamento",
+      "origem": "E1 s53"
+    },
+    {
+      "id": "V009",
+      "conceito": "C078",
+      "nivel": "critica",
+      "descricao": "On delay x off delay",
+      "erro_tipico": "Troca o momento do atraso (energização x desenergização)",
+      "como_a_banca_explora": "Pergunta em que consiste cada tipo; diagrama temporal",
+      "origem": "E6 p8-11; SOPA Q2.1a"
+    },
+    {
+      "id": "V010",
+      "conceito": "C093",
+      "nivel": "critica",
+      "descricao": "Momento da comutação Y-Δ",
+      "erro_tipico": "Afirma que comutar cedo não tem efeito ou que o tempo é qualquer",
+      "como_a_banca_explora": "Pergunta o cuidado com o tempo do relé",
+      "origem": "E6 p23; SOPA Q2.1d"
+    },
+    {
+      "id": "V011",
+      "conceito": "C094",
+      "nivel": "alta",
+      "descricao": "Número de terminais para Y-Δ",
+      "erro_tipico": "Responde 3 ou 12 terminais",
+      "como_a_banca_explora": "Pergunta direta",
+      "origem": "E6 p23; SOPA Q2.1e"
+    },
+    {
+      "id": "V012",
+      "conceito": "C084",
+      "nivel": "critica",
+      "descricao": "Condições x impedimentos da partida direta",
+      "erro_tipico": "Coloca 'partida sem carga' como impedimento ou '5 CV' como condição",
+      "como_a_banca_explora": "Pergunta o que impede a partida direta",
+      "origem": "E6 p14-15; SOPA Q2.1c"
+    },
+    {
+      "id": "V013",
+      "conceito": "C110",
+      "nivel": "critica",
+      "descricao": "Controle de nível: sensor inferior abrindo desliga a bomba",
+      "erro_tipico": "Esquece o selo 13-14 em paralelo com o sensor inferior",
+      "como_a_banca_explora": "V/F sobre o enchimento a partir do tanque vazio",
+      "origem": "E6 p37; SOPA Q1.2"
+    },
+    {
+      "id": "V014",
+      "conceito": "C112",
+      "nivel": "critica",
+      "descricao": "Controle de nível: sensor superior fechando liga a bomba",
+      "erro_tipico": "Esquece que o sensor inferior e o 13-14 estão abertos",
+      "como_a_banca_explora": "V/F sobre o esvaziamento a partir do tanque cheio",
+      "origem": "E6 p37; SOPA Q1.2"
+    },
+    {
+      "id": "V015",
+      "conceito": "C140",
+      "nivel": "critica",
+      "descricao": "Secador x lubrificador x filtro de linha",
+      "erro_tipico": "Diz que o secador adiciona óleo ou que o filtro de linha seca o ar",
+      "como_a_banca_explora": "V/F de função de componente",
+      "origem": "P1 s10, s20; SOPA Q3.1"
+    },
+    {
+      "id": "V016",
+      "conceito": "C145",
+      "nivel": "critica",
+      "descricao": "VCD pertence ao consumo",
+      "erro_tipico": "Coloca VCD no sistema de produção",
+      "como_a_banca_explora": "V/F sobre sistema de produção",
+      "origem": "P1 s22; SOPA Q3.1"
+    },
+    {
+      "id": "V017",
+      "conceito": "C171",
+      "nivel": "critica",
+      "descricao": "Símbolo de pressão x exaustão",
+      "erro_tipico": "Troca círculo com ponto (pressão) por triângulo (exaustão)",
+      "como_a_banca_explora": "V/F de simbologia de VCD",
+      "origem": "P1 s45-46; SOPA Q3.1"
+    },
+    {
+      "id": "V018",
+      "conceito": "C177",
+      "nivel": "critica",
+      "descricao": "VCD 5/2 só para simples efeito",
+      "erro_tipico": "Associa 5 vias a simples efeito ou 3/2 a duplo efeito",
+      "como_a_banca_explora": "V/F de aplicação das VCD",
+      "origem": "P1 s52-54; SOPA Q3.1"
+    },
+    {
+      "id": "V019",
+      "conceito": "C153",
+      "nivel": "critica",
+      "descricao": "Princípio dos compressores",
+      "erro_tipico": "Atribui conversão de energia cinética ao deslocamento positivo",
+      "como_a_banca_explora": "V/F sobre compressores",
+      "origem": "P1 s25; SOPA Q3.1"
+    },
+    {
+      "id": "V020",
+      "conceito": "C134",
+      "nivel": "critica",
+      "descricao": "Pressostato x manômetro x válvula de segurança x retenção x regulador",
+      "erro_tipico": "Escolhe a função de componente vizinho",
+      "como_a_banca_explora": "Múltipla escolha com funções vizinhas",
+      "origem": "P1 s17-19; SOPA Q3.3"
+    },
+    {
+      "id": "V021",
+      "conceito": "C121",
+      "nivel": "critica",
+      "descricao": "Vantagens pneumática x hidráulica",
+      "erro_tipico": "Atribui à pneumática alta potência, rigidez ou alta eficiência",
+      "como_a_banca_explora": "Múltipla escolha de vantagens",
+      "origem": "P1 s5-6; SOPA Q3.2"
+    },
+    {
+      "id": "V022",
+      "conceito": "C182",
+      "nivel": "critica",
+      "descricao": "Controle de velocidade no avanço x no recuo",
+      "erro_tipico": "Lê a posição da válvula e não a orientação da retenção",
+      "como_a_banca_explora": "Figura do circuito pedindo avanço ou recuo",
+      "origem": "P1 s59-61; SOPA Q3.4c"
+    },
+    {
+      "id": "V023",
+      "conceito": "C158",
+      "nivel": "alta",
+      "descricao": "Classificação completa do atuador",
+      "erro_tipico": "Responde só 'simples efeito' sem 'linear' e 'retorno por mola'",
+      "como_a_banca_explora": "Pede classificação completa pela figura",
+      "origem": "P1 s29-31; SOPA Q3.4a"
+    },
+    {
+      "id": "V024",
+      "conceito": "C197",
+      "nivel": "critica",
+      "descricao": "Características das bombas (pressões e aplicações)",
+      "erro_tipico": "Troca 600/200/3000/6000 psi ou atribui submarino à bomba de pistões",
+      "como_a_banca_explora": "Correlação texto × bomba com distrator híbrido",
+      "origem": "H1 s8, s13, s16, s26; SOPA Q4.1"
+    },
+    {
+      "id": "V025",
+      "conceito": "C192",
+      "nivel": "alta",
+      "descricao": "Capacidade ajustável por excentricidade",
+      "erro_tipico": "Atribui a excentricidade à bomba de engrenagens ou de pistões",
+      "como_a_banca_explora": "Distrator híbrido na correlação",
+      "origem": "H1 s13; SOPA Q4.1"
+    },
+    {
+      "id": "V026",
+      "conceito": "C217",
+      "nivel": "critica",
+      "descricao": "Circuito aberto x fechado",
+      "erro_tipico": "Marca características do fechado para o aberto",
+      "como_a_banca_explora": "Múltipla escolha sobre o circuito aberto",
+      "origem": "H1 s42, s60; SOPA Q4.2"
+    },
+    {
+      "id": "V027",
+      "conceito": "C222",
+      "nivel": "critica",
+      "descricao": "Narrativa do circuito 3 (câmaras em alta e baixa pressão)",
+      "erro_tipico": "Inverte câmara dianteira/traseira ou o solenoide que causa o avanço",
+      "como_a_banca_explora": "Discursiva passo a passo",
+      "origem": "H1 s46; SOPA Q4.3b"
+    },
+    {
+      "id": "V028",
+      "conceito": "C221",
+      "nivel": "alta",
+      "descricao": "Chave de partida sem retenção x parada-marcha com retenção",
+      "erro_tipico": "Troca o tipo de chave entre os circuitos 3 e 4",
+      "como_a_banca_explora": "Pergunta direta sobre a chave",
+      "origem": "H1 s46-47"
+    },
+    {
+      "id": "V029",
+      "conceito": "C214",
+      "nivel": "alta",
+      "descricao": "Válvula limitadora x retenção x controle de fluxo (símbolos)",
+      "erro_tipico": "Nomeia o símbolo errado",
+      "como_a_banca_explora": "Nomenclatura de componentes numerados",
+      "origem": "H1 s34-39; SOPA Q4.3a"
+    },
+    {
+      "id": "V030",
+      "conceito": "C180",
+      "nivel": "critica",
+      "descricao": "Controle de fluxo fixa x variável x unidirecional",
+      "erro_tipico": "Diz que a fixa permite ajuste ou que a unidirecional restringe nos dois sentidos",
+      "como_a_banca_explora": "V/F e associação sobre válvulas de fluxo",
+      "origem": "P1 s55-58; orientação 2026"
+    },
+    {
+      "id": "V031",
+      "conceito": "C199",
+      "nivel": "alta",
+      "descricao": "Símbolo de bomba x motor hidráulico",
+      "erro_tipico": "Troca triângulo para fora (bomba) com triângulo para dentro (motor)",
+      "como_a_banca_explora": "Identificação de símbolo",
+      "origem": "H1 s27, s30"
+    },
+    {
+      "id": "V032",
+      "conceito": "C045",
+      "nivel": "alta",
+      "descricao": "Relé x contator",
+      "erro_tipico": "Diz que o contator tem travamento ou duas posições de repouso",
+      "como_a_banca_explora": "V/F sobre contator",
+      "origem": "E1 s33"
+    },
+    {
+      "id": "V033",
+      "conceito": "C016",
+      "nivel": "alta",
+      "descricao": "Comando x potência",
+      "erro_tipico": "Coloca o motor no comando ou a botoeira na potência",
+      "como_a_banca_explora": "V/F e identificação em figura",
+      "origem": "E1 s14; E4"
+    },
+    {
+      "id": "V034",
+      "conceito": "C013",
+      "nivel": "alta",
+      "descricao": "Soft starter x VFD x Y-Δ x partida direta",
+      "erro_tipico": "Atribui SCRs ao VFD ou variação de frequência ao soft starter",
+      "como_a_banca_explora": "Associação tipo de acionamento × princípio",
+      "origem": "E1 s12"
+    },
+    {
+      "id": "V035",
+      "conceito": "C115",
+      "nivel": "alta",
+      "descricao": "Partida sequencial: quem sela quem",
+      "erro_tipico": "Diz que C2-NA sela B1 ou que os motores partem juntos",
+      "como_a_banca_explora": "Discursiva de funcionamento",
+      "origem": "E6 p41"
+    },
+    {
+      "id": "V036",
+      "conceito": "C090",
+      "nivel": "media",
+      "descricao": "Relação de corrente Y/Δ",
+      "erro_tipico": "Responde 1/√3 em vez de 1/3 para a corrente de linha",
+      "como_a_banca_explora": "Pergunta direta",
+      "origem": "E6 p20"
+    },
+    {
+      "id": "V037",
+      "conceito": "C207",
+      "nivel": "alta",
+      "descricao": "Retenção x controle de fluxo unidirecional",
+      "erro_tipico": "Diz que a retenção regula a vazão",
+      "como_a_banca_explora": "V/F sobre válvulas hidráulicas",
+      "origem": "H1 s34-35"
+    },
+    {
+      "id": "V038",
+      "conceito": "C062",
+      "nivel": "media",
+      "descricao": "Botão de emergência x botão desliga",
+      "erro_tipico": "Diz que o botão de emergência retorna sozinho",
+      "como_a_banca_explora": "Pergunta sobre a novidade do circuito",
+      "origem": "E7 p5"
+    }
+  ],
+  "analise_provas": [
+    {
+      "fonte": "SOPA_T2_FAS_2025.pdf",
+      "tipo": "prova_anterior",
+      "perfil_de_cobranca": {
+        "fontes_de_evidencia": [
+          "SOPA_T2_FAS_2025.pdf (prova_anterior)",
+          "orientação do professor 2026"
+        ],
+        "eixos": {
+          "literalidade": {
+            "nivel": "alta",
+            "evidencia": [
+              "SOPA Q2.1a = texto de E6 p8 (relé on delay)",
+              "SOPA Q2.1b = E6 p17 (objetivo Y-Δ)",
+              "SOPA Q2.1c = E6 p15 (impedimentos da partida direta)",
+              "SOPA Q4.1 = textos de H1 s8, s13, s16, s26 (bombas)",
+              "Orientação: 'tudo está no slide'"
+            ]
+          },
+          "interpretacao": {
+            "nivel": "media",
+            "evidencia": [
+              "SOPA Q1.3a: qual botoeira para R,S,T e T,S,R (leitura da figura de reversão)",
+              "SOPA Q2.2c-f: contatoras energizadas e ligação dos enrolamentos lendo a figura Y-Δ",
+              "SOPA Q3.4: classificar atuador, nomear válvula e dizer avanço/recuo pela figura"
+            ]
+          },
+          "calculo": {
+            "nivel": "indeterminada",
+            "evidencia": [
+              "Nenhum item de cálculo na SOPA 2025 nem na orientação 2026"
+            ],
+            "incerteza": "[PONTO DE INCERTEZA] E6 p19-20 traz 127/220 V e IL(Y)=IL(Δ)/3; o curso cobra esses valores como fato, sem conta elaborada."
+          },
+          "detalhismo": {
+            "nivel": "alta",
+            "evidencia": [
+              "SOPA Q1.3d: números dos terminais do selo (13-14)",
+              "SOPA Q2.1e: mínimo de 6 terminais",
+              "SOPA Q2.1c: 5 CV",
+              "SOPA Q4.1: 600/200/3000/6000 psi e 10 HP"
+            ]
+          },
+          "memorizacao": {
+            "nivel": "alta",
+            "evidencia": [
+              "SOPA Q3.1: 10 V/F de função de componente e simbologia de VCD",
+              "SOPA Q3.3: função do pressostato",
+              "SOPA Q4.3a: nomenclatura de 5 componentes"
+            ]
+          },
+          "pegadinhas": {
+            "nivel": "media",
+            "evidencia": [
+              "SOPA Q3.1: troca de função entre secador e lubrificador; VCD colocada na produção; símbolo de pressão x exaustão; 5/2 'apenas simples efeito'; cinética atribuída ao deslocamento positivo",
+              "SOPA Q4.1: alternativa-distrator que mistura características de quatro bombas",
+              "SOPA Q4.2: distratores do circuito fechado para pergunta do circuito aberto",
+              "Orientação: cuidado com a posição da bobina triângulo e estrela"
+            ]
+          },
+          "integracao": {
+            "nivel": "media",
+            "evidencia": [
+              "SOPA Q4.3: circuito hidráulico + acionamento elétrico (SOL1, SOL2, m1)",
+              "SOPA Q2.2: temporizador + contatores + ligação dos enrolamentos",
+              "Orientação: circuito pneumático-hidráulico com narrativa"
+            ]
+          },
+          "aplicacao_inedita": {
+            "nivel": "baixa",
+            "evidencia": [
+              "Orientação: 'figuras e circuitos são conhecidos'",
+              "SOPA: todas as figuras presentes vêm dos slides"
+            ]
+          }
+        },
+        "estrutura_sopa_2025": [
+          {
+            "q": 1,
+            "sue": "3.2",
+            "pontos": 3.0,
+            "itens": "relé (discursiva 0,5); V/F controle de nível 5x0,1; reversão 4 subitens (2,0)"
+          },
+          {
+            "q": 2,
+            "sue": "3.3",
+            "pontos": 3.0,
+            "itens": "5 perguntas diretas x0,3; Y-Δ figura 3 com 7 subitens (1,5)"
+          },
+          {
+            "q": 3,
+            "sue": "4.1",
+            "pontos": 2.0,
+            "itens": "10 V/F x0,1; 2 múltipla escolha x0,2; figura 4 com 3 subitens x0,2"
+          },
+          {
+            "q": 4,
+            "sue": "4.2",
+            "pontos": 2.0,
+            "itens": "correlação bombas; múltipla escolha 0,2; figura 5 nomenclatura 5x0,1 + narrativa 0,5"
+          }
+        ]
+      }
+    }
+  ],
+  "orientacao_professor_2026": {
+    "fonte": "mensagem do usuário, 16/09/2026 (orientação repassada pelo professor)",
+    "eletrica": {
+      "pontos": 6.0,
+      "questoes": [
+        {
+          "n": 1,
+          "formato": "circuito + perguntas diretas",
+          "foco": "conhecer os circuitos, seus componentes, funcionamentos e proteções"
+        },
+        {
+          "n": 2,
+          "formato": "5 perguntas diretas gerais x 0,3",
+          "foco": "tudo está no slide (ex.: como tem que ser o motor para ter estrela-triângulo? como funciona um relé?)"
+        },
+        {
+          "n": 3,
+          "formato": "outro circuito com perguntas diretas",
+          "foco": "parecida com a 1ª, muda o circuito"
+        },
+        {
+          "n": 4,
+          "formato": "outro circuito com perguntas diretas",
+          "foco": "parecida com a 1ª, muda o circuito"
+        },
+        {
+          "n": 5,
+          "formato": "circuito com V/F",
+          "foco": ""
+        }
+      ],
+      "alerta": "cuidado com a posição da bobina triângulo e bobina estrela"
+    },
+    "fluidos": {
+      "pontos": 4.0,
+      "questoes": [
+        {
+          "n": 1,
+          "pontos": 2.0,
+          "formato": "V/F de pneumática + múltipla escolha (hidráulica e pneumática) + perguntas diretas sobre circuitinho com algum acionamento",
+          "foco": "básico dos compressores e características"
+        },
+        {
+          "n": 2,
+          "pontos": 2.0,
+          "formato": "V/F sobre bombas e válvulas + múltipla escolha + pequeno circuito pneumático-hidráulico com perguntas diretas + associação de colunas",
+          "foco": "historinha/narrativa de circuito simples; válvula de controle de fluxo, fixa etc."
+        }
+      ]
+    },
+    "figuras": "figuras e circuitos são conhecidos (dos slides)"
+  },
+  "estrutura_simulado": [
+    [
+      "E1",
+      1.5,
+      "Circuito + perguntas diretas (componentes, funcionamento, proteções)"
+    ],
+    [
+      "E2",
+      1.5,
+      "5 perguntas diretas gerais x 0,3"
+    ],
+    [
+      "E3",
+      1.0,
+      "Outro circuito com perguntas diretas"
+    ],
+    [
+      "E4",
+      1.0,
+      "Outro circuito com perguntas diretas"
+    ],
+    [
+      "E5",
+      1.0,
+      "Circuito com V/F"
+    ],
+    [
+      "F1",
+      2.0,
+      "V/F pneumática + múltipla escolha + circuitinho com acionamento"
+    ],
+    [
+      "F2",
+      2.0,
+      "V/F bombas e válvulas + múltipla escolha + circuito com narrativa + associação de colunas"
+    ]
+  ],
+  "conflitos": [
+    {
+      "id": "D-01",
+      "descricao": "Nomenclatura da chave Y-Δ muda entre figuras: E6 p30-34 (e SOPA 2025) K2 = triângulo, K3 = estrela; E6 p25-28 e E7 p15-17 KM2 = estrela, KM3 = triângulo.",
+      "tratamento": "Não é conflito de conteúdo; é o alerta do professor ('cuidado com a posição da bobina triângulo e bobina estrela'). Ensinado explicitamente; toda questão indica a figura."
+    },
+    {
+      "id": "D-02",
+      "descricao": "Contatos auxiliares NF numerados 21-22 (E1 s52-53) e 11-12 (E7 p9-13).",
+      "tratamento": "Ambos terminam em 1-2 (regra de E1 s39). Ensinado como regra de final 1-2/3-4."
+    },
+    {
+      "id": "D-03",
+      "descricao": "E7 p9 rotula S1 'gira esquerda' e S2 'gira direita', mas p11/p13 dizem 'sentido, por hipótese, horário' para K1.",
+      "tratamento": "[POSSÍVEL ERRO NA FONTE] — nenhuma questão cobra esquerda/direita desse circuito."
+    },
+    {
+      "id": "D-04",
+      "descricao": "H1 s39: 'a válvula se abre e retorna o óleo ao laboratório'.",
+      "tratamento": "[POSSÍVEL ERRO NA FONTE] — a figura do mesmo slide mostra o retorno ao reservatório; ensinado como reservatório com a marcação."
+    },
+    {
+      "id": "D-05",
+      "descricao": "SOPA 4.3b: resposta registrada diz 'óleo a BP estará na câmara dianteira' duas vezes.",
+      "tratamento": "Erro de digitação da resposta registrada; correto: BP na câmara traseira no recuo."
+    },
+    {
+      "id": "D-06",
+      "descricao": "SOPA 3.4c: resposta 'controle de velocidade no recuo (pela válvula V2)' enquanto 3.4b chama V2 de VCD 3/2.",
+      "tratamento": "[PONTO DE INCERTEZA] sem a Figura 4; o curso ensina: quem controla a velocidade é a válvula de controle de fluxo unidirecional (P1 s59-61)."
+    },
+    {
+      "id": "D-07",
+      "descricao": "P1 s14: a diagonal Produção/Consumo deixa filtro, regulador e lubrificador do lado da produção; P1 s15/s21 colocam a FRL como item 3 do consumo.",
+      "tratamento": "Ensinado como divergência; questões usam a classificação textual do s21 (consumo)."
+    },
+    {
+      "id": "D-08",
+      "descricao": "H1 s5 associa deslocamento variável a não-positivo e diz que todas as bombas estudadas são de deslocamento positivo, mas s13/s18/s24/s27 falam em capacidade ajustável/variável e símbolos de deslocamento variável.",
+      "tratamento": "[PONTO DE INCERTEZA]; nenhuma questão cobra a conciliação."
+    },
+    {
+      "id": "D-09",
+      "descricao": "E7 p26: 'S0 é possível a partida' (digitação de 'Só é possível').",
+      "tratamento": "Ensinado com a correção."
+    },
+    {
+      "id": "D-10",
+      "descricao": "E1 s33-s36: desenho do contator com (1)-(2), (3)-(4) NA e (5)-(6) NF; E1 s37 usa 1-2/3-4/5-6 para contatos principais.",
+      "tratamento": "Nomenclatura de figura; cobra-se a regra do s37/s39."
+    },
+    {
+      "id": "D-11",
+      "descricao": "E1 s18 põe a proteção contra sobrecarga antes do dispositivo de manobra; nos circuitos E1 s47/s48 o relé térmico F2 fica depois de K1.",
+      "tratamento": "Aviso de confusão provável; não cobrado como ordem física."
+    },
+    {
+      "id": "D-12",
+      "descricao": "E6 p33 cita 'relé temporizado KT1' enquanto a figura E6 p30 rotula T1.",
+      "tratamento": "Ensinado T1 na figura K1/K2/K3."
+    },
+    {
+      "id": "D-13",
+      "descricao": "Circuitos de potência KM: 440 VCA/60 Hz (E6 p28) e 60 Hz 400 V (E7 p15).",
+      "tratamento": "Cada figura com sua tensão; não cobrado."
+    },
+    {
+      "id": "D-14",
+      "descricao": "H1 s18 (figura) usa 'tambor' e 'placa guia'; H1 s21-s22 (texto) usa 'rotor' e 'prato fixo'.",
+      "tratamento": "Correspondência como [INFERÊNCIA PEDAGÓGICA]; não cobrada."
+    },
+    {
+      "id": "D-15",
+      "descricao": "H1 s47: no desenho m1 fica junto à ponta da haste recuada e m2 afastado; o texto não descreve a função de cada fim de curso.",
+      "tratamento": "[PONTO DE INCERTEZA]; função/posição de m1/m2 do circuito 4 não é cobrada."
+    },
+    {
+      "id": "D-16",
+      "descricao": "SOPA Figura 5: SOL1 desenhado à esquerda e SOL2 à direita, inverso de H1 s46; posição física não é cobrada",
+      "marcacao": "[PONTO DE INCERTEZA]"
+    }
+  ],
+  "lacunas_de_fonte": [
+    "Apostila de Automação de Sistemas Navais (2ª Rev. 2024, cap. 3, seção 3.1) e Apostila Automação de Sistemas de Armas cap. 2 são citadas nos slides mas NÃO foram enviadas — o curso usa só os slides.",
+    "SOPA 2025: Figuras 1, 2, 3 e 4 não aparecem nas fotos; associação às figuras dos slides é inferência.",
+    "Vídeos: áudio não transcrito; conteúdo visual amostrado não acrescenta conceito novo.",
+    "Slides 25-28 de E1/E6 sem texto (figuras) — conteúdo capturado por leitura visual."
+  ],
+  "parametros_do_curso": {
+    "proporcao_teoria_pratica": {
+      "teoria": 0.25,
+      "exercicios_revisoes_simulados": 0.75
+    },
+    "estilo_teoria": "rápida e objetiva, sem omitir conceito examinável; leitura rápida = escrita eficiente",
+    "formato_prova_alvo": "extensa, muitos itens curtos (preferência do professor: muitos itens de 0,1)",
+    "tipos_de_item_prioritarios": [
+      "OBJ",
+      "VF",
+      "COR",
+      "lacuna",
+      "ordenacao",
+      "identificacao por figura",
+      "discursiva curta (nomear/definir/explicar funcionamento)",
+      "situacao com subitens"
+    ],
+    "figuras": "prints dos circuitos dos slides; versões numeradas/mascaradas para questões de identificação",
+    "sopa": "SOPA T2 2025 comentada + questões adaptadas dela, marcadas com 'adaptada_de' (pedido do usuário em 16/09/2026)",
+    "origem": "pedido do usuário em 16/09/2026"
+  }
+}

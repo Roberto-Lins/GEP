@@ -1,0 +1,466 @@
+---
+titulo: "Relés temporizadores e partida de motores de indução — aula"
+secao: "aula"
+secaoOrdem: 1
+---
+
+# MÓDULO M06 — Relés temporizadores e partida de motores de indução
+
+> Fontes: ‹E6 p5–p18› · ‹E6 p42› · Tempo de leitura: ~14 min
+
+**Você vai precisar saber:**
+- definir relé temporizador, citar seus usos, sua precisão e a faixa de ajuste;
+- explicar em que consiste o retardo na energização (on delay) e o retardo na desenergização (off delay), lendo os diagramas temporais;
+- reconhecer o símbolo da bobina de cada tipo;
+- listar as 5 formas de partida de motor de indução e separar condições necessárias x fatores que impedem a partida direta;
+- definir conjugado acelerante e localizar o ponto de operação na curva.
+
+## Bloco B1 — Relés temporizadores
+
+‹fonte: E6 p5–p11›
+
+Nomes usados pelo professor: **relés de tempo**, **relés temporizadores** ou **relés temporizados** ‹E6 p5›.
+
+**‹C075› Definição e usos** — os relés temporizadores "são **dispositivos eletrônicos** que permitem, **em função de tempos ajustados, comutar um sinal de saída** de acordo com a sua função". São muito utilizados em automação de máquinas e processos industriais, como **partidas de motores, quadros de comando, fornos industriais**, entre outros ‹E6 p6›.
+
+**‹C076› Precisão e faixa** — possuem **eletrônica digital**, que proporciona **elevada precisão, repetitividade e imunidade a ruídos** ‹E6 p6›. Com faixas de temporização, podem ser ajustados de **0,3 segundos a 30 minutos**, com elevada confiabilidade e precisão ‹E6 p7›.
+
+**‹C077› Tipos, quanto ao tipo de atuação** ‹E6 p7›:
+- **retardo na energização** ("on delay");
+- **retardo na desenergização** ("off delay").
+
+**‹C078› Relé de tempo com retardo na energização (on delay)** — "Atua em seus contatos **um tempo após** a ligação, ou energização do relé, e as retorna ao repouso **imediatamente** após seu desligamento ou 'desenergização'" ‹E6 p8›.
+
+Diagrama temporal ‹E6 p9› (V A1-A2 da bobina em cima; V dos contatos embaixo):
+
+| Instante / intervalo | Bobina | Contatos |
+|---|---|---|
+| 0 → t0 | Off (repouso) | Off |
+| **t0** — "energização da bobina" | On | continuam Off |
+| t0 → t1 = **T (tempo ajustado)** | On | Off (contando o tempo) |
+| **t1** — "comutação" | On | **On** |
+| **t2** — bobina desligada | Off | **Off no mesmo instante** — "retorno ao estado inicial" |
+
+![Relé de tempo com retardo na energização](/imagens/cursos/fas-t2/conteudo/E6-08-on-delay.webp)
+*Figura — Retardo na energização: definição e símbolos (bobina, contato NA, contato NF) ‹fonte: E6 p8›*
+
+![Diagrama temporal on delay](/imagens/cursos/fas-t2/conteudo/E6-09-on-delay-grafico.webp)
+*Figura — Diagrama temporal do retardo na energização ‹fonte: E6 p9›*
+
+**‹C079› Relé de tempo com retardo na desenergização (off delay)** — "Atua em seus contatos **imediatamente** na ativação, porém estas chaves só retornam ao repouso **um tempo após** a desativação" ‹E6 p10›.
+
+Diagrama temporal ‹E6 p11›:
+
+| Instante / intervalo | Bobina | Contatos |
+|---|---|---|
+| 0 → t0 — Repouso | Off | Off |
+| **t0** — "energização da bobina e comutação" | On | **On no mesmo instante** |
+| t0 → t1 — **Etapa 1** | On | On |
+| **t1** — bobina desligada | Off | continuam On |
+| t1 → t2 — **Etapa 2** = **T (tempo ajustado)** | Off | On |
+| **t2** — "retorno ao estado inicial" | Off | Off |
+
+![Relé de tempo com retardo na desenergização](/imagens/cursos/fas-t2/conteudo/E6-10-off-delay.webp)
+*Figura — Retardo na desenergização: definição e símbolos ‹fonte: E6 p10›*
+
+![Diagrama temporal off delay](/imagens/cursos/fas-t2/conteudo/E6-11-off-delay-grafico.webp)
+*Figura — Diagrama temporal do retardo na desenergização ‹fonte: E6 p11›*
+
+**‹C080› Símbolos das bobinas temporizadas** ‹E6 p8; E6 p10› — a bobina tem terminais **A1 e A2** nos dois tipos:
+- **retardo na energização:** retângulo da bobina com um **quadrado marcado com X** na lateral — é o mesmo símbolo do "acionamento temporizado na ligação" da tabela de símbolos ‹E1 s43›;
+- **retardo na desenergização:** retângulo da bobina com o **quadrado lateral preenchido** (preto).
+- Nomenclatura da figura: os contatos NA e NF do relé de tempo são desenhados com um traço de acionamento com seta, e a seta aparece em sentidos opostos nos dois tipos (compare E6 p8 com E6 p10).
+
+[INFERÊNCIA PEDAGÓGICA] Comparação direta:
+
+| | On delay (retardo na energização) | Off delay (retardo na desenergização) |
+|---|---|---|
+| Ao energizar a bobina | contatos atuam **um tempo T depois** | contatos atuam **imediatamente** |
+| Ao desenergizar a bobina | contatos retornam **imediatamente** | contatos retornam **um tempo T depois** |
+| T é contado a partir da | energização (t0 → t1) | desenergização (t1 → t2) |
+| Bobina | quadrado com **X** | quadrado **preenchido** |
+
+### Exemplos práticos e confusões prováveis
+- ‹C078› On delay ajustado em 5 s: a bobina é energizada e os contatos só comutam 5 s depois; desligada a bobina, voltam na hora.
+- ‹C079› Off delay ajustado em 5 s: os contatos comutam junto com a energização; desligada a bobina, continuam comutados por mais 5 s.
+- ⚠️ ‹C077› "Delay" = retardo. **On** delay atrasa a **atuação** após a energização; **off** delay atrasa o **retorno** após a desenergização. Não troque.
+- ⚠️ ‹C080› **X** = retardo na **energização**; **preenchido** = retardo na **desenergização**.
+- ‹C075› O relé temporizador é **eletrônico** e comuta em função de tempos ajustados; o relé da Aula 3.2 é **eletromecânico** (a bobina atrai a armadura) ‹E1 s27›.
+- ‹C076› Faixa: **0,3 s a 30 min** (segundos no início, minutos no fim).
+
+### Questões — bloco B1
+
+**Questão 1** · 0,2 pt
+
+Com relação aos relés temporizadores, marque (X) a única correta.
+
+(A) São elementos eletromecânicos de comando a distância, com uma única posição de repouso e sem travamento.  
+(B) Possuem eletrônica digital que proporciona elevada precisão, mas que os torna sensíveis a ruídos e de baixa repetitividade.  
+(C) Atuam pelo efeito térmico provocado pela corrente elétrica, tendo como elemento básico o bimetal.  
+(D) Só podem ser ajustados de 0,3 minuto a 30 segundos, o que restringe seu uso aos fornos industriais.  
+(E) São dispositivos eletrônicos que permitem, em função de tempos ajustados, comutar um sinal de saída de acordo com a sua função, sendo usados em partidas de motores, quadros de comando e fornos industriais.  
+
+**Questão 2** · 0,6 pt
+
+Com relação aos relés de tempo, marque V ou F.
+
+( ) 1. Também são chamados de relés temporizadores ou relés temporizados.  
+( ) 2. Com faixas de temporização, podem ser ajustados de 0,3 segundos a 30 minutos, com elevada confiabilidade e precisão.  
+( ) 3. A imunidade a ruídos desses relés é proporcionada por sua eletrônica analógica.  
+( ) 4. Quanto ao tipo de atuação, podem ser com retardo na energização ('on delay') ou com retardo na desenergização ('off delay').  
+( ) 5. O relé 'on delay' é o relé com retardo na desenergização.  
+( ) 6. Quanto ao tipo de atuação, são três os tipos: retardo na energização, retardo na desenergização e retardo na comutação.  
+
+**Questão 3** · 0,9 pt
+
+Associe cada característica ao tipo de relé de tempo a que ela se refere. Os números podem se repetir.
+
+**Coluna A**
+
+- (1) Relé de tempo com retardo na energização (on delay)
+- (2) Relé de tempo com retardo na desenergização (off delay)
+
+**Coluna B**
+
+- ( ) Atua em seus contatos um tempo após a energização do relé.
+- ( ) Atua em seus contatos imediatamente na ativação.
+- ( ) Retorna os contatos ao repouso imediatamente após a desenergização.
+- ( ) Os contatos só retornam ao repouso um tempo após a desativação.
+- ( ) Bobina desenhada com um quadrado marcado com X.
+- ( ) Bobina desenhada com um quadrado preenchido.
+- ( ) No diagrama temporal, a energização da bobina e a comutação ocorrem no mesmo instante t0.
+- ( ) No diagrama temporal, o tempo ajustado T é contado da energização da bobina até a comutação.
+- ( ) Tem o mesmo símbolo de bobina do 'acionamento temporizado na ligação' da tabela de símbolos da Aula 3.2.
+
+**Questão 4** · 0,8 pt
+
+O diagrama temporal de um relé de tempo mostra: a tensão na bobina (A1-A2) passa a On em t0 e volta a Off em t1; a tensão nos contatos passa a On em t0 e só volta a Off em t2; o intervalo entre t1 e t2 está indicado como T (tempo ajustado). Responda objetivamente.
+
+- a) Qual o tipo de relé representado (nome em português e em inglês)? (0,2)
+- b) O que ocorre no instante t0? (0,1)
+- c) Qual o estado dos contatos entre t1 e t2 e o que esse intervalo representa? (0,2)
+- d) O que ocorre em t2? (0,1)
+- e) Como é o símbolo da bobina desse relé? (0,1)
+- f) Se o diagrama mostrasse a comutação só em t1, um tempo T após a energização da bobina em t0, e o retorno ao estado inicial no mesmo instante do desligamento da bobina, qual seria o tipo de relé? (0,1)
+
+**Questão 5** · 0,8 pt
+
+Complete as lacunas sobre o funcionamento dos relés de tempo (E6 p8-p11).
+
+- 1) No relé com retardo na desenergização, os contatos atuam __________ na ativação, mas só retornam ao repouso __________ a desativação. (0,2)
+- 2) No relé com retardo na energização, depois que a bobina é desligada, os contatos retornam ao repouso __________. (0,1)
+- 3) No diagrama temporal do retardo na energização, o intervalo entre t0 e t1 é o __________, e o instante t1 marca a __________ dos contatos. (0,2)
+- 4) No diagrama do retardo na desenergização, a Etapa 1 vai da energização da bobina até o seu __________; a Etapa 2 corresponde ao __________. (0,2)
+- 5) Nos dois diagramas, o instante t2 é indicado como __________. (0,1)
+
+**Questão 6** · 0,7 pt
+
+Com relação aos diagramas temporais e aos símbolos dos relés de tempo (E6 p8-p11), marque V ou F.
+
+( ) 1. No retardo na energização, a comutação dos contatos ocorre em t1, decorrido o tempo ajustado T a partir da energização da bobina em t0.  
+( ) 2. No retardo na energização, após a desenergização da bobina em t2, os contatos permanecem comutados durante o tempo ajustado T.  
+( ) 3. Entre t0 e t1 do diagrama de retardo na energização, a bobina está energizada e os contatos continuam em repouso.  
+( ) 4. No retardo na desenergização, durante a Etapa 1 a bobina está energizada e os contatos já estão comutados.  
+( ) 5. No retardo na desenergização, a Etapa 2 é o intervalo em que a bobina ainda está energizada e os contatos aguardam a comutação.  
+( ) 6. A bobina com um quadrado preenchido representa o relé com retardo na energização.  
+( ) 7. Nos dois tipos, a bobina do relé de tempo é identificada pelos terminais A1 e A2.  
+
+**Questão 7** · 0,3 pt · *adaptada de SOPA 2025 Q2.1a*
+
+Com relação ao relé de tempo com retardo na desenergização ('off delay'), marque (X) a única correta.
+
+(A) Atua em seus contatos um tempo após a energização e só os retorna ao repouso um tempo após a desenergização.  
+(B) Atua e retorna seus contatos imediatamente, sem temporização, da mesma forma que um contator.  
+(C) Atua em seus contatos imediatamente na ativação, porém os contatos só retornam ao repouso um tempo após a desativação.  
+(D) Atua em seus contatos um tempo após a energização e os retorna ao repouso imediatamente após a desenergização.  
+(E) É representado pela bobina com um quadrado marcado com X.  
+
+**Questão 8** · 0,6 pt
+
+Com relação às diferenças entre o relé temporizador e os dispositivos estudados na Aula 3.2 (relé eletromecânico e contator), marque V ou F.
+
+( ) 1. O relé temporizador é um dispositivo eletrônico que comuta um sinal de saída em função de tempos ajustados.  
+( ) 2. No relé eletromecânico, a corrente na bobina cria um campo magnético que atrai a armadura móvel e altera a posição dos contatos.  
+( ) 3. No relé eletromecânico, interrompida a corrente na bobina, os contatos retornam à posição inicial por ação da mola.  
+( ) 4. O contator é derivado do conceito de relé temporizador.  
+( ) 5. Tanto a bobina do contator quanto a bobina do relé de tempo têm terminais A1 e A2.  
+( ) 6. Os relés temporizadores são aplicados somente em fornos industriais.  
+
+**Questão 9** · 1,5 pt · *adaptada de SOPA 2025 Q2.1a*
+
+Em um quadro de comando há dois relés de tempo: T1, com retardo na energização, e T2, com retardo na desenergização, ambos ajustados em T = 20 s. Cada um tem um contato NA. As bobinas (A1-A2) dos dois são energizadas juntas no instante 0 s e desenergizadas juntas no instante 60 s. Responda.
+
+- a) Em que instantes o contato NA de T1 fecha e volta a abrir? (0,3)
+- b) Em que instantes o contato NA de T2 fecha e volta a abrir? (0,3)
+- c) No instante 10 s, qual o estado de cada contato NA? (0,2)
+- d) No instante 70 s, qual o estado de cada contato NA? (0,2)
+- e) Como é desenhada a bobina de T1 e a de T2? (0,2)
+- f) Seria possível ajustar esses relés para 45 minutos, segundo a faixa citada no slide? Justifique. (0,2)
+- g) Classifique T1 e T2 quanto ao tipo de atuação, usando os nomes em inglês. (0,1)
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q1 — E.** E6 p6: 'Os relés temporizadores são dispositivos eletrônicos que permitem, em função de tempos ajustados, comutar um sinal de saída de acordo com a sua função'; usos: partidas de motores, quadros de comando, fornos industriais, entre outros.
+- **Q2 — V-V-F-V-F-F**
+  - 3. F — Correção: é a eletrônica digital que proporciona elevada precisão, repetitividade e imunidade a ruídos (E6 p6).
+  - 5. F — Correção: 'on delay' = retardo na energização; 'off delay' = retardo na desenergização (E6 p7).
+  - 6. F — Correção: são dois tipos, retardo na energização e retardo na desenergização (E6 p7).
+- **Q3 — 1-2-1-2-1-2-2-1-1** E6 p8-p11 (definições, símbolos e diagramas temporais) e E1 s43 (acionamento temporizado na ligação = bobina com X).
+- **Q4**
+  - a) Relé de tempo com retardo na desenergização (off delay).
+  - b) Energização da bobina e comutação dos contatos, no mesmo instante.
+  - c) Continuam comutados (On), embora a bobina já esteja desenergizada; é o tempo ajustado T (Etapa 2).
+  - d) Retorno dos contatos ao estado inicial (repouso).
+  - e) Bobina (A1-A2) com o quadrado lateral preenchido.
+  - f) Relé de tempo com retardo na energização (on delay).
+- **Q5**
+  - • imediatamente; um tempo após
+  - • imediatamente
+  - • tempo ajustado (T); comutação
+  - • desligamento (desenergização, em t1); tempo ajustado T (de t1 a t2)
+  - • retorno ao estado inicial
+- **Q6 — V-F-V-V-F-F-V**
+  - 2. F — Correção: os contatos retornam ao estado inicial imediatamente, em t2 (E6 p8-p9).
+  - 5. F — Correção: na Etapa 2 (t1 a t2) a bobina já está desenergizada e os contatos continuam comutados durante o tempo ajustado T (E6 p11).
+  - 6. F — Correção: quadrado com X = retardo na energização; quadrado preenchido = retardo na desenergização (E6 p8; E6 p10).
+- **Q7 — C.** E6 p10: 'Atua em seus contatos imediatamente na ativação, porém estas chaves só retornam ao repouso um tempo após a desativação'; símbolo: bobina com quadrado preenchido.
+- **Q8 — V-V-V-F-V-F**
+  - 4. F — Correção: o contator é derivado do conceito de relé; é elemento eletromecânico de comando a distância, com uma única posição de repouso e sem travamento (E1 s33).
+  - 6. F — Correção: são usados em partidas de motores, quadros de comando, fornos industriais, entre outros (E6 p6).
+- **Q9**
+  - a) Fecha em 20 s (um tempo T após a energização) e abre em 60 s (imediatamente após a desenergização).
+  - b) Fecha em 0 s (imediatamente na energização) e abre em 80 s (um tempo T após a desenergização).
+  - c) T1: aberto (ainda em repouso, dentro do tempo ajustado); T2: fechado (já comutado).
+  - d) T1: aberto (retornou em 60 s); T2: fechado (ainda dentro do tempo ajustado, até 80 s).
+  - e) T1: bobina com quadrado marcado com X; T2: bobina com quadrado preenchido.
+  - f) Não: a faixa de temporização citada vai de 0,3 s a 30 min.
+  - g) T1: on delay; T2: off delay.
+
+</details>
+
+
+## Bloco B2 — Partida de motores de indução
+
+‹fonte: E6 p12–p18; E6 p42›
+
+**‹C081› Um sistema eficiente de partida proporciona** ‹E6 p12›:
+- aumento da **vida útil do motor**;
+- redução dos **custos operacionais**; e
+- **alívio à equipe de manutenção**, permitindo maior disponibilidade para a mesma realizar outras funções.
+
+**‹C082› Principais tipos de partida de motor de indução** ‹E6 p13›:
+1. Partida direta;
+2. Partida através de chave estrela-triângulo;
+3. Partida através de chave compensadora;
+4. Partida através de chaves estáticas;
+5. Partida através de reator.
+
+(Slide: "Vimos partida direta. Hoje veremos a chave estrela-triângulo" — assunto do M07.)
+
+**‹C083› Condições necessárias para o uso da partida direta** ‹E6 p14›:
+- a **corrente nominal da rede é tão elevada** que a corrente de partida do motor não é relevante;
+- a **corrente de partida do motor é de baixo valor porque sua potência é pequena**;
+- a **partida do motor é feita sem carga**, o que **reduz a duração da corrente de partida** e, consequentemente, **atenua os efeitos sobre o sistema de alimentação**.
+
+**‹C084› Fatores que impedem o uso da partida direta** ‹E6 p15›:
+- a **potência do motor é superior ao máximo permitido pela concessionária local**, normalmente estabelecida em **5 CV**, quando a unidade de consumo é alimentada em **baixa tensão** pela rede da concessionária; e
+- a **carga a ser movimentada necessita de acionamento lento e progressivo**.
+
+[INFERÊNCIA PEDAGÓGICA] Condição x impedimento, lado a lado:
+
+| Tema | Condição necessária (permite) | Fator que impede |
+|---|---|---|
+| Rede | corrente nominal tão elevada que a de partida não é relevante | — |
+| Potência do motor | pequena → corrente de partida de baixo valor | acima do máximo da concessionária (normalmente 5 CV, baixa tensão) |
+| Carga | partida **sem carga** | carga que exige acionamento **lento e progressivo** |
+
+**‹C085› Curva conjugado–velocidade** — todo motor dimensionado para acionar adequadamente uma determinada carga acoplada ao seu eixo necessita, **durante a partida, em cada instante**, de um **conjugado superior ao conjugado resistente de carga** ‹E6 p16›.
+
+**‹C086› Conjugado acelerante e ponto de operação** — "À diferença entre o **Conjugado do Motor** e o **Conjugado Resistente**, denomina-se **Conjugado Acelerante**" ‹E6 p18›. Nas figuras, o **ponto de operação** é indicado onde a curva do conjugado do motor encontra a curva do conjugado resistente ‹E6 p18; E6 p42›.
+- Nomenclatura da figura de E6 p18: eixos **Cp/Cn** × **n/ns**; curvas "Partida direta", "Partida Estrela-Triângulo" e "**CR: conjugado resistente (carga)**"; "Ponto de operação" próximo de n/ns = 1.
+- Nomenclatura da figura de E6 p42 ("F1. Curva torque x velocidade para motor trifásico"): **C motor**, **C resistente**, **conjugado acelerante** (área hachurada entre as duas curvas), **ponto de operação**, eixo N (rpm).
+
+![Ponto de operação de motor de indução](/imagens/cursos/fas-t2/conteudo/E6-18-conjugado.webp)
+*Figura — Ponto de operação e conjugado acelerante ‹fonte: E6 p18›*
+
+### Exemplos práticos e confusões prováveis
+- ‹C084› Motor com potência acima do máximo da concessionária (normalmente 5 CV, em baixa tensão) → partida direta **impedida**.
+- ⚠️ ‹C083›/‹C084› "Partida **sem carga**" é **condição** (reduz a duração da corrente de partida); "carga que necessita de acionamento **lento e progressivo**" é **impedimento**. O "5 CV" só aparece no impedimento.
+- ‹C082› As 5 formas de E6 p13: direta, estrela-triângulo, compensadora, estáticas, reator. Soft starter e inversor de frequência aparecem em outra tabela (acionamentos, E1 s12); H-Bridge é de motor CC.
+- ‹C081› São 3 benefícios: vida útil do motor, custos operacionais, alívio à manutenção.
+- ‹C085›/‹C086› Conjugado acelerante = conjugado do motor **menos** conjugado resistente; ponto de operação = onde as duas curvas se encontram.
+
+### Questões — bloco B2
+
+**Questão 10** · 0,8 pt
+
+Complete as lacunas sobre a partida de motores de indução (E6 p12-p13).
+
+- 1) Um sistema eficiente de partida proporciona aumento da __________ do motor; (0,1)
+- 2) redução dos custos __________; e (0,1)
+- 3) alívio à equipe de __________, permitindo maior disponibilidade para a mesma realizar outras funções. (0,1)
+- 4) Principais tipos de partida de motor de indução: partida __________; (0,1)
+- 5) partida através de chave __________; (0,1)
+- 6) partida através de chave __________; (0,1)
+- 7) partida através de chaves __________; (0,1)
+- 8) partida através de __________. (0,1)
+
+**Questão 11** · 0,7 pt
+
+Com relação às condições necessárias e aos fatores que impedem o uso da partida direta, marque V ou F.
+
+( ) 1. É condição necessária para o uso da partida direta que a corrente nominal da rede seja tão elevada que a corrente de partida do motor não seja relevante.  
+( ) 2. A partida do motor feita sem carga é um fator que impede o uso da partida direta.  
+( ) 3. Impede o uso da partida direta a potência do motor superior ao máximo permitido pela concessionária local, normalmente 5 CV, quando a unidade de consumo é alimentada em baixa tensão.  
+( ) 4. A necessidade de acionamento lento e progressivo da carga é condição necessária para o uso da partida direta.  
+( ) 5. A partida sem carga aumenta a duração da corrente de partida, agravando os efeitos sobre o sistema de alimentação.  
+( ) 6. Uma corrente de partida de baixo valor, porque a potência do motor é pequena, é condição necessária para o uso da partida direta.  
+( ) 7. O limite normalmente estabelecido de 5 CV refere-se a unidades de consumo alimentadas em alta tensão.  
+
+**Questão 12** · 0,5 pt
+
+Para cada caso da coluna B, indique se ele corresponde a uma condição necessária para o uso da partida direta (1) ou a um fator que impede o uso da partida direta (2), segundo E6 p14-p15.
+
+**Coluna A**
+
+- (1) Condição necessária para o uso da partida direta
+- (2) Fator que impede o uso da partida direta
+
+**Coluna B**
+
+- ( ) Motor de pequena potência, cuja corrente de partida é de baixo valor.
+- ( ) Motor que aciona uma carga que precisa ser movimentada de forma lenta e progressiva.
+- ( ) Motor de 20 CV em unidade de consumo alimentada em baixa tensão pela concessionária, que adota o limite normalmente estabelecido.
+- ( ) Motor que parte sem carga, o que reduz a duração da corrente de partida.
+- ( ) Instalação cuja rede tem corrente nominal tão elevada que a corrente de partida do motor não é relevante.
+
+**Questão 13** · 0,3 pt
+
+Com relação à curva conjugado-velocidade na partida de motores de indução, marque (X) a única correta.
+
+(A) Todo motor dimensionado para acionar adequadamente uma carga necessita, durante a partida, em cada instante, de um conjugado superior ao conjugado resistente de carga.  
+(B) Conjugado resistente é a diferença entre o conjugado do motor e o conjugado da carga.  
+(C) Conjugado acelerante é a soma do conjugado do motor com o conjugado resistente.  
+(D) Durante a partida, o conjugado do motor deve ser inferior ao conjugado resistente da carga.  
+(E) O motor precisa de conjugado superior ao resistente apenas no instante inicial da partida.  
+
+**Questão 14** · 0,7 pt
+
+![Figura da questão 14](/imagens/cursos/fas-t2/conteudo/E6-18-conjugado.webp)
+
+Considere a Figura (ponto de operação de motor de indução, Cp/Cn × n/ns). Responda objetivamente.
+
+- a) O que representa a curva indicada por CR? (0,1)
+- b) Em que ponto das curvas se localiza o ponto de operação? (0,2)
+- c) Na partida (n/ns = 0), o conjugado da curva 'Partida direta' é maior ou menor que o conjugado resistente? Que exigência do slide de curva conjugado-velocidade isso atende? (0,2)
+- d) Além da curva CR, quais curvas de partida estão traçadas na figura? (0,1)
+- e) Como se denomina, nessa figura, a diferença entre o conjugado do motor e o conjugado resistente? (0,1)
+
+**Questão 15** · 0,3 pt
+
+Com relação à partida de motores de indução (E6 p12-p18), marque (X) a única INCORRETA.
+
+(A) À diferença entre o conjugado do motor e o conjugado resistente denomina-se conjugado acelerante.  
+(B) Os principais tipos de partida de motor de indução são: direta, através de chave estrela-triângulo, através de chave compensadora, através de chaves estáticas e através de driver com H-Bridge.  
+(C) A partida do motor feita sem carga reduz a duração da corrente de partida e atenua os efeitos sobre o sistema de alimentação.  
+(D) A necessidade de acionamento lento e progressivo da carga impede o uso da partida direta.  
+(E) Um sistema eficiente de partida proporciona alívio à equipe de manutenção, permitindo maior disponibilidade para a mesma realizar outras funções.  
+
+**Questão 16** · 1,6 pt · *adaptada de SOPA 2025 Q2.1c*
+
+Uma unidade de consumo alimentada em baixa tensão pela rede da concessionária local vai instalar dois motores de indução trifásicos: o motor A, de 30 CV, que movimenta uma carga que necessita de acionamento lento e progressivo; e o motor B, de pequena potência, com corrente de partida de baixo valor, que parte sem carga. Considere o limite de potência normalmente estabelecido citado no slide.
+
+- a) O motor A pode usar partida direta? Justifique com os dois fatores do slide. (0,4)
+- b) Quais condições necessárias para a partida direta o motor B atende? Explique o efeito de partir sem carga. (0,3)
+- c) Além da partida direta, quais são os outros quatro principais tipos de partida que poderiam ser avaliados para o motor A? (0,2)
+- d) Cite os três benefícios que um sistema eficiente de partida traz para essa instalação. (0,3)
+- e) Qualquer que seja o tipo de partida escolhido para o motor A, que exigência de conjugado deve ser atendida durante a partida, e como se chama a diferença envolvida? (0,3)
+- f) Como se chama o ponto em que a curva do conjugado do motor encontra a curva do conjugado resistente? (0,1)
+
+**Questão 17** · 0,9 pt · *adaptada de SOPA 2025 Q2.1a, Q2.1c*
+
+Relacione os tipos de relé temporizador às condições da partida direta e ao conjugado exigido do motor.
+
+- a) Quais são os dois tipos de relé temporizador quanto ao tipo de atuação, e como se distingue a bobina de cada um no desenho? (0,3)
+- b) Quais são as condições necessárias para o uso da partida direta? (0,3)
+- c) De que o motor necessita, em cada instante da partida, em relação ao conjugado resistente de carga? (0,3)
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q10**
+  - • vida útil
+  - • operacionais
+  - • manutenção
+  - • direta
+  - • estrela-triângulo
+  - • compensadora
+  - • estáticas
+  - • reator
+- **Q11 — V-F-V-F-F-V-F**
+  - 2. F — Correção: é condição necessária; reduz a duração da corrente de partida e atenua os efeitos sobre o sistema de alimentação (E6 p14).
+  - 4. F — Correção: é fator que impede o uso da partida direta (E6 p15).
+  - 5. F — Correção: reduz a duração da corrente de partida e atenua os efeitos (E6 p14).
+  - 7. F — Correção: refere-se a unidades alimentadas em baixa tensão pela rede da concessionária (E6 p15).
+- **Q12 — 1-2-2-1-1** E6 p14 (condições: rede com corrente nominal elevada; potência pequena; partida sem carga) e E6 p15 (impedimentos: potência acima do máximo da concessionária, normalmente 5 CV em baixa tensão; carga com acionamento lento e progressivo).
+- **Q13 — A.** E6 p16 (curva conjugado-velocidade) e E6 p18 (conjugado acelerante = diferença entre conjugado do motor e conjugado resistente).
+- **Q14**
+  - a) O conjugado resistente (da carga).
+  - b) Onde a curva do conjugado do motor encontra (cruza) a curva do conjugado resistente CR, próximo de n/ns = 1.
+  - c) Maior (cerca de 1,5 contra cerca de 0,3 em Cp/Cn); atende à exigência de o motor ter, em cada instante da partida, conjugado superior ao conjugado resistente de carga.
+  - d) Partida direta e partida estrela-triângulo.
+  - e) Conjugado acelerante.
+- **Q15 — B.** A lista de E6 p13 termina em 'partida através de reator'; driver com H-Bridge é acionamento de motor CC (E1 s12). As demais afirmações são literais de E6 p12, p14, p15 e p18.
+- **Q16**
+  - a) Não. Sua potência é superior ao máximo permitido pela concessionária (normalmente 5 CV em baixa tensão) e sua carga necessita de acionamento lento e progressivo.
+  - b) Corrente de partida de baixo valor porque a potência é pequena; partida sem carga, que reduz a duração da corrente de partida e, consequentemente, atenua os efeitos sobre o sistema de alimentação.
+  - c) Partida através de chave estrela-triângulo, de chave compensadora, de chaves estáticas e de reator.
+  - d) Aumento da vida útil do motor; redução dos custos operacionais; alívio à equipe de manutenção, com maior disponibilidade para outras funções.
+  - e) Em cada instante da partida, o conjugado do motor deve ser superior ao conjugado resistente da carga; a diferença entre eles é o conjugado acelerante.
+  - f) Ponto de operação.
+- **Q17**
+  - a) Retardo na energização (on delay): bobina com quadrado marcado com X; retardo na desenergização (off delay): bobina com quadrado preenchido.
+  - b) Corrente nominal da rede tão elevada que a corrente de partida do motor não é relevante; corrente de partida de baixo valor porque a potência do motor é pequena; partida feita sem carga.
+  - c) De um conjugado superior ao conjugado resistente de carga.
+
+</details>
+
+
+## Revisão cumulativa
+### Questões — revisão cumulativa
+
+**Questão 18** · 0,7 pt
+
+Revisão cumulativa (M01 a M06) — marque V ou F.
+
+( ) 1. O símbolo 'acionamento temporizado na ligação' da tabela de símbolos da Aula 3.2 é a bobina com quadrado marcado com X, igual à do relé com retardo na energização.  
+( ) 2. Na tabela de acionamentos de motor CA trifásico, a partida direta corresponde à ligação direta do motor à rede.  
+( ) 3. O soft starter faz o controle gradual da tensão de partida com tiristores (SCRs).  
+( ) 4. No relé eletromecânico, quando a corrente na bobina é interrompida, os contatos permanecem na posição acionada até um novo comando.  
+( ) 5. Na partida com reversão, para trocar o sentido de rotação basta pressionar a botoeira do outro sentido com o motor em funcionamento.  
+( ) 6. O contator é um elemento eletromecânico de comando a distância com duas posições de repouso e com travamento.  
+( ) 7. O relé térmico atua pelo efeito térmico provocado pela corrente e tem o bimetal como elemento básico.  
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q18 — V-V-V-F-F-F-V**
+  - 4. F — Correção: o campo magnético se dispersa e os contatos retornam à posição inicial por ação da mola (E1 s28).
+  - 5. F — Correção: pressiona-se S0, desligando o motor, e depois S2 (E1 s54).
+  - 6. F — Correção: tem uma única posição de repouso e é sem travamento (E1 s33).
+
+</details>
+
+
+## Checklist de domínio
+- [ ] Defino relé temporizador (eletrônico; comuta sinal em função de tempos ajustados) e cito três usos.
+- [ ] Sei a faixa (0,3 s a 30 min) e o que a eletrônica digital proporciona.
+- [ ] Explico on delay e off delay e leio t0, t1, t2, T, Etapa 1 e Etapa 2 nos diagramas.
+- [ ] Reconheço a bobina com X (energização) e a bobina preenchida (desenergização).
+- [ ] Cito os 3 benefícios de um sistema eficiente de partida e as 5 formas de partida.
+- [ ] Separo as 3 condições necessárias dos 2 fatores que impedem a partida direta.
+- [ ] Defino conjugado acelerante e localizo o ponto de operação.

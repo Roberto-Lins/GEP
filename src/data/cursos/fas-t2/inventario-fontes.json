@@ -1,0 +1,263 @@
+{
+  "curso": "FAS-T2",
+  "gerado_em": "2026-09-16",
+  "deduplicacao": {
+    "arquivos_recebidos_em_rar": 54,
+    "conteudos_unicos": 16,
+    "nota": "6 RARs: ELETRICA, ELETRICA 2, PNEUMÁTICA, PNEUMÁTICA 2 (conteúdo = elétrica, idênticos byte a byte), HIDRÁULICA e HIDRÁULICA e PNEUMÁTICA (idênticos; contêm SUE 4.1 pneumática e SUE 4.2 hidráulica). 8 arquivos '~$...pptx' de 165 bytes são arquivos de bloqueio do PowerPoint, sem conteúdo — descartados."
+  },
+  "fontes": [
+    {
+      "id": "E1",
+      "arquivo": "E1_Aula3.2_acionamento_controle_motores.pptx",
+      "original": "1 FAS Aula 3.2 Acionamento e controle de motores elétricos_Versão Final.pptx",
+      "tipo": "slides",
+      "sue": "3.2",
+      "paginas": 54,
+      "funcao": "autoridade principal — motores, elementos de comando, relé, contator, selo, intertravamento, partida direta e com reversão",
+      "testemunho": "T-E1",
+      "condicao": "LIDO integral (texto + 54 slides visualizados)",
+      "texto": "texto/E1_Aula3.2_acionamento_controle_motores.txt",
+      "sha256": "d94f2f366d087d55de6e1cc0e4fc44c53b1de351c065c1c278faa5e42b2dde15"
+    },
+    {
+      "id": "E2",
+      "arquivo": "E2_ED_partida_direta.pdf",
+      "original": "Estudo dirigido Partida Direta de Motores.pdf",
+      "tipo": "estudo_dirigido",
+      "sue": "3.2",
+      "paginas": 1,
+      "funcao": "apoio — lista de componentes e objetivo (selo)",
+      "testemunho": "T-E2",
+      "condicao": "LIDO",
+      "texto": "texto/E2_ED_partida_direta.pdf.txt",
+      "sha256": "9ed826460846b25f606d5924e63847c954b0d2fbb2e674e9ebdf995aaf6ec5cb"
+    },
+    {
+      "id": "E3",
+      "arquivo": "E3_ED_partida_reversao.pdf",
+      "original": "Estudo dirigido Partida de Motor com reversão.pdf",
+      "tipo": "estudo_dirigido",
+      "sue": "3.2",
+      "paginas": 1,
+      "funcao": "apoio — componentes da reversão, intertravamento, exercício de sinalização",
+      "testemunho": "T-E3",
+      "condicao": "LIDO",
+      "texto": "texto/E3_ED_partida_reversao.pdf.txt",
+      "sha256": "5cda58743af576402037041984920f61f327987166779fa78f88e4ec42b90166"
+    },
+    {
+      "id": "E4",
+      "arquivo": "E4_EX_partida_direta.pdf",
+      "original": "Exercício partida direta de motores.pdf",
+      "tipo": "lista_exercicios",
+      "sue": "3.2",
+      "paginas": 1,
+      "funcao": "apoio — definições de comando/potência (limites de corrente e tensão) e perguntas de identificação",
+      "testemunho": "T-E4",
+      "condicao": "LIDO",
+      "texto": "texto/E4_EX_partida_direta.pdf.txt",
+      "sha256": "a8b50c0f8034853e27e2341f42d4f19c6e506ef4ac89c631392c7f803843ac49"
+    },
+    {
+      "id": "E5",
+      "arquivo": "E5_EX_partida_reversao.pdf",
+      "original": "Exercício partida de motores com reversão.pdf",
+      "tipo": "lista_exercicios",
+      "sue": "3.2",
+      "paginas": 1,
+      "funcao": "apoio — definição de reversão e perguntas de identificação",
+      "testemunho": "T-E5",
+      "condicao": "LIDO",
+      "texto": "texto/E5_EX_partida_reversao.pdf.txt",
+      "sha256": "b150e92f007bf1cfa7ead4639d64f52d51e49e0fbd2b94e8f1c24b5b16449b2a"
+    },
+    {
+      "id": "E6",
+      "arquivo": "E6_Aula3.3_aplicacoes_circuitos.pdf",
+      "original": "FAS Aula 3.3 Aplicações de circuitos de acionamento e controle de motores elétricos.pdf",
+      "tipo": "slides",
+      "sue": "3.3",
+      "paginas": 42,
+      "funcao": "autoridade principal — relés temporizados, partida de motores de indução, estrela-triângulo, controle de nível, partida sequencial",
+      "testemunho": "T-E6",
+      "condicao": "LIDO integral",
+      "texto": "texto/E6_Aula3.3_aplicacoes_circuitos.pdf.txt",
+      "sha256": "c6c8f3de075035f021dc20c05f670ca04074da6fbbe5f63ed145fe908444d356"
+    },
+    {
+      "id": "E7",
+      "arquivo": "E7_Aula3.3_exercicios_acionamento.pdf",
+      "original": "FAS Aula 3.3 Exercícios de acionamento.pdf + .ppt",
+      "tipo": "slides_exercicios",
+      "sue": "3.3",
+      "paginas": 31,
+      "funcao": "autoridade — 8 circuitos resolvidos (alta potência, emergência, reversora, Y-Δ KM, nível, lâmpada, dois motores, sequencial)",
+      "testemunho": "T-E7 (PDF e PPT = UM testemunho; 1240 palavras idênticas)",
+      "condicao": "LIDO integral",
+      "texto": "texto/E7_Aula3.3_exercicios_acionamento.pdf.txt",
+      "sha256": "96e9bb88b1f2447daf2af52ab687e99a7af2081d10830ac42290855e95d92075"
+    },
+    {
+      "id": "P1",
+      "arquivo": "P1_Aula4.1_componentes_pneumatico.pdf",
+      "original": "FAS Aula 4.1 Componentes de um Circuito Pneumático_versão final.pdf + .pptx",
+      "tipo": "slides",
+      "sue": "4.1",
+      "paginas": 62,
+      "funcao": "autoridade principal — fluidomecânica, produção/consumo de ar, compressores, atuadores, VCD, válvulas de fluxo, alívio",
+      "testemunho": "T-P1 (PDF e PPTX = UM testemunho; vocabulário idêntico)",
+      "condicao": "LIDO integral",
+      "texto": "texto/P1_Aula4.1_componentes_pneumatico.txt",
+      "sha256": "d4d39db40870808e2503102d4620cd5e6b4cd8cd1f6e0124dfcf6659f7823f30"
+    },
+    {
+      "id": "P1V",
+      "arquivo": "P1_video_atuador_rotativo_VCD.mp4",
+      "tipo": "video_apoio",
+      "sue": "4.1",
+      "duracao_s": 19.2,
+      "funcao": "apoio audiovisual — animação de atuador rotativo com válvula solenoide (interface NAMUR); sem conteúdo examinável além dos slides",
+      "testemunho": "T-P1V",
+      "condicao": "AMOSTRADO (8 quadros); áudio não transcrito",
+      "sha256": "724a9a3bce0eb28798601fd48d4b92c5638625923de4305e1d4e09b9f580c44a"
+    },
+    {
+      "id": "H1",
+      "arquivo": "H1_SUE4.2_componentes_hidraulico.pdf",
+      "original": "FAS SUE 4.2 componentes circuito hidráulico.pdf + .pptx",
+      "tipo": "slides",
+      "sue": "4.2",
+      "paginas": 61,
+      "funcao": "autoridade principal — bombas, motores, atuadores, válvulas, acessórios e circuitos hidráulicos",
+      "testemunho": "T-H1 (PDF e PPTX = UM testemunho)",
+      "condicao": "LIDO integral",
+      "texto": "texto/H1_SUE4.2_componentes_hidraulico.txt",
+      "sha256": "a00c696377f0be79cf143938f13423d27185e80bb907111cd073b4f9d8e141f6"
+    },
+    {
+      "id": "H1V1",
+      "arquivo": "H1_video_bomba_engrenagem_externa.mp4",
+      "tipo": "video_apoio",
+      "sue": "4.2",
+      "duracao_s": 100.8,
+      "funcao": "apoio audiovisual — animação de bomba de engrenagens externas",
+      "testemunho": "T-H1V1",
+      "condicao": "AMOSTRADO; áudio não transcrito",
+      "sha256": "1abd46eb2f2768beb9b0a7301eccb9ee11cb441cf8ab6d46c926a2b7161078c5"
+    },
+    {
+      "id": "H1V2",
+      "arquivo": "H1_video_bomba_palhetas.mp4",
+      "tipo": "video_apoio",
+      "sue": "4.2",
+      "duracao_s": 74.5,
+      "funcao": "apoio audiovisual — animação de bomba de palhetas (expansão/redução de volume)",
+      "testemunho": "T-H1V2",
+      "condicao": "AMOSTRADO; áudio não transcrito",
+      "sha256": "905eca425987b5d1964f3b7c251be5a7ec23eadb9bf309bd5bd788d85a9951a0"
+    },
+    {
+      "id": "SOPA",
+      "arquivo": "SOPA_T2_FAS_2025.pdf",
+      "tipo": "prova_anterior",
+      "paginas": 6,
+      "funcao": "padrão de cobrança (estrutura, formatos, literalidade) — respostas registradas NÃO são gabarito oficial",
+      "testemunho": "T-SOPA",
+      "condicao": "LIDO (6 fotos); Figuras 1-4 ausentes; Figura 5 visível",
+      "texto": "notas/SOPA_T2_FAS_2025_transcricao.md",
+      "sha256": "e1227c8cb83d885124d5251d930ca6e2d84425fb30638f509ca658dd41931c16"
+    },
+    {
+      "id": "ORIENT",
+      "arquivo": "(mensagem do usuário 16/09/2026)",
+      "tipo": "orientacao_do_professor",
+      "funcao": "estrutura da T2 2026: Elétrica 6,0 (5 questões) e Pneumática/Hidráulica 4,0 (2 questões)",
+      "testemunho": "T-ORIENT",
+      "condicao": "registrado no escopo"
+    }
+  ],
+  "lacunas_de_fonte": [
+    "Apostila de Automação de Sistemas Navais (2ª Rev. 2024, cap. 3, seção 3.1) e Apostila Automação de Sistemas de Armas cap. 2 são citadas nos slides mas NÃO foram enviadas — o curso usa só os slides.",
+    "SOPA 2025: Figuras 1, 2, 3 e 4 não aparecem nas fotos; associação às figuras dos slides é inferência.",
+    "Vídeos: áudio não transcrito; conteúdo visual amostrado não acrescenta conceito novo.",
+    "Slides 25-28 de E1/E6 sem texto (figuras) — conteúdo capturado por leitura visual."
+  ],
+  "divergencias_internas": [
+    {
+      "id": "D-01",
+      "descricao": "Nomenclatura da chave Y-Δ muda entre figuras: E6 p30-34 (e SOPA 2025) K2 = triângulo, K3 = estrela; E6 p25-28 e E7 p15-17 KM2 = estrela, KM3 = triângulo.",
+      "tratamento": "Não é conflito de conteúdo; é o alerta do professor ('cuidado com a posição da bobina triângulo e bobina estrela'). Ensinado explicitamente; toda questão indica a figura."
+    },
+    {
+      "id": "D-02",
+      "descricao": "Contatos auxiliares NF numerados 21-22 (E1 s52-53) e 11-12 (E7 p9-13).",
+      "tratamento": "Ambos terminam em 1-2 (regra de E1 s39). Ensinado como regra de final 1-2/3-4."
+    },
+    {
+      "id": "D-03",
+      "descricao": "E7 p9 rotula S1 'gira esquerda' e S2 'gira direita', mas p11/p13 dizem 'sentido, por hipótese, horário' para K1.",
+      "tratamento": "[POSSÍVEL ERRO NA FONTE] — nenhuma questão cobra esquerda/direita desse circuito."
+    },
+    {
+      "id": "D-04",
+      "descricao": "H1 s39: 'a válvula se abre e retorna o óleo ao laboratório'.",
+      "tratamento": "[POSSÍVEL ERRO NA FONTE] — a figura do mesmo slide mostra o retorno ao reservatório; ensinado como reservatório com a marcação."
+    },
+    {
+      "id": "D-05",
+      "descricao": "SOPA 4.3b: resposta registrada diz 'óleo a BP estará na câmara dianteira' duas vezes.",
+      "tratamento": "Erro de digitação da resposta registrada; correto: BP na câmara traseira no recuo."
+    },
+    {
+      "id": "D-06",
+      "descricao": "SOPA 3.4c: resposta 'controle de velocidade no recuo (pela válvula V2)' enquanto 3.4b chama V2 de VCD 3/2.",
+      "tratamento": "[PONTO DE INCERTEZA] sem a Figura 4; o curso ensina: quem controla a velocidade é a válvula de controle de fluxo unidirecional (P1 s59-61)."
+    },
+    {
+      "id": "D-07",
+      "descricao": "P1 s14: a diagonal Produção/Consumo deixa filtro, regulador e lubrificador do lado da produção; P1 s15/s21 colocam a FRL como item 3 do consumo.",
+      "tratamento": "Ensinado como divergência; questões usam a classificação textual do s21 (consumo)."
+    },
+    {
+      "id": "D-08",
+      "descricao": "H1 s5 associa deslocamento variável a não-positivo e diz que todas as bombas estudadas são de deslocamento positivo, mas s13/s18/s24/s27 falam em capacidade ajustável/variável e símbolos de deslocamento variável.",
+      "tratamento": "[PONTO DE INCERTEZA]; nenhuma questão cobra a conciliação."
+    },
+    {
+      "id": "D-09",
+      "descricao": "E7 p26: 'S0 é possível a partida' (digitação de 'Só é possível').",
+      "tratamento": "Ensinado com a correção."
+    },
+    {
+      "id": "D-10",
+      "descricao": "E1 s33-s36: desenho do contator com (1)-(2), (3)-(4) NA e (5)-(6) NF; E1 s37 usa 1-2/3-4/5-6 para contatos principais.",
+      "tratamento": "Nomenclatura de figura; cobra-se a regra do s37/s39."
+    },
+    {
+      "id": "D-11",
+      "descricao": "E1 s18 põe a proteção contra sobrecarga antes do dispositivo de manobra; nos circuitos E1 s47/s48 o relé térmico F2 fica depois de K1.",
+      "tratamento": "Aviso de confusão provável; não cobrado como ordem física."
+    },
+    {
+      "id": "D-12",
+      "descricao": "E6 p33 cita 'relé temporizado KT1' enquanto a figura E6 p30 rotula T1.",
+      "tratamento": "Ensinado T1 na figura K1/K2/K3."
+    },
+    {
+      "id": "D-13",
+      "descricao": "Circuitos de potência KM: 440 VCA/60 Hz (E6 p28) e 60 Hz 400 V (E7 p15).",
+      "tratamento": "Cada figura com sua tensão; não cobrado."
+    },
+    {
+      "id": "D-14",
+      "descricao": "H1 s18 (figura) usa 'tambor' e 'placa guia'; H1 s21-s22 (texto) usa 'rotor' e 'prato fixo'.",
+      "tratamento": "Correspondência como [INFERÊNCIA PEDAGÓGICA]; não cobrada."
+    },
+    {
+      "id": "D-15",
+      "descricao": "H1 s47: no desenho m1 fica junto à ponta da haste recuada e m2 afastado; o texto não descreve a função de cada fim de curso.",
+      "tratamento": "[PONTO DE INCERTEZA]; função/posição de m1/m2 do circuito 4 não é cobrada."
+    }
+  ]
+}

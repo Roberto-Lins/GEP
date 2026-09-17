@@ -1,0 +1,694 @@
+---
+titulo: "Elementos de comandos elétricos — aula"
+secao: "aula"
+secaoOrdem: 1
+---
+
+# MÓDULO M02 — Elementos de comandos elétricos
+
+> Fontes: ‹E1 s13–s24› · ‹E1 s43, s46› · ‹E1 s50 (antecipação)› · ‹E4› · Tempo de leitura: ~19 min
+
+**Você vai precisar saber:**
+- Nomear os dois objetivos dos elementos de um painel e distinguir circuito de comando e circuito de potência, com os limites de corrente e tensão.
+- Explicar contato NA e NF e prever o estado da carga nas quatro associações (NA/NF em série e em paralelo).
+- Ordenar os dispositivos entre a rede elétrica e o motor e dar a função de cada um.
+- Comparar fusível, disjuntor e relé térmico (o que protegem, religação, bimetal, contatos 95-96/97-98).
+- Identificar na figura a botoeira, os símbolos de comandos elétricos e as letras de identificação.
+
+## Bloco B1 — Painel elétrico: objetivos e os dois circuitos
+
+‹fonte: E1 s13–s14; E4›
+
+**‹C015› Objetivos principais dos elementos em um painel elétrico** ‹fonte: E1 s13›:
+a) **proteger o operador** e
+b) **propiciar uma lógica de comando**.
+
+**Dois circuitos** ‹fonte: E1 s14; E4›
+
+| | ‹C016› **Circuito de comando** | ‹C017› **Circuito de potência** |
+|---|---|---|
+| Definição | Circuito de **interface com o operador** da máquina (ou dispositivo) | Circuito onde se encontram as **cargas a serem acionadas** |
+| Exemplos (E4) | — | Motores, resistências de aquecimento, entre outras |
+| Corrente e tensão (E4) | **Baixas correntes (i ≤ 10 A)** e/ou **baixas tensões (Vac ≤ 220 V)** | Correntes de **10 A ou mais**; tensões de **até 760 V** |
+
+**‹C018› Prioridades da divisão** ‹fonte: E4› — Os circuitos de manobra são divididos em "comando" e "potência", possibilitando **em primeiro lugar a segurança do operador** e **em segundo a automação** do circuito. A partida direta de motor de indução trifásico é o método de partida **mais simples**, sem **dispositivos especiais** de acionamento do motor.
+
+### Exemplos práticos e confusões prováveis
+- ‹C016›/‹C017› Na partida direta (E1 s48, M04), as botoeiras S0 e S1 estão no desenho "COMANDO" e o motor M1 no desenho "POTÊNCIA" (V033).
+- ⚠️ ‹C016›/‹C017› "i ≤ 10 A e/ou Vac ≤ 220 V" = comando; "10 A ou mais, até 760 V" = potência. Não troque 220 V por 760 V.
+- ⚠️ ‹C018› Ordem de prioridade: 1º segurança do operador, 2º automação.
+- ‹C015› [INFERÊNCIA PEDAGÓGICA] Os dois objetivos do painel (proteger o operador; lógica de comando) correspondem às duas prioridades do E4 (segurança do operador; automação).
+
+### Questões — bloco B1
+
+**Questão 1** · 0,6 pt
+
+Com relação aos elementos de um painel elétrico e à divisão entre circuito de comando e circuito de potência, marque V ou F.
+
+( ) 1. Os objetivos principais dos elementos em um painel elétrico são proteger o operador e propiciar uma lógica de comando.  
+( ) 2. O circuito de potência é o circuito de interface com o operador da máquina.  
+( ) 3. O motor a ser acionado fica no circuito de comando, pois é ele que o operador liga e desliga.  
+( ) 4. Resistências de aquecimento são exemplos de cargas do circuito de potência.  
+( ) 5. A divisão dos circuitos de manobra em comando e potência possibilita, em primeiro lugar, a automação do circuito e, em segundo, a segurança do operador.  
+( ) 6. A partida direta de motor de indução trifásico é o método de partida mais simples, sem dispositivos especiais de acionamento do motor.  
+
+**Questão 2** · 0,5 pt
+
+Associe cada característica ao circuito de um painel elétrico a que ela se refere.
+
+**Coluna A**
+
+- (1) Circuito de comando
+- (2) Circuito de potência
+
+**Coluna B**
+
+- ( ) Pode atingir tensões de até 760 V
+- ( ) Circuito de interface com o operador da máquina ou dispositivo
+- ( ) Nele podem circular correntes elétricas de 10 A ou mais
+- ( ) Trabalha com baixas correntes (i ≤ 10 A) e/ou baixas tensões (Vac ≤ 220 V)
+- ( ) Circuito onde se encontram as cargas a serem acionadas
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q1 — V-F-F-V-F-V**
+  - 2. F — Correção: o circuito de interface com o operador é o de comando; o de potência é onde se encontram as cargas a serem acionadas (E1 s14).
+  - 3. F — Correção: o motor é carga e fica no circuito de potência (E1 s14; E4).
+  - 5. F — Correção: em primeiro lugar a segurança do operador e em segundo a automação (E4).
+- **Q2 — 2-1-2-1-2** E1 s14 e E4: comando = interface com o operador, i ≤ 10 A e/ou Vac ≤ 220 V; potência = cargas, 10 A ou mais, até 760 V.
+
+</details>
+
+
+## Bloco B2 — Contatos NA e NF e suas associações
+
+‹fonte: E1 s15–s17›
+
+**‹C019› Contato normalmente aberto (NA)** — **Não há** passagem de corrente elétrica **em repouso**. Figura (a): contato aberto em série com a carga.
+
+**‹C020› Contato normalmente fechado (NF)** — **Há** passagem de corrente elétrica **em repouso**. Figura (b): contato fechado em série com a carga.
+
+![Contatos NA e NF](/imagens/cursos/fas-t2/conteudo/E1-15-na-nf.webp)
+*Figura — (a) contato NA; (b) contato NF ‹fonte: E1 s15›*
+
+**Associações** — dois contatos E1 e E2 entre Fase e Neutro alimentando a carga; (a) em série, (b) em paralelo. Estado da carga nas linhas das tabelas, na ordem E1/E2 = repouso/repouso · repouso/acionado · acionado/repouso · acionado/acionado:
+
+| Associação | Regra | Carga nas 4 linhas |
+|---|---|---|
+| ‹C021› **NA em série** (Tab. 1.1) | Carga só ligada com **os dois contatos acionados** | desligada · desligada · desligada · **ligada** |
+| ‹C022› **NA em paralelo** (Tab. 1.2) | Carga ligada se **qualquer um** for acionado | desligada · ligada · ligada · ligada |
+| ‹C023› **NF em série** (Tab. 1.3) | Carga ligada **só com os dois em repouso**; basta acionar um para desligar | **ligada** · desligada · desligada · desligada |
+| ‹C024› **NF em paralelo** (Tab. 1.4) | Carga **só desligada com os dois acionados** | ligada · ligada · ligada · **desligada** |
+
+![Associação de contatos NA](/imagens/cursos/fas-t2/conteudo/E1-16-assoc-na.webp)
+*Figura — Associação em série (a) e em paralelo (b) de contatos NA ‹fonte: E1 s16›*
+
+![Associação de contatos NF](/imagens/cursos/fas-t2/conteudo/E1-17-assoc-nf.webp)
+*Figura — Associação em série (a) e em paralelo (b) de contatos NF ‹fonte: E1 s17›*
+
+### Exemplos práticos e confusões prováveis
+- ‹C019›/‹C020› Pergunte sempre "o que acontece em repouso?": NA → não passa corrente; NF → passa.
+- ‹C021› Dois NA em série: a carga exige E1 **e** E2 acionados.
+- ‹C022› Dois NA em paralelo: basta E1 **ou** E2 acionado.
+- ‹C023› Dois NF em série: acionar **qualquer um** desliga a carga.
+- ‹C024› Dois NF em paralelo: a carga só desliga com **os dois** acionados.
+- ⚠️ [INFERÊNCIA PEDAGÓGICA] NA em série e NF em paralelo só mudam a carga na última linha (acionado/acionado). Na prova a coluna CARGA pode vir em branco.
+
+### Questões — bloco B2
+
+**Questão 3** · 0,6 pt
+
+Com relação aos contatos NA e NF e às suas associações, marque V ou F.
+
+( ) 1. Em um contato normalmente aberto (NA), não há passagem de corrente elétrica em repouso.  
+( ) 2. Em um contato normalmente fechado (NF), a corrente elétrica só passa quando o contato é acionado.  
+( ) 3. Na associação em série de dois contatos NA, a carga é ligada se qualquer um dos contatos for acionado.  
+( ) 4. Na associação em paralelo de dois contatos NA, a carga só fica desligada quando os dois contatos estão em repouso.  
+( ) 5. Na associação em série de dois contatos NF, basta acionar um dos contatos para desligar a carga.  
+( ) 6. Na associação em paralelo de dois contatos NF, a carga é desligada quando qualquer um dos contatos é acionado.  
+
+**Questão 4** · 0,8 pt
+
+![Figura da questão 4](/imagens/cursos/fas-t2/conteudo/Q-E1-16-assoc-na.webp)
+
+A Figura mostra a associação em série (a) e em paralelo (b) de dois contatos NA, E1 e E2, com a coluna CARGA das tabelas em branco. Indique, para cada linha, se a carga está ligada ou desligada (0,1 cada).
+
+- Tab. 1.1 (série), linha 1: E1 repouso, E2 repouso (0,1)
+- Tab. 1.1 (série), linha 2: E1 repouso, E2 acionado (0,1)
+- Tab. 1.1 (série), linha 3: E1 acionado, E2 repouso (0,1)
+- Tab. 1.1 (série), linha 4: E1 acionado, E2 acionado (0,1)
+- Tab. 1.2 (paralelo), linha 1: E1 repouso, E2 repouso (0,1)
+- Tab. 1.2 (paralelo), linha 2: E1 repouso, E2 acionado (0,1)
+- Tab. 1.2 (paralelo), linha 3: E1 acionado, E2 repouso (0,1)
+- Tab. 1.2 (paralelo), linha 4: E1 acionado, E2 acionado (0,1)
+
+**Questão 5** · 0,8 pt
+
+![Figura da questão 5](/imagens/cursos/fas-t2/conteudo/Q-E1-17-assoc-nf.webp)
+
+Considere a Figura (associação de dois contatos NF, coluna CARGA em branco). Associe cada situação ao estado da carga.
+
+**Coluna A**
+
+- (1) Carga ligada
+- (2) Carga desligada
+
+**Coluna B**
+
+- ( ) NF em paralelo, com os dois contatos acionados
+- ( ) NF em série, com os dois contatos em repouso
+- ( ) NF em paralelo, com apenas E2 acionado
+- ( ) NF em série, com apenas E1 acionado
+- ( ) NF em paralelo, com os dois contatos em repouso
+- ( ) NF em série, com os dois contatos acionados
+- ( ) NF em paralelo, com apenas E1 acionado
+- ( ) NF em série, com apenas E2 acionado
+
+**Questão 6** · 0,2 pt
+
+Deseja-se que uma carga permaneça ligada e só seja desligada quando dois contatos, E1 e E2, estiverem acionados ao mesmo tempo. Com relação à associação que atende a essa condição, marque (X) a única correta.
+
+(A) Dois contatos NF associados em série, pois nessa ligação a carga só é desligada com os dois contatos acionados.  
+(B) Dois contatos NA associados em série.  
+(C) Dois contatos NA associados em paralelo.  
+(D) Dois contatos NF associados em paralelo.  
+(E) Dois contatos NF associados em série.  
+
+**Questão 7** · 1,1 pt
+
+Em uma bancada de treinamento, uma carga é alimentada entre Fase e Neutro por dois contatos, E1 e E2, instalados em dois pontos de operação diferentes, como nas associações vistas em aula. Responda objetivamente.
+
+- a) Os contatos E1 e E2 são acionados pelos operadores e o circuito trabalha com i ≤ 10 A e Vac ≤ 220 V. Esse circuito é de comando ou de potência? Justifique pela definição. (0,2)
+- b) Deseja-se que a carga só seja ligada quando os dois operadores acionarem E1 e E2 simultaneamente. Que tipo de contato e que associação devem ser usados? (0,2)
+- c) Deseja-se agora que a carga fique ligada em repouso e seja desligada quando qualquer um dos operadores acionar o seu contato. Que tipo de contato e que associação devem ser usados? (0,2)
+- d) Com dois contatos NA em paralelo, qual é o estado da carga se apenas E1 for acionado? (0,1)
+- e) Com dois contatos NF em paralelo, qual é o estado da carga se apenas E1 for acionado? E se E2 também for acionado? (0,2)
+- f) As cargas acionadas por esse painel, como motores, ficam em qual circuito, e até que tensão ele pode atingir? (0,2)
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q3 — V-F-F-V-V-F**
+  - 2. F — Correção: no NF há passagem de corrente elétrica em repouso (E1 s15).
+  - 3. F — Correção: em série, a carga só é ligada com os dois contatos acionados; 'qualquer um' é a associação em paralelo (E1 s16, Tab. 1.1).
+  - 6. F — Correção: em paralelo NF a carga só é desligada com os dois contatos acionados (E1 s17, Tab. 1.4).
+- **Q4**
+  - • desligada
+  - • desligada
+  - • desligada
+  - • ligada
+  - • desligada
+  - • ligada
+  - • ligada
+  - • ligada
+- **Q5 — 2-1-1-2-1-2-1-2** Tabelas 1.3 e 1.4 de E1 s17: NF em série só fica ligada com os dois em repouso; NF em paralelo só desliga com os dois acionados.
+- **Q6 — D.** E1 s17, Tab. 1.4: NF em paralelo — a carga só é desligada com os dois contatos acionados.
+- **Q7**
+  - a) Circuito de comando: é o circuito de interface com o operador e trabalha com baixas correntes (i ≤ 10 A) e/ou baixas tensões (Vac ≤ 220 V).
+  - b) Dois contatos NA em série.
+  - c) Dois contatos NF em série.
+  - d) Ligada.
+  - e) Ligada; desligada.
+  - f) Circuito de potência; tensões de até 760 V.
+
+</details>
+
+
+## Bloco B3 — Dispositivos entre a rede elétrica e o motor
+
+‹fonte: E1 s18›
+
+**‹C025› Sequência da figura** — REDE ELÉTRICA → SECCIONAMENTO → PROTEÇÃO CONTRA CURTO-CIRCUITO → PROTEÇÃO CONTRA SOBRECARGA → DISPOSITIVO DE MANOBRA → MOTOR.
+
+- **‹C026› Seccionamento:** só pode ser operado **sem carga**. Usado durante a **manutenção**.
+- **‹C027› Proteção contra correntes de curto-circuito:** destina-se à proteção dos **condutores do circuito terminal**.
+- **‹C028› Proteção contra correntes de sobrecarga:** para proteger as **bobinas do enrolamento do motor**.
+- **‹C029› Dispositivos de manobra:** liga e desliga o motor de forma segura, ou seja, **sem que haja o contato do operador no circuito de potência**.
+
+![Dispositivos entre a rede e o motor](/imagens/cursos/fas-t2/conteudo/E1-18-cadeia-protecao.webp)
+*Figura — Dispositivos entre a rede elétrica e o motor ‹fonte: E1 s18›*
+
+### Exemplos práticos e confusões prováveis
+- ‹C025› [INFERÊNCIA PEDAGÓGICA] Mnemônico da ordem depois da rede: **S**eccionamento – **C**urto – **S**obrecarga – **M**anobra – motor.
+- ‹C026› Equipe vai fazer manutenção → abre-se o seccionamento, mas **sem carga**.
+- ⚠️ ‹C027›/‹C028› Curto-circuito → **condutores do circuito terminal**; sobrecarga → **bobinas do enrolamento do motor**. Trocar os alvos é o erro típico.
+- ⚠️ ‹C029› Quem liga e desliga o motor é o dispositivo de manobra; a segurança está em o operador **não ter contato com o circuito de potência** (ele atua no comando, B1).
+
+### Questões — bloco B3
+
+**Questão 8** · 1,1 pt
+
+![Figura da questão 8](/imagens/cursos/fas-t2/conteudo/Q-E1-18-cadeia.webp)
+
+Considere a Figura, que representa os dispositivos entre a rede elétrica e o motor. Responda aos itens.
+
+- Nomeie o elemento 1. (0,1)
+- Nomeie o elemento 2. (0,1)
+- Nomeie o elemento 3. (0,1)
+- Nomeie o elemento 4. (0,1)
+- Nomeie o elemento 5. (0,1)
+- Nomeie o elemento 6. (0,1)
+- Qual número corresponde ao dispositivo que só pode ser operado sem carga, e em que ocasião ele é usado? (0,2)
+- Qual número protege os condutores do circuito terminal? (0,1)
+- Qual número protege as bobinas do enrolamento do motor? (0,1)
+- Qual número liga e desliga o motor de forma segura, sem contato do operador no circuito de potência? (0,1)
+
+**Questão 9** · 0,5 pt
+
+Com relação aos dispositivos instalados entre a rede elétrica e o motor, marque V ou F.
+
+( ) 1. No sentido da rede para o motor, a proteção contra curto-circuito vem antes da proteção contra sobrecarga.  
+( ) 2. O dispositivo de manobra fica logo após o seccionamento, antes dos dispositivos de proteção.  
+( ) 3. O seccionamento pode ser operado com carga e é usado para ligar e desligar o motor durante a operação normal.  
+( ) 4. A proteção contra correntes de curto-circuito destina-se à proteção das bobinas do enrolamento do motor.  
+( ) 5. O dispositivo de manobra liga e desliga o motor de forma segura, ou seja, sem que haja o contato do operador no circuito de potência.  
+
+**Questão 10** · 0,4 pt
+
+Os dispositivos entre a rede elétrica e o motor estão descritos abaixo apenas pela sua função, fora de ordem. (A) Protege as bobinas do enrolamento do motor. (B) Só pode ser operado sem carga e é usado durante a manutenção. (C) Liga e desliga o motor sem que haja contato do operador no circuito de potência. (D) Protege os condutores do circuito terminal.
+
+- Escreva a sequência das letras, do dispositivo mais próximo da rede elétrica ao mais próximo do motor. (0,4)
+
+**Questão 11** · 0,7 pt
+
+Responda objetivamente sobre a proteção do operador em comandos elétricos.
+
+- a) Quais são os dois objetivos principais dos elementos em um painel elétrico? (0,2)
+- b) Segundo o exercício de partida direta, o que possibilita a divisão dos circuitos de manobra em comando e potência, e em que ordem? (0,2)
+- c) Explique onde o operador atua e qual dispositivo, na cadeia entre a rede e o motor, garante que ele não tenha contato com o circuito de potência. (0,3)
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q8**
+  - • Rede elétrica.
+  - • Seccionamento.
+  - • Proteção contra curto-circuito.
+  - • Proteção contra sobrecarga.
+  - • Dispositivo de manobra.
+  - • Motor.
+  - • 2 (seccionamento); usado durante a manutenção.
+  - • 3 (proteção contra correntes de curto-circuito).
+  - • 4 (proteção contra correntes de sobrecarga).
+  - • 5 (dispositivo de manobra).
+- **Q9 — V-F-F-F-V**
+  - 2. F — Correção: rede → seccionamento → proteção contra curto-circuito → proteção contra sobrecarga → dispositivo de manobra → motor (E1 s18).
+  - 3. F — Correção: o seccionamento só pode ser operado sem carga e é usado durante a manutenção; quem liga e desliga o motor é o dispositivo de manobra (E1 s18).
+  - 4. F — Correção: destina-se à proteção dos condutores do circuito terminal; as bobinas do enrolamento são protegidas pela proteção contra sobrecarga (E1 s18).
+- **Q10**
+  - • B – D – A – C (seccionamento → curto-circuito → sobrecarga → manobra).
+- **Q11**
+  - a) Proteger o operador e propiciar uma lógica de comando.
+  - b) Possibilita, em primeiro lugar, a segurança do operador e, em segundo, a automação do circuito.
+  - c) O operador atua no circuito de comando (circuito de interface com o operador, de baixas correntes e/ou tensões); o dispositivo de manobra liga e desliga o motor de forma segura, sem que haja o contato do operador no circuito de potência, onde estão as cargas.
+
+</details>
+
+
+## Bloco B4 — Fusíveis, disjuntores e relé térmico
+
+‹fonte: E1 s19–s22; E1 s43; E1 s50›
+
+**‹C030› Fusíveis** — são elementos que se destinam à proteção contra **correntes de curto-circuito ou sobrecargas de longa duração** (s19). Devem ser **substituídos antes de uma nova operação** (s21).
+
+**‹C031› Disjuntores** — proteção do circuito contra **correntes de curto-circuito**. **Quando há o elemento térmico**, os disjuntores também podem se destinar à proteção contra **correntes de sobrecarga** (s20; na tabela de símbolos s43 há o disjuntor só com elemento magnético e o com elementos térmicos e magnéticos).
+
+**‹C032› Vantagem dos disjuntores** — permitem a **re-ligação do sistema** após a ocorrência da elevação da corrente, enquanto os fusíveis devem ser **substituídos** antes de uma nova operação (s21).
+
+**‹C033› Relé térmico ou de sobrecarga** (s22)
+- Construído para proteger atuando pelo **efeito térmico** provocado pela corrente elétrica.
+- Elemento básico: o **"bimetal"**.
+- Na foto do slide: contatos **95-96 (NC = NF)** e **97-98 (NO = NA)** (nomenclatura da foto).
+- **Atuação** (E1 s50 — circuito completo no M04): o relé térmico bimetálico F2, **do circuito de potência**, atua ao **abrir o contato NF 95-96, no circuito de comando**, em função do aquecimento devido à corrente de sobrecarga. Isso desenergiza a bobina do contator, que abre os seus contatos principais e interrompe a alimentação do motor.
+
+| Dispositivo | Protege contra | Após atuar |
+|---|---|---|
+| Fusível | Curto-circuito ou sobrecargas de longa duração | Deve ser substituído |
+| Disjuntor (só elemento magnético) | Curto-circuito | Permite religação |
+| Disjuntor com elementos térmicos e magnéticos | Curto-circuito e sobrecarga | Permite religação |
+| Relé térmico (de sobrecarga) | Atua pelo efeito térmico (bimetal) da corrente — sobrecarga | Abre o NF 95-96 no comando |
+
+![Relé térmico](/imagens/cursos/fas-t2/conteudo/E1-22-rele-termico.webp)
+*Figura — Relé térmico ou de sobrecarga (contatos 95-96 NC e 97-98 NO) ‹fonte: E1 s22›*
+
+### Exemplos práticos e confusões prováveis
+- ‹C030› Houve curto-circuito e o fusível atuou → ele precisa ser **substituído** antes de operar de novo.
+- ‹C031›/‹C032› Com disjuntor, após a elevação da corrente é possível **religar** o sistema.
+- ⚠️ ‹C031› O disjuntor só protege contra sobrecarga **quando há o elemento térmico**.
+- ⚠️ ‹C033› O bimetal **não corta o motor diretamente**: abre o **NF 95-96**, que está no **circuito de comando** (V005).
+- ⚠️ ‹C033› 95-96 = NF (NC na foto); 97-98 = NA (NO na foto).
+- ⚠️ ‹C030›/‹C032› "Religação" é vantagem do **disjuntor**, nunca do fusível (V006).
+
+### Questões — bloco B4
+
+**Questão 12** · 0,6 pt
+
+Associe cada dispositivo de proteção à característica correspondente.
+
+**Coluna A**
+
+- (1) Fusível
+- (2) Disjuntor com elemento magnético
+- (3) Disjuntor com elementos térmicos e magnéticos
+- (4) Relé térmico (de sobrecarga)
+
+**Coluna B**
+
+- ( ) Atua pelo efeito térmico provocado pela corrente elétrica, tendo o bimetal como elemento básico
+- ( ) Protege contra correntes de curto-circuito ou sobrecargas de longa duração
+- ( ) Protege contra correntes de curto e sobrecarga e permite a religação do sistema
+- ( ) Deve ser substituído antes de uma nova operação
+- ( ) Possui contato NF 95-96 e contato NA 97-98
+- ( ) Protege apenas contra corrente de curto-circuito e permite a religação do sistema
+
+**Questão 13** · 0,5 pt
+
+Com relação aos fusíveis, disjuntores e relés térmicos, marque V ou F.
+
+( ) 1. Os fusíveis permitem a re-ligação do sistema após a ocorrência da elevação da corrente.  
+( ) 2. Os fusíveis destinam-se apenas à proteção contra curto-circuito, não atuando em sobrecargas.  
+( ) 3. Quando há o elemento térmico, os disjuntores também podem se destinar à proteção contra correntes de sobrecarga.  
+( ) 4. O relé térmico, também chamado de relé de sobrecarga, tem como elemento básico uma bobina que atua por efeito magnético.  
+( ) 5. Ao atuar por sobrecarga, o bimetal do relé térmico abre diretamente os contatos principais que alimentam o motor, sem atuar no circuito de comando.  
+
+**Questão 14** · 0,2 pt
+
+Com referência à vantagem dos disjuntores em relação aos fusíveis, marque (X) a única correta.
+
+(A) Os disjuntores permitem a re-ligação do sistema após a elevação da corrente, enquanto os fusíveis devem ser substituídos antes de uma nova operação.  
+(B) Os fusíveis permitem a re-ligação do sistema após a elevação da corrente, enquanto os disjuntores devem ser substituídos antes de uma nova operação.  
+(C) Os disjuntores só podem ser operados sem carga, sendo usados durante a manutenção.  
+(D) Os disjuntores atuam pelo efeito térmico do bimetal, dispensando a proteção contra curto-circuito.  
+(E) Os disjuntores ligam e desligam o motor sem que haja contato do operador no circuito de potência.  
+
+**Questão 15** · 0,6 pt
+
+Descreva o funcionamento do relé térmico (relé de sobrecarga), respondendo aos itens.
+
+- a) Em que efeito se baseia a sua atuação e qual é o seu elemento básico? (0,2)
+- b) Como proteção contra correntes de sobrecarga, o que ele protege? (0,1)
+- c) O relé térmico F2 fica no circuito de potência. Quando a corrente de sobrecarga provoca aquecimento, que contato ele abre (tipo e numeração) e em qual circuito esse contato está ligado? (0,3)
+
+**Questão 16** · 1,2 pt
+
+O motor elétrico de uma bomba dos tanques de lastro de controle será alimentado a partir da rede elétrica. O plano do painel prevê: seccionamento; fusíveis como proteção contra curto-circuito; relé térmico como proteção contra sobrecarga; e um dispositivo de manobra. Responda objetivamente.
+
+- a) Escreva a sequência completa de dispositivos, da rede elétrica até o motor, indicando onde entram os fusíveis e o relé térmico do plano. (0,3)
+- b) Para a manutenção, a equipe vai operar o seccionamento. Em que condição isso é permitido? (0,1)
+- c) Ocorre um curto-circuito e os fusíveis atuam. O que essa proteção preserva e o que deve ser feito antes de uma nova operação? (0,2)
+- d) Se os fusíveis fossem trocados por um disjuntor, qual seria a vantagem? Que elemento esse disjuntor precisaria ter para também proteger contra sobrecarga? (0,3)
+- e) O motor passa a operar com corrente de sobrecarga. Qual dispositivo do plano atua, o que ele protege e qual é o seu elemento básico? (0,3)
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q12 — 4-1-3-1-4-2** E1 s19–s22 e tabela de símbolos s43.
+- **Q13 — F-F-V-F-F**
+  - 1. F — Correção: são os disjuntores que permitem a re-ligação; os fusíveis devem ser substituídos antes de uma nova operação (E1 s21).
+  - 2. F — Correção: destinam-se à proteção contra correntes de curto-circuito ou sobrecargas de longa duração (E1 s19).
+  - 4. F — Correção: atua pelo efeito térmico provocado pela corrente, e seu elemento básico é o bimetal (E1 s22).
+  - 5. F — Correção: o relé térmico do circuito de potência atua abrindo o contato NF 95-96, que está no circuito de comando (E1 s50).
+- **Q14 — A.** E1 s21: a vantagem dos disjuntores é permitir a re-ligação após a elevação da corrente; os fusíveis devem ser substituídos.
+- **Q15**
+  - a) Atua pelo efeito térmico provocado pela corrente elétrica; o elemento básico é o bimetal.
+  - b) As bobinas do enrolamento do motor.
+  - c) Abre o contato NF 95-96, que está ligado no circuito de comando.
+- **Q16**
+  - a) Rede elétrica → seccionamento → proteção contra curto-circuito (fusíveis) → proteção contra sobrecarga (relé térmico) → dispositivo de manobra → motor.
+  - b) Somente sem carga.
+  - c) Protege os condutores do circuito terminal; os fusíveis devem ser substituídos antes de uma nova operação.
+  - d) Permitiria a re-ligação do sistema após a elevação da corrente; precisaria ter o elemento térmico.
+  - e) O relé térmico (de sobrecarga); protege as bobinas do enrolamento do motor; elemento básico: bimetal.
+
+</details>
+
+
+## Bloco B5 — Botoeira e chave fim de curso
+
+‹fonte: E1 s23–s24; E1 s43; E1 s46›
+
+**‹C034› Botoeira ou botão de comando** — esquema de um botão de comando (a):
+1. **Acionamento** (seta sobre a cabeça do botão);
+2. **Mola de retorno**;
+3. **Contato NF (DESLIGA)** — o par de cima;
+4. **Contato NA (LIGA)** — o par de baixo.
+
+Exemplos de botão de comando (b): **sem retenção** e **com retenção**. Na tabela de símbolos (s43) aparecem botoeira NA, botoeira NF, botoeira NA com retorno por mola e botoeira NF com retorno por mola. Nos circuitos das aulas seguintes (E7), as botoeiras de partida e parada aparecem como "chaves de impulso sem retenção".
+
+[INFERÊNCIA PEDAGÓGICA — esquema lido com as definições do B2] Ao pressionar, o NF abre e o NA fecha; a mola de retorno devolve o botão ao repouso.
+
+![Botoeira](/imagens/cursos/fas-t2/conteudo/E1-23-botoeira.webp)
+*Figura — (a) esquema de um botão de comando; (b) exemplos sem retenção e com retenção ‹fonte: E1 s23›*
+
+**‹C035› Chave fim de curso** — o slide s24 mostra fotos de diversos modelos de chave fim de curso. Na tabela de letras (s46) ela está na letra **S** — "dispositivos de manobra, seletores auxiliares": dispositivos e botões de comando e **de posição (fim-de-curso)** e seletores.
+
+### Exemplos práticos e confusões prováveis
+- ‹C034› Contato de cima = NF = **desliga**; contato de baixo = NA = **liga**.
+- ⚠️ ‹C034› A **mola de retorno** é peça do esquema; "sem retenção" e "com retenção" são os dois grupos de exemplos da parte (b).
+- ‹C035› Fim de curso é dispositivo "de posição" e recebe a mesma letra dos botões de comando: **S**.
+
+### Questões — bloco B5
+
+**Questão 17** · 0,7 pt
+
+![Figura da questão 17](/imagens/cursos/fas-t2/conteudo/Q-E1-23-botoeira.webp)
+
+A Figura mostra o esquema de um botão de comando (botoeira) com as indicações numeradas. Responda.
+
+- Nomeie o elemento 1. (0,1)
+- Nomeie o elemento 2. (0,1)
+- Nomeie o elemento 3 e dê a sua função (liga ou desliga). (0,1)
+- Nomeie o elemento 4 e dê a sua função (liga ou desliga). (0,1)
+- Com o botão em repouso, por qual dos contatos, 3 ou 4, há passagem de corrente elétrica? (0,1)
+- Ao pressionar o elemento 1, o que ocorre com os contatos 3 e 4? E ao soltar? (0,2)
+
+**Questão 18** · 0,5 pt
+
+Com relação à botoeira (botão de comando) e à chave fim de curso, marque V ou F.
+
+( ) 1. Os exemplos de botão de comando apresentados em aula dividem-se em botões sem retenção e com retenção.  
+( ) 2. No esquema de um botão de comando, a mola de retorno é o elemento que mantém o botão travado na posição acionada.  
+( ) 3. A tabela de símbolos apresenta botoeira NA com retorno por mola e botoeira NF com retorno por mola.  
+( ) 4. No esquema de um botão de comando, o contato NA tem a função de desligar e o contato NF a de ligar.  
+( ) 5. A chave fim de curso é identificada pela letra H, própria dos dispositivos de posição.  
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q17**
+  - • Acionamento.
+  - • Mola de retorno.
+  - • Contato NF — desliga.
+  - • Contato NA — liga.
+  - • Pelo contato 3 (NF), pois há passagem de corrente em repouso; no 4 (NA) não há.
+  - • Pressionando: o 3 (NF) abre e o 4 (NA) fecha. Ao soltar, a mola de retorno devolve o botão ao repouso (3 fechado, 4 aberto).
+- **Q18 — V-F-V-F-F**
+  - 2. F — Correção: é mola de retorno — devolve o botão ao repouso; a tabela de símbolos fala em botoeira 'com retorno por mola' (E1 s23, s43).
+  - 4. F — Correção: NF = desliga; NA = liga (E1 s23).
+  - 5. F — Correção: fim-de-curso é dispositivo de posição da letra S; H identifica os dispositivos de sinalização (E1 s46).
+
+</details>
+
+
+## Bloco B6 — Simbologia e letras de identificação
+
+‹fonte: E1 s43; E1 s46›
+
+**‹C036› Tabela de símbolos de comandos elétricos** (s43) — 16 descrições:
+
+| Coluna da esquerda | Coluna da direita |
+|---|---|
+| Botoeira NA | Botoeira NF |
+| Botoeira NA com retorno por mola | Botoeira NF com retorno por mola |
+| Contatos tripolares NA, ex.: contator de potência | Fusível |
+| Acionamento eletromagnético, ex.: bobina do contator | Contato normalmente aberto (NA) |
+| Relé térmico | Contato normalmente fechado (NF) |
+| Disjuntor com elementos térmicos e magnéticos, proteção contra correntes de curto e sobrecarga (Q1) | Acionamento temporizado na ligação |
+| Disjuntor com elemento magnético, proteção contra corrente de curto-circuito | Lâmpada / sinalização |
+| Transformador trifásico | Motor trifásico |
+
+![Símbolos de comandos elétricos](/imagens/cursos/fas-t2/conteudo/E1-43-simbolos.webp)
+*Figura — Tabela de símbolos ‹fonte: E1 s43›*
+
+**‹C037› Letras de identificação dos componentes** (s46):
+
+| Letra | Componente | Exemplos |
+|---|---|---|
+| **F** | Dispositivos de proteção | Fusíveis, pára-raios, disparadores, relés |
+| **H** | Dispositivos de sinalização | Indicadores acústicos e ópticos |
+| **K** | Contatores | Contatores de potência e auxiliares |
+| **M** | Motores | — |
+| **Q** | Dispositivos de manobra para circuitos de potência | Disjuntores, seccionadores, interruptores |
+| **S** | Dispositivos de manobra, seletores auxiliares | Dispositivos e botões de comando e de posição (fim-de-curso) e seletores |
+| **T** | Transformadores | De distribuição, de potência, de potencial, de corrente, autotransformadores |
+
+![Letras de identificação](/imagens/cursos/fas-t2/conteudo/E1-46-letras.webp)
+*Figura — Letras de identificação ‹fonte: E1 s46›*
+
+### Exemplos práticos e confusões prováveis
+- ‹C036› Leitura da figura: botoeira = contato com tracejado até o "E" (com triângulo = retorno por mola); bobina = retângulo; temporizado na ligação = retângulo com X na lateral; lâmpada = círculo com X; motor = círculo "M 3~".
+- ⚠️ ‹C036› Os dois disjuntores diferem pelo bloco inferior: com elementos **térmicos e magnéticos** (curto e sobrecarga) × só elemento **magnético** (curto-circuito).
+- ⚠️ ‹C037› **Relés** de proteção → **F**; **contatores** → **K**. Relé térmico recebe F (ex.: F2), não K.
+- ⚠️ ‹C037› **Disjuntores e seccionadores** → **Q**; **botões e fim-de-curso** → **S**; **sinalização** → **H** (não S).
+- ‹C037› Num painel: F1 fusíveis, Q1 disjuntor, K1 contator, F2 relé térmico, M1 motor, S0/S1 botoeiras, H1 lâmpada, T1 transformador.
+
+### Questões — bloco B6
+
+**Questão 19** · 1,6 pt
+
+![Figura da questão 19](/imagens/cursos/fas-t2/conteudo/Q-E1-43-simbolos.webp)
+
+Na tabela completa de comandos elétricos da Figura, identifique os dezesseis símbolos numerados de 1 a 16 (0,1 cada).
+
+- Símbolo 1 (0,1)
+- Símbolo 2 (0,1)
+- Símbolo 3 (0,1)
+- Símbolo 4 (0,1)
+- Símbolo 5 (0,1)
+- Símbolo 6 (0,1)
+- Símbolo 7 (0,1)
+- Símbolo 8 (0,1)
+- Símbolo 9 (0,1)
+- Símbolo 10 (0,1)
+- Símbolo 11 (0,1)
+- Símbolo 12 (0,1)
+- Símbolo 13 (0,1)
+- Símbolo 14 (0,1)
+- Símbolo 15 (0,1)
+- Símbolo 16 (0,1)
+
+**Questão 20** · 1 pt
+
+Associe cada componente ou exemplo à letra de identificação usada nos diagramas de comandos elétricos.
+
+**Coluna A**
+
+- (F) Dispositivos de proteção
+- (H) Dispositivos de sinalização
+- (K) Contatores
+- (M) Motores
+- (Q) Dispositivos de manobra para circuitos de potência
+- (S) Dispositivos de manobra, seletores auxiliares
+- (T) Transformadores
+
+**Coluna B**
+
+- ( ) Seccionadores
+- ( ) Indicadores acústicos e ópticos
+- ( ) Pára-raios
+- ( ) Chave fim-de-curso
+- ( ) Contatores de potência e auxiliares
+- ( ) Autotransformadores
+- ( ) Relés
+- ( ) Interruptores
+- ( ) Seletores
+- ( ) Disparadores
+
+**Questão 21** · 0,6 pt
+
+Com relação à simbologia e às letras de identificação dos componentes de comandos elétricos, marque V ou F.
+
+( ) 1. Na tabela de símbolos, o contator de potência é dado como exemplo de contatos tripolares NA.  
+( ) 2. O símbolo de acionamento eletromagnético tem como exemplo a bobina do contator.  
+( ) 3. O disjuntor com elemento magnético é representado como proteção contra correntes de curto-circuito e de sobrecarga.  
+( ) 4. A letra Q identifica dispositivos de manobra para circuitos de potência.  
+( ) 5. A letra S identifica os dispositivos de sinalização.  
+( ) 6. A letra K identifica os dispositivos de proteção.  
+
+**Questão 22** · 0,2 pt
+
+Em um diagrama de comandos elétricos, o relé térmico e o disjuntor recebem, respectivamente, as letras de identificação. Marque (X) a única correta.
+
+(A) K e Q.  
+(B) F e S.  
+(C) F e Q.  
+(D) K e F.  
+(E) Q e F.  
+
+**Questão 23** · 1,5 pt
+
+O diagrama do painel de uma bomba traz os componentes F1, Q1, K1, M1, S1, S2, H1 e T1. Sabe-se que S1 é uma botoeira NA e S2 uma botoeira NF, ambas com retorno por mola; F1 é um relé térmico; e Q1 é um disjuntor com elemento magnético. Responda objetivamente.
+
+- a) Indique o tipo de componente correspondente a cada uma das letras K, M, H e T do diagrama. (0,4)
+- b) Qual das botoeiras, S1 ou S2, tem a função de ligar e qual a de desligar? Com as duas em repouso, por qual delas há passagem de corrente? (0,3)
+- c) As botoeiras S1 e S2 e o motor M1 pertencem a qual circuito, comando ou potência? Justifique pelas definições. (0,3)
+- d) Q1 possui apenas elemento magnético. Contra o que ele protege? Ele protege M1 contra sobrecarga? (0,2)
+- e) Qual componente do painel protege as bobinas do enrolamento de M1 contra sobrecarga? Por que ele recebe a letra F, e não K? (0,3)
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q19**
+  - • Botoeira NA
+  - • Botoeira NA com retorno por mola
+  - • Contatos tripolares NA (ex.: contator de potência)
+  - • Acionamento eletromagnético (ex.: bobina do contator)
+  - • Relé térmico
+  - • Disjuntor com elementos térmicos e magnéticos (proteção contra correntes de curto e sobrecarga)
+  - • Disjuntor com elemento magnético (proteção contra corrente de curto-circuito)
+  - • Transformador trifásico
+  - • Botoeira NF
+  - • Botoeira NF com retorno por mola
+  - • Fusível
+  - • Contato normalmente aberto (NA)
+  - • Contato normalmente fechado (NF)
+  - • Acionamento temporizado na ligação
+  - • Lâmpada / sinalização
+  - • Motor trifásico
+- **Q20 — Q-H-F-S-K-T-F-Q-S-F (M não é usada)** Tabela de letras de identificação de E1 s46. A letra M (motores) não tem exemplo na tabela e fica sem par.
+- **Q21 — V-V-F-V-F-F**
+  - 3. F — Correção: o disjuntor com elemento magnético protege contra corrente de curto-circuito; o com elementos térmicos e magnéticos protege contra curto e sobrecarga (E1 s43).
+  - 5. F — Correção: sinalização é H; S identifica dispositivos de manobra, seletores auxiliares (E1 s46).
+  - 6. F — Correção: K identifica contatores; dispositivos de proteção são F (E1 s46).
+- **Q22 — C.** E1 s46: F = dispositivos de proteção (fusíveis, pára-raios, disparadores, relés); Q = dispositivos de manobra para circuitos de potência (disjuntores, seccionadores, interruptores).
+- **Q23**
+  - a) K: contatores; M: motores; H: dispositivos de sinalização; T: transformadores.
+  - b) S1 (NA) liga; S2 (NF) desliga; em repouso há passagem de corrente por S2 (NF).
+  - c) S1 e S2: circuito de comando (interface com o operador); M1: circuito de potência (onde se encontram as cargas a serem acionadas).
+  - d) Protege contra corrente de curto-circuito; não protege contra sobrecarga, pois só o disjuntor com elemento térmico se destina também à sobrecarga.
+  - e) O relé térmico F1; F identifica dispositivos de proteção (entre eles os relés), enquanto K identifica contatores.
+
+</details>
+
+
+## Revisão cumulativa
+
+### Questões — revisão cumulativa
+
+**Questão 24** · 0,6 pt
+
+Revisão cumulativa (M01 e M02). Marque V ou F.
+
+( ) 1. O motor CA trifásico, usado em bombas e compressores, exige inversor de frequência (VFD) para o controle de velocidade.  
+( ) 2. Na partida direta, o motor CA trifásico é ligado à rede por meio de tiristores (SCRs) que controlam gradualmente a tensão.  
+( ) 3. Com dois contatos NA em paralelo, a carga só é desligada quando os dois contatos estão acionados.  
+( ) 4. O seccionamento, por só poder ser operado sem carga, é usado durante a manutenção.  
+( ) 5. Nas letras de identificação, M corresponde a motores e T a transformadores.  
+( ) 6. Os motores CA trifásicos de ventiladores, por serem acionados pelo operador, pertencem ao circuito de comando.  
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q24 — V-F-F-V-V-F**
+  - 2. F — Correção: partida direta = ligação direta à rede; SCRs são do soft starter (E1 s12).
+  - 3. F — Correção: com NA em paralelo a carga só fica desligada com os dois em repouso; acionando qualquer um, liga (E1 s16, Tab. 1.2).
+  - 6. F — Correção: motores são cargas e ficam no circuito de potência; o comando é a interface com o operador (E1 s11, s14; E4).
+
+</details>
+
+
+## Checklist de domínio
+- [ ] Objetivos do painel, prioridades e limites comando × potência.
+- [ ] NA/NF pelo repouso e as quatro tabelas de associação.
+- [ ] Sequência rede → motor com a função de cada dispositivo.
+- [ ] Fusível × disjuntor × relé térmico (NF 95-96 no comando).
+- [ ] 4 partes da botoeira; fim de curso = S.
+- [ ] 16 símbolos e 7 letras com exemplos.

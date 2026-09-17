@@ -1,0 +1,39 @@
+{
+  "ordem": 11,
+  "slug": "11-valvulas-pneumaticas-vcd-fluxo-e-alivio",
+  "titulo": "Válvulas pneumáticas: VCD, fluxo e alívio",
+  "prioridade": "máxima",
+  "subtitulo": "Simbologia, vias, posições, controle de velocidade e pressão",
+  "tempoEstimado": "55 min",
+  "objetivo": "Interpretar a simbologia das VCD e explicar válvulas de controle de fluxo, retenção e alívio em circuitos pneumáticos.",
+  "palavrasChave": [
+    "VCD",
+    "vias",
+    "posições",
+    "controle de fluxo",
+    "retenção",
+    "alívio"
+  ],
+  "conceptIds": [
+    "C165",
+    "C166",
+    "C167",
+    "C168",
+    "C169",
+    "C170",
+    "C171",
+    "C172",
+    "C173",
+    "C174",
+    "C175",
+    "C176",
+    "C177",
+    "C178",
+    "C179",
+    "C180",
+    "C181",
+    "C182",
+    "C183",
+    "C184"
+  ]
+}

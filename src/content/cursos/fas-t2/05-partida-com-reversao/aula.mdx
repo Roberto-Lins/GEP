@@ -1,0 +1,474 @@
+---
+titulo: "Partida com reversão — aula"
+secao: "aula"
+secaoOrdem: 1
+---
+
+# MÓDULO M05 — Partida com reversão
+
+> Fontes: ‹E1 s51–s54› · ‹E3› · ‹E5› · ‹E7 p7–p13› · Tempo de leitura: ~14 min
+
+**Você vai precisar saber:**
+- explicar como se inverte o sentido de rotação de um motor trifásico (troca de duas fases por contatores adicionais);
+- identificar na figura os componentes e as ligações dos circuitos de potência e de comando da reversão;
+- descrever passo a passo o que acontece ao pressionar S1, S0 e S2, nomeando intertravamento e selagem pelos números dos terminais;
+- justificar o intertravamento (evitar curto-circuito) e distinguir intertravamento por contator e por botoeira;
+- comparar o comando da Aula 3.2 com a chave reversora de duplo intertravamento e com o estudo dirigido.
+
+## Bloco B1 — Princípio e circuito de potência
+
+‹fonte: E5; E1 s51–s52; E3›
+
+**‹C066› Princípio da reversão** — "permite a inversão do sentido de rotação de motores trifásicos, **trocando duas fases por meio de contatores adicionais**" ‹E5›. Circuitos divididos em comando e potência: **1º segurança do operador, 2º automação** ‹E5›.
+
+**‹C067› Circuito de potência** ‹E1 s51–s52› — R, S, T → fusíveis **F1** → disjuntor **Q1** → dois contatores ligados à mesma alimentação: **K1** ("forward contactor") e **K2** ("reverse contactor") → relé térmico **F2** ("thermal overload") → bornes **X1** → motor **M1** (U1, V1, W1).
+- **K1** repassa as fases sem troca; **K2** usa ligações cruzadas: na figura, **R e T são trocadas** e S mantém a posição (leitura de E1 s51–s52 e E7 p8).
+- **F2 é um só**, comum aos dois contatores (fica depois da junção das saídas de K1 e K2).
+
+![Partida com reversão — circuito de potência](/imagens/cursos/fas-t2/conteudo/E1-51-reversao-potencia.webp)
+*Figura — Circuito de potência da partida com reversão (esquema e "forward and reverse operation circuit diagram") ‹fonte: E1 s51›*
+
+**‹C074› Componentes** (Figura 5.1 do estudo dirigido e exercício de identificação) ‹E3; E5›:
+
+| Potência | Comando |
+|---|---|
+| F1 fusíveis · Q1 disjuntor **tripolar** · K1 e K2 contatores · F2 relé térmico · X1 bornes · M1 motor trifásico | F3 fusíveis · Q2 disjuntor **bipolar** · F2 95-96 (NF) · S0 botoeira **NF** (desliga) · S1 e S2 botoeiras **NA** (partida em cada sentido) · bobinas K1 e K2 |
+
+### Exemplos práticos e confusões prováveis
+- ‹C066› Reverter = **trocar duas fases** — não as três, não reduzir tensão (estrela-triângulo), não chavear polaridade (H-Bridge, motor CC ‹E1 s12›).
+- ‹C067› F2 aparece **uma vez só** na potência: não há um relé térmico por contator.
+- ⚠️ ‹C074› Q1 **tripolar** (potência) x Q2 **bipolar** (comando); F1/F3 fusíveis x F2 relé térmico (mesma letra F).
+
+### Questões — bloco B1
+
+**Questão 1** · 0,2 pt
+
+Com relação ao princípio da partida de motor de indução trifásico com reversão, marque (X) a única correta.
+
+(A) Permite a inversão do sentido de rotação trocando as três fases entre si por meio de um único contator.  
+(B) Inverte o sentido de rotação retirando uma das fases do motor por meio do disjuntor Q1.  
+(C) Inverte o sentido de rotação por chaveamento de polaridade, com driver H-Bridge.  
+(D) Permite a inversão do sentido de rotação do motor trifásico trocando duas fases por meio de contatores adicionais.  
+(E) Reduz a tensão aplicada aos enrolamentos na partida e depois comuta para a tensão nominal.  
+
+**Questão 2** · 0,9 pt
+
+Considere a lista de componentes da partida de motor com reversão (estudo dirigido, Figura 5.1). Associe cada sigla ao tipo de dispositivo que ela identifica. Os números podem se repetir.
+
+**Coluna A**
+
+- (1) Disjuntor
+- (2) Fusível
+- (3) Relé térmico
+- (4) Contator
+- (5) Botoeira
+
+**Coluna B**
+
+- ( ) Q1 — tripolar
+- ( ) F3
+- ( ) K2
+- ( ) S0 — NF
+- ( ) F2
+- ( ) Q2 — bipolar
+- ( ) S2 — NA
+- ( ) F1
+- ( ) K1
+
+**Questão 3** · 1,1 pt
+
+![Figura da questão 3](/imagens/cursos/fas-t2/conteudo/Q-E1-52-reversao.webp)
+
+Considere a Figura (circuitos de potência e de comando de um motor M1). Responda objetivamente.
+
+- a) O que é Q1 e em qual circuito ele está? (0,1)
+- b) O que é Q2 e em qual circuito ele está? (0,1)
+- c) O que são F1 e F3? (0,1)
+- d) Qual componente é identificado por F2 e em que ponto de cada circuito ele aparece? (0,2)
+- e) Qual contator entrega as fases ao motor com duas delas trocadas? Quais fases são trocadas na figura? (0,2)
+- f) Quantos relés térmicos a potência usa para os dois sentidos de rotação? Justifique pela posição na figura. (0,2)
+- g) Identifique X1 e M1. (0,1)
+- h) Qual o tipo (NA ou NF) de S0, S1 e S2? (0,1)
+
+**Questão 4** · 0,6 pt
+
+Com relação à partida de motor de indução trifásico com reversão e à divisão de seus circuitos, marque V ou F.
+
+( ) 1. A reversão do sentido de rotação é obtida trocando duas fases por meio de contatores adicionais.  
+( ) 2. O contator K1 alimenta o motor com as fases sem troca, e o contator K2 o alimenta com duas fases trocadas.  
+( ) 3. O relé térmico F2 fica entre o disjuntor Q1 e os contatores K1 e K2.  
+( ) 4. Os circuitos de manobra são divididos em comando e potência, possibilitando em primeiro lugar a automação do circuito e em segundo a segurança do operador.  
+( ) 5. No circuito de potência podem circular correntes elétricas de 10 A ou mais e atingir tensões de até 760 V.  
+( ) 6. O circuito de comando é a interface com o operador e trabalha com baixas correntes (i ≤ 10 A) e/ou baixas tensões (Vac ≤ 220 V).  
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q1 — D.** E5: a partida com reversão 'permite a inversão do sentido de rotação de motores trifásicos, trocando duas fases por meio de contatores adicionais'.
+- **Q2 — 1-2-4-5-3-1-5-2-4** E3: 1 disjuntor tripolar (Q1), 1 disjuntor bipolar (Q2), 1 relé térmico (F2), 2 contatores (K1 e K2), 1 botoeira NF (S0), 2 botoeiras NA (S1 e S2); F1 e F3 são os fusíveis das figuras E1 s52/E3. A letra F (proteção) vale para fusíveis e relé térmico (E1 s46).
+- **Q3**
+  - a) Disjuntor tripolar do circuito de potência.
+  - b) Disjuntor bipolar do circuito de comando.
+  - c) Fusíveis: F1 no circuito de potência e F3 no circuito de comando.
+  - d) Relé térmico: na potência, depois dos contatores K1/K2 e antes dos bornes X1; no comando, pelo contato NF 95-96, antes de S0.
+  - e) K2; as ligações cruzadas trocam R e T, e S mantém a posição.
+  - f) Um só (F2), comum a K1 e K2: fica depois do ponto em que as saídas dos dois contatores se juntam, protegendo o motor nos dois sentidos.
+  - g) X1: bornes de ligação; M1: motor trifásico (U1, V1, W1).
+  - h) S0: NF (1-2); S1 e S2: NA (3-4).
+- **Q4 — V-V-F-F-V-V**
+  - 3. F — Correção: F2 fica depois dos contatores, entre K1/K2 e os bornes X1 (E1 s51-s52).
+  - 4. F — Correção: em primeiro lugar a segurança do operador e em segundo a automação (E5).
+
+</details>
+
+
+## Bloco B2 — Circuito de comando e funcionamento passo a passo
+
+‹fonte: E1 s52–s54›
+
+**‹C068› Circuito de comando** — "composto por **duas partidas diretas simples, que são intertravadas**" ‹E1 s53›. Na figura: S, T → F3 → Q2 → **F2 95-96** → **S0 1-2** → dois ramos:
+- ramo de K1: **S1 3-4 em paralelo com K1 13-14** → **K2 21-22** → bobina **K1 (A1-A2)**;
+- ramo de K2: **S2 3-4 em paralelo com K2 13-14** → **K1 21-22** → bobina **K2 (A1-A2)**.
+
+"O botão S0 interrompe o circuito de comando e desliga o motor" ‹E1 s53›. O NF 95-96 de F2 fica antes de S0: se F2 atuar, desliga o motor em qualquer sentido ‹E1 s50›.
+
+![Partida com reversão — potência e comando](/imagens/cursos/fas-t2/conteudo/E1-52-reversao.webp)
+*Figura — Motor CA trifásico, partida com reversão: potência (esquerda) e comando (direita) ‹fonte: E1 s52›*
+
+**‹C069› Ao pressionar S1** ‹E1 s53›:
+1. A bobina do contator **K1** é energizada, alimentando o motor com as três fases.
+2. O contato auxiliar **21/22 de K1 se abre**, impedindo qualquer tentativa de energização de K2 com K1 em funcionamento → **(Intertravamento)**.
+3. Em sequência, o contato auxiliar **13/14 de K1 se fecha**, realizando o selo de K1 e mantendo-o energizado após S1 parar de ser pressionado → **(Selagem)**.
+
+**‹C071› Por que intertravar** — energizar K2 com K1 em funcionamento "**provocaria um curto-circuito**" ‹E1 s53›. Na figura de potência, K2 entrega as fases trocadas: com K1 e K2 fechados juntos, as fases que K2 troca (R e T) ficariam ligadas entre si — curto entre fases.
+
+**‹C070› Trocar o sentido de rotação** ‹E1 s54›:
+1. **S0 deverá ser pressionado**, desligando o motor.
+2. Após isso, pressiona-se o **botão de impulso S2** e a sequência se repete: bobina de **K2** energizada → **21/22 de K2 abre** (intertravamento: impede K1) → **13/14 de K2 fecha** (selagem).
+
+[INFERÊNCIA PEDAGÓGICA] Quadro-resumo:
+
+| | Intertravamento | Selagem (selo) |
+|---|---|---|
+| Contato | auxiliar **NF** do **outro** contator (21-22), em série antes da bobina | auxiliar **NA** do **próprio** contator (13-14), em paralelo com a botoeira |
+| Ao energizar o contator | abre | fecha |
+| Finalidade | impedir os dois contatores energizados juntos (curto-circuito) | manter a bobina energizada depois que se solta a botoeira |
+
+### Exemplos práticos e confusões prováveis
+- ‹C069› Soltou S1 e o motor continuou: quem mantém K1 é o **13-14 de K1** (selo), não o 21-22.
+- ⚠️ ‹C070› Motor girando por K1 e o operador aperta S2 direto: **K2 não energiza** (21-22 de K1 aberto em série com a bobina de K2). Sequência correta: **S0, depois S2**.
+- ⚠️ ‹C071› Intertravamento evita **curto-circuito** — não é proteção contra sobrecarga (F2) nem economia de energia.
+- ‹C068› O NF de intertravamento fica **no ramo do outro contator**.
+- ‹C067›/‹C068› F2 na potência e F2 95-96 no comando são o **mesmo** relé térmico.
+
+### Questões — bloco B2
+
+**Questão 5** · 1,2 pt
+
+![Figura da questão 5](/imagens/cursos/fas-t2/conteudo/Q-E1-52-reversao.webp)
+
+Considere o circuito de comando da Figura. Complete as lacunas.
+
+- 1) O circuito de comando de uma partida com reversão é composto por duas __________ simples, que são __________. (0,2)
+- 2) Depois de F3 e Q2, a corrente passa pelo contato __________ de F2 e pela botoeira __________ antes de se dividir nos dois ramos. (0,2)
+- 3) No ramo de K1, a botoeira S1 (3-4) está em paralelo com o contato __________ de K1 e em série com o contato __________ de K2, antes da bobina K1 (A1-A2). (0,2)
+- 4) O contato 21-22 ligado em série antes da bobina de K2 pertence ao contator __________. (0,1)
+- 5) Ao pressionar S1, a bobina de __________ é energizada, alimentando o motor com as três fases. (0,1)
+- 6) Em seguida, o contato auxiliar __________ de K1 se abre, impedindo a energização de K2; essa ligação chama-se __________. (0,2)
+- 7) Em sequência, o contato auxiliar __________ de K1 se fecha, mantendo K1 energizado após S1 parar de ser pressionado; essa ação chama-se __________. (0,2)
+
+**Questão 6** · 0,8 pt
+
+Associe cada contato do circuito de comando da partida com reversão (E1 s52) à função que ele desempenha. Os números podem se repetir.
+
+**Coluna A**
+
+- (1) Selagem
+- (2) Intertravamento
+- (3) Desligamento pelo operador
+- (4) Proteção contra sobrecarga
+- (5) Partida em um dos sentidos
+
+**Coluna B**
+
+- ( ) K1 13-14
+- ( ) K2 21-22, no ramo de K1
+- ( ) S0 1-2
+- ( ) F2 95-96
+- ( ) S2 3-4
+- ( ) K2 13-14
+- ( ) K1 21-22, no ramo de K2
+- ( ) S1 3-4
+
+**Questão 7** · 0,3 pt
+
+O motor M1 da partida com reversão (E1 s52) gira com K1 energizado e selado. Ordene, de 1 a 5, as etapas para que ele passe a girar no outro sentido.
+
+- ( ) O contato auxiliar 13-14 de K2 se fecha, mantendo K2 energizado após S2 ser solto.
+( ) O operador pressiona S0, desligando o motor.
+( ) A bobina de K2 é energizada, alimentando o motor com as três fases, duas delas trocadas em relação a K1.
+( ) O operador pressiona S2.
+( ) O contato auxiliar 21-22 de K2 se abre, impedindo a energização de K1. (0,3)
+
+**Questão 8** · 0,3 pt · *adaptada de SOPA 2025 Q1.3b*
+
+Na partida com reversão da Aula 3.2 (E1 s52), o motor gira com K1 energizado e selado. O operador pressiona S2 sem pressionar S0. Marque (X) a única correta.
+
+(A) K2 fica energizado apenas enquanto S2 permanecer pressionado, porque o ramo de K2 não tem selo.  
+(B) K2 não é energizado, pois o contato 21-22 de K1, aberto, está em série com a bobina de K2; o motor continua girando no mesmo sentido.  
+(C) K1 e K2 ficam energizados ao mesmo tempo, e o relé térmico F2 atua para proteger o motor.  
+(D) O contato 13-14 de K1 se abre ao pressionar S2 e o motor para.  
+(E) K2 é energizado e seu contato 21-22 abre, desligando K1; o motor inverte o sentido sem parar.  
+
+**Questão 9** · 0,8 pt
+
+![Figura da questão 9](/imagens/cursos/fas-t2/conteudo/Q-E1-52-reversao.webp)
+
+Considere a Figura. O operador pressionou e soltou S1, e o motor está em funcionamento. Com relação ao estado dos componentes, marque V ou F.
+
+( ) 1. A bobina de K1 permanece energizada pelo contato 13-14 de K1, ligado em paralelo com S1.  
+( ) 2. O contato 21-22 de K1, em série com a bobina de K2, está aberto.  
+( ) 3. O contato 21-22 de K2, em série com a bobina de K1, está aberto.  
+( ) 4. O intertravamento impede que K2 seja energizado com K1 em funcionamento, o que provocaria um curto-circuito.  
+( ) 5. A finalidade do intertravamento é proteger as bobinas do enrolamento do motor contra correntes de sobrecarga.  
+( ) 6. Se F2 atuar por sobrecarga, abrirá seu contato 95-96, desenergizando a bobina de K1 e desligando o motor.  
+( ) 7. Pressionar S0 interrompe o circuito de comando e desliga o motor.  
+( ) 8. O contato que realiza o selo de K1 está ligado em série com a botoeira S1.  
+
+**Questão 10** · 0,8 pt
+
+Responda objetivamente sobre o intertravamento na partida com reversão (E1 s52-s53).
+
+- a) Qual seria a consequência de energizar K2 com K1 em funcionamento? (0,3)
+- b) Por que o contato usado no intertravamento é normalmente fechado (NF) e fica antes da bobina do outro contator? (0,3)
+- c) Um aluno afirmou que o intertravamento serve 'para economizar energia, pois só um contator fica ligado'. Corrija a afirmação. (0,2)
+
+**Questão 11** · 0,5 pt
+
+Descreva o funcionamento do circuito de comando da partida com reversão (E1 s52) para o sentido comandado por S1, desde o motor parado até o desligamento pelo operador. Indique os contatos pelos números dos terminais.
+
+- a) Partida e manutenção do motor ligado (0,4).
+- b) Desligamento pelo operador (0,1).
+
+**Questão 12** · 1,8 pt · *adaptada de SOPA 2025 Q1.3*
+
+![Figura da questão 12](/imagens/cursos/fas-t2/conteudo/Q-E1-52-reversao.webp)
+
+Considere a Figura. O motor M1 aciona um equipamento que deve operar ora num sentido, ora no outro. Inicialmente o motor está parado e todos os dispositivos de proteção estão em repouso. Responda aos itens na ordem dos acontecimentos.
+
+- a) O operador pressiona e solta S2. Descreva o que ocorre com a bobina de K2 e com os contatos auxiliares 21-22 e 13-14 de K2, nomeando a finalidade de cada contato. (0,4)
+- b) Com o motor girando conforme o item a, o operador pressiona S1 sem pressionar S0. O que acontece? Justifique pelo circuito de comando. (0,3)
+- c) Qual seria a consequência se esse bloqueio não existisse e K1 fosse energizado com K2 em funcionamento? (0,2)
+- d) Ainda no sentido do item a, ocorre sobrecarga prolongada. Descreva a atuação da proteção até o motor parar e explique por que um só relé térmico basta para os dois sentidos. (0,4)
+- e) Considere que o contato 95-96 de F2 voltou a fechar. Para partir o motor no sentido de K1, é necessário pressionar S0 antes de S1? Justifique. (0,3)
+- f) Cite dois componentes que aparecem só no circuito de comando e dois que aparecem só no circuito de potência desta figura. (0,2)
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q5**
+  - • partidas diretas; intertravadas
+  - • 95-96 (NF); S0 (1-2)
+  - • 13-14; 21-22
+  - • K1
+  - • K1
+  - • 21-22; intertravamento
+  - • 13-14; selagem (selo)
+- **Q6 — 1-2-3-4-5-1-2-5** E1 s53-s54: 13/14 de cada contator faz a selagem; 21/22 do outro contator faz o intertravamento; S0 interrompe o comando; F2 95-96 abre por sobrecarga (E1 s50); S1 e S2 partem cada sentido.
+- **Q7**
+  - • 5-1-3-2-4 (S0 → S2 → bobina de K2 energizada → 21-22 de K2 abre → 13-14 de K2 fecha).
+- **Q8 — B.** E1 s53: o 21/22 de K1 se abre, 'impedindo qualquer tentativa de energização do contator K2 com K1 em funcionamento'. E1 s54: para partir no outro sentido, S0 deve ser pressionado antes de S2.
+- **Q9 — V-V-F-V-F-V-V-F**
+  - 3. F — Correção: K2 está desenergizado, portanto seu NF 21-22 permanece fechado (em repouso), e é por ele que passa a alimentação de K1 (E1 s52).
+  - 5. F — Correção: essa é a proteção feita pelo relé térmico F2; o intertravamento evita o curto-circuito (E1 s53).
+  - 8. F — Correção: o selo fica em paralelo com a botoeira S1 (E1 s44; figura E1 s52).
+- **Q10**
+  - a) Um curto-circuito (E1 s53): K2 alimenta o motor com duas fases trocadas em relação a K1; com os dois fechados, essas fases ficariam ligadas entre si.
+  - b) Com o seu contator desligado, o NF está em repouso e deixa passar corrente, permitindo ligar o outro contator; quando o seu contator é energizado, esse NF se abre e bloqueia a alimentação da bobina do outro (E1 s15; E1 s45).
+  - c) Incorreta: a finalidade é impedir o funcionamento simultâneo dos contatores, que provocaria curto-circuito (E1 s45; E1 s53).
+- **Q11**
+  - a) Pressiona-se S1 (3-4): a corrente passa por F2 95-96, S0 1-2, S1 e pelo 21-22 de K2 (fechado) e energiza a bobina de K1 (A1-A2); os contatos principais de K1 alimentam o motor com as três fases. O 21-22 de K1 se abre, impedindo a energização de K2 (intertravamento). Em sequência, o 13-14 de K1 se fecha e mantém K1 energizado depois que S1 é solto (selagem).
+  - b) Pressiona-se S0, que interrompe o circuito de comando: a bobina de K1 é desenergizada e o motor é desligado.
+- **Q12**
+  - a) A bobina de K2 é energizada e o motor é alimentado com as três fases, duas trocadas em relação a K1. O 21-22 de K2 se abre (intertravamento: impede a energização de K1). O 13-14 de K2 se fecha (selagem: mantém K2 energizado após soltar S2).
+  - b) Nada muda: o 21-22 de K2, aberto, está em série com a bobina de K1 e impede sua energização; o motor continua no mesmo sentido. Para inverter, é preciso pressionar S0 e depois S1.
+  - c) Curto-circuito: com K1 e K2 fechados, as fases que K2 troca (R e T na figura) ficariam ligadas entre si.
+  - d) O relé térmico F2 atua pelo aquecimento do bimetal e abre seu NF 95-96 no comando (antes de S0), desenergizando a bobina de K2, que abre os contatos principais e desliga o motor. F2 fica na potência depois de K1 e K2, comum aos dois, e protege o motor em qualquer sentido.
+  - e) Não: o motor já está parado e K2 desenergizado (21-22 de K2 fechado); basta pressionar S1 — K1 energiza, o 21-22 de K1 abre e o 13-14 de K1 fecha.
+  - f) Só no comando: F3, Q2, S0, S1, S2 (quaisquer dois). Só na potência: F1, Q1, X1, M1 (quaisquer dois). K1, K2 e F2 aparecem nos dois circuitos.
+
+</details>
+
+
+## Bloco B3 — Chave reversora com duplo intertravamento e estudo dirigido
+
+‹fonte: E7 p7–p13; E3›
+
+**‹C073› Acionamento de partida direta com chave reversora** (exercício 3) — **potência** ‹E7 p8›: disjuntor força **DJ-FORÇA**, contatores **K1 e K2** (K2 troca duas fases), relé térmico **RT**, motor trifásico. **Comando** ‹E7 p9›: R → **DJ.COMANDO** (disjuntor de comando) → **RT 95-96** (NF) → **S0 1-2** (botoeira desliga) → ramos → N:
+- ramo de K1: S1 em paralelo com **K1 13-14** → **NF de S2** → **K2 11-12** → bobina K1 (A1-A2);
+- ramo de K2: S2 em paralelo com **K2 13-14** → **NF de S1** → **K1 11-12** → bobina K2 (A1-A2).
+
+"**S0, S1 e S2 são chaves de impulso sem retenção**" ‹E7 p9›.
+
+![Chave reversora — potência](/imagens/cursos/fas-t2/conteudo/E7-08-reversora-potencia.webp)
+*Figura — Chave reversora: circuito de potência ‹fonte: E7 p8›*
+
+![Chave reversora — comando](/imagens/cursos/fas-t2/conteudo/E7-09-reversora-comando.webp)
+*Figura — Chave reversora: comando com duplo intertravamento ‹fonte: E7 p9›*
+
+**3-a Partida e parada em um sentido** ‹E7 p11›:
+1. Aciona-se **S1 NA sem retenção** → bobina da contatora K1 (A1 A2) energizada.
+2. **Intertravamento por botoeira**: S1 também possui contato **NF**, em série no circuito da contatora K2, que se abre no momento do acionamento.
+3. **K1 (13-14)** fecha → **selagem** à chave S1; ao mesmo tempo **K1 (11-12)** abre → impede K2 (**INTERLOCK**).
+4. Principais de K1 fecham; o motor parte no sentido, **por hipótese, horário**.
+5. Sobrecarga: o **sensor bimetálico** aciona **RT 95-96**, que desalimenta a bobina de K1. Parada: **S0 NF sem retenção** desenergiza K1.
+
+**3-b Sentido contrário** ‹E7 p13›: mesma sequência com **S2** (NF em série no circuito de K1), **K2 13-14** (selagem) e **K2 11-12** (INTERLOCK); sentido **por hipótese anti-horário**.
+
+**Divergências da fonte:**
+- **Numeração do NF de intertravamento:** 21-22 em E1 s52–s54; 11-12 em E7 p9–p13. Ambos terminam em 1-2 (**NF**); o selo é **13-14 (NA)** nos dois ‹E1 s39›.
+- **Rótulos de E7 p9:** "S1 – Botoeira gira esquerda" / "S2 – Botoeira gira direita", mas E7 p11/p13 dizem "por hipótese" horário (K1) e anti-horário (K2). [POSSÍVEL ERRO NA FONTE] — não associe esquerda/direita a horário/anti-horário.
+
+**‹C072› Estudo dirigido — Laboratório 5: Partida de Motores com reversão** ‹E3›
+- **Objetivo:** acionar, de forma automática, um motor com reversão do sentido de rotação, **mostrando algumas similaridades com a partida direta**, e **introduzir o conceito de "intertravamento"**.
+- **Componentes:** 1 disjuntor tripolar (Q1), 1 disjuntor bipolar (Q2), 1 relé térmico (F2), 2 contatores (K1 e K2), 1 botoeira NF (S0), 2 botoeiras NA (S1 e S2), 1 motor trifásico (M1).
+- **Exercício:** desenhar e montar a sinalização — lâmpada **verde**: motor girando no sentido **horário**; **amarela**: sentido **anti-horário**; **vermelha**: **atuação do relé de sobrecarga**.
+
+[INFERÊNCIA PEDAGÓGICA] A fonte não traz a solução do desenho (apoio: letra H = sinalização ‹E1 s46›; lâmpada H1 junto à bobina de K1 ‹E7 p22›). A ligação das lâmpadas não é cobrada.
+
+### Exemplos práticos e confusões prováveis
+- ‹C073› **Duplo intertravamento** = **por botoeira** (NF de S1/S2 cruzados) **+ por contator** (NF 11-12 cruzados). Em E1 s52 só há o por contator (21-22).
+- ⚠️ ‹C073› Selagem é o 13-14, nunca o 11-12. DJ.COMANDO (comando) ≠ DJ-FORÇA (potência).
+- ⚠️ ‹C074›/‹C072› O ED de reversão introduz **intertravamento**; o de partida direta ‹E2› introduz **selo**.
+
+### Questões — bloco B3
+
+**Questão 13** · 1 pt
+
+![Figura da questão 13](/imagens/cursos/fas-t2/conteudo/Q-E7-09-reversora.webp)
+
+Considere a Figura (circuito de comando). Identifique cada elemento indicado e sua função no circuito.
+
+- a) DJ.COMANDO (0,1)
+- b) RT 95-96 (0,2)
+- c) S0 (1-2) (0,1)
+- d) K1 13-14, em paralelo com S1 (0,1)
+- e) Contato de S2 ligado em série no ramo da bobina de K1 (0,2)
+- f) K2 11-12, no ramo da bobina de K1 (0,2)
+- g) Tipo de acionamento de S0, S1 e S2 (0,1)
+
+**Questão 14** · 0,7 pt
+
+Com relação ao acionamento de partida direta com chave reversora (E7 p8-p13) e à partida com reversão da Aula 3.2 (E1 s51-s54), marque V ou F.
+
+( ) 1. Na chave reversora, o circuito de potência tem disjuntor força, contatores K1 e K2, relé térmico RT e motor trifásico.  
+( ) 2. Os contatos auxiliares de intertravamento são numerados 21-22 na Aula 3.2 e 11-12 na chave reversora; nos dois casos são contatos NF.  
+( ) 3. Na chave reversora, ao acionar S1, o contato NF de S1, em série no circuito da contatora K2, se abre no momento do acionamento.  
+( ) 4. O comando da partida com reversão da Aula 3.2 (E1 s52) também possui intertravamento por botoeira.  
+( ) 5. Na chave reversora, a selagem da chave S1 é provida pelo contato K1 (11-12).  
+( ) 6. Na chave reversora, o sensor bimetálico aciona o contato RT 95-96, que desalimenta a bobina da contatora, que por sua vez abre seus contatos principais.  
+( ) 7. Na chave reversora, S0 é uma botoeira NA com retenção.  
+
+**Questão 15** · 0,3 pt
+
+Comparando o circuito de comando da chave reversora (E7 p9) com o da partida com reversão da Aula 3.2 (E1 s52), marque (X) a única correta.
+
+(A) Na chave reversora, os contatos 11-12 de K1 e K2 são NA e fazem a selagem das botoeiras S1 e S2.  
+(B) Nos dois circuitos, o contato NF do relé térmico fica em série apenas no ramo de K1, pois o sentido de K2 não precisa de proteção.  
+(C) Na Aula 3.2 o intertravamento é feito por botoeira e, na chave reversora, apenas pelos contatos auxiliares dos contatores.  
+(D) Na chave reversora, S1 e S2 são botoeiras com retenção, o que dispensa os contatos de selo.  
+(E) Além do intertravamento pelos contatos auxiliares NF dos contatores, a chave reversora tem intertravamento por botoeira, com o contato NF de cada botoeira em série no circuito da contatora do outro sentido.  
+
+**Questão 16** · 1,8 pt · *adaptada de SOPA 2025 Q1.3*
+
+![Figura da questão 16](/imagens/cursos/fas-t2/conteudo/Q-E7-09-reversora.webp)
+
+Considere a Figura (circuito de comando de partida direta com chave reversora). O motor está parado e o circuito, em repouso. Responda aos itens na ordem dos acontecimentos.
+
+- a) O operador aciona S1. Cite os contatos que mudam de estado nos dois ramos e o nome de cada ação. (0,5)
+- b) S1 é solto. Qual contato mantém K1 energizado e qual contato continua impedindo a alimentação de K2? (0,3)
+- c) Qual a finalidade de impedir que K1 e K2 fiquem energizados ao mesmo tempo? (0,2)
+- d) O operador aciona S0. Descreva o que ocorre. (0,2)
+- e) Com o motor parado, o operador aciona S2. Quais são os dois contatos que se abrem no ramo de K1? (0,2)
+- f) Compare com o comando de E1 s52: qual intertravamento existe nos dois circuitos e qual existe só na chave reversora? (0,2)
+- g) Com o motor girando por K2, ocorre sobrecarga. Qual contato atua e o que acontece em seguida? (0,2)
+
+**Questão 17** · 0,7 pt
+
+Com relação ao estudo dirigido de laboratório 'Partida de Motores com reversão' (Figura 5.1), marque V ou F.
+
+( ) 1. O objetivo é acionar, de forma automática, um motor com reversão do sentido de rotação.  
+( ) 2. O laboratório mostra algumas similaridades com a partida direta.  
+( ) 3. O conceito que o laboratório pretende introduzir é o de selo.  
+( ) 4. No exercício de sinalização, a lâmpada verde indica motor girando no sentido horário.  
+( ) 5. No exercício de sinalização, a lâmpada amarela indica a atuação do relé de sobrecarga.  
+( ) 6. A lista de componentes inclui 1 botoeira NF (S0) e 2 botoeiras NA (S1 e S2).  
+( ) 7. Na lista de componentes, Q2 é um disjuntor tripolar e Q1 é um disjuntor bipolar.  
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q13**
+  - a) Disjuntor de comando.
+  - b) Contato NF do relé térmico: acionado pelo sensor bimetálico na sobrecarga, desalimenta a bobina da contatora energizada.
+  - c) Botoeira desliga (NF).
+  - d) Contato auxiliar NA de K1 que provê a selagem à chave S1.
+  - e) Contato NF da botoeira S2: intertravamento por botoeira; abre no momento do acionamento de S2.
+  - f) Contato auxiliar NF de K2: intertravamento pelo contator (INTERLOCK); abre quando K2 é energizado e impede a alimentação de K1.
+  - g) Chaves de impulso sem retenção.
+- **Q14 — V-V-V-F-F-V-F**
+  - 4. F — Correção: em E1 s52 o intertravamento é feito apenas pelos auxiliares 21-22 dos contatores.
+  - 5. F — Correção: a selagem é feita por K1 (13-14); o K1 (11-12) faz o INTERLOCK (E7 p11).
+  - 7. F — Correção: S0 é NF, chave de impulso sem retenção (E7 p9; E7 p11).
+- **Q15 — E.** E7 p9, p11 e p13: intertravamento por botoeira (NF de S1 no circuito de K2 e de S2 no de K1) e INTERLOCK pelos auxiliares 11-12; E1 s52-s53: só os auxiliares 21-22.
+- **Q16**
+  - a) O NF de S1, no ramo de K2, abre no momento do acionamento (intertravamento por botoeira); a bobina de K1 é energizada; K1 13-14 fecha (selagem à chave S1); K1 11-12, no ramo de K2, abre (INTERLOCK); os contatos principais de K1 fecham e o motor parte (por hipótese, no sentido horário).
+  - b) K1 13-14 mantém K1 energizado (selo); K1 11-12, aberto enquanto K1 estiver energizado, continua impedindo a alimentação de K2.
+  - c) Evitar curto-circuito, pois K2 alimenta o motor com duas fases trocadas em relação a K1 (E1 s53; E7 p8).
+  - d) S0 (NF, sem retenção) desenergiza a bobina de K1, que abre seus contatos e desalimenta o motor.
+  - e) O NF de S2 (intertravamento por botoeira) e o K2 11-12 (INTERLOCK).
+  - f) Nos dois: pelo contato auxiliar NF do outro contator (21-22 em E1 s52; 11-12 em E7 p9). Só na chave reversora: o intertravamento por botoeira.
+  - g) O sensor bimetálico aciona o RT 95-96, que desalimenta a bobina de K2; K2 abre seus contatos principais e desalimenta o motor.
+- **Q17 — V-V-F-V-F-V-F**
+  - 3. F — Correção: introduz o conceito de intertravamento; o selo é o conceito do laboratório de partida direta (E2; E3).
+  - 5. F — Correção: amarela = sentido anti-horário; vermelha = atuação do relé de sobrecarga (E3).
+  - 7. F — Correção: Q1 é tripolar e Q2 é bipolar (E3).
+
+</details>
+
+
+## Revisão cumulativa
+### Questões — revisão cumulativa
+
+**Questão 18** · 0,7 pt
+
+Revisão cumulativa (M01 a M05) — marque V ou F.
+
+( ) 1. No motor CC, o sentido de giro é trocado pelo driver com H-Bridge (chaveamento de polaridade); no motor CA trifásico com reversão, trocam-se duas fases por meio de contatores.  
+( ) 2. O comando da partida direta tem um único ramo com S1 em paralelo com K1 13-14; o comando da reversão repete essa estrutura em dois ramos intertravados.  
+( ) 3. No intertravamento, o contato NF de um contator é colocado antes da alimentação da bobina do outro contator.  
+( ) 4. Os contatos auxiliares NF têm numeração com finais 3 e 4.  
+( ) 5. Como a botoeira sem retenção volta ao repouso pela mola de retorno, o selo é que mantém a bobina do contator energizada depois que o operador retira o dedo.  
+( ) 6. Na identificação de componentes, a letra K designa botoeiras e a letra S designa contatores.  
+( ) 7. No circuito de potência da chave reversora, o disjuntor aparece identificado como DJ-FORÇA.  
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q18 — V-V-V-F-V-F-V**
+  - 4. F — Correção: NF termina em 1 e 2 (21-22, 11-12); NA termina em 3 e 4 (13-14) (E1 s39).
+  - 6. F — Correção: K = contatores; S = dispositivos de manobra/seletores auxiliares, como botões e fins de curso (E1 s46).
+
+</details>
+
+
+## Checklist de domínio
+- [ ] Explico a reversão (troca de duas fases) e localizo na figura F1, Q1, K1, K2, F2 (comum), X1, M1, F3, Q2, S0, S1, S2.
+- [ ] Descrevo o comando e narro S1 → K1 → 21-22 de K1 abre (intertravamento) → 13-14 de K1 fecha (selagem).
+- [ ] Sei que para inverter é S0 e depois S2, e justifico o intertravamento pelo curto-circuito.
+- [ ] Diferencio intertravamento por botoeira e por contator na chave reversora (11-12 x 21-22).
+- [ ] Sei objetivo, componentes e cores de sinalização do estudo dirigido.

@@ -1,0 +1,377 @@
+---
+titulo: "Aplicações: controle de nível e partida sequencial — aula"
+secao: "aula"
+secaoOrdem: 1
+---
+
+# MÓDULO M08 — Aplicações: controle de nível e partida sequencial
+
+> Fontes: ‹E6 p35–p41› · ‹E7 p18–p20, p27–p31› · Tempo de leitura: ~10 min
+
+**Você vai precisar saber:**
+- Nomear os componentes do controle de nível on-off na figura e dizer a função de cada um (sensores, bobina A1/A2, 13-14, principais, bomba).
+- Descrever o ciclo do controle de nível: início do enchimento, selagem, desligamento com tanque cheio e início do esvaziamento.
+- Identificar na partida sequencial de quatro motores os componentes de potência e de comando.
+- Explicar quem energiza e quem sela cada contatora (B1/C1-NA, D1-NA/C2-NA, D2-NA/C3-NA, D3-NA/C4-NA) e o intervalo entre partidas.
+
+## Bloco B1 — Controle de nível on-off: componentes
+
+‹fonte: E6 p35–p36; E7 p18–p19›
+
+**‹C107› Controle de nível (on-off)** — ação de controle **liga-desliga** de uma bomba a partir de dois sensores de nível. Exercício de E6 p35: descrever o funcionamento "abordando todos os componentes".
+
+**‹C108› Componentes do controle de nível** (figura E6 p36):
+
+| Componente | Onde está na figura | Função |
+|---|---|---|
+| Sensor de nível superior | contato em série no circuito da bobina | fecha quando o nível desce abaixo dele; abre com o tanque cheio |
+| Sensor de nível inferior | contato em série com a bobina, **em paralelo com o 13-14** | fecha quando o tanque esvazia; abre quando o nível sobe |
+| Bobina da contatora (A1/A2) | alimentada por L1/L2 através dos sensores | fecha os contatos principais e o auxiliar |
+| Contato auxiliar 13-14 (NA) | em paralelo com o sensor inferior | **selagem** da bobina |
+| Contatos principais L1 L2 L3 / T1 T2 T3 | entre a rede e o motor | alimentam o motor da bomba |
+| Bomba | carga | fornece água para o reservatório |
+
+Nomenclatura da figura: L1/L2 no alto alimentam a bobina; L1–L3/T1–T3 na contatora são os contatos principais.
+
+![Controle de nível on-off](/imagens/cursos/fas-t2/conteudo/E6-36-nivel.webp)
+*Figura — sensores superior e inferior, contatora A1/A2, 13-14, L1–L3/T1–T3 e bomba ‹fonte: E6 p36›*
+
+### Exemplos práticos e confusões prováveis
+- ‹C107› "Que tipo de ação de controle?" → liga-desliga (on-off): a bomba só está ligada ou desligada.
+- ⚠️ ‹C108› O 13-14 é contato **auxiliar NA** (final 3-4) e está em paralelo com o sensor **inferior** — não com o superior.
+
+### Questões — bloco B1
+
+**Questão 1** · 0,7 pt
+
+![Figura da questão 1](/imagens/cursos/fas-t2/conteudo/Q-E6-36-nivel.webp)
+
+Considere a Figura (sistema de controle automático de nível). Para cada elemento, informe como está ligado no circuito e qual a sua função no sistema.
+
+- Sensor de nível superior (0,1)
+- Sensor de nível inferior (0,1)
+- Terminais A1 e A2 (0,1)
+- Contato 13-14 (0,1)
+- Terminais L1, L2, L3 / T1, T2, T3 da contatora (0,1)
+- Bomba (0,1)
+- Tipo de ação de controle realizada pelo sistema (0,1)
+
+**Questão 2** · 0,3 pt
+
+Com relação ao contato auxiliar 13-14 no sistema de controle automático de nível (E6 p36), marque (X) a única correta.
+
+(A) Está em paralelo com o sensor de nível inferior e funciona como selagem, mantendo a bobina alimentada quando esse sensor abre.  
+(B) É um contato NF que realiza o intertravamento entre os dois sensores de nível.  
+(C) Está em série com os dois sensores e se abre quando a bobina é energizada.  
+(D) É um contato principal que alimenta diretamente o motor da bomba.  
+(E) Está em paralelo com o sensor de nível superior e desliga a bomba quando o tanque enche.  
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q1**
+  - • Contato em série no circuito de alimentação da bobina; fecha quando o nível desce abaixo dele e, ao abrir com o tanque cheio, desalimenta a bobina e para a bomba (E6 p36-p37).
+  - • Contato em série com a bobina e em paralelo com o contato 13-14; ao fechar com o tanque vazio, completa a malha e energiza a bobina (E6 p36-p37).
+  - • Bobina da contatora (E6 p36).
+  - • Contato auxiliar NA da contatora, em paralelo com o sensor inferior: funciona como selagem (E6 p36-p37).
+  - • Contatos principais: alimentam o motor da bomba (E6 p36-p37).
+  - • Carga acionada: seu motor, alimentado pelos contatos principais, fornece água para o reservatório (E6 p37).
+  - • Liga-desliga (on-off) (E6 p36).
+- **Q2 — A.** E6 p36-p37: o 13-14 (auxiliar NA, final 3-4) fica em paralelo com o sensor inferior e mantém a bobina alimentada quando o sensor inferior abre — selagem.
+
+</details>
+
+
+## Bloco B2 — Controle de nível: funcionamento
+
+‹fonte: E6 p37; E7 p20›
+
+Situação inicial: os contatos principais e o contato auxiliar da contatora estão desenergizados.
+
+1. **‹C109› Início do enchimento** — na medida em que o tanque se esvazia, o contato do sensor de nível **superior** se fecha e, posteriormente, o do sensor **inferior** também se fecha. Neste momento a malha do circuito de alimentação da bobina se fecha e a bobina é energizada; os contatos principais e o auxiliar fecham, alimentando o motor da bomba, que passa a fornecer água ao reservatório.
+2. **‹C110› Selagem durante o enchimento** — o nível sobe e o contato do sensor **inferior se abre**, mas a bobina **continua alimentada por meio do contato auxiliar 13-14**, que funciona como selagem.
+3. **‹C111› Desligamento com tanque cheio** — quando o contato do sensor **superior se abre**, a bobina é desalimentada e a **bomba para**. Com o tanque cheio, os dois sensores estão abertos.
+4. **‹C112› Início do esvaziamento** — quando o tanque começa a esvaziar, o sensor **superior se fecha, mas nada acontece**, porque o sensor inferior está aberto e o contato 13-14 também está aberto.
+
+| Situação | Sensor superior | Sensor inferior | 13-14 | Bomba |
+|---|---|---|---|---|
+| Tanque cheio, bomba parada | aberto | aberto | aberto | desligada |
+| Esvaziando (nível abaixo do superior) | fechado | aberto | aberto | desligada — "nada acontece" |
+| Tanque vazio (nível abaixo do inferior) | fechado | fechado | fecha | **liga** |
+| Enchendo (nível acima do inferior) | fechado | aberto | fechado (selo) | ligada |
+| Nível atinge o superior | abre | aberto | abre | **para** |
+
+### Exemplos práticos e confusões prováveis
+- ⚠️ ‹C110› Sensor inferior abrindo **não** desliga a bomba: o 13-14 sela.
+- ⚠️ ‹C112› Sensor superior fechando a partir do tanque cheio **não** liga a bomba: inferior e 13-14 abertos.
+- ‹C109›/‹C111› Esvaziando: superior fecha → inferior fecha → bomba liga. Quem desliga é a abertura do **superior**.
+
+### Questões — bloco B2
+
+**Questão 3** · 0,8 pt · *adaptada de SOPA 2025 Q1.2*
+
+![Figura da questão 3](/imagens/cursos/fas-t2/conteudo/Q-E6-36-nivel.webp)
+
+Considere a Figura. Com relação ao funcionamento do controle de nível, marque V ou F.
+
+( ) 1. Na medida em que o tanque se esvazia, o contato do sensor inferior se fecha primeiro e, depois, o do sensor superior.  
+( ) 2. Partindo da bomba desligada, a bobina da contatora só passa a ser energizada quando os contatos dos dois sensores estão fechados.  
+( ) 3. Durante o enchimento, a abertura do contato do sensor inferior não desliga a bomba, porque o contato 13-14 mantém a bobina alimentada.  
+( ) 4. A bomba para no instante em que o contato do sensor de nível inferior se abre.  
+( ) 5. Quando a bobina é desalimentada, os contatos principais se abrem e o motor da bomba deixa de ser alimentado.  
+( ) 6. O contato 13-14 é um contato auxiliar NF, que se abre quando a bobina é energizada.  
+( ) 7. Com a bomba parada, o fechamento do contato do sensor superior no início do esvaziamento não liga a bomba, pois o sensor inferior e o contato 13-14 estão abertos.  
+( ) 8. O contato 13-14 está ligado em paralelo com o sensor de nível superior.  
+
+**Questão 4** · 0,4 pt
+
+Partindo do tanque cheio com a bomba parada, ordene os eventos de um ciclo completo do controle de nível on-off.
+
+- (A) O contato do sensor inferior se abre, mas a bobina continua alimentada pelo 13-14. (B) O nível desce abaixo do sensor superior, cujo contato se fecha, mas nada acontece. (C) O contato do sensor superior se abre, a bobina é desalimentada e a bomba para. (D) O contato do sensor inferior se fecha e a malha de alimentação da bobina se completa. (E) Os contatos principais e o 13-14 se fecham e a bomba passa a encher o reservatório. (0,4)
+
+**Questão 5** · 1,3 pt · *adaptada de SOPA 2025 Q1.2*
+
+![Figura da questão 5](/imagens/cursos/fas-t2/conteudo/Q-E6-36-nivel.webp)
+
+Situação: o tanque de água de consumo de um navio é mantido pelo sistema da Figura. Às 08h00 o tanque está cheio e a bomba parada; com o consumo de bordo, o nível passa a descer. Responda para cada momento:
+
+- a) 08h00, tanque cheio: qual o estado dos contatos dos dois sensores, da bobina A1/A2 e do contato 13-14? (0,2)
+- b) 10h00, o nível fica abaixo do sensor superior, cujo contato se fecha. A bomba liga? Justifique. (0,2)
+- c) 13h00, o nível chega ao sensor inferior. Descreva o que acontece no circuito e na bomba. (0,3)
+- d) 13h10, o nível sobe acima do sensor inferior. O que acontece com a bomba e por quê? (0,3)
+- e) Em que momento a bomba volta a parar e qual contato provoca o desligamento? (0,2)
+- f) Que tipo de ação de controle esse sistema realiza? (0,1)
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q3 — F-V-V-F-V-F-V-F**
+  - 1. F — Correção: fecha primeiro o sensor superior e, posteriormente, o inferior (E6 p37).
+  - 4. F — Correção: a bomba para quando o contato do sensor superior se abre (E6 p37).
+  - 6. F — Correção: 13-14 é auxiliar NA (final 3-4) e fecha junto com os principais quando a bobina é energizada (E1 s39; E6 p37).
+  - 8. F — Correção: em paralelo com o sensor de nível inferior (E6 p36).
+- **Q4**
+  - • B – D – E – A – C
+- **Q5**
+  - a) Sensores superior e inferior abertos; bobina desalimentada; 13-14 aberto; bomba parada (E6 p37).
+  - b) Não, nada acontece: o sensor inferior e o contato 13-14 estão abertos (E6 p37).
+  - c) O contato do sensor inferior fecha; a malha da bobina se fecha e ela é energizada; fecham os contatos principais e o auxiliar 13-14; o motor da bomba passa a fornecer água ao reservatório (E6 p37).
+  - d) Continua ligada: o contato do sensor inferior abre, mas a bobina continua alimentada pelo contato auxiliar 13-14, que funciona como selagem (E6 p37).
+  - e) Quando o nível atinge o sensor superior e seu contato se abre, desalimentando a bobina (E6 p37).
+  - f) Liga-desliga (on-off) (E6 p36).
+
+</details>
+
+
+## Bloco B3 — Partida sequencial de quatro motores: potência e comando
+
+‹fonte: E6 p38–p40; E7 p27–p29›
+
+"Trata-se de um circuito de partida sequencial de quatro motores de indução" (E6 p38).
+
+**‹C113› Circuito de potência** (E6 p39) — rede R, S, T; para cada motor: **três fusíveis** (F1 a F12 no total), **contatora** (C1, C2, C3, C4), **relé térmico** (RL1, RL2, RL3, RL4) e **motor** (M1 a M4, com símbolo de aterramento).
+
+![Partida sequencial — potência](/imagens/cursos/fas-t2/conteudo/E6-39-sequencial-potencia.webp)
+*Figura — fusíveis F1…F12, contatoras C1–C4, relés térmicos RL1–RL4, motores M1–M4 ‹fonte: E6 p39›*
+
+**‹C114› Circuito de comando** (E6 p40) — F1 → B0 → **B1 // C1-NA** → ramos:
+
+| Ramo | Contato do relé térmico (NF) | Contato que energiza | Selo em paralelo | Bobinas |
+|---|---|---|---|---|
+| 1 | RL1 | B1 | C1-NA | C1 e D1 |
+| 2 | RL2 | D1-NA | C2-NA | C2 e D2 |
+| 3 | RL3 | D2-NA | C3-NA | C3 e D3 |
+| 4 | RL4 | D3-NA | C4-NA | C4 |
+
+Nomenclatura da figura: D1, D2, D3 = relés temporizados (bobina com X, retardo na energização — M06); não existe D4. B0 (parada) fica antes de todos os ramos. O fusível do comando também se chama F1 (≠ F1 da potência).
+
+![Partida sequencial — comando](/imagens/cursos/fas-t2/conteudo/E6-40-sequencial-comando.webp)
+*Figura — B0, B1 // C1-NA, RL1…RL4, D1-NA // C2-NA, D2-NA // C3-NA, D3-NA // C4-NA ‹fonte: E6 p40›*
+
+### Exemplos práticos e confusões prováveis
+- ‹C113›/‹C114› Cada motor tem fusíveis (curto-circuito) e relé térmico (sobrecarga); os RL1…RL4 do comando são os NF desses relés, um por ramo.
+- ⚠️ ‹C114› D1-NA (e não B1) é o contato que energiza C2.
+
+### Questões — bloco B3
+
+**Questão 6** · 0,8 pt
+
+![Figura da questão 6](/imagens/cursos/fas-t2/conteudo/Q-E6-40-sequencial.webp)
+
+Considere a Figura (circuito de comando da partida sequencial de quatro motores de indução). Identifique cada elemento e informe sua função.
+
+- B0 (0,1)
+- B1 (0,1)
+- C1-NA, em paralelo com B1 (0,1)
+- RL1, RL2, RL3 e RL4 (0,1)
+- Bobinas D1, D2 e D3 (símbolo com X) (0,1)
+- D1-NA (0,1)
+- C2-NA, em paralelo com D1-NA (0,1)
+- Bobinas C1, C2, C3 e C4 (0,1)
+
+**Questão 7** · 0,6 pt
+
+Associe cada grupo de componentes da partida sequencial de quatro motores (E6 p39-p40) à característica correspondente.
+
+**Coluna A**
+
+- (1) Fusíveis F1 a F12
+- (2) Contatoras C1 a C4
+- (3) Relés térmicos RL1 a RL4
+- (4) Relés temporizados D1 a D3
+
+**Coluna B**
+
+- ( ) Proteção de cada motor contra curto-circuito, três por motor no circuito de potência.
+- ( ) Proteção de cada motor contra sobrecarga.
+- ( ) Seus contatos principais ligam cada motor à rede R, S, T.
+- ( ) Seus contatos NF ficam em série, um em cada ramo do comando.
+- ( ) Seus contatos NA fecham após o tempo de atraso e energizam a contatora do motor seguinte.
+- ( ) Seus contatos auxiliares NA realizam as selagens no comando.
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q6**
+  - • Botão de parada (NF), em série antes de todos os ramos (E6 p40).
+  - • Botão de partida (NA): energiza a bobina C1 (E6 p40-p41).
+  - • Contato auxiliar de C1 que faz a selagem de B1 (E6 p41).
+  - • Contatos NF dos relés térmicos dos motores M1 a M4 (proteção contra sobrecarga), um em cada ramo (E6 p39-p40).
+  - • Relés temporizados com retardo na energização (E6 p40-p41; E6 p8).
+  - • Contato do relé temporizado D1: fecha decorrido o tempo de atraso e energiza a bobina C2 (E6 p41).
+  - • Contato auxiliar de C2 que faz a selagem de D1-NA (E6 p41).
+  - • Bobinas das contatoras que acionam os motores M1, M2, M3 e M4 (E6 p39-p40).
+- **Q7 — 1-3-2-3-4-2** Potência de E6 p39 (fusíveis, contatoras, relés térmicos) e comando de E6 p40-p41 (RL NF, D-NA, C-NA); fusível = curto, relé térmico = sobrecarga (E7 p4).
+
+</details>
+
+
+## Bloco B4 — Partida sequencial: funcionamento e intervalo
+
+‹fonte: E6 p41; E7 p30–p31›
+
+**‹C115› Funcionamento** (E6 p41):
+1. Aciona-se **B1**. A bobina de **C1** é energizada, os contatos principais NA de C1 se fecham e **M1 parte**.
+2. O contato auxiliar **C1 NA** se fecha, proporcionando a **selagem de B1**. A bobina do relé temporizado **D1** também é energizada.
+3. Decorrido o tempo de atraso, D1 aciona seus contatos: **D1 NA fecha**, a bobina de **C2** é energizada e **M2 parte**.
+4. **C2 NA** fecha, proporcionando a **selagem de D1 NA**; a bobina de **D2** é energizada.
+5. Decorrido o atraso, **D2 NA fecha** → **C3** → **M3 parte**; **C3 NA sela D2 NA**; **D3** é energizada.
+6. Decorrido o atraso, **D3 NA fecha** → **C4** → **M4 parte**; **C4 NA sela D3 NA**.
+
+**‹C116› Intervalo entre partidas** — "Os motores partem com um intervalo de tempo entre eles. Este tempo será o tempo de atraso nos relés temporizados." (E7 p31)
+
+### Exemplos práticos e confusões prováveis
+- ⚠️ ‹C115› C2 NA sela **D1 NA** (não B1); só C1 NA sela B1.
+- ⚠️ ‹C116› Os motores **não** partem juntos: entre um e o seguinte passa o tempo de atraso do relé temporizado.
+
+### Questões — bloco B4
+
+**Questão 8** · 0,9 pt
+
+![Figura da questão 8](/imagens/cursos/fas-t2/conteudo/Q-E6-40-sequencial.webp)
+
+Considere a Figura. Descreva o funcionamento do circuito a partir do acionamento de B1, indicando para cada motor o contato que energiza a sua contatora, o contato que faz a selagem e o relé temporizado envolvido.
+
+- Partida de M1 (0,2)
+- Partida de M2 (0,2)
+- Partida de M3 (0,2)
+- Partida de M4 (0,2)
+- Intervalo entre as partidas (0,1)
+
+**Questão 9** · 0,6 pt
+
+Com relação à partida direta de quatro motores em sequência, marque V ou F.
+
+( ) 1. Ao acionar B1, os quatro motores partem simultaneamente.  
+( ) 2. O contato C2 NA proporciona a selagem do botão B1.  
+( ) 3. A bobina do relé temporizado D1 é energizada junto com a bobina da contatora C1.  
+( ) 4. A contatora C4 é energizada pelo fechamento de D3 NA, e seu contato C4 NA sela D3 NA.  
+( ) 5. O circuito possui quatro relés temporizados, D1 a D4, um para cada motor.  
+( ) 6. Os relés D1, D2 e D3 acionam seus contatos decorrido o tempo de atraso após a energização de suas bobinas.  
+
+**Questão 10** · 0,2 pt
+
+Na partida sequencial de quatro motores, deseja-se alterar o intervalo entre a partida de M1 e a de M2. Marque (X) a única correta sobre o que determina esse intervalo.
+
+(A) O tempo de atuação do relé térmico RL2.  
+(B) O tempo de fechamento do contato C2 NA, que sela D1 NA.  
+(C) O tempo de atraso ajustado no relé temporizado D1.  
+(D) A soma dos tempos de atraso de D1, D2 e D3.  
+(E) O tempo durante o qual o operador mantém B1 pressionado.  
+
+**Questão 11** · 1,1 pt
+
+![Figura da questão 11](/imagens/cursos/fas-t2/conteudo/Q-E6-40-sequencial.webp)
+
+Situação: quatro motores de ventilação de uma praça de máquinas são acionados pelo circuito da Figura. O operador pressiona B1 e solta o botão. Responda:
+
+- a) Por que M1 continua funcionando depois que o operador solta B1? (0,2)
+- b) Quanto tempo depois de M1 parte o motor M2 e qual elemento define esse tempo? (0,2)
+- c) Depois que M2 partiu, qual contato fica em paralelo com D1 NA mantendo o ramo de C2 alimentado? (0,2)
+- d) Na sequência, qual contato energiza C3 e qual relé temporizado é energizado junto com C3? (0,2)
+- e) O motor M3 sofre sobrecarga. Que dispositivo protege esse motor e onde está o seu contato no comando? (0,2)
+- f) Qual botão é o de parada e em que ponto do comando ele está ligado? (0,1)
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q8**
+  - • Aciona-se B1: a bobina C1 é energizada, os contatos principais de C1 fecham e M1 parte; C1 NA fecha e sela B1; a bobina do relé temporizado D1 também é energizada (E6 p41).
+  - • Decorrido o tempo de atraso, D1 aciona seus contatos: D1 NA fecha, C2 é energizada e M2 parte; C2 NA sela D1 NA; a bobina de D2 é energizada (E6 p41).
+  - • Decorrido o atraso de D2, D2 NA fecha: C3 é energizada e M3 parte; C3 NA sela D2 NA; a bobina de D3 é energizada (E6 p41).
+  - • Decorrido o atraso de D3, D3 NA fecha: C4 é energizada e M4 parte; C4 NA sela D3 NA (E6 p41).
+  - • Os motores partem com um intervalo de tempo entre eles igual ao tempo de atraso nos relés temporizados (E7 p31).
+- **Q9 — F-F-V-V-F-V**
+  - 1. F — Correção: partem em sequência, com intervalo igual ao tempo de atraso dos relés temporizados (E7 p31).
+  - 2. F — Correção: C2 NA sela D1 NA; B1 é selado por C1 NA (E6 p41).
+  - 5. F — Correção: são três relés temporizados (D1, D2, D3); a bobina C4 não tem temporizador associado (E6 p40).
+- **Q10 — C.** E6 p41: D1 é energizado com C1 e, decorrido o tempo de atraso, D1 NA energiza C2; E7 p31: o intervalo é o tempo de atraso nos relés temporizados.
+- **Q11**
+  - a) Porque o contato auxiliar C1 NA, em paralelo com B1, fecha e faz a selagem de B1 (E6 p41).
+  - b) Depois do tempo de atraso do relé temporizado D1, energizado junto com C1 (E6 p41; E7 p31).
+  - c) C2 NA, que faz a selagem de D1 NA (E6 p41).
+  - d) D2 NA energiza C3; junto com C3 é energizado o relé temporizado D3 (E6 p41).
+  - e) O relé térmico RL3, no circuito de potência de M3; seu contato NF RL3 fica em série no ramo das bobinas C3 e D3 (E6 p39-p40).
+  - f) B0 (NF), em série antes de todos os ramos do comando (E6 p40).
+
+</details>
+
+
+## Revisão cumulativa
+
+### Questões — revisão cumulativa
+
+**Questão 12** · 0,7 pt
+
+Revisão cumulativa. Com relação aos circuitos de acionamento estudados até aqui, marque V ou F.
+
+( ) 1. No controle de nível e na partida sequencial, a selagem é feita por contato auxiliar NA da própria contatora (13-14 e C1-NA, por exemplo).  
+( ) 2. Os relés D1, D2 e D3 da partida sequencial são de retardo na desenergização, pois seus contatos atuam imediatamente ao serem energizados.  
+( ) 3. Na partida direta de dois motores com lâmpadas (E7 p25-p26), o intertravamento só permite a partida e o funcionamento de um motor de cada vez.  
+( ) 4. Na partida direta com lâmpada de sinalização, a lâmpada H1 se acende quando o motor parte.  
+( ) 5. Na chave estrela-triângulo da figura K1/K2/K3, depois da atuação do temporizador ficam energizadas as contatoras K1 e K3.  
+( ) 6. Os relés térmicos RL1 a RL4 protegem os motores da partida sequencial contra curto-circuito.  
+( ) 7. Para usar a chave estrela-triângulo, o motor deve ter pelo menos seis terminais acessíveis.  
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q12 — V-F-V-V-F-F-V**
+  - 2. F — Correção: seus contatos atuam decorrido o tempo de atraso após a energização — retardo na energização (E6 p8, p41).
+  - 5. F — Correção: ficam K1 (linha) e K2 (triângulo nessa figura); K3 é o estrela (E6 p32, p34).
+  - 6. F — Correção: relé térmico protege contra sobrecarga; curto-circuito é função dos fusíveis (E1 s22; E7 p4).
+
+</details>
+
+
+## Checklist de domínio
+- [ ] Nomeio os componentes do controle de nível e digo a função do 13-14.
+- [ ] Descrevo o ciclo: superior fecha → inferior fecha → bomba liga → inferior abre (selo) → superior abre → bomba para → superior fecha e nada acontece.
+- [ ] Identifico fusíveis, contatoras, relés térmicos e motores na potência sequencial.
+- [ ] Digo quem energiza e quem sela cada contatora da partida sequencial.
+- [ ] Sei que o intervalo entre partidas é o tempo de atraso dos relés temporizados.

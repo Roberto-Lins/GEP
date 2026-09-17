@@ -21,6 +21,7 @@ type BlocoSimulado = {
   questoes: import('@tipos/question').Questao[];
   duracaoMinutos?: number;
   pontos?: number;
+  itens?: number;
   blueprint?: Array<{ bloco: string; pontos: number; objetivo: string }>;
   rubrica?: string[];
 };
@@ -66,7 +67,9 @@ const totais = Object.fromEntries(dados.timeline.map((t) => [t.slug, dados.check
             <div class="mt-3 flex flex-wrap gap-2">
               {s.duracaoMinutos && <span class="chip border border-white/10 bg-white/5 text-nevoa/80">{s.duracaoMinutos} min</span>}
               {s.pontos && <span class="chip border border-dourado/30 bg-dourado/10 text-dourado-soft">{s.pontos} pontos</span>}
-              <span class="chip border border-white/10 bg-white/5 text-nevoa/80">{s.questoes.length} questões</span>
+              <span class="chip border border-white/10 bg-white/5 text-nevoa/80">
+                {s.itens ? `${s.itens} itens em ${s.questoes.length} questões` : `${s.questoes.length} questões`}
+              </span>
             </div>
           )}
         </div>

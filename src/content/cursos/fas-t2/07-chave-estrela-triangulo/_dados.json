@@ -1,0 +1,38 @@
+{
+  "ordem": 7,
+  "slug": "07-chave-estrela-triangulo",
+  "titulo": "Chave estrela-triângulo",
+  "prioridade": "máxima",
+  "subtitulo": "Ligações, relações elétricas, sequência e nomenclaturas K/KM",
+  "tempoEstimado": "55 min",
+  "objetivo": "Ler as ligações estrela e triângulo, calcular suas relações e identificar corretamente as contatoras em ambas as nomenclaturas das fontes.",
+  "palavrasChave": [
+    "estrela-triângulo",
+    "K1 K2 K3",
+    "KM1 KM2 KM3",
+    "temporizador",
+    "intertravamento"
+  ],
+  "conceptIds": [
+    "C087",
+    "C088",
+    "C089",
+    "C090",
+    "C091",
+    "C092",
+    "C093",
+    "C094",
+    "C095",
+    "C096",
+    "C097",
+    "C098",
+    "C099",
+    "C100",
+    "C101",
+    "C102",
+    "C103",
+    "C104",
+    "C105",
+    "C106"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "ordem": 3,
+  "slug": "03-rele-contator-selo-e-intertravamento",
+  "titulo": "Relé, contator, selo e intertravamento",
+  "prioridade": "máxima",
+  "subtitulo": "Bobinas, contatos auxiliares, numeração e lógica de comando",
+  "tempoEstimado": "50 min",
+  "objetivo": "Explicar relés e contatores, ler seus terminais e distinguir sem ambiguidade selo de intertravamento.",
+  "palavrasChave": [
+    "relé",
+    "contator",
+    "13-14",
+    "21-22",
+    "selo",
+    "intertravamento"
+  ],
+  "conceptIds": [
+    "C038",
+    "C039",
+    "C040",
+    "C041",
+    "C042",
+    "C043",
+    "C044",
+    "C045",
+    "C046",
+    "C047",
+    "C048",
+    "C049",
+    "C050",
+    "C051",
+    "C052",
+    "C053",
+    "C054"
+  ]
+}

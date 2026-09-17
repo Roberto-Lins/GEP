@@ -1,0 +1,485 @@
+---
+titulo: "Partida direta e variações — aula"
+secao: "aula"
+secaoOrdem: 1
+---
+
+# MÓDULO M04 — Partida direta e variações
+
+> Fontes: ‹E1 s47–s50› · ‹E2› · ‹E4› · ‹E7 p2–p6, p21–p26› · Tempo de leitura: ~18 min
+
+**Você vai precisar saber:**
+- identificar na figura da partida direta cada componente dos circuitos de potência e de comando, com sigla e terminais;
+- dar a função de cada componente (fusível, disjuntor, relé térmico, contator, botoeiras, selo);
+- descrever passo a passo a partida, a parada e a atuação do relé térmico;
+- reconhecer as variações do E7: cargas de alta potência, botão de emergência, lâmpada de sinalização e dois motores com intertravamento.
+
+## Bloco B1 — Circuitos de potência e de comando
+
+‹fonte: E1 s47–s48; E2; E4›
+
+A partida direta de motor de indução trifásico "é o método de partida mais simples, em que não são empregados dispositivos especiais de acionamento do motor". Os circuitos são divididos em comando e potência. ‹fonte: E4›
+
+**‹C055› Circuito de potência** — R, S, T → **F1** (fusíveis) → **Q1** (disjuntor tripolar) → contatos principais de **K1** (1-2, 3-4, 5-6) → **F2** (relé térmico, 1-2, 3-4, 5-6) → **X1** (bornes 1, 2, 3) → **M1** (motor trifásico, U1, V1, W1). A foto "Direct online starter (DOL)" do slide 47 mostra a mesma cadeia: circuit breaker → contactor → thermal overload (O/L) → motor. ‹fonte: E1 s47–s48›
+
+**‹C056› Circuito de comando** — S, T → **F3** (fusíveis) → **Q2** (disjuntor bipolar) → **F2 95-96** (contato NF do relé térmico) → **S0 1-2** (botoeira NF) → **S1 3-4** (botoeira NA) **em paralelo com K1 13-14** (selo) → bobina **K1 A1-A2** → retorno. ‹fonte: E1 s48›
+
+![Partida direta — potência e comando](/imagens/cursos/fas-t2/conteudo/E1-48-partida-direta.webp)
+*Figura — Partida direta: potência (esquerda) e comando (direita) ‹fonte: E1 s48; E2 fig. 3.1›*
+
+**‹C057› Funções dos componentes** — ‹fonte: E1 s18–s23, s43, s48; E2; E4; E7 p4›
+
+| Sigla | Componente | Função | Circuito |
+|---|---|---|---|
+| F1 | fusíveis | proteção contra curto-circuito | potência |
+| Q1 | disjuntor tripolar (símbolo com elementos térmicos e magnéticos) | disjuntor do circuito de potência: proteção contra curto e sobrecarga, permite religação | potência |
+| K1 | contator | manobra: liga/desliga o motor sem contato do operador com a potência | principais na potência; bobina e 13-14 no comando |
+| F2 | relé térmico | proteção contra sobrecarga (bimetal) | elementos térmicos na potência; 95-96 no comando |
+| X1 | bornes | ligação dos terminais U1, V1, W1 do motor | potência |
+| M1 | motor trifásico | carga acionada | potência |
+| F3 | fusíveis | proteção contra curto-circuito do comando | comando |
+| Q2 | disjuntor bipolar | disjuntor do circuito de comando | comando |
+| S0 | botoeira NF | parada (desliga) | comando |
+| S1 | botoeira NA | partida (liga) | comando |
+
+**‹C065› Estudo dirigido de partida direta (E2)** — Objetivo: "montar esta partida no laboratório, observando as dificuldades e a lógica de funcionamento, bem como apresentar o **conceito de selo**". Componentes: 1 disjuntor tripolar (Q1), 1 disjuntor bipolar (Q2), 1 relé térmico (F2), 1 contator (K1), 1 botoeira NF (S0), 1 botoeira NA (S1), 1 motor trifásico (M1). O E4 (exercício) pede identificar F1, Q1, K1, F2, M1, F3, Q2, S0, S1 e as funções de S0, S1, Q1, F2 e K1. ‹fonte: E2; E4›
+
+### Exemplos práticos e confusões prováveis
+- ‹C055› ⚠️ Na figura, F2 fica **depois** de K1 (entre K1 e o motor). Não confunda com a ordem do diagrama de blocos do E1 s18, que lista a proteção contra sobrecarga antes do dispositivo de manobra.
+- ‹C056› ⚠️ O comando é alimentado por **S e T**; Q2 é **bipolar** (Q1 é tripolar).
+- ‹C057› ⚠️ F2 e K1 aparecem **nos dois circuitos**: F2 com os elementos térmicos na potência e o NF 95-96 no comando; K1 com os principais na potência e a bobina A1-A2 + o 13-14 no comando.
+- ‹C057› ⚠️ V006: fusível = **curto-circuito**; relé térmico = **sobrecarga**. Motor e contatos principais ficam na potência; botoeiras e bobina, no comando (V033).
+- ‹C065› O ED da partida direta apresenta o conceito de **selo**. Os fusíveis F1 e F3 aparecem na figura, mas não na lista de componentes do E2.
+
+### Questões — bloco B1
+
+**Questão 1** · 1,2 pt
+
+![Figura da questão 1](/imagens/cursos/fas-t2/conteudo/Q-E1-48-partida-direta.webp)
+
+Considere a Figura (partida direta de motor de indução trifásico). Identifique cada componente indicado e informe se pertence ao circuito de potência ou ao de comando.
+
+- F1. (0,1)
+- Q1. (0,1)
+- K1, terminais 1-2, 3-4 e 5-6. (0,1)
+- F2, terminais 1-2, 3-4 e 5-6. (0,1)
+- X1. (0,1)
+- F3. (0,1)
+- Q2. (0,1)
+- F2, terminais 95-96. (0,1)
+- S0 (1-2) e S1 (3-4). (0,2)
+- K1 (13-14) e K1 (A1-A2). (0,2)
+
+**Questão 2** · 0,7 pt
+
+![Figura da questão 2](/imagens/cursos/fas-t2/conteudo/Q-E1-48-partida-direta.webp)
+
+Considere a Figura (partida direta). Com relação aos circuitos de potência e de comando, marque V ou F.
+
+( ) 1. No circuito de potência, a sequência a partir de R, S, T é: fusíveis F1, disjuntor tripolar Q1, contatos principais de K1, relé térmico F2, bornes X1 e motor M1.  
+( ) 2. O relé térmico F2 aparece nos dois circuitos: seus elementos térmicos no circuito de potência e seu contato NF 95-96 no circuito de comando.  
+( ) 3. O circuito de comando é alimentado pelas fases R e S, passando pelos fusíveis F3 e por um disjuntor tripolar Q2.  
+( ) 4. A botoeira S0 (terminais 1-2) é NA, e a botoeira S1 (terminais 3-4) é NF.  
+( ) 5. O contato K1 13-14 está ligado em paralelo com a botoeira S1.  
+( ) 6. A bobina de K1 (A1-A2) está no circuito de potência, em série com o motor M1.  
+( ) 7. Os terminais U1, V1 e W1 do motor M1 são ligados por meio dos bornes X1.  
+
+**Questão 3** · 0,7 pt
+
+Associe cada componente da partida direta (coluna A) à sua função (coluna B). Um número pode ser usado mais de uma vez.
+
+**Coluna A**
+
+- (1) Fusíveis F1 e F3
+- (2) Disjuntor tripolar Q1
+- (3) Relé térmico F2
+- (4) Contator K1
+- (5) Botoeira S0
+- (6) Botoeira S1
+
+**Coluna B**
+
+- ( ) Proteção contra sobrecarga, pelo efeito térmico da corrente sobre o bimetal.
+- ( ) Botoeira NA de partida do motor.
+- ( ) Proteção contra curto-circuito; após atuar, deve ser substituído.
+- ( ) Liga e desliga o motor de forma segura, sem contato do operador com o circuito de potência.
+- ( ) Proteção do circuito de potência contra curto-circuito e sobrecarga, permitindo a religação.
+- ( ) Botoeira NF de parada do motor.
+- ( ) Seu contato auxiliar NA 13-14 realiza o selo.
+
+**Questão 4** · 0,2 pt
+
+Com relação ao estudo dirigido de laboratório da partida direta de motores (E2), marque (X) a única correta.
+
+(A) Os componentes incluem uma botoeira NA S0 e uma botoeira NF S1.  
+(B) Os componentes incluem um disjuntor bipolar Q1 para a potência e um disjuntor tripolar Q2 para o comando.  
+(C) O objetivo é montar a partida direta no laboratório, observando as dificuldades e a lógica de funcionamento, bem como apresentar o conceito de selo.  
+(D) Os componentes dispensam o relé térmico, pois o disjuntor Q1 já protege o motor.  
+(E) O objetivo é apresentar o conceito de intertravamento, montando o circuito com dois contatores.  
+
+**Questão 5** · 0,7 pt
+
+![Figura da questão 5](/imagens/cursos/fas-t2/conteudo/Q-E1-48-partida-direta.webp)
+
+Com base na Figura (partida direta), responda objetivamente, comparando os componentes.
+
+- Diferencie Q1 e Q2 quanto ao circuito em que estão e ao número de polos. (0,2)
+- Por que o relé térmico F2 aparece nos dois circuitos? (0,2)
+- Por que o contator K1 também aparece nos dois circuitos? (0,2)
+- Por quais fases é alimentado o circuito de comando? (0,1)
+
+**Questão 6** · 0,6 pt
+
+Ordene os componentes na sequência em que aparecem nos circuitos da partida direta (E1 s48). Escreva a sequência das letras.
+
+- Circuito de potência, da rede R, S, T até o motor: (A) relé térmico F2; (B) motor M1; (C) disjuntor tripolar Q1; (D) contatos principais de K1; (E) fusíveis F1; (F) bornes X1. (0,3)
+- Circuito de comando, a partir das fases S e T até a bobina: (A) S0 (1-2); (B) disjuntor bipolar Q2; (C) bobina K1 (A1-A2); (D) F2 (95-96); (E) fusíveis F3; (F) S1 (3-4) em paralelo com K1 (13-14). (0,3)
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q1**
+  - • Fusíveis do circuito de potência.
+  - • Disjuntor tripolar (com elementos térmicos e magnéticos) do circuito de potência.
+  - • Contatos principais do contator K1, no circuito de potência.
+  - • Relé térmico (elementos térmicos), no circuito de potência.
+  - • Bornes de ligação dos terminais U1, V1 e W1 do motor, no circuito de potência.
+  - • Fusíveis do circuito de comando.
+  - • Disjuntor bipolar do circuito de comando.
+  - • Contato NF do relé térmico, no circuito de comando.
+  - • S0: botoeira NF de parada; S1: botoeira NA de partida; ambas no circuito de comando.
+  - • 13-14: contato auxiliar NA de selo, em paralelo com S1; A1-A2: bobina do contator; ambos no circuito de comando.
+- **Q2 — V-V-F-F-V-F-V**
+  - 3. F — Correção: o comando é alimentado por S e T, e Q2 é um disjuntor bipolar (E1 s48; E2).
+  - 4. F — Correção: S0 é a botoeira NF (parada) e S1 é a botoeira NA (partida) (E2).
+  - 6. F — Correção: a bobina A1-A2 está no circuito de comando; na potência ficam os contatos principais de K1 (E1 s48).
+- **Q3 — 3-6-1-4-2-5-4** Funções dos componentes da partida direta (E1 s18–s22, s43, s48; E2; E4).
+- **Q4 — C.** Correta: objetivo literal do E2.
+- **Q5**
+  - • Q1: disjuntor tripolar do circuito de potência; Q2: disjuntor bipolar do circuito de comando.
+  - • Seus elementos térmicos (1-2, 3-4, 5-6) ficam no circuito de potência, percorridos pela corrente do motor; seu contato NF 95-96 fica em série no circuito de comando.
+  - • Seus contatos principais (1-2, 3-4, 5-6) estão na potência, alimentando o motor; sua bobina (A1-A2) e o contato auxiliar 13-14 estão no comando.
+  - • Pelas fases S e T (através de F3 e Q2).
+- **Q6**
+  - • E – C – D – A – F – B
+  - • E – B – D – A – F – C
+
+</details>
+
+
+## Bloco B2 — Funcionamento passo a passo
+
+‹fonte: E1 s49–s50›
+
+**‹C058› Ligar** — ‹fonte: E1 s49›
+1. O operador pressiona a botoeira **S1 (NA)**.
+2. A corrente flui por **S0** (fechada por padrão) e por **S1** (fechada pelo toque) até a bobina de **K1**, que é energizada.
+3. A bobina fecha os **contatos principais** de potência, ligando o motor.
+4. Simultaneamente, o contato auxiliar **NA de K1 (13-14)** se fecha e mantém a bobina energizada, mesmo após a liberação de S1 — é o chamado **selo**.
+
+**‹C059› Desligar** — "Para parar o motor, o operador pressiona **S0**. Isso **abre o circuito de comando**, desenergiza a bobina e desliga o contator, interrompendo a alimentação do motor." ‹fonte: E1 s49›
+
+**‹C060› Atuação do relé térmico** — "Se o motor operar com corrente acima do valor nominal por um tempo prolongado, o relé térmico F2 atuará." "O relé térmico bimetálico F2 do circuito de potência atua ao abrir o **contato NF 95-96, no circuito de comando**, em função do aquecimento devido à corrente de sobrecarga. Tal fato desenergiza a bobina K1 do contator que, por sua vez, abre os contatos principais de K1 interrompendo a alimentação do motor." ‹fonte: E1 s49–s50›
+
+Cadeia: sobrecarga prolongada → aquecimento do bimetal de F2 → abre **95-96** (comando) → bobina **K1** desenergizada → **principais** de K1 abrem → motor desligado.
+
+| Situação | S1 (3-4) | S0 (1-2) | F2 95-96 | Bobina K1 | K1 13-14 | Motor |
+|---|---|---|---|---|---|---|
+| Repouso | aberta | fechada | fechado | desenergizada | aberto | parado |
+| S1 pressionada | fechada | fechada | fechado | energizada | fecha | liga |
+| S1 liberada | aberta | fechada | fechado | energizada (selo) | fechado | funcionando |
+| S0 pressionada | aberta | aberta | fechado | desenergizada | abre | para |
+| Sobrecarga | aberta | fechada | **aberto** | desenergizada | abre | para |
+
+### Exemplos práticos e confusões prováveis
+- ‹C058› Soltar S1 **não** desliga o motor: o K1 13-14, em paralelo com S1, mantém a bobina.
+- ‹C059› S0 (NF) está em série no comando: pressioná-la abre o circuito e a bobina perde a alimentação.
+- ⚠️ ‹C060› V005: o bimetal **não** abre diretamente os contatos de potência; ele abre o **NF 95-96 no comando**, e é o **contator K1** que abre os principais.
+- ⚠️ ‹C060› 95-96 é **NF** (o relé térmico também tem 97-98 NA, E1 s22); o contato que atua na partida direta é o 95-96.
+
+### Questões — bloco B2
+
+**Questão 7** · 0,7 pt
+
+Com relação ao funcionamento da partida direta (E1 s48–s50), marque V ou F.
+
+( ) 1. Se o motor operar com corrente acima do valor nominal por um tempo prolongado, o relé térmico F2 atuará.  
+( ) 2. Ao atuar, o bimetal de F2 abre diretamente os contatos principais de K1 no circuito de potência.  
+( ) 3. O contato de F2 que atua no circuito de comando é o contato NA 95-96.  
+( ) 4. Para parar o motor, o operador pressiona S0, o que abre o circuito de comando, desenergiza a bobina e desliga o contator.  
+( ) 5. Ao soltar S1 após a partida, o motor para, porque S1 é uma botoeira NA.  
+( ) 6. Na partida, a corrente chega à bobina de K1 passando por S0, que é fechada por padrão, e por S1, fechada pelo toque.  
+( ) 7. Após a atuação de F2, com a bobina de K1 desenergizada, o contato K1 13-14 permanece fechado, mantendo o selo.  
+
+**Questão 8** · 0,9 pt
+
+Complete as lacunas sobre a atuação do relé térmico na partida direta (E1 s49–s50).
+
+- O relé térmico atua se o motor operar com corrente acima do valor ______ por um tempo prolongado. (0,1)
+- O relé térmico ______ F2 ... (0,1)
+- ... do circuito de ______ ... (0,1)
+- ... atua ao abrir o contato ______ (tipo) ... (0,1)
+- ... de terminais ______ ... (0,1)
+- ... no circuito de ______ ... (0,1)
+- ... em função do aquecimento devido à corrente de ______. (0,1)
+- Tal fato desenergiza a ______ K1 do contator ... (0,1)
+- ... que, por sua vez, abre os contatos ______ de K1, interrompendo a alimentação do motor. (0,1)
+
+**Questão 9** · 0,7 pt
+
+![Figura da questão 9](/imagens/cursos/fas-t2/conteudo/Q-E1-48-partida-direta.webp)
+
+Considere a Figura (partida direta), com o motor inicialmente desligado. Descreva o funcionamento do circuito em cada etapa, citando os terminais dos contatos envolvidos.
+
+- O operador pressiona S1. (0,3)
+- O operador solta S1. (0,2)
+- O operador pressiona S0. (0,2)
+
+**Questão 10** · 0,3 pt
+
+![Figura da questão 10](/imagens/cursos/fas-t2/conteudo/Q-E1-48-partida-direta.webp)
+
+Considere a Figura (partida direta), com o motor M1 em funcionamento depois de o operador ter pressionado e liberado S1. Marque (X) a única correta.
+
+(A) A bobina de K1 continua energizada pelo caminho F2 (95-96) → S0 (1-2) → S1 (3-4), que permanece fechada após o toque.  
+(B) A bobina de K1 continua energizada pelo caminho F2 (95-96) → S0 (1-2) → K1 (13-14), mesmo com S1 já liberada.  
+(C) Para desligar o motor, pressiona-se S1, que abre o circuito de comando.  
+(D) O motor só continua funcionando enquanto o operador mantiver S1 pressionada.  
+(E) Havendo sobrecarga, F2 abre seu contato 13-14 no circuito de comando, desenergizando K1.  
+
+**Questão 11** · 1,4 pt
+
+![Figura da questão 11](/imagens/cursos/fas-t2/conteudo/Q-E1-48-partida-direta.webp)
+
+Situação — O motor M1 é acionado pela partida direta da Figura e está inicialmente desligado. Responda aos subitens, indicando os componentes pela sigla.
+
+- O operador pressiona S1 e a solta em seguida. Explique por que o motor continua ligado, indicando os terminais do contato responsável e o nome dessa ligação. (0,3)
+- Da rede até o motor, por quais componentes passa a corrente de alimentação de M1? (0,2)
+- Após algum tempo, M1 passa a operar com corrente acima da nominal por tempo prolongado. Qual dispositivo atua, qual contato ele abre (terminais e circuito) e qual a consequência? (0,3)
+- Quais dispositivos da Figura protegem contra curto-circuito, e em qual circuito está cada um? (0,2)
+- Em uma parada normal, qual botoeira é acionada, de que tipo ela é e o que acontece com a bobina de K1? (0,2)
+- Por que as botoeiras e a bobina de K1 estão no circuito de comando, e não no de potência? (0,2)
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q7 — V-F-F-V-F-V-F**
+  - 2. F — Correção: F2 abre o contato NF 95-96 no circuito de comando; isso desenergiza a bobina K1, que abre os contatos principais (E1 s50).
+  - 3. F — Correção: é o contato NF 95-96 (E1 s50).
+  - 5. F — Correção: o motor continua ligado, pois o contato auxiliar NA de K1 (13-14) mantém a bobina energizada — selo (E1 s49).
+  - 7. F — Correção: com a bobina desenergizada o contator volta ao repouso e o auxiliar NA 13-14 abre (E1 s35, s39, s50).
+- **Q8**
+  - • nominal
+  - • bimetálico
+  - • potência
+  - • NF
+  - • 95-96
+  - • comando
+  - • sobrecarga
+  - • bobina
+  - • principais
+- **Q9**
+  - • A corrente passa por F2 (95-96), por S0 (1-2), fechada por padrão, e por S1 (3-4), fechada pelo toque, até a bobina K1 (A1-A2), que é energizada. A bobina fecha os contatos principais (1-2, 3-4, 5-6), ligando o motor, e simultaneamente fecha o auxiliar NA 13-14.
+  - • O motor continua ligado: o contato K1 13-14, fechado e em paralelo com S1, mantém a bobina energizada (selo).
+  - • S0 (1-2) abre o circuito de comando, desenergiza a bobina e desliga o contator, interrompendo a alimentação do motor.
+- **Q10 — B.** Correta: após a liberação de S1, a bobina é mantida pelo selo K1 13-14 em paralelo com S1 (E1 s48–s49).
+- **Q11**
+  - • Ao pressionar S1, a bobina de K1 é energizada e fecha os contatos principais e o auxiliar NA 13-14; esse contato, em paralelo com S1, mantém a bobina energizada após a liberação de S1 — é o selo.
+  - • R, S, T → fusíveis F1 → disjuntor tripolar Q1 → contatos principais de K1 → relé térmico F2 → bornes X1 → M1 (U1, V1, W1).
+  - • O relé térmico bimetálico F2 abre o contato NF 95-96 no circuito de comando; a bobina de K1 é desenergizada, os contatos principais de K1 abrem e a alimentação do motor é interrompida.
+  - • Fusíveis F1 (potência) e F3 (comando); disjuntores Q1 (tripolar, potência) e Q2 (bipolar, comando).
+  - • S0, botoeira NF (1-2): abre o circuito de comando, desenergiza a bobina e desliga o contator, interrompendo a alimentação do motor.
+  - • Porque o circuito de comando é o de interface com o operador e trabalha com baixas correntes e/ou baixas tensões, enquanto o de potência é onde estão as cargas (o motor); a divisão possibilita, em primeiro lugar, a segurança do operador.
+
+</details>
+
+
+## Bloco B3 — Variações da partida direta (exercícios do E7)
+
+‹fonte: E7 p3–p6, p21–p26›
+
+**‹C061› Chaveamento de cargas de alta potência** — ‹fonte: E7 p3–p4›
+- Comando: F → **F1** → **RL 95-96** → **B0** → **B1 // C1 NA** → bobina **C1** → N. Força: R, S, T → fusíveis **F2, F3, F4** → contator **C1** → relé térmico **RL** → motor. "B0 e B1 são chaves de impulso sem retenção."
+- Aciona-se **B1 NA** sem retenção, que energiza a bobina da contatora C1.
+- O contato **C1 NA** é fechado, provendo a **selagem** à chave B1.
+- Os contatos principais de C1 são fechados e o motor trifásico é alimentado.
+- Os **fusíveis** proporcionam proteção de **curto-circuito**; o **relé térmico**, proteção de **sobrecarga**: o sensor bimetálico aciona o contato do relé térmico, que desalimenta a bobina da contatora, que abre seus contatos e desalimenta o motor.
+- Aciona-se **B0 NF** sem retenção, que desenergiza a bobina de C1, que abre seus contatos e desalimenta o motor.
+
+![Chaveamento de cargas de alta potência](/imagens/cursos/fas-t2/conteudo/E7-03-alta-potencia.webp)
+*Figura — Circuito de comando e circuito de força ‹fonte: E7 p3›*
+
+**‹C062› Botão de emergência** — "A novidade neste circuito é a **chave de parada em emergência que, uma vez acionada, não retorna à posição normal**." Figura: potência — rede de alimentação (L1, L2, L3, N, PE), fusíveis F123, contator K1, relé térmico F7, motor elétrico trifásico M1. Comando — R → F21 → **F7 95-96** (relé térmico) → **Emerg 1-2** (botão de emergência, NF) → **Liga 3-4 // K1 13-14** (botão liga + selo) → **Desl 1-2** (botão desliga) → **K1 A1/A2** (bobina do contator) → F22 → S. ‹fonte: E7 p5–p6›
+
+![Partida direta com botão de emergência](/imagens/cursos/fas-t2/conteudo/E7-06-emergencia.webp)
+*Figura — Partida direta com botão de emergência ‹fonte: E7 p6›*
+
+**‹C063› Lâmpada de sinalização** — "Trata-se da conhecida partida direta. Neste caso, existe a **lâmpada H1** que se acenderá quando o motor partir." Na figura 5.5, H1 está **em paralelo com a bobina de K1**, depois de FT1 95-96, S0 e S1 // K1 13-14. Letra H = dispositivos de sinalização (E1 s46). ‹fonte: E7 p21–p22›
+
+![Partida direta com lâmpada H1](/imagens/cursos/fas-t2/conteudo/E7-22-lampada.webp)
+*Figura — Diagramas de força e de comando com H1 ‹fonte: E7 p22›*
+
+**‹C064› Partida direta de dois motores** — Força: R, S, T → fusíveis → K1 → M1 e fusíveis → K2 → M2. Comando: R → F1 → contato do relé térmico → **B0** → ramo 1: **B1 // K1 NA** → **K2 NF** → bobina **K1** // lâmpada; ramo 2: **B2 // K2 NA** → **K1 NF** → bobina **K2** // lâmpada → S. "B0, B1 e B2 são chaves de impulso sem retenção." O slide diz que só é possível a partida e funcionamento de **um motor de cada vez**, "em função do mecanismo de **INTERLOCK ou intertravamento**", e que "existem **lâmpadas indicadoras** do funcionamento de cada um dos motores" (no slide está escrito "S0 é possível", erro de digitação de "Só é possível"). ‹fonte: E7 p23–p26›
+
+![Dois motores — potência](/imagens/cursos/fas-t2/conteudo/E7-24-dois-motores-potencia.webp)
+*Figura — Potência: K1 aciona M1 e K2 aciona M2 ‹fonte: E7 p24›*
+
+![Dois motores — comando](/imagens/cursos/fas-t2/conteudo/E7-25-dois-motores-comando.webp)
+*Figura — Comando com selo, intertravamento e lâmpadas ‹fonte: E7 p25›*
+
+| Variação | O que a distingue |
+|---|---|
+| Alta potência (p3) | contatora C1, relé térmico RL, fusíveis F2–F4, botões B0/B1 sem retenção |
+| Emergência (p6) | chave de parada em emergência que não retorna à posição normal |
+| Lâmpada (p22) | H1 em paralelo com a bobina de K1, acende quando o motor parte |
+| Dois motores (p25) | NF de K2 no ramo de K1 e NF de K1 no ramo de K2: um motor de cada vez; uma lâmpada por motor |
+
+### Exemplos práticos e confusões prováveis
+- ‹C061› ⚠️ As siglas mudam entre figuras: no E7 p3, **F2–F4 são fusíveis** e **RL é o relé térmico**; no E1 s48, **F2 é o relé térmico**. Leia sempre a figura.
+- ‹C062› ⚠️ V038: o botão de emergência **não retorna** à posição normal depois de acionado — é justamente a "novidade" do circuito. Ele é NF e fica em série no comando.
+- ‹C063› H1 em paralelo com a bobina: acende quando K1 é energizada e o motor parte.
+- ‹C064› ⚠️ Pressionar B2 com M1 funcionando não parte M2: o **NF de K1** está aberto no ramo de K2 (intertravamento). Primeiro B0 desliga; depois B2.
+
+### Questões — bloco B3
+
+**Questão 12** · 1,2 pt
+
+![Figura da questão 12](/imagens/cursos/fas-t2/conteudo/Q-E7-06-emergencia.webp)
+
+A Figura mostra os circuitos de potência (à esquerda) e de comando (à direita) de uma partida direta, com os componentes indicados pelos números 1 a 10. Identifique cada componente e dê a sua função.
+
+- Número 1. (0,1)
+- Número 2. (0,1)
+- Número 3. (0,1)
+- Número 4. (0,1)
+- Número 5. (0,1)
+- Número 6. (0,1)
+- Número 7. (0,2)
+- Número 8. (0,2)
+- Número 9. (0,1)
+- Número 10. (0,1)
+
+**Questão 13** · 0,7 pt
+
+Com relação às variações da partida direta apresentadas nos exercícios de acionamento (E7), marque V ou F.
+
+( ) 1. No chaveamento de cargas de alta potência, B0 e B1 são chaves de impulso sem retenção.  
+( ) 2. No chaveamento de cargas de alta potência, os fusíveis F2, F3 e F4 proporcionam proteção de sobrecarga, e o relé térmico RL, proteção de curto-circuito.  
+( ) 3. Nesse mesmo circuito, acionando-se B1 NA, energiza-se a bobina da contatora C1, e o contato C1 NA fechado provê a selagem à chave B1.  
+( ) 4. A novidade do circuito com botão de emergência é uma chave de parada que, uma vez acionada, retorna sozinha à posição normal quando o operador a solta.  
+( ) 5. Na partida direta com lâmpada de sinalização, a lâmpada H1 se acende quando o motor parte.  
+( ) 6. Na partida direta de dois motores, é possível partir e manter os dois motores funcionando ao mesmo tempo, desde que B1 e B2 sejam pressionadas juntas.  
+( ) 7. No comando dos dois motores, o contato NF de K2 está em série com a bobina de K1, e o contato NF de K1, em série com a bobina de K2.  
+
+**Questão 14** · 0,6 pt
+
+Associe cada circuito de partida direta dos exercícios de acionamento (coluna A) à característica que o distingue (coluna B). Um número pode ser usado mais de uma vez.
+
+**Coluna A**
+
+- (1) Chaveamento de cargas de alta potência
+- (2) Partida direta com botão de emergência
+- (3) Partida direta com lâmpada de sinalização
+- (4) Partida direta de dois motores
+
+**Coluna B**
+
+- ( ) Chave de parada que, uma vez acionada, não retorna à posição normal.
+- ( ) Contatos NF cruzados entre K1 e K2 permitem o funcionamento de um só motor por vez.
+- ( ) Contatora C1, relé térmico RL e fusíveis F2, F3 e F4, com botões B0 e B1.
+- ( ) Lâmpadas indicadoras do funcionamento de cada um dos motores.
+- ( ) Lâmpada H1 ligada em paralelo com a bobina de K1, que acende quando o motor parte.
+- ( ) Rede de alimentação L1, L2, L3, N e PE; fusíveis F123; relé térmico F7.
+
+**Questão 15** · 0,8 pt
+
+Considere o circuito de chaveamento de cargas de alta potência (E7 p3): comando F – F1 – RL (95-96) – B0 – B1 em paralelo com C1 NA – bobina C1 – N; força R, S, T – fusíveis F2, F3, F4 – contator C1 – relé térmico RL – motor. B0 e B1 são chaves de impulso sem retenção. Descreva o funcionamento em cada etapa.
+
+- Aciona-se B1. (0,3)
+- Ocorre sobrecarga no motor. (0,2)
+- Aciona-se B0. (0,2)
+- Que proteção proporcionam os fusíveis F2, F3 e F4? (0,1)
+
+**Questão 16** · 1 pt · *adaptada de SOPA 2025 Q1.3b*
+
+![Figura da questão 16](/imagens/cursos/fas-t2/conteudo/Q-E7-25-dois-motores.webp)
+
+Situação — A Figura mostra o circuito de comando da partida direta de dois motores: K1 aciona M1 e K2 aciona M2. B0, B1 e B2 são chaves de impulso sem retenção. Inicialmente os dois motores estão parados. Responda aos subitens.
+
+- O operador pressiona e solta B1. O que acontece com a bobina de K1, com o contato NA de K1 e com a lâmpada do ramo de K1? (0,3)
+- Com M1 funcionando, o operador pressiona B2. M2 parte? Justifique indicando o contato responsável e o nome do mecanismo. (0,3)
+- O que deve ser feito para colocar M2 em funcionamento no lugar de M1? (0,2)
+- Qual contato, ligado logo após F1, é comum aos dois ramos, e qual o efeito de sua abertura? (0,2)
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q12**
+  - • Rede de alimentação (L1, L2, L3, N, PE).
+  - • Fusíveis (F123): proteção contra curto-circuito do circuito de potência.
+  - • Contator K1 (contatos principais 1-2, 3-4, 5-6): liga e desliga o motor.
+  - • Relé térmico F7: proteção contra sobrecarga.
+  - • Motor elétrico trifásico M1.
+  - • Contato NF 95-96 do relé térmico F7: abre na sobrecarga e desenergiza a bobina de K1.
+  - • Botão de emergência (NF 1-2, em série no comando): chave de parada em emergência que, uma vez acionada, não retorna à posição normal.
+  - • Botão liga (NA 3-4) com o contato K1 13-14 em paralelo (selo): parte o motor e mantém a bobina energizada após soltar o botão.
+  - • Botão desliga (NF 1-2): abre o circuito de comando e desenergiza a bobina, parando o motor.
+  - • Bobina do contator K1 (A1-A2).
+- **Q13 — V-F-V-F-V-F-V**
+  - 2. F — Correção: os fusíveis proporcionam proteção de curto-circuito e o relé térmico, de sobrecarga (E7 p4).
+  - 4. F — Correção: a chave de parada em emergência, uma vez acionada, não retorna à posição normal (E7 p5).
+  - 6. F — Correção: só é possível a partida e o funcionamento de um motor de cada vez, em função do INTERLOCK ou intertravamento (E7 p26).
+- **Q14 — 2-4-1-4-3-2** Distinção das quatro variações do E7 (p3, p6, p22, p25–p26).
+- **Q15**
+  - • B1 NA sem retenção energiza a bobina da contatora C1; o contato C1 NA é fechado, provendo a selagem à chave B1; os contatos principais de C1 são fechados e o motor trifásico é alimentado.
+  - • O sensor bimetálico aciona o contato do relé térmico RL (95-96), que desalimenta a bobina da contatora C1; esta abre seus contatos e desalimenta o motor.
+  - • B0 NF sem retenção desenergiza a bobina da contatora C1, que abre seus contatos e desalimenta o motor.
+  - • Proteção de curto-circuito.
+- **Q16**
+  - • A bobina de K1 é energizada; o contato NA de K1, em paralelo com B1, se fecha e sela B1, mantendo K1 energizada após soltar o botão; a lâmpada em paralelo com a bobina acende, indicando M1 em funcionamento.
+  - • Não. O contato NF de K1, em série no ramo da bobina de K2, está aberto: é o intertravamento (INTERLOCK); só é possível a partida e o funcionamento de um motor de cada vez.
+  - • Pressionar B0 para desenergizar K1 (o NF de K1 volta a fechar) e, em seguida, pressionar B2.
+  - • O contato NF do relé térmico: ao abrir, desenergiza a bobina do contator que estiver em funcionamento, desligando o motor.
+
+</details>
+
+
+## Revisão cumulativa
+
+### Questões — revisão cumulativa
+
+**Questão 17** · 0,7 pt
+
+Revisão cumulativa — Com relação a acionamentos, elementos de comando, relés e contatores, marque V ou F.
+
+( ) 1. A partida direta de motor CA trifásico é feita por ligação direta à rede.  
+( ) 2. A partida direta é o método de partida mais simples, em que não são empregados dispositivos especiais de acionamento do motor.  
+( ) 3. Na tabela de letras de identificação, Q designa os contatores e K, os disjuntores.  
+( ) 4. A letra H da lâmpada H1 indica um dispositivo de sinalização.  
+( ) 5. Assim como o disjuntor, o fusível permite a religação do sistema após atuar.  
+( ) 6. O diodo damper, ligado em paralelo com a bobina do relé, faz a proteção contra pico reverso.  
+( ) 7. O selo da partida direta é feito pelo contato auxiliar 13-14 de K1, que é NF por terminar em 3-4.  
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q17 — V-V-F-V-F-V-F**
+  - 3. F — Correção: K = contatores; Q = dispositivos de manobra para circuitos de potência (disjuntores, seccionadores, interruptores) (E1 s46).
+  - 5. F — Correção: o disjuntor permite a religação; o fusível deve ser substituído (E1 s21).
+  - 7. F — Correção: final 3-4 identifica contato NA; o 13-14 é auxiliar NA (E1 s39, s48–s49).
+
+</details>
+
+
+## Checklist de domínio
+- [ ] Percorro a potência (R,S,T → F1 → Q1 → K1 → F2 → X1 → M1) e o comando (S,T → F3 → Q2 → F2 95-96 → S0 → S1 // K1 13-14 → K1 A1-A2).
+- [ ] Dou a função de F1, F3, Q1, Q2, F2, K1, S0, S1 e M1, sabendo em qual circuito cada um está.
+- [ ] Sei o objetivo e o material do estudo dirigido E2 (conceito de selo).
+- [ ] Descrevo a partida (S1 → bobina → principais + selo), a parada (S0) e a atuação do relé térmico (95-96 no comando).
+- [ ] Explico o circuito de alta potência (B0/B1 sem retenção, fusíveis = curto, relé térmico = sobrecarga).
+- [ ] Identifico os 10 elementos da partida com botão de emergência e sei que este não retorna à posição normal.
+- [ ] Explico a lâmpada H1 e a partida de dois motores com intertravamento.

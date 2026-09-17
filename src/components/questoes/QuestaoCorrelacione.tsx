@@ -30,6 +30,12 @@ export default function QuestaoCorrelacione({ questao, indice, onResponder }: Pr
         <h4 className="font-serif text-base font-semibold text-marfim">{questao.titulo}</h4>
       </div>
 
+      {questao.imagem && (
+        <a href={questao.imagem} target="_blank" rel="noopener noreferrer" className="mb-4 block w-full max-w-2xl" title="Abrir a figura em tela cheia">
+          <img src={questao.imagem} alt={`Figura da questão: ${questao.titulo}`} loading="lazy" className="block w-full rounded-lg ring-1 ring-white/10 transition hover:ring-dourado/40" />
+        </a>
+      )}
+
       <div className="mb-4 flex flex-wrap gap-2 text-xs">
         {questao.chaves.map((c) => (
           <span key={c.chave} className="chip border border-white/10 bg-white/5 text-nevoa">

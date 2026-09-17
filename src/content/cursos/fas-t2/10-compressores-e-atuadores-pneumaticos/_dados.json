@@ -1,0 +1,34 @@
+{
+  "ordem": 10,
+  "slug": "10-compressores-e-atuadores-pneumaticos",
+  "titulo": "Compressores e atuadores pneumáticos",
+  "prioridade": "muito alta",
+  "subtitulo": "Princípios de compressão e atuadores lineares e rotativos",
+  "tempoEstimado": "40 min",
+  "objetivo": "Classificar compressores e diferenciar atuadores pneumáticos lineares, rotativos, de simples efeito e de duplo efeito.",
+  "palavrasChave": [
+    "compressor",
+    "deslocamento positivo",
+    "dinâmico",
+    "simples efeito",
+    "duplo efeito"
+  ],
+  "conceptIds": [
+    "C149",
+    "C150",
+    "C151",
+    "C152",
+    "C153",
+    "C154",
+    "C155",
+    "C156",
+    "C157",
+    "C158",
+    "C159",
+    "C160",
+    "C161",
+    "C162",
+    "C163",
+    "C164"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "ordem": 8,
+  "slug": "08-controle-de-nivel-e-partida-sequencial",
+  "titulo": "Aplicações: controle de nível e partida sequencial",
+  "prioridade": "máxima",
+  "subtitulo": "Sensores de nível, selagem e temporização de vários motores",
+  "tempoEstimado": "40 min",
+  "objetivo": "Narrar o controle de nível on-off e a partida sequencial, acompanhando sensores, contatores, selagem e temporizadores.",
+  "palavrasChave": [
+    "controle de nível",
+    "13-14",
+    "sensor superior",
+    "sensor inferior",
+    "partida sequencial"
+  ],
+  "conceptIds": [
+    "C107",
+    "C108",
+    "C109",
+    "C110",
+    "C111",
+    "C112",
+    "C113",
+    "C114",
+    "C115",
+    "C116"
+  ]
+}

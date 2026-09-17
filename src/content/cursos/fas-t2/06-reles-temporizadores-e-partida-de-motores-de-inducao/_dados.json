@@ -1,0 +1,30 @@
+{
+  "ordem": 6,
+  "slug": "06-reles-temporizadores-e-partida-de-motores-de-inducao",
+  "titulo": "Relés temporizadores e partida de motores de indução",
+  "prioridade": "muito alta",
+  "subtitulo": "On delay, off delay, conjugado e critérios de partida",
+  "tempoEstimado": "45 min",
+  "objetivo": "Diferenciar temporizadores e analisar corrente, conjugado e condições para os métodos de partida de motores de indução.",
+  "palavrasChave": [
+    "on delay",
+    "off delay",
+    "corrente de partida",
+    "conjugado",
+    "motor de indução"
+  ],
+  "conceptIds": [
+    "C075",
+    "C076",
+    "C077",
+    "C078",
+    "C079",
+    "C080",
+    "C081",
+    "C082",
+    "C083",
+    "C084",
+    "C085",
+    "C086"
+  ]
+}

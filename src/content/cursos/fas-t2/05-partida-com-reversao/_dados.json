@@ -1,0 +1,27 @@
+{
+  "ordem": 5,
+  "slug": "05-partida-com-reversao",
+  "titulo": "Partida com reversão",
+  "prioridade": "máxima",
+  "subtitulo": "Inversão de fases, selagem e intertravamento entre contatores",
+  "tempoEstimado": "45 min",
+  "objetivo": "Explicar a reversão de motores trifásicos e acompanhar os circuitos de potência e comando sem confundir selo e intertravamento.",
+  "palavrasChave": [
+    "reversão",
+    "inversão de fases",
+    "K1",
+    "K2",
+    "intertravamento"
+  ],
+  "conceptIds": [
+    "C066",
+    "C067",
+    "C068",
+    "C069",
+    "C070",
+    "C071",
+    "C072",
+    "C073",
+    "C074"
+  ]
+}

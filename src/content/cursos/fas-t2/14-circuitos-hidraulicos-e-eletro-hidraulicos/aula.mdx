@@ -1,0 +1,623 @@
+---
+titulo: "Circuitos hidráulicos e eletro-hidráulicos — aula"
+secao: "aula"
+secaoOrdem: 1
+---
+
+# MÓDULO M14 — Circuitos hidráulicos e eletro-hidráulicos
+
+> Fontes: ‹H1 s42–s61› · ‹SOPA 2025 Q4.2, Q4.3 (padrão de cobrança)› · Tempo de leitura: ~15 min
+
+**Você vai precisar saber:**
+- **Diferenciar** circuito aberto de fechado sem trocar as características.
+- **Nomear** os componentes numerados dos Circuitos 1, 5, 6 e 7 e dividir o Circuito 1 em atuação × unidade de potência.
+- **Interpretar** o Circuito 2 (rótulos em inglês): que via e que câmara recebem alta pressão ao estender e ao retrair.
+- **Narrar** o Circuito 3 (Partida → SOL1 → avanço → m1 → SOL2 → recuo) sem inverter câmaras nem solenoides.
+- **Comparar** o Circuito 3 (partida SEM retenção, repetitivo) com o 4 (parada-marcha COM retenção, automático).
+
+## Bloco B1 — Circuito aberto × circuito fechado
+
+‹fonte: H1 s42, s60, s61›
+
+**‹C217› Circuito hidráulico aberto** — a bomba **succiona** o óleo do **reservatório** e o **recalca (descarrega)** através das tubulações para os atuadores hidráulicos. Em seguida, o óleo já empregado nos atuadores **retorna ao reservatório**. ‹fonte: H1 s42›
+
+**‹C218› Circuito hidráulico fechado** — o fluido flui **diretamente de uma bomba de pistão para um motor de pistões** e **retorna diretamente para a bomba, sem entrar em um reservatório**. Ou seja, a **vazão e a direção do fluido controlam o motor**, e o sistema pode **operar em qualquer direção com a mesma dinâmica**. ‹fonte: H1 s60›
+
+| | Aberto ‹s42› | Fechado ‹s60› |
+|---|---|---|
+| Caminho do óleo | reservatório → bomba → atuadores → reservatório | bomba de pistão → motor de pistões → bomba |
+| Reservatório no circuito | sim | não |
+| O que o slide acrescenta | — | vazão e direção controlam o motor; qualquer direção, mesma dinâmica |
+
+[INFERÊNCIA PEDAGÓGICA] O título "Exemplos de circuitos hidráulicos abertos" (s42) antecede os Circuitos 1 a 7, e todos têm reservatório recebendo o retorno.
+
+**‹C227› Aplicação (s61)** — "Servomecanismo de Conteira e de Elevação dos Canhões de 40 mm MK3 das FCN e Corveta Barroso". O slide tem só esse título e uma foto. ‹fonte: H1 s61›
+
+### Exemplos práticos e confusões prováveis
+- ‹C217› Em qualquer um dos Circuitos 1 a 7, a linha de retorno termina no reservatório. É a marca do aberto.
+- ‹C218› Bomba **de pistão** → motor **de pistões** → bomba. Se a frase põe um reservatório nesse caminho, não é o fechado.
+- ⚠️ ‹C217›/‹C218› (V026): "circula entre bomba e motor sem reservatório" e "opera em qualquer direção" descrevem o **fechado**. Na múltipla escolha sobre o **aberto**, essas frases são distratores.
+- ⚠️ ‹C218› troca de palavra-chave: é "com a **mesma** dinâmica", e o motor é controlado pela "**vazão** e **direção**" do fluido.
+- ‹C227› Os movimentos são conteira e elevação; o canhão é de 40 mm, modelo MK3.
+
+### Questões — bloco B1
+
+**Questão 1** · 0,2 pt · *adaptada de SOPA 2025 Q4.2 (inversão estrutural: pergunta sobre o fechado)*
+
+Com referência ao circuito hidráulico FECHADO, conforme os slides, marque (X) a única correta.
+
+(A) O fluido sai de uma bomba de pistão, passa por um motor de pistões e volta direto à bomba, sem entrar em reservatório.  
+(B) O motor é controlado pelo nível de óleo no reservatório, e não pela vazão e pela direção do fluido.  
+(C) Depois de movimentar os atuadores, o óleo é devolvido ao reservatório, de onde a bomba volta a succioná-lo.  
+(D) A bomba succiona o óleo do reservatório e o descarrega pelas tubulações até os atuadores hidráulicos.  
+(E) O sistema opera em qualquer direção, mas cada sentido de operação apresenta dinâmica diferente.  
+
+**Questão 2** · 0,6 pt
+
+Com relação aos circuitos hidráulicos aberto e fechado, marque V ou F.
+
+( ) 1. No circuito aberto, o óleo que já trabalhou nos atuadores volta ao reservatório.  
+( ) 2. No circuito aberto, a bomba recebe o óleo diretamente do motor hidráulico, sem passar pelo reservatório.  
+( ) 3. A ausência de reservatório no retorno do motor para a bomba identifica o circuito fechado.  
+( ) 4. No circuito fechado, o sistema pode operar em qualquer direção, porém com dinâmica diferente em cada sentido.  
+( ) 5. Tanto no circuito aberto quanto no fechado, o óleo é devolvido ao reservatório depois de realizar trabalho.  
+( ) 6. Um sistema em que a bomba descarrega o óleo pelas tubulações até os cilindros e o retorno segue para o reservatório é um circuito aberto.  
+
+**Questão 3** · 1 pt
+
+Responda objetivamente, com base nos slides de circuitos hidráulicos.
+
+- Descreva o percurso do óleo em um circuito hidráulico aberto, da bomba até o retorno. (0,3)
+- No circuito hidráulico fechado, que tipo de bomba e que tipo de motor o slide cita? (0,2)
+- No circuito hidráulico fechado, o que controla o motor? (0,2)
+- Qual servomecanismo naval é apresentado no último slide da sequência de circuitos (H1 s61)? Cite os movimentos, o calibre e o modelo do canhão. (0,3)
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q1 — A.** H1 s60: no circuito fechado o fluido flui diretamente da bomba de pistão para o motor de pistões e retorna diretamente à bomba sem entrar em reservatório; vazão e direção controlam o motor; opera em qualquer direção com a mesma dinâmica.
+- **Q2 — V-F-V-F-F-V**
+  - 2. F — Correção: no aberto a bomba succiona o óleo do reservatório; o retorno direto à bomba, sem reservatório, é do circuito fechado (H1 s42, s60).
+  - 4. F — Correção: opera em qualquer direção com a MESMA dinâmica (H1 s60).
+  - 5. F — Correção: só no aberto o óleo retorna ao reservatório; no fechado retorna diretamente à bomba (H1 s42, s60).
+- **Q3**
+  - • A bomba succiona o óleo do reservatório e o recalca (descarrega) através das tubulações para os atuadores hidráulicos; o óleo já empregado nos atuadores retorna ao reservatório.
+  - • Bomba de pistão e motor de pistões.
+  - • A vazão e a direção do fluido.
+  - • Servomecanismo de conteira e de elevação dos canhões de 40 mm MK3 das FCN e da Corveta Barroso.
+
+</details>
+
+
+## Bloco B2 — Circuitos 1 e 2
+
+‹fonte: H1 s43–s45›
+
+**‹C219› Circuito 1 — atuação × unidade de potência.** A figura mostra o mesmo circuito em corte (à esquerda) e em símbolos (à direita), dividido em dois quadros:
+
+| Circuito de Atuação | Circuito da Unidade de Potência |
+|---|---|
+| Motor hidráulico · Cilindro · Válvula redutora de vazão · Válvula de retenção · Válvula direcional | Válvula limitadora de pressão · Bomba · Filtro · Reservatório |
+
+![Circuito 1](/imagens/cursos/fas-t2/conteudo/H1-43-circuito-1.webp)
+*Figura — Circuito 1 ‹fonte: H1 s43›*
+
+No desenho, o motor hidráulico tem seta curva (giro) e o cilindro, seta reta. [INFERÊNCIA PEDAGÓGICA] A redutora de vazão e a retenção ficam lado a lado, como no símbolo de controle de fluxo unidirecional (M13). O slide, porém, dá dois nomes: responda como no slide.
+
+**‹C220› Circuito 2 — estender e retrair o cilindro.** Os rótulos em inglês são **nomenclatura da figura**:
+- **PUMP** — bomba, desenhada como bomba de engrenagens dentro do reservatório;
+- **PRESSURE RELIEF VALVE** — válvula de alívio, ligada entre a linha de pressão e a de retorno;
+- **DIRECTIONAL CONTROL VALVE** — válvula de controle direcional, vias P, T, A e B;
+- **CYLINDER EXTENDING / RETRACTING** — cilindro estendendo / retraindo;
+- **HIGH / LOW PRESSURE OIL** — óleo de alta pressão (hachura escura) / de baixa pressão (pontilhado);
+- **LOAD** — carga.
+
+| Leitura da figura | Estendendo ‹s44› | Retraindo ‹s45› |
+|---|---|---|
+| Seta sobre a válvula | para baixo | para cima |
+| P (alta pressão) comunica-se com | A | B |
+| Via que devolve baixa pressão à T | B | A |
+| Câmara com alta pressão | superior (acima do pistão) | inferior (lado da haste) |
+| Carga (LOAD) | desce | sobe |
+
+![Circuito 2 estendendo](/imagens/cursos/fas-t2/conteudo/H1-44-circuito-2-estendendo.webp)
+*Figura — Circuito 2, cilindro estendendo ‹fonte: H1 s44›*
+
+![Circuito 2 retraindo](/imagens/cursos/fas-t2/conteudo/H1-45-circuito-2-retraindo.webp)
+*Figura — Circuito 2, cilindro retraindo ‹fonte: H1 s45›*
+
+### Exemplos práticos e confusões prováveis
+- ‹C219› Bomba, filtro, reservatório e limitadora = unidade de potência. Motor hidráulico, cilindro e as três válvulas restantes = circuito de atuação.
+- ⚠️ ‹C219› confusão provável: pôr a **válvula direcional** na unidade de potência, ou a **limitadora** no circuito de atuação.
+- ‹C220› Estendendo: P→A, carga desce. Retraindo: P→B, alta pressão no lado da haste, carga sobe.
+- ⚠️ ‹C220› confusão provável: achar que T leva alta pressão. Nas duas figuras, T é a via de retorno (LOW PRESSURE OIL).
+
+### Questões — bloco B2
+
+**Questão 4** · 1,1 pt
+
+![Figura da questão 4](/imagens/cursos/fas-t2/conteudo/Q-H1-43-circuito-1.webp)
+
+Considere a Figura (circuito hidráulico mostrado em corte e em símbolos). Dê a nomenclatura dos quadros A e B e dos componentes numerados de 1 a 9.
+
+- A (0,1)
+- B (0,1)
+- 1 (0,1)
+- 2 (0,1)
+- 3 (0,1)
+- 4 (0,1)
+- 5 (0,1)
+- 6 (0,1)
+- 7 (0,1)
+- 8 (0,1)
+- 9 (0,1)
+
+**Questão 5** · 1 pt
+
+![Figura da questão 5](/imagens/cursos/fas-t2/conteudo/Q-H1-43-circuito-1.webp)
+
+Situação: durante a instrução, o encarregado aponta a Figura (circuito hidráulico com os quadros A e B e componentes numerados) e pede que você explique a organização do circuito. Responda.
+
+- a) Quais componentes numerados pertencem ao quadro da unidade de potência? Cite número e nome. (0,3)
+- b) Quais componentes numerados do quadro de atuação transformam o óleo em movimento, e qual deles tem movimento de giro indicado pela seta curva? (0,2)
+- c) Um colega afirma que a válvula direcional (5) pertence à unidade de potência, por estar ligada diretamente à bomba. Corrija-o. (0,2)
+- d) Classifique o circuito como aberto ou fechado e justifique pelo percurso do óleo, citando os componentes numerados. (0,3)
+
+**Questão 6** · 0,8 pt
+
+![Figura da questão 6](/imagens/cursos/fas-t2/conteudo/H1-44-circuito-2-estendendo.webp)
+
+Considere a Figura do Circuito 2 (cilindro estendendo, rótulos em inglês). Marque V ou F.
+
+( ) 1. A via P da válvula de controle direcional recebe óleo de alta pressão (HIGH PRESSURE OIL) vindo da bomba (PUMP).  
+( ) 2. Nesta situação, a via P está comunicada com a via A, que leva óleo de alta pressão à câmara superior do cilindro.  
+( ) 3. A via B conduz óleo de alta pressão até a câmara do lado da haste.  
+( ) 4. A via T devolve óleo de baixa pressão (LOW PRESSURE OIL) ao reservatório.  
+( ) 5. A válvula de alívio (PRESSURE RELIEF VALVE) está ligada entre a linha de pressão da bomba e a linha de retorno.  
+( ) 6. A carga (LOAD) está subindo, porque o cilindro está estendendo.  
+( ) 7. A bomba (PUMP) está desenhada como uma bomba de palhetas.  
+( ) 8. Na figura de retração do mesmo circuito (H1 s45), a via P passa a comunicar-se com a via B.  
+
+**Questão 7** · 0,8 pt
+
+Associe cada descrição ao rótulo em inglês correspondente das figuras do Circuito 2 (H1 s44–s45). Um rótulo pode ser usado mais de uma vez.
+
+**Coluna A**
+
+- (1) PUMP
+- (2) PRESSURE RELIEF VALVE
+- (3) DIRECTIONAL CONTROL VALVE
+- (4) CYLINDER EXTENDING
+- (5) CYLINDER RETRACTING
+- (6) HIGH PRESSURE OIL
+- (7) LOW PRESSURE OIL
+
+**Coluna B**
+
+- ( ) Componente cuja posição comunica a via P com a via A ou com a via B.
+- ( ) Situação em que a carga (LOAD) sobe.
+- ( ) Óleo que sai pela via T em direção ao reservatório.
+- ( ) Válvula ligada entre a linha de pressão e a linha de retorno.
+- ( ) Óleo que chega à câmara do lado da haste durante a retração.
+- ( ) Situação em que a via P está comunicada com a via A.
+- ( ) Óleo presente na linha entre a bomba e a via P nas duas figuras.
+- ( ) Desenhada como um par de engrenagens dentro do reservatório.
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q4**
+  - • Circuito de atuação.
+  - • Circuito da unidade de potência.
+  - • Motor hidráulico.
+  - • Cilindro.
+  - • Válvula redutora de vazão.
+  - • Válvula de retenção.
+  - • Válvula direcional.
+  - • Válvula limitadora de pressão.
+  - • Bomba.
+  - • Filtro.
+  - • Reservatório.
+- **Q5**
+  - a) 6 válvula limitadora de pressão; 7 bomba; 8 filtro; 9 reservatório.
+  - b) 1 motor hidráulico (giro, seta curva) e 2 cilindro (deslocamento da haste, seta reta).
+  - c) Incorreto: a válvula direcional pertence ao circuito de atuação (quadro A), junto com motor hidráulico, cilindro, válvula redutora de vazão e válvula de retenção.
+  - d) Aberto: a bomba 7 succiona o óleo do reservatório 9 e o recalca pelas tubulações até os atuadores 1 e 2; o óleo já empregado retorna ao reservatório 9.
+- **Q6 — V-V-F-V-V-F-F-V**
+  - 3. F — Correção: ao estender, a via B traz óleo de baixa pressão da câmara do lado da haste para a via T (H1 s44). Alta pressão pela B ocorre na retração (H1 s45).
+  - 6. F — Correção: estendendo, as setas mostram a carga descendo; a carga sobe na figura de retração (H1 s44, s45).
+  - 7. F — Correção: o desenho é de uma bomba de engrenagens, dentro do reservatório (H1 s44).
+- **Q7 — 3-5-7-2-6-4-6-1** Nomenclatura da figura do Circuito 2 (rótulos em inglês) ligada ao que cada rótulo mostra em H1 s44–s45.
+
+</details>
+
+
+## Bloco B3 — Circuitos 5, 6 e 7
+
+‹fonte: H1 s48–s50, s59›
+
+Os Circuitos 5 e 6 são **só desenho**; a leitura abaixo usa a simbologia de M11–M13. O Circuito 7 tem legenda.
+
+**‹C224› Circuito 5** — componentes, de cima para baixo:
+- cilindro de duplo efeito;
+- **VCD 4/2 acionada por solenoide, com retorno por mola**;
+- manômetro;
+- válvula limitadora de pressão (ajustável);
+- bomba hidráulica **acoplada a um motor (M)**;
+- filtro, na sucção;
+- reservatório.
+
+‹fonte: H1 s48›
+
+![Circuito 5](/imagens/cursos/fas-t2/conteudo/H1-48-circuito-5.webp)
+*Figura — Circuito 5 ‹fonte: H1 s48›*
+
+**‹C225› Circuito 6** — componentes:
+- cilindro de duplo efeito;
+- VCD de 4 vias e 2 posições;
+- **válvula de controle de fluxo variável unidirecional**, na linha entre a VCD e a câmara do lado da haste;
+- manômetro;
+- válvula limitadora de pressão;
+- bomba acionada por motor (M);
+- filtro;
+- reservatório.
+
+A válvula unidirecional deixa o fluido passar livre num sentido; no inverso, força-o pela restrição e regula a vazão (H1 s35). O símbolo sob o manômetro não é nomeado nos slides e não é cobrado. ‹fonte: H1 s49›
+
+![Circuito 6](/imagens/cursos/fas-t2/conteudo/H1-49-circuito-6.webp)
+*Figura — Circuito 6 ‹fonte: H1 s49›*
+
+**‹C226› Circuito 7 — nomenclatura do slide** ‹fonte: H1 s50–s59›
+
+| Nº | Nomenclatura |
+|---|---|
+| 1 | Reservatório |
+| 2 | Filtro |
+| 3 | Bomba hidráulica, débito constante. Rotação de acionamento n = constante |
+| 4 | Válvula de retenção |
+| 5 | Manômetro |
+| 6 | Válvula limitadora de pressão |
+| 7 | Válvula de controle direcional |
+| 8 | Cilindro hidráulico (pistão axial) |
+| 9 | Trocador de calor |
+
+Percurso na figura: 1 → 2 → 3 → 4 → linha de pressão (5 e 6; a 6 descarrega no reservatório) → 7 (via P) → 8. O retorno sai pela via T e passa pelo 9 antes de chegar ao 1.
+
+![Circuito 7](/imagens/cursos/fas-t2/conteudo/H1-59-circuito-7.webp)
+*Figura — Circuito 7 com nomenclatura ‹fonte: H1 s59›*
+
+### Exemplos práticos e confusões prováveis
+- ‹C224› **Um** solenoide + **mola** = "acionada por solenoide com retorno por mola". Não confunda com o SOL1/SOL2 dos Circuitos 3 e 4.
+- ⚠️ ‹C224› confusão provável: pôr a mola no cilindro. No Circuito 5, a mola é da **VCD**; o cilindro é de duplo efeito.
+- ‹C225› O que distingue o Circuito 6 do 5 é o controle de fluxo variável unidirecional numa linha do cilindro.
+- ⚠️ ‹C225› confusão provável: chamá-lo de "fixo" ou "bidirecional". A seta inclinada indica variável; a retenção em paralelo indica unidirecional.
+- ‹C226› O 3 é "débito constante, rotação n constante"; o 8 é "cilindro hidráulico (pistão axial)".
+- ⚠️ ‹C226› confusão provável: trocar 4 (retenção) com 6 (limitadora), ou 2 (filtro, na sucção) com 9 (trocador, no retorno). Os dois são losangos.
+
+### Questões — bloco B3
+
+**Questão 8** · 0,9 pt
+
+![Figura da questão 8](/imagens/cursos/fas-t2/conteudo/Q-H1-48-circuito-5.webp)
+
+Considere a Figura (circuito hidráulico com componentes numerados de 1 a 8). Dê a nomenclatura de cada componente; para o 2, informe vias, posições, acionamento e retorno.
+
+- 1 (0,1)
+- 2 (0,2)
+- 3 (0,1)
+- 4 (0,1)
+- 5 (0,1)
+- 6 (0,1)
+- 7 (0,1)
+- 8 (0,1)
+
+**Questão 9** · 0,3 pt
+
+Comparando os Circuitos 5 e 6 dos slides, marque (X) a única correta.
+
+(A) O Circuito 6 dispensa a válvula limitadora de pressão, pois a válvula de controle de fluxo limita a pressão do sistema.  
+(B) O Circuito 5 usa cilindro de simples ação com retorno por mola; o Circuito 6, cilindro de duplo efeito.  
+(C) O Circuito 6 possui válvula de controle de fluxo variável unidirecional em uma das linhas do cilindro; o Circuito 5 não possui esse componente.  
+(D) Somente o Circuito 6 possui manômetro na linha de pressão.  
+(E) O Circuito 5 possui trocador de calor na linha de retorno; o Circuito 6 não possui.  
+
+**Questão 10** · 0,9 pt
+
+![Figura da questão 10](/imagens/cursos/fas-t2/conteudo/Q-H1-49-circuito-6.webp)
+
+Considere a Figura (circuito hidráulico com oito componentes numerados, incluindo uma válvula instalada numa das linhas do cilindro). Identifique cada número; para o 3, use a denominação completa (fixa ou variável; uni ou bidirecional).
+
+- 1 (0,1)
+- 2 (0,1)
+- 3 (0,2)
+- 4 (0,1)
+- 5 (0,1)
+- 6 (0,1)
+- 7 (0,1)
+- 8 (0,1)
+
+**Questão 11** · 0,8 pt
+
+![Figura da questão 11](/imagens/cursos/fas-t2/conteudo/Q-H1-49-circuito-6.webp)
+
+Considere a Figura (circuito hidráulico com componentes numerados de 1 a 8). Com relação aos componentes e suas funções, marque V ou F.
+
+( ) 1. O componente 3 permite a passagem livre do fluido em um sentido e, no sentido inverso, força sua passagem pela restrição, regulando a vazão.  
+( ) 2. O componente 3 é uma válvula de controle de fluxo fixa bidirecional.  
+( ) 3. O componente 3 está instalado na linha entre a válvula 2 e uma das câmaras do cilindro 1.  
+( ) 4. O componente 1 é um cilindro de simples ação com retorno por mola.  
+( ) 5. O componente 5 evita que a pressão exceda um limite pré-estabelecido, retornando o óleo ao reservatório.  
+( ) 6. A válvula 3 é o componente que limita a pressão máxima do sistema.  
+( ) 7. O filtro 7 está entre o reservatório 8 e a bomba 6.  
+( ) 8. A bomba 6 é acionada pelo motor indicado pela letra M.  
+
+**Questão 12** · 1 pt
+
+![Figura da questão 12](/imagens/cursos/fas-t2/conteudo/Q-H1-50-circuito-7.webp)
+
+Considere a Figura (circuito hidráulico numerado de 1 a 9). Dê a nomenclatura de cada componente, conforme a legenda dos slides; para o 3, inclua a caracterização da bomba e de sua rotação.
+
+- 1 (0,1)
+- 2 (0,1)
+- 3 (0,2)
+- 4 (0,1)
+- 5 (0,1)
+- 6 (0,1)
+- 7 (0,1)
+- 8 (0,1)
+- 9 (0,1)
+
+**Questão 13** · 1,2 pt
+
+![Figura da questão 13](/imagens/cursos/fas-t2/conteudo/Q-H1-50-circuito-7.webp)
+
+Situação: um aspirante recebe a Figura (circuito hidráulico numerado de 1 a 9) para explicar à turma o percurso do óleo e a classificação do circuito. Responda.
+
+- a) Cite, em ordem, os componentes numerados pelos quais o óleo passa desde o reservatório até chegar à válvula 7. (0,3)
+- b) Antes de chegar ao reservatório, o óleo que sai da válvula 7 pela via T passa por qual componente numerado? Dê o nome dele. (0,2)
+- c) Classifique o circuito como aberto ou fechado e justifique com a definição dos slides. (0,3)
+- d) Um colega diz que, se o circuito fosse fechado, bastaria retirar o trocador de calor. Segundo os slides, o que caracteriza o circuito fechado (bomba, receptor, retorno e controle)? (0,4)
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q8**
+  - • Cilindro (atuador linear) de duplo efeito.
+  - • Válvula de controle direcional 4/2 (4 vias, 2 posições), acionada por solenoide, com retorno por mola.
+  - • Manômetro.
+  - • Válvula limitadora de pressão (válvula de alívio).
+  - • Bomba hidráulica.
+  - • Motor de acionamento da bomba (símbolo M).
+  - • Filtro.
+  - • Reservatório.
+- **Q9 — C.** H1 s48 e s49: ambos têm cilindro de duplo efeito, VCD 4/2, manômetro, limitadora, bomba com motor, filtro e reservatório; só o 6 tem controle de fluxo variável unidirecional.
+- **Q10**
+  - • Atuador linear (cilindro) de duplo efeito.
+  - • Válvula de controle direcional (4 vias, 2 posições).
+  - • Válvula de controle de fluxo variável unidirecional.
+  - • Manômetro.
+  - • Válvula limitadora de pressão.
+  - • Bomba hidráulica, acionada pelo motor M.
+  - • Filtro.
+  - • Reservatório.
+- **Q11 — V-F-V-F-V-F-V-V**
+  - 2. F — Correção: é variável (seta inclinada) e unidirecional (retenção em paralelo) — H1 s35, s49.
+  - 4. F — Correção: cilindro de duplo efeito, com as duas câmaras ligadas à VCD (H1 s49).
+  - 6. F — Correção: quem limita a pressão é a válvula limitadora 5; a 3 regula a vazão (H1 s35, s39).
+- **Q12**
+  - • Reservatório.
+  - • Filtro.
+  - • Bomba hidráulica, débito constante; rotação de acionamento n = constante.
+  - • Válvula de retenção.
+  - • Manômetro.
+  - • Válvula limitadora de pressão.
+  - • Válvula de controle direcional.
+  - • Cilindro hidráulico (pistão axial).
+  - • Trocador de calor.
+- **Q13**
+  - a) 1 reservatório → 2 filtro → 3 bomba → 4 válvula de retenção → linha de pressão (onde estão o manômetro 5 e a limitadora 6) → 7 válvula de controle direcional (via P).
+  - b) Pelo 9 — trocador de calor.
+  - c) Aberto: a bomba 3 succiona o óleo do reservatório 1 e o recalca pelas tubulações até o cilindro 8; o óleo já empregado retorna ao reservatório 1.
+  - d) No fechado, o fluido vai diretamente de uma bomba de pistão para um motor de pistões e retorna diretamente à bomba, sem entrar em reservatório; a vazão e a direção do fluido controlam o motor, que pode operar em qualquer direção com a mesma dinâmica.
+
+</details>
+
+
+## Bloco B4 — Circuitos 3 e 4: comando eletro-hidráulico
+
+‹fonte: H1 s46–s47›
+
+**‹C221› Circuito 3 — "Comando repetitivo dos pistões".** Slide: "A chave de partida é de **impulso sem retenção**".
+- **Hidráulico:** cilindro (atuador linear) de duplo efeito; VC, uma VCD 4/2 com SOL1 (à direita) e SOL2 (à esquerda); válvula de alívio ou limitadora de pressão; bomba; filtro; reservatório.
+- **m1:** chave fim de curso, desenhada além da ponta da haste, que a aciona no fim do avanço.
+- **Elétrico, 24 VCC:** **Partida (NA) → SOL1** e **m1 (NA) → SOL2**.
+
+![Circuito 3](/imagens/cursos/fas-t2/conteudo/H1-46-circuito-3.webp)
+*Figura — Circuito 3 ‹fonte: H1 s46›*
+
+**‹C222› Narrativa do Circuito 3 ("historinha")** ‹fonte: H1 s46; padrão SOPA 2025 Q4.3b›
+1. **Inicial:** alta pressão (AP) na **câmara dianteira** (lado da haste) e baixa pressão (BP) na **traseira**; a haste está **recuada**.
+2. Aciona-se a **Partida** → o **SOL1** é energizado.
+3. A VCD passa à posição do lado de SOL1 (setas cruzadas): **AP na câmara traseira**, BP na dianteira.
+4. A haste **avança**.
+5. No limite do avanço, a haste aciona **m1**, que fecha.
+6. O **SOL2** é energizado → a VCD **volta à posição inicial**.
+7. AP volta à **dianteira** → a haste **recua e estaciona**.
+
+[INFERÊNCIA PEDAGÓGICA] Como a partida é sem retenção e só há m1, cada novo ciclo exige outro acionamento da Partida. Daí o nome "repetitivo".
+
+**‹C223› Circuito 4 — "Comando automático dos pistões".** Slide: "A chave de parada-marcha é de **impulso com retenção**". A base hidráulica é a mesma do Circuito 3 (cilindro de duplo efeito, VC com SOL1/SOL2, limitadora, bomba, filtro, reservatório), com **dois fins de curso, m1 e m2**. No desenho de 24 VCC, o ramo de SOL2 tem m2, e o ramo de SOL1 tem Parada-Marcha em série com m1.
+
+[PONTO DE INCERTEZA] O slide não descreve em texto o funcionamento nem a função de cada fim de curso. No desenho, m1 aparece junto à ponta da haste **recuada** (desenhado acionado) e m2, afastado à direita. "Enquanto em marcha, o cilindro avança e recua repetidamente" é [INFERÊNCIA PEDAGÓGICA] e não é cobrado.
+
+![Circuito 4](/imagens/cursos/fas-t2/conteudo/H1-47-circuito-4.webp)
+*Figura — Circuito 4 ‹fonte: H1 s47›*
+
+| | Circuito 3 ‹s46› | Circuito 4 ‹s47› |
+|---|---|---|
+| Título | Comando **repetitivo** | Comando **automático** |
+| Chave | **Partida**, impulso **SEM** retenção | **Parada-marcha**, impulso **COM** retenção |
+| Fins de curso | m1 | m1 e m2 |
+| Comum aos dois | SOL1, SOL2, 24 VCC, cilindro de duplo efeito, VC 4/2, limitadora, bomba, filtro, reservatório | idem |
+
+### Exemplos práticos e confusões prováveis
+- ‹C221› Partida → SOL1; m1 → SOL2. Cada ramo de 24 VCC comanda um solenoide.
+- ⚠️ ‹C222› (V027): AP inicial na **traseira**, ou **SOL2** causando o avanço, estão errados. Avanço = SOL1 + AP na traseira; recuo = SOL2 + AP na dianteira.
+- ⚠️ ‹C221›/‹C223› (V028): **3 = partida sem retenção**; **4 = parada-marcha com retenção**.
+- ‹C223› O Circuito 3 tem um fim de curso (m1); o 4 tem dois (m1 e m2).
+- ‹C221› Aqui o fim de curso se chama m1/m2 (nomenclatura da figura), e não S como nos comandos elétricos (M02).
+
+### Questões — bloco B4
+
+**Questão 14** · 1 pt · *adaptada de SOPA 2025 Q4.3b (variação estrutural: lacunas, com o atuador 6)*
+
+![Figura da questão 14](/imagens/cursos/fas-t2/conteudo/Q-H1-46-circuito-3.webp)
+
+Considere a Figura (circuito hidráulico e respectivo acionamento elétrico, na situação inicial). Complete cada lacuna da narrativa do comando.
+
+- O componente 6 é um atuador linear de ______ efeito. (0,1)
+- Em repouso, o óleo de alta pressão está na câmara ______ do componente 6, o que mantém a haste recolhida. (0,1)
+- Em repouso, a câmara ______ do componente 6 está com óleo de baixa pressão. (0,1)
+- A chave de Partida é de impulso ______ retenção. (0,1)
+- Pressionada a Partida, fecha-se o ramo de 24 VCC do solenoide ______. (0,1)
+- O componente 5 muda de posição e a pressão alta passa a atuar na câmara ______. (0,1)
+- Com essa mudança, a haste ______. (0,1)
+- No final do curso, a própria haste atua o fim de curso ______. (0,1)
+- O contato desse fim de curso fecha e alimenta o solenoide ______. (0,1)
+- O componente 5 volta à posição de repouso e a haste ______, parando na posição de partida. (0,1)
+
+**Questão 15** · 0,3 pt
+
+Circuito 3 dos slides — comando repetitivo dos pistões (H1 s46). Ordene os eventos a partir da situação inicial.
+
+- Eventos: (A) a haste aciona o fim de curso m1; (B) SOL1 é energizado; (C) a VCD passa a enviar alta pressão à câmara traseira e baixa à dianteira; (D) o operador aciona a chave de Partida; (E) a haste recua e estaciona na posição inicial; (F) SOL2 é energizado e a VCD retorna à posição inicial; (G) a haste avança. Escreva a sequência correta das letras. (0,3)
+
+**Questão 16** · 0,8 pt
+
+![Figura da questão 16](/imagens/cursos/fas-t2/conteudo/Q-H1-46-circuito-3.webp)
+
+Considere a Figura (circuito hidráulico e acionamento elétrico, situação inicial). Com relação ao funcionamento do comando, marque V ou F.
+
+( ) 1. O circuito elétrico, de 24 VCC, tem dois ramos: um com a chave de Partida e outro com o fim de curso m1.  
+( ) 2. O solenoide alimentado pelo ramo da chave de Partida é o SOL2.  
+( ) 3. Na situação inicial, a câmara traseira do atuador 6 está com óleo de baixa pressão.  
+( ) 4. Com SOL1 energizado, a válvula 5 envia alta pressão para a câmara dianteira, provocando o avanço da haste.  
+( ) 5. O fim de curso m1 é atuado pela haste do atuador 6 no término do avanço.  
+( ) 6. A energização de SOL2 faz a válvula 5 voltar à posição inicial e a haste recuar.  
+( ) 7. A chave de Partida deste circuito é de impulso com retenção.  
+( ) 8. O componente 1, ao ser ultrapassado o limite de pressão, abre e retorna o óleo ao reservatório 4.  
+
+**Questão 17** · 0,2 pt
+
+Com relação às chaves de comando dos Circuitos 3 (comando repetitivo dos pistões) e 4 (comando automático dos pistões), marque (X) a única correta.
+
+(A) No Circuito 3, a chave de partida é de impulso com retenção; no Circuito 4, a chave de parada-marcha é de impulso sem retenção.  
+(B) No Circuito 3, a chave de parada-marcha é de impulso com retenção e trabalha com os fins de curso m1 e m2.  
+(C) Nos dois circuitos a chave é de impulso sem retenção; a única diferença do Circuito 4 é o acréscimo do fim de curso m2.  
+(D) No Circuito 4, a chave de partida é de impulso sem retenção e comanda sozinha os dois solenoides, dispensando fins de curso.  
+(E) No Circuito 3, a chave de partida é de impulso sem retenção; no Circuito 4, a chave de parada-marcha é de impulso com retenção.  
+
+**Questão 18** · 0,8 pt
+
+![Figura da questão 18](/imagens/cursos/fas-t2/conteudo/Q-H1-47-circuito-4.webp)
+
+Considere a Figura (circuito hidráulico e circuito elétrico) e compare-a com o Circuito 3 dos slides. Marque V ou F.
+
+( ) 1. A figura corresponde ao 'Comando automático dos pistões'.  
+( ) 2. A chave Parada-Marcha é de impulso sem retenção, como a chave de Partida do Circuito 3.  
+( ) 3. O circuito possui dois fins de curso, m1 e m2, enquanto o Circuito 3 possui apenas m1.  
+( ) 4. A válvula VC é acionada por dois solenoides, SOL1 e SOL2, tal como no Circuito 3.  
+( ) 5. O circuito elétrico deste comando é alimentado em 24 VCC.  
+( ) 6. O atuador deste circuito é um cilindro de simples ação com retorno por mola, diferente do Circuito 3.  
+( ) 7. Diferentemente do Circuito 3, este circuito não possui válvula limitadora de pressão.  
+( ) 8. O Circuito 3 recebe, nos slides, o título 'Comando repetitivo dos pistões'.  
+
+**Questão 19** · 1,2 pt · *adaptada de SOPA 2025 Q4.3 (variação estrutural: situação com subitens)*
+
+![Figura da questão 19](/imagens/cursos/fas-t2/conteudo/Q-H1-46-circuito-3.webp)
+
+Situação: a equipe de manutenção de bordo recebeu o diagrama da Figura (circuito hidráulico e acionamento elétrico, situação inicial) e precisa entender o comando antes de testá-lo. Responda.
+
+- a) Classifique o atuador 6 e diga em quais câmaras deve atuar o óleo de alta pressão para avançar e para recuar a haste. (0,2)
+- b) O técnico aciona a chave de Partida. Qual solenoide é energizado e qual o movimento resultante da haste? (0,2)
+- c) Qual dispositivo encerra o avanço, qual solenoide ele energiza e o que acontece em seguida? (0,3)
+- d) O chefe da equipe quer o 'comando automático dos pistões' (Circuito 4 dos slides). Que chave e que componente adicional esse circuito apresenta em relação ao da figura? (0,3)
+- e) Justifique por que o circuito hidráulico da figura é um circuito aberto. (0,2)
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q14**
+  - • duplo
+  - • dianteira (lado da haste)
+  - • traseira
+  - • sem
+  - • SOL1
+  - • traseira
+  - • avança
+  - • m1
+  - • SOL2
+  - • recua
+- **Q15**
+  - • D - B - C - G - A - F - E
+- **Q16 — V-F-V-F-V-V-F-V**
+  - 2. F — Correção: a Partida alimenta o SOL1; m1 alimenta o SOL2 (H1 s46).
+  - 4. F — Correção: para o avanço, a alta pressão vai para a câmara TRASEIRA (H1 s46).
+  - 7. F — Correção: é de impulso SEM retenção; com retenção é a parada-marcha do Circuito 4 (H1 s46, s47).
+- **Q17 — E.** H1 s46: 'A chave de partida é de impulso sem retenção' (Circuito 3). H1 s47: 'A chave de parada-marcha é de impulso com retenção' (Circuito 4).
+- **Q18 — V-F-V-V-V-F-F-V**
+  - 2. F — Correção: a parada-marcha é de impulso COM retenção (H1 s47); a de Partida do Circuito 3 é sem retenção (H1 s46).
+  - 6. F — Correção: é cilindro de duplo efeito, a mesma base hidráulica do Circuito 3 (H1 s47).
+  - 7. F — Correção: a limitadora de pressão está presente nos dois (H1 s46, s47).
+- **Q19**
+  - a) Atuador (cilindro) linear de duplo efeito; alta pressão na câmara traseira para avançar e na câmara dianteira para recuar.
+  - b) SOL1; a VCD (5) passa a comunicar alta pressão à câmara traseira e baixa à dianteira, e a haste avança.
+  - c) O fim de curso m1, acionado pela haste; energiza SOL2; a VCD retorna à posição inicial, a alta pressão volta à câmara dianteira e a haste recua e estaciona.
+  - d) Chave de parada-marcha de impulso com retenção (no lugar da chave de partida de impulso sem retenção) e um segundo fim de curso, m2.
+  - e) A bomba 2 succiona o óleo do reservatório 4 e o envia pelas tubulações ao atuador; o óleo já empregado retorna ao reservatório 4.
+
+</details>
+
+
+## Revisão cumulativa
+### Questões — revisão cumulativa
+
+**Questão 20** · 0,8 pt
+
+Revisão cumulativa (M02, M09, M11–M14). Marque V ou F.
+
+( ) 1. Botoeiras existem sem retenção (pulso) e com retenção; a chave de Partida do Circuito 3 é do primeiro tipo.  
+( ) 2. O fim de curso m1 do Circuito 3 é um dispositivo acionado mecanicamente pelo movimento da máquina — no caso, pela haste do cilindro.  
+( ) 3. A válvula limitadora de pressão, ao ser excedido o valor estabelecido, abre e devolve o óleo à bomba.  
+( ) 4. O trocador de calor (9) do Circuito 7 serve para aquecer o fluido quando sua temperatura no reservatório está abaixo da de trabalho.  
+( ) 5. A válvula 7 do Circuito 7 tem três quadrados justapostos e vias A, B, P e T; pela simbologia estudada, é uma VCD de 4 vias e 3 posições.  
+( ) 6. O posicionamento de canhões, citado entre as aplicações navais da hidráulica, aparece no fim dos slides de circuitos como servomecanismo de conteira e de elevação dos canhões de 40 mm MK3.  
+( ) 7. No cilindro de duplo efeito dos Circuitos 3 e 4, o fluido sob pressão só pode ser aplicado em um dos lados do pistão, e uma mola faz o retorno.  
+( ) 8. A bomba de pistões, empregada no circuito fechado, é pouco eficiente e restrita a baixas pressões, como a bomba de engrenagens.  
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q20 — V-V-F-F-V-V-F-F**
+  - 3. F — Correção: devolve o óleo ao reservatório (H1 s39; M13).
+  - 4. F — Correção: resfria o fluido cuja temperatura no reservatório está acima da de trabalho (H1 s41; M13).
+  - 7. F — Correção: no duplo efeito o fluido pode ser aplicado em qualquer lado do pistão; mola de retorno é do cilindro de simples ação (H1 s32; M13).
+  - 8. F — Correção: a bomba de pistões é extremamente eficiente e opera até 6.000 psi ou mais (M12); no fechado, bomba de pistão → motor de pistões (H1 s60).
+
+</details>
+
+
+## Checklist de domínio
+- [ ] Defino circuito aberto e fechado com as palavras dos slides.
+- [ ] Nomeio A, B e 1–9 do Circuito 1.
+- [ ] Traduzo os rótulos do Circuito 2 e digo P→A (estendendo) e P→B (retraindo).
+- [ ] Nomeio os componentes dos Circuitos 5 e 6.
+- [ ] Recito a legenda 1–9 do Circuito 7.
+- [ ] Conto a historinha do Circuito 3 sem trocar dianteira/traseira nem SOL1/SOL2.
+- [ ] Distingo o Circuito 3 do Circuito 4 pela chave e pelos fins de curso.
+- [ ] Cito a aplicação do s61.

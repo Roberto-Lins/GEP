@@ -88,6 +88,8 @@ export interface GrupoCorrelacione extends MetadadosQuestao {
   topico: string;
   dificuldade?: Dificuldade;
   titulo: string;
+  /** figura/circuito compartilhado pelo grupo — caminho em /public */
+  imagem?: string;
   chaves: { chave: string; texto: string }[];
   itens: { texto: string; chave: string }[];
   /** explicação exibida após a correção do grupo */

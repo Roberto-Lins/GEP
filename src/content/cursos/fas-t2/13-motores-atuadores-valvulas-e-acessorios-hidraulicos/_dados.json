@@ -1,0 +1,35 @@
+{
+  "ordem": 13,
+  "slug": "13-motores-atuadores-valvulas-e-acessorios-hidraulicos",
+  "titulo": "Motores, atuadores, válvulas e acessórios hidráulicos",
+  "prioridade": "muito alta",
+  "subtitulo": "Conversão de energia, comando do fluido e componentes auxiliares",
+  "tempoEstimado": "45 min",
+  "objetivo": "Reconhecer motores, cilindros, válvulas e acessórios hidráulicos e explicar a função de cada componente no circuito.",
+  "palavrasChave": [
+    "motor hidráulico",
+    "cilindro",
+    "VCD",
+    "válvula de alívio",
+    "acumulador"
+  ],
+  "conceptIds": [
+    "C200",
+    "C201",
+    "C202",
+    "C203",
+    "C204",
+    "C205",
+    "C206",
+    "C207",
+    "C208",
+    "C209",
+    "C210",
+    "C211",
+    "C212",
+    "C213",
+    "C214",
+    "C215",
+    "C216"
+  ]
+}

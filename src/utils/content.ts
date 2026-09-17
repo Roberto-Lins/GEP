@@ -36,6 +36,8 @@ export interface CursoData {
     descricao: string;
     duracaoMinutos: number;
     pontos: number;
+    /** total de itens avaliados, quando uma questão agrupa vários subitens */
+    itens?: number;
     questoes: Questao[];
     blueprint?: Array<{ bloco: string; pontos: number; objetivo: string }>;
     rubrica?: string[];

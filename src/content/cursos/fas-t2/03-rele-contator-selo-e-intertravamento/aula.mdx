@@ -1,0 +1,522 @@
+---
+titulo: "Relé, contator, selo e intertravamento — aula"
+secao: "aula"
+secaoOrdem: 1
+---
+
+# MÓDULO M03 — Relé, contator, selo e intertravamento
+
+> Fontes: ‹E1 s25–s46› · ‹E7 p9–p13› · Tempo de leitura: ~19 min
+
+**Você vai precisar saber:**
+- nomear as partes e os terminais (1) a (5) do relé e explicar o que acontece ao energizar e ao desenergizar a bobina;
+- explicar a principal vantagem do relé (não há contato físico entre comando e potência) e a função do diodo damper;
+- definir contator, descrever seu funcionamento e identificar no símbolo a bobina A1/A2, os contatos principais e os auxiliares;
+- reconhecer pela numeração um contato auxiliar NA (final 3-4) e um NF (final 1-2);
+- distinguir selo (13-14 em paralelo com a botoeira) de intertravamento (NF do outro contator antes da bobina), inclusive o intertravamento por botoeira.
+
+## Bloco B1 — Relé eletromecânico
+
+‹fonte: E1 s25–s32›
+
+**‹C038› Partes do relé** — na foto do slide estão indicados: **armadura**, **bobina**, **contatos**, **terminais da bobina** e **terminais dos contatos** (NF e NA). No esquema aparece também a **mola**, responsável por devolver os contatos à posição inicial. ‹fonte: E1 s25–s26, s28›
+
+![Terminais do relé](/imagens/cursos/fas-t2/conteudo/E1-26-rele-terminais.webp)
+*Figura — Esquema do relé com terminais numerados ‹fonte: E1 s26›*
+
+**‹C039› Terminais do relé** — "Os terminais (1) e (2) correspondem a bobina de excitação. O terminal (3) é o de entrada, e os terminais (4) e (5) correspondem aos contatos normalmente fechado (NF) e normalmente aberto (NA), respectivamente." ‹fonte: E1 s26›
+
+| Terminal | Corresponde a |
+|---|---|
+| (1) e (2) | bobina de excitação |
+| (3) | entrada |
+| (4) | contato normalmente fechado (NF) |
+| (5) | contato normalmente aberto (NA) |
+
+**‹C040› Relé energizado** — "Quando a corrente elétrica circula através da bobina e dá origem a um campo magnético, a armadura móvel é atraída por essa força, que altera a posição dos contatos." ‹fonte: E1 s27›
+1. corrente circula na bobina → 2. surge o campo magnético → 3. a armadura móvel é atraída → 4. a posição dos contatos é alterada.
+
+**‹C041› Relé desenergizado** — "Quando a corrente elétrica é interrompida, o campo magnético se dispersa e os contatos retornam para a posição inicial através da ação da mola." ‹fonte: E1 s28›
+
+**‹C042› Isolamento entre comando e potência** — "Não há contato físico entre os terminais de comando e os de potência." No exemplo de acionamento a relé, o lado do controlador é de **baixa potência** e o da carga (RL, 110 V, 60 Hz) é de **alta potência**; o relé proporciona **acoplamento eletromecânico** e **isolamento elétrico**. Vantagem: o circuito de baixa potência comanda o de alta potência com isolamento. ‹fonte: E1 s27–s29›
+
+**‹C043› Acionamento a relé por transistor** — controlador → resistor RB → transistor → bobina do relé (alimentada por Vcc) → contato → carga RL. ‹fonte: E1 s29–s31›
+
+| Saída do controlador | Correntes | Transistor | Bobina | Relé | Contato NA | Carga |
+|---|---|---|---|---|---|---|
+| 0 | IB = 0, IC = 0 | cortado | desalimentada | desatracado | aberto | desalimentada |
+| 1 | IB > IBSAT, IC = ICSAT | saturado | alimentada | atracado | fechado | alimentada |
+
+![Acionamento a relé com controlador em 1](/imagens/cursos/fas-t2/conteudo/E1-31-rele-transistor-1.webp)
+*Figura — Controlador em 1: transistor saturado, relé atracado, carga alimentada ‹fonte: E1 s31›*
+
+**‹C044› Diodo damper** — "Proteção contra pico reverso": diodo **DAMPER** ligado **em paralelo com a bobina** do relé. ‹fonte: E1 s32›
+
+![Diodo damper](/imagens/cursos/fas-t2/conteudo/E1-32-diodo-damper.webp)
+*Figura — Proteção contra pico reverso ‹fonte: E1 s32›*
+
+### Exemplos práticos e confusões prováveis
+- ‹C038› Foto do s25: armadura, bobina, contatos, terminais da bobina e terminais dos contatos NF/NA.
+- ‹C039› Em repouso, a lâmina ligada ao (3) encosta no (4), que é NF (há passagem em repouso); ao energizar a bobina, a posição muda e o (3) passa ao (5), o NA. ⚠️ Não inverta: **(4) = NF, (5) = NA**.
+- ‹C040›/‹C041› Energizar = campo magnético atrai a **armadura móvel**; desenergizar = campo se dispersa e **a mola** devolve os contatos. ⚠️ Os contatos não "ficam" na posição alterada.
+- ‹C042› ⚠️ "Não há contato físico" é entre terminais de **comando** (bobina) e de **potência** (contatos) — por isso o controlador fica no lado de baixa potência e a carga no de alta.
+- ‹C043› Controlador em 1 → transistor **saturado** → relé **atracado**; controlador em 0 → transistor **cortado** → relé **desatracado**.
+- ‹C044› ⚠️ Diodo damper: **em paralelo com a bobina** do relé — não em série com a carga nem com o transistor.
+
+### Questões — bloco B1
+
+**Questão 1** · 0,5 pt
+
+Associe cada parte do relé eletromecânico (coluna A) à sua descrição ou atuação (coluna B). Um número pode ser usado mais de uma vez.
+
+**Coluna A**
+
+- (1) Bobina
+- (2) Armadura móvel
+- (3) Mola
+- (4) Contatos
+
+**Coluna B**
+
+- ( ) É atraída pela força do campo magnético e altera a posição dos contatos.
+- ( ) Quando percorrida por corrente elétrica, dá origem a um campo magnético.
+- ( ) Seus terminais são identificados como NF e NA.
+- ( ) Faz os contatos retornarem à posição inicial quando a corrente elétrica é interrompida.
+- ( ) No esquema com terminais numerados, corresponde aos terminais (1) e (2), chamados de excitação.
+
+**Questão 2** · 0,8 pt
+
+Considere o esquema do relé eletromecânico estudado (E1 s26), com os terminais numerados de (1) a (5). Responda objetivamente.
+
+- A que correspondem os terminais (1) e (2)? (0,1)
+- Qual é o terminal (3)? (0,1)
+- A que contatos correspondem os terminais (4) e (5)? (0,2)
+- Com a bobina desenergizada, o terminal (3) está em contato com qual terminal? Justifique. (0,2)
+- Circulando corrente pela bobina, o que ocorre no relé e com qual terminal o (3) passa a fazer contato? (0,2)
+
+**Questão 3** · 0,7 pt
+
+Com relação ao relé eletromecânico, marque V ou F.
+
+( ) 1. Na foto do relé estão indicados: armadura, bobina, contatos, terminais da bobina e terminais dos contatos.  
+( ) 2. Quando a corrente elétrica circula através da bobina e dá origem a um campo magnético, a armadura móvel é atraída por essa força, que altera a posição dos contatos.  
+( ) 3. Quando a corrente da bobina é interrompida, o campo magnético se dispersa e os contatos permanecem na posição alterada até que a bobina seja novamente energizada.  
+( ) 4. Há contato físico entre os terminais de comando e os terminais de potência do relé.  
+( ) 5. No esquema do relé, o terminal (3) é o de entrada, e os terminais (4) e (5) correspondem aos contatos normalmente aberto (NA) e normalmente fechado (NF), respectivamente.  
+( ) 6. No exemplo de acionamento a relé, o controlador e o transistor ficam no lado de alta potência, e a carga RL (110 V, 60 Hz), no lado de baixa potência.  
+( ) 7. No exemplo de acionamento a relé, o relé proporciona acoplamento eletromecânico e isolamento elétrico.  
+
+**Questão 4** · 0,5 pt · *adaptada de SOPA 2025 Q1.1*
+
+Um relé eletromecânico está com a bobina energizada e seus contatos na posição alterada. Responda objetivamente.
+
+- Descreva o que ocorre no relé quando a corrente elétrica da bobina é interrompida. (0,3)
+- Qual elemento do relé é responsável por esse retorno? (0,1)
+- Após o retorno, qual dos contatos do esquema estudado, (4) ou (5), permite a passagem de corrente a partir do terminal de entrada (3)? (0,1)
+
+**Questão 5** · 0,7 pt
+
+Complete as lacunas sobre o acionamento a relé por transistor e sua proteção (E1 s27–s32).
+
+- Com o controlador em 0, IB = 0 e o transistor fica ______. (0,1)
+- Nessa condição a bobina fica desalimentada, o relé fica ______ e a carga, desalimentada. (0,1)
+- Com o controlador em 1, IB > IBSAT, IC = ICSAT e o transistor fica ______. (0,1)
+- Com a bobina alimentada, o relé atraca e o contato ______ se fecha, alimentando a carga. (0,1)
+- Não há contato ______ entre os terminais de comando e os de potência do relé; por isso ele proporciona acoplamento eletromecânico e isolamento elétrico. (0,1)
+- A proteção contra pico reverso é feita pelo diodo ______. (0,1)
+- Esse diodo é ligado em ______ com a bobina do relé. (0,1)
+
+**Questão 6** · 0,2 pt · *adaptada de SOPA 2025 Q1.1*
+
+Com referência à principal vantagem de utilizar um relé eletromecânico para comandar uma carga, marque (X) a única correta.
+
+(A) O próprio relé elimina o pico reverso da bobina, dispensando qualquer componente de proteção no circuito.  
+(B) Um circuito de baixa potência comanda um circuito de alta potência sem contato físico entre os terminais de comando e os de potência, isto é, com isolamento elétrico.  
+(C) A bobina e os contatos formam um único circuito elétrico, de modo que a corrente da carga passa também pela bobina.  
+(D) A carga de alta potência pode ser ligada diretamente à saída do controlador, pois o transistor fica cortado com o controlador em 1.  
+(E) Os contatos permanecem na posição alterada após a interrupção da corrente, o que dispensa a mola de retorno.  
+
+**Questão 7** · 1,1 pt
+
+Situação — Um controlador comanda uma carga RL de 110 V/60 Hz por meio de um resistor RB, de um transistor e de um relé cuja bobina é alimentada por Vcc (exemplo de acionamento a relé dos slides 29 a 32). Responda aos subitens.
+
+- Classifique quanto à potência o lado do controlador/transistor e o lado da carga, e cite as duas funções que o slide atribui ao relé nesse circuito. (0,3)
+- A saída do controlador passa de 0 para 1. Indique o estado do transistor, da bobina, do relé, do contato NA e da carga. (0,3)
+- A saída volta a 0. Explique o que ocorre no transistor e dentro do relé até a carga ficar desalimentada. (0,3)
+- Qual componente, ligado em paralelo com a bobina do relé, aparece nesse circuito e qual a sua finalidade? (0,2)
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q1 — 2-1-4-3-1** E1 s25–s28: a bobina gera o campo magnético; a armadura móvel é atraída e altera a posição dos contatos; a mola devolve os contatos à posição inicial; os terminais dos contatos são NF e NA; (1) e (2) correspondem à bobina de excitação.
+- **Q2**
+  - • À bobina de excitação.
+  - • O terminal de entrada.
+  - • (4) contato normalmente fechado (NF); (5) contato normalmente aberto (NA).
+  - • Com o (4), porque é o contato NF: há passagem de corrente em repouso.
+  - • Surge o campo magnético, a armadura móvel é atraída e altera a posição dos contatos: o NF (4) abre e o NA (5) fecha; o (3) passa a fazer contato com o (5).
+- **Q3 — V-V-F-F-F-F-V**
+  - 3. F — Correção: os contatos retornam para a posição inicial através da ação da mola (E1 s28).
+  - 4. F — Correção: não há contato físico entre os terminais de comando e os de potência (E1 s27–s28).
+  - 5. F — Correção: (4) é o contato NF e (5) é o contato NA (E1 s26).
+  - 6. F — Correção: controlador e transistor estão no lado de baixa potência; a carga RL, no de alta potência (E1 s29).
+- **Q4**
+  - • O campo magnético se dispersa e os contatos retornam para a posição inicial.
+  - • A mola.
+  - • O (4), contato NF, pois os contatos voltaram à posição de repouso.
+- **Q5**
+  - • cortado
+  - • desatracado
+  - • saturado
+  - • NA
+  - • físico
+  - • damper
+  - • paralelo
+- **Q6 — B.** Correta: não há contato físico entre os terminais de comando e os de potência; o relé faz acoplamento eletromecânico e isolamento elétrico entre o lado de baixa e o de alta potência (E1 s27–s29).
+- **Q7**
+  - • Controlador/transistor: baixa potência; carga RL: alta potência. O relé proporciona acoplamento eletromecânico e isolamento elétrico (não há contato físico entre os terminais de comando e os de potência).
+  - • IB > IBSAT: transistor saturado; bobina alimentada; relé atracado; contato NA fechado; carga alimentada.
+  - • IB = 0 e o transistor fica cortado; a bobina é desalimentada, o campo magnético se dispersa e a mola retorna os contatos à posição inicial: relé desatracado, contato NA aberto, carga desalimentada.
+  - • O diodo damper, que faz a proteção contra pico reverso.
+
+</details>
+
+
+## Bloco B2 — Contator
+
+‹fonte: E1 s33–s40›
+
+**‹C045› Contator** — "Do conceito de relés pode-se derivar o conceito de contatores." É um "elemento eletromecânico de **comando a distância**, com **uma única posição de repouso** e **sem travamento**." ‹fonte: E1 s33›
+
+![Contator](/imagens/cursos/fas-t2/conteudo/E1-33-contator.webp)
+*Figura — Contator: bobina A1/A2, núcleo e contatos ‹fonte: E1 s33›*
+
+**‹C046› Contator energizado** — "É constituído de uma bobina que, quando é alimentada, cria um campo magnético no **núcleo fixo** que atrai o **núcleo móvel** que fecha o circuito." ‹fonte: E1 s34›
+
+**‹C047› Contator desenergizado** — "Cessando a alimentação da bobina, é interrompido o campo magnético, provocando o **retorno do núcleo por molas**." ‹fonte: E1 s35›
+
+**‹C048› Redução da centelha** — a centelha é reduzida por: (1) **afastamento rápido** entre os contatos; (2) **abafadores**; (3) **resfriamento**. ‹fonte: E1 s36›
+
+> Nomenclatura da figura: no desenho dos slides 33–36 os terminais estão numerados (1) a (6), com (1)-(2) e (3)-(4) NA e (5)-(6) NF. É a numeração daquele desenho; a numeração de terminais do contator que se usa nos circuitos é a do símbolo do slide 37, abaixo.
+
+**‹C049› Bobina A1/A2 e símbolo** — no símbolo aparecem o "símbolo de atuação eletromecânica (**tracejado**), a linha de acoplamento direto e os contatos de força (principais). A denominação dos terminais da bobina é **sempre A1/A2**." ‹fonte: E1 s37›
+
+![Símbolo do contator](/imagens/cursos/fas-t2/conteudo/E1-37-contator-simbolo.webp)
+*Figura — Símbolo do contator: A1/A2, principais 1-2/3-4/5-6, auxiliares 13-14 e 21-22 ‹fonte: E1 s37›*
+
+**‹C050› Contatos principais (de força)** — numerados **1-2, 3-4, 5-6**; "são utilizados para estabelecer e interromper correntes elétricas de alimentação de cargas, como motores". ‹fonte: E1 s37–s38›
+
+**‹C051› Contatos auxiliares** — "Alguns contatores também possuem contatos auxiliares, além dos contatos de força." "São utilizados para acionar e/ou bloquear circuitos auxiliares de **comando**, **sinalização** e **intertravamento elétrico**." "Podem ser **NA (números finais 3 e 4)** ou **NF (números finais 1 e 2)**." ‹fonte: E1 s37, s39›
+
+| Contato | Numeração | Com a bobina desenergizada | Com a bobina energizada | Uso |
+|---|---|---|---|---|
+| Principais (força) | 1-2, 3-4, 5-6 | abertos | fechados | alimentar a carga (motor) |
+| Auxiliar NA | final 3-4 (ex.: **13-14**) | aberto | fechado | acionar circuito auxiliar |
+| Auxiliar NF | final 1-2 (ex.: **21-22** ou **11-12**) | fechado | aberto | bloquear circuito auxiliar |
+
+> Divergência interna (D-02): o NF auxiliar aparece como **21-22** no E1 (s37, s52) e como **11-12** no E7 (p9–p13). Não é erro: os dois terminam em **1-2**, que é a regra do slide 39.
+
+### Exemplos práticos e confusões prováveis
+- ‹C045› ⚠️ V/F clássico (V032): "o contator tem duas posições de repouso" ou "tem travamento" → **Falso**. Uma única posição de repouso, sem travamento.
+- ‹C046›/‹C047› ⚠️ O campo é criado no núcleo **fixo** e atrai o **móvel**; o retorno é **por molas** — não inverta fixo e móvel.
+- ‹C048› ⚠️ Afastamento **rápido** (não lento) + abafadores + resfriamento.
+- ‹C049› A1/A2 é sempre bobina de contator; (1) e (2) é a bobina do **relé** do slide 26. ⚠️ Não misture as numerações.
+- ‹C050› 1-2, 3-4, 5-6 levam a corrente do motor; sinalização e intertravamento usam contatos **auxiliares**.
+- ‹C051› ⚠️ V004: final **3-4 = NA** (13-14); final **1-2 = NF** (21-22 ou 11-12). Quem pede "o contato que fica fechado em repouso" quer o NF.
+
+### Questões — bloco B2
+
+**Questão 8** · 0,8 pt
+
+Com relação aos contatores, marque V ou F.
+
+( ) 1. Do conceito de relés pode-se derivar o conceito de contatores.  
+( ) 2. O contator é um elemento eletromecânico de comando a distância, com duas posições de repouso e com travamento.  
+( ) 3. No contator, a bobina alimentada cria um campo magnético no núcleo móvel, que atrai o núcleo fixo.  
+( ) 4. Cessando a alimentação da bobina, o campo magnético é interrompido, provocando o retorno do núcleo por molas.  
+( ) 5. A centelha nos contatos é reduzida pelo afastamento lento entre os contatos, por abafadores e por resfriamento.  
+( ) 6. A denominação dos terminais da bobina do contator é sempre A1/A2.  
+( ) 7. Os contatos principais do contator são utilizados para acionar e/ou bloquear circuitos auxiliares de comando e sinalização.  
+( ) 8. Os contatos auxiliares NF são identificados com números finais 3 e 4, e os NA, com números finais 1 e 2.  
+
+**Questão 9** · 0,6 pt
+
+![Figura da questão 9](/imagens/cursos/fas-t2/conteudo/Q-E1-37-simbolo-contator.webp)
+
+A Figura representa o símbolo de um contator. Identifique o que representa cada elemento indicado e, para os contatos, informe se são NA ou NF.
+
+- Terminais A1 e A2. (0,1)
+- Linha tracejada que liga a bobina aos contatos. (0,1)
+- Contatos 1-2, 3-4 e 5-6. (0,2)
+- Contato 13-14. (0,1)
+- Contato 21-22. (0,1)
+
+**Questão 10** · 0,6 pt
+
+Associe cada descrição (coluna B) ao dispositivo a que ela se refere nos slides (coluna A): o relé do esquema com terminais (1) a (5), o contator, ou ambos.
+
+**Coluna A**
+
+- (1) Relé
+- (2) Contator
+- (3) Ambos
+
+**Coluna B**
+
+- ( ) Terminais da bobina denominados sempre A1/A2.
+- ( ) A corrente na bobina cria campo magnético que atrai a armadura móvel.
+- ( ) Ao cessar a corrente na bobina, o retorno à posição inicial se dá pela ação de mola(s).
+- ( ) Terminais da bobina identificados como (1) e (2).
+- ( ) A bobina alimentada cria campo magnético no núcleo fixo, que atrai o núcleo móvel.
+- ( ) Possui contatos principais 1-2, 3-4, 5-6 e auxiliares 13-14 e 21-22.
+
+**Questão 11** · 0,3 pt
+
+Ordene os eventos do funcionamento de um contator, desde a alimentação da bobina até o retorno ao repouso (E1 s34–s35).
+
+- Escreva a sequência das letras: (A) o núcleo móvel é atraído e fecha o circuito; (B) cessa a alimentação da bobina; (C) a bobina é alimentada; (D) o núcleo retorna por molas; (E) cria-se campo magnético no núcleo fixo; (F) o campo magnético é interrompido. (0,3)
+
+**Questão 12** · 0,7 pt
+
+Complete as lacunas sobre o contator (E1 s33–s39).
+
+- O contator é um elemento eletromecânico de comando a distância, com uma única posição de ______ e sem ______. (0,2)
+- A bobina, quando é alimentada, cria um campo magnético no núcleo ______, que atrai o núcleo ______, que fecha o circuito. (0,2)
+- Cessando a alimentação da bobina, é interrompido o campo magnético, provocando o retorno do núcleo por ______. (0,1)
+- A centelha é reduzida pelo afastamento ______ entre os contatos, por ______ e por resfriamento. (0,1)
+- Com a bobina desalimentada, o contato auxiliar 21-22 está ______ e o contato auxiliar 13-14 está ______. (0,1)
+
+**Questão 13** · 0,2 pt
+
+Com relação aos contatores, marque (X) a única correta.
+
+(A) No contator, os terminais da bobina são identificados por (1) e (2), como no esquema do relé.  
+(B) No contator, a centelha é reduzida pelo afastamento lento entre os contatos, que evita desgaste mecânico.  
+(C) O contator é derivado do conceito de relé e é um elemento eletromecânico de comando a distância, com uma única posição de repouso e sem travamento.  
+(D) O contator possui duas posições de repouso e travamento, mantendo os contatos acionados após cessar a alimentação da bobina.  
+(E) Os contatos auxiliares do contator são os utilizados para estabelecer e interromper a corrente de alimentação de motores.  
+
+**Questão 14** · 1 pt
+
+![Figura da questão 14](/imagens/cursos/fas-t2/conteudo/Q-E1-37-simbolo-contator.webp)
+
+Situação — O contator representado na Figura será usado para alimentar um motor trifásico, comandado a distância por um operador. Responda aos subitens.
+
+- Entre quais terminais deve ser aplicada a tensão de comando para energizar o contator? (0,1)
+- Por quais terminais devem passar as três fases que alimentam o motor? Justifique pelo tipo de contato. (0,2)
+- Com a bobina energizada e o motor funcionando, qual o estado dos contatos 13-14 e 21-22? (0,2)
+- O operador deixa de alimentar a bobina. Descreva o que ocorre no contator e com o motor, justificando pela definição do contator quanto à posição de repouso e ao travamento. (0,3)
+- Qual dos contatos auxiliares seria adequado para bloquear um circuito auxiliar enquanto o contator estiver energizado? Justifique. (0,2)
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q8 — V-F-F-V-F-V-F-F**
+  - 2. F — Correção: tem uma única posição de repouso e é sem travamento (E1 s33).
+  - 3. F — Correção: o campo é criado no núcleo fixo, que atrai o núcleo móvel, que fecha o circuito (E1 s34).
+  - 5. F — Correção: o afastamento entre os contatos é rápido (E1 s36).
+  - 7. F — Correção: essa é a função dos contatos auxiliares; os principais estabelecem e interrompem correntes de alimentação de cargas, como motores (E1 s38–s39).
+  - 8. F — Correção: NA = números finais 3 e 4; NF = números finais 1 e 2 (E1 s39).
+- **Q9**
+  - • Terminais da bobina do contator.
+  - • Símbolo de atuação eletromecânica (acoplamento entre a bobina e os contatos).
+  - • Contatos principais (de força), NA: estabelecem e interrompem as correntes de alimentação da carga (ex.: motor).
+  - • Contato auxiliar NA (números finais 3 e 4).
+  - • Contato auxiliar NF (números finais 1 e 2).
+- **Q10 — 2-1-3-1-2-2** Relé: terminais (1)-(2) da bobina e armadura móvel (E1 s26–s27); contator: A1/A2, núcleo fixo/móvel e contatos 1-2…21-22 (E1 s34, s37); ambos retornam por mola(s) (E1 s28, s35).
+- **Q11**
+  - • C – E – A – B – F – D
+- **Q12**
+  - • repouso; travamento
+  - • fixo; móvel
+  - • molas
+  - • rápido; abafadores
+  - • fechado; aberto
+- **Q13 — C.** Correta: definição literal do contator (E1 s33).
+- **Q14**
+  - • A1 e A2, terminais da bobina.
+  - • 1-2, 3-4 e 5-6: são os contatos principais (de força), utilizados para estabelecer e interromper correntes de alimentação de cargas, como motores.
+  - • 13-14 (auxiliar NA) fechado; 21-22 (auxiliar NF) aberto.
+  - • O campo magnético é interrompido e o núcleo retorna por molas; os contatos principais abrem e o motor é desalimentado. O contator tem uma única posição de repouso e é sem travamento, logo não mantém os contatos acionados sem a alimentação da bobina.
+  - • O 21-22 (NF), que abre quando a bobina é energizada; contatos auxiliares servem para acionar e/ou bloquear circuitos auxiliares de comando, sinalização e intertravamento.
+
+</details>
+
+
+## Bloco B3 — Selo e intertravamento
+
+‹fonte: E1 s44–s45; E7 p9–p13›
+
+**‹C052› Contato de selo (selagem)** — "O contato de selo é sempre ligado **em paralelo com o contato de fechamento da botoeira**. Sua finalidade é de **manter a corrente circulando pelo contator, mesmo após o operador ter retirado o dedo da botoeira**." Na figura: S0 (1-2, NF) → S1 (3-4, NA) com **K1 13-14 em paralelo** → bobina K1 (A1-A2). É um contato auxiliar **NA** do próprio contator. No E7 p11: "O contato K1 (13-14) auxiliar é fechado, provendo a **selagem** à chave S1 NA." ‹fonte: E1 s44; E7 p11›
+
+![Contato de selo](/imagens/cursos/fas-t2/conteudo/E1-44-selo.webp)
+*Figura — Selo: K1 13-14 em paralelo com S1 ‹fonte: E1 s44›*
+
+**‹C053› Intertravamento (INTERLOCK)** — "Quando existem 2 ou mais contatores, para evitar curtos é indesejável o funcionamento simultâneo de dois contatores. Utiliza-se assim o intertravamento. Neste caso os contatos devem ficar **antes da alimentação da bobina** dos contatores." Na figura: **NF de K2 antes da bobina de K1** e **NF de K1 antes da bobina de K2**. No E7: "o contato K1 (11-12) auxiliar é aberto, impedindo uma eventual alimentação da contatora K2 (A1A2). Portanto, há **INTERLOCK**." ‹fonte: E1 s45; E7 p11, p13›
+
+![Intertravamento](/imagens/cursos/fas-t2/conteudo/E1-45-intertravamento.webp)
+*Figura — Intertravamento: NF de um contator antes da bobina do outro ‹fonte: E1 s45›*
+
+**‹C054› Intertravamento por botoeira** — "Existe um intertravamento por botoeira, que ocorre ao acionar-se S1. Assim, esta chave também possui **contato NF**, que está ligado **em série no circuito da contatora K2** (A1A2). Então, este contato **se abre no momento do acionamento**." O mesmo vale para S2, cujo NF está em série no circuito de K1. ‹fonte: E7 p11, p13›
+
+![Comando com duplo intertravamento](/imagens/cursos/fas-t2/conteudo/E7-09-reversora-comando.webp)
+*Figura — Comando com selo, intertravamento por botoeira e por contator ‹fonte: E7 p9›*
+
+Leitura da figura do E7 p9 (S0, S1 e S2 são chaves de impulso sem retenção):
+- R → **DJ.COMANDO** (disjuntor de comando) → **RT 95-96** (contato NF do relé térmico) → **S0 1-2** (botoeira desliga);
+- ramo de K1: **S1 // K1 13-14** (selo) → **NF de S2** (intertravamento por botoeira) → **K2 11-12** (intertravamento por contator) → bobina **K1 A1-A2** → N;
+- ramo de K2: **S2 // K2 13-14** (selo) → **NF de S1** → **K1 11-12** → bobina **K2 A1-A2** → N.
+
+Ao acionar S1 (E7 p11): K1 energiza; o NF de S1 abre o circuito de K2; K1 13-14 fecha (selagem); K1 11-12 abre (INTERLOCK); o motor parte. Sobrecarga: RT 95-96 desalimenta a bobina. Parada: S0 NF sem retenção.
+
+> [POSSÍVEL ERRO NA FONTE] (D-03): a figura do E7 p9 rotula S1 "gira esquerda" e S2 "gira direita", mas o texto do p11/p13 fala em sentido "por hipótese" horário para K1. O sentido de giro desse circuito não é cobrado.
+
+| | Selo | Intertravamento |
+|---|---|---|
+| Contato | auxiliar **NA** do **próprio** contator (13-14) | auxiliar **NF** do **outro** contator (21-22 / 11-12) ou NF da botoeira do outro circuito |
+| Ligação | **em paralelo** com a botoeira de fechamento | **em série**, antes da bobina do outro contator |
+| Finalidade | manter a corrente no contator após soltar a botoeira | impedir o funcionamento simultâneo (evitar curtos) |
+
+### Exemplos práticos e confusões prováveis
+- ‹C052› No E7 p9, K1 13-14 sela S1 e K2 13-14 sela S2; no E7 p4, "o contato C1 NA é fechado, provendo a selagem à chave B1".
+- ⚠️ ‹C052›/‹C053› V003: 13-14 **em paralelo** com a botoeira = **selo**; NF **cruzado**, antes da bobina do outro = **intertravamento**. Pergunta "qual o nome da ligação que garante que dois contatores não funcionem juntos?" → intertravamento (INTERLOCK).
+- ‹C053› ⚠️ Motivo do intertravamento no slide: **evitar curtos** — não "economizar energia".
+- ‹C054› ⚠️ O NF da botoeira **abre** no momento do acionamento (não fecha) e está no circuito da **outra** contatora.
+
+### Questões — bloco B3
+
+**Questão 15** · 0,8 pt
+
+Com relação ao selo e ao intertravamento em comandos de motores, marque V ou F.
+
+( ) 1. O contato de selo é sempre ligado em paralelo com o contato de fechamento da botoeira.  
+( ) 2. O selo é feito por um contato auxiliar NF do próprio contator, ligado em série com a botoeira de desligar.  
+( ) 3. Quando existem dois ou mais contatores, para evitar curtos é indesejável o funcionamento simultâneo de dois contatores; utiliza-se, então, o intertravamento.  
+( ) 4. No intertravamento, os contatos devem ficar depois da bobina dos contatores, no retorno do circuito.  
+( ) 5. No intertravamento por botoeira, a botoeira S1 possui também um contato NF, ligado em série no circuito da contatora K2, que se abre no momento do acionamento de S1.  
+( ) 6. Ao energizar a contatora K1 no comando do E7, o contato auxiliar K1 (11-12) se fecha, provendo a selagem à chave S1.  
+( ) 7. No intertravamento entre K1 e K2, o contato NF de K2 fica no circuito da bobina de K1, e o contato NF de K1 no circuito da bobina de K2.  
+( ) 8. Com o selo, o contator continua energizado mesmo que a botoeira de partida seja uma chave de impulso sem retenção.  
+
+**Questão 16** · 1 pt · *adaptada de SOPA 2025 Q1.3d*
+
+![Figura da questão 16](/imagens/cursos/fas-t2/conteudo/Q-E7-09-reversora.webp)
+
+A Figura mostra um circuito de comando com dois contatores, K1 e K2 (S0, S1 e S2 são chaves de impulso sem retenção). Identifique o nome ou a função de cada elemento indicado.
+
+- DJ.COMANDO. (0,1)
+- RT 95-96. (0,1)
+- S0 (1-2). (0,1)
+- K1 13-14, em paralelo com S1. (0,2)
+- Contato NF de S2, em série no ramo da bobina de K1. (0,2)
+- K2 11-12, no ramo da bobina de K1. (0,2)
+- Terminais A1-A2 de K1 e de K2. (0,1)
+
+**Questão 17** · 0,2 pt · *adaptada de SOPA 2025 Q1.3c*
+
+Em um comando com dois contatores, K1 e K2, cujo funcionamento simultâneo causaria curto, deve-se usar uma ligação que impeça essa simultaneidade. Com relação a essa ligação, marque (X) a única correta.
+
+(A) Chama-se intertravamento: o contato NF de K2 fica antes da alimentação da bobina de K1, e o contato NF de K1, antes da alimentação da bobina de K2.  
+(B) Chama-se intertravamento por botoeira: basta que a botoeira S0 seja NF e fique em série com as duas bobinas.  
+(C) Chama-se selo: o contato NF de cada contator é ligado em paralelo com a bobina do outro contator.  
+(D) Chama-se selo: o contato auxiliar NA 13-14 de cada contator é ligado em paralelo com a sua botoeira de partida.  
+(E) Chama-se intertravamento: o contato auxiliar 13-14 de K2 fica em série com a bobina de K1, e o 13-14 de K1, em série com a bobina de K2.  
+
+**Questão 18** · 1 pt · *adaptada de SOPA 2025 Q1.3d*
+
+Explique como contatos auxiliares realizam selagem e intertravamento em comandos com contatores.
+
+- Em um comando de partida com botoeira de impulso sem retenção, o que aconteceria com a bobina do contator quando o operador retirasse o dedo da botoeira, se não existisse o contato de selo? Justifique. (0,3)
+- Para que são utilizados os contatos auxiliares de um contator? (0,2)
+- Em que condição se utiliza o intertravamento e onde devem ficar os seus contatos? (0,3)
+- No intertravamento por botoeira do E7, em que momento o contato NF da botoeira S1 se abre e em qual circuito ele está ligado? (0,2)
+
+**Questão 19** · 1,2 pt
+
+![Figura da questão 19](/imagens/cursos/fas-t2/conteudo/Q-E7-09-reversora.webp)
+
+Situação — No circuito de comando da Figura, as bobinas K1 e K2 estão desenergizadas. O operador aciona S1 (chave de impulso sem retenção) e, em seguida, a solta. Responda aos subitens.
+
+- Ao acionar S1, o que acontece com a bobina de K1 e com o contato NF de S1 que está no ramo de K2? (0,2)
+- Quais contatos auxiliares de K1 mudam de estado com a bobina energizada? Indique os terminais, o novo estado e a finalidade de cada um. (0,3)
+- Depois que S1 é solta, por que K1 permanece energizada? (0,2)
+- Com K1 energizada e S1 já solta, qual contato impede a energização de K2 e qual o nome desse mecanismo? (0,2)
+- Ocorre uma sobrecarga no motor acionado por K1. Descreva a atuação do relé térmico até a desalimentação do motor. (0,2)
+- Em operação normal, qual chave se aciona para parar o motor e de que tipo ela é? (0,1)
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q15 — V-F-V-F-V-F-V-V**
+  - 2. F — Correção: é um contato auxiliar NA (ex.: 13-14) ligado em paralelo com a botoeira de fechamento (E1 s44; E7 p11).
+  - 4. F — Correção: os contatos devem ficar antes da alimentação da bobina dos contatores (E1 s45).
+  - 6. F — Correção: K1 (11-12) se abre, impedindo uma eventual alimentação de K2 (INTERLOCK); a selagem de S1 é feita por K1 (13-14), que se fecha (E7 p11).
+- **Q16**
+  - • Disjuntor de comando.
+  - • Contato NF do relé térmico: abre na sobrecarga e desalimenta a bobina da contatora.
+  - • Botoeira desliga (NF, sem retenção).
+  - • Contato auxiliar NA de K1 que provê a selagem à chave S1 (selo).
+  - • Intertravamento por botoeira: ao acionar S2, esse NF se abre e impede a alimentação de K1.
+  - • Contato auxiliar NF de K2 (final 1-2): intertravamento (INTERLOCK), abre quando K2 está energizada e impede a alimentação de K1.
+  - • Bobinas dos contatores K1 e K2.
+- **Q17 — A.** Correta: intertravamento — NF de um contator antes da alimentação da bobina do outro (E1 s45; E7 p11).
+- **Q18**
+  - • Seria desenergizada, pois a corrente só circulava pela botoeira pressionada; é o selo, em paralelo com a botoeira de fechamento, que mantém a corrente circulando pelo contator após o operador retirar o dedo.
+  - • Para acionar e/ou bloquear circuitos auxiliares de comando, sinalização e intertravamento elétrico.
+  - • Quando existem 2 ou mais contatores cujo funcionamento simultâneo é indesejável, para evitar curtos; os contatos devem ficar antes da alimentação da bobina dos contatores.
+  - • No momento do acionamento de S1; está ligado em série no circuito da contatora K2 (A1-A2).
+- **Q19**
+  - • A bobina de K1 (A1-A2) é energizada; o contato NF de S1, em série no circuito de K2, se abre no momento do acionamento (intertravamento por botoeira).
+  - • K1 13-14 (NA) se fecha, provendo a selagem à chave S1; K1 11-12 (NF) se abre, impedindo uma eventual alimentação de K2 (INTERLOCK).
+  - • Porque o contato K1 13-14, fechado e em paralelo com S1, mantém a corrente circulando pela bobina (selo).
+  - • O contato auxiliar K1 11-12, aberto no ramo de K2; intertravamento (INTERLOCK).
+  - • O sensor bimetálico aciona o contato RT 95-96 (NF), que abre e desalimenta a bobina de K1; a contatora abre seus contatos principais e desalimenta o motor.
+  - • S0, botoeira NF sem retenção, que desenergiza a bobina de K1.
+
+</details>
+
+
+## Revisão cumulativa
+
+### Questões — revisão cumulativa
+
+**Questão 20** · 0,6 pt
+
+![Figura da questão 20](/imagens/cursos/fas-t2/conteudo/Q-E1-43-simbolos.webp)
+
+Revisão cumulativa — Na tabela da Figura, identifique somente os símbolos 2, 3, 4, 5, 7 e 13 e relacione-os a botoeiras, contator, relé térmico e disjuntor.
+
+- Símbolo 2. (0,1)
+- Símbolo 3. (0,1)
+- Símbolo 4. (0,1)
+- Símbolo 5. (0,1)
+- Símbolo 7. (0,1)
+- Símbolo 13. (0,1)
+
+<details>
+<summary>Gabarito comentado (abra só depois de responder)</summary>
+
+
+- **Q20**
+  - • Botoeira NA com retorno por mola.
+  - • Contatos tripolares NA (ex.: contator de potência).
+  - • Acionamento eletromagnético (ex.: bobina do contator).
+  - • Relé térmico.
+  - • Disjuntor com elemento magnético: proteção contra corrente de curto-circuito.
+  - • Contato normalmente fechado (NF).
+
+</details>
+
+
+## Checklist de domínio
+- [ ] Nomeio as partes do relé e os terminais (1)–(5).
+- [ ] Descrevo o relé energizado (campo → armadura móvel → contatos) e desenergizado (campo se dispersa → mola).
+- [ ] Explico a vantagem do relé: não há contato físico entre comando e potência (acoplamento eletromecânico + isolamento elétrico).
+- [ ] Preencho a tabela controlador 0/1 (cortado/saturado, desatracado/atracado) e sei onde fica o diodo damper.
+- [ ] Defino contator (comando a distância, uma única posição de repouso, sem travamento) e descrevo núcleo fixo/móvel e retorno por molas.
+- [ ] Cito as três formas de reduzir a centelha.
+- [ ] Identifico A1/A2, 1-2/3-4/5-6, 13-14 (NA) e 21-22 ou 11-12 (NF).
+- [ ] Diferencio selo (13-14 em paralelo com a botoeira) de intertravamento (NF antes da bobina do outro) e explico o intertravamento por botoeira.

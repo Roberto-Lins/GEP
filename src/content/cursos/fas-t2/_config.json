@@ -1,0 +1,29 @@
+{
+  "slug": "fas-t2",
+  "titulo": "Fundamentos de Automação — FAS T2",
+  "subtitulo": "Comandos elétricos, pneumática, hidráulica, 331 questões e três simulados completos",
+  "descricao": "Curso único para a T2 de FAS, com 16 módulos, 227 conceitos rastreados às fontes, prática distribuída ao longo das aulas e três simulados de 80 itens no perfil informado pelo professor.",
+  "categoria": "Carreira Naval",
+  "ano": "4",
+  "semestre": "2",
+  "epoca": "T2",
+  "turma": ["CA-HM", "CA-HE", "CA-HS", "FN-HM", "FN-HE", "FN-HS"],
+  "ordem": 4,
+  "temaVisual": "naval-command",
+  "corTema": "dourado",
+  "icone": "/imagens/cursos/fas-t2/icone.svg",
+  "capa": "/imagens/cursos/fas-t2/capa.webp",
+  "features": {
+    "timeline": true,
+    "simulados": true,
+    "mapasMentais": false,
+    "podcasts": false,
+    "animacoesHero": true,
+    "animacoesTransicao": false,
+    "modoRevisaoVespera": true,
+    "graficoProgressoAvancado": false,
+    "writing": false,
+    "cadernoRevisao": false
+  },
+  "componentesExtras": []
+}

@@ -1,0 +1,30 @@
+{
+  "ordem": 4,
+  "slug": "04-partida-direta-e-variacoes",
+  "titulo": "Partida direta e variações",
+  "prioridade": "máxima",
+  "subtitulo": "Circuitos de potência e comando, proteções e sinalização",
+  "tempoEstimado": "45 min",
+  "objetivo": "Ler circuitos de partida direta, narrar sua operação e identificar proteções, selo, emergência e sinalização.",
+  "palavrasChave": [
+    "partida direta",
+    "K1",
+    "F2",
+    "95-96",
+    "emergência",
+    "sinalização"
+  ],
+  "conceptIds": [
+    "C055",
+    "C056",
+    "C057",
+    "C058",
+    "C059",
+    "C060",
+    "C061",
+    "C062",
+    "C063",
+    "C064",
+    "C065"
+  ]
+}

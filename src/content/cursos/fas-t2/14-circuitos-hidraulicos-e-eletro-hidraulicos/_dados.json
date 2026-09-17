@@ -1,0 +1,30 @@
+{
+  "ordem": 14,
+  "slug": "14-circuitos-hidraulicos-e-eletro-hidraulicos",
+  "titulo": "Circuitos hidráulicos e eletro-hidráulicos",
+  "prioridade": "máxima",
+  "subtitulo": "Circuito aberto/fechado, sequência de operação e aplicações navais",
+  "tempoEstimado": "50 min",
+  "objetivo": "Ler e narrar circuitos hidráulicos e eletro-hidráulicos, identificando fluxo, pressão, acionamentos e movimentos dos atuadores.",
+  "palavrasChave": [
+    "circuito aberto",
+    "circuito fechado",
+    "solenoide",
+    "avanço",
+    "recuo",
+    "servomecanismo"
+  ],
+  "conceptIds": [
+    "C217",
+    "C218",
+    "C219",
+    "C220",
+    "C221",
+    "C222",
+    "C223",
+    "C224",
+    "C225",
+    "C226",
+    "C227"
+  ]
+}
