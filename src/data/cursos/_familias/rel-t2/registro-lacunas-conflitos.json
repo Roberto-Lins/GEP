@@ -1,0 +1,168 @@
+{
+  "schema_version": "1.0.0",
+  "familia_id": "rel-t2",
+  "registrado_em": "2026-09-17",
+  "conflitos_entre_fontes": [
+    {
+      "id": "CF-01",
+      "objeto": "Versão vigente da PND/END",
+      "versoes": [
+        "AULA 12.pdf: versão atual 2016, aprovada pelo Congresso em 2018; proposta de 2020 em análise.",
+        "AULA 13.pdf: versão atual de 18/11/2025, Decreto nº 12.725."
+      ],
+      "resolucao": "Prevalece AULA 13.pdf. Não é erro de extração: é atualização do mesmo slide pelo professor.",
+      "destino_no_curso": "Ensinado como conceito REL-T2-M02-C003, com a distinção entre datas de aprovação pelo Congresso (2005, 2012, 2018) e versão em vigor. Cobrado na questão REL-T2-M00-OBJ-N2-002.",
+      "status": "resolvido"
+    },
+    {
+      "id": "CF-02",
+      "objeto": "Situação da Política Marítima Nacional",
+      "versoes": [
+        "REL - T2.pdf (resumo): defasada, atualização de 1994 de decreto de 1984; GTI instituído pela Marinha em 2021.",
+        "AULA 14.pdf: Decreto nº 12.481, de 02/06/2025."
+      ],
+      "resolucao": "Prevalece AULA 14.pdf. As informações são etapas de uma sequência, não versões concorrentes: defasagem → GTI 2021 → decreto de 2025.",
+      "destino_no_curso": "Ensinado como conceito REL-T2-M03-C001, com o mecanismo completo. Cobrado na questão REL-T2-M03-OBJ-N2-002.",
+      "status": "resolvido"
+    },
+    {
+      "id": "CF-03",
+      "objeto": "Redação dos Objetivos Nacionais de Defesa",
+      "versoes": [
+        "AULA 13.pdf: lista de oito objetivos, incluindo preservar a coesão e a unidade nacionais, salvaguardar pessoas e interesses no exterior, ampliar o envolvimento da sociedade e incrementar a projeção do Brasil no concerto das Nações.",
+        "REL - T2.pdf: lista abreviada e reescrita, incluindo \"fortalecer a presença no entorno estratégico (zopacas)\", redação que não consta do slide."
+      ],
+      "resolucao": "Prevalece o slide. A formulação do resumo é paráfrase do Aspirante: ZOPACAS é PRESSUPOSTO da PND, não Objetivo Nacional de Defesa.",
+      "destino_no_curso": "Ensinado como conceitos REL-T2-M02-C005 (pressupostos) e REL-T2-M02-C006 (objetivos), com a separação explícita. Cobrado na questão REL-T2-M02-OBJ-N3-006.",
+      "status": "resolvido"
+    },
+    {
+      "id": "CF-04",
+      "objeto": "Cronologia e litígios chineses no resumo de Aspirante",
+      "versoes": [
+        "REL - T2.pdf: \"Dinastia Zhou: a primeira dinastia da China\"; \"Dinastia Qing (1892)\"; \"platô Doklam com Bangladesh\".",
+        "AULA 16.pdf: Shang (1650-1050 a.C.) como primeira linha de governantes com registro escrito e evidência arqueológica, tendo criado a primeira forma escrita do idioma; Qing 1644-1911; o mapa do deck rotula Bhutan na área do Doklam."
+      ],
+      "resolucao": "Prevalece o slide. Os três pontos do resumo são erros do Aspirante (POSSÍVEL ERRO NA FONTE de nível 3).",
+      "destino_no_curso": "Sinalizados como erros frequentes nos conceitos REL-T2-M05-C004 e REL-T2-M05-C009 e cobrados na questão REL-T2-M99-OBJ-N2-008.",
+      "status": "resolvido"
+    }
+  ],
+  "incertezas": [
+    {
+      "id": "I-01",
+      "tipo": "PONTO DE INCERTEZA — REQUER VERIFICAÇÃO",
+      "objeto": "Formato da avaliação T2 de 2026",
+      "descricao": "O corpus não contém nenhuma prova ESCRITA de T2. O único documento de T2 (2025) descreve trabalho em grupo: apresentação com áudio de até 30 minutos, 10,0 pontos em sete itens. Todos os testemunhos de prova escrita são de T1, P1 e P2.",
+      "impacto": "Alto sobre a forma de preparo; nulo sobre o escopo de conteúdo.",
+      "tratamento": "Declarado ao aluno no Módulo 00 e na rubrica do simulado. O curso prepara para os dois formatos: a matriz de dez passos serve de roteiro tanto da discursiva quanto do trabalho, e as questões REL-T2-SG01-DIS-N4-014, REL-T2-SG01-DIS-N4-016 e REL-T2-M99-DIS-N3-005 ensaiam os itens de maior peso do trabalho. Nenhum conceito foi omitido por causa desta incerteza.",
+      "status": "aberto — depende de informação do professor"
+    },
+    {
+      "id": "I-02",
+      "tipo": "PONTO DE INCERTEZA — REQUER VERIFICAÇÃO",
+      "objeto": "Orientação gráfica dos eixos da matriz 2×2 de cenários do Leste Asiático",
+      "descricao": "O slide nomeia as duas forças-motrizes e os quatro cenários, mas a extração de texto embaralhou a posição dos rótulos no plano cartesiano.",
+      "tratamento": "Adotada a leitura de REL - T2.pdf, compatível com as descrições textuais dos slides: Cria Cuervos (expansão chinesa baixa, arco forte), Concerto Asiático (expansão alta, arco forte), Casa sem Dono (expansão baixa, arco frágil), Império do Meio II (expansão alta, arco frágil). Marcada como [INFERÊNCIA PEDAGÓGICA] quanto à posição gráfica no conceito REL-T2-M04-C013 e no comentário da questão REL-T2-M04-COR-N3-005. As quatro descrições, em si, são explícitas nos slides.",
+      "impacto": "Baixo. O que se cobra é o raciocínio de cada cenário, não a coordenada.",
+      "status": "aberto — verificável abrindo o deck"
+    },
+    {
+      "id": "I-03",
+      "tipo": "LACUNA DE COBERTURA",
+      "objeto": "Capítulos de Magnoli sobre EUA, China e Rússia",
+      "descricao": "A bibliografia obrigatória das Aulas 16, 17 e 18 indica MAGNOLI (2013) nas páginas 133-140/226-239 (EUA), 244-260 (China) e 128-132/176-190 (Rússia). O corpus forneceu apenas o capítulo 21 (Aula 13) e a nota de correspondência de páginas, segundo a qual Aula 16 corresponde ao cap. 8 (p. 119-131 e 192-204) e Aula 17 ao cap. 18 (p. 265-282, \"A China em ascensão pacífica\").",
+      "impacto": "Médio. Onde Magnoli aprofundaria, o curso usa os slides como autoridade máxima mais as leituras complementares que o professor autorizou para exatamente esses tópicos.",
+      "tratamento": "NENHUM conteúdo foi atribuído a Magnoli sem estar na fonte lida. Declarado ao aluno na seção de referências dos módulos 04, 05 e 06, com a indicação de página para quem tiver o exemplar (há exemplar na biblioteca, conforme a nota de correspondência).",
+      "status": "aberto — depende de obtenção dos capítulos"
+    },
+    {
+      "id": "I-04",
+      "tipo": "LACUNA DE EXTRAÇÃO",
+      "objeto": "Slides gráficos cujo texto não foi recuperado",
+      "itens_recuperados_por_resumo": [
+        "Elementos do Poder Marítimo (AULA 14.pdf): os oito elementos foram recuperados de REL - T2.pdf e estão marcados como nível 3 no conceito REL-T2-M03-C007.",
+        "Leitura dos mapas dos EUA, da China e da Rússia: recuperada de REL - T2.pdf e marcada como tal nos conceitos REL-T2-M04-C001, REL-T2-M05-C001 e REL-T2-M06-C002."
+      ],
+      "itens_nao_recuperados": [
+        "PROHIDRO (Navio ApAnt) e PROADSUMUS (AULA 14.pdf): slides de imagem sem texto. O curso registra a existência dos programas e sua função declarada em outros slides, sem descrever o que a imagem mostra.",
+        "Operações Multidomínio (AULA 15.pdf): figura sem texto. O conceito é ensinado a partir do slide textual de A2/AD e da leitura complementar.",
+        "Mapas históricos russos com rótulos parciais (AULA 17.pdf)."
+      ],
+      "tratamento": "Onde o conteúdo do slide gráfico é examinável e foi recuperado, o curso o ensina marcando a procedência. Onde não foi recuperado, o curso diz que o slide existe e que o aluno deve abri-lo — e não inventa o conteúdo.",
+      "status": "aberto — resolvível por inspeção visual dos decks"
+    },
+    {
+      "id": "I-05",
+      "tipo": "PONTO DE INCERTEZA — REQUER VERIFICAÇÃO",
+      "objeto": "Numeração física dos slides",
+      "descricao": "A extração de texto não preserva número de slide. Todas as citações de fonte primária deste curso usam o TÍTULO DO SLIDE como localizador.",
+      "impacto": "Baixo para o estudo; relevante para conferência.",
+      "status": "aberto — por limitação do método de extração"
+    },
+    {
+      "id": "I-06",
+      "tipo": "PONTO DE INCERTEZA — REQUER VERIFICAÇÃO",
+      "objeto": "Data do Pacto de Varsóvia",
+      "descricao": "REL - T2.pdf registra 1953; o slide de AULA 17.pdf menciona o Pacto sem datá-lo. A data exata não pôde ser confirmada no corpus autorizado.",
+      "tratamento": "O conceito REL-T2-M06-C008 trata o Pacto como arranjo do início dos anos 1950 e marca o ponto como [PONTO DE INCERTEZA]. Nenhuma questão cobra a data.",
+      "status": "aberto"
+    },
+    {
+      "id": "I-07",
+      "tipo": "PONTO DE INCERTEZA — REQUER VERIFICAÇÃO",
+      "objeto": "Gabaritos manuscritos das provas antigas",
+      "descricao": "As folhas de P1 REL 2024 e das duas digitalizações da SOPA REL T1 2024 têm marcações de aluno e de correção às vezes divergentes entre exemplares (a questão 4 da SOPA aparece marcada como E em um e com rasura E→B em outro).",
+      "tratamento": "Irrelevante por construção: as provas antigas são usadas SÓ como evidência de formato e peso. Nenhum gabarito antigo foi transportado para este curso e nenhuma questão antiga foi copiada ou parafraseada.",
+      "status": "encerrado — sem impacto"
+    },
+    {
+      "id": "I-08",
+      "tipo": "PONTO DE INCERTEZA — REQUER VERIFICAÇÃO",
+      "objeto": "Vídeos indicados nos decks",
+      "descricao": "A Aula 13 indica um debate do EBERI 2021 (trecho entre 1h15 e 1h45) e a Aula 15 indica um vídeo sobre os avanços do GTI da Política Marítima (a partir de 1h10). Nenhum dos dois foi fornecido, acessado ou verificado nesta autoria.",
+      "tratamento": "NÃO foram registrados como mídia do curso (midias.ts está vazio, com a razão documentada no próprio arquivo). Mencionados apenas como indicação do professor, sem link inventado e sem descrição de conteúdo.",
+      "status": "aberto"
+    },
+    {
+      "id": "I-09",
+      "tipo": "PONTO DE INCERTEZA — REQUER VERIFICAÇÃO",
+      "objeto": "Natureza posicionada de três leituras complementares",
+      "descricao": "HAESBAERT & SANTA BÁRBARA (2026) escreve a partir de quadro teórico declarado de imperialismo e colonialidade do poder; LOVATT (ECFR) é análise de think tank europeu com posição declarada; GVINERIA é autor georgiano com posição declaradamente pró-ocidental.",
+      "tratamento": "As três são usadas como INTERPRETAÇÃO IDENTIFICADA, nunca como descrição neutra. Cada conceito que as invoca registra a natureza da fonte, e as questões que as usam exigem do aluno o reconhecimento da posição e a apresentação de leitura concorrente (REL-T2-M04-DIS-N4-006, REL-T2-M04-OBJ-N4-007, REL-T2-M06-OBJ-N4-008, REL-T2-SG01-DIS-N4-018).",
+      "status": "encerrado — tratamento documentado"
+    }
+  ],
+  "escopo_excluido_deliberadamente": [
+    {
+      "objeto": "Seção EUROPA do resumo REL - T2.pdf",
+      "razao": "Determinação expressa do pedido: o escopo termina em Rússia.",
+      "verificacao": "Nenhum conceito, exemplo, distrator ou referência deste curso provém dessa seção. A palavra Europa aparece no curso apenas em contextos internos ao escopo: centro Europa-Urais, planície europeia, expansão da OTAN, eixo Moscou-Berlim, Concerto Europeu como analogia do slide de EUA e reconstrução europeia no pós-guerra."
+    },
+    {
+      "objeto": "Aulas internas 1 a 12",
+      "razao": "Fora do escopo declarado.",
+      "verificacao": "Entram apenas como ponte de pré-requisito no conceito REL-T2-M00-C015, marcado examinavel=false e presente apenas em pra-safar e completo, com a função declarada de atender ao item 3 do trabalho de T2 (escolha de um geopolítico das aulas 4 e 5). Mahan e Spykman são exceção legítima: aparecem em slide próprio da Aula 16, dentro do escopo."
+    },
+    {
+      "objeto": "Cronologia cerâmica das dinastias chinesas",
+      "razao": "Densidade seletiva: porcelanas, celadons, sancai, esmaltes e os fornos de Jingdezhen ocupam vários slides e não cumprem nenhuma das seis funções exigidas de um bloco do curso.",
+      "verificacao": "O conceito REL-T2-M05-C004 preserva de cada dinastia apenas o que explica unificação, ideologia de Estado, tecnologia de projeção e alcance territorial, e declara o corte."
+    },
+    {
+      "objeto": "Detalhamento de batalhas e de localidades sem consequência estratégica",
+      "razao": "Densidade seletiva.",
+      "verificacao": "Quantidade de batalhas por localidade na Guerra da Cisplatina, listas de municípios e de estaleiros e cronogramas de casco a casco entram apenas quando sustentam um argumento (o cronograma das fragatas sustenta o argumento de continuidade de programa da BID, e está fora do modo Rápido)."
+    }
+  ],
+  "validacoes_academicas": {
+    "todo_conceito_examinavel_na_matriz": "sim — 126 conceitos, dos quais 125 examináveis e 1 marcado examinavel=false (ponte de pré-requisito REL-T2-M00-C015)",
+    "todo_conceito_cobrado_foi_ensinado": "garantido por construção: build.py deriva as modalidades de cada questão da presença de TODOS os seus conceitos na matriz, e scripts/validate-content.ts reprova qualquer questão que cobre conceito não ensinado na modalidade",
+    "todo_conceito_examinavel_tem_questao": "sim — auditoria de build.py sem lacuna de cobertura",
+    "distribuicao_por_nivel": "N1 9%, N2 19%, N3 44%, N4 25% sobre 81 atividades (alvo: 10/20/45/25)",
+    "atividades_por_modulo": "00=8, 01=8, 02=7, 03=8, 04=8, 05=8, 06=8, 99=8 (alvo: 5 a 8)",
+    "simulado_final": "12 objetivas e 6 discursivas, com 5 questões marcadas como integração entre módulos e gabarito integralmente comentado com critérios por elementos",
+    "ids_reutilizados": "nenhum — a auditoria verifica unicidade sobre o conjunto de módulos e simulado",
+    "copia_de_prova_anterior": "nenhuma. As provas antigas foram usadas apenas como evidência de formato e peso, registrada em perfil-cobranca.json. Onde uma questão trata de objeto geopolítico que já apareceu em prova, a fonte da questão declara explicitamente que o enunciado, os fatos e o gabarito são distintos."
+  }
+}

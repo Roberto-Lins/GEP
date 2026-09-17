@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0.0",
+  "status": "confirmado",
+  "classificacao": {
+    "literalidade": "media",
+    "interpretacao": "alta",
+    "calculo": "baixa",
+    "detalhismo": "alta",
+    "memorizacao": "media",
+    "pegadinhas": "alta",
+    "integracao": "alta",
+    "aplicacaoInedita": "alta"
+  },
+  "evidencias": [
+    "FORMATO — T1: a estrutura é declarada em REL-T1-IM415 (\"9Q valendo 0,9; 1Q correlacione valendo 1,4; 1Q valendo 0,5\") e confirmada item a item pela SOPA REL T1 2024, que tem exatamente 11 questões nesses valores, somando 10,0. Não há discursiva no T1.",
+    "FORMATO — P1 2024: 18 questões, 10,0 pontos. Treze objetivas (0,2 / 0,4 / 0,5) somando ~4,7 e cinco discursivas (1,8 + 0,3 + 0,8 + 0,9 + 1,5) somando ~5,3. As discursivas de maior valor são subdivididas em itens a/b/c com pontuação própria.",
+    "FORMATO — P2 2024: 14 objetivas de 0,3 (4,2) e quatro blocos discursivos subdivididos (1,2 = 0,6×2; 0,7; 2,1 = 0,7×3; 1,8 = 0,6×3), somando 5,8. Confirma que, nas provas escritas maiores, o discursivo pesa MAIS que o objetivo.",
+    "FORMATO — T2 2025: trabalho em grupo, 10,0 pontos em sete itens: apresentação (1,0); três objetivos/desafios geoceanopolíticos com fatores facilitadores/dificultadores, situação atual da nação e do sistema internacional e perspectiva de alteração futura (2,0); escolha e instrumentalização de um geopolítico (1,0); três organizações ou tratados de segurança militar e seu efeito sobre os objetivos (2,0); três operações de interoperabilidade externa dos últimos 5 anos e seu impacto (2,0); conclusão em forma de sumário executivo (1,0); referências ABNT (1,0).",
+    "INTERPRETAÇÃO ALTA — quase toda questão objetiva parte de um estímulo: texto acadêmico adaptado com citação completa, charge, mapa, quadro do SIPRI, gráfico do McKinsey sobre o centro de gravidade da economia, figura de exaustão de recursos minerais, mapa do Ártico com a dorsal Lomonosov, mapa da OTAN 2024. O comando pede aplicação de conceito ao estímulo, não recuperação de definição.",
+    "INTERPRETAÇÃO ALTA — o comando remete explicitamente à aula, e não só à bibliografia: \"com base no que foi debatido em sala de aula\", \"conforme analisado em aula\", \"com base no que foi abordado nas diversas aulas e nos textos recomendados\", \"tópico abrangido nas aulas e no material de pesquisa à disposição\".",
+    "PEGADINHAS ALTAS — o professor usa sistematicamente o comando invertido: \"aponte a alternativa INCORRETA\" (P1 2024, q. 7), \"aponte a resposta que contenha apenas itens INCORRETOS\" (SOPA T1, q. 1 e 3), \"aponte a que NÃO contribui para explicar a afirmação\" (SOPA T1, q. 6), \"aquele que apresenta TODAS as características simultaneamente\" (P1 2024, q. 9).",
+    "PEGADINHAS ALTAS — asserção e razão aparece em quatro formas distintas nas provas, incluindo a variante refinada \"a afirmativa 2 é a explicação COMPLETA da afirmativa 1\" (SOPA T1, q. 10) e o par clássico com alternativas de cinco níveis (P1 2024, q. 6 e 12; P2 2024, q. 6, 7, 9, 10, 13).",
+    "PEGADINHAS ALTAS — alternativas longas e parcialmente verdadeiras. No gabarito da P2 2024 a resposta da q. 8 é um parágrafo inteiro em que o erro está enxertado no meio (\"Final da União Soviética, no qual a decisão por uma guerra civil devastadora levou à independência de todas as repúblicas...\"). Ler metade da alternativa leva ao erro.",
+    "DETALHISMO ALTO — cobra-se a diferença entre coisas próximas: Geopolítica × Oceanopolítica por correlação item a item (P1 2024, q. 4); choke points de Mahan × choke points do Chatham House (P1 2024, q. 14); Combate no Mar × Combate pelo Mar (SOPA T1, q. 4); zona contígua × ZEE × mar territorial com distâncias numéricas (P1 2024, q. 8 e 16); interoperabilidade interna × externa (SOPA T1, q. 5).",
+    "MEMORIZAÇÃO MÉDIA E SUBORDINADA — o professor não cobra listas por si. Cobra a lista quando ela decide um caso: a questão 16 da P1 2024 exige saber que ilha artificial não gera direitos e que ilha ocupada gera ZEE, para então resolver a distância de 186 MN. A questão 11 da SOPA T1 exige o conceito de polaridade para ler percentuais de gasto militar.",
+    "INTEGRAÇÃO ALTA — a questão 15 da P1 2024 pede que se associe uma figura de exaustão de recursos minerais à evolução de Combate no Mar → Combate pelo Mar e se projetem cenários futuros. A questão 17 cruza centro de gravidade da economia mundial, oferta energética por região e o Acordo de Paris. A questão 17 da P2 2024 cruza Estreito de Málaca, Canal de Kra, precedentes de Suez e Panamá e os interesses da Índia.",
+    "APLICAÇÃO INÉDITA ALTA — o professor pega um caso real recente e exige a lente: AUKUS lido por Spykman, Mackinder, Douhet e Corbett (SOPA T1, q. 1); Guerra da Ucrânia lida por Mackinder, Spykman, Douhet e Mahan (SOPA T1, q. 3); reconhecimento de Israel pelos EAU explicado pela geopolítica sunita/xiita (P2 2024, q. 15); proibição de ZTE e Huawei na Austrália explicada pela \"geopolítica de uma ilha\" (P2 2024, q. 18c).",
+    "CÁLCULO BAIXO — não há cálculo algébrico. Há, no máximo, aritmética de distâncias em milhas náuticas aplicada a regime jurídico (P1 2024, q. 8 e 16) e leitura de percentuais em quadro (SOPA T1, q. 11).",
+    "PADRÃO DE CORREÇÃO DAS DISCURSIVAS — a correção é por ELEMENTOS EXIGIDOS, com crédito parcial. A correção da SOPA da P1 registra exatamente esse movimento: \"A explicação está bem certa, mas faltou ele mencionar que a manutenção dos choke points do Chatham institute são essenciais à segurança alimentar mundial\"; \"O que faltou ser mencionado era o Acordo de Paris\"; \"ele errou em dizer que foi aproximação c os eua\".",
+    "PADRÃO DE RESPOSTA-MODELO — as respostas do gabarito da P2 2024 têm forma fixa: nomeiam os atores, apresentam o mecanismo causal em uma cadeia explícita, ancoram em fato concreto e concluem. Exemplo literal: \"Apesar de a China ser o maior parceiro comercial da Austrália, a geopolítica de uma ilha a leva a se aliar à maior potência naval mundial ou regional, no caso os EUA. Portanto, os interesses de segurança acabam se superpondo aos interesses comerciais.\"",
+    "TEÓRICOS COMO FERRAMENTA, NÃO COMO CITAÇÃO — tanto a SOPA T1 (\"os vários conceitos e abordagens teóricas são utilizados de acordo com o objeto de análise; quanto mais tal objeto se inserir nas premissas das abordagens, maior o sucesso na análise\") quanto o T2 2025 (\"escolham aquele que mais se adequa a explicar o analisado, com a instrumentalização dos conceitos do referido estudioso\") exigem ADEQUAÇÃO entre caso e lente. Citar o autor sem instrumentalizar não pontua.",
+    "ESTUDO DIRIGIDO COMO ANTECIPAÇÃO — os slides encerram cada aula com um Estudo Dirigido cujo verbo dominante é 'correlacione' (\"Correlacione alguma das tarefas básicas do Poder Naval com o conceito de Amazônia Azul\"; \"Correlacione diretamente o PESD e o ensino na Escola Naval\"; \"Correlacione o conceito de multimodal com uma das Capacidades Nacionais de Defesa\"; \"Correlacione a defesa ribeirinha com o conceito de AJB\"). Isso é declaração de intenção de cobrança por integração.",
+    "PERGUNTAS DE JULGAMENTO ABERTO NOS SLIDES — \"Qual das ameaças contidas no PEM 2040 é mais difícil de combater, em termos operacionais? Por quê?\"; \"O conceito de AJB utilizado pela Marinha do Brasil abrange a Elevação do Rio Grande? Por quê?\"; \"A Rússia teria interesse de influir no eventual processo de independência da Escócia? Embase sua resposta\". O professor pede tese com fundamentação, aceitando formulações distintas."
+  ],
+  "fontes_localizadas": [
+    "P1 REL 2024 — prova corrigida, 17 páginas, com espelho de pontos por questão: estrutura, valores, formatos e padrão das discursivas.",
+    "Gabarito da P2 REL 2024 — 3 páginas: 14 objetivas de 0,3 e quatro blocos discursivos subdivididos; respostas-padrão integrais.",
+    "SOPA REL T1 2024 — 6 páginas, dois exemplares digitalizados do mesmo instrumento: 9 × 0,9 + correlação 1,4 + 0,5.",
+    "Correção da SOPA da P1 + estudo dirigido — padrão de correção por elementos faltantes.",
+    "T2_2025.pdf — critérios e pesos do trabalho em grupo de T2 de 2025.",
+    "REL - T1 - IM415 — declaração explícita da estrutura do T1 e repertório de geopolíticos das aulas 4 e 5.",
+    "Estudos Dirigidos ao final de cada um dos seis decks primários (aulas internas 13 a 18)."
+  ],
+  "incertezas": [
+    "PONTO DE INCERTEZA — O formato da T2 de 2026 não é conhecido. O corpus não contém nenhuma prova ESCRITA de T2; o único documento de T2 (2025) descreve um TRABALHO EM GRUPO. As classificações de literalidade, pegadinhas e detalhismo acima foram inferidas de T1, P1 e P2, que são provas escritas, e valem integralmente se a T2 for escrita. Se a T2 repetir o trabalho em grupo, os eixos que efetivamente decidem a nota passam a ser interpretação, integração e aplicação inédita — os três já classificados como ALTOS —, enquanto literalidade e pegadinhas perdem peso. O curso foi desenhado para os dois cenários e nenhum conceito foi omitido por causa desta incerteza.",
+    "PONTO DE INCERTEZA — A ponderação relativa entre objetivo e discursivo varia de forma significativa entre os instrumentos (T1: 100% objetivo; P1 2024: ~47% objetivo; P2 2024: 42% objetivo). Não é possível derivar do corpus um percentual esperado para a T2. A distribuição de questões deste curso (10% N1, 20% N2, 45% N3, 25% N4) foi calibrada pelo NÍVEL COGNITIVO observado, não por um percentual de formato que a evidência não sustenta.",
+    "PONTO DE INCERTEZA — Não há, no corpus, evidência de recorrência tema por tema ao longo dos anos: há um instrumento de T1, um de P1 e um de P2, todos de 2024. Não se afirma neste curso que algum assunto 'cai sempre' nem se atribui peso histórico a tópico algum.",
+    "PONTO DE INCERTEZA — Os gabaritos manuscritos de P1 e SOPA T1 têm marcações divergentes em algumas questões. Isso é irrelevante por construção: nenhuma questão antiga foi copiada, parafraseada ou teve gabarito transportado para este curso."
+  ]
+}

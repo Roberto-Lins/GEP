@@ -1,0 +1,344 @@
+{
+  "schema_version": "1.0.0",
+  "familia_id": "rel-t2",
+  "materia": "Relações Internacionais — T2 (2º semestre, aulas internas 13 a 18)",
+  "auditado_em": "2026-09-17",
+  "status": "confirmado",
+  "regra_de_identificacao": "O número da aula foi determinado pelo TÍTULO INTERNO do primeiro slide de cada arquivo, nunca pelo nome do arquivo. O deslocamento de uma unidade entre nome de arquivo e título interno foi confirmado em todos os seis testemunhos primários.",
+  "limitacao_de_citacao": "Os decks foram lidos por extração de texto (representação em linguagem natural do Google Drive). Essa extração NÃO preserva a numeração física dos slides. Por isso toda citação de fonte primária neste curso usa o TÍTULO DO SLIDE como localizador (ex.: 'Aula 18 — slide \"Imperativos Estratégicos\"'), que é verificável abrindo o deck. Onde o slide é puramente gráfico e o texto não foi recuperado, isso está registrado em lacunas_de_extracao.",
+  "primarias": [
+    {
+      "id": "F01",
+      "arquivo": "AULA 12.pdf",
+      "aula_interna": "13 e 14 (arquivo combinado)",
+      "titulo_interno": "Aula 13 - SUE 1.11 Política Externa Brasileira  +  Aula 14 – SUE 1.11 PND, END, PESD",
+      "link": "https://drive.google.com/file/d/15XsUPfirjp4OimwAoxLiPLhT7JhlAvsq/view?usp=drivesdk",
+      "bytes": 1184179,
+      "funcao": "Fonte material dos Módulos 01 e 02. Achado da auditoria: este arquivo contém DUAS aulas emendadas — o deck de Política Externa Brasileira seguido do deck de PND/END/PESD.",
+      "modulos": ["00-metodo-e-matriz-de-cenarios", "01-politica-externa-brasileira", "02-pnd-end-e-pesd"]
+    },
+    {
+      "id": "F02",
+      "arquivo": "AULA 13.pdf",
+      "aula_interna": "14",
+      "titulo_interno": "Aula 14 - SUE 1.11 PND, END, PESD",
+      "link": "https://drive.google.com/file/d/1uy7gaG_X3dlQgcMzSc_amSMPJi6LLCbx/view?usp=drivesdk",
+      "bytes": 529472,
+      "funcao": "Versão autônoma e ATUALIZADA do deck da Aula 14. Materialmente igual à segunda metade de F01, com uma divergência relevante e não acidental: a referência normativa da PND/END. Ver conflito CF-01.",
+      "modulos": ["02-pnd-end-e-pesd"]
+    },
+    {
+      "id": "F03",
+      "arquivo": "AULA 14.pdf",
+      "aula_interna": "15",
+      "titulo_interno": "Aula 15 - SUE 1.11 - Política Marítima, Política Naval, Plano Estratégico da Marinha 2040, Economia Azul",
+      "link": "https://drive.google.com/file/d/11XenuP6XWIed00tsGUrZ2U06g8pfV67d/view?usp=drivesdk",
+      "bytes": 555174,
+      "funcao": "Fonte material do Módulo 03.",
+      "modulos": ["03-politica-maritima-naval-e-economia-azul"]
+    },
+    {
+      "id": "F04",
+      "arquivo": "AULA 15.pdf",
+      "aula_interna": "16",
+      "titulo_interno": "Aula 16 - EUA (Unidade 2.1)",
+      "link": "https://drive.google.com/file/d/16FTEiQTXiRvbk1CQy0BESN0jvgVq-SP8/view?usp=drivesdk",
+      "bytes": 1836935,
+      "funcao": "Fonte material do Módulo 04. Também é a ÚNICA fonte primária que define, em slides próprios, o conceito de imperativo estratégico e as três lentes teóricas (Realismo, Liberais, Construtivismo) — por isso sustenta o Módulo 00.",
+      "modulos": ["00-metodo-e-matriz-de-cenarios", "04-estados-unidos"]
+    },
+    {
+      "id": "F05",
+      "arquivo": "AULA 16.pdf",
+      "aula_interna": "17",
+      "titulo_interno": "Aula 17 - China (Unidade 2.1)",
+      "link": "https://drive.google.com/file/d/1nsP-rWqZoPvx4gHnMyWRZEFV3sIgaZ0O/view?usp=drivesdk",
+      "bytes": 2780954,
+      "funcao": "Fonte material do Módulo 05.",
+      "modulos": ["05-china"]
+    },
+    {
+      "id": "F06",
+      "arquivo": "AULA 17.pdf",
+      "aula_interna": "18",
+      "titulo_interno": "Aula 18 - Rússia (Unidade 2.3)",
+      "link": "https://drive.google.com/file/d/1SbyD2eScAhFAf_XC3rJkUaFN0ZZn07iA/view?usp=drivesdk",
+      "bytes": 2263883,
+      "funcao": "Fonte material do Módulo 06. Encerra o escopo desta execução.",
+      "modulos": ["06-russia"]
+    }
+  ],
+  "complementares_autorizadas": [
+    {
+      "id": "C01",
+      "titulo": "MAGNOLI, Demétrio — capítulo 21, \"O Brasil e a América Latina\" (p. 340–355)",
+      "link": "https://drive.google.com/file/d/163HKBuTspoWZ7AxqUXTQ9quv1k_VA2kX/view?usp=drivesdk",
+      "funcao": "Bibliografia OBRIGATÓRIA da Aula 13 (o slide indica MAGNOLI 2013, 340-355 — confere). Aprofunda bolivarianismo × pan-americanismo, corolários Polk e Roosevelt, Sistema Interamericano, invenção da América Latina, Cepal, Travassos e Golbery, Mercosul, Unasul e IIRSA.",
+      "usada_em": ["01-politica-externa-brasileira", "04-estados-unidos"],
+      "lido": "integral"
+    },
+    {
+      "id": "C02",
+      "titulo": "MORE, Rodrigo Fernandes — \"Reflexões sobre a formação de um pensamento oceanopolítico brasileiro\" (cap. 10 de Amazônia Azul, p. 232–248)",
+      "link": "https://drive.google.com/file/d/1sJahCEJ0FAaA3OC1whhvQLZ_ngoXB4ZC/view?usp=drivesdk",
+      "funcao": "Aprofunda oceanopolítica, Barbosa Jr., Martinez Busch, Mar Presencial, fronteira integral, CNUDM como \"Constituição do Mar\", Lei 8.617/1993, LEPLAC, PNRM/CIRM e o deslocamento dos conflitos do plano terrestre para o oceânico.",
+      "usada_em": ["00-metodo-e-matriz-de-cenarios", "03-politica-maritima-naval-e-economia-azul"],
+      "lido": "integral"
+    },
+    {
+      "id": "C03",
+      "titulo": "HAESBAERT, R.; SANTA BÁRBARA, M. — \"Da Doutrina Monroe à 'Doutrina Donroe'\" (GEOgraphia, v. 28, n. 60, 2026)",
+      "link": "https://drive.google.com/file/d/1sckiZincK6L2O1pPp3xw2ZTqM-aeih2D/view?usp=drivesdk",
+      "funcao": "Aprofunda Monroe 1823 → Corolário Roosevelt 1904 → \"corolário Trump\" da Estratégia de Segurança Nacional de 2025; mediterrâneo americano; tese da fronteira de Turner; chokepoints; terras raras.",
+      "usada_em": ["04-estados-unidos"],
+      "lido": "integral",
+      "natureza": "artigo acadêmico com posição crítica declarada (imperialismo e colonialidade do poder). Usado como INTERPRETAÇÃO identificada, nunca como fato neutro."
+    },
+    {
+      "id": "C04",
+      "titulo": "CRS — \"Navy Force Structure and Shipbuilding Plans\" (RL32665)",
+      "link": "https://drive.google.com/file/d/1qY1sna1ODE6XJNubQGsrWq3HB6Hhn5TI/view?usp=drivesdk",
+      "funcao": "Relatório do Congresso dos EUA citado pelo próprio slide da Aula 16. Sustenta as metas de força naval (355 navios, 381 navios, vetores não tripulados).",
+      "usada_em": ["04-estados-unidos"],
+      "lido": "parcial — sumário executivo, sumário de conteúdo e as metas de nível de força. O relatório tem 167 mil caracteres; as tabelas de que o curso precisa já estão transcritas no slide da Aula 16."
+    },
+    {
+      "id": "C05",
+      "titulo": "Geopolitical Futures — \"The Third Opium War\" (10/01/2019)",
+      "link": "https://drive.google.com/file/d/1rEYDmGOmOJRb5PsBxr6JR5VXqixs-4E1/view?usp=drivesdk",
+      "funcao": "Aprofunda o mecanismo causal do Século das Humilhações: desequilíbrio comercial → ópio → prata/cobre → interior contra o litoral. É a explicação causal da dupla tensão histórica que o slide apenas afirma. Também sustenta a leitura da guerra comercial contemporânea e o fato de a China já NÃO ser autossuficiente (importa alimento e petróleo).",
+      "usada_em": ["05-china"],
+      "lido": "integral"
+    },
+    {
+      "id": "C06",
+      "titulo": "BARTOSIAK, Jacek — \"The Politics of Space\" (25/05/2020)",
+      "link": "https://drive.google.com/file/d/1ZIR0UY9RyF4DLxefPTGcn0qvnfkXcQwx/view?usp=drivesdk",
+      "funcao": "Autor citado na bibliografia de aprofundamento da Aula 16 (BARTOSIAK 2020). Sustenta a analogia espaço sideral ↔ oceano (só grandes potências navegam; sem árbitro, o poder decide) e o âmbito multidomínio.",
+      "usada_em": ["04-estados-unidos", "05-china"],
+      "lido": "integral"
+    },
+    {
+      "id": "C07",
+      "titulo": "LOVATT, Hugh (ECFR) — \"Bem-vindo à selva: o Conselho da Paz de Trump se torna global\" (23/01/2026)",
+      "link": "https://drive.google.com/file/d/1rMeBeSEYWaufV3KOO_TNQvq0CS-oZVrJ/view?usp=drivesdk",
+      "funcao": "Caixa de conjuntura. Serve como caso-clínica da ambiguidade institucional: o mesmo arranjo lido como cooperação institucionalizada e como instrumento de poder.",
+      "usada_em": ["00-metodo-e-matriz-de-cenarios", "04-estados-unidos"],
+      "lido": "integral",
+      "natureza": "análise de think tank europeu, com posição declarada. Usado como interpretação identificada."
+    },
+    {
+      "id": "C08",
+      "titulo": "IDEG — \"Taiwan e as Nações Unidas: a política de Uma Só China e os limites do reconhecimento internacional\"",
+      "link": "https://drive.google.com/file/d/1z9NGkYXvR2Tw946O6FmjiiABnQ3ri-0y/view?usp=drivesdk",
+      "funcao": "Aprofunda Taiwan: Resolução 2758 (1971) e a disputa interpretativa sobre ela; distinção entre PRINCÍPIO de Uma Só China (RPC) e POLÍTICA de Uma Só China (EUA); ambiguidade estratégica; escudo de silício; participação seletiva (OMC/APEC como Chinese Taipei).",
+      "usada_em": ["05-china"],
+      "lido": "integral"
+    },
+    {
+      "id": "C09",
+      "titulo": "MAGNOLI, Demétrio — nota de correspondência de páginas entre os slides e o PDF disponibilizado",
+      "link": "https://drive.google.com/file/d/1t0_IeiZU7m8yEBTaD_Iw6airxA0z3Fvv/view?usp=drivesdk",
+      "funcao": "NÃO é conteúdo. É a tabela de correspondência: Aula 16 → cap. 8, p. 119-131 e 192-204; Aula 17 → cap. 18, p. 265-282 (\"A China em ascensão pacífica\"). Consequência registrada em lacunas: os capítulos de Magnoli sobre EUA, China e Rússia NÃO foram fornecidos ao corpus.",
+      "usada_em": ["00-metodo-e-matriz-de-cenarios"],
+      "lido": "integral"
+    },
+    {
+      "id": "C10",
+      "titulo": "ZOLOTOVA, Ekaterina (GPF) — \"Russia's New Maritime Strategy\" (07/08/2022)",
+      "link": "https://drive.google.com/file/d/1OY8iv93nimZO-0f-C18vt1tYhurV5gh4/view?usp=drivesdk",
+      "funcao": "Aprofunda a doutrina marítima russa de julho/2022: zonas de interesse vital, deslocamento do foco atlântico para Ártico e Pacífico, Rota Marítima do Norte, e as restrições materiais (frota, tecnologia, bases). Fornece a formulação didática decisiva: \"é útil pensar a Rússia como um país sem litoral\".",
+      "usada_em": ["06-russia"],
+      "lido": "integral"
+    },
+    {
+      "id": "C11",
+      "titulo": "GVINERIA, Shota (GEOpolítica) — \"Visão da Rússia sobre Multipolaridade: esferas de influência e subjugação das nações\"",
+      "link": "https://drive.google.com/file/d/1W_lfuvZrg0LNNa1W-PHqwhW1ngU-WXRZ/view?usp=drivesdk",
+      "funcao": "Citada na própria bibliografia complementar da Aula 18. Aprofunda a Doutrina Primakov (três objetivos duradouros), a multipolaridade russa como retorno a esferas de influência, o Memorando de Budapeste e o \"próximo estrangeiro\".",
+      "usada_em": ["06-russia"],
+      "lido": "integral",
+      "natureza": "análise de autor georgiano com posição declaradamente pró-ocidental. Usada como INTERPRETAÇÃO identificada e sempre confrontada com o enquadramento do professor (\"paranoia geopolítica\" como problema analítico, não como diagnóstico)."
+    }
+  ],
+  "perfil_de_cobranca": [
+    {
+      "id": "P01",
+      "titulo": "P1 REL 2024 — prova corrigida, com as respostas de um Aspirante e o espelho de pontos",
+      "link": "https://drive.google.com/file/d/1thkzzvFYVafwK1QKyElvg7gW2zKeItWD/view?usp=drivesdk",
+      "funcao": "Evidência de formato e peso. 18 questões, 10,0 pontos: 13 objetivas de 0,2 a 0,5 e 5 discursivas somando ~5,3.",
+      "lido": "integral"
+    },
+    {
+      "id": "P02",
+      "titulo": "Correção da SOPA da P1 + questões do estudo dirigido",
+      "link": "https://drive.google.com/file/d/1g9e2rlYjy_5O2fxactf97pDLYm4WJlHw/view?usp=drivesdk",
+      "funcao": "Evidência do PADRÃO DE CORREÇÃO das discursivas: a crítica é sempre \"faltou mencionar X\" — correção por elementos exigidos, com crédito parcial.",
+      "lido": "integral"
+    },
+    {
+      "id": "P03",
+      "titulo": "SOPA REL T1 (2024) — prova T1 completa",
+      "link": "https://drive.google.com/file/d/1tsNfOY__IqTys1L3jLqGhrTPqi3wtjxz/view?usp=drivesdk",
+      "funcao": "Evidência da estrutura de um T1: 9 questões de 0,9 + 1 correlação de 1,4 + 1 de 0,5 = 10,0. Só objetivas e correlação.",
+      "lido": "integral"
+    },
+    {
+      "id": "P04",
+      "titulo": "Sopa REL T1 2024 — segundo exemplar digitalizado da MESMA prova de P03",
+      "link": "https://drive.google.com/file/d/1bn3o4bepBget3zBHp8LQ8IhIx1WFC8xg/view?usp=drivesdk",
+      "funcao": "DEDUPLICADA. Mesmas 11 questões, mesmos valores, mesma ordem de P03; difere apenas por ser outra folha de respostas. Tratada como UM testemunho.",
+      "lido": "integral",
+      "duplicata_de": "P03"
+    },
+    {
+      "id": "P05",
+      "titulo": "Gabarito da P2 REL 2024",
+      "link": "https://drive.google.com/file/d/1tJNmwCYaATv8DpdIXBF-2jnaKvZYtF1I/view?usp=drivesdk",
+      "funcao": "Evidência mais forte do padrão de resposta discursiva esperado: 14 objetivas de 0,3 (4,2) + 4 blocos discursivos subdivididos (5,8). As respostas-padrão têm um parágrafo, nomeiam atores, apresentam mecanismo causal explícito e concluem.",
+      "lido": "integral"
+    },
+    {
+      "id": "P06",
+      "titulo": "Trabalho da T2 de 2025 (T2_2025.pdf)",
+      "link": "https://drive.google.com/file/d/1CKDJlOH2rFpqT_fx6ZD8TVRHFlF63MN2/view?usp=drivesdk",
+      "funcao": "Critérios do T2 de 2025, com os pesos por item. ACHADO CRÍTICO: em 2025 a T2 NÃO foi prova escrita, e sim trabalho em grupo (análise geopolítica de uma nação). Ver incerteza I-01.",
+      "lido": "integral",
+      "duplicata_de": "anexo local REL/T2_2025.pdf (174.514 bytes — arquivo idêntico)"
+    },
+    {
+      "id": "P07",
+      "titulo": "RESUMO REL fim — resumo de Aspirante sobre a T1",
+      "link": "https://drive.google.com/file/d/19Us2TODRa3B7GNlS8UxS2cYqugyIMSKO/view?usp=drivesdk",
+      "funcao": "Recupera o enquadramento oral das escolas de pensamento (Realismo, Liberalismo, Construtivismo). Conteúdo de T1, fora do escopo; usado apenas como ponte de pré-requisito.",
+      "lido": "amostra (abertura). Conteúdo equivalente ao de P09, que foi lido integralmente."
+    },
+    {
+      "id": "P08",
+      "titulo": "RESUMO REL até CRS",
+      "link": "https://drive.google.com/file/d/1ylXZLtBqLLr2TmNK8x4Kkdp6naY2VOOR/view?usp=drivesdk",
+      "funcao": "DEDUPLICADA. Versão anterior e parcial de P07 (630 KB contra 2,8 MB; 04/04/2025 contra 09/04/2025), com abertura idêntica. Tratada como UM testemunho, prevalecendo P07.",
+      "lido": "amostra (abertura)",
+      "duplicata_de": "P07"
+    },
+    {
+      "id": "P09",
+      "titulo": "REL - T1 - IM415 — resumo estruturado da T1 (aulas 1 a 6)",
+      "link": "https://drive.google.com/file/d/1hQMiqWSA838U8NVBDdS33903ukCc3lqz/view?usp=drivesdk",
+      "funcao": "Declara explicitamente a estrutura do T1 (\"9Q valendo 0,9; 1Q correlacione valendo 1,4; 1Q valendo 0,5\"), confirmando P03. Fornece o repertório completo de geopolíticos das aulas 4–5 (Mackinder, Mahan, Spykman, Corbett, Haushofer, Douhet, Seversky) e as faces do poder — base da ponte de pré-requisito do Módulo 00.",
+      "lido": "integral"
+    }
+  ],
+  "anexos_entregues_no_pedido": [
+    {
+      "id": "A01",
+      "arquivo": "REL - T2.pdf (31 páginas)",
+      "funcao": "Resumo produzido por Aspirante, cobrindo as aulas 14 a 18 (Rússia inclusive) e depois entrando em Europa. Recupera explicações orais que NÃO estão nos slides e que se mostraram decisivas: Grande Estratégia (Peter Feaver), Alsina Jr. e as ameaças internas à defesa, Milani e Nery, os elementos do Poder Marítimo (slide gráfico não extraído), a leitura dos eixos da matriz de cenários do Leste Asiático, o mecanismo do A2/AD por cadeia de ilhas e a distinção ZEE (zona econômica exclusiva) × ZEE (zonas econômicas especiais chinesas).",
+      "corte_aplicado": "A seção EUROPA, que começa na p. 31, foi INTEGRALMENTE IGNORADA por determinação expressa do pedido. Nenhum conceito, exemplo ou distrator deste curso vem dela.",
+      "lacuna": "A parte da Aula 13 (Política Externa Brasileira) aparece no resumo como imagem/mapa mental: a extração de texto da p. 1 começa no meio de um quadro sobre PEI → FHC → Lula → Dilma. Para o Módulo 01 prevalece o slide.",
+      "hierarquia": "Nível 3. Nunca prevalece sobre os slides. Onde divergiu, o slide venceu e a divergência foi registrada."
+    },
+    {
+      "id": "A02",
+      "arquivo": "T2_2025.pdf",
+      "funcao": "Idêntico a P06.",
+      "duplicata_de": "P06"
+    }
+  ],
+  "conflitos": [
+    {
+      "id": "CF-01",
+      "tipo": "CONFLITO ENTRE FONTES",
+      "objeto": "Referência normativa vigente da PND/END",
+      "versao_a": "F01 (AULA 12.pdf), slide \"Política Nacional de Defesa/Estratégia Nacional de Defesa\": \"Versão atual 2016 (aprovada pelo Congresso em 2018)\" + versão proposta em 2020 ainda em análise.",
+      "versao_b": "F02 (AULA 13.pdf), mesmo slide: \"Versão atual 18 nov 2025\" com link para o Decreto nº 12.725.",
+      "resolucao": "Prevalece F02. Não é erro de extração: é atualização do mesmo slide pelo professor. O curso ensina que a PND/END foi aprovada pelo Congresso em 2005, 2012 e 2018 e que a versão em vigor é a de nov/2025 (Decreto 12.725), registrando que decks mais antigos ainda citam 2016/2018.",
+      "consequencia_didatica": "Vira pegadinha explícita: a data de aprovação pelo Congresso e a data da versão em vigor são coisas diferentes."
+    },
+    {
+      "id": "CF-02",
+      "tipo": "CONFLITO ENTRE FONTES",
+      "objeto": "Situação da Política Marítima Nacional (PMN)",
+      "versao_a": "A01 (resumo do Aspirante): \"encontra-se defasada em relação a PND e a END, por ser a atualização feita em 1994 de um decreto realizado em 1984\"; a MB instituiu em 2021 um Grupo de Trabalho (GTI).",
+      "versao_b": "F03 (Aula 15), slide \"Política Marítima Nacional\": \"Decreto Nº 12.481, de 02 jun de 2025\".",
+      "resolucao": "Prevalece F03. O resumo descreve o estado ANTERIOR (a defasagem que motivou o GTI); o slide registra o desfecho: a PMN foi finalmente reeditada pelo Decreto 12.481/2025. As duas informações são compatíveis em sequência, não em simultâneo.",
+      "consequencia_didatica": "É um dos melhores casos do curso: o aluno aprende o mecanismo (política defasada → GTI 2021 → novo decreto 2025) em vez de memorizar uma data solta. Quem estudar só pelo resumo erra a pergunta \"a PMN está defasada?\"."
+    },
+    {
+      "id": "CF-03",
+      "tipo": "CONFLITO ENTRE FONTES",
+      "objeto": "Objetivos Nacionais de Defesa (END/PND)",
+      "versao_a": "F01/F02 (slides): lista de oito objetivos, entre eles \"preservar a coesão e a unidade nacionais\", \"salvaguardar pessoas, bens e interesses no exterior\", \"ampliar o envolvimento da sociedade\", \"incrementar a projeção do Brasil no concerto das Nações\".",
+      "versao_b": "A01 (resumo): lista abreviada e reescrita, incluindo \"fortalecer a presença no entorno estratégico (zopacas)\", que não aparece com essa redação no slide.",
+      "resolucao": "Prevalece o slide. O curso ensina a lista do slide. A formulação do resumo é tratada como paráfrase do aluno, não como item da lista.",
+      "consequencia_didatica": "Pegadinha de literalidade: um item plausível e correto no conteúdo pode não estar na lista cobrada."
+    },
+    {
+      "id": "CF-04",
+      "tipo": "POSSÍVEL ERRO NA FONTE",
+      "objeto": "Datas na cronologia chinesa do resumo",
+      "descricao": "A01 atribui \"Dinastia Zhou: a primeira dinastia da China\" e datas como \"Dinastia Qing (1892)\" e \"platô Doklam com Bangladesh\". O slide de F05 registra Shang (1650–1050 a.C.) como a primeira dinastia com registro escrito e arqueológico, Qing como 1644–1911, e o Doklam é litígio com o BUTÃO (o mapa do próprio deck rotula Bhutan).",
+      "resolucao": "Prevalece F05. Os três pontos do resumo são erros do Aspirante e estão sinalizados no curso como erros frequentes.",
+      "consequencia_didatica": "Entra em 'não caia nesta simplificação' no Módulo 05."
+    }
+  ],
+  "incertezas": [
+    {
+      "id": "I-01",
+      "tipo": "PONTO DE INCERTEZA — REQUER VERIFICAÇÃO",
+      "objeto": "FORMATO da avaliação T2",
+      "descricao": "Não existe, no corpus autorizado, nenhuma prova escrita de T2. O único documento de T2 é P06, que descreve a T2 de 2025 como TRABALHO EM GRUPO (apresentação com áudio, até 30 min, 10,0 pontos distribuídos em sete itens). Todos os testemunhos de prova escrita são de T1, P1 e P2.",
+      "impacto": "Alto. Se a T2 de 2026 repetir o formato de trabalho, o que decide a nota é a instrumentalização de um teórico, o detalhamento de objetivos/desafios com fatores facilitadores e dificultadores, organizações e tratados de segurança, operações de interoperabilidade externa dos últimos 5 anos e uma conclusão em formato de sumário executivo. Se for prova escrita, vale o padrão T1/P1/P2.",
+      "tratamento": "O curso prepara para OS DOIS formatos e diz isso ao aluno explicitamente no Módulo 00. A matriz de análise de cenários de dez passos foi desenhada para servir de roteiro tanto da resposta discursiva quanto do trabalho. Nenhum conceito foi omitido por causa dessa incerteza."
+    },
+    {
+      "id": "I-02",
+      "tipo": "PONTO DE INCERTEZA — REQUER VERIFICAÇÃO",
+      "objeto": "Orientação exata dos eixos da matriz 2×2 de cenários do Leste Asiático",
+      "descricao": "O slide de F04 nomeia as duas forças-motrizes (\"nível de expansão da economia chinesa\" e \"capacidade dos EUA de forjar e manter um arco de alianças para conter a China\") e os quatro cenários, mas a extração de texto embaralhou a posição dos rótulos no plano cartesiano.",
+      "resolucao": "A01 descreve a leitura dos quadrantes de forma independente e COMPATÍVEL com as descrições textuais dos slides: Cria Cuervos (expansão chinesa baixa, arco forte), Concerto Asiático (expansão alta, arco forte), Casa sem Dono (expansão baixa, arco frágil), Império do Meio II (expansão alta, arco frágil). O curso adota essa leitura e a marca como [INFERÊNCIA PEDAGÓGICA] quanto à posição gráfica — as quatro descrições, em si, são explícitas nos slides.",
+      "impacto": "Baixo. O que se cobra é o raciocínio de cada cenário, não a coordenada."
+    },
+    {
+      "id": "I-03",
+      "tipo": "LACUNA DE COBERTURA",
+      "objeto": "Capítulos de Magnoli sobre EUA, China e Rússia",
+      "descricao": "A bibliografia obrigatória das Aulas 16, 17 e 18 indica MAGNOLI (2013) nas páginas 133-140/226-239 (EUA), 244-260 (China) e 128-132/176-190 (Rússia). O corpus autorizado forneceu apenas o capítulo 21 (Aula 13) e a NOTA de correspondência de páginas (C09). Os capítulos em si não foram fornecidos.",
+      "impacto": "Médio. Onde Magnoli aprofundaria, o curso usa os slides (autoridade máxima) mais as leituras complementares que o professor autorizou para exatamente esses tópicos. NENHUM conteúdo foi atribuído a Magnoli sem estar na fonte lida.",
+      "tratamento": "Declarado ao aluno na seção de referências de cada módulo afetado, com a indicação de página para quem tiver o exemplar (há exemplar na biblioteca, conforme C09)."
+    },
+    {
+      "id": "I-04",
+      "tipo": "LACUNA DE EXTRAÇÃO",
+      "objeto": "Slides puramente gráficos cujo texto não foi recuperado",
+      "itens": [
+        "F03 (Aula 15), slide \"Elementos do Poder Marítimo\": diagrama sem texto extraível. A lista foi recuperada de A01 (Poder Naval, Marinha Mercante, indústria naval, indústria bélica, pessoal, pesquisa e tecnologia, recursos do mar, infraestrutura marítima e hidroviária) e está marcada como recuperação por resumo, nível 3.",
+        "F03 (Aula 15), slides \"PROHIDRO (Navio ApAnt)\", \"PROADSUMUS\", \"Economia Azul\" (dois slides de imagem): sem texto.",
+        "F04 (Aula 16), slides \"EUA (fonte: GPF)\" e \"Âmbito multidomínio / Operações Multidomínio\": mapas e figuras sem texto.",
+        "F05 (Aula 17), slides de mapas (isoieta de 300 mm, topografia, ZEE chinesas, Primeira Cadeia de Ilhas, Estreito de Málaca): a leitura analítica foi recuperada de A01 e está marcada como tal.",
+        "F06 (Aula 18), slides de mapas históricos (Rus de Kiev, Grão-Ducado, Czarismo, Império, Grande Jogo, Guerra Fria, OTAN 2000/2014/2021/2024): rótulos parciais."
+      ],
+      "tratamento": "Onde o conteúdo do slide gráfico é examinável e foi recuperado por A01, o curso ensina a informação marcando a procedência. Onde não foi recuperado, o curso diz que o slide existe e que o aluno deve abri-lo — não inventa o conteúdo."
+    },
+    {
+      "id": "I-05",
+      "tipo": "PONTO DE INCERTEZA — REQUER VERIFICAÇÃO",
+      "objeto": "Numeração física dos slides",
+      "descricao": "A extração não preserva número de slide. Todas as citações usam título de slide.",
+      "impacto": "Baixo para o estudo, relevante para conferência: o aluno que quiser checar uma afirmação localiza pelo título, não pelo número."
+    },
+    {
+      "id": "I-06",
+      "tipo": "PONTO DE INCERTEZA — REQUER VERIFICAÇÃO",
+      "objeto": "Gabaritos das provas antigas",
+      "descricao": "As folhas de P01, P03 e P04 trazem marcações manuscritas de alunos e de correção, às vezes divergentes entre si (a questão 4 da SOPA T1 aparece marcada como E em um exemplar e com rasura E→B em outro).",
+      "tratamento": "IRRELEVANTE por construção: as provas antigas são usadas SÓ como evidência de formato e peso. Nenhum gabarito antigo foi transportado para o curso e nenhuma questão antiga foi copiada ou parafraseada."
+    }
+  ],
+  "fora_de_escopo_declarado": [
+    "Aulas internas 1 a 12 (teorias de RI, sistemas internacionais, geopolítica clássica, oceanopolítica introdutória, ambiente, energia, Antártica/Ártico, CNUDM, segurança ampliada, organizações internacionais). Entram apenas como ponte de pré-requisito no Módulo 00, em poucas linhas e marcadas como tal.",
+    "Qualquer conteúdo posterior ao encerramento de Rússia.",
+    "A seção EUROPA do resumo A01 (topografia europeia, antiga Iugoslávia, Itália e o que segue).",
+    "Aprofundamentos enciclopédicos sem função avaliativa: cronologia cerâmica das dinastias chinesas (porcelanas, celadons, sancai, fornos de Jingdezhen), detalhamento de batalhas da Cisplatina e listas de municípios/estaleiros sem consequência estratégica."
+  ]
+}

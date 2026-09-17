@@ -1,0 +1,50 @@
+{
+  "slug": "rel-t2--pra-safar",
+  "titulo": "Relações Internacionais — T2 — Pra Safar",
+  "subtitulo": "Aulas internas 13 a 18: política externa, defesa, poder marítimo, EUA, China e Rússia",
+  "descricao": "Estudo dirigido de todo o escopo examinável da T2, com aprofundamento nos pontos que geram interpretação: imperativos estratégicos, lentes teóricas, casos ambíguos e a comparação entre Brasil, EUA, China e Rússia.",
+  "categoria": "Carreira Naval",
+  "ano": "4",
+  "semestre": "2",
+  "epoca": "T2",
+  "turma": "geral",
+  "ordem": 5,
+  "temaVisual": "naval-command",
+  "corTema": "dourado",
+  "icone": "/imagens/cursos/rel-t2/icone.svg",
+  "capa": "/imagens/cursos/rel-t2/capa.webp",
+  "estudo": {
+    "contratoVersao": "1.0.0",
+    "familiaId": "rel-t2",
+    "familiaTitulo": "Relações Internacionais — T2",
+    "id": "pra-safar",
+    "modalidadePadrao": "completo",
+    "modalidadesDisponiveis": [
+      "rapido",
+      "pra-safar",
+      "completo"
+    ],
+    "legadoSomenteCompleto": false,
+    "rotulo": "Pra Safar",
+    "descricao": "Estudo dirigido de todo o escopo examinável da T2, com aprofundamento nos pontos que geram interpretação: imperativos estratégicos, lentes teóricas, casos ambíguos e a comparação entre Brasil, EUA, China e Rússia.",
+    "finalidade": "Buscar alto desempenho cobrindo todo o examinável e treinando a aplicação a cenários inéditos, sem ampliar o curso além do que o corpus sustenta.",
+    "cobertura": "Todo o conteúdo examinável das aulas internas 13 a 18, com profundidade proporcional à cobrança e aprofundamento seletivo nos pontos de interpretação.",
+    "duracaoMinutos": 315,
+    "estadoAutoria": "publicado"
+  },
+  "features": {
+    "timeline": true,
+    "simulados": true,
+    "mapasMentais": false,
+    "podcasts": false,
+    "animacoesHero": false,
+    "animacoesTransicao": false,
+    "modoRevisaoVespera": true,
+    "graficoProgressoAvancado": false,
+    "writing": false,
+    "cadernoRevisao": false,
+    "verRespostaAntes": true
+  },
+  "componentesExtras": [],
+  "downloads": []
+}
