@@ -10,13 +10,12 @@ localizador canônico de fonte primária é o TÍTULO DO SLIDE.
 """
 
 PREFIXOS = {
-    # Primárias — decks das aulas internas 13 a 18
+    # Primárias — decks das aulas internas 13 a 17
     "F01": 'AULA 12.pdf (título interno: Aula 13 — Política Externa Brasileira + Aula 14 — PND, END, PESD)',
     "F02": 'AULA 13.pdf (título interno: Aula 14 — PND, END, PESD; versão de nov/2025)',
     "F03": 'AULA 14.pdf (título interno: Aula 15 — Política Marítima, Política Naval, PEM 2040, Economia Azul)',
     "F04": 'AULA 15.pdf (título interno: Aula 16 — EUA, Unidade 2.1)',
     "F05": 'AULA 16.pdf (título interno: Aula 17 — China, Unidade 2.1)',
-    "F06": 'AULA 17.pdf (título interno: Aula 18 — Rússia, Unidade 2.3)',
     # Complementares autorizadas
     "C01": 'MAGNOLI, D. — cap. 21 "O Brasil e a América Latina"',
     "C02": 'MORE, R. F. — "Reflexões sobre a formação de um pensamento oceanopolítico brasileiro"',
@@ -27,8 +26,6 @@ PREFIXOS = {
     "C07": 'LOVATT, H. (ECFR) — "O Conselho da Paz de Trump se torna global" (23/01/2026)',
     "C08": 'IDEG — "Taiwan e as Nações Unidas: a política de Uma Só China"',
     "C09": 'Nota de correspondência de páginas do livro de Magnoli',
-    "C10": 'ZOLOTOVA, E. (GPF) — "Russia\'s New Maritime Strategy" (07/08/2022)',
-    "C11": 'GVINERIA, S. — "Visão da Rússia sobre Multipolaridade"',
     # Perfil de cobrança
     "P01": "P1 REL 2024 (prova corrigida)",
     "P02": "Correção da SOPA da P1 + estudo dirigido",

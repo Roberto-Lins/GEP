@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "familia_id": "rel-t2",
-  "materia": "Relações Internacionais — T2 (2º semestre, aulas internas 13 a 18)",
+  "materia": "Relações Internacionais — T2 (2º semestre, aulas internas 13 a 17, com módulo de aplicação de PEB)",
   "auditado_em": "2026-09-17",
   "status": "confirmado",
   "regra_de_identificacao": "O número da aula foi determinado pelo TÍTULO INTERNO do primeiro slide de cada arquivo, nunca pelo nome do arquivo. O deslocamento de uma unidade entre nome de arquivo e título interno foi confirmado em todos os seis testemunhos primários.",
@@ -15,7 +15,11 @@
       "link": "https://drive.google.com/file/d/15XsUPfirjp4OimwAoxLiPLhT7JhlAvsq/view?usp=drivesdk",
       "bytes": 1184179,
       "funcao": "Fonte material dos Módulos 01 e 02. Achado da auditoria: este arquivo contém DUAS aulas emendadas — o deck de Política Externa Brasileira seguido do deck de PND/END/PESD.",
-      "modulos": ["00-metodo-e-matriz-de-cenarios", "01-politica-externa-brasileira", "02-pnd-end-e-pesd"]
+      "modulos": [
+        "00-metodo-e-matriz-de-cenarios",
+        "01-politica-externa-brasileira",
+        "02-pnd-end-e-pesd"
+      ]
     },
     {
       "id": "F02",
@@ -25,7 +29,9 @@
       "link": "https://drive.google.com/file/d/1uy7gaG_X3dlQgcMzSc_amSMPJi6LLCbx/view?usp=drivesdk",
       "bytes": 529472,
       "funcao": "Versão autônoma e ATUALIZADA do deck da Aula 14. Materialmente igual à segunda metade de F01, com uma divergência relevante e não acidental: a referência normativa da PND/END. Ver conflito CF-01.",
-      "modulos": ["02-pnd-end-e-pesd"]
+      "modulos": [
+        "02-pnd-end-e-pesd"
+      ]
     },
     {
       "id": "F03",
@@ -35,7 +41,9 @@
       "link": "https://drive.google.com/file/d/11XenuP6XWIed00tsGUrZ2U06g8pfV67d/view?usp=drivesdk",
       "bytes": 555174,
       "funcao": "Fonte material do Módulo 03.",
-      "modulos": ["03-politica-maritima-naval-e-economia-azul"]
+      "modulos": [
+        "03-politica-maritima-naval-e-economia-azul"
+      ]
     },
     {
       "id": "F04",
@@ -45,7 +53,10 @@
       "link": "https://drive.google.com/file/d/16FTEiQTXiRvbk1CQy0BESN0jvgVq-SP8/view?usp=drivesdk",
       "bytes": 1836935,
       "funcao": "Fonte material do Módulo 04. Também é a ÚNICA fonte primária que define, em slides próprios, o conceito de imperativo estratégico e as três lentes teóricas (Realismo, Liberais, Construtivismo) — por isso sustenta o Módulo 00.",
-      "modulos": ["00-metodo-e-matriz-de-cenarios", "04-estados-unidos"]
+      "modulos": [
+        "00-metodo-e-matriz-de-cenarios",
+        "04-estados-unidos"
+      ]
     },
     {
       "id": "F05",
@@ -55,17 +66,9 @@
       "link": "https://drive.google.com/file/d/1nsP-rWqZoPvx4gHnMyWRZEFV3sIgaZ0O/view?usp=drivesdk",
       "bytes": 2780954,
       "funcao": "Fonte material do Módulo 05.",
-      "modulos": ["05-china"]
-    },
-    {
-      "id": "F06",
-      "arquivo": "AULA 17.pdf",
-      "aula_interna": "18",
-      "titulo_interno": "Aula 18 - Rússia (Unidade 2.3)",
-      "link": "https://drive.google.com/file/d/1SbyD2eScAhFAf_XC3rJkUaFN0ZZn07iA/view?usp=drivesdk",
-      "bytes": 2263883,
-      "funcao": "Fonte material do Módulo 06. Encerra o escopo desta execução.",
-      "modulos": ["06-russia"]
+      "modulos": [
+        "05-china"
+      ]
     }
   ],
   "complementares_autorizadas": [
@@ -74,7 +77,11 @@
       "titulo": "MAGNOLI, Demétrio — capítulo 21, \"O Brasil e a América Latina\" (p. 340–355)",
       "link": "https://drive.google.com/file/d/163HKBuTspoWZ7AxqUXTQ9quv1k_VA2kX/view?usp=drivesdk",
       "funcao": "Bibliografia OBRIGATÓRIA da Aula 13 (o slide indica MAGNOLI 2013, 340-355 — confere). Aprofunda bolivarianismo × pan-americanismo, corolários Polk e Roosevelt, Sistema Interamericano, invenção da América Latina, Cepal, Travassos e Golbery, Mercosul, Unasul e IIRSA.",
-      "usada_em": ["01-politica-externa-brasileira", "04-estados-unidos"],
+      "usada_em": [
+        "01-politica-externa-brasileira",
+        "04-estados-unidos",
+        "06-peb-aplicacao-e-integracao"
+      ],
       "lido": "integral"
     },
     {
@@ -82,7 +89,10 @@
       "titulo": "MORE, Rodrigo Fernandes — \"Reflexões sobre a formação de um pensamento oceanopolítico brasileiro\" (cap. 10 de Amazônia Azul, p. 232–248)",
       "link": "https://drive.google.com/file/d/1sJahCEJ0FAaA3OC1whhvQLZ_ngoXB4ZC/view?usp=drivesdk",
       "funcao": "Aprofunda oceanopolítica, Barbosa Jr., Martinez Busch, Mar Presencial, fronteira integral, CNUDM como \"Constituição do Mar\", Lei 8.617/1993, LEPLAC, PNRM/CIRM e o deslocamento dos conflitos do plano terrestre para o oceânico.",
-      "usada_em": ["00-metodo-e-matriz-de-cenarios", "03-politica-maritima-naval-e-economia-azul"],
+      "usada_em": [
+        "00-metodo-e-matriz-de-cenarios",
+        "03-politica-maritima-naval-e-economia-azul"
+      ],
       "lido": "integral"
     },
     {
@@ -90,7 +100,9 @@
       "titulo": "HAESBAERT, R.; SANTA BÁRBARA, M. — \"Da Doutrina Monroe à 'Doutrina Donroe'\" (GEOgraphia, v. 28, n. 60, 2026)",
       "link": "https://drive.google.com/file/d/1sckiZincK6L2O1pPp3xw2ZTqM-aeih2D/view?usp=drivesdk",
       "funcao": "Aprofunda Monroe 1823 → Corolário Roosevelt 1904 → \"corolário Trump\" da Estratégia de Segurança Nacional de 2025; mediterrâneo americano; tese da fronteira de Turner; chokepoints; terras raras.",
-      "usada_em": ["04-estados-unidos"],
+      "usada_em": [
+        "04-estados-unidos"
+      ],
       "lido": "integral",
       "natureza": "artigo acadêmico com posição crítica declarada (imperialismo e colonialidade do poder). Usado como INTERPRETAÇÃO identificada, nunca como fato neutro."
     },
@@ -99,7 +111,9 @@
       "titulo": "CRS — \"Navy Force Structure and Shipbuilding Plans\" (RL32665)",
       "link": "https://drive.google.com/file/d/1qY1sna1ODE6XJNubQGsrWq3HB6Hhn5TI/view?usp=drivesdk",
       "funcao": "Relatório do Congresso dos EUA citado pelo próprio slide da Aula 16. Sustenta as metas de força naval (355 navios, 381 navios, vetores não tripulados).",
-      "usada_em": ["04-estados-unidos"],
+      "usada_em": [
+        "04-estados-unidos"
+      ],
       "lido": "parcial — sumário executivo, sumário de conteúdo e as metas de nível de força. O relatório tem 167 mil caracteres; as tabelas de que o curso precisa já estão transcritas no slide da Aula 16."
     },
     {
@@ -107,7 +121,9 @@
       "titulo": "Geopolitical Futures — \"The Third Opium War\" (10/01/2019)",
       "link": "https://drive.google.com/file/d/1rEYDmGOmOJRb5PsBxr6JR5VXqixs-4E1/view?usp=drivesdk",
       "funcao": "Aprofunda o mecanismo causal do Século das Humilhações: desequilíbrio comercial → ópio → prata/cobre → interior contra o litoral. É a explicação causal da dupla tensão histórica que o slide apenas afirma. Também sustenta a leitura da guerra comercial contemporânea e o fato de a China já NÃO ser autossuficiente (importa alimento e petróleo).",
-      "usada_em": ["05-china"],
+      "usada_em": [
+        "05-china"
+      ],
       "lido": "integral"
     },
     {
@@ -115,7 +131,10 @@
       "titulo": "BARTOSIAK, Jacek — \"The Politics of Space\" (25/05/2020)",
       "link": "https://drive.google.com/file/d/1ZIR0UY9RyF4DLxefPTGcn0qvnfkXcQwx/view?usp=drivesdk",
       "funcao": "Autor citado na bibliografia de aprofundamento da Aula 16 (BARTOSIAK 2020). Sustenta a analogia espaço sideral ↔ oceano (só grandes potências navegam; sem árbitro, o poder decide) e o âmbito multidomínio.",
-      "usada_em": ["04-estados-unidos", "05-china"],
+      "usada_em": [
+        "04-estados-unidos",
+        "05-china"
+      ],
       "lido": "integral"
     },
     {
@@ -123,7 +142,10 @@
       "titulo": "LOVATT, Hugh (ECFR) — \"Bem-vindo à selva: o Conselho da Paz de Trump se torna global\" (23/01/2026)",
       "link": "https://drive.google.com/file/d/1rMeBeSEYWaufV3KOO_TNQvq0CS-oZVrJ/view?usp=drivesdk",
       "funcao": "Caixa de conjuntura. Serve como caso-clínica da ambiguidade institucional: o mesmo arranjo lido como cooperação institucionalizada e como instrumento de poder.",
-      "usada_em": ["00-metodo-e-matriz-de-cenarios", "04-estados-unidos"],
+      "usada_em": [
+        "00-metodo-e-matriz-de-cenarios",
+        "04-estados-unidos"
+      ],
       "lido": "integral",
       "natureza": "análise de think tank europeu, com posição declarada. Usado como interpretação identificada."
     },
@@ -132,7 +154,9 @@
       "titulo": "IDEG — \"Taiwan e as Nações Unidas: a política de Uma Só China e os limites do reconhecimento internacional\"",
       "link": "https://drive.google.com/file/d/1z9NGkYXvR2Tw946O6FmjiiABnQ3ri-0y/view?usp=drivesdk",
       "funcao": "Aprofunda Taiwan: Resolução 2758 (1971) e a disputa interpretativa sobre ela; distinção entre PRINCÍPIO de Uma Só China (RPC) e POLÍTICA de Uma Só China (EUA); ambiguidade estratégica; escudo de silício; participação seletiva (OMC/APEC como Chinese Taipei).",
-      "usada_em": ["05-china"],
+      "usada_em": [
+        "05-china"
+      ],
       "lido": "integral"
     },
     {
@@ -140,25 +164,10 @@
       "titulo": "MAGNOLI, Demétrio — nota de correspondência de páginas entre os slides e o PDF disponibilizado",
       "link": "https://drive.google.com/file/d/1t0_IeiZU7m8yEBTaD_Iw6airxA0z3Fvv/view?usp=drivesdk",
       "funcao": "NÃO é conteúdo. É a tabela de correspondência: Aula 16 → cap. 8, p. 119-131 e 192-204; Aula 17 → cap. 18, p. 265-282 (\"A China em ascensão pacífica\"). Consequência registrada em lacunas: os capítulos de Magnoli sobre EUA, China e Rússia NÃO foram fornecidos ao corpus.",
-      "usada_em": ["00-metodo-e-matriz-de-cenarios"],
+      "usada_em": [
+        "00-metodo-e-matriz-de-cenarios"
+      ],
       "lido": "integral"
-    },
-    {
-      "id": "C10",
-      "titulo": "ZOLOTOVA, Ekaterina (GPF) — \"Russia's New Maritime Strategy\" (07/08/2022)",
-      "link": "https://drive.google.com/file/d/1OY8iv93nimZO-0f-C18vt1tYhurV5gh4/view?usp=drivesdk",
-      "funcao": "Aprofunda a doutrina marítima russa de julho/2022: zonas de interesse vital, deslocamento do foco atlântico para Ártico e Pacífico, Rota Marítima do Norte, e as restrições materiais (frota, tecnologia, bases). Fornece a formulação didática decisiva: \"é útil pensar a Rússia como um país sem litoral\".",
-      "usada_em": ["06-russia"],
-      "lido": "integral"
-    },
-    {
-      "id": "C11",
-      "titulo": "GVINERIA, Shota (GEOpolítica) — \"Visão da Rússia sobre Multipolaridade: esferas de influência e subjugação das nações\"",
-      "link": "https://drive.google.com/file/d/1W_lfuvZrg0LNNa1W-PHqwhW1ngU-WXRZ/view?usp=drivesdk",
-      "funcao": "Citada na própria bibliografia complementar da Aula 18. Aprofunda a Doutrina Primakov (três objetivos duradouros), a multipolaridade russa como retorno a esferas de influência, o Memorando de Budapeste e o \"próximo estrangeiro\".",
-      "usada_em": ["06-russia"],
-      "lido": "integral",
-      "natureza": "análise de autor georgiano com posição declaradamente pró-ocidental. Usada como INTERPRETAÇÃO identificada e sempre confrontada com o enquadramento do professor (\"paranoia geopolítica\" como problema analítico, não como diagnóstico)."
     }
   ],
   "perfil_de_cobranca": [
@@ -233,8 +242,8 @@
     {
       "id": "A01",
       "arquivo": "REL - T2.pdf (31 páginas)",
-      "funcao": "Resumo produzido por Aspirante, cobrindo as aulas 14 a 18 (Rússia inclusive) e depois entrando em Europa. Recupera explicações orais que NÃO estão nos slides e que se mostraram decisivas: Grande Estratégia (Peter Feaver), Alsina Jr. e as ameaças internas à defesa, Milani e Nery, os elementos do Poder Marítimo (slide gráfico não extraído), a leitura dos eixos da matriz de cenários do Leste Asiático, o mecanismo do A2/AD por cadeia de ilhas e a distinção ZEE (zona econômica exclusiva) × ZEE (zonas econômicas especiais chinesas).",
-      "corte_aplicado": "A seção EUROPA, que começa na p. 31, foi INTEGRALMENTE IGNORADA por determinação expressa do pedido. Nenhum conceito, exemplo ou distrator deste curso vem dela.",
+      "funcao": "Resumo produzido por Aspirante, cobrindo as aulas 14 a 18 e depois entrando em Europa. Deste resumo o curso usa apenas as aulas 14 a 17: a parte de Rússia saiu com o ajuste de escopo de 18/09/2026 e consta em fontes_retiradas_do_escopo. Recupera explicações orais que NÃO estão nos slides e que se mostraram decisivas: Grande Estratégia (Peter Feaver), Alsina Jr. e as ameaças internas à defesa, Milani e Nery, os elementos do Poder Marítimo (slide gráfico não extraído), a leitura dos eixos da matriz de cenários do Leste Asiático, o mecanismo do A2/AD por cadeia de ilhas e a distinção ZEE (zona econômica exclusiva) × ZEE (zonas econômicas especiais chinesas).",
+      "corte_aplicado": "A seção EUROPA, que começa na p. 31, e a seção RÚSSIA foram INTEGRALMENTE IGNORADAS por determinação expressa do pedido. Nenhum conceito, exemplo ou distrator deste curso vem dela.",
       "lacuna": "A parte da Aula 13 (Política Externa Brasileira) aparece no resumo como imagem/mapa mental: a extração de texto da p. 1 começa no meio de um quadro sobre PEI → FHC → Lula → Dilma. Para o Módulo 01 prevalece o slide.",
       "hierarquia": "Nível 3. Nunca prevalece sobre os slides. Onde divergiu, o slide venceu e a divergência foi registrada."
     },
@@ -302,8 +311,8 @@
     {
       "id": "I-03",
       "tipo": "LACUNA DE COBERTURA",
-      "objeto": "Capítulos de Magnoli sobre EUA, China e Rússia",
-      "descricao": "A bibliografia obrigatória das Aulas 16, 17 e 18 indica MAGNOLI (2013) nas páginas 133-140/226-239 (EUA), 244-260 (China) e 128-132/176-190 (Rússia). O corpus autorizado forneceu apenas o capítulo 21 (Aula 13) e a NOTA de correspondência de páginas (C09). Os capítulos em si não foram fornecidos.",
+      "objeto": "Capítulos de Magnoli sobre EUA e China",
+      "descricao": "A bibliografia obrigatória das Aulas 16 e 17 indica MAGNOLI (2013) nas páginas 133-140/226-239 (EUA) e 244-260 (China). O corpus autorizado forneceu apenas o capítulo 21 (Aula 13), que sustenta parte do Módulo 06, e a NOTA de correspondência de páginas (C09). Os capítulos de EUA e China em si não foram fornecidos.",
       "impacto": "Médio. Onde Magnoli aprofundaria, o curso usa os slides (autoridade máxima) mais as leituras complementares que o professor autorizou para exatamente esses tópicos. NENHUM conteúdo foi atribuído a Magnoli sem estar na fonte lida.",
       "tratamento": "Declarado ao aluno na seção de referências de cada módulo afetado, com a indicação de página para quem tiver o exemplar (há exemplar na biblioteca, conforme C09)."
     },
@@ -337,8 +346,48 @@
   ],
   "fora_de_escopo_declarado": [
     "Aulas internas 1 a 12 (teorias de RI, sistemas internacionais, geopolítica clássica, oceanopolítica introdutória, ambiente, energia, Antártica/Ártico, CNUDM, segurança ampliada, organizações internacionais). Entram apenas como ponte de pré-requisito no Módulo 00, em poucas linhas e marcadas como tal.",
-    "Qualquer conteúdo posterior ao encerramento de Rússia.",
     "A seção EUROPA do resumo A01 (topografia europeia, antiga Iugoslávia, Itália e o que segue).",
-    "Aprofundamentos enciclopédicos sem função avaliativa: cronologia cerâmica das dinastias chinesas (porcelanas, celadons, sancai, fornos de Jingdezhen), detalhamento de batalhas da Cisplatina e listas de municípios/estaleiros sem consequência estratégica."
-  ]
+    "Aprofundamentos enciclopédicos sem função avaliativa: cronologia cerâmica das dinastias chinesas (porcelanas, celadons, sancai, fornos de Jingdezhen), detalhamento de batalhas da Cisplatina e listas de municípios/estaleiros sem consequência estratégica.",
+    "RÚSSIA (aula interna 18, arquivo AULA 17.pdf) — retirada do escopo em 18/09/2026, por informação do usuário de que a T2 não cobrará Rússia e cobrará Política Externa Brasileira. O deck e as duas leituras complementares russas (ZOLOTOVA, GPF 2022; GVINERIA, GEOpolítica) saem do corpus ativo e ficam registrados abaixo, em fontes_retiradas_do_escopo.",
+    "Qualquer conteúdo posterior ao encerramento de China (aula interna 17)."
+  ],
+  "fontes_retiradas_do_escopo": {
+    "motivo": "Ajuste de escopo informado pelo usuário em 18/09/2026: a T2 não cobrará Rússia e cobrará Política Externa Brasileira. O módulo 06 passou de Rússia para aplicação e integração de PEB.",
+    "efeito": "Nenhum conceito, questão ou texto derivado destas fontes permanece no curso. Os IDs emitidos para o módulo de Rússia (conceitos REL-T2-M06-C001 a C014 e questões REL-T2-M06-*-001 a 008, mais REL-T2-M99-*-001, 002, 005, 008 e REL-T2-SG01-OBJ-N3-007 e REL-T2-SG01-DIS-N4-014) foram APOSENTADOS e não serão reutilizados.",
+    "fontes": [
+      {
+        "id": "F06",
+        "arquivo": "AULA 17.pdf",
+        "aula_interna": "18",
+        "titulo_interno": "Aula 18 - Rússia (Unidade 2.3)",
+        "link": "https://drive.google.com/file/d/1SbyD2eScAhFAf_XC3rJkUaFN0ZZn07iA/view?usp=drivesdk",
+        "bytes": 2263883,
+        "funcao": "Fonte material do Módulo 06. Encerra o escopo desta execução.",
+        "modulos": [
+          "06-russia"
+        ]
+      },
+      {
+        "id": "C10",
+        "titulo": "ZOLOTOVA, Ekaterina (GPF) — \"Russia's New Maritime Strategy\" (07/08/2022)",
+        "link": "https://drive.google.com/file/d/1OY8iv93nimZO-0f-C18vt1tYhurV5gh4/view?usp=drivesdk",
+        "funcao": "Aprofunda a doutrina marítima russa de julho/2022: zonas de interesse vital, deslocamento do foco atlântico para Ártico e Pacífico, Rota Marítima do Norte, e as restrições materiais (frota, tecnologia, bases). Fornece a formulação didática decisiva: \"é útil pensar a Rússia como um país sem litoral\".",
+        "usada_em": [
+          "06-russia"
+        ],
+        "lido": "integral"
+      },
+      {
+        "id": "C11",
+        "titulo": "GVINERIA, Shota (GEOpolítica) — \"Visão da Rússia sobre Multipolaridade: esferas de influência e subjugação das nações\"",
+        "link": "https://drive.google.com/file/d/1W_lfuvZrg0LNNa1W-PHqwhW1ngU-WXRZ/view?usp=drivesdk",
+        "funcao": "Citada na própria bibliografia complementar da Aula 18. Aprofunda a Doutrina Primakov (três objetivos duradouros), a multipolaridade russa como retorno a esferas de influência, o Memorando de Budapeste e o \"próximo estrangeiro\".",
+        "usada_em": [
+          "06-russia"
+        ],
+        "lido": "integral",
+        "natureza": "análise de autor georgiano com posição declaradamente pró-ocidental. Usada como INTERPRETAÇÃO identificada e sempre confrontada com o enquadramento do professor (\"paranoia geopolítica\" como problema analítico, não como diagnóstico)."
+      }
+    ]
+  }
 }

@@ -280,12 +280,12 @@ def emitir_index_ts():
 # ───────────────────────────── config e dados ────────────────────────────
 DESCRICOES = {
     "rapido": (
-        "Revisão concentrada da T2 de Relações Internacionais: o núcleo examinável das aulas internas 13 a 18, "
-        "as listas fechadas, as relações críticas, as pegadinhas de formato e uma aplicação por módulo."
+        "Revisão concentrada da T2 de Relações Internacionais: o núcleo examinável das aulas internas 13 a 17, "
+        "a política externa brasileira aplicada, as listas fechadas, as pegadinhas de formato e uma aplicação por módulo."
     ),
     "pra-safar": (
         "Estudo dirigido de todo o escopo examinável da T2, com aprofundamento nos pontos que geram interpretação: "
-        "imperativos estratégicos, lentes teóricas, casos ambíguos e a comparação entre Brasil, EUA, China e Rússia."
+        "imperativos estratégicos, lentes teóricas, casos ambíguos e a comparação entre Brasil, EUA e China."
     ),
     "completo": (
         "Formação integrada da T2 com mecanismos causais, exceções, leituras concorrentes, leituras complementares "
@@ -308,16 +308,18 @@ FINALIDADES = {
 }
 COBERTURAS = {
     "rapido": (
-        "Conceitos indispensáveis das seis aulas, relações críticas, principais pegadinhas, uma aplicação por módulo, "
+        "Conceitos indispensáveis das cinco aulas em escopo e da PEB aplicada, relações críticas, principais pegadinhas, "
+        "uma aplicação por módulo, "
         "quadro comparativo global e teste ativo final."
     ),
     "pra-safar": (
-        "Todo o conteúdo examinável das aulas internas 13 a 18, com profundidade proporcional à cobrança e "
+        "Todo o conteúdo examinável das aulas internas 13 a 17, mais o módulo de aplicação da política externa brasileira, "
+        "com profundidade proporcional à cobrança e "
         "aprofundamento seletivo nos pontos de interpretação."
     ),
     "completo": (
         "Todo o Pra Safar, mais mecanismos causais, exceções, cronologias que explicam o presente, leituras "
-        "complementares autorizadas, casos contemporâneos datados e integração entre os seis módulos."
+        "complementares autorizadas, casos contemporâneos datados e integração entre os sete módulos."
     ),
 }
 
@@ -326,7 +328,7 @@ def config_de(modo, duracao):
     return {
         "slug": f"{FAMILIA}--{modo}",
         "titulo": f"Relações Internacionais — T2 — {ROTULOS[modo]}",
-        "subtitulo": "Aulas internas 13 a 18: política externa, defesa, poder marítimo, EUA, China e Rússia",
+        "subtitulo": "Aulas internas 13 a 17: política externa, defesa, poder marítimo, EUA e China — com PEB aplicada",
         "descricao": DESCRICOES[modo],
         "categoria": "Carreira Naval",
         "ano": "4",
@@ -501,7 +503,7 @@ def main():
         "schema_version": "1.0.0",
         "familia_id": FAMILIA,
         "materia": "Relações Internacionais — T2",
-        "escopo": "aulas internas 13 a 18, com término em Rússia; Europa excluída",
+        "escopo": "aulas internas 13 a 17, com término em China, mais módulo de aplicação de Política Externa Brasileira; Rússia e Europa excluídas",
         "arquitetura": "familia_multimodal_contrato_1.0.0",
         "gerado_por": "scripts/autoria/rel-t2/build.py",
         "modulos": [{"slug": m["slug"], "ordem": m["ordem"], "aula_interna": m["aula"],

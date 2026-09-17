@@ -138,29 +138,6 @@ OBJETIVAS = [
         erro="Concluir isolamento completo a partir da não admissão como membro pleno da ONU.",
         tempo=4),
 
-    obj(S, "N3", 7, topico=T,
-        conceitos=["REL-T2-M06-C009", "REL-T2-M06-C003", "REL-T2-M06-C007"],
-        enunciado="Aponte a alternativa que NÃO contribui para explicar por que a fragmentação da União Soviética em 1991 é lida em Moscou como perda de segurança, e não apenas de prestígio.",
-        alternativas=[
-            "Na URSS, as repúblicas bálticas e as do sul funcionavam como Estados tampão do núcleo russo, de modo que um invasor teria de atravessá-las antes de alcançar a Rússia.",
-            "A planície que se estende da Alemanha, passa pela Polônia e chega à Rússia não oferece acidente geográfico que barre o avanço de tropas terrestres, o que torna a profundidade territorial substituta de fronteira defensável.",
-            "A perda dos satélites soviéticos implicou também perda de infraestrutura portuária e, com ela, de acesso a rotas de comércio.",
-            "Diversos países do antigo Pacto de Varsóvia aderiram posteriormente à aliança ocidental, reduzindo a camada protetora a oeste do centro Europa-Urais.",
-            "A União Soviética foi dissolvida por decisão de uma guerra civil devastadora que levou à independência de todas as repúblicas que dela faziam parte.",
-        ],
-        correta=4,
-        comentario="A alternativa que não contribui é também factualmente insustentável: a dissolução da União Soviética em 1991 não resultou de guerra civil devastadora. Essa formulação é o tipo de alternativa longa e parcialmente verossímil que o corpus emprega — o erro está enxertado no meio de uma frase de aparência técnica. As demais quatro contribuem, e juntas formam o argumento completo: a URSS organizava a defesa em camadas; a planície não oferece barreira; a perda incluiu portos e rotas; e a camada protetora diminuiu ainda mais com as adesões posteriores. Nada disso justifica ações subsequentes — explica a percepção, que é o que o curso trata como problema analítico.",
-        distratores=[
-            "Contribui. Descreve a lógica de camadas da URSS.",
-            "Contribui. É o condicionante geográfico que torna a camada necessária.",
-            "Contribui. Acrescenta a dimensão marítima e comercial da perda.",
-            "Contribui. Descreve a redução posterior da camada protetora.",
-            "NÃO contribui — resposta da questão. A dissolução não se deu por guerra civil devastadora.",
-        ],
-        fonte="AULA 17.pdf, slides “União Soviética”, “Pós-Guerra Fria (2000)”, “OTAN em 2014”, “OTAN em 2024” e “‘Paranoia geopolítica’?”; REL - T2.pdf, seções sobre a URSS e o pós-Guerra Fria; ZOLOTOVA (GPF, 2022) (perda de infraestrutura portuária).",
-        competencia="Reconhecer alternativa longa com erro factual enxertado em comando do tipo “NÃO contribui”.",
-        erro="Aceitar alternativa de aparência técnica sem verificar o fato central que ela afirma.",
-        tempo=4),
 
     obj(S, "N4", 8, topico=T,
         conceitos=["REL-T2-M05-C012", "REL-T2-M04-C011", "REL-T2-M99-C004"],
@@ -283,6 +260,31 @@ OBJETIVAS = [
         erro="Supor que arco de alianças forte é sempre favorável aos Estados Unidos.",
         tempo=5,
         extra_assinatura=["integração entre módulos 04 e 05"]),
+
+    obj(S, "N3", 19, topico=T,
+        conceitos=["REL-T2-M06-C017", "REL-T2-M06-C021", "REL-T2-M01-C012"],
+        enunciado="Um Estado sul-americano justifica sua política de integração regional invocando, ao mesmo tempo, uma determinação do seu texto constitucional e um cálculo de poder de negociação coletivo, mas participa de um bloco cujos órgãos decisórios são compostos por representantes dos Estados e agem apenas por consenso. Qual análise é mais rigorosa?",
+        alternativas=[
+            "As duas justificativas são equivalentes, uma vez que toda norma constitucional decorre de cálculo de interesse.",
+            "As justificativas são de naturezas distintas — uma normativa, ancorada na determinação do parágrafo único do art. 4º, e outra pragmática, de estabilizar o entorno e reforçar poder de negociação — e o desenho intergovernamental por consenso é o que explica o descompasso entre o compromisso declarado e o ritmo efetivo da integração: a soberania fica protegida e a velocidade passa a ser a do membro mais relutante.",
+            "O desenho por consenso acelera a integração, porque evita disputas judiciais entre os membros sobre decisões majoritárias.",
+            "A determinação constitucional torna a integração obrigatória em resultado, e não apenas em esforço, o que dispensa a análise do desenho institucional.",
+            "Como o bloco não é supranacional, a justificativa normativa é irrelevante e apenas o cálculo de poder importa.",
+        ],
+        correta=1,
+        comentario="A questão cruza os módulos 01 e 06 e cobra a distinção que o Estudo Dirigido pede: razão **institucional** e razão **pragmática** são de naturezas diferentes, e reduzir uma à outra perde metade da resposta. O terceiro elemento é o que a maioria ignora: **regra de decisão**. Órgãos intergovernamentais que decidem por consenso protegem soberania e, pelo mesmo mecanismo, permitem que qualquer membro trave a decisão — daí o descompasso entre compromisso declarado e ritmo real. Note ainda a precisão exigida: a determinação de buscar a integração está no **parágrafo único** do art. 4º, não entre os dez princípios do caput; e determinação constitucional obriga a **esforço**, não garante **resultado**.",
+        distratores=[
+            "Errada. Uma justificativa é normativa e a outra é de cálculo; equipará-las apaga a distinção que o Estudo Dirigido cobra.",
+            "Correta. Separa as duas naturezas e identifica a regra de decisão como explicação do ritmo.",
+            "Errada. Consenso protege soberania e reduz velocidade; não acelera harmonização.",
+            "Errada. A determinação obriga a esforço, e o desenho institucional continua decisivo para o resultado.",
+            "Errada. A justificativa normativa é precisamente o fundamento que o corpus pede que se nomeie.",
+        ],
+        fonte="AULA 12.pdf, slide “PEB - Constituição de 1988”; Estudo Dirigido 2 da Aula 13; MAGNOLI, cap. 21, seção “Do Mercosul à Unasul” (Ouro Preto, Ushuaia, adesão venezuelana).",
+        competencia="Separar fundamento normativo de cálculo pragmático e ler a regra de decisão como explicação do ritmo.",
+        erro="Reduzir a razão institucional à pragmática, ou ignorar o efeito da regra de consenso.",
+        tempo=4,
+        extra_assinatura=["integração entre módulos 01 e 06"]),
 ]
 
 DISCURSIVAS = [
@@ -312,32 +314,6 @@ DISCURSIVAS = [
         erro="Saltar da ação ao objetivo sem nomear capacidade e tarefa.",
         tempo=12),
 
-    dis(S, "N4", 14, topico=T,
-        conceitos=["REL-T2-M99-C001", "REL-T2-M99-C002", "REL-T2-M99-C003", "REL-T2-M99-C007"],
-        enunciado="Compare Brasil, Estados Unidos, China e Rússia em objetivos estratégicos, condicionantes geográficos e vulnerabilidades. Conclua identificando a lógica teórica que melhor explica cada um e declarando pelo menos dois limites da comparação.",
-        gabarito=(
-            "**Tese.** Os quatro atores diferem menos em ambição e mais na NATUREZA do problema que precisam resolver — e essa natureza é dada, em primeiro lugar, pela geografia.\n\n"
-            "**Objetivos.** Brasil: soberania, integridade territorial, autonomia tecnológica e produtiva, coesão nacional, salvaguarda de interesses no exterior, envolvimento da sociedade, estabilidade regional e projeção no concerto das Nações. Estados Unidos: hegemonia na América do Norte; depois América do Sul e Caribe; domínio dos oceanos das duas costas como instrumento de projeção e de livre comércio; e evitar o surgimento de potência hegemônica na Eurásia. China: manter a integridade territorial; evitar desigualdades significativas internas; manter abertura ao exterior sem permitir desagregação. Rússia: manter o centro Europa-Urais com áreas tampão; garantir o Cazaquistão na área de influência; tentar o acesso aos mares.\n\n"
-            "**Condicionantes geográficos.** Brasil: cerca de 8.500 km de litoral, com 80% da população e 90% do PIB nele concentrados, bacias internacionais e nenhum rival estatal de peso comparável no entorno. Estados Unidos: bioceanidade, planícies centrais com rios navegáveis interligados por canais e eclusas, vizinhos de poder muito inferior. China: isoieta de 300 mm separando litoral rico de interior pobre, zonas tampão de aridez e altitude, litoral fechado por cadeias de ilhas. Rússia: planície aberta da Alemanha à Rússia, centro Europa-Urais, saídas marítimas congeladas ou dependentes de estreitos de terceiros.\n\n"
-            "**Vulnerabilidades.** Brasil: dependência do mar para mais de 95% do comércio exterior, somada a baixa prontidão, baixo investimento e cultura de defesa pouco consolidada — vulnerabilidade sobretudo interna e institucional. Estados Unidos: declínio relativo de participação econômica e dependência do arco de alianças, além do desafio do antiacesso adversário. China: Estreito de Málaca, perda da autossuficiência em alimento e petróleo, demografia, custos trabalhistas crescentes e desigualdade litoral-interior. Rússia: demografia em retração, dependência de hidrocarbonetos, frota e indústria naval defasadas e perda dos tampões.\n\n"
-            "**Lógica teórica predominante.** Rússia: realista, e de forma quase pura — segurança do centro, profundidade territorial, equilíbrio de poder. China: realista no imperativo de integridade e no A2/AD, mas com componente liberal significativo, porque depende de abertura e de fluxos, e com camada construtivista relevante, pela memória das humilhações e pelo Tianxia como ordem hierárquica legítima. Estados Unidos: variável conforme o aspecto — liberal na arquitetura institucional do pós-guerra, realista na Doutrina Monroe e em sua releitura contemporânea, construtivista no Destino Manifesto e no American way of life. Brasil: predominantemente liberal-institucional, pelos princípios do art. 4º, pela reivindicação de assento no Conselho de Segurança e pela aposta em integração regional, com componente realista no esforço de dissuasão marítima e de autonomia tecnológica.\n\n"
-            "**Limites da comparação.** Primeiro, **escala**: os quatro não são atores de porte comparável, e comparar serve para isolar variáveis, não para ranquear. Segundo, **assimetria das fontes**: o Brasil é analisado por documentos oficiais próprios — PND, END, PESD, Política Naval, PEM 2040 —, enquanto os outros três são analisados por slides de aula e por leituras complementares, algumas com posição declarada; a base documental não é equivalente. Terceiro, **posição no sistema**: um ator que sustenta uma ordem e um ator que quer revisá-la não enfrentam o mesmo problema, o que torna certas categorias intransferíveis. Quarto, **lente não é atributo fixo de país**: a mesma potência pede lentes distintas conforme o aspecto destacado, e atribuir uma lente permanente a um ator é erro de método.\n\n"
-            "**Conclusão.** A comparação mostra que três dos quatro imperativos são de preservação ou de recuperação, e só um — o norte-americano — tem objeto fora do próprio hemisfério. É essa assimetria, e não a diferença de capacidade, que organiza a competição sistêmica contemporânea: a China precisa de fluxo, a Rússia precisa de distância, os Estados Unidos precisam de ausência de rival continental e o Brasil precisa de capacidade proporcional ao que já possui.\n\n"
-            "**Insuficiente:** descrever os quatro países em sequência, sem critério de comparação. **Satisfatória:** compara nas três linhas pedidas. **Nível MB:** compara nas três linhas, atribui lente por aspecto e não por país, e declara pelo menos dois limites com justificativa."
-        ),
-        criterios=[
-            "Compara objetivos estratégicos dos quatro atores com formulação fiel ao corpus (0,2)",
-            "Compara condicionantes geográficos dos quatro atores (0,2)",
-            "Compara vulnerabilidades dos quatro atores, com ao menos um dado (0,2)",
-            "Atribui lógica teórica por ASPECTO, e não como atributo fixo de país (0,2)",
-            "Declara pelo menos dois limites da comparação, com justificativa (0,2)",
-            "Não pontua: descrever países em sequência sem critério; atribuir uma lente permanente a cada ator; omitir os limites",
-        ],
-        fonte="AULA 13.pdf, “Objetivos Nacionais de Defesa”; AULA 14.pdf, “Economia Azul”; AULA 15.pdf, “EUA - Imperativo Estratégico”, “Declínio?” e slides das teorias; AULA 16.pdf, “China - Imperativo Estratégico” e mapas; AULA 17.pdf, “Imperativos Estratégicos” e “Desafios para a Rússia”; T2_2025.pdf, itens 2, 3 e 6.",
-        competencia="Produzir a matriz comparativa global com atribuição de lente por aspecto e limites declarados.",
-        erro="Descrever os quatro países em sequência em vez de compará-los por critério.",
-        tempo=25,
-        extra_assinatura=["integração entre os módulos 01 a 06"]),
 
     dis(S, "N3", 15, topico=T,
         conceitos=["REL-T2-M01-C008", "REL-T2-M01-C014", "REL-T2-M01-C015", "REL-T2-M01-C017"],
@@ -448,6 +424,33 @@ DISCURSIVAS = [
         erro="Escolher uma leitura sem enunciar o critério de arbitragem.",
         tempo=20,
         extra_assinatura=["integração entre módulos 00 e 04"]),
+
+    dis(S, "N4", 20, topico=T,
+        conceitos=["REL-T2-M99-C001", "REL-T2-M99-C002", "REL-T2-M99-C003", "REL-T2-M99-C007"],
+        enunciado="Compare Brasil, Estados Unidos e China em objetivos estratégicos, condicionantes geográficos e vulnerabilidades. Conclua identificando a lógica teórica que melhor explica cada um e declarando pelo menos dois limites da comparação.",
+        gabarito=(
+            "**Tese.** Os três atores diferem menos em ambição e mais na NATUREZA do problema que precisam resolver — e essa natureza é dada, em primeiro lugar, pela geografia.\n\n"
+            "**Objetivos.** Brasil: soberania, integridade territorial, autonomia tecnológica e produtiva, coesão nacional, salvaguarda de interesses no exterior, envolvimento da sociedade, estabilidade regional e projeção no concerto das Nações — em lista sem hierarquia declarada. Estados Unidos: hegemonia na América do Norte; depois América do Sul e Caribe; domínio dos oceanos das duas costas como instrumento de projeção e de livre comércio; e evitar o surgimento de potência hegemônica na Eurásia — em sequência de degraus. China: manter a integridade territorial; evitar desigualdades significativas internas; manter abertura ao exterior sem permitir desagregação — em trilema.\n\n"
+            "**Condicionantes geográficos.** Brasil: cerca de 8.500 km de litoral, com 80% da população e 90% do PIB nele concentrados, bacias internacionais e nenhum rival estatal de peso comparável no entorno. Estados Unidos: bioceanidade, planícies centrais com rios navegáveis interligados por canais e eclusas, vizinhos de poder muito inferior. China: isoieta de 300 mm separando litoral rico de interior pobre, zonas tampão de aridez e altitude, litoral fechado por cadeias de ilhas.\n\n"
+            "**Vulnerabilidades.** Brasil: dependência do mar para mais de 95% do comércio exterior, somada a baixa prontidão, baixo investimento e cultura de defesa pouco consolidada — vulnerabilidade sobretudo interna e institucional. Estados Unidos: declínio relativo de participação econômica e dependência do arco de alianças, além do desafio do antiacesso adversário. China: Estreito de Málaca, perda da autossuficiência em alimento e petróleo, demografia, custos trabalhistas crescentes e desigualdade litoral-interior.\n\n"
+            "**Lógica teórica predominante.** China: realista no imperativo de integridade e no A2/AD, com componente liberal significativo, porque depende de abertura e de fluxos, e camada construtivista relevante, pela memória das humilhações e pelo Tianxia como ordem hierárquica legítima. Estados Unidos: variável conforme o aspecto — liberal na arquitetura institucional do pós-guerra, realista na Doutrina Monroe e em sua releitura contemporânea, construtivista no Destino Manifesto e no American way of life. Brasil: predominantemente liberal-institucional, pelos princípios do art. 4º, pela reivindicação de assento no Conselho de Segurança e pela aposta em integração regional, com componente realista no esforço de dissuasão marítima e de autonomia tecnológica.\n\n"
+            "**Limites da comparação.** Primeiro, **escala**: os três não são atores de porte comparável, e comparar serve para isolar variáveis, não para ranquear. Segundo, **assimetria das fontes**: o Brasil é analisado por documentos oficiais próprios — PND, END, PESD, Política Naval, PEM 2040 —, enquanto os outros dois são analisados por slides de aula e leituras complementares, algumas com posição declarada, e sem os capítulos obrigatórios de Magnoli, que não foram fornecidos; a base documental não é equivalente. Terceiro, **posição no sistema**: um ator que sustenta uma ordem e um ator que quer refazê-la não enfrentam o mesmo problema. Quarto, **lente não é atributo fixo de país**: a mesma potência pede lentes distintas conforme o aspecto destacado.\n\n"
+            "**Conclusão.** Dois dos três imperativos são de preservação e inserção; só o norte-americano tem objeto fora do próprio hemisfério. É essa assimetria, e não a diferença de capacidade, que organiza a competição sistêmica contemporânea: a China precisa de fluxo, os Estados Unidos precisam de ausência de rival continental e o Brasil precisa de capacidade proporcional ao que já possui.\n\n"
+            "**Insuficiente:** descrever os três países em sequência, sem critério de comparação. **Satisfatória:** compara nas três linhas pedidas. **Nível MB:** compara nas três linhas, atribui lente por aspecto e não por país, e declara pelo menos dois limites com justificativa."
+        ),
+        criterios=[
+            "Compara objetivos estratégicos dos três atores com formulação fiel ao corpus (0,25)",
+            "Compara condicionantes geográficos dos três atores (0,2)",
+            "Compara vulnerabilidades, distinguindo a brasileira (interna e institucional) das demais (0,2)",
+            "Atribui lógica teórica POR ASPECTO, e não como rótulo fixo de país (0,25)",
+            "Declara ao menos dois limites da comparação, com justificativa (0,1)",
+            "Não pontua: descrição sequencial sem critério; rotular país com uma lente; concluir sem limite declarado",
+        ],
+        fonte="AULA 13.pdf, slide “Objetivos Nacionais de Defesa”; AULA 14.pdf, slides “Política Naval” e “Economia Azul”; AULA 15.pdf, slides “EUA - Imperativo Estratégico” e “Declínio?”; AULA 16.pdf, slides “China - Imperativo Estratégico”, “Dupla Tensão Histórica” e “China recente”; matriz-cobertura.json (linhas da comparação global).",
+        competencia="Produzir a comparação global em três linhas, com arbitragem por aspecto e limites declarados.",
+        erro="Descrever os países em sequência ou atribuir uma lente fixa a cada um.",
+        tempo=18,
+        extra_assinatura=["integração entre os módulos 01 a 06"]),
 ]
 
 SIMULADOS = [
@@ -469,13 +472,13 @@ SIMULADOS = [
             {"bloco": "Objetivas — política externa brasileira (Q3)",
              "pontos": 0.4,
              "objetivo": "Verificar a tipologia da autonomia com suas exceções."},
-            {"bloco": "Objetivas — EUA, China e Rússia (Q6, Q7, Q10)",
+            {"bloco": "Objetivas — EUA, China e política externa aplicada (Q6, Q10, Q19)",
              "pontos": 1.2,
-             "objetivo": "Verificar Taiwan, percepção de ameaça russa e arbitragem entre lentes teóricas."},
+             "objetivo": "Verificar Taiwan, arbitragem entre lentes teóricas e a leitura do desenho institucional do entorno."},
             {"bloco": "Objetivas — integração entre módulos (Q5, Q8, Q12)",
              "pontos": 1.4,
              "objetivo": "Verificar a capacidade de cruzar módulos em asserção e razão, interação estratégica e cenários."},
-            {"bloco": "Discursivas de cadeia e comparação (Q13, Q14)",
+            {"bloco": "Discursivas de cadeia e comparação (Q13, Q20)",
              "pontos": 2.0,
              "objetivo": "Verificar o percurso da cadeia de defesa e a matriz comparativa global com limites declarados."},
             {"bloco": "Discursivas de política externa e de trilema (Q15, Q16)",
@@ -493,7 +496,7 @@ SIMULADOS = [
             "Exemplo de conjuntura sem o conceito que ele ilumina, ou sem data de corte, não pontua.",
             "Formulações distintas da resposta-modelo pontuam integralmente quando conceitualmente defensáveis e sustentadas por evidência do corpus.",
             "A pontuação por bloco é a do blueprint; a soma é 10,0.",
-            "PONTO DE INCERTEZA: não há prova escrita de T2 no corpus autorizado. A duração de 180 minutos e a distribuição entre objetivas e discursivas foram calibradas pelo padrão de P1 e P2 de 2024, em que o discursivo pesa mais que o objetivo. Se a T2 repetir o formato de trabalho em grupo de 2025, use as questões 14, 16 e 17 como ensaio dos itens de maior peso do trabalho.",
+            "PONTO DE INCERTEZA: não há prova escrita de T2 no corpus autorizado. A duração de 180 minutos e a distribuição entre objetivas e discursivas foram calibradas pelo padrão de P1 e P2 de 2024, em que o discursivo pesa mais que o objetivo. Se a T2 repetir o formato de trabalho em grupo de 2025, use as questões 20, 16 e 17 como ensaio dos itens de maior peso do trabalho.",
         ],
         "questoes": OBJETIVAS + DISCURSIVAS,
     }

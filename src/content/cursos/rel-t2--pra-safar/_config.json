@@ -1,8 +1,8 @@
 {
   "slug": "rel-t2--pra-safar",
   "titulo": "Relações Internacionais — T2 — Pra Safar",
-  "subtitulo": "Aulas internas 13 a 18: política externa, defesa, poder marítimo, EUA, China e Rússia",
-  "descricao": "Estudo dirigido de todo o escopo examinável da T2, com aprofundamento nos pontos que geram interpretação: imperativos estratégicos, lentes teóricas, casos ambíguos e a comparação entre Brasil, EUA, China e Rússia.",
+  "subtitulo": "Aulas internas 13 a 17: política externa, defesa, poder marítimo, EUA e China — com PEB aplicada",
+  "descricao": "Estudo dirigido de todo o escopo examinável da T2, com aprofundamento nos pontos que geram interpretação: imperativos estratégicos, lentes teóricas, casos ambíguos e a comparação entre Brasil, EUA e China.",
   "categoria": "Carreira Naval",
   "ano": "4",
   "semestre": "2",
@@ -26,10 +26,10 @@
     ],
     "legadoSomenteCompleto": false,
     "rotulo": "Pra Safar",
-    "descricao": "Estudo dirigido de todo o escopo examinável da T2, com aprofundamento nos pontos que geram interpretação: imperativos estratégicos, lentes teóricas, casos ambíguos e a comparação entre Brasil, EUA, China e Rússia.",
+    "descricao": "Estudo dirigido de todo o escopo examinável da T2, com aprofundamento nos pontos que geram interpretação: imperativos estratégicos, lentes teóricas, casos ambíguos e a comparação entre Brasil, EUA e China.",
     "finalidade": "Buscar alto desempenho cobrindo todo o examinável e treinando a aplicação a cenários inéditos, sem ampliar o curso além do que o corpus sustenta.",
-    "cobertura": "Todo o conteúdo examinável das aulas internas 13 a 18, com profundidade proporcional à cobrança e aprofundamento seletivo nos pontos de interpretação.",
-    "duracaoMinutos": 315,
+    "cobertura": "Todo o conteúdo examinável das aulas internas 13 a 17, mais o módulo de aplicação da política externa brasileira, com profundidade proporcional à cobrança e aprofundamento seletivo nos pontos de interpretação.",
+    "duracaoMinutos": 310,
     "estadoAutoria": "publicado"
   },
   "features": {

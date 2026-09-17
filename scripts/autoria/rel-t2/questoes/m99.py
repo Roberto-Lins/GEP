@@ -6,54 +6,7 @@ from helper import obj, vf, cor, dis
 T = "99-revisao-final"
 
 QUESTOES = [
-    cor("M99", "N3", 1, topico=T,
-        conceitos=["REL-T2-M99-C001", "REL-T2-M99-C002", "REL-T2-M99-C004"],
-        titulo="Correlacione cada condicionante geográfico ou instrumento marítimo ao ator a que corresponde",
-        chaves=[
-            ("A", "Brasil"),
-            ("B", "Estados Unidos"),
-            ("C", "China"),
-            ("D", "Rússia"),
-        ],
-        itens=[
-            ("Bioceanidade e planícies centrais com rios navegáveis interligados por canais e eclusas, com vizinhos de poder muito inferior.", "B"),
-            ("Litoral concentrando 80% da população e 90% do PIB, sem rival estatal de peso comparável no entorno imediato.", "A"),
-            ("Linha de igual precipitação separando litoral rico de interior pobre, com zonas tampão de altitude e aridez, e litoral fechado por cadeias de ilhas.", "C"),
-            ("Planície aberta a oeste do centro político, com saídas marítimas congeladas ou dependentes de estreitos controlados por terceiros.", "D"),
-            ("Instrumento marítimo dominante: jurisdição e consciência situacional sobre área de dimensão continental, com sistema integrado de gerenciamento.", "A"),
-            ("Instrumento marítimo dominante: negação regional por cadeias de ilhas, somada a corredores terrestres alternativos e a um programa global de infraestrutura.", "C"),
-            ("Instrumento marítimo dominante: projeção global sustentada por rede de bases, canais interoceânicos e alianças que somam a maioria das grandes marinhas.", "B"),
-            ("Instrumento marítimo dominante: compensação de acesso deficiente, com doutrina de 2022 voltada ao Ártico e à rota setentrional, apesar de frota e indústria naval defasadas.", "D"),
-        ],
-        comentario="A matriz comparativa se resolve por uma pergunta só: **que tarefa a geografia permite e o instrumento cumpre?** O Brasil investe em JURISDIÇÃO, porque tem área imensa e nenhum rival próximo; os Estados Unidos, em PROJEÇÃO, porque têm acesso livre e aliados; a China, em NEGAÇÃO, porque tem acesso obstruído e precisa manter o adversário longe; a Rússia, em COMPENSAÇÃO, porque tem litoral extenso e acesso deficiente. Note a assimetria decisiva: Brasil e Estados Unidos têm acesso oceânico livre; China e Rússia, não — a primeira por cadeias de ilhas, a segunda por gelo e estreitos alheios.",
-        fonte="AULA 14.pdf, slides “Economia Azul”, “SisGAAz” e “Programas Estratégicos”; AULA 15.pdf, mapas de formação geográfica e slides de estrutura de força naval; AULA 16.pdf, mapas de isoieta e topografia e slide “Mar do Sul da China - A2/AD”; AULA 17.pdf, slide “Imperativos Estratégicos”; ZOLOTOVA (GPF, 2022).",
-        competencia="Preencher a matriz comparativa associando geografia e instrumento por ator.",
-        erro="Comparar marinhas por número de meios em vez de por tarefa que a composição permite cumprir.",
-        tempo=8),
 
-    obj("M99", "N4", 2, topico=T,
-        conceitos=["REL-T2-M99-C001", "REL-T2-M99-C007"],
-        enunciado="Ao comparar os imperativos estratégicos de Brasil, Estados Unidos, China e Rússia, qual leitura é mais rigorosa?",
-        alternativas=[
-            "Todos os quatro têm imperativos expansionistas, diferindo apenas na capacidade de realizá-los.",
-            "Os imperativos diferem em NATUREZA, e não apenas em escala: os da China são de preservação (integridade territorial, contenção da desigualdade interna, abertura sem desagregação); os do Brasil, de preservação e inserção (soberania, integridade, autonomia tecnológica, coesão, projeção no concerto das Nações); os dos Estados Unidos, de manutenção de hegemonia em degraus, culminando em evitar hegemon eurasiático; e os da Rússia, de recuperação de posição perdida (centro com tampões, Cazaquistão na área de influência, tentar acesso aos mares). Apenas os Estados Unidos têm um imperativo cujo objeto está fora do próprio hemisfério.",
-            "Os imperativos são incomparáveis, porque documentos de defesa brasileiros e slides sobre potências estrangeiras têm naturezas distintas.",
-            "Os quatro imperativos se reduzem à busca de acesso ao mar, uma vez que todos são Estados com litoral.",
-            "Os imperativos da China e da Rússia são idênticos, pois ambos os países são potências continentais autoritárias com acesso marítimo restrito.",
-        ],
-        correta=1,
-        comentario="Comparar não é ranquear: é isolar variáveis. E a variável que organiza a comparação é a **natureza** do imperativo. Três dos quatro atores têm imperativos de preservação ou de recuperação; só os Estados Unidos têm um imperativo de manutenção de hegemonia com objeto extra-hemisférico — evitar o surgimento de uma potência hegemônica na Eurásia. Esse detalhe explica por que a competição sistêmica é assimétrica: a China busca não se desagregar e prosperar; os Estados Unidos buscam impedir que alguém domine outro continente. A alternativa que iguala China e Rússia falha no essencial: o imperativo chinês depende de ABERTURA ao exterior para prosperar, enquanto o russo depende de CAMADA protetora — um precisa de fluxo, o outro de distância.",
-        distratores=[
-            "Errada. Três dos quatro são de preservação ou recuperação, não de expansão.",
-            "Correta. Distingue a natureza de cada imperativo e identifica a assimetria do caso americano.",
-            "Errada. A diferença de tipo documental exige cautela declarada, mas não impede a comparação — que é justamente o que o trabalho de T2 pede.",
-            "Errada. Acesso ao mar é imperativo russo e condicionante chinês; para os Estados Unidos é instrumento, e para o Brasil é base econômica já disponível.",
-            "Errada. O imperativo chinês exige abertura ao exterior; o russo exige camada protetora. São lógicas opostas.",
-        ],
-        fonte="AULA 13.pdf, slides “Objetivos Nacionais de Defesa”; AULA 15.pdf, slide “EUA - Imperativo Estratégico”; AULA 16.pdf, slide “China - Imperativo Estratégico”; AULA 17.pdf, slide “Imperativos Estratégicos”; T2_2025.pdf, item 2 do trabalho.",
-        competencia="Comparar imperativos por natureza, e não por escala, declarando a assimetria relevante.",
-        erro="Tratar todos os imperativos como expansionistas, ou igualar China e Rússia por serem continentais.",
-        tempo=5),
 
     dis("M99", "N4", 3, topico=T,
         conceitos=["REL-T2-M99-C006", "REL-T2-M99-C005", "REL-T2-M00-C005", "REL-T2-M00-C006"],
@@ -61,7 +14,7 @@ QUESTOES = [
         enunciado="Explique a decisão, indicando a regra geral que ela ilustra sobre a tensão entre economia e segurança, e apresente o limite dessa regra.",
         gabarito=(
             "**Tese.** Quando a dependência econômica e a dependência de segurança apontam para atores diferentes, o vetor de segurança tende a prevalecer nas decisões estruturais — e é o que a proibição da infraestrutura de rede ilustra.\n\n"
-            "**Conceito.** A tensão entre economia e segurança é uma das linhas da comparação global do curso. Nenhum dos quatro grandes atores escapa dela: o Brasil depende do mar para mais de 95% do comércio exterior e investe pouco em defesa; os Estados Unidos dependem de cadeias globais e adotam desacoplamento e tarifas; a China precisa de abertura para prosperar e teme a desagregação interna e o bloqueio de um estreito; a Rússia depende de receita de hidrocarbonetos e enfrenta sanções.\n\n"
+            "**Conceito.** A tensão entre economia e segurança é uma das linhas da comparação global do curso. Nenhum dos três grandes atores escapa dela: o Brasil depende do mar para mais de 95% do comércio exterior e investe pouco em defesa; os Estados Unidos dependem de cadeias globais e adotam desacoplamento e tarifas; e a China precisa de abertura para prosperar e teme, ao mesmo tempo, a desagregação interna e o bloqueio de um estreito.\n\n"
             "**Evidência e nexo.** No caso descrito, o cálculo é geográfico antes de ser econômico. A geopolítica de uma ilha leva o Estado a se aliar à maior potência naval — mundial ou regional —, porque o que assegura a sua sobrevivência não é o fluxo comercial, e sim o controle das linhas de comunicação marítimas de que esse fluxo depende. Infraestrutura crítica de telecomunicações é, além disso, vetor de dependência estrutural e de vulnerabilidade informacional: não é bem substituível no curto prazo, ao contrário de um fluxo de commodities, que se redireciona. Acrescente-se que a potência extrarregional também é grande investidora na economia do país, o que reduz o custo econômico da escolha. Daí a regra: interesses de segurança se sobrepõem a interesses comerciais quando o ativo em jogo é estrutural e a substituição é difícil.\n\n"
             "**Lente teórica.** Predomina leitura realista: a decisão privilegia segurança e autonomia decisória sobre ganho econômico imediato, e o instrumento é a aliança. Há leitura liberal secundária, já que o Estado age dentro de arranjos institucionalizados de segurança e de inteligência; mas a razão declarada não é a maximização de ganhos mútuos.\n\n"
             "**Limite da regra.** A regra é **tendência observada, não lei**. Três limites. Primeiro, ela vale para decisões estruturais e de difícil reversão; em decisões correntes, o vetor comercial frequentemente prevalece — o mesmo Estado segue comerciando amplamente com o parceiro que excluiu da rede. Segundo, ela pressupõe que o aliado de segurança tenha capacidade efetiva de prover a proteção prometida: se essa capacidade for duvidosa, o cálculo muda, e é exatamente essa a variável dos cenários asiáticos, em que a força do arco de alianças é uma das duas forças-motrizes. Terceiro, a regra não diz QUANTO custo econômico o Estado aceita pagar: no caso, o custo foi mitigado pelo investimento da própria potência aliada.\n\n"
@@ -106,34 +59,6 @@ QUESTOES = [
         erro="Gastar a véspera em releitura linear em vez de recuperação ativa de listas fechadas.",
         tempo=3),
 
-    dis("M99", "N3", 5, topico=T,
-        conceitos=["REL-T2-M99-C007", "REL-T2-M99-C003", "REL-T2-M00-C003"],
-        enunciado="Caso a avaliação seja um trabalho em grupo de análise geopolítica de uma nação, nos termos praticados em 2025, apresente o roteiro que você seguiria para os itens de maior peso: os três principais objetivos ou desafios geoceanopolíticos da nação estudada, com fatores facilitadores e dificultadores, situação atual da nação e do sistema internacional, e perspectiva de alteração futura. Use um dos quatro atores do curso como exemplo.",
-        gabarito=(
-            "**Observação ao corretor.** Qualquer dos quatro atores pontua integralmente. A resposta-modelo usa a Rússia. O que se avalia é o ROTEIRO e o nexo, não a escolha do país.\n\n"
-            "**Roteiro em seis passos, derivado da matriz de dez passos do curso.**\n\n"
-            "**1. Selecionar três objetivos ou desafios, e não descrever o país.** Para a Rússia: (a) manter o centro Europa-Urais protegido por camada tampão; (b) obter acesso utilizável ao mar; (c) obter dinamismo econômico que não dependa apenas de petróleo e gás. Os três estão declarados no corpus, o que os torna defensáveis.\n\n"
-            "**2. Para cada um, nomear o condicionante que o produz.** (a) Planície que se estende da Alemanha, passa pela Polônia e chega à Rússia, sem acidente geográfico que barre avanço terrestre. (b) Pacífico setentrional congelado boa parte do tempo; Mar Negro dependente de Bósforo e Dardanelos, sob controle turco; Báltico cercado por países da aliança adversária e com estreito controlado pela Dinamarca — problema repetido em Kaliningrado. (c) Estrutura produtiva concentrada em hidrocarbonetos.\n\n"
-            "**3. Separar facilitadores de dificultadores, para cada objetivo.** Facilitadores: profundidade territorial e memória estratégica que sustenta apoio interno a políticas de segurança; base de recursos naturais; prioridade orçamentária declarada, como o compromisso de cerca de 1,8 trilhão de rublos com a rota setentrional até 2035. Dificultadores: perda dos tampões com a fragmentação da URSS em 1991 e as ondas posteriores de adesão à OTAN, inclusive Suécia e Finlândia até meados de 2024, esta com fronteira terrestre direta; frota muito inferior à soviética e estaleiros defasados, com dependência de 40% a 85% de componentes importados no setor civil; poucas bases no exterior; demografia em retração e envelhecimento.\n\n"
-            "**4. Situar a nação E o sistema internacional, separadamente.** Nação: economia sob sanções, dependência crescente da China, contradição declarada entre conter a expansão chinesa na Ásia Central e manter aliança tática com a China. Sistema: competição interestatal crescente; aumento de 20% nos gastos militares da OTAN em 2025, com 574 bilhões de dólares e nova meta de 3,5% do PIB até 2035 mais 1,5% em segurança; e disputa aberta por rotas e recursos no Ártico, onde convergem interesses de três potências militares.\n\n"
-            "**5. Projetar alteração futura ancorada em mecanismo, não em opinião.** Para (b), a variável crítica é o degelo: rotas setentrionais mais navegáveis aumentariam o valor do único acesso que não depende de estreito alheio, o que tenderia a deslocar esforço para o Ártico — tendência já registrada na doutrina marítima de 2022, que desloca a prioridade do Atlântico para o Ártico e o Pacífico. Para (c), a variável crítica é o preço e o destino dos hidrocarbonetos: quanto mais a receita se concentra em um único comprador, mais o objetivo (b) se subordina ao parceiro que o financia. Cada projeção deve nomear a variável que a controla e dizer em que direção ela empurra.\n\n"
-            "**6. Fechar com sumário executivo, em um ou dois parágrafos.** Enunciar o que foi pesquisado e os principais resultados, sem repetir o desenvolvimento, e declarar o limite da análise: comparações entre atores de escalas distintas servem para isolar variáveis, não para ranquear; e as fontes usadas incluem análises com posição declarada, identificadas como tais.\n\n"
-            "**Erro que o roteiro evita.** Descrever o país em lugar de analisar objetivos; listar facilitadores e dificultadores sem dizer em que direção cada um empurra a decisão; e projetar futuro sem nomear a variável que controla a projeção.\n\n"
-            "**Insuficiente:** apresentar três objetivos sem condicionante nem fator. **Satisfatória:** apresenta os três com facilitadores e dificultadores. **Nível MB:** apresenta os três, separa nação de sistema, ancora cada projeção em uma variável nomeada e declara o limite da análise."
-        ),
-        criterios=[
-            "Seleciona três objetivos ou desafios declarados no corpus, e não descreve o país (0,2)",
-            "Nomeia o condicionante que produz cada objetivo (0,2)",
-            "Separa facilitadores de dificultadores, dizendo a direção em que cada um empurra (0,2)",
-            "Situa nação e sistema internacional separadamente, com ao menos um dado (0,15)",
-            "Projeta alteração futura nomeando a variável que a controla (0,15)",
-            "Fecha com sumário executivo e declara o limite da análise (0,1)",
-            "Não pontua: descrever o país em vez de analisar objetivos; projetar futuro sem mecanismo",
-        ],
-        fonte="T2_2025.pdf, itens 2 e 6 do trabalho (pesos 2,0 e 1,0); AULA 17.pdf, slides “Imperativos Estratégicos”, “Desafios para a Rússia” e “OTAN em 2024”; ZOLOTOVA (GPF, 2022); matriz-cobertura.json (matriz de dez passos).",
-        competencia="Estruturar a análise geopolítica de uma nação no formato exigido pelo trabalho, com mecanismo e limite.",
-        erro="Descrever o país em vez de analisar objetivos e desafios.",
-        tempo=16),
 ]
 
 # ── Questões de fechamento de cobertura ───────────────────────────────────
@@ -193,30 +118,126 @@ QUESTOES += [
         competencia="Atribuir cada enunciado ao documento institucional ou à leitura acadêmica correta.",
         erro="Atribuir conceito de leitura complementar a documento oficial da Marinha.",
         tempo=8),
+    cor("M99", "N3", 9, topico=T,
+        conceitos=["REL-T2-M99-C002", "REL-T2-M99-C004", "REL-T2-M04-C001", "REL-T2-M05-C001"],
+        titulo="Correlacione cada condicionante geográfico ou instrumento marítimo ao ator a que corresponde",
+        chaves=[
+            ("A", "Brasil"),
+            ("B", "Estados Unidos"),
+            ("C", "China"),
+        ],
+        itens=[
+            ("Bioceanidade e planícies centrais com rios navegáveis interligados por canais e eclusas, com vizinhos de poder muito inferior.", "B"),
+            ("Litoral concentrando 80% da população e 90% do PIB, sem rival estatal de peso comparável no entorno imediato.", "A"),
+            ("Linha de igual precipitação separando litoral rico de interior pobre, com zonas tampão de altitude e aridez, e litoral fechado por cadeias de ilhas.", "C"),
+            ("Instrumento marítimo dominante: jurisdição e consciência situacional sobre área de dimensão continental, com sistema integrado de gerenciamento.", "A"),
+            ("Instrumento marítimo dominante: negação regional por cadeias de ilhas, somada a corredores terrestres alternativos e a um programa global de infraestrutura.", "C"),
+            ("Instrumento marítimo dominante: projeção global sustentada por rede de bases, canais interoceânicos e alianças que somam a maioria das grandes marinhas.", "B"),
+        ],
+        comentario="A matriz comparativa se resolve por uma pergunta só: **que tarefa a geografia permite e o instrumento cumpre?** O Brasil investe em JURISDIÇÃO, porque tem área imensa e nenhum rival próximo; os Estados Unidos, em PROJEÇÃO, porque têm acesso livre e aliados; a China, em NEGAÇÃO, porque tem acesso obstruído e precisa manter o adversário longe. Note a assimetria decisiva: Brasil e Estados Unidos têm acesso oceânico livre; a China, não — o litoral é fechado por cadeias de ilhas e as rotas dependem de um estreito controlável por terceiros.",
+        fonte="AULA 14.pdf, slides “Economia Azul”, “SisGAAz” e “Programas Estratégicos”; AULA 15.pdf, mapas de formação geográfica e slides de estrutura de força naval; AULA 16.pdf, mapas de isoieta e topografia e slide “Mar do Sul da China - A2/AD”.",
+        competencia="Preencher a matriz comparativa associando geografia e instrumento por ator.",
+        erro="Comparar marinhas por número de meios em vez de por tarefa que a composição permite cumprir.",
+        tempo=6),
 
-    obj("M99", "N2", 8, topico=T,
-        conceitos=["REL-T2-M04-C001", "REL-T2-M04-C002", "REL-T2-M05-C001", "REL-T2-M05-C004",
-                   "REL-T2-M05-C005", "REL-T2-M05-C009", "REL-T2-M06-C002", "REL-T2-M06-C008"],
-        enunciado="Aponte a alternativa que contém apenas afirmações CORRETAS sobre a formação territorial e histórica dos três atores extrarregionais estudados. **I.** A expansão norte-americana combinou compra (Louisiana da França em 1803, Flórida da Espanha em 1819, Alasca da Rússia em 1867), tratado com o Reino Unido (1818, 1842 e 1846) e guerra com o México, sendo as planícies centrais com os rios Mississippi e Missouri o fator que facilitou o avanço para oeste. **II.** Na China, a primeira dinastia com registro escrito e evidência arqueológica é a Shang, e foi a Qin que promoveu a primeira unificação, com governo burocrático centralizado e padronização de pesos, moedas e escrita. **III.** O litígio do platô de Doklam opõe a China a Bangladesh, enquanto Aksai Chin e Arunachal Pradesh são disputas com o Japão. **IV.** Na Rússia, o Grão-Ducado de Moscou se consolida entre 1390 e 1530, com Moscou como centro político e religioso por efeito da ocupação mongol sobre Kiev, e o Império Russo, a partir de 1721, alcança sua maior extensão sob Pedro o Grande. **V.** O Grande Jogo do século XIX opôs o Império Britânico e o Império Russo no contexto de uma China enfraquecida, disputando o controle de tampões como o Afeganistão e o acesso russo às águas quentes.",
+    obj("M99", "N4", 10, topico=T,
+        conceitos=["REL-T2-M99-C001", "REL-T2-M99-C007", "REL-T2-M06-C015"],
+        enunciado="Ao comparar os imperativos estratégicos de Brasil, Estados Unidos e China, qual leitura é mais rigorosa?",
         alternativas=[
-            "I, II e III.",
-            "I, II, IV e V.",
-            "II, III e IV.",
-            "I, III e V.",
-            "III, IV e V.",
+            "Os três têm imperativos expansionistas, diferindo apenas na capacidade de realizá-los.",
+            "Os imperativos diferem em NATUREZA e em ESTRUTURA, e não apenas em escala: os da China são de preservação e formam um trilema, porque a abertura de que a prosperidade depende alimenta a desigualdade que ameaça a unidade; os do Brasil são de preservação e inserção, e estão declarados em lista sem hierarquia entre si; os dos Estados Unidos são de manutenção de hegemonia, em sequência de quatro degraus cujo último tem objeto FORA do próprio hemisfério. Apenas o caso americano tem esse objeto extra-hemisférico.",
+            "Os imperativos são incomparáveis, porque documentos de defesa brasileiros e slides sobre potências estrangeiras têm naturezas distintas.",
+            "Os três se reduzem à busca de acesso ao mar, uma vez que todos são Estados com litoral.",
+            "Os imperativos de Brasil e China são idênticos, pois ambos priorizam integridade territorial e desenvolvimento econômico.",
         ],
         correta=1,
-        comentario="O único item incorreto é o **III**, e ele contém dois erros. O platô de Doklam é litígio com o **Butão** — o próprio mapa do deck rotula Bhutan —, e não com Bangladesh; esse é um erro que aparece em resumo de Aspirante e está sinalizado no curso. E Aksai Chin e Arunachal Pradesh são litígios com a **Índia**, nos setores ocidental e oriental respectivamente; com o Japão a disputa é pelas ilhas Diaoyu, que os japoneses chamam Senkaku. Os demais itens são corretos: I reproduz a legenda do mapa de expansão territorial e a leitura das planícies; II corrige a atribuição frequente da primeira dinastia à Zhou, que na verdade é a dinastia do conceito de Mandato do Céu; IV e V reproduzem a formação territorial russa e o Grande Jogo, que é o precedente direto do desafio contemporâneo na Ásia Central.",
+        comentario="Comparar não é ranquear: é isolar variáveis. E as variáveis que organizam esta comparação são a **natureza** (preservação, inserção ou manutenção de hegemonia) e a **estrutura** (lista sem hierarquia, trilema ou sequência). Dois dos três são de preservação; só os Estados Unidos têm imperativo cujo objeto está fora do hemisfério — evitar o surgimento de potência hegemônica na Eurásia. É essa assimetria, e não a diferença de capacidade, que torna a competição sistêmica desigual em natureza. A alternativa que iguala Brasil e China falha no essencial: o imperativo chinês é internamente contraditório por construção, enquanto o brasileiro é indeterminado por falta de hierarquia declarada — problemas diferentes, com soluções diferentes.",
         distratores=[
-            "Errada. O item III é incorreto em dois pontos.",
-            "Correta. Apenas o item III é incorreto.",
-            "Errada. O item III é incorreto.",
-            "Errada. O item III é incorreto e o item II, correto, ficou de fora.",
-            "Errada. O item III é incorreto.",
+            "Errada. Dois dos três são de preservação e inserção, não de expansão.",
+            "Correta. Distingue natureza e estrutura, e identifica a assimetria do caso americano.",
+            "Errada. A diferença de tipo documental exige cautela declarada, mas não impede a comparação — que é justamente o que o trabalho de T2 pede.",
+            "Errada. Para os EUA o mar é instrumento; para a China é cerco a romper; para o Brasil é base econômica já disponível e a garantir.",
+            "Errada. Trilema e lista sem hierarquia são estruturas distintas, com problemas distintos.",
         ],
-        fonte="AULA 15.pdf, mapa “Estados Unidos: expansão territorial”; AULA 16.pdf, slides das dinastias, “China recente” e mapas dos litígios; AULA 17.pdf, slides “Grão-Ducado de Moscou”, “Império Russo” e “O Grande Jogo (século XIX)”; REL - T2.pdf, leitura dos mapas; fontes-manifesto.json, conflito CF-04.",
-        competencia="Verificar precisão factual sobre formação territorial e litígios dos três atores extrarregionais.",
+        fonte="AULA 13.pdf, slide “Objetivos Nacionais de Defesa”; AULA 14.pdf, slide “Política Naval”; AULA 15.pdf, slide “EUA - Imperativo Estratégico”; AULA 16.pdf, slide “China - Imperativo Estratégico”; T2_2025.pdf, item 2 do trabalho.",
+        competencia="Comparar imperativos por natureza e estrutura, declarando a assimetria relevante.",
+        erro="Tratar todos os imperativos como expansionistas, ou igualar Brasil e China por priorizarem integridade territorial.",
+        tempo=5),
+
+    obj("M99", "N2", 11, topico=T,
+        conceitos=["REL-T2-M04-C002", "REL-T2-M05-C004", "REL-T2-M05-C009"],
+        enunciado="Aponte a alternativa que contém apenas afirmações CORRETAS sobre a formação territorial e histórica dos dois atores extrarregionais estudados. **I.** A expansão norte-americana combinou compra, tratado e guerra, com a Louisiana adquirida da França em 1803 e o Alasca comprado da Rússia em 1867. **II.** A primeira dinastia chinesa com registro escrito e evidência arqueológica é a Shang, e a última dinastia imperial, a Qing, vai de 1644 a 1911. **III.** O platô de Doklam é litígio entre China e Bangladesh, e Aksai Chin é litígio entre China e Japão.",
+        alternativas=[
+            "Apenas I.",
+            "Apenas I e II.",
+            "Apenas II e III.",
+            "I, II e III.",
+            "Apenas III.",
+        ],
+        correta=1,
+        comentario="O único item incorreto é o **III**, e ele contém dois erros. O platô de **Doklam** é litígio com o **Butão** — o próprio mapa do deck rotula *Bhutan* —, e **Aksai Chin** é litígio com a **Índia**, não com o Japão; com o Japão o litígio é o das ilhas **Diaoyu/Senkaku**. O erro de Doklam aparece em resumo de Aspirante em circulação e está registrado como conflito entre fontes resolvido em favor do slide. Os itens I e II reproduzem o corpus: a compra da Louisiana (1803) e do Alasca (1867) constam do mapa de expansão territorial, e a Shang como primeira dinastia com registro escrito e a Qing como última dinastia imperial (1644-1911) constam dos slides de dinastias.",
+        distratores=[
+            "Errada. O item II também é correto.",
+            "Correta. O item III é incorreto em dois pontos.",
+            "Errada. O item III é incorreto.",
+            "Errada. O item III é incorreto.",
+            "Errada. O item III é o único incorreto.",
+        ],
+        fonte="AULA 15.pdf, mapa “Estados Unidos: expansão territorial”; AULA 16.pdf, slides das dinastias, “China recente” e mapas dos litígios; REL - T2.pdf, leitura dos mapas; fontes-manifesto.json, conflito CF-04.",
+        competencia="Verificar precisão factual sobre formação territorial e litígios dos dois atores extrarregionais.",
         erro="Situar o platô de Doklam como litígio com Bangladesh e Aksai Chin com o Japão.",
+        tempo=4,
+        extra_assinatura=["integração entre módulos 04 e 05"]),
+
+    dis("M99", "N3", 12, topico=T,
+        conceitos=["REL-T2-M99-C008", "REL-T2-M06-C022", "REL-T2-M99-C007"],
+        enunciado="Caso a T2 seja cobrada no formato de trabalho de análise geopolítica, descreva o roteiro que você seguiria para o item de maior peso — três objetivos ou desafios geoceanopolíticos de uma nação, com fatores facilitadores e dificultadores, situação atual e perspectivas —, usando o Brasil como nação analisada.",
+        gabarito=(
+            "**Observação ao corretor.** Qualquer dos três atores do curso pontua integralmente. A resposta-modelo usa o **Brasil**, por ser o caso com base documental própria e por integrar os módulos 01 a 03. O que se avalia é o ROTEIRO e o nexo, não a escolha do país.\n\n"
+            "**1. Selecionar três objetivos ou desafios, e não descrever o país.** Para o Brasil: (a) assegurar o uso do mar de que a economia depende; (b) manter o entorno sul-americano estável e sem coalizão hostil; (c) ampliar a inserção decisória sem alinhamento automático.\n\n"
+            "**2. Para cada um, nomear o condicionante que o produz.** (a) Cerca de 8.500 km de litoral, com 80% da população e 90% do PIB nele concentrados, e mais de 95% do comércio exterior por via marítima. (b) Fronteira com dez vizinhos e bacias internacionais compartilhadas, com rios que atravessam fronteiras políticas. (c) Posição no hemisfério sul, distante dos principais polos de poder.\n\n"
+            "**3. Separar facilitadores de dificultadores, sem misturá-los.** Facilitadores: jurisdição reconhecida sobre área extensa; ausência de rival estatal próximo; fronteiras estabilizadas desde a era Rio Branco; determinação constitucional de integração; trajetória de diversificação de parceiros. Dificultadores: dimensão da área a monitorar; orçamento de ciclo longo em disputa anual; regra de consenso que trava decisões no bloco regional; baixa continuidade estratégica entre governos; hemisfério tratado como zona de exclusão por potência extrarregional.\n\n"
+            "**4. Nomear o instrumento de cada objetivo, com nome próprio.** SisGAAz e o complexo naval de uso múltiplo previsto para a foz do Amazonas; Mercosul, Unasul e cooperação em infraestrutura física; ZOPACAS, CPLP, diplomacia naval e a articulação declarada entre defesa e política externa.\n\n"
+            "**5. Situação atual, nacional e internacional.** Nacional: programas estratégicos avançando em ritmo determinado pelo financiamento; Política Marítima Nacional reeditada em 2025. Internacional: competição sistêmica entre as duas maiores potências pressionando escolhas de parceria e de cadeia produtiva, inclusive em minerais críticos.\n\n"
+            "**6. Prospecção com variável nomeada.** A variável que mais desloca o cenário é a **continuidade orçamentária**: sem ela, objetivo declarado não vira capacidade. A segunda é o grau de fechamento do hemisfério, que determina a margem de diversificação disponível.\n\n"
+            "**7. Fechar em sumário executivo e declarar o limite.** Mecanismo, vulnerabilidade com instrumentos e limite, em três linhas — mais a ressalva de que o imperativo estratégico brasileiro é reconstrução a partir de documentos, e não enunciado de slide, e a data de corte da informação.\n\n"
+            "**Insuficiente:** apresentar três objetivos sem condicionante nem fator. **Satisfatória:** apresenta os três com facilitadores e dificultadores. **Nível MB:** apresenta os três, separa nação de sistema, ancora cada projeção em uma variável nomeada e declara o limite da análise."
+        ),
+        criterios=[
+            "Seleciona três objetivos ou desafios em vez de descrever o país (0,2)",
+            "Nomeia o condicionante que produz cada objetivo (0,2)",
+            "Separa facilitadores de dificultadores, sem misturar (0,2)",
+            "Nomeia o instrumento de cada objetivo (0,2)",
+            "Apresenta situação atual nacional E internacional e prospecção com variável nomeada (0,1)",
+            "Fecha em sumário executivo e declara o limite da análise (0,1)",
+            "Não pontua: narrar a história do país; listar programas sem vínculo com objetivo; omitir dificultadores",
+        ],
+        fonte="T2_2025.pdf, itens 2 e 6 do trabalho (pesos 2,0 e 1,0); AULA 12.pdf, slides “PEB - Dilemas futuros” e “PEB - Governos pós-1985”; AULA 14.pdf, slides “Economia Azul” e “SisGAAz”; matriz-cobertura.json (matriz de dez passos).",
+        competencia="Executar o roteiro do item de maior peso do trabalho de T2, com nação, fatores e prospecção.",
+        erro="Descrever o país em vez de estruturar objetivos, condicionantes, fatores e instrumentos.",
+        tempo=14),
+    obj("M99", "N3", 13, topico=T,
+        conceitos=["REL-T2-M99-C003", "REL-T2-M99-C006", "REL-T2-M06-C015"],
+        enunciado="Comparando as VULNERABILIDADES centrais de Brasil, Estados Unidos e China, qual leitura é mais rigorosa?",
+        alternativas=[
+            "As três são da mesma natureza — dependência de comércio exterior —, e diferem apenas em magnitude.",
+            "São de naturezas distintas: a brasileira é sobretudo INTERNA E INSTITUCIONAL, porque a dependência do mar para mais de 95% do comércio exterior convive com baixa prontidão, orçamento restrito e cultura de defesa pouco consolidada; a americana é de SUSTENTAÇÃO, porque o declínio relativo de participação econômica e a dependência do arco de alianças convivem com o desafio do antiacesso adversário; e a chinesa é de FLUXO, porque a prosperidade que financia a unidade depende de passagem por um estreito controlável por terceiros, somada à perda de autossuficiência em alimento e petróleo, à demografia e à desigualdade litoral-interior.",
+            "A vulnerabilidade brasileira é externa e militar, decorrente da ameaça de invasão por vizinhos da América do Sul.",
+            "A vulnerabilidade chinesa foi resolvida pelos corredores terrestres alternativos e pelo programa de infraestrutura global.",
+            "A vulnerabilidade americana é irrelevante, porque a superioridade naval absoluta torna o declínio de participação econômica inconsequente.",
+        ],
+        correta=1,
+        comentario="A comparação só rende se separar **natureza** de **magnitude**. O caso brasileiro é o único em que o principal obstáculo está dentro de casa: não há ameaça estatal próxima, e o que falta é capacidade proporcional à dependência já existente. O americano é de sustentação: o problema não é ter poder, é manter compromissos simultâneos com participação econômica relativa menor. O chinês é de fluxo: tudo depende de manter aberto o que passa por um ponto de passagem obrigatória. Note as duas armadilhas: os corredores alternativos e o programa de infraestrutura **mudam a natureza** da vulnerabilidade chinesa — de marítima para terrestre e dependente de terceiros —, mas não a eliminam; e superioridade naval não neutraliza base econômica relativa, porque é ela que sustenta esquadra, indústria e inovação.",
+        distratores=[
+            "Errada. Só o caso brasileiro tem a dependência comercial como eixo; os outros dois têm eixos distintos.",
+            "Correta. Separa as três naturezas e nomeia a evidência de cada uma.",
+            "Errada. O corpus registra ausência de rival estatal de peso comparável no entorno brasileiro.",
+            "Errada. As alternativas mudam a natureza da vulnerabilidade, sem eliminá-la.",
+            "Errada. Base econômica é condição de sustentação de esquadra, indústria e inovação.",
+        ],
+        fonte="AULA 14.pdf, slide “Economia Azul”; AULA 15.pdf, slide “Declínio?”; AULA 16.pdf, slides “China recente” e “Perspectiva Chinesa”; Geopolitical Futures (2019), perda da autossuficiência chinesa.",
+        competencia="Comparar vulnerabilidades por natureza, e não por magnitude.",
+        erro="Tratar a vulnerabilidade brasileira como externa e militar.",
         tempo=5,
-        extra_assinatura=["integração entre módulos 04, 05 e 06"]),
+        extra_assinatura=["integração entre os módulos 03, 04, 05 e 06"]),
 ]

@@ -231,50 +231,46 @@ export const checklists: Record<string, ItemChecklist[]> = {
       "texto": "Recuso a conclusão de superioridade naval chinesa a partir da contagem de cascos."
     }
   ],
-  "06-russia": [
+  "06-peb-aplicacao-e-integracao": [
     {
       "id": "c01",
-      "texto": "Digo por que a origem comum no Rus de Kiev não é título jurídico sobre a Ucrânia."
+      "texto": "Enuncio os quatro itens do imperativo estratégico brasileiro e digo que são reconstrução, não slide."
     },
     {
       "id": "c02",
-      "texto": "Recito os três imperativos estratégicos russos e a lista de áreas tampão."
+      "texto": "Explico por que o imperativo brasileiro não tem hierarquia declarada, ao contrário do americano e do chinês."
     },
     {
       "id": "c03",
-      "texto": "Explico como a planície europeia se converte em necessidade de profundidade territorial."
+      "texto": "Respondo ao Estudo Dirigido 1 com um caso a favor e um contra o alinhamento automático."
     },
     {
       "id": "c04",
-      "texto": "Nomeio os quatro problemas geográficos da Rússia e o encadeamento entre eles."
+      "texto": "Dou uma razão institucional e uma pragmática para a integração sul-americana, sem repetir a natureza."
     },
     {
       "id": "c05",
-      "texto": "Explico por que cada um dos três acessos ao mar é deficiente, incluindo Kaliningrado."
+      "texto": "Explico por que ZOPACAS e CPLP importam ao entorno estratégico E à Marinha."
     },
     {
       "id": "c06",
-      "texto": "Trato a 'paranoia geopolítica' como problema analítico, com as duas listas do slide."
+      "texto": "Converto as heranças de Rio Branco em norma vigente: art. 4º e fundamento da Política Naval."
     },
     {
       "id": "c07",
-      "texto": "Explico o Grande Jogo do século XIX e por que a BRI configura um novo Grande Jogo."
+      "texto": "Distingo potência regional de ator global na formulação da fonte, sem inflar para capacidade militar."
     },
     {
       "id": "c08",
-      "texto": "Digo o efeito não pretendido da invasão de 2022 sobre a expansão da OTAN."
+      "texto": "Explico o efeito da regra de consenso do Mercosul e o da adesão venezuelana de 2012."
     },
     {
       "id": "c09",
-      "texto": "Distingo telurocracia de talassocracia e digo em que ponto a prática russa contrariou Dugin."
+      "texto": "Preencho os dez passos da matriz para o Brasil, com vulnerabilidade, instrumentos e contraponto."
     },
     {
       "id": "c10",
-      "texto": "Recito os três objetivos da Doutrina Primakov e identifico a posição da fonte que os apresenta."
-    },
-    {
-      "id": "c11",
-      "texto": "Avalio a doutrina marítima de 2022 contra as restrições materiais documentadas."
+      "texto": "Escrevo uma discursiva de PEB nos seis movimentos, sem omitir o nexo causal."
     }
   ],
   "99-revisao-final": [

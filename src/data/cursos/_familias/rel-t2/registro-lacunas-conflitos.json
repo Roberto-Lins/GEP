@@ -70,10 +70,10 @@
     {
       "id": "I-03",
       "tipo": "LACUNA DE COBERTURA",
-      "objeto": "Capítulos de Magnoli sobre EUA, China e Rússia",
-      "descricao": "A bibliografia obrigatória das Aulas 16, 17 e 18 indica MAGNOLI (2013) nas páginas 133-140/226-239 (EUA), 244-260 (China) e 128-132/176-190 (Rússia). O corpus forneceu apenas o capítulo 21 (Aula 13) e a nota de correspondência de páginas, segundo a qual Aula 16 corresponde ao cap. 8 (p. 119-131 e 192-204) e Aula 17 ao cap. 18 (p. 265-282, \"A China em ascensão pacífica\").",
+      "objeto": "Capítulos de Magnoli sobre EUA e China",
+      "descricao": "A bibliografia obrigatória das Aulas 16 e 17 indica MAGNOLI (2013) nas páginas 133-140/226-239 (EUA) e 244-260 (China). O corpus forneceu apenas o capítulo 21 (Aula 13) e a nota de correspondência de páginas, segundo a qual a Aula 16 corresponde ao cap. 8 (p. 119-131 e 192-204) e a Aula 17 ao cap. 18 (p. 265-282, \"A China em ascensão pacífica\").",
       "impacto": "Médio. Onde Magnoli aprofundaria, o curso usa os slides como autoridade máxima mais as leituras complementares que o professor autorizou para exatamente esses tópicos.",
-      "tratamento": "NENHUM conteúdo foi atribuído a Magnoli sem estar na fonte lida. Declarado ao aluno na seção de referências dos módulos 04, 05 e 06, com a indicação de página para quem tiver o exemplar (há exemplar na biblioteca, conforme a nota de correspondência).",
+      "tratamento": "NENHUM conteúdo foi atribuído a Magnoli sem estar na fonte lida. Declarado ao aluno na seção de referências dos módulos 04 e 05, com a indicação de página para quem tiver o exemplar (há exemplar na biblioteca, conforme a nota de correspondência).",
       "status": "aberto — depende de obtenção dos capítulos"
     },
     {
@@ -82,12 +82,11 @@
       "objeto": "Slides gráficos cujo texto não foi recuperado",
       "itens_recuperados_por_resumo": [
         "Elementos do Poder Marítimo (AULA 14.pdf): os oito elementos foram recuperados de REL - T2.pdf e estão marcados como nível 3 no conceito REL-T2-M03-C007.",
-        "Leitura dos mapas dos EUA, da China e da Rússia: recuperada de REL - T2.pdf e marcada como tal nos conceitos REL-T2-M04-C001, REL-T2-M05-C001 e REL-T2-M06-C002."
+        "Leitura dos mapas dos EUA e da China: recuperada de REL - T2.pdf e marcada como tal nos conceitos REL-T2-M04-C001 e REL-T2-M05-C001."
       ],
       "itens_nao_recuperados": [
         "PROHIDRO (Navio ApAnt) e PROADSUMUS (AULA 14.pdf): slides de imagem sem texto. O curso registra a existência dos programas e sua função declarada em outros slides, sem descrever o que a imagem mostra.",
-        "Operações Multidomínio (AULA 15.pdf): figura sem texto. O conceito é ensinado a partir do slide textual de A2/AD e da leitura complementar.",
-        "Mapas históricos russos com rótulos parciais (AULA 17.pdf)."
+        "Operações Multidomínio (AULA 15.pdf): figura sem texto. O conceito é ensinado a partir do slide textual de A2/AD e da leitura complementar."
       ],
       "tratamento": "Onde o conteúdo do slide gráfico é examinável e foi recuperado, o curso o ensina marcando a procedência. Onde não foi recuperado, o curso diz que o slide existe e que o aluno deve abri-lo — e não inventa o conteúdo.",
       "status": "aberto — resolvível por inspeção visual dos decks"
@@ -136,7 +135,7 @@
   "escopo_excluido_deliberadamente": [
     {
       "objeto": "Seção EUROPA do resumo REL - T2.pdf",
-      "razao": "Determinação expressa do pedido: o escopo termina em Rússia.",
+      "razao": "Determinação expressa do pedido original.",
       "verificacao": "Nenhum conceito, exemplo, distrator ou referência deste curso provém dessa seção. A palavra Europa aparece no curso apenas em contextos internos ao escopo: centro Europa-Urais, planície europeia, expansão da OTAN, eixo Moscou-Berlim, Concerto Europeu como analogia do slide de EUA e reconstrução europeia no pós-guerra."
     },
     {
@@ -153,6 +152,11 @@
       "objeto": "Detalhamento de batalhas e de localidades sem consequência estratégica",
       "razao": "Densidade seletiva.",
       "verificacao": "Quantidade de batalhas por localidade na Guerra da Cisplatina, listas de municípios e de estaleiros e cronogramas de casco a casco entram apenas quando sustentam um argumento (o cronograma das fragatas sustenta o argumento de continuidade de programa da BID, e está fora do modo Rápido)."
+    },
+    {
+      "objeto": "RÚSSIA — aula interna 18 (arquivo AULA 17.pdf) e as duas leituras complementares russas",
+      "razao": "Ajuste de escopo informado pelo usuário em 18/09/2026: a T2 não cobrará Rússia e cobrará Política Externa Brasileira.",
+      "verificacao": "O módulo 06 deixou de ser Rússia e passou a ser Política Externa Brasileira — aplicação e integração. Foram removidos o deck, as duas leituras complementares, os 14 conceitos REL-T2-M06-C001 a C014, as 8 questões de módulo de Rússia, as questões REL-T2-M99-*-001, 002, 005 e 008, e as questões REL-T2-SG01-OBJ-N3-007 e REL-T2-SG01-DIS-N4-014 do simulado. A matriz comparativa global passou de quatro para três atores: Brasil, EUA e China. Permanecem apenas menções literais às fontes que continuam no escopo — o Alasca comprado da Rússia em 1867, no mapa de expansão dos EUA, e os países recalcitrantes do cenário Império do Meio II, no deck da China. Nenhum ID aposentado foi reutilizado: os novos conceitos do módulo 06 começam em C015 e as novas questões, em 009."
     }
   ],
   "validacoes_academicas": {
@@ -163,6 +167,7 @@
     "atividades_por_modulo": "00=8, 01=8, 02=7, 03=8, 04=8, 05=8, 06=8, 99=8 (alvo: 5 a 8)",
     "simulado_final": "12 objetivas e 6 discursivas, com 5 questões marcadas como integração entre módulos e gabarito integralmente comentado com critérios por elementos",
     "ids_reutilizados": "nenhum — a auditoria verifica unicidade sobre o conjunto de módulos e simulado",
-    "copia_de_prova_anterior": "nenhuma. As provas antigas foram usadas apenas como evidência de formato e peso, registrada em perfil-cobranca.json. Onde uma questão trata de objeto geopolítico que já apareceu em prova, a fonte da questão declara explicitamente que o enunciado, os fatos e o gabarito são distintos."
+    "copia_de_prova_anterior": "nenhuma. As provas antigas foram usadas apenas como evidência de formato e peso, registrada em perfil-cobranca.json. Onde uma questão trata de objeto geopolítico que já apareceu em prova, a fonte da questão declara explicitamente que o enunciado, os fatos e o gabarito são distintos.",
+    "ajuste_de_escopo_2026_09_18": "Auditado após a retirada da Rússia: nenhum conceito examinável ficou sem questão; nenhuma questão aponta para conceito não ensinado; a comparação global foi reescrita para três atores; e o simulado voltou a ter 18 itens (12 objetivas e 6 discursivas) com blueprint somando 10,0."
   }
 }

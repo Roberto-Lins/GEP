@@ -1,8 +1,8 @@
 {
   "slug": "rel-t2--rapido",
   "titulo": "Relações Internacionais — T2 — Rápido",
-  "subtitulo": "Aulas internas 13 a 18: política externa, defesa, poder marítimo, EUA, China e Rússia",
-  "descricao": "Revisão concentrada da T2 de Relações Internacionais: o núcleo examinável das aulas internas 13 a 18, as listas fechadas, as relações críticas, as pegadinhas de formato e uma aplicação por módulo.",
+  "subtitulo": "Aulas internas 13 a 17: política externa, defesa, poder marítimo, EUA e China — com PEB aplicada",
+  "descricao": "Revisão concentrada da T2 de Relações Internacionais: o núcleo examinável das aulas internas 13 a 17, a política externa brasileira aplicada, as listas fechadas, as pegadinhas de formato e uma aplicação por módulo.",
   "categoria": "Carreira Naval",
   "ano": "4",
   "semestre": "2",
@@ -26,10 +26,10 @@
     ],
     "legadoSomenteCompleto": false,
     "rotulo": "Rápido",
-    "descricao": "Revisão concentrada da T2 de Relações Internacionais: o núcleo examinável das aulas internas 13 a 18, as listas fechadas, as relações críticas, as pegadinhas de formato e uma aplicação por módulo.",
+    "descricao": "Revisão concentrada da T2 de Relações Internacionais: o núcleo examinável das aulas internas 13 a 17, a política externa brasileira aplicada, as listas fechadas, as pegadinhas de formato e uma aplicação por módulo.",
     "finalidade": "Recuperar o núcleo mais cobrável e o procedimento de prova depois de já ter tido contato com a disciplina, em uma sessão de véspera.",
-    "cobertura": "Conceitos indispensáveis das seis aulas, relações críticas, principais pegadinhas, uma aplicação por módulo, quadro comparativo global e teste ativo final.",
-    "duracaoMinutos": 100,
+    "cobertura": "Conceitos indispensáveis das cinco aulas em escopo e da PEB aplicada, relações críticas, principais pegadinhas, uma aplicação por módulo, quadro comparativo global e teste ativo final.",
+    "duracaoMinutos": 98,
     "estadoAutoria": "publicado"
   },
   "features": {

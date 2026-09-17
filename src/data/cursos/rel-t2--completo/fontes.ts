@@ -51,21 +51,13 @@ export const fontes: Fonte[] = [
     ]
   },
   {
-    "titulo": "Aula interna 18 — Rússia (arquivo AULA 17.pdf)",
-    "tipo": "slide",
-    "descricao": "Fonte material do Módulo 06 e último deck do escopo. Bibliografia obrigatória: MAGNOLI (2013, 128-132; 176-190), não fornecida ao corpus. Traz na bibliografia complementar as duas leituras russas usadas no curso.",
-    "topicos": [
-      "06-russia",
-      "99-revisao-final"
-    ]
-  },
-  {
     "titulo": "MAGNOLI, Demétrio — capítulo 21, 'O Brasil e a América Latina' (p. 340-355)",
     "tipo": "livro",
-    "descricao": "Bibliografia obrigatória da Aula 13, fornecida ao corpus e lida integralmente. Aprofunda bolivarianismo e pan-americanismo, corolários Polk e Roosevelt, Sistema Interamericano, invenção da América Latina, Cepal, Travassos e Golbery, Mercosul, Unasul e IIRSA.",
+    "descricao": "Bibliografia obrigatória da Aula 13, fornecida ao corpus e lida integralmente. Aprofunda bolivarianismo e pan-americanismo, corolários Polk e Roosevelt, Sistema Interamericano, invenção da América Latina, Cepal, Travassos e Golbery, Mercosul, Unasul e IIRSA — e sustenta o módulo de aplicação de PEB.",
     "topicos": [
       "01-politica-externa-brasileira",
-      "04-estados-unidos"
+      "04-estados-unidos",
+      "06-peb-aplicacao-e-integracao"
     ]
   },
   {
@@ -128,22 +120,6 @@ export const fontes: Fonte[] = [
     ]
   },
   {
-    "titulo": "ZOLOTOVA, Ekaterina (GPF) — \"Russia's New Maritime Strategy\"",
-    "tipo": "observacao",
-    "descricao": "Leitura complementar autorizada. Doutrina marítima russa de julho/2022, zonas de interesse vital, Rota Marítima do Norte e as restrições materiais quantificadas. Fonte da formulação 'pensar a Rússia como país sem litoral'.",
-    "topicos": [
-      "06-russia"
-    ]
-  },
-  {
-    "titulo": "GVINERIA, Shota — 'Visão da Rússia sobre Multipolaridade'",
-    "tipo": "observacao",
-    "descricao": "Citada na bibliografia complementar do próprio deck da Aula 18. Autor georgiano com posição declaradamente pró-ocidental. Fonte da Doutrina Primakov e da leitura da multipolaridade como esferas de influência; sempre confrontada com o enquadramento do professor.",
-    "topicos": [
-      "06-russia"
-    ]
-  },
-  {
     "titulo": "Perfil de cobrança da família rel-t2 (perfil-cobranca.json)",
     "tipo": "prova",
     "descricao": "Formato e peso inferidos de P1 REL 2024, gabarito da P2 REL 2024, SOPA REL T1 2024 (dois exemplares), correção da SOPA da P1 e critérios do trabalho de T2 de 2025. Nenhuma questão antiga foi copiada ou parafraseada. Incerteza declarada: não há prova ESCRITA de T2 no corpus.",
@@ -162,13 +138,13 @@ export const fontes: Fonte[] = [
       "03-politica-maritima-naval-e-economia-azul",
       "04-estados-unidos",
       "05-china",
-      "06-russia"
+      "06-peb-aplicacao-e-integracao"
     ]
   },
   {
     "titulo": "Manifesto de fontes, conflitos e lacunas (fontes-manifesto.json)",
     "tipo": "observacao",
-    "descricao": "Inventário deduplicado com o mapeamento arquivo → aula interna, os quatro conflitos entre fontes e as seis incertezas e lacunas declaradas, incluindo a ausência dos capítulos de Magnoli sobre EUA, China e Rússia.",
+    "descricao": "Inventário deduplicado com o mapeamento arquivo → aula interna, os quatro conflitos entre fontes e as incertezas e lacunas declaradas, incluindo a ausência dos capítulos de Magnoli sobre EUA e China e a saída da Rússia do escopo.",
     "topicos": [
       "00-metodo-e-matriz-de-cenarios",
       "99-revisao-final"

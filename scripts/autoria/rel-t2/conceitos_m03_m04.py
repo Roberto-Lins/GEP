@@ -479,7 +479,7 @@ CONCEITOS = [
         dep=["REL-T2-M04-C008", "REL-T2-M00-C004", "REL-T2-M00-C014"], exam=True, rap=True, safar=True,
         fontes=["F04:slide \"EUA - Imperativo Estratégico\"", "A01:IMPERATIVO ESTRATÉGICO DOS EUA (quatro itens numerados)",
                 "P03:questão 10 (asserção e razão sobre Spykman e o pré-requisito sul-americano)"],
-        prio=["É o conceito central do módulo, já cobrado em asserção e razão, e a chave da comparação com China e Rússia."],
+        prio=["É o conceito central do módulo, já cobrado em asserção e razão, e a chave da comparação com a China e com o Brasil."],
         prof=(R_ANC, P_T3, C_T3),
         just=("Quatro degraus na ordem certa.",
               "É o que explica por que a América do Sul importa e por que a Eurásia é a preocupação final.",
