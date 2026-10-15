@@ -1,0 +1,21 @@
+{
+  "ordem": 7,
+  "slug": "07-interferencia-intersimbolica",
+  "titulo": "Interferência intersimbólica (ISI)",
+  "prioridade": "muito alta",
+  "subtitulo": "Origem da ISI, critério de Nyquist e cosseno levantado",
+  "tempoEstimado": "25 min",
+  "objetivo": "Explicar a ISI, enunciar o critério de Nyquist e calcular a banda com roll-off.",
+  "palavrasChave": [
+    "ISI",
+    "Nyquist criterion",
+    "raised cosine",
+    "roll-off"
+  ],
+  "conceptIds": [
+    "C057",
+    "C058",
+    "C059",
+    "C060"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "ordem": 2,
+  "slug": "02-analise-de-fourier",
+  "titulo": "Análise de Fourier",
+  "prioridade": "muito alta",
+  "subtitulo": "Série, CTFT, DTFT, DFT, FFT e largura de banda",
+  "tempoEstimado": "40 min",
+  "objetivo": "Dizer, para cada tipo de sinal, como é o seu espectro e relacionar duração e banda.",
+  "palavrasChave": [
+    "Fourier series",
+    "CTFT",
+    "DTFT",
+    "DFT",
+    "FFT",
+    "bandwidth"
+  ],
+  "conceptIds": [
+    "C013",
+    "C014",
+    "C015",
+    "C016",
+    "C017",
+    "C018",
+    "C019",
+    "C020"
+  ]
+}

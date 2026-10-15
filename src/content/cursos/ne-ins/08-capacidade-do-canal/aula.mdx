@@ -1,0 +1,227 @@
+---
+titulo: "Capacidade do canal — aula"
+secao: "aula"
+secaoOrdem: 1
+---
+
+## Resumo executivo
+
+Quantos bits por segundo cabem num canal? Este módulo responde em três degraus, do ideal ao real: o **1º teorema de Nyquist** ($C_{\max} = 2B$ símbolos/s num canal ideal de 2 níveis), a **lei de Hartley** para codificação multinível ($C = 2B\log_2 M$ bit/s) e o **teorema de Shannon-Hartley** para canal com ruído AWGN ($C = B\log_2(1+\mathrm{SNR})$, com SNR **linear**). No caminho aparecem a diferença entre **baud** e **bit/s**, o espectro de um sinal digital (pior caso = onda quadrada alternada, fundamental = metade da taxa) e a **BER**.
+
+Na prova de 2025 caiu a **Q19** (o que é a capacidade de Shannon → a taxa máxima de transferência que o canal suporta sem erro). As contas são simples: saiba aplicar as três fórmulas.
+
+<BlocoObjetivo titulo="Ao final você deve conseguir">
+
+- Definir capacidade do canal e explicar por que o pior caso é a sequência 1010…
+- Aplicar Nyquist ($2B$), Hartley ($2B\log_2 M$) e Shannon ($B\log_2(1+\mathrm{SNR})$) e saber quando usar cada um.
+- Distinguir baud de bit/s e calcular $f_s = f_d / n$.
+- Explicar por que mais níveis significa mais erros num canal ruidoso.
+- Converter SNR de dB para linear antes de usar Shannon e interpretar a condição $R \lt C$.
+- Definir BER e citar os valores típicos.
+
+</BlocoObjetivo>
+
+## Conceitos
+
+### C061 — Capacidade do canal e espectro de um sinal digital (Channel capacity)
+
+‹fonte: Electr L4 p. 2–8›
+
+**Capacidade do canal** (*channel capacity*) é a **velocidade máxima de transmissão (bit/s) teoricamente alcançável** num canal, e está diretamente ligada à **banda $B$** disponível. Num canal ideal de banda $B$, frequências até $B$ passam; harmônicos acima de $B$ são progressivamente atenuados (comportamento passa-baixas).
+
+Problema: uma sequência de bits **não é periódica** (depende da mensagem; ex.: ASCII do "C" = 01000011), logo não dá para definir a priori um espectro válido para qualquer sinal binário. Mesmo uma sucessão periódica de 1 e 0 tem **banda infinita** (linhas espectrais infinitas, de amplitude decrescente); e mesmo considerando só alguns harmônicos, uma onda quadrada ocupa muita banda (p. 3–4).
+
+Considerações gerais (p. 5–6):
+
+- a banda de um sinal **aumenta com a velocidade de transmissão**;
+- para uma dada velocidade, a frequência é **máxima** quando há alternância regular alto/baixo (mais transições por unidade de tempo);
+- **pior caso**: onda quadrada formada por **níveis alternados** (1010…), o máximo de transições por segundo.
+
+Regra-chave (p. 7): no pior caso, a **frequência fundamental** (1º harmônico) é **metade da velocidade de transmissão** em bit/s:
+
+$$
+f_1 = \frac{V}{2} \qquad (V \text{ em bit/s},\ f_1 \text{ em Hz})
+$$
+
+Exemplos do slide:
+
+- 8 bit/s alternados → período da onda quadrada 0,25 s → $f_1 = 1/0{,}25 = 4\,\mathrm{Hz}$ (metade de 8).
+- Sequência "1100…" (dois 1 e dois 0) a 8 bit/s → período 0,5 s → $f = 2\,\mathrm{Hz}$ (um quarto da velocidade).
+- 200 bit/s alternados → fundamental de **100 Hz**; o espectro é o de uma onda quadrada, com componente DC se os níveis não tiverem média zero (p. 8).
+
+Note as unidades diferentes: **bit/s** para velocidade, **Hz** para frequência.
+
+### C062 — 1º teorema de Nyquist (1st Nyquist theorem)
+
+‹fonte: Electr L4 p. 9–10›
+
+**Enunciado:** se um canal ideal tem banda $B$, sua capacidade máxima teórica é o **dobro da banda**.
+
+Para canal ideal (sem ruído) e codificação de **2 níveis**:
+
+$$
+C_{\max} = 2B \quad [\mathrm{baud}]
+$$
+
+(baud = símbolos por segundo.)
+
+Por quê: na transmissão digital as formas de onda representam **símbolos**, não o sinal original; basta o receptor distinguir **alto** de **baixo**. Então basta deixar passar o **1º harmônico** do pior caso, cuja frequência é $V/2$. Com $f_c = B$, cabem $V = 2B$ símbolos/s.
+
+Exemplos do slide (p. 10):
+
+- canal ideal de **4 kHz** → máximo teórico de **8000 símbolos/s** (sem erros); se 1 símbolo = 1 bit, também 8000 bit/s.
+- O valor é um **limite teórico**, não alcançado na prática. Costuma-se aplicar um fator de redução de **0,5 a 0,7**: um canal de 25 kHz teria na prática $C \approx 2 \cdot 25\,\mathrm{k} \cdot 0{,}6 = 30\,\mathrm{k}$ símbolos/s (faixa de 25 a 35 ksímbolos/s para fatores 0,5 a 0,7).
+
+### C063 — Baud × bit/s (Baud rate vs. bit rate)
+
+‹fonte: Electr L4 p. 11›
+
+O 1º teorema de Nyquist dá a capacidade em **símbolos por segundo**, medida em **baud** (*baud rate*), em homenagem a Émile Baudot (código Baudot da telegrafia).
+
+A baud rate máxima é **proporcional à banda** e não pode ser mudada (o número de transições por segundo define a banda ocupada). Como aumentar o bitrate, então? **Associando mais bits a cada transição**: um símbolo pode carregar vários bits.
+
+<BlocoConceito titulo="Definição de prova — baud × bit/s">
+
+*Baud = symbols per second. Only in case of 1 bit per symbol, bitrate and baud rate coincide.* Com $n$ bits por símbolo: bit rate = $n$ × baud rate.
+
+</BlocoConceito>
+
+### C064 — Codificação multinível e lei de Hartley (Multilevel encoding, Hartley's law)
+
+‹fonte: Electr L4 p. 12–14›
+
+Agrupando bits obtém-se um **alfabeto de símbolos**, por exemplo vários níveis de tensão (4, 8, …, 256 níveis). Com $M$ níveis lógicos, o número de bits por símbolo é
+
+$$
+n = \log_2 M \qquad (M = 4 \Rightarrow n = 2;\ M = 8 \Rightarrow n = 3;\ M = 16 \Rightarrow n = 4)
+$$
+
+Se o canal suporta $2B$ símbolos/s, o total de bits é $2B \log_2 M$. Essa é a **lei de Hartley**, capacidade do canal **ideal** (sem ruído) com codificação multinível:
+
+$$
+C = 2B\log_2 M \quad [\mathrm{bit/s}]
+$$
+
+Relação entre velocidade de modulação e bitrate (p. 14): sendo $T_s$ a duração de cada símbolo, $f_s = 1/T_s$ a velocidade de modulação e $f_d$ o bitrate,
+
+$$
+f_s = \frac{f_d}{n}
+$$
+
+isto é, a velocidade de modulação é $n$ vezes **menor** que o bitrate. A figura da p. 14 mostra 4 níveis ($+3, +1, -1, -3$) com 2 bits por símbolo (00, 11, 01, 10, 01).
+
+Exemplos numéricos (canal ideal de $B = 4\,\mathrm{kHz}$):
+
+| $M$ | $n = \log_2 M$ | $C = 2B\log_2 M$ |
+|---|---|---|
+| 2 | 1 | 8 kb/s |
+| 4 | 2 | 16 kb/s |
+| 8 | 3 | 24 kb/s |
+| 16 | 4 | 32 kb/s |
+
+E com $f_s = f_d/n$: um bitrate de 9600 bit/s com 4 bits por símbolo exige só $9600/4 = 2400$ baud.
+
+### C065 — Multinível com ruído (Multilevel encoding: real case)
+
+‹fonte: Electr L4 p. 15–16›
+
+Hartley sugere que basta aumentar $M$ para aumentar $C$ sem limite. No canal **real** há ruído: aumentar o número de níveis **diminui a distância entre níveis vizinhos**, ficando cada vez mais difícil distingui-los; a **probabilidade de erro aumenta**. Com muitos níveis, o ruído facilmente supera a "distância" entre níveis e compromete a interpretação do sinal recebido (figura com 2, 4 e 8 níveis sob o mesmo ruído). É isso que o teorema de Shannon-Hartley quantifica.
+
+### C066 — Teorema de Shannon-Hartley (Shannon-Hartley theorem)
+
+‹fonte: Electr L4 p. 17–19›
+
+Para um canal **real**, sujeito a ruído **AWGN** de potência $N$, com potência média de sinal recebido $S$, a capacidade é o **limite superior teórico** da taxa de informação que pode ser comunicada com **taxa de erro arbitrariamente baixa**:
+
+$$
+C_{n,\max} = B\log_2(1 + \mathrm{SNR}) \quad [\mathrm{bit/s}], \qquad \mathrm{SNR} = \frac{S}{N}
+$$
+
+Aqui a SNR é **razão de potências (linear), não dB**.
+
+Se $R$ é a taxa de informação (bitrate), para ter probabilidade de erro praticamente nula ($P_e \approx 0$) é preciso
+
+$$
+R \lt C
+$$
+
+<BlocoConceito titulo="Frase de prova — Q19">
+
+*Shannon channel capacity: the theoretical tightest upper bound on the information rate that can be communicated at an arbitrarily low error rate* → **the maximum data transfer rate a channel can support without error.**
+
+</BlocoConceito>
+
+**A curva de Shannon** (p. 18) mostra $S/\eta R$ em dB contra $B/R$ (Hz por bit/s). Acima da curva ($R \lt C$) ficam as **comunicações reais possíveis sem erros**; abaixo ($R \gt C$), região **impossível** (erros). Sobre a curva, $R = C$. Andar para a esquerda (menor $B/R$) = **mais eficiência espectral** (mais níveis), mas exige mais SNR. A curva tende a cerca de **−1,6 dB** para $B/R$ grande.
+
+<FiguraFonte figura="ne-ins-l4-p18" />
+
+**Multinível na prática** (p. 19): no PAM quantizado, passar a 4-PAM ou 8-PAM exige considerar a SNR ($E_b/N_0$; o slide chama $E_b$ de energia por símbolo e $N_0$ de potência de ruído em 1 Hz) e a probabilidade de erro associada. No gráfico, para a mesma probabilidade de erro de $10^{-10}$, o 4-PAM precisa de cerca de **4 dB** a mais que o 2-PAM, e o 8-PAM de cerca de **4,5 dB** a mais que o 4-PAM.
+
+<FiguraFonte figura="ne-ins-l4-p19" />
+
+#### Exemplos numéricos de Shannon
+
+Passo obrigatório: **converter SNR de dB para linear**, $\mathrm{SNR} = 10^{\mathrm{SNR_{dB}}/10}$.
+
+1. $B = 4\,\mathrm{kHz}$, $\mathrm{SNR} = 30\,\mathrm{dB} = 1000$:
+   $C = 4000 \cdot \log_2(1001) \approx 4000 \cdot 9{,}97 \approx 39{,}9\,\mathrm{kb/s}$.
+2. $B = 4\,\mathrm{kHz}$, $\mathrm{SNR} = 0\,\mathrm{dB} = 1$ (sinal e ruído com a mesma potência):
+   $C = 4000 \cdot \log_2 2 = 4\,\mathrm{kb/s}$, ou seja, $C = B$.
+3. $B = 1\,\mathrm{MHz}$, $\mathrm{SNR} = 20\,\mathrm{dB} = 100$:
+   $C = 10^6 \cdot \log_2(101) \approx 10^6 \cdot 6{,}66 \approx 6{,}66\,\mathrm{Mb/s}$.
+
+Erro clássico: usar 30 em vez de 1000 no exemplo 1 daria $4000 \cdot \log_2 31 \approx 19{,}8\,\mathrm{kb/s}$, metade do valor correto.
+
+Comparando com Hartley [INFERÊNCIA PEDAGÓGICA]: no exemplo 1, Hartley com $2B\log_2 M$ atingiria os mesmos 39,9 kb/s com $M = \sqrt{1 + \mathrm{SNR}} \approx 31{,}6$ níveis. Mais níveis que isso não aumentariam a capacidade sem erros, porque o ruído passa a confundir níveis vizinhos (C065). Atalho útil para SNR alta: $\log_2(1 + \mathrm{SNR}) \approx \mathrm{SNR_{dB}}/3$ (30 dB → cerca de 10 bit/s por Hz).
+
+### C067 — BER (Bit error rate)
+
+‹fonte: Electr L4 p. 25›
+
+Nas transmissões digitais, o parâmetro principal no receptor é a **BER**: a razão entre **bits recebidos incorretamente e bits transmitidos**. Está ligada à SNR (**SNR melhor → BER menor**; o slide diz "proporcional", no sentido de que depende da SNR) e mede a qualidade de todo o sistema digital.
+
+Valores típicos:
+
+- $10^{-3}$ pode ser aceitável em **telefonia**;
+- em **transmissão de dados** (internet), aceita-se no mínimo $10^{-7}$ (um erro em 10 milhões de bits). A 40 Mb/s: $40 \times 10^{6} \cdot 10^{-7} = 4$ erros/s.
+
+## Como isso caiu na prova de 2025
+
+**Q19** — *What is Shannon Channel Capacity in information theory?*
+Resposta: **a) The maximum data transfer rate a channel can support without error.**
+
+- b) "número de canais disponíveis para broadcasting" — capacidade é taxa (bit/s), não contagem de canais.
+- c) "largura física do canal" — banda é em Hz, não largura física; e capacidade é bit/s.
+- d) "medida da qualidade do canal" — vago; qualidade é medida por SNR/BER, não é a definição de capacidade.
+
+[INFERÊNCIA PEDAGÓGICA] O que mais pode cair deste módulo em 2026: diferença baud × bit/s (só coincidem com 1 bit por símbolo), $C = 2B$ de Nyquist, $n = \log_2 M$ e a exigência de SNR **linear** na fórmula de Shannon.
+
+<BlocoPegadinha titulo="Pegadinhas">
+
+- **SNR em Shannon é linear.** 30 dB = 1000, não 30. 20 dB = 100. 0 dB = 1 dá $C = B$.
+- **Nyquist dá símbolos/s (baud); Hartley e Shannon dão bit/s.** Não misture unidades.
+- **Nyquist e Hartley são para canal ideal (sem ruído); Shannon é para canal com AWGN.**
+- **Fundamental = metade do bitrate** no pior caso (1010…): 200 bit/s → 100 Hz, não 200 Hz.
+- **Mais níveis aumentam o bitrate, mas também a probabilidade de erro** quando há ruído.
+- **R menor que C** é a condição para erro arbitrariamente pequeno; com $R \gt C$ não há codificação que salve.
+
+</BlocoPegadinha>
+
+## Vocabulário EN → PT
+
+| Inglês | Português | Significado em 1 linha |
+|---|---|---|
+| Channel capacity | Capacidade do canal | Taxa máxima teórica (bit/s) que o canal suporta |
+| Worst case (alternating levels) | Pior caso (níveis alternados) | 1010…: máximo de transições, maior banda |
+| Fundamental frequency | Frequência fundamental | 1º harmônico; no pior caso, metade do bitrate |
+| 1st Nyquist theorem | 1º teorema de Nyquist | $C_{\max} = 2B$ símbolos/s em canal ideal |
+| Baud / baud rate | Baud / taxa de símbolos | Símbolos por segundo |
+| Bit rate | Taxa de bits | Bits por segundo = $n$ × baud |
+| Multilevel encoding | Codificação multinível | Vários bits por símbolo, $n = \log_2 M$ |
+| Hartley's law | Lei de Hartley | $C = 2B\log_2 M$ (canal ideal) |
+| Modulation velocity | Velocidade de modulação | $f_s = 1/T_s = f_d/n$ |
+| Shannon-Hartley theorem | Teorema de Shannon-Hartley | $C = B\log_2(1+\mathrm{SNR})$ com AWGN |
+| Spectral efficiency | Eficiência espectral | Bits/s por Hz de banda |
+| Arbitrarily low error rate | Taxa de erro arbitrariamente baixa | Possível se $R \lt C$ |
+| Bit error rate (BER) | Taxa de erro de bit | Bits errados ÷ bits transmitidos |
+| M-PAM | PAM de M níveis | Pulsos com M amplitudes; mais níveis, mais SNR exigida |

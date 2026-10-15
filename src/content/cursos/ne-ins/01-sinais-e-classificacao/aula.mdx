@@ -1,0 +1,293 @@
+---
+titulo: "Sinais e classificação — aula"
+secao: "aula"
+secaoOrdem: 1
+---
+
+## Resumo executivo
+
+Este módulo é o vocabulário de base de toda a disciplina: o que é um sistema de comunicação, o que é um sinal (*signal*) e como os sinais são classificados — determinístico × aleatório, tempo contínuo × discreto, amplitude contínua × discreta, analógico × digital, periódico × aperiódico. Fecha com os **sinais elementares** que reaparecem em todos os módulos seguintes: *rect*, onda quadrada, **delta de Dirac**, senoide e *sinc*.
+
+Na prova de 2025 caiu **uma** questão direta daqui (Q24, propriedade do Dirac), mas quase todas as outras dependem deste vocabulário: o Dirac é a base da amostragem (módulo 04) e da resposta ao impulso (módulo 03); rect e sinc são o par de Fourier mais cobrado (módulo 02); "quantizado" e "digital" voltam na conversão A/D.
+
+<BlocoObjetivo titulo="Ao final você deve conseguir">
+
+- Nomear os blocos de um sistema de comunicação (*source*, *transmitter*, *channel*, *receiver*, *destination*).
+- Distinguir processo estocástico, estacionário e ergódico em uma frase cada.
+- Classificar um sinal quanto ao tempo, à amplitude, à determinação e à periodicidade, e dizer por que "digital" exige as duas discretizações.
+- Listar vantagens e custos da transmissão digital.
+- Enunciar as propriedades do delta de Dirac (distribuição, área 1, amostragem, espectro plano).
+- Diferenciar sinc normalizada (zeros nos inteiros) de Samp (zeros nos múltiplos de $\pi$).
+
+</BlocoObjetivo>
+
+## Conceitos
+
+### C001 — Sistema de comunicação (communication diagram)
+
+‹fonte: Electr L1 p. 9›
+
+O slide apresenta o diagrama clássico de uma cadeia de comunicação digital:
+
+- ***Source*** (fonte de informação): gera a informação — voz, vídeo, dados.
+- ***Transmitter*** (transmissor): converte a informação em grandezas físicas adequadas para atravessar o canal (elétricas, ópticas). No diagrama ele é composto por *quantizer/source encoder* → *channel encoder* → *modulator* → *amplifier*.
+- ***Channel*** (canal): o meio físico entre as antenas (ou o cabo).
+- ***Receiver*** (receptor): interpreta essas grandezas físicas e reconstrói a informação. No diagrama: *RF front end* (amplificador/filtro/misturador) → *demodulator* → *discrete channel decoder* → *source decoder*.
+- ***Destination / information sink***: quem recebe a informação reconstruída.
+
+Repare na **simetria**: cada bloco do transmissor tem seu "inverso" no receptor (codificador de fonte ↔ decodificador de fonte, codificador de canal ↔ decodificador de canal, modulador ↔ demodulador). Esse diagrama é o índice do curso: quantização e codificação de fonte (módulo 04), banda base (módulo 05), ruído no *front end* (módulo 06), modulação (módulo 09).
+
+<FiguraFonte figura="ne-ins-l1-p09" />
+
+### C002 — Sinal (signal)
+
+‹fonte: Electr L1 p. 10–11, 18›
+
+**Sinal** é uma grandeza física variável encarregada de "transportar" informação. Isso implica geração, associação da informação, transferência, recepção e reconversão em informação. A grandeza física varia muito: intensidade de luz e cor numa tela (sinal de TV), variação de pressão do ar (sinal musical), onda eletromagnética (sinal de rádio).
+
+Para estudar sinais, eles são **esquematizados como funções matemáticas** de uma ou mais variáveis. No caso mais comum, a grandeza física (ordenada) é função do tempo (abscissa) — por exemplo, uma tensão em volts em função do tempo em milissegundos.
+
+### C003 — Processo estocástico, estacionário e ergódico (stochastic, stationary, ergodic process)
+
+‹fonte: Electr L1 p. 12–15, 21›
+
+- ***Stochastic process*** (processo estocástico): função do tempo cujos valores $X(t)$ em cada instante $t$ são **variáveis aleatórias** — ou seja, uma **família de variáveis aleatórias**. Observações repetidas do mesmo processo produzem trajetórias diferentes, chamadas **realizações** (*realizations*). Fixando um instante $\tau$ e olhando todas as realizações, obtém-se a variável aleatória $X(\tau)$.
+- ***Stationary process*** (estacionário): processo estocástico cujas propriedades estatísticas (esperanças matemáticas como a média $\mu$ e a variância $\sigma^2$) **não mudam com o tempo**. As causas que geram a informação e os mecanismos que formam o sinal permanecem os mesmos. Há "graus" de estacionariedade (sentido estrito/amplo, forte/fraco). Exemplo do slide: o câmbio USD/EUR é aleatório, mas com a estatística de 100 dias em 2017 era possível prever, com boa confiança, variação entre −1 % e +1 % nas semanas seguintes. Outro exemplo (p. 14): processo estacionário **na média** — mesma $\mu$, mas desvios-padrão $\sigma$ diferentes (baixa, média e alta variabilidade).
+- ***Ergodic process*** (ergódico): processo estacionário em que **cada membro (realização) é estatisticamente representativo de todos os outros**. Logo, a densidade de probabilidade extraída de uma única realização é sempre a mesma.
+
+**Por que isso importa em telecomunicações (p. 21):** a informação transmitida não é conhecida *a priori*, nem os distúrbios (ambiente, circuitos eletrônicos). Sob certas condições, os sinais de TLC podem ser tratados como processos **estacionários e ergódicos**: então estatísticas como $\mu$ e $\sigma$, tiradas de uma só realização, permitem calcular, por exemplo, a **densidade espectral de potência** (*power spectral density*, vista no módulo de ruído) e modelar matematicamente o sistema eletrônico.
+
+### C004 — Números complexos e sinal complexo (complex numbers, Euler's formula)
+
+‹fonte: Electr L1 p. 16–17›
+
+Conjuntos numéricos: $\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R}$ (naturais, inteiros, racionais, reais; os reais incluem os irracionais como $\pi$ e $\sqrt{3}$).
+
+A **unidade imaginária** $i$ — em engenharia elétrica escrita $j$ — é a solução de $x^2+1=0$, isto é, $j^2=-1$. Um número complexo é $n = a + jb$, ou o par $(a,b)$: parte real e parte imaginária. Número real puro: $(a,0)$; imaginário puro: $(0,b)$.
+
+Para sinais vale o mesmo: um **sinal complexo** é
+
+$$
+S(t) = S_r(t) + j\,S_i(t)
+$$
+
+A **fórmula de Euler** liga exponencial complexa e trigonometria:
+
+$$
+e^{j\varphi} = \cos\varphi + j\sin\varphi
+$$
+
+No círculo unitário, $\cos\varphi$ é a projeção no eixo real e $\sin\varphi$ no eixo imaginário. É esta fórmula que permite escrever a série de Fourier com exponenciais (módulo 02) e que está por trás das componentes **I/Q** (*in-phase* = parte real, *quadrature* = parte imaginária) do módulo de modulação.
+
+### C005 — Determinístico × aleatório (deterministic × random/stochastic signals)
+
+‹fonte: Electr L1 p. 19–21›
+
+- ***Deterministic signals***: trajetória determinada; em qualquer instante, as flutuações são conhecidas em todo o domínio do tempo. Podem ser definidos **exatamente por uma fórmula matemática** (ex.: uma senoide). Modelo: relação clara de causa e efeito entre entrada e saída.
+- ***Random (stochastic) signals***: as flutuações dependem de fenômenos aleatórios — os resultados podem diferir de uma vez para outra (ex.: jogar um dado). Modelo: incerteza; a entrada fornece uma **faixa de resultados possíveis**.
+
+Em telecomunicações, o sinal útil é tratado como aleatório porque a informação **não é conhecida antes** — se fosse, não haveria nada a transmitir — e o ruído também é aleatório.
+
+### C006 — Dimensão, tempo e amplitude (one/multidimensional; continuous/discrete time; continuous/discrete amplitude)
+
+‹fonte: Electr L1 p. 22–24›
+
+- **Unidimensional** (*one-dimensional*): evolui pela variação de **uma** variável (tempo, espaço…). **Multidimensional**: evolui pela variação simultânea de duas ou mais (ex.: tempo e espaço).
+- ***Continuous-time***: o domínio da função (o tempo) tem a cardinalidade dos **números reais**. ***Discrete-time***: o domínio tem a cardinalidade dos **números inteiros**.
+- ***Continuous amplitude***: o sinal pode assumir valores num conjunto **não enumerável** (*uncountable*). ***Discrete amplitude***: valores num conjunto **enumerável** (*countable*) — são os sinais **numéricos ou quantizados** (*quantized signals*).
+
+**Analogia da régua (p. 24):** medir a altura de todos os cidadãos da Toscana com precisão de nanômetros daria milhões de valores (praticamente infinitos); uma régua comum tem subdivisões finitas. A largura da **menor subdivisão** (1 cm, ou 1 mm no melhor caso) é o **quantum** do processo de medida. Quantizar é exatamente isso: só existem os valores das "marcas da régua". Essa ideia volta como **passo de quantização** $K$ no módulo 04.
+
+### C007 — Digital × analógico (digital × analogue signals)
+
+‹fonte: Electr L1 p. 25–28›
+
+**Sinal digital** (*digital signal*): assume valores de amplitude num conjunto enumerável, para um conjunto enumerável de instantes — **tempo e amplitude discretos ao mesmo tempo**. A tabela da p. 25 cruza as duas classificações:
+
+| Tempo → / Amplitude ↓ | Contínuo | Discreto |
+|---|---|---|
+| **Contínua** | analógico | amostrado (tempo discreto) |
+| **Discreta** | quantizado em tempo contínuo | **digital** |
+
+**Sinal analógico** (*analogue/analog*): usado desde o início das telecomunicações, reflete o mundo. O canal (um cabo, por exemplo) também é "analógico", por isso **não se transmite diretamente um sinal digital**. Na transmissão analógica, a informação transmitida é **a própria forma do sinal**, como gerada no transmissor; o transmissor-receptor é construído em função do tipo de sinal (ex.: rede telefônica dedicada à voz).
+
+**Transmissão digital (p. 27):** o sinal digital vem de uma fonte digital (um PC) ou da digitalização de um analógico por um **ADC** (*A/D converter*); o **DAC** devolve o analógico. Após uma série de operações o sinal vira uma sequência de **símbolos**; aí se transmitem formas de onda analógicas, mas que **representam os símbolos codificados, não a forma de onda original**.
+
+**Vantagens (p. 28):**
+
+- o ruído que afeta o sinal na transmissão pode ser **controlado com mais precisão**;
+- dá para usar o poder de cálculo dos microprocessadores no processamento;
+- **economia de potência** para a mesma informação, ou **mais capacidade** para a mesma potência;
+- a estrutura do transmissor/receptor **não muda** com o tipo de sinal: voz, vídeo e dados pelo mesmo sistema.
+
+**Custos:** esquema de transmissão/recepção **mais complexo** que o analógico, e o processo A/D/A **pode causar perda de informação**. Mesmo assim, as vantagens fizeram do digital a melhor escolha em todo sistema RTX.
+
+### C008 — Periódico × aperiódico (periodic × aperiodic signals)
+
+‹fonte: Electr L1 p. 29›
+
+**Sinal periódico**: definido em todo o eixo real; para descrevê-lo basta conhecê-lo em **um período**:
+
+$$
+s(t) = s(t + nT), \qquad T \gt 0,\quad f = \frac{1}{T}
+$$
+
+Uma combinação linear de sinais periódicos de período $T$, ou de período submúltiplo $T/n$, é por sua vez periódica de período $T$ — é exatamente o que a série de Fourier faz (fundamental + harmônicos). **Sinal aperiódico**: não se repete no tempo.
+
+### C009 — Função retangular e onda quadrada (rectangular function, square wave)
+
+‹fonte: Electr L1 p. 30–31›
+
+O **pulso retangular** (*rect*) mantém valor constante por toda a sua duração limitada $\tau$:
+
+$$
+\mathrm{rect}\left(\frac{t}{\tau}\right) =
+\begin{cases}
+1, & \lvert t \rvert \lt \frac{\tau}{2} \\
+0, & \lvert t \rvert \gt \frac{\tau}{2}
+\end{cases}
+$$
+
+A soma de pulsos retangulares repetidos a cada $T$ dá um sinal periódico de período $T$, a **onda quadrada** (*square wave*):
+
+$$
+sq(t) = \sum_{n=-\infty}^{+\infty} \mathrm{rect}\left(\frac{t-nT}{\tau}\right)
+$$
+
+O rect é o "tijolo" de três ideias centrais: o Dirac é o limite de um rect (C010); o rect no tempo vira sinc na frequência (módulo 02); o filtro passa-baixas ideal é um rect na frequência (módulo 03).
+
+### C010 — Delta de Dirac (Dirac delta function)
+
+‹fonte: Electr L1 p. 32–33, 52; Electr L2 p. 6›
+
+**O Dirac não é uma função de verdade, é uma distribuição**: só pode ser definido **dentro de uma integral**. Constrói-se como o limite de um rect de área unitária cuja largura vai a zero:
+
+$$
+\delta(t) = \lim_{T \to 0} \frac{1}{T}\,\mathrm{rect}\left(\frac{t}{T}\right)
+$$
+
+O resultado vale zero em todo lugar, exceto em $t=0$, onde assume valor nominalmente infinito — por isso é estritamente impossível desenhá-lo; representa-se por uma **seta** (o rect cada vez mais estreito e mais alto).
+
+<FiguraFonte figura="ne-ins-l1-p32" />
+
+Propriedades que a prova cobra:
+
+1. **Área unitária:**
+
+$$
+\int_{-\infty}^{+\infty} \delta(t)\,dt = 1
+$$
+
+2. **Propriedade de amostragem** (*sifting/sampling property*): aplicado a uma função $s(t)$ dentro de uma integral, extrai o valor da função no ponto onde o delta está aplicado (desde que $s(t)$ seja contínua em $t_0$):
+
+$$
+\int_{-\infty}^{+\infty} s(t)\,\delta(t-t_0)\,dt = s(t_0)
+$$
+
+O slide escreve ao lado: **SAMPLING**. Um trem de Diracs (pente de Dirac) aplicado ao sinal produz as amostras — é o modelo da amostragem ideal do módulo 04.
+
+3. **Espectro plano:** no limite $\tau \to 0$ do rect de área $Q = A\tau = 1$, o espectro sinc se alarga até virar uma **constante** de amplitude 1 em todas as frequências (L1 p. 52). Por isso a L2 p. 6 diz que o espectro de $\delta(t)$ é "*flat and infinite*" — e é por isso que o Dirac é a entrada ideal para caracterizar um sistema: a saída para $\delta(t)$ é a **resposta ao impulso** $h(t)$ (módulo 03).
+
+<BlocoConceito titulo="Dirac em uma frase de prova">
+
+*The Dirac delta is a distribution (not a real function): it is zero everywhere except at one instant, it integrates to 1 over its domain, and inside an integral it extracts (samples) the value of a function at that instant. Its spectrum is flat.*
+
+</BlocoConceito>
+
+### C011 — Senoide (sinusoidal signal)
+
+‹fonte: Electr L1 p. 34–35›
+
+Bastam três elementos para definir uma senoide: **amplitude** $A$ (máxima excursão), **pulsação** $\omega = 2\pi f$ e **fase inicial** $\varphi$ (o argumento da senoide em $t = 0$). A frequência $f$ é o número de ciclos por unidade de tempo.
+
+$$
+s(t) = A\sin(2\pi f t + \varphi)
+$$
+
+Uma senoide com fase inicial $\pi/2$ é uma **cossenoide**:
+
+$$
+\sin\left(\omega t + \frac{\pi}{2}\right) = \cos(\omega t)
+$$
+
+A p. 35 mostra o efeito dos parâmetros: aumentar a **fase** desloca a curva no tempo; aumentar a **frequência** comprime os ciclos. As senoides são a "base" da análise de Fourier: todo sinal periódico vira soma de senoides.
+
+### C012 — Sinc normalizada e Samp (sinc, cardinal sine)
+
+‹fonte: Electr L1 p. 36›
+
+A função **SINC** (*cardinal sine*, seno cardinal) é uma função **normalizada** (por $\pi$), muito usada em TLC:
+
+$$
+\mathrm{sinc}(x) = \frac{\sin(\pi x)}{\pi x}
+$$
+
+A versão **não normalizada**, chamada ***sampling*** (Samp), é:
+
+$$
+\mathrm{Samp}(x) = \frac{\sin(x)}{x}
+$$
+
+Por causa da normalização, a **sinc vale zero nos inteiros** ($x = \pm 1, \pm 2, \dots$), enquanto a **Samp vale zero nos múltiplos de** $\pi$ ($x = \pm\pi, \pm 2\pi, \dots$). O gráfico do slide mostra as duas com pico 1 na origem e lóbulos laterais decrescentes. A sinc aparece como transformada do rect (módulo 02), como resposta ao impulso do passa-baixas ideal (módulo 03) e como função de interpolação na reconstrução do sinal amostrado (módulo 04).
+
+<BlocoConceito titulo="Sinc × Samp">
+
+*Normalized sinc: sinc(x) = sin(πx)/(πx), zeros at the integers. Non-normalized (Samp): sin(x)/x, zeros at multiples of π.*
+
+</BlocoConceito>
+
+<BlocoComparacao titulo="Resumo das classificações">
+
+| Critério | Uma ponta | Outra ponta |
+|---|---|---|
+| Determinação | determinístico (fórmula exata) | aleatório/estocástico (faixa de resultados) |
+| Variáveis | unidimensional | multidimensional |
+| Tempo | contínuo (cardinalidade dos reais) | discreto (cardinalidade dos inteiros) |
+| Amplitude | contínua (não enumerável) | discreta/quantizada (enumerável) |
+| Repetição | periódico, $f = 1/T$ | aperiódico |
+| Natureza | analógico (a forma é a informação) | digital (tempo **e** amplitude discretos) |
+
+</BlocoComparacao>
+
+## Como isso caiu na prova de 2025
+
+**Q24 — *What is a property of a Dirac delta function?***
+
+Resposta correta: **(d) *It produces an impulse at a specific time instant and integrates to 1 over its domain*.** É literalmente a soma de "zero exceto em um instante" (L1 p. 32) com $\int \delta(t)\,dt = 1$ (L1 p. 33).
+
+- (a) *It has no Fourier transform* — errado: a transformada existe e é **constante/plana** (L1 p. 52; L2 p. 6).
+- (b) *It is a continuous and differentiable function* — errado: o Dirac **nem é função**, é distribuição (L1 p. 32).
+- (c) *It represents the impulse response of an LTI system* — pegadinha: o Dirac é a **entrada** que se aplica ao sistema; a **resposta ao impulso** $h(t)$ é a **saída** do sistema a essa entrada (L2 p. 5).
+
+**O que mais pode cair daqui** [INFERÊNCIA PEDAGÓGICA]: definição de sinal digital (tempo **e** amplitude discretos); ergódico (uma realização representa todas); vantagens da transmissão digital; zeros da sinc normalizada nos inteiros; propriedade de amostragem do Dirac.
+
+<BlocoPegadinha titulo="Pegadinhas">
+
+- "Digital" exige **tempo discreto e amplitude discreta**. Só amostrado (tempo discreto, amplitude contínua) **não** é digital; só quantizado também não.
+- O Dirac **não** é função contínua nem diferenciável e **não** "é" a resposta ao impulso — ele é a entrada que gera $h(t)$.
+- Ergódico ≠ estacionário: todo ergódico é estacionário, mas ergódico exige ainda que **uma única realização** represente estatisticamente o processo inteiro.
+- Sinc normalizada zera nos **inteiros**; Samp zera nos **múltiplos de π**. Uma alternativa que troque as duas está errada.
+- Na transmissão digital as formas de onda enviadas são analógicas, mas representam **símbolos codificados**, não a forma original do sinal.
+- A transmissão digital tem custo: transmissor/receptor **mais complexo** e possível **perda de informação** na conversão A/D/A.
+
+</BlocoPegadinha>
+
+## Vocabulário EN → PT
+
+| English | Português | O que significa |
+|---|---|---|
+| *source / sink* | fonte / destino | quem gera e quem recebe a informação |
+| *channel* | canal | meio físico entre transmissor e receptor |
+| *stochastic process* | processo estocástico | família de variáveis aleatórias no tempo |
+| *realization* | realização | uma das trajetórias possíveis do processo |
+| *stationary* | estacionário | estatísticas (média, variância) não mudam no tempo |
+| *ergodic* | ergódico | uma realização representa todas |
+| *deterministic signal* | sinal determinístico | descrito exatamente por uma fórmula |
+| *countable / uncountable* | enumerável / não enumerável | conjunto discreto × contínuo de valores |
+| *quantized signal* | sinal quantizado | amplitude restrita a níveis discretos |
+| *periodic signal* | sinal periódico | repete-se a cada período T |
+| *rectangular pulse (rect)* | pulso retangular | constante numa duração limitada, zero fora |
+| *Dirac delta* | delta de Dirac | impulso de área 1, distribuição |
+| *sifting (sampling) property* | propriedade de amostragem | o Dirac extrai o valor da função num instante |
+| *pulsation / initial phase* | pulsação / fase inicial | ω = 2πf / argumento da senoide em t = 0 |
+| *cardinal sine (sinc)* | seno cardinal | sin(πx)/(πx), zeros nos inteiros |

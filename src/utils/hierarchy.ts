@@ -36,9 +36,13 @@ export function cursoNaTurma(c: CursoConfig, turma: Turma): boolean {
   return Array.isArray(c.turma) ? c.turma.includes(turma) : c.turma === turma;
 }
 
+/** Curso fora do currículo (seção "Extras"); nunca entra em turma/semestre/época. */
+export const ehExtra = (c: CursoConfig): boolean => c.extra !== undefined;
+
 export function filtrarCursos(f: FiltroCurso): CursoConfig[] {
   return listarFamilias().map((familia) => familia.representante).filter(
     (c) =>
+      !ehExtra(c) &&
       c.ano === f.ano &&
       (f.turma === undefined || cursoNaTurma(c, f.turma)) &&
       (f.semestre === undefined || c.semestre === f.semestre) &&
@@ -47,6 +51,13 @@ export function filtrarCursos(f: FiltroCurso): CursoConfig[] {
 }
 
 export const contarMaterias = (f: FiltroCurso): number => filtrarCursos(f).length;
+
+/** Cursos extras (fora do currículo) de um ano — seção "Extras" da tela de turmas. */
+export function filtrarExtras(ano: Ano): CursoConfig[] {
+  return listarFamilias()
+    .map((familia) => familia.representante)
+    .filter((c) => ehExtra(c) && c.ano === ano);
+}
 
 /** Todos os cursos de um ano (usado no dashboard). */
 export const getCoursesByAno = (ano: Ano): CursoConfig[] => filtrarCursos({ ano });
@@ -144,6 +155,7 @@ export function buildNavPath(curso: CursoConfig): string {
  * pelo botão "Voltar" do cabeçalho ao entrar numa matéria.
  */
 export function listingPathDoCurso(c: CursoConfig): string {
+  if (ehExtra(c)) return `/ano/${c.ano}#extras`;
   const turma = Array.isArray(c.turma) ? c.turma[0] : c.turma;
   return anoUsaTurma(c.ano)
     ? `/ano/${c.ano}/${turma ?? 'geral'}/${c.semestre}/${c.epoca}`

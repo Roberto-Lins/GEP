@@ -1,0 +1,1031 @@
+{
+ "curso": "ne-ins",
+ "arquitetura": "curso_unico",
+ "status": "confirmada",
+ "conceitos": [
+  {
+   "concept_id": "C001",
+   "conceito": "Sistema de comunicação: fonte, transmissor, canal, receptor, destino",
+   "modulo": "01-sinais-e-classificacao",
+   "fonte_localizada": "Electr L1 p. 9",
+   "questoes": [
+    "NE-M01-001"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C002",
+   "conceito": "Sinal como grandeza física que transporta informação",
+   "modulo": "01-sinais-e-classificacao",
+   "fonte_localizada": "Electr L1 p. 10–11",
+   "questoes": [
+    "NE-M01-012"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C003",
+   "conceito": "Processo estocástico, estacionário e ergódico",
+   "modulo": "01-sinais-e-classificacao",
+   "fonte_localizada": "Electr L1 p. 12–15, 21",
+   "questoes": [
+    "NE-M01-002",
+    "NE-M01-003"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C004",
+   "conceito": "Números complexos, fórmula de Euler e sinal complexo",
+   "modulo": "01-sinais-e-classificacao",
+   "fonte_localizada": "Electr L1 p. 16–17",
+   "questoes": [
+    "NE-P25-Q17"
+   ],
+   "cobrado_em_2025": true
+  },
+  {
+   "concept_id": "C005",
+   "conceito": "Sinal determinístico × aleatório",
+   "modulo": "01-sinais-e-classificacao",
+   "fonte_localizada": "Electr L1 p. 19–21",
+   "questoes": [
+    "NE-M01-011"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C006",
+   "conceito": "Tempo contínuo/discreto; amplitude contínua/discreta",
+   "modulo": "01-sinais-e-classificacao",
+   "fonte_localizada": "Electr L1 p. 22–24",
+   "questoes": [
+    "NE-M01-004",
+    "NE-M01-005"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C007",
+   "conceito": "Sinal digital × analógico e vantagens da transmissão digital",
+   "modulo": "01-sinais-e-classificacao",
+   "fonte_localizada": "Electr L1 p. 25–28",
+   "questoes": [
+    "NE-M01-005",
+    "NE-M01-006"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C008",
+   "conceito": "Sinal periódico × aperiódico",
+   "modulo": "01-sinais-e-classificacao",
+   "fonte_localizada": "Electr L1 p. 29",
+   "questoes": [
+    "NE-M01-013"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C009",
+   "conceito": "Função retangular e onda quadrada",
+   "modulo": "01-sinais-e-classificacao",
+   "fonte_localizada": "Electr L1 p. 30–31",
+   "questoes": [
+    "NE-M01-014"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C010",
+   "conceito": "Delta de Dirac",
+   "modulo": "01-sinais-e-classificacao",
+   "fonte_localizada": "Electr L1 p. 32–33, 52",
+   "questoes": [
+    "NE-P25-Q24",
+    "NE-M01-007",
+    "NE-M01-008"
+   ],
+   "cobrado_em_2025": true
+  },
+  {
+   "concept_id": "C011",
+   "conceito": "Sinal senoidal",
+   "modulo": "01-sinais-e-classificacao",
+   "fonte_localizada": "Electr L1 p. 34–35",
+   "questoes": [
+    "NE-M01-009"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C012",
+   "conceito": "Função sinc",
+   "modulo": "01-sinais-e-classificacao",
+   "fonte_localizada": "Electr L1 p. 36",
+   "questoes": [
+    "NE-M01-010"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C013",
+   "conceito": "Série de Fourier e harmônicos da onda quadrada",
+   "modulo": "02-analise-de-fourier",
+   "fonte_localizada": "Electr L1 p. 37–39",
+   "questoes": [
+    "NE-M02-001",
+    "NE-M02-002"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C014",
+   "conceito": "Espectro de linhas (SFT) e teorema de Parseval",
+   "modulo": "02-analise-de-fourier",
+   "fonte_localizada": "Electr L1 p. 40–43",
+   "questoes": [
+    "NE-M02-003"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C015",
+   "conceito": "Importância da análise em frequência",
+   "modulo": "02-analise-de-fourier",
+   "fonte_localizada": "Electr L1 p. 44–49",
+   "questoes": [
+    "NE-M02-010"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C016",
+   "conceito": "CTFT: rect ↔ sinc, Dirac ↔ constante",
+   "modulo": "02-analise-de-fourier",
+   "fonte_localizada": "Electr L1 p. 50–53",
+   "questoes": [
+    "NE-M01-008",
+    "NE-M02-004"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C017",
+   "conceito": "Largura de banda e B ∝ 1/T",
+   "modulo": "02-analise-de-fourier",
+   "fonte_localizada": "Electr L1 p. 53–55",
+   "questoes": [
+    "NE-M02-005",
+    "NE-M02-009"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C018",
+   "conceito": "DTFT: discreto aperiódico → espectro contínuo periódico",
+   "modulo": "02-analise-de-fourier",
+   "fonte_localizada": "Electr L1 p. 55",
+   "questoes": [
+    "NE-P25-Q15",
+    "NE-M02-006"
+   ],
+   "cobrado_em_2025": true
+  },
+  {
+   "concept_id": "C019",
+   "conceito": "DFT e FFT",
+   "modulo": "02-analise-de-fourier",
+   "fonte_localizada": "Electr L1 p. 56–57",
+   "questoes": [
+    "NE-P25-Q16",
+    "NE-M02-008"
+   ],
+   "cobrado_em_2025": true
+  },
+  {
+   "concept_id": "C020",
+   "conceito": "Resumo: periódico ↔ linhas, discreto ↔ periódico",
+   "modulo": "02-analise-de-fourier",
+   "fonte_localizada": "Electr L1 p. 58",
+   "questoes": [
+    "NE-P25-Q15",
+    "NE-P25-Q16",
+    "NE-M02-007"
+   ],
+   "cobrado_em_2025": true
+  },
+  {
+   "concept_id": "C021",
+   "conceito": "Sistema caixa-preta; invariância no tempo",
+   "modulo": "03-sistemas-filtros-e-decibel",
+   "fonte_localizada": "Electr L2 p. 2–3",
+   "questoes": [
+    "NE-M03-008"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C022",
+   "conceito": "Linearidade: homogeneidade e aditividade",
+   "modulo": "03-sistemas-filtros-e-decibel",
+   "fonte_localizada": "Electr L2 p. 4",
+   "questoes": [
+    "NE-M03-001"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C023",
+   "conceito": "Causalidade",
+   "modulo": "03-sistemas-filtros-e-decibel",
+   "fonte_localizada": "Electr L2 p. 5",
+   "questoes": [
+    "NE-M03-002"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C024",
+   "conceito": "Resposta ao impulso, função de transferência, LTI",
+   "modulo": "03-sistemas-filtros-e-decibel",
+   "fonte_localizada": "Electr L2 p. 5–6",
+   "questoes": [
+    "NE-M03-003"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C025",
+   "conceito": "Filtros ideais LP, HP e BP; não causalidade",
+   "modulo": "03-sistemas-filtros-e-decibel",
+   "fonte_localizada": "Electr L2 p. 7–18",
+   "questoes": [
+    "NE-M03-004",
+    "NE-M03-005"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C026",
+   "conceito": "Filtros reais",
+   "modulo": "03-sistemas-filtros-e-decibel",
+   "fonte_localizada": "Electr L2 p. 19",
+   "questoes": [
+    "NE-M03-009"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C027",
+   "conceito": "Decibel",
+   "modulo": "03-sistemas-filtros-e-decibel",
+   "fonte_localizada": "Electr L2 p. 20",
+   "questoes": [
+    "NE-M03-006",
+    "NE-M03-007",
+    "NE-M06-003"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C028",
+   "conceito": "Etapas do ADC",
+   "modulo": "04-conversao-ad-e-amostragem",
+   "fonte_localizada": "Electr L2 p. 21",
+   "questoes": [
+    "NE-M04-001"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C029",
+   "conceito": "Amostragem e pente de Dirac",
+   "modulo": "04-conversao-ad-e-amostragem",
+   "fonte_localizada": "Electr L2 p. 22–24",
+   "questoes": [
+    "NE-M04-014"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C030",
+   "conceito": "Espectro do sinal amostrado",
+   "modulo": "04-conversao-ad-e-amostragem",
+   "fonte_localizada": "Electr L2 p. 25–28",
+   "questoes": [
+    "NE-M04-004"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C031",
+   "conceito": "Teorema de Nyquist-Shannon",
+   "modulo": "04-conversao-ad-e-amostragem",
+   "fonte_localizada": "Electr L2 p. 28–30",
+   "questoes": [
+    "NE-P25-Q11",
+    "NE-P25-Q22",
+    "NE-M04-002",
+    "NE-M04-003",
+    "NE-M04-013"
+   ],
+   "cobrado_em_2025": true
+  },
+  {
+   "concept_id": "C032",
+   "conceito": "Aliasing",
+   "modulo": "04-conversao-ad-e-amostragem",
+   "fonte_localizada": "Electr L2 p. 30, 39",
+   "questoes": [
+    "NE-P25-Q12",
+    "NE-P25-Q14",
+    "NE-M04-005"
+   ],
+   "cobrado_em_2025": true
+  },
+  {
+   "concept_id": "C033",
+   "conceito": "Filtro anti-aliasing",
+   "modulo": "04-conversao-ad-e-amostragem",
+   "fonte_localizada": "Electr L2 p. 37–40",
+   "questoes": [
+    "NE-P25-Q13",
+    "NE-M04-003",
+    "NE-M04-006"
+   ],
+   "cobrado_em_2025": true
+  },
+  {
+   "concept_id": "C034",
+   "conceito": "Reconstrução ideal e interpolação cardinal",
+   "modulo": "04-conversao-ad-e-amostragem",
+   "fonte_localizada": "Electr L2 p. 31–33",
+   "questoes": [
+    "NE-P25-Q21",
+    "NE-P25-Q22",
+    "NE-M04-012"
+   ],
+   "cobrado_em_2025": true
+  },
+  {
+   "concept_id": "C035",
+   "conceito": "Sample and hold / zero-order hold",
+   "modulo": "04-conversao-ad-e-amostragem",
+   "fonte_localizada": "Electr L2 p. 34–36",
+   "questoes": [
+    "NE-P25-Q20",
+    "NE-M04-007"
+   ],
+   "cobrado_em_2025": true
+  },
+  {
+   "concept_id": "C036",
+   "conceito": "Quantização e erro de quantização",
+   "modulo": "04-conversao-ad-e-amostragem",
+   "fonte_localizada": "Electr L2 p. 42–45",
+   "questoes": [
+    "NE-M04-008",
+    "NE-M04-009",
+    "NE-M04-011"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C037",
+   "conceito": "Codificação e bitrate",
+   "modulo": "04-conversao-ad-e-amostragem",
+   "fonte_localizada": "Electr L2 p. 46–47",
+   "questoes": [
+    "NE-P25-Q26",
+    "NE-M04-010",
+    "NE-M04-011"
+   ],
+   "cobrado_em_2025": true
+  },
+  {
+   "concept_id": "C038",
+   "conceito": "DAC",
+   "modulo": "04-conversao-ad-e-amostragem",
+   "fonte_localizada": "Electr L2 p. 48–49",
+   "questoes": [
+    "NE-M04-015"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C039",
+   "conceito": "Transmissão em banda base × passband",
+   "modulo": "05-transmissao-em-banda-base-e-pcm",
+   "fonte_localizada": "Electr L2 p. 50–51",
+   "questoes": [
+    "NE-P25-Q23",
+    "NE-M05-001"
+   ],
+   "cobrado_em_2025": true
+  },
+  {
+   "concept_id": "C040",
+   "conceito": "Cadeia de line coding; bit rate × symbol rate",
+   "modulo": "05-transmissao-em-banda-base-e-pcm",
+   "fonte_localizada": "Electr L2 p. 52–55",
+   "questoes": [
+    "NE-M05-002"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C041",
+   "conceito": "NRZ, RZ, unipolar, polar, NRZ-L, NRZ-I",
+   "modulo": "05-transmissao-em-banda-base-e-pcm",
+   "fonte_localizada": "Electr L2 p. 56–59",
+   "questoes": [
+    "NE-M05-003",
+    "NE-M05-004"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C042",
+   "conceito": "Codificação bipolar / AMI",
+   "modulo": "05-transmissao-em-banda-base-e-pcm",
+   "fonte_localizada": "Electr L2 p. 60–61",
+   "questoes": [
+    "NE-M05-005",
+    "NE-M05-006"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C043",
+   "conceito": "PCM e SQR",
+   "modulo": "05-transmissao-em-banda-base-e-pcm",
+   "fonte_localizada": "Electr L2 p. 62–64",
+   "questoes": [
+    "NE-P25-Q30",
+    "NE-M05-007",
+    "NE-M05-008",
+    "NE-M05-009",
+    "NE-M05-010"
+   ],
+   "cobrado_em_2025": true
+  },
+  {
+   "concept_id": "C044",
+   "conceito": "Receptor em banda base e limiar de decisão",
+   "modulo": "05-transmissao-em-banda-base-e-pcm",
+   "fonte_localizada": "Electr L2 p. 65–67",
+   "questoes": [
+    "NE-M05-011"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C045",
+   "conceito": "SNR e BER",
+   "modulo": "06-ruido-snr-e-figura-de-ruido",
+   "fonte_localizada": "Electr L3 p. 2–6",
+   "questoes": [
+    "NE-M06-016",
+    "NE-M06-020"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C046",
+   "conceito": "Ruído externo × interno",
+   "modulo": "06-ruido-snr-e-figura-de-ruido",
+   "fonte_localizada": "Electr L3 p. 7",
+   "questoes": [
+    "NE-M06-019"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C047",
+   "conceito": "Ruído térmico (Johnson)",
+   "modulo": "06-ruido-snr-e-figura-de-ruido",
+   "fonte_localizada": "Electr L3 p. 8–9",
+   "questoes": [
+    "NE-P25-Q09",
+    "NE-M06-004"
+   ],
+   "cobrado_em_2025": true
+  },
+  {
+   "concept_id": "C048",
+   "conceito": "PSD kT e potência kTB",
+   "modulo": "06-ruido-snr-e-figura-de-ruido",
+   "fonte_localizada": "Electr L3 p. 10, 12",
+   "questoes": [
+    "NE-P25-Q10",
+    "NE-M06-001",
+    "NE-M06-002",
+    "NE-M06-003"
+   ],
+   "cobrado_em_2025": true
+  },
+  {
+   "concept_id": "C049",
+   "conceito": "Ruído em bipolos",
+   "modulo": "06-ruido-snr-e-figura-de-ruido",
+   "fonte_localizada": "Electr L3 p. 11–16",
+   "questoes": [
+    "NE-P25-Q09",
+    "NE-M06-005",
+    "NE-M06-006"
+   ],
+   "cobrado_em_2025": true
+  },
+  {
+   "concept_id": "C050",
+   "conceito": "Ruído flicker (1/f)",
+   "modulo": "06-ruido-snr-e-figura-de-ruido",
+   "fonte_localizada": "Electr L3 p. 17",
+   "questoes": [
+    "NE-M06-007"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C051",
+   "conceito": "Ruído shot",
+   "modulo": "06-ruido-snr-e-figura-de-ruido",
+   "fonte_localizada": "Electr L3 p. 18–20",
+   "questoes": [
+    "NE-M06-008"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C052",
+   "conceito": "Banda equivalente de ruído",
+   "modulo": "06-ruido-snr-e-figura-de-ruido",
+   "fonte_localizada": "Electr L3 p. 21–23",
+   "questoes": [
+    "NE-P25-Q01",
+    "NE-M06-018"
+   ],
+   "cobrado_em_2025": true
+  },
+  {
+   "concept_id": "C053",
+   "conceito": "Fator de ruído e figura de ruído",
+   "modulo": "06-ruido-snr-e-figura-de-ruido",
+   "fonte_localizada": "Electr L3 p. 24–27",
+   "questoes": [
+    "NE-P25-Q02",
+    "NE-P25-Q28",
+    "NE-M06-009",
+    "NE-M06-010",
+    "NE-M06-011",
+    "NE-M06-016"
+   ],
+   "cobrado_em_2025": true
+  },
+  {
+   "concept_id": "C054",
+   "conceito": "Temperatura equivalente de ruído",
+   "modulo": "06-ruido-snr-e-figura-de-ruido",
+   "fonte_localizada": "Electr L3 p. 28",
+   "questoes": [
+    "NE-P25-Q03",
+    "NE-M06-012"
+   ],
+   "cobrado_em_2025": true
+  },
+  {
+   "concept_id": "C055",
+   "conceito": "Fórmula de Friis e LNA",
+   "modulo": "06-ruido-snr-e-figura-de-ruido",
+   "fonte_localizada": "Electr L3 p. 29–32",
+   "questoes": [
+    "NE-P25-Q04",
+    "NE-P25-Q28",
+    "NE-M06-013",
+    "NE-M06-014",
+    "NE-M06-015"
+   ],
+   "cobrado_em_2025": true
+  },
+  {
+   "concept_id": "C056",
+   "conceito": "AWGN",
+   "modulo": "06-ruido-snr-e-figura-de-ruido",
+   "fonte_localizada": "Electr L3 p. 33–34",
+   "questoes": [
+    "NE-P25-Q18",
+    "NE-M06-017"
+   ],
+   "cobrado_em_2025": true
+  },
+  {
+   "concept_id": "C057",
+   "conceito": "Origem da ISI",
+   "modulo": "07-interferencia-intersimbolica",
+   "fonte_localizada": "Electr L3 p. 35–38",
+   "questoes": [
+    "NE-M07-001",
+    "NE-M07-002"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C058",
+   "conceito": "Condição de ISI nula e banda de Nyquist",
+   "modulo": "07-interferencia-intersimbolica",
+   "fonte_localizada": "Electr L3 p. 39",
+   "questoes": [
+    "NE-M07-003",
+    "NE-M07-004"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C059",
+   "conceito": "Critério de Nyquist e limitações práticas",
+   "modulo": "07-interferencia-intersimbolica",
+   "fonte_localizada": "Electr L3 p. 40–42",
+   "questoes": [
+    "NE-P25-Q29",
+    "NE-M07-007"
+   ],
+   "cobrado_em_2025": true
+  },
+  {
+   "concept_id": "C060",
+   "conceito": "Filtro cosseno levantado e roll-off",
+   "modulo": "07-interferencia-intersimbolica",
+   "fonte_localizada": "Electr L3 p. 43–44",
+   "questoes": [
+    "NE-M07-005",
+    "NE-M07-006",
+    "NE-M07-008"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C061",
+   "conceito": "Capacidade e espectro de sinais digitais",
+   "modulo": "08-capacidade-do-canal",
+   "fonte_localizada": "Electr L4 p. 2–8",
+   "questoes": [
+    "NE-M08-009"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C062",
+   "conceito": "1º teorema de Nyquist",
+   "modulo": "08-capacidade-do-canal",
+   "fonte_localizada": "Electr L4 p. 9–10",
+   "questoes": [
+    "NE-M08-001",
+    "NE-M08-002"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C063",
+   "conceito": "Baud × bit/s",
+   "modulo": "08-capacidade-do-canal",
+   "fonte_localizada": "Electr L4 p. 11",
+   "questoes": [
+    "NE-M05-002",
+    "NE-M08-003"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C064",
+   "conceito": "Codificação multinível e lei de Hartley",
+   "modulo": "08-capacidade-do-canal",
+   "fonte_localizada": "Electr L4 p. 12–14",
+   "questoes": [
+    "NE-P25-Q26",
+    "NE-M08-004",
+    "NE-M08-005"
+   ],
+   "cobrado_em_2025": true
+  },
+  {
+   "concept_id": "C065",
+   "conceito": "Multinível com ruído",
+   "modulo": "08-capacidade-do-canal",
+   "fonte_localizada": "Electr L4 p. 15–16",
+   "questoes": [
+    "NE-M08-010"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C066",
+   "conceito": "Teorema de Shannon-Hartley",
+   "modulo": "08-capacidade-do-canal",
+   "fonte_localizada": "Electr L4 p. 17–19",
+   "questoes": [
+    "NE-P25-Q19",
+    "NE-M08-006",
+    "NE-M08-007",
+    "NE-M08-008",
+    "NE-M08-012"
+   ],
+   "cobrado_em_2025": true
+  },
+  {
+   "concept_id": "C067",
+   "conceito": "BER",
+   "modulo": "08-capacidade-do-canal",
+   "fonte_localizada": "Electr L4 p. 25",
+   "questoes": [
+    "NE-M08-011"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C068",
+   "conceito": "Por que modular",
+   "modulo": "09-modulacao-digital",
+   "fonte_localizada": "Electr L4 p. 20–22",
+   "questoes": [
+    "NE-P25-Q05",
+    "NE-M09-001"
+   ],
+   "cobrado_em_2025": true
+  },
+  {
+   "concept_id": "C069",
+   "conceito": "Modulações digitais e up-conversion",
+   "modulo": "09-modulacao-digital",
+   "fonte_localizada": "Electr L4 p. 23–24",
+   "questoes": [
+    "NE-M09-017"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C070",
+   "conceito": "ASK / OOK",
+   "modulo": "09-modulacao-digital",
+   "fonte_localizada": "Electr L4 p. 26–28",
+   "questoes": [
+    "NE-M09-002",
+    "NE-M09-003"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C071",
+   "conceito": "FSK",
+   "modulo": "09-modulacao-digital",
+   "fonte_localizada": "Electr L4 p. 29–32",
+   "questoes": [
+    "NE-M09-004",
+    "NE-M09-005"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C072",
+   "conceito": "PSK / BPSK e demodulação coerente",
+   "modulo": "09-modulacao-digital",
+   "fonte_localizada": "Electr L4 p. 33–38",
+   "questoes": [
+    "NE-P25-Q06",
+    "NE-P25-Q08",
+    "NE-M09-006",
+    "NE-M09-007"
+   ],
+   "cobrado_em_2025": true
+  },
+  {
+   "concept_id": "C073",
+   "conceito": "QPSK e circuito I/Q",
+   "modulo": "09-modulacao-digital",
+   "fonte_localizada": "Electr L4 p. 39–42",
+   "questoes": [
+    "NE-P25-Q17",
+    "NE-M09-008",
+    "NE-M09-009"
+   ],
+   "cobrado_em_2025": true
+  },
+  {
+   "concept_id": "C074",
+   "conceito": "M-PSK",
+   "modulo": "09-modulacao-digital",
+   "fonte_localizada": "Electr L4 p. 43–44",
+   "questoes": [
+    "NE-M09-010"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C075",
+   "conceito": "QAM",
+   "modulo": "09-modulacao-digital",
+   "fonte_localizada": "Electr L4 p. 45–51",
+   "questoes": [
+    "NE-P25-Q07",
+    "NE-M09-011",
+    "NE-M09-012"
+   ],
+   "cobrado_em_2025": true
+  },
+  {
+   "concept_id": "C076",
+   "conceito": "Constelação e mapeamento Gray",
+   "modulo": "09-modulacao-digital",
+   "fonte_localizada": "Electr L4 p. 39–49",
+   "questoes": [
+    "NE-P25-Q25",
+    "NE-P25-Q27",
+    "NE-M09-013"
+   ],
+   "cobrado_em_2025": true
+  },
+  {
+   "concept_id": "C077",
+   "conceito": "Modulação adaptativa, desempenho e eficiência de banda",
+   "modulo": "09-modulacao-digital",
+   "fonte_localizada": "Electr L4 p. 52–57",
+   "questoes": [
+    "NE-M09-014",
+    "NE-M09-015",
+    "NE-M09-016"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C078",
+   "conceito": "Dispositivo elétrico × eletrônico",
+   "modulo": "10-componentes-eletronicos-e-cis",
+   "fonte_localizada": "Electr L5 p. 2–3",
+   "questoes": [
+    "NE-M10-001"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C079",
+   "conceito": "Bipolos e impedância",
+   "modulo": "10-componentes-eletronicos-e-cis",
+   "fonte_localizada": "Electr L5 p. 4–8",
+   "questoes": [
+    "NE-M10-002"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C080",
+   "conceito": "Diodo",
+   "modulo": "10-componentes-eletronicos-e-cis",
+   "fonte_localizada": "Electr L5 p. 9–12",
+   "questoes": [
+    "NE-M10-003"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C081",
+   "conceito": "BJT",
+   "modulo": "10-componentes-eletronicos-e-cis",
+   "fonte_localizada": "Electr L5 p. 13–18",
+   "questoes": [
+    "NE-M10-004",
+    "NE-M10-005",
+    "NE-M10-006"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C082",
+   "conceito": "FET / JFET",
+   "modulo": "10-componentes-eletronicos-e-cis",
+   "fonte_localizada": "Electr L5 p. 19–20",
+   "questoes": [
+    "NE-M10-007"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C083",
+   "conceito": "MOSFET",
+   "modulo": "10-componentes-eletronicos-e-cis",
+   "fonte_localizada": "Electr L5 p. 21–31",
+   "questoes": [
+    "NE-M10-008"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C084",
+   "conceito": "Circuitos integrados e lei de Moore",
+   "modulo": "10-componentes-eletronicos-e-cis",
+   "fonte_localizada": "Electr L5 p. 32–43",
+   "questoes": [
+    "NE-M10-009",
+    "NE-M10-011"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C085",
+   "conceito": "FPGA, DSP e GPP",
+   "modulo": "10-componentes-eletronicos-e-cis",
+   "fonte_localizada": "Electr L5 p. 38–39",
+   "questoes": [
+    "NE-M10-010"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C086",
+   "conceito": "Álgebra booleana: AND, OR, NOT",
+   "modulo": "11-algebra-booleana-e-logica",
+   "fonte_localizada": "Electr L5 p. 44–48",
+   "questoes": [
+    "NE-M11-015"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C087",
+   "conceito": "Operações compostas: implicação, XOR, XNOR",
+   "modulo": "11-algebra-booleana-e-logica",
+   "fonte_localizada": "Electr L5 p. 49",
+   "questoes": [
+    "NE-M11-008",
+    "NE-M11-009"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C088",
+   "conceito": "Portas lógicas e buffer",
+   "modulo": "11-algebra-booleana-e-logica",
+   "fonte_localizada": "Electr L5 p. 50–55",
+   "questoes": [
+    "NE-M11-001",
+    "NE-M11-002",
+    "NE-M11-005",
+    "NE-M11-009",
+    "NE-M11-012"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C089",
+   "conceito": "Leis booleanas e De Morgan",
+   "modulo": "11-algebra-booleana-e-logica",
+   "fonte_localizada": "Electr L5 p. 56–58",
+   "questoes": [
+    "NE-M11-003"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C090",
+   "conceito": "Portas universais e PLA",
+   "modulo": "11-algebra-booleana-e-logica",
+   "fonte_localizada": "Electr L5 p. 59–62",
+   "questoes": [
+    "NE-M11-004",
+    "NE-M11-014"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C091",
+   "conceito": "Combinacional × sequencial; latches",
+   "modulo": "11-algebra-booleana-e-logica",
+   "fonte_localizada": "Electr L5 p. 63–66",
+   "questoes": [
+    "NE-M11-006",
+    "NE-M11-007"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C092",
+   "conceito": "Famílias lógicas",
+   "modulo": "11-algebra-booleana-e-logica",
+   "fonte_localizada": "Electr L5 p. 67–71",
+   "questoes": [
+    "NE-M11-013"
+   ],
+   "cobrado_em_2025": false
+  },
+  {
+   "concept_id": "C093",
+   "conceito": "CMOS",
+   "modulo": "11-algebra-booleana-e-logica",
+   "fonte_localizada": "Electr L5 p. 72–75",
+   "questoes": [
+    "NE-M11-010",
+    "NE-M11-011"
+   ],
+   "cobrado_em_2025": false
+  }
+ ]
+}

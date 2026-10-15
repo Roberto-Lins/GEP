@@ -1,0 +1,90 @@
+{
+  "curso": "ne-ins",
+  "itens": [
+    {
+      "tipo": "lacuna",
+      "onde": "Q28 da prova de 2025",
+      "descricao": "O arquivo da prova não traz os dados do cálculo de figura de ruído; só o gabarito 'About 7'. O curso ensina o método e um exemplo compatível (SNRi 20 dB, SNRo 13 dB)."
+    },
+    {
+      "tipo": "conflito",
+      "onde": "Q2 × Electr L3 p. 26–27",
+      "descricao": "Slide define F = SNRi/SNRo; a prova escreve 'ratio of output SNR versus input SNR'. Ensinada a definição do slide, com aviso sobre a redação da prova."
+    },
+    {
+      "tipo": "conflito",
+      "onde": "Q30 × Electr L2 p. 64",
+      "descricao": "Slide diz '+6 dB por nível'; a conta da prova é por bit (4 × 6 = 24 dB)."
+    },
+    {
+      "tipo": "erro_fonte",
+      "onde": "Q15",
+      "descricao": "Enunciado diz 'distorted signal'; as alternativas falam de 'discrete signal'."
+    },
+    {
+      "tipo": "erro_fonte",
+      "onde": "Q29",
+      "descricao": "'P(I)' tratado como P(f), espectro do pulso de formatação."
+    },
+    {
+      "tipo": "erro_fonte",
+      "onde": "Electr L3 p. 28",
+      "descricao": "'F = T+Tr/T' sem parênteses; correto (T + Tr)/T."
+    },
+    {
+      "tipo": "erro_fonte",
+      "onde": "Electr L3 p. 12",
+      "descricao": "kT a 290 K dado como 3,98·10⁻²¹ W/Hz (arredondamento de 4,00·10⁻²¹)."
+    },
+    {
+      "tipo": "erro_fonte",
+      "onde": "Electr L2 p. 46",
+      "descricao": "'011 for +7' com 3 bits — erro de digitação."
+    },
+    {
+      "tipo": "erro_fonte",
+      "onde": "Electr L4 p. 41",
+      "descricao": "cos ωt + sin ωt = sin(ωt + 45°) sem o fator √2."
+    },
+    {
+      "tipo": "erro_fonte",
+      "onde": "Electr L5 p. 65",
+      "descricao": "Tabela do latch SR imprime Q = 0 na linha HOLD; ensinado 'Q anterior'."
+    },
+    {
+      "tipo": "erro_fonte",
+      "onde": "Electr L5 p. 58",
+      "descricao": "Tabelas do rodapé de De Morgan com rótulos AND/OR aparentemente trocados."
+    },
+    {
+      "tipo": "conflito",
+      "onde": "Electr L4 p. 45 × p. 52–56",
+      "descricao": "'Excellent noise immunity' do QAM contradiz as curvas de BER; tratado como pegadinha."
+    },
+    {
+      "tipo": "conflito",
+      "onde": "Electr L4 p. 33 × p. 35",
+      "descricao": "Convenção de qual bit leva 0°/180° no BPSK muda entre slides."
+    },
+    {
+      "tipo": "inferencia",
+      "onde": "Código Gray",
+      "descricao": "Não nomeado nos slides; apoiado no mapeamento da constelação 16QAM (L4 p. 46)."
+    },
+    {
+      "tipo": "inferencia",
+      "onde": "I/Q = real/imaginário",
+      "descricao": "Apoiado em L1 p. 17 (sinal complexo) e nos eixos I/Q da L4."
+    },
+    {
+      "tipo": "incerteza",
+      "onde": "Boato de prova repetida",
+      "descricao": "Não verificável; o curso prepara para repetição (SG01) e para prova nova (SG02/SG03)."
+    },
+    {
+      "tipo": "incerteza",
+      "onde": "Aula L5",
+      "descricao": "Programa inclui componentes e lógica (L1 p. 3), mas nenhuma questão de 2025 veio da L5."
+    }
+  ]
+}

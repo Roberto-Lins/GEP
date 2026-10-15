@@ -86,4 +86,19 @@ export interface CursoConfig extends CourseHierarchyMeta {
    * são interpretados como famílias com apenas a modalidade Completo.
    */
   estudo?: ModalidadeCursoConfig;
+  /**
+   * Curso fora do currículo da Escola Naval (intercâmbio, curso externo etc.).
+   * Quando presente, o curso sai das turmas/semestres/épocas e aparece apenas
+   * na seção "Extras" da tela de turmas do seu ano. Ausente = curso curricular.
+   */
+  extra?: CursoExtra;
+}
+
+export interface CursoExtra {
+  /** Rótulo curto do selo exibido no card (ex.: 'Intercâmbio'). */
+  rotulo: string;
+  /** Instituição que aplica o curso/prova, quando externa. */
+  instituicao?: string;
+  /** Data da prova em ISO (AAAA-MM-DD), quando conhecida. */
+  dataProva?: string;
 }

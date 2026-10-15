@@ -1,0 +1,345 @@
+---
+titulo: "Ruído, SNR e figura de ruído — aula"
+secao: "aula"
+secaoOrdem: 1
+---
+
+## Resumo executivo
+
+Este é um dos dois módulos **mais cobrados** da prova (empatado com o 04): 8 das 30 questões de 2025 (Q1, Q2, Q3, Q4, Q9, Q10, Q18, Q28) saíram daqui. O tema é tudo o que estraga o sinal no receptor: a *signal to noise ratio* (SNR), os tipos de ruído (*thermal*, *flicker*, *shot*), a densidade espectral de potência do ruído $kT$, a *equivalent noise bandwidth* $B_n$, o *noise factor* $F$ e a *noise figure* $NF$, a *equivalent noise temperature* $T_r$, a fórmula de **Friis** para estágios em cascata e o modelo **AWGN**.
+
+As perguntas são quase todas de definição (a frase do slide em inglês) e uma é de cálculo (Q28, figura de ruído em dB). Domine as definições de prova dos blocos abaixo e a conversão dB ↔ linear para Friis.
+
+<BlocoObjetivo titulo="Ao final você deve conseguir">
+
+- Definir SNR, BER × SNR, PSD do ruído e citar $N = kTB$ e $kT = -174\,\mathrm{dBm/Hz}$ a 290 K.
+- Classificar ruído externo × interno e distinguir *thermal*, *flicker* e *shot* (origem, dependência de $T$ e de $f$).
+- Dizer quais bipolos geram ruído térmico (resistores) e quais praticamente não (L, C ideais, diodos).
+- Definir $B_n$, $F$, $NF$ e $T_r$ e converter entre eles.
+- Calcular a figura de ruído de uma cascata com Friis, convertendo dB ↔ linear, e explicar por que o **primeiro estágio** (LNA) domina.
+- Explicar cada letra de AWGN.
+
+</BlocoObjetivo>
+
+## Conceitos
+
+### C045 — SNR e BER (Signal to noise ratio, bit error rate)
+
+‹fonte: Electr L3 p. 2–6›
+
+O meio (cabo, ar) **atenua** o sinal (inevitável) e o **atrasa** (velocidade de propagação finita). Meios e equipamentos reais ainda criam frequências espúrias: fora da banda de interesse podem ser filtradas; dentro dela, somam-se ao sinal como distorção. Há também **interferência** (sinais estranhos, em geral humanos, mas também cósmicos). Simplificando, tudo isso é chamado de **ruído** (*noise*).
+
+A *SNR* é o parâmetro prático: compara as **potências** de sinal e de ruído no receptor. É a razão entre duas grandezas homogêneas e diz quanto o sinal é mais forte que o ruído:
+
+$$
+\mathrm{SNR} = \frac{S}{N} \qquad\qquad \mathrm{SNR_{dB}} = 10\log_{10}\frac{S}{N}
+$$
+
+Quanto **menor** a SNR, mais difícil decodificar o sinal, isto é, **maior a probabilidade de erro**.
+
+- **Sistemas analógicos**: a SNR mínima (melhor em dB ou dBm) depende do receptor, do serviço e até da avaliação do usuário final.
+- **Sistemas digitais**: usa-se a **BER** (*bit error rate*) no receptor em função da SNR. Existe um **limiar mínimo de SNR** abaixo do qual o sistema não funciona; graças ao processamento digital, esse limiar é **muito baixo** comparado ao de um sistema analógico de desempenho similar.
+
+### C046 — Ruído externo × interno (External vs. internal noise)
+
+‹fonte: Electr L3 p. 7›
+
+Ruído é um **sinal aleatório que se soma** ao sinal desejado, alterando seu conteúdo de informação.
+
+- **Externo**: atmosférico (ex.: raios), espacial/cósmico (ex.: atividade solar) ou artificial/humano (ex.: rede elétrica, máquinas industriais). É **bastante gerenciável**: seu efeito depende das radiofrequências usadas, e em cabos a blindagem resolve muito bem.
+- **Interno**: produzido pelos próprios transceptores (componentes eletrônicos). Seus efeitos **não podem ser eliminados**.
+
+### C047 — Ruído térmico (Thermal noise, Johnson noise)
+
+‹fonte: Electr L3 p. 8–9›
+
+É o ruído interno **mais importante**, medido pela primeira vez em 1926 (Johnson). Origem: **agitação térmica dos portadores de carga** (elétrons) dentro de um condutor em equilíbrio. Acontece **independentemente de sinal aplicado**: mesmo sem tensão aplicada mede-se uma tensão aleatória no circuito. É **proporcional à temperatura** $T$ e só desaparece no zero absoluto, $T = 0\,\mathrm{K}$.
+
+Propriedades estatísticas (p. 9):
+
+- processo estocástico em **elementos resistivos** (só existe onde há dissipação de energia);
+- **ergódico** (a potência pode ser calculada como média);
+- **branco** (*white noise*): PSD plana em qualquer faixa de interesse;
+- amplitude com distribuição de probabilidade **gaussiana**.
+
+### C048 — PSD do ruído térmico e N = kTB (Noise power spectral density)
+
+‹fonte: Electr L3 p. 10, 12›
+
+A constante de Boltzmann $k = 1{,}38 \times 10^{-23}\,\mathrm{J/K}$ relaciona energia térmica média e temperatura. A **densidade espectral de potência** (*PSD*) do ruído térmico mede a **potência de ruído por unidade de frequência**:
+
+$$
+dN = kT \qquad [\mathrm{W/Hz}]
+$$
+
+Numa banda $B$, a potência de ruído é $N = kTB$. Só com $T = 0\,\mathrm{K}$ teríamos $dN = 0$.
+
+Valor de referência (p. 12): a $T = 290\,\mathrm{K}$, $kT \approx -204\,\mathrm{dBW/Hz} = -174\,\mathrm{dBm/Hz}$ $\approx 4 \times 10^{-21}\,\mathrm{W/Hz}$ (o slide escreve $3{,}98 \times 10^{-21}$; $1{,}38 \times 10^{-23} \times 290 = 4{,}00 \times 10^{-21}$, diferença de arredondamento).
+
+Aplicação [cálculo com a fórmula do slide]: numa banda de 1 MHz a 290 K, $N_{\mathrm{dBm}} = -174 + 10\log_{10}(10^6) = -174 + 60 = -114\,\mathrm{dBm}$.
+
+<BlocoConceito titulo="Frase de prova — Q10">
+
+*The thermal noise spectral density (PSD) is a measure of the **noise power per frequency unit**.* Para ruído térmico, $dN = kT$; a potência total numa banda $B$ é $N = kTB$.
+
+</BlocoConceito>
+
+### C049 — Ruído em bipolos (Noise in bipolar/two-terminal elements)
+
+‹fonte: Electr L3 p. 11–16›
+
+Um condutor real é modelado como um **condutor ideal** (sem ruído) **mais um gerador de ruído** de tensão (ou de corrente). Com carga $R_L$ casada ($R = R_L$, máxima transferência de potência), a potência disponível é
+
+$$
+P_n = \frac{V^2}{2(R+R_L)} = \frac{V^2}{4R} \quad (R_L = R), \qquad \overline{P_n} = kTB
+$$
+
+com densidade bilateral $P(f) = kT/2$. A aproximação vale até cerca de 600 GHz e $T \ge 250\,\mathrm{K}$ (acima disso precisa de "correção quântica").
+
+Daí a tensão de ruído: $V_{\mathrm{rms}}^2/4R = kTB \Rightarrow V_{\mathrm{rms}} = \sqrt{4kTRB}$.
+
+**Exemplo do slide (p. 13)**: resistor de $100\,\mathrm{k\Omega}$, banda de 1 MHz, $T = 300\,\mathrm{K}$:
+
+$$
+V_{\mathrm{rms}} = \sqrt{4 \cdot 1{,}38\times10^{-23} \cdot 300 \cdot 10^{5} \cdot 10^{6}} \approx 40{,}7\,\mu\mathrm{V}
+$$
+
+Com ou sem sinal de entrada, essa tensão de ruído **sempre** está no circuito.
+
+Quem gera ruído térmico (p. 14–16):
+
+- **Resistores**: a parcela relevante do ruído em bipolos.
+- **L e C ideais (reativos)**: **não geram** ruído térmico (argumento termodinâmico de conservação de energia). L e C reais têm componente resistiva, e é ela que gera ruído. Um bipolo com $Z(f) = R(f) + jX(f)$ gera ruído pela parte **resistiva** $R(f)$.
+- **Diodos**: contribuição **muito baixa**, porque em polarização direta $R$ é quase nula e em polarização inversa a condução é interrompida.
+
+<BlocoConceito titulo="Frase de prova — Q9">
+
+*The relevant portion of noise in bipolar elements came from **resistors**, while a low (very low) portion came from capacitors, inductances and diodes.*
+
+</BlocoConceito>
+
+### C050 — Ruído flicker (Flicker noise, pink noise, 1/f)
+
+‹fonte: Electr L3 p. 17, 20›
+
+Vem principalmente de **semicondutores**: flutuação de resistência que vira flutuação de corrente/tensão. Causa principal: **contato imperfeito** entre materiais (ou imperfeições internas). Sua PSD é **inversamente proporcional à frequência**, $\propto 1/f$; por isso é **desprezível em alta frequência** (ex.: acima de $10\,\mathrm{kHz}$, dependendo do componente) e **relevante em baixa frequência**. O gráfico da p. 20 mostra a curva $1/f$ caindo até encontrar o patamar plano do ruído térmico + shot.
+
+### C051 — Ruído shot (Shot noise, Schottky noise)
+
+‹fonte: Electr L3 p. 18–20›
+
+Descoberto por Walter Schottky (1918, válvulas). Origem: **natureza discreta (quantizada) da carga elétrica**, isto é, variações aleatórias no número e na velocidade dos elétrons que cruzam uma **barreira de potencial** (junções) ou na geração/recombinação de portadores. São flutuações aleatórias de **corrente**, **independentes da temperatura e da frequência**, relevantes com correntes de nível eletrônico ($\mu\mathrm{A}$, $\mathrm{nA}$).
+
+Exemplo do slide: 1 A tem $N \approx 6 \times 10^{18}$ elétrons/s com flutuação da ordem de $10^9$; irrelevante. Mas num diodo com $1\,\mathrm{nA}$ e $B = 10\,\mathrm{MHz}$ a flutuação chega a cerca de $56\,\mathrm{pA}$, em torno de 5% da corrente. [INFERÊNCIA PEDAGÓGICA] O número bate com $i_n = \sqrt{2qIB}$, fórmula que o slide não mostra.
+
+Conclusão do slide: **ruído térmico e shot são inevitáveis** e comparáveis entre si.
+
+### C052 — Banda equivalente de ruído (Equivalent noise bandwidth)
+
+‹fonte: Electr L3 p. 21–23›
+
+Ruído térmico e shot têm PSD praticamente constante em todas as frequências; o que interessa é o ruído **total na saída** do receptor, e para isso é preciso saber qual $B$ usar em $P_n = kTB$. Um estágio ideal teria ganho constante na banda e zero fora; os reais não têm bordas verticais nem topo plano.
+
+Solução: trocar a resposta real $G_p(f)$ por uma **janela retangular** de altura $G_{p0}$ (ganho máximo) e largura $B_n$ com a **mesma área**:
+
+$$
+B_n = \frac{1}{G_{p0}} \int_0^{\infty} G_p(f)\, df
+$$
+
+A razão entre a banda convencional $B_3$ (−3 dB) e $B_n$ depende da forma da curva; em geral **$B_n$ é um pouco maior que $B_3$**.
+
+<FiguraFonte figura="ne-ins-l3-p23" />
+
+<BlocoConceito titulo="Frase de prova — Q1">
+
+*The equivalent noise bandwidth $B_n$ is **the width of an ideal rectangular band with a constant gain value**, enclosing an area equal to that subtended by the power amplification curve of the real device.*
+
+</BlocoConceito>
+
+### C053 — Fator de ruído e figura de ruído (Noise factor F, noise figure NF)
+
+‹fonte: Electr L3 p. 24–27›
+
+Num quadripolo (*quadripole*, *four-pole*) de ganho $G$, o ruído na saída é o ruído de entrada amplificado **mais** o ruído do próprio quadripolo $dN_a$: $dN_i = kT\,df$ e $dN_u = G\,dN_i + dN_a$. Se o quadripolo fosse ideal ($dN_a = 0$), sairia só $dN_u' = G\,dN_i$. O **fator de ruído** é a razão entre o ruído real e o ideal na saída:
+
+$$
+F = \frac{dN_u}{dN_u'} = \frac{G\,dN_i + dN_a}{G\,dN_i} \ge 1
+$$
+
+É um número puro: mede quanto ruído o quadripolo **introduz** (menor é melhor). Sempre $F \gt 1$; o caso ideal é $F = 1$.
+
+Na banda de interesse ($N = dN \cdot B$), com $S_o = G S_i$ e $N_o = G N_i + N_a$ (figura da p. 26):
+
+$$
+\frac{\mathrm{SNR}_i}{\mathrm{SNR}_o} = \frac{S_i / N_i}{G S_i / (G N_i + N_a)} = \frac{G N_i + N_a}{G N_i} = F
+$$
+
+<FiguraFonte figura="ne-ins-l3-p26" />
+
+A **figura de ruído** é o fator de ruído em dB:
+
+$$
+NF = 10\log_{10} F \qquad\Longleftrightarrow\qquad NF = \mathrm{SNR}_{i,\mathrm{dB}} - \mathrm{SNR}_{o,\mathrm{dB}}
+$$
+
+$F$ (ou $NF$) é a **figura de mérito da degradação da SNR** causada pelos componentes da cadeia; usada para avaliar receptores, **valores menores = melhor desempenho**. Como $F \ge 1$, sempre $NF \ge 0\,\mathrm{dB}$.
+
+<BlocoConceito titulo="Frase de prova — Q2 (atenção à redação)">
+
+Slide: $F = \mathrm{SNR}_i / \mathrm{SNR}_o$ (**entrada sobre saída**), e $NF = 10\log_{10}F$. O gabarito oficial de 2025 marca *"the ratio of output SNR versus input SNR"*, que é a única alternativa que fala de **razão entre as duas SNRs**. Aprenda a definição correta do slide; na prova, escolha a alternativa que relaciona SNR de entrada e de saída.
+
+</BlocoConceito>
+
+### C054 — Temperatura equivalente de ruído (Equivalent noise temperature)
+
+‹fonte: Electr L3 p. 28›
+
+Em analogia, a temperatura equivalente de ruído $T_r$ é a temperatura **que se deveria somar** à temperatura $T$ da entrada para obter, na saída de um quadripolo **suposto ideal**, a mesma potência de ruído $dN_u$. É como "transferir" o ruído do quadripolo para a entrada. É uma temperatura **fictícia/hipotética**, não a temperatura física do componente.
+
+$$
+dN_u = k\,df\,G\,(T + T_r) = F\,kT\,df\,G \quad\Rightarrow\quad F = \frac{T + T_r}{T} = 1 + \frac{T_r}{T}, \qquad T_r = (F - 1)\,T
+$$
+
+(O slide escreve "F = T+Tr/T"; os parênteses no numerador ficam implícitos.) Exemplo: $F = 2$ (NF ≈ 3 dB) com $T = 290\,\mathrm{K}$ dá $T_r = 290\,\mathrm{K}$.
+
+<BlocoConceito titulo="Frase de prova — Q3">
+
+*Equivalent noise temperature* é **uma temperatura hipotética que representa a potência de ruído do sistema**: a temperatura a somar à da entrada para reproduzir o ruído do quadripolo, tratado como ideal.
+
+</BlocoConceito>
+
+### C055 — Fórmula de Friis e o LNA (Friis formula, low noise amplifier)
+
+‹fonte: Electr L3 p. 29–32›
+
+Um receptor é uma **cascata** de estágios (amplificador de RF, misturador/*mixer*, amplificador de FI etc.). Com fatores $F_k$ e ganhos $G_k$ **lineares**:
+
+$$
+F = F_1 + \frac{F_2 - 1}{G_1} + \frac{F_3 - 1}{G_1 G_2} + \cdots + \frac{F_N - 1}{G_1 G_2 \cdots G_{N-1}}
+$$
+
+$$
+T_{r,\mathrm{tot}} = T_{r1} + \frac{T_{r2}}{G_1} + \frac{T_{r3}}{G_1 G_2} + \cdots
+$$
+
+<FiguraFonte figura="ne-ins-l3-p30" />
+
+Consequências (p. 30–31):
+
+- o **fator de ruído do primeiro estágio é o fator primário** que influencia o ruído total;
+- o **ganho do primeiro estágio $G_1$ deve ser o maior possível**, porque divide a contribuição de todos os seguintes;
+- a SNR na saída é **sempre menor** que na entrada, porque circuitos sempre somam ruído.
+
+Por isso (p. 32) o primeiro estágio de um receptor é em geral um **LNA** (*low noise amplifier*): mais sofisticado e caro, mas com **alto ganho e baixo $F$**. Amplificar é inevitável (sinal fraco demais), mas um amplificador real amplifica o ruído da entrada **e** soma o seu próprio.
+
+#### Passo a passo — figura de ruído em cascata
+
+1. **Converta tudo para linear.** $F_k = 10^{NF_k/10}$ e $G_k = 10^{G_{k,\mathrm{dB}}/10}$. Friis **não funciona em dB**.
+2. **Aplique Friis** termo a termo: o 1º termo é $F_1$ inteiro; os demais são $(F_k - 1)$ divididos pelo produto dos ganhos **anteriores**.
+3. **Some** os termos para obter $F$ total (linear).
+4. **Volte para dB**: $NF = 10\log_{10}F$.
+5. (Opcional) **Temperatura**: $T_r = (F - 1)\,T$, com $T = 290\,\mathrm{K}$.
+
+Tabela rápida dB → linear (potência):
+
+| dB | 0 | 1 | 2 | 3 | 6 | 7 | 10 | 15 | 20 | 30 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| linear | 1 | 1,26 | 1,58 | 2,0 | 3,98 | 5,01 | 10 | 31,6 | 100 | 1000 |
+
+**Exemplo 1 — LNA na frente.** Estágio 1 (LNA): $NF_1 = 2\,\mathrm{dB}$, $G_1 = 20\,\mathrm{dB}$. Estágio 2 (mixer): $NF_2 = 10\,\mathrm{dB}$, $G_2 = 10\,\mathrm{dB}$. Estágio 3 (amplificador de FI): $NF_3 = 15\,\mathrm{dB}$.
+
+- Linear: $F_1 = 1{,}585$; $G_1 = 100$; $F_2 = 10$; $G_2 = 10$; $F_3 = 31{,}62$.
+- Termos: $F_1 = 1{,}585$; $\dfrac{F_2 - 1}{G_1} = \dfrac{9}{100} = 0{,}090$; $\dfrac{F_3 - 1}{G_1 G_2} = \dfrac{30{,}62}{1000} = 0{,}031$.
+- Soma: $F = 1{,}585 + 0{,}090 + 0{,}031 = 1{,}706$.
+- dB: $NF = 10\log_{10}1{,}706 \approx 2{,}32\,\mathrm{dB}$.
+- Temperatura: $T_r = (1{,}706 - 1) \cdot 290 \approx 205\,\mathrm{K}$. Conferência pela fórmula de temperaturas: $T_{r1} = 169{,}6$; $T_{r2} = 2610$; $T_{r3} = 8881\,\mathrm{K}$, e $169{,}6 + 2610/100 + 8881/1000 \approx 204{,}6\,\mathrm{K}$.
+
+Leitura: a cascata inteira ficou só 0,32 dB pior que o LNA sozinho. O mixer de 10 dB quase "sumiu" porque foi dividido por $G_1 = 100$.
+
+**Exemplo 2 — mesmos estágios, mixer na frente.** Estágio 1: mixer ($NF = 10\,\mathrm{dB}$, $G = 10\,\mathrm{dB}$). Estágio 2: LNA ($NF = 2\,\mathrm{dB}$, $G = 20\,\mathrm{dB}$). Estágio 3: FI ($NF = 15\,\mathrm{dB}$).
+
+- Termos: $F_1 = 10$; $\dfrac{1{,}585 - 1}{10} = 0{,}058$; $\dfrac{31{,}62 - 1}{10 \cdot 100} = 0{,}031$.
+- Soma: $F = 10{,}089$ → $NF = 10\log_{10}10{,}089 \approx 10{,}04\,\mathrm{dB}$.
+
+Leitura: os **mesmos** componentes, em outra ordem, dão quase 8 dB a mais de figura de ruído. É exatamente o que Q4 cobra: **o primeiro estágio manda**.
+
+#### Q28: método e lacuna dos dados
+
+A Q28 de 2025 diz apenas *"Calculate the noise figure in dB"*, com alternativas About 6 / 7 / 8 / 9 e gabarito **b) About 7**. **Os dados numéricos (ganhos, fatores, SNRs ou temperaturas) não vieram no arquivo da prova recebido**, então não é possível refazer a conta oficial. O que dá para garantir é o método, conforme o tipo de dado que vier:
+
+- **SNRs de entrada e saída em dB**: $NF = \mathrm{SNR}_{i,\mathrm{dB}} - \mathrm{SNR}_{o,\mathrm{dB}}$. Ilustração (dados hipotéticos): $\mathrm{SNR}_i = 20\,\mathrm{dB}$ e $\mathrm{SNR}_o = 13\,\mathrm{dB}$ → $NF = 7\,\mathrm{dB}$ ($F \approx 5$).
+- **Temperatura equivalente**: $NF = 10\log_{10}(1 + T_r/T)$. Ilustração: $T_r = 1160\,\mathrm{K}$, $T = 290\,\mathrm{K}$ → $F = 5$ → $NF \approx 6{,}99 \approx 7\,\mathrm{dB}$.
+- **Cascata**: siga o passo a passo acima (linear, Friis, volta para dB).
+- **Ruídos de saída real e ideal**: $F = N_o / (G N_i)$, depois $10\log_{10}$.
+
+Dica para "About 7": $F \approx 5$ corresponde a $\approx 7\,\mathrm{dB}$; $F \approx 4$ a 6 dB; $F \approx 6{,}3$ a 8 dB; $F \approx 7{,}9$ a 9 dB.
+
+### C056 — AWGN (Additive White Gaussian Noise)
+
+‹fonte: Electr L3 p. 33–34›
+
+No projeto de sistemas de telecomunicação, o ruído do canal costuma ser modelado como AWGN:
+
+- **Additive**: é **somado** ao sinal de interesse.
+- **White**: **densidade espectral de potência uniforme** em toda a banda do sistema, por analogia com a luz branca (emissão uniforme em todas as frequências visíveis).
+- **Gaussian**: distribuição **normal** no domínio do tempo, com **média zero**.
+
+A figura da p. 34 (*noisy channel*) mostra dados, sinal, ruído e sinal + ruído com limiar tracejado: nos instantes de amostragem em que o ruído empurra o sinal para o outro lado do limiar aparecem **bits errados**. É a ligação entre SNR e BER (C045) e o receptor com limiar do módulo 05.
+
+<FiguraFonte figura="ne-ins-l3-p34" />
+
+<BlocoConceito titulo="Frase de prova — Q18">
+
+*White refers to a **uniform power spectral density** across the frequency band.* Na prova: "the noise has a uniform frequency response".
+
+</BlocoConceito>
+
+## Como isso caiu na prova de 2025
+
+**Q1** — *How is the "equivalent noise bandwidth" defined?* → **a) The width of an ideal rectangular bandwidth with constant gain.** b) mistura temperatura e figura de ruído; c) "máxima atenuação" não tem relação; d) é temperatura, não banda.
+
+**Q2** — *What is "noise figure"?* → **b) The ratio of output SNR versus input SNR** (gabarito oficial; o slide define $F = \mathrm{SNR}_i/\mathrm{SNR}_o$). a) é só a SNR de saída; c) é $T_r$, outra grandeza; d) não é a definição ($T_r/T = F - 1$).
+
+**Q3** — *What does "equivalent noise temperature" represent?* → **c) A hypothetical temperature representing the noise power in a system.** a) não é a temperatura física; b) ruído só some a 0 K, não é isso; d) nada a ver com operação eficiente.
+
+**Q4** — *Primary factor that influences the overall noise in an amplification chain?* → **a) The noise figure of the first stage** (frase literal da p. 31). b), c), d) não aparecem em Friis como fator dominante.
+
+**Q9** — *In which bipolar components can you typically find thermal noise?* → **a) Resistors.** b) indutores e d) capacitores ideais não geram ruído térmico; c) diodos contribuem muito pouco.
+
+**Q10** — *Noise PSD is a measure of:* → **c) The noise power per unit frequency.** a) potência total é $N = kTB$, não a PSD; b) tensão não é potência; d) SNR é outra grandeza.
+
+**Q18** — *What does "White" mean in AWGN?* → **a) The noise has a uniform frequency response** (PSD uniforme). b), c), d) são interpretações literais de "branco", sem sentido técnico.
+
+**Q28** — *Calculate the noise figure in dB* → **b) About 7.** Dados ausentes no arquivo da prova; ver o método na seção "Q28: método e lacuna dos dados" acima. As demais alternativas só diferem no número.
+
+<BlocoPegadinha titulo="Pegadinhas">
+
+- **Friis só em linear.** Somar NF em dB ou dividir dB por dB dá resposta errada. Converta, calcule, volte para dB.
+- **No denominador de Friis entram os ganhos dos estágios anteriores**, nunca o do próprio estágio. O último ganho da cadeia não entra.
+- **F ≥ 1 e NF ≥ 0 dB.** Alternativa com NF negativa ou $F \lt 1$ é impossível. Menor é melhor.
+- **F = SNR de entrada ÷ SNR de saída** (slide); a prova chamou de "output versus input". Em dB: $NF = \mathrm{SNR}_{i} - \mathrm{SNR}_{o}$.
+- **L e C ideais não geram ruído térmico; diodos quase nada.** Resistor é a resposta.
+- **Flicker é 1/f (baixa frequência); shot independe de T e de f; térmico é ∝ T e branco.** Não troque as dependências.
+- **Temperatura de ruído é fictícia**, não a temperatura física do componente.
+
+</BlocoPegadinha>
+
+## Vocabulário EN → PT
+
+| Inglês | Português | Significado em 1 linha |
+|---|---|---|
+| Signal to noise ratio (SNR) | Relação sinal-ruído | Potência do sinal ÷ potência do ruído, em geral em dB |
+| Bit error rate (BER) | Taxa de erro de bit | Bits errados ÷ bits transmitidos; cai quando a SNR sobe |
+| Thermal (Johnson) noise | Ruído térmico | Agitação térmica dos elétrons; ∝ T; branco e gaussiano |
+| Power spectral density (PSD) | Densidade espectral de potência | Potência de ruído por Hz; térmico: $kT$ |
+| Boltzmann constant | Constante de Boltzmann | $k = 1{,}38 \times 10^{-23}\,\mathrm{J/K}$ |
+| Flicker (pink, 1/f) noise | Ruído flicker (rosa) | Semicondutores; forte em baixa frequência |
+| Shot (Schottky) noise | Ruído shot (granalha) | Carga discreta cruzando junções; independe de T e f |
+| Equivalent noise bandwidth | Banda equivalente de ruído | Retângulo de ganho constante com mesma área da curva real |
+| Quadripole / four-pole | Quadripolo | Bloco de 2 portas (amplificador, mixer etc.) |
+| Noise factor (F) | Fator de ruído | $\mathrm{SNR}_i/\mathrm{SNR}_o$, número ≥ 1 |
+| Noise figure (NF) | Figura de ruído | $10\log_{10}F$, em dB |
+| Equivalent noise temperature | Temperatura equivalente de ruído | $T_r = (F-1)T$; temperatura hipotética |
+| Cascade / Friis formula | Cascata / fórmula de Friis | F total de estágios em série; 1º estágio domina |
+| Low noise amplifier (LNA) | Amplificador de baixo ruído | 1º estágio do receptor: alto ganho, baixo F |
+| AWGN | Ruído aditivo, branco e gaussiano | Somado ao sinal, PSD uniforme, normal de média zero |

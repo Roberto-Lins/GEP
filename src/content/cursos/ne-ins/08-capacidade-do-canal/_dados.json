@@ -1,0 +1,25 @@
+{
+  "ordem": 8,
+  "slug": "08-capacidade-do-canal",
+  "titulo": "Capacidade do canal",
+  "prioridade": "muito alta",
+  "subtitulo": "Nyquist, baud, multinível (Hartley), Shannon-Hartley e BER",
+  "tempoEstimado": "35 min",
+  "objetivo": "Calcular capacidade por Nyquist, Hartley e Shannon e distinguir baud de bit/s.",
+  "palavrasChave": [
+    "channel capacity",
+    "baud",
+    "Hartley",
+    "Shannon",
+    "BER"
+  ],
+  "conceptIds": [
+    "C061",
+    "C062",
+    "C063",
+    "C064",
+    "C065",
+    "C066",
+    "C067"
+  ]
+}

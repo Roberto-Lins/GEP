@@ -1,0 +1,31 @@
+{
+  "ordem": 6,
+  "slug": "06-ruido-snr-e-figura-de-ruido",
+  "titulo": "Ruído, SNR e figura de ruído",
+  "prioridade": "máxima",
+  "subtitulo": "Térmico, flicker, shot, kTB, banda equivalente, F, NF, Tr, Friis, AWGN",
+  "tempoEstimado": "60 min",
+  "objetivo": "Definir cada grandeza de ruído com a frase da prova e calcular figura de ruído em cascata.",
+  "palavrasChave": [
+    "thermal noise",
+    "kTB",
+    "noise figure",
+    "noise temperature",
+    "Friis",
+    "AWGN"
+  ],
+  "conceptIds": [
+    "C045",
+    "C046",
+    "C047",
+    "C048",
+    "C049",
+    "C050",
+    "C051",
+    "C052",
+    "C053",
+    "C054",
+    "C055",
+    "C056"
+  ]
+}

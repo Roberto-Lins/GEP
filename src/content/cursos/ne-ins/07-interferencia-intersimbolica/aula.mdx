@@ -1,0 +1,182 @@
+---
+titulo: "Interferência intersimbólica — aula"
+secao: "aula"
+secaoOrdem: 1
+---
+
+## Resumo executivo
+
+Além do ruído (módulo 06), existe outro inimigo da transmissão digital que aparece **mesmo sem ruído**: a *intersymbol interference* (ISI), ou interferência intersimbólica. Um canal de banda limitada "alarga" cada pulso no tempo, e as caudas de um símbolo invadem os instantes de amostragem dos vizinhos. O módulo cobre a causa da ISI, a condição de ISI nula ($d(kT) = 0$ para $k \ne 0$), a **banda de Nyquist** $W = 1/2T = R/2$, o **critério de Nyquist** para ISI nula, os problemas práticos do filtro retangular/sinc e a solução: o filtro **cosseno levantado** (*raised cosine*) com *roll-off* $\beta$ e banda $BW = (R/2)(1+\beta)$.
+
+Na prova de 2025 caiu a **Q29** (o que é o critério de Nyquist para evitar ISI → o produto do espectro do pulso pela resposta do canal deve ser plano).
+
+<BlocoObjetivo titulo="Ao final você deve conseguir">
+
+- Explicar por que um canal limitado em frequência causa ISI, mesmo sem ruído.
+- Enunciar a condição de ISI nula no tempo e a banda de Nyquist $W = R/2$.
+- Reconhecer o critério de Nyquist na forma da prova (resposta total plana na banda).
+- Citar os dois problemas práticos do pulso sinc/filtro retangular.
+- Calcular a banda do cosseno levantado para um dado $R$ e $\beta$.
+
+</BlocoObjetivo>
+
+## Conceitos
+
+### C057 — ISI: causa e definição (Intersymbol interference)
+
+‹fonte: Electr L3 p. 35–38›
+
+Suponha o canal como um **passa-baixas ideal** (resposta ao impulso = sinc). Ao transmitir uma sequência de pulsos, além do ruído surge a ISI. A causa é uma propriedade de Fourier já vista: um canal $H(f)$ **limitado em frequência** tem resposta ao impulso **ilimitada no tempo** ("se encolhe na frequência, alarga no tempo").
+
+O resultado da passagem pelo canal $h(t)$ (junto com os filtros de transmissão e de recepção) é, para um único pulso, uma forma $d(t)$ **alargada**, independentemente do ruído. A sequência de pulsos vira uma sequência de $d(t)$ deslocados que se **sobrepõem**.
+
+O sinal recebido $y(t)$ é amostrado a cada $T$. Mesmo com amostragem perfeitamente precisa (na prática pode não ser), as amostras $y(0), y(T), \ldots$ **diferem** de $a_0, a_1, \ldots$: há ISI **mesmo sem ruído**, e isso pode causar erros no decisor.
+
+<FiguraFonte figura="ne-ins-l3-p37" />
+
+Na figura: os pulsos $a_0$ (azul), $a_1$ (verde, negativo) e $a_2$ (vermelho) se somam na curva preta; em cada instante de amostragem, a diferença entre a curva preta e o pulso "dono" daquele instante é a ISI.
+
+Ruído × ISI, lado a lado (L3 p. 33–44):
+
+| | Ruído (AWGN) | ISI |
+|---|---|---|
+| Origem | sinal aleatório **somado** ao sinal | **banda limitada** do canal alarga os pulsos |
+| Existe sem o outro? | sim | sim, **mesmo sem ruído** |
+| Efeito no decisor | amostra cruza o limiar → erro | caudas dos vizinhos deslocam a amostra → erro |
+| Remédio do curso | mais SNR, LNA no 1º estágio | *pulse shaping* (cosseno levantado) ou taxa menor |
+
+Definição do slide (p. 38): fenômeno indesejado no receptor de uma transmissão digital em que as formas de onda transmitidas em sequência (representando símbolos) **se sobrepõem temporal e parcialmente**, distorcendo a forma de onda recebida, **reduzindo a margem de imunidade a erros** e **aumentando a probabilidade de erro** na fase de decisão.
+
+<BlocoConceito titulo="Definição de prova — ISI">
+
+*ISI: symbols transmitted in sequence overlap partially in time at the receiver, distorting the received waveform and increasing the probability of error, even without noise.* Causa: canal de banda limitada → resposta ao impulso ilimitada no tempo.
+
+</BlocoConceito>
+
+### C058 — Condição de ISI nula e banda de Nyquist (Zero-ISI condition, Nyquist band)
+
+‹fonte: Electr L3 p. 39›
+
+Soluções "à primeira vista", ambas ruins:
+
+- **afastar muito os pulsos** → reduz o bitrate;
+- **limitar $d(t)$ a uma duração $T$** → exige banda muito larga.
+
+A condição útil é: **$d(t)$ deve ser zero em todos os instantes $kT$**, exceto na origem:
+
+$$
+d(0) = 1, \qquad d(kT) = 0 \quad \text{para } k \ne 0
+$$
+
+Assim, no instante de amostragem de um símbolo, todos os outros pulsos passam por zero. O pulso sinc tem exatamente essa propriedade (zeros em todos os múltiplos de $T$, figura da esquerda). Se $R = 1/T$ é a *baud rate*, a transformada (CFT) do sinc é um retângulo $\mathrm{rect}(fT)$ de largura:
+
+$$
+W = \frac{1}{2T} = \frac{R}{2} \qquad \text{(banda de Nyquist)}
+$$
+
+Ou seja, uma sequência a $R$ baud cabe sem ISI num canal de banda $B = R/2 = W$.
+
+<FiguraFonte figura="ne-ins-l3-p39" />
+
+Exemplo: $R = 10\,\mathrm{kbaud}$ → $T = 100\,\mu\mathrm{s}$ → banda mínima $W = 5\,\mathrm{kHz}$. Ligação com o módulo 08: virado ao contrário, um canal de banda $B$ suporta no máximo $R = 2B$ símbolos/s (1º teorema de Nyquist).
+
+### C059 — Critério de Nyquist para ISI nula e problemas práticos (Nyquist ISI criterion)
+
+‹fonte: Electr L3 p. 40–42›
+
+O slide resume (p. 40):
+
+- $B = R/2$ é a **banda de Nyquist** (e $R = C = 2B$, como no módulo 08). O critério é parente próximo do teorema de amostragem de Nyquist-Shannon, só com outro ponto de vista.
+- Se a resposta total $h(t)$ vale 1 em $t = 0$ e 0 em cada $kT$, a resposta é **livre de ISI**: em $kT$ só contribui o pulso $k$.
+- **Quando os filtros de banda base do sistema satisfazem o critério de Nyquist, os símbolos podem ser transmitidos por um canal com resposta plana numa banda limitada, sem ISI.**
+
+Leitura em frequência [INFERÊNCIA PEDAGÓGICA, mínima]: a forma $d(t)$ que chega ao decisor é o pulso transmitido passando pelo canal e pelos filtros; no domínio da frequência, isso é o **produto** do espectro do pulso pela resposta do canal (e dos filtros). Exigir zeros em $kT$ equivale a exigir que esse produto resulte numa resposta **plana** dentro da banda de Nyquist. É essa a redação da alternativa correta da Q29.
+
+O **sinc** é o caso ideal e a curva **mais eficiente em banda** (p. 41): cada pulso passa por zero nos instantes dos outros.
+
+Mas há **dois problemas** (p. 42):
+
+1. **não é possível construir fisicamente filtros de forma retangular** (o sinc é não causal e infinito, como no módulo 03);
+2. **sincronismo de símbolo imperfeito** na recepção: amostrando um pouco fora de $kT$, as caudas do sinc (que decaem devagar) não são zero → **ISI de novo**.
+
+<BlocoConceito titulo="Frase de prova — Q29">
+
+Critério de Nyquist para evitar ISI: *the product of the pulse spectrum $P(f)$ and the channel frequency response must be flat* (na banda de Nyquist). No tempo: $d(0) = 1$ e $d(kT) = 0$ para $k \ne 0$.
+
+</BlocoConceito>
+
+### C060 — Filtro cosseno levantado e roll-off (Raised cosine filter, roll-off factor)
+
+‹fonte: Electr L3 p. 43–44›
+
+**Solução**: modelar os pulsos (*pulse shaping*) com um filtro **fisicamente realizável**, o **cosseno levantado** (*raised cosine*): transição **suave** em frequência, ao custo de um aumento **tolerável** de banda. O único parâmetro é o **roll-off** $\beta$ (entre 0 e 1): ele define quão rápido o filtro decai no tempo, o que é inversamente proporcional a quão rápido decai na frequência.
+
+<FiguraFonte figura="ne-ins-l3-p43" />
+
+- $\beta = 0$: retângulo em frequência = sinc no tempo (banda mínima, caudas longas).
+- $\beta = 1$: precisa do **dobro da banda** original (ou há banda sobrando, ou a baud rate tem de cair), mas a ISI é **drasticamente reduzida**, porque as caudas de $h(t)$ caem muito rápido.
+
+**Banda em excesso** (*excess bandwidth*): o que fica acima da banda mínima do sinc, $B = R/2$:
+
+$$
+BW = \frac{R}{2} + \beta\,\frac{R}{2} = \frac{R}{2}(1 + \beta)
+$$
+
+Com $\beta = 1$, $BW = 2B$ (com $B = R/2$), isto é, $BW = R$.
+
+Exemplo numérico, $R = 10\,\mathrm{kbaud}$:
+
+| $\beta$ | $BW$ |
+|---|---|
+| 0 | 5 kHz |
+| 0,25 | 6,25 kHz |
+| 0,5 | 7,5 kHz |
+| 1 | 10 kHz |
+
+Ao contrário: num canal de 4 kHz com $\beta = 0{,}5$, a taxa máxima é $R = 2 \cdot BW / (1 + \beta) = 8000 / 1{,}5 \approx 5{,}33\,\mathrm{kbaud}$.
+
+É uma **troca** (*trade-off*): menos ISI custa banda. Com mais banda dá para ir mais rápido sem ISI; com menos banda é preciso ir mais devagar. Deve-se avaliar o compromisso entre $R$, banda e probabilidade de ISI.
+
+<BlocoConceito titulo="Definição de prova — roll-off">
+
+*The roll-off factor $\beta$ is the only parameter of the raised-cosine filter; $\beta = 1$ needs twice the Nyquist band but drastically reduces ISI.* $BW = \frac{R}{2}(1+\beta)$.
+
+</BlocoConceito>
+
+## Como isso caiu na prova de 2025
+
+**Q29** — *What is the "Nyquist criterion" to avoid inter symbol interference?* (o enunciado traz "P(I)", que provavelmente é $P(f)$, o espectro do pulso)
+Resposta: **d) The product of P(f) and channel frequency response must be flat.**
+
+- a) "pulso constante" — um pulso constante no tempo não tem zeros em $kT$; não é o critério.
+- b) "a resposta em **frequência** do canal deve ter uma única amostra na origem" — confunde: a condição de uma amostra não nula em $t = 0$ vale para a resposta **no tempo** $d(t)$, não para a resposta em frequência.
+- c) "pulso periódico" — periodicidade não tem relação com ISI nula.
+
+<BlocoPegadinha titulo="Pegadinhas">
+
+- **ISI existe mesmo sem ruído.** É causada pela banda limitada do canal, não pelo ruído.
+- **Banda de Nyquist é R/2, não 2R.** $W = 1/2T$; a capacidade é $R = 2B$ (o inverso).
+- **Condição de ISI nula é no tempo** ($d(kT) = 0$ para $k \ne 0$); a forma da prova é em frequência (produto **plano**).
+- **Sinc é o mais eficiente em banda, mas irrealizável** e sensível a erro de sincronismo.
+- **β = 1 dobra a banda** em relação a $R/2$; β = 0 é o sinc. Roll-off maior = menos ISI, mais banda.
+- **"P(I)" na Q29 é erro de digitação** para $P(f)$, o espectro do pulso.
+
+</BlocoPegadinha>
+
+## Vocabulário EN → PT
+
+| Inglês | Português | Significado em 1 linha |
+|---|---|---|
+| Intersymbol interference (ISI) | Interferência intersimbólica | Sobreposição de pulsos vizinhos nos instantes de amostragem |
+| Band-limited channel | Canal de banda limitada | Passa-baixas: resposta ao impulso infinita no tempo |
+| Impulse response | Resposta ao impulso | $h(t)$: saída do canal para um impulso |
+| Baud rate | Taxa de símbolos | $R = 1/T$ símbolos por segundo |
+| Nyquist band | Banda de Nyquist | $W = 1/2T = R/2$, banda mínima sem ISI |
+| Nyquist ISI criterion | Critério de Nyquist para ISI | Resposta total plana na banda ↔ zeros em $kT$ |
+| Pulse shaping | Formatação de pulso | Escolher a forma do pulso para controlar banda e ISI |
+| Sinc pulse | Pulso sinc | Ideal e mais eficiente em banda; irrealizável |
+| Raised cosine filter | Filtro cosseno levantado | Pulso realizável com transição suave em frequência |
+| Roll-off factor (β) | Fator de roll-off | Excesso de banda; 0 = sinc, 1 = dobro da banda |
+| Excess bandwidth | Banda em excesso | Banda acima de $R/2$: $\beta R/2$ |
+| Symbol synchronization | Sincronismo de símbolo | Amostrar exatamente em $kT$ |
+| Decision device | Decisor | Bloco que escolhe o símbolo a partir da amostra |

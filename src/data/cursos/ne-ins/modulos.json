@@ -1,0 +1,237 @@
+[
+ {
+  "ordem": 0,
+  "slug": "00-mapa-da-prova-e-prova-2025",
+  "titulo": "Mapa da prova e a prova de 2025",
+  "subtitulo": "Formato, peso de cada assunto e as 30 questões de 2025 resolvidas",
+  "prioridade": "máxima",
+  "tempoEstimado": "40 min",
+  "statusInicial": "pendente",
+  "objetivo": "Conhecer o formato da prova, saber de cor o gabarito comentado de 2025 e decidir onde gastar o tempo de estudo.",
+  "palavrasChave": [
+   "prova 2025",
+   "gabarito",
+   "distribuição por assunto",
+   "estratégia"
+  ],
+  "modulo": "M00"
+ },
+ {
+  "ordem": 1,
+  "slug": "01-sinais-e-classificacao",
+  "titulo": "Sinais e classificação",
+  "subtitulo": "Sistema de comunicação, processos estocásticos, Dirac, senoide e sinc",
+  "prioridade": "alta",
+  "tempoEstimado": "35 min",
+  "statusInicial": "pendente",
+  "objetivo": "Classificar sinais e reconhecer as propriedades dos sinais elementares, em especial o delta de Dirac.",
+  "palavrasChave": [
+   "signal",
+   "stochastic",
+   "ergodic",
+   "Dirac delta",
+   "sinc"
+  ],
+  "modulo": "M01"
+ },
+ {
+  "ordem": 2,
+  "slug": "02-analise-de-fourier",
+  "titulo": "Análise de Fourier",
+  "subtitulo": "Série, CTFT, DTFT, DFT, FFT e largura de banda",
+  "prioridade": "muito alta",
+  "tempoEstimado": "40 min",
+  "statusInicial": "pendente",
+  "objetivo": "Dizer, para cada tipo de sinal, como é o seu espectro e relacionar duração e banda.",
+  "palavrasChave": [
+   "Fourier series",
+   "CTFT",
+   "DTFT",
+   "DFT",
+   "FFT",
+   "bandwidth"
+  ],
+  "modulo": "M02"
+ },
+ {
+  "ordem": 3,
+  "slug": "03-sistemas-filtros-e-decibel",
+  "titulo": "Sistemas, filtros e decibel",
+  "subtitulo": "Linearidade, causalidade, LTI, filtros ideais e reais, dB",
+  "prioridade": "alta",
+  "tempoEstimado": "30 min",
+  "statusInicial": "pendente",
+  "objetivo": "Classificar sistemas, explicar por que o filtro ideal não é realizável e converter razões em dB.",
+  "palavrasChave": [
+   "LTI",
+   "impulse response",
+   "low-pass",
+   "band-pass",
+   "decibel"
+  ],
+  "modulo": "M03"
+ },
+ {
+  "ordem": 4,
+  "slug": "04-conversao-ad-e-amostragem",
+  "titulo": "Conversão A/D e amostragem",
+  "subtitulo": "Nyquist, aliasing, anti-aliasing, reconstrução, quantização e codificação",
+  "prioridade": "máxima",
+  "tempoEstimado": "60 min",
+  "statusInicial": "pendente",
+  "objetivo": "Aplicar o teorema da amostragem, explicar aliasing e reconstrução e calcular níveis, bits e bitrate.",
+  "palavrasChave": [
+   "Nyquist",
+   "aliasing",
+   "anti-aliasing",
+   "sample and hold",
+   "quantization"
+  ],
+  "modulo": "M04"
+ },
+ {
+  "ordem": 5,
+  "slug": "05-transmissao-em-banda-base-e-pcm",
+  "titulo": "Transmissão em banda base e PCM",
+  "subtitulo": "Line coding, NRZ, AMI, PCM e receptor com limiar",
+  "prioridade": "muito alta",
+  "tempoEstimado": "35 min",
+  "statusInicial": "pendente",
+  "objetivo": "Reconhecer os códigos de linha, calcular a taxa do PCM e o ganho de SQR por bit.",
+  "palavrasChave": [
+   "line coding",
+   "NRZ",
+   "AMI",
+   "PCM",
+   "threshold"
+  ],
+  "modulo": "M05"
+ },
+ {
+  "ordem": 6,
+  "slug": "06-ruido-snr-e-figura-de-ruido",
+  "titulo": "Ruído, SNR e figura de ruído",
+  "subtitulo": "Térmico, flicker, shot, kTB, banda equivalente, F, NF, Tr, Friis, AWGN",
+  "prioridade": "máxima",
+  "tempoEstimado": "60 min",
+  "statusInicial": "pendente",
+  "objetivo": "Definir cada grandeza de ruído com a frase da prova e calcular figura de ruído em cascata.",
+  "palavrasChave": [
+   "thermal noise",
+   "kTB",
+   "noise figure",
+   "noise temperature",
+   "Friis",
+   "AWGN"
+  ],
+  "modulo": "M06"
+ },
+ {
+  "ordem": 7,
+  "slug": "07-interferencia-intersimbolica",
+  "titulo": "Interferência intersimbólica (ISI)",
+  "subtitulo": "Origem da ISI, critério de Nyquist e cosseno levantado",
+  "prioridade": "muito alta",
+  "tempoEstimado": "25 min",
+  "statusInicial": "pendente",
+  "objetivo": "Explicar a ISI, enunciar o critério de Nyquist e calcular a banda com roll-off.",
+  "palavrasChave": [
+   "ISI",
+   "Nyquist criterion",
+   "raised cosine",
+   "roll-off"
+  ],
+  "modulo": "M07"
+ },
+ {
+  "ordem": 8,
+  "slug": "08-capacidade-do-canal",
+  "titulo": "Capacidade do canal",
+  "subtitulo": "Nyquist, baud, multinível (Hartley), Shannon-Hartley e BER",
+  "prioridade": "muito alta",
+  "tempoEstimado": "35 min",
+  "statusInicial": "pendente",
+  "objetivo": "Calcular capacidade por Nyquist, Hartley e Shannon e distinguir baud de bit/s.",
+  "palavrasChave": [
+   "channel capacity",
+   "baud",
+   "Hartley",
+   "Shannon",
+   "BER"
+  ],
+  "modulo": "M08"
+ },
+ {
+  "ordem": 9,
+  "slug": "09-modulacao-digital",
+  "titulo": "Modulação digital",
+  "subtitulo": "ASK, FSK, PSK, QPSK, QAM, I/Q, constelação e Gray",
+  "prioridade": "máxima",
+  "tempoEstimado": "55 min",
+  "statusInicial": "pendente",
+  "objetivo": "Identificar cada modulação pelo parâmetro que varia, contar bits por símbolo e ler constelações.",
+  "palavrasChave": [
+   "ASK",
+   "FSK",
+   "BPSK",
+   "QPSK",
+   "QAM",
+   "constellation",
+   "Gray"
+  ],
+  "modulo": "M09"
+ },
+ {
+  "ordem": 10,
+  "slug": "10-componentes-eletronicos-e-cis",
+  "titulo": "Componentes eletrônicos e CIs",
+  "subtitulo": "Bipolos, diodo, BJT, FET, MOSFET, circuitos integrados, FPGA e DSP",
+  "prioridade": "alta",
+  "tempoEstimado": "30 min",
+  "statusInicial": "pendente",
+  "objetivo": "Reconhecer as regiões de operação dos transistores e os marcos dos circuitos integrados.",
+  "palavrasChave": [
+   "diode",
+   "BJT",
+   "MOSFET",
+   "integrated circuit",
+   "Moore",
+   "FPGA"
+  ],
+  "modulo": "M10"
+ },
+ {
+  "ordem": 11,
+  "slug": "11-algebra-booleana-e-logica",
+  "titulo": "Álgebra booleana e lógica",
+  "subtitulo": "Portas, De Morgan, portas universais, latch SR, famílias lógicas e CMOS",
+  "prioridade": "alta",
+  "tempoEstimado": "30 min",
+  "statusInicial": "pendente",
+  "objetivo": "Montar tabelas-verdade, aplicar De Morgan e explicar o funcionamento do CMOS.",
+  "palavrasChave": [
+   "Boolean algebra",
+   "NAND",
+   "NOR",
+   "De Morgan",
+   "latch",
+   "CMOS"
+  ],
+  "modulo": "M11"
+ },
+ {
+  "ordem": 99,
+  "slug": "99-revisao-final",
+  "titulo": "Revisão final",
+  "subtitulo": "Formulário, erros frequentes e revisão de véspera",
+  "prioridade": "máxima",
+  "tempoEstimado": "30 min",
+  "statusInicial": "pendente",
+  "objetivo": "Revisar em meia hora tudo o que a prova cobra, com o formulário completo.",
+  "palavrasChave": [
+   "formulário",
+   "revisão de véspera"
+  ],
+  "modulo": "R99"
+ }
+]

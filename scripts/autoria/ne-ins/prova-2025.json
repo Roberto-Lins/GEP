@@ -1,0 +1,302 @@
+[
+ [
+  1,
+  "How is the “equivalent noise bandwidth” defined?",
+  [
+   "The width of an ideal rectangular bandwidth with constant gain",
+   "The difference between noise temperature and noise figure",
+   "The bandwidth with the maximum attenuation",
+   "The thermodynamic temperature of the four-pole"
+  ]
+ ],
+ [
+  2,
+  "What is “noise figure”?",
+  [
+   "The signal-to-noise ratio at the output of an amplifier",
+   "The ratio of output SNR versus input SNR",
+   "The equivalent noise temperature of a four-pole",
+   "The ratio between noise temperature and thermodynamic temperature"
+  ]
+ ],
+ [
+  3,
+  "What does “equivalent noise temperature” represent in the context of electronic system?",
+  [
+   "The actual physical temperature of the components",
+   "The temperature at which noise is completely eliminated.",
+   "A hypothetical temperature representing the noise power in a system.",
+   "The temperature required for components to operate efficiently."
+  ]
+ ],
+ [
+  4,
+  "What is the primary factor that influences the overall noise in an amplification chain?",
+  [
+   "The noise figure of the first stage",
+   "The thermodynamic temperature of the system",
+   "Losses within the antenna",
+   "The noise temperature at the receiver’s output"
+  ]
+ ],
+ [
+  5,
+  "What is the primary purpose of a radiofrequency (RF) modulation in communication system?",
+  [
+   "To enable long-distance communication",
+   "To convert digital signals into analogue signals",
+   "To improve signal clarity in baseband communication",
+   "To simplify signal demodulation"
+  ]
+ ],
+ [
+  6,
+  "What is the modulation scheme that represents binary data using a phase shift of 180 degrees?",
+  [
+   "QPSK",
+   "BPSK",
+   "FSK",
+   "ASK"
+  ]
+ ],
+ [
+  7,
+  "What modulation scheme combines both amplitude and phase modulation to transmit digital data?",
+  [
+   "ASK",
+   "FSK",
+   "QPSK",
+   "QAM"
+  ]
+ ],
+ [
+  8,
+  "Which modulation scheme encodes digital data by varying the phase of the carrier signal?",
+  [
+   "ASK",
+   "FSK",
+   "QAM",
+   "PSK"
+  ]
+ ],
+ [
+  9,
+  "In which type of bipolar components can you typically find thermal noise?",
+  [
+   "Resistors",
+   "Inductors",
+   "Diodes",
+   "Capacitors"
+  ]
+ ],
+ [
+  10,
+  "Noise power spectral density (Noise PSD) is a measure of:",
+  [
+   "The total noise power in a circuit",
+   "The noise voltage in a circuit",
+   "The noise power per unit frequency",
+   "The signal-to-noise ratio in a circuit"
+  ]
+ ],
+ [
+  11,
+  "The Nyquist Sampling Theorem states that the minimum sampling rate must be at least:",
+  [
+   "Twice the highest frequency component of the signal",
+   "Half the highest frequency component of the signal",
+   "Equal to the highest frequency component of the signal",
+   "One-tenth of the highest frequency component of the signal"
+  ]
+ ],
+ [
+  12,
+  "What happens if the Nyquist Sampling Condition is not met when digitizing a signal?",
+  [
+   "The signal becomes distorted.",
+   "There is no effect on the digitization process.",
+   "The signal is oversampled.",
+   "The signal loses its highest frequency components."
+  ]
+ ],
+ [
+  13,
+  "How can aliasing be prevented in DSP when sampling analog signals with non-limited bandwidth?",
+  [
+   "By increasing the sampling rate.",
+   "By reducing the bit depth of the ADC.",
+   "By adding noise to the analog signal.",
+   "By using a low-pass anti-aliasing filter."
+  ]
+ ],
+ [
+  14,
+  "If aliasing occurs in a signal, what happens to its Fourier transform?",
+  [
+   "The Fourier transform remains unchanged.",
+   "The magnitude of the Fourier transform decreases.",
+   "The Fourier transform becomes distorted and inaccurate.",
+   "The phase of the Fourier transform is inverted."
+  ]
+ ],
+ [
+  15,
+  "What is the essential difference between the Fourier transform of a continuous signal and the Fourier transform of a distorted signal?",
+  [
+   "The Fourier transform of a discrete signal is always zero.",
+   "The Fourier transform of a discrete signal is a continuous function.",
+   "The Fourier transform of a discrete signal is periodic in the frequency domain.",
+   "The Fourier transform of a discrete signal is undefined."
+  ]
+ ],
+ [
+  16,
+  "What is The Fourier transform of a periodic discrete signal in the frequency domain?",
+  [
+   "A continuous spectrum with infinite frequency components.",
+   "A continuous spectrum with no discernible peaks.",
+   "A discrete spectrum with periodic frequency components.",
+   "A spectrum consisting of only odd harmonics."
+  ]
+ ],
+ [
+  17,
+  "In signal processing, what are in-phase (I) and quadrature (Q) components used for?",
+  [
+   "To represent real and imaginary parts of a signal.",
+   "To convert analog signals to digital.",
+   "To filter out high-frequency noise.",
+   "To increase the signal frequency."
+  ]
+ ],
+ [
+  18,
+  "In the context of communication systems, what does “White” mean when referring to AWGN?",
+  [
+   "The noise has a uniform frequency response.",
+   "The noise is visible as white lines in a spectral analysis.",
+   "The noise is only present in bright or white light environments.",
+   "The noise is generated by a white noise machine."
+  ]
+ ],
+ [
+  19,
+  "What is Shannon Channel Capacity in information theory?",
+  [
+   "The maximum data transfer rate a channel can support without error.",
+   "The number of channels available for broadcasting",
+   "The physical width of a communication channel.",
+   "A measure of channel quality."
+  ]
+ ],
+ [
+  20,
+  "How does sample and hold interpolation work?",
+  [
+   "It increases the signal’s frequency.",
+   "It discards the sampled values",
+   "It holds each sample for a fixed duration and creates a piecewise constant signal.",
+   "It creates a continuous signal by averaging the samples"
+  ]
+ ],
+ [
+  21,
+  "What is the primary purpose of a cardinal interpolation in signal processing?",
+  [
+   "To discard some of the original datapoints",
+   "To reduce the signal’s bandwidth",
+   "To reconstruct a continuous signal from discrete samples using sinc functions.",
+   "To perform high-pass filtering on the signal."
+  ]
+ ],
+ [
+  22,
+  "What is a necessary condition for the feasibility of cardinal interpolation in signal processing?",
+  [
+   "The original signal must be continuous.",
+   "The sampling rate should be decreased.",
+   "The signal should have limited bandwidth.",
+   "There are no specific conditions required."
+  ]
+ ],
+ [
+  23,
+  "What is the primary purpose of numerical baseband modulation in communication systems?",
+  [
+   "To transmit data at high frequencies.",
+   "To modulate analog signals",
+   "To facilitate data transmission for direct connection system",
+   "To simplify signal processing"
+  ]
+ ],
+ [
+  24,
+  "What is a property of a Dirac delta function?",
+  [
+   "It has no fourier transform",
+   "It is a continuous and differentiable function",
+   "It represents the impulse response of an LTI system",
+   "It produces an impulse at a specific time instant and integrates to 1 over its domain"
+  ]
+ ],
+ [
+  25,
+  "How does Gray coding work in digital communication?",
+  [
+   "It ensures that only one bit changes between adjacent values",
+   "It uses a series of gray-scale images for modulation.",
+   "It increases the resolution of digital-to-analog converters.",
+   "It represents information using a binary code with no particular order"
+  ]
+ ],
+ [
+  26,
+  "How many bits per level are needed to correctly encode a word?",
+  [
+   "Bits per level = |log2(N)|, where N is the number of levels",
+   "Bits per level = |N / log2(2)|, where N is the number of levels",
+   "Bits per level = |N − 1|, where N is the number of levels",
+   "Bits per level = |2^N|, where N is the number of levels"
+  ]
+ ],
+ [
+  27,
+  "In digital communication, what is the purpose of a signal constellation?",
+  [
+   "To help with navigation",
+   "To represent the value of power of signal",
+   "To organize data symbols for modulation",
+   "To map out radio frequency bands"
+  ]
+ ],
+ [
+  28,
+  "Calculate the noise figure in dB",
+  [
+   "About 6",
+   "About 7",
+   "About 8",
+   "About 9"
+  ]
+ ],
+ [
+  29,
+  "What is the “Nyquist criterion” to avoid inter symbol interference?",
+  [
+   "Shaping pulse must be constant",
+   "The channel frequency response must have only one sample in the origin",
+   "Shaping pulse must be periodic",
+   "The product of P(I) and channel frequency response must be flat"
+  ]
+ ],
+ [
+  30,
+  "In PCM, If I code with 4 bits, how much is the gain in dB of the Signal to quantization ratio?",
+  [
+   "2",
+   "4",
+   "24",
+   "16"
+  ]
+ ]
+]

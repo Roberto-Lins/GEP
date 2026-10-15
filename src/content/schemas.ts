@@ -84,6 +84,15 @@ export const cursoConfigSchema = z.object({
   downloads: z.array(downloadSchema).default([]),
   // Ausente = curso legado complete-only. Cursos novos usam o contrato 1.0.0.
   estudo: modalidadeCursoSchema.optional(),
+  // Curso fora do currículo da Escola Naval: aparece só na seção "Extras" da
+  // tela de turmas do ano. Ausente = curso curricular (comportamento anterior).
+  extra: z
+    .object({
+      rotulo: z.string().min(1),
+      instituicao: z.string().min(1).optional(),
+      dataProva: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
+    })
+    .optional(),
 });
 
 export const midiaSchema = z.object({

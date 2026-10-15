@@ -1,0 +1,268 @@
+---
+titulo: "Álgebra booleana e lógica digital — aula"
+secao: "aula"
+secaoOrdem: 1
+---
+
+## Resumo executivo
+
+Segunda metade da L5: como os CIs digitais processam sinais de só dois valores (0 e 1). Começa na álgebra booleana (Boole 1854, Shannon cerca de 1930), passa pelas operações básicas (AND, OR, NOT) e compostas (implicação, XOR, equivalência), pelas portas lógicas e suas tabelas-verdade, pelas leis booleanas e de De Morgan, pelas portas universais NAND e NOR, pelos circuitos combinacionais × sequenciais (latches SR e D) e termina nas famílias lógicas RTL → DTL → TTL → CMOS. **Não houve questão deste módulo em 2025**, mas está no programa (L1 p. 3). É o assunto mais "decorável" da L5: tabelas-verdade e definições de uma linha.
+
+<BlocoObjetivo titulo="Ao final você deve conseguir">
+
+- Escrever de memória a tabela-verdade de AND, OR, NOT, NAND, NOR, XOR, XNOR, BUFFER e da implicação.
+- Aplicar as leis comutativa, associativa, distributiva, de identidade e de De Morgan.
+- Explicar por que NAND (ou NOR) sozinha é universal.
+- Distinguir circuito combinacional de sequencial e preencher a tabela da latch SR.
+- Ordenar RTL, DTL, TTL, CMOS e explicar o baixo consumo do CMOS.
+
+</BlocoObjetivo>
+
+## Conceitos
+
+### C086 — Álgebra booleana e operações básicas (*Boolean algebra: AND, OR, NOT*)
+
+‹fonte: Electr L5 p. 44–48›
+
+Os CIs digitais trabalham com sinais elétricos de **dois valores** de tensão, aos quais a lógica binária associa 0 e 1; o processamento é feito por *logic gates* — circuitos que implementam uma operação lógica sobre uma ou mais variáveis booleanas (p. 44). A **álgebra booleana** foi criada por **George Boole em 1854**; por volta de **1930, Claude Shannon** a aplicou ao projeto de circuitos de chaveamento, base da lógica dos computadores (p. 45).
+
+Difere da álgebra elementar em dois pontos (p. 46): as variáveis valem **verdadeiro/falso** (1/0), não números; e usa **operadores lógicos**, não aritméticos. Há correspondência **um a um** entre expressão algébrica e circuito (p. 47): troca-se cada operador pela porta correspondente; inversamente, todo circuito é uma função $y = f(x_1, x_2, \ldots, x_n)$.
+
+Operações básicas (p. 48):
+
+| x | y | AND $x \land y$ | OR $x \lor y$ | NOT $\lnot x$ |
+|---|---|---|---|---|
+| 0 | 0 | 0 | 0 | 1 |
+| 0 | 1 | 0 | 1 | 1 |
+| 1 | 0 | 0 | 1 | 0 |
+| 1 | 1 | 1 | 1 | 0 |
+
+- **AND** = conjunção, produto lógico ($x \cdot y$, também "&"): saída 1 **só se ambas** as entradas forem 1.
+- **OR** = disjunção, soma lógica ($x + y$, também a barra vertical): saída 1 se **uma ou ambas** forem 1.
+- **NOT** = negação, inversão ($\bar{x}$, também "~"): inverte a entrada.
+
+<FiguraFonte figura="ne-ins-l5-p48" />
+
+### C087 — Operações compostas: implicação, XOR, equivalência (*Composed operations*)
+
+‹fonte: Electr L5 p. 49›
+
+| x | y | Implicação $x \to y$ | XOR $x \oplus y$ | Equivalência $x \leftrightarrow y$ |
+|---|---|---|---|---|
+| 0 | 0 | 1 | 0 | 1 |
+| 0 | 1 | 1 | 1 | 0 |
+| 1 | 0 | 0 | 1 | 0 |
+| 1 | 1 | 1 | 0 | 1 |
+
+- **Implicação** (*material conditional*, operador *implies*), $x \to y = \lnot x \lor y$: verdadeira **exceto** quando a primeira é 1 e a segunda é 0.
+- **XOR** (*exclusive OR*), $x \oplus y = \lnot(x \leftrightarrow y)$: 0 quando as entradas são **iguais**, 1 quando são **diferentes**.
+- **Equivalência** (*material biconditional*, *logical equivalence*), $x \leftrightarrow y$ (ou $x \equiv y$): 1 quando as entradas são **iguais**. É a função da porta **XNOR**.
+
+### C088 — Portas lógicas e símbolos (*Elementary logic gates*)
+
+‹fonte: Electr L5 p. 50–55›
+
+Porta lógica: dispositivo que executa uma operação booleana sobre uma ou mais entradas binárias e produz **uma única saída** binária; pode ser ideal (tempo de subida zero) ou física (p. 50). Classes: **duas variáveis** — AND, OR, XOR, NOR, NAND, XNOR; **uma variável** — NOT e BUFFER.
+
+O conjunto **AND, OR, NOT** é **funcionalmente completo** (*functionally complete set*): com ele se gera **qualquer** função lógica.
+
+Tabela-verdade completa das portas de duas entradas (p. 51–54):
+
+| A | B | AND | OR | NAND | NOR | XOR | XNOR |
+|---|---|---|---|---|---|---|---|
+| 0 | 0 | 0 | 0 | 1 | 1 | 0 | 1 |
+| 0 | 1 | 0 | 1 | 1 | 0 | 1 | 0 |
+| 1 | 0 | 0 | 1 | 1 | 0 | 1 | 0 |
+| 1 | 1 | 1 | 1 | 0 | 0 | 0 | 1 |
+
+Portas de uma entrada (p. 52, 55):
+
+| A | NOT | BUFFER |
+|---|---|---|
+| 0 | 1 | 0 |
+| 1 | 0 | 1 |
+
+Definições do slide (AND, OR e NOT como em C086):
+
+- **NAND**: saída 0 **só se todas** as entradas forem 1 (negação do AND).
+- **NOR**: saída 1 **só se ambas** as entradas forem 0 (negação do OR).
+- **XOR**: 1 quando o **número de entradas em 1 é ímpar** — função **desigualdade** (*inequality*).
+- **XNOR**: 1 quando as entradas são **iguais** — bicondicional, função **igualdade** (*equality*).
+- **BUFFER**: não altera o sinal. Para que serve? Copia a entrada e a **isola da carga**: alta impedância de entrada (puxa pouca corrente), baixa impedância de saída. Uso típico: armazenamento de dados; no circuito, pode ser visto como um **atraso** (*delay*).
+
+**Símbolos** (p. 51): *IEEE/ANSI* (o mais difundido, derivado da norma militar americana MIL-STD, formas curvas), *IEC* (europeu: retângulo com "&" para AND, "≥1" para OR, "1" para NOT/BUFFER) e *DIN* (norma alemã).
+
+### C089 — Leis booleanas e De Morgan (*Boolean laws, De Morgan*)
+
+‹fonte: Electr L5 p. 56–58›
+
+Leis principais (p. 56), com valores só 0 ou 1:
+
+| Lei | Para OR | Para AND |
+|---|---|---|
+| Comutativa | $A + B = B + A$ | $A \cdot B = B \cdot A$ |
+| Associativa | $(A + B) + C = A + (B + C)$ | $A \cdot (B \cdot C) = (A \cdot B) \cdot C$ |
+| Distributiva | — | $A \cdot (B + C) = (A \cdot B) + (A \cdot C)$ |
+| Identidade | $A + 0 = A$ | $A \cdot 1 = A$ |
+
+Cada lei pode ser implementada em portas e, portanto, em circuitos elétricos. As operações compostas vêm das básicas; o XOR, por exemplo (p. 57), é $x \oplus y = (x \land \lnot y) \lor (\lnot x \land y)$, isto é, (X AND NOT Y) OR (NOT X AND Y).
+
+**Leis de De Morgan** (p. 58):
+
+$$
+\overline{A \cdot B} = \bar{A} + \bar{B} \qquad \text{(NAND = Negative-OR)}
+$$
+
+$$
+\overline{A + B} = \bar{A} \cdot \bar{B} \qquad \text{(NOR = Negative-AND)}
+$$
+
+"A negação de A AND B é (NOT A) OR (NOT B); a negação de A OR B é NOT A AND NOT B." Regra prática: **nega tudo e troca AND ↔ OR**.
+
+<FiguraFonte figura="ne-ins-l5-p58" />
+
+<BlocoConceito titulo="Frase de prova — De Morgan">
+
+**De Morgan's laws**: the negation of "A AND B" equals "(NOT A) OR (NOT B)"; the negation of "A OR B" equals "(NOT A) AND (NOT B)". A NAND is a negative-OR; a NOR is a negative-AND.
+
+</BlocoConceito>
+
+### C090 — Portas universais NAND e NOR; PLA (*Universal gates, PLA*)
+
+‹fonte: Electr L5 p. 59–62›
+
+**Só NOR** (ou **só NAND**) basta para reproduzir **todas** as outras portas — por isso são **portas universais** (p. 59). Exemplos da figura: AND com NAND = uma NAND seguida de outra NAND usada como inversor; AND com NOR = inverter cada entrada com uma NOR e juntar com outra NOR (De Morgan); XOR com 4 NAND.
+
+<FiguraFonte figura="ne-ins-l5-p59" />
+
+Parâmetros de cascateamento (p. 60): ***fan-out*** = número de portas de carga ligadas à saída de uma porta (fan-out grande → mais lenta); ***fan-in*** = número de entradas da porta (fan-in grande → porta maior e mais lenta).
+
+As portas são os **blocos de construção** do digital: cascateadas como funções booleanas, constroem toda a lógica — somadores, *shifters*, comparadores, multiplexadores, registradores, ULAs, memória, até microprocessadores completos (p. 61).
+
+**PLA** (*Programmable Logic Array*, desde meados dos anos 70, p. 62): baseia-se na propriedade de que **toda função lógica pode ser escrita como soma de produtos** lógicos. Implementação: matriz de entrada de portas **AND programáveis** ligada a portas **OR programáveis**.
+
+<BlocoConceito titulo="Frase de prova — portas universais">
+
+**NAND** and **NOR** are **universal gates**: NAND gates alone (or NOR gates alone) can reproduce the function of every other logic gate. **AND, OR, NOT** together form a **functionally complete set**.
+
+</BlocoConceito>
+
+### C091 — Combinacional × sequencial; latches SR e D (*Combinational vs sequential, latches*)
+
+‹fonte: Electr L5 p. 63–66›
+
+- **Combinacional** (*combinational logic circuit*, p. 63): a saída em qualquer instante é **função direta das entradas atuais**; não depende de entradas anteriores.
+- **Sequencial** (*sequential logic circuit*, p. 64): a saída depende das entradas atuais **e das saídas anteriores**. Tem **elementos de memória** junto com lógica combinacional; é especificado por uma sequência no tempo de entradas, saídas e **estados internos**.
+
+**Latch SR** (*Set-Reset*, p. 65): elemento de armazenamento feito com portas realimentadas (ex.: duas NOR cruzadas) — tipo de circuito da RAM do PC. $S = 1, R = 0$ põe o estado em 1 (**SET**); $S = 0, R = 1$ põe em 0 (**RESET**); $S = R = 0$ **mantém** (*HOLD*) o estado anterior — por isso o sistema tem **memória**.
+
+| S | R | Q | Estado |
+|---|---|---|---|
+| 1 | 0 | 1 | SET |
+| 0 | 0 | Q anterior | HOLD |
+| 0 | 1 | 0 | RESET |
+| 1 | 1 | — | NOT ALLOWED (proibido) |
+
+(O slide imprime "0" na linha HOLD; o significado de HOLD é "mantém o valor anterior".)
+
+<FiguraFonte figura="ne-ins-l5-p65" />
+
+**Latch SR gated** (p. 66): acrescenta uma entrada de habilitação **E**. Com $E = 1$ funciona exatamente como a tabela SR acima; com $E = 0$ mantém o estado, quaisquer que sejam S e R.
+
+**Latch D** (p. 66): uso típico do SR **para evitar a configuração instável** (S = R = 1). Um circuito de entrada gera S e R a partir de um único dado **D** (o sinal a armazenar) e do habilitador **E**:
+
+| E | D | Q | $\overline{Q}$ |
+|---|---|---|---|
+| 1 | 1 | 1 | 0 |
+| 1 | 0 | 0 | 1 |
+| 0 | 1 | Q anterior | $\overline{Q}$ anterior |
+| 0 | 0 | Q anterior | $\overline{Q}$ anterior |
+
+<FiguraFonte figura="ne-ins-l5-p66" />
+
+### C092 — Famílias lógicas: RTL, DTL, TTL, CMOS (*Logic families*)
+
+‹fonte: Electr L5 p. 44, 67–71›
+
+**Família lógica** (p. 67–68): grupo de componentes digitais feitos com o **mesmo projeto de circuito**, com os **mesmos níveis lógicos** e a **mesma tensão de alimentação** (padronizada com tolerância, ex.: 5 V, de 4,5 a 5,5 V). Cada família tem uma função lógica principal (sua porta básica). Componentes da **mesma família são compatíveis** e ligam-se diretamente; entre famílias diferentes, em geral não.
+
+| Família | Nome | O que o slide destaca |
+|---|---|---|
+| RTL | *resistor-transistor logic* | a primeira; fan-in limitado por ruído (limita o cascateamento); fazia NAND e NOR; usada no computador da missão **Apollo** (2800 CIs, cada um com duas portas NOR RTL) |
+| DTL | *diode-transistor logic* | diodos no lugar de resistores; atenuou o problema de fan-in; também NAND e NOR |
+| TTL | *transistor-transistor logic* | primeira tecnologia de CI difundida no mundo todo; base da **série 7400** (computadores anos 70–80); baixo custo tornou o digital mais barato que o analógico; ex. (p. 44): 4 NAND de 2 entradas, 4,75 a 5,25 V, 10 a 50 ns |
+| CMOS | *complementary metal-oxide-semiconductor* | usada nos computadores de hoje; baseada no inversor MOSFET; baixo consumo |
+
+### C093 — CMOS: pull-up, pull-down, inversor e NAND (*CMOS logic*)
+
+‹fonte: Electr L5 p. 72–75›
+
+A lógica **CMOS** (inventada nos anos 60; o slide a apresenta como derivada da TTL) baseia-se no **inversor MOSFET** (p. 72). Ela tem uma rede ***pull-up*** e uma ***pull-down*** (p. 73):
+
+- **Pull-up** = MOSFETs **canal P** (PMOS), ligados a $V_{dd}$; "acendem" quando a tensão de porta (em relação ao source) fica abaixo do limiar → garantem o nível **1**.
+- **Pull-down** = MOSFETs **canal N** (NMOS), ligados a $V_{ss}$; acendem quando a tensão de porta fica acima do limiar → garantem o nível **0**.
+
+**Inversor (NOT):** $V_{in}$ alto (cerca de $V_{dd}$) → NMOS conduz → $V_{out}$ baixo (cerca de $V_{ss}$); $V_{in}$ baixo → PMOS conduz → $V_{out}$ alto. A saída é sempre o NOT da entrada.
+
+<FiguraFonte figura="ne-ins-l5-p73" />
+
+**NAND CMOS** (p. 74): dois PMOS em **paralelo** em cima, dois NMOS em **série** embaixo.
+
+| A | B | NMOS (série) | PMOS (paralelo) | Saída |
+|---|---|---|---|---|
+| 0 | 0 | nenhum conduz | ambos conduzem | 1 |
+| 0 | 1 | um não conduz | um conduz | 1 |
+| 1 | 0 | um não conduz | um conduz | 1 |
+| 1 | 1 | ambos conduzem | nenhum conduz | 0 |
+
+Com NAND (ou NOR) em CMOS se obtêm todas as outras funções.
+
+<FiguraFonte figura="ne-ins-l5-p74" />
+
+**Por que CMOS consome pouco** (p. 75): idealmente **não flui corrente**, e portanto não há consumo, **exceto durante a comutação** das entradas. Isso vem de complementar cada nMOSFET com um pMOSFET, ligando as duas portas juntas e os dois drenos juntos. Menos consumo e menos calor fizeram do CMOS o elemento fundamental de todos os CIs: praticamente todos os microprocessadores de PC são CMOS.
+
+<BlocoConceito titulo="Frase de prova — CMOS">
+
+**CMOS** pairs every nMOSFET (pull-down) with a pMOSFET (pull-up); in steady state one of them is always off, so ideally **no current flows except while switching** — hence very low static power consumption.
+
+</BlocoConceito>
+
+## Como isso caiu na prova de 2025
+
+**Nenhuma questão de 2025** saiu deste módulo. Ele está no programa (L1 p. 3). [INFERÊNCIA PEDAGÓGICA] Pelo formato da prova (definição curta em inglês, 4 alternativas), o mais provável é:
+
+- *Which gates are universal?* → NAND and NOR.
+- *Output of XOR / XNOR / NAND / NOR for given inputs* → use a tabela-verdade completa acima.
+- *De Morgan: NOT (A AND B) equals…* → (NOT A) OR (NOT B).
+- *Combinational vs sequential?* → o sequencial tem memória (depende de saídas anteriores).
+- *Forbidden input of an SR latch* → S = R = 1.
+- *Why is CMOS low power?* → corrente só na comutação.
+
+<BlocoPegadinha titulo="Pegadinhas">
+
+- **XOR × XNOR:** XOR = 1 quando as entradas são **diferentes** (número ímpar de 1s, "inequality"); XNOR = 1 quando são **iguais** ("equality", bicondicional).
+- **NOR só dá 1 em 00; NAND só dá 0 em 11.** Não confunda com OR e AND.
+- **Implicação** só é falsa em $x = 1, y = 0$; com $x = 0$ ela é sempre verdadeira.
+- **Universal × funcionalmente completo:** NAND sozinha e NOR sozinha são universais; o **conjunto** AND, OR, NOT é funcionalmente completo. AND sozinha ou OR sozinha **não** bastam.
+- **Latch SR:** S = R = 1 é **proibido**, não "toggle"; S = R = 0 é **HOLD**. A latch D existe justamente para nunca cair em S = R = 1.
+- **Slide de De Morgan (p. 58):** as tabelinhas do rodapé aparecem com rótulos trocados — a marcada "AND" tem saídas 0, 1, 1, 1 (que é OR) e a marcada "OR" tem 0, 0, 0, 1 (que é AND). Confie nas definições.
+
+</BlocoPegadinha>
+
+## Vocabulário EN → PT
+
+| English | Português | Em 1 linha |
+|---|---|---|
+| truth table | tabela-verdade | saída para cada combinação de entradas |
+| logic gate | porta lógica | circuito que executa uma operação booleana |
+| material conditional | implicação material | $x \to y = \lnot x \lor y$ |
+| exclusive OR (XOR) | OU exclusivo | 1 quando as entradas diferem |
+| logical equivalence | equivalência lógica | XNOR: 1 quando as entradas são iguais |
+| functionally complete set | conjunto funcionalmente completo | gera qualquer função (AND, OR, NOT) |
+| universal gate | porta universal | NAND ou NOR sozinha gera tudo |
+| sum of products | soma de produtos | forma usada no PLA |
+| fan-in / fan-out | fan-in / fan-out | nº de entradas / nº de cargas na saída |
+| combinational / sequential | combinacional / sequencial | sem memória / com memória |
+| latch (set, reset, hold) | latch (ativar, zerar, manter) | elemento de memória de 1 bit |
+| logic family | família lógica | mesmos níveis lógicos e mesma alimentação |
+| pull-up / pull-down network | rede pull-up / pull-down | PMOS levam a 1 / NMOS levam a 0 |

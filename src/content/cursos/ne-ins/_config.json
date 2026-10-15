@@ -1,0 +1,33 @@
+{
+  "slug": "ne-ins",
+  "titulo": "Naval Electronics — INS",
+  "subtitulo": "Accademia Navale · International Naval Semester · prova escrita de 16/10/2026",
+  "descricao": "Curso de véspera para a prova de Naval Electronics: sinais, Fourier, amostragem, ruído, ISI, capacidade, modulação digital, componentes e lógica — com a prova de 2025 inteira resolvida e 142 questões inéditas no mesmo estilo.",
+  "categoria": "Intercâmbio",
+  "ano": "4",
+  "semestre": "2",
+  "epoca": "T2",
+  "ordem": 90,
+  "temaVisual": "naval-command",
+  "corTema": "dourado",
+  "capa": "/imagens/cursos/ne-ins/capa.webp",
+  "features": {
+    "timeline": true,
+    "simulados": true,
+    "mapasMentais": false,
+    "podcasts": false,
+    "animacoesHero": true,
+    "animacoesTransicao": false,
+    "modoRevisaoVespera": true,
+    "graficoProgressoAvancado": false,
+    "writing": false,
+    "cadernoRevisao": false,
+    "verRespostaAntes": true
+  },
+  "componentesExtras": [],
+  "extra": {
+    "rotulo": "Intercâmbio · Accademia Navale",
+    "instituicao": "Accademia Navale (Marina Militare) — International Naval Semester",
+    "dataProva": "2026-10-16"
+  }
+}

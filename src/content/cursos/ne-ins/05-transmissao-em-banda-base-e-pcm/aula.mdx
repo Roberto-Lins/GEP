@@ -1,0 +1,216 @@
+---
+titulo: "Transmissão em banda base e PCM — aula"
+secao: "aula"
+secaoOrdem: 1
+---
+
+## Resumo executivo
+
+Depois do ADC (módulo 04) você tem bits. Este módulo responde: como esses bits viajam por um cabo? A resposta do slide é a *baseband transmission* (transmissão em banda base), também chamada *line coding* (codificação de linha): cada bit vira um pulso de tensão, sem deslocar o espectro para uma portadora. Você precisa saber a cadeia *encoder → baseband modulator → channel → demodulator → decoder*, a diferença entre *bit rate* e *symbol rate* (baud), os códigos NRZ, RZ, unipolar, polar, NRZ-L, NRZ-I e bipolar/AMI, o PCM telefônico (8 kHz × 8 bits = 64 kb/s) e o receptor com limiar de decisão.
+
+Na prova de 2025 caíram **duas** questões daqui: a Q23 (para que serve a modulação em banda base → *direct connection systems*, como Ethernet) e a Q30 (PCM com 4 bits → ganho de SQR de **24 dB**, a 6 dB por bit).
+
+<BlocoObjetivo titulo="Ao final você deve conseguir">
+
+- Dizer o que é transmissão em banda base e onde ela é usada (Ethernet, conexão direta, etapa anterior à passband).
+- Desenhar a cadeia de blocos e distinguir $T_d$ (bit) de $T_s$ (símbolo), bit rate de baud rate.
+- Reconhecer NRZ × RZ, unipolar × polar, NRZ-L × NRZ-I e bipolar/AMI, e dizer qual tem melhor sincronismo e equilíbrio DC.
+- Calcular a taxa do PCM e o ganho de SQR em dB a partir do número de bits (≈ 6 dB por bit).
+- Explicar o receptor: amostrador + decisor com limiar $\lambda$, e por que o ruído causa erros.
+
+</BlocoObjetivo>
+
+## Conceitos
+
+### C039 — Banda base × banda passante (Baseband vs. passband transmission)
+
+‹fonte: Electr L2 p. 50–51›
+
+O slide parte de uma provocação: "o mundo não é feito de bits... ele é analógico". Para levar bits por um meio físico (cabo, fibra, ar) é preciso transformá-los em uma grandeza física: tensão em um cabo, radiação eletromagnética entre antenas.
+
+A *baseband digital transmission* é a transmissão por um meio do tipo **passa-baixas** (*low-pass*), **sem processo de modulação**, isto é, sem deslocar o espectro do sinal para uma frequência de portadora. Ela também é chamada de *line coding* e serve para transferir um fluxo de bits por um canal em banda base, tipicamente "um fio não filtrado" (*an unfiltered wire*).
+
+O contrário é a *passband (broadband) transmission*, também chamada *carrier-modulated transmission* (transmissão com portadora modulada), assunto do módulo 09.
+
+Onde a banda base é usada, segundo o slide (frase de prova):
+
+- em vários protocolos de **conexão direta** (*direct connection systems*), como a **Ethernet**;
+- como **etapa preparatória** antes da transmissão em banda passante.
+
+<BlocoConceito titulo="Frase de prova — Q23">
+
+*Baseband modulation is used in several protocols for direct connection system, like Ethernet, as well as preparatory step before the passband transmission.* Portanto, o propósito principal da modulação numérica em banda base é **facilitar a transmissão de dados em sistemas de conexão direta**.
+
+</BlocoConceito>
+
+### C040 — Cadeia de transmissão, bit rate e baud (Encoder, baseband modulator, bit rate, modulation velocity)
+
+‹fonte: Electr L2 p. 52–56›
+
+Técnica básica (p. 52): para mandar bits por um canal passa-baixas, envia-se uma sucessão de formas de onda passa-baixas $s(t-kT)$, **réplicas deslocadas** de uma forma predeterminada $s(t)$, cada uma com amplitude positiva ou negativa conforme o bit (por exemplo, nível positivo para "1" e negativo para "0", ou o contrário). A figura mostra a informação, o *clock* e a codificação NRZ entre $+V$ e $-V$.
+
+<FiguraFonte figura="ne-ins-l2-p52" />
+
+Blocos do sistema (p. 53–54):
+
+| Bloco | Entrada → saída | Função |
+|---|---|---|
+| *Encoder* | bits $d$ → símbolos $a$ | forma a sequência de símbolos |
+| *Baseband modulator* | símbolos $a$ → sinal $v(t)$ | gera a forma de onda |
+| *Channel* | $v(t)$ → $r(t)$ | entrega réplica "pouco fiel", com ruído e interferência |
+| *Demodulator* | $r(t)$ → símbolos estimados $\hat a$ | recupera símbolos (podem diferir dos originais) |
+| *Decoder* | $\hat a$ → bits estimados $\hat d$ | transformação inversa do encoder |
+
+**Encoder + baseband modulator juntos realizam a função de *line coding*.**
+
+Tempos e taxas (p. 55), em transmissão síncrona:
+
+- $T_d$ = duração de um bit; a **taxa binária** (*bit rate*) é $r = 1/T_d$, em bit/s.
+- $T_s$ = **período de símbolo** (*symbol period*); $1/T_s$ é a **velocidade de modulação** (*modulation velocity*), o número de símbolos por segundo (baud).
+- Um símbolo pode carregar um ou mais bits; **só quando 1 bit = 1 símbolo** vale $T_d = T_s$.
+- A forma de sinalização pode ter **memória**: depender também dos símbolos anteriores $a_{n-1}, a_{n-2}$ (é o caso do bipolar, C042).
+
+Resumo matemático (p. 56): se cada amostra $n$ corresponde a um pulso $p(t)$,
+
+$$
+v(t) = \sum_{n=-\infty}^{+\infty} a_n \, p(t - nT)
+$$
+
+Exemplo numérico: com $T_d = 1\,\mu\mathrm{s}$, a taxa é $r = 1/T_d = 10^6$ bit/s = 1 Mb/s. Se cada símbolo levasse 2 bits, a velocidade de modulação seria a metade: 500 kbaud.
+
+### C041 — NRZ, RZ, unipolar, polar, NRZ-L e NRZ-I (Line encoding)
+
+‹fonte: Electr L2 p. 56–59›
+
+Para PAM binário (*2-PAM*, 1 símbolo = 1 bit), o slide dá o **NRZ polar**: $d_n = 0 \Rightarrow a_n = -1$ e $d_n = 1 \Rightarrow a_n = +1$ (por exemplo $+5\,\mathrm{V}$ e $-5\,\mathrm{V}$). Atenção do próprio slide: as formas de onda representam os **símbolos codificados**, não a forma de onda original.
+
+- **NRZ × RZ**: se o sinal **não volta a zero** dentro do bit, é *NRZ (non-return to zero)*; se volta, é *RZ (return to zero)*.
+- **Unipolar**: tensão positiva para 1 e **tensão zero** para 0.
+- **Polar NRZ**: dois níveis de tensão (em geral positivo = 1, negativo = 0). É NRZ porque não há condição de repouso (*no rest condition*).
+- **NRZ-L (level)**: o nível depende do valor do bit; muda de tensão quando aparece um bit diferente.
+- **NRZ-I (inverted, IBM, 1956)**: **muda a tensão quando encontra um 1** (também chamado NRZ-M); existe ainda o NRZ-S, que muda no "0". Uso citado: CDs, USB 2.0, Fast Ethernet.
+
+Sincronismo (*self-synchronization*, p. 59): o NRZ-L é **pior** que o NRZ-I, porque o NRZ-I garante uma transição na fronteira sempre que o próximo bit é 1. Sequências longas de **0** são problema para os dois; sequências longas de **1** são problema mais grave no **NRZ-L** (nível constante, sem transições).
+
+<FiguraFonte figura="ne-ins-l2-p59" />
+
+### C042 — Codificação bipolar e AMI (Bipolar encoding, Alternate Mark Inversion)
+
+‹fonte: Electr L2 p. 60–61›
+
+A *bipolar encoding* (que o slide classifica como código de retorno a zero) usa **três níveis**: positivo, negativo e zero. O bit 0 é tensão zero; o bit 1 é representado **alternando** tensões positiva e negativa. Os dados são binários, mas os símbolos são ternários: $d \in \lbrace 0, 1 \rbrace$ e $a \in \lbrace -1, 0, +1 \rbrace$, por exemplo $-5\,\mathrm{V}$, $0\,\mathrm{V}$ e $+5\,\mathrm{V}$.
+
+Por que importa:
+
+- É **codificação com memória** (*memory coding*): o sinal de cada 1 depende do 1 anterior.
+- Foi projetada para **equilíbrio DC** (*DC balancing*; componente DC é "energia desperdiçada"), passando tempos iguais nos estados + e −.
+- Permite **extrair o sincronismo no receptor**: com unipolar (e também NRZ-L e NRZ-I) isso pode falhar, obrigando a transmitir sincronismo à parte. No bipolar, sequências de "1" não causam falta de transições.
+- Aplicação típica: **AMI** (*alternate mark inversion*; "mark" é o bit 1).
+
+Exemplo do slide: $1337_{10} = 10100111001_2$. Em AMI, os 1 saem alternados: $+,\ 0,\ -,\ 0,\ 0,\ +,\ -,\ +,\ 0,\ 0,\ -$.
+
+<FiguraFonte figura="ne-ins-l2-p61" />
+
+### C043 — PCM (Pulse Code Modulation)
+
+‹fonte: Electr L2 p. 62–64›
+
+O PCM é o ponto de partida histórico da codificação de sinais analógicos: modulação numérica padrão da telefonia por décadas (patenteada em 1938). Depois de **amostrar e quantizar**, faz-se a **codificação**: a amplitude de cada amostra vira uma sequência de bits, convertida em um grupo de $n$ pulsos. É **robusto** em comparação com a transmissão analógica, **à custa de ocupação de banda**.
+
+A figura (p. 63) mostra: (a) sinal amostrado e quantizado em 3 instantes; (b) sinal digital de 4 bits, 16 níveis; (c) portadora impulsiva; (d) PCM unipolar; (e) PCM NRZ.
+
+<FiguraFonte figura="ne-ins-l2-p63" />
+
+Números do PCM telefônico (ITU-T G.711), p. 64:
+
+- frequência de amostragem $f_c = 8\,\mathrm{kHz}$ (banda telefônica de 3,4 kHz + margem; lembre $f_c \ge 2B$);
+- $256 = 2^8$ níveis (divididos entre positivos e negativos), cada um codificado em **8 bits**;
+- taxa de um canal:
+
+$$
+R = 8000\,\tfrac{\text{amostras}}{\mathrm{s}} \times 8\,\tfrac{\text{bits}}{\text{amostra}} = 64\,\mathrm{kb/s}
+$$
+
+- isso exige cerca de **64 kHz** de banda, em vez dos 4 kHz do sinal analógico (é o "preço" do PCM).
+
+Para estreitar a banda, usam-se **menos níveis** (ex.: 64 níveis = 6 bits → $8000 \times 6 = 48\,\mathrm{kb/s}$), o que gera **mais erro de quantização**. Cada bit a mais acrescenta cerca de **+6 dB** à *signal to quantization ratio* (SQR).
+
+$$
+\mathrm{SQR_{ganho}} \approx 6\,\mathrm{dB} \times n \qquad (n = \text{bits por amostra})
+$$
+
+| Bits $n$ | Níveis $2^n$ | Ganho de SQR | Taxa a 8 kHz |
+|---|---|---|---|
+| 4 | 16 | ≈ 24 dB | 32 kb/s |
+| 6 | 64 | ≈ 36 dB | 48 kb/s |
+| 8 | 256 | ≈ 48 dB | 64 kb/s |
+
+Por que 6 dB por bit? [INFERÊNCIA PEDAGÓGICA] Um bit a mais **dobra** o número de níveis e, para a mesma faixa, **reduz à metade** o passo de quantização $K$ (módulo 04, erro máximo $\pm K/2$). Metade da amplitude de erro é $20\log_{10}2 \approx 6\,\mathrm{dB}$ a mais de SQR (a regra "+6 dB = 2× em amplitude" do módulo 03).
+
+<BlocoConceito titulo="Frase de prova — Q30">
+
+O slide diz "*each level adds about +6 dB*", mas o cálculo cobrado é **por bit**: com 4 bits, $4 \times 6 = 24\,\mathrm{dB}$ de ganho na SQR.
+
+</BlocoConceito>
+
+### C044 — Receptor em banda base e limiar de decisão (Baseband receiver, decision threshold)
+
+‹fonte: Electr L2 p. 65–67›
+
+O sinal $v(t)$ chega ao receptor **modificado**: atraso, atenuação, ruído e interferência $n(t)$. No caso de 2 níveis, o receptor faz o processo inverso:
+
+1. **amostra** o sinal recebido $r(t)$ (para recuperar amostras a partir da forma de onda);
+2. um **dispositivo de decisão** (*decision device*) decide se cada amostra é "1" ou "0".
+
+O critério simples do slide é comparar a amostra com um **limiar** predeterminado $\lambda$ (*threshold*). Com $a_k \in \lbrace 1, -1 \rbrace$:
+
+$$
+r \gt \lambda \Rightarrow a_k = 1,\ d_k = 1 \qquad\qquad r \lt \lambda \Rightarrow a_k = -1,\ d_k = 0
+$$
+
+A **probabilidade de erro** está ligada essencialmente ao ruído e às interferências: o decisor observa uma **variável aleatória** em vez da amostra transmitida e, se o ruído empurra a amostra para o outro lado de $\lambda$, ocorre um erro de bit. Existem decisores sofisticados (*hard/soft decision decoders*), fora do escopo do curso. Esse é o gancho para o módulo 06 (SNR e BER) e o módulo 07 (ISI, que causa erro **mesmo sem ruído**).
+
+## Como isso caiu na prova de 2025
+
+**Q23** — *What is the primary purpose of numerical baseband modulation in communication systems?*
+Resposta: **c) To facilitate data transmission for direct connection system.** (L2 p. 51: Ethernet.)
+
+- a) "transmitir em altas frequências" é o papel da modulação **com portadora** (passband), não da banda base.
+- b) "modular sinais analógicos" — a banda base aqui transmite **dados digitais**.
+- d) "simplificar o processamento" — genérico; não é o propósito citado no slide.
+
+**Q30** — *In PCM, if I code with 4 bits, how much is the gain in dB of the signal to quantization ratio?*
+Resposta: **c) 24.** Cada bit ≈ +6 dB → $4 \times 6 = 24\,\mathrm{dB}$.
+
+- a) 2 e b) 4 — confundem com nada de dB (4 é só o número de bits).
+- d) 16 — é o número de **níveis** ($2^4$), não o ganho em dB.
+
+<BlocoPegadinha titulo="Pegadinhas">
+
+- **Banda base não tem portadora.** "To transmit data at high frequencies" é passband; banda base é passa-baixas, "unfiltered wire", Ethernet.
+- **Bit rate ≠ baud.** $r = 1/T_d$ (bits/s) e $1/T_s$ (símbolos/s) só coincidem quando 1 símbolo = 1 bit.
+- **NRZ-I muda no 1, não no 0.** E NRZ-L sofre mais com longas sequências de **1**; longas sequências de 0 atrapalham os dois.
+- **Bipolar/AMI tem 3 níveis** e memória; vantagens: equilíbrio DC e sincronismo. Não confunda com polar NRZ (2 níveis).
+- **6 dB é por bit.** Na Q30, 16 é o número de níveis, distrator clássico; a resposta é 24 dB.
+- **64 kb/s = 8000 × 8**, não 4000 × 16: a amostragem é 8 kHz por causa da banda de 3,4 kHz + margem.
+
+</BlocoPegadinha>
+
+## Vocabulário EN → PT
+
+| Inglês | Português | Significado em 1 linha |
+|---|---|---|
+| Baseband transmission | Transmissão em banda base | Envio dos bits como pulsos, sem portadora, em meio passa-baixas |
+| Passband (broadband) transmission | Transmissão em banda passante | Transmissão com portadora modulada (módulo 09) |
+| Line coding | Codificação de linha | Encoder + modulador em banda base: bits viram forma de onda |
+| Direct connection system | Sistema de conexão direta | Enlace por fio, como Ethernet |
+| Bit rate | Taxa binária | $r = 1/T_d$, em bit/s |
+| Symbol period / modulation velocity | Período de símbolo / velocidade de modulação | $T_s$ e $1/T_s$ (baud) |
+| NRZ / RZ | Sem retorno a zero / com retorno a zero | Se o nível volta ou não a zero dentro do bit |
+| Unipolar / polar | Unipolar / polar | 1 = +V e 0 = 0 V; ou 1 = +V e 0 = −V |
+| NRZ-L / NRZ-I | NRZ por nível / NRZ invertido | Nível segue o bit; ou inverte a cada 1 |
+| Bipolar, AMI | Bipolar, inversão alternada de marca | 3 níveis; 1 alterna + e −; 0 é zero |
+| DC balancing | Equilíbrio DC | Tempo igual em + e −, sem componente contínua |
+| PCM | Modulação por código de pulsos | Amostrar, quantizar e codificar em $n$ bits |
+| SQR | Relação sinal/ruído de quantização | Melhora ≈ 6 dB por bit |
+| Decision threshold | Limiar de decisão | Valor $\lambda$ que separa "1" de "0" |

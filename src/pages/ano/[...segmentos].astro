@@ -18,6 +18,8 @@ import {
   breadcrumbDe,
   contarMaterias,
   filtrarCursos,
+  filtrarExtras,
+  anoUsaTurma,
 } from '@utils/hierarchy';
 import { dadosDoCurso } from '@utils/content';
 import { familiaDoCurso } from '@utils/courses';
@@ -87,6 +89,23 @@ const cursosLeaf =
       }))
     : [];
 
+// Seção "Extras": cursos fora do currículo da Escola Naval (intercâmbio etc.).
+// Aparece só na tela raiz do ano — turmas (3°/4°) ou semestres (1°/2°).
+const telaRaizDoAno = segs.length === 1 && (anoUsaTurma(ano) ? nivel === 'turmas' : nivel === 'semestres');
+const cursosExtras = telaRaizDoAno
+  ? filtrarExtras(ano).map((c) => ({
+      slug: c.estudo?.familiaId ?? c.slug,
+      href: rotaEntradaFamilia(familiaDoCurso(c)),
+      progressSlug: c.slug,
+      titulo: c.estudo?.familiaTitulo ?? c.titulo,
+      subtitulo: c.subtitulo,
+      descricao: c.descricao,
+      categoria: c.extra?.rotulo ?? c.categoria,
+      totalMaterias: dadosDoCurso(c.slug)?.topicosEstudo.length ?? 0,
+      imagem: `/imagens/plataforma/cursos/${c.estudo?.familiaId ?? c.slug}.webp`,
+    }))
+  : [];
+
 const descricaoNivel: Record<typeof nivel, string> = {
   turmas: 'Escolha a turma. As matérias gerais ficam só em GERAL.',
   semestres: 'Escolha o semestre.',
@@ -121,5 +140,17 @@ const descricaoNivel: Record<typeof nivel, string> = {
         <NavCard href={c.href} titulo={c.titulo} badge={c.badge} meta={c.meta} imagem={c.imagem} cta="Abrir →" />
       ))}
     </div>
+  )}
+
+  {cursosExtras.length > 0 && (
+    <section id="extras" class="mt-12 scroll-mt-24" aria-labelledby="extras-titulo">
+      <div class="mb-5 border-t border-dourado/20 pt-8">
+        <h2 id="extras-titulo" class="text-2xl font-bold sm:text-3xl">Extras</h2>
+        <p class="mt-2 text-nevoa/75">
+          Cursos fora do currículo da Escola Naval — intercâmbios e provas externas. Não entram em nenhuma turma, semestre ou época.
+        </p>
+      </div>
+      <CourseDashboard cursos={cursosExtras} client:load />
+    </section>
   )}
 </BaseLayout>

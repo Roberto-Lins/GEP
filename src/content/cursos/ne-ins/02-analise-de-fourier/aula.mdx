@@ -1,0 +1,239 @@
+---
+titulo: "Análise de Fourier — aula"
+secao: "aula"
+secaoOrdem: 1
+---
+
+## Resumo executivo
+
+Este módulo leva o sinal do **domínio do tempo** (*time domain*) para o **domínio da frequência** (*frequency domain*). São quatro "sabores" de Fourier, escolhidos pelo tipo de sinal: **série** (SFT, sinal contínuo periódico), **CTFT** (contínuo aperiódico), **DTFT** (discreto aperiódico) e **DFT** (discreto periódico, calculada na prática pela **FFT**). O conceito-chave é a dualidade: **periódico em um domínio ↔ linhas (discreto) no outro**.
+
+Na prova de 2025 caíram **duas** questões daqui (Q15 e Q16), ambas sobre o que acontece com o espectro de um sinal **discreto**: ele fica **periódico** em frequência; se o sinal discreto também for periódico, o espectro fica **discreto e periódico**. Também é aqui que nascem a **largura de banda** (*bandwidth*) e o par **rect ↔ sinc**, usados em amostragem e filtros.
+
+<BlocoObjetivo titulo="Ao final você deve conseguir">
+
+- Explicar por que senoides formam um conjunto **completo e ortogonal** e o que é a frequência fundamental $f_1 = 1/T$.
+- Descrever o espectro da onda quadrada (componente contínua 1/2, harmônicos pares nulos).
+- Enunciar o teorema de Parseval em palavras.
+- Dar o par rect ↔ sinc e o par Dirac ↔ constante, e explicar por que $B \propto 1/T$.
+- Dizer, para CTFT, SFT, DTFT e DFT, se o espectro é contínuo ou de linhas, periódico ou não.
+
+</BlocoObjetivo>
+
+## Conceitos
+
+### C013 — Série de Fourier (Fourier series)
+
+‹fonte: Electr L1 p. 37–39›
+
+Toda função $X(t)$ pode ser aproximada pela soma de funções elementares $U_n(t)$ multiplicadas por coeficientes $C_n$. Para uma **boa** aproximação, as funções devem formar um conjunto **completo e ortogonal** (*complete and orthogonal set*):
+
+- **Completude**: cada novo termo acrescentado à série **melhora** a aproximação da função original.
+- **Ortogonalidade**: para quaisquer duas funções diferentes, o produto integrado no período é nulo:
+
+$$
+\int_0^T u_n(t)\,u_m(t)\,dt = 0, \qquad m \ne n
+$$
+
+Um bom conjunto são as **funções senoidais**: um sinal **periódico** de período $T$, contínuo nesse intervalo, pode ser representado como **soma de senoides** de amplitude e fase adequadas. Na forma exponencial (L1 p. 38):
+
+$$
+x(t) = \sum_{n=-\infty}^{+\infty} X_n\, e^{j2\pi f_n t}, \qquad f_n = \frac{n}{T}
+$$
+
+com $e^{j2\pi f_n t} = \cos 2\pi f_n t + j \sin 2\pi f_n t$ (Euler, módulo 01).
+
+**Frequência fundamental** (*fundamental frequency*): o valor obtido com $n = 1$, $f_1 = 1/T$, é a primeira senoide; todas as outras (os **harmônicos**, *harmonics*) são **múltiplos** dela. O slide mostra uma onda quadrada sendo reconstruída: com 1, depois 2, depois mais senoides, a soma fica cada vez mais parecida com o quadrado (completude na prática).
+
+**Onda quadrada (p. 39):** para a onda quadrada de amplitude 0 a 1 com meio período em cada nível, a **componente contínua** (*DC*, $k = 0$) vale $1/2$ e **todos os harmônicos pares têm amplitude zero** — por causa da **simetria** da forma de onda. No gráfico aparecem apenas $k = 0, 1, 3, 5, 7, 9$, com amplitudes decrescentes.
+
+<FiguraFonte figura="ne-ins-l1-p39" />
+
+### C014 — Espectro de linhas, módulo e fase; Parseval (series Fourier transform, line spectrum, Parseval's theorem)
+
+‹fonte: Electr L1 p. 40–43›
+
+Descrever um sinal periódico no tempo é **equivalente** a descrevê-lo pelos coeficientes da série de Fourier (domínio da frequência). Passa-se de $x(t)$ para o **espectro** $X_n$ de forma **única e sem ambiguidade** — a chamada **SFT** (*Series Fourier Transform*):
+
+$$
+X_n = \frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} x(t)\, e^{-j2\pi f_n t}\,dt
+$$
+
+Como o sinal é periódico, o espectro só existe nas frequências $f_n = n/T$: é um **espectro de linhas** (*line spectrum*). Exemplo do slide: um trem de pulsos retangulares de amplitude $A$, largura $\tau$ e período $T$ (área de cada pulso $Q = A\tau$) tem linhas cujo valor máximo, em $n = 0$, é $A\tau/T$, com envoltória em forma de sinc.
+
+Como os $X_n$ são **complexos**, o espectro tem duas partes: **espectro de módulo** (amplitude), $\lvert X_n \rvert$, e **espectro de fase**, $\varphi_n$ (p. 41).
+
+**Teorema de Parseval** (p. 42): dada a equivalência tempo ↔ frequência, a **potência média** do sinal pode ser calculada **só com os coeficientes**:
+
+$$
+P_x = \frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} \lvert x(t) \rvert^2\,dt = \sum_{n=-\infty}^{+\infty} \lvert X_n \rvert^2
+$$
+
+Cada parcela $\lvert X_n \rvert^2$ é a **potência associada a um único harmônico** $X_n e^{j2\pi f_n t}$.
+
+**Exemplo — cossenoide (p. 43):** $f(t) = A\cos\omega_0 t$ tem espectro com **duas linhas** de altura $A/2$ em $\pm\omega_0$ (com $\omega = 2\pi f$):
+
+$$
+F(\omega) = \frac{A}{2}\left[\delta(\omega-\omega_0) + \delta(\omega+\omega_0)\right]
+$$
+
+A metade da amplitude vai para a frequência positiva e a outra metade para a negativa.
+
+### C015 — Por que analisar em frequência (why frequency analysis)
+
+‹fonte: Electr L1 p. 44–48›
+
+No domínio da frequência o sinal é **decomposto nas frequências que o compõem**, como um feixe de luz atravessando um **prisma** de vidro ($f \cdot \lambda = c$): o raio se separa nos seus componentes e obtém-se o **espectro**, "extraindo" a informação de interesse do resto (por exemplo, do ruído).
+
+Exemplos dos slides (p. 45–47): soma de uma senoide de 50 Hz e 10 V com outra de 150 Hz e 3 V. Mudando apenas a fase da segunda (0°, 45°, −180°), a **forma de onda resultante no tempo muda bastante**, mas o espectro de amplitude continua mostrando as mesmas duas linhas (10 V em 50 Hz, 3 V em 150 Hz); a diferença aparece só no **espectro de fase**.
+
+Exemplo decisivo (p. 48): um sinal que no tempo parece puro ruído; no domínio da frequência fica fácil ver **duas senoides**, $f_1 = 50\,\mathrm{Hz}$ e $f_2 = 120\,\mathrm{Hz}$, imersas em **ruído branco** (*white noise*: **espectro plano em todas as frequências**). Essa definição de "branco" volta no módulo de ruído (AWGN).
+
+### C016 — Transformada de Fourier em tempo contínuo (continuous time Fourier transform, CTFT)
+
+‹fonte: Electr L1 p. 49–52›
+
+Para um sinal **contínuo e não periódico**, usa-se a **CTFT**. O espectro deixa de ser "em linhas" e passa a ser **contínuo** (infinitas frequências contínuas são necessárias para representá-lo). Intuição do slide: partindo da onda quadrada, aumente o período $T$ até o infinito; como a distância entre as linhas espectrais é $1/T$, elas ficam cada vez mais próximas até descreverem uma **curva contínua**.
+
+$$
+X(f) = \int_{-\infty}^{+\infty} x(t)\, e^{-j2\pi f t}\,dt
+$$
+
+**Par rect ↔ sinc (p. 50):**
+
+$$
+x(t) = A\,\mathrm{rect}\left(\frac{t}{T}\right) \iff X(f) = AT\,\mathrm{sinc}(Tf)
+$$
+
+O pico vale $AT$ (a **área** do pulso) e os zeros ficam em $f = \pm 1/T, \pm 2/T, \dots$ O slide marca $B \equiv 1/T$: a largura do lóbulo principal (no semieixo positivo) é $1/T$. Encurtando o pulso (**T−−**), o sinc **alarga**; alongando o pulso (**T++**), o sinc **estreita**.
+
+<FiguraFonte figura="ne-ins-l1-p50" />
+
+**Par dual sinc ↔ rect (p. 51):** a dualidade também vale ao contrário — um sinc no tempo tem espectro retangular, limitado entre $-1/2T$ e $1/2T$:
+
+$$
+x(t) = A\,\mathrm{sinc}\left(\frac{t}{T}\right) \iff X(f) = AT\,\mathrm{rect}(fT)
+$$
+
+<FiguraFonte figura="ne-ins-l1-p51" />
+
+É esse par que explica, no módulo 03, por que o filtro passa-baixas ideal (rect em frequência) tem resposta ao impulso sinc no tempo.
+
+**Dirac ↔ constante (p. 52):** o impulso matemático é obtido do pulso retangular com área unitária ($Q = A\tau = 1$) e duração no limite $\tau \to 0$. Em frequência, o sinc se alarga indefinidamente ($1/\tau \to \infty$) e o espectro vira uma **constante de amplitude 1**: **o Dirac tem espectro plano**.
+
+<BlocoConceito titulo="Pares de Fourier que caem em prova">
+
+*Narrow in time → wide in frequency.* A rectangular pulse transforms into a **sinc**; a sinc transforms into a rectangle; a **Dirac delta** transforms into a **constant (flat) spectrum**. A periodic signal has a **line spectrum**; an aperiodic one has a **continuous spectrum**.
+
+</BlocoConceito>
+
+### C017 — Largura de banda (bandwidth)
+
+‹fonte: Electr L1 p. 53–54›
+
+**Largura de banda** $B$ de um sinal $x(t)$ é a faixa de frequências, **medida no semieixo positivo**, em que $X(f)$ é diferente de zero.
+
+- Sinais **passa-baixas** (*low-pass type*): $X(f)$ concentrado em torno de $f = 0$; a banda vai de 0 a $B$.
+- Sinais **passa-faixa** (*band-pass type*): $X(f)$ concentrado em torno de $f = \pm f_0$; a banda é a largura do lóbulo em torno de $f_0$.
+
+Muitas vezes $X(f)$ é diferente de zero **até** $+\infty$ (o sinc do rect nunca zera de vez). Então define-se a **banda significativa** (*significant band*): a faixa em que $X(f)$ é "significativamente" diferente de zero — por exemplo, até 5–10 % da amplitude da fundamental — ou a faixa que concentra **90–95 % da potência** do sinal. O resto é a banda desprezível (*negligible band*).
+
+**Regra de ouro:** $B$ é **proporcional a** $1/T$. Se o sinal fica mais rápido (pulsos de menor duração), é preciso **mais banda**.
+
+### C018 — Transformada de Fourier em tempo discreto (discrete time Fourier transform, DTFT)
+
+‹fonte: Electr L1 p. 55›
+
+Os casos discretos são os mais usados no processamento digital, em que um sinal analógico é **amostrado no tempo** (módulo 04) — são sinais "artificiais". Para um sinal **discreto e aperiódico** no tempo (amostras a intervalos regulares), a **DTFT** dá um **espectro contínuo e periódico** em frequência.
+
+Leitura espelhada: a DTFT é "uma SFT ao contrário" — na SFT há linhas na frequência e uma forma de onda periódica no tempo; na DTFT há **linhas no tempo** (as amostras) e uma forma de onda **periódica na frequência**. Na figura, as amostras espaçadas de $T$ geram um espectro que se repete, com marcas em $\pm 1/2T$.
+
+<FiguraFonte figura="ne-ins-l1-p55" />
+
+### C019 — Transformada discreta de Fourier e FFT (discrete Fourier transform, DFT; fast Fourier transform, FFT)
+
+‹fonte: Electr L1 p. 56–57›
+
+A **DFT** é aplicada a um sinal **discreto e periódico** no tempo, de período $T_0$, e produz um **espectro de linhas periódico**. Leitura do slide: partindo da DTFT (contínua e periódica), repetir o sinal discreto com período $T_0$ transforma o espectro em **discreto** — porque agora o tempo é periódico. Na figura, $g(kT)$ periódico ↔ $G(n/NT)$ em linhas, repetido.
+
+Resumo do próprio slide: **período, tanto em $t$ quanto em $f$, significa linhas** — período em $t$ e em $f$ ⇒ linhas em $t$ e em $f$.
+
+<FiguraFonte figura="ne-ins-l1-p56" />
+
+**FFT** (p. 57): nas aplicações modernas a DFT é calculada por algoritmos computacionalmente eficientes, como a ***Fast Fourier Transform***, com menor volume de cálculo. A aproximação depende de $N$ (número de pontos): **$N$ baixo → menos precisão e mais velocidade**, e vice-versa. O slide compara a DTFT (módulo) com a FFT para $N = 10$ e $N = 20$: com mais pontos, as linhas da FFT acompanham melhor a curva contínua.
+
+### C020 — Recapitulação: período ↔ linhas, discreto ↔ periódico (Fourier transforms recap)
+
+‹fonte: Electr L1 p. 58›
+
+<FiguraFonte figura="ne-ins-l1-p58" />
+
+| Transformada | Sinal no tempo | Espectro em frequência |
+|---|---|---|
+| **CTFT** | contínuo, aperiódico | **contínuo**, aperiódico |
+| **SFT** (série) | contínuo, **periódico** | **de linhas**, aperiódico |
+| **DTFT** | **discreto**, aperiódico | contínuo, **periódico** |
+| **DFT** (via FFT) | **discreto**, **periódico** | **de linhas**, **periódico** |
+
+Duas regras cobrem a tabela inteira:
+
+1. **Periódico** num domínio ⇒ **discreto (linhas)** no outro.
+2. **Discreto** num domínio ⇒ **periódico** no outro.
+
+O slide marca ainda, no espectro da CTFT, a **banda significativa** e a **banda desprezível** (C017).
+
+<BlocoConceito titulo="Regra da dualidade (frase de prova)">
+
+*The Fourier transform of a **discrete** signal is **periodic** in the frequency domain. The Fourier transform of a **periodic discrete** signal is a **discrete and periodic** spectrum (periodic line spectrum).*
+
+</BlocoConceito>
+
+## Como isso caiu na prova de 2025
+
+**Q15 — *What is the essential difference between the Fourier transform of a continuous signal and the Fourier transform of a discrete signal?*** (o enunciado original diz "*distorted*", erro de digitação; as alternativas falam de *discrete*.)
+
+Resposta correta: **(c) *The Fourier transform of a discrete signal is periodic in the frequency domain*** (DTFT, L1 p. 55; recap p. 58).
+
+- (a) *always zero* — absurdo; a DTFT tem conteúdo espectral.
+- (b) *is a continuous function* — armadilha: a DTFT **é** contínua, mas a CTFT de um sinal contínuo **também é**; logo isso não é a **diferença** entre elas. A diferença é a **periodicidade**.
+- (d) *undefined* — errado; a DTFT existe e é a ferramenta do slide.
+
+**Q16 — *What is the Fourier transform of a periodic discrete signal in the frequency domain?***
+
+Resposta correta: **(c) *A discrete spectrum with periodic frequency components*** (DFT, L1 p. 56: "*periodic line spectrum*").
+
+- (a) *continuous spectrum with infinite frequency components* — isso é a CTFT (ou a DTFT); sinal periódico gera **linhas**, não espectro contínuo.
+- (b) *continuous spectrum with no discernible peaks* — errado pelos mesmos motivos; parece descrição de ruído branco.
+- (d) *only odd harmonics* — armadilha da onda quadrada (C013): só harmônicos ímpares é uma propriedade **daquela forma de onda simétrica**, não de qualquer sinal discreto periódico.
+
+**O que mais pode cair daqui** [INFERÊNCIA PEDAGÓGICA]: espectro de um sinal periódico contínuo (linhas); Parseval (potência pelos coeficientes); $B \propto 1/T$; transformada do rect (sinc); FFT como algoritmo eficiente para a DFT.
+
+<BlocoPegadinha titulo="Pegadinhas">
+
+- "Contínuo" e "periódico" são propriedades **independentes** do espectro. A DTFT é contínua **e** periódica; a DFT é discreta **e** periódica.
+- A diferença essencial entre a transformada de um sinal contínuo e a de um discreto é a **periodicidade em frequência**, não a continuidade.
+- Harmônicos pares nulos são consequência da **simetria da onda quadrada**, não regra geral de Fourier.
+- Pulso **mais curto** → espectro **mais largo**. Quem inverte isso erra $B \propto 1/T$.
+- A banda é medida **só no semieixo positivo** de frequências.
+- FFT não é outra transformada: é um **algoritmo rápido** para calcular a DFT; menos pontos $N$ = mais rápido e menos preciso.
+
+</BlocoPegadinha>
+
+## Vocabulário EN → PT
+
+| English | Português | O que significa |
+|---|---|---|
+| *time domain / frequency domain* | domínio do tempo / da frequência | descrição por x(t) ou pelo espectro |
+| *complete and orthogonal set* | conjunto completo e ortogonal | base de funções que permite aproximar bem um sinal |
+| *fundamental frequency* | frequência fundamental | primeira senoide, igual a 1/T |
+| *harmonics* | harmônicos | múltiplos inteiros da fundamental |
+| *line spectrum* | espectro de linhas | espectro que só existe em frequências discretas |
+| *magnitude / phase spectrum* | espectro de módulo / de fase | amplitude e fase de cada componente |
+| *Parseval's theorem* | teorema de Parseval | potência média = soma das potências dos harmônicos |
+| *white noise* | ruído branco | espectro plano em todas as frequências |
+| *CTFT* | transformada de Fourier contínua | espectro contínuo de sinal aperiódico |
+| *DTFT* | transformada de Fourier de tempo discreto | sinal discreto aperiódico → espectro contínuo e periódico |
+| *DFT / FFT* | transformada discreta / algoritmo rápido | sinal discreto periódico → linhas periódicas |
+| *bandwidth* | largura de banda | faixa positiva em que o espectro é não nulo |
+| *significant band* | banda significativa | faixa com 90–95 % da potência |
+| *low-pass / band-pass signal* | sinal passa-baixas / passa-faixa | espectro em torno de 0 / em torno de ±f0 |

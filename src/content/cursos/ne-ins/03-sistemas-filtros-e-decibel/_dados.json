@@ -1,0 +1,25 @@
+{
+  "ordem": 3,
+  "slug": "03-sistemas-filtros-e-decibel",
+  "titulo": "Sistemas, filtros e decibel",
+  "prioridade": "alta",
+  "subtitulo": "Linearidade, causalidade, LTI, filtros ideais e reais, dB",
+  "tempoEstimado": "30 min",
+  "objetivo": "Classificar sistemas, explicar por que o filtro ideal não é realizável e converter razões em dB.",
+  "palavrasChave": [
+    "LTI",
+    "impulse response",
+    "low-pass",
+    "band-pass",
+    "decibel"
+  ],
+  "conceptIds": [
+    "C021",
+    "C022",
+    "C023",
+    "C024",
+    "C025",
+    "C026",
+    "C027"
+  ]
+}
