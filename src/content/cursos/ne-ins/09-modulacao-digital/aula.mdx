@@ -1,0 +1,328 @@
+---
+titulo: "Modulação digital — aula"
+secao: "aula"
+secaoOrdem: 1
+---
+
+## Resumo executivo
+
+Este é o **terceiro módulo mais cobrado** da prova: 7 das 30 questões de 2025 (Q5, Q6, Q7, Q8, Q17, Q25, Q27) saíram daqui. O assunto é a *passband transmission* (transmissão com portadora): por que modular, e como a informação digital é "pendurada" em um parâmetro da portadora senoidal — amplitude (*ASK*), frequência (*FSK*), fase (*PSK*, *QPSK*, *8PSK*, *16PSK*) ou amplitude e fase juntas (*QAM*). A prova pergunta definições curtas: qual esquema usa 180°, qual combina amplitude e fase, para que servem I e Q, o que é uma constelação, como funciona o código Gray. Fechamos com o *trade-off* do professor: mais bits por símbolo exige mais SNR para a mesma BER — "nothing is for free".
+
+<BlocoObjetivo titulo="Ao final você deve conseguir">
+
+- Dizer por que se modula (meio passa-faixa, várias portadoras no mesmo meio, tamanho de antena, propagação, não sobrepor transmissões).
+- Associar cada esquema ao parâmetro que varia: ASK → amplitude, FSK → frequência, PSK → fase, QAM → amplitude + fase.
+- Calcular bits por símbolo com $n = \log_2 M$ para qualquer M-PSK ou M-QAM.
+- Explicar o circuito I/Q, a constelação e o mapeamento Gray.
+- Ler o gráfico BER × $E_b/N_0$ e aplicar $\eta = R_b/B_t$.
+
+</BlocoObjetivo>
+
+## Conceitos
+
+### C068 — Por que modular (*Introduction to modulation*)
+
+‹fonte: Electr L4 p. 20–21›
+
+A transmissão com portadora (*carrier modulated transmission*, também chamada *passband* ou *broadband transmission*) existe por quatro motivos que o slide dá explicitamente:
+
+1. **Aproveitar o meio** (*exploit the transmission media*): o meio físico tem banda muito maior que o espectro do sinal. Colocando cada informação numa portadora diferente, várias transmissões passam pelo **mesmo meio**, e o receptor separa cada uma pelo processo inverso (demodulação).
+2. **Adaptar o sinal ao meio e ao enlace** (banda, frequência, serviço): a informação é do tipo **passa-baixas** (*low-pass*), enquanto o canal disponível se comporta como **passa-faixa** (*band-pass*). A modulação "sobe" o espectro para onde o canal deixa passar.
+3. **Antena de tamanho viável** (*wireless*): a dimensão da antena depende do comprimento de onda. Para voz em banda base (4 kHz):
+
+$$
+\lambda = \frac{c}{f} = \frac{3\cdot 10^{8}\,\mathrm{m/s}}{4\cdot 10^{3}\,\mathrm{Hz}} = 75\,\mathrm{km}, \qquad \frac{\lambda}{4} \approx 18\,\mathrm{km}
+$$
+
+Uma antena de 18 km é "absolutely unthinkable". Em RF, $\lambda$ cai para metros ou centímetros.
+
+4. **Propagação e não sobreposição** (p. 21): sem modulação, a transmissão ocorreria numa banda que nem sempre propaga bem e **se sobreporia às outras transmissões** — no melhor caso, "todo mundo ouviria tudo" e nada seria inteligível.
+
+Consequência para a prova: a finalidade principal da modulação em RF é permitir a **comunicação a longa distância** (*long-distance communication*) pelo ar, com antenas viáveis, boa propagação e canais separados.
+
+<BlocoConceito titulo="Frase de prova — modulação em RF">
+
+The primary purpose of RF modulation is **to enable long-distance communication**: it moves the low-pass information to a band-pass channel, allowing practical antenna sizes (λ/4), good propagation and many carriers on the same medium without overlap.
+
+</BlocoConceito>
+
+### C069 — Modulação digital (*Digital modulation*)
+
+‹fonte: Electr L4 p. 22–24›
+
+Partindo do sinal digital em banda base (módulo 05), faz-se a transmissão passa-faixa variando **um parâmetro da portadora** (*carrier*), tipicamente uma oscilação senoidal, conforme a lei do sinal modulante — exatamente como nas modulações analógicas (p. 22). A diferença é que agora o modulante é um *bit stream*: transições baixo-alto-baixo, e não variações contínuas — "a onda quadrada vira a onda modulante" (p. 24).
+
+Correspondência analógico ↔ digital (p. 23):
+
+| Analógica | Digital | Parâmetro que varia |
+|---|---|---|
+| AM | *ASK* (*Amplitude Shift Keying*) | amplitude |
+| FM | *FSK* (*Frequency Shift Keying*) | frequência |
+| PM | *PSK* (*Phase Shift Keying*) | fase |
+| combinação amplitude + fase | *QAM* (*Quadrature Amplitude Modulation*) | amplitude **e** fase |
+
+O slide p. 23 diz que a modulação digital "converte entrada digital em sinal analógico" — guarde isso, porque aparece como distrator na Q5. Levar a informação de banda base para frequências mais altas (RF) por meio de uma portadora chama-se *up-conversion* (p. 24).
+
+O parâmetro de qualidade no receptor é a *BER* (*Bit Error Rate*), já vista no módulo 08: bits errados sobre bits transmitidos; melhor SNR → menor BER (p. 25).
+
+### C070 — ASK e OOK (*Amplitude Shift Keying / On-Off Keying*)
+
+‹fonte: Electr L4 p. 26–28›
+
+No **ASK binário** a portadora funciona como uma **chave**: presença da portadora = bit 1, ausência = bit 0. Por isso se chama *On-Off Keying* (OOK). Uso típico: baixas taxas (CW — telegrafia, pagamentos *contactless*) e comunicações ópticas. Também existe **ASK multinível**: várias amplitudes, cada uma representando 2 ou mais bits (p. 26).
+
+**Modulador** (p. 27): o sinal binário **unipolar** entra num *product modulator* junto com a portadora de alta frequência gerada por um *local oscillator*. A saída é o produto instantâneo dos dois — no OOK, liga ou desliga a portadora. Um *bandpass filter* limita a banda à faixa alocada.
+
+<FiguraFonte figura="ne-ins-l4-p27" />
+
+**Demodulador** (p. 28): *half-wave rectifier* + *low-pass filter* formam o *envelope detector*, que recupera o sinal unipolar. Depois, um *voltage comparator* com tensão de referência **no meio** entre os dois níveis amostra o sinal **no meio de cada bit** e decide 1 ou 0. Não precisa de portadora local sincronizada (detecção de envoltória).
+
+### C071 — FSK (*Frequency Shift Keying*)
+
+‹fonte: Electr L4 p. 29–32›
+
+No FSK a **amplitude é constante**; o que varia é a **frequência**. Bit 1 → frequência alta; bit 0 → frequência baixa (p. 30). O sinal é a união de senoides em 2 frequências de mesma amplitude.
+
+Propriedades do slide (p. 29): transceptor relativamente simples (o desvio de frequência é **discreto**, não contínuo como no FM), **alta imunidade a perturbações**, mas **não permite taxas muito altas**.
+
+- **FSK não coerente** (*non-coherent*, p. 31–32): dois osciladores independentes e um *switching multiplexer*. As duas senoides estão fora de fase no início de cada bit, então o sinal tem mudanças bruscas de fase e amplitude → mais potência nas bandas laterais, **mais banda**, mais interferência em canais adjacentes.
+- **FSK coerente** (*coherent*): um único *VCO* (*voltage controlled oscillator*) muda a frequência sem salto de fase → desempenho superior e **menor BER**, mas circuitos mais sofisticados no transmissor e no receptor (custo um pouco maior).
+
+**Demodulador não coerente** (p. 32): dois *bandpass filters* (um em cada frequência — a saída de cada um parece um sinal OOK), dois *envelope detectors* e um *decision circuit* que dá 1 ou 0 conforme qual detector tem o sinal mais forte.
+
+<FiguraFonte figura="ne-ins-l4-p32" />
+
+### C072 — PSK e BPSK (*Phase Shift Keying / Binary PSK*)
+
+‹fonte: Electr L4 p. 33–38›
+
+No PSK a informação está na **fase** da portadora; amplitude e frequência ficam constantes. No caso mais simples, o **BPSK** (2 níveis, 1 bit por símbolo), as fases são **0° e 180°** (podem ser ±90°) em relação à portadora, uma para cada bit (p. 33). A constelação BPSK tem dois pontos opostos sobre o eixo I.
+
+**Modulador** (p. 34): *NRZ level encoder* (sinal polar ±) → *balanced modulator* ← portadora. Cada mudança de bit (1→0 ou 0→1) inverte a fase da portadora: inversão de 180°.
+
+**Demodulador coerente** (p. 36): multiplica o sinal recebido por uma portadora local de **mesma frequência e mesma fase** do transmissor. O sincronismo de fase vem de um *PLL* (*Phase Locked Loop*): malha fechada que trava frequência e fase da saída nas da entrada (filtro de malha + VCO).
+
+Por que funciona — *Werner formulas* (p. 37):
+
+$$
+\cos x \cdot \cos y = \tfrac{1}{2}\left[\cos(x+y) + \cos(x-y)\right]
+$$
+
+$$
+\sin x \cdot \sin y = \tfrac{1}{2}\left[\cos(x-y) - \cos(x+y)\right], \qquad \sin x \cdot \cos y = \tfrac{1}{2}\left[\sin(x+y) + \sin(x-y)\right]
+$$
+
+Multiplicando $\cos(\omega t + \varphi)$ pela portadora local $\cos(\omega t)$ (p. 38):
+
+$$
+r_{bb}(t) = \tfrac{1}{2}\left[\cos(2\omega t + \varphi) + \cos\varphi\right]
+$$
+
+O termo em $2\omega$ é filtrado (integrador sobre $T_b$); sobra o nível DC $\tfrac{1}{2}\cos\varphi$: positivo para $\varphi = 0^\circ$ e negativo para $\varphi = 180^\circ$. Amostra-se em $t = kT_b$ e um limiar decide: $+V$ → "1", $-V$ → "0".
+
+<FiguraFonte figura="ne-ins-l4-p38" />
+
+<BlocoConceito titulo="Frase de prova — BPSK">
+
+**BPSK** represents binary data using a **phase shift of 180°** (0° for one bit, 180° for the other). Demodulation is **coherent**: the receiver multiplies by a carrier with the same frequency and phase, recovered by a **PLL**.
+
+</BlocoConceito>
+
+### C073 — QPSK e o circuito I/Q (*In-phase / Quadrature*)
+
+‹fonte: Electr L4 p. 39–42; Electr L1 p. 17›
+
+O **QPSK** (*Quadrature Phase Shift Keying*) usa **4 fases**, cada uma associada a um valor de **2 bits** (p. 39). Ele é montado com o *I/Q circuit* (p. 40): um oscilador em $f_c$ alimenta dois misturadores, um com a portadora a **0°** (ramo *in-phase*, I) e outro com a portadora defasada de **90°** (ramo *quadrature*, Q); as saídas são somadas e formam $y(t)$.
+
+<FiguraFonte figura="ne-ins-l4-p40" />
+
+QPSK = **duas BPSK em quadratura** (p. 41): um *demultiplexor* separa o fluxo em bits ímpares (*odd*, ramo I com $\cos\omega_c t$) e pares (*even*, ramo Q com $\sin\omega_c t$); cada ramo passa por um *NRZ encoder* ($\pm\sqrt{E_b}$) e modula sua portadora. Tabela do slide:
+
+| Q | I | Fase de saída |
+|---|---|---|
+| 0 | 0 | −135° |
+| 0 | 1 | −45° |
+| 1 | 0 | +135° |
+| 1 | 1 | +45° |
+
+Exemplo do slide para "11": $\cos\omega t + \sin\omega t = \sqrt{2}\,\sin(\omega t + 45^\circ)$ (o slide escreve sem o fator $\sqrt{2}$, que é só amplitude; o ponto é a fase de 45°).
+
+<FiguraFonte figura="ne-ins-l4-p41" />
+
+**Demodulação** (p. 42): replica o esquema I/Q — dois ramos, cada um um demodulador BPSK (misturador + passa-baixas + decisor), e um *2-bit parallel-to-serial converter* junta bits ímpares e pares.
+
+**I e Q = partes real e imaginária.** Em L1 p. 17 o professor escreve um sinal complexo como $S(t) = S_r(t) + j\,S_i(t)$. No diagrama I/Q (p. 40) o eixo horizontal é I e o vertical é Q, exatamente o plano complexo: **I é a parte real, Q é a parte imaginária** do sinal (envoltória complexa). [INFERÊNCIA PEDAGÓGICA: o slide de L4 não usa as palavras "real/imaginary"; a ligação vem de L1 p. 17 + desenho dos eixos, e é a resposta oficial da Q17.]
+
+<BlocoConceito titulo="Frase de prova — I/Q">
+
+In-phase (I) and quadrature (Q) components are used **to represent the real and imaginary parts of a signal**: two carriers at the same frequency, 90° apart, whose amplitudes are set independently and then summed.
+
+</BlocoConceito>
+
+### C074 — M-PSK: 8PSK e 16PSK (*Multilevel PSK*)
+
+‹fonte: Electr L4 p. 43–44›
+
+Aumentando o número de fases, cada símbolo carrega mais bits: **8PSK = 3 bits** e **16PSK = 4 bits** por símbolo (p. 43), pela regra
+
+$$
+n = \log_2 M \quad\Rightarrow\quad \log_2 8 = 3, \qquad \log_2 16 = 4
+$$
+
+O preço é **menos robustez**: os pontos ficam mais próximos em ângulo. No 16PSK a distância angular entre vizinhos é $\pi/8$ (22,5°) e o **erro máximo tolerado** é metade disso, $\pi/16$ (11,25°). No BPSK os pontos distam 180°, então um erro de fase de 60° "is virtually free from bit errors" — no 8PSK e no 16PSK, não. (Pela mesma conta, no 8PSK a distância é 45° e o erro máximo 22,5°.)
+
+<FiguraFonte figura="ne-ins-l4-p43" />
+
+Consequência (p. 44): **para obter uma dada BER é preciso mais SNR**. As constelações 8PSK a 20, 15, 5 e 0 dB mostram as "nuvens" crescendo até se misturarem — abaixo de certo SNR o *bit stream* não é mais recebido.
+
+### C075 — QAM (*Quadrature Amplitude Modulation*)
+
+‹fonte: Electr L4 p. 45–51›
+
+O QAM **combina modulação de amplitude e de fase** usando **duas portadoras de mesma frequência defasadas de 90°** (p. 45). Dois fluxos de bits mudam as amplitudes dessas duas portadoras, que depois são somadas (p. 46): o resultado é ao mesmo tempo ASK e PSK. Caso particular: um modulador QAM pode funcionar como PSK (amplitude constante).
+
+Vantagens e custo (p. 45): maior capacidade em bitrate, muito difundido (ADSL, Wi-Fi), "excellent noise immunity", mas **mais complexidade**. Tamanhos (p. 47): do "acadêmico" 2QAM (não usado) a **256QAM = 8 bits por símbolo**, e até 4096QAM (12 bits). O primeiro QAM "operativo" é o **16QAM** ($2^4$ símbolos → 4 bits).
+
+**Modulador 16QAM** (p. 48): um *4-bit shift register* separa os bits em (I, I′) e (Q, Q′); cada par vai a um *2-to-4-level converter* (DAC) que gera 4 níveis; dois misturadores (LO e LO + 90°) e uma soma linear. Níveis do slide:
+
+| I I′ (ou Q Q′) | Saída |
+|---|---|
+| 0 0 | −0,22 V |
+| 0 1 | −0,821 V |
+| 1 0 | +0,22 V |
+| 1 1 | +0,821 V |
+
+Exemplo: o símbolo 0000 vale
+
+$$
+-0{,}22\,\sin\omega_c t - 0{,}22\,\cos\omega_c t = 0{,}311\,\sin(\omega_c t - 135^\circ)
+$$
+
+ou seja, amplitude $0{,}22\sqrt{2} \approx 0{,}311$ e fase −135°: um único símbolo QAM é definido por **amplitude e fase**. A p. 49 mostra outra forma de distribuir 16 pontos: 8 ângulos (0° a 315°) com amplitudes $\sqrt{2}$, 3, $3\sqrt{2}$ e 5.
+
+<FiguraFonte figura="ne-ins-l4-p49" />
+
+**Demodulador** (p. 50–51): mesmo esquema I/Q (misturadores com $\cos\omega_c t$ e $\sin\omega_c t$, *LPF*, A/D, conversor série-paralelo). O problema central: manter a BER dentro do limite, pois com SNR caindo o ruído faz o receptor **confundir um símbolo com o vizinho**.
+
+<BlocoConceito titulo="Frase de prova — QAM">
+
+**QAM** combines **both amplitude and phase modulation**, using two carriers at the same frequency, 90° out of phase. 16QAM carries 4 bits per symbol, 64QAM 6 bits, 256QAM 8 bits.
+
+</BlocoConceito>
+
+### C076 — Constelação e código Gray (*Signal constellation / Gray coding*)
+
+‹fonte: Electr L4 p. 39–49›
+
+**Constelação** (*signal constellation*) é o desenho, no plano I (horizontal) × Q (vertical), de **todos os símbolos possíveis** de uma modulação, cada ponto com o grupo de bits que representa. A distância do ponto à origem é a **amplitude**; o ângulo é a **fase**. Ela organiza os símbolos de dados para a modulação: BPSK tem 2 pontos, QPSK 4, 8PSK 8 num círculo, 16QAM uma grade 4 × 4 (p. 46: "2⁴ symbols constellation", p. 47). No receptor, ruído espalha cada ponto numa "nuvem" (p. 44, 52–55); erro de símbolo = a nuvem cruzar para a região do vizinho.
+
+**Código Gray** (*Gray coding*): rótulos atribuídos de modo que **símbolos vizinhos diferem em um único bit**. [INFERÊNCIA PEDAGÓGICA: o nome "Gray" não aparece nos slides; a propriedade, porém, está visível nos mapeamentos deles.] Confira na constelação 16QAM da p. 46:
+
+<FiguraFonte figura="ne-ins-l4-p46" />
+
+- Linha de cima, da esquerda para a direita: 0000 → 0100 → 1100 → 1000 — cada passo muda **1 bit**.
+- Coluna da esquerda, de cima para baixo: 0000 → 0001 → 0011 → 0010 — de novo **1 bit** por passo.
+- O mesmo vale nos outros slides: QPSK (p. 41) em volta do círculo 11 → 10 → 00 → 01 → 11; 8PSK (p. 43) 010 → 110 → 111 → 101 → 100 → 000 → 001 → 011 → 010; e os níveis do 16QAM da p. 48 em ordem crescente (−0,821; −0,22; +0,22; +0,821) são 01, 00, 10, 11.
+
+Por que isso importa: o erro mais provável com ruído é confundir um símbolo com o **vizinho mais próximo**. Com Gray, esse erro custa **1 bit**, não 2, 3 ou 4 — a BER fica menor para o mesmo SNR. [INFERÊNCIA PEDAGÓGICA mínima, coerente com p. 50–51.]
+
+<BlocoConceito titulo="Frases de prova — constelação e Gray">
+
+A **signal constellation** organizes the data symbols for modulation (each point = one symbol, with its amplitude and phase on the I/Q plane). **Gray coding** ensures that **only one bit changes between adjacent values**, so the most likely error (a neighbour symbol) costs a single bit.
+
+</BlocoConceito>
+
+### C077 — Modulação adaptativa e desempenho (*Adaptive modulation / Modulation performance*)
+
+‹fonte: Electr L4 p. 52–57›
+
+**Modulação adaptativa** (p. 52–53): sistemas modernos mudam de modulação **dinamicamente** conforme a BER do canal. Exemplo: em 256QAM (8 bits por símbolo), se a BER sobe, o sistema negocia com a outra ponta (ou o controle central decide) descer para **64QAM (6 bits por símbolo)**, adequado ao SNR disponível, garantindo a BER desejada; volta a 256QAM quando o canal melhora. Comparando QPSK e 16QAM a 30, 10 e 6 dB (p. 54–55): quanto menor o SNR, maior a BER; QAM é excelente para velocidade, mas com SNR baixo ainda se transmite, **mais devagar**, com um PSK mais robusto.
+
+**Desempenho** (p. 56): "Nothing is for free" — aumentar bits por símbolo exige **mais energia (potência)**, senão a BER no receptor sobe. Escolhe-se a melhor modulação para a BER desejada dado o SNR (e a banda) disponível.
+
+<FiguraFonte figura="ne-ins-l4-p56" />
+
+Leitura do gráfico BER × $E_b/N_0$ (p. 56, valores lidos no gráfico, aproximados): para BER $= 10^{-8}$, BPSK/QPSK precisam de cerca de 12 dB; 8-PSK e 16-QAM de cerca de 15–16 dB; 64-QAM ainda está em BER perto de $10^{-5}$ a 18 dB. Repare que **BPSK e QPSK têm a mesma curva**: o QPSK dobra os bits por símbolo sem piorar a BER por bit. Ao lado, as constelações com a potência média para a mesma distância entre vizinhos: BPSK $P_{avg} = 1$, QPSK 2, 8PSK 6,83, 16QAM 10, 16PSK 26,27 — mais pontos custam mais potência, e o 16QAM gasta bem menos que o 16PSK para os mesmos 4 bits.
+
+**Eficiência de banda** (*bandwidth efficiency*, p. 57):
+
+$$
+\eta = \frac{R_b}{B_t} \quad [\mathrm{bit/s/Hz}]
+$$
+
+$R_b$ = taxa de bits útil; $B_t$ = banda ocupada pelo sinal modulado. Uma modulação eficiente em **potência** (BER baixa com pouco SNR) pode ser ineficiente em **banda**. O slide compara (r = 1 bit por elemento, S = N):
+
+$$
+B_{FSK} = (1+d)\,S + 2\Delta f, \qquad B_{PSK} = (1+d)\,S
+$$
+
+O FSK ocupa mais banda (duas portadoras afastadas de $2\Delta f$). [INFERÊNCIA PEDAGÓGICA: o fator $d$, não definido no slide, depende da filtragem/modulação e fica entre 0 e 1.] Mais uma vez: *trade-off* entre potência, banda e velocidade.
+
+<FiguraFonte figura="ne-ins-l4-p57" />
+
+### Tabela-resumo das modulações
+
+<BlocoComparacao titulo="ASK × FSK × PSK × QAM">
+
+| Esquema | O que varia | Bits por símbolo | Robustez ao ruído (segundo os slides) |
+|---|---|---|---|
+| ASK (OOK) | amplitude (liga/desliga) | 1 (ASK multinível: 2 ou mais) | usado só em baixa taxa; detecção simples por envoltória. [INFERÊNCIA PEDAGÓGICA: a amplitude é o parâmetro mais afetado pelo ruído aditivo] |
+| FSK | frequência (amplitude constante) | 1 (BFSK) | alta imunidade a perturbações, mas taxa baixa e mais banda |
+| BPSK | fase: 0° / 180° | 1 | a mais robusta das PSK: erro de 60° não gera erro de bit |
+| QPSK | fase: 4 valores (±45°, ±135°) | 2 | mesma curva BER × $E_b/N_0$ do BPSK |
+| 8PSK | fase: 8 valores (45° entre vizinhos) | 3 | menos robusta; precisa de mais SNR |
+| 16PSK | fase: 16 valores (22,5° entre vizinhos) | 4 | erro máximo 11,25°; a que mais exige potência entre as de 4 bits |
+| 16QAM | amplitude + fase (grade 4 × 4) | 4 | melhor que 16PSK para os mesmos 4 bits; mais complexa |
+| 64QAM | amplitude + fase | 6 | precisa de SNR alto; degrau de recuo do 256QAM |
+| 256QAM | amplitude + fase | 8 | maior taxa, menor robustez; cai para 64QAM quando a BER sobe |
+
+</BlocoComparacao>
+
+Regra geral: $M$ símbolos → $n = \log_2 M$ bits por símbolo; **mais bits por símbolo = pontos mais próximos = mais SNR para a mesma BER**.
+
+## Como isso caiu na prova de 2025
+
+**Q5** — *What is the primary purpose of RF modulation in communication systems?* → **a) To enable long-distance communication.** Por quê: antena λ/4 viável, propagação e separação de canais (p. 20–21). b) converter digital em analógico descreve a modulação **digital** (p. 23), não a finalidade da modulação em RF; c) banda base é justamente o que a modulação abandona; d) modular não simplifica a demodulação, ela é que a exige.
+
+**Q6** — *Modulation scheme that represents binary data using a phase shift of 180°?* → **b) BPSK.** a) QPSK usa saltos de 90° entre 4 fases; c) FSK muda frequência; d) ASK muda amplitude.
+
+**Q7** — *Scheme that combines both amplitude and phase modulation?* → **d) QAM.** a) ASK só amplitude; b) FSK só frequência; c) QPSK só fase (amplitude constante).
+
+**Q8** — *Scheme that encodes digital data by varying the phase of the carrier?* → **d) PSK.** a) ASK = amplitude; b) FSK = frequência; c) QAM varia fase **e** amplitude — a pergunta quer o esquema "de fase", que é o PSK.
+
+**Q17** — *What are in-phase (I) and quadrature (Q) components used for?* → **a) To represent real and imaginary parts of a signal.** b) conversão A/D é outro bloco; c) filtragem de ruído é função de filtro; d) I/Q não muda a frequência da portadora.
+
+**Q25** — *How does Gray coding work?* → **a) It ensures that only one bit changes between adjacent values.** b) não tem nada a ver com imagens em tons de cinza ("gray-scale"); c) não aumenta resolução de DAC; d) é exatamente o contrário: a ordem é escolhida de propósito.
+
+**Q27** — *Purpose of a signal constellation?* → **c) To organize data symbols for modulation.** a) "constelação" não é navegação astronômica; b) não representa só a potência; d) não é mapa de bandas de RF.
+
+<BlocoPegadinha titulo="Pegadinhas">
+
+- **QPSK ≠ QAM.** QPSK tem "Quadrature" no nome, usa I/Q, mas varia **só a fase** (amplitude constante). Quem combina amplitude e fase é o **QAM**.
+- **Q8 × Q7:** QAM também varia a fase, mas a resposta "varying the phase" é **PSK**; reserve QAM para "amplitude **and** phase".
+- **Bits por símbolo:** $\log_2 M$, não $M$. 16QAM = 4 bits, 64QAM = 6, 256QAM = 8, 8PSK = 3. "256" não significa 256 bits.
+- **Qual bit vale 0° no BPSK** muda de slide para slide (p. 33: 0 → 180°, 1 → 0°; p. 35: "1 → shift 180°"). O que define BPSK é a **diferença de 180°** entre os dois símbolos.
+- **"Excellent noise immunity" do QAM** (p. 45) não significa que 256QAM seja robusto: quanto maior o QAM, mais SNR exige (p. 52–56). Robustez máxima: BPSK.
+- **Coerente × não coerente:** ASK e FSK simples usam detector de envoltória (não coerente); PSK exige **demodulação coerente com PLL**. FSK com VCO é "coherent" e tem menor BER.
+
+</BlocoPegadinha>
+
+## Vocabulário EN → PT
+
+| English | Português | Em 1 linha |
+|---|---|---|
+| carrier | portadora | senoide de alta frequência cujo parâmetro carrega a informação |
+| passband transmission | transmissão passa-faixa | sinal deslocado para perto da portadora |
+| up-conversion | conversão para cima | levar a banda base para frequências mais altas (RF) |
+| On-Off Keying (OOK) | chaveamento liga-desliga | ASK binário: portadora presente = 1, ausente = 0 |
+| envelope detector | detector de envoltória | retificador de meia onda + passa-baixas |
+| product / balanced modulator | modulador produto / balanceado | multiplica sinal e portadora |
+| voltage controlled oscillator (VCO) | oscilador controlado por tensão | gera FSK coerente, sem saltos de fase |
+| coherent demodulation | demodulação coerente | usa portadora local de mesma frequência e fase |
+| Phase Locked Loop (PLL) | malha de captura de fase | trava a fase da portadora local na recebida |
+| in-phase / quadrature (I/Q) | em fase / em quadratura | ramos a 0° e 90°: partes real e imaginária |
+| signal constellation | constelação de sinais | mapa de todos os símbolos no plano I/Q |
+| Gray coding | código Gray | vizinhos diferem em 1 bit |
+| bits per symbol | bits por símbolo | $n = \log_2 M$ |
+| adaptive modulation | modulação adaptativa | troca 256QAM ↔ 64QAM conforme a BER |
+| bandwidth efficiency | eficiência de banda | $\eta = R_b/B_t$ em bit/s/Hz |

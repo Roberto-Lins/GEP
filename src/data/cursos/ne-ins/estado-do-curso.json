@@ -1,0 +1,16 @@
+{
+  "curso": "ne-ins",
+  "arquitetura": "curso_unico",
+  "extra": true,
+  "estado": "publicado",
+  "prova": "2026-10-16",
+  "modulos": 13,
+  "conceitos": 93,
+  "questoes": {
+    "prova_2025": 30,
+    "ineditas": 142
+  },
+  "simulados": 3,
+  "figuras": 49,
+  "auditoria_gabarito": "inéditas auditadas por agente independente em 2026-10-15 — sem problemas"
+}

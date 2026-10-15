@@ -1,0 +1,112 @@
+---
+titulo: "Mapa da prova e a prova de 2025 — aula"
+secao: "aula"
+secaoOrdem: 1
+---
+
+## Resumo executivo
+
+A prova escrita de **Naval Electronics** do *International Naval Semester* está marcada para **16 Oct 2026** ‹fonte: Electr L1 p. 4›. O professor avisou no R.O.E. do curso: informação não classificada, **fórmulas leves**, conceitos gerais e assuntos simplificados ‹fonte: Electr L1 p. 4›.
+
+A prova de **2025** tinha **30 questões de múltipla escolha**, quatro alternativas, todas em inglês, quase todas conceituais (uma única conta explícita, a Q28, e uma conta mental, a Q30). Circula entre os alunos que a prova **se repete** ou muda pouco de um ano para o outro. Isso não é garantido — trate como hipótese — mas torna a prova de 2025 o material mais valioso que você tem: **saia daqui sabendo as 30 de cor e o porquê de cada uma**.
+
+<BlocoObjetivo titulo="Ao final você deve conseguir">
+
+- Responder as 30 questões de 2025 sem consulta, explicando por que as outras alternativas estão erradas.
+- Saber quais assuntos pesam mais e distribuir o tempo de estudo de hoje.
+- Reconhecer a "frase de prova" de cada definição, em inglês.
+
+</BlocoObjetivo>
+
+## O peso de cada assunto em 2025
+
+| Assunto (módulo) | Questões de 2025 | Quantas |
+|---|---|---|
+| Ruído, SNR e figura de ruído (06) | 1, 2, 3, 4, 9, 10, 18, 28 | 8 |
+| Conversão A/D e amostragem (04) | 11, 12, 13, 14, 20, 21, 22, 26 | 8 |
+| Modulação digital (09) | 5, 6, 7, 8, 17, 25, 27 | 7 |
+| Análise de Fourier (02) | 15, 16 | 2 |
+| Banda base e PCM (05) | 23, 30 | 2 |
+| Sinais — Dirac (01) | 24 | 1 |
+| ISI — critério de Nyquist (07) | 29 | 1 |
+| Capacidade — Shannon (08) | 19 | 1 |
+| Sistemas e filtros (03), componentes (10), lógica (11) | — | 0 |
+
+Três assuntos — **ruído, amostragem e modulação** — fizeram **23 das 30** questões. Os módulos 10 e 11 (componentes, CIs e lógica, da aula L5) estão no programa ‹fonte: Electr L1 p. 3› mas não caíram em 2025. `[PONTO DE INCERTEZA]` Não sabemos se a L5 foi dada em 2025; se a prova de 2026 for nova, ela pode aparecer. Por isso ela está no curso, com prioridade menor.
+
+## Plano para hoje
+
+1. **Simulado 1 (prova de 2025)** sem consulta, cronometrado — 30 min. Anote as que errou.
+2. **Módulos 06, 04 e 09** (prioridade máxima), lendo a aula e fazendo os exercícios do módulo.
+3. **Módulos 02, 05, 07 e 08** — mais curtos.
+4. **Simulados 2 e 3** (inéditas) para testar se você entendeu, e não só decorou.
+5. **Módulos 01, 03, 10 e 11** — leitura rápida focada nas pegadinhas.
+6. **Revisão final** (formulário + erros frequentes) e, de novo, a prova de 2025.
+
+<BlocoConceito titulo="Como usar a prova de 2025">
+
+Decore a resposta, mas **decore pelo motivo**. Se a prova de 2026 trocar a ordem das alternativas ou mudar uma palavra, quem decorou a letra erra; quem decorou o porquê acerta. Cada questão abaixo tem a resposta em inglês, exatamente como estava na prova.
+
+</BlocoConceito>
+
+## Gabarito comentado da prova de 2025
+
+| Q | Assunto | Resposta oficial | Por quê (em uma linha) |
+|---|---|---|---|
+| 1 | Equivalent noise bandwidth | **a)** The width of an ideal rectangular bandwidth with constant gain | Retângulo de ganho constante com a mesma área da curva real |
+| 2 | Noise figure | **b)** The ratio of output SNR versus input SNR | A única que fala de razão entre as SNRs (o slide define F = SNRi/SNRo) |
+| 3 | Equivalent noise temperature | **c)** A hypothetical temperature representing the noise power in a system | Temperatura fictícia, não a física |
+| 4 | Ruído numa cadeia | **a)** The noise figure of the first stage | Friis: o 1º estágio domina |
+| 5 | Objetivo da modulação RF | **a)** To enable long-distance communication | Antenas viáveis e propagação pelo meio |
+| 6 | Fase de 180° | **b)** BPSK | Duas fases: 0° e 180° |
+| 7 | Amplitude + fase | **d)** QAM | Duas portadoras a 90° com amplitudes moduladas |
+| 8 | Varia a fase | **d)** PSK | A informação está na fase |
+| 9 | Onde há ruído térmico | **a)** Resistors | Só elementos que dissipam energia |
+| 10 | Noise PSD | **c)** The noise power per unit frequency | W/Hz; para o térmico, kT |
+| 11 | Nyquist | **a)** Twice the highest frequency component of the signal | fc ≥ 2B |
+| 12 | Nyquist não respeitado | **a)** The signal becomes distorted | Aliasing distorce |
+| 13 | Evitar aliasing com banda ilimitada | **d)** By using a low-pass anti-aliasing filter | Limita a banda antes de amostrar |
+| 14 | Aliasing e a transformada | **c)** The Fourier transform becomes distorted and inaccurate | Réplicas sobrepostas |
+| 15 | Contínuo × discreto | **c)** The Fourier transform of a discrete signal is periodic in the frequency domain | Discreto ↔ periódico |
+| 16 | Discreto e periódico | **c)** A discrete spectrum with periodic frequency components | Periódico ↔ linhas; discreto ↔ periódico |
+| 17 | I e Q | **a)** To represent real and imaginary parts of a signal | Componentes em fase e em quadratura |
+| 18 | "White" em AWGN | **a)** The noise has a uniform frequency response | PSD plana |
+| 19 | Capacidade de Shannon | **a)** The maximum data transfer rate a channel can support without error | C = B log₂(1 + SNR) |
+| 20 | Sample and hold | **c)** It holds each sample for a fixed duration and creates a piecewise constant signal | Zero-order hold |
+| 21 | Interpolação cardinal | **c)** To reconstruct a continuous signal from discrete samples using sinc functions | Whittaker-Shannon |
+| 22 | Condição da interpolação cardinal | **c)** The signal should have limited bandwidth | Sem banda limitada não há reconstrução exata |
+| 23 | Modulação numérica em banda base | **c)** To facilitate data transmission for direct connection system | Ex.: Ethernet |
+| 24 | Dirac | **d)** It produces an impulse at a specific time instant and integrates to 1 over its domain | Área unitária |
+| 25 | Código Gray | **a)** It ensures that only one bit changes between adjacent values | Vizinhos diferem em 1 bit |
+| 26 | Bits por nível | **a)** Bits per level = log₂(N) | N níveis pedem log₂ N bits |
+| 27 | Constelação | **c)** To organize data symbols for modulation | Mapa dos símbolos no plano I/Q |
+| 28 | Calcular NF em dB | **b)** About 7 | Dados ausentes no arquivo — ver módulo 06 |
+| 29 | Critério de Nyquist (ISI) | **d)** The product of P(f) and channel frequency response must be flat | Resposta total plana na banda |
+| 30 | PCM com 4 bits | **c)** 24 | ≈ 6 dB por bit × 4 |
+
+<BlocoPegadinha titulo="Pegadinhas da prova de 2025">
+
+- **Q2:** a definição correta é F = SNRi/SNRo (entrada sobre saída), mas a prova escreve "output SNR versus input SNR". Marque a alternativa que fala da **razão entre as duas SNRs**.
+- **Q12:** "loses its highest frequency components" é o que um passa-baixas faz — não é aliasing. No aliasing as altas frequências **se dobram** sobre as baixas e distorcem o sinal.
+- **Q13:** "increasing the sampling rate" parece certo, mas a pergunta diz *non-limited bandwidth*: sem limitar a banda, nenhuma taxa resolve.
+- **Q15:** o enunciado diz "distorted", mas as alternativas falam de "discrete" — erro de digitação da prova. A resposta é a periodicidade em frequência.
+- **Q24:** "represents the impulse response of an LTI system" é tentadora; h(t) é a **resposta** ao impulso, não o impulso.
+- **Q28:** os dados da conta não vieram no arquivo. Se a questão reaparecer com dados, faça a conta (módulo 06); se vier idêntica, a resposta oficial é "About 7".
+- **Q30:** 16 é o número de **níveis** de 4 bits — não é o ganho. O ganho é 4 × 6 dB = 24 dB.
+
+</BlocoPegadinha>
+
+## Vocabulário EN → PT para ler a prova
+
+| English | Português | Atenção |
+|---|---|---|
+| *four-pole* / *quadripole* | quadripolo | amplificador, filtro: 2 portas |
+| *noise figure* | figura de ruído (dB) | *noise factor* é o mesmo em linear |
+| *sampling rate* | taxa (frequência) de amostragem | fc |
+| *band-limited* | de banda limitada | condição do teorema |
+| *piecewise constant* | constante por partes | sample and hold |
+| *carrier* | portadora | modulação passband |
+| *constellation* | constelação | mapa de símbolos no plano I/Q |
+| *baseband* | banda base | sem portadora |
+| *bit rate* / *baud rate* | taxa de bits / taxa de símbolos | só coincidem com 1 bit por símbolo |
+| *roll-off* | fator de decaimento | cosseno levantado |

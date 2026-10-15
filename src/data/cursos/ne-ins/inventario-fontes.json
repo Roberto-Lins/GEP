@@ -1,0 +1,35 @@
+{
+  "curso": "ne-ins",
+  "fontes": [
+    {
+      "arquivo": "N.E. Exam.pdf",
+      "funcao": "prova de 2025 com gabarito oficial (DNA da cobrança)",
+      "paginas": 4
+    },
+    {
+      "arquivo": "Electr L1 2026.pdf",
+      "funcao": "teoria: programa, sinais, Fourier",
+      "paginas": 59
+    },
+    {
+      "arquivo": "Electr L2 2026.pdf",
+      "funcao": "teoria: sistemas, A/D, banda base, PCM",
+      "paginas": 68
+    },
+    {
+      "arquivo": "Electr L3 2026.pdf",
+      "funcao": "teoria: ruído e ISI",
+      "paginas": 45
+    },
+    {
+      "arquivo": "Electr L4 2026.pdf",
+      "funcao": "teoria: capacidade e modulação digital",
+      "paginas": 58
+    },
+    {
+      "arquivo": "Electr L5 2026.pdf",
+      "funcao": "teoria: componentes, CIs, lógica",
+      "paginas": 76
+    }
+  ]
+}

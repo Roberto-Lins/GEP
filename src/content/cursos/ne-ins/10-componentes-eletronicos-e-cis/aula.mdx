@@ -1,0 +1,213 @@
+---
+titulo: "Componentes eletrônicos e circuitos integrados — aula"
+secao: "aula"
+secaoOrdem: 1
+---
+
+## Resumo executivo
+
+Primeira metade da L5: os "tijolos" físicos com que se constroem os blocos vistos no curso (amplificadores, filtros, amostradores). Vai de dispositivo elétrico × eletrônico, passa pelos bipolos R, L, C e pela impedância, pelo diodo (junção p-n), pelo transistor bipolar (*BJT*), pelo *FET* e pelo *MOSFET*, e chega aos circuitos integrados: Kilby, Lei de Moore, escalas de integração, nós de processo e os CIs típicos de um rádio definido por software (*FPGA*, *DSP*, *GPP*). **Não houve questão deste módulo em 2025**, mas ele está no programa (L1 p. 3). Espere perguntas conceituais curtas: qual transistor é unipolar, o que é *enhancement mode*, o que diz a Lei de Moore.
+
+<BlocoObjetivo titulo="Ao final você deve conseguir">
+
+- Distinguir dispositivo elétrico de eletrônico e resistência (propriedade) de resistor (componente).
+- Explicar a junção p-n e o modelo linearizado do diodo.
+- Dar as três regiões do BJT (interdição, saturação, ativa) e o papel de $h_{FE}$.
+- Diferenciar BJT (bipolar) de FET/MOSFET (unipolar) e *enhancement* de *depletion*.
+- Citar Kilby 1958, Lei de Moore, SSI → WSI e o papel de FPGA, DSP e GPP no SDR.
+
+</BlocoObjetivo>
+
+## Conceitos
+
+### C078 — Dispositivo elétrico × eletrônico (*Electrical vs electronic devices*)
+
+‹fonte: Electr L5 p. 2–3›
+
+- **Dispositivo elétrico** (*electrical device*): converte eletricidade em outra forma de energia (ex.: aquecedor → calor). Conduz por metal, opera em geral com corrente alternada alta, **consumo alto**.
+- **Dispositivo eletrônico** (*electronic device*): **controla o fluxo de elétrons** (no vácuo ou na matéria) para realizar uma tarefa. "Electronics" = estudo do comportamento dos elétrons sob um campo elétrico.
+
+Hoje um aparelho elétrico costuma conter eletrônica (controles, Wi-Fi, display). Os componentes básicos são os mesmos; a diferença principal é a **potência**, isto é, a ordem de grandeza das correntes: eletrônica trabalha em mA, nA, pA; eletricidade em A, kA. Um capacitor de eletrônica tem em geral menor capacitância e menor tensão máxima. A presença de um **semicondutor** (ex.: transistor) indica claramente um dispositivo eletrônico.
+
+### C079 — Bipolos R, C, L e impedância (*Bipolar elements, impedance*)
+
+‹fonte: Electr L5 p. 4–8›
+
+Bipolos (*bipolar elements*, dois terminais) básicos (p. 4):
+
+| Componente | Símbolo | Unidade | Lei |
+|---|---|---|---|
+| *Resistor* | R | ohm (Ω) | $R = V/I$ |
+| *Capacitor* | C | farad (F) | $C = Q/V$ |
+| *Inductor* | L | henry (H) | $\Phi = L \cdot I$ |
+
+**Resistência ≠ resistor** (p. 6): resistência elétrica é a **propriedade física do material** de se opor à passagem de corrente; não depende da tensão aplicada nem da corrente, mas das características físicas do material. O resistor é o componente feito desse material. Todo circuito tem alguma resistência, capacitância e indutância "parasitas"; o efeito desejado é obtido **por projeto**, com componentes de valor determinado (ex.: 1 µF, 100 V, ±20 %) (p. 7).
+
+**Impedância** (p. 8): generaliza a resistência para corrente alternada, somando a reatância $X$ de L e C:
+
+$$
+Z = R + jX, \qquad \bar{Z} = R + j\omega L - j\frac{1}{\omega C}
+$$
+
+Resistência = atrito puro, tensão em fase com a corrente; impedância = expressão completa da oposição (resistência + reatância), presente em todos os componentes.
+
+### C080 — Diodo e junção p-n (*Diode, p-n junction*)
+
+‹fonte: Electr L5 p. 9–12›
+
+O diodo é um **bipolo não linear semicondutor** que deixa passar corrente **num sentido** e a bloqueia quase totalmente no outro (Zener, túnel etc. exploram outras características). Construção comum (1940): cristal de silício **dopado** — numa ponta com átomos **trivalentes** (ex.: boro) = **zona p** (lacunas); na outra com átomos **pentavalentes** (ex.: fósforo) = **zona n** (elétrons). Na estreita transição entre as duas (a **junção p-n**) forma-se uma **barreira de potencial** que se opõe à difusão das cargas. Terminais: ânodo (+, lado p) e cátodo (−, lado n). Silício puro = intrínseco; dopado = extrínseco (p. 10).
+
+**Modelo linearizado** (p. 11): em polarização direta ($V \gt V_d$), um gerador $V_d$ em série com resistência muito baixa; em interdição ($V \lt V_d$), resistência reversa $R_r$ muito grande (idealmente infinita). Em CA, passa só a meia-onda positiva — é o retificador de meia onda usado no detector de envoltória do módulo 09. Exemplos (p. 12): diodos comuns (1N4007, 1N4148), Zener, LED.
+
+### C081 — Transistor bipolar de junção (*BJT*)
+
+‹fonte: Electr L5 p. 13–18›
+
+Transistor: dispositivo semicondutor de pelo menos três terminais, usado para **amplificar ou chavear** sinais. O BJT foi criado em **1948 (Bell Labs)** como substituto da válvula (menor, mais seguro, mais frio, mais eficiente); AT&T o usou em telecom em 1953; a Sony o produziu em massa para rádios a partir de 1957. Duas junções → dois tipos, **PNP** e **NPN**. "Bipolar" porque **lacunas e elétrons** são portadores de carga (p. 13).
+
+Três regiões dopadas: **emissor** (*emitter*), **base**, **coletor** (*collector*). Princípio: controlar a condutividade, e portanto a corrente, aplicando tensão entre os terminais — a "torneira" (p. 14–15). Malhas de entrada e saída:
+
+$$
+E_B = R_B I_B + V_{BE}, \qquad E_C = R_C I_C + V_{CE}, \qquad I_C = h_{FE}\, I_B
+$$
+
+Uma variação de $V_{BE}$ (sinal $V_s$) varia $I_B$, que varia $I_C$; num resistor de carga $R_L$ isso vira a tensão amplificada $V_0$, com a mesma forma do sinal de entrada (dentro de limites, sem distorção) (p. 16).
+
+Regiões de operação (NPN; $J_E$ = junção B-E, $J_C$ = junção B-C) (p. 17–18):
+
+| Região | Junções | Tensões | Comportamento |
+|---|---|---|---|
+| Interdição (*cut-off / interdiction*) | $J_E$ e $J_C$ reversas | $V_C \gt V_B$, $V_E \gt V_B$ | $I_{CE} = 0$, $I_B = 0$: chave **aberta** |
+| Saturação (*saturation*) | $J_E$ e $J_C$ diretas | $V_B \gt V_C$, $V_B \gt V_E$ | $I_{CE}$ máxima: chave **fechada** |
+| Ativa / linear (*active mode*) | $J_E$ direta, $J_C$ reversa | $V_C \gt V_B \gt V_E$ | amplificação: $0 \lt I_{CE} \lt I_{CE,max}$ |
+
+<FiguraFonte figura="ne-ins-l5-p17" />
+
+Valores do slide: $I_B + I_C = I_E$; $h_{FE} = I_C/I_B$ (ganho de corrente DC), ex.: 100 → amplifica 100 vezes a corrente de base; $\beta = h_{FE} \approx 50$ a $1000$; $\alpha \approx 0{,}99$ ($I_C = \alpha I_E$). Para "ligar" um NPN basta $V_{BE} \approx 0{,}6$ a $0{,}7\,\mathrm{V}$. **Interdição e saturação = 2 estados lógicos** → o BJT serve como chave em circuitos digitais.
+
+<BlocoConceito titulo="Frase de prova — BJT">
+
+A **BJT** is a current-controlled, **bipolar** device (both holes and electrons carry charge). In **active mode** it amplifies ($I_C = h_{FE} I_B$); **cut-off** and **saturation** are the two logic states used when it works as a switch.
+
+</BlocoConceito>
+
+### C082 — FET e JFET (*Field-Effect Transistor*)
+
+‹fonte: Electr L5 p. 19–20›
+
+O FET é uma família de transistores (amplificador ou chave) que funciona de modo diferente do BJT. Terminais: **source, gate, drain**, que correspondem *grosso modo* a emissor, base e coletor; há ainda o *body* (em geral ligado ao source e ao terra). No **JFET** há um "canal" dopado (N ou P) e a porta dopada com o tipo oposto (P ou N).
+
+Princípio: a **tensão na porta** cria um **campo elétrico** que altera a condutividade entre drain e source. A condução usa **um só tipo de portador** — elétrons (canal n) ou lacunas (canal p): o FET é **unipolar**. Contraste-chave com o BJT: BJT é bipolar e controlado por corrente de base; FET é unipolar e controlado por campo elétrico (tensão).
+
+### C083 — MOSFET (*Metal-Oxide-Semiconductor FET*)
+
+‹fonte: Electr L5 p. 21–30›
+
+Princípio do efeito de campo descoberto por J. E. Lilienfeld (1925); primeiro MOSFET realizado em **1959 (Bell Labs)**. Tipos: **NMOS** e **PMOS**, cada um em modo *enhancement* ou *depletion* (p. 21).
+
+Estrutura (p. 22–23): substrato de silício dopado + três terminais. **NMOS** = substrato **p** (boro) com regiões **n** (fósforo/arsênio) de source e drain → portadores majoritários **elétrons**. **PMOS** = o inverso → **lacunas**. Entre source e drain fica o **canal**; acima dele a porta, separada por um isolante muito fino (dióxido de silício, *gate oxide*); por cima, metal ou polissilício dopado. O conjunto porta-canal se comporta como um **capacitor**.
+
+<FiguraFonte figura="ne-ins-l5-p24" />
+
+**Enhancement mode** (NMOS) (p. 24–26): com $V_{GS} \approx 0$ **não há canal** → "normalmente **OFF**" (chave aberta). Aplicando $V_{GS}$ positivo, elétrons livres se acumulam sob a porta (o óxido atua como dielétrico) e formam o **canal n induzido**. Com $V_{GS} \gt V_{Th}$ (tensão de limiar, *threshold*) e $V_{DS} \gt 0$, flui a corrente de dreno $I_D$ do drain para o source.
+
+<FiguraFonte figura="ne-ins-l5-p26" />
+
+Regiões (p. 27): $V_{GS} \lt V_{Th}$ → sem canal; $V_{GS} \gt V_{Th}$ → canal criado. Como amplificador (controlado por tensão):
+
+$$
+V_{DS} \lt V_{GS} - V_{Th}\ \text{(linear)}, \qquad V_{DS} = V_{GS} - V_{Th}\ \text{(início da saturação, pinch-off)}, \qquad V_{DS} \gt V_{GS} - V_{Th}\ \text{(saturação)}
+$$
+
+**Depletion mode** (p. 28): o canal N já existe por construção → com $V_{GS} \approx 0$ e $V_{DS} \gt 0$ há corrente: "normalmente **ON**" (*normally closed switch*). Uma tensão negativa na porta ($V_{GS} \lt -V_{Th}$) repele os elétrons e corta o canal.
+
+Por que o MOSFET venceu (p. 29–30): é o componente fundamental da lógica **CMOS** (módulo 11), usado como chave; desligado, idealmente **não deixa passar corrente** → baixa dissipação (menos consumo, menos aquecimento). E pode ser miniaturizado até nanômetros: bilhões de MOSFETs numa unha.
+
+<BlocoConceito titulo="Frase de prova — enhancement × depletion">
+
+**Enhancement-mode** MOSFET: no channel at $V_{GS} \approx 0$, **normally OFF**; it conducts when $V_{GS} \gt V_{Th}$. **Depletion-mode** MOSFET: channel built in, **normally ON**; a negative gate voltage switches it OFF.
+
+</BlocoConceito>
+
+### C084 — Circuitos integrados (*Integrated circuits*)
+
+‹fonte: Electr L5 p. 32–38, 41–43›
+
+**CI** (*IC*): componentes ativos (transistores, diodos) e passivos (resistores, capacitores) num **único chip** de semicondutor — nova era depois das válvulas (p. 32). Primeiro CI: **Jack Kilby, 1958** (Nobel), uma senoide gerada em poucos mm² de silício. Nos anos 60 vieram os amplificadores operacionais, como o **µA741 (1968)**: custava o equivalente a uns 2000 dólares atuais; hoje, cerca de 0,5 dólar (p. 33). Depois, placas de circuito impresso, SMD e *through-hole*, chips e microchips em tudo, de celulares a carros (p. 35). Componentes grandes (indutor, capacitor grande) às vezes ainda ficam discretos (p. 36).
+
+**Lei de Moore** (*Moore's law*, p. 37): observação empírica (artigo de Gordon Moore, 1965; formulação popularizada por David House, Intel): o número de transistores num CI **dobra a cada cerca de dois anos**. Validada por quase 50 anos: de cerca de 1000 transistores em 1970 a $50 \cdot 10^{9}$ em 2020.
+
+**Escalas de integração** (p. 38):
+
+| Escala | Ano | Transistores (ordem) |
+|---|---|---|
+| SSI (*Small Scale Integration*) | 1964 | cerca de 10 |
+| LSI (*Large Scale*) | 1971 | 1000 a 10 000 |
+| VLSI (*Very Large Scale*) | 1980 | 10 000 a 100 000 |
+| ULSI (*Ultra Large Scale*) | 1984 | milhões |
+| WSI (*Wafer Scale*) | — | acima disso |
+
+**Nó de processo** (*process technology*, p. 41): a medida em nm é o **tamanho mínimo da porta** de cada transistor: 180 nm (1999) → 22 nm (2011) → 10 nm hoje é o padrão "barato" (7, 6, 2 nm… às vezes só marketing). Comparação: vírus HIV cerca de 120 nm; fio de cabelo cerca de 80 000 nm. Miniaturizar é inevitável também por **velocidade**: chip grande é mais lento porque a informação demora mais de um transistor a outro (iPhone 12: 12 bilhões de transistores em 88 mm²) (p. 42).
+
+**Limites** (p. 43): o silício chegou ao limite físico (cerca de 6 nm, com 0,5 nm entre átomos de silício), além do problema de **refrigeração**. Saídas: chips **multicore**, novos materiais (grafeno, fósforo negro), circuitos **ópticos** (fótons em vez de elétrons).
+
+### C085 — FPGA, DSP e GPP no rádio definido por software (*SDR*)
+
+‹fonte: Electr L5 p. 39–40›
+
+CIs típicos em aplicações navais como o *software defined radio* (SDR):
+
+- **FPGA** (*Field Programmable Gate Array*): hardware **paralelo**, CI capaz de executar funções lógicas repetitivas, **programável e modificável** por linguagens próprias (*firmware*) — analogia do slide: um CD-R virgem que será "gravado".
+- **DSP** (*Digital Signal Processor*): microprocessador otimizado de base **serial**, para tarefas complexas, matematicamente intensivas e recorrentes, usando memória externa.
+- **GPP** (*General Purpose Processor*), como a CPU do PC: não amarrado a uma função, **alta flexibilidade**; com o desempenho atual (ex.: *quad-core* de smartphone) também faz processamento de sinais.
+
+<BlocoComparacao titulo="FPGA × DSP × GPP">
+
+| | FPGA | DSP | GPP |
+|---|---|---|---|
+| Arquitetura | paralela, lógica reconfigurável | serial, otimizada para matemática | uso geral |
+| Ponto forte | funções lógicas repetitivas em paralelo | cálculos intensivos e recorrentes | flexibilidade |
+| Programação | firmware que "configura" o hardware | software | software |
+
+</BlocoComparacao>
+
+## Como isso caiu na prova de 2025
+
+**Nenhuma questão de 2025** saiu deste módulo. O assunto, porém, está no programa (L1 p. 3) e é a base do módulo 11. [INFERÊNCIA PEDAGÓGICA] Pelo estilo da prova (definições curtas em inglês), o mais provável é:
+
+- *Which transistor is unipolar / controlled by an electric field?* → FET/MOSFET.
+- *What does "enhancement mode" mean?* → normally OFF; o canal só existe com $V_{GS} \gt V_{Th}$.
+- *In which region is a BJT used as an amplifier?* → região ativa ($J_E$ direta, $J_C$ reversa).
+- *What does Moore's law state?* → número de transistores dobra a cada cerca de 2 anos.
+- *What is a diode?* → semicondutor não linear que conduz num só sentido (junção p-n).
+- *Why is CMOS/MOSFET low power?* → desligado, idealmente não conduz corrente.
+
+<BlocoPegadinha titulo="Pegadinhas">
+
+- **"Bipolar" tem dois sentidos na L5:** *bipolar element* = bipolo (2 terminais: R, L, C, diodo); *bipolar transistor* = BJT, que usa **dois tipos de portador**. O FET é **unipolar**.
+- **Saturação no BJT ≠ saturação no MOSFET.** No BJT, saturação = chave fechada (corrente máxima). No MOSFET, "saturation mode" é a região com $V_{DS} \gt V_{GS} - V_{Th}$, usada como amplificador.
+- **Enhancement = normalmente OFF; depletion = normalmente ON.** Não inverta.
+- **Resistência é propriedade do material**, não depende de V nem de I; resistor é o componente.
+- **O "nm" do nó de processo** é o tamanho mínimo da porta do transistor — e o slide avisa que 7, 6, 2 nm às vezes é marketing.
+
+</BlocoPegadinha>
+
+## Vocabulário EN → PT
+
+| English | Português | Em 1 linha |
+|---|---|---|
+| electronic device | dispositivo eletrônico | controla o fluxo de elétrons |
+| impedance | impedância | $Z = R + jX$: resistência + reatância |
+| doping | dopagem | inserir átomos trivalentes (p) ou pentavalentes (n) no silício |
+| p-n junction | junção p-n | transição p-n com barreira de potencial |
+| forward / reverse bias | polarização direta / reversa | junção conduzindo / bloqueando |
+| emitter, base, collector | emissor, base, coletor | terminais do BJT |
+| cut-off (interdiction) | corte (interdição) | BJT sem corrente: chave aberta |
+| active mode | região ativa | BJT amplificando |
+| DC current gain | ganho de corrente DC | $h_{FE} = I_C/I_B$ |
+| source, gate, drain | fonte, porta, dreno | terminais do FET |
+| gate oxide | óxido de porta | isolante de dióxido de silício sob a porta |
+| threshold voltage | tensão de limiar | $V_{Th}$, mínima para criar o canal |
+| enhancement / depletion mode | modo intensificação / depleção | normalmente OFF / normalmente ON |
+| integration scale | escala de integração | SSI, LSI, VLSI, ULSI, WSI |
+| software defined radio | rádio definido por software | rádio cujo processamento é feito em FPGA, DSP ou GPP |

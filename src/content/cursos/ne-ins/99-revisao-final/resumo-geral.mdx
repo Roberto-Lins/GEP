@@ -1,0 +1,72 @@
+---
+titulo: "Formulário completo"
+secao: "resumo-geral"
+secaoOrdem: 2
+---
+
+## Sinais e Fourier
+
+- Senoide: $s(t) = A\sin(2\pi f t + \varphi)$, com $\omega = 2\pi f$ e $f = 1/T$ ‹L1 p. 34›
+- Euler: $e^{j\theta} = \cos\theta + j\sin\theta$ ‹L1 p. 17›
+- Sinc normalizada: $\mathrm{sinc}(x) = \dfrac{\sin(\pi x)}{\pi x}$, zero nos inteiros não nulos ‹L1 p. 36›
+- Dirac: $\displaystyle\int s(t)\,\delta(t - t_0)\,dt = s(t_0)$ e área 1 ‹L1 p. 32–33›
+- Fundamental da série de Fourier: $f_1 = 1/T$ ‹L1 p. 38›
+- $\mathrm{rect}(t/T) \leftrightarrow T\,\mathrm{sinc}(fT)$; banda $B \propto 1/T$ ‹L1 p. 50, 54›
+- Regra de ouro: **periódico ↔ linhas**, **discreto ↔ periódico** ‹L1 p. 58›
+
+## Sistemas, filtros e decibel
+
+- Passa-faixa: $B = f_H - f_L$ e $f_0 = (f_L + f_H)/2$ ‹L2 p. 18›
+- Passa-baixas ideal: $h_{LP}(t) = 2B\,\mathrm{sinc}(2Bt)$ — não causal ‹L2 p. 14›
+- Potência: $10\log_{10}(P_1/P_2)$ (+3 dB = 2×, +10 dB = 10×, +20 dB = 100×) ‹L2 p. 20›
+- Amplitude: $20\log_{10}(V_1/V_2)$ (+6 dB = 2×) ‹L2 p. 20›
+
+## Amostragem e PCM
+
+- Nyquist-Shannon: banda limitada e $f_c \ge 2B$ ‹L2 p. 29›
+- Anti-aliasing: passa-baixas antes do ADC cortando acima de $f_c/2$ ‹L2 p. 37›
+- Níveis com $n$ bits: $2^n$; bits para $N$ níveis: $\lceil \log_2 N \rceil$ ‹L2 p. 44›
+- Erro máximo de quantização: $\pm K/2$ ‹L2 p. 44›
+- PCM telefônico: $8\,\mathrm{kHz} \times 8\,\mathrm{bits} = 64\,\mathrm{kb/s}$ ‹L2 p. 64›
+- SQR: cerca de $6\,\mathrm{dB}$ por bit (4 bits → 24 dB) ‹L2 p. 64›
+
+## Ruído
+
+- PSD térmica $= kT$; potência $N = kTB$; $k = 1{,}38\cdot 10^{-23}\,\mathrm{J/K}$ ‹L3 p. 10›
+- A 290 K: $kT \approx -174\,\mathrm{dBm/Hz} = -204\,\mathrm{dBW/Hz}$ ‹L3 p. 12›
+- Tensão de ruído de um resistor: $V_{rms} = \sqrt{4kTRB}$ ‹L3 p. 13›
+- Fator de ruído: $F = \dfrac{SNR_i}{SNR_o} \ge 1$; figura de ruído $NF = 10\log_{10} F$ ‹L3 p. 26–27›
+- Temperatura de ruído: $T_r = (F - 1)\,T$ e $F = \dfrac{T + T_r}{T}$ ‹L3 p. 28›
+- Friis:
+
+$$
+F = F_1 + \frac{F_2 - 1}{G_1} + \frac{F_3 - 1}{G_1 G_2} + \cdots
+$$
+
+$$
+T_{r,tot} = T_{r1} + \frac{T_{r2}}{G_1} + \frac{T_{r3}}{G_1 G_2} + \cdots
+$$
+
+(ganhos e fatores **lineares**, nunca em dB) ‹L3 p. 29›
+
+## ISI e capacidade
+
+- Banda de Nyquist: $W = \dfrac{1}{2T} = \dfrac{R}{2}$ ‹L3 p. 39›
+- Cosseno levantado: $BW = \dfrac{R}{2}(1 + \beta)$ ‹L3 p. 44›
+- 1º Nyquist: $C_{max} = 2B$ baud ‹L4 p. 9›
+- Hartley: $C = 2B\log_2 M$ bit/s; $n = \log_2 M$ ‹L4 p. 12–13›
+- Shannon-Hartley: $C = B\log_2(1 + SNR)$ com SNR **linear**; sem erro se $R \lt C$ ‹L4 p. 17›
+- Eficiência de banda: $\eta = R_b / B_t$ em bit/s/Hz ‹L4 p. 57›
+
+## Modulação
+
+| Modulação | O que varia | Bits/símbolo |
+|---|---|---|
+| ASK / OOK | amplitude (liga/desliga) | 1 |
+| FSK | frequência | 1 |
+| BPSK | fase (0°, 180°) | 1 |
+| QPSK | fase (4 fases) | 2 |
+| 8PSK / 16PSK | fase | 3 / 4 |
+| 16QAM / 64QAM / 256QAM | amplitude + fase | 4 / 6 / 8 |
+
+- Werner: $\cos x \cos y = \tfrac{1}{2}[\cos(x + y) + \cos(x - y)]$ ‹L4 p. 37›

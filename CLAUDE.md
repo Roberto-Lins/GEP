@@ -22,6 +22,7 @@ Hoje existem **13 cursos/famílias reais** (19 slugs concretos), todos com o tem
 - **NAV4-T2** (Navegação 4 — T2, família multimodal `nav4-t2`): `ano 4 · semestre 2 · época T2 · turma geral`.
 - **DIR-T2** (Direito — T2, família multimodal `dir-t2`): `ano 4 · semestre 2 · época T2 · turma geral`.
 - **REL-T2** (Relações Internacionais — T2, família multimodal `rel-t2`): `ano 4 · semestre 2 · época T2 · turma geral`.
+- **NE-INS** (Naval Electronics — intercâmbio na Accademia Navale): curso **extra**, fora do currículo; aparece só na seção **Extras** de `/ano/4` (campo `extra` no `_config.json`). Detalhes: `docs/courses/NE-INS.md`.
 
 `turma: "geral"` = matéria comum a todas as turmas do ano (mas, na navegação, aparece **só** em
 GERAL, não dentro das turmas especializadas). Outros cursos citados nesta documentação (ex.:
@@ -146,9 +147,15 @@ via `listingPathDoCurso`) e **Bússola** (volta ao `/`); há também botão flut
   "icone": "/imagens/cursos/gep/icone.svg",
   "capa": "/imagens/cursos/gep/capa.webp",   // raster SEM texto — vira o fundo do hero (ver passo 5)
   "features": { /* ver abaixo */ },
-  "componentesExtras": []
+  "componentesExtras": [],
+  "extra": { "rotulo": "Intercâmbio", "instituicao": "...", "dataProva": "AAAA-MM-DD" } // opcional
 }
 ```
+
+**Cursos extras (`extra`):** curso fora do currículo da Escola Naval (intercâmbio, prova externa).
+Continua precisando de `ano/semestre/epoca`, mas `filtrarCursos` o exclui de turmas, semestres e
+épocas; ele aparece apenas na seção **Extras** da tela raiz do ano (`/ano/<ano>#extras`), e
+`listingPathDoCurso` aponta o Voltar para lá. Ausente = curso curricular.
 
 A plataforma descobre os cursos lendo todos os `_config.json` (via `listarCursos`); o dashboard os
 **agrupa pela hierarquia** (ano → [turma] → semestre → época), e dentro de um período ordena por

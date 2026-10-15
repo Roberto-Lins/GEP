@@ -1,0 +1,24 @@
+{
+  "ordem": 5,
+  "slug": "05-transmissao-em-banda-base-e-pcm",
+  "titulo": "Transmissão em banda base e PCM",
+  "prioridade": "muito alta",
+  "subtitulo": "Line coding, NRZ, AMI, PCM e receptor com limiar",
+  "tempoEstimado": "35 min",
+  "objetivo": "Reconhecer os códigos de linha, calcular a taxa do PCM e o ganho de SQR por bit.",
+  "palavrasChave": [
+    "line coding",
+    "NRZ",
+    "AMI",
+    "PCM",
+    "threshold"
+  ],
+  "conceptIds": [
+    "C039",
+    "C040",
+    "C041",
+    "C042",
+    "C043",
+    "C044"
+  ]
+}

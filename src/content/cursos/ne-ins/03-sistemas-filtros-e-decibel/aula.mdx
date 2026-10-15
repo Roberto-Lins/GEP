@@ -1,0 +1,233 @@
+---
+titulo: "Sistemas, filtros e decibel — aula"
+secao: "aula"
+secaoOrdem: 1
+---
+
+## Resumo executivo
+
+Este módulo trata o equipamento eletrônico como **caixa-preta** (*black box*) que transforma o sinal, $y(t) = T[x(t)]$, e classifica essa transformação: **invariante ou variante no tempo**, **linear** (homogênea + aditiva) e **causal**. Para sistemas **LTI** (*linear time-invariant*), tudo se resume à **resposta ao impulso** $h(t)$ e à **função de transferência** $H(f)$. Em seguida vêm os **filtros ideais** (passa-baixas, passa-altas, passa-faixa) — que são **não causais** e, portanto, irrealizáveis — e os filtros reais. Fecha com o **decibel**.
+
+Na prova de 2025 **nenhuma questão** foi mapeada diretamente neste módulo, mas ele é pré-requisito de três questões de outros módulos: a Q24 usa a resposta ao impulso como alternativa-armadilha; as Q13 e Q21 do módulo 04 dependem do filtro passa-baixas e do sinc. O decibel é a régua de SNR, figura de ruído e SQR nos módulos 05 e 06.
+
+<BlocoObjetivo titulo="Ao final você deve conseguir">
+
+- Definir sistema invariante no tempo, linear e causal, cada um em uma frase.
+- Explicar por que $h(t)$ caracteriza completamente um sistema LTI.
+- Desenhar $H(f)$ dos filtros ideais LP, HP e BP e calcular $f_0$ e $B$ do passa-faixa.
+- Justificar por que o filtro ideal é não causal ($h_{LP}$ é um sinc que existe para $t \lt 0$).
+- Converter razões de potência e de amplitude em dB (+3, +6, +10, +20 dB).
+
+</BlocoObjetivo>
+
+## Conceitos
+
+### C021 — Sistema como caixa-preta; invariante × variante no tempo (system, time-invariant × time-variant)
+
+‹fonte: Electr L2 p. 2–3›
+
+Os blocos de um equipamento operam **transformações sobre o sinal**. O curso não entra em *como* a eletrônica faz isso: considera o sistema uma **caixa-preta**, da qual só se conhece o **efeito** — o tipo de transformação. A ação do sistema sobre o sinal é escrita $T[\cdot]$:
+
+$$
+y(t) = T[x(t)]
+$$
+
+- ***Time-invariant*** (estacionário): o efeito do sistema **não muda com o tempo**. Exemplo do slide: um divisor resistivo R1–R2 alimentado por um gerador (marcado L.T.I.).
+- ***Time-variant***: a saída depende **não só da entrada, mas também do tempo**. Exemplo do slide: o mesmo circuito com uma **chave** que, conforme a posição, curto-circuita R1 — a resposta depende do instante em que a chave está numa ou noutra posição.
+
+### C022 — Linearidade: homogeneidade + aditividade (linearity = homogeneity + additivity)
+
+‹fonte: Electr L2 p. 4›
+
+Um sistema é **linear** se for **homogêneo** e **aditivo**:
+
+- **Homogeneidade** (*homogeneity*): uma mudança de escala na amplitude da entrada produz a **mesma** mudança de escala na saída. Se $x(t) \to y(t)$, então $a\,x(t) \to a\,y(t)$.
+- **Aditividade** (*additivity*): a resposta a uma soma é a **soma das respostas individuais**, para quaisquer entradas. Se $x_1 \to y_1$ e $x_2 \to y_2$, então:
+
+$$
+x_1(t) + x_2(t) \to y_1(t) + y_2(t)
+$$
+
+As duas juntas formam o **princípio da superposição** [INFERÊNCIA PEDAGÓGICA: nome usual do conjunto das duas propriedades; o slide usa "additive principle" no módulo 04].
+
+### C023 — Causalidade (causal / physical system)
+
+‹fonte: Electr L2 p. 5›
+
+Um sistema é **causal** (ou **físico**) quando a resposta no instante $t$ depende apenas da entrada no instante $t$ e/ou em instantes **anteriores**: $y(t_0)$ é saída de $T[x(t)]$ com $t \le t_0$.
+
+Consequência: **um sistema não causal não pode ser realizado fisicamente** — o efeito não pode acontecer antes da causa. Essa frase é o motivo de todos os filtros ideais deste módulo serem irrealizáveis.
+
+### C024 — Resposta ao impulso e função de transferência (impulse response, transfer function)
+
+‹fonte: Electr L2 p. 5–6›
+
+Para caracterizar um sistema usa-se a **resposta ao impulso** (*impulse response*): a **saída** do sistema quando a **entrada** é o impulso $\delta(t)$. Indica-se por $h(t)$ no tempo e $H(f)$ na frequência:
+
+$$
+h(t) = T[\delta(t)]
+$$
+
+- Se o sistema é **invariante no tempo**, a forma de $h(t)$ **não depende do instante** em que o impulso é aplicado.
+- Se é também **linear**, conhecendo $h(t)$ calcula-se a saída para qualquer combinação linear de impulsos:
+
+$$
+y(t) = T[a\,\delta(t) + b\,\delta(t-\tau_1)] = a\,h(t) + b\,h(t-\tau_1)
+$$
+
+Para sistemas **LTI**, a resposta ao impulso $h(t)$ **caracteriza completamente o sistema**. O motivo, lembrado no slide: o espectro de $\delta(t)$ é **plano e infinito** — o impulso "testa" o sistema em **todas as frequências ao mesmo tempo**. $H(f)$ é a **função de transferência** (*transfer function*): descreve a resposta em frequência do sistema a uma perturbação genérica. A imagem do slide: é como perguntar à caixa "Qual é o seu nome? Quem é você?".
+
+<BlocoConceito titulo="LTI em uma frase de prova">
+
+*For a linear time-invariant (LTI) system, the impulse response h(t) — the output when the input is a Dirac delta — completely characterizes the system; its Fourier transform H(f) is the transfer function.*
+
+</BlocoConceito>
+
+### C025 — Filtros ideais: passa-baixas, passa-altas, passa-faixa (ideal low-pass, high-pass, band-pass filters)
+
+‹fonte: Electr L2 p. 7–18›
+
+**Filtro** (*filter*): dispositivo que transforma ou processa os sinais de entrada — por exemplo, **elimina certas bandas de frequência** e deixa passar as outras. Caso típico: o sinal observado é $x(t) = x_1(t) + x_2(t)$, onde $x_1$ é o sinal **útil** e $x_2$ é **interferência/ruído** a eliminar (ou reduzir fortemente).
+
+**Exemplo do eletrocardiograma (p. 8–9):** a tensão captada no corpo do paciente é muito fraca e pode vir sobreposta pelo resíduo da rede elétrica (220 V, 50 Hz), da mesma ordem de grandeza do sinal útil. No tempo, separar os dois parece impossível. Na **frequência** (p. 10), porém, a transformada da soma é a soma das transformadas, $X_1(f) + X_2(f)$, e se os dois espectros ocupam **intervalos separados**, um sistema linear com **seletividade** em frequência preserva o sinal e rejeita o distúrbio (p. 11).
+
+**Passa-baixas ideal** (*ideal low-pass filter*, p. 12–14):
+
+$$
+H_{LP}(f) = \mathrm{rect}\left(\frac{f}{2B}\right), \qquad Y(f) = X(f) \cdot H_{LP}(f)
+$$
+
+Na **banda passante** (*passband*), perto da frequência nula, $H(f) = 1$: as componentes passam **inalteradas**. Fora dela, $H(f) = 0$: as componentes são **completamente canceladas**. $B$ é o **limite de banda** (*band edge*). Por convenção, a **banda do filtro** é a largura da banda passante medida **só no semieixo positivo** — aqui, igual a $B$.
+
+<FiguraFonte figura="ne-ins-l2-p12" />
+
+A resposta ao impulso vem da transformada inversa (o inverso de um rect é um sinc, módulo 02):
+
+$$
+h_{LP}(t) = 2B\,\mathrm{sinc}(2Bt)
+$$
+
+O sinc tem pico $2B$ em $t = 0$, zeros em $\pm 1/2B$, e é **diferente de zero também para** $t \lt 0$. Ou seja: o filtro "responde" antes de o impulso chegar. **O passa-baixas ideal é não causal e, portanto, fisicamente irrealizável.**
+
+**Passa-altas ideal** (*ideal high-pass filter*, p. 15–16): para suprimir $X_1$ (baixas frequências) e isolar $X_2$. A banda passante fica **além** do limite $B$; ali as componentes não são alteradas. Diz-se — **impropriamente** — que a banda do passa-altas é $B$, referindo-se na verdade ao **limite de banda**. $H_{HP}$ também é **não causal**.
+
+**Passa-faixa ideal** (*ideal band-pass filter*, p. 17–18): caso de $x(t) = x_1 + x_2 + x_3$, típico dos sinais modulados de emissoras (rádio FM no carro), quando se quer extrair só $X_2$. $H_{BP}(f)$ é não nulo apenas na banda ocupada por $X_2$, entre o **limite inferior** $f_L$ e o **limite superior** $f_H$ (sempre no semieixo positivo):
+
+$$
+f_0 = \frac{f_L + f_H}{2}, \qquad B = f_H - f_L
+$$
+
+Exemplo numérico [INFERÊNCIA PEDAGÓGICA: números ilustrativos, só aplicação das fórmulas do slide]: com $f_L = 3\,\mathrm{kHz}$ e $f_H = 5\,\mathrm{kHz}$, a frequência central é $f_0 = 4\,\mathrm{kHz}$ e a banda é $B = 2\,\mathrm{kHz}$ — não $5\,\mathrm{kHz}$, porque a banda é a **largura** da faixa, não o limite superior.
+
+### C026 — Filtros reais (real filters)
+
+‹fonte: Electr L2 p. 19›
+
+Nas aplicações reais os filtros são, obviamente, **causais**. Em troca, eles:
+
+- **se alargam em banda** (ocupam mais banda que o ideal);
+- têm curvas de subida e descida **mais suaves**;
+- são **menos seletivos**.
+
+A figura do slide compara ideal × real para passa-baixas, passa-altas, passa-faixa e também **rejeita-faixa** (*band-stop*, "filtro escludi banda").
+
+<BlocoComparacao titulo="Filtro ideal × filtro real">
+
+| | Ideal | Real |
+|---|---|---|
+| $H(f)$ | degrau abrupto (rect) | transição suave |
+| Causal? | **não** ($h(t)$ existe para $t \lt 0$) | **sim** |
+| Realizável? | **não** | sim |
+| Banda ocupada | exatamente $B$ | maior que $B$ |
+| Seletividade | máxima | menor |
+
+</BlocoComparacao>
+
+### C027 — Decibel (decibel)
+
+‹fonte: Electr L2 p. 20›
+
+Grandezas físicas variam por muitas ordens de grandeza — a intensidade sonora audível vai de 1 a $10^{-12}\,\mathrm{W/m^2}$. Interessa mais saber se o sinal **dobrou, triplicou, caiu à metade** em relação a uma referência. Usa-se então uma escala **logarítmica**: o logaritmo (base 10) da razão entre duas grandezas **homogêneas**. A unidade é o **bel** (B); mais comum é o **decibel** (dB), igual a **1/10 de bel**. Em dB, **multiplicações e divisões viram somas e subtrações**.
+
+**Razão de potências:**
+
+$$
+\left(\frac{S}{N}\right)_{\mathrm{dB}} = 10\log_{10}\frac{S}{N}
+$$
+
+**Razão de amplitudes** (tensões):
+
+$$
+\left(\frac{V_1}{V_2}\right)_{\mathrm{dB}} = 20\log_{10}\frac{V_1}{V_2}
+$$
+
+Tabela de bolso (valores do slide):
+
+| Em dB | Potência | Amplitude |
+|---|---|---|
+| +3 dB | 2 vezes | — |
+| +6 dB | — | 2 vezes |
+| +10 dB | 10 vezes | — |
+| +20 dB | 100 vezes | — |
+| +30 dB | 1000 vezes | — |
+
+Por que 20 para amplitude: a potência é proporcional ao quadrado da amplitude, e $10\log_{10}(V^2) = 20\log_{10}V$ [INFERÊNCIA PEDAGÓGICA: justificativa não escrita no slide]. Por isso **dobrar a tensão** dá $20\log_{10}2 \approx 6\,\mathrm{dB}$, enquanto **dobrar a potência** dá $10\log_{10}2 \approx 3\,\mathrm{dB}$.
+
+Exemplos rápidos (aritmética com as regras do slide):
+
+- $S/N = 20\,\mathrm{dB}$ → $S$ é **100 vezes** maior que $N$ (exemplo do próprio slide).
+- $33\,\mathrm{dB} = 30 + 3$ → $1000 \times 2 = 2000$ vezes em potência.
+- Faixa da audição: $10\log_{10}(1/10^{-12}) = 120\,\mathrm{dB}$.
+- $-3\,\mathrm{dB}$ → metade da potência.
+
+<BlocoConceito titulo="Decibel em uma frase de prova">
+
+*Power ratio in dB = $10\log_{10}(P_1/P_2)$; amplitude ratio in dB = $20\log_{10}(V_1/V_2)$. +3 dB doubles the power, +10 dB multiplies it by 10, +6 dB doubles the amplitude.*
+
+</BlocoConceito>
+
+## Como isso caiu na prova de 2025
+
+**Nenhuma questão da prova de 2025 foi mapeada para este módulo.** Ele aparece **indiretamente**:
+
+- **Q24** (módulo 01): a alternativa (c) *"It represents the impulse response of an LTI system"* é a armadilha — o Dirac é a **entrada**; $h(t)$ é a **saída** (C024).
+- **Q13 e Q21** (módulo 04): o filtro anti-aliasing é um **passa-baixas**, e a reconstrução ideal usa um passa-baixas cuja resposta ao impulso é **sinc** (C025).
+- **Q28 e Q30** (módulos 05–06): respostas em dB.
+
+**O que é mais provável cair** [INFERÊNCIA PEDAGÓGICA]:
+
+- *What characterizes an LTI system completely?* → **the impulse response h(t)**.
+- *Why is an ideal low-pass filter not physically realizable?* → **it is non-causal** (o sinc existe para $t \lt 0$).
+- *A system is linear if…* → **homogeneous and additive**.
+- *+3 dB / +10 dB / +6 dB mean…* → 2× potência / 10× potência / 2× amplitude.
+- *Bandwidth of a band-pass filter* → $B = f_H - f_L$.
+
+<BlocoPegadinha titulo="Pegadinhas">
+
+- Linear exige **as duas** propriedades: homogeneidade **e** aditividade.
+- "Causal" não é "estável" nem "linear": é **não depender do futuro**. Não causal = **não realizável**.
+- O filtro **ideal** é não causal; o **real** é causal, porém mais largo e menos seletivo.
+- A "banda" do passa-altas é $B$ só por convenção imprópria: é o **limite**, não a largura da banda passante.
+- +3 dB é dobro de **potência**; +6 dB é dobro de **amplitude**. Não misture 10 log com 20 log.
+- Em dB, ganhos em cascata **somam**; em escala linear, **multiplicam**.
+
+</BlocoPegadinha>
+
+## Vocabulário EN → PT
+
+| English | Português | O que significa |
+|---|---|---|
+| *black box* | caixa-preta | sistema descrito só pelo efeito na saída |
+| *time-invariant (stationary)* | invariante no tempo | efeito não muda com o tempo |
+| *time-variant* | variante no tempo | saída depende também do instante |
+| *homogeneity* | homogeneidade | escala na entrada = mesma escala na saída |
+| *additivity* | aditividade | resposta à soma = soma das respostas |
+| *causal (physical) system* | sistema causal (físico) | saída só depende do presente e do passado |
+| *impulse response* | resposta ao impulso | saída quando a entrada é um Dirac |
+| *transfer function* | função de transferência | H(f), transformada de h(t) |
+| *passband* | banda passante | faixa em que H(f) = 1 |
+| *band edge* | limite de banda | frequência B onde a banda passante termina |
+| *low-pass / high-pass / band-pass* | passa-baixas / passa-altas / passa-faixa | tipos de filtro por banda preservada |
+| *band-stop* | rejeita-faixa | elimina uma faixa intermediária |
+| *selectivity* | seletividade | capacidade de separar frequências vizinhas |
+| *decibel (dB)* | decibel | 1/10 de bel; 10 log de razão de potências |

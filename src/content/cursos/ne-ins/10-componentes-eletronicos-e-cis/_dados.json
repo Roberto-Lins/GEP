@@ -1,0 +1,27 @@
+{
+  "ordem": 10,
+  "slug": "10-componentes-eletronicos-e-cis",
+  "titulo": "Componentes eletrônicos e CIs",
+  "prioridade": "alta",
+  "subtitulo": "Bipolos, diodo, BJT, FET, MOSFET, circuitos integrados, FPGA e DSP",
+  "tempoEstimado": "30 min",
+  "objetivo": "Reconhecer as regiões de operação dos transistores e os marcos dos circuitos integrados.",
+  "palavrasChave": [
+    "diode",
+    "BJT",
+    "MOSFET",
+    "integrated circuit",
+    "Moore",
+    "FPGA"
+  ],
+  "conceptIds": [
+    "C078",
+    "C079",
+    "C080",
+    "C081",
+    "C082",
+    "C083",
+    "C084",
+    "C085"
+  ]
+}

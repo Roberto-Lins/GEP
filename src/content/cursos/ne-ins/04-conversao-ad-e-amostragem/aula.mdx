@@ -1,0 +1,378 @@
+---
+titulo: "Conversão A/D e amostragem — aula"
+secao: "aula"
+secaoOrdem: 1
+---
+
+## Resumo executivo
+
+Este é um dos dois módulos **mais cobrados** da prova (empatado com o 06): **8 das 30 questões de 2025** (Q11, Q12, Q13, Q14, Q20, Q21, Q22, Q26) saíram daqui. Ele descreve como um sinal analógico vira bits no **ADC** (*analogue-to-digital converter*) — **filtragem, amostragem, quantização e codificação** — e como volta a ser analógico no **DAC**.
+
+O núcleo é o **teorema de Nyquist-Shannon**: um sinal **limitado em banda** $B$ pode ser reconstruído exatamente das suas amostras se $f_c \ge 2B$. Se a condição falha, as réplicas do espectro se sobrepõem e surge o **aliasing** (espectro distorcido, reconstrução impossível), que se previne com um **filtro anti-aliasing** passa-baixas **antes** do ADC. A reconstrução ideal é a **interpolação cardinal** (fórmula de Whittaker-Shannon, soma de sincs), irrealizável; na prática usa-se o **sample and hold** (*zero-order hold*). Fecha com quantização ($2^n$ níveis, erro máximo $\pm K/2$) e codificação (bits por amostra e *bitrate*).
+
+<BlocoObjetivo titulo="Ao final você deve conseguir">
+
+- Listar as quatro etapas do ADC e dizer por que elas precisam ser "inversíveis".
+- Escrever o espectro do sinal amostrado e desenhar os três casos: $f_c \gt 2B$, $f_c = 2B$, $f_c \lt 2B$.
+- Enunciar o teorema de Nyquist-Shannon com as **duas** condições (banda limitada e $f_c \ge 2B$).
+- Definir aliasing no tempo e na frequência, e dizer como preveni-lo.
+- Explicar a interpolação cardinal (sincs) e por que ela não é realizável.
+- Explicar o *sample and hold* no DAC (degraus) e no ADC (congelar a amostra).
+- Calcular níveis ($2^n$), bits por amostra ($\log_2 N$), erro máximo ($\pm K/2$) e bitrate ($f_c \cdot n$).
+
+</BlocoObjetivo>
+
+## Conceitos
+
+### C028 — Etapas do ADC e inversibilidade (ADC steps, invertibility)
+
+‹fonte: Electr L2 p. 21, 41›
+
+As operações que transformam um sinal analógico em dados digitais precisam ser **inversíveis** (*invertible*): no receptor deve ser possível "voltar" e ter de novo o sinal original — ou, pelo menos, um sinal **próximo** do original e útil para o fim a que se destina.
+
+No transmissor, a digitalização é feita pelo **ADC** e inclui:
+
+1. **Filtragem** (*filtering*) — o filtro anti-aliasing (C033);
+2. **Amostragem** (*sampling*) — discretiza o **tempo** (C029–C031);
+3. **Quantização** (*quantization*) — discretiza a **amplitude** (C036);
+4. **Codificação** (*encoding*) — transforma cada nível em bits (C037).
+
+Cadeia prática da p. 41: entrada analógica → **amplificador** → **filtro anti-aliasing** → **sample & hold** → **ADC** → saídas digitais. O filtro e o S&H "preparam" o sinal para as fases de quantização e codificação.
+
+Ligação com o módulo 01: amostrar torna o **tempo** discreto; quantizar torna a **amplitude** discreta; só com as duas o sinal é **digital**.
+
+### C029 — Amostragem e pente de Dirac (sampling, Dirac comb)
+
+‹fonte: Electr L2 p. 22–24›
+
+**Amostragem** (*sampling*) é a redução de um sinal de **tempo contínuo** a um sinal de **tempo discreto**. A forma de onda $x(t)$ é adequadamente representada pelas suas amostras $x(n)$ **quando elas são escolhidas corretamente** — só nesse caso a forma de onda pode ser reconstruída a partir delas.
+
+Se $T_c$ é o **período de amostragem** (*sampling period* ou *step*), seu recíproco é a **frequência de amostragem** (*sampling frequency*, *cadence*, na prova *sampling rate*): $f_c = 1/T_c$.
+
+**Como amostrar idealmente?** Com um **pente de Dirac** (*Dirac comb*, *shah*), repetição periódica do impulso a cada $T$:
+
+$$
+\tilde{\delta}_T(t) = \sum_{n=-\infty}^{+\infty} \delta(t - nT)
+$$
+
+Pela propriedade do Dirac (extrair o valor da função onde o delta é aplicado, módulo 01), o pente extrai **todos** os valores $x(kT)$:
+
+$$
+\int_{-\infty}^{+\infty} x(t)\,\mathrm{III}_T(t)\,dt = \sum_{k=-\infty}^{+\infty} x(kT)
+$$
+
+A transformada de Fourier de um pente de Dirac **ainda é um pente de Dirac** — com dentes espaçados de $1/T$ e altura $1/T$:
+
+$$
+\sum_{n=-\infty}^{+\infty} \delta(t - nT) \;\longleftrightarrow\; \frac{1}{T}\sum_{k=-\infty}^{+\infty} \delta\left(f - \frac{k}{T}\right)
+$$
+
+**No tempo** (p. 24), a amostragem ideal é o **produto** do sinal pelo pente:
+
+$$
+x_\delta(t) = x_a(t)\cdot\tilde{\delta}_T(t) = \sum_{n=-\infty}^{+\infty} x_a(nT)\,\delta(t - nT)
+$$
+
+O resultado é um trem de impulsos cujas "alturas" (áreas) são as amostras $x_a(nT)$.
+
+### C030 — Espectro do sinal amostrado (sampling in frequency domain)
+
+‹fonte: Electr L2 p. 25–27›
+
+Produto no tempo vira repetição na frequência: o espectro do sinal amostrado é formado por **réplicas** do espectro de $x_a(t)$ (banda $B$), **deslocadas** de $k f_c = k/T$ e **escaladas** em amplitude pelo fator $1/T = f_c$:
+
+$$
+X_\delta(f) = \frac{1}{T}\sum_{k=-\infty}^{+\infty} X_a\left(f - \frac{k}{T}\right) = f_c \sum_{k=-\infty}^{+\infty} X_a(f - k f_c)
+$$
+
+Esse espectro **depende do valor de** $f_c$. Cada réplica ocupa de $k f_c - B$ a $k f_c + B$ (largura $2B$), e réplicas vizinhas estão a $f_c$ de distância. Daí os três casos:
+
+- **(a)** $f_c \gt 2B$ — ***oversampling*** (sobreamostragem): as réplicas **não se sobrepõem**; sobra um intervalo vazio entre elas.
+- **(b)** $f_c = 2B$ — as réplicas **se tocam** exatamente na borda.
+- **(c)** $f_c \lt 2B$ — ***undersampling*** (subamostragem): as réplicas **se sobrepõem** (*overlapping of signal replicas*).
+
+<FiguraFonte figura="ne-ins-l2-p26" />
+
+<FiguraFonte figura="ne-ins-l2-p27" />
+
+Exemplo numérico [INFERÊNCIA PEDAGÓGICA: números ilustrativos aplicando a regra do slide] — sinal com $B = 4\,\mathrm{kHz}$:
+
+| $f_c$ | Caso | O que acontece entre réplicas |
+|---|---|---|
+| $10\,\mathrm{kHz}$ | (a) oversampling | sobra $f_c - 2B = 2\,\mathrm{kHz}$ livres |
+| $8\,\mathrm{kHz}$ | (b) $f_c = 2B$ | encostam, sem folga |
+| $6\,\mathrm{kHz}$ | (c) undersampling | sobrepõem-se em $2B - f_c = 2\,\mathrm{kHz}$ → aliasing |
+
+### C031 — Teorema de Nyquist-Shannon (Nyquist-Shannon sampling theorem)
+
+‹fonte: Electr L2 p. 28–30, 64›
+
+**Condição de Nyquist** (*Nyquist condition*): $f_c = 2B$ é a **frequência de amostragem mínima**. Da análise do espectro segue que, se
+
+1. o sinal é **limitado em banda** (*band limited*), e
+2. a condição de Nyquist é satisfeita,
+
+então $x_a(t)$ pode ser **reconstruído exatamente** a partir da versão amostrada $x_\delta(t)$, com um **filtro passa-baixas ideal** (que recorta só a réplica central).
+
+**Enunciado do teorema** (p. 29): um sinal analógico $x(t)$ é **totalmente representado** por suas amostras tomadas com passo constante $T$, isto é, com $f_c = 1/T$, se:
+
+- **(a)** o sinal é limitado à banda $B$: $X(f) \equiv 0$ para todo $\lvert f \rvert \ge B$;
+- **(b)** a taxa de amostragem é igual ou maior que a condição de Nyquist:
+
+$$
+f_c \ge 2B
+$$
+
+A frequência mínima de amostragem para um sinal de banda (monolateral) $B$ é, portanto (p. 30):
+
+$$
+f_c = F_N = 2B \quad \text{(frequência ou cadência de Nyquist)}
+$$
+
+**Banda de guarda** (*guard band*): na prática, $f_c$ deve ser **pelo menos um pouco maior** que $2B$, para que os efeitos não ideais dos filtros reais (que não cortam abruptamente) não cortem partes úteis do sinal.
+
+Contas de prova com números das fontes:
+
+| Aplicação | Banda $B$ | Mínimo $2B$ | Usado na prática | Fonte |
+|---|---|---|---|---|
+| Telefonia (PCM) | $3{,}4\,\mathrm{kHz}$ | $6{,}8\,\mathrm{kHz}$ | $8\,\mathrm{kHz}$ (com margem) | L2 p. 64 |
+| Áudio hi-fi | $20\,\mathrm{kHz}$ | $40\,\mathrm{kHz}$ | $44{,}1\,\mathrm{kHz}$ (CD) | L2 p. 37 |
+| Onda quadrada 50 Hz, 100 harmônicos | $5\,\mathrm{kHz}$ | $10\,\mathrm{kHz}$ | 10 kHz ou mais **+ filtro** | L2 p. 38 |
+
+A diferença entre o mínimo e o usado é justamente a **banda de guarda**.
+
+<BlocoConceito titulo="Nyquist-Shannon (frase de prova)">
+
+*A band-limited signal (X(f) = 0 for every frequency at or above B) is completely represented by its samples if the sampling rate is at least **twice the highest frequency component**: $f_c \ge 2B$. The minimum, $f_c = 2B$, is the Nyquist rate. In practice $f_c$ is slightly higher (guard band).*
+
+</BlocoConceito>
+
+### C032 — Aliasing (aliasing effect)
+
+‹fonte: Electr L2 p. 30, 39›
+
+Se o sinal **não é limitado em banda** ou, mesmo sendo, se a **condição de Nyquist não é satisfeita**, as réplicas de $X(f)$ **se sobrepõem** e a reconstrução **deixa de ser possível**: diz-se que o sinal amostrado está afetado por **aliasing**.
+
+Definição do slide (p. 39): o efeito de aliasing é uma **distorção do espectro** (*spectrum distortion*) devida à **subamostragem** (*undersampling* — $f_c$ incorreta **ou** banda não limitada), de modo que o sinal reconstruído assume **outra forma** — a um espectro diferente corresponde um sinal diferente no tempo —, o "***alias***" (do latim: "outro"), em relação ao original.
+
+**Interpretação no tempo:** existe **outro sinal** (o azul, de frequência bem mais baixa) que passaria **pelos mesmos valores amostrados** do sinal original (o vermelho, de frequência alta). Olhando só as amostras, é impossível saber qual dos dois foi amostrado — e o reconstrutor entrega o errado.
+
+<FiguraFonte figura="ne-ins-l2-p39" />
+
+Consequências para a prova:
+
+- O sinal reconstruído fica **distorcido** (*the signal becomes distorted*).
+- A transformada de Fourier do sinal amostrado fica **distorcida e imprecisa**: as réplicas sobrepostas se **somam** na região de sobreposição, e o filtro de reconstrução passa a recortar um espectro que **não é** mais $X_a(f)$.
+- Depois de amostrar errado, **não há como desfazer**: a sobreposição torna impossível a reconstrução exata (p. 39). A prevenção tem de vir **antes** da amostragem.
+
+### C033 — Filtro anti-aliasing (anti-aliasing filter)
+
+‹fonte: Electr L2 p. 37–40›
+
+O teorema impõe uma restrição ao projeto de um ADC. Um sinal analógico **muitas vezes não é limitado em frequência**, por isso precisa ser **filtrado** para eliminar as componentes **acima de** $f_c/2$, com um **passa-baixas** apropriado. Esse é o **filtro anti-aliasing** (*anti-aliasing filter*), colocado **antes do ADC**: ele garante a **1ª condição** do teorema de Shannon (banda limitada), cortando as frequências que não são úteis.
+
+Exemplos dos slides:
+
+- **Áudio:** o ouvido humano percebe até cerca de 20 kHz; o que estiver acima pode ser cortado sem perda útil ("eu não ouviria mesmo!"). Amostragem hi-fi em torno de 40 kHz; com banda de guarda, o padrão do **CD é 44,1 kHz**.
+- **Telefone:** canal de cerca de 4 kHz de banda bruta; a voz é limitada cortando os harmônicos superiores, que não acrescentariam qualidade (por isso música pelo telefone soa mal). A fundamental da fala comum fica quase sempre abaixo de 1 kHz.
+- **Posso simplesmente ignorar alguns harmônicos? Não!** Onda quadrada de 50 Hz ($T = 20\,\mathrm{ms}$): supondo significativos só os 100 primeiros harmônicos, $B = 100 \times 50\,\mathrm{Hz} = 5\,\mathrm{kHz}$ e $f_c \ge 10\,\mathrm{kHz}$. Mas amostrar a 10 kHz o sinal **original**, que **ainda contém** frequências acima de 5 kHz, produz aliasing: as frequências consideradas desprezíveis, se não forem **eliminadas**, continuam sendo amostradas e **interferem** nas frequências úteis.
+
+Moral: "desprezível" no cálculo de $B$ não basta — é preciso **remover fisicamente** essas componentes com o filtro **antes** de amostrar.
+
+<FiguraFonte figura="ne-ins-l2-p40" />
+
+Na figura: onda quadrada com harmônicos não significativos → **HLP anti-aliasing** → espectro **limitado a B** e uma aproximação da onda quadrada (com pequenas oscilações) no tempo.
+
+<BlocoConceito titulo="Anti-aliasing (frase de prova)">
+
+*Aliasing is prevented by placing a **low-pass anti-aliasing filter before the ADC**: it removes the components above $f_c/2$, so the signal becomes band-limited (first condition of the sampling theorem). Raising the sampling rate alone cannot fix a signal whose bandwidth is not limited.*
+
+</BlocoConceito>
+
+### C034 — Reconstrução ideal e interpolação cardinal (ideal reconstruction, Whittaker-Shannon interpolation formula)
+
+‹fonte: Electr L2 p. 28, 31–33; Electr L1 p. 36›
+
+No caso ideal, basta **filtrar o sinal amostrado** com um passa-baixas ideal que deixe passar só a réplica central (ganho $T$ compensa o fator $1/T$ da amostragem):
+
+$$
+H_{LP}(f) = T\,\mathrm{rect}\left(\frac{f}{2B}\right), \qquad B \le f_p \le f_c - B
+$$
+
+onde $f_p$ é a frequência de corte do filtro: ela precisa estar **acima** de $B$ (para não cortar o sinal) e **abaixo** de $f_c - B$ (onde começa a primeira réplica). A resposta ao impulso correspondente é um sinc:
+
+$$
+h_{LP}(t) = 2BT\,\mathrm{sinc}(2Bt)
+$$
+
+<FiguraFonte figura="ne-ins-l2-p31" />
+
+**Fórmula de interpolação de Whittaker-Shannon** (p. 32): calculando a saída do filtro no tempo pelo **princípio aditivo** — soma das respostas a cada impulso de $x_\delta(t)$ — com $x(t)$ de banda $B \le 1/2T$ e $h(t)$ sinc:
+
+$$
+x(t) = \sum_{n=-\infty}^{+\infty} x[n]\;\mathrm{sinc}\left(\frac{t - nT}{T}\right)
+$$
+
+Leitura: em cada instante de amostragem $nT$ coloca-se um sinc com altura igual à amostra $x[n]$; os sincs **se sobrepõem** e a soma reconstrói o sinal desejado. Como o sinc vale 1 no próprio ponto e **zero em todos os outros instantes de amostragem** (zeros nos inteiros, módulo 01), cada amostra é preservada exatamente. Com $f_c = 2B$, $2BT = 1$ e o $h_{LP}$ acima vira exatamente $\mathrm{sinc}(t/T)$.
+
+É isso que a prova chama de **interpolação cardinal** (*cardinal interpolation*): interpolação com o **seno cardinal** (sinc, L1 p. 36) para reconstruir um sinal contínuo a partir das amostras discretas. Condição necessária: o sinal ter **banda limitada** (e ser amostrado com $f_c \ge 2B$).
+
+**Por que não é realizável (p. 32–33):** os sincs interpoladores são **infinitamente extensos no tempo, nas duas direções** — inclusive para trás, o que torna o filtro **não causal** (módulo 03). Na prática usa-se um **filtro real**, com **banda maior** (e possível distorção de novo se $f_c$ não for bem maior que $2B$, daí bandas de guarda maiores), que no tempo faz uma "espécie" de interpolação por sincs com **caudas que se anulam rapidamente**.
+
+<BlocoConceito titulo="Interpolação cardinal (frase de prova)">
+
+*Cardinal (Whittaker-Shannon) interpolation reconstructs a continuous signal from its discrete samples as a sum of sinc functions weighted by the samples. It requires a band-limited signal sampled at $f_c \ge 2B$, and it is not physically realizable because the sincs extend infinitely in both directions.*
+
+</BlocoConceito>
+
+### C035 — Sample and hold / zero-order hold (no DAC e no ADC)
+
+‹fonte: Electr L2 p. 34–36›
+
+**No DAC (reconstrução):** uma alternativa à reconstrução ideal é o circuito ***sample and hold*** dentro do DAC. Ele converte o sinal de tempo discreto em tempo contínuo **mantendo o valor de cada amostra durante um intervalo de amostragem** — o ***zero-order hold*** (**ZOH**). O resultado é um sinal **constante por partes** (em degraus).
+
+Visto como filtro, é como usar um filtro com **resposta ao impulso retangular** no tempo — portanto **sinc(fT)** na frequência —, **seguido de outro filtro** para eliminar as caudas em frequência acima da banda $B$ do sinal, obtendo de novo um sinal analógico. É uma **boa aproximação**, que funciona em muitos casos.
+
+<FiguraFonte figura="ne-ins-l2-p34" />
+
+**No ADC (aquisição):** os amostradores reais não são ideais — o Dirac é uma idealização; na realidade a amostra é um rect. Além disso, o ADC **não produz a saída instantaneamente**: precisa de uma entrada **constante** durante todo o tempo de conversão para não errar. Extrair uma amostra leva um tempo $\tau$; se o sinal varia **mais rápido** que $\tau$, varia mais rápido do que o ADC consegue converter, e isso gera **erros** (*signal skewing*).
+
+Solução: um circuito **S&H** antes dos elementos seguintes, que **"congela"** (*freezes*) a amplitude a ser convertida durante toda a conversão, dando ao ADC tempo para converter corretamente. No esquema do slide: um *buffer* de entrada, uma **chave** comandada por um pulso e um **capacitor** que guarda a tensão, seguido de outro *buffer*.
+
+<BlocoComparacao titulo="Três maneiras de reconstruir">
+
+| | Passa-baixas ideal (cardinal) | Passa-baixas real | Sample and hold (ZOH) |
+|---|---|---|---|
+| Resposta ao impulso | sinc infinito | sinc com caudas que morrem rápido | rect de duração $T$ |
+| Saída antes do filtro final | — | — | degraus (constante por partes) |
+| Realizável? | **não** (não causal) | sim | sim |
+| Preço | — | mais banda, banda de guarda maior | precisa de passa-baixas para arredondar os degraus |
+
+</BlocoComparacao>
+
+### C036 — Quantização (quantization)
+
+‹fonte: Electr L2 p. 42–45›
+
+Depois da amostragem, cada amostra $x_a(nT)$ ainda tem um valor **real**, que pode assumir **continuamente** qualquer valor entre um mínimo e um máximo. Para representá-la em forma digital, é preciso aproximar os reais por um **conjunto discreto** de valores: cada valor amostrado é associado ao **nível mais próximo** dentre um número limitado de **níveis discretos**. Essa operação é a **quantização**, feita pelo **quantizador** (*quantizer*), que transforma $x_a(nT)$ em $x_q(nT)$.
+
+**Erro de quantização** (*quantization error*):
+
+$$
+e(nT) = x_q(nT) - x(nT)
+$$
+
+A quantização **altera** o sinal transmitido em relação ao original. A sucessão de erros pode ser interpretada como um **ruído** (*quantization noise*) **somado** ao sinal original. **Os erros de quantização são tanto menores quanto maior o número de níveis usados.**
+
+<FiguraFonte figura="ne-ins-l2-p44" />
+
+**Passo e erro máximo (p. 45):** se o intervalo entre dois níveis consecutivos é $K$ (*step size*), o erro máximo de quantização é $e_{\max} = \pm K/2$, porque o valor real nunca está a mais de meio passo do nível mais próximo.
+
+**Resolução em bits:** o número de níveis é dado pela **resolução** do quantizador, expressa em bits. Com $n$ bits:
+
+$$
+N = 2^n \quad \text{níveis} \qquad\Longleftrightarrow\qquad n = \log_2 N \quad \text{bits}
+$$
+
+Exemplos do slide: **3 bits → $2^3 = 8$ níveis**; **6 bits → $2^6 = 64$ níveis**. A curva em escada da p. 45 mostra os códigos 000 a 111 em função da tensão de entrada (frações de *full scale*, FS); a distância entre a escada e a reta é o erro de quantização.
+
+Exemplo [INFERÊNCIA PEDAGÓGICA: o slide não dá a relação entre faixa e passo; aqui se supõe passo uniforme]: faixa de 0 a 8 V com 3 bits → 8 níveis, $K = 8/8 = 1\,\mathrm{V}$, erro máximo $\pm 0{,}5\,\mathrm{V}$. Com 6 bits → 64 níveis, $K = 0{,}125\,\mathrm{V}$, erro máximo $\pm 0{,}0625\,\mathrm{V}$.
+
+### C037 — Codificação e bitrate (coding, bitrate)
+
+‹fonte: Electr L2 p. 46–47›
+
+Cada nível de quantização pode ser "traduzido" em bits: cada amostra quantizada vira um **grupo de bits** pelas funções de codificação. Se o sinal pode assumir **8 níveis**, cada amostra se escreve em binário com **3 dígitos** (o slide cita 000 para o nível 0; os códigos vão de 000 a 111).
+
+Um quantizador de **8 bits** tem $2^8 = 256$ níveis, e cada amostra usa 8 bits. Para **voz**, com 8 mil amostras por segundo:
+
+$$
+R = f_c \cdot n \qquad 8000 \cdot 3 = 24\,\mathrm{kbit/s} \qquad 8000 \cdot 8 = 64\,\mathrm{kbit/s}
+$$
+
+**Trade-off:** mais níveis → **menos erro** de quantização, mas o **bitrate aumenta** (custo em **banda** e **armazenamento**). Em qualquer caso, a saída do ADC é um **fluxo de bits** (*bit stream*) com certa velocidade, o **bitrate**. (No módulo 05, o PCM G.711 usa exatamente $8\,\mathrm{kHz} \times 8$ bits $= 64\,\mathrm{kbit/s}$, e cada bit a mais rende cerca de 6 dB de SQR.)
+
+**Quantos bits para N níveis (Q26):** $n = \log_2 N$. Se $N$ não for potência de 2, arredonda-se **para cima** [INFERÊNCIA PEDAGÓGICA: as alternativas da Q26 trazem barras ao redor de log₂(N), compatíveis com esse arredondamento]: 100 níveis exigem 7 bits ($2^7 = 128 \ge 100$).
+
+<BlocoConceito titulo="Níveis, bits e bitrate (frase de prova)">
+
+*An n-bit quantizer has $2^n$ levels; to encode N levels you need $\log_2 N$ bits per sample. Maximum quantization error is $\pm K/2$ (K = step size). Bitrate = samples per second × bits per sample ($8\,\mathrm{kHz} \times 8 = 64\,\mathrm{kbit/s}$).*
+
+</BlocoConceito>
+
+### C038 — DAC e reconstrução real (digital to analogue converter)
+
+‹fonte: Electr L2 p. 48–49›
+
+O **DAC** reconstrói um sinal analógico a partir dos bits. Os erros originados no ADC e durante a transmissão da fonte ao destino **podem ser mantidos dentro dos requisitos** da aplicação — **desde que** a amostragem do sinal original tenha **respeitado a condição de Nyquist**. Se houve aliasing na entrada, nenhum DAC o desfaz.
+
+Cadeia completa da p. 48: $V_{IN}$ → **S&H** → **ADC** → bits ($A_3 \dots A_0$) … bits ($B_3 \dots B_0$) → **DAC** → $V_{OUT}^*$ em degraus → **filtro passa-baixas** → $V_{OUT}$ suave.
+
+Para voltar das amostras quantizadas ao sinal, há várias técnicas de interpolação e filtragem: do **passa-baixas ideal** à **aproximação S&H**, até soluções mais sofisticadas. O sinal aproximado em degraus tem **saltos bruscos** — e saltos bruscos significam **alargamento de banda** (módulo 02: pulso curto, espectro largo). Por isso ele é **arredondado com filtros passa-baixas**, recuperando uma reconstrução fiel do sinal transmitido.
+
+## Como isso caiu na prova de 2025
+
+**Q11 — *The Nyquist Sampling Theorem states that the minimum sampling rate must be at least:***
+Correta: **(a) *Twice the highest frequency component of the signal*** — $f_c \ge 2B$ (L2 p. 29–30).
+(b) *Half* confunde com $f_c/2$, o limite do filtro anti-aliasing; (c) *Equal* daria réplicas sobrepostas; (d) *One-tenth* não tem base.
+
+**Q12 — *What happens if the Nyquist Sampling Condition is not met when digitizing a signal?***
+Correta: **(a) *The signal becomes distorted*** — aliasing: espectro distorcido, o reconstruído é um "alias" (L2 p. 39).
+(b) *No effect* é falso; (c) *oversampled* é o oposto ($f_c \gt 2B$); (d) *loses its highest frequency components* é o que o **filtro anti-aliasing** faz de propósito — no aliasing as altas frequências não somem, elas se **dobram** sobre a banda útil.
+
+**Q13 — *How can aliasing be prevented in DSP when sampling analog signals with non-limited bandwidth?***
+Correta: **(d) *By using a low-pass anti-aliasing filter*** (L2 p. 37, 40).
+(a) *Increasing the sampling rate* não basta: com banda **não limitada** nenhuma $f_c$ finita satisfaz $f_c \ge 2B$; (b) *bit depth* afeta quantização, não aliasing; (c) *adding noise* não limita banda.
+
+**Q14 — *If aliasing occurs in a signal, what happens to its Fourier transform?***
+Correta: **(c) *The Fourier transform becomes distorted and inaccurate*** — "*spectrum distortion*" (L2 p. 39).
+(a) *unchanged* — as réplicas sobrepostas se somam; (b) *magnitude decreases* — não é atenuação; (d) *phase inverted* — não há inversão de fase.
+
+**Q20 — *How does sample and hold interpolation work?***
+Correta: **(c) *It holds each sample for a fixed duration and creates a piecewise constant signal*** — ZOH (L2 p. 34).
+(a) não altera a frequência do sinal; (b) não descarta as amostras, ele as **mantém**; (d) não faz média entre amostras.
+
+**Q21 — *What is the primary purpose of a cardinal interpolation in signal processing?***
+Correta: **(c) *To reconstruct a continuous signal from discrete samples using sinc functions*** — Whittaker-Shannon (L2 p. 32).
+(a) não descarta amostras; (b) não reduz banda; (d) o filtro de reconstrução é **passa-baixas**, não passa-altas.
+
+**Q22 — *What is a necessary condition for the feasibility of cardinal interpolation?***
+Correta: **(c) *The signal should have limited bandwidth*** (L2 p. 28–29, 32: "$B \le 1/2T$").
+(a) *must be continuous* — armadilha: a condição do teorema é **banda limitada**, não continuidade; (b) *decrease the sampling rate* vai contra $f_c \ge 2B$; (d) há condições, sim.
+
+**Q26 — *How many bits per level are needed to correctly encode a word?***
+Correta: **(a) $\log_2 N$, com $N$ = número de níveis** (L2 p. 45–47: $2^3 = 8$ níveis ↔ 3 bits).
+(b) $N/\log_2 2 = N$ — um bit por nível, absurdo; (c) $N - 1$ — idem; (d) $2^N$ — é a relação **inversa** (níveis a partir de bits), armadilha clássica.
+
+<BlocoPegadinha titulo="Pegadinhas">
+
+- O mínimo é **2B** (dobro da maior frequência), não B nem B/2. O valor $f_c/2$ aparece em outro papel: é a frequência máxima que o filtro anti-aliasing deixa passar.
+- Nyquist tem **duas** condições: banda limitada **e** $f_c \ge 2B$. "O sinal precisa ser contínuo" não é condição do teorema.
+- Aumentar $f_c$ **não resolve** aliasing de um sinal com banda **não limitada**: só o **filtro anti-aliasing antes do ADC** resolve.
+- Aliasing **não** é perda das altas frequências: é a **sobreposição** delas na banda útil → espectro **distorcido**. Depois de amostrado, não se corrige.
+- *Oversampling* = $f_c \gt 2B$ (bom); *undersampling* = $f_c \lt 2B$ (aliasing). Não troque.
+- $2^n$ dá **níveis** a partir de **bits**; $\log_2 N$ dá **bits** a partir de **níveis**. Erro máximo é $\pm K/2$, **meio** passo, não um passo inteiro.
+- A interpolação cardinal é **ideal e irrealizável** (sincs infinitos, não causal); o S&H é **realizável**, mas gera degraus que pedem um passa-baixas.
+
+</BlocoPegadinha>
+
+## Vocabulário EN → PT
+
+| English | Português | O que significa |
+|---|---|---|
+| *ADC / DAC* | conversor A/D / D/A | analógico → bits / bits → analógico |
+| *sampling period / sampling rate* | período / taxa de amostragem | $T_c$ e $f_c = 1/T_c$ |
+| *Dirac comb (shah)* | pente de Dirac | trem periódico de impulsos usado na amostragem ideal |
+| *replica* | réplica | cópia do espectro deslocada de $k f_c$ |
+| *oversampling / undersampling* | sobreamostragem / subamostragem | $f_c$ maior / menor que $2B$ |
+| *band-limited signal* | sinal de banda limitada | espectro nulo acima de $B$ |
+| *Nyquist rate (condition)* | taxa (condição) de Nyquist | $f_c = 2B$, mínimo para reconstruir |
+| *guard band* | banda de guarda | folga acima de $2B$ para filtros reais |
+| *aliasing / alias* | aliasing / "o outro" | sobreposição de réplicas; sinal falso reconstruído |
+| *anti-aliasing filter* | filtro anti-aliasing | passa-baixas antes do ADC que limita a banda |
+| *cardinal (Whittaker-Shannon) interpolation* | interpolação cardinal | reconstrução por soma de sincs |
+| *sample and hold (S&H)* | amostrador-retentor | congela a amostra durante a conversão |
+| *zero-order hold (ZOH)* | retentor de ordem zero | mantém cada amostra por um período: degraus |
+| *quantizer / step size* | quantizador / passo | associa ao nível mais próximo / distância K entre níveis |
+| *quantization error (noise)* | erro (ruído) de quantização | $x_q - x$, no máximo meio passo |
+| *bitrate* | taxa de bits | amostras por segundo × bits por amostra |

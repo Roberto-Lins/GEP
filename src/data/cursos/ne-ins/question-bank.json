@@ -1,0 +1,3799 @@
+{
+ "curso": "ne-ins",
+ "arquitetura": "curso_unico",
+ "questoes": [
+  {
+   "id": "NE-P25-Q01",
+   "tipo": "multipla",
+   "topico": "06-ruido-snr-e-figura-de-ruido",
+   "modulo": "M06",
+   "dificuldade": "facil",
+   "enunciado": "[Prova 2025 · Q1] How is the “equivalent noise bandwidth” defined?",
+   "alternativas": [
+    "The width of an ideal rectangular bandwidth with constant gain",
+    "The difference between noise temperature and noise figure",
+    "The bandwidth with the maximum attenuation",
+    "The thermodynamic temperature of the four-pole"
+   ],
+   "correta": 0,
+   "comentario": "Bn é a largura de um retângulo ideal de ganho constante Gp0 que encerra a mesma área da curva de ganho de potência real (L3 p. 22). As outras alternativas misturam grandezas sem relação com banda.",
+   "conceptIds": [
+    "C052"
+   ],
+   "origem": "Prova escrita 2025 — questão 1 (gabarito oficial)",
+   "fonte": "N.E. Exam.pdf",
+   "questaoOriginal": "1",
+   "armadilha": "Não confunda com a banda de −3 dB (B3): Bn costuma ser um pouco maior que B3."
+  },
+  {
+   "id": "NE-P25-Q02",
+   "tipo": "multipla",
+   "topico": "06-ruido-snr-e-figura-de-ruido",
+   "modulo": "M06",
+   "dificuldade": "medio",
+   "enunciado": "[Prova 2025 · Q2] What is “noise figure”?",
+   "alternativas": [
+    "The signal-to-noise ratio at the output of an amplifier",
+    "The ratio of output SNR versus input SNR",
+    "The equivalent noise temperature of a four-pole",
+    "The ratio between noise temperature and thermodynamic temperature"
+   ],
+   "correta": 1,
+   "comentario": "O fator de ruído é a razão entre as SNRs de entrada e de saída: F = SNRi/SNRo (L3 p. 26–27); NF é F em dB. A prova escreve 'output SNR versus input SNR' — redação frouxa, mas é a única alternativa que fala da razão entre as duas SNRs. (a) é só a SNR de saída; (c) é a temperatura de ruído; (d) não define nada.",
+   "conceptIds": [
+    "C053"
+   ],
+   "origem": "Prova escrita 2025 — questão 2 (gabarito oficial)",
+   "fonte": "N.E. Exam.pdf",
+   "questaoOriginal": "2",
+   "armadilha": "Pela definição do slide, o numerador é a SNR de ENTRADA (por isso F ≥ 1)."
+  },
+  {
+   "id": "NE-P25-Q03",
+   "tipo": "multipla",
+   "topico": "06-ruido-snr-e-figura-de-ruido",
+   "modulo": "M06",
+   "dificuldade": "facil",
+   "enunciado": "[Prova 2025 · Q3] What does “equivalent noise temperature” represent in the context of electronic system?",
+   "alternativas": [
+    "The actual physical temperature of the components",
+    "The temperature at which noise is completely eliminated.",
+    "A hypothetical temperature representing the noise power in a system.",
+    "The temperature required for components to operate efficiently."
+   ],
+   "correta": 2,
+   "comentario": "Temperatura equivalente de ruído é uma temperatura fictícia que, somada à da entrada, explicaria o ruído que o quadripolo acrescenta (L3 p. 28): representa potência de ruído, não temperatura física.",
+   "conceptIds": [
+    "C054"
+   ],
+   "origem": "Prova escrita 2025 — questão 3 (gabarito oficial)",
+   "fonte": "N.E. Exam.pdf",
+   "questaoOriginal": "3",
+   "armadilha": "Não é a temperatura física dos componentes."
+  },
+  {
+   "id": "NE-P25-Q04",
+   "tipo": "multipla",
+   "topico": "06-ruido-snr-e-figura-de-ruido",
+   "modulo": "M06",
+   "dificuldade": "facil",
+   "enunciado": "[Prova 2025 · Q4] What is the primary factor that influences the overall noise in an amplification chain?",
+   "alternativas": [
+    "The noise figure of the first stage",
+    "The thermodynamic temperature of the system",
+    "Losses within the antenna",
+    "The noise temperature at the receiver’s output"
+   ],
+   "correta": 0,
+   "comentario": "Pela fórmula de Friis, F do 1º estágio entra inteiro e os demais são divididos pelo ganho acumulado: 'the noise factor F of the first stage is the primary factor that influences the overall noise' (L3 p. 31).",
+   "conceptIds": [
+    "C055"
+   ],
+   "origem": "Prova escrita 2025 — questão 4 (gabarito oficial)",
+   "fonte": "N.E. Exam.pdf",
+   "questaoOriginal": "4",
+   "armadilha": "Ganho alto do 1º estágio também ajuda, mas a frase do slide é sobre o F do primeiro estágio."
+  },
+  {
+   "id": "NE-P25-Q05",
+   "tipo": "multipla",
+   "topico": "09-modulacao-digital",
+   "modulo": "M09",
+   "dificuldade": "facil",
+   "enunciado": "[Prova 2025 · Q5] What is the primary purpose of a radiofrequency (RF) modulation in communication system?",
+   "alternativas": [
+    "To enable long-distance communication",
+    "To convert digital signals into analogue signals",
+    "To improve signal clarity in baseband communication",
+    "To simplify signal demodulation"
+   ],
+   "correta": 0,
+   "comentario": "A modulação em RF permite propagar pelo meio (antenas de tamanho viável, várias portadoras no mesmo meio) e, assim, comunicar a longa distância (L4 p. 20–22). Ela não converte digital em analógico (isso é o DAC) nem simplifica a demodulação.",
+   "conceptIds": [
+    "C068"
+   ],
+   "origem": "Prova escrita 2025 — questão 5 (gabarito oficial)",
+   "fonte": "N.E. Exam.pdf",
+   "questaoOriginal": "5",
+   "armadilha": "'Convert digital into analogue' descreve o DAC, não a modulação RF."
+  },
+  {
+   "id": "NE-P25-Q06",
+   "tipo": "multipla",
+   "topico": "09-modulacao-digital",
+   "modulo": "M09",
+   "dificuldade": "facil",
+   "enunciado": "[Prova 2025 · Q6] What is the modulation scheme that represents binary data using a phase shift of 180 degrees?",
+   "alternativas": [
+    "QPSK",
+    "BPSK",
+    "FSK",
+    "ASK"
+   ],
+   "correta": 1,
+   "comentario": "BPSK: duas fases, 0° e 180° (L4 p. 33–34). QPSK usa quatro fases separadas de 90°.",
+   "conceptIds": [
+    "C072"
+   ],
+   "origem": "Prova escrita 2025 — questão 6 (gabarito oficial)",
+   "fonte": "N.E. Exam.pdf",
+   "questaoOriginal": "6"
+  },
+  {
+   "id": "NE-P25-Q07",
+   "tipo": "multipla",
+   "topico": "09-modulacao-digital",
+   "modulo": "M09",
+   "dificuldade": "facil",
+   "enunciado": "[Prova 2025 · Q7] What modulation scheme combines both amplitude and phase modulation to transmit digital data?",
+   "alternativas": [
+    "ASK",
+    "FSK",
+    "QPSK",
+    "QAM"
+   ],
+   "correta": 3,
+   "comentario": "QAM combina modulação de amplitude e de fase com duas portadoras a 90° (L4 p. 45).",
+   "conceptIds": [
+    "C075"
+   ],
+   "origem": "Prova escrita 2025 — questão 7 (gabarito oficial)",
+   "fonte": "N.E. Exam.pdf",
+   "questaoOriginal": "7"
+  },
+  {
+   "id": "NE-P25-Q08",
+   "tipo": "multipla",
+   "topico": "09-modulacao-digital",
+   "modulo": "M09",
+   "dificuldade": "facil",
+   "enunciado": "[Prova 2025 · Q8] Which modulation scheme encodes digital data by varying the phase of the carrier signal?",
+   "alternativas": [
+    "ASK",
+    "FSK",
+    "QAM",
+    "PSK"
+   ],
+   "correta": 3,
+   "comentario": "PSK liga a informação à fase da portadora (L4 p. 33). ASK varia amplitude, FSK varia frequência e QAM varia amplitude e fase.",
+   "conceptIds": [
+    "C072"
+   ],
+   "origem": "Prova escrita 2025 — questão 8 (gabarito oficial)",
+   "fonte": "N.E. Exam.pdf",
+   "questaoOriginal": "8",
+   "armadilha": "QAM também varia a fase, mas não SÓ a fase; a pergunta descreve PSK."
+  },
+  {
+   "id": "NE-P25-Q09",
+   "tipo": "multipla",
+   "topico": "06-ruido-snr-e-figura-de-ruido",
+   "modulo": "M06",
+   "dificuldade": "facil",
+   "enunciado": "[Prova 2025 · Q9] In which type of bipolar components can you typically find thermal noise?",
+   "alternativas": [
+    "Resistors",
+    "Inductors",
+    "Diodes",
+    "Capacitors"
+   ],
+   "correta": 0,
+   "comentario": "O ruído térmico só existe em elementos capazes de dissipar energia (resistivos). Capacitor e indutor ideais não geram ruído térmico; diodos contribuem muito pouco (L3 p. 9, 14–16).",
+   "conceptIds": [
+    "C047",
+    "C049"
+   ],
+   "origem": "Prova escrita 2025 — questão 9 (gabarito oficial)",
+   "fonte": "N.E. Exam.pdf",
+   "questaoOriginal": "9",
+   "armadilha": "Capacitores reais geram algum ruído pela parte resistiva, mas a resposta típica é o resistor."
+  },
+  {
+   "id": "NE-P25-Q10",
+   "tipo": "multipla",
+   "topico": "06-ruido-snr-e-figura-de-ruido",
+   "modulo": "M06",
+   "dificuldade": "facil",
+   "enunciado": "[Prova 2025 · Q10] Noise power spectral density (Noise PSD) is a measure of:",
+   "alternativas": [
+    "The total noise power in a circuit",
+    "The noise voltage in a circuit",
+    "The noise power per unit frequency",
+    "The signal-to-noise ratio in a circuit"
+   ],
+   "correta": 2,
+   "comentario": "PSD é a potência de ruído por unidade de frequência (W/Hz); para o ruído térmico vale kT (L3 p. 10).",
+   "conceptIds": [
+    "C048"
+   ],
+   "origem": "Prova escrita 2025 — questão 10 (gabarito oficial)",
+   "fonte": "N.E. Exam.pdf",
+   "questaoOriginal": "10",
+   "armadilha": "A potência total é kTB (PSD × banda), não a PSD."
+  },
+  {
+   "id": "NE-P25-Q11",
+   "tipo": "multipla",
+   "topico": "04-conversao-ad-e-amostragem",
+   "modulo": "M04",
+   "dificuldade": "facil",
+   "enunciado": "[Prova 2025 · Q11] The Nyquist Sampling Theorem states that the minimum sampling rate must be at least:",
+   "alternativas": [
+    "Twice the highest frequency component of the signal",
+    "Half the highest frequency component of the signal",
+    "Equal to the highest frequency component of the signal",
+    "One-tenth of the highest frequency component of the signal"
+   ],
+   "correta": 0,
+   "comentario": "Nyquist-Shannon: fc ≥ 2B, o dobro da maior frequência do sinal (L2 p. 29–30).",
+   "conceptIds": [
+    "C031"
+   ],
+   "origem": "Prova escrita 2025 — questão 11 (gabarito oficial)",
+   "fonte": "N.E. Exam.pdf",
+   "questaoOriginal": "11"
+  },
+  {
+   "id": "NE-P25-Q12",
+   "tipo": "multipla",
+   "topico": "04-conversao-ad-e-amostragem",
+   "modulo": "M04",
+   "dificuldade": "facil",
+   "enunciado": "[Prova 2025 · Q12] What happens if the Nyquist Sampling Condition is not met when digitizing a signal?",
+   "alternativas": [
+    "The signal becomes distorted.",
+    "There is no effect on the digitization process.",
+    "The signal is oversampled.",
+    "The signal loses its highest frequency components."
+   ],
+   "correta": 0,
+   "comentario": "Sem a condição de Nyquist as réplicas do espectro se sobrepõem (aliasing) e o sinal reconstruído fica distorcido (L2 p. 30, 39).",
+   "conceptIds": [
+    "C032"
+   ],
+   "origem": "Prova escrita 2025 — questão 12 (gabarito oficial)",
+   "fonte": "N.E. Exam.pdf",
+   "questaoOriginal": "12",
+   "armadilha": "'Loses its highest frequency components' descreve um filtro passa-baixas, não o aliasing: no aliasing as altas frequências se DOBRAM sobre as baixas."
+  },
+  {
+   "id": "NE-P25-Q13",
+   "tipo": "multipla",
+   "topico": "04-conversao-ad-e-amostragem",
+   "modulo": "M04",
+   "dificuldade": "facil",
+   "enunciado": "[Prova 2025 · Q13] How can aliasing be prevented in DSP when sampling analog signals with non-limited bandwidth?",
+   "alternativas": [
+    "By increasing the sampling rate.",
+    "By reducing the bit depth of the ADC.",
+    "By adding noise to the analog signal.",
+    "By using a low-pass anti-aliasing filter."
+   ],
+   "correta": 3,
+   "comentario": "Para sinal de banda não limitada, usa-se um filtro passa-baixas anti-aliasing antes do ADC, garantindo a 1ª condição do teorema (L2 p. 40). Aumentar a taxa não resolve se a banda é ilimitada.",
+   "conceptIds": [
+    "C033"
+   ],
+   "origem": "Prova escrita 2025 — questão 13 (gabarito oficial)",
+   "fonte": "N.E. Exam.pdf",
+   "questaoOriginal": "13",
+   "armadilha": "'Increasing the sampling rate' só funciona se a banda for limitada — a pergunta diz 'non-limited bandwidth'."
+  },
+  {
+   "id": "NE-P25-Q14",
+   "tipo": "multipla",
+   "topico": "04-conversao-ad-e-amostragem",
+   "modulo": "M04",
+   "dificuldade": "medio",
+   "enunciado": "[Prova 2025 · Q14] If aliasing occurs in a signal, what happens to its Fourier transform?",
+   "alternativas": [
+    "The Fourier transform remains unchanged.",
+    "The magnitude of the Fourier transform decreases.",
+    "The Fourier transform becomes distorted and inaccurate.",
+    "The phase of the Fourier transform is inverted."
+   ],
+   "correta": 2,
+   "comentario": "Aliasing é uma distorção do espectro: a transformada do sinal amostrado deixa de representar o original (L2 p. 39).",
+   "conceptIds": [
+    "C032"
+   ],
+   "origem": "Prova escrita 2025 — questão 14 (gabarito oficial)",
+   "fonte": "N.E. Exam.pdf",
+   "questaoOriginal": "14"
+  },
+  {
+   "id": "NE-P25-Q15",
+   "tipo": "multipla",
+   "topico": "02-analise-de-fourier",
+   "modulo": "M02",
+   "dificuldade": "medio",
+   "enunciado": "[Prova 2025 · Q15] What is the essential difference between the Fourier transform of a continuous signal and the Fourier transform of a distorted signal?",
+   "alternativas": [
+    "The Fourier transform of a discrete signal is always zero.",
+    "The Fourier transform of a discrete signal is a continuous function.",
+    "The Fourier transform of a discrete signal is periodic in the frequency domain.",
+    "The Fourier transform of a discrete signal is undefined."
+   ],
+   "correta": 2,
+   "comentario": "Discreto no tempo ⇒ periódico em frequência (DTFT, L1 p. 55, 58). O enunciado diz 'distorted', mas as alternativas falam de 'discrete' — erro de digitação da prova original.",
+   "conceptIds": [
+    "C018",
+    "C020"
+   ],
+   "origem": "Prova escrita 2025 — questão 15 (gabarito oficial)",
+   "fonte": "N.E. Exam.pdf",
+   "questaoOriginal": "15",
+   "armadilha": "Não é 'contínuo' que distingue: a CTFT também é contínua; o que muda é a PERIODICIDADE."
+  },
+  {
+   "id": "NE-P25-Q16",
+   "tipo": "multipla",
+   "topico": "02-analise-de-fourier",
+   "modulo": "M02",
+   "dificuldade": "medio",
+   "enunciado": "[Prova 2025 · Q16] What is The Fourier transform of a periodic discrete signal in the frequency domain?",
+   "alternativas": [
+    "A continuous spectrum with infinite frequency components.",
+    "A continuous spectrum with no discernible peaks.",
+    "A discrete spectrum with periodic frequency components.",
+    "A spectrum consisting of only odd harmonics."
+   ],
+   "correta": 2,
+   "comentario": "Sinal discreto e periódico no tempo ⇒ espectro discreto (linhas) e periódico (DFT, L1 p. 56, 58).",
+   "conceptIds": [
+    "C019",
+    "C020"
+   ],
+   "origem": "Prova escrita 2025 — questão 16 (gabarito oficial)",
+   "fonte": "N.E. Exam.pdf",
+   "questaoOriginal": "16",
+   "armadilha": "'Only odd harmonics' é propriedade da onda quadrada simétrica, não de todo sinal periódico discreto."
+  },
+  {
+   "id": "NE-P25-Q17",
+   "tipo": "multipla",
+   "topico": "09-modulacao-digital",
+   "modulo": "M09",
+   "dificuldade": "medio",
+   "enunciado": "[Prova 2025 · Q17] In signal processing, what are in-phase (I) and quadrature (Q) components used for?",
+   "alternativas": [
+    "To represent real and imaginary parts of a signal.",
+    "To convert analog signals to digital.",
+    "To filter out high-frequency noise.",
+    "To increase the signal frequency."
+   ],
+   "correta": 0,
+   "comentario": "I e Q são as componentes em fase e em quadratura (90°) da portadora — equivalentes às partes real e imaginária do sinal complexo (L1 p. 17; L4 p. 40).",
+   "conceptIds": [
+    "C073",
+    "C004"
+   ],
+   "origem": "Prova escrita 2025 — questão 17 (gabarito oficial)",
+   "fonte": "N.E. Exam.pdf",
+   "questaoOriginal": "17"
+  },
+  {
+   "id": "NE-P25-Q18",
+   "tipo": "multipla",
+   "topico": "06-ruido-snr-e-figura-de-ruido",
+   "modulo": "M06",
+   "dificuldade": "facil",
+   "enunciado": "[Prova 2025 · Q18] In the context of communication systems, what does “White” mean when referring to AWGN?",
+   "alternativas": [
+    "The noise has a uniform frequency response.",
+    "The noise is visible as white lines in a spectral analysis.",
+    "The noise is only present in bright or white light environments.",
+    "The noise is generated by a white noise machine."
+   ],
+   "correta": 0,
+   "comentario": "White = densidade espectral de potência uniforme em toda a banda (analogia com a luz branca) (L3 p. 33).",
+   "conceptIds": [
+    "C056"
+   ],
+   "origem": "Prova escrita 2025 — questão 18 (gabarito oficial)",
+   "fonte": "N.E. Exam.pdf",
+   "questaoOriginal": "18"
+  },
+  {
+   "id": "NE-P25-Q19",
+   "tipo": "multipla",
+   "topico": "08-capacidade-do-canal",
+   "modulo": "M08",
+   "dificuldade": "facil",
+   "enunciado": "[Prova 2025 · Q19] What is Shannon Channel Capacity in information theory?",
+   "alternativas": [
+    "The maximum data transfer rate a channel can support without error.",
+    "The number of channels available for broadcasting",
+    "The physical width of a communication channel.",
+    "A measure of channel quality."
+   ],
+   "correta": 0,
+   "comentario": "Capacidade de Shannon é a taxa máxima que o canal suporta com probabilidade de erro arbitrariamente baixa: C = B log₂(1 + SNR) (L4 p. 17).",
+   "conceptIds": [
+    "C066"
+   ],
+   "origem": "Prova escrita 2025 — questão 19 (gabarito oficial)",
+   "fonte": "N.E. Exam.pdf",
+   "questaoOriginal": "19"
+  },
+  {
+   "id": "NE-P25-Q20",
+   "tipo": "multipla",
+   "topico": "04-conversao-ad-e-amostragem",
+   "modulo": "M04",
+   "dificuldade": "facil",
+   "enunciado": "[Prova 2025 · Q20] How does sample and hold interpolation work?",
+   "alternativas": [
+    "It increases the signal’s frequency.",
+    "It discards the sampled values",
+    "It holds each sample for a fixed duration and creates a piecewise constant signal.",
+    "It creates a continuous signal by averaging the samples"
+   ],
+   "correta": 2,
+   "comentario": "Sample and hold (zero-order hold) mantém cada amostra por um intervalo de amostragem, gerando um sinal constante por partes (L2 p. 34).",
+   "conceptIds": [
+    "C035"
+   ],
+   "origem": "Prova escrita 2025 — questão 20 (gabarito oficial)",
+   "fonte": "N.E. Exam.pdf",
+   "questaoOriginal": "20",
+   "armadilha": "Não faz média entre amostras."
+  },
+  {
+   "id": "NE-P25-Q21",
+   "tipo": "multipla",
+   "topico": "04-conversao-ad-e-amostragem",
+   "modulo": "M04",
+   "dificuldade": "facil",
+   "enunciado": "[Prova 2025 · Q21] What is the primary purpose of a cardinal interpolation in signal processing?",
+   "alternativas": [
+    "To discard some of the original datapoints",
+    "To reduce the signal’s bandwidth",
+    "To reconstruct a continuous signal from discrete samples using sinc functions.",
+    "To perform high-pass filtering on the signal."
+   ],
+   "correta": 2,
+   "comentario": "Interpolação cardinal (Whittaker-Shannon) reconstrói o sinal contínuo como soma de sincs ponderadas pelas amostras (L2 p. 32).",
+   "conceptIds": [
+    "C034"
+   ],
+   "origem": "Prova escrita 2025 — questão 21 (gabarito oficial)",
+   "fonte": "N.E. Exam.pdf",
+   "questaoOriginal": "21"
+  },
+  {
+   "id": "NE-P25-Q22",
+   "tipo": "multipla",
+   "topico": "04-conversao-ad-e-amostragem",
+   "modulo": "M04",
+   "dificuldade": "medio",
+   "enunciado": "[Prova 2025 · Q22] What is a necessary condition for the feasibility of cardinal interpolation in signal processing?",
+   "alternativas": [
+    "The original signal must be continuous.",
+    "The sampling rate should be decreased.",
+    "The signal should have limited bandwidth.",
+    "There are no specific conditions required."
+   ],
+   "correta": 2,
+   "comentario": "A interpolação cardinal só reconstrói exatamente se o sinal tiver banda limitada (e fc ≥ 2B) (L2 p. 28–32).",
+   "conceptIds": [
+    "C034",
+    "C031"
+   ],
+   "origem": "Prova escrita 2025 — questão 22 (gabarito oficial)",
+   "fonte": "N.E. Exam.pdf",
+   "questaoOriginal": "22",
+   "armadilha": "'The original signal must be continuous' não basta: a condição essencial é banda limitada."
+  },
+  {
+   "id": "NE-P25-Q23",
+   "tipo": "multipla",
+   "topico": "05-transmissao-em-banda-base-e-pcm",
+   "modulo": "M05",
+   "dificuldade": "medio",
+   "enunciado": "[Prova 2025 · Q23] What is the primary purpose of numerical baseband modulation in communication systems?",
+   "alternativas": [
+    "To transmit data at high frequencies.",
+    "To modulate analog signals",
+    "To facilitate data transmission for direct connection system",
+    "To simplify signal processing"
+   ],
+   "correta": 2,
+   "comentario": "A modulação numérica em banda base (line coding) é usada em sistemas de conexão direta, como Ethernet, e como etapa anterior à transmissão passband (L2 p. 50–51).",
+   "conceptIds": [
+    "C039"
+   ],
+   "origem": "Prova escrita 2025 — questão 23 (gabarito oficial)",
+   "fonte": "N.E. Exam.pdf",
+   "questaoOriginal": "23",
+   "armadilha": "'Transmit at high frequencies' é o objetivo da modulação passband (portadora), não da banda base."
+  },
+  {
+   "id": "NE-P25-Q24",
+   "tipo": "multipla",
+   "topico": "01-sinais-e-classificacao",
+   "modulo": "M01",
+   "dificuldade": "medio",
+   "enunciado": "[Prova 2025 · Q24] What is a property of a Dirac delta function?",
+   "alternativas": [
+    "It has no fourier transform",
+    "It is a continuous and differentiable function",
+    "It represents the impulse response of an LTI system",
+    "It produces an impulse at a specific time instant and integrates to 1 over its domain"
+   ],
+   "correta": 3,
+   "comentario": "O Dirac é uma distribuição: impulso em um instante, nulo no resto, com integral (área) igual a 1 (L1 p. 32). Ele TEM transformada (constante) e não é contínuo nem diferenciável.",
+   "conceptIds": [
+    "C010"
+   ],
+   "origem": "Prova escrita 2025 — questão 24 (gabarito oficial)",
+   "fonte": "N.E. Exam.pdf",
+   "questaoOriginal": "24",
+   "armadilha": "(c) é tentadora: h(t) é a RESPOSTA ao impulso, não o impulso em si."
+  },
+  {
+   "id": "NE-P25-Q25",
+   "tipo": "multipla",
+   "topico": "09-modulacao-digital",
+   "modulo": "M09",
+   "dificuldade": "facil",
+   "enunciado": "[Prova 2025 · Q25] How does Gray coding work in digital communication?",
+   "alternativas": [
+    "It ensures that only one bit changes between adjacent values",
+    "It uses a series of gray-scale images for modulation.",
+    "It increases the resolution of digital-to-analog converters.",
+    "It represents information using a binary code with no particular order"
+   ],
+   "correta": 0,
+   "comentario": "No código Gray valores adjacentes diferem em um único bit; na constelação, erro para o vizinho custa só 1 bit (constelação 16QAM da L4 p. 46).",
+   "conceptIds": [
+    "C076"
+   ],
+   "origem": "Prova escrita 2025 — questão 25 (gabarito oficial)",
+   "fonte": "N.E. Exam.pdf",
+   "questaoOriginal": "25"
+  },
+  {
+   "id": "NE-P25-Q26",
+   "tipo": "multipla",
+   "topico": "04-conversao-ad-e-amostragem",
+   "modulo": "M04",
+   "dificuldade": "medio",
+   "enunciado": "[Prova 2025 · Q26] How many bits per level are needed to correctly encode a word?",
+   "alternativas": [
+    "Bits per level = |log2(N)|, where N is the number of levels",
+    "Bits per level = |N / log2(2)|, where N is the number of levels",
+    "Bits per level = |N − 1|, where N is the number of levels",
+    "Bits per level = |2^N|, where N is the number of levels"
+   ],
+   "correta": 0,
+   "comentario": "Com N níveis precisa-se de log₂(N) bits por amostra (arredondado para cima) (L2 p. 45; L4 p. 12).",
+   "conceptIds": [
+    "C037",
+    "C064"
+   ],
+   "origem": "Prova escrita 2025 — questão 26 (gabarito oficial)",
+   "fonte": "N.E. Exam.pdf",
+   "questaoOriginal": "26",
+   "armadilha": "2^N dá o número de NÍVEIS a partir de N bits — é a relação inversa."
+  },
+  {
+   "id": "NE-P25-Q27",
+   "tipo": "multipla",
+   "topico": "09-modulacao-digital",
+   "modulo": "M09",
+   "dificuldade": "facil",
+   "enunciado": "[Prova 2025 · Q27] In digital communication, what is the purpose of a signal constellation?",
+   "alternativas": [
+    "To help with navigation",
+    "To represent the value of power of signal",
+    "To organize data symbols for modulation",
+    "To map out radio frequency bands"
+   ],
+   "correta": 2,
+   "comentario": "A constelação organiza os símbolos da modulação no plano I/Q (amplitude e fase de cada símbolo) (L4 p. 40, 46).",
+   "conceptIds": [
+    "C076"
+   ],
+   "origem": "Prova escrita 2025 — questão 27 (gabarito oficial)",
+   "fonte": "N.E. Exam.pdf",
+   "questaoOriginal": "27"
+  },
+  {
+   "id": "NE-P25-Q28",
+   "tipo": "multipla",
+   "topico": "06-ruido-snr-e-figura-de-ruido",
+   "modulo": "M06",
+   "dificuldade": "dificil",
+   "enunciado": "[Prova 2025 · Q28] Calculate the noise figure in dB",
+   "alternativas": [
+    "About 6",
+    "About 7",
+    "About 8",
+    "About 9"
+   ],
+   "correta": 1,
+   "comentario": "Gabarito oficial: 'About 7'. O arquivo recebido não traz os dados da questão (figura ou valores), então não dá para refazer a conta. Método: converta tudo para linear, aplique F = SNRi/SNRo ou Friis F = F1 + (F2−1)/G1 + …, e volte para dB com NF = 10 log F. Exemplo compatível: SNRi = 20 dB e SNRo = 13 dB ⇒ NF = 7 dB.",
+   "conceptIds": [
+    "C053",
+    "C055"
+   ],
+   "origem": "Prova escrita 2025 — questão 28 (gabarito oficial)",
+   "fonte": "N.E. Exam.pdf",
+   "questaoOriginal": "28",
+   "armadilha": "Se a prova repetir com dados, cuidado em somar dB onde a fórmula de Friis pede valores lineares."
+  },
+  {
+   "id": "NE-P25-Q29",
+   "tipo": "multipla",
+   "topico": "07-interferencia-intersimbolica",
+   "modulo": "M07",
+   "dificuldade": "dificil",
+   "enunciado": "[Prova 2025 · Q29] What is the “Nyquist criterion” to avoid inter symbol interference?",
+   "alternativas": [
+    "Shaping pulse must be constant",
+    "The channel frequency response must have only one sample in the origin",
+    "Shaping pulse must be periodic",
+    "The product of P(I) and channel frequency response must be flat"
+   ],
+   "correta": 3,
+   "comentario": "Critério de Nyquist para ISI nula: o conjunto filtro de formatação × canal deve dar resposta plana dentro da banda limitada (L3 p. 40). 'P(I)' na prova é o espectro do pulso de formatação, P(f).",
+   "conceptIds": [
+    "C059"
+   ],
+   "origem": "Prova escrita 2025 — questão 29 (gabarito oficial)",
+   "fonte": "N.E. Exam.pdf",
+   "questaoOriginal": "29",
+   "armadilha": "O pulso não precisa ser constante nem periódico; precisa se anular nos instantes kT ≠ 0."
+  },
+  {
+   "id": "NE-P25-Q30",
+   "tipo": "multipla",
+   "topico": "05-transmissao-em-banda-base-e-pcm",
+   "modulo": "M05",
+   "dificuldade": "medio",
+   "enunciado": "[Prova 2025 · Q30] In PCM, If I code with 4 bits, how much is the gain in dB of the Signal to quantization ratio?",
+   "alternativas": [
+    "2",
+    "4",
+    "24",
+    "16"
+   ],
+   "correta": 2,
+   "comentario": "Cada bit acrescenta cerca de 6 dB à SQR: 4 bits × 6 dB = 24 dB (L2 p. 64). O slide escreve 'each level', mas a conta da prova é por bit.",
+   "conceptIds": [
+    "C043"
+   ],
+   "origem": "Prova escrita 2025 — questão 30 (gabarito oficial)",
+   "fonte": "N.E. Exam.pdf",
+   "questaoOriginal": "30",
+   "armadilha": "16 é o número de NÍVEIS com 4 bits, não o ganho em dB."
+  },
+  {
+   "id": "NE-M01-001",
+   "tipo": "multipla",
+   "topico": "01-sinais-e-classificacao",
+   "modulo": "M01",
+   "dificuldade": "facil",
+   "enunciado": "In a communication system, which block converts the information into physical quantities that can be sent over the channel?",
+   "alternativas": [
+    "The receiver",
+    "The source",
+    "The transmitter",
+    "The destination"
+   ],
+   "correta": 2,
+   "comentario": "O transmissor converte a informação em grandezas físicas adequadas ao canal (elétricas, ópticas) (L1 p. 9).",
+   "conceptIds": [
+    "C001"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L1 p. 9"
+  },
+  {
+   "id": "NE-M01-002",
+   "tipo": "multipla",
+   "topico": "01-sinais-e-classificacao",
+   "modulo": "M01",
+   "dificuldade": "medio",
+   "enunciado": "A stationary stochastic process is ergodic when:",
+   "alternativas": [
+    "Its mean value changes with time",
+    "Each realization is statistically representative of all the others",
+    "Its variance is always zero",
+    "It can be described exactly by a mathematical formula"
+   ],
+   "correta": 1,
+   "comentario": "Ergódico: cada realização representa estatisticamente todas as outras; a densidade de probabilidade extraída de uma só realização é sempre a mesma (L1 p. 15).",
+   "conceptIds": [
+    "C003"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L1 p. 12–15, 21"
+  },
+  {
+   "id": "NE-M01-003",
+   "tipo": "multipla",
+   "topico": "01-sinais-e-classificacao",
+   "modulo": "M01",
+   "dificuldade": "facil",
+   "enunciado": "A stochastic process is called stationary when:",
+   "alternativas": [
+    "Its amplitude can take only a finite set of values",
+    "All its realizations are identical",
+    "Its statistical properties, such as mean and variance, do not change over time",
+    "Its spectrum is periodic in frequency"
+   ],
+   "correta": 2,
+   "comentario": "Estacionário: propriedades estatísticas (média μ, variância σ²) independentes do tempo (L1 p. 13).",
+   "conceptIds": [
+    "C003"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L1 p. 12–15, 21"
+  },
+  {
+   "id": "NE-M01-004",
+   "tipo": "multipla",
+   "topico": "01-sinais-e-classificacao",
+   "modulo": "M01",
+   "dificuldade": "facil",
+   "enunciado": "A signal whose time domain has the cardinality of the integer numbers is a:",
+   "alternativas": [
+    "Multidimensional signal",
+    "Discrete-time signal",
+    "Deterministic signal",
+    "Continuous-time signal"
+   ],
+   "correta": 1,
+   "comentario": "Tempo discreto: domínio com a cardinalidade dos inteiros; tempo contínuo: dos reais (L1 p. 22).",
+   "conceptIds": [
+    "C006"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L1 p. 22–24"
+  },
+  {
+   "id": "NE-M01-005",
+   "tipo": "multipla",
+   "topico": "01-sinais-e-classificacao",
+   "modulo": "M01",
+   "dificuldade": "facil",
+   "enunciado": "A digital signal is a signal that is:",
+   "alternativas": [
+    "Continuous in time but quantized in amplitude",
+    "Discrete both in time and in amplitude",
+    "Discrete in time but continuous in amplitude",
+    "Continuous both in time and in amplitude"
+   ],
+   "correta": 1,
+   "comentario": "Digital: valores de amplitude contáveis em instantes contáveis — tempo e amplitude discretos (L1 p. 25).",
+   "conceptIds": [
+    "C007",
+    "C006"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L1 p. 25–28"
+  },
+  {
+   "id": "NE-M01-006",
+   "tipo": "multipla",
+   "topico": "01-sinais-e-classificacao",
+   "modulo": "M01",
+   "dificuldade": "medio",
+   "enunciado": "Which of the following is a DISADVANTAGE of digital transmission compared with analogue transmission?",
+   "alternativas": [
+    "Noise affecting the signal cannot be controlled",
+    "It needs more power to convey the same amount of information",
+    "It requires a more complex transmit/receive scheme and the A/D/A conversion can cause information loss",
+    "Voice, video and data need different transmitter structures"
+   ],
+   "correta": 2,
+   "comentario": "Os slides listam como custo da transmissão digital um esquema TX/RX mais complexo e possível perda na conversão A/D/A; as outras alternativas contrariam as vantagens listadas (L1 p. 28).",
+   "conceptIds": [
+    "C007"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L1 p. 25–28"
+  },
+  {
+   "id": "NE-M01-007",
+   "tipo": "multipla",
+   "topico": "01-sinais-e-classificacao",
+   "modulo": "M01",
+   "dificuldade": "medio",
+   "enunciado": "When the Dirac delta δ(t − t₀) multiplies a continuous function s(t) inside an integral, the result is:",
+   "alternativas": [
+    "The average value of s(t)",
+    "The derivative of s(t) at t₀",
+    "The value of s(t) at t = t₀",
+    "Zero for every function"
+   ],
+   "correta": 2,
+   "comentario": "Propriedade de amostragem: o Dirac 'extrai' o valor da função no ponto em que é aplicado (L1 p. 33) — base do processo de amostragem.",
+   "conceptIds": [
+    "C010"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L1 p. 32–33, 52"
+  },
+  {
+   "id": "NE-M01-008",
+   "tipo": "multipla",
+   "topico": "01-sinais-e-classificacao",
+   "modulo": "M01",
+   "dificuldade": "medio",
+   "enunciado": "Which statement about the Dirac delta is correct?",
+   "alternativas": [
+    "Its area tends to infinity",
+    "Its Fourier transform does not exist",
+    "Its spectrum is flat: it contains all frequencies with the same amplitude",
+    "It is an ordinary continuous function"
+   ],
+   "correta": 2,
+   "comentario": "O Dirac é limite de um rect de área 1; em frequência, amplitude 1 constante — espectro plano e infinito (L1 p. 52; L2 p. 6).",
+   "conceptIds": [
+    "C010",
+    "C016"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L1 p. 32–33, 52"
+  },
+  {
+   "id": "NE-M01-009",
+   "tipo": "multipla",
+   "topico": "01-sinais-e-classificacao",
+   "modulo": "M01",
+   "dificuldade": "facil",
+   "enunciado": "Which three elements are sufficient to define a sinusoidal signal?",
+   "alternativas": [
+    "Frequency, power and bandwidth",
+    "Amplitude, bandwidth and period",
+    "Amplitude, angular frequency (pulsation) and initial phase",
+    "Mean, variance and phase"
+   ],
+   "correta": 2,
+   "comentario": "Senoide: amplitude A, pulsação ω = 2πf e fase inicial φ (L1 p. 34).",
+   "conceptIds": [
+    "C011"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L1 p. 34–35"
+  },
+  {
+   "id": "NE-M01-010",
+   "tipo": "multipla",
+   "topico": "01-sinais-e-classificacao",
+   "modulo": "M01",
+   "dificuldade": "medio",
+   "enunciado": "The normalized sinc function, sinc(x) = sin(πx)/(πx), is equal to zero:",
+   "alternativas": [
+    "At every non-zero integer value of x",
+    "Only at multiples of π",
+    "Only at x = 0",
+    "Never"
+   ],
+   "correta": 0,
+   "comentario": "Por causa da normalização com π, a sinc zera nos inteiros não nulos; a não normalizada (Samp) zera nos múltiplos de π (L1 p. 36). Em x = 0 vale 1.",
+   "conceptIds": [
+    "C012"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L1 p. 36"
+  },
+  {
+   "id": "NE-M01-011",
+   "tipo": "multipla",
+   "topico": "01-sinais-e-classificacao",
+   "modulo": "M01",
+   "dificuldade": "facil",
+   "enunciado": "A deterministic signal is a signal that:",
+   "alternativas": [
+    "Can only be described by its probability density",
+    "Can be defined exactly by a mathematical formula at any instant",
+    "Depends on random phenomena",
+    "Is always discrete in time"
+   ],
+   "correta": 1,
+   "comentario": "Determinístico: trajetória conhecida em todo o domínio, definida por fórmula (ex.: senoide) (L1 p. 19).",
+   "conceptIds": [
+    "C005"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L1 p. 19–21"
+  },
+  {
+   "id": "NE-M02-001",
+   "tipo": "multipla",
+   "topico": "02-analise-de-fourier",
+   "modulo": "M02",
+   "dificuldade": "facil",
+   "enunciado": "For a periodic signal of period T, the fundamental frequency of its Fourier series is:",
+   "alternativas": [
+    "1/T",
+    "T",
+    "2/T",
+    "1/(2T)"
+   ],
+   "correta": 0,
+   "comentario": "Fundamental: n = 1, f₁ = 1/T; os harmônicos são múltiplos dela (L1 p. 38).",
+   "conceptIds": [
+    "C013"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L1 p. 37–39"
+  },
+  {
+   "id": "NE-M02-002",
+   "tipo": "multipla",
+   "topico": "02-analise-de-fourier",
+   "modulo": "M02",
+   "dificuldade": "medio",
+   "enunciado": "In the Fourier series of the square wave shown in the lessons (levels 0 and 1, symmetric), which statement is true?",
+   "alternativas": [
+    "The spectrum is continuous",
+    "Only the even harmonics are present",
+    "The DC component is 1/2 and all even harmonics are zero",
+    "The DC component is zero and all odd harmonics are zero"
+   ],
+   "correta": 2,
+   "comentario": "Onda quadrada da aula: componente contínua 1/2 e harmônicos pares nulos pela simetria (L1 p. 39).",
+   "conceptIds": [
+    "C013"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L1 p. 37–39"
+  },
+  {
+   "id": "NE-M02-003",
+   "tipo": "multipla",
+   "topico": "02-analise-de-fourier",
+   "modulo": "M02",
+   "dificuldade": "medio",
+   "enunciado": "Parseval's theorem for periodic signals states that:",
+   "alternativas": [
+    "The average power can be computed from the Fourier series coefficients",
+    "The bandwidth is inversely proportional to the power",
+    "The spectrum of a periodic signal is continuous",
+    "The phase spectrum is always zero"
+   ],
+   "correta": 0,
+   "comentario": "Parseval: potência média = soma de |Xn|² — cada termo é a potência de um harmônico (L1 p. 42).",
+   "conceptIds": [
+    "C014"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L1 p. 40–43"
+  },
+  {
+   "id": "NE-M02-004",
+   "tipo": "multipla",
+   "topico": "02-analise-de-fourier",
+   "modulo": "M02",
+   "dificuldade": "medio",
+   "enunciado": "The continuous-time Fourier transform of a rectangular pulse of duration T is:",
+   "alternativas": [
+    "A constant over all frequencies",
+    "A sinc function whose first zeros are at f = ±1/T",
+    "A Dirac comb with spacing 1/T",
+    "Another rectangular pulse of width T"
+   ],
+   "correta": 1,
+   "comentario": "rect(t/T) ↔ AT·sinc(fT), com primeiros zeros em ±1/T (L1 p. 50).",
+   "conceptIds": [
+    "C016"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L1 p. 50–53"
+  },
+  {
+   "id": "NE-M02-005",
+   "tipo": "multipla",
+   "topico": "02-analise-de-fourier",
+   "modulo": "M02",
+   "dificuldade": "facil",
+   "enunciado": "If a pulse becomes shorter in time, its bandwidth:",
+   "alternativas": [
+    "Becomes zero",
+    "Does not change",
+    "Decreases",
+    "Increases"
+   ],
+   "correta": 3,
+   "comentario": "B é proporcional a 1/T: sinal mais rápido (menor duração) exige mais banda (L1 p. 54).",
+   "conceptIds": [
+    "C017"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L1 p. 53–55"
+  },
+  {
+   "id": "NE-M02-006",
+   "tipo": "multipla",
+   "topico": "02-analise-de-fourier",
+   "modulo": "M02",
+   "dificuldade": "medio",
+   "enunciado": "The DTFT of an aperiodic discrete-time signal is:",
+   "alternativas": [
+    "A discrete and aperiodic spectrum",
+    "A continuous and aperiodic spectrum",
+    "A single spectral line",
+    "A continuous and periodic spectrum"
+   ],
+   "correta": 3,
+   "comentario": "Discreto aperiódico → espectro contínuo e periódico (L1 p. 55).",
+   "conceptIds": [
+    "C018"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L1 p. 55"
+  },
+  {
+   "id": "NE-M02-007",
+   "tipo": "multipla",
+   "topico": "02-analise-de-fourier",
+   "modulo": "M02",
+   "dificuldade": "medio",
+   "enunciado": "According to the Fourier transforms recap, a signal that is PERIODIC in time always has a spectrum that is:",
+   "alternativas": [
+    "Made of lines (discrete in frequency)",
+    "Zero outside the fundamental frequency",
+    "Periodic in frequency",
+    "Continuous in frequency"
+   ],
+   "correta": 0,
+   "comentario": "Periódico em um domínio ⇔ linhas no outro; discreto em um domínio ⇔ periódico no outro (L1 p. 56, 58).",
+   "conceptIds": [
+    "C020"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L1 p. 58"
+  },
+  {
+   "id": "NE-M02-008",
+   "tipo": "multipla",
+   "topico": "02-analise-de-fourier",
+   "modulo": "M02",
+   "dificuldade": "facil",
+   "enunciado": "The Fast Fourier Transform (FFT) is:",
+   "alternativas": [
+    "A computationally efficient algorithm to calculate the DFT",
+    "A transform for continuous aperiodic signals",
+    "An analogue filter",
+    "The inverse of the sampling theorem"
+   ],
+   "correta": 0,
+   "comentario": "FFT calcula a DFT com menos operações; precisão aumenta com N (L1 p. 57).",
+   "conceptIds": [
+    "C019"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L1 p. 56–57"
+  },
+  {
+   "id": "NE-M02-009",
+   "tipo": "multipla",
+   "topico": "02-analise-de-fourier",
+   "modulo": "M02",
+   "dificuldade": "facil",
+   "enunciado": "A band-pass type signal has its spectrum X(f) concentrated:",
+   "alternativas": [
+    "Only at f = 0",
+    "Around ±f₀",
+    "Around f = 0",
+    "Uniformly over all frequencies"
+   ],
+   "correta": 1,
+   "comentario": "Passa-baixas: concentrado em f = 0; passa-faixa: em torno de ±f₀ (L1 p. 53).",
+   "conceptIds": [
+    "C017"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L1 p. 53–55"
+  },
+  {
+   "id": "NE-M03-001",
+   "tipo": "multipla",
+   "topico": "03-sistemas-filtros-e-decibel",
+   "modulo": "M03",
+   "dificuldade": "facil",
+   "enunciado": "A system is linear if it is:",
+   "alternativas": [
+    "Time-invariant and memoryless",
+    "Stable and causal",
+    "Causal and time-invariant",
+    "Homogeneous and additive"
+   ],
+   "correta": 3,
+   "comentario": "Linear = homogeneidade (escala) + aditividade (soma de respostas) (L2 p. 4).",
+   "conceptIds": [
+    "C022"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L2 p. 4"
+  },
+  {
+   "id": "NE-M03-002",
+   "tipo": "multipla",
+   "topico": "03-sistemas-filtros-e-decibel",
+   "modulo": "M03",
+   "dificuldade": "facil",
+   "enunciado": "A system is causal when:",
+   "alternativas": [
+    "Its output depends on future values of the input",
+    "It does not change with time",
+    "Its impulse response is a sinc",
+    "Its output at time t₀ depends only on present and past values of the input"
+   ],
+   "correta": 3,
+   "comentario": "Causal (físico): o efeito não precede a causa; y(t₀) depende de x(t) com t ≤ t₀ (L2 p. 5).",
+   "conceptIds": [
+    "C023"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L2 p. 5"
+  },
+  {
+   "id": "NE-M03-003",
+   "tipo": "multipla",
+   "topico": "03-sistemas-filtros-e-decibel",
+   "modulo": "M03",
+   "dificuldade": "medio",
+   "enunciado": "For a linear time-invariant (LTI) system, the impulse response h(t):",
+   "alternativas": [
+    "Is always a rectangular pulse",
+    "Exists only for causal filters",
+    "Depends on the instant at which the impulse is applied",
+    "Completely characterizes the system"
+   ],
+   "correta": 3,
+   "comentario": "Em sistemas LTI, h(t) (e H(f), a função de transferência) caracteriza completamente o sistema (L2 p. 6).",
+   "conceptIds": [
+    "C024"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L2 p. 5–6"
+  },
+  {
+   "id": "NE-M03-004",
+   "tipo": "multipla",
+   "topico": "03-sistemas-filtros-e-decibel",
+   "modulo": "M03",
+   "dificuldade": "medio",
+   "enunciado": "Why is the ideal low-pass filter physically unrealizable?",
+   "alternativas": [
+    "Its impulse response is zero for every t",
+    "Its impulse response is a sinc that is non-zero for t below 0, so it is non-causal",
+    "It is not a linear system",
+    "It amplifies all frequencies"
+   ],
+   "correta": 1,
+   "comentario": "h_LP(t) = 2B sinc(2Bt) existe para t negativo: o filtro ideal é não causal (L2 p. 14).",
+   "conceptIds": [
+    "C025"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L2 p. 7–18"
+  },
+  {
+   "id": "NE-M03-005",
+   "tipo": "multipla",
+   "topico": "03-sistemas-filtros-e-decibel",
+   "modulo": "M03",
+   "dificuldade": "medio",
+   "enunciado": "An ideal band-pass filter has fL = 10 kHz and fH = 14 kHz. Its bandwidth and central frequency are:",
+   "alternativas": [
+    "B = 4 kHz and f₀ = 12 kHz",
+    "B = 4 kHz and f₀ = 14 kHz",
+    "B = 24 kHz and f₀ = 12 kHz",
+    "B = 14 kHz and f₀ = 10 kHz"
+   ],
+   "correta": 0,
+   "comentario": "B = fH − fL = 4 kHz e f₀ = (fL + fH)/2 = 12 kHz (L2 p. 18).",
+   "conceptIds": [
+    "C025"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L2 p. 7–18"
+  },
+  {
+   "id": "NE-M03-006",
+   "tipo": "multipla",
+   "topico": "03-sistemas-filtros-e-decibel",
+   "modulo": "M03",
+   "dificuldade": "facil",
+   "enunciado": "A power ratio S/N of 20 dB means that S is:",
+   "alternativas": [
+    "20 times N",
+    "10 times N",
+    "100 times N",
+    "2 times N"
+   ],
+   "correta": 2,
+   "comentario": "10 log(S/N) = 20 ⇒ S/N = 100 (L2 p. 20).",
+   "conceptIds": [
+    "C027"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L2 p. 20"
+  },
+  {
+   "id": "NE-M03-007",
+   "tipo": "multipla",
+   "topico": "03-sistemas-filtros-e-decibel",
+   "modulo": "M03",
+   "dificuldade": "medio",
+   "enunciado": "In terms of signal AMPLITUDE (voltage), +6 dB corresponds approximately to:",
+   "alternativas": [
+    "Doubling the amplitude",
+    "Four times the amplitude",
+    "Half the amplitude",
+    "Ten times the amplitude"
+   ],
+   "correta": 0,
+   "comentario": "Para amplitude usa-se 20 log: +6 dB ≈ 2×. Em potência, o dobro é +3 dB (L2 p. 20).",
+   "conceptIds": [
+    "C027"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L2 p. 20"
+  },
+  {
+   "id": "NE-M03-008",
+   "tipo": "multipla",
+   "topico": "03-sistemas-filtros-e-decibel",
+   "modulo": "M03",
+   "dificuldade": "facil",
+   "enunciado": "A system is time-invariant (stationary) when:",
+   "alternativas": [
+    "Its effect on the signal does not change with time",
+    "Its output is always zero for t below 0",
+    "It has no memory",
+    "Its output depends on the time instant as well as the input"
+   ],
+   "correta": 0,
+   "comentario": "Invariante no tempo: o efeito do sistema não muda com o tempo (L2 p. 3).",
+   "conceptIds": [
+    "C021"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L2 p. 2–3"
+  },
+  {
+   "id": "NE-M03-009",
+   "tipo": "multipla",
+   "topico": "03-sistemas-filtros-e-decibel",
+   "modulo": "M03",
+   "dificuldade": "facil",
+   "enunciado": "Compared with an ideal filter, a real filter:",
+   "alternativas": [
+    "Has zero bandwidth",
+    "Is causal, occupies more band and has smoother edges (it is less selective)",
+    "Has vertical edges and a perfectly flat passband",
+    "Is non-causal"
+   ],
+   "correta": 1,
+   "comentario": "Filtros reais são causais, alargam a banda e têm bordas suaves — menos seletivos (L2 p. 19).",
+   "conceptIds": [
+    "C026"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L2 p. 19"
+  },
+  {
+   "id": "NE-M04-001",
+   "tipo": "multipla",
+   "topico": "04-conversao-ad-e-amostragem",
+   "modulo": "M04",
+   "dificuldade": "facil",
+   "enunciado": "Which is the correct sequence of operations of an analogue-to-digital converter (ADC)?",
+   "alternativas": [
+    "Filtering, sampling, quantization, encoding",
+    "Quantization, sampling, encoding, filtering",
+    "Encoding, quantization, sampling, filtering",
+    "Sampling, encoding, filtering, quantization"
+   ],
+   "correta": 0,
+   "comentario": "ADC: filtragem (anti-aliasing), amostragem, quantização e codificação (L2 p. 21).",
+   "conceptIds": [
+    "C028"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L2 p. 21"
+  },
+  {
+   "id": "NE-M04-002",
+   "tipo": "multipla",
+   "topico": "04-conversao-ad-e-amostragem",
+   "modulo": "M04",
+   "dificuldade": "facil",
+   "enunciado": "A signal is band-limited to B = 5 kHz. The minimum sampling frequency that allows exact reconstruction is:",
+   "alternativas": [
+    "5 kHz",
+    "10 kHz",
+    "20 kHz",
+    "2.5 kHz"
+   ],
+   "correta": 1,
+   "comentario": "fc ≥ 2B = 10 kHz (L2 p. 30). Na prática usa-se um pouco mais, como banda de guarda.",
+   "conceptIds": [
+    "C031"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L2 p. 28–30"
+  },
+  {
+   "id": "NE-M04-003",
+   "tipo": "multipla",
+   "topico": "04-conversao-ad-e-amostragem",
+   "modulo": "M04",
+   "dificuldade": "medio",
+   "enunciado": "Why is the audio CD sampled at 44.1 kHz?",
+   "alternativas": [
+    "To make the quantization error zero",
+    "Hearing extends to about 20 kHz, so about 40 kHz is needed, plus a guard band",
+    "Hearing extends to about 44 kHz",
+    "Because 44.1 kHz is the Nyquist band of a telephone channel"
+   ],
+   "correta": 1,
+   "comentario": "Ouvido até ~20 kHz ⇒ ~40 kHz por Nyquist, mais margem de guarda ⇒ 44,1 kHz (L2 p. 37).",
+   "conceptIds": [
+    "C031",
+    "C033"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L2 p. 28–30"
+  },
+  {
+   "id": "NE-M04-004",
+   "tipo": "multipla",
+   "topico": "04-conversao-ad-e-amostragem",
+   "modulo": "M04",
+   "dificuldade": "medio",
+   "enunciado": "In the frequency domain, ideal sampling with frequency fc produces:",
+   "alternativas": [
+    "A spectrum that is zero outside ±B",
+    "A single copy of the spectrum shifted to fc",
+    "Replicas of the original spectrum shifted by multiples of fc",
+    "The removal of all frequencies above fc"
+   ],
+   "correta": 2,
+   "comentario": "Amostrar = multiplicar pelo pente de Dirac ⇒ réplicas do espectro em k·fc, escaladas por 1/T (L2 p. 25).",
+   "conceptIds": [
+    "C030"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L2 p. 25–28"
+  },
+  {
+   "id": "NE-M04-005",
+   "tipo": "multipla",
+   "topico": "04-conversao-ad-e-amostragem",
+   "modulo": "M04",
+   "dificuldade": "facil",
+   "enunciado": "Sampling with fc lower than 2B (undersampling) causes:",
+   "alternativas": [
+    "Oversampling",
+    "Overlapping of the spectral replicas (aliasing)",
+    "An exact reconstruction with an ideal low-pass filter",
+    "A reduction of quantization noise"
+   ],
+   "correta": 1,
+   "comentario": "fc menor que 2B ⇒ réplicas sobrepostas ⇒ aliasing; reconstrução exata impossível (L2 p. 27, 30).",
+   "conceptIds": [
+    "C032"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L2 p. 30, 39"
+  },
+  {
+   "id": "NE-M04-006",
+   "tipo": "multipla",
+   "topico": "04-conversao-ad-e-amostragem",
+   "modulo": "M04",
+   "dificuldade": "medio",
+   "enunciado": "The anti-aliasing filter is:",
+   "alternativas": [
+    "A digital filter applied after quantization",
+    "A low-pass filter placed before the sampler that removes components above fc/2",
+    "A band-pass filter centred on fc",
+    "A high-pass filter placed after the DAC"
+   ],
+   "correta": 1,
+   "comentario": "Passa-baixas antes do ADC, cortando acima de fc/2, para garantir a banda limitada (L2 p. 37, 40).",
+   "conceptIds": [
+    "C033"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L2 p. 37–40"
+  },
+  {
+   "id": "NE-M04-007",
+   "tipo": "multipla",
+   "topico": "04-conversao-ad-e-amostragem",
+   "modulo": "M04",
+   "dificuldade": "medio",
+   "enunciado": "Why is a sample and hold (S&H) circuit placed before the ADC?",
+   "alternativas": [
+    "To limit the signal bandwidth",
+    "To increase the sampling frequency",
+    "To remove the quantization error",
+    "To keep the amplitude constant while the conversion takes place"
+   ],
+   "correta": 3,
+   "comentario": "O ADC precisa de entrada constante durante a conversão; o S&H 'congela' a amplitude (L2 p. 35–36).",
+   "conceptIds": [
+    "C035"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L2 p. 34–36"
+  },
+  {
+   "id": "NE-M04-008",
+   "tipo": "multipla",
+   "topico": "04-conversao-ad-e-amostragem",
+   "modulo": "M04",
+   "dificuldade": "facil",
+   "enunciado": "If the quantization step size is K, the maximum quantization error is:",
+   "alternativas": [
+    "Zero",
+    "±K/2",
+    "±K",
+    "±2K"
+   ],
+   "correta": 1,
+   "comentario": "Cada amostra vai ao nível mais próximo: erro máximo de meio passo, ±K/2 (L2 p. 44).",
+   "conceptIds": [
+    "C036"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L2 p. 42–45"
+  },
+  {
+   "id": "NE-M04-009",
+   "tipo": "multipla",
+   "topico": "04-conversao-ad-e-amostragem",
+   "modulo": "M04",
+   "dificuldade": "facil",
+   "enunciado": "How many quantization levels does a 6-bit quantizer have?",
+   "alternativas": [
+    "64",
+    "6",
+    "12",
+    "36"
+   ],
+   "correta": 0,
+   "comentario": "2⁶ = 64 níveis (L2 p. 44).",
+   "conceptIds": [
+    "C036"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L2 p. 42–45"
+  },
+  {
+   "id": "NE-M04-010",
+   "tipo": "multipla",
+   "topico": "04-conversao-ad-e-amostragem",
+   "modulo": "M04",
+   "dificuldade": "facil",
+   "enunciado": "A voice signal is sampled at 8 000 samples/s and each sample is coded with 8 bits. The bit rate is:",
+   "alternativas": [
+    "1 kb/s",
+    "64 kb/s",
+    "8 kb/s",
+    "16 kb/s"
+   ],
+   "correta": 1,
+   "comentario": "8 000 × 8 = 64 kb/s (L2 p. 47).",
+   "conceptIds": [
+    "C037"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L2 p. 46–47"
+  },
+  {
+   "id": "NE-M04-011",
+   "tipo": "multipla",
+   "topico": "04-conversao-ad-e-amostragem",
+   "modulo": "M04",
+   "dificuldade": "medio",
+   "enunciado": "A quantizer must represent 100 different levels. How many bits per sample are needed?",
+   "alternativas": [
+    "6",
+    "100",
+    "7",
+    "50"
+   ],
+   "correta": 2,
+   "comentario": "log₂ 100 ≈ 6,64 ⇒ arredonda para cima: 7 bits (2⁷ = 128 ≥ 100).",
+   "conceptIds": [
+    "C036",
+    "C037"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L2 p. 42–45"
+  },
+  {
+   "id": "NE-M04-012",
+   "tipo": "multipla",
+   "topico": "04-conversao-ad-e-amostragem",
+   "modulo": "M04",
+   "dificuldade": "medio",
+   "enunciado": "The Whittaker-Shannon interpolation formula reconstructs the continuous signal as:",
+   "alternativas": [
+    "A piecewise constant signal",
+    "A sum of shifted sinc functions weighted by the sample values",
+    "The average of all samples",
+    "A straight line between consecutive samples"
+   ],
+   "correta": 1,
+   "comentario": "Interpolação ideal (cardinal): soma de sincs centradas nas amostras, infinitas nos dois sentidos — por isso irrealizável (L2 p. 32–33).",
+   "conceptIds": [
+    "C034"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L2 p. 31–33"
+  },
+  {
+   "id": "NE-M04-013",
+   "tipo": "multipla",
+   "topico": "04-conversao-ad-e-amostragem",
+   "modulo": "M04",
+   "dificuldade": "medio",
+   "enunciado": "In practice the sampling frequency is chosen slightly higher than 2B because:",
+   "alternativas": [
+    "The quantization error must be zero",
+    "The Nyquist condition requires fc = 4B",
+    "A guard band is needed, since real filters are not ideal",
+    "Higher fc reduces the number of bits"
+   ],
+   "correta": 2,
+   "comentario": "Banda de guarda para que filtros não ideais não cortem partes úteis do sinal (L2 p. 30).",
+   "conceptIds": [
+    "C031"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L2 p. 28–30"
+  },
+  {
+   "id": "NE-M05-001",
+   "tipo": "multipla",
+   "topico": "05-transmissao-em-banda-base-e-pcm",
+   "modulo": "M05",
+   "dificuldade": "facil",
+   "enunciado": "Digital baseband transmission (line coding) is:",
+   "alternativas": [
+    "The conversion of an analogue signal into bits",
+    "The transmission of data on a high-frequency carrier",
+    "A technique used only in wireless links",
+    "The transfer of a bit stream over a low-pass channel without shifting the signal band"
+   ],
+   "correta": 3,
+   "comentario": "Banda base: canal passa-baixas, sem deslocamento de banda (sem portadora) (L2 p. 51).",
+   "conceptIds": [
+    "C039"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L2 p. 50–51"
+  },
+  {
+   "id": "NE-M05-002",
+   "tipo": "multipla",
+   "topico": "05-transmissao-em-banda-base-e-pcm",
+   "modulo": "M05",
+   "dificuldade": "medio",
+   "enunciado": "The symbol period Ts equals the bit period Td only when:",
+   "alternativas": [
+    "Each symbol carries two bits",
+    "The channel is noiseless",
+    "The signal is RZ",
+    "Each symbol carries one bit"
+   ],
+   "correta": 3,
+   "comentario": "Um símbolo pode carregar vários bits; Ts = Td só com 1 bit por símbolo (L2 p. 55).",
+   "conceptIds": [
+    "C040",
+    "C063"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L2 p. 52–55"
+  },
+  {
+   "id": "NE-M05-003",
+   "tipo": "multipla",
+   "topico": "05-transmissao-em-banda-base-e-pcm",
+   "modulo": "M05",
+   "dificuldade": "medio",
+   "enunciado": "In NRZ-I (inverted) encoding, the voltage level changes:",
+   "alternativas": [
+    "When a 0 is encountered",
+    "When a 1 is encountered",
+    "At every bit",
+    "Never"
+   ],
+   "correta": 1,
+   "comentario": "NRZ-I inverte o nível a cada bit 1; NRZ-L muda quando o bit muda (L2 p. 58).",
+   "conceptIds": [
+    "C041"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L2 p. 56–59"
+  },
+  {
+   "id": "NE-M05-004",
+   "tipo": "multipla",
+   "topico": "05-transmissao-em-banda-base-e-pcm",
+   "modulo": "M05",
+   "dificuldade": "facil",
+   "enunciado": "Unipolar encoding represents:",
+   "alternativas": [
+    "0 with a positive voltage and 1 with zero voltage",
+    "1 alternately with positive and negative voltage",
+    "1 with a positive voltage and 0 with zero voltage",
+    "1 with a positive and 0 with a negative voltage"
+   ],
+   "correta": 2,
+   "comentario": "Unipolar: positivo para 1 e zero para 0 (L2 p. 57).",
+   "conceptIds": [
+    "C041"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L2 p. 56–59"
+  },
+  {
+   "id": "NE-M05-005",
+   "tipo": "multipla",
+   "topico": "05-transmissao-em-banda-base-e-pcm",
+   "modulo": "M05",
+   "dificuldade": "medio",
+   "enunciado": "In bipolar AMI (alternate mark inversion) encoding:",
+   "alternativas": [
+    "Only two voltage levels are used",
+    "A 0 is sent as zero voltage and each 1 alternates between positive and negative voltage",
+    "A 1 is sent as zero voltage and each 0 alternates polarity",
+    "The signal never returns to zero"
+   ],
+   "correta": 1,
+   "comentario": "AMI: três níveis; 0 = 0 V; 1 alterna +V/−V (mark = 1) (L2 p. 60–61).",
+   "conceptIds": [
+    "C042"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L2 p. 60–61"
+  },
+  {
+   "id": "NE-M05-006",
+   "tipo": "multipla",
+   "topico": "05-transmissao-em-banda-base-e-pcm",
+   "modulo": "M05",
+   "dificuldade": "medio",
+   "enunciado": "A main advantage of bipolar (AMI) encoding is that:",
+   "alternativas": [
+    "It uses only two voltage levels",
+    "It is DC-balanced and long runs of 1s do not cause a lack of transitions",
+    "It needs no synchronization at all, even for long runs of 0s",
+    "It doubles the bit rate"
+   ],
+   "correta": 1,
+   "comentario": "Equilíbrio DC e transições garantidas para sequências de 1, ajudando a extrair o sincronismo (L2 p. 60–61).",
+   "conceptIds": [
+    "C042"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L2 p. 60–61"
+  },
+  {
+   "id": "NE-M05-007",
+   "tipo": "multipla",
+   "topico": "05-transmissao-em-banda-base-e-pcm",
+   "modulo": "M05",
+   "dificuldade": "facil",
+   "enunciado": "Standard telephone PCM (ITU-T G.711) produces a bit rate of:",
+   "alternativas": [
+    "4 kb/s",
+    "64 kb/s",
+    "8 kb/s",
+    "48 kb/s"
+   ],
+   "correta": 1,
+   "comentario": "8 kHz × 8 bits = 64 kb/s por canal (L2 p. 64).",
+   "conceptIds": [
+    "C043"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L2 p. 62–64"
+  },
+  {
+   "id": "NE-M05-008",
+   "tipo": "multipla",
+   "topico": "05-transmissao-em-banda-base-e-pcm",
+   "modulo": "M05",
+   "dificuldade": "medio",
+   "enunciado": "In telephone PCM, why is the sampling frequency 8 kHz?",
+   "alternativas": [
+    "To obtain 256 quantization levels",
+    "Because the human ear perceives up to 8 kHz",
+    "Because each sample has 8 bits",
+    "The voice channel is about 3.4 kHz, so 2B plus a margin gives 8 kHz"
+   ],
+   "correta": 3,
+   "comentario": "Banda telefônica 3,4 kHz + margem ⇒ 8 kHz (L2 p. 64).",
+   "conceptIds": [
+    "C043"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L2 p. 62–64"
+  },
+  {
+   "id": "NE-M05-009",
+   "tipo": "multipla",
+   "topico": "05-transmissao-em-banda-base-e-pcm",
+   "modulo": "M05",
+   "dificuldade": "medio",
+   "enunciado": "A PCM system goes from 8 bits to 10 bits per sample. The signal-to-quantization ratio improves by about:",
+   "alternativas": [
+    "20 dB",
+    "12 dB",
+    "6 dB",
+    "2 dB"
+   ],
+   "correta": 1,
+   "comentario": "≈ 6 dB por bit: 2 bits a mais ⇒ ≈ 12 dB (L2 p. 64).",
+   "conceptIds": [
+    "C043"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L2 p. 62–64"
+  },
+  {
+   "id": "NE-M05-010",
+   "tipo": "multipla",
+   "topico": "05-transmissao-em-banda-base-e-pcm",
+   "modulo": "M05",
+   "dificuldade": "medio",
+   "enunciado": "Reducing PCM from 8 to 6 bits per sample (8 kHz sampling):",
+   "alternativas": [
+    "Reduces the bit rate but eliminates quantization error",
+    "Increases the bit rate to 80 kb/s",
+    "Does not change the bandwidth needed",
+    "Reduces the bit rate to 48 kb/s and increases the quantization error"
+   ],
+   "correta": 3,
+   "comentario": "8 000 × 6 = 48 kb/s (menos banda), porém menos níveis ⇒ mais erro de quantização (L2 p. 64).",
+   "conceptIds": [
+    "C043"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L2 p. 62–64"
+  },
+  {
+   "id": "NE-M05-011",
+   "tipo": "multipla",
+   "topico": "05-transmissao-em-banda-base-e-pcm",
+   "modulo": "M05",
+   "dificuldade": "facil",
+   "enunciado": "A simple baseband receiver decides which symbol was sent by:",
+   "alternativas": [
+    "Counting the zero crossings",
+    "Computing the FFT of the signal",
+    "Comparing each sample with a predetermined threshold λ",
+    "Measuring the carrier phase"
+   ],
+   "correta": 2,
+   "comentario": "Amostra r comparada com λ: r maior que λ ⇒ 1; menor ⇒ 0. Ruído pode causar erro (L2 p. 67).",
+   "conceptIds": [
+    "C044"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L2 p. 65–67"
+  },
+  {
+   "id": "NE-M06-001",
+   "tipo": "multipla",
+   "topico": "06-ruido-snr-e-figura-de-ruido",
+   "modulo": "M06",
+   "dificuldade": "facil",
+   "enunciado": "The power spectral density of thermal noise is:",
+   "alternativas": [
+    "kTB",
+    "kT",
+    "kT/B",
+    "4kTRB"
+   ],
+   "correta": 1,
+   "comentario": "dN = kT (W/Hz); a potência numa banda B é kTB (L3 p. 10).",
+   "conceptIds": [
+    "C048"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L3 p. 10, 12"
+  },
+  {
+   "id": "NE-M06-002",
+   "tipo": "multipla",
+   "topico": "06-ruido-snr-e-figura-de-ruido",
+   "modulo": "M06",
+   "dificuldade": "medio",
+   "enunciado": "At T = 290 K the thermal noise power spectral density is approximately:",
+   "alternativas": [
+    "−114 dBm/Hz",
+    "−204 dBm/Hz",
+    "−174 dBm/Hz",
+    "−174 dBW/Hz"
+   ],
+   "correta": 2,
+   "comentario": "kT a 290 K ≈ 4·10⁻²¹ W/Hz = −204 dBW/Hz = −174 dBm/Hz (L3 p. 12).",
+   "conceptIds": [
+    "C048"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L3 p. 10, 12"
+  },
+  {
+   "id": "NE-M06-003",
+   "tipo": "multipla",
+   "topico": "06-ruido-snr-e-figura-de-ruido",
+   "modulo": "M06",
+   "dificuldade": "dificil",
+   "enunciado": "What is the thermal noise power at 290 K in a bandwidth of 1 MHz?",
+   "alternativas": [
+    "About −54 dBm",
+    "About −114 dBm",
+    "About −174 dBm",
+    "About −234 dBm"
+   ],
+   "correta": 1,
+   "comentario": "−174 dBm/Hz + 10 log(10⁶) = −174 + 60 = −114 dBm.",
+   "conceptIds": [
+    "C048",
+    "C027"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L3 p. 10, 12"
+  },
+  {
+   "id": "NE-M06-004",
+   "tipo": "multipla",
+   "topico": "06-ruido-snr-e-figura-de-ruido",
+   "modulo": "M06",
+   "dificuldade": "facil",
+   "enunciado": "Thermal (Johnson) noise disappears only when:",
+   "alternativas": [
+    "The absolute temperature is 0 K",
+    "The resistor is short-circuited",
+    "The bandwidth is very large",
+    "No signal is applied"
+   ],
+   "correta": 0,
+   "comentario": "É proporcional a T e existe mesmo sem sinal aplicado; só some a 0 K (L3 p. 8).",
+   "conceptIds": [
+    "C047"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L3 p. 8–9"
+  },
+  {
+   "id": "NE-M06-005",
+   "tipo": "multipla",
+   "topico": "06-ruido-snr-e-figura-de-ruido",
+   "modulo": "M06",
+   "dificuldade": "medio",
+   "enunciado": "Which statement about noise in reactive components is correct?",
+   "alternativas": [
+    "Inductors are the main source of thermal noise",
+    "Diodes are the main source of thermal noise in passive dipoles",
+    "Ideal capacitors generate more thermal noise than resistors",
+    "Ideal capacitors and inductors do not generate thermal noise; only the resistive part does"
+   ],
+   "correta": 3,
+   "comentario": "Elemento reativo ideal não gera ruído térmico; num dipolo Z = R + jX, só R gera (L3 p. 14).",
+   "conceptIds": [
+    "C049"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L3 p. 11–16"
+  },
+  {
+   "id": "NE-M06-006",
+   "tipo": "multipla",
+   "topico": "06-ruido-snr-e-figura-de-ruido",
+   "modulo": "M06",
+   "dificuldade": "dificil",
+   "enunciado": "A 1 kΩ resistor at T = 300 K is observed in a 1 MHz bandwidth. Its RMS noise voltage, Vrms = √(4kTRB), is about:",
+   "alternativas": [
+    "4 µV",
+    "0.4 µV",
+    "400 µV",
+    "40 µV"
+   ],
+   "correta": 0,
+   "comentario": "√(4·1,38·10⁻²³·300·10³·10⁶) ≈ 4,07 µV. O exemplo do slide (100 kΩ) dá 40,7 µV: R 100× menor ⇒ tensão 10× menor (L3 p. 13).",
+   "conceptIds": [
+    "C049"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L3 p. 11–16"
+  },
+  {
+   "id": "NE-M06-007",
+   "tipo": "multipla",
+   "topico": "06-ruido-snr-e-figura-de-ruido",
+   "modulo": "M06",
+   "dificuldade": "facil",
+   "enunciado": "Flicker (pink) noise:",
+   "alternativas": [
+    "Has a power spectral density proportional to 1/f and is relevant at low frequencies",
+    "Is relevant only at very high frequencies",
+    "Is caused only by the temperature of resistors",
+    "Is white and independent of frequency"
+   ],
+   "correta": 0,
+   "comentario": "Flicker: PSD ∝ 1/f, de semicondutores, relevante em baixa frequência (L3 p. 17).",
+   "conceptIds": [
+    "C050"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L3 p. 17"
+  },
+  {
+   "id": "NE-M06-008",
+   "tipo": "multipla",
+   "topico": "06-ruido-snr-e-figura-de-ruido",
+   "modulo": "M06",
+   "dificuldade": "medio",
+   "enunciado": "Shot noise originates from:",
+   "alternativas": [
+    "Lightning and solar activity",
+    "The discrete (quantized) nature of electric charge crossing a potential barrier",
+    "The thermal agitation of electrons in a resistor",
+    "Imperfect contacts between materials, with a 1/f spectrum"
+   ],
+   "correta": 1,
+   "comentario": "Shot (Schottky): carga discreta, flutuações independentes de T e f, relevantes em correntes pequenas (L3 p. 18).",
+   "conceptIds": [
+    "C051"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L3 p. 18–20"
+  },
+  {
+   "id": "NE-M06-009",
+   "tipo": "multipla",
+   "topico": "06-ruido-snr-e-figura-de-ruido",
+   "modulo": "M06",
+   "dificuldade": "facil",
+   "enunciado": "The noise factor F of an ideal noiseless amplifier is:",
+   "alternativas": [
+    "1 (0 dB)",
+    "0",
+    "Infinite",
+    "Equal to its gain"
+   ],
+   "correta": 0,
+   "comentario": "F = 1 no caso ideal; real sempre maior que 1 (L3 p. 25).",
+   "conceptIds": [
+    "C053"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L3 p. 24–27"
+  },
+  {
+   "id": "NE-M06-010",
+   "tipo": "multipla",
+   "topico": "06-ruido-snr-e-figura-de-ruido",
+   "modulo": "M06",
+   "dificuldade": "medio",
+   "enunciado": "An amplifier has an input SNR of 30 dB and an output SNR of 26 dB. Its noise figure is:",
+   "alternativas": [
+    "4 dB",
+    "1.15 dB",
+    "56 dB",
+    "26 dB"
+   ],
+   "correta": 0,
+   "comentario": "NF = SNRi(dB) − SNRo(dB) = 4 dB (F = SNRi/SNRo; divisão vira subtração em dB).",
+   "conceptIds": [
+    "C053"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L3 p. 24–27"
+  },
+  {
+   "id": "NE-M06-011",
+   "tipo": "multipla",
+   "topico": "06-ruido-snr-e-figura-de-ruido",
+   "modulo": "M06",
+   "dificuldade": "medio",
+   "enunciado": "An amplifier has an input SNR of 20 dB and an output SNR of 13 dB. Its noise figure is about:",
+   "alternativas": [
+    "1.5 dB",
+    "7 dB",
+    "13 dB",
+    "33 dB"
+   ],
+   "correta": 1,
+   "comentario": "NF = 20 − 13 = 7 dB — o mesmo valor do gabarito da Q28 de 2025.",
+   "conceptIds": [
+    "C053"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L3 p. 24–27"
+  },
+  {
+   "id": "NE-M06-012",
+   "tipo": "multipla",
+   "topico": "06-ruido-snr-e-figura-de-ruido",
+   "modulo": "M06",
+   "dificuldade": "medio",
+   "enunciado": "An amplifier has a noise factor F = 2 (NF ≈ 3 dB). With reference temperature T = 290 K, its equivalent noise temperature is:",
+   "alternativas": [
+    "870 K",
+    "145 K",
+    "290 K",
+    "580 K"
+   ],
+   "correta": 2,
+   "comentario": "Tr = (F − 1)·T = (2 − 1)·290 = 290 K (L3 p. 28).",
+   "conceptIds": [
+    "C054"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L3 p. 28"
+  },
+  {
+   "id": "NE-M06-013",
+   "tipo": "multipla",
+   "topico": "06-ruido-snr-e-figura-de-ruido",
+   "modulo": "M06",
+   "dificuldade": "dificil",
+   "enunciado": "Two stages in cascade: stage 1 has F₁ = 2 and G₁ = 10 (10 dB); stage 2 has F₂ = 11. The overall noise figure is about:",
+   "alternativas": [
+    "13 dB",
+    "10.4 dB",
+    "3 dB",
+    "4.8 dB"
+   ],
+   "correta": 3,
+   "comentario": "Friis: F = 2 + (11 − 1)/10 = 3 ⇒ NF = 10 log 3 ≈ 4,8 dB (L3 p. 29).",
+   "conceptIds": [
+    "C055"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L3 p. 29–32"
+  },
+  {
+   "id": "NE-M06-014",
+   "tipo": "multipla",
+   "topico": "06-ruido-snr-e-figura-de-ruido",
+   "modulo": "M06",
+   "dificuldade": "medio",
+   "enunciado": "To minimize the noise of a receiver chain, the first stage should have:",
+   "alternativas": [
+    "The lowest possible noise factor and the highest possible gain",
+    "Unity gain",
+    "The same noise factor as the last stage",
+    "The highest possible noise factor and the lowest gain"
+   ],
+   "correta": 0,
+   "comentario": "Friis: o 1º estágio domina; por isso usa-se um LNA (baixo F, alto ganho) (L3 p. 30–32).",
+   "conceptIds": [
+    "C055"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L3 p. 29–32"
+  },
+  {
+   "id": "NE-M06-015",
+   "tipo": "multipla",
+   "topico": "06-ruido-snr-e-figura-de-ruido",
+   "modulo": "M06",
+   "dificuldade": "medio",
+   "enunciado": "According to the Friis formula, the contribution of the second stage to the overall noise factor is:",
+   "alternativas": [
+    "F₂ multiplied by the gain of the first stage",
+    "Independent of the first stage gain",
+    "(F₂ − 1) divided by the gain of the first stage",
+    "F₂ added directly to F₁"
+   ],
+   "correta": 2,
+   "comentario": "F = F₁ + (F₂ − 1)/G₁ + (F₃ − 1)/(G₁G₂) + … (L3 p. 29).",
+   "conceptIds": [
+    "C055"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L3 p. 29–32"
+  },
+  {
+   "id": "NE-M06-016",
+   "tipo": "multipla",
+   "topico": "06-ruido-snr-e-figura-de-ruido",
+   "modulo": "M06",
+   "dificuldade": "facil",
+   "enunciado": "Along a chain of real stages, the output SNR compared with the input SNR is:",
+   "alternativas": [
+    "Always smaller",
+    "Always equal",
+    "Larger if the gain is high",
+    "Always larger"
+   ],
+   "correta": 0,
+   "comentario": "Os circuitos sempre acrescentam ruído: SNR de saída menor que a de entrada (L3 p. 30).",
+   "conceptIds": [
+    "C053",
+    "C045"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L3 p. 24–27"
+  },
+  {
+   "id": "NE-M06-017",
+   "tipo": "multipla",
+   "topico": "06-ruido-snr-e-figura-de-ruido",
+   "modulo": "M06",
+   "dificuldade": "facil",
+   "enunciado": "In AWGN, the word 'Gaussian' means that the noise:",
+   "alternativas": [
+    "Is multiplied by the signal",
+    "Has a 1/f spectrum",
+    "Has a normal amplitude distribution with zero mean",
+    "Exists only at high frequencies"
+   ],
+   "correta": 2,
+   "comentario": "AWGN: aditivo, branco (PSD uniforme) e gaussiano de média zero (L3 p. 33).",
+   "conceptIds": [
+    "C056"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L3 p. 33–34"
+  },
+  {
+   "id": "NE-M06-018",
+   "tipo": "multipla",
+   "topico": "06-ruido-snr-e-figura-de-ruido",
+   "modulo": "M06",
+   "dificuldade": "medio",
+   "enunciado": "Compared with the conventional −3 dB bandwidth B₃, the equivalent noise bandwidth Bn is usually:",
+   "alternativas": [
+    "Much lower",
+    "Slightly higher",
+    "Zero",
+    "Exactly equal"
+   ],
+   "correta": 1,
+   "comentario": "Bn costuma ser um pouco maior que B₃; a razão depende da forma da curva (L3 p. 22).",
+   "conceptIds": [
+    "C052"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L3 p. 21–23"
+  },
+  {
+   "id": "NE-M06-019",
+   "tipo": "multipla",
+   "topico": "06-ruido-snr-e-figura-de-ruido",
+   "modulo": "M06",
+   "dificuldade": "facil",
+   "enunciado": "Which noise cannot be eliminated and comes from the electronic components themselves?",
+   "alternativas": [
+    "Internal noise",
+    "Man-made noise from industrial machines",
+    "Cosmic noise",
+    "Atmospheric noise"
+   ],
+   "correta": 0,
+   "comentario": "Ruído interno (componentes) não pode ser eliminado; o externo é mais administrável (L3 p. 7).",
+   "conceptIds": [
+    "C046"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L3 p. 7"
+  },
+  {
+   "id": "NE-M06-020",
+   "tipo": "multipla",
+   "topico": "06-ruido-snr-e-figura-de-ruido",
+   "modulo": "M06",
+   "dificuldade": "facil",
+   "enunciado": "In a digital system, the quality of reception is commonly expressed by:",
+   "alternativas": [
+    "The number of quantization levels only",
+    "The antenna length",
+    "The BER as a function of the SNR",
+    "The thermodynamic temperature"
+   ],
+   "correta": 2,
+   "comentario": "Em sistemas digitais usa-se a BER em função da SNR, com um limiar mínimo de SNR (L3 p. 6).",
+   "conceptIds": [
+    "C045"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L3 p. 2–6"
+  },
+  {
+   "id": "NE-M07-001",
+   "tipo": "multipla",
+   "topico": "07-interferencia-intersimbolica",
+   "modulo": "M07",
+   "dificuldade": "medio",
+   "enunciado": "Intersymbol interference (ISI) arises because:",
+   "alternativas": [
+    "The transmitter uses Gray coding",
+    "The sampling frequency is too high",
+    "A band-limited channel has an impulse response that is not limited in time, so pulses overlap",
+    "The channel adds white Gaussian noise"
+   ],
+   "correta": 2,
+   "comentario": "Canal limitado em frequência ⇒ resposta ao impulso ilimitada no tempo ⇒ pulsos alargados se sobrepõem (L3 p. 35–36).",
+   "conceptIds": [
+    "C057"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L3 p. 35–38"
+  },
+  {
+   "id": "NE-M07-002",
+   "tipo": "multipla",
+   "topico": "07-interferencia-intersimbolica",
+   "modulo": "M07",
+   "dificuldade": "facil",
+   "enunciado": "Can ISI cause decision errors even in a noiseless channel?",
+   "alternativas": [
+    "No, ISI only affects analogue signals",
+    "Yes, because the overlapping pulses alter the sampled values",
+    "No, ISI exists only with noise",
+    "Yes, but only with RZ coding"
+   ],
+   "correta": 1,
+   "comentario": "ISI ocorre independentemente do ruído e pode causar erro no decisor (L3 p. 37).",
+   "conceptIds": [
+    "C057"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L3 p. 35–38"
+  },
+  {
+   "id": "NE-M07-003",
+   "tipo": "multipla",
+   "topico": "07-interferencia-intersimbolica",
+   "modulo": "M07",
+   "dificuldade": "medio",
+   "enunciado": "A condition for zero ISI is that the received pulse d(t):",
+   "alternativas": [
+    "Is constant",
+    "Has infinite bandwidth",
+    "Is zero at every sampling instant kT except k = 0",
+    "Is periodic"
+   ],
+   "correta": 2,
+   "comentario": "ISI = 0 se d(kT) = 0 para todo k ≠ 0 (L3 p. 39).",
+   "conceptIds": [
+    "C058"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L3 p. 39"
+  },
+  {
+   "id": "NE-M07-004",
+   "tipo": "multipla",
+   "topico": "07-interferencia-intersimbolica",
+   "modulo": "M07",
+   "dificuldade": "medio",
+   "enunciado": "A symbol stream at R = 2400 baud is sent with ideal sinc pulses. The minimum (Nyquist) bandwidth is:",
+   "alternativas": [
+    "4800 Hz",
+    "600 Hz",
+    "2400 Hz",
+    "1200 Hz"
+   ],
+   "correta": 3,
+   "comentario": "W = R/2 = 1/(2T) = 1200 Hz (L3 p. 39).",
+   "conceptIds": [
+    "C058"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L3 p. 39"
+  },
+  {
+   "id": "NE-M07-005",
+   "tipo": "multipla",
+   "topico": "07-interferencia-intersimbolica",
+   "modulo": "M07",
+   "dificuldade": "medio",
+   "enunciado": "With a raised-cosine filter of roll-off β = 0.5 and R = 2000 baud, the required bandwidth is:",
+   "alternativas": [
+    "1500 Hz",
+    "3000 Hz",
+    "1000 Hz",
+    "2000 Hz"
+   ],
+   "correta": 0,
+   "comentario": "BW = R/2 + β·R/2 = 1000 + 500 = 1500 Hz (L3 p. 44).",
+   "conceptIds": [
+    "C060"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L3 p. 43–44"
+  },
+  {
+   "id": "NE-M07-006",
+   "tipo": "multipla",
+   "topico": "07-interferencia-intersimbolica",
+   "modulo": "M07",
+   "dificuldade": "facil",
+   "enunciado": "A raised-cosine filter with β = 1 requires:",
+   "alternativas": [
+    "Infinite bandwidth",
+    "Twice the Nyquist bandwidth, but its tails decay very quickly",
+    "Exactly the Nyquist bandwidth",
+    "Half the Nyquist bandwidth"
+   ],
+   "correta": 1,
+   "comentario": "β = 1 ⇒ BW = 2·(R/2); caudas caem rápido e a ISI é muito reduzida (L3 p. 43–44).",
+   "conceptIds": [
+    "C060"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L3 p. 43–44"
+  },
+  {
+   "id": "NE-M07-007",
+   "tipo": "multipla",
+   "topico": "07-interferencia-intersimbolica",
+   "modulo": "M07",
+   "dificuldade": "medio",
+   "enunciado": "Why are ideal sinc pulses not used in practice to avoid ISI?",
+   "alternativas": [
+    "They require infinite power",
+    "They are not band-limited",
+    "They work only with QAM",
+    "Rectangular filters cannot be built and imperfect symbol synchronization still produces ISI"
+   ],
+   "correta": 3,
+   "comentario": "Os dois problemas citados: filtro retangular irrealizável e sincronismo imperfeito (L3 p. 42).",
+   "conceptIds": [
+    "C059"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L3 p. 40–42"
+  },
+  {
+   "id": "NE-M07-008",
+   "tipo": "multipla",
+   "topico": "07-interferencia-intersimbolica",
+   "modulo": "M07",
+   "dificuldade": "medio",
+   "enunciado": "Increasing the roll-off factor β of a raised-cosine filter:",
+   "alternativas": [
+    "Increases the symbol rate for the same bandwidth",
+    "Increases the bandwidth and reduces the sensitivity to ISI",
+    "Reduces the bandwidth and increases ISI",
+    "Does not change the bandwidth"
+   ],
+   "correta": 1,
+   "comentario": "Troca-se banda por menos ISI: mais β ⇒ mais banda, caudas mais curtas (L3 p. 43–44).",
+   "conceptIds": [
+    "C060"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L3 p. 43–44"
+  },
+  {
+   "id": "NE-M08-001",
+   "tipo": "multipla",
+   "topico": "08-capacidade-do-canal",
+   "modulo": "M08",
+   "dificuldade": "facil",
+   "enunciado": "According to the 1st Nyquist theorem, an ideal noiseless channel of bandwidth B can carry at most:",
+   "alternativas": [
+    "B/2 symbols per second",
+    "B symbols per second",
+    "2B symbols per second",
+    "4B symbols per second"
+   ],
+   "correta": 2,
+   "comentario": "Cmax = 2B baud (canal ideal, sem ruído) (L4 p. 9).",
+   "conceptIds": [
+    "C062"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L4 p. 9–10"
+  },
+  {
+   "id": "NE-M08-002",
+   "tipo": "multipla",
+   "topico": "08-capacidade-do-canal",
+   "modulo": "M08",
+   "dificuldade": "facil",
+   "enunciado": "What is the maximum theoretical symbol rate on an ideal 4 kHz channel?",
+   "alternativas": [
+    "8000 symbols/s",
+    "4000 symbols/s",
+    "2000 symbols/s",
+    "16000 symbols/s"
+   ],
+   "correta": 0,
+   "comentario": "2B = 8000 símbolos/s (L4 p. 10).",
+   "conceptIds": [
+    "C062"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L4 p. 9–10"
+  },
+  {
+   "id": "NE-M08-003",
+   "tipo": "multipla",
+   "topico": "08-capacidade-do-canal",
+   "modulo": "M08",
+   "dificuldade": "facil",
+   "enunciado": "The baud is the unit of:",
+   "alternativas": [
+    "Bits per symbol",
+    "Symbols per second",
+    "Bits per second",
+    "Hertz"
+   ],
+   "correta": 1,
+   "comentario": "Baud = símbolos/s; coincide com bit/s só com 1 bit por símbolo (L4 p. 11).",
+   "conceptIds": [
+    "C063"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L4 p. 11"
+  },
+  {
+   "id": "NE-M08-004",
+   "tipo": "multipla",
+   "topico": "08-capacidade-do-canal",
+   "modulo": "M08",
+   "dificuldade": "medio",
+   "enunciado": "A 16-level signal is transmitted at 2400 baud. The bit rate is:",
+   "alternativas": [
+    "38400 bit/s",
+    "9600 bit/s",
+    "4800 bit/s",
+    "2400 bit/s"
+   ],
+   "correta": 1,
+   "comentario": "log₂ 16 = 4 bits/símbolo ⇒ 4 × 2400 = 9600 bit/s (L4 p. 12–13).",
+   "conceptIds": [
+    "C064"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L4 p. 12–14"
+  },
+  {
+   "id": "NE-M08-005",
+   "tipo": "multipla",
+   "topico": "08-capacidade-do-canal",
+   "modulo": "M08",
+   "dificuldade": "medio",
+   "enunciado": "Using Hartley's law, the ideal capacity of a 3 kHz channel with M = 8 levels is:",
+   "alternativas": [
+    "18 kbit/s",
+    "6 kbit/s",
+    "24 kbit/s",
+    "48 kbit/s"
+   ],
+   "correta": 0,
+   "comentario": "C = 2B log₂ M = 2·3000·3 = 18 kbit/s (L4 p. 13).",
+   "conceptIds": [
+    "C064"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L4 p. 12–14"
+  },
+  {
+   "id": "NE-M08-006",
+   "tipo": "multipla",
+   "topico": "08-capacidade-do-canal",
+   "modulo": "M08",
+   "dificuldade": "medio",
+   "enunciado": "A channel has B = 1 MHz and a linear SNR of 15. Its Shannon capacity is:",
+   "alternativas": [
+    "15 Mbit/s",
+    "4 Mbit/s",
+    "2 Mbit/s",
+    "30 Mbit/s"
+   ],
+   "correta": 1,
+   "comentario": "C = B log₂(1 + 15) = 10⁶ · 4 = 4 Mbit/s (L4 p. 17).",
+   "conceptIds": [
+    "C066"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L4 p. 17–19"
+  },
+  {
+   "id": "NE-M08-007",
+   "tipo": "multipla",
+   "topico": "08-capacidade-do-canal",
+   "modulo": "M08",
+   "dificuldade": "dificil",
+   "enunciado": "A 3 kHz channel has SNR = 30 dB. Its Shannon capacity is about:",
+   "alternativas": [
+    "15 kbit/s",
+    "6 kbit/s",
+    "30 kbit/s",
+    "90 kbit/s"
+   ],
+   "correta": 2,
+   "comentario": "30 dB ⇒ SNR = 1000; C = 3000·log₂(1001) ≈ 3000·9,97 ≈ 29,9 kbit/s. Converta o dB para linear antes!",
+   "conceptIds": [
+    "C066"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L4 p. 17–19"
+  },
+  {
+   "id": "NE-M08-008",
+   "tipo": "multipla",
+   "topico": "08-capacidade-do-canal",
+   "modulo": "M08",
+   "dificuldade": "facil",
+   "enunciado": "To transmit with an arbitrarily low error probability, the information rate R must satisfy:",
+   "alternativas": [
+    "R above C",
+    "R independent of C",
+    "R equal to 2B always",
+    "R below C"
+   ],
+   "correta": 3,
+   "comentario": "Condição de Shannon: R menor que C ⇒ Pe ≈ 0 (L4 p. 17).",
+   "conceptIds": [
+    "C066"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L4 p. 17–19"
+  },
+  {
+   "id": "NE-M08-009",
+   "tipo": "multipla",
+   "topico": "08-capacidade-do-canal",
+   "modulo": "M08",
+   "dificuldade": "medio",
+   "enunciado": "A binary signal at 200 bit/s with alternating bits (1010…) has a fundamental frequency of:",
+   "alternativas": [
+    "200 Hz",
+    "100 Hz",
+    "400 Hz",
+    "50 Hz"
+   ],
+   "correta": 1,
+   "comentario": "Pior caso (alternância): fundamental = metade da taxa em bit/s (L4 p. 7–8).",
+   "conceptIds": [
+    "C061"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L4 p. 2–8"
+  },
+  {
+   "id": "NE-M08-010",
+   "tipo": "multipla",
+   "topico": "08-capacidade-do-canal",
+   "modulo": "M08",
+   "dificuldade": "facil",
+   "enunciado": "In a noisy channel, increasing the number of levels of a multilevel code:",
+   "alternativas": [
+    "Brings the levels closer and increases the error probability",
+    "Reduces the bit rate",
+    "Always reduces the error probability",
+    "Has no effect on errors"
+   ],
+   "correta": 0,
+   "comentario": "Níveis mais próximos ⇒ o ruído supera a distância entre eles ⇒ mais erros (L4 p. 16).",
+   "conceptIds": [
+    "C065"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L4 p. 15–16"
+  },
+  {
+   "id": "NE-M08-011",
+   "tipo": "multipla",
+   "topico": "08-capacidade-do-canal",
+   "modulo": "M08",
+   "dificuldade": "facil",
+   "enunciado": "The bit error rate (BER) is:",
+   "alternativas": [
+    "The number of bits per symbol",
+    "The ratio between bits received incorrectly and bits transmitted",
+    "The signal-to-noise ratio in dB",
+    "The ratio between bit rate and bandwidth"
+   ],
+   "correta": 1,
+   "comentario": "BER = bits errados / bits transmitidos; telefonia ~10⁻³, dados ~10⁻⁷ (L4 p. 25).",
+   "conceptIds": [
+    "C067"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L4 p. 25"
+  },
+  {
+   "id": "NE-M08-012",
+   "tipo": "multipla",
+   "topico": "08-capacidade-do-canal",
+   "modulo": "M08",
+   "dificuldade": "medio",
+   "enunciado": "In the Shannon-Hartley formula C = B log₂(1 + SNR), the SNR must be:",
+   "alternativas": [
+    "A linear power ratio, not in dB",
+    "The BER",
+    "An amplitude ratio in dB",
+    "Expressed in dB"
+   ],
+   "correta": 0,
+   "comentario": "O slide frisa: SNR como razão de potências, não em dB (L4 p. 17).",
+   "conceptIds": [
+    "C066"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L4 p. 17–19"
+  },
+  {
+   "id": "NE-M09-001",
+   "tipo": "multipla",
+   "topico": "09-modulacao-digital",
+   "modulo": "M09",
+   "dificuldade": "medio",
+   "enunciado": "Why is baseband radio transmission of a 4 kHz voice signal impractical?",
+   "alternativas": [
+    "Because 4 kHz cannot be sampled",
+    "Because voice signals are band-pass",
+    "The wavelength would be 75 km, so an efficient λ/4 antenna would be about 18 km long",
+    "Because the channel would have infinite capacity"
+   ],
+   "correta": 2,
+   "comentario": "λ = c/f = 75 km; antena λ/4 ≈ 18 km — inviável. Modular leva o sinal a frequências adequadas (L4 p. 20).",
+   "conceptIds": [
+    "C068"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L4 p. 20–22"
+  },
+  {
+   "id": "NE-M09-002",
+   "tipo": "multipla",
+   "topico": "09-modulacao-digital",
+   "modulo": "M09",
+   "dificuldade": "facil",
+   "enunciado": "On-Off Keying (OOK) represents binary data by:",
+   "alternativas": [
+    "Four amplitude and phase combinations",
+    "Two different carrier frequencies",
+    "Two carrier phases 180° apart",
+    "The presence or absence of the carrier"
+   ],
+   "correta": 3,
+   "comentario": "OOK (ASK binária): portadora presente = 1, ausente = 0 (L4 p. 26).",
+   "conceptIds": [
+    "C070"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L4 p. 26–28"
+  },
+  {
+   "id": "NE-M09-003",
+   "tipo": "multipla",
+   "topico": "09-modulacao-digital",
+   "modulo": "M09",
+   "dificuldade": "medio",
+   "enunciado": "In an ASK receiver, the envelope detector consists of:",
+   "alternativas": [
+    "Two band-pass filters",
+    "A half-wave rectifier and a low-pass filter",
+    "A PLL and a mixer",
+    "A DAC and a high-pass filter"
+   ],
+   "correta": 1,
+   "comentario": "Retificador de meia onda + passa-baixas, seguido de comparador (L4 p. 28).",
+   "conceptIds": [
+    "C070"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L4 p. 26–28"
+  },
+  {
+   "id": "NE-M09-004",
+   "tipo": "multipla",
+   "topico": "09-modulacao-digital",
+   "modulo": "M09",
+   "dificuldade": "facil",
+   "enunciado": "In FSK modulation:",
+   "alternativas": [
+    "The amplitude is constant and the frequency changes with the data",
+    "The phase changes by 180°",
+    "Amplitude and phase change together",
+    "The frequency is constant and the amplitude changes"
+   ],
+   "correta": 0,
+   "comentario": "FSK: amplitude constante, frequência varia (alta para 1, baixa para 0) (L4 p. 29–30).",
+   "conceptIds": [
+    "C071"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L4 p. 29–32"
+  },
+  {
+   "id": "NE-M09-005",
+   "tipo": "multipla",
+   "topico": "09-modulacao-digital",
+   "modulo": "M09",
+   "dificuldade": "medio",
+   "enunciado": "The simplest non-coherent FSK demodulator uses:",
+   "alternativas": [
+    "A single envelope detector",
+    "Two band-pass filters, two envelope detectors and a decision circuit",
+    "One PLL and one integrator",
+    "An I/Q mixer and an ADC"
+   ],
+   "correta": 1,
+   "comentario": "Cada ramo vira um OOK; o decisor escolhe o de saída mais forte (L4 p. 32).",
+   "conceptIds": [
+    "C071"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L4 p. 29–32"
+  },
+  {
+   "id": "NE-M09-006",
+   "tipo": "multipla",
+   "topico": "09-modulacao-digital",
+   "modulo": "M09",
+   "dificuldade": "medio",
+   "enunciado": "PSK demodulation is coherent, which means that:",
+   "alternativas": [
+    "No carrier is needed at the receiver",
+    "The received signal is multiplied by a carrier with the same frequency and phase, usually recovered by a PLL",
+    "Only the envelope is detected",
+    "The receiver uses two band-pass filters"
+   ],
+   "correta": 1,
+   "comentario": "Demodulação coerente com portadora sincronizada em fase (PLL) (L4 p. 36).",
+   "conceptIds": [
+    "C072"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L4 p. 33–38"
+  },
+  {
+   "id": "NE-M09-007",
+   "tipo": "multipla",
+   "topico": "09-modulacao-digital",
+   "modulo": "M09",
+   "dificuldade": "medio",
+   "enunciado": "After multiplying a BPSK signal by the local carrier, cos x · cos y = ½[cos(x + y) + cos(x − y)] gives:",
+   "alternativas": [
+    "Only a double-frequency term",
+    "A signal at the carrier frequency",
+    "A double-frequency term to be filtered plus a DC term of +1 or −1 depending on the phase",
+    "A constant zero output"
+   ],
+   "correta": 2,
+   "comentario": "Werner: termo em 2ω (filtrado) + termo DC: 0° ⇒ +1, 180° ⇒ −1 (L4 p. 37–38).",
+   "conceptIds": [
+    "C072"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L4 p. 33–38"
+  },
+  {
+   "id": "NE-M09-008",
+   "tipo": "multipla",
+   "topico": "09-modulacao-digital",
+   "modulo": "M09",
+   "dificuldade": "facil",
+   "enunciado": "How many bits are carried by each QPSK symbol?",
+   "alternativas": [
+    "4",
+    "1",
+    "8",
+    "2"
+   ],
+   "correta": 3,
+   "comentario": "QPSK: 4 fases ⇒ 2 bits por símbolo (L4 p. 39).",
+   "conceptIds": [
+    "C073"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L4 p. 39–42"
+  },
+  {
+   "id": "NE-M09-009",
+   "tipo": "multipla",
+   "topico": "09-modulacao-digital",
+   "modulo": "M09",
+   "dificuldade": "medio",
+   "enunciado": "QPSK can be seen as:",
+   "alternativas": [
+    "Two BPSK signals on carriers in quadrature (I and Q)",
+    "Four independent carriers",
+    "Two ASK signals at different frequencies",
+    "A single FSK signal"
+   ],
+   "correta": 0,
+   "comentario": "QPSK = soma de duas BPSK em quadratura (bits pares e ímpares) (L4 p. 41).",
+   "conceptIds": [
+    "C073"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L4 p. 39–42"
+  },
+  {
+   "id": "NE-M09-010",
+   "tipo": "multipla",
+   "topico": "09-modulacao-digital",
+   "modulo": "M09",
+   "dificuldade": "medio",
+   "enunciado": "Compared with BPSK, 8PSK:",
+   "alternativas": [
+    "Carries 3 bits per symbol and is more robust",
+    "Carries 1 bit per symbol",
+    "Carries 3 bits per symbol but is less robust to noise",
+    "Carries 8 bits per symbol"
+   ],
+   "correta": 2,
+   "comentario": "8PSK: 3 bits/símbolo; fases mais próximas ⇒ precisa de mais SNR para a mesma BER (L4 p. 43–44).",
+   "conceptIds": [
+    "C074"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L4 p. 43–44"
+  },
+  {
+   "id": "NE-M09-011",
+   "tipo": "multipla",
+   "topico": "09-modulacao-digital",
+   "modulo": "M09",
+   "dificuldade": "facil",
+   "enunciado": "How many bits per symbol does 256QAM carry?",
+   "alternativas": [
+    "4",
+    "8",
+    "6",
+    "256"
+   ],
+   "correta": 1,
+   "comentario": "log₂ 256 = 8 bits/símbolo (L4 p. 47).",
+   "conceptIds": [
+    "C075"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L4 p. 45–51"
+  },
+  {
+   "id": "NE-M09-012",
+   "tipo": "multipla",
+   "topico": "09-modulacao-digital",
+   "modulo": "M09",
+   "dificuldade": "medio",
+   "enunciado": "QAM uses:",
+   "alternativas": [
+    "Two carriers at different frequencies",
+    "A carrier whose frequency changes continuously",
+    "A single carrier switched on and off",
+    "Two carriers at the same frequency, 90° out of phase"
+   ],
+   "correta": 3,
+   "comentario": "QAM: duas portadoras de mesma frequência defasadas de 90°, com amplitudes moduladas (L4 p. 45–46).",
+   "conceptIds": [
+    "C075"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L4 p. 45–51"
+  },
+  {
+   "id": "NE-M09-013",
+   "tipo": "multipla",
+   "topico": "09-modulacao-digital",
+   "modulo": "M09",
+   "dificuldade": "medio",
+   "enunciado": "With Gray mapping on a constellation, an error towards an adjacent symbol causes:",
+   "alternativas": [
+    "The loss of synchronization",
+    "Only one bit error",
+    "Errors in all bits of the symbol",
+    "No error at all"
+   ],
+   "correta": 1,
+   "comentario": "Vizinhos diferem em 1 bit ⇒ erro para o vizinho custa 1 bit (constelação 16QAM, L4 p. 46). [inferência pedagógica a partir da figura]",
+   "conceptIds": [
+    "C076"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L4 p. 39–49"
+  },
+  {
+   "id": "NE-M09-014",
+   "tipo": "multipla",
+   "topico": "09-modulacao-digital",
+   "modulo": "M09",
+   "dificuldade": "medio",
+   "enunciado": "When the SNR of a link degrades, an adaptive modem typically:",
+   "alternativas": [
+    "Switches to a lower-order modulation (e.g. from 256QAM to 64QAM) to keep the BER",
+    "Increases the bits per symbol",
+    "Stops using QAM entirely",
+    "Switches to a higher-order modulation"
+   ],
+   "correta": 0,
+   "comentario": "Modulação adaptativa: reduz bits/símbolo para manter a BER com a SNR disponível (L4 p. 52–53).",
+   "conceptIds": [
+    "C077"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L4 p. 52–57"
+  },
+  {
+   "id": "NE-M09-015",
+   "tipo": "multipla",
+   "topico": "09-modulacao-digital",
+   "modulo": "M09",
+   "dificuldade": "facil",
+   "enunciado": "Bandwidth efficiency η is defined as:",
+   "alternativas": [
+    "The SNR divided by the BER",
+    "The bit rate divided by the occupied bandwidth (bit/s/Hz)",
+    "The bandwidth divided by the bit rate",
+    "The number of levels divided by the bandwidth"
+   ],
+   "correta": 1,
+   "comentario": "η = Rb/Bt em bit/s/Hz (L4 p. 57).",
+   "conceptIds": [
+    "C077"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L4 p. 52–57"
+  },
+  {
+   "id": "NE-M09-016",
+   "tipo": "multipla",
+   "topico": "09-modulacao-digital",
+   "modulo": "M09",
+   "dificuldade": "medio",
+   "enunciado": "For the same BER, which modulation needs the LOWEST Eb/N0?",
+   "alternativas": [
+    "16QAM",
+    "16PSK",
+    "64QAM",
+    "BPSK"
+   ],
+   "correta": 3,
+   "comentario": "BPSK/QPSK são as mais robustas; mais bits/símbolo exigem mais energia (curvas da L4 p. 56).",
+   "conceptIds": [
+    "C077"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L4 p. 52–57"
+  },
+  {
+   "id": "NE-M10-001",
+   "tipo": "multipla",
+   "topico": "10-componentes-eletronicos-e-cis",
+   "modulo": "M10",
+   "dificuldade": "facil",
+   "enunciado": "Which element is a clear indication that a device is electronic rather than merely electrical?",
+   "alternativas": [
+    "A high alternating current",
+    "A metal conductor",
+    "A resistor",
+    "A semiconductor component such as a transistor"
+   ],
+   "correta": 3,
+   "comentario": "A presença de semicondutor (transistor) indica dispositivo eletrônico (L5 p. 3).",
+   "conceptIds": [
+    "C078"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L5 p. 2–3"
+  },
+  {
+   "id": "NE-M10-002",
+   "tipo": "multipla",
+   "topico": "10-componentes-eletronicos-e-cis",
+   "modulo": "M10",
+   "dificuldade": "facil",
+   "enunciado": "The impedance of a passive dipole is written as Z = R + jX, where X is:",
+   "alternativas": [
+    "The resistance",
+    "The reactance",
+    "The noise factor",
+    "The conductance"
+   ],
+   "correta": 1,
+   "comentario": "R é a parte resistiva (gera ruído), X a reativa (L5 p. 8; L3 p. 14).",
+   "conceptIds": [
+    "C079"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L5 p. 4–8"
+  },
+  {
+   "id": "NE-M10-003",
+   "tipo": "multipla",
+   "topico": "10-componentes-eletronicos-e-cis",
+   "modulo": "M10",
+   "dificuldade": "medio",
+   "enunciado": "In a silicon p-n diode, the p zone is doped with:",
+   "alternativas": [
+    "Pentavalent atoms such as phosphorus",
+    "Germanium only",
+    "Trivalent atoms such as boron",
+    "Oxygen"
+   ],
+   "correta": 2,
+   "comentario": "p: trivalente (boro); n: pentavalente (fósforo) (L5 p. 9).",
+   "conceptIds": [
+    "C080"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L5 p. 9–12"
+  },
+  {
+   "id": "NE-M10-004",
+   "tipo": "multipla",
+   "topico": "10-componentes-eletronicos-e-cis",
+   "modulo": "M10",
+   "dificuldade": "medio",
+   "enunciado": "An NPN BJT used as a closed switch operates in:",
+   "alternativas": [
+    "Saturation, with both junctions forward-biased",
+    "The active region, with only the collector junction forward-biased",
+    "Interdiction (cut-off), with both junctions reverse-biased",
+    "Breakdown"
+   ],
+   "correta": 0,
+   "comentario": "Saturação = chave fechada (Je e Jc diretas); interdição = chave aberta (L5 p. 17).",
+   "conceptIds": [
+    "C081"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L5 p. 13–18"
+  },
+  {
+   "id": "NE-M10-005",
+   "tipo": "multipla",
+   "topico": "10-componentes-eletronicos-e-cis",
+   "modulo": "M10",
+   "dificuldade": "medio",
+   "enunciado": "In the active (linear) region of a BJT used as an amplifier:",
+   "alternativas": [
+    "Both junctions are forward-biased",
+    "The base-emitter junction is forward-biased and the base-collector junction is reverse-biased",
+    "No base current flows",
+    "Both junctions are reverse-biased"
+   ],
+   "correta": 1,
+   "comentario": "Ativa: Je direta, Jc reversa, VC maior que VB maior que VE (L5 p. 18).",
+   "conceptIds": [
+    "C081"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L5 p. 13–18"
+  },
+  {
+   "id": "NE-M10-006",
+   "tipo": "multipla",
+   "topico": "10-componentes-eletronicos-e-cis",
+   "modulo": "M10",
+   "dificuldade": "facil",
+   "enunciado": "A BJT has hFE = 100 and a base current of 20 µA. The collector current is:",
+   "alternativas": [
+    "20 µA",
+    "20 mA",
+    "2 mA",
+    "0.2 mA"
+   ],
+   "correta": 2,
+   "comentario": "IC = hFE·IB = 100 × 20 µA = 2 mA (L5 p. 18).",
+   "conceptIds": [
+    "C081"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L5 p. 13–18"
+  },
+  {
+   "id": "NE-M10-007",
+   "tipo": "multipla",
+   "topico": "10-componentes-eletronicos-e-cis",
+   "modulo": "M10",
+   "dificuldade": "facil",
+   "enunciado": "A FET is called a unipolar transistor because:",
+   "alternativas": [
+    "It has only one terminal",
+    "Current is carried by a single type of carrier (electrons or holes)",
+    "It works only with positive voltages",
+    "It has one junction only"
+   ],
+   "correta": 1,
+   "comentario": "FET: operação com um só tipo de portador (L5 p. 20).",
+   "conceptIds": [
+    "C082"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L5 p. 19–20"
+  },
+  {
+   "id": "NE-M10-008",
+   "tipo": "multipla",
+   "topico": "10-componentes-eletronicos-e-cis",
+   "modulo": "M10",
+   "dificuldade": "medio",
+   "enunciado": "An N-channel enhancement MOSFET:",
+   "alternativas": [
+    "Is normally ON and is switched off by a negative VGS",
+    "Has no gate oxide",
+    "Is normally OFF and needs VGS above the threshold voltage to create the channel",
+    "Conducts with VGS = 0"
+   ],
+   "correta": 2,
+   "comentario": "Enhancement: normalmente desligado; depletion: normalmente ligado (L5 p. 24–26, 28).",
+   "conceptIds": [
+    "C083"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L5 p. 21–31"
+  },
+  {
+   "id": "NE-M10-009",
+   "tipo": "multipla",
+   "topico": "10-componentes-eletronicos-e-cis",
+   "modulo": "M10",
+   "dificuldade": "facil",
+   "enunciado": "Moore's law states that the number of transistors in an integrated circuit:",
+   "alternativas": [
+    "Doubles about every two years",
+    "Doubles every ten years",
+    "Stays constant",
+    "Halves every two years"
+   ],
+   "correta": 0,
+   "comentario": "Lei de Moore: dobra a cada ~2 anos (L5 p. 36).",
+   "conceptIds": [
+    "C084"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L5 p. 32–43"
+  },
+  {
+   "id": "NE-M10-010",
+   "tipo": "multipla",
+   "topico": "10-componentes-eletronicos-e-cis",
+   "modulo": "M10",
+   "dificuldade": "medio",
+   "enunciado": "In software defined radio, an FPGA is:",
+   "alternativas": [
+    "An analogue amplifier",
+    "Programmable parallel hardware configured through firmware",
+    "A general purpose PC processor",
+    "A serial microprocessor optimized for mathematical tasks"
+   ],
+   "correta": 1,
+   "comentario": "FPGA: hardware paralelo programável; DSP: microprocessador serial otimizado; GPP: processador de uso geral (L5 p. 38–39).",
+   "conceptIds": [
+    "C085"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L5 p. 38–39"
+  },
+  {
+   "id": "NE-M10-011",
+   "tipo": "multipla",
+   "topico": "10-componentes-eletronicos-e-cis",
+   "modulo": "M10",
+   "dificuldade": "medio",
+   "enunciado": "Which integration scale corresponds to roughly 10 000 – 100 000 transistors?",
+   "alternativas": [
+    "VLSI",
+    "WSI",
+    "SSI",
+    "LSI"
+   ],
+   "correta": 0,
+   "comentario": "SSI ≈ 10; LSI 1 000–10 000; VLSI 10 000–100 000; ULSI milhões (L5 p. 37).",
+   "conceptIds": [
+    "C084"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L5 p. 32–43"
+  },
+  {
+   "id": "NE-M11-001",
+   "tipo": "multipla",
+   "topico": "11-algebra-booleana-e-logica",
+   "modulo": "M11",
+   "dificuldade": "facil",
+   "enunciado": "A NAND gate produces a 0 output:",
+   "alternativas": [
+    "Only when all inputs are 1",
+    "Never",
+    "Only when all inputs are 0",
+    "When the inputs are different"
+   ],
+   "correta": 0,
+   "comentario": "NAND = negação do AND (L5 p. 53).",
+   "conceptIds": [
+    "C088"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L5 p. 50–55"
+  },
+  {
+   "id": "NE-M11-002",
+   "tipo": "multipla",
+   "topico": "11-algebra-booleana-e-logica",
+   "modulo": "M11",
+   "dificuldade": "facil",
+   "enunciado": "An XOR gate gives output 1 when:",
+   "alternativas": [
+    "All inputs are 1",
+    "The inputs are equal",
+    "The number of inputs at 1 is odd",
+    "All inputs are 0"
+   ],
+   "correta": 2,
+   "comentario": "XOR: 1 com número ímpar de entradas em 1 (função desigualdade) (L5 p. 54).",
+   "conceptIds": [
+    "C088"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L5 p. 50–55"
+  },
+  {
+   "id": "NE-M11-003",
+   "tipo": "multipla",
+   "topico": "11-algebra-booleana-e-logica",
+   "modulo": "M11",
+   "dificuldade": "medio",
+   "enunciado": "By De Morgan's law, NOT(A AND B) equals:",
+   "alternativas": [
+    "NOT(A OR B)",
+    "(NOT A) OR (NOT B)",
+    "A OR B",
+    "(NOT A) AND (NOT B)"
+   ],
+   "correta": 1,
+   "comentario": "De Morgan: negar o produto = somar as negações (L5 p. 58).",
+   "conceptIds": [
+    "C089"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L5 p. 56–58"
+  },
+  {
+   "id": "NE-M11-004",
+   "tipo": "multipla",
+   "topico": "11-algebra-booleana-e-logica",
+   "modulo": "M11",
+   "dificuldade": "facil",
+   "enunciado": "Which gates are called universal?",
+   "alternativas": [
+    "NAND and NOR",
+    "AND and OR",
+    "XOR and XNOR",
+    "NOT and BUFFER"
+   ],
+   "correta": 0,
+   "comentario": "Só NAND (ou só NOR) reproduz qualquer porta (L5 p. 59).",
+   "conceptIds": [
+    "C090"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L5 p. 59–62"
+  },
+  {
+   "id": "NE-M11-005",
+   "tipo": "multipla",
+   "topico": "11-algebra-booleana-e-logica",
+   "modulo": "M11",
+   "dificuldade": "medio",
+   "enunciado": "Which set of operations is functionally complete?",
+   "alternativas": [
+    "AND and OR only",
+    "AND, OR and NOT",
+    "BUFFER and OR",
+    "XOR only"
+   ],
+   "correta": 1,
+   "comentario": "AND, OR e NOT geram qualquer função lógica (L5 p. 50).",
+   "conceptIds": [
+    "C088"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L5 p. 50–55"
+  },
+  {
+   "id": "NE-M11-006",
+   "tipo": "multipla",
+   "topico": "11-algebra-booleana-e-logica",
+   "modulo": "M11",
+   "dificuldade": "facil",
+   "enunciado": "In a sequential logic circuit, the output depends on:",
+   "alternativas": [
+    "The present inputs and the previous state",
+    "Only the supply voltage",
+    "Only the present inputs",
+    "Only the clock frequency"
+   ],
+   "correta": 0,
+   "comentario": "Sequencial tem memória; combinacional depende só das entradas atuais (L5 p. 63–64).",
+   "conceptIds": [
+    "C091"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L5 p. 63–66"
+  },
+  {
+   "id": "NE-M11-007",
+   "tipo": "multipla",
+   "topico": "11-algebra-booleana-e-logica",
+   "modulo": "M11",
+   "dificuldade": "facil",
+   "enunciado": "Which input combination is NOT allowed in an SR latch?",
+   "alternativas": [
+    "S = 1 and R = 0",
+    "S = 1 and R = 1",
+    "S = 0 and R = 0",
+    "S = 0 and R = 1"
+   ],
+   "correta": 1,
+   "comentario": "S = R = 1 é proibido; S = R = 0 mantém o estado (L5 p. 65).",
+   "conceptIds": [
+    "C091"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L5 p. 63–66"
+  },
+  {
+   "id": "NE-M11-008",
+   "tipo": "multipla",
+   "topico": "11-algebra-booleana-e-logica",
+   "modulo": "M11",
+   "dificuldade": "medio",
+   "enunciado": "The material implication x → y is false only when:",
+   "alternativas": [
+    "x = 1 and y = 1",
+    "x = 0 and y = 1",
+    "x = 0 and y = 0",
+    "x = 1 and y = 0"
+   ],
+   "correta": 3,
+   "comentario": "Implicação: verdadeira salvo primeiro argumento verdadeiro e segundo falso (L5 p. 49).",
+   "conceptIds": [
+    "C087"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L5 p. 49"
+  },
+  {
+   "id": "NE-M11-009",
+   "tipo": "multipla",
+   "topico": "11-algebra-booleana-e-logica",
+   "modulo": "M11",
+   "dificuldade": "facil",
+   "enunciado": "The XNOR gate implements:",
+   "alternativas": [
+    "Logical inequality",
+    "Logical equality (biconditional)",
+    "Logical inversion",
+    "Material implication"
+   ],
+   "correta": 1,
+   "comentario": "XNOR = 1 quando as entradas são iguais (L5 p. 54).",
+   "conceptIds": [
+    "C087",
+    "C088"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L5 p. 49"
+  },
+  {
+   "id": "NE-M11-010",
+   "tipo": "multipla",
+   "topico": "11-algebra-booleana-e-logica",
+   "modulo": "M11",
+   "dificuldade": "medio",
+   "enunciado": "CMOS logic has low power consumption because:",
+   "alternativas": [
+    "Its transistors are always conducting",
+    "It uses only bipolar transistors",
+    "It operates at very high voltage",
+    "Ideally no current flows except when the inputs are switching"
+   ],
+   "correta": 3,
+   "comentario": "Cada nMOS complementado por um pMOS: sem corrente estática, só na comutação (L5 p. 75).",
+   "conceptIds": [
+    "C093"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L5 p. 72–75"
+  },
+  {
+   "id": "NE-M11-011",
+   "tipo": "multipla",
+   "topico": "11-algebra-booleana-e-logica",
+   "modulo": "M11",
+   "dificuldade": "dificil",
+   "enunciado": "In a CMOS NAND gate:",
+   "alternativas": [
+    "All transistors are NMOS",
+    "There is no pull-up network",
+    "The NMOS transistors are in parallel and the PMOS transistors are in series",
+    "The NMOS transistors are in series and the PMOS transistors are in parallel"
+   ],
+   "correta": 3,
+   "comentario": "Saída baixa só se A e B altos (NMOS em série conduzem); qualquer entrada baixa liga um PMOS em paralelo (L5 p. 74).",
+   "conceptIds": [
+    "C093"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L5 p. 72–75"
+  },
+  {
+   "id": "NE-M11-012",
+   "tipo": "multipla",
+   "topico": "11-algebra-booleana-e-logica",
+   "modulo": "M11",
+   "dificuldade": "medio",
+   "enunciado": "A logic BUFFER, which does not change the logic value, is used to:",
+   "alternativas": [
+    "Store two bits",
+    "Invert the signal",
+    "Isolate the input from the output load (high input impedance, low output impedance)",
+    "Implement the AND function"
+   ],
+   "correta": 2,
+   "comentario": "Buffer copia o sinal e isola da carga; pode ser visto como atraso (L5 p. 55).",
+   "conceptIds": [
+    "C088"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L5 p. 50–55"
+  },
+  {
+   "id": "NE-M11-013",
+   "tipo": "multipla",
+   "topico": "11-algebra-booleana-e-logica",
+   "modulo": "M11",
+   "dificuldade": "facil",
+   "enunciado": "The popular 7400 series was based on which logic family?",
+   "alternativas": [
+    "TTL",
+    "CMOS",
+    "DTL",
+    "RTL"
+   ],
+   "correta": 0,
+   "comentario": "TTL foi a base da série 7400 (L5 p. 70).",
+   "conceptIds": [
+    "C092"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L5 p. 67–71"
+  },
+  {
+   "id": "NE-M11-014",
+   "tipo": "multipla",
+   "topico": "11-algebra-booleana-e-logica",
+   "modulo": "M11",
+   "dificuldade": "medio",
+   "enunciado": "A PLA (programmable logic array) implements logic functions as:",
+   "alternativas": [
+    "A chain of latches",
+    "An analogue amplifier",
+    "Sums of products: a programmable AND matrix followed by programmable OR gates",
+    "Products of sums using only NOT gates"
+   ],
+   "correta": 2,
+   "comentario": "PLA: matriz AND programável ligada a portas OR programáveis (L5 p. 62).",
+   "conceptIds": [
+    "C090"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L5 p. 59–62"
+  },
+  {
+   "id": "NE-M01-012",
+   "tipo": "multipla",
+   "topico": "01-sinais-e-classificacao",
+   "modulo": "M01",
+   "dificuldade": "facil",
+   "enunciado": "In telecommunications, a signal is:",
+   "alternativas": [
+    "Only an electromagnetic wave",
+    "The noise added by the channel",
+    "A variable physical quantity used to carry information",
+    "Any constant voltage in a circuit"
+   ],
+   "correta": 2,
+   "comentario": "Sinal: grandeza física variável encarregada de 'carregar' informação (luz, pressão do ar, onda eletromagnética) (L1 p. 10–11).",
+   "conceptIds": [
+    "C002"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L1 p. 10–11"
+  },
+  {
+   "id": "NE-M01-013",
+   "tipo": "multipla",
+   "topico": "01-sinais-e-classificacao",
+   "modulo": "M01",
+   "dificuldade": "facil",
+   "enunciado": "A periodic signal s(t) of period T satisfies:",
+   "alternativas": [
+    "s(t) = s(t + nT) for every integer n",
+    "s(t + T) = −s(t)",
+    "s(t) = 0 outside one period",
+    "s(t) = s(−t)"
+   ],
+   "correta": 0,
+   "comentario": "Periódico: basta conhecer um período; f = 1/T (L1 p. 29).",
+   "conceptIds": [
+    "C008"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L1 p. 29"
+  },
+  {
+   "id": "NE-M01-014",
+   "tipo": "multipla",
+   "topico": "01-sinais-e-classificacao",
+   "modulo": "M01",
+   "dificuldade": "facil",
+   "enunciado": "A square wave can be obtained as:",
+   "alternativas": [
+    "The product of two sinusoids",
+    "The derivative of a sinc",
+    "The sum of rectangular pulses repeated at a distance T",
+    "A single Dirac impulse"
+   ],
+   "correta": 2,
+   "comentario": "Repetir rects a cada T gera a onda quadrada de período T (L1 p. 31).",
+   "conceptIds": [
+    "C009"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L1 p. 30–31"
+  },
+  {
+   "id": "NE-M02-010",
+   "tipo": "multipla",
+   "topico": "02-analise-de-fourier",
+   "modulo": "M02",
+   "dificuldade": "facil",
+   "enunciado": "Why is frequency analysis useful?",
+   "alternativas": [
+    "It is needed only for periodic signals",
+    "It breaks a signal down into its frequency components, making it easy to separate the information from noise",
+    "It converts analogue signals into bits",
+    "It removes all noise automatically"
+   ],
+   "correta": 1,
+   "comentario": "Como o prisma decompõe a luz, o espectro revela as componentes (ex.: duas senoides em ruído branco) (L1 p. 44, 49).",
+   "conceptIds": [
+    "C015"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L1 p. 44–49"
+  },
+  {
+   "id": "NE-M04-014",
+   "tipo": "multipla",
+   "topico": "04-conversao-ad-e-amostragem",
+   "modulo": "M04",
+   "dificuldade": "facil",
+   "enunciado": "If Tc is the sampling period, the sampling frequency is:",
+   "alternativas": [
+    "fc = 1/Tc",
+    "fc = 2Tc",
+    "fc = 2/Tc",
+    "fc = Tc/2"
+   ],
+   "correta": 0,
+   "comentario": "fc = 1/Tc, a cadência de amostragem (L2 p. 22).",
+   "conceptIds": [
+    "C029"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L2 p. 22–24"
+  },
+  {
+   "id": "NE-M04-015",
+   "tipo": "multipla",
+   "topico": "04-conversao-ad-e-amostragem",
+   "modulo": "M04",
+   "dificuldade": "facil",
+   "enunciado": "The DAC (digital-to-analogue converter):",
+   "alternativas": [
+    "Removes aliasing that occurred in the ADC",
+    "Rebuilds an analogue signal from the bits, using interpolation and low-pass filtering",
+    "Samples the analogue signal",
+    "Increases the number of quantization levels"
+   ],
+   "correta": 1,
+   "comentario": "O DAC reconstrói o sinal; o aliasing não se desfaz depois — por isso Nyquist tem de ser respeitado na amostragem (L2 p. 48–49).",
+   "conceptIds": [
+    "C038"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L2 p. 48–49"
+  },
+  {
+   "id": "NE-M09-017",
+   "tipo": "multipla",
+   "topico": "09-modulacao-digital",
+   "modulo": "M09",
+   "dificuldade": "facil",
+   "enunciado": "The digital counterparts of the analogue modulations AM, FM and PM are:",
+   "alternativas": [
+    "ADC, DAC and S&H",
+    "PCM, NRZ and AMI",
+    "ASK, FSK and PSK",
+    "QPSK, QAM and OOK"
+   ],
+   "correta": 2,
+   "comentario": "ASK/FSK/PSK correspondem a AM/FM/PM; QAM combina amplitude e fase (L4 p. 23).",
+   "conceptIds": [
+    "C069"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L4 p. 23–24"
+  },
+  {
+   "id": "NE-M11-015",
+   "tipo": "multipla",
+   "topico": "11-algebra-booleana-e-logica",
+   "modulo": "M11",
+   "dificuldade": "facil",
+   "enunciado": "Who used Boolean algebra, around 1930, to design switching circuits?",
+   "alternativas": [
+    "Jack Kilby",
+    "Claude Shannon",
+    "Gordon Moore",
+    "George Boole"
+   ],
+   "correta": 1,
+   "comentario": "Boole criou a álgebra (1854); Shannon a aplicou a circuitos de chaveamento (~1930) (L5 p. 45).",
+   "conceptIds": [
+    "C086"
+   ],
+   "origem": "Inédita — estilo da prova de 2025",
+   "fonte": "Electr L5 p. 44–48"
+  }
+ ],
+ "simulados": [
+  {
+   "id": "sg01-prova-2025",
+   "titulo": "Simulado 1 — Prova de 2025 (reaplicação integral)",
+   "descricao": "As 30 questões de 2025, na ordem original, com gabarito oficial. Dizem que a prova se repete ou muda pouco: este é o treino mais importante.",
+   "duracaoMinutos": 60,
+   "questoes": [
+    "NE-P25-Q01",
+    "NE-P25-Q02",
+    "NE-P25-Q03",
+    "NE-P25-Q04",
+    "NE-P25-Q05",
+    "NE-P25-Q06",
+    "NE-P25-Q07",
+    "NE-P25-Q08",
+    "NE-P25-Q09",
+    "NE-P25-Q10",
+    "NE-P25-Q11",
+    "NE-P25-Q12",
+    "NE-P25-Q13",
+    "NE-P25-Q14",
+    "NE-P25-Q15",
+    "NE-P25-Q16",
+    "NE-P25-Q17",
+    "NE-P25-Q18",
+    "NE-P25-Q19",
+    "NE-P25-Q20",
+    "NE-P25-Q21",
+    "NE-P25-Q22",
+    "NE-P25-Q23",
+    "NE-P25-Q24",
+    "NE-P25-Q25",
+    "NE-P25-Q26",
+    "NE-P25-Q27",
+    "NE-P25-Q28",
+    "NE-P25-Q29",
+    "NE-P25-Q30"
+   ]
+  },
+  {
+   "id": "sg02-ineditas-a",
+   "titulo": "Simulado 2 — Inéditas A",
+   "descricao": "30 questões inéditas na proporção de assuntos de 2025 (ruído, amostragem e modulação pesam mais), com 2 itens de componentes e lógica.",
+   "duracaoMinutos": 60,
+   "questoes": [
+    "NE-M01-002",
+    "NE-M01-003",
+    "NE-M02-006",
+    "NE-M02-004",
+    "NE-M03-009",
+    "NE-M04-013",
+    "NE-M04-009",
+    "NE-M04-002",
+    "NE-M04-006",
+    "NE-M04-007",
+    "NE-M04-012",
+    "NE-M05-006",
+    "NE-M05-008",
+    "NE-M06-004",
+    "NE-M06-012",
+    "NE-M06-016",
+    "NE-M06-014",
+    "NE-M06-003",
+    "NE-M06-009",
+    "NE-M07-005",
+    "NE-M07-001",
+    "NE-M08-006",
+    "NE-M08-007",
+    "NE-M09-017",
+    "NE-M09-001",
+    "NE-M09-011",
+    "NE-M09-007",
+    "NE-M09-004",
+    "NE-M10-003",
+    "NE-M11-005"
+   ]
+  },
+  {
+   "id": "sg03-ineditas-b",
+   "titulo": "Simulado 3 — Inéditas B",
+   "descricao": "Outras 30 questões inéditas, sem repetir nenhuma do Simulado 2, com a mesma distribuição.",
+   "duracaoMinutos": 60,
+   "questoes": [
+    "NE-M01-013",
+    "NE-M01-004",
+    "NE-M02-002",
+    "NE-M02-007",
+    "NE-M03-001",
+    "NE-M04-001",
+    "NE-M04-004",
+    "NE-M04-010",
+    "NE-M04-015",
+    "NE-M04-008",
+    "NE-M04-005",
+    "NE-M05-005",
+    "NE-M05-011",
+    "NE-M06-011",
+    "NE-M06-017",
+    "NE-M06-010",
+    "NE-M06-007",
+    "NE-M06-001",
+    "NE-M06-020",
+    "NE-M07-004",
+    "NE-M07-008",
+    "NE-M08-011",
+    "NE-M08-010",
+    "NE-M09-008",
+    "NE-M09-012",
+    "NE-M09-014",
+    "NE-M09-013",
+    "NE-M09-009",
+    "NE-M10-010",
+    "NE-M11-002"
+   ]
+  }
+ ]
+}

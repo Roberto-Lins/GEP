@@ -1,0 +1,29 @@
+{
+  "ordem": 4,
+  "slug": "04-conversao-ad-e-amostragem",
+  "titulo": "Conversão A/D e amostragem",
+  "prioridade": "máxima",
+  "subtitulo": "Nyquist, aliasing, anti-aliasing, reconstrução, quantização e codificação",
+  "tempoEstimado": "60 min",
+  "objetivo": "Aplicar o teorema da amostragem, explicar aliasing e reconstrução e calcular níveis, bits e bitrate.",
+  "palavrasChave": [
+    "Nyquist",
+    "aliasing",
+    "anti-aliasing",
+    "sample and hold",
+    "quantization"
+  ],
+  "conceptIds": [
+    "C028",
+    "C029",
+    "C030",
+    "C031",
+    "C032",
+    "C033",
+    "C034",
+    "C035",
+    "C036",
+    "C037",
+    "C038"
+  ]
+}

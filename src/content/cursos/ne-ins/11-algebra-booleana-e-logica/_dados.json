@@ -1,0 +1,27 @@
+{
+  "ordem": 11,
+  "slug": "11-algebra-booleana-e-logica",
+  "titulo": "Álgebra booleana e lógica",
+  "prioridade": "alta",
+  "subtitulo": "Portas, De Morgan, portas universais, latch SR, famílias lógicas e CMOS",
+  "tempoEstimado": "30 min",
+  "objetivo": "Montar tabelas-verdade, aplicar De Morgan e explicar o funcionamento do CMOS.",
+  "palavrasChave": [
+    "Boolean algebra",
+    "NAND",
+    "NOR",
+    "De Morgan",
+    "latch",
+    "CMOS"
+  ],
+  "conceptIds": [
+    "C086",
+    "C087",
+    "C088",
+    "C089",
+    "C090",
+    "C091",
+    "C092",
+    "C093"
+  ]
+}

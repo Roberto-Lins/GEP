@@ -1,0 +1,20 @@
+---
+titulo: "Erros frequentes"
+secao: "erros-frequentes"
+secaoOrdem: 3
+---
+
+1. **Somar dB na fórmula de Friis.** Converta F e G para linear, calcule, volte para dB.
+2. **Usar SNR em dB em Shannon.** 30 dB é 1000, não 30.
+3. **Confundir níveis com dB no PCM.** 4 bits = 16 níveis; ganho de SQR = 24 dB.
+4. **Achar que aliasing "corta" as altas frequências.** Ele as **dobra** sobre as baixas: distorção.
+5. **Achar que aumentar fc resolve aliasing de sinal com banda ilimitada.** Precisa do anti-aliasing.
+6. **Trocar sample and hold por interpolação cardinal.** S&H = degraus (constante por partes); cardinal = soma de sincs, exige banda limitada.
+7. **Inverter a regra das transformadas.** Discreto no tempo ⇒ periódico na frequência; periódico ⇒ linhas.
+8. **Achar que capacitor e indutor ideais geram ruído térmico.** Só a parte resistiva gera.
+9. **Confundir PSD (kT, por Hz) com potência (kTB).**
+10. **Esquecer que o 1º estágio domina o ruído da cadeia** (LNA na frente).
+11. **Confundir baud com bit/s.** Só são iguais com 1 bit por símbolo.
+12. **Confundir I/Q com "converter analógico em digital".** I e Q são partes real e imaginária.
+13. **Achar que QAM grande é mais robusto.** Mais bits por símbolo ⇒ precisa de mais SNR.
+14. **Dirac "não tem transformada".** Tem: é constante (espectro plano).
